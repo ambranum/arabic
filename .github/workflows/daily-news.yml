@@ -28,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # full history — rebase/push misbehave on a shallow clone
 
       - uses: actions/setup-python@v5
         with:
@@ -43,7 +45,8 @@ jobs:
           ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
         run: python3 pipeline/daily_news.py --sentences 9
 
-      - name: Commit the day's text
+      - name: Commit the day's text (advisory — never blocks the deploy)
+        continue-on-error: true
         run: |
           git config user.name  "daily-news"
           git config user.email "actions@github.com"
