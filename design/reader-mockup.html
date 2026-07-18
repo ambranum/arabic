@@ -1,0 +1,957 @@
+<meta charset="utf-8">
+<title>Language Reader — Phase 0 mockup</title>
+<style>
+  :root {
+    --paper:      #EDEDE6;
+    --paper-2:    #E4E4DB;
+    --paper-3:    #DADAD0;
+    --ink:        #15161A;
+    --ink-soft:   #4A4B52;
+    --muted:      #7A7A72;
+    --rule:       #C9C9BE;
+    --rubric:     #B4372A;
+    --verdigris:  #2F6B63;
+    --verdigris-2:#E0EAE7;
+    --ochre:      #C8912F;
+    --ochre-wash: rgba(200, 145, 47, 0.16);
+
+    --serif: "Iowan Old Style", "Charter", Palatino, "Palatino Linotype", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono: "SF Mono", ui-monospace, Menlo, Monaco, monospace;
+    --arabic: "Geeza Pro", "SF Arabic", "Damascus", "Baghdad", "Al Bayan", serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:      #16171B;
+      --paper-2:    #1E1F24;
+      --paper-3:    #292A30;
+      --ink:        #E4E3DC;
+      --ink-soft:   #A9A9A2;
+      --muted:      #82827B;
+      --rule:       #33343B;
+      --rubric:     #FF7B62;
+      --verdigris:  #63B3A5;
+      --verdigris-2:#1C2E2C;
+      --ochre:      #D9A94D;
+      --ochre-wash: rgba(217, 169, 77, 0.14);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:      #16171B;
+    --paper-2:    #1E1F24;
+    --paper-3:    #292A30;
+    --ink:        #E4E3DC;
+    --ink-soft:   #A9A9A2;
+    --muted:      #82827B;
+    --rule:       #33343B;
+    --rubric:     #FF7B62;
+    --verdigris:  #63B3A5;
+    --verdigris-2:#1C2E2C;
+    --ochre:      #D9A94D;
+    --ochre-wash: rgba(217, 169, 77, 0.14);
+  }
+  :root[data-theme="light"] {
+    --paper:      #EDEDE6;
+    --paper-2:    #E4E4DB;
+    --paper-3:    #DADAD0;
+    --ink:        #15161A;
+    --ink-soft:   #4A4B52;
+    --muted:      #7A7A72;
+    --rule:       #C9C9BE;
+    --rubric:     #B4372A;
+    --verdigris:  #2F6B63;
+    --verdigris-2:#E0EAE7;
+    --ochre:      #C8912F;
+    --ochre-wash: rgba(200, 145, 47, 0.16);
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  * { box-sizing: border-box; }
+
+  /* 1040 keeps the Arabic measure near 700px — wider and the eye loses the line
+     on the return sweep, which RTL punishes harder than LTR. */
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 32px 24px 96px;
+  }
+
+  /* ---- masthead ---- */
+  .masthead {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .masthead h1 {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .masthead .sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .spacer { flex: 1 1 40px; }
+  .chip {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .chip.live {
+    border-color: var(--verdigris);
+    color: var(--verdigris);
+    background: var(--verdigris-2);
+  }
+
+  /* ---- layout ---- */
+  .cols {
+    display: grid;
+    grid-template-columns: 216px minmax(0, 1fr);
+    gap: 52px;
+    align-items: start;
+    margin-top: 34px;
+  }
+  @media (max-width: 860px) {
+    .cols { grid-template-columns: 1fr; gap: 30px; }
+    .rail { position: static !important; }
+  }
+
+  /* ---- control rail ---- */
+  .rail {
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .group { display: flex; flex-direction: column; gap: 9px; }
+  .group > .label {
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .hint {
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: var(--muted);
+    margin: -2px 0 0;
+  }
+
+  /* segmented */
+  .seg {
+    display: flex;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .seg button {
+    flex: 1;
+    font: inherit;
+    font-size: 12px;
+    padding: 7px 4px;
+    background: none;
+    border: none;
+    border-right: 1px solid var(--rule);
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+  }
+  .seg button:last-child { border-right: none; }
+  .seg button:hover { background: var(--paper-2); }
+  .seg button[aria-pressed="true"] {
+    background: var(--verdigris);
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .seg button:focus-visible {
+    outline: 2px solid var(--verdigris);
+    outline-offset: -2px;
+  }
+
+  /* switch rows */
+  .sw {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+    padding: 5px 0;
+    background: none;
+    border: none;
+    color: var(--ink);
+    font-family: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  .sw:focus-visible { outline: 2px solid var(--verdigris); outline-offset: 3px; }
+  .track {
+    flex: none;
+    width: 32px; height: 18px;
+    border-radius: 9px;
+    border: 1px solid var(--rule);
+    background: var(--paper-2);
+    position: relative;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .track::after {
+    content: "";
+    position: absolute;
+    top: 2px; left: 2px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: transform 0.15s, background 0.15s;
+  }
+  .sw[aria-pressed="true"] .track {
+    background: var(--verdigris);
+    border-color: var(--verdigris);
+  }
+  .sw[aria-pressed="true"] .track::after {
+    transform: translateX(14px);
+    background: var(--paper);
+  }
+
+  /* ---- reading column ---- */
+  .reader { min-width: 0; }
+
+  .playbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .play {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font: inherit;
+    font-size: 13px;
+    padding: 7px 13px;
+    border: 1px solid var(--verdigris);
+    color: var(--verdigris);
+    background: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.12s;
+  }
+  .play:hover { background: var(--verdigris-2); }
+  .play:focus-visible { outline: 2px solid var(--verdigris); outline-offset: 2px; }
+  .play svg { display: block; }
+  .rate {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    background: none;
+    padding: 6px 9px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .stub {
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .sent {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .sent:last-child { border-bottom: none; }
+
+  /* Sentence-level, not word-level, when real speech is playing: we know when an
+     utterance starts and ends, and nothing more. Word-by-word karaoke needs forced
+     alignment data from the ingest pipeline — faking it would drift out of sync. */
+  .sent.speaking {
+    background: var(--verdigris-2);
+    box-shadow: inset 3px 0 0 var(--verdigris);
+    border-radius: 0 3px 3px 0;
+  }
+
+  /* 34px is the floor where harakat strokes stay thick enough to hold their color
+     — below this the red antialiases to grey and the rubric idea collapses. */
+  .ar {
+    direction: rtl;
+    text-align: right;
+    font-family: var(--arabic);
+    font-size: 34px;
+    line-height: 2.3;
+    color: var(--ink);
+  }
+  /* transliteration on = looser leading so the latin line clears the descenders */
+  .reader[data-tr="on"] .ar { line-height: 2.9; }
+
+  .w {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 1px;
+    border-radius: 2px;
+    transition: background 0.1s;
+  }
+  .w:hover { background: var(--verdigris-2); }
+  .w:focus-visible { outline: 2px solid var(--verdigris); outline-offset: 1px; }
+  .w.unknown { background: var(--ochre-wash); box-shadow: inset 0 -2px 0 var(--ochre); }
+  .w.speaking { background: var(--verdigris); color: var(--paper); }
+  .w.speaking .tr { color: var(--paper); }
+
+  /* The .h spans exist ONLY so marks can be hidden — do not try to color them.
+     Arabic shaping merges each base letter + its marks into one glyph cluster and
+     paints the cluster in the base run's color, so a color here is silently
+     ignored (verified across Geeza Pro, SF Arabic, Damascus, Al Bayan, serif).
+     Coloring works at word granularity, which is where the rubric now lives. */
+  .reader[data-voc="none"] .h { display: none; }
+  .reader[data-voc="partial"] .w:not([data-hard="1"]) .h { display: none; }
+
+  /* Partial mode: the words that keep their marks are the ambiguous ones — the
+     exact reason tashkīl was invented. A red rule names them. text-decoration,
+     not box-shadow, so it composes with the ochre unknown-word marker. */
+  .reader[data-voc="partial"] .w[data-hard="1"] {
+    text-decoration: underline;
+    text-decoration-color: var(--rubric);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+  }
+
+  /* transliteration sits under its word, latin + LTR inside an RTL line */
+  .tr {
+    display: none;
+    direction: ltr;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    line-height: 1;
+    color: var(--muted);
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-top: -6px;
+    white-space: nowrap;
+  }
+  .reader[data-tr="on"] .tr { display: block; }
+
+  .en {
+    display: none;
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.55;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 14px;
+    padding-left: 13px;
+    border-left: 2px solid var(--rule);
+  }
+  .reader[data-en="on"] .en { display: block; }
+  .sent.peek .en { display: block; }
+
+  .peekbtn {
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: none;
+    padding: 6px 0 0;
+    cursor: pointer;
+  }
+  .peekbtn:hover { color: var(--verdigris); }
+  .peekbtn:focus-visible { outline: 2px solid var(--verdigris); outline-offset: 2px; }
+  .reader[data-en="on"] .peekbtn { display: none; }
+
+  /* ---- hover card ---- */
+  .card {
+    position: fixed;
+    z-index: 50;
+    width: 280px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    box-shadow: 0 14px 34px rgba(0,0,0,0.17);
+    padding: 15px 16px 13px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.11s;
+  }
+  .card.on { opacity: 1; visibility: visible; }
+  .card .hw {
+    font-family: var(--arabic);
+    direction: rtl;
+    font-size: 27px;
+    line-height: 1.7;
+  }
+  .card .hw-tr {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--verdigris);
+    margin-top: 2px;
+  }
+  .card .gloss {
+    font-family: var(--serif);
+    font-size: 16px;
+    margin: 9px 0 12px;
+    line-height: 1.4;
+  }
+  .card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px 12px;
+    margin: 0 0 12px;
+    padding: 11px 0 0;
+    border-top: 1px solid var(--rule);
+    font-size: 12.5px;
+  }
+  .card dt {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 3px;
+  }
+  .card dd {
+    margin: 0;
+    color: var(--ink);
+  }
+  .card dd.rtl {
+    font-family: var(--arabic);
+    direction: rtl;
+    text-align: left;
+    font-size: 16px;
+  }
+  .card .note {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    background: var(--paper-2);
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+  }
+  .card .acts { display: flex; gap: 7px; }
+  .card .acts button {
+    flex: 1;
+    font: inherit;
+    font-size: 12px;
+    padding: 7px;
+    border: 1px solid var(--rule);
+    background: none;
+    color: var(--ink-soft);
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .card .acts button:hover:not(:disabled) { border-color: var(--verdigris); color: var(--verdigris); }
+  .card .acts button:disabled { opacity: 0.35; cursor: default; }
+  .card .acts button.mark[data-on="1"] {
+    border-color: var(--ochre);
+    color: var(--ochre);
+    background: var(--ochre-wash);
+  }
+
+  /* ---- tray ---- */
+  .tray {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    box-shadow: 0 -6px 22px rgba(0,0,0,0.09);
+    z-index: 40;
+  }
+  .tray-in {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 11px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .tray .count {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .tray .count b {
+    font-variant-numeric: tabular-nums;
+    color: var(--ochre);
+  }
+  .tray .list {
+    flex: 1;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    direction: rtl;
+    padding: 2px 0;
+    min-width: 0;
+  }
+  .tray .list::-webkit-scrollbar { height: 0; }
+  .tray .list span {
+    font-family: var(--arabic);
+    font-size: 17px;
+    padding: 2px 9px;
+    border: 1px solid var(--ochre);
+    background: var(--ochre-wash);
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .tray .empty {
+    font-size: 12.5px;
+    color: var(--muted);
+    font-style: italic;
+    direction: ltr;
+  }
+  .export {
+    font: inherit;
+    font-size: 12.5px;
+    padding: 7px 13px;
+    background: var(--verdigris);
+    color: var(--paper);
+    border: 1px solid var(--verdigris);
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .export:disabled { opacity: 0.4; cursor: default; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <div>
+      <h1>قهوة الصبح <span style="color:var(--muted); font-family:var(--serif); font-style:italic;">— Morning Coffee</span></h1>
+      <p class="sub">Original · 5 sentences · 24 words</p>
+    </div>
+    <div class="spacer"></div>
+    <span class="chip live" id="regchip">Palestinian</span>
+    <span class="chip">A2 — 12% new to you</span>
+  </header>
+
+  <div class="cols">
+    <aside class="rail">
+      <div class="group">
+        <span class="label">Register</span>
+        <div class="seg" id="seg-reg">
+          <button aria-pressed="true" data-v="pal">Palestinian</button>
+          <button aria-pressed="false" data-v="msa">فُصْحى MSA</button>
+        </div>
+        <p class="hint">The same text as it's spoken, and as it'd be written.</p>
+      </div>
+
+      <div class="group">
+        <span class="label">Vocalization</span>
+        <div class="seg" id="seg-voc">
+          <button aria-pressed="true" data-v="full">Full</button>
+          <button aria-pressed="false" data-v="partial">Partial</button>
+          <button aria-pressed="false" data-v="none">None</button>
+        </div>
+        <p class="hint">Partial keeps marks only on the words you'd genuinely misread — <span style="color:var(--rubric)">ruled in red</span>, the reason scribes invented tashkīl. None is how it's really written.</p>
+      </div>
+
+      <div class="group">
+        <span class="label">Layers</span>
+        <button class="sw" id="sw-tr" aria-pressed="false">Transliteration <span class="track"></span></button>
+        <button class="sw" id="sw-en" aria-pressed="false">English <span class="track"></span></button>
+        <button class="sw" id="sw-unk" aria-pressed="true">Mark unknown <span class="track"></span></button>
+      </div>
+    </aside>
+
+    <main class="reader" id="reader" data-voc="full" data-tr="off" data-en="off">
+      <div class="playbar">
+        <button class="play" id="play">
+          <svg width="9" height="11" viewBox="0 0 9 11" fill="currentColor" aria-hidden="true"><path d="M0 0l9 5.5L0 11z"/></svg>
+          <span id="playlabel">Play text</span>
+        </button>
+        <button class="rate" id="rate">1.0×</button>
+        <span class="stub" id="audionote"></span>
+      </div>
+      <div id="body"></div>
+    </main>
+  </div>
+</div>
+
+<div class="card" id="card" role="dialog" aria-label="Word details"></div>
+
+<div class="tray">
+  <div class="tray-in">
+    <span class="count"><b id="cnt">0</b> words marked</span>
+    <div class="list" id="tlist"><span class="empty">Click any word you don't know — it collects here.</span></div>
+    <button class="export" id="exp" disabled>Export to Anki</button>
+  </div>
+</div>
+
+<script>
+// h() wraps diacritics so they can be shown/hidden and carry the rubric red
+const TEXT = {
+  pal: [
+    {en: "Every morning I wake up early and make coffee.", w: [
+      {p:"كل", v:"كُلّ", tr:"kull", g:"every, all", r:"ك-ل-ل", l:"كُلّ", pos:"quantifier"},
+      {p:"يوم", v:"يوم", tr:"yōm", g:"day", r:"ي-و-م", l:"يَوْم", pos:"noun, m."},
+      {p:"الصبح", v:"الصُّبِح", tr:"iṣ-ṣubiḥ", g:"the morning", r:"ص-ب-ح", l:"صُبْح", pos:"noun, m.", hard:1,
+       n:"Dialect keeps the sun letter assimilation you hear: al- + ṣ becomes iṣ-ṣ."},
+      {p:"بصحى", v:"بَصْحى", tr:"baṣḥa", g:"I wake up", r:"ص-ح-و", l:"صِحي", pos:"verb, 1sg", hard:1,
+       n:"The b- prefix is the dialect's habitual present — it doesn't exist in MSA. b- + aṣḥa = 'I (regularly) wake up.'"},
+      {p:"بكير", v:"بَكير", tr:"bakīr", g:"early", r:"ب-ك-ر", l:"بَكير", pos:"adverb"},
+      {p:"وبعمل", v:"وبَعْمَل", tr:"w-baʿmal", g:"and I make", r:"ع-م-ل", l:"عَمِل", pos:"verb, 1sg", hard:1,
+       n:"Three pieces stacked: w- (and) + b- (habitual) + aʿmal (I do/make)."},
+      {p:"قهوة", v:"قَهْوة", tr:"ahwe", g:"coffee", r:"ق-ه-و", l:"قَهْوة", pos:"noun, f.", hard:1,
+       n:"Written with ق but Palestinians drop it to a glottal stop: 'ahwe', not 'qahwa'. The spelling won't tell you this."}
+    ]},
+    {en: "The smell of cardamom fills the house.", w: [
+      {p:"ريحة", v:"ريحِة", tr:"rīḥit", g:"smell of", r:"ر-ي-ح", l:"ريحة", pos:"noun, f.", hard:1,
+       n:"In a possessive chain the tā' marbūṭa surfaces as -it: rīḥa becomes rīḥit il-hēl."},
+      {p:"الهيل", v:"الهيل", tr:"il-hēl", g:"cardamom", r:"ه-ي-ل", l:"هيل", pos:"noun, m."},
+      {p:"بتملا", v:"بِتْمَلا", tr:"bitmala", g:"it fills", r:"م-ل-أ", l:"مَلا", pos:"verb, 3sg f.", hard:1,
+       n:"bi- + timla. Feminine because rīḥa is feminine — the verb agrees with the smell, not the house."},
+      {p:"البيت", v:"البيت", tr:"il-bēt", g:"the house", r:"ب-ي-ت", l:"بَيْت", pos:"noun, m."}
+    ]},
+    {en: "I sit on the balcony and drink my cup slowly.", w: [
+      {p:"بقعد", v:"بُقْعُد", tr:"buqʿud", g:"I sit", r:"ق-ع-د", l:"قَعَد", pos:"verb, 1sg", hard:1,
+       n:"Same b- habitual prefix. قعد covers both 'sit' and 'stay' in dialect."},
+      {p:"عالبلكونة", v:"عالبَلْكونة", tr:"ʿal-balkōne", g:"on the balcony", r:"—", l:"بَلْكونة", pos:"noun, f.", hard:1,
+       n:"No root — borrowed from Italian balcone via Ottoman Turkish. ʿa + al- fuse into ʿal-. Loanwords are rootless, which is itself the clue they're loaned."},
+      {p:"وبشرب", v:"وبَشْرَب", tr:"w-bashrab", g:"and I drink", r:"ش-ر-ب", l:"شِرِب", pos:"verb, 1sg"},
+      {p:"فنجاني", v:"فِنْجاني", tr:"finjāni", g:"my cup", r:"ف-ن-ج-ن", l:"فِنْجان", pos:"noun, m.",
+       n:"Quadriliteral root, from Persian pingān. -i on the end is 'my'."},
+      {p:"على", v:"على", tr:"ʿala", g:"at, upon", r:"ع-ل-و", l:"عَلى", pos:"preposition"},
+      {p:"مهلي", v:"مَهْلي", tr:"mahli", g:"my leisure", r:"م-ه-ل", l:"مَهْل", pos:"noun, m.", hard:1,
+       n:"ʿala mahli is the idiom — literally 'at my leisure', used exactly where English says 'slowly' or 'take your time'."}
+    ]},
+    {en: "The street is still quiet.", w: [
+      {p:"الشارع", v:"الشّارِع", tr:"ish-shāriʿ", g:"the street", r:"ش-ر-ع", l:"شارِع", pos:"noun, m."},
+      {p:"لسه", v:"لِسَّه", tr:"lissa", g:"still, not yet", r:"ل-س-س", l:"لِسَّه", pos:"particle", hard:1,
+       n:"Dialect-only — MSA needs lā yazāl, a whole verb; lissa does it in one word. (Claude spelled this لسا and called it rootless. Maknuune: لِسَّه, root ل-س-س. Both wrong.)"},
+      {p:"هادي", v:"هادي", tr:"hādi", g:"quiet, calm", r:"ه-د-ي", l:"هادي", pos:"adjective",
+       n:"MSA hādi' (root ه-د-أ) dropped its hamza in dialect and re-rooted to ه-د-ي — the word and its filing both moved."}
+    ]},
+    {en: "This is the most beautiful moment of the day.", w: [
+      {p:"هاي", v:"هاي", tr:"hay", g:"this (f.)", r:"—", l:"هاي", pos:"demonstrative", hard:1,
+       n:"Levantine feminine demonstrative. MSA uses hādhihi."},
+      {p:"أحلى", v:"أَحْلى", tr:"aḥla", g:"sweetest, loveliest", r:"ح-ل-ي", l:"حِلو", pos:"elative", hard:1,
+       n:"From the root for 'sweet' — Arabic reaches for taste where English reaches for sight."},
+      {p:"لحظة", v:"لَحْظة", tr:"laḥẓa", g:"moment", r:"ل-ح-ظ", l:"لَحْظة", pos:"noun, f.",
+       n:"Root means 'to glance' — a moment is the length of a look."},
+      {p:"بالنهار", v:"بالنَّهار", tr:"bin-nahār", g:"in the day", r:"ن-ه-ر", l:"نَهار", pos:"noun, m."}
+    ]}
+  ],
+  msa: [
+    {en: "Every morning I wake up early and make coffee.", w: [
+      {p:"في", v:"في", tr:"fī", g:"in", r:"—", l:"في", pos:"preposition"},
+      {p:"كل", v:"كُلِّ", tr:"kulli", g:"every", r:"ك-ل-ل", l:"كُلّ", pos:"quantifier"},
+      {p:"صباح", v:"صَباحٍ", tr:"ṣabāḥin", g:"morning", r:"ص-ب-ح", l:"صَباح", pos:"noun, m.", hard:1,
+       n:"The -in ending is tanwīn — MSA case marking that dialect drops entirely."},
+      {p:"أستيقظ", v:"أَسْتَيْقِظُ", tr:"astayqiẓu", g:"I wake up", r:"ي-ق-ظ", l:"اِسْتَيْقَظَ", pos:"verb, 1sg", hard:1,
+       n:"Form X verb. Dialect swaps this out for the much shorter ṣiḥi."},
+      {p:"باكرا", v:"باكِراً", tr:"bākiran", g:"early", r:"ب-ك-ر", l:"باكِر", pos:"adverb"},
+      {p:"وأعد", v:"وأُعِدُّ", tr:"wa-uʿiddu", g:"and I prepare", r:"ع-د-د", l:"أَعَدَّ", pos:"verb, 1sg"},
+      {p:"القهوة", v:"القَهْوة", tr:"al-qahwa", g:"the coffee", r:"ق-ه-و", l:"قَهْوة", pos:"noun, f.", hard:1,
+       n:"Same word as the dialect's 'ahwe — but here the ق is actually pronounced."}
+    ]},
+    {en: "The smell of cardamom fills the house.", w: [
+      {p:"رائحة", v:"رائِحةُ", tr:"rā'iḥatu", g:"smell of", r:"ر-و-ح", l:"رائِحة", pos:"noun, f."},
+      {p:"الهيل", v:"الهيلِ", tr:"al-hēli", g:"the cardamom", r:"ه-ي-ل", l:"هيل", pos:"noun, m."},
+      {p:"تملأ", v:"تَمْلأُ", tr:"tamla'u", g:"it fills", r:"م-ل-أ", l:"مَلأَ", pos:"verb, 3sg f."},
+      {p:"البيت", v:"البَيْت", tr:"al-bayt", g:"the house", r:"ب-ي-ت", l:"بَيْت", pos:"noun, m.", hard:1,
+       n:"MSA bayt, dialect bēt — the ay diphthong flattens to ē across the Levant."}
+    ]},
+    {en: "I sit on the balcony and drink my cup slowly.", w: [
+      {p:"أجلس", v:"أَجْلِسُ", tr:"ajlisu", g:"I sit", r:"ج-ل-س", l:"جَلَسَ", pos:"verb, 1sg", hard:1,
+       n:"A different root than the dialect's qaʿad — not a sound change, a different word."},
+      {p:"في", v:"في", tr:"fī", g:"in, on", r:"—", l:"في", pos:"preposition"},
+      {p:"الشرفة", v:"الشُّرْفةِ", tr:"ash-shurfati", g:"the balcony", r:"ش-ر-ف", l:"شُرْفة", pos:"noun, f.", hard:1,
+       n:"MSA has a native root word; the dialect borrowed balkōne instead and left this one to the newspapers."},
+      {p:"وأشرب", v:"وأَشْرَبُ", tr:"wa-ashrabu", g:"and I drink", r:"ش-ر-ب", l:"شَرِبَ", pos:"verb, 1sg"},
+      {p:"فنجاني", v:"فِنْجاني", tr:"finjānī", g:"my cup", r:"ف-ن-ج-ن", l:"فِنْجان", pos:"noun, m."},
+      {p:"ببطء", v:"بِبُطْء", tr:"bi-buṭ'", g:"slowly", r:"ب-ط-أ", l:"بُطْء", pos:"noun, m.", hard:1,
+       n:"Literally 'with slowness'. The dialect's ʿala mahli is warmer and far more common."}
+    ]},
+    {en: "The street is still quiet.", w: [
+      {p:"الشارع", v:"الشّارِعُ", tr:"ash-shāriʿu", g:"the street", r:"ش-ر-ع", l:"شارِع", pos:"noun, m."},
+      {p:"لا", v:"لا", tr:"lā", g:"not", r:"—", l:"لا", pos:"negator"},
+      {p:"يزال", v:"يَزالُ", tr:"yazālu", g:"he/it ceases", r:"ز-ي-ل", l:"زالَ", pos:"verb, 3sg m.", hard:1,
+       n:"lā yazāl — 'does not cease' — is MSA's whole construction for 'still'. Dialect says lissa."},
+      {p:"هادئا", v:"هادِئاً", tr:"hādi'an", g:"quiet", r:"ه-د-أ", l:"هادِئ", pos:"adjective"}
+    ]},
+    {en: "This is the most beautiful moment of the day.", w: [
+      {p:"هذه", v:"هذِهِ", tr:"hādhihi", g:"this (f.)", r:"—", l:"هذِهِ", pos:"demonstrative"},
+      {p:"أجمل", v:"أَجْمَلُ", tr:"ajmalu", g:"most beautiful", r:"ج-م-ل", l:"جَميل", pos:"elative", hard:1,
+       n:"MSA goes to 'beauty'; the dialect goes to 'sweetness' (aḥla). Same idea, different sense."},
+      {p:"لحظة", v:"لَحْظةٍ", tr:"laḥẓatin", g:"moment", r:"ل-ح-ظ", l:"لَحْظة", pos:"noun, f."},
+      {p:"في", v:"في", tr:"fī", g:"in", r:"—", l:"في", pos:"preposition"},
+      {p:"اليوم", v:"اليَوْم", tr:"al-yawm", g:"the day", r:"ي-و-م", l:"يَوْم", pos:"noun, m."}
+    ]}
+  ]
+};
+
+const R = document.getElementById("reader");
+const BODY = document.getElementById("body");
+const CARD = document.getElementById("card");
+let reg = "pal";
+let marked = new Set();
+let showUnknown = true;
+
+// Split a vocalized word into base chars and diacritic spans.
+// Escapes, not literals: tanwīn/fatḥa/ḍamma/kasra/shadda/sukūn + superscript alef.
+// Hamza and madda (0653-0655) are deliberately excluded — they're part of the
+// letter's identity, not vowel marks, and must stay visible when tashkīl is off.
+const HARAKAT = /[\u064B-\u0652\u0670]/;
+function render(v) {
+  let out = "", buf = "";
+  for (const ch of v) {
+    if (HARAKAT.test(ch)) { buf += ch; }
+    else {
+      if (buf) { out += '<span class="h">' + buf + "</span>"; buf = ""; }
+      out += ch;
+    }
+  }
+  if (buf) out += '<span class="h">' + buf + "</span>";
+  return out;
+}
+
+function draw() {
+  BODY.innerHTML = "";
+  TEXT[reg].forEach((s, si) => {
+    const d = document.createElement("div");
+    d.className = "sent";
+    const line = document.createElement("div");
+    line.className = "ar";
+    s.w.forEach((w, wi) => {
+      const b = document.createElement("span");
+      b.className = "w";
+      b.tabIndex = 0;
+      if (w.hard) b.dataset.hard = "1";
+      if (showUnknown && marked.has(w.l)) b.classList.add("unknown");
+      b.dataset.si = si; b.dataset.wi = wi;
+      b.innerHTML = render(w.v) + '<span class="tr">' + w.tr + "</span>";
+      line.appendChild(b);
+      if (wi < s.w.length - 1) line.appendChild(document.createTextNode(" "));
+    });
+    d.appendChild(line);
+    const en = document.createElement("p");
+    en.className = "en";
+    en.textContent = s.en;
+    d.appendChild(en);
+    const pk = document.createElement("button");
+    pk.className = "peekbtn";
+    pk.textContent = "Peek at English";
+    pk.onclick = () => d.classList.toggle("peek");
+    d.appendChild(pk);
+    BODY.appendChild(d);
+  });
+}
+
+// ---- hover card ----
+let hideT;
+function showCard(el) {
+  clearTimeout(hideT);
+  const w = TEXT[reg][el.dataset.si].w[el.dataset.wi];
+  const on = marked.has(w.l);
+  CARD.innerHTML =
+    '<div class="hw">' + render(w.v) + "</div>" +
+    '<div class="hw-tr">' + w.tr + "</div>" +
+    '<div class="gloss">' + w.g + "</div>" +
+    "<dl>" +
+      "<dt>Root</dt><dd class='rtl'>" + w.r + "</dd>" +
+      "<dt>Lemma</dt><dd class='rtl'>" + w.l + "</dd>" +
+      "<dt>Type</dt><dd>" + w.pos + "</dd>" +
+    "</dl>" +
+    (w.n ? '<div class="note">' + w.n + "</div>" : "") +
+    '<div class="acts">' +
+      "<button data-a='play'>▸ Hear it</button>" +
+      "<button class='mark' data-a='mark' data-on='" + (on ? "1" : "0") + "'>" +
+        (on ? "✓ Marked" : "+ Don't know") + "</button>" +
+    "</div>";
+
+  const r = el.getBoundingClientRect();
+  let left = r.left + r.width / 2 - 140;
+  left = Math.max(12, Math.min(left, window.innerWidth - 292));
+  let top = r.bottom + 9;
+  if (top + CARD.offsetHeight > window.innerHeight - 60) top = r.top - CARD.offsetHeight - 9;
+  CARD.style.left = left + "px";
+  CARD.style.top = Math.max(12, top) + "px";
+  CARD.classList.add("on");
+
+  CARD.querySelector("[data-a='mark']").onclick = () => { toggle(w.l); showCard(el); };
+
+  const hear = CARD.querySelector("[data-a='play']");
+  if (canSpeak()) {
+    hear.onclick = () => { SYNTH.cancel(); const u = new SpeechSynthesisUtterance(w.v);
+      u.voice = arVoice; u.lang = arVoice.lang; u.rate = rate; SYNTH.speak(u); };
+  } else {
+    hear.disabled = true;
+    hear.title = arVoice
+      ? "No Palestinian voice — the fuṣḥā voice would mispronounce this"
+      : "No Arabic voice installed";
+  }
+}
+function hideCard() { hideT = setTimeout(() => CARD.classList.remove("on"), 160); }
+
+BODY.addEventListener("mouseover", e => { const w = e.target.closest(".w"); if (w) showCard(w); });
+BODY.addEventListener("mouseout", e => { if (e.target.closest(".w")) hideCard(); });
+BODY.addEventListener("focusin", e => { const w = e.target.closest(".w"); if (w) showCard(w); });
+CARD.addEventListener("mouseenter", () => clearTimeout(hideT));
+CARD.addEventListener("mouseleave", hideCard);
+BODY.addEventListener("click", e => {
+  const el = e.target.closest(".w");
+  if (el) toggle(TEXT[reg][el.dataset.si].w[el.dataset.wi].l);
+});
+
+// ---- marking + tray ----
+function toggle(lemma) {
+  marked.has(lemma) ? marked.delete(lemma) : marked.add(lemma);
+  draw(); tray();
+}
+function tray() {
+  const list = document.getElementById("tlist");
+  document.getElementById("cnt").textContent = marked.size;
+  document.getElementById("exp").disabled = marked.size === 0;
+  if (!marked.size) {
+    list.innerHTML = '<span class="empty">Click any word you don\'t know — it collects here.</span>';
+    return;
+  }
+  list.innerHTML = [...marked].map(m => "<span>" + m + "</span>").join("");
+}
+document.getElementById("exp").onclick = function () {
+  this.textContent = "✓ " + marked.size + " cards exported";
+  setTimeout(() => { this.textContent = "Export to Anki"; }, 1800);
+};
+
+// ---- controls ----
+function seg(id, fn) {
+  const el = document.getElementById(id);
+  el.addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    [...el.children].forEach(c => c.setAttribute("aria-pressed", String(c === b)));
+    fn(b.dataset.v);
+  });
+}
+seg("seg-reg", v => {
+  stopAll();
+  reg = v;
+  document.getElementById("regchip").textContent = v === "pal" ? "Palestinian" : "MSA — fuṣḥā";
+  draw();
+  audioNote();
+});
+seg("seg-voc", v => R.dataset.voc = v);
+
+function sw(id, fn) {
+  const el = document.getElementById(id);
+  el.onclick = () => {
+    const on = el.getAttribute("aria-pressed") !== "true";
+    el.setAttribute("aria-pressed", String(on));
+    fn(on);
+  };
+}
+sw("sw-tr", on => R.dataset.tr = on ? "on" : "off");
+sw("sw-en", on => R.dataset.en = on ? "on" : "off");
+sw("sw-unk", on => { showUnknown = on; draw(); });
+
+// ---- audio ----
+// This machine has exactly one Arabic voice: Majed (ar-001), a fuṣḥā reader. So MSA
+// gets real speech and the dialect gets silence. Pointing an MSA voice at Palestinian
+// would say "qahwa" for قهوة where a Palestinian says "ahwe" — teaching precisely the
+// habit this app exists to break. Silence is the honest state until a dialect voice
+// exists; the gap in the UI is the point, not an oversight.
+const SYNTH = window.speechSynthesis || null;
+let arVoice = null;
+
+function pickVoice() {
+  if (!SYNTH) return;
+  arVoice = SYNTH.getVoices().filter(v => /^ar/i.test(v.lang))[0] || null;
+}
+function canSpeak() { return !!arVoice && reg === "msa"; }
+
+function audioNote() {
+  const n = document.getElementById("audionote");
+  if (!SYNTH || !arVoice) {
+    n.textContent = "No Arabic voice on this machine — highlight only.";
+  } else if (reg === "msa") {
+    n.textContent = "Real speech — " + arVoice.name + " (" + arVoice.lang + "), a fuṣḥā voice.";
+  } else {
+    n.textContent = "Silent: the only Arabic voice here reads fuṣḥā. Highlight previews the follow-along.";
+  }
+}
+
+let rate = 1, playing = false, token = 0;
+const RATES = [1, 0.75, 0.5];
+document.getElementById("rate").onclick = function () {
+  rate = RATES[(RATES.indexOf(rate) + 1) % RATES.length];
+  this.textContent = rate.toFixed(2).replace(/0$/, "") + "×";
+};
+
+function stopAll() {
+  playing = false;
+  token++;
+  if (SYNTH) SYNTH.cancel();
+  BODY.querySelectorAll(".speaking").forEach(e => e.classList.remove("speaking"));
+  document.getElementById("playlabel").textContent = "Play text";
+}
+
+document.getElementById("play").onclick = () => {
+  if (playing) { stopAll(); return; }
+  playing = true;
+  const t = ++token;
+  document.getElementById("playlabel").textContent = "Stop";
+  canSpeak() ? playSpoken(t) : playSilent(t);
+};
+
+// Real speech: advance on the utterance's own end event, so the highlight can't drift.
+function playSpoken(t) {
+  const sents = [...BODY.querySelectorAll(".sent")];
+  let i = 0;
+  const next = () => {
+    if (t !== token) return;
+    sents.forEach(s => s.classList.remove("speaking"));
+    if (i >= sents.length) { stopAll(); return; }
+    sents[i].classList.add("speaking");
+    const u = new SpeechSynthesisUtterance(TEXT[reg][i].w.map(w => w.v).join(" "));
+    u.voice = arVoice; u.lang = arVoice.lang; u.rate = rate;
+    u.onend = next; u.onerror = next;
+    i++;
+    SYNTH.speak(u);
+  };
+  next();
+}
+
+// Silent preview of the intended word-level follow-along. Timed, so explicitly a demo.
+function playSilent(t) {
+  const words = [...BODY.querySelectorAll(".w")];
+  let i = 0;
+  const step = () => {
+    if (t !== token) return;
+    words.forEach(w => w.classList.remove("speaking"));
+    if (i >= words.length) { stopAll(); return; }
+    words[i].classList.add("speaking");
+    i++;
+    setTimeout(step, 340 / rate);
+  };
+  step();
+}
+
+if (SYNTH) {
+  pickVoice();
+  SYNTH.onvoiceschanged = () => { pickVoice(); audioNote(); };
+}
+draw(); tray(); audioNote();
+</script>

@@ -1,0 +1,245 @@
+<meta charset="utf-8">
+<title>Does this sound like a person? — a 10-minute review</title>
+<style>
+  :root{
+    --paper:#EDEDE6; --paper-2:#E4E4DB; --ink:#15161A; --ink-soft:#4A4B52;
+    --muted:#7A7A72; --rule:#C9C9BE; --rubric:#B4372A;
+    --verdigris:#2F6B63; --verdigris-2:#E0EAE7; --ochre:#C8912F;
+    --ochre-wash:rgba(200,145,47,0.14);
+    --serif:"Iowan Old Style","Charter",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,monospace;
+    --arabic:"Geeza Pro","SF Arabic","Damascus",serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#16171B; --paper-2:#1E1F24; --ink:#E4E3DC; --ink-soft:#A9A9A2;
+    --muted:#82827B; --rule:#33343B; --rubric:#FF7B62;
+    --verdigris:#63B3A5; --verdigris-2:#1C2E2C; --ochre:#D9A94D;
+    --ochre-wash:rgba(217,169,77,0.13);}}
+  :root[data-theme="dark"]{
+    --paper:#16171B; --paper-2:#1E1F24; --ink:#E4E3DC; --ink-soft:#A9A9A2;
+    --muted:#82827B; --rule:#33343B; --rubric:#FF7B62;
+    --verdigris:#63B3A5; --verdigris-2:#1C2E2C; --ochre:#D9A94D;
+    --ochre-wash:rgba(217,169,77,0.13);}
+  :root[data-theme="light"]{
+    --paper:#EDEDE6; --paper-2:#E4E4DB; --ink:#15161A; --ink-soft:#4A4B52;
+    --muted:#7A7A72; --rule:#C9C9BE; --rubric:#B4372A;
+    --verdigris:#2F6B63; --verdigris-2:#E0EAE7; --ochre:#C8912F;
+    --ochre-wash:rgba(200,145,47,0.14);}
+
+  *{box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);margin:0;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:640px;margin:0 auto;padding:32px 20px 60px}
+
+  h1{font-family:var(--serif);font-size:26px;font-weight:400;margin:0 0 10px;
+     letter-spacing:-0.01em;text-wrap:balance}
+  p.l{font-size:15px;line-height:1.62;color:var(--ink-soft);margin:0 0 14px}
+  p.l b{color:var(--ink);font-weight:600}
+
+  .frame{border-left:2px solid var(--verdigris);background:var(--verdigris-2);
+         padding:14px 16px;border-radius:0 3px 3px 0;margin:20px 0 8px;
+         font-size:14px;line-height:1.6}
+  .frame b{display:block;font-family:var(--serif);font-size:15.5px;margin-bottom:5px}
+
+  .prog{position:sticky;top:0;background:var(--paper);padding:14px 0 12px;
+        border-bottom:1px solid var(--rule);margin:26px 0 4px;z-index:5}
+  .prog .t{font-size:12px;color:var(--muted);display:flex;justify-content:space-between;
+           margin-bottom:6px}
+  .prog .b{height:4px;background:var(--paper-2);border-radius:2px;overflow:hidden}
+  .prog .b i{display:block;height:100%;background:var(--verdigris);width:0;
+             transition:width .25s}
+
+  .card{border:1px solid var(--rule);border-radius:5px;padding:18px;margin:14px 0}
+  .card.done{border-color:var(--verdigris)}
+  .n{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.08em}
+  .ar{font-family:var(--arabic);direction:rtl;text-align:right;font-size:29px;
+      line-height:2.05;margin:8px 0 4px}
+  .tr{font-family:var(--mono);font-size:12px;color:var(--verdigris);margin-bottom:3px}
+  .en{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink-soft);
+      margin-bottom:14px}
+
+  .q{font-size:12.5px;color:var(--muted);margin:0 0 7px;font-weight:600;
+     letter-spacing:.03em}
+  .opts{display:flex;flex-direction:column;gap:6px}
+  .opt{display:flex;align-items:flex-start;gap:9px;font:inherit;font-size:14px;
+       text-align:left;padding:10px 12px;border:1px solid var(--rule);
+       background:none;color:var(--ink);border-radius:4px;cursor:pointer;width:100%;
+       line-height:1.4;transition:all .12s}
+  .opt:hover{border-color:var(--verdigris)}
+  .opt:focus-visible{outline:2px solid var(--verdigris);outline-offset:2px}
+  .opt .k{flex:none;width:15px;height:15px;border-radius:50%;border:1.5px solid var(--rule);
+          margin-top:1px}
+  .opt[aria-pressed="true"]{background:var(--verdigris-2);border-color:var(--verdigris)}
+  .opt[aria-pressed="true"] .k{background:var(--verdigris);border-color:var(--verdigris);
+          box-shadow:inset 0 0 0 2.5px var(--paper)}
+  .opt small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
+  textarea{width:100%;margin-top:9px;min-height:52px;font-family:var(--arabic);
+    font-size:19px;direction:rtl;text-align:right;padding:9px 11px;
+    border:1px solid var(--rule);border-radius:4px;background:var(--paper-2);
+    color:var(--ink);resize:vertical;display:none}
+  textarea.on{display:block}
+  textarea:focus{outline:2px solid var(--verdigris);outline-offset:-1px}
+  textarea::placeholder{font-family:var(--sans);font-size:13px;direction:ltr;
+    text-align:left;color:var(--muted)}
+
+  .out{margin-top:30px;padding:18px;border:1px solid var(--ochre);
+       background:var(--ochre-wash);border-radius:5px;display:none}
+  .out.on{display:block}
+  .out h2{font-family:var(--serif);font-size:18px;font-weight:400;margin:0 0 10px}
+  .out pre{font-family:var(--mono);font-size:11.5px;line-height:1.6;white-space:pre-wrap;
+    background:var(--paper);border:1px solid var(--rule);border-radius:4px;
+    padding:12px;overflow-x:auto;margin:0 0 12px}
+  .cp{font:inherit;font-size:13px;padding:9px 15px;background:var(--verdigris);
+      color:var(--paper);border:none;border-radius:4px;cursor:pointer}
+  .thanks{font-size:14px;line-height:1.6;color:var(--ink-soft);margin-top:26px;
+          padding-top:20px;border-top:1px solid var(--rule)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <h1>Does this sound like a person?</h1>
+  <p class="l">
+    Someone is building a tool to learn spoken Levantine Arabic, and every sentence below
+    was written by <b>an AI, not a native speaker</b>. Nobody has checked them. If they're
+    wrong, the tool will teach them confidently and the learner will never know.
+  </p>
+  <p class="l">It takes about 10 minutes. There are 5 sentences.</p>
+
+  <div class="frame">
+    <b>What we're actually asking</b>
+    Not “is this Palestinian?” — we know you're Lebanese and that's a different question we
+    have other ways to answer. We're asking the thing only a native ear can judge:
+    <b style="display:inline;font-family:inherit;font-size:inherit">does this sound like
+    something a real person would say, or does it sound like Modern Standard Arabic wearing
+    a costume?</b>
+    If you happen to know that Palestinians say it differently, that's a bonus — but it's
+    not what we need from you.
+  </div>
+
+  <div class="prog">
+    <div class="t"><span id="pt">0 of 5</span><span id="pl">…</span></div>
+    <div class="b"><i id="pb"></i></div>
+  </div>
+
+  <div id="cards"></div>
+
+  <div class="out" id="out">
+    <h2>Done — thank you</h2>
+    <p class="l" style="font-size:13.5px">Send this back to him however's easiest.</p>
+    <pre id="res"></pre>
+    <button class="cp" id="cp">Copy</button>
+  </div>
+
+  <p class="thanks">
+    Seriously — thank you. This is the single most valuable thing anyone can do for this
+    project right now. Everything else is guesswork until a native speaker looks at it.
+  </p>
+</div>
+
+<script>
+// The five sentences from the reader mockup — all written by Claude, all unverified.
+const S = [
+  {ar:"كل يوم الصبح، بصحى بكير وبعمل قهوة.",
+   tr:"kull yōm iṣ-ṣubiḥ, baṣḥa bakīr w-baʿmal ahwe.",
+   en:"Every morning I wake up early and make coffee."},
+  {ar:"ريحة الهيل بتملا البيت.",
+   tr:"rīḥit il-hēl bitmala l-bēt.",
+   en:"The smell of cardamom fills the house."},
+  {ar:"بقعد عالبلكونة وبشرب فنجاني على مهلي.",
+   tr:"buqʿud ʿal-balkōne w-bashrab finjāni ʿala mahli.",
+   en:"I sit on the balcony and drink my cup slowly."},
+  {ar:"الشارع لسا هادي.",
+   tr:"ish-shāriʿ lissa hādi.",
+   en:"The street is still quiet."},
+  {ar:"هاي أحلى لحظة بالنهار.",
+   tr:"hay aḥla laḥẓa bin-nahār.",
+   en:"This is the most beautiful moment of the day."}
+];
+
+const OPTS = [
+  {k:"natural", t:"Sounds natural", s:"A person could say this."},
+  {k:"stiff",   t:"Understandable, but stiff", s:"Not wrong, but nobody talks like this."},
+  {k:"fusha",   t:"This is fuṣḥā pretending", s:"Too formal — it's not really dialect."},
+  {k:"wrong",   t:"Wrong or strange", s:"Something's actually off here."},
+  {k:"diff",    t:"I'd say it differently", s:"Write it your way below."}
+];
+
+const answers = {};
+const cards = document.getElementById("cards");
+
+S.forEach((s,i) => {
+  const d = document.createElement("div");
+  d.className = "card";
+  d.innerHTML =
+    `<div class="n">${i+1} / ${S.length}</div>` +
+    `<div class="ar">${s.ar}</div>` +
+    `<div class="tr">${s.tr}</div>` +
+    `<div class="en">${s.en}</div>` +
+    `<p class="q">How does it land?</p>` +
+    `<div class="opts">` +
+      OPTS.map(o => `<button class="opt" data-k="${o.k}" aria-pressed="false">
+        <span class="k"></span><span>${o.t}<small>${o.s}</small></span></button>`).join("") +
+    `</div>` +
+    `<textarea placeholder="However you'd actually say it — type in Arabic"></textarea>`;
+
+  const ta = d.querySelector("textarea");
+  d.querySelector(".opts").addEventListener("click", e => {
+    const b = e.target.closest(".opt");
+    if (!b) return;
+    [...d.querySelectorAll(".opt")].forEach(x =>
+      x.setAttribute("aria-pressed", String(x === b)));
+    answers[i] = {choice: b.dataset.k, fix: ta.value};
+    // the rewrite box is useful for any critical verdict, not just "I'd say it differently"
+    ta.classList.toggle("on", b.dataset.k !== "natural");
+    d.classList.add("done");
+    progress();
+  });
+  ta.addEventListener("input", () => {
+    if (answers[i]) answers[i].fix = ta.value;
+    progress();
+  });
+  cards.appendChild(d);
+});
+
+function progress(){
+  const n = Object.keys(answers).length;
+  document.getElementById("pt").textContent = n + " of " + S.length;
+  document.getElementById("pb").style.width = (n/S.length*100) + "%";
+  const done = n === S.length;
+  document.getElementById("pl").textContent = done ? "done — thank you" : "keep going";
+  document.getElementById("out").classList.toggle("on", done);
+  if (done) render();
+}
+
+function render(){
+  const label = k => (OPTS.find(o => o.k === k) || {}).t || k;
+  let t = "NATIVE REVIEW — Lebanese speaker\n";
+  t += "Asked about: naturalness, not Palestinian-specificity\n";
+  t += "".padEnd(52,"-") + "\n\n";
+  S.forEach((s,i) => {
+    const a = answers[i];
+    t += (i+1) + ". " + s.ar + "\n";
+    t += "   -> " + label(a.choice).toUpperCase() + "\n";
+    if (a.fix && a.fix.trim()) t += "   she'd say: " + a.fix.trim() + "\n";
+    t += "\n";
+  });
+  const bad = Object.values(answers).filter(a => a.choice !== "natural").length;
+  t += "".padEnd(52,"-") + "\n";
+  t += bad + " of " + S.length + " flagged.\n";
+  t += bad === 0
+    ? "Claude's Levantine held up. Generation is viable — keep validating anyway."
+    : "Generated Levantine needs a human in the loop. Do not ship unverified text.";
+  document.getElementById("res").textContent = t;
+}
+
+document.getElementById("cp").onclick = function(){
+  navigator.clipboard.writeText(document.getElementById("res").textContent)
+    .then(() => { this.textContent = "Copied ✓";
+                  setTimeout(() => this.textContent = "Copy", 1600); })
+    .catch(() => { this.textContent = "Select the text above"; });
+};
+
+progress();
+</script>

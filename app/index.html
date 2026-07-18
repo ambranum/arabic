@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#EDEDE6">
+<title>Palestinian Arabic</title>
+<style>
+  :root{
+    --paper:#EDEDE6; --paper-2:#E4E4DB; --paper-3:#DADAD0;
+    --ink:#15161A; --ink-soft:#4A4B52; --muted:#7A7A72; --rule:#C9C9BE;
+    --rubric:#B4372A; --verdigris:#2F6B63; --verdigris-2:#E0EAE7;
+    --ochre:#C8912F; --ochre-wash:rgba(200,145,47,.17);
+    --serif:"Iowan Old Style","Charter",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,monospace;
+    --arabic:"Geeza Pro","SF Arabic","Damascus","Al Bayan",serif;
+    --tray:60px;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#16171B; --paper-2:#1E1F24; --paper-3:#292A30;
+    --ink:#E4E3DC; --ink-soft:#A9A9A2; --muted:#82827B; --rule:#33343B;
+    --rubric:#FF7B62; --verdigris:#63B3A5; --verdigris-2:#1C2E2C;
+    --ochre:#D9A94D; --ochre-wash:rgba(217,169,77,.15);}}
+  :root[data-theme="dark"]{
+    --paper:#16171B; --paper-2:#1E1F24; --paper-3:#292A30;
+    --ink:#E4E3DC; --ink-soft:#A9A9A2; --muted:#82827B; --rule:#33343B;
+    --rubric:#FF7B62; --verdigris:#63B3A5; --verdigris-2:#1C2E2C;
+    --ochre:#D9A94D; --ochre-wash:rgba(217,169,77,.15);}
+  :root[data-theme="light"]{
+    --paper:#EDEDE6; --paper-2:#E4E4DB; --paper-3:#DADAD0;
+    --ink:#15161A; --ink-soft:#4A4B52; --muted:#7A7A72; --rule:#C9C9BE;
+    --rubric:#B4372A; --verdigris:#2F6B63; --verdigris-2:#E0EAE7;
+    --ochre:#C8912F; --ochre-wash:rgba(200,145,47,.17);}
+
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  html,body{margin:0}
+  body{background:var(--paper); color:var(--ink); font-family:var(--sans);
+       -webkit-font-smoothing:antialiased; overscroll-behavior-y:none}
+  .wrap{max-width:760px; margin:0 auto; padding:20px 18px calc(var(--tray) + 34px)}
+
+  /* ---------- chrome ---------- */
+  .top{display:flex; align-items:baseline; gap:12px; padding-bottom:14px;
+       border-bottom:1px solid var(--rule); margin-bottom:20px}
+  .top h1{font-family:var(--serif); font-size:20px; font-weight:400; margin:0;
+          letter-spacing:-.01em}
+  .top .sp{flex:1}
+  .back{font:inherit; font-size:13px; color:var(--verdigris); background:none;
+        border:none; padding:6px 0; cursor:pointer}
+  .back:hover{text-decoration:underline}
+
+  /* ---------- home ---------- */
+  .hero{display:grid; gap:12px; margin:4px 0 26px}
+  .big{display:block; width:100%; text-align:left; font:inherit; cursor:pointer;
+       border:1px solid var(--rule); background:none; color:var(--ink);
+       border-radius:8px; padding:20px; position:relative}
+  .big:hover{border-color:var(--verdigris); background:var(--verdigris-2)}
+  .big:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+  .big .k{font-size:10px; letter-spacing:.13em; text-transform:uppercase;
+          color:var(--verdigris); font-weight:700}
+  .big .t{font-family:var(--serif); font-size:23px; margin-top:5px; line-height:1.25}
+  .big .s{font-size:13px; color:var(--muted); margin-top:6px; line-height:1.5}
+  .big.warn{border-color:var(--ochre)}
+  .big.warn .k{color:var(--ochre)}
+  .big .ar{font-family:var(--arabic); direction:rtl; font-size:21px; margin-top:6px;
+           color:var(--ink-soft)}
+  .cmd{font-family:var(--mono); font-size:11.5px; background:var(--paper-2);
+       border:1px solid var(--rule); border-radius:4px; padding:9px 11px; margin-top:10px;
+       overflow-x:auto; white-space:pre; color:var(--ink-soft)}
+
+  /* ---------- library ---------- */
+  .sec{font-size:10px; letter-spacing:.13em; text-transform:uppercase;
+       color:var(--muted); font-weight:700; margin:26px 0 10px}
+  .card{display:block; width:100%; text-align:left; font:inherit; cursor:pointer;
+        border:1px solid var(--rule); background:none; color:var(--ink);
+        border-radius:6px; padding:15px 16px; margin-bottom:10px}
+  .card:hover{border-color:var(--verdigris)}
+  .card:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+  .card .ar{font-family:var(--arabic); direction:rtl; font-size:24px; line-height:1.7}
+  .card .en{font-family:var(--serif); font-size:16px; margin-top:1px}
+  .card .meta{font-size:11.5px; color:var(--muted); margin-top:7px;
+              display:flex; gap:9px; flex-wrap:wrap; align-items:center}
+  .pill{font-family:var(--mono); font-size:9.5px; letter-spacing:.05em;
+        text-transform:uppercase; border:1px solid var(--rule); border-radius:2px;
+        padding:2px 6px; color:var(--muted)}
+  .pill.on{border-color:var(--verdigris); color:var(--verdigris)}
+  .pill.off{opacity:.55}
+
+  /* ---------- reader ---------- */
+  .ctl{display:flex; gap:7px; flex-wrap:wrap; margin-bottom:20px}
+  .tog{font:inherit; font-size:12.5px; padding:6px 12px; border:1px solid var(--rule);
+       background:none; color:var(--ink-soft); border-radius:14px; cursor:pointer}
+  .tog[aria-pressed="true"]{background:var(--verdigris); border-color:var(--verdigris);
+       color:var(--paper); font-weight:500}
+  .tog:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+
+  .unval{font-size:12px; line-height:1.55; color:var(--ink-soft); border:1px solid var(--ochre);
+         background:var(--ochre-wash); border-radius:5px; padding:10px 12px; margin-bottom:18px}
+  .unval b{color:var(--ochre)}
+  .sent{padding:15px 0; border-bottom:1px solid var(--rule)}
+  .sent:last-child{border-bottom:none}
+  .ar{font-family:var(--arabic); direction:rtl; text-align:right;
+      font-size:31px; line-height:2.1; color:var(--ink)}
+  /* Own line-height: an inline-block inherits the 2.1 leading and the highlight
+     becomes a tall block instead of hugging the word. */
+  .w{display:inline-block; cursor:pointer; padding:2px 3px; border-radius:3px;
+     line-height:1.3}
+  .w:hover{background:var(--verdigris-2)}
+  .w:focus-visible{outline:2px solid var(--verdigris); outline-offset:1px}
+  .w.mk{background:var(--ochre-wash); box-shadow:inset 0 -2px 0 var(--ochre)}
+  .w.sel{background:var(--verdigris); color:var(--paper)}
+  .w.gap{border-bottom:1px dotted var(--muted)}
+  /* Vowels toggle: both spellings are in the DOM, CSS picks one. */
+  .w .v{display:none}
+  .rd[data-voc="on"] .w .v{display:inline}
+  .rd[data-voc="on"] .w .p{display:none}
+  /* Vowel marks sit above the line, so they need more leading to clear the row above. */
+  .rd[data-voc="on"] .ar{line-height:2.4}
+
+  /* Scoped to .rd — an unscoped .en also matched the library card titles and hid them. */
+  .rd .en{display:none; font-family:var(--serif); font-size:16px; line-height:1.55;
+      font-style:italic; color:var(--ink-soft); margin-top:11px; padding-left:12px;
+      border-left:2px solid var(--rule)}
+  .rd[data-en="on"] .en{display:block}
+  .sent.peek .en{display:block}
+  .peek{font:inherit; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+        color:var(--muted); background:none; border:none; padding:7px 0 0 14px; cursor:pointer}
+  .rd[data-en="on"] .peek{display:none}
+  .aud{font:inherit; font-size:12px; color:var(--verdigris); background:none;
+       border:1px solid var(--verdigris); border-radius:3px; padding:4px 10px;
+       margin-top:9px; cursor:pointer}
+  .aud[disabled]{opacity:.3; border-color:var(--rule); color:var(--muted); cursor:default}
+
+  /* ---------- word card: bottom sheet on phone, popover on desktop ---------- */
+  .cardwrap{position:fixed; inset:0; z-index:60; display:none}
+  .cardwrap.on{display:block}
+  .scrim{position:absolute; inset:0; background:rgba(0,0,0,.28)}
+  .wc{position:absolute; left:0; right:0; bottom:0; background:var(--paper);
+      border-top:1px solid var(--rule); border-radius:12px 12px 0 0;
+      padding:18px 18px calc(18px + env(safe-area-inset-bottom));
+      box-shadow:0 -8px 30px rgba(0,0,0,.2); max-height:78vh; overflow-y:auto}
+  @media(min-width:620px){
+    .scrim{background:transparent}
+    .wc{left:50%; right:auto; bottom:auto; transform:translateX(-50%);
+        top:12vh; width:340px; border:1px solid var(--rule); border-radius:7px;
+        box-shadow:0 16px 44px rgba(0,0,0,.22); padding:18px}
+  }
+  .wc .hw{font-family:var(--arabic); direction:rtl; font-size:32px; line-height:1.6}
+  .wc .ph{font-family:var(--mono); font-size:13px; color:var(--verdigris); margin-top:2px}
+  .wc .gl{font-family:var(--serif); font-size:18px; margin:10px 0 14px; line-height:1.4}
+  .wc dl{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; margin:0 0 14px;
+         padding-top:12px; border-top:1px solid var(--rule); font-size:13.5px}
+  .wc dt{color:var(--muted); font-size:10px; letter-spacing:.08em;
+         text-transform:uppercase; padding-top:3px}
+  .wc dd{margin:0}
+  .wc dd.rtl{font-family:var(--arabic); direction:rtl; text-align:left; font-size:19px}
+  .wc .src{font-family:var(--mono); font-size:10px; color:var(--muted); margin-bottom:12px}
+  .wc .acts{display:flex; gap:8px}
+  .wc .acts button{flex:1; font:inherit; font-size:14px; padding:11px;
+      border:1px solid var(--rule); background:none; color:var(--ink-soft);
+      border-radius:5px; cursor:pointer}
+  .wc .acts button.mk[data-on="1"]{border-color:var(--ochre); color:var(--ochre);
+      background:var(--ochre-wash); font-weight:600}
+  .wc .acts button:disabled{opacity:.35; cursor:default}
+
+  /* ---------- drill ---------- */
+  .ch{border:1px solid var(--rule); border-radius:6px; padding:14px 16px; margin-bottom:9px}
+  .ch .q{font-family:var(--serif); font-size:17px}
+  .ch .a{font-family:var(--arabic); direction:rtl; text-align:right; font-size:27px;
+         line-height:1.8; margin-top:6px; filter:blur(7px); cursor:pointer;
+         transition:filter .12s}
+  .ch .a.show{filter:none}
+  .ch .u{font-size:11.5px; color:var(--muted); margin-top:5px; line-height:1.45}
+  .hint{font-size:12.5px; color:var(--muted); line-height:1.55; margin:0 0 16px}
+
+  /* ---------- tray ---------- */
+  .tray{position:fixed; left:0; right:0; bottom:0; z-index:50; background:var(--paper);
+        border-top:1px solid var(--rule); padding-bottom:env(safe-area-inset-bottom)}
+  .tray .in{max-width:760px; margin:0 auto; padding:11px 18px; display:flex;
+            align-items:center; gap:14px; min-height:var(--tray)}
+  .tray .n{font-size:13px; color:var(--ink-soft); white-space:nowrap}
+  .tray .n b{color:var(--ochre); font-variant-numeric:tabular-nums}
+  .tray .sp{flex:1}
+  .tray button{font:inherit; font-size:13px; padding:8px 14px; border-radius:5px;
+               cursor:pointer; border:1px solid var(--rule); background:none;
+               color:var(--ink-soft); white-space:nowrap}
+  .tray button.go{background:var(--verdigris); border-color:var(--verdigris);
+                  color:var(--paper)}
+  .tray button:disabled{opacity:.4; cursor:default}
+
+  .note{font-size:12px; line-height:1.6; color:var(--muted); border:1px solid var(--rule);
+        border-radius:5px; padding:11px 13px; margin-top:22px}
+  .note b{color:var(--ink-soft)}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <h1 id="title">Palestinian Arabic</h1>
+    <span class="sp"></span>
+    <button class="back" id="back" hidden>&larr; Library</button>
+  </div>
+  <div id="view"></div>
+</div>
+
+<div class="cardwrap" id="cw"><div class="scrim" id="scrim"></div><div class="wc" id="wc"></div></div>
+
+<div class="tray"><div class="in">
+  <span class="n"><b id="cnt">0</b> words to learn</span>
+  <span class="sp"></span>
+  <button id="rev">Review</button>
+  <button class="go" id="exp">Export</button>
+</div></div>
+
+<script src="data/library.js"></script>
+<script>
+// ---------- persistence ----------
+// localStorage: survives closing the tab, lives on this device, no server involved.
+// Keyed by LEMMA so a word you marked in one text is known in every text.
+const KEY = 'alp.marked.v1';
+let marked = new Map();
+try { marked = new Map(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...marked])); } catch (e) {} };
+
+const VOCSRC = {
+  'lexicon:exact'              : 'straight from the lexicon',
+  'derived:affix'              : 'lexicon stem + prefix rule',
+  'derived:verb'               : 'lexicon stem — prefix vowel is our best call',
+  'unvocalized:weak-final-verb': "not shown — we couldn't derive it honestly",
+  'unvocalized:no-alignment'   : "not shown — couldn't match the dictionary form",
+  'unvocalized:no-entry'       : 'not in the lexicon',
+  'curated'                    : 'hand-written by us, not from the lexicon',
+  'unvocalized:curated-with-clitic': 'not shown — name carries a prefix'
+};
+const LIB = window.LIBRARY || {texts: [], drills: []};
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pretty = g => String(g || '').replace(/_/g, ' ').replace(/;/g, ' · ');
+
+// ---------- routing (hash so Back works, and it survives a reload) ----------
+function route() {
+  const h = location.hash.slice(1) || '/';
+  const [, kind, id] = h.split('/');
+  if (kind === 'text')  { const t = LIB.texts.find(x => x.id === id);  if (t) return reader(t); }
+  if (kind === 'drill') { const d = LIB.drills.find(x => x.id === id); if (d) return drill(d); }
+  if (kind === 'news')  { return newsHelp(); }
+  home();
+}
+addEventListener('hashchange', route);
+
+// ---------- home ----------
+function todayISO(){ const d=new Date(); return d.getFullYear()+'-'+
+  String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+
+function home(){
+  $('back').hidden = true;
+  $('title').textContent = 'Palestinian Arabic';
+  const today = todayISO();
+  const news = LIB.texts.filter(t => t.kind === 'news')
+                        .sort((a,b) => (b.date||'').localeCompare(a.date||''))[0];
+  const fresh = news && news.date === today;
+
+  // Today's lesson: the current curriculum item. Phase 1 is reaction chunks
+  // (LEARNING-SYSTEM §5) — they come before everything else deliberately.
+  const drill = LIB.drills[0];
+  const lesson = drill
+    ? {href:'/drill/'+drill.id, kind:'Today’s lesson', title:drill.title.en,
+       sub:drill.items.length+' chunks · say each one out loud before you check'}
+    : (LIB.texts[0]
+       ? {href:'/text/'+LIB.texts[0].id, kind:'Today’s lesson', title:LIB.texts[0].title.en,
+          sub:LIB.texts[0]._words+' words'}
+       : null);
+
+  let h = '<div class="hero">';
+  if (lesson) h += `<button class="big" onclick="location.hash='${lesson.href}'">
+      <div class="k">${lesson.kind}</div><div class="t">${esc(lesson.title)}</div>
+      <div class="s">${esc(lesson.sub)}</div></button>`;
+
+  if (fresh) {
+    h += `<button class="big" onclick="location.hash='/text/${esc(news.id)}'">
+      <div class="k">Daily news · today</div>
+      <div class="t">${esc(news.title.en)}</div>
+      <div class="ar">${esc(news.title.ar)}</div>
+      <div class="s">${news.sentences.length} sentences · ${news._words} words, in spoken Palestinian</div>
+    </button>`;
+  } else {
+    // The app is a static site — it cannot fetch news, translate it, query a 36k-entry
+    // lexicon and make audio. That work happens in the pipeline. Say so plainly.
+    h += `<button class="big warn" onclick="location.hash='/news'">
+      <div class="k">Daily news · needs importing</div>
+      <div class="t">No news for today yet</div>
+      <div class="s">${news ? 'Latest is '+esc(news.date)+'. ' : ''}Tap to see how to import today’s.</div>
+    </button>`;
+  }
+  h += '</div>';
+
+  h += '<div class="sec">Everything</div>';
+  h += LIB.texts.map(t => card(t, 'text')).join('') + LIB.drills.map(d => card(d, 'drill')).join('');
+  h += `<div class="note"><b>What this shows is real.</b> Every root, meaning and
+    pronunciation comes from Maknuune, a 36,000-entry Palestinian lexicon compiled by
+    linguists — not generated. <b>Vowel marks</b> are on: about half come straight from the
+    lexicon, the rest are built from its stem plus standard prefix rules. Tap any word and
+    the card tells you which. Where we couldn't work it out honestly, the word stays bare
+    rather than guess.
+    <div style="margin-top:10px;padding-top:9px;border-top:1px solid var(--rule);
+      font-size:11px;color:var(--muted)">Word data from the <b>Maknuune Palestinian Arabic
+      Lexicon</b> (Dibas, Khairallah, Habash et al., WANLP 2022) —
+      <a href="https://palestine-lexicon.org/" target="_blank" rel="noopener"
+      style="color:var(--verdigris)">palestine-lexicon.org</a>, CC BY-SA 4.0.</div></div>`;
+  $('view').innerHTML = h;
+}
+
+function newsHelp(){
+  $('back').hidden = false;
+  $('title').textContent = 'Importing the news';
+  const news = LIB.texts.filter(t=>t.kind==='news')
+                        .sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];
+  $('view').innerHTML =
+    `<p class="hint">This app is a set of files with no server behind it — that's why it
+     costs nothing and can't break. The flip side: it can't go and fetch the news itself.
+     Summarising the headlines, writing them in Palestinian, and checking every word
+     against the lexicon all happen on your Mac.</p>
+     <p class="hint"><b>Ask Claude for today's news import.</b> Then paste this:</p>
+     <div class="cmd">cd "/Users/alexbranum/Desktop/Projects/Arabic Language Project"
+python3 pipeline/ingest.py texts/news-${esc(todayISO())}.json
+python3 pipeline/build_app.py</div>
+     <p class="hint" style="margin-top:16px">Reload this page and today's news will be
+     on the home screen.</p>` +
+    (news ? '<div class="sec">Most recent</div>' + card(news, 'text') : '');
+}
+
+function card(t, kind){
+  const isDrill = kind === 'drill';
+  const n = isDrill ? 0 : t.sentences.reduce((a,s) =>
+    a + s.words.filter(w => w.lemma && marked.has(w.lemma)).length, 0);
+  return `<button class="card" onclick="location.hash='/${kind}/${esc(t.id)}'">
+    ${!isDrill && t.title.ar ? `<div class="ar">${esc(t.title.ar)}</div>` : ''}
+    <div class="en">${esc(t.title.en)}</div>
+    <div class="meta">
+      <span>${isDrill ? t.items.length+' chunks' : t._words+' words'}</span>
+      ${n ? `<span style="color:var(--ochre)">${n} marked</span>` : ''}
+      ${t.kind === 'news' ? '<span class="pill">news</span>' : ''}
+      <span class="pill ${t._audio ? 'on' : 'off'}">${t._audio ? 'audio' : 'no audio'}</span>
+    </div></button>`;
+}
+
+// ---------- reader ----------
+let cur = null;
+function reader(t) {
+  cur = t;
+  $('back').hidden = false;
+  $('title').textContent = t.title.en;
+  let h = `<div class="ctl">
+      <button class="tog" id="tVoc" aria-pressed="true">Vowels</button>
+      <button class="tog" id="tEn" aria-pressed="false">English</button>
+      <button class="tog" id="tMk" aria-pressed="true">Show marked</button>
+    </div>` +
+    (/not native-validated/i.test(t.source || '')
+      ? `<div class="unval"><b>Not checked by a native speaker.</b> Every word's root,
+         meaning and vowels come from the lexicon — but the <i>sentences</i> were written
+         by Claude. Fine for reading practice; don't memorise the phrasing yet.</div>`
+      : '') +
+    `<div class="rd" id="rd" data-en="off" data-voc="on">`;
+  t.sentences.forEach((s, si) => {
+    h += '<div class="sent"><div class="ar">';
+    s.words.forEach((w, wi) => {
+      const gap = !w.lemma;
+      // Both spellings ship; the toggle swaps which is shown. A word we could not
+      // vocalize honestly falls back to its plain spelling and says so in the card.
+      const voc = w.vocalized || w.surface;
+      h += `<span class="w${gap ? ' gap' : ''}${w.vocalized ? '' : ' novoc'}"
+              data-s="${si}" data-w="${wi}" tabindex="0"
+             ><span class="v">${esc(voc)}</span><span class="p">${esc(w.surface)}</span></span> `;
+    });
+    h += `</div><p class="en">${esc(s.en)}</p>`;
+    h += s.audio
+      ? `<button class="aud" data-src="${esc(s.audio)}">▸ Listen</button>`
+      : `<button class="aud" disabled>no audio yet</button>`;
+    h += `<button class="peek" data-peek="${si}">Peek at English</button></div>`;
+  });
+  $('view').innerHTML = h + '</div>';
+  paint();
+
+  $('tVoc').onclick = e => {
+    const on = e.target.getAttribute('aria-pressed') !== 'true';
+    e.target.setAttribute('aria-pressed', String(on));
+    $('rd').dataset.voc = on ? 'on' : 'off';
+  };
+  $('tEn').onclick = e => {
+    const on = e.target.getAttribute('aria-pressed') !== 'true';
+    e.target.setAttribute('aria-pressed', String(on));
+    $('rd').dataset.en = on ? 'on' : 'off';
+  };
+  $('tMk').onclick = e => {
+    const on = e.target.getAttribute('aria-pressed') !== 'true';
+    e.target.setAttribute('aria-pressed', String(on));
+    $('rd').dataset.mk = on ? 'on' : 'off';
+    paint();
+  };
+  $('view').addEventListener('click', e => {
+    const pk = e.target.closest('[data-peek]');
+    if (pk) { pk.closest('.sent').classList.add('peek'); return; }
+    const au = e.target.closest('.aud[data-src]');
+    if (au) { new Audio(au.dataset.src).play().catch(() => {}); return; }
+    const w = e.target.closest('.w');
+    if (w) showCard(+w.dataset.s, +w.dataset.w);
+  });
+}
+
+function paint() {
+  const showMk = $('rd') && $('rd').dataset.mk !== 'off';
+  document.querySelectorAll('#rd .w').forEach(el => {
+    const w = cur.sentences[+el.dataset.s].words[+el.dataset.w];
+    el.classList.toggle('mk', showMk && !!w.lemma && marked.has(w.lemma));
+  });
+  count();
+}
+
+// ---------- word card ----------
+function showCard(si, wi) {
+  const w = cur.sentences[si].words[wi];
+  const on = w.lemma && marked.has(w.lemma);
+  const CUR = {'curated:function-word':'hand-curated · common function word',
+               'curated:proper-noun'  :'hand-curated · name, no lexicon has these',
+               'curated:modern-term'  :'hand-curated · too new for the lexicon'};
+  const src = w.maknuune_id ? `Maknuune #${esc(w.maknuune_id)}`
+            : CUR[w.provenance] || ((w.provenance||'').startsWith('curated')
+              ? 'hand-curated' : 'not in the lexicon — unverified');
+  $('wc').innerHTML =
+    `<div class="hw">${esc(w.vocalized || w.surface)}</div>
+     <div class="ph">${esc(w.caphi_urban || w.caphi || '')}</div>
+     <div class="gl">${esc(pretty(w.gloss)) || '<span style="color:var(--muted)">no entry</span>'}</div>
+     <dl>
+       <dt>As written</dt><dd class="rtl">${esc(w.surface)}</dd>
+       <dt>Vowels</dt><dd>${esc(VOCSRC[w.vocalized_from] || w.vocalized_from || '—')}</dd>
+       <dt>Dictionary</dt><dd class="rtl">${esc(w.form || '—')}</dd>
+       <dt>Root</dt><dd class="rtl">${esc(w.root || '—')}</dd>
+       <dt>Type</dt><dd>${esc(w.analysis || '—')}</dd>
+     </dl>
+     <div class="src">${src}</div>
+     <div class="acts">
+       <button data-a="close">Close</button>
+       <button class="mk" data-a="mark" data-on="${on ? 1 : 0}" ${w.lemma ? '' : 'disabled'}>
+         ${on ? '✓ Learning this' : "+ Don't know it"}</button>
+     </div>`;
+  $('cw').classList.add('on');
+  $('wc').querySelector('[data-a="close"]').onclick = hideCard;
+  const mk = $('wc').querySelector('[data-a="mark"]');
+  if (w.lemma) mk.onclick = () => {
+    marked.has(w.lemma) ? marked.delete(w.lemma)
+                        : marked.set(w.lemma, {gloss: w.gloss, root: w.root,
+                                               caphi: w.caphi_urban || w.caphi,
+                                               surface: w.surface, text: cur.id});
+    save(); paint(); showCard(si, wi);
+  };
+}
+const hideCard = () => $('cw').classList.remove('on');
+$('scrim').onclick = hideCard;
+addEventListener('keydown', e => { if (e.key === 'Escape') hideCard(); });
+
+// ---------- drill ----------
+function drill(d) {
+  $('back').hidden = false;
+  $('title').textContent = d.title.en;
+  let h = `<p class="hint">Read the English, <b>say it out loud</b>, then tap to check.
+    The saying-it-first part is what makes it work — checking before you try is the
+    one way to get nothing out of this.</p>`;
+  d.items.forEach(it => {
+    h += `<div class="ch"><div class="q">${esc(it.cue)}</div>
+      <div class="a" tabindex="0">${esc(it.answer)}</div>
+      <div class="u">${esc(it.use || '')}</div></div>`;
+  });
+  $('view').innerHTML = h;
+  $('view').addEventListener('click', e => {
+    const a = e.target.closest('.a');
+    if (a) a.classList.toggle('show');
+  });
+}
+
+// ---------- tray ----------
+function count() { $('cnt').textContent = marked.size; $('exp').disabled = !marked.size;
+                   $('rev').disabled = !marked.size; }
+$('back').onclick = () => location.hash = '/';
+$('rev').onclick = () => {
+  if (!marked.size) return;
+  $('back').hidden = false; $('title').textContent = 'Words to learn';
+  $('view').innerHTML = '<div class="sec">Marked</div>' + [...marked].map(([l, m]) =>
+    `<div class="ch"><div class="a show" style="filter:none">${esc(l)}</div>
+      <div class="q" style="font-size:15px">${esc(pretty(m.gloss))}</div>
+      <div class="u">${esc(m.caphi || '')} &nbsp;·&nbsp; root ${esc(m.root || '—')}</div></div>`).join('');
+};
+$('exp').onclick = () => {
+  // Tab-separated: what Anki's importer expects. Front / Back / Pronunciation / Root.
+  const rows = [...marked].map(([l, m]) =>
+    [l, pretty(m.gloss), m.caphi || '', m.root || ''].join('\t')).join('\n');
+  navigator.clipboard.writeText(rows).then(() => {
+    $('exp').textContent = '✓ Copied';
+    setTimeout(() => $('exp').textContent = 'Export', 1600);
+  }).catch(() => {
+    $('view').innerHTML = '<div class="sec">Copy this into Anki</div><pre style="white-space:pre-wrap;font-family:var(--mono);font-size:12px;border:1px solid var(--rule);padding:12px;border-radius:5px">' + esc(rows) + '</pre>';
+  });
+};
+
+count();
+route();
+</script>
+</body>
+</html>

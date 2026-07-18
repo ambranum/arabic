@@ -1,0 +1,404 @@
+<meta charset="utf-8">
+<title>Scheduler — describe your day, get a plan</title>
+<style>
+  :root{
+    --paper:#EDEDE6; --paper-2:#E4E4DB; --paper-3:#DADAD0; --ink:#15161A;
+    --ink-soft:#4A4B52; --muted:#7A7A72; --rule:#C9C9BE;
+    --rubric:#B4372A; --rubric-wash:rgba(180,55,42,0.09);
+    --verdigris:#2F6B63; --verdigris-2:#E0EAE7;
+    --ochre:#C8912F; --ochre-wash:rgba(200,145,47,0.14);
+    --serif:"Iowan Old Style","Charter",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#16171B; --paper-2:#1E1F24; --paper-3:#292A30; --ink:#E4E3DC;
+    --ink-soft:#A9A9A2; --muted:#82827B; --rule:#33343B;
+    --rubric:#FF7B62; --rubric-wash:rgba(255,123,98,0.11);
+    --verdigris:#63B3A5; --verdigris-2:#1C2E2C;
+    --ochre:#D9A94D; --ochre-wash:rgba(217,169,77,0.13);}}
+  :root[data-theme="dark"]{
+    --paper:#16171B; --paper-2:#1E1F24; --paper-3:#292A30; --ink:#E4E3DC;
+    --ink-soft:#A9A9A2; --muted:#82827B; --rule:#33343B;
+    --rubric:#FF7B62; --rubric-wash:rgba(255,123,98,0.11);
+    --verdigris:#63B3A5; --verdigris-2:#1C2E2C;
+    --ochre:#D9A94D; --ochre-wash:rgba(217,169,77,0.13);}
+  :root[data-theme="light"]{
+    --paper:#EDEDE6; --paper-2:#E4E4DB; --paper-3:#DADAD0; --ink:#15161A;
+    --ink-soft:#4A4B52; --muted:#7A7A72; --rule:#C9C9BE;
+    --rubric:#B4372A; --rubric-wash:rgba(180,55,42,0.09);
+    --verdigris:#2F6B63; --verdigris-2:#E0EAE7;
+    --ochre:#C8912F; --ochre-wash:rgba(200,145,47,0.14);}
+
+  *{box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+       -webkit-font-smoothing:antialiased;margin:0}
+  .wrap{max-width:1000px;margin:0 auto;padding:36px 24px 90px}
+
+  h1{font-family:var(--serif);font-size:29px;font-weight:400;margin:0 0 8px;
+     letter-spacing:-0.015em;text-wrap:balance}
+  .lede{font-size:14.5px;line-height:1.6;color:var(--ink-soft);max-width:64ch;margin:0}
+  .lede b{color:var(--ink);font-weight:600}
+
+  .goal{margin:24px 0 30px;padding:14px 16px;border-left:2px solid var(--verdigris);
+        background:var(--verdigris-2);border-radius:0 3px 3px 0}
+  .goal .k{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+           color:var(--verdigris);font-weight:700;display:block;margin-bottom:4px}
+  .goal .v{font-family:var(--serif);font-size:16px;font-style:italic;line-height:1.5}
+
+  h2{font-family:var(--serif);font-size:19px;font-weight:400;margin:38px 0 6px;
+     padding-top:26px;border-top:1px solid var(--rule)}
+  .sub{font-size:13px;color:var(--muted);margin:0 0 16px;max-width:66ch;line-height:1.55}
+
+  /* input */
+  .presets{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+  .pz{font:inherit;font-size:12.5px;padding:6px 12px;border:1px solid var(--rule);
+      background:none;color:var(--ink-soft);border-radius:14px;cursor:pointer;
+      transition:all .12s}
+  .pz:hover{border-color:var(--verdigris);color:var(--verdigris)}
+  .pz[aria-pressed="true"]{background:var(--verdigris);border-color:var(--verdigris);
+      color:var(--paper);font-weight:500}
+  .pz:focus-visible{outline:2px solid var(--verdigris);outline-offset:2px}
+
+  textarea{width:100%;min-height:78px;font-family:var(--serif);font-size:15px;
+    line-height:1.55;padding:13px 15px;border:1px solid var(--rule);border-radius:4px;
+    background:var(--paper-2);color:var(--ink);resize:vertical}
+  textarea:focus{outline:2px solid var(--verdigris);outline-offset:-1px}
+  .note{font-size:11.5px;color:var(--muted);font-style:italic;margin:8px 0 0}
+
+  /* budget */
+  .budget{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end;margin:22px 0 8px}
+  .stat .n{font-family:var(--serif);font-size:29px;line-height:1;
+           font-variant-numeric:tabular-nums}
+  .stat .l{font-size:10.5px;letter-spacing:0.09em;text-transform:uppercase;
+           color:var(--muted);margin-top:5px;font-weight:600}
+  .stat.hi .n{color:var(--rubric)}
+  .bar{height:8px;border-radius:4px;background:var(--paper-3);overflow:hidden;
+       display:flex;margin-top:12px}
+  .bar i{display:block;height:100%}
+  .bar i.v{background:var(--rubric)}
+  .bar i.o{background:var(--verdigris)}
+  .legend{display:flex;gap:16px;font-size:11.5px;color:var(--muted);margin-top:8px}
+  .legend s{text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+  .legend b{width:9px;height:9px;border-radius:2px;display:inline-block}
+
+  /* slots */
+  .slots{display:flex;flex-direction:column;gap:9px;margin-top:8px}
+  .slot{display:grid;grid-template-columns:96px 1fr 1.15fr;gap:16px;
+        border:1px solid var(--rule);border-radius:4px;padding:13px 15px;
+        align-items:start}
+  .slot.voice{border-left:3px solid var(--rubric);background:var(--rubric-wash)}
+  .slot .when{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);
+              line-height:1.5;font-variant-numeric:tabular-nums}
+  .slot .when b{display:block;color:var(--ink);font-size:12.5px;font-weight:600}
+  .slot .when i{display:block;color:var(--muted);font-style:normal;font-size:10.5px;
+                margin-top:2px}
+  .slot .what{font-size:13.5px}
+  .slot .what .nm{font-weight:600;margin-bottom:6px;display:block}
+  .chips{display:flex;flex-wrap:wrap;gap:4px}
+  .ch{font-family:var(--mono);font-size:9.5px;letter-spacing:0.04em;padding:2px 6px;
+      border-radius:2px;border:1px solid var(--rule);color:var(--muted);
+      text-transform:uppercase;white-space:nowrap}
+  .ch.no{opacity:0.42;text-decoration:line-through}
+  .ch.yes{border-color:var(--verdigris);color:var(--verdigris)}
+  .ch.gold{border-color:var(--rubric);color:var(--rubric);background:var(--paper);
+           font-weight:700}
+  .slot .act{font-size:13.5px;line-height:1.5}
+  .slot .act .a{font-family:var(--serif);font-size:15.5px;display:block;margin-bottom:4px}
+  .slot .act .w{color:var(--muted);font-size:12px;line-height:1.5}
+  .slot .act .b{font-size:10.5px;letter-spacing:0.07em;text-transform:uppercase;
+                color:var(--verdigris);margin-top:6px;font-weight:600}
+
+  .verdict{margin-top:18px;padding:14px 16px;border-radius:4px;font-size:13.5px;
+           line-height:1.6;border:1px solid var(--ochre);background:var(--ochre-wash)}
+  .verdict .vt{font-family:var(--serif);font-size:15px;display:block;margin-bottom:4px;font-weight:600}
+  .verdict b{font-weight:600}
+
+  /* loop */
+  .loop{display:flex;flex-direction:column;gap:0;margin-top:8px}
+  .lp{display:grid;grid-template-columns:112px 1fr;gap:16px;padding:9px 0;
+      align-items:baseline}
+  .lp .s{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:700;
+         color:var(--verdigris);text-align:right}
+  .lp .d{font-size:13.5px;line-height:1.5}
+  .lp.sleep .s{color:var(--muted)}
+  .lp.sleep .d{color:var(--muted);font-style:italic}
+  .arrow{grid-column:2;color:var(--rule);font-size:11px;line-height:1;padding:0 0 0 1px}
+
+  @media(max-width:780px){
+    .slot{grid-template-columns:1fr;gap:9px}
+    .lp{grid-template-columns:1fr;gap:2px}
+    .lp .s{text-align:left}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <h1>Describe your day. Get a plan that fits it.</h1>
+  <p class="lede">
+    An hour in a car and an hour at a desk are <b>not the same resource</b> — they permit
+    different things. Most language apps hand you one surface and ignore where you are, so
+    they waste your commute and interrupt your desk. This one matches the activity to the
+    constraint.
+  </p>
+
+  <div class="goal">
+    <span class="k">The goal everything answers to</span>
+    <span class="v">“Sit down with a family for a full dinner and describe the same feelings
+    and conversation that I could in my native tongue.”</span>
+  </div>
+
+  <h2>Your day</h2>
+  <p class="sub">Written however you'd say it out loud. Try someone else's day — the point
+  is that the engine derives a plan from whatever it's given, not that it knows one person.</p>
+
+  <div class="presets" id="presets"></div>
+  <textarea id="desc" aria-label="Describe your day"></textarea>
+  <p class="note" id="parsenote"></p>
+
+  <h2>What the week actually gives you</h2>
+  <p class="sub" id="budgetsub"></p>
+  <div class="budget" id="budget"></div>
+  <div class="bar" id="bar"></div>
+  <div class="legend">
+    <s><b style="background:var(--rubric)"></b> Speaking time — the scarce one</s>
+    <s><b style="background:var(--verdigris)"></b> Everything else</s>
+  </div>
+  <div class="verdict" id="verdict"></div>
+
+  <h2>The plan</h2>
+  <p class="sub">Red = slots where you <b>actually speak</b>. The <b>voice ✦</b> chip marks
+  slots that merely <i>permit</i> it — the two aren't the same, and conflating them is how
+  a plan flatters itself. Note the parent's 5:30am slot: voice is free, but it's spent
+  encoding, because a fresh uninterrupted brain is too scarce to spend on talking.</p>
+  <div class="slots" id="slots"></div>
+
+  <h2>Why the order matters</h2>
+  <p class="sub">Slots hand off to each other, so every chunk travels a full
+  encode → consolidate → retrieve → use cycle within 24 hours.</p>
+  <div class="loop" id="loop"></div>
+</div>
+
+<script>
+// Affordances: what a slot physically permits. voice+alone is the scarce combination —
+// almost everyone has it (the car), almost nobody uses it.
+const PRESETS = {
+  commute: {
+    label: "Long commute",
+    desc: "I wake up very early. A couple days a week I drive about an hour to work. Then I sit at work with 30–45 minutes free, and I can take small breaks through the day. Another hour drive home. In the evening I can sit down.",
+    slots: [
+      {t:"06:10", d:"60 min", days:"2×/wk", nm:"Drive to work",
+       e:0,h:0,v:1,alone:1, att:"medium",
+       a:"Cold retrieval + shadowing", speaks:1,
+       w:"Yesterday's chunks, out loud, before you've seen them again. Hard recall is what makes memory stick — easy review builds almost nothing.",
+       b:"Pronunciation · retrieval speed"},
+      {t:"09:00", d:"40 min", days:"5×/wk", nm:"Free time at desk",
+       e:1,h:1,v:0,alone:0, att:"high",
+       a:"The reader",
+       w:"Silent, eyes free, uninterrupted — the one slot built for text. Meet this week's chunks in real Palestinian writing and mark what's still fuzzy.",
+       b:"Vocabulary in context"},
+      {t:"—", d:"3 min ×4", days:"5×/wk", nm:"Small breaks",
+       e:1,h:1,v:0,alone:0, att:"low",
+       a:"SRS reps",
+       w:"Whatever you marked fuzzy at the desk. Two minutes on a phone, standing anywhere. Spaced repetition is built for exactly this shape of time.",
+       b:"Retention"},
+      {t:"17:30", d:"60 min", days:"2×/wk", nm:"Drive home",
+       e:0,h:0,v:1,alone:1, att:"low",
+       a:"Free production + 4/3/2", speaks:1,
+       w:"Talk about your actual day, unscripted. Then tell the same story in 4 minutes, then 3, then 2 — the pressure forces automaticity. Low attention is fine; your mouth is doing the work.",
+       b:"Fluency under pressure"},
+      {t:"21:00", d:"30 min", days:"5×/wk", nm:"Evening sit-down",
+       e:1,h:1,v:1,alone:1, att:"medium",
+       a:"Encode tomorrow + write today's gaps",
+       w:"Right before sleep, because consolidation is free and we should use it. Write down what you couldn't say in the car — that becomes tomorrow's material.",
+       b:"New chunks · closes the loop"}
+    ],
+    verdict: {
+      t: "This is close to an ideal schedule, and the car is why.",
+      d: "Four hours a week alone in a car is the best language-learning asset most people have and never use. It's over a third of your budget and the <b>only</b> slot where speaking is possible. Everything else here exists to feed it."
+    }
+  },
+
+  wfh: {
+    label: "Work from home",
+    desc: "I work from home so there's no commute. I walk the dog for 25 minutes in the morning. I take lunch around noon, usually alone. I get a few short breaks. Evenings are pretty free.",
+    slots: [
+      {t:"07:15", d:"25 min", days:"7×/wk", nm:"Dog walk",
+       e:0,h:1,v:1,alone:1, att:"high",
+       a:"Shadowing + cold retrieval", speaks:1,
+       w:"Outdoors and alone — you can talk out loud and nobody's listening. This is your car. Guard it; without a commute it's most of your speaking time.",
+       b:"Pronunciation · retrieval"},
+      {t:"12:00", d:"30 min", days:"5×/wk", nm:"Lunch, alone",
+       e:1,h:0,v:1,alone:1, att:"medium",
+       a:"Conversation bot", speaks:1,
+       w:"Voice free and eyes free at once — rare. Two-way unscripted talk, where you find out what you can't yet say.",
+       b:"Unpredictable production"},
+      {t:"—", d:"3 min ×4", days:"5×/wk", nm:"Short breaks",
+       e:1,h:1,v:0,alone:0, att:"low",
+       a:"SRS reps",
+       w:"Same as anyone's breaks. Phone, two minutes, whatever's fuzzy.",
+       b:"Retention"},
+      {t:"20:30", d:"45 min", days:"5×/wk", nm:"Evening",
+       e:1,h:1,v:1,alone:1, att:"medium",
+       a:"Reader + encode + write gaps",
+       w:"With no desk slot, the reader moves here. Longer block, so it carries both reading and tomorrow's encoding.",
+       b:"Vocabulary · new chunks"}
+    ],
+    verdict: {
+      t: "More speaking time than the commuter — and that's exactly the trap.",
+      d: "On paper this is the better schedule. But every one of those minutes is <b>optional</b>. The commuter is locked in a box for an hour whether they feel like it or not; you can skip the walk and eat lunch at your desk. The difference isn't quantity, it's <b>enforcement</b> — and enforcement is what survives month eight. Defend the dog walk like it's a meeting, or this quietly becomes zero."
+    }
+  },
+
+  parent: {
+    label: "Parent, young kids",
+    desc: "I have two small kids. I get up around 5:30 before they're awake. Short drive to daycare and work, maybe 20 minutes. Work is packed. Evenings are chaos until they're down around 8, then I'm wrecked. I clean the kitchen after.",
+    slots: [
+      {t:"05:30", d:"20 min", days:"6×/wk", nm:"Before they wake",
+       e:1,h:1,v:1,alone:1, att:"high",
+       a:"Encode new chunks",
+       w:"The only high-attention, uninterrupted, alone slot you have. It is far too valuable for review — this is where the hardest new material goes.",
+       b:"New chunks"},
+      {t:"08:10", d:"20 min", days:"5×/wk", nm:"Drive to daycare",
+       e:0,h:0,v:1,alone:0, att:"medium",
+       a:"Shadowing — out loud, with them", speaks:1,
+       w:"Kids in the back is not a blocker. Say it out loud anyway; small children are the least judgmental audience alive, and some of it may stick to them too.",
+       b:"Pronunciation"},
+      {t:"20:15", d:"15 min", days:"6×/wk", nm:"Kitchen cleanup",
+       e:0,h:0,v:1,alone:1, att:"low",
+       a:"Free production, quietly", speaks:1,
+       w:"Hands and eyes busy, mouth free, nobody listening. Narrate what you did today. Low attention is fine — this is mouth work, not brain work.",
+       b:"Fluency"},
+      {t:"—", d:"3 min ×3", days:"5×/wk", nm:"Whatever gaps appear",
+       e:1,h:1,v:0,alone:0, att:"low",
+       a:"SRS reps",
+       w:"Fully interruptible by design. If a kid needs you mid-card, nothing is lost.",
+       b:"Retention"}
+    ],
+    verdict: {
+      t: "About 6 hours a week — a 3–4 year timeline, and that's the honest number.",
+      d: "The plan does not pretend otherwise, and it removes the desk reader entirely rather than give you something you'll fail at and feel bad about. <b>Sustainability beats intensity</b> — a plan you can still run in month eight beats one that wins for three weeks and then makes you quit."
+    }
+  },
+
+  student: {
+    label: "Student on campus",
+    desc: "I walk between classes, maybe 10 minutes each, a few times a day. I go to the gym for about 45 minutes. I have long gaps in the library. Nights are unpredictable.",
+    slots: [
+      {t:"—", d:"10 min ×3", days:"5×/wk", nm:"Walking between classes",
+       e:0,h:1,v:1,alone:1, att:"medium",
+       a:"Chunk drills, out loud", speaks:1,
+       w:"Earbuds in, everyone assumes you're on a call. Short bursts suit chunks — say them, don't just hear them.",
+       b:"Retrieval speed"},
+      {t:"16:00", d:"45 min", days:"4×/wk", nm:"Gym",
+       e:0,h:0,v:0,alone:0, att:"low",
+       a:"Multi-party listening",
+       w:"The one slot where you genuinely can't speak — so it gets the ear training. Several voices overlapping, which is the actual dinner-table skill and almost nobody trains it.",
+       b:"The dinner-table ear"},
+      {t:"—", d:"60 min", days:"4×/wk", nm:"Library gap",
+       e:1,h:1,v:0,alone:0, att:"high",
+       a:"The reader + encode",
+       w:"Long, silent, high attention. Best text slot in any of these schedules.",
+       b:"Vocabulary · new chunks"}
+    ],
+    verdict: {
+      t: "Strong on input, thin on real speaking.",
+      d: "Walks are only 30 minutes a day and the gym can't take voice. This schedule will build a good ear and a slow mouth. If you want the dinner table, <b>find one protected hour alone per week</b> and talk — a walk, a drive, an empty room. It matters more than any other change here."
+    }
+  }
+};
+
+const ORDER = ["commute","wfh","parent","student"];
+let active = "commute";
+
+const el = id => document.getElementById(id);
+
+function chips(s){
+  const c = [];
+  c.push(`<span class="ch ${s.e?'yes':'no'}">eyes</span>`);
+  c.push(`<span class="ch ${s.h?'yes':'no'}">hands</span>`);
+  c.push(s.v && s.alone
+    ? `<span class="ch gold">voice ✦</span>`
+    : `<span class="ch ${s.v?'yes':'no'}">voice</span>`);
+  c.push(`<span class="ch ${s.alone?'yes':'no'}">alone</span>`);
+  c.push(`<span class="ch">${s.att} focus</span>`);
+  return `<div class="chips">${c.join("")}</div>`;
+}
+
+// weekly minutes, honouring the ×N repeats encoded in the duration string
+function mins(s){
+  const per = parseInt(s.d) || 0;
+  const reps = (s.d.match(/×(\d+)/) || [,1])[1];
+  const days = parseInt(s.days) || 1;
+  return per * reps * days;
+}
+
+function render(){
+  const p = PRESETS[active];
+  el("desc").value = p.desc;
+
+  [...el("presets").children].forEach(b =>
+    b.setAttribute("aria-pressed", String(b.dataset.k === active)));
+
+  // slots
+  el("slots").innerHTML = p.slots.map(s => `
+    <div class="slot ${s.speaks ? 'voice' : ''}">
+      <div class="when"><b>${s.t}</b>${s.d}<i>${s.days}</i></div>
+      <div class="what"><span class="nm">${s.nm}</span>${chips(s)}</div>
+      <div class="act">
+        <span class="a">${s.a}</span>
+        <span class="w">${s.w}</span>
+        <span class="b">${s.b}</span>
+      </div>
+    </div>`).join("");
+
+  // Budget counts slots where you ACTUALLY SPEAK, not slots that merely permit it.
+  // An evening sit-down allows talking but its activity is reading and encoding — no
+  // speech happens there, and counting it as speaking time flatters the plan.
+  const total = p.slots.reduce((n,s) => n + mins(s), 0);
+  const voice = p.slots.filter(s => s.speaks).reduce((n,s) => n + mins(s), 0);
+  const pct = total ? Math.round(voice / total * 100) : 0;
+  const hrs = m => (m/60).toFixed(1).replace(/\.0$/,"");
+
+  el("budget").innerHTML = `
+    <div class="stat"><div class="n">${hrs(total)}</div><div class="l">hrs / week</div></div>
+    <div class="stat hi"><div class="n">${hrs(voice)}</div><div class="l">speaking, alone</div></div>
+    <div class="stat"><div class="n">${pct}%</div><div class="l">of budget</div></div>
+    <div class="stat"><div class="n">${Math.round(total*52/60)}</div><div class="l">hrs / year</div></div>`;
+  el("bar").innerHTML = `<i class="v" style="width:${pct}%"></i><i class="o" style="width:${100-pct}%"></i>`;
+
+  const yr = Math.round(total*52/60);
+  el("budgetsub").textContent = yr >= 400
+    ? "Roughly " + yr + " hours a year. That's genuinely a lot — comfortable conversation lands somewhere around 18 months to 2 years."
+    : "Roughly " + yr + " hours a year. Slower, and the plan below says so rather than pretending.";
+
+  el("verdict").innerHTML = `<span class="vt">${p.verdict.t}</span>${p.verdict.d}`;
+  el("parsenote").textContent =
+    "In the real app Claude parses this text into slots. Here the four examples are pre-parsed — the mapping below is real, the parsing is not.";
+}
+
+const LOOP = [
+  {s:"Evening", d:"Encode new chunks, in context, with attention."},
+  {s:"Sleep", d:"Consolidation happens for free. This is the one part that works while you don't.", sleep:1},
+  {s:"Morning car", d:"Retrieve it out loud, cold — before you've seen it again. Hard recall is the whole point."},
+  {s:"Work desk", d:"Meet it again in real text. Mark what's still fuzzy."},
+  {s:"Breaks", d:"SRS reps on exactly what you marked."},
+  {s:"Evening car", d:"Produce with it. Unscripted, about your actual life. Find out what you still can't say."},
+  {s:"Evening", d:"Encode tomorrow — starting with what you couldn't say. The gaps write the curriculum."}
+];
+
+el("loop").innerHTML = LOOP.map((l,i) =>
+  `<div class="lp ${l.sleep?'sleep':''}"><div class="s">${l.s}</div><div class="d">${l.d}</div></div>` +
+  (i < LOOP.length-1 ? `<div class="arrow">↓</div>` : "")).join("");
+
+el("presets").innerHTML = ORDER.map(k =>
+  `<button class="pz" data-k="${k}" aria-pressed="false">${PRESETS[k].label}</button>`).join("");
+el("presets").onclick = e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  active = b.dataset.k;
+  render();
+};
+
+render();
+</script>

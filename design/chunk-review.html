@@ -1,0 +1,152 @@
+<meta charset="utf-8">
+<title>30 chunks — does anyone actually say these?</title>
+<style>
+ :root{--paper:#EDEDE6;--paper-2:#E4E4DB;--ink:#15161A;--ink-soft:#4A4B52;--muted:#7A7A72;
+  --rule:#C9C9BE;--rubric:#B4372A;--verdigris:#2F6B63;--verdigris-2:#E0EAE7;--ochre:#C8912F;
+  --ochre-wash:rgba(200,145,47,.14);
+  --serif:"Iowan Old Style","Charter",Palatino,Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  --mono:"SF Mono",ui-monospace,Menlo,monospace;
+  --arabic:"Geeza Pro","SF Arabic","Damascus",serif}
+ @media(prefers-color-scheme:dark){:root{--paper:#16171B;--paper-2:#1E1F24;--ink:#E4E3DC;
+  --ink-soft:#A9A9A2;--muted:#82827B;--rule:#33343B;--rubric:#FF7B62;--verdigris:#63B3A5;
+  --verdigris-2:#1C2E2C;--ochre:#D9A94D;--ochre-wash:rgba(217,169,77,.13)}}
+ :root[data-theme="dark"]{--paper:#16171B;--paper-2:#1E1F24;--ink:#E4E3DC;--ink-soft:#A9A9A2;
+  --muted:#82827B;--rule:#33343B;--rubric:#FF7B62;--verdigris:#63B3A5;--verdigris-2:#1C2E2C;
+  --ochre:#D9A94D;--ochre-wash:rgba(217,169,77,.13)}
+ :root[data-theme="light"]{--paper:#EDEDE6;--paper-2:#E4E4DB;--ink:#15161A;--ink-soft:#4A4B52;
+  --muted:#7A7A72;--rule:#C9C9BE;--rubric:#B4372A;--verdigris:#2F6B63;--verdigris-2:#E0EAE7;
+  --ochre:#C8912F;--ochre-wash:rgba(200,145,47,.14)}
+ *{box-sizing:border-box} body{background:var(--paper);color:var(--ink);font-family:var(--sans);margin:0}
+ .w{max-width:620px;margin:0 auto;padding:30px 18px 70px}
+ h1{font-family:var(--serif);font-size:25px;font-weight:400;margin:0 0 10px;text-wrap:balance}
+ p.l{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 12px}
+ p.l b{color:var(--ink);font-weight:600}
+ .fr{border-left:2px solid var(--verdigris);background:var(--verdigris-2);padding:13px 15px;
+  border-radius:0 3px 3px 0;margin:18px 0;font-size:13.5px;line-height:1.6}
+ .fr b{display:block;font-family:var(--serif);font-size:15px;margin-bottom:4px}
+ .prog{position:sticky;top:0;background:var(--paper);padding:12px 0 10px;
+  border-bottom:1px solid var(--rule);margin:22px 0 0;z-index:5;font-size:12px;color:var(--muted)}
+ .prog .b{height:4px;background:var(--paper-2);border-radius:2px;margin-top:5px;overflow:hidden}
+ .prog .b i{display:block;height:100%;background:var(--verdigris);width:0;transition:width .2s}
+ .c{border:1px solid var(--rule);border-radius:5px;padding:14px;margin:11px 0}
+ .c.flag{border-color:var(--ochre);background:var(--ochre-wash)}
+ .c.done{border-color:var(--verdigris)}
+ .ar{font-family:var(--arabic);direction:rtl;text-align:right;font-size:27px;line-height:1.9}
+ .en{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink-soft)}
+ .use{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+ .badge{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;color:var(--ochre);
+  letter-spacing:.07em;margin-top:6px;display:block}
+ .o{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+ .o button{flex:1;min-width:88px;font:inherit;font-size:12.5px;padding:8px 6px;border:1px solid var(--rule);
+  background:none;color:var(--ink);border-radius:4px;cursor:pointer}
+ .o button:hover{border-color:var(--verdigris)}
+ .o button[aria-pressed="true"]{background:var(--verdigris);border-color:var(--verdigris);color:var(--paper)}
+ textarea{width:100%;margin-top:8px;min-height:44px;font-family:var(--arabic);font-size:18px;
+  direction:rtl;text-align:right;padding:8px 10px;border:1px solid var(--rule);border-radius:4px;
+  background:var(--paper-2);color:var(--ink);display:none}
+ textarea.on{display:block}
+ textarea::placeholder{font-family:var(--sans);font-size:12.5px;direction:ltr;text-align:left}
+ .out{margin-top:26px;padding:16px;border:1px solid var(--ochre);background:var(--ochre-wash);
+  border-radius:5px;display:none}.out.on{display:block}
+ pre{font-family:var(--mono);font-size:11px;line-height:1.55;white-space:pre-wrap;background:var(--paper);
+  border:1px solid var(--rule);border-radius:4px;padding:11px;overflow-x:auto}
+ .cp{font:inherit;font-size:13px;padding:8px 14px;background:var(--verdigris);color:var(--paper);
+  border:none;border-radius:4px;cursor:pointer}
+</style>
+<div class="w">
+<h1>Does anyone actually say these?</h1>
+<p class="l">30 short Palestinian reactions — the kind of thing you say at a dinner table.
+He&#39;s about to drill these in the car until they&#39;re automatic, so if any are wrong,
+they&#39;ll be <b>wrong forever</b>. Ten minutes now saves that.</p>
+<div class="fr"><b>What we need from you</b>
+Not &ldquo;is this Palestinian?&rdquo; &mdash; these are Levantine-general, which is why you&#39;re
+exactly the right person. Just: <b>would a real person say this, and is it natural?</b>
+If you&#39;d say it differently, write yours.</div>
+<div class="fr" style="border-color:var(--ochre);background:var(--ochre-wash)">
+<b>The 5 marked &ldquo;not in the dictionary&rdquo;</b>
+Our Palestinian lexicon has 36,000 entries and <b>none of these five</b> &mdash; it only covers
+content words, not the things people actually say. So for those, you are the only check
+that exists. They matter most.</div>
+<label class="fr" style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;border-color:var(--rubric)"><input type="checkbox" id="who" style="margin-top:3px;width:16px;height:16px;flex:none"><span><b style="margin:0">Before you start</b>A real person is answering these — not a test, not a guess. If nobody has actually looked at them, close this page.</span></label>
+<div class="prog"><span id="t">0 of 30</span><div class="b"><i id="b"></i></div></div>
+<div id="cs"></div>
+<div class="out" id="out"><h1 style="font-size:18px">Done — thank you</h1><pre id="r"></pre>
+<button class="cp" id="cp">Copy</button></div>
+</div>
+<script>
+const C=[
+  {ar:"والله؟", en:"Really?", use:"surprise \u2014 the single most common reaction in Levantine", flag:true},
+  {ar:"بجد؟", en:"For real?", use:"stronger disbelief", flag:false},
+  {ar:"لا!", en:"No way!", use:"said with rising tone", flag:false},
+  {ar:"شو؟", en:"What?", use:"genuine 'what' or shocked 'what?!'", flag:false},
+  {ar:"يا سلام", en:"Wow.", use:"admiration \u2014 food, a view, a story", flag:false},
+  {ar:"أيوه", en:"Yeah.", use:"plain yes", flag:false},
+  {ar:"أكيد", en:"Of course.", use:"certainty", flag:false},
+  {ar:"صح", en:"Right. / True.", use:"agreeing with a claim", flag:false},
+  {ar:"مظبوط", en:"Exactly.", use:"stronger agreement \u2014 'precisely'", flag:false},
+  {ar:"تمام", en:"Okay. / Perfect.", use:"everything's fine", flag:false},
+  {ar:"طبعاً", en:"Naturally.", use:"'obviously' \u2014 slightly emphatic", flag:true},
+  {ar:"يا حرام", en:"Oh no. / Poor thing.", use:"sympathy \u2014 THE sympathy phrase; use it constantly", flag:false},
+  {ar:"معليش", en:"Never mind. / It's OK.", use:"brushing off a problem or apology", flag:true},
+  {ar:"سلامتك", en:"Get well.", use:"to someone ill or hurt", flag:false},
+  {ar:"الله معك", en:"God be with you.", use:"parting, or sympathy for a hard road", flag:false},
+  {ar:"حلو", en:"Nice. / Sweet.", use:"positive evaluation of almost anything", flag:false},
+  {ar:"منيح", en:"Good.", use:"plainer than \u062d\u0644\u0648", flag:false},
+  {ar:"كتير حلو", en:"Very nice.", use:"intensified", flag:false},
+  {ar:"مش بطال", en:"Not bad.", use:"understated approval", flag:false},
+  {ar:"ما بعرف", en:"I don't know.", use:"the most useful sentence for a beginner", flag:false},
+  {ar:"يمكن", en:"Maybe.", use:"hedging", flag:false},
+  {ar:"مش هيك", en:"Not like that.", use:"gentle correction", flag:false},
+  {ar:"ولا إشي", en:"Nothing. / Not at all.", use:"denial; also 'no problem at all'", flag:false},
+  {ar:"طيب", en:"Okay, so... / Well...", use:"discourse glue \u2014 starts half of all turns", flag:false},
+  {ar:"يعني", en:"I mean... / Like...", use:"the most-used filler in Arabic; buys thinking time", flag:false},
+  {ar:"وبعدين؟", en:"And then?", use:"keeps a story going \u2014 makes you a good listener", flag:false},
+  {ar:"شو صار؟", en:"What happened?", use:"invites the story", flag:false},
+  {ar:"تفضل", en:"Please \u2014 help yourself.", use:"hospitality; you will hear this every 90 seconds at dinner", flag:false},
+  {ar:"صحتين", en:"Bon app\u00e9tit.", use:"said to someone eating; reply: \u0639\u0644\u0649 \u0642\u0644\u0628\u0643", flag:true},
+  {ar:"يسلمو إيديكي", en:"Bless your hands.", use:"TO THE COOK, after a meal. The single highest-value phrase at a Palestinian dinner table. Feminine ending \u2014 \u0625\u064a\u062f\u064a\u0643 for a man.", flag:true},
+  ];
+const O=[["ok","Natural"],["stiff","Stiff/odd"],["no","Nobody says this"],["diff","I&#39;d say it differently"]];
+const SID = Math.random().toString(36).slice(2,8).toUpperCase();
+const A={},cs=document.getElementById("cs");
+C.forEach((c,i)=>{
+ const d=document.createElement("div"); d.className="c"+(c.flag?" flag":"");
+ d.innerHTML='<div class="ar">'+c.ar+'</div><div class="en">'+c.en+'</div>'+
+  '<div class="use">'+c.use+'</div>'+
+  (c.flag?'<span class="badge">not in the dictionary — you are the only check</span>':'')+
+  '<div class="o">'+O.map(o=>'<button data-k="'+o[0]+'" aria-pressed="false">'+o[1]+'</button>').join("")+'</div>'+
+  '<textarea placeholder="Write it the way you\'d say it"></textarea>';
+ const ta=d.querySelector("textarea");
+ d.querySelector(".o").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b)return;
+  [...d.querySelectorAll(".o button")].forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  A[i]={k:b.dataset.k,fix:ta.value}; ta.classList.toggle("on",b.dataset.k!=="ok");
+  d.classList.add("done"); P();});
+ ta.addEventListener("input",()=>{if(A[i])A[i].fix=ta.value; P();});
+ cs.appendChild(d);});
+function P(){const n=Object.keys(A).length;
+ document.getElementById("t").textContent=n+" of "+C.length;
+ document.getElementById("b").style.width=(n/C.length*100)+"%";
+ const ok=document.getElementById("who").checked;
+ const done=n===C.length&&ok; document.getElementById("out").classList.toggle("on",done);
+ if(done)R();}
+document.getElementById("who").addEventListener("change",P);
+function R(){
+ // Stamp the export. A completed-looking review with no stamp is not a review.
+ const stamp = new Date().toISOString().slice(0,16).replace("T"," ");
+ let t="CHUNK REVIEW — Lebanese native speaker\nAsked: naturalness, not Palestinian-specificity\n"+"Completed: "+stamp+"  ·  session "+SID+"\n"+"-".repeat(50)+"\n\n";
+ let bad=0;
+ C.forEach((c,i)=>{const a=A[i]; const lab=(O.find(o=>o[0]===a.k)||[])[1];
+  if(a.k!=="ok"){bad++; t+=(i+1)+". "+c.ar+"  ("+c.en+")\n   -> "+lab.replace("&#39;","'").toUpperCase()+"\n";
+   if(a.fix&&a.fix.trim())t+="   she says: "+a.fix.trim()+"\n"; t+="\n";}});
+ if(!bad)t+="All 30 natural.\n\n";
+ t+="-".repeat(50)+"\n"+bad+" of "+C.length+" flagged.\n";
+ t+=bad?"Fix these BEFORE generating audio.":"Clear to generate audio.";
+ document.getElementById("r").textContent=t;}
+document.getElementById("cp").onclick=function(){
+ navigator.clipboard.writeText(document.getElementById("r").textContent)
+  .then(()=>{this.textContent="Copied ✓";setTimeout(()=>this.textContent="Copy",1500);})
+  .catch(()=>{this.textContent="Select the text above";});};
+P();
+</script>

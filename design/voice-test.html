@@ -1,0 +1,225 @@
+<meta charset="utf-8">
+<title>Voice test — can respelling force Palestinian pronunciation?</title>
+<style>
+  :root {
+    --paper:#EDEDE6; --paper-2:#E4E4DB; --ink:#15161A; --ink-soft:#4A4B52;
+    --muted:#7A7A72; --rule:#C9C9BE; --rubric:#B4372A; --verdigris:#2F6B63;
+    --verdigris-2:#E0EAE7; --ochre:#C8912F;
+    --serif:"Iowan Old Style","Charter",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+    --mono:"SF Mono",ui-monospace,Menlo,monospace;
+    --arabic:"Geeza Pro","SF Arabic","Damascus",serif;
+  }
+  @media (prefers-color-scheme: dark){ :root{
+    --paper:#16171B; --paper-2:#1E1F24; --ink:#E4E3DC; --ink-soft:#A9A9A2;
+    --muted:#82827B; --rule:#33343B; --rubric:#FF7B62; --verdigris:#63B3A5;
+    --verdigris-2:#1C2E2C; --ochre:#D9A94D; } }
+  :root[data-theme="dark"]{
+    --paper:#16171B; --paper-2:#1E1F24; --ink:#E4E3DC; --ink-soft:#A9A9A2;
+    --muted:#82827B; --rule:#33343B; --rubric:#FF7B62; --verdigris:#63B3A5;
+    --verdigris-2:#1C2E2C; --ochre:#D9A94D; }
+  :root[data-theme="light"]{
+    --paper:#EDEDE6; --paper-2:#E4E4DB; --ink:#15161A; --ink-soft:#4A4B52;
+    --muted:#7A7A72; --rule:#C9C9BE; --rubric:#B4372A; --verdigris:#2F6B63;
+    --verdigris-2:#E0EAE7; --ochre:#C8912F; }
+
+  *{box-sizing:border-box}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:36px 24px 80px}
+
+  h1{font-family:var(--serif);font-size:27px;font-weight:400;margin:0 0 6px;
+     text-wrap:balance;letter-spacing:-0.01em}
+  .lede{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 4px;max-width:62ch}
+  .lede b{color:var(--ink);font-weight:600}
+  .status{font-family:var(--mono);font-size:11.5px;color:var(--muted);
+          border:1px solid var(--rule);border-radius:3px;padding:8px 11px;
+          margin:20px 0 28px;display:inline-block}
+  .status.bad{color:var(--rubric);border-color:var(--rubric)}
+
+  h2{font-family:var(--serif);font-size:18px;font-weight:400;margin:36px 0 4px;
+     padding-top:24px;border-top:1px solid var(--rule)}
+  .sub{font-size:13px;color:var(--muted);margin:0 0 18px;max-width:62ch;line-height:1.5}
+
+  table{width:100%;border-collapse:collapse}
+  th{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
+     text-align:left;font-weight:600;padding:0 10px 9px 0;border-bottom:1px solid var(--rule)}
+  th.c{text-align:center}
+  td{padding:11px 10px 11px 0;border-bottom:1px solid var(--rule);vertical-align:middle}
+  td.gloss{font-family:var(--serif);font-size:14.5px;color:var(--ink-soft);white-space:nowrap}
+  td.ar{font-family:var(--arabic);font-size:27px;direction:rtl;text-align:right;
+        line-height:1.9;white-space:nowrap}
+  td.say{font-family:var(--mono);font-size:12px;color:var(--verdigris);white-space:nowrap}
+  td.note{font-size:11.5px;color:var(--muted);line-height:1.4}
+  td.b{text-align:center;width:44px}
+
+  .p{width:30px;height:30px;border-radius:50%;border:1px solid var(--rule);
+     background:none;color:var(--ink-soft);cursor:pointer;font-size:11px;line-height:1;
+     display:inline-flex;align-items:center;justify-content:center;padding:0}
+  .p:hover:not(:disabled){border-color:var(--verdigris);color:var(--verdigris);
+     background:var(--verdigris-2)}
+  .p:focus-visible{outline:2px solid var(--verdigris);outline-offset:2px}
+  .p:disabled{opacity:0.3;cursor:default}
+  .p.on{background:var(--verdigris);border-color:var(--verdigris);color:var(--paper)}
+  .p.alt:hover:not(:disabled){border-color:var(--rubric);color:var(--rubric);background:none}
+  .p.alt.on{background:var(--rubric);border-color:var(--rubric);color:var(--paper)}
+
+  .sent{display:grid;gap:14px;margin-top:6px}
+  .row{border:1px solid var(--rule);border-radius:4px;padding:14px 16px;
+       display:flex;align-items:center;gap:16px}
+  .row .lbl{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;
+            color:var(--muted);font-weight:600;width:74px;flex:none;line-height:1.4}
+  .row .txt{flex:1;min-width:0}
+  .row .txt .a{font-family:var(--arabic);font-size:26px;direction:rtl;text-align:right;
+                line-height:2;display:block}
+  .row .txt .t{font-family:var(--mono);font-size:11.5px;color:var(--muted);
+               display:block;margin-top:3px}
+  .row.alt{border-color:var(--rubric)}
+
+  .ask{margin-top:34px;padding:16px 18px;border-radius:4px;background:var(--paper-2);
+       border:1px solid var(--rule);font-size:14px;line-height:1.6;max-width:64ch}
+  .ask b{display:block;font-family:var(--serif);font-size:16px;margin-bottom:6px;font-weight:600}
+  ol{margin:8px 0 0;padding-left:20px}
+  li{margin-bottom:5px}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <h1>Can respelling force Palestinian pronunciation out of an MSA voice?</h1>
+  <p class="lede">
+    In Levantine Arabic, ق is pronounced as a <b>glottal stop</b> in most words — but it's
+    still <i>written</i> as ق. So the spelling itself is what drags any text-to-speech
+    engine back into fuṣḥā. This app generates its own dialect text, which means we control
+    what the engine is fed, independently of what you see on screen.
+  </p>
+  <p class="lede">
+    Each row below is the same word twice: <b>as it's spelled</b>, and <b>as it's said</b>.
+    Both are spoken by Majed — the one MSA voice on this Mac. If the right-hand column
+    sounds Palestinian, the fix is orthographic, not a model problem.
+  </p>
+  <div class="status" id="status">checking voices…</div>
+
+  <h2>Single words</h2>
+  <p class="sub">Grey = standard spelling. Red = respelled for how Palestinians actually say it.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Meaning</th>
+        <th class="c">▶</th>
+        <th>As spelled</th>
+        <th class="c">▶</th>
+        <th>As said</th>
+        <th>Target</th>
+        <th>Change</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <h2>A whole sentence</h2>
+  <p class="sub">“What time is it? I want to drink coffee and sit a while.” — four glottal stops in one line.</p>
+  <div class="sent" id="sent"></div>
+
+  <div class="ask">
+    <b>What I need from you</b>
+    Play each pair and tell me:
+    <ol>
+      <li>Does the <b>red</b> version sound meaningfully more Palestinian than the grey one?</li>
+      <li>Is Majed's voice quality itself tolerable, or is it grating regardless of accent?</li>
+      <li>Do any red ones sound <i>worse</i> — broken or mangled rather than dialectal?</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+// Palestinian phonology vs. standard orthography. The respellings encode the two changes
+// that matter most: ق → glottal stop, and the interdentals ث/ذ collapsing to ت/د.
+const PAIRS = [
+  {g:"coffee",    std:"قَهْوة",  tts:"أَهْوة",  say:"ahwe",   n:"ق → glottal stop"},
+  {g:"how much?", std:"قَدّيش",  tts:"أَدّيش",  say:"addēsh", n:"ق → glottal stop"},
+  {g:"my heart",  std:"قَلْبي",  tts:"أَلْبي",  say:"albi",   n:"ق → glottal stop"},
+  {g:"time",      std:"وَقْت",   tts:"وَأْت",   say:"wa't",   n:"ق → glottal stop"},
+  {g:"I sit",     std:"بُقْعُد",  tts:"بُؤْعُد",  say:"bu'ud",  n:"ق → glottal stop"},
+  {g:"three",     std:"ثَلاثة",  tts:"تَلاتة",  say:"talāte", n:"ث → ت (interdental lost)"},
+  {g:"this",      std:"هَذا",    tts:"هادا",    say:"hāda",   n:"ذ → د (interdental lost)"}
+];
+
+const SENT = {
+  std: "قَدّيش الوَقْت؟ بِدّي أَشْرَب قَهْوة وأَقْعُد شْوَي.",
+  tts: "أَدّيش الوَأْت؟ بِدّي أَشْرَب أَهْوة وأَؤْعُد شْوَي.",
+  say: "addēsh il-wa't? biddi ashrab ahwe w-a'ud shwayy."
+};
+
+const SYNTH = window.speechSynthesis || null;
+let voice = null, current = null;
+
+function pick(){
+  if(!SYNTH) return;
+  voice = SYNTH.getVoices().filter(v=>/^ar/i.test(v.lang))[0] || null;
+  const s = document.getElementById('status');
+  if(voice){
+    s.textContent = "voice: " + voice.name + " (" + voice.lang + ") — " +
+      (voice.localService ? "on-device" : "network");
+    s.className = "status";
+  } else {
+    s.textContent = "No Arabic voice found on this machine — nothing will play.";
+    s.className = "status bad";
+  }
+  document.querySelectorAll('.p').forEach(b=>b.disabled = !voice);
+}
+
+function say(text, btn){
+  if(!voice) return;
+  SYNTH.cancel();
+  if(current) current.classList.remove('on');
+  if(current === btn){ current = null; return; }   // click again = stop
+  btn.classList.add('on'); current = btn;
+  const u = new SpeechSynthesisUtterance(text);
+  u.voice = voice; u.lang = voice.lang; u.rate = 0.85;
+  u.onend = u.onerror = () => { btn.classList.remove('on'); if(current===btn) current=null; };
+  SYNTH.speak(u);
+}
+
+function playBtn(text, alt){
+  const b = document.createElement('button');
+  b.className = 'p' + (alt ? ' alt' : '');
+  b.textContent = '▶';
+  b.setAttribute('aria-label', 'Play ' + text);
+  b.onclick = () => say(text, b);
+  return b;
+}
+
+const rows = document.getElementById('rows');
+PAIRS.forEach(p => {
+  const tr = document.createElement('tr');
+  const cells = [
+    ['gloss', p.g], ['b',null], ['ar', p.std], ['b',null],
+    ['ar', p.tts], ['say', p.say], ['note', p.n]
+  ];
+  cells.forEach(([cls, val], i) => {
+    const td = document.createElement('td');
+    td.className = cls;
+    if(cls === 'b') td.appendChild(playBtn(i === 1 ? p.std : p.tts, i !== 1));
+    else td.textContent = val;
+    if(cls === 'ar' && i === 4) td.style.color = 'var(--rubric)';
+    tr.appendChild(td);
+  });
+  rows.appendChild(tr);
+});
+
+const sent = document.getElementById('sent');
+[['As spelled', SENT.std, false, null], ['As said', SENT.tts, true, SENT.say]].forEach(([lbl, txt, alt, tr]) => {
+  const d = document.createElement('div');
+  d.className = 'row' + (alt ? ' alt' : '');
+  const l = document.createElement('span'); l.className = 'lbl'; l.textContent = lbl;
+  const t = document.createElement('div'); t.className = 'txt';
+  const a = document.createElement('span'); a.className = 'a'; a.textContent = txt;
+  if(alt) a.style.color = 'var(--rubric)';
+  t.appendChild(a);
+  if(tr){ const s = document.createElement('span'); s.className='t'; s.textContent = tr; t.appendChild(s); }
+  d.append(l, t, playBtn(txt, alt));
+  sent.appendChild(d);
+});
+
+if(SYNTH){ pick(); SYNTH.onvoiceschanged = pick; } else { pick(); }
+</script>
