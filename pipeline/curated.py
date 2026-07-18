@@ -44,6 +44,32 @@ PROPER = {
     "الإيبولا": ("الإيبولا", "2il2iibola", "Ebola", "NOUN_PROP"),
 }
 
+PROPER.update({
+    # Countries and cities. News is full of these and no lexicon carries them.
+    "روسيا":("روسيا","ruusya","Russia","NOUN_PROP"),
+    "أوكرانيا":("أوكرانيا","2ukraanya","Ukraine","NOUN_PROP"),
+    "موسكو":("موسكو","mosko","Moscow","NOUN_PROP"),
+    "كندا":("كندا","kanada","Canada","NOUN_PROP"),
+    "المكسيك":("المَكسيك","2ilmaksiik","Mexico","NOUN_PROP"),
+    "النرويج":("النَّرويج","2innarwiij","Norway","NOUN_PROP"),
+    "الكويت":("الكُويت","2ilkuweet","Kuwait","NOUN_PROP"),
+    "اليمن":("اليَمَن","2ilyaman","Yemen","NOUN_PROP"),
+    "الصومال":("الصّومال","2is.s.oomaal","Somalia","NOUN_PROP"),
+    "الهند":("الهِند","2ilhind","India","NOUN_PROP"),
+    "ترامب":("ترامب","traamb","Trump","NOUN_PROP"),
+    # Demonyms — derived from the country but not stored in the lexicon.
+    "روسي":("روسي","ruusi","Russian","ADJ:MS"),
+    "روسية":("روسِيّة","ruusiyye","Russian (f.)","ADJ:FS"),
+    "أوكراني":("أوكراني","2ukraani","Ukrainian","ADJ:MS"),
+    "أوكرانية":("أوكرانِيّة","2ukraaniyye","Ukrainian (f.)","ADJ:FS"),
+    "أوكرانيين":("أوكرانِيّين","2ukraaniyyiin","Ukrainians","ADJ:P"),
+    "أمريكي":("أَمريكي","2ameerki","American","ADJ:MS"),
+    "أمريكية":("أَمريكِيّة","2ameerkiyye","American (f.)","ADJ:FS"),
+    "صومالي":("صومالي","s.oomaali","Somali","ADJ:MS"),
+    "صوماليين":("صوماليّين","s.oomaaliyyiin","Somalis","ADJ:P"),
+    "هندية":("هِندِيّة","hindiyye","Indian (f.)","ADJ:FS"),
+})
+
 MODERN = {
     "الذكاء":    ("الذَّكاء",   "2iz.zakaa2",   "intelligence", "NOUN:MS"),
     "الاصطناعي": ("الاصطِناعي","2il2is.t.inaa3i","artificial", "ADJ:MS"),
@@ -51,12 +77,45 @@ MODERN = {
     "دول":       ("دُوَل",      "duwal",        "countries", "NOUN:P"),
     "تلاتين":    ("تَلاتين",   "talaatiin",    "thirty", "NOUN_NUM"),
     "مطعم":      ("مَطعَم",    "mat.3am",      "restaurant, venue", "NOUN:MS"),
+    # News vocabulary a colloquial lexicon doesn't carry.
+    "نفط":       ("نِفط",      "nift.",        "oil, petroleum", "NOUN:MS"),
+    "ناقلة":     ("ناقِلة",    "naa2ile",      "tanker, carrier", "NOUN:FS"),
+    "قراصنة":    ("قَراصنة",   "2araas.ne",    "pirates", "NOUN:P"),
+    "بوليس":     ("بوليس",     "buliis",       "police", "NOUN:MS"),
+    "هليكوبتر":  ("هِليكوبتر", "hilikobter",   "helicopter", "NOUN:MS"),
+    "هليكوبترات":("هِليكوبترات","hilikobteraat","helicopters", "NOUN:P"),
+    "ناشئة":     ("ناشئة",     "naashi2a",     "start-up, emerging", "ADJ:FS"),
+    "مصمم":      ("مُصَمَّم",   "mus.ammam",    "designed", "ADJ:MS"),
+    "مدار":      ("مَدار",     "madaar",       "orbit", "NOUN:MS"),
+    "صاروخ":     ("صاروخ",     "s.aaruukh",    "rocket, missile", "NOUN:MS"),
 }
 
 def _norm(x):
     for a, b in (('أ','ا'),('إ','ا'),('آ','ا'),('ى','ي'),('ة','ه'),('ؤ','ء'),('ئ','ء')):
         x = x.replace(a, b)
     return x.strip()
+
+# Arabic-Indic digits. No lexicon contains "١١" — but a learner still needs to know
+# it reads eleven, and the pronunciation is derivable, so handle it programmatically
+# rather than leave a quarter of a news sentence bare.
+_AR_DIGITS = "٠١٢٣٤٥٦٧٨٩"
+_NUM_NAMES = {0:"sifr",1:"waaHad",2:"tneen",3:"tlaate",4:"2arb3a",5:"khamse",
+              6:"sitte",7:"sab3a",8:"tmaanye",9:"tis3a",10:"3ashara",11:"iH.da3sh",
+              12:"tna3sh",20:"3ishriin",30:"talaatiin",50:"khamsiin",100:"miyye",
+              1000:"2alf"}
+
+def numeral(surface):
+    """-> word dict for an Arabic-Indic numeral, else None."""
+    core = surface.strip("،.؟!")
+    if not core or not all(ch in _AR_DIGITS for ch in core):
+        return None
+    val = int("".join(str(_AR_DIGITS.index(ch)) for ch in core))
+    say = _NUM_NAMES.get(val, str(val))
+    return {"surface": surface, "root": "—", "lemma": core, "form": core,
+            "caphi_raw": say, "caphi": say, "gloss": f"{val}", "analysis": "NOUN_NUM",
+            "maknuune_id": None, "village": None,
+            "vocalized": core, "vocalized_from": "curated",
+            "provenance": "curated:numeral"}
 
 _ALL = {}
 for src, tag in ((FUNCTION, 'function-word'), (PROPER, 'proper-noun'), (MODERN, 'modern-term')):

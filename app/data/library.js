@@ -455,31 +455,49 @@ window.LIBRARY = {
      "words": [
       {
        "surface": "طيارات",
-       "root": null,
-       "lemma": null,
-       "form": "طيارات",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "طيارات",
-       "vocalized_from": "lexicon:exact"
+       "root": "ط.ي.ر",
+       "lemma": "طَيَّارَة",
+       "form": "طَيَّارَة",
+       "caphi_raw": "t. a y y aa r a",
+       "caphi": "t.ayyaara",
+       "gloss": "aero_plane",
+       "analysis": "NOUN:FS",
+       "maknuune_id": "19775",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "19775",
+         "root": "ط.ي.ر",
+         "gloss": "aero_plane",
+         "analysis": "NOUN:FS"
+        },
+        {
+         "id": "19776",
+         "root": "ط.ي.ر",
+         "gloss": "aviator;pilot;flyer",
+         "analysis": "NOUN:MS"
+        }
+       ],
+       "caphi_urban": "t.ayyaara",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "أوكرانية",
-       "root": null,
-       "lemma": null,
-       "form": "أوكرانية",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "أوكرانِيّة",
+       "form": "أوكرانِيّة",
+       "caphi_raw": "2ukraaniyye",
+       "caphi": "2ukraaniyye",
+       "gloss": "Ukrainian (f.)",
+       "analysis": "ADJ:FS",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "أوكرانية",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "أوكرانِيّة",
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "2ukraaniyye"
       },
       {
        "surface": "بدون",
@@ -572,7 +590,45 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "16162",
        "village": null,
-       "provenance": "maknuune:unique",
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "16162",
+         "root": "ش.ر.ك",
+         "gloss": "company",
+         "analysis": "NOUN:FS"
+        },
+        {
+         "id": "16163",
+         "root": "ش.ر.ك",
+         "gloss": "the_sin_of_idolatry_or_polytheism",
+         "analysis": "NOUN:MS"
+        },
+        {
+         "id": "16170",
+         "root": "ش.ر.ك",
+         "gloss": "make_sb_participate;make_sb_get_involved",
+         "analysis": "VERB:C"
+        },
+        {
+         "id": "16172",
+         "root": "ش.ر.ك",
+         "gloss": "make_sb_participate;make_sb_get_involved",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "16171",
+         "root": "ش.ر.ك",
+         "gloss": "make_sb_participate;make_sb_get_involved",
+         "analysis": "VERB:I"
+        },
+        {
+         "id": "16177",
+         "root": "ش.ر.ك",
+         "gloss": "do_the_sin_of_idolatry_or_polytheism;inc",
+         "analysis": "VERB:I"
+        }
+       ],
        "caphi_urban": "shirke",
        "vocalized": "لِشِرْكِة",
        "vocalized_from": "derived:affix"
@@ -595,17 +651,19 @@ window.LIBRARY = {
       },
       {
        "surface": "روسية",
-       "root": null,
-       "lemma": null,
-       "form": "روسية",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "روسِيّة",
+       "form": "روسِيّة",
+       "caphi_raw": "ruusiyye",
+       "caphi": "ruusiyye",
+       "gloss": "Russian (f.)",
+       "analysis": "ADJ:FS",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "روسية",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "روسِيّة",
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "ruusiyye"
       },
       {
        "surface": "قرب",
@@ -625,17 +683,19 @@ window.LIBRARY = {
       },
       {
        "surface": "موسكو",
-       "root": null,
-       "lemma": null,
+       "root": "—",
+       "lemma": "موسكو",
        "form": "موسكو",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "caphi_raw": "mosko",
+       "caphi": "mosko",
+       "gloss": "Moscow",
+       "analysis": "NOUN_PROP",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
+       "village": null,
        "vocalized": "موسكو",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "mosko"
       },
       {
        "surface": "وفي",
@@ -726,31 +786,35 @@ window.LIBRARY = {
       },
       {
        "surface": "أوكرانيين",
-       "root": null,
-       "lemma": null,
-       "form": "أوكرانيين",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "أوكرانِيّين",
+       "form": "أوكرانِيّين",
+       "caphi_raw": "2ukraaniyyiin",
+       "caphi": "2ukraaniyyiin",
+       "gloss": "Ukrainians",
+       "analysis": "ADJ:P",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "أوكرانيين",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "أوكرانِيّين",
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "2ukraaniyyiin"
       },
       {
        "surface": "زعلانين",
-       "root": null,
-       "lemma": null,
-       "form": "زعلانين",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "زعلانين",
-       "vocalized_from": "lexicon:exact"
+       "root": "ز.ع.ل",
+       "lemma": "زَعْلَان",
+       "form": "زَعْلَان",
+       "caphi_raw": "z a 3 l aa n",
+       "caphi": "za3laan",
+       "gloss": "angry;sad",
+       "analysis": "ADJ:MS",
+       "maknuune_id": "12899",
+       "village": null,
+       "provenance": "maknuune:unique",
+       "caphi_urban": "za3laan",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:unknown-suffix"
       },
       {
        "surface": "لأنهم",
@@ -850,17 +914,33 @@ window.LIBRARY = {
       },
       {
        "surface": "مظاهرات",
-       "root": null,
-       "lemma": null,
-       "form": "مظاهرات",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "مظاهرات",
-       "vocalized_from": "lexicon:exact"
+       "root": "ظ.ه.ر",
+       "lemma": "مُظَاهَرَة",
+       "form": "مُظَاهَرَة",
+       "caphi_raw": "m u Z. aa h a r a",
+       "caphi": "muZ.aahara",
+       "gloss": "demonstration",
+       "analysis": "NOUN:FS",
+       "maknuune_id": "19875",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "19875",
+         "root": "ظ.ه.ر",
+         "gloss": "demonstration",
+         "analysis": "NOUN:FS"
+        },
+        {
+         "id": "19882",
+         "root": "ظ.ه.ر",
+         "gloss": "appearance_[auto]",
+         "analysis": "NOUN:P"
+        }
+       ],
+       "caphi_urban": "muZ.aahara",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "هناك",
@@ -919,17 +999,57 @@ window.LIBRARY = {
       },
       {
        "surface": "تضرب",
-       "root": null,
-       "lemma": null,
-       "form": "تضرب",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "تضرب",
-       "vocalized_from": "lexicon:exact"
+       "root": "ض.ر.ب",
+       "lemma": "ضَرِب",
+       "form": "ضَرِب",
+       "caphi_raw": "D. a r i b",
+       "caphi": "D.arib",
+       "gloss": "beating;hitting",
+       "analysis": "NOUN:MS",
+       "maknuune_id": "18423",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "18423",
+         "root": "ض.ر.ب",
+         "gloss": "beating;hitting",
+         "analysis": "NOUN:MS"
+        },
+        {
+         "id": "18441",
+         "root": "ض.ر.ب",
+         "gloss": "hit;beat_[auto]",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "18428",
+         "root": "ض.ر.ب",
+         "gloss": "an_idea_flashed_into_sb's_mind",
+         "analysis": "VERB:PHRASE"
+        },
+        {
+         "id": "18433",
+         "root": "ض.ر.ب",
+         "gloss": "hit;beat_[auto]",
+         "analysis": "VERB:C"
+        },
+        {
+         "id": "18437",
+         "root": "ض.ر.ب",
+         "gloss": "hit;beat",
+         "analysis": "VERB:I"
+        },
+        {
+         "id": "18448",
+         "root": "ض.ر.ب",
+         "gloss": "go_on_a_strike;be_on_a_strike",
+         "analysis": "VERB:I"
+        }
+       ],
+       "caphi_urban": "D.arib",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:unknown-prefix"
       },
       {
        "surface": "إيران",
@@ -1045,17 +1165,51 @@ window.LIBRARY = {
       },
       {
        "surface": "وضربت",
-       "root": null,
-       "lemma": null,
-       "form": "وضربت",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "وضربت",
-       "vocalized_from": "lexicon:exact"
+       "root": "ض.ر.ب",
+       "lemma": "ضَرِب",
+       "form": "ضَرِب",
+       "caphi_raw": "D. a r i b",
+       "caphi": "D.arib",
+       "gloss": "beating;hitting",
+       "analysis": "NOUN:MS",
+       "maknuune_id": "18423",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "18423",
+         "root": "ض.ر.ب",
+         "gloss": "beating;hitting",
+         "analysis": "NOUN:MS"
+        },
+        {
+         "id": "18441",
+         "root": "ض.ر.ب",
+         "gloss": "hit;beat_[auto]",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "18428",
+         "root": "ض.ر.ب",
+         "gloss": "an_idea_flashed_into_sb's_mind",
+         "analysis": "VERB:PHRASE"
+        },
+        {
+         "id": "18433",
+         "root": "ض.ر.ب",
+         "gloss": "hit;beat_[auto]",
+         "analysis": "VERB:C"
+        },
+        {
+         "id": "18437",
+         "root": "ض.ر.ب",
+         "gloss": "hit;beat",
+         "analysis": "VERB:I"
+        }
+       ],
+       "caphi_urban": "D.arib",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:unknown-prefix"
       },
       {
        "surface": "محطة",
@@ -1107,17 +1261,19 @@ window.LIBRARY = {
       },
       {
        "surface": "بالكويت",
-       "root": null,
-       "lemma": null,
-       "form": "بالكويت",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "الكُويت",
+       "form": "الكُويت",
+       "caphi_raw": "2ilkuweet",
+       "caphi": "2ilkuweet",
+       "gloss": "Kuwait",
+       "analysis": "NOUN_PROP",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "بالكويت",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": null,
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "2ilkuweet"
       }
      ],
      "audio": null
@@ -1128,17 +1284,19 @@ window.LIBRARY = {
      "words": [
       {
        "surface": "ترامب",
-       "root": null,
-       "lemma": null,
+       "root": "—",
+       "lemma": "ترامب",
        "form": "ترامب",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "caphi_raw": "traamb",
+       "caphi": "traamb",
+       "gloss": "Trump",
+       "analysis": "NOUN_PROP",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
+       "village": null,
        "vocalized": "ترامب",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "traamb"
       },
       {
        "surface": "عم",
@@ -1174,17 +1332,19 @@ window.LIBRARY = {
       },
       {
        "surface": "كندا",
-       "root": null,
-       "lemma": null,
+       "root": "—",
+       "lemma": "كندا",
        "form": "كندا",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "caphi_raw": "kanada",
+       "caphi": "kanada",
+       "gloss": "Canada",
+       "analysis": "NOUN_PROP",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
+       "village": null,
        "vocalized": "كندا",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "kanada"
       },
       {
        "surface": "بضرايب",
@@ -1348,17 +1508,19 @@ window.LIBRARY = {
       },
       {
        "surface": "أمريكية",
-       "root": null,
-       "lemma": null,
-       "form": "أمريكية",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "أَمريكِيّة",
+       "form": "أَمريكِيّة",
+       "caphi_raw": "2ameerkiyye",
+       "caphi": "2ameerkiyye",
+       "gloss": "American (f.)",
+       "analysis": "ADJ:FS",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "أمريكية",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "أَمريكِيّة",
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "2ameerkiyye"
       }
      ],
      "audio": null
@@ -1385,33 +1547,35 @@ window.LIBRARY = {
       },
       {
        "surface": "هندية",
-       "root": "ه.ن.د",
-       "lemma": "هِنْدِي",
-       "form": "هِنْدِي",
-       "caphi_raw": "h i n d i",
-       "caphi": "hindi",
-       "gloss": "Indian",
-       "analysis": "ADJ:MS",
-       "maknuune_id": "34698",
+       "root": "—",
+       "lemma": "هِندِيّة",
+       "form": "هِندِيّة",
+       "caphi_raw": "hindiyye",
+       "caphi": "hindiyye",
+       "gloss": "Indian (f.)",
+       "analysis": "ADJ:FS",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "hindi",
-       "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-suffix"
+       "vocalized": "هِندِيّة",
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "hindiyye"
       },
       {
        "surface": "ناشئة",
-       "root": null,
-       "lemma": null,
+       "root": "—",
+       "lemma": "ناشئة",
        "form": "ناشئة",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "caphi_raw": "naashi2a",
+       "caphi": "naashi2a",
+       "gloss": "start-up, emerging",
+       "analysis": "ADJ:FS",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
+       "village": null,
        "vocalized": "ناشئة",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "naashi2a"
       },
       {
        "surface": "أطلقت",
@@ -1447,19 +1611,19 @@ window.LIBRARY = {
       },
       {
        "surface": "صاروخ",
-       "root": "ص.ر.خ",
-       "lemma": "صَارُوخ",
-       "form": "صَارُوخ",
-       "caphi_raw": "s. aa r uu kh",
+       "root": "—",
+       "lemma": "صاروخ",
+       "form": "صاروخ",
+       "caphi_raw": "s.aaruukh",
        "caphi": "s.aaruukh",
-       "gloss": "rocket;missile;a_very_beautiful_lady_(sarcastic)",
+       "gloss": "rocket, missile",
        "analysis": "NOUN:MS",
-       "maknuune_id": "17679",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "s.aaruukh",
-       "vocalized": "صَارُوخ",
-       "vocalized_from": "lexicon:exact"
+       "vocalized": "صاروخ",
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "s.aaruukh"
       },
       {
        "surface": "تجاري",
@@ -1479,33 +1643,35 @@ window.LIBRARY = {
       },
       {
        "surface": "هندي",
-       "root": "ه.ن.د",
-       "lemma": "هِنْدِي",
-       "form": "هِنْدِي",
-       "caphi_raw": "h i n d i",
-       "caphi": "hindi",
-       "gloss": "Indian",
-       "analysis": "ADJ:MS",
-       "maknuune_id": "34698",
+       "root": "—",
+       "lemma": "الهِند",
+       "form": "الهِند",
+       "caphi_raw": "2ilhind",
+       "caphi": "2ilhind",
+       "gloss": "India",
+       "analysis": "NOUN_PROP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "hindi",
-       "vocalized": "هِنْدِي",
-       "vocalized_from": "lexicon:exact"
+       "vocalized": null,
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "2ilhind"
       },
       {
        "surface": "مصمم",
-       "root": null,
-       "lemma": null,
-       "form": "مصمم",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "مُصَمَّم",
+       "form": "مُصَمَّم",
+       "caphi_raw": "mus.ammam",
+       "caphi": "mus.ammam",
+       "gloss": "designed",
+       "analysis": "ADJ:MS",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "مصمم",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "مُصَمَّم",
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "mus.ammam"
       },
       {
        "surface": "يوصل",
@@ -1525,19 +1691,19 @@ window.LIBRARY = {
       },
       {
        "surface": "للمدار",
-       "root": "د.و.ر",
-       "lemma": "مَدَار",
-       "form": "مَدَار",
-       "caphi_raw": "m a d aa r",
+       "root": "—",
+       "lemma": "مَدار",
+       "form": "مَدار",
+       "caphi_raw": "madaar",
        "caphi": "madaar",
-       "gloss": "orbit;sphere;axis;pivot",
+       "gloss": "orbit",
        "analysis": "NOUN:MS",
-       "maknuune_id": "10491",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:unique",
-       "caphi_urban": "madaar",
-       "vocalized": "المَدَار",
-       "vocalized_from": "derived:affix"
+       "vocalized": null,
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "madaar"
       }
      ],
      "audio": null
@@ -1596,31 +1762,35 @@ window.LIBRARY = {
       },
       {
        "surface": "٧",
-       "root": null,
-       "lemma": null,
+       "root": "—",
+       "lemma": "٧",
        "form": "٧",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "caphi_raw": "sab3a",
+       "caphi": "sab3a",
+       "gloss": "7",
+       "analysis": "NOUN_NUM",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
+       "village": null,
        "vocalized": "٧",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "curated",
+       "provenance": "curated:numeral",
+       "caphi_urban": "sab3a"
       },
       {
        "surface": "٣",
-       "root": null,
-       "lemma": null,
+       "root": "—",
+       "lemma": "٣",
        "form": "٣",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "caphi_raw": "tlaate",
+       "caphi": "tlaate",
+       "gloss": "3",
+       "analysis": "NOUN_NUM",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
+       "village": null,
        "vocalized": "٣",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "curated",
+       "provenance": "curated:numeral",
+       "caphi_urban": "tlaate"
       },
       {
        "surface": "قدام",
@@ -1656,31 +1826,67 @@ window.LIBRARY = {
       },
       {
        "surface": "المكسيك",
-       "root": null,
-       "lemma": null,
-       "form": "المكسيك",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "المَكسيك",
+       "form": "المَكسيك",
+       "caphi_raw": "2ilmaksiik",
+       "caphi": "2ilmaksiik",
+       "gloss": "Mexico",
+       "analysis": "NOUN_PROP",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "المكسيك",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "المَكسيك",
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "2ilmaksiik"
       },
       {
        "surface": "وسجّلوا",
-       "root": null,
-       "lemma": null,
-       "form": "وسجّلوا",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "وسجّلوا",
-       "vocalized_from": "lexicon:exact"
+       "root": "س.ج.ل",
+       "lemma": "سِجِل",
+       "form": "سِجِل",
+       "caphi_raw": "s i J i l",
+       "caphi": "siJil",
+       "gloss": "record",
+       "analysis": "NOUN:MS",
+       "maknuune_id": "13718",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "13718",
+         "root": "س.ج.ل",
+         "gloss": "record",
+         "analysis": "NOUN:MS"
+        },
+        {
+         "id": "13719",
+         "root": "س.ج.ل",
+         "gloss": "register;record",
+         "analysis": "VERB:C"
+        },
+        {
+         "id": "13721",
+         "root": "س.ج.ل",
+         "gloss": "register;record",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "13720",
+         "root": "س.ج.ل",
+         "gloss": "register;record",
+         "analysis": "VERB:I"
+        },
+        {
+         "id": "13722",
+         "root": "س.ج.ل",
+         "gloss": "change_the_registered_owner_name_for_a_p",
+         "analysis": "VERB:PHRASE"
+        }
+       ],
+       "caphi_urban": "sijil",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:unknown-prefix"
       },
       {
        "surface": "أمواج",
@@ -1819,17 +2025,19 @@ window.LIBRARY = {
       },
       {
        "surface": "١١",
-       "root": null,
-       "lemma": null,
+       "root": "—",
+       "lemma": "١١",
        "form": "١١",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "caphi_raw": "iH.da3sh",
+       "caphi": "iH.da3sh",
+       "gloss": "11",
+       "analysis": "NOUN_NUM",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
+       "village": null,
        "vocalized": "١١",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "curated",
+       "provenance": "curated:numeral",
+       "caphi_urban": "iH.da3sh"
       },
       {
        "surface": "واحد",
@@ -1849,17 +2057,19 @@ window.LIBRARY = {
       },
       {
        "surface": "والبوليس",
-       "root": null,
-       "lemma": null,
-       "form": "والبوليس",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "بوليس",
+       "form": "بوليس",
+       "caphi_raw": "buliis",
+       "caphi": "buliis",
+       "gloss": "police",
+       "analysis": "NOUN:MS",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "والبوليس",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": null,
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "buliis"
       },
       {
        "surface": "بقول",
@@ -1998,33 +2208,61 @@ window.LIBRARY = {
       },
       {
        "surface": "التانية",
-       "root": null,
-       "lemma": null,
-       "form": "التانية",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "التانية",
-       "vocalized_from": "lexicon:exact"
+       "root": "ث.ن.ي",
+       "lemma": "ثَانِي",
+       "form": "ثَانِي",
+       "caphi_raw": "T aa n i",
+       "caphi": "Taani",
+       "gloss": "second",
+       "analysis": "ADJ_NUM",
+       "maknuune_id": "3454",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "3454",
+         "root": "ث.ن.ي",
+         "gloss": "second",
+         "analysis": "ADJ_NUM"
+        },
+        {
+         "id": "3468",
+         "root": "ث.ن.ي",
+         "gloss": "second",
+         "analysis": "ADJ_COMP"
+        },
+        {
+         "id": "569",
+         "root": "NTWS",
+         "gloss": "I;me",
+         "analysis": "PRON:1S"
+        },
+        {
+         "id": "626",
+         "root": "NTWS",
+         "gloss": "which;who",
+         "analysis": "PRON_INTERROG"
+        }
+       ],
+       "caphi_urban": "Taani",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:unknown-prefix"
       },
       {
        "surface": "بتلات",
-       "root": "ث.ل.ث",
-       "lemma": "ثَلَاث",
-       "form": "ثَلَاث",
-       "caphi_raw": "T a l aa T",
-       "caphi": "TalaaT",
-       "gloss": "three;3",
-       "analysis": "NOUN_NUM",
-       "maknuune_id": "3404",
+       "root": "ت.ل.ل",
+       "lemma": "تَلّ",
+       "form": "يتِلّ",
+       "caphi_raw": "y t i l l",
+       "caphi": "ytill",
+       "gloss": "grab_sb's_arm_and_drag_him/her_somewhere",
+       "analysis": "VERB:I",
+       "maknuune_id": "3153",
        "village": null,
        "provenance": "maknuune:unique",
-       "caphi_urban": "TalaaT",
+       "caphi_urban": "ytill",
        "vocalized": null,
-       "vocalized_from": "unvocalized:no-alignment"
+       "vocalized_from": "unvocalized:unknown-suffix"
       },
       {
        "surface": "شهور",
@@ -2044,17 +2282,19 @@ window.LIBRARY = {
       },
       {
        "surface": "قراصنة",
-       "root": null,
-       "lemma": null,
-       "form": "قراصنة",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "قَراصنة",
+       "form": "قَراصنة",
+       "caphi_raw": "2araas.ne",
+       "caphi": "2araas.ne",
+       "gloss": "pirates",
+       "analysis": "NOUN:P",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "قراصنة",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "قَراصنة",
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "2araas.ne"
       },
       {
        "surface": "يمكن",
@@ -2074,17 +2314,19 @@ window.LIBRARY = {
       },
       {
        "surface": "صوماليين",
-       "root": null,
-       "lemma": null,
-       "form": "صوماليين",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "صوماليّين",
+       "form": "صوماليّين",
+       "caphi_raw": "s.oomaaliyyiin",
+       "caphi": "s.oomaaliyyiin",
+       "gloss": "Somalis",
+       "analysis": "ADJ:P",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "صوماليين",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "صوماليّين",
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "s.oomaaliyyiin"
       },
       {
        "surface": "خطفوا",
@@ -2104,31 +2346,35 @@ window.LIBRARY = {
       },
       {
        "surface": "ناقلة",
-       "root": null,
-       "lemma": null,
-       "form": "ناقلة",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "ناقِلة",
+       "form": "ناقِلة",
+       "caphi_raw": "naa2ile",
+       "caphi": "naa2ile",
+       "gloss": "tanker, carrier",
+       "analysis": "NOUN:FS",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "ناقلة",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "ناقِلة",
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "naa2ile"
       },
       {
        "surface": "نفط",
-       "root": null,
-       "lemma": null,
-       "form": "نفط",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "نِفط",
+       "form": "نِفط",
+       "caphi_raw": "nift.",
+       "caphi": "nift.",
+       "gloss": "oil, petroleum",
+       "analysis": "NOUN:MS",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "نفط",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "نِفط",
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "nift."
       },
       {
        "surface": "قدام",
@@ -2164,19 +2410,19 @@ window.LIBRARY = {
       },
       {
        "surface": "اليمن",
-       "root": "ي.م.ن",
-       "lemma": "يُمُن",
-       "form": "يُمُن",
-       "caphi_raw": "y u m u n",
-       "caphi": "yumun",
-       "gloss": "blessing",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "36268",
+       "root": "—",
+       "lemma": "اليَمَن",
+       "form": "اليَمَن",
+       "caphi_raw": "2ilyaman",
+       "caphi": "2ilyaman",
+       "gloss": "Yemen",
+       "analysis": "NOUN_PROP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:unique",
-       "caphi_urban": "yumun",
-       "vocalized": "اليُمُن",
-       "vocalized_from": "derived:affix"
+       "vocalized": "اليَمَن",
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "2ilyaman"
       }
      ],
      "audio": null
@@ -2219,17 +2465,19 @@ window.LIBRARY = {
       },
       {
        "surface": "بالنرويج",
-       "root": null,
-       "lemma": null,
-       "form": "بالنرويج",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "النَّرويج",
+       "form": "النَّرويج",
+       "caphi_raw": "2innarwiij",
+       "caphi": "2innarwiij",
+       "gloss": "Norway",
+       "analysis": "NOUN_PROP",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "بالنرويج",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": null,
+       "vocalized_from": "curated",
+       "provenance": "curated:proper-noun",
+       "caphi_urban": "2innarwiij"
       },
       {
        "surface": "حرق",
@@ -2281,17 +2529,19 @@ window.LIBRARY = {
       },
       {
        "surface": "١٠٠",
-       "root": null,
-       "lemma": null,
+       "root": "—",
+       "lemma": "١٠٠",
        "form": "١٠٠",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "caphi_raw": "miyye",
+       "caphi": "miyye",
+       "gloss": "100",
+       "analysis": "NOUN_NUM",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
+       "village": null,
        "vocalized": "١٠٠",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "curated",
+       "provenance": "curated:numeral",
+       "caphi_urban": "miyye"
       },
       {
        "surface": "بيت",
@@ -2311,17 +2561,19 @@ window.LIBRARY = {
       },
       {
        "surface": "والهليكوبترات",
-       "root": null,
-       "lemma": null,
-       "form": "والهليكوبترات",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "هِليكوبترات",
+       "form": "هِليكوبترات",
+       "caphi_raw": "hilikobteraat",
+       "caphi": "hilikobteraat",
+       "gloss": "helicopters",
+       "analysis": "NOUN:P",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "والهليكوبترات",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": null,
+       "vocalized_from": "curated",
+       "provenance": "curated:modern-term",
+       "caphi_urban": "hilikobteraat"
       },
       {
        "surface": "عم",
@@ -2341,17 +2593,57 @@ window.LIBRARY = {
       },
       {
        "surface": "ترمي",
-       "root": null,
-       "lemma": null,
-       "form": "ترمي",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "ترمي",
-       "vocalized_from": "lexicon:exact"
+       "root": "ر.م.ي",
+       "lemma": "رَمِي",
+       "form": "رَمِي",
+       "caphi_raw": "r a m i",
+       "caphi": "rami",
+       "gloss": "throwing;shooting",
+       "analysis": "NOUN:MS",
+       "maknuune_id": "12219",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "12219",
+         "root": "ر.م.ي",
+         "gloss": "throwing;shooting",
+         "analysis": "NOUN:MS"
+        },
+        {
+         "id": "12231",
+         "root": "ر.م.ي",
+         "gloss": "throw_[auto]",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "12233",
+         "root": "ر.م.ي",
+         "gloss": "throwing_sth",
+         "analysis": "NOUN:MS"
+        },
+        {
+         "id": "12236",
+         "root": "ر.م.ي",
+         "gloss": "throw_things_in_a_disorganized_way",
+         "analysis": "VERB:C"
+        },
+        {
+         "id": "12238",
+         "root": "ر.م.ي",
+         "gloss": "throw_things_in_a_disorganized_way",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "12217",
+         "root": "ر.م.ي",
+         "gloss": "ignore_it",
+         "analysis": "VERB:PHRASE"
+        }
+       ],
+       "caphi_urban": "rami",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:unknown-prefix"
       },
       {
        "surface": "مي",
@@ -2387,17 +2679,57 @@ window.LIBRARY = {
       },
       {
        "surface": "تطفيه",
-       "root": null,
-       "lemma": null,
-       "form": "تطفيه",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "تطفيه",
-       "vocalized_from": "lexicon:exact"
+       "root": "ط.ف.ي",
+       "lemma": "طَفَّى",
+       "form": "طَفِّى",
+       "caphi_raw": "t. a f f i",
+       "caphi": "t.affi",
+       "gloss": "extinguish;switch_off_[auto]",
+       "analysis": "VERB:C",
+       "maknuune_id": "19262",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "19262",
+         "root": "ط.ف.ي",
+         "gloss": "extinguish;switch_off_[auto]",
+         "analysis": "VERB:C"
+        },
+        {
+         "id": "19265",
+         "root": "ط.ف.ي",
+         "gloss": "switch_off;feel_tired_and_sleepy_[auto]",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "19266",
+         "root": "ط.ف.ي",
+         "gloss": "extinguish;switch_off_[auto]",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "19261",
+         "root": "ط.ف.ي",
+         "gloss": "switch_off;feel_tired_and_sleepy_[auto]",
+         "analysis": "VERB:C"
+        },
+        {
+         "id": "19263",
+         "root": "ط.ف.ي",
+         "gloss": "switch_off;feel_tired_and_sleepy",
+         "analysis": "VERB:I"
+        },
+        {
+         "id": "19264",
+         "root": "ط.ف.ي",
+         "gloss": "extinguish;switch_off",
+         "analysis": "VERB:I"
+        }
+       ],
+       "caphi_urban": "t.affi",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
      "audio": null

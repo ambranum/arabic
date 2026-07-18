@@ -33,7 +33,7 @@ def tokenize(sent):
 
 def annotate_word(lex, surface, res):
     key = norm(surface)
-    c = curated.lookup(surface, key)
+    c = curated.numeral(surface) or curated.lookup(surface, key)
     if not c:
         # Proper nouns take clitics too (بكييف = بـ + كييف, وأمريكا = وـ + أمريكا).
         stems, _ = lex.morph(surface)
