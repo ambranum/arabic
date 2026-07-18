@@ -49,7 +49,18 @@ jobs:
           git config user.email "actions@github.com"
           git add texts/ build/ app/ pipeline/resolutions.json
           git diff --staged --quiet || git commit -m "news: $(date -u +%F)"
-          git push
+
+          # The remote can move between checkout and push — a human commit, or an
+          # earlier run. A bare `git push` then dies with "fetch first" and the whole
+          # day's work (audio included) is thrown away. Rebase onto whatever landed,
+          # then push. Retry once for the narrow race where it moves again mid-rebase.
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "push attempt $attempt failed; retrying"
+            sleep 5
+          done
+          echo "could not push after 3 attempts"
+          exit 1
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
