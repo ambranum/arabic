@@ -50,6 +50,34 @@
         border:none; padding:6px 0; cursor:pointer}
   .back:hover{text-decoration:underline}
 
+  /* ---------- nav bar (the menu) ---------- */
+  .nav{display:flex; gap:4px; overflow-x:auto; margin:0 0 22px; padding-bottom:2px;
+       -webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .navb{flex:none; font:inherit; font-size:13px; white-space:nowrap; cursor:pointer;
+        padding:7px 14px; border:1px solid var(--rule); border-radius:16px;
+        background:none; color:var(--ink-soft)}
+  .navb:hover{border-color:var(--verdigris); color:var(--verdigris)}
+  .navb.on{background:var(--verdigris); border-color:var(--verdigris); color:var(--paper);
+           font-weight:600}
+  .navb:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+
+  /* section tiles on the home page */
+  .tiles{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:6px}
+  .tile{text-align:left; font:inherit; cursor:pointer; border:1px solid var(--rule);
+        background:none; color:var(--ink); border-radius:7px; padding:16px}
+  .tile:hover{border-color:var(--verdigris)}
+  .tile:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+  .tile-t{font-family:var(--serif); font-size:17px; line-height:1.2}
+  .tile-s{font-size:12px; color:var(--muted); margin-top:6px}
+  .tile.soon{opacity:.62}
+  .tile.soon .tile-s{color:var(--ochre)}
+
+  /* empty section placeholder */
+  .empty{text-align:center; padding:56px 20px; color:var(--muted)}
+  .empty-t{font-family:var(--serif); font-size:22px; color:var(--ink-soft); margin-bottom:8px}
+  .empty p{font-size:14px; line-height:1.6; margin:0}
+
   /* ---------- home ---------- */
   .hero{display:grid; gap:12px; margin:4px 0 26px}
   .big{display:block; width:100%; text-align:left; font:inherit; cursor:pointer;
@@ -232,10 +260,11 @@
 <body>
 <div class="wrap">
   <div class="top">
-    <h1 id="title">Palestinian Arabic</h1>
+    <h1 id="title" onclick="location.hash='/'" style="cursor:pointer">Palestinian Arabic</h1>
     <span class="sp"></span>
-    <button class="back" id="back" hidden>&larr; Library</button>
+    <button class="back" id="back" hidden>&larr; Back</button>
   </div>
+  <nav class="nav" id="nav"></nav>
   <div id="view"></div>
 </div>
 
@@ -368,13 +397,36 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c =>
   ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pretty = g => String(g || '').replace(/_/g, ' ').replace(/;/g, ' · ');
 
+// ---------- sections (the menu) ----------
+// Order here is the order in the menu bar. `route` is the hash; `ready:false` sections
+// render an honest "coming soon" instead of pretending to have content.
+const SECTIONS = [
+  {route: 'news',    label: "Today's News",    ready: true},
+  {route: 'verbs',   label: 'Verbs',           ready: false},
+  {route: 'grammar', label: 'Grammar Lessons', ready: false},
+  {route: 'stories', label: 'Short Stories',   ready: false},
+];
+
+function renderNav(active){
+  $('nav').innerHTML = SECTIONS.map(sec =>
+    `<button class="navb${sec.route===active?' on':''}"
+             onclick="location.hash='/${sec.route}'">${esc(sec.label)}</button>`
+  ).join('');
+}
+
 // ---------- routing (hash so Back works, and it survives a reload) ----------
 function route() {
   const h = location.hash.slice(1) || '/';
   const [, kind, id] = h.split('/');
-  if (kind === 'text')  { const t = LIB.texts.find(x => x.id === id);  if (t) return reader(t); }
-  if (kind === 'drill') { const d = LIB.drills.find(x => x.id === id); if (d) return drill(d); }
-  if (kind === 'news')  { return newsHelp(); }
+  // A text/drill belongs to whichever section it came from; light that tab when we can.
+  if (kind === 'text')  { const t = LIB.texts.find(x => x.id === id);
+    if (t) { renderNav(t.kind === 'news' ? 'news' : null); return reader(t); } }
+  if (kind === 'drill') { const d = LIB.drills.find(x => x.id === id);
+    if (d) { renderNav(null); return drill(d); } }
+  const sec = SECTIONS.find(x => x.route === kind);
+  if (sec) { renderNav(sec.route);
+    return sec.route === 'news' ? newsSection() : emptySection(sec); }
+  renderNav(null);
   home();
 }
 addEventListener('hashchange', route);
@@ -388,51 +440,54 @@ function home(){
   $('title').textContent = 'Palestinian Arabic';
   const today = todayISO();
   const news = LIB.texts.filter(t => t.kind === 'news')
-                        .sort((a,b) => (b.date||'').localeCompare(a.date||''))[0];
+                        .sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0];
   const fresh = news && news.date === today;
 
-  // Today's lesson: the current curriculum item. Phase 1 is reaction chunks
-  // (LEARNING-SYSTEM §5) — they come before everything else deliberately.
-  const drill = LIB.drills[0];
-  const lesson = drill
-    ? {href:'/drill/'+drill.id, kind:'Today’s lesson', title:drill.title.en,
-       sub:drill.items.length+' chunks · say each one out loud before you check'}
-    : (LIB.texts[0]
-       ? {href:'/text/'+LIB.texts[0].id, kind:'Today’s lesson', title:LIB.texts[0].title.en,
-          sub:LIB.texts[0]._words+' words'}
-       : null);
-
+  // Today's news, up top — the one section with live content, and the thing you'd
+  // reach for first each morning.
   let h = '<div class="hero">';
-  if (lesson) h += `<button class="big" onclick="location.hash='${lesson.href}'">
-      <div class="k">${lesson.kind}</div><div class="t">${esc(lesson.title)}</div>
-      <div class="s">${esc(lesson.sub)}</div></button>`;
-
   if (fresh) {
     h += `<button class="big" onclick="location.hash='/text/${esc(news.id)}'">
-      <div class="k">Daily news · today</div>
+      <div class="k">Today's News</div>
       <div class="t">${esc(news.title.en)}</div>
       <div class="ar">${esc(news.title.ar)}</div>
-      <div class="s">${news.sentences.length} sentences · ${news._words} words, in spoken Palestinian</div>
+      <div class="s">${news.sentences.length} sentences, in spoken Palestinian${news._audio ? ' · audio' : ''}</div>
     </button>`;
   } else {
-    // The app is a static site — it cannot fetch news, translate it, query a 36k-entry
-    // lexicon and make audio. That work happens in the pipeline. Say so plainly.
     h += `<button class="big warn" onclick="location.hash='/news'">
-      <div class="k">Daily news · needs importing</div>
-      <div class="t">No news for today yet</div>
-      <div class="s">${news ? 'Latest is '+esc(news.date)+'. ' : ''}Tap to see how to import today’s.</div>
+      <div class="k">Today's News</div>
+      <div class="t">${news ? "Today's isn't in yet" : 'No news yet'}</div>
+      <div class="s">${news ? 'Latest is ' + esc(news.date) + '.' : 'Written fresh each morning.'} Tap to browse.</div>
     </button>`;
   }
   h += '</div>';
 
-  h += '<div class="sec">Everything</div>';
-  h += LIB.texts.map(t => card(t, 'text')).join('') + LIB.drills.map(d => card(d, 'drill')).join('');
+  // The menu as tiles — mirrors the bar, with a status line per section.
+  h += '<div class="sec">Sections</div><div class="tiles">';
+  h += SECTIONS.map(sec => {
+    const count = sec.route === 'news'
+      ? LIB.texts.filter(t => t.kind === 'news').length + ' articles'
+      : 'Coming soon';
+    return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
+      <div class="tile-t">${esc(sec.label)}</div>
+      <div class="tile-s">${count}</div></button>`;
+  }).join('');
+  h += '</div>';
+
+  // Existing practice content that predates the sections. Kept reachable rather than
+  // orphaned; morning-coffee could later live under Short Stories.
+  const drill = LIB.drills[0];
+  const coffee = LIB.texts.find(t => t.kind !== 'news');
+  if (drill || coffee) {
+    h += '<div class="sec">Practice</div>';
+    if (drill) h += card(drill, 'drill');
+    if (coffee) h += card(coffee, 'text');
+  }
+
   h += `<div class="note"><b>What this shows is real.</b> Every root, meaning and
     pronunciation comes from Maknuune, a 36,000-entry Palestinian lexicon compiled by
-    linguists — not generated. <b>Vowel marks</b> are on: about half come straight from the
-    lexicon, the rest are built from its stem plus standard prefix rules. Tap any word and
-    the card tells you which. Where we couldn't work it out honestly, the word stays bare
-    rather than guess.
+    linguists — not generated. Tap any word and the card tells you exactly where its
+    root, gloss and vowels came from.
     <div style="margin-top:10px;padding-top:9px;border-top:1px solid var(--rule);
       font-size:11px;color:var(--muted)">Word data from the <b>Maknuune Palestinian Arabic
       Lexicon</b> (Dibas, Khairallah, Habash et al., WANLP 2022) —
@@ -441,23 +496,32 @@ function home(){
   $('view').innerHTML = h;
 }
 
-function newsHelp(){
+function newsSection(){
   $('back').hidden = false;
-  $('title').textContent = 'Importing the news';
-  const news = LIB.texts.filter(t=>t.kind==='news')
-                        .sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];
+  $('title').textContent = "Today's News";
+  const news = LIB.texts.filter(t => t.kind === 'news')
+                        .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  if (!news.length) { $('view').innerHTML =
+    `<p class="hint">No news yet. It's written fresh each morning by the daily job.</p>`;
+    return; }
+  const today = todayISO();
+  let h = '';
+  if (news[0].date !== today)
+    h += `<div class="unval"><b>Today's isn't in yet.</b> The morning job writes it around
+      5am; until then the latest is ${esc(news[0].date)}.</div>`;
+  h += news.map(t => card(t, 'text')).join('');
+  $('view').innerHTML = h;
+}
+
+// An honest placeholder for a section with no content yet.
+function emptySection(sec){
+  $('back').hidden = false;
+  $('title').textContent = sec.label;
   $('view').innerHTML =
-    `<p class="hint">This app is a set of files with no server behind it — that's why it
-     costs nothing and can't break. The flip side: it can't go and fetch the news itself.
-     Summarising the headlines, writing them in Palestinian, and checking every word
-     against the lexicon all happen on your Mac.</p>
-     <p class="hint"><b>Ask Claude for today's news import.</b> Then paste this:</p>
-     <div class="cmd">cd "/Users/alexbranum/Desktop/Projects/Arabic Language Project"
-python3 pipeline/ingest.py texts/news-${esc(todayISO())}.json
-python3 pipeline/build_app.py</div>
-     <p class="hint" style="margin-top:16px">Reload this page and today's news will be
-     on the home screen.</p>` +
-    (news ? '<div class="sec">Most recent</div>' + card(news, 'text') : '');
+    `<div class="empty">
+       <div class="empty-t">${esc(sec.label)}</div>
+       <p>Nothing here yet — this section is being built.</p>
+     </div>`;
 }
 
 function card(t, kind){
@@ -600,7 +664,9 @@ function drill(d) {
 // ---------- tray ----------
 function count() { $('cnt').textContent = marked.size; $('exp').disabled = !marked.size;
                    $('rev').disabled = !marked.size; }
-$('back').onclick = () => location.hash = '/';
+// Return to wherever you came from (the section list, home, etc.) rather than
+// always jumping home. Falls back to home if there's no in-app history.
+$('back').onclick = () => { if (history.length > 1) history.back(); else location.hash = '/'; };
 $('rev').onclick = () => {
   if (!marked.size) return;
   $('back').hidden = false; $('title').textContent = 'Words to learn';
