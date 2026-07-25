@@ -275,6 +275,44 @@
   .note{font-size:12px; line-height:1.6; color:var(--muted); border:1px solid var(--rule);
         border-radius:5px; padding:11px 13px; margin-top:22px}
   .note b{color:var(--ink-soft)}
+  /* ---------- verbs ---------- */
+  .vsearch{width:100%; font:inherit; font-size:15px; padding:11px 14px; margin:2px 0 6px;
+      border:1px solid var(--rule); border-radius:8px; background:var(--paper-2);
+      color:var(--ink); -webkit-appearance:none}
+  .vsearch:focus{outline:none; border-color:var(--verdigris); background:var(--paper)}
+  .vsearch::placeholder{color:var(--muted)}
+
+  .vtiles{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  @media(max-width:560px){.vtiles{grid-template-columns:1fr}}
+  .vtile{text-align:left; font:inherit; cursor:pointer; border:1px solid var(--rule);
+      background:none; color:var(--ink); border-radius:8px; padding:14px 15px}
+  .vtile.wide{width:100%}
+  .vtile:hover{border-color:var(--verdigris); background:var(--verdigris-2)}
+  .vtile:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+  .vtile-h{display:flex; align-items:baseline; gap:9px}
+  .vtile-t{font-family:var(--serif); font-size:17px; line-height:1.2}
+  .vtile-n{margin-left:auto; font-family:var(--mono); font-size:12px; color:var(--verdigris);
+      font-variant-numeric:tabular-nums}
+  .vtile-s{font-size:12px; color:var(--muted); margin-top:6px; line-height:1.5}
+
+  .vlist{display:grid; gap:10px}
+  .vc{border:1px solid var(--rule); border-radius:8px; padding:13px 15px; background:var(--paper-2)}
+  .vc-h{display:flex; align-items:baseline; gap:10px}
+  .vc-gl{font-family:var(--serif); font-size:16px; line-height:1.3; color:var(--ink)}
+  .vc-badges{margin-left:auto; display:flex; gap:6px; flex:none}
+  .b-form,.b-wk{font-family:var(--mono); font-size:9.5px; letter-spacing:.04em;
+      text-transform:uppercase; border-radius:3px; padding:2px 7px; white-space:nowrap}
+  .b-form{background:var(--verdigris); color:var(--paper); font-weight:600}
+  .b-wk{border:1px solid var(--ochre); color:var(--ochre)}
+  .vc-root{font-family:var(--arabic); direction:rtl; text-align:right; font-size:15px;
+      color:var(--muted); margin:2px 0 11px}
+  .vc-pp{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+  .pp{display:flex; flex-direction:column; align-items:center; text-align:center; gap:3px;
+      background:var(--paper); border:1px solid var(--rule); border-radius:6px; padding:9px 6px}
+  .pp-k{font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+  .pp-ar{font-family:var(--arabic); direction:rtl; font-size:23px; line-height:1.45; color:var(--ink)}
+  .pp-c{font-family:var(--mono); font-size:11px; color:var(--verdigris); word-break:break-all}
+
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -307,6 +345,7 @@
 </div></div>
 
 <script src="data/library.js"></script>
+<script src="data/verbs.js"></script>
 <script>
 // ---------- persistence ----------
 // localStorage: survives closing the tab, lives on this device, no server involved.
@@ -421,6 +460,37 @@ const VOCSRC = {
   'unvocalized:curated-with-clitic': 'not shown — name carries a prefix'
 };
 const LIB = window.LIBRARY || {texts: [], drills: []};
+
+// ---------- verbs ----------
+// Sourced from Maknuune: root, gloss, the three principal parts (past / present / command)
+// and their pronunciation are looked up, never generated. The Form (measure I–X) and the
+// weak class are computed by pipeline/verbforms.py from the perfect form + root.
+const VB = (window.VERBS && window.VERBS.verbs) || [];
+const FORM_ORDER = ['I','II','III','IV','V','VI','VII','VIII','X','Q'];
+// One honest line on what each measure tends to do. Patterns, not promises — a given verb
+// can drift from its measure's core sense, so these orient rather than define.
+const FORM_INFO = {
+  I:   ['Form I',        'The base verb — the plain action. كتب “he wrote”.'],
+  II:  ['Form II',       'Doubled middle root letter. Often intensive or causative — درّس “he taught”.'],
+  III: ['Form III',      'Long vowel after the first letter. Doing something to or with someone — كاتب “he corresponded”.'],
+  IV:  ['Form IV',       'Causative. Rare in dialect; usually surfaces as Form I or II instead.'],
+  V:   ['Form V',        'Form II with a t- prefix. Reflexive of II — تعلّم “he learned”.'],
+  VI:  ['Form VI',       'Form III with a t- prefix. Reciprocal — تكاتبوا “they wrote to each other”.'],
+  VII: ['Form VII',      'n- prefix. Passive or medio-passive — انكسر “it broke”.'],
+  VIII:['Form VIII',     'Infixed -t-. Often middle voice or reflexive — اشتغل “he worked”.'],
+  X:   ['Form X',        'ista- prefix. Seeking or considering — استعمل “he used”.'],
+  Q:   ['Quadriliteral', 'Four-consonant roots, including loanwords — تلفن “he phoned”.'],
+};
+const WEAK_INFO = {
+  hollow:      ['Hollow',      'Middle root letter is و or ي and drops or shifts — راح / يروح.'],
+  defective:   ['Defective',   'Final root letter is و or ي — مشي / يمشي.'],
+  doubled:     ['Doubled',     'Last two root letters are the same, written with shadda — حبّ / يحبّ.'],
+  assimilated: ['Assimilated', 'First root letter is و and often drops in the present — وصل / يوصل.'],
+  hamzated:    ['Hamzated',    'A root letter is hamza (ء) — أكل / ياكل.'],
+};
+const WEAK_ORDER = ['hollow','defective','doubled','assimilated','hamzated'];
+const byForm = f => VB.filter(v => v.form === f);
+const irregular = VB.filter(v => WEAK_INFO[v.weak]);
 const $ = id => document.getElementById(id);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c =>
   ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -442,7 +512,7 @@ const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
 
 const SECTIONS = [
   {route: 'news',    icon: 'news',    label: "Today's News",    ready: true},
-  {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: false},
+  {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: false},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: false},
 ];
@@ -469,7 +539,9 @@ function route() {
     if (d) { renderNav(null); return drill(d); } }
   const sec = SECTIONS.find(x => x.route === kind);
   if (sec) { renderNav(sec.route);
-    return sec.route === 'news' ? newsSection() : emptySection(sec); }
+    if (sec.route === 'news')  return newsSection();
+    if (sec.route === 'verbs') return verbsSection(id);
+    return emptySection(sec); }
   renderNav('home');
   home();
 }
@@ -511,6 +583,7 @@ function home(){
   h += SECTIONS.map(sec => {
     const count = sec.route === 'news'
       ? LIB.texts.filter(t => t.kind === 'news').length + ' articles'
+      : sec.route === 'verbs' ? VB.length + ' verbs, by form'
       : 'Coming soon';
     return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
       <div class="tile-t">${esc(sec.label)}</div>
@@ -554,6 +627,118 @@ function newsSection(){
     h += `<div class="unval"><b>Today's isn't in yet.</b> The morning job writes it around
       5am; until then the latest is ${esc(news[0].date)}.</div>`;
   h += news.map(t => card(t, 'text')).join('');
+  $('view').innerHTML = h;
+}
+
+// ---------- verbs section ----------
+function verbsSection(sub){
+  $('back').hidden = false;
+  if (sub && FORM_INFO[sub]) return verbsForm(sub);
+  if (sub === 'irregular')   return verbsIrregular();
+  return verbsHome();
+}
+
+// One verb → a card with its root, gloss, badges and the three principal parts. The
+// principal parts are the skeleton of the whole paradigm; full conjugations come later.
+function verbCard(v){
+  const badges = `<span class="b-form">${esc(v.form === 'Q' ? 'Quad' : v.form)}</span>` +
+    (WEAK_INFO[v.weak] ? `<span class="b-wk">${esc(WEAK_INFO[v.weak][0].toLowerCase())}</span>` : '');
+  const root = esc((v.root || '').replace(/\./g, ' · '));
+  const part = (k, pp) => pp ? `<div class="pp">
+      <span class="pp-k">${k}</span>
+      <span class="pp-ar">${esc(pp.ar)}</span>
+      <span class="pp-c">${esc(pp.caphi)}</span></div>` : '';
+  return `<div class="vc">
+    <div class="vc-h"><span class="vc-gl">${esc(v.gloss || '—')}</span>
+      <span class="vc-badges">${badges}</span></div>
+    <div class="vc-root">${root}</div>
+    <div class="vc-pp">
+      ${part('Past', v.past)}${part('Present', v.pres)}${part('Command', v.imp)}</div>
+  </div>`;
+}
+
+function verbsHome(){
+  $('title').textContent = 'Verbs';
+  let h = `<p class="hint">Arabic verbs are built on three- or four-letter roots, run
+    through a set of patterns called <b>forms</b> (measures I–X). The form shapes the
+    meaning; the root supplies it. Browse by form below, or search across all
+    ${VB.length} verbs. Every root, gloss and pronunciation is from the Maknuune
+    lexicon — the form is computed, the conjugations are not invented.</p>`;
+
+  h += `<input id="vsearch" class="vsearch" type="search" inputmode="search"
+    placeholder="Search ${VB.length} verbs — English, root or Arabic…"
+    oninput="verbSearch(this.value)" aria-label="Search verbs">
+    <div id="vsearchout"></div>`;
+
+  h += '<div class="sec">Forms</div><div class="vtiles">';
+  h += FORM_ORDER.map(f => {
+    const n = byForm(f).length; if (!n) return '';
+    const [label, desc] = FORM_INFO[f];
+    return `<button class="vtile" onclick="location.hash='/verbs/${f}'">
+      <div class="vtile-h"><span class="vtile-t">${esc(label)}</span>
+        <span class="vtile-n">${n}</span></div>
+      <div class="vtile-s">${esc(desc)}</div></button>`;
+  }).join('');
+  h += '</div>';
+
+  h += `<div class="sec">Cross-cutting</div>
+    <button class="vtile wide" onclick="location.hash='/verbs/irregular'">
+      <div class="vtile-h"><span class="vtile-t">Irregular / weak verbs</span>
+        <span class="vtile-n">${irregular.length}</span></div>
+      <div class="vtile-s">Verbs whose root has a و, ي or ء that shifts or drops —
+        grouped by how they bend. These exist inside every form.</div></button>`;
+  $('view').innerHTML = h;
+}
+
+// Live search across all verbs. Kept simple: substring over gloss, root and Arabic.
+function verbSearch(q){
+  const out = $('vsearchout'); if (!out) return;
+  q = (q || '').trim().toLowerCase();
+  if (q.length < 2) { out.innerHTML = ''; return; }
+  // Score so the verb you meant floats up: an exact gloss sense beats a word that merely
+  // starts with q, which beats a bare substring ("eat" shouldn't rank "seat" first).
+  const wordRe = new RegExp('(^|[\\s·])' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const score = v => {
+    const g = (v.gloss || '').toLowerCase();
+    if (g.split(' · ').includes(q)) return 0;          // exact sense
+    if (wordRe.test(g))             return 1;          // a sense word starts with q
+    if (g.includes(q))              return 2;          // gloss substring
+    if ((v.root || '').includes(q)) return 3;          // root
+    if ([v.past, v.pres, v.imp].some(p => p && (p.ar.includes(q) || p.caphi.toLowerCase().includes(q))))
+      return 4;                                        // arabic / pronunciation
+    return 99;
+  };
+  const hits = VB.map(v => [score(v), v]).filter(x => x[0] < 99)
+    .sort((a, b) => a[0] - b[0]).map(x => x[1]).slice(0, 60);
+  out.innerHTML = hits.length
+    ? `<div class="sec">${hits.length}${hits.length === 60 ? '+' : ''} match${hits.length===1?'':'es'}</div>` +
+      `<div class="vlist">${hits.map(verbCard).join('')}</div>`
+    : `<p class="hint">No verb matches “${esc(q)}”.</p>`;
+}
+
+function verbsForm(f){
+  const [label, desc] = FORM_INFO[f];
+  $('title').textContent = label;
+  const list = byForm(f);
+  let h = `<div class="unval" style="border-color:var(--rule);background:var(--paper-2)">
+    <b style="color:var(--verdigris)">${esc(label)}.</b> ${esc(desc)}</div>`;
+  h += `<div class="sec">${list.length} verbs</div>`;
+  h += `<div class="vlist">${list.map(verbCard).join('')}</div>`;
+  $('view').innerHTML = h;
+}
+
+function verbsIrregular(){
+  $('title').textContent = 'Irregular verbs';
+  let h = `<p class="hint">Weak verbs carry a و, ي or ء in the root that shifts or
+    disappears when conjugated. They cut across all the forms. Grouped here by the kind
+    of weakness so the patterns sit side by side.</p>`;
+  WEAK_ORDER.forEach(w => {
+    const list = irregular.filter(v => v.weak === w); if (!list.length) return;
+    const [label, desc] = WEAK_INFO[w];
+    h += `<div class="sec">${esc(label)} · ${list.length}</div>
+      <p class="hint" style="margin-bottom:12px">${esc(desc)}</p>
+      <div class="vlist">${list.map(verbCard).join('')}</div>`;
+  });
   $('view').innerHTML = h;
 }
 
