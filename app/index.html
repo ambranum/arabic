@@ -50,17 +50,38 @@
         border:none; padding:6px 0; cursor:pointer}
   .back:hover{text-decoration:underline}
 
-  /* ---------- nav bar (the menu) ---------- */
-  .nav{display:flex; gap:4px; overflow-x:auto; margin:0 0 22px; padding-bottom:2px;
-       -webkit-overflow-scrolling:touch; scrollbar-width:none}
-  .nav::-webkit-scrollbar{display:none}
-  .navb{flex:none; font:inherit; font-size:13px; white-space:nowrap; cursor:pointer;
-        padding:7px 14px; border:1px solid var(--rule); border-radius:16px;
-        background:none; color:var(--ink-soft)}
-  .navb:hover{border-color:var(--verdigris); color:var(--verdigris)}
-  .navb.on{background:var(--verdigris); border-color:var(--verdigris); color:var(--paper);
-           font-weight:600}
-  .navb:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+  /* ---------- hamburger + sidebar drawer ---------- */
+  .ham{flex:none; width:36px; height:36px; margin:-4px 4px -4px -6px; padding:0; cursor:pointer;
+       display:inline-flex; align-items:center; justify-content:center; border:none;
+       border-radius:8px; background:none; color:var(--ink)}
+  .ham:hover{background:var(--paper-2)}
+  .ham:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+
+  /* classic dark sidebar, always dark for that contrast against the page */
+  .sidebar{position:fixed; top:0; left:0; bottom:0; z-index:80; width:264px; max-width:84vw;
+           background:#181a22; color:#d7dae2; transform:translateX(-100%);
+           transition:transform .22s ease; display:flex; flex-direction:column;
+           padding:18px 12px calc(18px + env(safe-area-inset-bottom));
+           overflow-y:auto; box-shadow:2px 0 24px rgba(0,0,0,.28)}
+  .sidebar.open{transform:none}
+  .side-brand{display:flex; flex-direction:column; gap:2px; padding:6px 12px 16px;
+      font-family:var(--arabic); font-size:26px; direction:rtl; color:#fff; line-height:1}
+  .side-brand span{font-family:var(--serif); font-size:13px; direction:ltr; color:#8b90a0}
+  .side-sep{height:1px; background:rgba(255,255,255,.09); margin:8px 10px}
+
+  #nav{display:flex; flex-direction:column; gap:3px}
+  .navb{display:flex; align-items:center; gap:12px; width:100%; text-align:left;
+        font:inherit; font-size:14.5px; cursor:pointer; padding:11px 12px; border:none;
+        border-radius:9px; background:none; color:#aeb2c0}
+  .navb svg{flex:none; opacity:.85}
+  .navb:hover{background:rgba(255,255,255,.06); color:#fff}
+  .navb.on{background:var(--verdigris); color:#fff; font-weight:600}
+  .navb.on svg{opacity:1}
+  .navb em{margin-left:auto; font-style:normal; font-size:9.5px; letter-spacing:.06em;
+           text-transform:uppercase; color:var(--ochre); opacity:.9}
+  .navb:focus-visible{outline:2px solid var(--verdigris); outline-offset:-2px}
+
+  .side-scrim{position:fixed; inset:0; z-index:75; background:rgba(0,0,0,.4)}
 
   /* section tiles on the home page */
   .tiles{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:6px}
@@ -260,11 +281,19 @@
 <body>
 <div class="wrap">
   <div class="top">
+    <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
     <h1 id="title" onclick="location.hash='/'" style="cursor:pointer">Palestinian Arabic</h1>
     <span class="sp"></span>
     <button class="back" id="back" hidden>&larr; Back</button>
   </div>
-  <nav class="nav" id="nav"></nav>
+  <aside class="sidebar" id="sidebar" aria-hidden="true" aria-label="Sections">
+    <div class="side-brand">القهوة<span>Palestinian Arabic</span></div>
+    <nav id="nav"></nav>
+  </aside>
+  <div class="side-scrim" id="sideScrim" hidden></div>
   <div id="view"></div>
 </div>
 
@@ -400,22 +429,37 @@ const pretty = g => String(g || '').replace(/_/g, ' ').replace(/;/g, ' · ');
 // ---------- sections (the menu) ----------
 // Order here is the order in the menu bar. `route` is the hash; `ready:false` sections
 // render an honest "coming soon" instead of pretending to have content.
+// Inline SVG icons — no external requests, works offline. 24-grid, currentColor stroke.
+const ICON = {
+  home:    '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>',
+  news:    '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
+  verbs:   '<path d="M13 2 4 14h6l-1 8 9-12h-6z"/>',
+  grammar: '<path d="M5 4h13a1 1 0 0 1 1 1v15H6a1 1 0 0 1-1-1z"/><path d="M5 17h14"/>',
+  stories: '<path d="M12 7c-2-1.4-5-1.4-8 0v12c3-1.4 6-1.4 8 0 2-1.4 5-1.4 8 0V7c-3-1.4-6-1.4-8 0z"/><path d="M12 7v12"/>',
+};
+const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+  stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[n]}</svg>`;
+
 const SECTIONS = [
-  {route: 'news',    label: "Today's News",    ready: true},
-  {route: 'verbs',   label: 'Verbs',           ready: false},
-  {route: 'grammar', label: 'Grammar Lessons', ready: false},
-  {route: 'stories', label: 'Short Stories',   ready: false},
+  {route: 'news',    icon: 'news',    label: "Today's News",    ready: true},
+  {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: false},
+  {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: false},
+  {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: false},
 ];
 
 function renderNav(active){
-  $('nav').innerHTML = SECTIONS.map(sec =>
-    `<button class="navb${sec.route===active?' on':''}"
-             onclick="location.hash='/${sec.route}'">${esc(sec.label)}</button>`
-  ).join('');
+  const item = (route, icon, label, ready) =>
+    `<button class="navb${route===active?' on':''}" onclick="location.hash='/${route==='home'?'':route}'">
+       ${svg(icon)}<span>${esc(label)}</span>${ready===false?'<em>soon</em>':''}</button>`;
+  $('nav').innerHTML =
+    item('home', 'home', 'Home', true) +
+    `<div class="side-sep"></div>` +
+    SECTIONS.map(sec => item(sec.route, sec.icon, sec.label, sec.ready)).join('');
 }
 
 // ---------- routing (hash so Back works, and it survives a reload) ----------
 function route() {
+  if (typeof closeSide === 'function') closeSide();
   const h = location.hash.slice(1) || '/';
   const [, kind, id] = h.split('/');
   // A text/drill belongs to whichever section it came from; light that tab when we can.
@@ -426,7 +470,7 @@ function route() {
   const sec = SECTIONS.find(x => x.route === kind);
   if (sec) { renderNav(sec.route);
     return sec.route === 'news' ? newsSection() : emptySection(sec); }
-  renderNav(null);
+  renderNav('home');
   home();
 }
 addEventListener('hashchange', route);
@@ -667,6 +711,15 @@ function count() { $('cnt').textContent = marked.size; $('exp').disabled = !mark
 // Return to wherever you came from (the section list, home, etc.) rather than
 // always jumping home. Falls back to home if there's no in-app history.
 $('back').onclick = () => { if (history.length > 1) history.back(); else location.hash = '/'; };
+
+// ---------- sidebar drawer ----------
+function openSide(){ $('sidebar').classList.add('open'); $('sideScrim').hidden = false;
+  $('ham').setAttribute('aria-expanded','true'); $('sidebar').setAttribute('aria-hidden','false'); }
+function closeSide(){ $('sidebar').classList.remove('open'); $('sideScrim').hidden = true;
+  $('ham').setAttribute('aria-expanded','false'); $('sidebar').setAttribute('aria-hidden','true'); }
+$('ham').onclick = () => $('sidebar').classList.contains('open') ? closeSide() : openSide();
+$('sideScrim').onclick = closeSide;
+addEventListener('keydown', e => { if (e.key === 'Escape') closeSide(); });
 $('rev').onclick = () => {
   if (!marked.size) return;
   $('back').hidden = false; $('title').textContent = 'Words to learn';
