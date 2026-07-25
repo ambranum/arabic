@@ -450,14 +450,6 @@ function reader(t) {
     $('rd').dataset.mk = on ? 'on' : 'off';
     paint();
   };
-  $('view').addEventListener('click', e => {
-    const pk = e.target.closest('[data-peek]');
-    if (pk) { pk.closest('.sent').classList.add('peek'); return; }
-    const au = e.target.closest('.aud[data-src]');
-    if (au) { playClip(au.dataset.src); return; }
-    const w = e.target.closest('.w');
-    if (w) showCard(+w.dataset.s, +w.dataset.w);
-  });
 }
 
 function paint() {
@@ -528,12 +520,6 @@ function drill(d) {
   });
   $('view').innerHTML = h;
   wireSpeed($('view'));
-  $('view').addEventListener('click', e => {
-    const au = e.target.closest('.aud[data-src]');
-    if (au) { playClip(au.dataset.src); return; }
-    const a = e.target.closest('.a');
-    if (a) a.classList.toggle('show');
-  });
 }
 
 // ---------- tray ----------
@@ -559,6 +545,21 @@ $('exp').onclick = () => {
     $('view').innerHTML = '<div class="sec">Copy this into Anki</div><pre style="white-space:pre-wrap;font-family:var(--mono);font-size:12px;border:1px solid var(--rule);padding:12px;border-radius:5px">' + esc(rows) + '</pre>';
   });
 };
+
+// Single delegated click handler for the whole app. Attached ONCE — a per-render
+// listener on the reused #view element stacked with every navigation and played each
+// clip multiple times (the echo). Every branch below keys off a distinct class, so one
+// handler serves reader, drill, and word cards alike.
+$('view').addEventListener('click', e => {
+  const au = e.target.closest('.aud[data-src]');
+  if (au) { playClip(au.dataset.src); return; }           // reader Listen + drill Hear it
+  const pk = e.target.closest('[data-peek]');
+  if (pk) { pk.closest('.sent').classList.add('peek'); return; }
+  const w = e.target.closest('.rd .w');
+  if (w) { showCard(+w.dataset.s, +w.dataset.w); return; }
+  const a = e.target.closest('.ch .a');
+  if (a) { a.classList.toggle('show'); return; }
+});
 
 count();
 route();
