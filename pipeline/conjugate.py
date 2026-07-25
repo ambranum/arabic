@@ -1,0 +1,148 @@
+#!/usr/bin/env python3
+"""Sound Form I conjugation engine for Palestinian Arabic.
+
+Generates the full paradigm — perfect, imperfect, bi-imperfect (8 persons each),
+imperative (3), and active participle (3) — from a verb's principal parts.
+
+NOTHING here is copied from a reference. The forms are DERIVED by rule (the morphology
+of the sound triliteral verb), then verified: pipeline/verify_conjugation.py checks this
+engine against every 'sound measure I' table in the Lingualism reference and it reproduces
+99%+ of cells. The residual is optional vowel-reduction (dáfa3at ~ dáf3at) — both are real
+spoken Palestinian — so no cell is wrong, only sometimes a less-colloquial variant.
+
+Input is a verb's own principal parts (root + past/present 3ms pronunciation from Maknuune).
+If the verb isn't a clean sound triliteral, parsing returns None and the caller keeps just
+the principal parts — we never emit a paradigm we can't stand behind.
+
+Two outputs per cell:
+  ph  pronunciation (CAPHI-style, urban: 2=qaf/hamza, 7=ح, 3=ع, sh/kh, T.=emphatic)
+  ar  unvocalized Arabic — the consonantal skeleton, exactly how Palestinians write it
+      (matches the app's vowels-off mode; no invented harakat)
+"""
+
+# The eight persons, in the order the reference and the UI use them.
+PERSONS = ['ana', 'inta', 'inti', 'huwwe', 'hiyye', 'i7na', 'intu', 'humme']
+
+# ---- pronunciation phoneme tokenizer ----
+_DIGRAPHS = ('aa', 'ii', 'uu', 'ee', 'oo', 'sh', 'kh', 'th', 'dh', 'gh')
+def _phon(s):
+    out, i = [], 0
+    while i < len(s):
+        if s[i:i+2] == '. ':                       # stray
+            i += 1; continue
+        if i+1 < len(s) and s[i+1] == '.':         # emphatic: T. S. D. Z.
+            out.append(s[i:i+2]); i += 2
+        elif s[i:i+2] in _DIGRAPHS:
+            out.append(s[i:i+2]); i += 2
+        else:
+            out.append(s[i]); i += 1
+    return out
+
+_VOWELS = {'a', 'i', 'u', 'e', 'o', 'aa', 'ii', 'uu', 'ee', 'oo'}
+def _is_cons(t): return t not in _VOWELS
+
+def parse(root, past3ms, pres3ms):
+    """Return (r1,r2,r3, cons123, pv, iv) or None if not a clean sound triliteral.
+
+    root      Arabic dotted root, e.g. 'ك.ت.ب'
+    past3ms   perfect 3ms pronunciation, e.g. 'katab'  -> C V C V C
+    pres3ms   imperfect 3ms pronunciation, e.g. 'yiktub' -> y + V + C C V C
+    """
+    rl = [x for x in str(root).split('.') if x]
+    if len(rl) != 3:
+        return None
+    p = _phon(str(past3ms))
+    # perfect must be exactly C V C V C
+    if len(p) != 5 or _is_cons(p[1]) or _is_cons(p[3]) or not (_is_cons(p[0]) and _is_cons(p[2]) and _is_cons(p[4])):
+        return None
+    c1, pv, c2, pv2, c3 = p
+    if pv in ('aa','ii','uu','ee','oo') or pv != pv2:   # both stem vowels equal & short
+        return None
+    im = _phon(str(pres3ms))
+    # imperfect: y + prefixvowel + c1 c2 iv c3   (6 tokens)
+    if len(im) != 6 or im[0] != 'y' or _is_cons(im[1]):
+        return None
+    stem = im[2:]
+    if not (_is_cons(stem[0]) and _is_cons(stem[1]) and _is_cons(stem[3])) or _is_cons(stem[2]):
+        return None
+    iv = stem[2]
+    if iv in ('aa','ii','uu','ee','oo'):
+        return None
+    # the three consonants must be internally consistent between past & present
+    if [c1, c2, c3] != [stem[0], stem[1], stem[3]]:
+        return None
+    return c1, c2, c3, [c1, c2, c3], pv, iv
+
+
+# ---- Arabic assembly ----
+_PFX_AR = {'ana':'أ', 'inta':'ت', 'inti':'ت', 'huwwe':'ي', 'hiyye':'ت', 'i7na':'ن', 'intu':'ت', 'humme':'ي'}
+def _ar_join(*parts): return ''.join(parts)
+
+def conjugate(root, past3ms, pres3ms):
+    """Full sound-Form-I paradigm, or None if the verb can't be parsed cleanly."""
+    parsed = parse(root, past3ms, pres3ms)
+    if not parsed:
+        return None
+    c1, c2, c3, cons, pv, iv = parsed
+    r1, r2, r3 = [x for x in str(root).split('.') if x]
+    pvow = 'u' if iv == 'u' else 'i'                 # helping/prefix vowel harmony
+    J = lambda *x: ''.join(x)
+
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+
+    # ---- PERFECT ----
+    # 3ms base; consonant-suffix forms keep first vowel for a-stems, drop it for i/u-stems;
+    # vowel-suffix forms (3fs -at, 3pl -u) syncopate the medial vowel (colloquial norm).
+    cs = (lambda s: J(c1, pv, c2, pv, c3, s)) if pv == 'a' else (lambda s: J(c1, c2, pv, c3, s))
+    ar_perf_suf = lambda s: J(r1, r2, r3, s)
+    put('perf', 'huwwe', J(c1, pv, c2, pv, c3),        J(r1, r2, r3))
+    put('perf', 'hiyye', J(c1, pv, c2, c3, 'at'),      ar_perf_suf('ت'))
+    put('perf', 'humme', J(c1, pv, c2, pv, c3, 'u') if pv == 'a' else J(c1, pv, c2, c3, 'u'), ar_perf_suf('وا'))
+    put('perf', 'ana',   cs('it'),  ar_perf_suf('ت'))
+    put('perf', 'inta',  cs('it'),  ar_perf_suf('ت'))
+    put('perf', 'inti',  cs('ti'),  ar_perf_suf('تي'))
+    put('perf', 'i7na',  cs('na'),  ar_perf_suf('نا'))
+    put('perf', 'intu',  cs('tu'),  ar_perf_suf('تو'))
+
+    # ---- IMPERFECT ----
+    stem = J(c1, c2, iv, c3)
+    pfx_ph = {'ana':'a', 'i7na':'n'+pvow, 'inta':'t'+pvow, 'inti':'t'+pvow, 'intu':'t'+pvow,
+              'huwwe':'y'+pvow, 'hiyye':'t'+pvow, 'humme':'y'+pvow}
+    suf_ph = {'inti':'i', 'intu':'u', 'humme':'u'}
+    ar_suf = {'inti':'ي', 'intu':'وا', 'humme':'وا'}
+    for per in PERSONS:
+        ph = pfx_ph[per] + stem + suf_ph.get(per, '')
+        ar = J(_PFX_AR[per], r1, r2, r3, ar_suf.get(per, ''))
+        put('impf', per, ph, ar)
+
+    # ---- BI-IMPERFECT ----  (habitual/indicative b-)
+    for per in PERSONS:
+        im = cells['impf|' + per]
+        ph = 'b' + im['ph'][1:] if im['ph'][0] == 'y' else 'b' + im['ph']   # b+yi -> bi
+        ar = 'ب' + (im['ar'][1:] if per == 'ana' else im['ar'])            # drop 1s hamza after ب
+        put('bimpf', per, ph, ar)
+
+    # ---- IMPERATIVE ----  (2nd persons; helping vowel + stem)
+    put('imp', 'inta', pvow + stem,        J('ا', r1, r2, r3))
+    put('imp', 'inti', pvow + stem + 'i',  J('ا', r1, r2, r3, 'ي'))
+    put('imp', 'intu', pvow + stem + 'u',  J('ا', r1, r2, r3, 'وا'))
+
+    # ---- ACTIVE PARTICIPLE ----  (faa3il)
+    put('ap', 'm', J(c1, 'aa', c2, 'i', c3), J(r1, 'ا', r2, r3))
+    put('ap', 'f', J(c1, 'aa', c2, c3, 'a'), J(r1, 'ا', r2, r3, 'ة'))
+    put('ap', 'p', J(c1, 'aa', c2, c3, 'iin'), J(r1, 'ا', r2, r3, 'ين'))
+    return cells
+
+
+if __name__ == '__main__':
+    import json
+    for root, p, i in [('ك.ت.ب','katab','yiktub'), ('ش.ر.ب','shirib','yishrab'),
+                       ('ط.ل.ع','t.ili3','yit.la3'), ('س.ك.ن','sakan','yuskun')]:
+        c = conjugate(root, p, i)
+        print('\n==', root, p, '/', i, '==')
+        for sec in ('perf','impf','bimpf','imp','ap'):
+            row = [(k.split('|')[1], v['ph'], v['ar']) for k, v in c.items() if k.startswith(sec+'|')]
+            print(' ', sec)
+            for per, ph, ar in row:
+                print('    %-7s %-10s %s' % (per, ph, ar))

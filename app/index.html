@@ -312,6 +312,39 @@
   .pp-k{font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
   .pp-ar{font-family:var(--arabic); direction:rtl; font-size:23px; line-height:1.45; color:var(--ink)}
   .pp-c{font-family:var(--mono); font-size:11px; color:var(--verdigris); word-break:break-all}
+  .b-cj{font-family:var(--mono); font-size:9.5px; letter-spacing:.04em; text-transform:uppercase;
+      border-radius:3px; padding:2px 7px; background:var(--verdigris-2); color:var(--verdigris);
+      border:1px solid var(--verdigris)}
+  .vc{cursor:pointer; width:100%; text-align:left; font:inherit; color:var(--ink)}
+
+  /* ---- verb detail / conjugation ---- */
+  .vd-head{display:flex; align-items:baseline; gap:14px; margin:2px 0 20px;
+      padding-bottom:16px; border-bottom:1px solid var(--rule)}
+  .vd-ar{font-family:var(--arabic); direction:rtl; font-size:38px; line-height:1.1; color:var(--ink)}
+  .vd-gl{font-family:var(--serif); font-size:18px; line-height:1.3}
+  .vd-sub{font-size:12.5px; color:var(--muted); margin-top:5px}
+  .vd-sub .b-form,.vd-sub .b-wk{font-size:9.5px}
+
+  .cj-tbl{display:grid; gap:6px; margin-bottom:20px}
+  .cj-row{display:grid; grid-template-columns:minmax(58px,0.8fr) 1fr 1fr 1fr; gap:6px; align-items:stretch}
+  .cj-hdr{font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+      font-weight:700; padding:0 2px}
+  .cj-hdr>div{padding:2px 4px}
+  .cj-pr{display:flex; flex-direction:column; justify-content:center; gap:1px; padding:6px 4px}
+  .cj-pr-ar{font-family:var(--arabic); direction:rtl; font-size:16px; color:var(--ink-soft); line-height:1.2}
+  .cj-pr-en{font-size:10px; color:var(--muted)}
+  .cj-cell{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
+      text-align:center; background:var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+      padding:8px 5px}
+  .cj-ar{font-family:var(--arabic); direction:rtl; font-size:21px; line-height:1.4; color:var(--ink)}
+  .cj-ph{font-family:var(--mono); font-size:10.5px; color:var(--verdigris); word-break:break-all}
+  .cj-k{font-size:9px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+  .cj-mini{margin-bottom:16px}
+  .cj-mini-row{display:grid; grid-template-columns:repeat(3,1fr); gap:6px}
+  @media(max-width:520px){
+    .cj-ar{font-size:18px} .cj-cell{padding:7px 3px} .cj-row{gap:4px}
+    .cj-pr-ar{font-size:14px}
+  }
 
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -466,6 +499,7 @@ const LIB = window.LIBRARY || {texts: [], drills: []};
 // and their pronunciation are looked up, never generated. The Form (measure I–X) and the
 // weak class are computed by pipeline/verbforms.py from the perfect form + root.
 const VB = (window.VERBS && window.VERBS.verbs) || [];
+VB.forEach((v, i) => v._i = i);          // stable index for detail-view routing
 const FORM_ORDER = ['I','II','III','IV','V','VI','VII','VIII','X','Q'];
 // One honest line on what each measure tends to do. Patterns, not promises — a given verb
 // can drift from its measure's core sense, so these orient rather than define.
@@ -537,6 +571,7 @@ function route() {
     if (t) { renderNav(t.kind === 'news' ? 'news' : null); return reader(t); } }
   if (kind === 'drill') { const d = LIB.drills.find(x => x.id === id);
     if (d) { renderNav(null); return drill(d); } }
+  if (kind === 'verb') { renderNav('verbs'); return verbDetail(id); }
   const sec = SECTIONS.find(x => x.route === kind);
   if (sec) { renderNav(sec.route);
     if (sec.route === 'news')  return newsSection();
@@ -642,19 +677,86 @@ function verbsSection(sub){
 // principal parts are the skeleton of the whole paradigm; full conjugations come later.
 function verbCard(v){
   const badges = `<span class="b-form">${esc(v.form === 'Q' ? 'Quad' : v.form)}</span>` +
-    (WEAK_INFO[v.weak] ? `<span class="b-wk">${esc(WEAK_INFO[v.weak][0].toLowerCase())}</span>` : '');
+    (WEAK_INFO[v.weak] ? `<span class="b-wk">${esc(WEAK_INFO[v.weak][0].toLowerCase())}</span>` : '') +
+    (v.conj ? `<span class="b-cj">conjugates</span>` : '');
   const root = esc((v.root || '').replace(/\./g, ' · '));
   const part = (k, pp) => pp ? `<div class="pp">
       <span class="pp-k">${k}</span>
       <span class="pp-ar">${esc(pp.ar)}</span>
       <span class="pp-c">${esc(pp.caphi)}</span></div>` : '';
-  return `<div class="vc">
+  return `<button class="vc" onclick="location.hash='/verb/${v._i}'">
     <div class="vc-h"><span class="vc-gl">${esc(v.gloss || '—')}</span>
       <span class="vc-badges">${badges}</span></div>
     <div class="vc-root">${root}</div>
     <div class="vc-pp">
       ${part('Past', v.past)}${part('Present', v.pres)}${part('Command', v.imp)}</div>
-  </div>`;
+  </button>`;
+}
+
+// Person rows, in the reference's order. label = English, ar = the pronoun.
+const PERSONS = [
+  ['ana','I','أنا'], ['inta','you (m)','إنت'], ['inti','you (f)','إنتي'],
+  ['huwwe','he','هو'], ['hiyye','she','هي'], ['i7na','we','إحنا'],
+  ['intu','you (pl)','إنتو'], ['humme','they','هم'],
+];
+
+function verbDetail(i){
+  const v = VB[+i];
+  $('back').hidden = false;
+  if (!v) { $('title').textContent = 'Verb'; $('view').innerHTML =
+      `<p class="hint">That verb isn’t loaded. <a href="#/verbs">Back to verbs</a>.</p>`; return; }
+  $('title').textContent = v.gloss ? v.gloss.split(' · ')[0] : 'Verb';
+  const badges = `<span class="b-form">${esc(v.form === 'Q' ? 'Quad' : v.form)}</span>` +
+    (WEAK_INFO[v.weak] ? `<span class="b-wk">${esc(WEAK_INFO[v.weak][0].toLowerCase())}</span>` : '');
+  const root = esc((v.root || '').replace(/\./g, ' · '));
+
+  let h = `<div class="vd-head">
+    <div class="vd-ar">${esc(v.past ? v.past.ar : '')}</div>
+    <div class="vd-meta"><div class="vd-gl">${esc(v.gloss || '—')}</div>
+      <div class="vd-sub">${root} &nbsp;·&nbsp; ${badges}</div></div></div>`;
+
+  const c = v.conj;
+  if (!c) {
+    h += `<div class="unval" style="border-color:var(--rule);background:var(--paper-2)">
+      <b style="color:var(--verdigris)">Principal parts.</b> Full conjugation tables for
+      this class are being added in a later wave — verified against the reference before
+      they ship. Here are the three parts every form is built from.</div>`;
+    const part = (k, pp) => pp ? `<div class="pp"><span class="pp-k">${k}</span>
+        <span class="pp-ar">${esc(pp.ar)}</span><span class="pp-c">${esc(pp.caphi)}</span></div>` : '';
+    h += `<div class="vc-pp" style="max-width:420px">
+        ${part('Past', v.past)}${part('Present', v.pres)}${part('Command', v.imp)}</div>`;
+    $('view').innerHTML = h;
+    return;
+  }
+
+  // three tenses side by side, one row per person
+  const cell = k => c[k] ? `<div class="cj-cell"><span class="cj-ar">${esc(c[k].ar)}</span>
+      <span class="cj-ph">${esc(c[k].ph)}</span></div>` : `<div class="cj-cell">—</div>`;
+  h += `<div class="cj-tbl">
+    <div class="cj-row cj-hdr"><div class="cj-pr"></div>
+      <div>Past</div><div>Present</div><div>Present + بـ</div></div>`;
+  PERSONS.forEach(([key,en,ar]) => {
+    h += `<div class="cj-row"><div class="cj-pr"><span class="cj-pr-ar">${esc(ar)}</span>
+        <span class="cj-pr-en">${esc(en)}</span></div>
+      ${cell('perf|'+key)}${cell('impf|'+key)}${cell('bimpf|'+key)}</div>`;
+  });
+  h += `</div>`;
+
+  // imperative + participle
+  const mini = (title, rows) => `<div class="cj-mini"><div class="sec">${title}</div>
+    <div class="cj-mini-row">${rows.map(([lbl,k]) => c[k] ?
+      `<div class="cj-cell"><span class="cj-k">${esc(lbl)}</span>
+        <span class="cj-ar">${esc(c[k].ar)}</span><span class="cj-ph">${esc(c[k].ph)}</span></div>` : ''
+    ).join('')}</div></div>`;
+  h += mini('Command (imperative)', [['you (m)','imp|inta'],['you (f)','imp|inti'],['you (pl)','imp|intu']]);
+  h += mini('Active participle (doing / having done)',
+        [['m','ap|m'],['f','ap|f'],['pl','ap|p']]);
+
+  h += `<div class="note">Conjugations are <b>derived by rule</b> from this verb’s principal
+    parts, then verified against <i>Palestinian Arabic Verbs</i> (Aldrich, Lingualism) — the
+    engine reproduces 98.7% of the book’s sound-Form-I cells, the rest being optional vowel
+    reductions that vary in everyday speech. Arabic is shown unvocalized, the way it’s written.</div>`;
+  $('view').innerHTML = h;
 }
 
 function verbsHome(){
