@@ -88,7 +88,16 @@
   .pill.off{opacity:.55}
 
   /* ---------- reader ---------- */
-  .ctl{display:flex; gap:7px; flex-wrap:wrap; margin-bottom:20px}
+  .ctl{display:flex; gap:7px; flex-wrap:wrap; margin-bottom:14px}
+  .spd{display:inline-flex; align-items:center; gap:0; margin:0 0 20px;
+       border:1px solid var(--rule); border-radius:14px; overflow:hidden}
+  .spd-l{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+         padding:0 10px 0 12px}
+  .spd-b{font:inherit; font-size:12.5px; padding:6px 13px; border:none;
+         border-left:1px solid var(--rule); background:none; color:var(--ink-soft);
+         cursor:pointer; font-variant-numeric:tabular-nums}
+  .spd-b[aria-pressed="true"]{background:var(--verdigris); color:var(--paper); font-weight:600}
+  .spd-b:focus-visible{outline:2px solid var(--verdigris); outline-offset:-2px}
   .tog{font:inherit; font-size:12.5px; padding:6px 12px; border:1px solid var(--rule);
        background:none; color:var(--ink-soft); border-radius:14px; cursor:pointer}
   .tog[aria-pressed="true"]{background:var(--verdigris); border-color:var(--verdigris);
@@ -224,6 +233,46 @@ let marked = new Map();
 try { marked = new Map(JSON.parse(localStorage.getItem(KEY) || '[]')); } catch (e) {}
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...marked])); } catch (e) {} };
 
+// Playback speed. Slow is the single most useful setting for dialect — a Palestinian
+// sentence at full pace is a wall; at 0.5x you can actually pick the words apart. Kept
+// in its own localStorage key so it persists across sessions like the marked list.
+const SKEY = 'alp.speed.v1';
+let SPEED = parseFloat(localStorage.getItem(SKEY)) || 1;
+const setSpeed = v => { SPEED = v; try { localStorage.setItem(SKEY, String(v)); } catch (e) {} };
+
+// One player for every clip in the app. Stops whatever's playing first, so tapping a new
+// sentence doesn't stack voices, and applies the current speed. preservesPitch keeps the
+// voice from turning into a chipmunk/drone at 0.5/0.9.
+let _clip = null;
+function playClip(src) {
+  if (!src) return;
+  if (_clip) { _clip.pause(); _clip = null; }
+  const a = new Audio(src);
+  a.playbackRate = SPEED;
+  a.preservesPitch = true;
+  a.mozPreservesPitch = true; a.webkitPreservesPitch = true;
+  _clip = a;
+  a.play().catch(() => {});
+}
+
+// The speed control, shared by the reader and the drill. 0.9 is the honest default for
+// a learner — natural rhythm, just a hair slower; 0.5 for pulling a hard line apart.
+function speedControl() {
+  return `<div class="spd" role="group" aria-label="Playback speed">
+      <span class="spd-l">Speed</span>
+      ${[[0.5,'0.5×'],[0.9,'0.9×'],[1,'1×']].map(([v,t]) =>
+        `<button class="spd-b" data-spd="${v}" aria-pressed="${SPEED===v}">${t}</button>`
+      ).join('')}
+    </div>`;
+}
+function wireSpeed(scope) {
+  scope.querySelectorAll('.spd-b').forEach(b => b.onclick = () => {
+    setSpeed(parseFloat(b.dataset.spd));
+    scope.querySelectorAll('.spd-b').forEach(x =>
+      x.setAttribute('aria-pressed', String(parseFloat(x.dataset.spd) === SPEED)));
+  });
+}
+
 const VOCSRC = {
   'lexicon:exact'              : 'straight from the lexicon',
   'derived:affix'              : 'lexicon stem + prefix rule',
@@ -357,7 +406,7 @@ function reader(t) {
       <button class="tog" id="tVoc" aria-pressed="true">Vowels</button>
       <button class="tog" id="tEn" aria-pressed="false">English</button>
       <button class="tog" id="tMk" aria-pressed="true">Show marked</button>
-    </div>` +
+    </div>` + speedControl() +
     (/not native-validated/i.test(t.source || '')
       ? `<div class="unval"><b>Not checked by a native speaker.</b> Every word's root,
          meaning and vowels come from the lexicon — but the <i>sentences</i> were written
@@ -382,6 +431,7 @@ function reader(t) {
     h += `<button class="peek" data-peek="${si}">Peek at English</button></div>`;
   });
   $('view').innerHTML = h + '</div>';
+  wireSpeed($('view'));
   paint();
 
   $('tVoc').onclick = e => {
@@ -404,7 +454,7 @@ function reader(t) {
     const pk = e.target.closest('[data-peek]');
     if (pk) { pk.closest('.sent').classList.add('peek'); return; }
     const au = e.target.closest('.aud[data-src]');
-    if (au) { new Audio(au.dataset.src).play().catch(() => {}); return; }
+    if (au) { playClip(au.dataset.src); return; }
     const w = e.target.closest('.w');
     if (w) showCard(+w.dataset.s, +w.dataset.w);
   });
@@ -467,14 +517,20 @@ function drill(d) {
   $('title').textContent = d.title.en;
   let h = `<p class="hint">Read the English, <b>say it out loud</b>, then tap to check.
     The saying-it-first part is what makes it work — checking before you try is the
-    one way to get nothing out of this.</p>`;
-  d.items.forEach(it => {
+    one way to get nothing out of this.</p>` + speedControl();
+  d.items.forEach((it, i) => {
     h += `<div class="ch"><div class="q">${esc(it.cue)}</div>
-      <div class="a" tabindex="0">${esc(it.answer)}</div>
-      <div class="u">${esc(it.use || '')}</div></div>`;
+      <div class="a" tabindex="0">${esc(it.answer)}</div>` +
+      (it.answer_audio
+        ? `<button class="aud" data-src="${esc(it.answer_audio)}">▸ Hear it</button>`
+        : '') +
+      `<div class="u">${esc(it.use || '')}</div></div>`;
   });
   $('view').innerHTML = h;
+  wireSpeed($('view'));
   $('view').addEventListener('click', e => {
+    const au = e.target.closest('.aud[data-src]');
+    if (au) { playClip(au.dataset.src); return; }
     const a = e.target.closest('.a');
     if (a) a.classList.toggle('show');
   });
