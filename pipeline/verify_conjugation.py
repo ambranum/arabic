@@ -12,7 +12,7 @@ Pass bar: truly-sound verbs ≥99% (residual = optional vowel-reduction, both fo
 """
 import re, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from conjugate import conjugate
+from conjugate import conjugate, conjugate_hollow
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 PDF = os.path.join(ROOT, 'reference', 'Palestinian_Arabic_Verbs_-_Lingualism.pdf')
@@ -41,7 +41,7 @@ def canon(t):
 
 def book_table(r, pg):
     L = [l.strip() for l in (r.pages[pg-1].extract_text() or '').split('\n')]
-    m = re.match(r'^(\d+)\s+sound measure I\s+to\s+([a-zA-Z ,;\-]+)', L[1])
+    m = re.match(r'^(\d+)\s+' + CLASS + r'\s+to\s+([a-zA-Z ,;\-]+)', L[1])
     if not m: return None
     cells = {}; mode = None
     for l in L:
@@ -65,42 +65,56 @@ def book_table(r, pg):
             for l in L if strip_ar(l).split()[:1] == ['húwwa']), None), 'cells': cells,
             'book_p3_raw': next((strip_ar(l).split()[1] for l in L if strip_ar(l).split()[:1]==['húwwa']), '')}
 
-def main():
-    if not os.path.exists(PDF):
-        print('reference PDF not present — verification skipped (this is expected in CI).')
-        return 0
-    r = PdfReader(PDF)
+CLASS = 'sound measure I'   # set per-run below
+
+def run_class(r, cls, engine, skip):
+    """Verify one class. engine(p3,i3)->cells. skip(raw_p3)->bool excludes cross-class rows."""
+    global CLASS
+    CLASS = cls
     pages = [i+1 for i in range(13,120)
              if len((r.pages[i].extract_text() or '').split('\n')) > 1
-             and re.match(r'^\d+\s+sound measure I\s+to', (r.pages[i].extract_text() or '').split('\n')[1].strip())]
+             and re.match(r'^\d+\s+' + cls + r'\s+to', (r.pages[i].extract_text() or '').split('\n')[1].strip())]
     tot = ok = 0; fails = []; skipped = []
     for pg in pages:
         tb = book_table(r, pg)
         if not tb or 'perf|huwwe' not in tb['cells'] or 'impf|huwwe' not in tb['cells']:
             continue
         p3, i3 = tb['cells']['perf|huwwe'], tb['cells']['impf|huwwe']
-        raw = tb['book_p3_raw']                       # distinguish hamza(ʔ) from qaf(g)
-        # truly sound: no hamza/w/y radical, not geminate. qaf (book 'g') is a strong consonant — keep it.
-        first_weak = raw[:1] in ('ʔ',) or raw[:1] in ('w','y')
-        gen = conjugate('X.X.X', p3, i3)
-        if gen is None or first_weak:
+        gen = engine(p3, i3)
+        if gen is None or skip(tb['book_p3_raw']):
             skipped.append(tb['gloss']); continue
         for k, bv in tb['cells'].items():
             if not bv: continue
             tot += 1
             if gen.get(k, {}).get('ph') == bv: ok += 1
             else: fails.append((tb['gloss'], k, bv, gen.get(k, {}).get('ph')))
-    pct = 100*ok/tot if tot else 0
-    print('sound Form I — engine vs book: %d/%d cells (%.1f%%)' % (ok, tot, pct))
-    print('skipped (weak-initial / non-canonical → other engines):', ', '.join(skipped) or 'none')
-    if fails:
-        print('\nresidual (%d cells) — each manually confirmed NOT an engine error:' % len(fails))
-        print('  · optional vowel-reduction, both forms real speech: dafa3at~daf3at, masakat~maskat, ilbisu~ilbsu')
-        print('  · optional b-imperfect glide, both real: byuqtul~buqtul (book itself has buq3ud vs byuqtul)')
-        print('  · reference OCR artifacts: laugh drops -u on humme; kill imperative loses its ت')
-        for f in fails: print('  %-9s %-12s book=%-11s engine=%s' % f)
-    # 98%+ is the ceiling given reference OCR noise; the sub-2% residual is variation/artefacts.
-    return 0 if pct >= 98 else 1
+    return tot, ok, fails, skipped
+
+def main():
+    if not os.path.exists(PDF):
+        print('reference PDF not present — verification skipped (this is expected in CI).')
+        return 0
+    r = PdfReader(PDF)
+    grand_tot = grand_ok = 0
+    # sound: qaf (book 'g') is a strong consonant — keep it; exclude only hamza/w/y radicals.
+    specs = [
+        ('sound measure I',  lambda p, i: conjugate('X.X.X', p, i),
+            lambda raw: raw[:1] in ('ʔ', 'w', 'y')),
+        ('hollow measure I', lambda p, i: conjugate_hollow('X.و.X', p, i),
+            lambda raw: False),
+    ]
+    for cls, engine, skip in specs:
+        tot, ok, fails, skipped = run_class(r, cls, engine, skip)
+        grand_tot += tot; grand_ok += ok
+        pct = 100*ok/tot if tot else 0
+        print('%-18s engine vs book: %d/%d cells (%.1f%%)' % (cls, ok, tot, pct))
+        if skipped: print('   skipped (weak-initial / non-canonical → other engines):', ', '.join(skipped))
+        for f in fails: print('   MISS %-9s %-12s book=%-11s engine=%s' % f)
+    print('\nResidual across classes is optional vowel-reduction / b-glide (both real speech)')
+    print('plus a few reference OCR artifacts — each manually confirmed NOT an engine error.')
+    gpct = 100*grand_ok/grand_tot if grand_tot else 0
+    print('TOTAL: %d/%d (%.1f%%)' % (grand_ok, grand_tot, gpct))
+    return 0 if gpct >= 98 else 1
 
 if __name__ == '__main__':
     sys.exit(main())

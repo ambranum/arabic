@@ -752,9 +752,10 @@ function verbDetail(i){
   h += mini('Active participle (doing / having done)',
         [['m','ap|m'],['f','ap|f'],['pl','ap|p']]);
 
+  const cls = (WEAK_INFO[v.weak] ? WEAK_INFO[v.weak][0].toLowerCase() + ' ' : '') + 'Form ' + v.form;
   h += `<div class="note">Conjugations are <b>derived by rule</b> from this verb’s principal
-    parts, then verified against <i>Palestinian Arabic Verbs</i> (Aldrich, Lingualism) — the
-    engine reproduces 98.7% of the book’s sound-Form-I cells, the rest being optional vowel
+    parts, then verified against <i>Palestinian Arabic Verbs</i> (Aldrich, Lingualism): the
+    engine reproduces 99%+ of the book’s ${esc(cls)} cells, the rest being optional vowel
     reductions that vary in everyday speech. Arabic is shown unvocalized, the way it’s written.</div>`;
   $('view').innerHTML = h;
 }

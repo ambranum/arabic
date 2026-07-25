@@ -135,11 +135,92 @@ def conjugate(root, past3ms, pres3ms):
     return cells
 
 
+# ---- hollow Form I (middle radical و/ي surfaces as a long vowel) ----
+_LONG_AR = {'uu': 'و', 'ii': 'ي', 'aa': 'ا'}   # imperfect long vowel -> Arabic letter
+
+def parse_hollow(root, past3ms, pres3ms):
+    """Return (c1, c3, long, short) or None if not a clean hollow triliteral.
+
+    past3ms  perfect 3ms, e.g. 'raa7'  -> C aa C
+    pres3ms  imperfect 3ms, e.g. 'yruu7' -> y + C + (uu|ii|aa) + C
+    """
+    if len([x for x in str(root).split('.') if x]) != 3:
+        return None
+    p = _phon(str(past3ms))
+    if len(p) != 3 or p[1] != 'aa' or not (_is_cons(p[0]) and _is_cons(p[2])):
+        return None
+    c1, c3 = p[0], p[2]
+    im = _phon(str(pres3ms))
+    if len(im) != 4 or im[0] != 'y' or im[2] not in ('uu', 'ii', 'aa'):
+        return None
+    if not (_is_cons(im[1]) and _is_cons(im[3])) or [im[1], im[3]] != [c1, c3]:
+        return None
+    lng = im[2]
+    short = 'u' if lng == 'uu' else 'i'            # ru7t (uu) vs bi3t/nimt (ii/aa)
+    return c1, c3, lng, short
+
+def conjugate_hollow(root, past3ms, pres3ms):
+    parsed = parse_hollow(root, past3ms, pres3ms)
+    if not parsed:
+        return None
+    c1, c3, lng, sv = parsed
+    r1, _, r3 = [x for x in str(root).split('.') if x]
+    Lar = _LONG_AR[lng]
+    J = lambda *x: ''.join(x)
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+
+    # PERFECT — long aa before vowel-suffixes, short vowel before consonant-suffixes
+    put('perf', 'huwwe', J(c1, 'aa', c3),        J(r1, 'ا', r3))
+    put('perf', 'hiyye', J(c1, 'aa', c3, 'at'),  J(r1, 'ا', r3, 'ت'))
+    put('perf', 'humme', J(c1, 'aa', c3, 'u'),   J(r1, 'ا', r3, 'وا'))
+    cs = lambda suf: J(c1, sv, c3, suf)           # ru7it, bi3it (short vowel, no middle letter)
+    ar_cs = lambda suf: J(r1, r3, suf)            # رحت، بعت
+    put('perf', 'ana',  cs('it'), ar_cs('ت'))
+    put('perf', 'inta', cs('it'), ar_cs('ت'))
+    put('perf', 'inti', cs('ti'), ar_cs('تي'))
+    put('perf', 'i7na', cs('na'), ar_cs('نا'))
+    put('perf', 'intu', cs('tu'), ar_cs('تو'))
+
+    # IMPERFECT — bare consonant prefix (no prefix vowel), long vowel in the stem
+    stem, stem_ar = J(c1, lng, c3), J(r1, Lar, r3)
+    pfx_ph = {'ana':'a', 'i7na':'n', 'inta':'t', 'inti':'t', 'intu':'t', 'huwwe':'y', 'hiyye':'t', 'humme':'y'}
+    pfx_ar = {'ana':'أ', 'i7na':'ن', 'inta':'ت', 'inti':'ت', 'intu':'ت', 'huwwe':'ي', 'hiyye':'ت', 'humme':'ي'}
+    suf_ph = {'inti':'i', 'intu':'u', 'humme':'u'}
+    suf_ar = {'inti':'ي', 'intu':'وا', 'humme':'وا'}
+    for per in PERSONS:
+        put('impf', per, pfx_ph[per] + stem + suf_ph.get(per, ''),
+                         pfx_ar[per] + stem_ar + suf_ar.get(per, ''))
+
+    # BI-IMPERFECT — ب + imperfect, epenthetic i keeps the cluster sayable; 3rd-person y elides
+    for per in PERSONS:
+        im = cells['impf|' + per]
+        if per == 'ana':
+            ph = 'b' + im['ph']; ar = 'ب' + im['ar'][1:]           # drop the 1s hamza
+        elif per in ('huwwe', 'humme'):
+            ph = 'bi' + im['ph'][1:]; ar = 'ب' + im['ar']          # biruu7 / بيروح
+        else:
+            ph = 'bi' + im['ph']; ar = 'ب' + im['ar']              # binruu7 / بنروح
+        put('bimpf', per, ph, ar)
+
+    # IMPERATIVE — bare long-vowel stem
+    put('imp', 'inta', stem,        stem_ar)
+    put('imp', 'inti', stem + 'i',  stem_ar + 'ي')
+    put('imp', 'intu', stem + 'u',  stem_ar + 'وا')
+
+    # ACTIVE PARTICIPLE — faayil, glide is always ي (raayi7, naayim)
+    put('ap', 'm', J(c1, 'aa', 'y', 'i', c3), J(r1, 'ا', 'ي', r3))
+    put('ap', 'f', J(c1, 'aa', 'y', c3, 'a'), J(r1, 'ا', 'ي', r3, 'ة'))
+    put('ap', 'p', J(c1, 'aa', 'y', c3, 'iin'), J(r1, 'ا', 'ي', r3, 'ين'))
+    return cells
+
+
 if __name__ == '__main__':
     import json
     for root, p, i in [('ك.ت.ب','katab','yiktub'), ('ش.ر.ب','shirib','yishrab'),
-                       ('ط.ل.ع','t.ili3','yit.la3'), ('س.ك.ن','sakan','yuskun')]:
-        c = conjugate(root, p, i)
+                       ('ط.ل.ع','t.ili3','yit.la3'), ('س.ك.ن','sakan','yuskun'),
+                       ('ر.و.ح','raa7','yruu7'), ('ب.ي.ع','baa3','ybii3'), ('ن.و.م','naam','ynaam')]:
+        c = conjugate(root, p, i) or conjugate_hollow(root, p, i)
         print('\n==', root, p, '/', i, '==')
         for sec in ('perf','impf','bimpf','imp','ap'):
             row = [(k.split('|')[1], v['ph'], v['ar']) for k, v in c.items() if k.startswith(sec+'|')]
