@@ -215,12 +215,92 @@ def conjugate_hollow(root, past3ms, pres3ms):
     return cells
 
 
+# ---- defective Form I (final radical و/ي surfaces as a final vowel) ----
+# Only ي/و-final verbs reach here — hamza-final (قرأ) classify as hamzated, keeping the
+# orthography regular: a weak final -a is ى, -i is ي, -u is وا. r3 is never written as
+# itself (the surface vowel decides the letter), so we only use r1/r2.
+_END = {'a': ('a', 'ى'), 'i': ('i', 'ي'), 'u': ('u', 'وا')}   # surface weak-final: (ph, ar)
+
+def parse_defective(root, past3ms, pres3ms):
+    """Return (c1, c2, pv, iv) or None. past 3ms = C V C V; pres 3ms = y i C C V."""
+    if len([x for x in str(root).split('.') if x]) != 3:
+        return None
+    p = _phon(str(past3ms))
+    if len(p) != 4 or not (_is_cons(p[0]) and _is_cons(p[2])) or p[1] not in ('a','i') or p[3] not in ('a','i'):
+        return None
+    c1, pv, c2 = p[0], p[1], p[2]
+    im = _phon(str(pres3ms))
+    if len(im) != 5 or im[0] != 'y' or im[1] != 'i' or not (_is_cons(im[2]) and _is_cons(im[3])) or im[4] not in ('a','i'):
+        return None
+    if [im[2], im[3]] != [c1, c2]:
+        return None
+    return c1, c2, pv, im[4]
+
+def conjugate_defective(root, past3ms, pres3ms):
+    parsed = parse_defective(root, past3ms, pres3ms)
+    if not parsed:
+        return None
+    c1, c2, pv, iv = parsed
+    r1, r2, _ = [x for x in str(root).split('.') if x]
+    J = lambda *x: ''.join(x)
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+    ivp, iva = _END[iv]
+
+    # PERFECT — a-perfect keeps the weak vowel (masha-); i-perfect drops the first vowel and
+    # takes a y-glide before vowel-suffixes (nisyat, nsiit).
+    put('perf', 'huwwe', J(c1, pv, c2, pv), J(r1, r2, _END[pv][1]))          # مشى / نسي
+    if pv == 'a':
+        put('perf', 'hiyye', J(c1, pv, c2, 'at'), J(r1, r2, 'ت'))            # مشت
+        put('perf', 'humme', J(c1, pv, c2, 'u'),  J(r1, r2, 'وا'))           # مشوا
+        cs = lambda s: J(c1, pv, c2, 'ee', s)                                # masheet
+    else:
+        put('perf', 'hiyye', J(c1, pv, c2, 'yat'), J(r1, r2, 'يت'))          # نسيت
+        put('perf', 'humme', J(c1, pv, c2, 'yu'),  J(r1, r2, 'يوا'))         # نسيوا
+        cs = lambda s: J(c1, c2, 'ii', s)                                    # nsiit
+    for per, ph_s, ar_s in [('ana','t','ت'), ('inta','t','ت'), ('inti','ti','تي'),
+                            ('i7na','na','نا'), ('intu','tu','تو')]:
+        put('perf', per, cs(ph_s), J(r1, r2, 'ي', ar_s))                     # بكيت / نسيت
+
+    # IMPERFECT — prefix + C1 C2 + weak final; 2fs always -i, 2pl/3pl always -u
+    pfx = {'ana':('a','أ'), 'i7na':('ni','ن'), 'inta':('ti','ت'), 'inti':('ti','ت'),
+           'intu':('ti','ت'), 'huwwe':('yi','ي'), 'hiyye':('ti','ت'), 'humme':('yi','ي')}
+    endp = {'inti':'i', 'intu':'u', 'humme':'u'}
+    for per in PERSONS:
+        e = endp.get(per, iv)
+        ep, ea = _END[e]
+        put('impf', per, pfx[per][0] + c1 + c2 + ep, pfx[per][1] + r1 + r2 + ea)
+
+    # BI-IMPERFECT — same sandhi as sound (prefix vowel present, no epenthesis)
+    for per in PERSONS:
+        im = cells['impf|' + per]
+        if per == 'ana':
+            ph, ar = 'b' + im['ph'], 'ب' + im['ar'][1:]
+        elif im['ph'][0] == 'y':
+            ph, ar = 'b' + im['ph'][1:], 'ب' + im['ar']
+        else:
+            ph, ar = 'b' + im['ph'], 'ب' + im['ar']
+        put('bimpf', per, ph, ar)
+
+    # IMPERATIVE — helping i + stem + weak final (masc = the imperfect vowel)
+    put('imp', 'inta', 'i' + c1 + c2 + ivp, J('ا', r1, r2, iva))
+    put('imp', 'inti', 'i' + c1 + c2 + 'i', J('ا', r1, r2, 'ي'))
+    put('imp', 'intu', 'i' + c1 + c2 + 'u', J('ا', r1, r2, 'وا'))
+
+    # ACTIVE PARTICIPLE — faaʕi (maashi / maashya)
+    put('ap', 'm', J(c1, 'aa', c2, 'i'),   J(r1, 'ا', r2, 'ي'))
+    put('ap', 'f', J(c1, 'aa', c2, 'ya'),  J(r1, 'ا', r2, 'ية'))
+    put('ap', 'p', J(c1, 'aa', c2, 'yiin'), J(r1, 'ا', r2, 'يين'))
+    return cells
+
+
 if __name__ == '__main__':
     import json
     for root, p, i in [('ك.ت.ب','katab','yiktub'), ('ش.ر.ب','shirib','yishrab'),
                        ('ط.ل.ع','t.ili3','yit.la3'), ('س.ك.ن','sakan','yuskun'),
-                       ('ر.و.ح','raa7','yruu7'), ('ب.ي.ع','baa3','ybii3'), ('ن.و.م','naam','ynaam')]:
-        c = conjugate(root, p, i) or conjugate_hollow(root, p, i)
+                       ('ر.و.ح','raa7','yruu7'), ('ب.ي.ع','baa3','ybii3'), ('ن.و.م','naam','ynaam'),
+                       ('م.ش.ي','mishi','yimshi'), ('ن.س.ي','nisi','yinsa'), ('ب.ك.ي','baka','yibki')]:
+        c = conjugate(root, p, i) or conjugate_hollow(root, p, i) or conjugate_defective(root, p, i)
         print('\n==', root, p, '/', i, '==')
         for sec in ('perf','impf','bimpf','imp','ap'):
             row = [(k.split('|')[1], v['ph'], v['ar']) for k, v in c.items() if k.startswith(sec+'|')]

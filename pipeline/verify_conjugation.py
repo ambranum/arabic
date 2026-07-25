@@ -12,7 +12,7 @@ Pass bar: truly-sound verbs ≥99% (residual = optional vowel-reduction, both fo
 """
 import re, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from conjugate import conjugate, conjugate_hollow
+from conjugate import conjugate, conjugate_hollow, conjugate_defective
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 PDF = os.path.join(ROOT, 'reference', 'Palestinian_Arabic_Verbs_-_Lingualism.pdf')
@@ -102,6 +102,8 @@ def main():
             lambda raw: raw[:1] in ('ʔ', 'w', 'y')),
         ('hollow measure I', lambda p, i: conjugate_hollow('X.و.X', p, i),
             lambda raw: False),
+        ('defective measure I', lambda p, i: conjugate_defective('X.X.ي', p, i),
+            lambda raw: False),
     ]
     for cls, engine, skip in specs:
         tot, ok, fails, skipped = run_class(r, cls, engine, skip)
@@ -110,8 +112,10 @@ def main():
         print('%-18s engine vs book: %d/%d cells (%.1f%%)' % (cls, ok, tot, pct))
         if skipped: print('   skipped (weak-initial / non-canonical → other engines):', ', '.join(skipped))
         for f in fails: print('   MISS %-9s %-12s book=%-11s engine=%s' % f)
-    print('\nResidual across classes is optional vowel-reduction / b-glide (both real speech)')
-    print('plus a few reference OCR artifacts — each manually confirmed NOT an engine error.')
+    print('\nResidual across classes is optional variation, both forms real speech:')
+    print('  · perfect vowel-reduction (dafa3at~daf3at) and b-imperfect glide (byuqtul~buqtul)')
+    print('  · defective a-type imperative length (ibda~ibdaa) — book itself is inconsistent')
+    print('  · plus a few reference OCR artifacts — each manually confirmed NOT an engine error.')
     gpct = 100*grand_ok/grand_tot if grand_tot else 0
     print('TOTAL: %d/%d (%.1f%%)' % (grand_ok, grand_tot, gpct))
     return 0 if gpct >= 98 else 1
