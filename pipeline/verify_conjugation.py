@@ -12,7 +12,7 @@ Pass bar: truly-sound verbs ≥99% (residual = optional vowel-reduction, both fo
 """
 import re, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from conjugate import conjugate, conjugate_hollow, conjugate_defective
+from conjugate import conjugate, conjugate_hollow, conjugate_defective, conjugate_geminate
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 PDF = os.path.join(ROOT, 'reference', 'Palestinian_Arabic_Verbs_-_Lingualism.pdf')
@@ -104,6 +104,8 @@ def main():
             lambda raw: False),
         ('defective measure I', lambda p, i: conjugate_defective('X.X.ي', p, i),
             lambda raw: False),
+        ('geminate measure I', lambda p, i: conjugate_geminate('X.b.b', p, i),
+            lambda raw: False),
     ]
     for cls, engine, skip in specs:
         tot, ok, fails, skipped = run_class(r, cls, engine, skip)
@@ -115,6 +117,8 @@ def main():
     print('\nResidual across classes is optional variation, both forms real speech:')
     print('  · perfect vowel-reduction (dafa3at~daf3at) and b-imperfect glide (byuqtul~buqtul)')
     print('  · defective a-type imperative length (ibda~ibdaa) — book itself is inconsistent')
+    print('  · geminate participle of ضل "stay" is suppletive (ضايل) — a one-verb lexical')
+    print('    exception NOT in our dataset (our ض.ل.ل is "be disoriented", yD.ill)')
     print('  · plus a few reference OCR artifacts — each manually confirmed NOT an engine error.')
     gpct = 100*grand_ok/grand_tot if grand_tot else 0
     print('TOTAL: %d/%d (%.1f%%)' % (grand_ok, grand_tot, gpct))

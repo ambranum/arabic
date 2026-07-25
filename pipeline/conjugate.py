@@ -294,13 +294,84 @@ def conjugate_defective(root, past3ms, pres3ms):
     return cells
 
 
+# ---- geminate / doubled Form I (last two radicals identical: حبّ, ردّ) ----
+def parse_geminate(root, past3ms, pres3ms):
+    """Return (c1, c2, pv, iv) or None. past 3ms = C V C C; pres 3ms = y C V C C."""
+    rl = [x for x in str(root).split('.') if x]
+    if len(rl) != 3 or rl[1] != rl[2]:               # must be a doubled root
+        return None
+    p = _phon(str(past3ms))
+    if len(p) != 4 or not (_is_cons(p[0]) and _is_cons(p[2])) or p[1] not in ('a','i') or p[2] != p[3]:
+        return None
+    c1, pv, c2 = p[0], p[1], p[2]
+    im = _phon(str(pres3ms))
+    if len(im) != 5 or im[0] != 'y' or im[2] not in ('a','i','u') or im[3] != im[4]:
+        return None
+    if [im[1], im[3]] != [c1, c2]:
+        return None
+    return c1, c2, pv, im[2]
+
+def conjugate_geminate(root, past3ms, pres3ms):
+    parsed = parse_geminate(root, past3ms, pres3ms)
+    if not parsed:
+        return None
+    c1, c2, pv, iv = parsed
+    r1, r2, _ = [x for x in str(root).split('.') if x]   # r2 == r3 (the doubled letter)
+    J = lambda *x: ''.join(x)
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+
+    # PERFECT — gemination stays throughout; consonant-suffix forms take -ee-
+    base_ph, base_ar = J(c1, pv, c2, c2), J(r1, r2)      # 7abb / حب (doubled written once)
+    put('perf', 'huwwe', base_ph,          base_ar)
+    put('perf', 'hiyye', base_ph + 'at',   base_ar + 'ت')
+    put('perf', 'humme', base_ph + 'u',    base_ar + 'وا')
+    for per, ph_s, ar_s in [('ana','t','ت'), ('inta','t','ت'), ('inti','ti','تي'),
+                            ('i7na','na','نا'), ('intu','tu','تو')]:
+        put('perf', per, base_ph + 'ee' + ph_s, J(base_ar, 'ي', ar_s))   # 7abbeet / حبيت
+
+    # IMPERFECT — bare consonant prefix + C1 iv C2 C2
+    stem_ph, stem_ar = J(c1, iv, c2, c2), J(r1, r2)
+    pfx_ph = {'ana':'a', 'i7na':'n', 'inta':'t', 'inti':'t', 'intu':'t', 'huwwe':'y', 'hiyye':'t', 'humme':'y'}
+    pfx_ar = {'ana':'أ', 'i7na':'ن', 'inta':'ت', 'inti':'ت', 'intu':'ت', 'huwwe':'ي', 'hiyye':'ت', 'humme':'ي'}
+    suf_ph = {'inti':'i', 'intu':'u', 'humme':'u'}
+    suf_ar = {'inti':'ي', 'intu':'وا', 'humme':'وا'}
+    for per in PERSONS:
+        put('impf', per, pfx_ph[per] + stem_ph + suf_ph.get(per, ''),
+                         pfx_ar[per] + stem_ar + suf_ar.get(per, ''))
+
+    # BI-IMPERFECT — same epenthesis as hollow (bare-consonant prefix)
+    for per in PERSONS:
+        im = cells['impf|' + per]
+        if per == 'ana':
+            ph, ar = 'b' + im['ph'], 'ب' + im['ar'][1:]
+        elif im['ph'][0] == 'y':
+            ph, ar = 'bi' + im['ph'][1:], 'ب' + im['ar']
+        else:
+            ph, ar = 'bi' + im['ph'], 'ب' + im['ar']
+        put('bimpf', per, ph, ar)
+
+    # IMPERATIVE — bare stem, no helping vowel (7ibb, not i7ibb)
+    put('imp', 'inta', stem_ph,        stem_ar)
+    put('imp', 'inti', stem_ph + 'i',  stem_ar + 'ي')
+    put('imp', 'intu', stem_ph + 'u',  stem_ar + 'وا')
+
+    # ACTIVE PARTICIPLE — faaʕiʕ (7aabib): masc breaks the gemination with i, f/pl keep it
+    put('ap', 'm', J(c1, 'aa', c2, 'i', c2),   J(r1, 'ا', r2, r2))     # حابب
+    put('ap', 'f', J(c1, 'aa', c2, c2, 'a'),   J(r1, 'ا', r2, 'ة'))    # حابة
+    put('ap', 'p', J(c1, 'aa', c2, c2, 'iin'), J(r1, 'ا', r2, 'ين'))   # حابين
+    return cells
+
+
 if __name__ == '__main__':
     import json
     for root, p, i in [('ك.ت.ب','katab','yiktub'), ('ش.ر.ب','shirib','yishrab'),
                        ('ط.ل.ع','t.ili3','yit.la3'), ('س.ك.ن','sakan','yuskun'),
                        ('ر.و.ح','raa7','yruu7'), ('ب.ي.ع','baa3','ybii3'), ('ن.و.م','naam','ynaam'),
-                       ('م.ش.ي','mishi','yimshi'), ('ن.س.ي','nisi','yinsa'), ('ب.ك.ي','baka','yibki')]:
-        c = conjugate(root, p, i) or conjugate_hollow(root, p, i) or conjugate_defective(root, p, i)
+                       ('م.ش.ي','mishi','yimshi'), ('ن.س.ي','nisi','yinsa'), ('ب.ك.ي','baka','yibki'),
+                       ('ح.ب.ب','7abb','y7ibb'), ('ح.ط.ط','7aT.T.','y7uT.T.'), ('ر.د.د','radd','yrudd')]:
+        c = (conjugate(root, p, i) or conjugate_hollow(root, p, i)
+             or conjugate_defective(root, p, i) or conjugate_geminate(root, p, i))
         print('\n==', root, p, '/', i, '==')
         for sec in ('perf','impf','bimpf','imp','ap'):
             row = [(k.split('|')[1], v['ph'], v['ar']) for k, v in c.items() if k.startswith(sec+'|')]
