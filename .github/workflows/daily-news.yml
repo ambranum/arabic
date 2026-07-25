@@ -11,8 +11,13 @@ name: Daily news
 # time as "before the morning drive", not as an alarm clock.
 on:
   schedule:
-    - cron: '0 10 * * *'
-  workflow_dispatch:        # lets you run it by hand from the Actions tab
+    - cron: '0 10 * * *'    # 5am EST / 6am EDT — writes fresh news, then deploys
+  workflow_dispatch:        # run by hand from the Actions tab
+  push:
+    branches: [main]
+    paths:                  # a code/content push should redeploy — the site is dead
+      - 'app/**'            # otherwise until the next 5am run. But DON'T regenerate news
+      - '.github/workflows/daily-news.yml'  # on a push (no API spend) — see the guard below.
 
 permissions:
   contents: write           # to commit the day's text back
@@ -39,6 +44,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Write today's news, annotate, voice
+        if: github.event_name != 'push'   # a push just redeploys; no news, no API spend
         env:
           ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
           ELEVENLABS_API_KEY:  ${{ secrets.ELEVENLABS_API_KEY }}
