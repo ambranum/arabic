@@ -89,15 +89,6 @@
 
   /* ---------- reader ---------- */
   .ctl{display:flex; gap:7px; flex-wrap:wrap; margin-bottom:14px}
-  .spd{display:inline-flex; align-items:center; gap:0; margin:0 0 20px;
-       border:1px solid var(--rule); border-radius:14px; overflow:hidden}
-  .spd-l{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
-         padding:0 10px 0 12px}
-  .spd-b{font:inherit; font-size:12.5px; padding:6px 13px; border:none;
-         border-left:1px solid var(--rule); background:none; color:var(--ink-soft);
-         cursor:pointer; font-variant-numeric:tabular-nums}
-  .spd-b[aria-pressed="true"]{background:var(--verdigris); color:var(--paper); font-weight:600}
-  .spd-b:focus-visible{outline:2px solid var(--verdigris); outline-offset:-2px}
   .tog{font:inherit; font-size:12.5px; padding:6px 12px; border:1px solid var(--rule);
        background:none; color:var(--ink-soft); border-radius:14px; cursor:pointer}
   .tog[aria-pressed="true"]{background:var(--verdigris); border-color:var(--verdigris);
@@ -136,10 +127,44 @@
   .peek{font:inherit; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
         color:var(--muted); background:none; border:none; padding:7px 0 0 14px; cursor:pointer}
   .rd[data-en="on"] .peek{display:none}
-  .aud{font:inherit; font-size:12px; color:var(--verdigris); background:none;
-       border:1px solid var(--verdigris); border-radius:3px; padding:4px 10px;
-       margin-top:9px; cursor:pointer}
-  .aud[disabled]{opacity:.3; border-color:var(--rule); color:var(--muted); cursor:default}
+  /* ---------- inline audio player (one per line) ---------- */
+  .noaud{display:inline-block; font-size:12px; color:var(--muted); font-style:italic; margin-top:9px}
+  .player{display:flex; align-items:center; gap:9px; margin-top:11px; flex-wrap:wrap;
+          direction:ltr}
+  .player .pp{flex:none; width:32px; height:32px; border-radius:50%; cursor:pointer;
+      border:1px solid var(--verdigris); background:var(--verdigris); color:var(--paper);
+      display:inline-flex; align-items:center; justify-content:center; padding:0}
+  .player .pp::before{content:""; width:0; height:0; margin-left:2px;
+      border-left:9px solid currentColor; border-top:6px solid transparent;
+      border-bottom:6px solid transparent}                 /* ▶ triangle */
+  .player.playing .pp::before{content:""; margin:0; width:8px; height:10px; border:none;
+      border-left:3px solid currentColor; border-right:3px solid currentColor}  /* ❚❚ */
+  .player .pp:focus-visible{outline:2px solid var(--verdigris); outline-offset:2px}
+  .player .t-cur, .player .t-dur{font-family:var(--mono); font-size:10.5px; color:var(--muted);
+      font-variant-numeric:tabular-nums; min-width:26px; text-align:center}
+
+  /* the scrubber — a range input styled as a filled progress bar */
+  .player .seek{flex:1 1 90px; min-width:90px; height:20px; -webkit-appearance:none;
+      appearance:none; background:none; cursor:pointer; margin:0}
+  .player .seek::-webkit-slider-runnable-track{height:5px; border-radius:3px;
+      background:linear-gradient(to right, var(--verdigris) var(--fill,0%), var(--paper-3) var(--fill,0%))}
+  .player .seek::-moz-range-track{height:5px; border-radius:3px; background:var(--paper-3)}
+  .player .seek::-moz-range-progress{height:5px; border-radius:3px; background:var(--verdigris)}
+  .player .seek::-webkit-slider-thumb{-webkit-appearance:none; width:14px; height:14px;
+      border-radius:50%; background:var(--verdigris); margin-top:-4.5px;
+      box-shadow:0 0 0 3px var(--paper)}
+  .player .seek::-moz-range-thumb{width:14px; height:14px; border:none; border-radius:50%;
+      background:var(--verdigris); box-shadow:0 0 0 3px var(--paper)}
+  .player .seek:focus-visible{outline:none}
+  .player .seek:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--verdigris)}
+
+  .pspd{display:inline-flex; border:1px solid var(--rule); border-radius:13px; overflow:hidden}
+  .pspd .sb{font:inherit; font-size:11px; padding:4px 9px; border:none; cursor:pointer;
+      border-left:1px solid var(--rule); background:none; color:var(--ink-soft);
+      font-variant-numeric:tabular-nums}
+  .pspd .sb:first-child{border-left:none}
+  .pspd .sb[aria-pressed="true"]{background:var(--verdigris); color:var(--paper); font-weight:600}
+  .pspd .sb:focus-visible{outline:2px solid var(--verdigris); outline-offset:-2px}
 
   /* ---------- word card: bottom sheet on phone, popover on desktop ---------- */
   .cardwrap{position:fixed; inset:0; z-index:60; display:none}
@@ -240,37 +265,91 @@ const SKEY = 'alp.speed.v1';
 let SPEED = parseFloat(localStorage.getItem(SKEY)) || 1;
 const setSpeed = v => { SPEED = v; try { localStorage.setItem(SKEY, String(v)); } catch (e) {} };
 
-// One player for every clip in the app. Stops whatever's playing first, so tapping a new
-// sentence doesn't stack voices, and applies the current speed. preservesPitch keeps the
-// voice from turning into a chipmunk/drone at 0.5/0.9.
-let _clip = null;
-function playClip(src) {
-  if (!src) return;
-  if (_clip) { _clip.pause(); _clip = null; }
-  const a = new Audio(src);
-  a.playbackRate = SPEED;
-  a.preservesPitch = true;
-  a.mozPreservesPitch = true; a.webkitPreservesPitch = true;
-  _clip = a;
-  a.play().catch(() => {});
+// ---------- one real audio engine, many inline players ----------
+// A single <audio> is reused for every line. Only one clip is ever audible; hitting play
+// on a new line re-points this element and resets the previous line's transport. The
+// per-line player UI (play/pause, scrubber, speed) binds to whichever line is active.
+const A = new Audio();
+A.preservesPitch = true; A.mozPreservesPitch = true; A.webkitPreservesPitch = true;
+let activeSrc = null;
+
+const fmt = t => (isFinite(t) ? Math.floor(t/60) + ':' + String(Math.floor(t%60)).padStart(2,'0') : '0:00');
+
+function activePlayer() {
+  return activeSrc ? document.querySelector(`.player[data-src="${cssq(activeSrc)}"]`) : null;
+}
+function cssq(s) { return String(s).replace(/["\\]/g, '\\$&'); }
+
+function resetPlayer(pl) {
+  if (!pl) return;
+  pl.classList.remove('playing');
+  const seek = pl.querySelector('.seek'); if (seek) { seek.value = 0; seek.style.setProperty('--fill','0%'); }
+  const cur = pl.querySelector('.t-cur'); if (cur) cur.textContent = '0:00';
 }
 
-// The speed control, shared by the reader and the drill. 0.9 is the honest default for
-// a learner — natural rhythm, just a hair slower; 0.5 for pulling a hard line apart.
-function speedControl() {
-  return `<div class="spd" role="group" aria-label="Playback speed">
-      <span class="spd-l">Speed</span>
-      ${[[0.5,'0.5×'],[0.9,'0.9×'],[1,'1×']].map(([v,t]) =>
-        `<button class="spd-b" data-spd="${v}" aria-pressed="${SPEED===v}">${t}</button>`
-      ).join('')}
-    </div>`;
+function playSrc(pl) {
+  const src = pl.dataset.src;
+  if (activeSrc !== src) {
+    resetPlayer(activePlayer());          // hand the audio over from the old line
+    activeSrc = src;
+    A.src = src;
+  }
+  A.playbackRate = SPEED;
+  A.play().catch(() => {});
+  pl.classList.add('playing');
 }
-function wireSpeed(scope) {
-  scope.querySelectorAll('.spd-b').forEach(b => b.onclick = () => {
-    setSpeed(parseFloat(b.dataset.spd));
-    scope.querySelectorAll('.spd-b').forEach(x =>
-      x.setAttribute('aria-pressed', String(parseFloat(x.dataset.spd) === SPEED)));
-  });
+function toggleSrc(pl) {
+  if (activeSrc === pl.dataset.src && !A.paused) { A.pause(); pl.classList.remove('playing'); }
+  else playSrc(pl);
+}
+
+A.addEventListener('timeupdate', () => {
+  const pl = activePlayer(); if (!pl) return;
+  const pct = A.duration ? (A.currentTime / A.duration * 100) : 0;
+  const seek = pl.querySelector('.seek');
+  if (seek && document.activeElement !== seek) {   // don't fight a finger that's dragging
+    seek.value = pct; seek.style.setProperty('--fill', pct + '%');
+  }
+  const cur = pl.querySelector('.t-cur'); if (cur) cur.textContent = fmt(A.currentTime);
+});
+A.addEventListener('loadedmetadata', () => {
+  const pl = activePlayer(); if (!pl) return;
+  const dur = pl.querySelector('.t-dur'); if (dur) dur.textContent = fmt(A.duration);
+});
+A.addEventListener('ended', () => { const pl = activePlayer(); resetPlayer(pl); });
+A.addEventListener('pause', () => { const pl = activePlayer(); if (pl) pl.classList.remove('playing'); });
+
+// Called from the delegated input handler when a scrubber is dragged.
+function seekTo(pl, pct) {
+  if (activeSrc !== pl.dataset.src) { activeSrc = pl.dataset.src; A.src = pl.dataset.src; }
+  const set = () => { A.currentTime = (pct/100) * (A.duration || 0);
+                      pl.querySelector('.seek').style.setProperty('--fill', pct + '%'); };
+  if (A.duration) set(); else A.addEventListener('loadedmetadata', set, {once:true});
+}
+
+// Change speed everywhere; apply live if something is playing. Persisted (SKEY).
+function applySpeed(v, pl) {
+  setSpeed(v);
+  A.playbackRate = v;
+  document.querySelectorAll('.pspd .sb').forEach(b =>
+    b.setAttribute('aria-pressed', String(parseFloat(b.dataset.spd) === v)));
+}
+
+// The inline player component — one per line. LTR so the scrubber fills left→right even
+// though the Arabic around it is RTL. Disabled lines show a plain note instead.
+function player(src) {
+  if (!src) return `<span class="noaud">no audio yet</span>`;
+  return `<div class="player" data-src="${esc(src)}" dir="ltr">
+      <button class="pp" aria-label="Play / pause"></button>
+      <span class="t-cur">0:00</span>
+      <input class="seek" type="range" min="0" max="100" value="0" step="0.5"
+             aria-label="Seek" style="--fill:0%">
+      <span class="t-dur">0:00</span>
+      <div class="pspd" role="group" aria-label="Speed">
+        ${[[0.5,'0.5×'],[0.9,'0.9×'],[1,'1×']].map(([v,t]) =>
+          `<button class="sb" data-spd="${v}" aria-pressed="${SPEED===v}">${t}</button>`).join('')}
+      </div>
+    </div>`;
 }
 
 const VOCSRC = {
@@ -406,7 +485,7 @@ function reader(t) {
       <button class="tog" id="tVoc" aria-pressed="true">Vowels</button>
       <button class="tog" id="tEn" aria-pressed="false">English</button>
       <button class="tog" id="tMk" aria-pressed="true">Show marked</button>
-    </div>` + speedControl() +
+    </div>` +
     (/not native-validated/i.test(t.source || '')
       ? `<div class="unval"><b>Not checked by a native speaker.</b> Every word's root,
          meaning and vowels come from the lexicon — but the <i>sentences</i> were written
@@ -425,13 +504,10 @@ function reader(t) {
              ><span class="v">${esc(voc)}</span><span class="p">${esc(w.surface)}</span></span> `;
     });
     h += `</div><p class="en">${esc(s.en)}</p>`;
-    h += s.audio
-      ? `<button class="aud" data-src="${esc(s.audio)}">▸ Listen</button>`
-      : `<button class="aud" disabled>no audio yet</button>`;
+    h += player(s.audio);
     h += `<button class="peek" data-peek="${si}">Peek at English</button></div>`;
   });
   $('view').innerHTML = h + '</div>';
-  wireSpeed($('view'));
   paint();
 
   $('tVoc').onclick = e => {
@@ -509,17 +585,16 @@ function drill(d) {
   $('title').textContent = d.title.en;
   let h = `<p class="hint">Read the English, <b>say it out loud</b>, then tap to check.
     The saying-it-first part is what makes it work — checking before you try is the
-    one way to get nothing out of this.</p>` + speedControl();
+    one way to get nothing out of this.</p>`;
   d.items.forEach((it, i) => {
     h += `<div class="ch"><div class="q">${esc(it.cue)}</div>
       <div class="a" tabindex="0">${esc(it.answer)}</div>` +
       (it.answer_audio
-        ? `<button class="aud" data-src="${esc(it.answer_audio)}">▸ Hear it</button>`
+        ? player(it.answer_audio)
         : '') +
       `<div class="u">${esc(it.use || '')}</div></div>`;
   });
   $('view').innerHTML = h;
-  wireSpeed($('view'));
 }
 
 // ---------- tray ----------
@@ -551,14 +626,20 @@ $('exp').onclick = () => {
 // clip multiple times (the echo). Every branch below keys off a distinct class, so one
 // handler serves reader, drill, and word cards alike.
 $('view').addEventListener('click', e => {
-  const au = e.target.closest('.aud[data-src]');
-  if (au) { playClip(au.dataset.src); return; }           // reader Listen + drill Hear it
+  const pp = e.target.closest('.player .pp');
+  if (pp) { toggleSrc(pp.closest('.player')); return; }   // play / pause
+  const sb = e.target.closest('.pspd .sb');
+  if (sb) { applySpeed(parseFloat(sb.dataset.spd), sb.closest('.player')); return; }
   const pk = e.target.closest('[data-peek]');
   if (pk) { pk.closest('.sent').classList.add('peek'); return; }
   const w = e.target.closest('.rd .w');
   if (w) { showCard(+w.dataset.s, +w.dataset.w); return; }
   const a = e.target.closest('.ch .a');
   if (a) { a.classList.toggle('show'); return; }
+});
+$('view').addEventListener('input', e => {
+  const sk = e.target.closest('.player .seek');
+  if (sk) seekTo(sk.closest('.player'), parseFloat(sk.value));
 });
 
 count();
