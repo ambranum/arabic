@@ -593,6 +593,49 @@ def _deglottal(past3ms):
     p = _phon(str(past3ms))
     return ('2', p[1:]) if p[:1] == ['2'] else ('', p)
 
+def conjugate_II_defective(root, past3ms, pres3ms):
+    """Form II with a final weak radical (غنّى/يغنّي, سوّى, بنّى): doubled middle + defective
+    final. C1aC2C2a perfect / yC1aC2C2i imperfect; -ee- suffixes, m- participle, ي glide."""
+    r = _radicals3(root)
+    if not r: return None
+    p = _match(_phon(str(past3ms)), ['C','a','C','C','a'])
+    im = _match(_phon(str(pres3ms)), ['y','C','a','C','C','i'])
+    if not p or not im or p[1] != p[2] or im[1] != im[2] or [p[0], p[1]] != [im[0], im[1]]:
+        return None
+    c1, c2 = p[0], p[1]
+    r1, r2 = _ar_letter(c1, r[0]), _ar_letter(c2, r[1])
+    J = J_
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+    put('perf', 'huwwe', J(c1,'a',c2,c2,'a'),  J(r1,r2,'ى'))         # ghanna / غنى
+    put('perf', 'hiyye', J(c1,'a',c2,c2,'at'), J(r1,r2,'ت'))
+    put('perf', 'humme', J(c1,'a',c2,c2,'u'),  J(r1,r2,'وا'))
+    for per, ps, ars in [('ana','t','ت'), ('inta','t','ت'), ('inti','ti','تي'),
+                         ('i7na','na','نا'), ('intu','tu','تو')]:
+        put('perf', per, J(c1,'a',c2,c2,'ee',ps), J(r1,r2,'ي',ars))  # ghanneet / غنيت
+    stem, stem_ar = J(c1,'a',c2,c2), J(r1,r2)                        # ghann / غن
+    pf = {'ana':'a', 'i7na':'n', 'inta':'t', 'inti':'t', 'intu':'t', 'huwwe':'y', 'hiyye':'t', 'humme':'y'}
+    va = {'intu': ('u','وا'), 'humme': ('u','وا')}
+    for per in PERSONS:
+        sp, sa = va.get(per, ('i', 'ي'))
+        put('impf', per, pf[per] + stem + sp, _APFX[per] + stem_ar + sa)
+    for per in PERSONS:                                             # bi-imperfect (hollow rule)
+        im2 = cells['impf|' + per]
+        if per == 'ana':
+            ph, ar = 'b' + im2['ph'], 'ب' + im2['ar'][1:]
+        elif per in ('huwwe', 'humme'):
+            ph, ar = 'bi' + im2['ph'][1:], 'ب' + im2['ar']
+        else:
+            ph, ar = 'bi' + im2['ph'], 'ب' + im2['ar']
+        put('bimpf', per, ph, ar)
+    put('imp', 'inta', J(c1,'a',c2,c2,'i'), J(r1,r2,'ي'))
+    put('imp', 'inti', J(c1,'a',c2,c2,'i'), J(r1,r2,'ي'))
+    put('imp', 'intu', J(c1,'a',c2,c2,'u'), J(r1,r2,'وا'))
+    put('ap', 'm', J('m',c1,'a',c2,c2,'i'),   J('م',r1,r2,'ي'))     # mghanni / مغني
+    put('ap', 'f', J('m',c1,'a',c2,c2,'ya'),  J('م',r1,r2,'ية'))
+    put('ap', 'p', J('m',c1,'a',c2,c2,'yiin'), J('م',r1,r2,'يين'))
+    return cells
+
 def conjugate_IV(root, past3ms, pres3ms):
     """Form IV (2af3al, causative): 2a-C1C2aC3 perfect, yi-C1C2iC3 imperfect (1sg keeps the
     hamza — 2a3lin), no syncope, mi- participle. Sound roots only (weak IV → principal parts)."""

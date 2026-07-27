@@ -123,13 +123,14 @@ for x in top[:20]:
 # 98.7% overall; residual is optional variation, not error). Verbs that don't parse cleanly
 # keep just their principal parts, so a misfiled entry can never emit a bad paradigm.
 from conjugate import (conjugate, conjugate_hollow, conjugate_defective, conjugate_geminate,
-                       conjugate_II, conjugate_III, conjugate_IV, conjugate_V, conjugate_VI,
+                       conjugate_II, conjugate_II_defective, conjugate_III, conjugate_IV,
+                       conjugate_V, conjugate_VI,
                        conjugate_VII, conjugate_VIII, conjugate_X)
 # Dispatch by measure. Form I splits by weak class; derived measures have one engine each
 # (parsers reject anything not matching the measure's template → principal parts only).
 _FORM1 = {'sound': conjugate, 'hollow': conjugate_hollow,
           'defective': conjugate_defective, 'doubled': conjugate_geminate}
-_MEASURE = {2: conjugate_II, 3: conjugate_III, 4: conjugate_IV, 5: conjugate_V,
+_MEASURE = {2: (lambda rt,pa,pr: conjugate_II(rt,pa,pr) or conjugate_II_defective(rt,pa,pr)), 3: conjugate_III, 4: conjugate_IV, 5: conjugate_V,
             6: conjugate_VI, 7: conjugate_VII, 8: conjugate_VIII, 10: conjugate_X}
 def paradigm(x):
     if not x['pres']:

@@ -13,7 +13,7 @@ Pass bar: truly-sound verbs ≥99% (residual = optional vowel-reduction, both fo
 import re, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from conjugate import (conjugate, conjugate_hollow, conjugate_defective,
-                       conjugate_geminate, conjugate_II, conjugate_III, conjugate_IV,
+                       conjugate_geminate, conjugate_II, conjugate_II_defective, conjugate_III, conjugate_IV,
                        conjugate_V, conjugate_VI, conjugate_VII, conjugate_VIII, conjugate_X)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -109,6 +109,7 @@ def main():
         ('geminate measure I', lambda p, i: conjugate_geminate('X.b.b', p, i),
             lambda raw: False),
         ('sound measure II', lambda p, i: conjugate_II('X.X.X', p, i), lambda raw: False),
+        ('defective measure II', lambda p, i: conjugate_II_defective('X.X.ي', p, i), lambda raw: False),
         ('sound measure III', lambda p, i: conjugate_III('X.X.X', p, i), lambda raw: False),
         ('sound measure IV', lambda p, i: conjugate_IV('X.X.X', p, i), lambda raw: False),
         ('sound measure V', lambda p, i: conjugate_V('X.X.X', p, i), lambda raw: False),
