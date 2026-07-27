@@ -12,7 +12,8 @@ Pass bar: truly-sound verbs ≥99% (residual = optional vowel-reduction, both fo
 """
 import re, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from conjugate import conjugate, conjugate_hollow, conjugate_defective, conjugate_geminate
+from conjugate import (conjugate, conjugate_hollow, conjugate_defective,
+                       conjugate_geminate, conjugate_II)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 PDF = os.path.join(ROOT, 'reference', 'Palestinian_Arabic_Verbs_-_Lingualism.pdf')
@@ -105,6 +106,8 @@ def main():
         ('defective measure I', lambda p, i: conjugate_defective('X.X.ي', p, i),
             lambda raw: False),
         ('geminate measure I', lambda p, i: conjugate_geminate('X.b.b', p, i),
+            lambda raw: False),
+        ('sound measure II', lambda p, i: conjugate_II('X.X.X', p, i),
             lambda raw: False),
     ]
     for cls, engine, skip in specs:

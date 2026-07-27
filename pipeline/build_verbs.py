@@ -118,19 +118,25 @@ for x in top[:20]:
     pp = x['past']['caphi'] + ' / ' + (x['pres']['caphi'] if x['pres'] else '—')
     print('  F%-2s %-10s %-22s %s' % (x['form'], pp[:20], (x['gloss'] or '')[:26], x['root']))
 
-# Full paradigms — every Form I class (sound, hollow, defective, geminate/doubled). The
-# engine is DERIVED by rule and verified against the Lingualism reference
-# (pipeline/verify_conjugation.py: 98.6% overall; residual is optional variation, not error).
-# Verbs that don't parse cleanly keep just their principal parts — including the Form-II
-# entries misfiled as 'doubled' (raddad/7abbab), which the parser's shape check rejects.
-from conjugate import conjugate, conjugate_hollow, conjugate_defective, conjugate_geminate
-_ENGINE = {'sound': conjugate, 'hollow': conjugate_hollow,
-           'defective': conjugate_defective, 'doubled': conjugate_geminate}
+# Full paradigms — all four Form I weak classes plus Form II (measure II). The engine is
+# DERIVED by rule and verified against the Lingualism reference (pipeline/verify_conjugation.py:
+# 98.7% overall; residual is optional variation, not error). Verbs that don't parse cleanly
+# keep just their principal parts, so a misfiled entry can never emit a bad paradigm.
+from conjugate import (conjugate, conjugate_hollow, conjugate_defective,
+                       conjugate_geminate, conjugate_II)
+# Dispatch by (measure, weak class). Form I splits by weak class; Form II is regular.
+_FORM1 = {'sound': conjugate, 'hollow': conjugate_hollow,
+          'defective': conjugate_defective, 'doubled': conjugate_geminate}
 def paradigm(x):
-    if x['form'] != 1 or not x['pres']:
+    if not x['pres']:
         return None
-    eng = _ENGINE.get(x['weak'])
-    return eng(x['root'], x['past']['caphi'], x['pres']['caphi']) if eng else None
+    root, pa, pr = x['root'], x['past']['caphi'], x['pres']['caphi']
+    if x['form'] == 1:
+        eng = _FORM1.get(x['weak'])
+        return eng(root, pa, pr) if eng else None
+    if x['form'] == 2:
+        return conjugate_II(root, pa, pr)
+    return None
 
 # Roman numerals for display; group label per Form.
 ROMAN = {1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI',7:'VII',8:'VIII',10:'X','Q':'Q'}
