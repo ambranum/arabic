@@ -13,7 +13,8 @@ Pass bar: truly-sound verbs ≥99% (residual = optional vowel-reduction, both fo
 import re, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from conjugate import (conjugate, conjugate_hollow, conjugate_defective,
-                       conjugate_geminate, conjugate_II)
+                       conjugate_geminate, conjugate_II, conjugate_III, conjugate_V,
+                       conjugate_VI, conjugate_VII, conjugate_VIII, conjugate_X)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 PDF = os.path.join(ROOT, 'reference', 'Palestinian_Arabic_Verbs_-_Lingualism.pdf')
@@ -107,8 +108,13 @@ def main():
             lambda raw: False),
         ('geminate measure I', lambda p, i: conjugate_geminate('X.b.b', p, i),
             lambda raw: False),
-        ('sound measure II', lambda p, i: conjugate_II('X.X.X', p, i),
-            lambda raw: False),
+        ('sound measure II', lambda p, i: conjugate_II('X.X.X', p, i), lambda raw: False),
+        ('sound measure III', lambda p, i: conjugate_III('X.X.X', p, i), lambda raw: False),
+        ('sound measure V', lambda p, i: conjugate_V('X.X.X', p, i), lambda raw: False),
+        ('sound measure VI', lambda p, i: conjugate_VI('X.X.X', p, i), lambda raw: False),
+        ('sound measure VII', lambda p, i: conjugate_VII('X.X.X', p, i), lambda raw: False),
+        ('sound measure VIII', lambda p, i: conjugate_VIII('X.X.X', p, i), lambda raw: False),
+        ('sound measure X', lambda p, i: conjugate_X('X.X.X', p, i), lambda raw: False),
     ]
     for cls, engine, skip in specs:
         tot, ok, fails, skipped = run_class(r, cls, engine, skip)
@@ -122,7 +128,8 @@ def main():
     print('  · defective a-type imperative length (ibda~ibdaa) — book itself is inconsistent')
     print('  · geminate participle of ضل "stay" is suppletive (ضايل) — a one-verb lexical')
     print('    exception NOT in our dataset (our ض.ل.ل is "be disoriented", yD.ill)')
-    print('  · plus a few reference OCR artifacts — each manually confirmed NOT an engine error.')
+    print('  · Form VII participle of "be born" is suppletive (مولود, the passive maf3uul)')
+    print('  · plus a few reference OCR artifacts (celebrate/enjoy) — NOT engine errors.')
     gpct = 100*grand_ok/grand_tot if grand_tot else 0
     print('TOTAL: %d/%d (%.1f%%)' % (grand_ok, grand_tot, gpct))
     return 0 if gpct >= 98 else 1

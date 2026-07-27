@@ -122,11 +122,17 @@ for x in top[:20]:
 # DERIVED by rule and verified against the Lingualism reference (pipeline/verify_conjugation.py:
 # 98.7% overall; residual is optional variation, not error). Verbs that don't parse cleanly
 # keep just their principal parts, so a misfiled entry can never emit a bad paradigm.
-from conjugate import (conjugate, conjugate_hollow, conjugate_defective,
-                       conjugate_geminate, conjugate_II)
-# Dispatch by (measure, weak class). Form I splits by weak class; Form II is regular.
+from conjugate import (conjugate, conjugate_hollow, conjugate_defective, conjugate_geminate,
+                       conjugate_II, conjugate_III, conjugate_V, conjugate_VI, conjugate_VII,
+                       conjugate_VIII, conjugate_X)
+# Dispatch by measure. Form I splits by weak class; derived measures have one engine each
+# (parsers reject anything not matching the measure's template → principal parts only).
 _FORM1 = {'sound': conjugate, 'hollow': conjugate_hollow,
           'defective': conjugate_defective, 'doubled': conjugate_geminate}
+# VII/VIII/X engines exist and are book-verified, but Maknuune renders them with glottal
+# onsets (2irtakab) and epenthesis/assimilation (yinifti7) that need dedicated handling —
+# deferred to the next wave so we never ship a form we can't stand behind.
+_MEASURE = {2: conjugate_II, 3: conjugate_III, 5: conjugate_V, 6: conjugate_VI}
 def paradigm(x):
     if not x['pres']:
         return None
@@ -134,9 +140,8 @@ def paradigm(x):
     if x['form'] == 1:
         eng = _FORM1.get(x['weak'])
         return eng(root, pa, pr) if eng else None
-    if x['form'] == 2:
-        return conjugate_II(root, pa, pr)
-    return None
+    eng = _MEASURE.get(x['form'])
+    return eng(root, pa, pr) if eng else None
 
 # Roman numerals for display; group label per Form.
 ROMAN = {1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI',7:'VII',8:'VIII',10:'X','Q':'Q'}
