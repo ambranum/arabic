@@ -129,10 +129,8 @@ from conjugate import (conjugate, conjugate_hollow, conjugate_defective, conjuga
 # (parsers reject anything not matching the measure's template → principal parts only).
 _FORM1 = {'sound': conjugate, 'hollow': conjugate_hollow,
           'defective': conjugate_defective, 'doubled': conjugate_geminate}
-# VII/VIII/X engines exist and are book-verified, but Maknuune renders them with glottal
-# onsets (2irtakab) and epenthesis/assimilation (yinifti7) that need dedicated handling —
-# deferred to the next wave so we never ship a form we can't stand behind.
-_MEASURE = {2: conjugate_II, 3: conjugate_III, 5: conjugate_V, 6: conjugate_VI}
+_MEASURE = {2: conjugate_II, 3: conjugate_III, 5: conjugate_V, 6: conjugate_VI,
+            7: conjugate_VII, 8: conjugate_VIII, 10: conjugate_X}
 def paradigm(x):
     if not x['pres']:
         return None

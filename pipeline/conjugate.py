@@ -462,16 +462,19 @@ _RPFX = {
 }
 
 def _derived(perf_ph, perf_ar, perf3fs_syn, impf_ph, impf_ar, group, impf_syn,
-             bimpf_rule, part_ph, part_syn=True):
+             bimpf_rule, part_ph, part_syn=True, glottal=''):
     """Assemble a derived-measure paradigm. impf_ph/impf_ar are the 3ms stem WITHOUT the
-    person prefix; part_ph is the participle stem after the m- prefix (Arabic reuses impf_ar)."""
+    person prefix; part_ph is the participle stem after the m- prefix (Arabic reuses impf_ar).
+    glottal ('2' or '') is the hamzat-wasl onset Maknuune writes on the perfect/imperative of
+    VII/VIII/X — prepended to those pronunciations so the table matches the verb's own card
+    (the Arabic already carries the alif)."""
     cells = {}
     def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
 
     # PERFECT
     for per, ps, as_ in _PERF_SUF:
         base = _syncope_ph(perf_ph) if (per == 'hiyye' and perf3fs_syn) else perf_ph
-        put('perf', per, base + ps, perf_ar + as_)
+        put('perf', per, glottal + base + ps, perf_ar + as_)
 
     # IMPERFECT
     rp = _RPFX[group]
@@ -499,7 +502,7 @@ def _derived(perf_ph, perf_ar, perf3fs_syn, impf_ph, impf_ar, group, impf_syn,
         put('bimpf', per, ph, ar)
 
     # IMPERATIVE — group 'i' measures take an initial i-/ا; 'bare' (II/III) don't
-    imp_ph = ('i' + impf_ph) if group == 'i' else impf_ph
+    imp_ph = glottal + (('i' + impf_ph) if group == 'i' else impf_ph)
     imp_ar = ('ا' + impf_ar) if group == 'i' else impf_ar
     imp_syn = _syncope_ph(imp_ph)
     put('imp', 'inta', imp_ph, imp_ar)
@@ -581,38 +584,51 @@ def conjugate_VI(root, past3ms, pres3ms):
                     J_('t',c1,'aa',c2,'a',c3), J_('ت',r1,'ا',r2,r3), 'i', False, 'sound',
                     J_('it',c1,'aa',c2,'i',c3))
 
+# Maknuune writes the hamzat-wasl of the perfect with a glottal onset (2irtakab); the book
+# drops it (irtakab). Strip it for matching, remember it, and hand it to _derived so the
+# output pronunciation matches whichever citation form the input used.
+def _deglottal(past3ms):
+    p = _phon(str(past3ms))
+    return ('2', p[1:]) if p[:1] == ['2'] else ('', p)
+
 def conjugate_VII(root, past3ms, pres3ms):
     r = _radicals3(root)
     if not r: return None
-    p = _match(_phon(str(past3ms)), ['i','n','C','a','C','a','C'])
+    g, pp = _deglottal(past3ms)
+    p = _match(pp, ['i','n','C','a','C','a','C'])
     im = _match(_phon(str(pres3ms)), ['y','i','n','C','i','C','i','C'])
     if not p or not im or p != im: return None
-    c1, c2, c3 = p; r1, r2, r3 = r
+    c1, c2, c3 = p
+    r1, r2, r3 = (_ar_letter(c1, r[0]), _ar_letter(c2, r[1]), _ar_letter(c3, r[2]))
     return _derived(J_('in',c1,'a',c2,'a',c3), J_('ا','ن',r1,r2,r3), True,
                     J_('n',c1,'i',c2,'i',c3), J_('ن',r1,r2,r3), 'i', True, 'sound',
-                    J_('in',c1,'i',c2,'i',c3))
+                    J_('in',c1,'i',c2,'i',c3), glottal=g)
 
 def conjugate_VIII(root, past3ms, pres3ms):
     r = _radicals3(root)
     if not r: return None
-    p = _match(_phon(str(past3ms)), ['i','C','t','a','C','a','C'])
+    g, pp = _deglottal(past3ms)
+    p = _match(pp, ['i','C','t','a','C','a','C'])
     im = _match(_phon(str(pres3ms)), ['y','i','C','t','i','C','i','C'])
     if not p or not im or p != im: return None
-    c1, c2, c3 = p; r1, r2, r3 = r
+    c1, c2, c3 = p
+    r1, r2, r3 = (_ar_letter(c1, r[0]), _ar_letter(c2, r[1]), _ar_letter(c3, r[2]))
     return _derived(J_('i',c1,'ta',c2,'a',c3), J_('ا',r1,'ت',r2,r3), True,
                     J_(c1,'ti',c2,'i',c3), J_(r1,'ت',r2,r3), 'i', True, 'sound',
-                    J_('i',c1,'ti',c2,'i',c3))
+                    J_('i',c1,'ti',c2,'i',c3), glottal=g)
 
 def conjugate_X(root, past3ms, pres3ms):
     r = _radicals3(root)
     if not r: return None
-    p = _match(_phon(str(past3ms)), ['i','s','t','a','C','C','a','C'])
+    g, pp = _deglottal(past3ms)
+    p = _match(pp, ['i','s','t','a','C','C','a','C'])
     im = _match(_phon(str(pres3ms)), ['y','i','s','t','a','C','C','i','C'])
     if not p or not im or p != im: return None
-    c1, c2, c3 = p; r1, r2, r3 = r
+    c1, c2, c3 = p
+    r1, r2, r3 = (_ar_letter(c1, r[0]), _ar_letter(c2, r[1]), _ar_letter(c3, r[2]))
     return _derived(J_('ista',c1,c2,'a',c3), J_('ا','س','ت',r1,r2,r3), False,
                     J_('sta',c1,c2,'i',c3), J_('س','ت',r1,r2,r3), 'i', False, 'sound',
-                    J_('ista',c1,c2,'i',c3), part_syn=False)
+                    J_('ista',c1,c2,'i',c3), part_syn=False, glottal=g)
 
 
 if __name__ == '__main__':
