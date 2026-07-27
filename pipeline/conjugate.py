@@ -228,6 +228,8 @@ def parse_defective(root, past3ms, pres3ms):
     p = _phon(str(past3ms))
     if len(p) != 4 or not (_is_cons(p[0]) and _is_cons(p[2])) or p[1] not in ('a','i') or p[3] not in ('a','i'):
         return None
+    if p[1] != p[3]:            # a-i verbs (7ali) don't fit the CvCv pattern → principal parts
+        return None
     c1, pv, c2 = p[0], p[1], p[2]
     im = _phon(str(pres3ms))
     if len(im) != 5 or im[0] != 'y' or im[1] != 'i' or not (_is_cons(im[2]) and _is_cons(im[3])) or im[4] not in ('a','i'):
@@ -556,7 +558,7 @@ def conjugate_V(root, past3ms, pres3ms):
     im = _match(_phon(str(pres3ms)), ['y','i','t','C','a','C','C','a','C'])
     if not im or im[1] != im[2]: return None
     c1, c2, _, c3 = im
-    p = _phon(str(past3ms))
+    g, p = _deglottal(past3ms)                       # data may write 2itkabbar
     pre = p[:1] == ['i']
     pc = _match(p, (['i'] if pre else []) + ['t','C','a','C','C','a','C'])
     if not pc or pc[1] != pc[2] or [pc[0], pc[1], pc[3]] != [c1, c2, c3]: return None
@@ -565,7 +567,7 @@ def conjugate_V(root, past3ms, pres3ms):
     perf_ar = ('ا' if pre else '') + J_('ت',r1,r2,r3)
     return _derived(perf_ph, perf_ar, False,
                     J_('t',c1,'a',c2,c2,'a',c3), J_('ت',r1,r2,r3), 'i', False, 'sound',
-                    J_('it',c1,'a',c2,c2,'i',c3))
+                    J_('it',c1,'a',c2,c2,'i',c3), glottal=g)
 
 def conjugate_VI(root, past3ms, pres3ms):
     r = _radicals3(root)
@@ -573,7 +575,7 @@ def conjugate_VI(root, past3ms, pres3ms):
     im = _match(_phon(str(pres3ms)), ['y','i','t','C','aa','C','a','C'])
     if not im: return None
     c1, c2, c3 = im
-    p = _phon(str(past3ms))
+    g, p = _deglottal(past3ms)
     pre = p[:1] == ['i']
     pc = _match(p, (['i'] if pre else []) + ['t','C','aa','C','a','C'])
     if not pc or [pc[0], pc[1], pc[2]] != [c1, c2, c3]: return None
@@ -582,7 +584,7 @@ def conjugate_VI(root, past3ms, pres3ms):
     perf_ar = ('ا' if pre else '') + J_('ت',r1,'ا',r2,r3)
     return _derived(perf_ph, perf_ar, False,
                     J_('t',c1,'aa',c2,'a',c3), J_('ت',r1,'ا',r2,r3), 'i', False, 'sound',
-                    J_('it',c1,'aa',c2,'i',c3))
+                    J_('it',c1,'aa',c2,'i',c3), glottal=g)
 
 # Maknuune writes the hamzat-wasl of the perfect with a glottal onset (2irtakab); the book
 # drops it (irtakab). Strip it for matching, remember it, and hand it to _derived so the
@@ -590,6 +592,45 @@ def conjugate_VI(root, past3ms, pres3ms):
 def _deglottal(past3ms):
     p = _phon(str(past3ms))
     return ('2', p[1:]) if p[:1] == ['2'] else ('', p)
+
+def conjugate_IV(root, past3ms, pres3ms):
+    """Form IV (2af3al, causative): 2a-C1C2aC3 perfect, yi-C1C2iC3 imperfect (1sg keeps the
+    hamza — 2a3lin), no syncope, mi- participle. Sound roots only (weak IV → principal parts)."""
+    r = _radicals3(root)
+    if not r: return None
+    p = _match(_phon(str(past3ms)), ['2','a','C','C','a','C'])
+    im = _match(_phon(str(pres3ms)), ['y','i','C','C','i','C'])
+    if not p or not im or p != im: return None
+    c1, c2, c3 = p
+    r1, r2, r3 = (_ar_letter(c1, r[0]), _ar_letter(c2, r[1]), _ar_letter(c3, r[2]))
+    J = J_
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+    perf, perf_ar = J('2a', c1, c2, 'a', c3), J('أ', r1, r2, r3)          # 2a3lan / أعلن
+    for per, ps, as_ in _PERF_SUF:
+        put('perf', per, perf + ps, perf_ar + as_)
+    stem, stem_ar = J(c1, c2, 'i', c3), J(r1, r2, r3)                     # 3lin / علن
+    pf = {'ana':'2a', 'i7na':'ni', 'inta':'ti', 'inti':'ti', 'intu':'ti', 'huwwe':'yi', 'hiyye':'ti', 'humme':'yi'}
+    va = {'inti':('i','ي'), 'intu':('u','وا'), 'humme':('u','وا')}
+    for per in PERSONS:
+        sp, sa = va.get(per, ('', ''))
+        put('impf', per, pf[per] + stem + sp, _APFX[per] + stem_ar + sa)
+    for per in PERSONS:                                                  # bi-imperfect (sound rule)
+        im2 = cells['impf|' + per]
+        if per == 'ana':                                                # ba3lin (glottal drops)
+            ph, ar = 'b' + im2['ph'][1:], 'ب' + im2['ar'][1:]
+        elif per in ('huwwe', 'humme'):
+            ph, ar = 'b' + im2['ph'][1:], 'ب' + im2['ar'][1:]
+        else:
+            ph, ar = 'b' + im2['ph'], 'ب' + im2['ar']
+        put('bimpf', per, ph, ar)
+    put('imp', 'inta', J('i', stem),       J('ا', stem_ar))             # i3lin / اعلن
+    put('imp', 'inti', J('i', stem, 'i'),  J('ا', stem_ar, 'ي'))
+    put('imp', 'intu', J('i', stem, 'u'),  J('ا', stem_ar, 'وا'))
+    put('ap', 'm', J('mi', stem),          J('م', stem_ar))             # mi3lin / معلن (no syncope)
+    put('ap', 'f', J('mi', stem, 'a'),     J('م', stem_ar, 'ة'))
+    put('ap', 'p', J('mi', stem, 'iin'),   J('م', stem_ar, 'ين'))
+    return cells
 
 def conjugate_VII(root, past3ms, pres3ms):
     r = _radicals3(root)
