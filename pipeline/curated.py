@@ -114,6 +114,20 @@ STORY = {
     "صحابي":("صْحابي",  "s.7aabi", "my friends", "NOUN:P"),
     "تنتين":("تِنتين",  "tinteen", "two (feminine)", "NOUN_NUM"),
     "قهوتي":("قَهوتي",  "2ahwti",  "my coffee", "NOUN:FS"),
+    # Intermediate stories: past-tense كان "to be" (1s/1pl collide with a homograph), a few
+    # everyday words the lexicon lacks, more names, and two very common suffixed verbs.
+    "كنت":  ("كُنت",    "kunt",    "I was, you were", "VERB:P"),
+    "كنا":  ("كُنّا",   "kunna",   "we were", "VERB:P"),
+    "امه":  ("إمّه",    "2immo",   "his mom", "NOUN:FS"),
+    "الاشيا":("الأشيا",  "2il2ashya","the things", "NOUN:P"),
+    "دايما":("دايماً",  "daayman", "always", "ADV"),
+    "حلويات":("حَلَويات","7alawiyyaat","sweets, desserts", "NOUN:P"),
+    "شوكولاته":("شوكولاتة","shokolaata","chocolate", "NOUN:FS"),
+    "سمير": ("سَمير",   "samiir",  "Samir (a name)", "NOUN_PROP"),
+    "خالد": ("خالِد",   "khaalid", "Khaled (a name)", "NOUN_PROP"),
+    "زياد": ("زياد",    "ziyaad",  "Ziad (a name)", "NOUN_PROP"),
+    "حسيت": ("حَسّيت",  "7asseet", "I felt", "VERB:P"),
+    "حطيت": ("حَطّيت",  "7at.t.eet","I put", "VERB:P"),
 }
 
 def _norm(x):
