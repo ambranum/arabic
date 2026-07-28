@@ -13,7 +13,7 @@ Audio runs once at ingest and is cached (SPEC 4.2). Needs:
     export ELEVENLABS_VOICE_ID=...     # the Palestinian Voice Design voice
 Without them the pipeline still emits the artifact with audio: null.
 """
-import json, os, sys, re, argparse, hashlib, urllib.request, ssl
+import json, os, sys, re, argparse, hashlib, urllib.request, ssl, urllib.error
 try:  # macOS python.org builds lack wired-up CA certs; use certifi's bundle for HTTPS.
     import certifi
     _SSL = ssl.create_default_context(cafile=certifi.where())
@@ -81,14 +81,17 @@ def tts(text, out_path, api_key, voice_id):
         return True, "cached"
     req = urllib.request.Request(
         f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}",
-        data=json.dumps({"text": text, "model_id": "eleven_v3"}).encode(),
+        data=json.dumps({"text": text,
+            "model_id": os.environ.get('ELEVENLABS_MODEL', 'eleven_multilingual_v2')}).encode(),
         headers={"xi-api-key": api_key, "Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=90, context=_SSL) as r:
             open(out_path, 'wb').write(r.read())
         return True, "generated"
+    except urllib.error.HTTPError as e:
+        return False, "HTTP %s — %s" % (e.code, e.read().decode('utf-8', 'replace')[:150])
     except Exception as e:
-        return False, str(e)[:90]
+        return False, str(e)[:120]
 
 def main():
     ap = argparse.ArgumentParser()
