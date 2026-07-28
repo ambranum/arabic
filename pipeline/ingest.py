@@ -29,7 +29,9 @@ def load_resolutions():
     return {}
 
 def tokenize(sent):
-    return [w for w in re.split(r'[\s،.؟!]+', sent.strip()) if w]
+    # Split on whitespace and punctuation — including the colon/semicolon and quotes that
+    # dialogue uses (قال: ...), so "قال:" tokenizes as قال, not an unmatchable "قال:".
+    return [w for w in re.split(r'[\s،.؟!:؛…"«»”“\-—()]+', sent.strip()) if w]
 
 def annotate_word(lex, surface, res):
     key = norm(surface)

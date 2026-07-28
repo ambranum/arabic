@@ -128,6 +128,19 @@ STORY = {
     "زياد": ("زياد",    "ziyaad",  "Ziad (a name)", "NOUN_PROP"),
     "حسيت": ("حَسّيت",  "7asseet", "I felt", "VERB:P"),
     "حطيت": ("حَطّيت",  "7at.t.eet","I put", "VERB:P"),
+    # Advanced stories: the core verb إجا "to come" (Maknuune has no clean entry), a few
+    # everyday words the lexicon lacks, one more name, and common suffixed forms.
+    "اجا":  ("إجا",     "2ija",    "he came", "VERB:P"),
+    "اجت":  ("إجت",     "2ijat",   "she came", "VERB:P"),
+    "اجاه": ("إجاه",    "2ijaa",   "came to him", "VERB:P"),
+    "اجوا": ("إجوا",    "2iju",    "they came", "VERB:P"),
+    "توفت": ("تُوَفّت",  "tiwaffat","she passed away", "VERB:P"),
+    "رغم":  ("رَغم",    "raghm",   "despite, in spite of", "PREP"),
+    "لسا":  ("لِسّا",   "lissa",   "still, not yet", "ADV"),
+    "محدا": ("مَحَدا",  "ma7ada",  "nobody, no one", "PRON"),
+    "الصوبا":("الصّوبا", "2is.s.oba","the heater, the stove", "NOUN:FS"),
+    "ماجد": ("ماجِد",   "maajid",  "Majid (a name)", "NOUN_PROP"),
+    "له":   ("لُه",     "2ilo",    "to him, for him", "PREP"),
 }
 
 def _norm(x):
