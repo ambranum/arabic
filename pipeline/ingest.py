@@ -13,7 +13,12 @@ Audio runs once at ingest and is cached (SPEC 4.2). Needs:
     export ELEVENLABS_VOICE_ID=...     # the Palestinian Voice Design voice
 Without them the pipeline still emits the artifact with audio: null.
 """
-import json, os, sys, re, argparse, hashlib, urllib.request
+import json, os, sys, re, argparse, hashlib, urllib.request, ssl
+try:  # macOS python.org builds lack wired-up CA certs; use certifi's bundle for HTTPS.
+    import certifi
+    _SSL = ssl.create_default_context(cafile=certifi.where())
+except Exception:
+    _SSL = None
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from maknuune import Lexicon, entry_to_word, norm
 from subdialect import realize
@@ -79,7 +84,7 @@ def tts(text, out_path, api_key, voice_id):
         data=json.dumps({"text": text, "model_id": "eleven_v3"}).encode(),
         headers={"xi-api-key": api_key, "Content-Type": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=90) as r:
+        with urllib.request.urlopen(req, timeout=90, context=_SSL) as r:
             open(out_path, 'wb').write(r.read())
         return True, "generated"
     except Exception as e:

@@ -9,7 +9,15 @@ Run:  ELEVENLABS_API_KEY=... ELEVENLABS_VOICE_ID=... python3 pipeline/vocab_audi
 Without the keys it just reports how many clips WOULD be generated and writes nothing.
 Clips are cached by content hash, so re-runs only synthesize new words.
 """
-import json, os, glob, hashlib, urllib.request
+import json, os, glob, hashlib, urllib.request, ssl
+
+# macOS python.org builds ship without wired-up CA certs, so HTTPS verification fails with
+# CERTIFICATE_VERIFY_FAILED. Use certifi's bundle when it's installed (it is, via pip).
+try:
+    import certifi
+    _SSL = ssl.create_default_context(cafile=certifi.where())
+except Exception:
+    _SSL = None
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 OUTDIR = os.path.join(ROOT, 'app', 'audio', 'vocab')
@@ -36,7 +44,7 @@ def tts(text, out_path, key, voice):
         f"https://api.elevenlabs.io/v1/text-to-speech/{voice}",
         data=json.dumps({"text": text, "model_id": "eleven_v3"}).encode(),
         headers={"xi-api-key": key, "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=90) as r:
+    with urllib.request.urlopen(req, timeout=90, context=_SSL) as r:
         open(out_path, 'wb').write(r.read())
     return 'generated'
 
