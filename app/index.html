@@ -548,8 +548,17 @@ const SECTIONS = [
   {route: 'news',    icon: 'news',    label: "Today's News",    ready: true},
   {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: false},
-  {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: false},
+  {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
 ];
+
+// Short-story reading levels, in order. label shown on tiles; blurb sets expectations.
+const STORY_LEVELS = [
+  ['beginner',     'Beginner',     'Short, present-tense, everyday life. A few sentences each.'],
+  ['intermediate', 'Intermediate', 'Longer past-tense stories with small plots and connectors.'],
+  ['advanced',     'Advanced',     'Full stories — dialogue, idioms, and richer situations.'],
+];
+const storiesAt = lvl => LIB.texts.filter(t => t.kind === 'story' && t.level === lvl)
+                                  .sort((a, b) => (a.id).localeCompare(b.id));
 
 function renderNav(active){
   const item = (route, icon, label, ready) =>
@@ -568,14 +577,15 @@ function route() {
   const [, kind, id] = h.split('/');
   // A text/drill belongs to whichever section it came from; light that tab when we can.
   if (kind === 'text')  { const t = LIB.texts.find(x => x.id === id);
-    if (t) { renderNav(t.kind === 'news' ? 'news' : null); return reader(t); } }
+    if (t) { renderNav(t.kind === 'news' ? 'news' : t.kind === 'story' ? 'stories' : null); return reader(t); } }
   if (kind === 'drill') { const d = LIB.drills.find(x => x.id === id);
     if (d) { renderNav(null); return drill(d); } }
   if (kind === 'verb') { renderNav('verbs'); return verbDetail(id); }
   const sec = SECTIONS.find(x => x.route === kind);
   if (sec) { renderNav(sec.route);
-    if (sec.route === 'news')  return newsSection();
-    if (sec.route === 'verbs') return verbsSection(id);
+    if (sec.route === 'news')    return newsSection();
+    if (sec.route === 'verbs')   return verbsSection(id);
+    if (sec.route === 'stories') return storiesSection(id);
     return emptySection(sec); }
   renderNav('home');
   home();
@@ -619,6 +629,7 @@ function home(){
     const count = sec.route === 'news'
       ? LIB.texts.filter(t => t.kind === 'news').length + ' articles'
       : sec.route === 'verbs' ? VB.length + ' verbs, by form'
+      : sec.route === 'stories' ? LIB.texts.filter(t => t.kind === 'story').length + ' stories, 3 levels'
       : 'Coming soon';
     return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
       <div class="tile-t">${esc(sec.label)}</div>
@@ -662,6 +673,44 @@ function newsSection(){
     h += `<div class="unval"><b>Today's isn't in yet.</b> The morning job writes it around
       5am; until then the latest is ${esc(news[0].date)}.</div>`;
   h += news.map(t => card(t, 'text')).join('');
+  $('view').innerHTML = h;
+}
+
+// ---------- short stories section ----------
+function storiesSection(sub){
+  $('back').hidden = false;
+  const lvl = STORY_LEVELS.find(l => l[0] === sub);
+  if (lvl) return storiesLevel(lvl);
+  return storiesHome();
+}
+
+function storiesHome(){
+  $('title').textContent = 'Short Stories';
+  let h = `<p class="hint">Graded short stories in spoken Palestinian, by level. Tap any word
+    to see its root, meaning and pronunciation — all from the lexicon. The <b>stories</b>
+    themselves are written by Claude, not native-checked, so read for practice and don't
+    memorise the phrasing.</p><div class="vtiles">`;
+  h += STORY_LEVELS.map(([key, label, blurb]) => {
+    const n = storiesAt(key).length;
+    return `<button class="vtile wide" onclick="location.hash='/stories/${key}'">
+      <div class="vtile-h"><span class="vtile-t">${esc(label)}</span>
+        <span class="vtile-n">${n}</span></div>
+      <div class="vtile-s">${esc(blurb)}</div></button>`;
+  }).join('');
+  h += '</div>';
+  $('view').innerHTML = h;
+}
+
+function storiesLevel(lvl){
+  const [key, label, blurb] = lvl;
+  $('title').textContent = label + ' Stories';
+  const list = storiesAt(key);
+  let h = `<p class="hint">${esc(blurb)}</p>`;
+  h += list.length ? list.map(t => card(t, 'text')).join('')
+                   : `<p class="hint">No stories here yet.</p>`;
+  h += `<div class="sec" style="margin-top:20px">Levels</div><div class="ctl">` +
+    STORY_LEVELS.map(([k, l]) => `<button class="tog"${k === key ? ' aria-pressed="true"' : ''}
+        onclick="location.hash='/stories/${k}'">${esc(l)}</button>`).join('') + `</div>`;
   $('view').innerHTML = h;
 }
 

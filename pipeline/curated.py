@@ -90,6 +90,32 @@ MODERN = {
     "صاروخ":     ("صاروخ",     "s.aaruukh",    "rocket, missile", "NOUN:MS"),
 }
 
+# STORY — words the short stories need that the lexicon can't resolve on its own:
+# character/pet names (proper nouns, like PROPER), and a handful of everyday possessive
+# forms whose base+clitic collides with a homograph verb (بيت+نا "our house" vs بيّتنا
+# "made us sleep"; أمّ+ي "my mom" vs أمّي "illiterate"). The possessives are transparent
+# morphology, not guesses; curated so the reader sees the intended word. Keyed by the
+# NORMALISED surface (diacritics stripped, أإآ→ا, ة→ه) to match the ingest lookup.
+STORY = {
+    "سامي": ("سامي",   "saami",   "Sami (a name)", "NOUN_PROP"),
+    "كريم": ("كَريم",   "kariim",  "Karim (a name)", "NOUN_PROP"),
+    "احمد": ("أَحمَد",  "2a7mad",  "Ahmad (a name)", "NOUN_PROP"),
+    "مشمش": ("مِشمِش",  "mishmish","Mishmish (a cat's name)", "NOUN_PROP"),
+    "لولو": ("لولو",   "luulu",   "Lulu (a dog's name)", "NOUN_PROP"),
+    "بيتنا": ("بيتْنا",  "beetna",  "our house", "NOUN:MS"),
+    "بالبيت":("بالبيت", "bilbeet", "at home, in the house", "NOUN:MS"),
+    "جدتي": ("جِدّتي",  "jiddti",  "my grandmother", "NOUN:FS"),
+    "جدي":  ("جِدّي",   "jiddi",   "my grandfather", "NOUN:MS"),
+    "امي":  ("إمّي",    "2immi",   "my mom", "NOUN:FS"),
+    "همه":  ("هُمّة",   "humme",   "they", "PRON"),
+    "وهمه": ("وهُمّة",  "whumme",  "and they", "PRON"),
+    "مني":  ("مِنّي",   "minni",   "from me, than me", "PREP"),
+    "الولاد":("الوْلاد", "2ilwlaad","the kids, the boys", "NOUN:P"),
+    "صحابي":("صْحابي",  "s.7aabi", "my friends", "NOUN:P"),
+    "تنتين":("تِنتين",  "tinteen", "two (feminine)", "NOUN_NUM"),
+    "قهوتي":("قَهوتي",  "2ahwti",  "my coffee", "NOUN:FS"),
+}
+
 def _norm(x):
     for a, b in (('أ','ا'),('إ','ا'),('آ','ا'),('ى','ي'),('ة','ه'),('ؤ','ء'),('ئ','ء')):
         x = x.replace(a, b)
@@ -118,7 +144,8 @@ def numeral(surface):
             "provenance": "curated:numeral"}
 
 _ALL = {}
-for src, tag in ((FUNCTION, 'function-word'), (PROPER, 'proper-noun'), (MODERN, 'modern-term')):
+for src, tag in ((FUNCTION, 'function-word'), (PROPER, 'proper-noun'), (MODERN, 'modern-term'),
+                 (STORY, 'story-word')):
     for k, v in src.items():
         _ALL[k] = (v, tag)
         _ALL[_norm(k)] = (v, tag)          # match normalised lookups too

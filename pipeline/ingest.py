@@ -103,6 +103,7 @@ def main():
 
     art = {"id": src['id'], "title": src['title'], "dialect": src.get('dialect', 'pal'),
            "kind": src.get('kind', 'lesson'), "date": src.get('date'),
+           "level": src.get('level'),          # beginner/intermediate/advanced (stories)
            "subdialect": SUB,
            "source": src.get('source', 'original'), "sentences": []}
     stats = {}
