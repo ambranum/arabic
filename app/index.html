@@ -514,6 +514,31 @@
   .sk-ref-en{font-size:12.5px; color:var(--muted); margin-top:2px}
   .sk-shadow{border:1px solid var(--rule); border-radius:8px; padding:11px 12px; margin-bottom:8px}
   .sk-shadow .ar{font-family:var(--arabic); font-size:20px; line-height:1.7; margin-bottom:8px}
+  /* guided shadow */
+  .gs-launch{display:block; width:100%; text-align:left; font:inherit; cursor:pointer;
+    border:1px solid var(--verdigris); background:var(--verdigris-2); color:var(--verdigris);
+    border-radius:9px; padding:13px 15px; font-size:15px; font-weight:600; margin-bottom:12px}
+  .gs-launch span{display:block; font-weight:400; font-size:12px; color:var(--ink-soft); margin-top:3px}
+  .gs-launch:hover{border-color:var(--verdigris); filter:brightness(1.03)}
+  .gs-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;
+    font-family:var(--mono); font-size:12px; color:var(--muted)}
+  .gs-top .pspd{display:flex; gap:4px}
+  .gs-card{border:1px solid var(--rule); border-radius:12px; padding:26px 18px; text-align:center; min-height:190px;
+    display:flex; flex-direction:column; justify-content:center; transition:border-color .2s,background .2s}
+  .gs-card.gs-listen{border-color:var(--verdigris); background:var(--verdigris-2)}
+  .gs-card.gs-turn{border-color:var(--ochre); background:var(--ochre-wash)}
+  .gs-phase{font-size:12px; letter-spacing:.06em; text-transform:uppercase; font-weight:700;
+    color:var(--muted); margin-bottom:14px}
+  .gs-listen .gs-phase{color:var(--verdigris)}
+  .gs-turn .gs-phase{color:var(--ochre)}
+  .gs-ar{font-family:var(--arabic); font-size:30px; line-height:1.7; color:var(--ink)}
+  .gs-en{font-size:13.5px; color:var(--muted); margin-top:10px; line-height:1.5}
+  .gs-progbar{height:6px; border-radius:4px; background:var(--paper-3); margin-top:18px; overflow:hidden}
+  .gs-progbar.off{visibility:hidden}
+  .gs-progbar i{display:block; height:100%; background:var(--ochre); border-radius:4px; width:0}
+  .gs-done{text-align:center; padding:44px 16px}
+  .gs-done-t{font-family:var(--serif); font-size:24px; color:var(--verdigris); margin-bottom:8px}
+  .gs-done p{font-size:14px; color:var(--muted); line-height:1.6; margin:0}
 </style>
 </head>
 <body>
@@ -821,6 +846,7 @@ function renderNav(active){
 function route() {
   if (typeof closeSide === 'function') closeSide();
   if (typeof spkStop === 'function') spkStop();           // stop any running speaking timer
+  if (typeof gsStop === 'function') { gsStop(); _gs = null; }   // stop guided-shadow audio
   const cw = $('cw'); if (cw) cw.classList.remove('on');   // close the word sheet on nav
   const h = location.hash.slice(1) || '/';
   const [, kind, id, arg] = h.split('/');
@@ -1963,11 +1989,13 @@ function drill(d) {
 // and until then we say so plainly rather than shadow a wrong-accent robotic voice.
 const SK_ROUNDS = [240, 180, 120];                        // 4, 3, 2 minutes, in seconds
 let _skTimer = null, _skLeft = SK_ROUNDS[0], _skRound = 0, _skDone = [false, false, false];
+let _spkT = null;                                         // the text the Speak view is showing
 const skFmt = s => { s = Math.max(0, s); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
 function spkStop() { if (_skTimer) { clearInterval(_skTimer); _skTimer = null; } }
 
 function speakView(t) {
   spkStop();
+  _spkT = t;
   $('back').hidden = false;
   $('title').textContent = 'Speak';
   _skRound = 0; _skLeft = SK_ROUNDS[0]; _skDone = [false, false, false];
@@ -2001,8 +2029,10 @@ function speakView(t) {
 
   h += `<div class="sec">Shadow the audio</div>`;
   if (hasAudio) {
-    h += `<p class="hint">Play each line, then say it straight back — copy the rhythm and melody, not just
-       the words. Drop it to 0.5× until your mouth keeps up.</p>`;
+    h += `<button class="gs-launch" onclick="gsOpen()">▶ Start guided shadow
+       <span>Hands-free — it plays each line, then waits for you to echo it back.</span></button>`;
+    h += `<p class="hint">…or go line by line yourself: play each one, then say it straight back — copy the
+       rhythm and melody, not just the words. Drop it to 0.5× until your mouth keeps up.</p>`;
     t.sentences.forEach(s => { if (!s.audio) return;
       h += `<div class="sk-shadow"><div class="ar" dir="rtl">${esc(s.ar)}</div>${player(s.audio)}</div>`; });
   } else {
@@ -2048,6 +2078,103 @@ function spkSetRound(n) { spkStop(); _skRound = n; _skLeft = SK_ROUNDS[n];
   const st = $('sk-status'); if (st) st.textContent = ''; spkPaint(); }
 function spkReset() { spkStop(); _skRound = 0; _skLeft = SK_ROUNDS[0]; _skDone = [false, false, false];
   const st = $('sk-status'); if (st) st.textContent = ''; spkPaint(); }
+
+// ---------- guided shadow (hands-free) ----------
+// Steps through a text line by line: play the clip → a symmetric "your turn" beat to echo it →
+// auto-advance. Uses its OWN <audio> so it never tangles with the reader's shared player. After
+// the first user-gesture play, subsequent programmatic plays on the same element are allowed.
+let _gs = null;
+function gsClear() { if (_gs) { if (_gs.timer) clearTimeout(_gs.timer); if (_gs.tick) clearInterval(_gs.tick);
+  _gs.timer = _gs.tick = null; if (_gs.audio) { _gs.audio.onended = null; _gs.audio.pause(); } } }
+function gsStop() { gsClear(); if (_gs) _gs.running = false; }
+
+function gsOpen() {
+  const t = _spkT; if (!t) return;
+  const sents = t.sentences.filter(s => s.audio).map(s => ({ar: s.ar, en: s.en, audio: s.audio}));
+  if (!sents.length) return;
+  const a = new Audio(); a.preservesPitch = true; a.mozPreservesPitch = true; a.webkitPreservesPitch = true;
+  _gs = {t, sents, i: 0, phase: 'idle', timer: null, tick: null, audio: a, speed: SPEED, running: false};
+  gsRender();
+}
+function gsExit() { const t = _gs && _gs.t; gsStop(); _gs = null; if (t) speakView(t); }
+
+function gsPlayLine() {
+  if (!_gs) return;
+  _gs.phase = 'listen'; _gs.running = true; gsRender();
+  const a = _gs.audio, s = _gs.sents[_gs.i];
+  a.src = s.audio; a.playbackRate = _gs.speed; a.currentTime = 0;
+  a.onended = () => { if (_gs && _gs.running) gsYourTurn(); };
+  a.play().catch(() => { _gs.running = false; _gs.phase = 'paused'; gsRender(); });   // autoplay blocked → wait for tap
+}
+function gsYourTurn() {
+  if (!_gs) return;
+  _gs.phase = 'turn'; gsRender();
+  const elapsed = (isFinite(_gs.audio.duration) ? _gs.audio.duration : 3) / _gs.speed;   // real time the clip took
+  const total = Math.max(2000, elapsed * 1000 + 800);
+  const start = now();
+  _gs.tick = setInterval(() => {
+    const el = $('gs-bar'); if (!el) { clearInterval(_gs.tick); _gs.tick = null; return; }
+    el.style.width = Math.min(100, (now() - start) / total * 100) + '%';
+  }, 60);
+  _gs.timer = setTimeout(() => { if (_gs && _gs.running) gsNext(); }, total);
+}
+function gsNext() {
+  if (!_gs) return; gsClear();
+  if (_gs.i < _gs.sents.length - 1) { _gs.i++; gsPlayLine(); }
+  else { _gs.phase = 'done'; _gs.running = false; gsRender(); }
+}
+function gsToggle() {                                    // Start / Pause / Resume
+  if (!_gs) return;
+  if (_gs.running) { gsStop(); _gs.phase = 'paused'; gsRender(); }
+  else { gsPlayLine(); }                                 // (re)play the current line and continue
+}
+function gsReplay() { if (_gs) { gsClear(); gsPlayLine(); } }
+function gsRestart() { if (_gs) { gsClear(); _gs.i = 0; gsPlayLine(); } }
+function gsSkip() { if (_gs) { gsClear(); _gs.running = true; gsNext(); } }
+function gsSpeed(v) { if (!_gs) return; _gs.speed = v; if (_gs.audio) _gs.audio.playbackRate = v; setSpeed(v); gsRender(); }
+
+function gsRender() {
+  if (!_gs) return;
+  const s = _gs.sents[_gs.i], n = _gs.sents.length, p = _gs.phase;
+  const speeds = `<div class="pspd" role="group" aria-label="Speed">${[[0.5, '0.5×'], [0.9, '0.9×'], [1, '1×']].map(([v, l]) =>
+    `<button class="sb" aria-pressed="${_gs.speed === v}" onclick="gsSpeed(${v})">${l}</button>`).join('')}</div>`;
+
+  if (p === 'done') {
+    $('view').innerHTML = `<div class="gs">
+      <div class="gs-done"><div class="gs-done-t">Nicely done 🎉</div>
+        <p>You shadowed all ${n} lines. Do it again a little faster, or head back.</p></div>
+      <div class="ctl" style="justify-content:center">
+        <button class="tog go" onclick="gsRestart()">Shadow again</button>
+        <button class="tog" onclick="gsExit()">Back to Speak</button></div></div>`;
+    return;
+  }
+
+  const phaseLabel = p === 'listen' ? '🔊 Listen…'
+    : p === 'turn' ? '🎤 Your turn — say it back'
+    : p === 'paused' ? '⏸ Paused' : 'Ready when you are';
+  const bar = p === 'turn' ? `<div class="gs-progbar"><i id="gs-bar" style="width:0%"></i></div>` : `<div class="gs-progbar off"></div>`;
+  const playLbl = _gs.running ? '⏸ Pause' : (p === 'idle' ? '▶ Start' : '▶ Resume');
+
+  $('view').innerHTML = `<div class="gs">
+    <div class="gs-top"><span>Line ${_gs.i + 1} of ${n}</span>${speeds}</div>
+    <div class="gs-card gs-${p}">
+      <div class="gs-phase">${phaseLabel}</div>
+      <div class="gs-ar" dir="rtl">${esc(s.ar)}</div>
+      <div class="gs-en">${esc(s.en || '')}</div>
+      ${bar}
+    </div>
+    <div class="ctl" style="justify-content:center;margin-top:14px">
+      <button class="tog go" onclick="gsToggle()">${playLbl}</button>
+      <button class="tog" onclick="gsReplay()">↺ Replay line</button>
+      <button class="tog" onclick="gsSkip()">Skip →</button>
+    </div>
+    <div class="ctl" style="justify-content:center">
+      <button class="tog" onclick="gsRestart()">Start over</button>
+      <button class="tog" onclick="gsExit()">Exit</button>
+    </div>
+    <p class="hint" style="text-align:center;margin-top:14px">Listen, then echo it out loud — match the melody,
+      not just the words. It moves on by itself; pause any time.</p></div>`;
+}
 
 // ---------- tray ----------
 function count() { const due = dueCards().length;
