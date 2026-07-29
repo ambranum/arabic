@@ -487,6 +487,33 @@
   .gex-src{font:inherit; font-size:11.5px; color:var(--verdigris); background:none; border:none;
     padding:6px 0 0; cursor:pointer; text-align:right}
   .gex-src:hover{text-decoration:underline}
+  /* ---- Speaking practice ---- */
+  .sk-go{border-color:var(--verdigris); color:var(--verdigris)}
+  .sk-hd{margin:2px 0 14px}
+  .sk-hk{font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--verdigris); font-weight:700}
+  .sk-ht{font-family:var(--serif); font-size:22px; margin-top:3px; line-height:1.2}
+  .sk-rounds{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:14px}
+  .sk-round{font:inherit; cursor:pointer; border:1px solid var(--rule); border-radius:8px;
+    background:none; color:var(--ink); padding:12px 6px; text-align:center; position:relative}
+  .sk-round b{display:block; font-family:var(--serif); font-size:18px}
+  .sk-round span{font-size:11px; color:var(--muted)}
+  .sk-round:hover{border-color:var(--verdigris)}
+  .sk-round.on{border-color:var(--verdigris); background:var(--verdigris-2)}
+  .sk-round.done{border-color:var(--verdigris)}
+  .sk-round.done::after{content:'✓'; position:absolute; top:5px; right:7px; font-size:11px; color:var(--verdigris)}
+  .sk-timer{text-align:center; border:1px solid var(--rule); border-radius:10px; padding:18px 12px; margin-bottom:16px}
+  .sk-time{font-family:var(--mono); font-size:52px; font-weight:600; letter-spacing:.02em; line-height:1}
+  .sk-status{font-size:12.5px; color:var(--ochre); min-height:17px; margin-top:8px; line-height:1.4}
+  .sk-peek{font:inherit; font-size:12.5px; color:var(--verdigris); background:none; border:none;
+    padding:2px 0 8px; cursor:pointer}
+  .sk-ref{display:none; border:1px solid var(--rule); border-radius:8px; padding:4px 12px; margin-bottom:8px}
+  .sk-ref.open{display:block}
+  .sk-ref-s{padding:9px 0; border-bottom:1px solid var(--rule)}
+  .sk-ref-s:last-child{border-bottom:none}
+  .sk-ref-s .ar{font-family:var(--arabic); font-size:19px; line-height:1.7}
+  .sk-ref-en{font-size:12.5px; color:var(--muted); margin-top:2px}
+  .sk-shadow{border:1px solid var(--rule); border-radius:8px; padding:11px 12px; margin-bottom:8px}
+  .sk-shadow .ar{font-family:var(--arabic); font-size:20px; line-height:1.7; margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -793,12 +820,15 @@ function renderNav(active){
 // ---------- routing (hash so Back works, and it survives a reload) ----------
 function route() {
   if (typeof closeSide === 'function') closeSide();
+  if (typeof spkStop === 'function') spkStop();           // stop any running speaking timer
   const cw = $('cw'); if (cw) cw.classList.remove('on');   // close the word sheet on nav
   const h = location.hash.slice(1) || '/';
   const [, kind, id, arg] = h.split('/');
   // A text/drill belongs to whichever section it came from; light that tab when we can.
   if (kind === 'text')  { const t = LIB.texts.find(x => x.id === id);
     if (t) { renderNav(t.kind === 'news' ? 'news' : t.kind === 'story' ? 'stories' : null); return reader(t); } }
+  if (kind === 'speak') { const t = LIB.texts.find(x => x.id === id);
+    if (t) { renderNav(t.kind === 'news' ? 'news' : t.kind === 'story' ? 'stories' : null); return speakView(t); } }
   if (kind === 'drill') { const d = LIB.drills.find(x => x.id === id);
     if (d) { renderNav(null); return drill(d); } }
   if (kind === 'verb') { renderNav('verbs'); return verbDetail(id); }
@@ -1246,8 +1276,14 @@ function resolveTask(cfg, sp, dayNo, k, minutes, carAvail) {
     t.title = R.name || A.label; t.url = R.url; t.note = R.note;
   } else if (sp.pool) {
     const pick = planPick(sp.pool, dayNo + k * 3);
-    if (pick) { t.title = pick.title; t.link = pick.link; }
-    else { t.title = A.label; t.note = 'No ' + sp.pool + ' content loaded yet.'; }
+    if (pick) {
+      // Speaking activities open the Speak view (4/3/2 + shadow); reading opens the reader.
+      // Reaction chunks already ARE a speaking drill (cue→say→check), so leave those as-is.
+      let link = pick.link;
+      if ((sp.act === 'shadow' || sp.act === 'drill432') && link.startsWith('/text/'))
+        link = link.replace('/text/', '/speak/');
+      t.title = pick.title; t.link = link;
+    } else { t.title = A.label; t.note = 'No ' + sp.pool + ' content loaded yet.'; }
   } else if (sp.act === 'srs') {
     t.title = 'Review your due flashcards'; t.link = '/vocab/review';
   } else if (sp.act === 'grammar') {
@@ -1796,6 +1832,7 @@ function reader(t) {
       <button class="tog" id="tVoc" aria-pressed="true">Vowels</button>
       <button class="tog" id="tEn" aria-pressed="false">English</button>
       <button class="tog" id="tMk" aria-pressed="true">Show marked</button>
+      <button class="tog sk-go" onclick="location.hash='/speak/${esc(t.id)}'">🗣 Speak it</button>
     </div>` +
     (/not native-validated/i.test(t.source || '')
       ? `<div class="unval"><b>Not checked by a native speaker.</b> Every word's root,
@@ -1918,6 +1955,99 @@ function drill(d) {
   });
   $('view').innerHTML = h;
 }
+
+// ---------- speaking practice (the fluency engine) ----------
+// Two drills over any text. The 4/3/2 retell (LEARNING-SYSTEM §2.3) needs no audio — it's a
+// timer that forces you to say the same thing faster and faster until the words come automatically.
+// Shadowing needs real Palestinian sentence audio; it lights up automatically once a text has it,
+// and until then we say so plainly rather than shadow a wrong-accent robotic voice.
+const SK_ROUNDS = [240, 180, 120];                        // 4, 3, 2 minutes, in seconds
+let _skTimer = null, _skLeft = SK_ROUNDS[0], _skRound = 0, _skDone = [false, false, false];
+const skFmt = s => { s = Math.max(0, s); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+function spkStop() { if (_skTimer) { clearInterval(_skTimer); _skTimer = null; } }
+
+function speakView(t) {
+  spkStop();
+  $('back').hidden = false;
+  $('title').textContent = 'Speak';
+  _skRound = 0; _skLeft = SK_ROUNDS[0]; _skDone = [false, false, false];
+  const hasAudio = t.sentences.some(s => s.audio);
+
+  let h = `<div class="sk-hd"><div class="sk-hk">Speaking practice</div>
+      <div class="sk-ht">${esc(t.title.en)}</div></div>`;
+
+  h += `<div class="note" style="margin:0 0 16px">The <b>4/3/2 drill</b>: retell this out loud from
+     memory — first in four minutes, then three, then two. Speeding up is the whole point; it forces the
+     words to come as chunks instead of one at a time. Keep talking the entire time — if you blank, say
+     what you remember or just describe it. Nobody’s grading you. The talking <i>is</i> the exercise.</div>`;
+
+  h += `<div class="sk-rounds">${[0, 1, 2].map(i =>
+     `<button class="sk-round" id="sk-r${i}" onclick="spkSetRound(${i})">
+        <b>${[4, 3, 2][i]} min</b><span>Round ${i + 1}</span></button>`).join('')}</div>`;
+
+  h += `<div class="sk-timer">
+      <div class="sk-time" id="sk-time">${skFmt(_skLeft)}</div>
+      <div class="sk-status" id="sk-status"></div>
+      <div class="ctl" style="justify-content:center;margin:12px 0 0">
+        <button class="tog go" id="sk-play" onclick="spkToggle()">Start</button>
+        <button class="tog" onclick="spkReset()">Reset</button></div></div>`;
+
+  h += `<button class="sk-peek" onclick="this.nextElementSibling.classList.toggle('open');
+     this.textContent=this.nextElementSibling.classList.contains('open')?'Hide the text ▴':'Peek at the text ▾'">Peek at the text ▾</button>
+     <div class="sk-ref">`;
+  t.sentences.forEach(s => { h += `<div class="sk-ref-s"><div class="ar" dir="rtl">${esc(s.ar)}</div>
+     <div class="sk-ref-en">${esc(s.en)}</div></div>`; });
+  h += `</div>`;
+
+  h += `<div class="sec">Shadow the audio</div>`;
+  if (hasAudio) {
+    h += `<p class="hint">Play each line, then say it straight back — copy the rhythm and melody, not just
+       the words. Drop it to 0.5× until your mouth keeps up.</p>`;
+    t.sentences.forEach(s => { if (!s.audio) return;
+      h += `<div class="sk-shadow"><div class="ar" dir="rtl">${esc(s.ar)}</div>${player(s.audio)}</div>`; });
+  } else {
+    h += `<div class="unval" style="border-color:var(--rule);color:var(--ink-soft)">
+       <b style="color:var(--verdigris)">Shadowing unlocks with audio.</b> This text doesn’t have spoken
+       audio yet. Once it’s generated with the Palestinian voice, each line gets a player here and you can
+       shadow it. For now, the 4/3/2 retell above is your speaking workout.</div>`;
+  }
+
+  h += `<div class="ctl" style="margin-top:16px">
+     <button class="tog" onclick="location.hash='/text/${esc(t.id)}'">Read it first</button></div>`;
+  $('view').innerHTML = h;
+  spkPaint();
+}
+
+function spkPaint() {
+  const tv = $('sk-time'); if (tv) tv.textContent = skFmt(_skLeft);
+  const pl = $('sk-play'); if (pl) pl.textContent = _skTimer ? 'Pause' : (_skLeft < SK_ROUNDS[_skRound] && _skLeft > 0 ? 'Resume' : 'Start');
+  [0, 1, 2].forEach(i => { const b = $('sk-r' + i); if (b) {
+    b.classList.toggle('on', i === _skRound); b.classList.toggle('done', _skDone[i]); } });
+}
+function spkTick() {
+  _skLeft--;
+  if (_skLeft <= 0) {
+    _skLeft = 0; spkStop(); _skDone[_skRound] = true;
+    const allDone = _skDone.every(x => x);
+    if (_skRound < 2) { _skRound++; _skLeft = SK_ROUNDS[_skRound]; }
+    spkPaint();
+    const st = $('sk-status'); if (st) st.textContent = allDone
+      ? 'All three rounds done — that’s the drill. 🎉'
+      : 'Round done. Next: ' + [4, 3, 2][_skRound] + ' minutes — faster this time.';
+    return;
+  }
+  spkPaint();
+}
+function spkToggle() {
+  if (_skTimer) { spkStop(); }
+  else { if (_skLeft <= 0) _skLeft = SK_ROUNDS[_skRound]; _skTimer = setInterval(spkTick, 1000);
+    const st = $('sk-status'); if (st) st.textContent = 'Talking… keep going, don’t stop.'; }
+  spkPaint();
+}
+function spkSetRound(n) { spkStop(); _skRound = n; _skLeft = SK_ROUNDS[n];
+  const st = $('sk-status'); if (st) st.textContent = ''; spkPaint(); }
+function spkReset() { spkStop(); _skRound = 0; _skLeft = SK_ROUNDS[0]; _skDone = [false, false, false];
+  const st = $('sk-status'); if (st) st.textContent = ''; spkPaint(); }
 
 // ---------- tray ----------
 function count() { const due = dueCards().length;
