@@ -7,6 +7,7 @@
  "dialect": "pal",
  "kind": "news",
  "date": "2026-07-19",
+ "level": null,
  "subdialect": "urban",
  "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -459,7 +460,7 @@
      "maknuune_id": "27400",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "kTiir",
+     "caphi_urban": "ktiir",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     },
@@ -1137,7 +1138,7 @@
      "maknuune_id": "3404",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "TalaaT",
+     "caphi_urban": "talaat",
      "vocalized": null,
      "vocalized_from": "unvocalized:no-alignment"
     },
@@ -1215,7 +1216,7 @@
      "maknuune_id": "5468",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "7aZZar",
+     "caphi_urban": "7azzar",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
@@ -1291,7 +1292,7 @@
      "maknuune_id": "27400",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "kTiir",
+     "caphi_urban": "ktiir",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     }
@@ -1500,7 +1501,7 @@
      "maknuune_id": "3403",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "TalaaTe",
+     "caphi_urban": "talaate",
      "vocalized": null,
      "vocalized_from": "unvocalized:no-alignment"
     },
@@ -1984,7 +1985,7 @@
      "maknuune_id": "10888",
      "village": null,
      "provenance": "maknuune:unique",
-     "caphi_urban": "yDayyil",
+     "caphi_urban": "ydayyil",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     },
@@ -2330,18 +2331,72 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
-     "surface": "فيكرام-وان",
+     "surface": "فيكرام",
      "root": null,
      "lemma": null,
-     "form": "فيكرام-وان",
+     "form": "فيكرام",
      "caphi": null,
      "gloss": null,
      "analysis": null,
      "maknuune_id": null,
      "provenance": "unresolved",
      "caphi_urban": null,
-     "vocalized": "فيكرام-وان",
+     "vocalized": "فيكرام",
      "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "وان",
+     "root": "ء.ن.ن",
+     "lemma": "أَنّ",
+     "form": "أَنّ",
+     "caphi_raw": "2 a n n",
+     "caphi": "2ann",
+     "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);it_introduces_the_perfective_verb_(بعد_أن_أكلت)",
+     "analysis": "CONJ",
+     "maknuune_id": "615",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "615",
+       "root": "ء.ن.ن",
+       "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
+       "analysis": "CONJ"
+      },
+      {
+       "id": "616",
+       "root": "NTWS",
+       "gloss": "if",
+       "analysis": "CONJ_SUB"
+      },
+      {
+       "id": "619",
+       "root": "ء.ن.ن",
+       "gloss": "(to)_want_sth",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "621",
+       "root": "NTWS",
+       "gloss": "it_is",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "624",
+       "root": "ء.ن.ن",
+       "gloss": "moan_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "618",
+       "root": "NTWS",
+       "gloss": "suspicious;questionable",
+       "analysis": "VERB_PSEUDO:PHRASE"
+      }
+     ],
+     "caphi_urban": "2ann",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "والإطلاق",

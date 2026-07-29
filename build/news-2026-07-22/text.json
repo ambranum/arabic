@@ -7,6 +7,7 @@
  "dialect": "pal",
  "kind": "news",
  "date": "2026-07-22",
+ "level": null,
  "subdialect": "urban",
  "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -569,7 +570,7 @@
      "maknuune_id": "3403",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "TalaaTe",
+     "caphi_urban": "talaate",
      "vocalized": null,
      "vocalized_from": "unvocalized:no-alignment"
     },
@@ -1237,18 +1238,20 @@
      "vocalized_from": "unvocalized:no-alignment"
     },
     {
-     "surface": "\"الصراصير\"",
-     "root": null,
-     "lemma": null,
-     "form": "\"الصراصير\"",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "\"الصراصير\"",
-     "vocalized_from": "lexicon:exact"
+     "surface": "الصراصير",
+     "root": "ص.ر.ص.ر",
+     "lemma": "صَرْصُور",
+     "form": "صَرَاصِير",
+     "caphi_raw": "s. a r aa s. ii r",
+     "caphi": "s.araas.iir",
+     "gloss": "cockroach",
+     "analysis": "NOUN:P",
+     "maknuune_id": "17704",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.araas.iir",
+     "vocalized": "الصَّرَاصِير",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "عم",
@@ -1529,19 +1532,19 @@
     },
     {
      "surface": "ولادة",
-     "root": "و.ل.د",
-     "lemma": "وِلَادِة",
-     "form": "وِلَادِة",
-     "caphi_raw": "w i l aa d e",
-     "caphi": "wilaade",
-     "gloss": "giving_birth_to_a_baby",
-     "analysis": "NOUN:FS",
-     "maknuune_id": "36007",
+     "root": "—",
+     "lemma": "الوْلاد",
+     "form": "الوْلاد",
+     "caphi_raw": "2ilwlaad",
+     "caphi": "2ilwlaad",
+     "gloss": "the kids, the boys",
+     "analysis": "NOUN:P",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "wilaade",
-     "vocalized": "وِلَادِة",
-     "vocalized_from": "lexicon:exact"
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:story-word",
+     "caphi_urban": "2ilwlaad"
     },
     {
      "surface": "هتلر",
@@ -2016,7 +2019,7 @@
      "maknuune_id": "3454",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "Taani",
+     "caphi_urban": "taani",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     }
@@ -2309,7 +2312,7 @@
      "maknuune_id": "27400",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "kTiir",
+     "caphi_urban": "ktiir",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     }

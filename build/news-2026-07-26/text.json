@@ -7,6 +7,7 @@
  "dialect": "pal",
  "kind": "news",
  "date": "2026-07-26",
+ "level": null,
  "subdialect": "urban",
  "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -1216,18 +1217,20 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "\"الصراصير\"",
-     "root": null,
-     "lemma": null,
-     "form": "\"الصراصير\"",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "\"الصراصير\"",
-     "vocalized_from": "lexicon:exact"
+     "surface": "الصراصير",
+     "root": "ص.ر.ص.ر",
+     "lemma": "صَرْصُور",
+     "form": "صَرَاصِير",
+     "caphi_raw": "s. a r aa s. ii r",
+     "caphi": "s.araas.iir",
+     "gloss": "cockroach",
+     "analysis": "NOUN:P",
+     "maknuune_id": "17704",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.araas.iir",
+     "vocalized": "الصَّرَاصِير",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": "audio/s3.mp3"
@@ -2178,19 +2181,19 @@
     },
     {
      "surface": "كريم",
-     "root": "ك.ر.م",
-     "lemma": "كَرِيم",
-     "form": "كَرِيم",
-     "caphi_raw": "k a r ii m",
+     "root": "—",
+     "lemma": "كَريم",
+     "form": "كَريم",
+     "caphi_raw": "kariim",
      "caphi": "kariim",
-     "gloss": "generous",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "27739",
+     "gloss": "Karim (a name)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "kariim",
-     "vocalized": "كَرِيم",
-     "vocalized_from": "lexicon:exact"
+     "vocalized": "كَريم",
+     "vocalized_from": "curated",
+     "provenance": "curated:story-word",
+     "caphi_urban": "kariim"
     },
     {
      "surface": "خان",

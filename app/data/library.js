@@ -10,6 +10,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "lesson",
    "date": null,
+   "level": null,
    "subdialect": "urban",
    "source": "original (Claude-written; sentences reviewed by a native Levantine speaker, 0/5 flagged)",
    "sentences": [
@@ -130,7 +131,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/morning-coffee/s0.mp3"
     },
     {
      "ar": "ريحة الهيل بتملا البيت.",
@@ -187,21 +188,21 @@ window.LIBRARY = {
       {
        "surface": "البيت",
        "root": "ب.ي.ت",
-       "lemma": "بِيت",
-       "form": "بِيت",
-       "caphi_raw": "b ii t",
-       "caphi": "biit",
+       "lemma": "بَيت",
+       "form": "بَيت",
+       "caphi_raw": "b ee t",
+       "caphi": "beet",
        "gloss": "house",
        "analysis": "NOUN:MS",
-       "maknuune_id": "2683",
-       "village": "رماضين",
+       "maknuune_id": "2684",
+       "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "biit",
-       "vocalized": "البِيت",
+       "caphi_urban": "beet",
+       "vocalized": "البَيت",
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/morning-coffee/s1.mp3"
     },
     {
      "ar": "بقعد عالبلكونة وبشرب فنجاني على مهلي.",
@@ -304,7 +305,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/morning-coffee/s2.mp3"
     },
     {
      "ar": "الشارع لسه هادي.",
@@ -359,7 +360,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/morning-coffee/s3.mp3"
     },
     {
      "ar": "هاي أحلى لحظة بالنهار.",
@@ -430,12 +431,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/morning-coffee/s4.mp3"
     }
    ],
    "_dir": "morning-coffee",
    "_words": 24,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "news-2026-07-18",
@@ -446,6 +447,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-18",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -464,21 +466,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "19775",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19775",
-         "root": "ط.ي.ر",
-         "gloss": "aero_plane",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "19776",
-         "root": "ط.ي.ر",
-         "gloss": "aviator;pilot;flyer",
-         "analysis": "NOUN:MS"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "t.ayyaara",
        "vocalized": null,
        "vocalized_from": "unvocalized:no-alignment"
@@ -590,45 +578,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "16162",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "16162",
-         "root": "ش.ر.ك",
-         "gloss": "company",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "16163",
-         "root": "ش.ر.ك",
-         "gloss": "the_sin_of_idolatry_or_polytheism",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "16170",
-         "root": "ش.ر.ك",
-         "gloss": "make_sb_participate;make_sb_get_involved",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "16172",
-         "root": "ش.ر.ك",
-         "gloss": "make_sb_participate;make_sb_get_involved",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "16171",
-         "root": "ش.ر.ك",
-         "gloss": "make_sb_participate;make_sb_get_involved",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "16177",
-         "root": "ش.ر.ك",
-         "gloss": "do_the_sin_of_idolatry_or_polytheism;inc",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shirke",
        "vocalized": "لِشِرْكِة",
        "vocalized_from": "derived:affix"
@@ -746,7 +696,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s0.mp3"
     },
     {
      "ar": "كتير جنود أوكرانيين زعلانين لأنهم شالوا وزير الدفاع، وصار في مظاهرات هناك.",
@@ -764,7 +714,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -923,21 +873,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "19875",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19875",
-         "root": "ظ.ه.ر",
-         "gloss": "demonstration",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "19882",
-         "root": "ظ.ه.ر",
-         "gloss": "appearance_[auto]",
-         "analysis": "NOUN:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "muZ.aahara",
        "vocalized": null,
        "vocalized_from": "unvocalized:no-alignment"
@@ -959,7 +895,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s1.mp3"
     },
     {
      "ar": "أمريكا عم تضرب إيران لسابع ليلة على التوالي، وإيران ردّت وضربت محطة مي وكهربا بالكويت.",
@@ -1000,54 +936,16 @@ window.LIBRARY = {
       {
        "surface": "تضرب",
        "root": "ض.ر.ب",
-       "lemma": "ضَرِب",
-       "form": "ضَرِب",
-       "caphi_raw": "D. a r i b",
-       "caphi": "D.arib",
-       "gloss": "beating;hitting",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "18423",
+       "lemma": "ضَرَب",
+       "form": "يِضْرُب",
+       "caphi_raw": "y i D. r u b",
+       "caphi": "yiD.rub",
+       "gloss": "hit;beat",
+       "analysis": "VERB:I",
+       "maknuune_id": "18437",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "18423",
-         "root": "ض.ر.ب",
-         "gloss": "beating;hitting",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "18441",
-         "root": "ض.ر.ب",
-         "gloss": "hit;beat_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "18428",
-         "root": "ض.ر.ب",
-         "gloss": "an_idea_flashed_into_sb's_mind",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "18433",
-         "root": "ض.ر.ب",
-         "gloss": "hit;beat_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "18437",
-         "root": "ض.ر.ب",
-         "gloss": "hit;beat",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "18448",
-         "root": "ض.ر.ب",
-         "gloss": "go_on_a_strike;be_on_a_strike",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "D.arib",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "yiD.rub",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -1276,7 +1174,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilkuweet"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s2.mp3"
     },
     {
      "ar": "ترامب عم يهدد كندا بضرايب جديدة، لأنه دخان الحرايق عم يوصل هوا وسخ لمدن أمريكية.",
@@ -1523,7 +1421,7 @@ window.LIBRARY = {
        "caphi_urban": "2ameerkiyye"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s3.mp3"
     },
     {
      "ar": "شركة هندية ناشئة أطلقت أول صاروخ تجاري هندي مصمم يوصل للمدار.",
@@ -1706,7 +1604,7 @@ window.LIBRARY = {
        "caphi_urban": "madaar"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s4.mp3"
     },
     {
      "ar": "صار زلزال قوته ٧.٣ قدام سواحل المكسيك، وسجّلوا أمواج صغيرة بعد الهزة.",
@@ -1953,7 +1851,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s5.mp3"
     },
     {
      "ar": "حريق بميتم للأطفال قتل ١١ واحد، والبوليس بقول إنه مكيّف هو اللي سبّب الحريق.",
@@ -2184,7 +2082,7 @@ window.LIBRARY = {
        "caphi_urban": "7arii2"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s6.mp3"
     },
     {
      "ar": "للمرة التانية بتلات شهور، قراصنة يمكن صوماليين خطفوا ناقلة نفط قدام سواحل اليمن.",
@@ -2217,34 +2115,8 @@ window.LIBRARY = {
        "analysis": "ADJ_NUM",
        "maknuune_id": "3454",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "3454",
-         "root": "ث.ن.ي",
-         "gloss": "second",
-         "analysis": "ADJ_NUM"
-        },
-        {
-         "id": "3468",
-         "root": "ث.ن.ي",
-         "gloss": "second",
-         "analysis": "ADJ_COMP"
-        },
-        {
-         "id": "569",
-         "root": "NTWS",
-         "gloss": "I;me",
-         "analysis": "PRON:1S"
-        },
-        {
-         "id": "626",
-         "root": "NTWS",
-         "gloss": "which;who",
-         "analysis": "PRON_INTERROG"
-        }
-       ],
-       "caphi_urban": "Taani",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "taani",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -2425,7 +2297,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilyaman"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s7.mp3"
     },
     {
      "ar": "حريق كبير بالنرويج حرق أكتر من ١٠٠ بيت، والهليكوبترات عم ترمي مي عشان تطفيه.",
@@ -2732,12 +2604,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-07-18/s8.mp3"
     }
    ],
    "_dir": "news-2026-07-18",
    "_words": 122,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "news-2026-07-19",
@@ -2748,6 +2620,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-19",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -3200,7 +3073,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -3878,7 +3751,7 @@ window.LIBRARY = {
        "maknuune_id": "3404",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "TalaaT",
+       "caphi_urban": "talaat",
        "vocalized": null,
        "vocalized_from": "unvocalized:no-alignment"
       },
@@ -3956,7 +3829,7 @@ window.LIBRARY = {
        "maknuune_id": "5468",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "7aZZar",
+       "caphi_urban": "7azzar",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -4032,7 +3905,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       }
@@ -4241,7 +4114,7 @@ window.LIBRARY = {
        "maknuune_id": "3403",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "TalaaTe",
+       "caphi_urban": "talaate",
        "vocalized": null,
        "vocalized_from": "unvocalized:no-alignment"
       },
@@ -4725,7 +4598,7 @@ window.LIBRARY = {
        "maknuune_id": "10888",
        "village": null,
        "provenance": "maknuune:unique",
-       "caphi_urban": "yDayyil",
+       "caphi_urban": "ydayyil",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -5071,18 +4944,72 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       },
       {
-       "surface": "فيكرام-وان",
+       "surface": "فيكرام",
        "root": null,
        "lemma": null,
-       "form": "فيكرام-وان",
+       "form": "فيكرام",
        "caphi": null,
        "gloss": null,
        "analysis": null,
        "maknuune_id": null,
        "provenance": "unresolved",
        "caphi_urban": null,
-       "vocalized": "فيكرام-وان",
+       "vocalized": "فيكرام",
        "vocalized_from": "lexicon:exact"
+      },
+      {
+       "surface": "وان",
+       "root": "ء.ن.ن",
+       "lemma": "أَنّ",
+       "form": "أَنّ",
+       "caphi_raw": "2 a n n",
+       "caphi": "2ann",
+       "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);it_introduces_the_perfective_verb_(بعد_أن_أكلت)",
+       "analysis": "CONJ",
+       "maknuune_id": "615",
+       "village": null,
+       "provenance": "AMBIGUOUS-needs-resolution",
+       "options": [
+        {
+         "id": "615",
+         "root": "ء.ن.ن",
+         "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
+         "analysis": "CONJ"
+        },
+        {
+         "id": "616",
+         "root": "NTWS",
+         "gloss": "if",
+         "analysis": "CONJ_SUB"
+        },
+        {
+         "id": "619",
+         "root": "ء.ن.ن",
+         "gloss": "(to)_want_sth",
+         "analysis": "VERB_PSEUDO"
+        },
+        {
+         "id": "621",
+         "root": "NTWS",
+         "gloss": "it_is",
+         "analysis": "VERB_PSEUDO"
+        },
+        {
+         "id": "624",
+         "root": "ء.ن.ن",
+         "gloss": "moan_[auto]",
+         "analysis": "VERB:P"
+        },
+        {
+         "id": "618",
+         "root": "NTWS",
+         "gloss": "suspicious;questionable",
+         "analysis": "VERB_PSEUDO:PHRASE"
+        }
+       ],
+       "caphi_urban": "2ann",
+       "vocalized": null,
+       "vocalized_from": "unvocalized:unknown-prefix"
       },
       {
        "surface": "والإطلاق",
@@ -5462,7 +5389,7 @@ window.LIBRARY = {
     }
    ],
    "_dir": "news-2026-07-19",
-   "_words": 168,
+   "_words": 169,
    "_audio": true
   },
   {
@@ -5474,6 +5401,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-20",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -5555,7 +5483,7 @@ window.LIBRARY = {
        "maknuune_id": "3454",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "Taani",
+       "caphi_urban": "taani",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -5745,7 +5673,7 @@ window.LIBRARY = {
        "maknuune_id": "3454",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "Taani",
+       "caphi_urban": "taani",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -6694,7 +6622,7 @@ window.LIBRARY = {
        "maknuune_id": "3454",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "Taani",
+       "caphi_urban": "taani",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -7365,7 +7293,7 @@ window.LIBRARY = {
        "maknuune_id": "33162",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "2anqaZ",
+       "caphi_urban": "2anqaz",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -7770,19 +7698,19 @@ window.LIBRARY = {
       },
       {
        "surface": "وهو",
-       "root": "NTWS",
-       "lemma": "هُو",
-       "form": "هُو",
-       "caphi_raw": "h uu",
-       "caphi": "huu",
-       "gloss": "he",
-       "analysis": "PRON:MS",
-       "maknuune_id": "34727",
+       "root": "—",
+       "lemma": "لُه",
+       "form": "لُه",
+       "caphi_raw": "2ilo",
+       "caphi": "2ilo",
+       "gloss": "to him, for him",
+       "analysis": "PREP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "huu",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "2ilo"
       },
       {
        "surface": "من",
@@ -7860,7 +7788,7 @@ window.LIBRARY = {
        "maknuune_id": "98",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "yaakhuD",
+       "caphi_urban": "yaakhud",
        "vocalized": null,
        "vocalized_from": "unvocalized:no-alignment"
       },
@@ -8073,19 +8001,19 @@ window.LIBRARY = {
       },
       {
        "surface": "إجاهم",
-       "root": "ج.و.ه",
-       "lemma": "جَاه",
-       "form": "جَاه",
-       "caphi_raw": "J aa h",
-       "caphi": "Jaah",
-       "gloss": "prestige;high_status",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "4946",
+       "root": "—",
+       "lemma": "إجا",
+       "form": "إجا",
+       "caphi_raw": "2ija",
+       "caphi": "2ija",
+       "gloss": "he came",
+       "analysis": "VERB:P",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "jaah",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "2ija"
       },
       {
        "surface": "رابع",
@@ -8184,6 +8112,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-21",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -8576,7 +8505,7 @@ window.LIBRARY = {
        "maknuune_id": "5468",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "7aZZar",
+       "caphi_urban": "7azzar",
        "vocalized": "حَذَّر",
        "vocalized_from": "lexicon:exact"
       },
@@ -9263,19 +9192,19 @@ window.LIBRARY = {
       },
       {
        "surface": "وهو",
-       "root": "NTWS",
-       "lemma": "هُو",
-       "form": "هُو",
-       "caphi_raw": "h uu",
-       "caphi": "huu",
-       "gloss": "he",
-       "analysis": "PRON:MS",
-       "maknuune_id": "34727",
+       "root": "—",
+       "lemma": "لُه",
+       "form": "لُه",
+       "caphi_raw": "2ilo",
+       "caphi": "2ilo",
+       "gloss": "to him, for him",
+       "analysis": "PREP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "huu",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "2ilo"
       },
       {
        "surface": "بيحل",
@@ -10287,7 +10216,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -10372,6 +10301,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-22",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -10934,7 +10864,7 @@ window.LIBRARY = {
        "maknuune_id": "3403",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "TalaaTe",
+       "caphi_urban": "talaate",
        "vocalized": null,
        "vocalized_from": "unvocalized:no-alignment"
       },
@@ -11602,18 +11532,20 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       },
       {
-       "surface": "\"الصراصير\"",
-       "root": null,
-       "lemma": null,
-       "form": "\"الصراصير\"",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "\"الصراصير\"",
-       "vocalized_from": "lexicon:exact"
+       "surface": "الصراصير",
+       "root": "ص.ر.ص.ر",
+       "lemma": "صَرْصُور",
+       "form": "صَرَاصِير",
+       "caphi_raw": "s. a r aa s. ii r",
+       "caphi": "s.araas.iir",
+       "gloss": "cockroach",
+       "analysis": "NOUN:P",
+       "maknuune_id": "17704",
+       "village": null,
+       "provenance": "maknuune:unique",
+       "caphi_urban": "s.araas.iir",
+       "vocalized": "الصَّرَاصِير",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "عم",
@@ -11894,19 +11826,19 @@ window.LIBRARY = {
       },
       {
        "surface": "ولادة",
-       "root": "و.ل.د",
-       "lemma": "وِلَادِة",
-       "form": "وِلَادِة",
-       "caphi_raw": "w i l aa d e",
-       "caphi": "wilaade",
-       "gloss": "giving_birth_to_a_baby",
-       "analysis": "NOUN:FS",
-       "maknuune_id": "36007",
+       "root": "—",
+       "lemma": "الوْلاد",
+       "form": "الوْلاد",
+       "caphi_raw": "2ilwlaad",
+       "caphi": "2ilwlaad",
+       "gloss": "the kids, the boys",
+       "analysis": "NOUN:P",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:unique",
-       "caphi_urban": "wilaade",
-       "vocalized": "وِلَادِة",
-       "vocalized_from": "lexicon:exact"
+       "vocalized": null,
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "2ilwlaad"
       },
       {
        "surface": "هتلر",
@@ -12381,7 +12313,7 @@ window.LIBRARY = {
        "maknuune_id": "3454",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "Taani",
+       "caphi_urban": "taani",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       }
@@ -12674,7 +12606,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       }
@@ -12920,6 +12852,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-23",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -14232,7 +14165,7 @@ window.LIBRARY = {
        "maknuune_id": "3405",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "TaaliT",
+       "caphi_urban": "taalit",
        "vocalized": null,
        "vocalized_from": "unvocalized:no-alignment"
       },
@@ -14254,19 +14187,19 @@ window.LIBRARY = {
       },
       {
        "surface": "وهو",
-       "root": "NTWS",
-       "lemma": "هُو",
-       "form": "هُو",
-       "caphi_raw": "h uu",
-       "caphi": "huu",
-       "gloss": "he",
-       "analysis": "PRON:MS",
-       "maknuune_id": "34727",
+       "root": "—",
+       "lemma": "لُه",
+       "form": "لُه",
+       "caphi_raw": "2ilo",
+       "caphi": "2ilo",
+       "gloss": "to him, for him",
+       "analysis": "PREP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "huu",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "2ilo"
       },
       {
        "surface": "عم",
@@ -14443,7 +14376,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -14507,7 +14440,7 @@ window.LIBRARY = {
        "maknuune_id": "27536",
        "village": null,
        "provenance": "maknuune:unique",
-       "caphi_urban": "kaZa",
+       "caphi_urban": "kaza",
        "vocalized": "كَذَا",
        "vocalized_from": "lexicon:exact"
       },
@@ -14927,17 +14860,19 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       },
       {
-       "surface": "\"أنا",
-       "root": null,
-       "lemma": null,
-       "form": "\"أنا",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "\"أنا",
+       "surface": "أنا",
+       "root": "NTWS",
+       "lemma": "أَنَا",
+       "form": "أَنَا",
+       "caphi_raw": "2 a n a",
+       "caphi": "2ana",
+       "gloss": "I;me",
+       "analysis": "PRON:1S",
+       "maknuune_id": "568",
+       "village": null,
+       "provenance": "maknuune:unique",
+       "caphi_urban": "2ana",
+       "vocalized": "أَنَا",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -14957,34 +14892,36 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       },
       {
-       "surface": "عايش\"",
-       "root": null,
-       "lemma": null,
-       "form": "عايش\"",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "عايش\"",
+       "surface": "عايش",
+       "root": "ع.ي.ش",
+       "lemma": "عَايِش",
+       "form": "عَايِش",
+       "caphi_raw": "3 aa y i sh",
+       "caphi": "3aayish",
+       "gloss": "alive",
+       "analysis": "ADJ:MS",
+       "maknuune_id": "22227",
+       "village": null,
+       "provenance": "maknuune:unique",
+       "caphi_urban": "3aayish",
+       "vocalized": "عَايِش",
        "vocalized_from": "lexicon:exact"
       },
       {
        "surface": "وهو",
-       "root": "NTWS",
-       "lemma": "هُو",
-       "form": "هُو",
-       "caphi_raw": "h uu",
-       "caphi": "huu",
-       "gloss": "he",
-       "analysis": "PRON:MS",
-       "maknuune_id": "34727",
+       "root": "—",
+       "lemma": "لُه",
+       "form": "لُه",
+       "caphi_raw": "2ilo",
+       "caphi": "2ilo",
+       "gloss": "to him, for him",
+       "analysis": "PREP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "huu",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "2ilo"
       },
       {
        "surface": "أهم",
@@ -15131,7 +15068,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -15798,6 +15735,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-24",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -17666,7 +17604,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -18154,6 +18092,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-25",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -18260,17 +18199,17 @@ window.LIBRARY = {
       {
        "surface": "البيت",
        "root": "ب.ي.ت",
-       "lemma": "بِيت",
-       "form": "بِيت",
-       "caphi_raw": "b ii t",
-       "caphi": "biit",
+       "lemma": "بَيت",
+       "form": "بَيت",
+       "caphi_raw": "b ee t",
+       "caphi": "beet",
        "gloss": "house",
        "analysis": "NOUN:MS",
-       "maknuune_id": "2683",
-       "village": "رماضين",
+       "maknuune_id": "2684",
+       "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "biit",
-       "vocalized": "البِيت",
+       "caphi_urban": "beet",
+       "vocalized": "البَيت",
        "vocalized_from": "derived:affix"
       },
       {
@@ -19304,7 +19243,7 @@ window.LIBRARY = {
        "maknuune_id": "27400",
        "village": null,
        "provenance": "maknuune:resolved",
-       "caphi_urban": "kTiir",
+       "caphi_urban": "ktiir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -19868,19 +19807,19 @@ window.LIBRARY = {
       },
       {
        "surface": "كريم",
-       "root": "ك.ر.م",
-       "lemma": "كَرِيم",
-       "form": "كَرِيم",
-       "caphi_raw": "k a r ii m",
+       "root": "—",
+       "lemma": "كَريم",
+       "form": "كَريم",
+       "caphi_raw": "kariim",
        "caphi": "kariim",
-       "gloss": "generous",
-       "analysis": "ADJ:MS",
-       "maknuune_id": "27739",
+       "gloss": "Karim (a name)",
+       "analysis": "NOUN_PROP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "kariim",
-       "vocalized": "كَرِيم",
-       "vocalized_from": "lexicon:exact"
+       "vocalized": "كَريم",
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "kariim"
       },
       {
        "surface": "خان",
@@ -20820,6 +20759,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-26",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -22029,18 +21969,20 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       },
       {
-       "surface": "\"الصراصير\"",
-       "root": null,
-       "lemma": null,
-       "form": "\"الصراصير\"",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
-       "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "\"الصراصير\"",
-       "vocalized_from": "lexicon:exact"
+       "surface": "الصراصير",
+       "root": "ص.ر.ص.ر",
+       "lemma": "صَرْصُور",
+       "form": "صَرَاصِير",
+       "caphi_raw": "s. a r aa s. ii r",
+       "caphi": "s.araas.iir",
+       "gloss": "cockroach",
+       "analysis": "NOUN:P",
+       "maknuune_id": "17704",
+       "village": null,
+       "provenance": "maknuune:unique",
+       "caphi_urban": "s.araas.iir",
+       "vocalized": "الصَّرَاصِير",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/news-2026-07-26/s3.mp3"
@@ -22991,19 +22933,19 @@ window.LIBRARY = {
       },
       {
        "surface": "كريم",
-       "root": "ك.ر.م",
-       "lemma": "كَرِيم",
-       "form": "كَرِيم",
-       "caphi_raw": "k a r ii m",
+       "root": "—",
+       "lemma": "كَريم",
+       "form": "كَريم",
+       "caphi_raw": "kariim",
        "caphi": "kariim",
-       "gloss": "generous",
-       "analysis": "ADJ:MS",
-       "maknuune_id": "27739",
+       "gloss": "Karim (a name)",
+       "analysis": "NOUN_PROP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:resolved",
-       "caphi_urban": "kariim",
-       "vocalized": "كَرِيم",
-       "vocalized_from": "lexicon:exact"
+       "vocalized": "كَريم",
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "kariim"
       },
       {
        "surface": "خان",
@@ -23740,6 +23682,7 @@ window.LIBRARY = {
    "dialect": "pal",
    "kind": "news",
    "date": "2026-07-27",
+   "level": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
@@ -25289,17 +25232,19 @@ window.LIBRARY = {
       },
       {
        "surface": "رغم",
-       "root": null,
-       "lemma": null,
-       "form": "رغم",
-       "caphi": null,
-       "gloss": null,
-       "analysis": null,
+       "root": "—",
+       "lemma": "رَغم",
+       "form": "رَغم",
+       "caphi_raw": "raghm",
+       "caphi": "raghm",
+       "gloss": "despite, in spite of",
+       "analysis": "PREP",
        "maknuune_id": null,
-       "provenance": "unresolved",
-       "caphi_urban": null,
-       "vocalized": "رغم",
-       "vocalized_from": "lexicon:exact"
+       "village": null,
+       "vocalized": "رَغم",
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "raghm"
       },
       {
        "surface": "الحرب",
@@ -25961,19 +25906,19 @@ window.LIBRARY = {
       },
       {
        "surface": "إله",
-       "root": "ء.و.ل",
-       "lemma": "آلِة",
-       "form": "آلِة",
-       "caphi_raw": "2 aa l e",
-       "caphi": "2aale",
-       "gloss": "instrument;apparatus;appliance;machine",
-       "analysis": "NOUN:FS",
-       "maknuune_id": "660",
+       "root": "—",
+       "lemma": "لُه",
+       "form": "لُه",
+       "caphi_raw": "2ilo",
+       "caphi": "2ilo",
+       "gloss": "to him, for him",
+       "analysis": "PREP",
+       "maknuune_id": null,
        "village": null,
-       "provenance": "maknuune:unique",
-       "caphi_urban": "2aale",
-       "vocalized": "إلِه",
-       "vocalized_from": "derived:affix"
+       "vocalized": null,
+       "vocalized_from": "curated",
+       "provenance": "curated:story-word",
+       "caphi_urban": "2ilo"
       }
      ],
      "audio": "audio/news-2026-07-27/s6.mp3"
@@ -32041,7 +31986,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s0.mp3"
     },
     {
      "ar": "جدي كان يقول إنها أكبر منه بكتير.",
@@ -32120,45 +32065,7 @@ window.LIBRARY = {
        "analysis": "CONJ",
        "maknuune_id": "615",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "615",
-         "root": "ء.ن.ن",
-         "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
-         "analysis": "CONJ"
-        },
-        {
-         "id": "616",
-         "root": "NTWS",
-         "gloss": "if",
-         "analysis": "CONJ_SUB"
-        },
-        {
-         "id": "619",
-         "root": "ء.ن.ن",
-         "gloss": "(to)_want_sth",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "621",
-         "root": "NTWS",
-         "gloss": "it_is",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "624",
-         "root": "ء.ن.ن",
-         "gloss": "moan_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "618",
-         "root": "NTWS",
-         "gloss": "suspicious;questionable",
-         "analysis": "VERB_PSEUDO:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2ann",
        "vocalized": "إَنّها",
        "vocalized_from": "derived:affix"
@@ -32250,7 +32157,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s1.mp3"
     },
     {
      "ar": "كل خريف، كانت العيلة كلها تجتمع تحتها لتقطف.",
@@ -32461,7 +32368,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s2.mp3"
     },
     {
      "ar": "لما كنت صغير، سألت جدي: ليش هالشجرة مهمة هيك؟",
@@ -32688,7 +32595,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s3.mp3"
     },
     {
      "ar": "ابتسم وقال: هاي الشجرة زرعها أبو جدي بإيده.",
@@ -32995,7 +32902,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s4.mp3"
     },
     {
      "ar": "قال إنها شافت أجيال وأجيال من عيلتنا.",
@@ -33028,45 +32935,7 @@ window.LIBRARY = {
        "analysis": "CONJ",
        "maknuune_id": "615",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "615",
-         "root": "ء.ن.ن",
-         "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
-         "analysis": "CONJ"
-        },
-        {
-         "id": "616",
-         "root": "NTWS",
-         "gloss": "if",
-         "analysis": "CONJ_SUB"
-        },
-        {
-         "id": "619",
-         "root": "ء.ن.ن",
-         "gloss": "(to)_want_sth",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "621",
-         "root": "NTWS",
-         "gloss": "it_is",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "624",
-         "root": "ء.ن.ن",
-         "gloss": "moan_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "618",
-         "root": "NTWS",
-         "gloss": "suspicious;questionable",
-         "analysis": "VERB_PSEUDO:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2ann",
        "vocalized": "إَنّها",
        "vocalized_from": "derived:affix"
@@ -33184,7 +33053,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s5.mp3"
     },
     {
      "ar": "كل غصن فيها بيحكي قصة، وكل زيتونة فيها بركة.",
@@ -33455,7 +33324,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s6.mp3"
     },
     {
      "ar": "مرة، إجا رجال وعرض يشتري الأرض والشجرة.",
@@ -33684,7 +33553,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s7.mp3"
     },
     {
      "ar": "عرض مصاري كتير، بس جدي رفض على طول.",
@@ -33921,7 +33790,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s8.mp3"
     },
     {
      "ar": "قال: الأرض مش للبيع، والذكريات ما إلها تمن.",
@@ -34122,7 +33991,7 @@ window.LIBRARY = {
        "caphi_urban": "min"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s9.mp3"
     },
     {
      "ar": "بعد سنين، توفى جدي، وورثنا الأرض والشجرة.",
@@ -34317,7 +34186,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s10.mp3"
     },
     {
      "ar": "وقفت تحت الشجرة وحسيت إنه جدي لسا معي.",
@@ -34490,7 +34359,7 @@ window.LIBRARY = {
        "caphi_urban": "ma3"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s11.mp3"
     },
     {
      "ar": "علمت ولادي نفس الشي اللي علمني ياه.",
@@ -34677,7 +34546,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s12.mp3"
     },
     {
      "ar": "الشجرة ما زالت واقفة، تشهد على محبتنا للأرض.",
@@ -34932,7 +34801,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s13.mp3"
     },
     {
      "ar": "وكل خريف، بنجتمع تحتها متل زمان.",
@@ -35175,12 +35044,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-01/s14.mp3"
     }
    ],
    "_dir": "story-adv-01",
    "_words": 116,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-02",
@@ -35424,7 +35293,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s0.mp3"
     },
     {
      "ar": "خالي سافر برا البلد يشتغل ويجمع مصاري.",
@@ -35615,7 +35484,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s1.mp3"
     },
     {
      "ar": "كل شهر، كان يبعت رسالة لإمه، جدتي.",
@@ -35768,7 +35637,7 @@ window.LIBRARY = {
        "caphi_urban": "jiddti"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s2.mp3"
     },
     {
      "ar": "جدتي ما كانت تعرف تقرا، فكانت تجيبني أقرالها.",
@@ -35826,37 +35695,17 @@ window.LIBRARY = {
        "surface": "تعرف",
        "root": "ع.ر.ف",
        "lemma": "تْعَرَّف",
-       "form": "تْعَرَّف",
-       "caphi_raw": "t 3 a r r a f",
-       "caphi": "t3arraf",
-       "gloss": "be_introduced_to_sth_or_sb;get_to_know_sth_or_sb_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "20553",
+       "form": "يِتْعَرَّف",
+       "caphi_raw": "y i  t 3 a r r a f",
+       "caphi": "yit3arraf",
+       "gloss": "be_introduced_to_sth_or_sb;get_to_know_sth_or_sb",
+       "analysis": "VERB:I",
+       "maknuune_id": "20548",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "20553",
-         "root": "ع.ر.ف",
-         "gloss": "be_introduced_to_sth_or_sb;get_to_know_s",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "20541",
-         "root": "ع.ر.ف",
-         "gloss": "be_introduced_to_sth_or_sb;get_to_know_s",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "20548",
-         "root": "ع.ر.ف",
-         "gloss": "be_introduced_to_sth_or_sb;get_to_know_s",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "t3arraf",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "yit3arraf",
        "vocalized": "تْعَرَّف",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "تقرا",
@@ -35995,7 +35844,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s3.mp3"
     },
     {
      "ar": "كنت أقعد جنبها وأقرا الرسالة بصوت عالي.",
@@ -36210,7 +36059,7 @@ window.LIBRARY = {
        "caphi_urban": "2illi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s4.mp3"
     },
     {
      "ar": "كانت تسمع وعيونها تدمع من الشوق.",
@@ -36371,7 +36220,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s5.mp3"
     },
     {
      "ar": "بعدين، كانت تملي عليي الرد، وأنا أكتب.",
@@ -36588,7 +36437,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s6.mp3"
     },
     {
      "ar": "مرة، تأخرت رسالة خالي شهرين.",
@@ -36771,7 +36620,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s7.mp3"
     },
     {
      "ar": "جدتي قلقت كتير وما عادت تنام.",
@@ -36976,7 +36825,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s8.mp3"
     },
     {
      "ar": "كل يوم، كانت تسأل: وصلت رسالة؟",
@@ -37137,7 +36986,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s9.mp3"
     },
     {
      "ar": "وأنا أرد: لسا يا جدتي، بكرا إن شاء الله.",
@@ -37360,7 +37209,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilo"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s10.mp3"
     },
     {
      "ar": "بالآخر، إجت الرسالة، وكان خالي مريض بس طاب.",
@@ -37599,7 +37448,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s11.mp3"
     },
     {
      "ar": "جدتي بكت من الفرح وحضنت الرسالة.",
@@ -37780,7 +37629,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s12.mp3"
     },
     {
      "ar": "قالت: الحمد لله اللي رجعلي خبر منه.",
@@ -37955,7 +37804,7 @@ window.LIBRARY = {
        "caphi_urban": "min"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s13.mp3"
     },
     {
      "ar": "لهلأ، بحتفظ بهديك الرسائل بصندوق قديم.",
@@ -38130,7 +37979,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s14.mp3"
     },
     {
      "ar": "كل ما أقراها، بتذكر جدتي وشوقها.",
@@ -38317,12 +38166,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-02/s15.mp3"
     }
    ],
    "_dir": "story-adv-02",
    "_words": 111,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-03",
@@ -38488,7 +38337,7 @@ window.LIBRARY = {
        "caphi_urban": "2is.s.oba"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s0.mp3"
     },
     {
      "ar": "فجأة، سمعنا دق عالباب.",
@@ -38635,7 +38484,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s1.mp3"
     },
     {
      "ar": "أبوي فتح، ولقى رجال غريب مبلول من الشتا.",
@@ -38908,7 +38757,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s2.mp3"
     },
     {
      "ar": "الرجال قال: سيارتي وقفت بالطريق، وأنا تايه.",
@@ -39121,7 +38970,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s3.mp3"
     },
     {
      "ar": "أبوي قاله على طول: تفضل، البيت بيتك.",
@@ -39394,7 +39243,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s4.mp3"
     },
     {
      "ar": "قعدناه جنب الصوبا وجبناله أواعي ناشفة.",
@@ -39425,45 +39274,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "4568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "4568",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4575",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4588",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "4590",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "4570",
-         "root": "ج.ن.ب",
-         "gloss": "do_what_is_convenient",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "4571",
-         "root": "ج.ن.ب",
-         "gloss": "beat_sb_severely",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "janb,jamb",
        "vocalized": "جَنْب",
        "vocalized_from": "lexicon:exact"
@@ -39565,7 +39376,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s5.mp3"
     },
     {
      "ar": "إمي سخنت شوربة وقدمتله عشا.",
@@ -39720,7 +39531,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s6.mp3"
     },
     {
      "ar": "الرجال قال: ما بعرف كيف أشكركم.",
@@ -39933,7 +39744,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s7.mp3"
     },
     {
      "ar": "أبوي رد: هاي واجب، وإحنا بنكرم الضيف.",
@@ -40206,7 +40017,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s8.mp3"
     },
     {
      "ar": "سهرنا معه وحكالنا عن حياته وسفراته.",
@@ -40341,7 +40152,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s9.mp3"
     },
     {
      "ar": "الصبح، طلعت الشمس ووقفت الشتا.",
@@ -40512,7 +40323,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s10.mp3"
     },
     {
      "ar": "أبوي ساعده يصلح سيارته.",
@@ -40653,7 +40464,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s11.mp3"
     },
     {
      "ar": "قبل ما يمشي، الرجال قال: مش رح أنساكم أبدا.",
@@ -40870,7 +40681,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s12.mp3"
     },
     {
      "ar": "بعد شهر، وصلنا هدية كبيرة وورقة مكتوب فيها شكرا.",
@@ -41099,7 +40910,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s13.mp3"
     },
     {
      "ar": "أبوي قال: الخير اللي بتعمله، بيرجعلك.",
@@ -41276,7 +41087,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s14.mp3"
     },
     {
      "ar": "من هديك الليلة، تعلمت شو يعني الكرم.",
@@ -41517,12 +41328,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-03/s15.mp3"
     }
    ],
    "_dir": "story-adv-03",
    "_words": 103,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-04",
@@ -41676,7 +41487,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s0.mp3"
     },
     {
      "ar": "أكلها كان له طعمة ما في متلها.",
@@ -41871,7 +41682,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s1.mp3"
     },
     {
      "ar": "كل النسوان بالعيلة حاولوا يقلدوا أكلها.",
@@ -42008,7 +41819,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s2.mp3"
     },
     {
      "ar": "بس ولا وحدة قدرت توصل لنفس الطعمة.",
@@ -42067,52 +41878,14 @@ window.LIBRARY = {
        "root": "ق.د.ر",
        "lemma": "قِدِر",
        "form": "قِدِر",
-       "caphi_raw": "q||g i d i r",
-       "caphi": "q||gidir",
-       "gloss": "cooking_pot",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "25320",
+       "caphi_raw": "Q i d i r",
+       "caphi": "Qidir",
+       "gloss": "can;manage_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "25338",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "25320",
-         "root": "ق.د.ر",
-         "gloss": "cooking_pot",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25324",
-         "root": "ق.د.ر",
-         "gloss": "fate;destiny",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25333",
-         "root": "ق.د.ر",
-         "gloss": "appreciate;destine;enable_or_make_sb_cap",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "25338",
-         "root": "ق.د.ر",
-         "gloss": "can;manage_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25339",
-         "root": "ق.د.ر",
-         "gloss": "appreciate;destine;enable_or_make_sb_cap",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25329",
-         "root": "ق.د.ر",
-         "gloss": "cooking_pot_[auto]",
-         "analysis": "NOUN:P"
-        }
-       ],
-       "caphi_urban": "qidir",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2idir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -42237,7 +42010,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s3.mp3"
     },
     {
      "ar": "مرة، سألتها إمي: شو سرك يا حجة؟",
@@ -42432,7 +42205,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s4.mp3"
     },
     {
      "ar": "جدتي ضحكت وقالت: السر مش بالبهارات.",
@@ -42665,7 +42438,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s5.mp3"
     },
     {
      "ar": "قالت: السر إنك تطبخي وقلبك مليان محبة.",
@@ -42944,7 +42717,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s6.mp3"
     },
     {
      "ar": "إمي ما فهمت الحكي بالأول.",
@@ -43127,7 +42900,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s7.mp3"
     },
     {
      "ar": "بس بعد ما توفت جدتي، بلشت تفهم.",
@@ -43280,7 +43053,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s8.mp3"
     },
     {
      "ar": "صارت إمي تطبخ لنا نفس الأكلات.",
@@ -43455,7 +43228,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s9.mp3"
     },
     {
      "ar": "وكانت تحط فيها كل محبتها لإلنا.",
@@ -43634,7 +43407,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s10.mp3"
     },
     {
      "ar": "شوي شوي، صار أكل إمي يشبه أكل جدتي.",
@@ -43853,7 +43626,7 @@ window.LIBRARY = {
        "caphi_urban": "jiddti"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s11.mp3"
     },
     {
      "ar": "يوم، ذقت أكلها وحسيت إنه جدتي رجعت.",
@@ -43970,7 +43743,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s12.mp3"
     },
     {
      "ar": "قلتلها: هيك بالضبط كانت تطبخ جدتي.",
@@ -44129,7 +43902,7 @@ window.LIBRARY = {
        "caphi_urban": "jiddti"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s13.mp3"
     },
     {
      "ar": "إمي دمعت وقالت: عرفت السر أخيرا.",
@@ -44332,12 +44105,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-04/s14.mp3"
     }
    ],
    "_dir": "story-adv-04",
    "_words": 97,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-05",
@@ -44521,7 +44294,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s0.mp3"
     },
     {
      "ar": "كنت خايف إنه كل شي تغير.",
@@ -44650,7 +44423,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s1.mp3"
     },
     {
      "ar": "لما وصلت، لقيت الشوارع نفسها بس أضيق.",
@@ -44845,7 +44618,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s2.mp3"
     },
     {
      "ar": "البيوت القديمة لسا واقفة، بس ناسها كبروا.",
@@ -45066,7 +44839,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s3.mp3"
     },
     {
      "ar": "مشيت بالحارة، وكل خطوة كانت تفكرني بشي.",
@@ -45331,7 +45104,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s4.mp3"
     },
     {
      "ar": "لقيت بيت جدي، وقفت قدامه طويل.",
@@ -45492,7 +45265,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s5.mp3"
     },
     {
      "ar": "الباب كان مسكر، والحديقة صارت يابسة.",
@@ -45687,7 +45460,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s6.mp3"
     },
     {
      "ar": "جار قديم شافني وعرفني رغم السنين.",
@@ -45818,7 +45591,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s7.mp3"
     },
     {
      "ar": "قال: يا هلا فيك، وينك من زمان؟",
@@ -46021,7 +45794,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s8.mp3"
     },
     {
      "ar": "عزمني عالبيت، وقعدنا نتذكر الأيام.",
@@ -46204,7 +45977,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s9.mp3"
     },
     {
      "ar": "حكالي مين توفى ومين سافر ومين لسا هون.",
@@ -46235,21 +46008,7 @@ window.LIBRARY = {
        "analysis": "PRON_INTERROG",
        "maknuune_id": "31534",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "31534",
-         "root": "م.ي.ن",
-         "gloss": "who?",
-         "analysis": "PRON_INTERROG"
-        },
-        {
-         "id": "31535",
-         "root": "م.ي.ن",
-         "gloss": "who",
-         "analysis": "PRON_REL"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "miin",
        "vocalized": "مِين",
        "vocalized_from": "lexicon:exact"
@@ -46479,7 +46238,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s10.mp3"
     },
     {
      "ar": "حسيت إنه الزمن مشى، بس الضيعة ضلت بقلبي.",
@@ -46768,7 +46527,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s11.mp3"
     },
     {
      "ar": "قبل ما أمشي، قطفت زيتونة من شجرة جدي.",
@@ -47013,7 +46772,7 @@ window.LIBRARY = {
        "caphi_urban": "jiddi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s12.mp3"
     },
     {
      "ar": "حطيتها بجيبي متل الكنز.",
@@ -47156,7 +46915,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s13.mp3"
     },
     {
      "ar": "عرفت يومها إنه الإنسان بيرجع دايما لجذوره.",
@@ -47327,12 +47086,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-05/s14.mp3"
     }
    ],
    "_dir": "story-adv-05",
    "_words": 99,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-06",
@@ -47526,7 +47285,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s0.mp3"
     },
     {
      "ar": "لما توفى أبوهم، ترك إلهم أرض وبيت.",
@@ -47793,7 +47552,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s1.mp3"
     },
     {
      "ar": "بلشوا يتخانقوا مين ياخذ إيش.",
@@ -47856,21 +47615,7 @@ window.LIBRARY = {
        "analysis": "PRON_INTERROG",
        "maknuune_id": "31534",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "31534",
-         "root": "م.ي.ن",
-         "gloss": "who?",
-         "analysis": "PRON_INTERROG"
-        },
-        {
-         "id": "31535",
-         "root": "م.ي.ن",
-         "gloss": "who",
-         "analysis": "PRON_REL"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "miin",
        "vocalized": "مِين",
        "vocalized_from": "lexicon:exact"
@@ -47948,7 +47693,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s2.mp3"
     },
     {
      "ar": "كل واحد كان بدو الأرض الأحسن.",
@@ -48089,7 +47834,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s3.mp3"
     },
     {
      "ar": "الخناق زاد، وصاروا ما يحكوا مع بعض.",
@@ -48306,7 +48051,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s4.mp3"
     },
     {
      "ar": "العيلة كلها زعلت من هالوضع.",
@@ -48429,7 +48174,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s5.mp3"
     },
     {
      "ar": "مرة، مرض أحمد مرض شديد.",
@@ -48516,7 +48261,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s6.mp3"
     },
     {
      "ar": "محمود سمع الخبر ونسي كل الخناق.",
@@ -48747,7 +48492,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s7.mp3"
     },
     {
      "ar": "ركض على المستشفى وقعد جنب أخوه.",
@@ -48904,45 +48649,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "4568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "4568",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4575",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4588",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "4590",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "4570",
-         "root": "ج.ن.ب",
-         "gloss": "do_what_is_convenient",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "4571",
-         "root": "ج.ن.ب",
-         "gloss": "beat_sb_severely",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "janb,jamb",
        "vocalized": "جَنْب",
        "vocalized_from": "lexicon:exact"
@@ -48964,7 +48671,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s8.mp3"
     },
     {
      "ar": "أحمد فتح عيونه وشاف أخوه، فبكى.",
@@ -49157,7 +48864,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s9.mp3"
     },
     {
      "ar": "قال: سامحني يا أخوي، الدنيا ما بتسوى خناق.",
@@ -49362,7 +49069,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s10.mp3"
     },
     {
      "ar": "محمود حضنه وقال: إنت أغلى من كل الأرض.",
@@ -49587,7 +49294,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s11.mp3"
     },
     {
      "ar": "من هديك اليوم، رجعوا متل ما كانوا.",
@@ -49820,7 +49527,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s12.mp3"
     },
     {
      "ar": "قسموا الأرض بالعدل وبدون خناق.",
@@ -49993,7 +49700,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s13.mp3"
     },
     {
      "ar": "تعلموا إنه الدم ما بيصير مي.",
@@ -50172,12 +49879,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-06/s14.mp3"
     }
    ],
    "_dir": "story-adv-06",
    "_words": 95,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-07",
@@ -50285,45 +49992,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "2341",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "2341",
-         "root": "ب.ن.ت",
-         "gloss": "girl",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "2350",
-         "root": "ب.ن.ت",
-         "gloss": "treat_sb_as_a_girl",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "2352",
-         "root": "ب.ن.ت",
-         "gloss": "treat_sb_as_a_girl",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "2339",
-         "root": "ب.ن.ت",
-         "gloss": "girl_[auto]",
-         "analysis": "NOUN:FP"
-        },
-        {
-         "id": "2342",
-         "root": "ب.ن.ت",
-         "gloss": "tonsillitis",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "2343",
-         "root": "ب.ن.ت",
-         "gloss": "four_stars_that_surround_\"n_a_dj_m_i_t;2",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "binit",
        "vocalized": "بِنِت",
        "vocalized_from": "lexicon:exact"
@@ -50399,7 +50068,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s0.mp3"
     },
     {
      "ar": "ليلى كانت تحب المدرسة أكتر من أي شي.",
@@ -50650,7 +50319,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s1.mp3"
     },
     {
      "ar": "بس المدرسة كانت بعيدة، بساعة مشي.",
@@ -50863,7 +50532,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s2.mp3"
     },
     {
      "ar": "كل الصبح، كانت تصحى بدري وتمشي لحالها.",
@@ -51096,7 +50765,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s3.mp3"
     },
     {
      "ar": "بالشتا، كانت تمشي تحت المطر والبرد.",
@@ -51253,7 +50922,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s4.mp3"
     },
     {
      "ar": "ناس الضيعة قالوا: ليش تتعب حالها هيك؟",
@@ -51506,7 +51175,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s5.mp3"
     },
     {
      "ar": "بس أبوها كان يقول: بنتي رح تصير شي كبير.",
@@ -51709,7 +51378,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s6.mp3"
     },
     {
      "ar": "ليلى كانت الأولى على صفها كل سنة.",
@@ -51904,7 +51573,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s7.mp3"
     },
     {
      "ar": "المعلمين كانوا يفتخروا فيها.",
@@ -51989,7 +51658,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s8.mp3"
     },
     {
      "ar": "لما كبرت، راحت عالجامعة بالمدينة.",
@@ -52192,7 +51861,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s9.mp3"
     },
     {
      "ar": "درست ليل نهار، ونجحت بتفوق.",
@@ -52421,7 +52090,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s10.mp3"
     },
     {
      "ar": "رجعت عالضيعة، بس هالمرة كمعلمة.",
@@ -52552,7 +52221,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s11.mp3"
     },
     {
      "ar": "فتحت مدرسة قريبة عشان البنات ما يتعبوا متلها.",
@@ -52829,7 +52498,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s12.mp3"
     },
     {
      "ar": "صارت قدوة لكل بنت بالضيعة.",
@@ -52930,45 +52599,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "2341",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "2341",
-         "root": "ب.ن.ت",
-         "gloss": "girl",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "2350",
-         "root": "ب.ن.ت",
-         "gloss": "treat_sb_as_a_girl",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "2352",
-         "root": "ب.ن.ت",
-         "gloss": "treat_sb_as_a_girl",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "2339",
-         "root": "ب.ن.ت",
-         "gloss": "girl_[auto]",
-         "analysis": "NOUN:FP"
-        },
-        {
-         "id": "2342",
-         "root": "ب.ن.ت",
-         "gloss": "tonsillitis",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "2343",
-         "root": "ب.ن.ت",
-         "gloss": "four_stars_that_surround_\"n_a_dj_m_i_t;2",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "binit",
        "vocalized": "بِنِت",
        "vocalized_from": "lexicon:exact"
@@ -53004,7 +52635,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s13.mp3"
     },
     {
      "ar": "وأبوها كان أفخر أب بالدنيا.",
@@ -53193,12 +52824,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-07/s14.mp3"
     }
    ],
    "_dir": "story-adv-07",
    "_words": 94,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-08",
@@ -53358,7 +52989,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s0.mp3"
     },
     {
      "ar": "الأرض يبست، والزرع مات.",
@@ -53467,7 +53098,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s1.mp3"
     },
     {
      "ar": "الفلاحين وقفوا حائرين، ما بيعرفوا شو يعملوا.",
@@ -53614,7 +53245,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s2.mp3"
     },
     {
      "ar": "الآبار جفت، والمي صارت قليلة.",
@@ -53771,7 +53402,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s3.mp3"
     },
     {
      "ar": "الناس بلشوا يخافوا عالسنة الجاي.",
@@ -53930,7 +53561,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s4.mp3"
     },
     {
      "ar": "بهديك السنة، الغني والفقير صاروا سوا.",
@@ -54131,7 +53762,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s5.mp3"
     },
     {
      "ar": "رجال غني بالضيعة فتح مخزنه للكل.",
@@ -54358,7 +53989,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s6.mp3"
     },
     {
      "ar": "قال: اللي عنده، لازم يساعد اللي ما عنده.",
@@ -54569,7 +54200,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s7.mp3"
     },
     {
      "ar": "وزع القمح والزيت عالعيال الفقيرة.",
@@ -54732,7 +54363,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s8.mp3"
     },
     {
      "ar": "الناس كلها وقفت مع بعض بهديك الأيام.",
@@ -54883,7 +54514,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s9.mp3"
     },
     {
      "ar": "بالآخر، بعد شهور طويلة، نزلت الشتا.",
@@ -55026,7 +54657,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s10.mp3"
     },
     {
      "ar": "الناس طلعوا عالشوارع يرقصوا تحت المطر.",
@@ -55149,7 +54780,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s11.mp3"
     },
     {
      "ar": "الأرض شربت، والزرع رجع أخضر.",
@@ -55312,7 +54943,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s12.mp3"
     },
     {
      "ar": "تعلمت الضيعة إنه بالشدة، بيبان معدن الناس.",
@@ -55529,7 +55160,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s13.mp3"
     },
     {
      "ar": "وإنه التعاون بيقهر أصعب الظروف.",
@@ -55668,12 +55299,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-08/s14.mp3"
     }
    ],
    "_dir": "story-adv-08",
    "_words": 89,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-09",
@@ -55885,7 +55516,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s0.mp3"
     },
     {
      "ar": "كان مختلف عن باقي المعلمين.",
@@ -56012,7 +55643,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s1.mp3"
     },
     {
      "ar": "ما كان بس يعلمنا دروس، كان يعلمنا حياة.",
@@ -56207,7 +55838,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s2.mp3"
     },
     {
      "ar": "أنا كنت طالب كسلان، ما بحب أدرس.",
@@ -56346,7 +55977,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s3.mp3"
     },
     {
      "ar": "مرة، أستاذ سعيد ناداني بعد الدرس.",
@@ -56521,7 +56152,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s4.mp3"
     },
     {
      "ar": "توقعت إنه رح يوبخني، بس هو ابتسم.",
@@ -56696,7 +56327,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s5.mp3"
     },
     {
      "ar": "قال: أنا شايف فيك ذكاء، بس إنت مش شايفه.",
@@ -56915,7 +56546,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s6.mp3"
     },
     {
      "ar": "حكيه دخل قلبي وغير شي فيي.",
@@ -57158,7 +56789,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s7.mp3"
     },
     {
      "ar": "بلشت أدرس، مش عشان الامتحان، عشان حالي.",
@@ -57319,7 +56950,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s8.mp3"
     },
     {
      "ar": "درجاتي تحسنت، وثقتي بحالي كبرت.",
@@ -57518,7 +57149,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s9.mp3"
     },
     {
      "ar": "كل ما كنت أوقع، أستاذ سعيد كان يوقفني.",
@@ -57665,7 +57296,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s10.mp3"
     },
     {
      "ar": "بعد سنين، تخرجت وصرت مهندس.",
@@ -57816,7 +57447,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s11.mp3"
     },
     {
      "ar": "رجعت عالمدرسة أدور عليه لأشكره.",
@@ -57961,7 +57592,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s12.mp3"
     },
     {
      "ar": "لقيته كبر بالعمر، بس ابتسامته نفسها.",
@@ -58166,7 +57797,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s13.mp3"
     },
     {
      "ar": "قلتله: إنت السبب إني صرت اللي أنا عليه.",
@@ -58365,7 +57996,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s14.mp3"
     },
     {
      "ar": "دمعت عيونه وقال: هاي أحلى هدية لمعلم.",
@@ -58608,12 +58239,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-09/s15.mp3"
     }
    ],
    "_dir": "story-adv-09",
    "_words": 108,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-10",
@@ -58829,7 +58460,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s0.mp3"
     },
     {
      "ar": "كل يوم كنا نلعب سوا ونحلم سوا.",
@@ -59052,7 +58683,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s1.mp3"
     },
     {
      "ar": "مرة، وقفنا عالتلة اللي فوق الضيعة.",
@@ -59263,7 +58894,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s2.mp3"
     },
     {
      "ar": "سامي قال: تعا نوعد بعض نضل أصحاب للأبد.",
@@ -59510,7 +59141,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s3.mp3"
     },
     {
      "ar": "مديت إيدي وقلتله: وعد.",
@@ -59655,7 +59286,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s4.mp3"
     },
     {
      "ar": "بس الحياة فرقتنا، هو سافر وأنا ضليت.",
@@ -59828,7 +59459,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s5.mp3"
     },
     {
      "ar": "مرت سنين طويلة وما سمعت عنه خبر.",
@@ -60075,7 +59706,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s6.mp3"
     },
     {
      "ar": "كنت أفكر فيه كل ما أطلع عالتلة.",
@@ -60246,7 +59877,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilo"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s7.mp3"
     },
     {
      "ar": "يوم، وأنا قاعد بالبيت، دق التلفون.",
@@ -60459,7 +60090,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s8.mp3"
     },
     {
      "ar": "صوت قال: بتذكر الوعد اللي وعدناه؟",
@@ -60594,7 +60225,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s9.mp3"
     },
     {
      "ar": "عرفت الصوت على طول، كان سامي.",
@@ -60755,7 +60386,7 @@ window.LIBRARY = {
        "caphi_urban": "saami"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s10.mp3"
     },
     {
      "ar": "قال إنه راجع عالضيعة بعد كل هالسنين.",
@@ -60924,7 +60555,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s11.mp3"
     },
     {
      "ar": "اتفقنا نتقابل عالتلة، نفس المكان.",
@@ -61079,7 +60710,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s12.mp3"
     },
     {
      "ar": "لما شفته، عرفته رغم إنه كبر.",
@@ -61216,7 +60847,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s13.mp3"
     },
     {
      "ar": "عانقنا بعض وضحكنا وبكينا بنفس الوقت.",
@@ -61423,7 +61054,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s14.mp3"
     },
     {
      "ar": "قال: قلتلك رح نضل أصحاب للأبد.",
@@ -61600,12 +61231,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-10/s15.mp3"
     }
    ],
    "_dir": "story-adv-10",
    "_words": 103,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-11",
@@ -61923,7 +61554,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s0.mp3"
     },
     {
      "ar": "كان يطعمه أحسن أكل ويهتم فيه كتير.",
@@ -62094,7 +61725,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s1.mp3"
     },
     {
      "ar": "بس العصفور ما كان يغني أبدا.",
@@ -62269,7 +61900,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s2.mp3"
     },
     {
      "ar": "الرجال حار، ليش عصفوره حزين؟",
@@ -62466,7 +62097,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s3.mp3"
     },
     {
      "ar": "جاب له قفص أكبر وأحلى، بس ما فرقت.",
@@ -62729,7 +62360,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s4.mp3"
     },
     {
      "ar": "مرة، إجاه ضيف حكيم وشاف العصفور.",
@@ -62916,7 +62547,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s5.mp3"
     },
     {
      "ar": "قال: هالعصفور ما بيغني لأنه مش حر.",
@@ -63081,7 +62712,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s6.mp3"
     },
     {
      "ar": "الرجال قال: بس أنا بحبه وبهتم فيه.",
@@ -63220,7 +62851,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s7.mp3"
     },
     {
      "ar": "الحكيم رد: المحبة الحقيقية إنك تطلق اللي بتحبه.",
@@ -63433,7 +63064,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s8.mp3"
     },
     {
      "ar": "الرجال فكر طويل بهالحكي.",
@@ -63574,7 +63205,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s9.mp3"
     },
     {
      "ar": "الصبح التاني، حمل القفص وطلع عالحديقة.",
@@ -63781,7 +63412,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s10.mp3"
     },
     {
      "ar": "فتح باب القفص وقال: روح، إنت حر.",
@@ -64068,7 +63699,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s11.mp3"
     },
     {
      "ar": "العصفور طار عالشجرة القريبة.",
@@ -64255,7 +63886,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s12.mp3"
     },
     {
      "ar": "وقف هناك، وبلش يغني أحلى غنا.",
@@ -64406,7 +64037,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s13.mp3"
     },
     {
      "ar": "الرجال حس بفرح ما حسه من قبل.",
@@ -64623,7 +64254,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s14.mp3"
     },
     {
      "ar": "فهم يومها إنه الحرية أغلى من الذهب.",
@@ -64864,12 +64495,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-11/s15.mp3"
     }
    ],
    "_dir": "story-adv-11",
    "_words": 102,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-12",
@@ -65101,7 +64732,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s0.mp3"
     },
     {
      "ar": "النسوان كانوا يحضروا والرجال يرتبوا.",
@@ -65242,7 +64873,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s1.mp3"
     },
     {
      "ar": "إمي قالت للعروس: هاي أحلى أيام عمرك.",
@@ -65413,7 +65044,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s2.mp3"
     },
     {
      "ar": "العروس كانت مبسوطة بس خايفة بنفس الوقت.",
@@ -65560,7 +65191,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s3.mp3"
     },
     {
      "ar": "قالت: رح أوحشكم كتير.",
@@ -65651,7 +65282,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s4.mp3"
     },
     {
      "ar": "ليلة العرس، القاعة كانت مليانة ضو وناس.",
@@ -65874,7 +65505,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s5.mp3"
     },
     {
      "ar": "الدبكة اشتغلت، والكل صار يرقص.",
@@ -66001,7 +65632,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s6.mp3"
     },
     {
      "ar": "جدتي، رغم كبر سنها، رقصت شوي.",
@@ -66250,7 +65881,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s7.mp3"
     },
     {
      "ar": "العريس إجا ولابس بدلة وواقف بفخر.",
@@ -66401,7 +66032,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s8.mp3"
     },
     {
      "ar": "لما شاف العروس، عيونه لمعت.",
@@ -66554,7 +66185,7 @@ window.LIBRARY = {
        "caphi_urban": "ma3"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s9.mp3"
     },
     {
      "ar": "الأهل زغردوا، والفرح عم بالمكان.",
@@ -66709,7 +66340,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s10.mp3"
     },
     {
      "ar": "أبو العروس وقف يحكي، وصوته كان مخنوق.",
@@ -66826,21 +66457,7 @@ window.LIBRARY = {
        "analysis": "VERB:I",
        "maknuune_id": "6626",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "6626",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "6631",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "yi7ki",
        "vocalized": "يِحْكِي",
        "vocalized_from": "lexicon:exact"
@@ -66946,7 +66563,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s11.mp3"
     },
     {
      "ar": "قال: بنتي، بيتك الجديد قريب من قلبنا.",
@@ -67123,7 +66740,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s12.mp3"
     },
     {
      "ar": "رقصنا وغنينا لطلوع الفجر.",
@@ -67298,7 +66915,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s13.mp3"
     },
     {
      "ar": "كانت ليلة ما بتننسى، مليانة محبة وفرح.",
@@ -67489,12 +67106,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-12/s14.mp3"
     }
    ],
    "_dir": "story-adv-12",
    "_words": 90,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-13",
@@ -67754,7 +67371,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s0.mp3"
     },
     {
      "ar": "كل الصبح، كان يطلع عالبحر بقاربه الصغير.",
@@ -67951,7 +67568,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s1.mp3"
     },
     {
      "ar": "كان يعرف البحر متل ما يعرف إيده.",
@@ -68212,7 +67829,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s2.mp3"
     },
     {
      "ar": "الناس كانوا يقولوا إنه بيحكي مع الموج.",
@@ -68391,7 +68008,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s3.mp3"
     },
     {
      "ar": "مرة، طلع بيوم والجو صافي.",
@@ -68606,7 +68223,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s4.mp3"
     },
     {
      "ar": "بس فجأة، هبت ريح قوية وصارت عاصفة.",
@@ -68861,7 +68478,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s5.mp3"
     },
     {
      "ar": "الموج علا، والقارب صار يترنح.",
@@ -69002,7 +68619,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s6.mp3"
     },
     {
      "ar": "الناس عالشط خافوا عليه كتير.",
@@ -69109,7 +68726,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s7.mp3"
     },
     {
      "ar": "بس أبو موسى ما خاف، لأنه يعرف البحر.",
@@ -69374,7 +68991,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s8.mp3"
     },
     {
      "ar": "مسك الدفة بقوة وصبر عالعاصفة.",
@@ -69571,7 +69188,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s9.mp3"
     },
     {
      "ar": "بعد ساعات، هدت الريح وصفى الجو.",
@@ -69828,7 +69445,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s10.mp3"
     },
     {
      "ar": "أبو موسى رجع عالشط، تعبان بس بأمان.",
@@ -70019,7 +69636,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s11.mp3"
     },
     {
      "ar": "الناس استقبلوه بالفرح والحمد لله.",
@@ -70138,7 +69755,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilo"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s12.mp3"
     },
     {
      "ar": "سألوه: ما خفت تغرق؟",
@@ -70283,7 +69900,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s13.mp3"
     },
     {
      "ar": "ضحك وقال: البحر بيحترم اللي بيحترمه.",
@@ -70528,12 +70145,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-13/s14.mp3"
     }
    ],
    "_dir": "story-adv-13",
    "_words": 93,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-14",
@@ -70763,7 +70380,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s0.mp3"
     },
     {
      "ar": "كان يشتغل نهار وليل عشان يطعم ولاده.",
@@ -70948,7 +70565,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilwlaad"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s1.mp3"
     },
     {
      "ar": "رغم فقره، كان دايما مبتسم وطيب.",
@@ -71087,7 +70704,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s2.mp3"
     },
     {
      "ar": "مرة، مرض ولده وما كان معه مصاري للدوا.",
@@ -71298,7 +70915,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s3.mp3"
     },
     {
      "ar": "كان محتار ومهموم، ما بيعرف شو يعمل.",
@@ -71445,7 +71062,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s4.mp3"
     },
     {
      "ar": "ناس الحارة سمعوا بالخبر.",
@@ -71568,7 +71185,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s5.mp3"
     },
     {
      "ar": "بدون ما يقول حدا، جمعوا مصاري بينهم.",
@@ -71765,7 +71382,7 @@ window.LIBRARY = {
        "caphi_urban": "been"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s6.mp3"
     },
     {
      "ar": "حطوها بمغلف وحطوه تحت باب أبو علي.",
@@ -71956,7 +71573,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s7.mp3"
     },
     {
      "ar": "الصبح، أبو علي لقى المغلف واستغرب.",
@@ -72155,7 +71772,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s8.mp3"
     },
     {
      "ar": "أخذ ولده عالدكتور واشترى الدوا.",
@@ -72378,7 +71995,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s9.mp3"
     },
     {
      "ar": "الولد طاب، وأبو علي ما عرف مين ساعده.",
@@ -72569,21 +72186,7 @@ window.LIBRARY = {
        "analysis": "PRON_INTERROG",
        "maknuune_id": "31534",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "31534",
-         "root": "م.ي.ن",
-         "gloss": "who?",
-         "analysis": "PRON_INTERROG"
-        },
-        {
-         "id": "31535",
-         "root": "م.ي.ن",
-         "gloss": "who",
-         "analysis": "PRON_REL"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "miin",
        "vocalized": "مِين",
        "vocalized_from": "lexicon:exact"
@@ -72625,7 +72228,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s10.mp3"
     },
     {
      "ar": "سأل الجيران، بس محدا اعترف.",
@@ -72776,7 +72379,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s11.mp3"
     },
     {
      "ar": "قال: الله يجازي اللي عمل هالخير.",
@@ -72915,7 +72518,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s12.mp3"
     },
     {
      "ar": "من يومها، صار أبو علي يساعد كل محتاج.",
@@ -73140,7 +72743,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s13.mp3"
     },
     {
      "ar": "قال: الخير اللي وصلني، لازم أمرره لغيري.",
@@ -73371,12 +72974,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-14/s14.mp3"
     }
    ],
    "_dir": "story-adv-14",
    "_words": 99,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-15",
@@ -73514,7 +73117,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s0.mp3"
     },
     {
      "ar": "الأرض كانت كل حياته، وهو ما بيعرف غيرها.",
@@ -73699,7 +73302,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s1.mp3"
     },
     {
      "ar": "لما كبر بالعمر، صار الشغل صعب عليه.",
@@ -73928,7 +73531,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s2.mp3"
     },
     {
      "ar": "بس كل موسم، كان يصر يحصد بإيده.",
@@ -74089,7 +73692,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s3.mp3"
     },
     {
      "ar": "سنة، حسينا إنه هاي رح تكون آخر حصاد إله.",
@@ -74296,7 +73899,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilo"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s4.mp3"
     },
     {
      "ar": "العيلة كلها إجت تساعده بالحصاد.",
@@ -74421,7 +74024,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s5.mp3"
     },
     {
      "ar": "جدي وقف بوسط الحقل، وعيونه مليانة دموع.",
@@ -74574,7 +74177,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s6.mp3"
     },
     {
      "ar": "قال: هالأرض عمرتها بعرق جبيني.",
@@ -74685,7 +74288,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s7.mp3"
     },
     {
      "ar": "قال: خذوا منها العبرة، الأرض ما بتخون.",
@@ -74852,7 +74455,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s8.mp3"
     },
     {
      "ar": "حصدنا سوا من الصبح للمسا.",
@@ -75005,7 +74608,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s9.mp3"
     },
     {
      "ar": "جدي كان يعلم الأحفاد كيف يمسكوا المنجل.",
@@ -75210,7 +74813,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s10.mp3"
     },
     {
      "ar": "آخر النهار، جلسنا كلنا نأكل تحت الشجرة.",
@@ -75481,7 +75084,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s11.mp3"
     },
     {
      "ar": "جدي نظر للحقل المحصود وابتسم بارتياح.",
@@ -75654,7 +75257,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s12.mp3"
     },
     {
      "ar": "بعد هديك السنة، توفى جدي بهدوء.",
@@ -75795,7 +75398,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s13.mp3"
     },
     {
      "ar": "بس كل موسم حصاد، بنحس إنه معنا بالحقل.",
@@ -75972,12 +75575,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-15/s14.mp3"
     }
    ],
    "_dir": "story-adv-15",
    "_words": 99,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-16",
@@ -76171,7 +75774,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s0.mp3"
     },
     {
      "ar": "بين أغراضها، لقينا مفتاح حديد قديم.",
@@ -76314,7 +75917,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s1.mp3"
     },
     {
      "ar": "محدا عرف هالمفتاح لأي باب.",
@@ -76475,7 +76078,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s2.mp3"
     },
     {
      "ar": "جربناه على كل أبواب البيت، بس ما فتح.",
@@ -76608,7 +76211,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s3.mp3"
     },
     {
      "ar": "إمي تذكرت إنه جدتي كانت تحكي عن صندوق.",
@@ -76735,54 +76338,16 @@ window.LIBRARY = {
       {
        "surface": "تحكي",
        "root": "ح.ك.ي",
-       "lemma": "حَكِي",
-       "form": "حَكِي",
-       "caphi_raw": "7 a k i",
-       "caphi": "7aki",
-       "gloss": "speech",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "6618",
+       "lemma": "حَكَى",
+       "form": "حَكَى",
+       "caphi_raw": "7 a K a",
+       "caphi": "7aKa",
+       "gloss": "talk;tell;recount_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "6628",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "6618",
-         "root": "ح.ك.ي",
-         "gloss": "speech",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "6628",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6630",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "6632",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6620",
-         "root": "ح.ك.ي",
-         "gloss": "pontificate_on_sth",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "6621",
-         "root": "ح.ك.ي",
-         "gloss": "I_forgot_to_mention_sth_about_X",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
-       "caphi_urban": "7aki",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7aka",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -76839,7 +76404,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s4.mp3"
     },
     {
      "ar": "دورنا بالبيت كله لحتى لقينا الصندوق بالعلية.",
@@ -77016,7 +76581,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s5.mp3"
     },
     {
      "ar": "حطينا المفتاح، ودار، وانفتح الصندوق.",
@@ -77217,7 +76782,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s6.mp3"
     },
     {
      "ar": "جوا، لقينا صور قديمة ورسائل ودفتر.",
@@ -77366,7 +76931,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s7.mp3"
     },
     {
      "ar": "الدفتر كان مذكرات جدتي من أيام شبابها.",
@@ -77531,7 +77096,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s8.mp3"
     },
     {
      "ar": "قعدنا نقرا، وعرفنا قصص ما سمعناها من قبل.",
@@ -77740,7 +77305,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s9.mp3"
     },
     {
      "ar": "عرفنا كيف تعرفت على جدي، وكيف تجوزوا.",
@@ -78049,7 +77614,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s10.mp3"
     },
     {
      "ar": "كل صفحة كانت تحكي عن محبة وصبر.",
@@ -78132,54 +77697,16 @@ window.LIBRARY = {
       {
        "surface": "تحكي",
        "root": "ح.ك.ي",
-       "lemma": "حَكِي",
-       "form": "حَكِي",
-       "caphi_raw": "7 a k i",
-       "caphi": "7aki",
-       "gloss": "speech",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "6618",
+       "lemma": "حَكَى",
+       "form": "حَكَى",
+       "caphi_raw": "7 a K a",
+       "caphi": "7aKa",
+       "gloss": "talk;tell;recount_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "6628",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "6618",
-         "root": "ح.ك.ي",
-         "gloss": "speech",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "6628",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6630",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "6632",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6620",
-         "root": "ح.ك.ي",
-         "gloss": "pontificate_on_sth",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "6621",
-         "root": "ح.ك.ي",
-         "gloss": "I_forgot_to_mention_sth_about_X",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
-       "caphi_urban": "7aki",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7aka",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -78270,7 +77797,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s11.mp3"
     },
     {
      "ar": "حسينا إنه جدتي رجعت تحكيلنا بصوتها.",
@@ -78369,7 +77896,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s12.mp3"
     },
     {
      "ar": "من يومها، حطينا الصندوق بمكان أمين.",
@@ -78598,7 +78125,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s13.mp3"
     },
     {
      "ar": "وصار متل الكنز اللي بيربط الأجيال ببعض.",
@@ -78789,12 +78316,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-16/s14.mp3"
     }
    ],
    "_dir": "story-adv-16",
    "_words": 99,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-17",
@@ -78974,7 +78501,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s0.mp3"
     },
     {
      "ar": "عالطريق، شفت رجال كبير واقف تحت المطر.",
@@ -79171,7 +78698,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s1.mp3"
     },
     {
      "ar": "كان مبلول وعم يرتجف من البرد.",
@@ -79306,7 +78833,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s2.mp3"
     },
     {
      "ar": "وقفت جنبه وسألته: عمو، شو بك واقف هون؟",
@@ -79521,7 +79048,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s3.mp3"
     },
     {
      "ar": "قال: ضيعت طريقي، وما بعرف وين أروح.",
@@ -79758,7 +79285,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s4.mp3"
     },
     {
      "ar": "قلتله: تعا معي، ما بينفع تضل بالبرد.",
@@ -79945,7 +79472,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s5.mp3"
     },
     {
      "ar": "أخذته عالبيت، وإمي سخنتله أكل وشاي.",
@@ -80044,7 +79571,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s6.mp3"
     },
     {
      "ar": "قعد يتدفى، وحكالنا إنه بيدور على ابنه.",
@@ -80219,7 +79746,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s7.mp3"
     },
     {
      "ar": "قال إنه ما شاف ابنه من سنين طويلة.",
@@ -80450,7 +79977,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s8.mp3"
     },
     {
      "ar": "الصبح، ساعدته ندور على عنوان ابنه.",
@@ -80641,7 +80168,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s9.mp3"
     },
     {
      "ar": "بعد تعب، لقينا البيت، ودقينا الباب.",
@@ -80818,7 +80345,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s10.mp3"
     },
     {
      "ar": "فتح شاب، وأول ما شاف الرجال، جمد بمكانه.",
@@ -81145,7 +80672,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s11.mp3"
     },
     {
      "ar": "قال بصوت مرتجف: بابا؟ إنت؟",
@@ -81256,7 +80783,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s12.mp3"
     },
     {
      "ar": "عانقوا بعض وبكوا، ونسيوا كل السنين.",
@@ -81435,7 +80962,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s13.mp3"
     },
     {
      "ar": "مشيت من هناك، وقلبي مليان بفرح غريب.",
@@ -81678,12 +81205,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-17/s14.mp3"
     }
    ],
    "_dir": "story-adv-17",
    "_words": 101,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-18",
@@ -81929,7 +81456,7 @@ window.LIBRARY = {
        "caphi_urban": "maajid"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s0.mp3"
     },
     {
      "ar": "ماجد ما كان شاف البحر بحياته.",
@@ -82100,7 +81627,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s1.mp3"
     },
     {
      "ar": "بس كان يحلم فيه كل ليلة.",
@@ -82203,7 +81730,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s2.mp3"
     },
     {
      "ar": "جده حكاله عن البحر، عن زرقته واتساعه.",
@@ -82394,7 +81921,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s3.mp3"
     },
     {
      "ar": "ماجد قال: يوم من الأيام، رح أشوف البحر.",
@@ -82599,7 +82126,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s4.mp3"
     },
     {
      "ar": "كبر ماجد، واشتغل وجمع مصاري شوي شوي.",
@@ -82878,7 +82405,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s5.mp3"
     },
     {
      "ar": "لما صار معه كفاية، قرر يسافر عالبحر.",
@@ -83069,7 +82596,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s6.mp3"
     },
     {
      "ar": "الطريق كان طويل، بس قلبه كان طاير من الفرح.",
@@ -83298,7 +82825,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s7.mp3"
     },
     {
      "ar": "لما وصل، وقف عالشط وشاف البحر لأول مرة.",
@@ -83535,7 +83062,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s8.mp3"
     },
     {
      "ar": "وقف صامت، وعيونه مليانة دموع.",
@@ -83642,7 +83169,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s9.mp3"
     },
     {
      "ar": "البحر كان أكبر وأحلى من كل أحلامه.",
@@ -83837,7 +83364,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s10.mp3"
     },
     {
      "ar": "نزل عالمي، وحس ببرودتها على قدميه.",
@@ -83988,7 +83515,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s11.mp3"
     },
     {
      "ar": "ضحك متل الولاد، وصرخ من الفرح.",
@@ -84205,7 +83732,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s12.mp3"
     },
     {
      "ar": "قعد لآخر النهار يتفرج عالموج.",
@@ -84350,7 +83877,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s13.mp3"
     },
     {
      "ar": "قال لحاله: الأحلام بتتحقق للي بيصبر.",
@@ -84519,12 +84046,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-18/s14.mp3"
     }
    ],
    "_dir": "story-adv-18",
    "_words": 101,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-19",
@@ -84710,7 +84237,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s0.mp3"
     },
     {
      "ar": "كانوا يسموها الحجة أم يوسف.",
@@ -84833,7 +84360,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s1.mp3"
     },
     {
      "ar": "لما يصير في مشكلة، الناس تروح تستشيرها.",
@@ -85004,7 +84531,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s2.mp3"
     },
     {
      "ar": "كانت تسمع الكل بصبر، وبعدين تحكي.",
@@ -85127,59 +84654,21 @@ window.LIBRARY = {
       {
        "surface": "تحكي",
        "root": "ح.ك.ي",
-       "lemma": "حَكِي",
-       "form": "حَكِي",
-       "caphi_raw": "7 a k i",
-       "caphi": "7aki",
-       "gloss": "speech",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "6618",
+       "lemma": "حَكَى",
+       "form": "حَكَى",
+       "caphi_raw": "7 a K a",
+       "caphi": "7aKa",
+       "gloss": "talk;tell;recount_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "6628",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "6618",
-         "root": "ح.ك.ي",
-         "gloss": "speech",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "6628",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6630",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "6632",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6620",
-         "root": "ح.ك.ي",
-         "gloss": "pontificate_on_sth",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "6621",
-         "root": "ح.ك.ي",
-         "gloss": "I_forgot_to_mention_sth_about_X",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
-       "caphi_urban": "7aki",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7aka",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s3.mp3"
     },
     {
      "ar": "مرة، جارين اتخانقوا على حد الأرض.",
@@ -85372,7 +84861,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s4.mp3"
     },
     {
      "ar": "راحوا عند الحجة، وكل واحد حكى قصته.",
@@ -85603,7 +85092,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s5.mp3"
     },
     {
      "ar": "الحجة سمعتهم، وبعدين سألت سؤال بسيط.",
@@ -85794,7 +85283,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s6.mp3"
     },
     {
      "ar": "قالت: شو بتسوى الأرض إذا خسرتوا بعض؟",
@@ -85939,7 +85428,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s7.mp3"
     },
     {
      "ar": "الجارين سكتوا وفكروا بالحكي.",
@@ -86114,7 +85603,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s8.mp3"
     },
     {
      "ar": "قالت: الجار قبل الدار، والصاحب قبل الأرض.",
@@ -86305,7 +85794,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s9.mp3"
     },
     {
      "ar": "الجارين نظروا لبعض، وحسوا بالخجل.",
@@ -86510,7 +85999,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s10.mp3"
     },
     {
      "ar": "مدوا إيديهم وتصالحوا قدام الحجة.",
@@ -86691,7 +86180,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s11.mp3"
     },
     {
      "ar": "الحجة ابتسمت وقالت: هيك بيكون العقلاء.",
@@ -86902,7 +86391,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s12.mp3"
     },
     {
      "ar": "رجعوا عبيوتهم، والقلوب صافية.",
@@ -87029,7 +86518,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s13.mp3"
     },
     {
      "ar": "حكمة الحجة ضلت تتناقل بالضيعة لأجيال.",
@@ -87248,12 +86737,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-19/s14.mp3"
     }
    ],
    "_dir": "story-adv-19",
    "_words": 88,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-20",
@@ -87457,7 +86946,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s0.mp3"
     },
     {
      "ar": "كنت رايح عالمدينة أكمل دراستي.",
@@ -87486,43 +86975,11 @@ window.LIBRARY = {
        "form": "رَايِح",
        "caphi_raw": "r aa y i 7",
        "caphi": "raayi7",
-       "gloss": "will",
-       "analysis": "PART_FUT",
-       "maknuune_id": "12344",
-       "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "12344",
-         "root": "ر.و.ح",
-         "gloss": "will",
-         "analysis": "PART_FUT"
-        },
-        {
-         "id": "12376",
-         "root": "ر.و.ح",
-         "gloss": "be_extravagant",
-         "analysis": "NOUN_ACT:PHRASE"
-        },
-        {
-         "id": "12377",
-         "root": "ر.و.ح",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN_ACT:PHRASE"
-        },
-        {
-         "id": "12350",
-         "root": "ر.و.ح",
-         "gloss": "going",
-         "analysis": "NOUN_ACT:MS"
-        },
-        {
-         "id": "12381",
-         "root": "ر.و.ح",
-         "gloss": "going_and_coming_back(an_idiomatic_exore",
-         "analysis": "NOUN_ACT:PHRASE"
-        }
-       ],
+       "gloss": "going",
+       "analysis": "NOUN_ACT:MS",
+       "maknuune_id": "12350",
+       "village": "أريحا",
+       "provenance": "maknuune:resolved",
        "caphi_urban": "raayi7",
        "vocalized": "رَايِح",
        "vocalized_from": "lexicon:exact"
@@ -87616,7 +87073,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s1.mp3"
     },
     {
      "ar": "إمي حضرتلي شنطة مليانة أكل وأواعي.",
@@ -87777,7 +87234,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s2.mp3"
     },
     {
      "ar": "عالمحطة، أبوي حطلي إيده على كتفي.",
@@ -87968,7 +87425,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s3.mp3"
     },
     {
      "ar": "قال: يا ابني، احترم حالك يحترموك الناس.",
@@ -88155,7 +87612,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s4.mp3"
     },
     {
      "ar": "إمي بكت، وأنا حاولت ما أبكي قدامها.",
@@ -88384,7 +87841,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s5.mp3"
     },
     {
      "ar": "ركبت الباص، وطل رأسي من الشباك أودعهم.",
@@ -88657,7 +88114,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s6.mp3"
     },
     {
      "ar": "الباص مشى، والضيعة صارت تصغر ورايا.",
@@ -88848,7 +88305,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s7.mp3"
     },
     {
      "ar": "لأول مرة، حسيت إني لحالي بهالدنيا.",
@@ -89033,7 +88490,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s8.mp3"
     },
     {
      "ar": "المدينة كانت كبيرة وغريبة ومليانة ناس.",
@@ -89190,7 +88647,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s9.mp3"
     },
     {
      "ar": "بالأول، تهت وما عرفت وين أروح.",
@@ -89391,7 +88848,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s10.mp3"
     },
     {
      "ar": "بس شوي شوي، تعلمت وتعودت.",
@@ -89618,7 +89075,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s11.mp3"
     },
     {
      "ar": "كل ليلة، كنت أتصل بأهلي وأطمنهم.",
@@ -89775,7 +89232,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s12.mp3"
     },
     {
      "ar": "بعد سنين، تخرجت، ورجعت عالضيعة مهندس.",
@@ -89986,7 +89443,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s13.mp3"
     },
     {
      "ar": "أبوي وإمي استقبلوني عالباب، وعيونهم تلمع بالفخر.",
@@ -90161,12 +89618,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-20/s14.mp3"
     }
    ],
    "_dir": "story-adv-20",
    "_words": 93,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-21",
@@ -90392,7 +89849,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s0.mp3"
     },
     {
      "ar": "كل الصبح، كان يصحينا بغناه الحلو.",
@@ -90561,7 +90018,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s1.mp3"
     },
     {
      "ar": "الولاد كانوا يحطولوا فتات خبز ومي.",
@@ -90700,7 +90157,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s2.mp3"
     },
     {
      "ar": "صار العصفور يعرفنا وما يخاف منا.",
@@ -90853,7 +90310,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s3.mp3"
     },
     {
      "ar": "مرة، هبت عاصفة قوية بالليل.",
@@ -91018,7 +90475,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s4.mp3"
     },
     {
      "ar": "الصبح، لقينا العش وقع عالأرض.",
@@ -91201,7 +90658,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s5.mp3"
     },
     {
      "ar": "الولاد زعلوا، وخافوا إنه العصفور مات.",
@@ -91400,7 +90857,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s6.mp3"
     },
     {
      "ar": "بس لقيناه واقف عالغصن، سليم.",
@@ -91497,7 +90954,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s7.mp3"
     },
     {
      "ar": "جمعنا العش وحطيناه بمكان أعلى وأأمن.",
@@ -91714,7 +91171,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s8.mp3"
     },
     {
      "ar": "العصفور رجعله، وكأنه بيشكرنا.",
@@ -91873,7 +91330,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s9.mp3"
     },
     {
      "ar": "بعد أسابيع، طلعت من العش عصافير صغيرة.",
@@ -92012,7 +91469,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s10.mp3"
     },
     {
      "ar": "الولاد فرحوا كأنه في مواليد جداد بالعيلة.",
@@ -92221,7 +91678,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s11.mp3"
     },
     {
      "ar": "راقبناهم لما كبروا وتعلموا الطيران.",
@@ -92382,7 +91839,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s12.mp3"
     },
     {
      "ar": "يوم، طاروا كلهم، وضل العش فاضي.",
@@ -92621,7 +92078,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s13.mp3"
     },
     {
      "ar": "بس كل ربيع، بيرجع عصفور يعشش بنفس الشجرة.",
@@ -92860,12 +92317,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-21/s14.mp3"
     }
    ],
    "_dir": "story-adv-21",
    "_words": 88,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-22",
@@ -93155,7 +92612,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s0.mp3"
     },
     {
      "ar": "مرة، ضاق حاله، ودان مصاري من جاره.",
@@ -93342,7 +92799,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s1.mp3"
     },
     {
      "ar": "الجار عطاه بدون تردد، وقال: خذ وقتك.",
@@ -93589,7 +93046,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s2.mp3"
     },
     {
      "ar": "أبو حسن اشتغل ليل نهار عشان يرد الدين.",
@@ -93892,7 +93349,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s3.mp3"
     },
     {
      "ar": "كل ما يجمع شوي، كان يصير في حاجة تصرفه.",
@@ -94127,7 +93584,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s4.mp3"
     },
     {
      "ar": "بس هو ما نسي دينه أبدا.",
@@ -94320,7 +93777,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s5.mp3"
     },
     {
      "ar": "بعد سنة، جمع المبلغ كامل.",
@@ -94465,7 +93922,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s6.mp3"
     },
     {
      "ar": "راح لجاره، ومد له المصاري.",
@@ -94660,7 +94117,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s7.mp3"
     },
     {
      "ar": "الجار رفض، وقال: أنا سامحتك من زمان.",
@@ -94881,7 +94338,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s8.mp3"
     },
     {
      "ar": "أبو حسن قال: لأ، الدين دين، ولازم يترد.",
@@ -95186,7 +94643,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s9.mp3"
     },
     {
      "ar": "الجار تأثر من صدقه وأمانته.",
@@ -95323,7 +94780,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s10.mp3"
     },
     {
      "ar": "أخذ المصاري، بس رجعله نصها هدية.",
@@ -95514,7 +94971,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s11.mp3"
     },
     {
      "ar": "قال: هاي مكافأة على أمانتك.",
@@ -95599,7 +95056,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s12.mp3"
     },
     {
      "ar": "من يومها، صاروا أحسن أصحاب.",
@@ -95762,7 +95219,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s13.mp3"
     },
     {
      "ar": "والحارة كلها حكت عن أمانة أبو حسن.",
@@ -96005,12 +95462,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-22/s14.mp3"
     }
    ],
    "_dir": "story-adv-22",
    "_words": 98,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-23",
@@ -96156,7 +95613,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s0.mp3"
     },
     {
      "ar": "الولاد كانوا يخافوا يقربوا منه.",
@@ -96243,7 +95700,7 @@ window.LIBRARY = {
        "caphi_urban": "min"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s1.mp3"
     },
     {
      "ar": "كانوا يقولوا إنه مسكون وفيه أشباح.",
@@ -96374,7 +95831,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s2.mp3"
     },
     {
      "ar": "أنا كنت فضولي، وحبيت أعرف الحقيقة.",
@@ -96521,7 +95978,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s3.mp3"
     },
     {
      "ar": "يوم، جمعت شجاعتي وقربت من البيت.",
@@ -96714,7 +96171,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s4.mp3"
     },
     {
      "ar": "الباب كان مفتوح شوي، فدخلت بحذر.",
@@ -96933,7 +96390,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s5.mp3"
     },
     {
      "ar": "جوا، كان في غبار وعناكب وأثاث قديم.",
@@ -97048,7 +96505,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s6.mp3"
     },
     {
      "ar": "بس ما كان في أشباح، بس ذكريات قديمة.",
@@ -97209,7 +96666,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s7.mp3"
     },
     {
      "ar": "لقيت صور معلقة عالحيط لعيلة زمان.",
@@ -97434,7 +96891,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s8.mp3"
     },
     {
      "ar": "عرفت إنه البيت كان مليان حياة ومحبة.",
@@ -97605,7 +97062,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s9.mp3"
     },
     {
      "ar": "سألت جدي عن هالبيت، فحكالي قصته.",
@@ -97740,7 +97197,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s10.mp3"
     },
     {
      "ar": "قال إنه أهله سافروا برا وما رجعوا.",
@@ -97955,7 +97412,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s11.mp3"
     },
     {
      "ar": "حسيت بحزن على بيت نساه أهله.",
@@ -98114,7 +97571,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s12.mp3"
     },
     {
      "ar": "من يومها، ما عدت أخاف منه.",
@@ -98313,7 +97770,7 @@ window.LIBRARY = {
        "caphi_urban": "min"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s13.mp3"
     },
     {
      "ar": "عرفت إنه أكتر شي مخيف، هو النسيان.",
@@ -98430,12 +97887,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-23/s14.mp3"
     }
    ],
    "_dir": "story-adv-23",
    "_words": 96,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-24",
@@ -98725,7 +98182,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s0.mp3"
     },
     {
      "ar": "كل مسا، كنا نسمع صوت عوده من الشباك.",
@@ -98958,7 +98415,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s1.mp3"
     },
     {
      "ar": "اللحن كان حزين حلو، بيمس القلب.",
@@ -99175,7 +98632,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s2.mp3"
     },
     {
      "ar": "مرة، سألته: ليش ألحانك حزينة يا عمو؟",
@@ -99344,7 +98801,7 @@ window.LIBRARY = {
        "caphi_urban": "3am"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s3.mp3"
     },
     {
      "ar": "حط العود جنبه، وحكالي قصته.",
@@ -99491,7 +98948,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s4.mp3"
     },
     {
      "ar": "قال إنه كان عنده بنت بتحب الموسيقى.",
@@ -99610,45 +99067,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "2341",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "2341",
-         "root": "ب.ن.ت",
-         "gloss": "girl",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "2350",
-         "root": "ب.ن.ت",
-         "gloss": "treat_sb_as_a_girl",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "2352",
-         "root": "ب.ن.ت",
-         "gloss": "treat_sb_as_a_girl",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "2339",
-         "root": "ب.ن.ت",
-         "gloss": "girl_[auto]",
-         "analysis": "NOUN:FP"
-        },
-        {
-         "id": "2342",
-         "root": "ب.ن.ت",
-         "gloss": "tonsillitis",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "2343",
-         "root": "ب.ن.ت",
-         "gloss": "four_stars_that_surround_\"n_a_dj_m_i_t;2",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "binit",
        "vocalized": "بِنِت",
        "vocalized_from": "lexicon:exact"
@@ -99686,7 +99105,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s5.mp3"
     },
     {
      "ar": "كانت تقعد جنبه وتسمعه وهو يعزف.",
@@ -99865,7 +99284,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s6.mp3"
     },
     {
      "ar": "بس البنت مرضت وتوفت وهي صغيرة.",
@@ -100044,7 +99463,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s7.mp3"
     },
     {
      "ar": "من يومها، صار يعزف عشانها هي.",
@@ -100237,7 +99656,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s8.mp3"
     },
     {
      "ar": "قال: العزف بيخليها قريبة من قلبي.",
@@ -100378,7 +99797,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s9.mp3"
     },
     {
      "ar": "سمعت قصته، ودمعت عيوني.",
@@ -100543,7 +99962,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s10.mp3"
     },
     {
      "ar": "من هديك اليوم، صرت أسمع عزفه بشكل تاني.",
@@ -100794,7 +100213,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s11.mp3"
     },
     {
      "ar": "كل لحن كان يحكي عن محبة أب لبنته.",
@@ -100891,21 +100310,7 @@ window.LIBRARY = {
        "analysis": "VERB:I",
        "maknuune_id": "6626",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "6626",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "6631",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "yi7ki",
        "vocalized": "يِحْكِي",
        "vocalized_from": "lexicon:exact"
@@ -101039,7 +100444,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s12.mp3"
     },
     {
      "ar": "قلتله: عزفك بيخلي بنتك حية بقلوبنا كلنا.",
@@ -101258,7 +100663,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s13.mp3"
     },
     {
      "ar": "ابتسم بحزن، ورجع يعزف لحنه الحلو.",
@@ -101515,12 +100920,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-24/s14.mp3"
     }
    ],
    "_dir": "story-adv-24",
    "_words": 98,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-25",
@@ -101746,7 +101151,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s0.mp3"
     },
     {
      "ar": "الأرض كانت عطشانة، والزرع كان محتاج مي.",
@@ -101899,7 +101304,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s1.mp3"
     },
     {
      "ar": "يوم، صارت السما رمادية، وهبت ريح باردة.",
@@ -102126,7 +101531,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s2.mp3"
     },
     {
      "ar": "ريحة التراب قبل المطر ملت الجو.",
@@ -102307,7 +101712,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s3.mp3"
     },
     {
      "ar": "الولاد وقفوا عالشبابيك يستنوا.",
@@ -102376,7 +101781,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s4.mp3"
     },
     {
      "ar": "وفجأة، نزلت أول قطرة، وبعدها انهمرت الشتا.",
@@ -102529,7 +101934,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s5.mp3"
     },
     {
      "ar": "الولاد صرخوا من الفرح وركضوا عالحديقة.",
@@ -102722,7 +102127,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s6.mp3"
     },
     {
      "ar": "لعبوا تحت المطر وانبلوا كلهم.",
@@ -102883,7 +102288,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s7.mp3"
     },
     {
      "ar": "الكبار وقفوا عالبواب، يتفرجوا ويبتسموا.",
@@ -102970,7 +102375,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s8.mp3"
     },
     {
      "ar": "جدي مد إيده وحس بالمطر على كفه.",
@@ -103241,7 +102646,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s9.mp3"
     },
     {
      "ar": "قال: هاي بركة من الله عالأرض والناس.",
@@ -103436,7 +102841,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s10.mp3"
     },
     {
      "ar": "الأرض شربت، وريحتها طلعت حلوة.",
@@ -103597,7 +103002,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s11.mp3"
     },
     {
      "ar": "بالمسا، وقفت الشتا، وطلع قوس قزح.",
@@ -103808,7 +103213,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s12.mp3"
     },
     {
      "ar": "الولاد وقفوا يتفرجوا عليه بدهشة.",
@@ -103895,7 +103300,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s13.mp3"
     },
     {
      "ar": "كانت أول شتوية، وأحلى يوم بالخريف.",
@@ -104050,12 +103455,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-25/s14.mp3"
     }
    ],
    "_dir": "story-adv-25",
    "_words": 91,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-26",
@@ -104253,7 +103658,7 @@ window.LIBRARY = {
        "caphi_urban": "bilbeet"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s0.mp3"
     },
     {
      "ar": "إحنا الولاد، كنا ندور عليه بكل زاوية.",
@@ -104424,7 +103829,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s1.mp3"
     },
     {
      "ar": "فتشنا بالخزاين، وتحت السراير، وبالعلية.",
@@ -104583,7 +103988,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s2.mp3"
     },
     {
      "ar": "بس ما لقينا لا ذهب ولا مصاري.",
@@ -104778,7 +104183,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s3.mp3"
     },
     {
      "ar": "سألنا جدي: وين الكنز؟ ما لقيناه.",
@@ -104957,7 +104362,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s4.mp3"
     },
     {
      "ar": "ضحك جدي وقال: الكنز مش شي بتلاقوه بإيدكم.",
@@ -105200,7 +104605,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s5.mp3"
     },
     {
      "ar": "كبرنا، وكل واحد راح بطريقه.",
@@ -105439,7 +104844,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s6.mp3"
     },
     {
      "ar": "بس كل عيد، كنا نرجع نجتمع ببيت جدي.",
@@ -105664,7 +105069,7 @@ window.LIBRARY = {
        "caphi_urban": "jiddi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s7.mp3"
     },
     {
      "ar": "كنا نقعد حوالي الطاولة، ونحكي ونضحك.",
@@ -105895,7 +105300,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s8.mp3"
     },
     {
      "ar": "جدي كان ينظر إلنا، وعيونه مليانة فرح.",
@@ -106092,7 +105497,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s9.mp3"
     },
     {
      "ar": "يوم، قبل ما يتوفى، جمعنا كلنا حواليه.",
@@ -106247,7 +105652,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s10.mp3"
     },
     {
      "ar": "قال: هلأ فهمتوا شو هو الكنز؟",
@@ -106382,7 +105787,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s11.mp3"
     },
     {
      "ar": "نظر لوجوهنا، وقال: إنتوا الكنز، عيلتي.",
@@ -106671,7 +106076,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s12.mp3"
     },
     {
      "ar": "سكتنا كلنا، وحسينا بمعنى كلامه.",
@@ -106840,7 +106245,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s13.mp3"
     },
     {
      "ar": "من يومها، عرفنا إنه أغلى كنز هو الأهل.",
@@ -107153,12 +106558,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-26/s14.mp3"
     }
    ],
    "_dir": "story-adv-26",
    "_words": 98,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-27",
@@ -107422,7 +106827,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s0.mp3"
     },
     {
      "ar": "كنا نمشي نص ساعة بين الحقول والجبال.",
@@ -107631,7 +107036,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s1.mp3"
     },
     {
      "ar": "بالشتا، الطريق كان يصير طين ومي.",
@@ -107862,7 +107267,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s2.mp3"
     },
     {
      "ar": "وبالصيف، الشمس كانت تحرقنا.",
@@ -108001,7 +107406,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s3.mp3"
     },
     {
      "ar": "بس رغم هيك، كنا نروح كل يوم مبسوطين.",
@@ -108174,7 +107579,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s4.mp3"
     },
     {
      "ar": "بالطريق، كنا نلعب ونضحك ونتسابق.",
@@ -108395,7 +107800,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s5.mp3"
     },
     {
      "ar": "مرة، لقينا كلب صغير تايه وجعان.",
@@ -108536,7 +107941,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s6.mp3"
     },
     {
      "ar": "أطعمناه من زوادتنا، وصار يمشي معنا.",
@@ -108655,7 +108060,7 @@ window.LIBRARY = {
        "caphi_urban": "ma3"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s7.mp3"
     },
     {
      "ar": "كل يوم، كان يستنانا عند نفس الشجرة.",
@@ -108810,7 +108215,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s8.mp3"
     },
     {
      "ar": "سميناه صاحب، وصار جزء من طريقنا.",
@@ -109007,7 +108412,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s9.mp3"
     },
     {
      "ar": "لما كبرنا وخلصنا المدرسة، افترقنا.",
@@ -109188,7 +108593,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s10.mp3"
     },
     {
      "ar": "بس لهلأ، بتذكر هديك الطريق وصحابي.",
@@ -109407,7 +108812,7 @@ window.LIBRARY = {
        "caphi_urban": "s.7aabi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s11.mp3"
     },
     {
      "ar": "الطريق كان صعب، بس علمنا الصبر.",
@@ -109650,7 +109055,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s12.mp3"
     },
     {
      "ar": "وعلمنا إنه الرفقة بتخفف أصعب طريق.",
@@ -109843,7 +109248,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s13.mp3"
     },
     {
      "ar": "لهلأ، كل ما أشوف مدرسة، بتذكر مشوارنا.",
@@ -110062,12 +109467,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-27/s14.mp3"
     }
    ],
    "_dir": "story-adv-27",
    "_words": 91,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-28",
@@ -110263,7 +109668,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s0.mp3"
     },
     {
      "ar": "كانت تتغير مع كل فصل بالسنة.",
@@ -110444,7 +109849,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s1.mp3"
     },
     {
      "ar": "بالربيع، كانت تلبس ورق أخضر وزهر.",
@@ -110625,7 +110030,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s2.mp3"
     },
     {
      "ar": "بالصيف، كانت تعطينا ظل وتوت حلو.",
@@ -110850,7 +110255,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s3.mp3"
     },
     {
      "ar": "الولاد كانوا يطلعوا عليها ياكلوا التوت.",
@@ -110953,7 +110358,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s4.mp3"
     },
     {
      "ar": "بالخريف، ورقها كان يصفر ويوقع.",
@@ -111092,7 +110497,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s5.mp3"
     },
     {
      "ar": "كنا نلعب بالورق اليابس ونجمعه.",
@@ -111275,7 +110680,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s6.mp3"
     },
     {
      "ar": "وبالشتا، كانت تصير عريانة، بس واقفة بقوة.",
@@ -111390,7 +110795,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s7.mp3"
     },
     {
      "ar": "جدي كان يقول: هالشجرة متل الإنسان.",
@@ -111543,7 +110948,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s8.mp3"
     },
     {
      "ar": "قال: بتمر بفصول، حلوة وصعبة.",
@@ -111726,7 +111131,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s9.mp3"
     },
     {
      "ar": "قال: المهم تضل واقف متل الشجرة بالشتا.",
@@ -111999,7 +111404,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s10.mp3"
     },
     {
      "ar": "كبرت، وفهمت حكمة جدي أكتر.",
@@ -112162,7 +111567,7 @@ window.LIBRARY = {
        "caphi_urban": "2aktar"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s11.mp3"
     },
     {
      "ar": "الحياة إلها فصول، وكل فصل بيعدي.",
@@ -112367,7 +111772,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s12.mp3"
     },
     {
      "ar": "والصعب بيروح، متل ما الشتا بيروح.",
@@ -112588,7 +111993,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s13.mp3"
     },
     {
      "ar": "والشجرة، متل الأمل، بترجع تخضر من جديد.",
@@ -112849,12 +112254,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-28/s14.mp3"
     }
    ],
    "_dir": "story-adv-28",
    "_words": 90,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-29",
@@ -113062,7 +112467,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s0.mp3"
     },
     {
      "ar": "ما كان معي مصاري أشتريلها هدية.",
@@ -113177,7 +112582,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s1.mp3"
     },
     {
      "ar": "فكرت كتير، شو ممكن أعطيها.",
@@ -113354,7 +112759,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s2.mp3"
     },
     {
      "ar": "قررت أعملها هدية بإيدي.",
@@ -113497,7 +112902,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s3.mp3"
     },
     {
      "ar": "قعدت أرسم وأكتب لأيام.",
@@ -113606,7 +113011,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s4.mp3"
     },
     {
      "ar": "عملتلها بطاقة، وكتبت فيها كل محبتي.",
@@ -113757,7 +113162,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s5.mp3"
     },
     {
      "ar": "جمعت ورد من الحديقة، وحطيته بالبطاقة.",
@@ -113964,7 +113369,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s6.mp3"
     },
     {
      "ar": "يوم عيدها، خبيت الهدية ورا ظهري.",
@@ -114183,7 +113588,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s7.mp3"
     },
     {
      "ar": "قلتلها: إمي، عندي إلك مفاجأة.",
@@ -114320,7 +113725,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s8.mp3"
     },
     {
      "ar": "مديت إيدي وعطيتها البطاقة.",
@@ -114441,7 +113846,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s9.mp3"
     },
     {
      "ar": "قرأتها، وعيونها امتلت بالدموع.",
@@ -114548,7 +113953,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s10.mp3"
     },
     {
      "ar": "حضنتني بقوة، وقالت: هاي أحلى هدية بحياتي.",
@@ -114731,7 +114136,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s11.mp3"
     },
     {
      "ar": "قلتلها: بس هي بسيطة، ما فيها مصاري.",
@@ -114862,7 +114267,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s12.mp3"
     },
     {
      "ar": "قالت: أغلى الهدايا هي اللي من القلب.",
@@ -115059,7 +114464,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s13.mp3"
     },
     {
      "ar": "من يومها، عرفت إنه المحبة أغلى من كل مصاري الدنيا.",
@@ -115328,12 +114733,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-29/s14.mp3"
     }
    ],
    "_dir": "story-adv-29",
    "_words": 88,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-30",
@@ -115529,7 +114934,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s0.mp3"
     },
     {
      "ar": "جدي كان عنده قنديل قديم بيضويله الليل.",
@@ -115724,7 +115129,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s1.mp3"
     },
     {
      "ar": "كل مسا، كان يشعله ويحطه عالطاولة.",
@@ -115861,7 +115266,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s2.mp3"
     },
     {
      "ar": "حواليه، كانت العيلة تجتمع تحكي وتضحك.",
@@ -115932,54 +115337,16 @@ window.LIBRARY = {
       {
        "surface": "تحكي",
        "root": "ح.ك.ي",
-       "lemma": "حَكِي",
-       "form": "حَكِي",
-       "caphi_raw": "7 a k i",
-       "caphi": "7aki",
-       "gloss": "speech",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "6618",
+       "lemma": "حَكَى",
+       "form": "حَكَى",
+       "caphi_raw": "7 a K a",
+       "caphi": "7aKa",
+       "gloss": "talk;tell;recount_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "6628",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "6618",
-         "root": "ح.ك.ي",
-         "gloss": "speech",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "6628",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6630",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "6632",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6620",
-         "root": "ح.ك.ي",
-         "gloss": "pontificate_on_sth",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "6621",
-         "root": "ح.ك.ي",
-         "gloss": "I_forgot_to_mention_sth_about_X",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
-       "caphi_urban": "7aki",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7aka",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -116038,7 +115405,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s3.mp3"
     },
     {
      "ar": "جدي كان يحكينا قصص عالضو الخافت.",
@@ -116207,7 +115574,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s4.mp3"
     },
     {
      "ar": "كنا نسمعه ونحن مشدودين، وظلالنا عالحيط.",
@@ -116414,7 +115781,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s5.mp3"
     },
     {
      "ar": "لما إجت الكهربا، الكل فرح بالضو الجديد.",
@@ -116603,7 +115970,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s6.mp3"
     },
     {
      "ar": "بس جدي ضل يحب قنديله القديم.",
@@ -116778,7 +116145,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s7.mp3"
     },
     {
      "ar": "قلتله: يا جدي، الكهربا أحسن وأقوى.",
@@ -116955,7 +116322,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s8.mp3"
     },
     {
      "ar": "ابتسم وقال: الضو القوي بيوري كل شي.",
@@ -117178,7 +116545,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s9.mp3"
     },
     {
      "ar": "قال: بس ضو القنديل بيخلي القلوب تقرب.",
@@ -117387,7 +116754,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s10.mp3"
     },
     {
      "ar": "ما فهمت حكيه وأنا صغير.",
@@ -117588,7 +116955,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s11.mp3"
     },
     {
      "ar": "بس هلأ، وكل واحد غارق بتلفونه، فهمت.",
@@ -117781,7 +117148,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s12.mp3"
     },
     {
      "ar": "لسا محتفظ بقنديل جدي لهلأ.",
@@ -117914,7 +117281,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s13.mp3"
     },
     {
      "ar": "وكل ما أشعله، بترجع تلك الليالي الدافية.",
@@ -118161,12 +117528,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-adv-30/s14.mp3"
     }
    ],
    "_dir": "story-adv-30",
    "_words": 97,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-01",
@@ -118304,7 +117671,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-01/s0.mp3"
     },
     {
      "ar": "بروح عالمطبخ وبعمل قهوة.",
@@ -118389,7 +117756,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-01/s1.mp3"
     },
     {
      "ar": "بحب القهوة سادة، بدون سكر.",
@@ -118534,7 +117901,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-01/s2.mp3"
     },
     {
      "ar": "بقعد عالشباك وبشرب قهوتي على مهل.",
@@ -118677,7 +118044,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-01/s3.mp3"
     },
     {
      "ar": "الجو حلو والشمس طالعة.",
@@ -118850,7 +118217,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-01/s4.mp3"
     },
     {
      "ar": "بعدين بلبس وبروح عالشغل.",
@@ -118995,12 +118362,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-01/s5.mp3"
     }
    ],
    "_dir": "story-beg-01",
    "_words": 28,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-02",
@@ -119218,7 +118585,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-02/s0.mp3"
     },
     {
      "ar": "أبوي بشتغل بالسوق وإمي بتطبخ أحلى أكل.",
@@ -119389,7 +118756,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-02/s1.mp3"
     },
     {
      "ar": "عندي أخ وأخت، وهمة أصغر مني.",
@@ -119530,7 +118897,7 @@ window.LIBRARY = {
        "caphi_urban": "minni"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-02/s2.mp3"
     },
     {
      "ar": "جدّتي بتسكن معنا بالبيت.",
@@ -119615,7 +118982,7 @@ window.LIBRARY = {
        "caphi_urban": "bilbeet"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-02/s3.mp3"
     },
     {
      "ar": "كل مسا بنقعد سوا ونحكي كتير.",
@@ -119804,7 +119171,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-02/s4.mp3"
     },
     {
      "ar": "بحب عيلتي كتير.",
@@ -119897,12 +119264,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-02/s5.mp3"
     }
    ],
    "_dir": "story-beg-02",
    "_words": 32,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-03",
@@ -120024,7 +119391,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-03/s0.mp3"
     },
     {
      "ar": "فيه غرفتين ومطبخ وحمام.",
@@ -120139,7 +119506,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-03/s1.mp3"
     },
     {
      "ar": "قدام البيت في حديقة صغيرة.",
@@ -120240,7 +119607,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-03/s2.mp3"
     },
     {
      "ar": "إمي بتزرع ورد وشوية نعنع.",
@@ -120425,7 +119792,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-03/s3.mp3"
     },
     {
      "ar": "بحب أقعد بالحديقة بعد الظهر.",
@@ -120526,12 +119893,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-03/s4.mp3"
     }
    ],
    "_dir": "story-beg-03",
    "_words": 23,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-04",
@@ -120683,7 +120050,7 @@ window.LIBRARY = {
        "caphi_urban": "mishmish"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-04/s0.mp3"
     },
     {
      "ar": "لونها أبيض وعيونها خضر.",
@@ -120830,7 +120197,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-04/s1.mp3"
     },
     {
      "ar": "كل الصبح بتنط عالسرير وبتصحيني.",
@@ -120935,7 +120302,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-04/s2.mp3"
     },
     {
      "ar": "بحب تاكل سمك وبتشرب حليب.",
@@ -121094,7 +120461,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-04/s3.mp3"
     },
     {
      "ar": "بالليل بتنام جنبي.",
@@ -121201,12 +120568,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-04/s4.mp3"
     }
    ],
    "_dir": "story-beg-04",
    "_words": 22,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-05",
@@ -121326,7 +120693,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-05/s0.mp3"
     },
     {
      "ar": "بناكل خبز وزيت وزعتر وجبنة.",
@@ -121535,7 +120902,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-05/s1.mp3"
     },
     {
      "ar": "إمي بتعمل بيض وشاي بالنعنع.",
@@ -121674,7 +121041,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-05/s2.mp3"
     },
     {
      "ar": "أنا بحب الزيت والزعتر كتير.",
@@ -121831,7 +121198,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-05/s3.mp3"
     },
     {
      "ar": "بعد الفطور، كل واحد بروح على شغله.",
@@ -121950,12 +121317,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-05/s4.mp3"
     }
    ],
    "_dir": "story-beg-05",
    "_words": 27,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-06",
@@ -122091,7 +121458,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-06/s0.mp3"
     },
     {
      "ar": "السوق مليان ناس وأصوات.",
@@ -122196,7 +121563,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-06/s1.mp3"
     },
     {
      "ar": "بشتري خضرة وفواكه ولحمة.",
@@ -122319,7 +121686,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-06/s2.mp3"
     },
     {
      "ar": "البياع بيعرفني وبيضحك.",
@@ -122400,7 +121767,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-06/s3.mp3"
     },
     {
      "ar": "بشتري كل شي وبرجع عالبيت.",
@@ -122515,12 +121882,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-06/s4.mp3"
     }
    ],
    "_dir": "story-beg-06",
    "_words": 20,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-07",
@@ -122626,7 +121993,7 @@ window.LIBRARY = {
        "caphi_urban": "kariim"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-07/s0.mp3"
     },
     {
      "ar": "بنشوف بعض كل يوم بعد المدرسة.",
@@ -122763,7 +122130,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-07/s1.mp3"
     },
     {
      "ar": "بنلعب كورة بالشارع.",
@@ -122858,7 +122225,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-07/s2.mp3"
     },
     {
      "ar": "كريم بيضحك كتير وبيحكي نكت.",
@@ -123023,7 +122390,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-07/s3.mp3"
     },
     {
      "ar": "هو أحسن صاحب عندي.",
@@ -123208,12 +122575,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-07/s4.mp3"
     }
    ],
    "_dir": "story-beg-07",
    "_words": 21,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-08",
@@ -123381,7 +122748,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-08/s0.mp3"
     },
     {
      "ar": "السما رمادية والغيم كتير.",
@@ -123510,7 +122877,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-08/s1.mp3"
     },
     {
      "ar": "بلبس جاكيت قبل ما أطلع.",
@@ -123637,7 +123004,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-08/s2.mp3"
     },
     {
      "ar": "يمكن اليوم تنزل شتا.",
@@ -123760,7 +123127,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-08/s3.mp3"
     },
     {
      "ar": "بحب صوت المطر عالشباك.",
@@ -123845,12 +123212,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-08/s4.mp3"
     }
    ],
    "_dir": "story-beg-08",
    "_words": 21,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-09",
@@ -123934,7 +123301,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-09/s0.mp3"
     },
     {
      "ar": "إمي بتحط نعنع بالشاي.",
@@ -124019,7 +123386,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-09/s1.mp3"
     },
     {
      "ar": "جدّي بيحب الشاي تقيل وحلو.",
@@ -124144,7 +123511,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-09/s2.mp3"
     },
     {
      "ar": "بنقعد بالصالون ونحكي.",
@@ -124251,7 +123618,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-09/s3.mp3"
     },
     {
      "ar": "الشاي بالنعنع أحلى شي بالمسا.",
@@ -124372,12 +123739,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-09/s4.mp3"
     }
    ],
    "_dir": "story-beg-09",
    "_words": 21,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-10",
@@ -124407,45 +123774,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "4568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "4568",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4575",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4588",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "4590",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "4570",
-         "root": "ج.ن.ب",
-         "gloss": "do_what_is_convenient",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "4571",
-         "root": "ج.ن.ب",
-         "gloss": "beat_sb_severely",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "janb,jamb",
        "vocalized": "جَنْب",
        "vocalized_from": "lexicon:exact"
@@ -124529,7 +123858,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-10/s0.mp3"
     },
     {
      "ar": "فيها شجر زيتون وليمون.",
@@ -124672,7 +124001,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-10/s1.mp3"
     },
     {
      "ar": "الولاد بيلعبوا بالحديقة كل يوم.",
@@ -124787,7 +124116,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-10/s2.mp3"
     },
     {
      "ar": "بحب أقعد تحت الشجرة وأقرا كتاب.",
@@ -124966,7 +124295,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-10/s3.mp3"
     },
     {
      "ar": "الجو هناك هادي وحلو.",
@@ -125069,12 +124398,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-10/s4.mp3"
     }
    ],
    "_dir": "story-beg-10",
    "_words": 24,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-11",
@@ -125198,7 +124527,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-11/s0.mp3"
     },
     {
      "ar": "الشوارع ضيقة والحجار قديمة.",
@@ -125309,7 +124638,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-11/s1.mp3"
     },
     {
      "ar": "في دكاكين بتبيع حلويات وبهارات.",
@@ -125438,7 +124767,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-11/s2.mp3"
     },
     {
      "ar": "ريحة القهوة والخبز بكل مكان.",
@@ -125615,7 +124944,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-11/s3.mp3"
     },
     {
      "ar": "بشتري كنافة وبقعد أكلها.",
@@ -125728,12 +125057,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-11/s4.mp3"
     }
    ],
    "_dir": "story-beg-11",
    "_words": 22,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-12",
@@ -125839,7 +125168,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-12/s0.mp3"
     },
     {
      "ar": "أم أحمد بتسكن جنبنا.",
@@ -125962,7 +125291,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-12/s1.mp3"
     },
     {
      "ar": "كل يوم بتبعت لإمي صحن أكل.",
@@ -126105,7 +125434,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-12/s2.mp3"
     },
     {
      "ar": "وإمي بترد عليها بصحن تاني.",
@@ -126206,7 +125535,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-12/s3.mp3"
     },
     {
      "ar": "هيك الجيرة بتصير حلوة.",
@@ -126341,12 +125670,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-12/s4.mp3"
     }
    ],
    "_dir": "story-beg-12",
    "_words": 22,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-13",
@@ -126466,7 +125795,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-13/s0.mp3"
     },
     {
      "ar": "اليوم إمي طبخت ملوخية ورز.",
@@ -126591,7 +125920,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-13/s1.mp3"
     },
     {
      "ar": "كلنا بنقعد حول الطاولة.",
@@ -126728,7 +126057,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-13/s2.mp3"
     },
     {
      "ar": "الأكل بيتهني لما نكون سوا.",
@@ -126867,7 +126196,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-13/s3.mp3"
     },
     {
      "ar": "بعد الغدا، بننام شوي.",
@@ -126970,12 +126299,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-13/s4.mp3"
     }
    ],
    "_dir": "story-beg-13",
    "_words": 21,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-14",
@@ -127079,7 +126408,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-14/s0.mp3"
     },
     {
      "ar": "المدرسة قريبة من بيتنا.",
@@ -127170,7 +126499,7 @@ window.LIBRARY = {
        "caphi_urban": "beetna"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-14/s1.mp3"
     },
     {
      "ar": "بحب درس العربي والرسم.",
@@ -127281,7 +126610,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-14/s2.mp3"
     },
     {
      "ar": "المعلمة طيبة وبتساعدنا.",
@@ -127364,7 +126693,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-14/s3.mp3"
     },
     {
      "ar": "بعد المدرسة بلعب مع صحابي.",
@@ -127485,12 +126814,12 @@ window.LIBRARY = {
        "caphi_urban": "s.7aabi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-14/s4.mp3"
     }
    ],
    "_dir": "story-beg-14",
    "_words": 20,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-15",
@@ -127650,7 +126979,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-15/s0.mp3"
     },
     {
      "ar": "فيه قصص وصور كتير.",
@@ -127747,7 +127076,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-15/s1.mp3"
     },
     {
      "ar": "كل ليلة بقرا صفحة أو تنتين.",
@@ -127890,7 +127219,7 @@ window.LIBRARY = {
        "caphi_urban": "tinteen"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-15/s2.mp3"
     },
     {
      "ar": "القراية بتساعدني أنام.",
@@ -127981,7 +127310,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-15/s3.mp3"
     },
     {
      "ar": "بحب القصص القديمة.",
@@ -128062,12 +127391,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-15/s4.mp3"
     }
    ],
    "_dir": "story-beg-15",
    "_words": 20,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-16",
@@ -128181,7 +127510,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-16/s0.mp3"
     },
     {
      "ar": "الشوارع صارت مليانة مي.",
@@ -128272,7 +127601,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-16/s1.mp3"
     },
     {
      "ar": "قعدت بالبيت وشربت شاي سخن.",
@@ -128435,7 +127764,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-16/s2.mp3"
     },
     {
      "ar": "بحب أتفرج عالمطر من الشباك.",
@@ -128536,7 +127865,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-16/s3.mp3"
     },
     {
      "ar": "الجو بارد بس البيت دافي.",
@@ -128675,12 +128004,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-16/s4.mp3"
     }
    ],
    "_dir": "story-beg-16",
    "_words": 24,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-17",
@@ -128778,7 +128107,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-17/s0.mp3"
     },
     {
      "ar": "فيها سرير وطاولة وكرسي.",
@@ -128921,7 +128250,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-17/s1.mp3"
     },
     {
      "ar": "عالحيط في صورة للبحر.",
@@ -129082,7 +128411,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-17/s2.mp3"
     },
     {
      "ar": "بحب أقعد عالطاولة وأكتب.",
@@ -129205,7 +128534,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-17/s3.mp3"
     },
     {
      "ar": "بالليل، بطفي الضو وبنام.",
@@ -129336,12 +128665,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-17/s4.mp3"
     }
    ],
    "_dir": "story-beg-17",
    "_words": 20,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-18",
@@ -129501,7 +128830,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-18/s0.mp3"
     },
     {
      "ar": "بنغسل الخضرة وبنقطعها.",
@@ -129590,7 +128919,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-18/s1.mp3"
     },
     {
      "ar": "إمي بتحط البهارات وأنا بحرك.",
@@ -129755,7 +129084,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-18/s2.mp3"
     },
     {
      "ar": "ريحة الأكل بتملى البيت.",
@@ -129858,7 +129187,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-18/s3.mp3"
     },
     {
      "ar": "بحب أتعلم الطبخ من إمي.",
@@ -129983,12 +129312,12 @@ window.LIBRARY = {
        "caphi_urban": "2immi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-18/s4.mp3"
     }
    ],
    "_dir": "story-beg-18",
    "_words": 22,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-19",
@@ -130108,7 +129437,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-19/s0.mp3"
     },
     {
      "ar": "كل الصبح بيطلع منه ريحة خبز.",
@@ -130231,7 +129560,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-19/s1.mp3"
     },
     {
      "ar": "بروح بشتري خبز سخن.",
@@ -130354,7 +129683,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-19/s2.mp3"
     },
     {
      "ar": "الخباز بيعرفني وبيعطيني قطعة زيادة.",
@@ -130465,7 +129794,7 @@ window.LIBRARY = {
        "caphi_urban": "ziyaad"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-19/s3.mp3"
     },
     {
      "ar": "الخبز السخن أحلى شي.",
@@ -130612,12 +129941,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-19/s4.mp3"
     }
    ],
    "_dir": "story-beg-19",
    "_words": 24,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-20",
@@ -130731,7 +130060,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-20/s0.mp3"
     },
     {
      "ar": "بيلعبوا ويجروا ويضحكوا.",
@@ -130814,7 +130143,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-20/s1.mp3"
     },
     {
      "ar": "واحد بيركض والتاني بيلحقه.",
@@ -130937,7 +130266,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-20/s2.mp3"
     },
     {
      "ar": "أصواتهم بتملى الحارة.",
@@ -131038,7 +130367,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-20/s3.mp3"
     },
     {
      "ar": "بحب أتفرج عليهم من الشباك.",
@@ -131139,12 +130468,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-20/s4.mp3"
     }
    ],
    "_dir": "story-beg-20",
    "_words": 20,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-21",
@@ -131278,7 +130607,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-21/s0.mp3"
     },
     {
      "ar": "الباص بيجي الساعة تمنية.",
@@ -131387,7 +130716,7 @@ window.LIBRARY = {
        "caphi_urban": "minni"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-21/s1.mp3"
     },
     {
      "ar": "بقعد جنب الشباك وأتفرج عالطريق.",
@@ -131420,45 +130749,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "4568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "4568",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4575",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4588",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "4590",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "4570",
-         "root": "ج.ن.ب",
-         "gloss": "do_what_is_convenient",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "4571",
-         "root": "ج.ن.ب",
-         "gloss": "beat_sb_severely",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "janb,jamb",
        "vocalized": "جَنْب",
        "vocalized_from": "lexicon:exact"
@@ -131584,7 +130875,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-21/s2.mp3"
     },
     {
      "ar": "الناس بالباص كتير بالصبح.",
@@ -131655,7 +130946,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-21/s3.mp3"
     },
     {
      "ar": "بعد نص ساعة، بوصل عالشغل.",
@@ -131820,12 +131111,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-21/s4.mp3"
     }
    ],
    "_dir": "story-beg-21",
    "_words": 23,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-22",
@@ -131943,7 +131234,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-22/s0.mp3"
     },
     {
      "ar": "أبوي بيتفرج عالأخبار.",
@@ -132036,7 +131327,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-22/s1.mp3"
     },
     {
      "ar": "إمي بتخيط وأنا بقرا.",
@@ -132159,7 +131450,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-22/s2.mp3"
     },
     {
      "ar": "بنشرب شاي وناكل بسكوت.",
@@ -132288,7 +131579,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-22/s3.mp3"
     },
     {
      "ar": "المسا بالبيت أحلى وقت.",
@@ -132379,12 +131670,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-22/s4.mp3"
     }
    ],
    "_dir": "story-beg-22",
    "_words": 19,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-23",
@@ -132590,7 +131881,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-23/s0.mp3"
     },
     {
      "ar": "بتحكيلي قصص من زمان.",
@@ -132685,7 +131976,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-23/s1.mp3"
     },
     {
      "ar": "بتعرف تطبخ أكلات قديمة كتير.",
@@ -132894,7 +132185,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-23/s2.mp3"
     },
     {
      "ar": "كل يوم بنقعد سوا ونحكي.",
@@ -133047,7 +132338,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-23/s3.mp3"
     },
     {
      "ar": "بحب جدّتي كتير.",
@@ -133102,12 +132393,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-23/s4.mp3"
     }
    ],
    "_dir": "story-beg-23",
    "_words": 23,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-24",
@@ -133227,7 +132518,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-24/s0.mp3"
     },
     {
      "ar": "المي زرقا والرملة دافية.",
@@ -133356,7 +132647,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-24/s1.mp3"
     },
     {
      "ar": "الولاد بيسبحوا ويلعبوا بالرملة.",
@@ -133455,7 +132746,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-24/s2.mp3"
     },
     {
      "ar": "بنقعد تحت الشمس وناكل بطيخ.",
@@ -133626,7 +132917,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-24/s3.mp3"
     },
     {
      "ar": "بحب صوت الموج كتير.",
@@ -133717,12 +133008,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-24/s4.mp3"
     }
    ],
    "_dir": "story-beg-24",
    "_words": 20,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-25",
@@ -133852,7 +133143,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-25/s0.mp3"
     },
     {
      "ar": "بالسوق في بندورة وخيار وكوسا.",
@@ -133983,7 +133274,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-25/s1.mp3"
     },
     {
      "ar": "البياع بيقول إنها من بستانه.",
@@ -134046,45 +133337,7 @@ window.LIBRARY = {
        "analysis": "CONJ",
        "maknuune_id": "615",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "615",
-         "root": "ء.ن.ن",
-         "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
-         "analysis": "CONJ"
-        },
-        {
-         "id": "616",
-         "root": "NTWS",
-         "gloss": "if",
-         "analysis": "CONJ_SUB"
-        },
-        {
-         "id": "619",
-         "root": "ء.ن.ن",
-         "gloss": "(to)_want_sth",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "621",
-         "root": "NTWS",
-         "gloss": "it_is",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "624",
-         "root": "ء.ن.ن",
-         "gloss": "moan_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "618",
-         "root": "NTWS",
-         "gloss": "suspicious;questionable",
-         "analysis": "VERB_PSEUDO:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2ann",
        "vocalized": "إَنّها",
        "vocalized_from": "derived:affix"
@@ -134142,7 +133395,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-25/s2.mp3"
     },
     {
      "ar": "بشتري شوية وبرجع عالبيت.",
@@ -134273,7 +133526,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-25/s3.mp3"
     },
     {
      "ar": "إمي بتعمل منها سلطة حلوة.",
@@ -134418,12 +133671,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-25/s4.mp3"
     }
    ],
    "_dir": "story-beg-25",
    "_words": 23,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-26",
@@ -134631,7 +133884,7 @@ window.LIBRARY = {
        "caphi_urban": "luulu"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-26/s0.mp3"
     },
     {
      "ar": "لونه بني وذيله طويل.",
@@ -134842,7 +134095,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-26/s1.mp3"
     },
     {
      "ar": "كل الصبح بيلعب بالحديقة.",
@@ -134941,7 +134194,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-26/s2.mp3"
     },
     {
      "ar": "لما يشوفني، بيجي بيركض.",
@@ -135010,7 +134263,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-26/s3.mp3"
     },
     {
      "ar": "بحب ألعب معه شوي.",
@@ -135113,12 +134366,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-26/s4.mp3"
     }
    ],
    "_dir": "story-beg-26",
    "_words": 21,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-27",
@@ -135268,7 +134521,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-27/s0.mp3"
     },
     {
      "ar": "بنشعل الصوبا ونقعد حواليها.",
@@ -135375,7 +134628,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-27/s1.mp3"
     },
     {
      "ar": "إمي بتعمل شوربة عدس سخنة.",
@@ -135532,7 +134785,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-27/s2.mp3"
     },
     {
      "ar": "برا بتنزل شتا والريح قوية.",
@@ -135705,7 +134958,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-27/s3.mp3"
     },
     {
      "ar": "بس جوا البيت دافي ومريح.",
@@ -135806,12 +135059,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-27/s4.mp3"
     }
    ],
    "_dir": "story-beg-27",
    "_words": 23,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-28",
@@ -136007,7 +135260,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-28/s0.mp3"
     },
     {
      "ar": "بنقعد برا بالمسا لأنه أبرد.",
@@ -136128,7 +135381,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-28/s1.mp3"
     },
     {
      "ar": "الولاد بياكلوا بوظة.",
@@ -136183,7 +135436,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-28/s2.mp3"
     },
     {
      "ar": "بنسقي الحديقة كل مسا.",
@@ -136314,7 +135567,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-28/s3.mp3"
     },
     {
      "ar": "بحب ليالي الصيف الطويلة.",
@@ -136431,12 +135684,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-28/s4.mp3"
     }
    ],
    "_dir": "story-beg-28",
    "_words": 21,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-29",
@@ -136554,7 +135807,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-29/s0.mp3"
     },
     {
      "ar": "بدي أشتري خبز وحليب وبيض.",
@@ -136693,7 +135946,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-29/s1.mp3"
     },
     {
      "ar": "بمشي عالدكان لأنه قريب.",
@@ -136798,7 +136051,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-29/s2.mp3"
     },
     {
      "ar": "بشوف ناس بعرفهم بالطريق وبسلم عليهم.",
@@ -136987,7 +136240,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-29/s3.mp3"
     },
     {
      "ar": "بشتري كل شي وبرجع بسرعة.",
@@ -137102,12 +136355,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-29/s4.mp3"
     }
    ],
    "_dir": "story-beg-29",
    "_words": 24,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-beg-30",
@@ -137191,7 +136444,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-30/s0.mp3"
     },
     {
      "ar": "كل الناس بيناموا بكير.",
@@ -137262,7 +136515,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-30/s1.mp3"
     },
     {
      "ar": "بطفي الضو وبفتح الشباك شوي.",
@@ -137455,7 +136708,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-30/s2.mp3"
     },
     {
      "ar": "الهوا بارد والسما مليانة نجوم.",
@@ -137620,7 +136873,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-30/s3.mp3"
     },
     {
      "ar": "بسكر عيوني وبنام مبسوط.",
@@ -137739,12 +136992,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-beg-30/s4.mp3"
     }
    ],
    "_dir": "story-beg-30",
    "_words": 22,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-01",
@@ -137972,7 +137225,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s0.mp3"
     },
     {
      "ar": "صحينا الصبح بكير وحضرنا الأكل والشراب.",
@@ -138111,7 +137364,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s1.mp3"
     },
     {
      "ar": "ركبنا السيارة والطريق كان طويل بس حلو.",
@@ -138384,7 +137637,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s2.mp3"
     },
     {
      "ar": "لما وصلنا، الولاد نزلوا عالمي على طول.",
@@ -138555,7 +137808,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s3.mp3"
     },
     {
      "ar": "قعدنا تحت الشمس وأكلنا بطيخ بارد.",
@@ -138748,7 +138001,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s4.mp3"
     },
     {
      "ar": "بعد الظهر، الجو صار أبرد شوي.",
@@ -138915,7 +138168,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s5.mp3"
     },
     {
      "ar": "لعبنا بالرملة وجمعنا صدف.",
@@ -139100,7 +138353,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s6.mp3"
     },
     {
      "ar": "قبل ما نرجع، تفرجنا عالغروب.",
@@ -139261,7 +138514,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s7.mp3"
     },
     {
      "ar": "رجعنا عالبيت تعبانين بس مبسوطين.",
@@ -139374,7 +138627,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s8.mp3"
     },
     {
      "ar": "كان يوم ما بننساه.",
@@ -139443,12 +138696,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-01/s9.mp3"
     }
    ],
    "_dir": "story-int-01",
    "_words": 57,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-02",
@@ -139610,7 +138863,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s0.mp3"
     },
     {
      "ar": "صحيت بكير ولبست أحسن أواعي عندي.",
@@ -139841,7 +139094,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s1.mp3"
     },
     {
      "ar": "وصلت المكتب قبل الوقت بنص ساعة.",
@@ -139996,7 +139249,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s2.mp3"
     },
     {
      "ar": "المدير استقبلني وعرفني عالموظفين.",
@@ -140077,7 +139330,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s3.mp3"
     },
     {
      "ar": "كانوا كلهم طيبين وساعدوني كتير.",
@@ -140238,7 +139491,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s4.mp3"
     },
     {
      "ar": "بالأول ما كنت بعرف وين الأشيا.",
@@ -140407,7 +139660,7 @@ window.LIBRARY = {
        "caphi_urban": "2il2ashya"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s5.mp3"
     },
     {
      "ar": "بس بعد شوي، تعودت عالشغل.",
@@ -140584,7 +139837,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s6.mp3"
     },
     {
      "ar": "بوقت الغدا، قعدت مع زملائي وحكينا.",
@@ -140725,7 +139978,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s7.mp3"
     },
     {
      "ar": "آخر النهار، حسيت إني تعلمت كتير.",
@@ -140918,7 +140171,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s8.mp3"
     },
     {
      "ar": "رجعت عالبيت مبسوط ومتحمس لبكرا.",
@@ -141003,12 +140256,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-02/s9.mp3"
     }
    ],
    "_dir": "story-int-02",
    "_words": 55,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-03",
@@ -141244,7 +140497,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s0.mp3"
     },
     {
      "ar": "فتشت بجيبي وبالشنطة بس ما لقيته.",
@@ -141393,7 +140646,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s1.mp3"
     },
     {
      "ar": "تذكرت إني كنت بالسوق قبل شوي.",
@@ -141580,7 +140833,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s2.mp3"
     },
     {
      "ar": "رجعت عالسوق ورحت عند كل دكان زرتها.",
@@ -141725,7 +140978,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s3.mp3"
     },
     {
      "ar": "سألت البياعين إذا حدا لقى مفتاح.",
@@ -141964,7 +141217,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s4.mp3"
     },
     {
      "ar": "واحد منهم ضحك وطلعلي المفتاح من الدرج.",
@@ -142165,7 +141418,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s5.mp3"
     },
     {
      "ar": "قال إني نسيته لما دفعت حق الخضرة.",
@@ -142372,7 +141625,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s6.mp3"
     },
     {
      "ar": "شكرته كتير ورجعت عالبيت مرتاح.",
@@ -142509,7 +141762,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s7.mp3"
     },
     {
      "ar": "من يومها، بربط المفتاح بخيط بجيبي.",
@@ -142684,12 +141937,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-03/s8.mp3"
     }
    ],
    "_dir": "story-int-03",
    "_words": 59,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-04",
@@ -142899,7 +142152,7 @@ window.LIBRARY = {
        "caphi_urban": "3am"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s0.mp3"
     },
     {
      "ar": "العيلة كلها اجتمعت من كل البلاد.",
@@ -143048,7 +142301,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s1.mp3"
     },
     {
      "ar": "النسوان حضروا الأكل والحلويات.",
@@ -143171,7 +142424,7 @@ window.LIBRARY = {
        "caphi_urban": "7alawiyyaat"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s2.mp3"
     },
     {
      "ar": "لبسنا أحلى أواعينا ورحنا عالقاعة.",
@@ -143348,7 +142601,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s3.mp3"
     },
     {
      "ar": "كان في دبكة وغنا وناس كتير.",
@@ -143489,7 +142742,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s4.mp3"
     },
     {
      "ar": "العروس كانت لابسة أبيض وحلوة كتير.",
@@ -143720,7 +142973,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s5.mp3"
     },
     {
      "ar": "رقصنا وضحكنا لآخر الليل.",
@@ -143919,7 +143172,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s6.mp3"
     },
     {
      "ar": "جدتي كانت أسعد وحدة بالعرس.",
@@ -144052,7 +143305,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s7.mp3"
     },
     {
      "ar": "رجعنا عالبيت تعبانين بس القلب مبسوط.",
@@ -144219,12 +143472,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-04/s8.mp3"
     }
    ],
    "_dir": "story-int-04",
    "_words": 49,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-05",
@@ -144418,7 +143671,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s0.mp3"
     },
     {
      "ar": "كل يوم كانت تقعد عالباب وتسلم عالناس.",
@@ -144613,7 +143866,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s1.mp3"
     },
     {
      "ar": "كانت تعرف كل واحد بالحارة باسمه.",
@@ -144639,37 +143892,17 @@ window.LIBRARY = {
        "surface": "تعرف",
        "root": "ع.ر.ف",
        "lemma": "تْعَرَّف",
-       "form": "تْعَرَّف",
-       "caphi_raw": "t 3 a r r a f",
-       "caphi": "t3arraf",
-       "gloss": "be_introduced_to_sth_or_sb;get_to_know_sth_or_sb_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "20553",
+       "form": "يِتْعَرَّف",
+       "caphi_raw": "y i  t 3 a r r a f",
+       "caphi": "yit3arraf",
+       "gloss": "be_introduced_to_sth_or_sb;get_to_know_sth_or_sb",
+       "analysis": "VERB:I",
+       "maknuune_id": "20548",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "20553",
-         "root": "ع.ر.ف",
-         "gloss": "be_introduced_to_sth_or_sb;get_to_know_s",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "20541",
-         "root": "ع.ر.ف",
-         "gloss": "be_introduced_to_sth_or_sb;get_to_know_s",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "20548",
-         "root": "ع.ر.ف",
-         "gloss": "be_introduced_to_sth_or_sb;get_to_know_s",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "t3arraf",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "yit3arraf",
        "vocalized": "تْعَرَّف",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "كل",
@@ -144756,7 +143989,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s2.mp3"
     },
     {
      "ar": "لما كنت صغير، كانت تعطيني حلوى.",
@@ -144895,7 +144128,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s3.mp3"
     },
     {
      "ar": "وكانت تحكيلي قصص من زمان.",
@@ -145044,7 +144277,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s4.mp3"
     },
     {
      "ar": "مرة، مرضت وقعدت بالبيت أسبوع.",
@@ -145189,7 +144422,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s5.mp3"
     },
     {
      "ar": "كل الجيران زاروها وجابولها أكل.",
@@ -145272,7 +144505,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s6.mp3"
     },
     {
      "ar": "لما طابت، رجعت تقعد عالباب من جديد.",
@@ -145411,7 +144644,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s7.mp3"
     },
     {
      "ar": "أم خالد كانت روح الحارة كلها.",
@@ -145566,12 +144799,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-05/s8.mp3"
     }
    ],
    "_dir": "story-int-05",
    "_words": 54,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-06",
@@ -145717,7 +144950,7 @@ window.LIBRARY = {
        "caphi_urban": "jiddi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s0.mp3"
     },
     {
      "ar": "كان البيت قديم وفيه حديقة كبيرة.",
@@ -145834,7 +145067,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s1.mp3"
     },
     {
      "ar": "كل الصبح، كنت أصحى على صوت العصافير.",
@@ -145973,7 +145206,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s2.mp3"
     },
     {
      "ar": "جدي كان يعلمني كيف أزرع وأسقي الشجر.",
@@ -146180,7 +145413,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s3.mp3"
     },
     {
      "ar": "بعد الظهر، كنت ألعب مع ولاد الحارة.",
@@ -146313,7 +145546,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s4.mp3"
     },
     {
      "ar": "كنا نلعب لآخر النهار ونرجع تعبانين.",
@@ -146556,7 +145789,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s5.mp3"
     },
     {
      "ar": "بالليل، جدتي كانت تطبخ أكل بيتهني.",
@@ -146697,7 +145930,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s6.mp3"
     },
     {
      "ar": "كانت أيام بسيطة بس حلوة كتير.",
@@ -146838,7 +146071,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s7.mp3"
     },
     {
      "ar": "لهلأ، بتذكرها وبشتاقلها.",
@@ -146931,12 +146164,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-06/s8.mp3"
     }
    ],
    "_dir": "story-int-06",
    "_words": 55,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-07",
@@ -147142,7 +146375,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s0.mp3"
     },
     {
      "ar": "الطريق عالضيعة كان طويل وفيه جبال.",
@@ -147355,7 +146588,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s1.mp3"
     },
     {
      "ar": "لما وصلنا، جدتي كانت مستنيتنا عالباب.",
@@ -147456,7 +146689,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s2.mp3"
     },
     {
      "ar": "عزمتنا على غدا كبير طبخته من الصبح.",
@@ -147571,7 +146804,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s3.mp3"
     },
     {
      "ar": "أكلنا مقلوبة وسلطة وشربنا لبن.",
@@ -147798,7 +147031,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s4.mp3"
     },
     {
      "ar": "بعد الغدا، قعدنا بالحديقة نشرب شاي.",
@@ -147953,7 +147186,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s5.mp3"
     },
     {
      "ar": "جدتي حكتلنا عن أيام زمان.",
@@ -148064,7 +147297,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s6.mp3"
     },
     {
      "ar": "الولاد لعبوا مع القطط بالحوش.",
@@ -148189,7 +147422,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s7.mp3"
     },
     {
      "ar": "قبل ما نرجع، عبتلنا جدتي أكل نوخذه.",
@@ -148370,7 +147603,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s8.mp3"
     },
     {
      "ar": "رجعنا عالبيت والقلب مليان محبة.",
@@ -148515,12 +147748,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-07/s9.mp3"
     }
    ],
    "_dir": "story-int-07",
    "_words": 58,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-08",
@@ -148684,7 +147917,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s0.mp3"
     },
     {
      "ar": "دورنا عليها بكل الحارة بس ما لقيناها.",
@@ -148853,7 +148086,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s1.mp3"
     },
     {
      "ar": "الولاد زعلوا كتير وبكوا.",
@@ -148962,7 +148195,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s2.mp3"
     },
     {
      "ar": "سألنا الجيران إذا حدا شافها.",
@@ -149314,7 +148547,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s4.mp3"
     },
     {
      "ar": "طلعنا لفوق ولقينا مشمش خايفة بالزاوية.",
@@ -149545,7 +148778,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s5.mp3"
     },
     {
      "ar": "نزلناها وأكلناها وسقيناها.",
@@ -149594,7 +148827,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s6.mp3"
     },
     {
      "ar": "من يومها، بنسكر الشباك بالليل.",
@@ -149747,7 +148980,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s7.mp3"
     },
     {
      "ar": "مشمش صارت تقعد جنبنا وما بتحب تطلع.",
@@ -149930,12 +149163,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s8.mp3"
     }
    ],
    "_dir": "story-int-08",
    "_words": 51,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-09",
@@ -150103,7 +149336,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s0.mp3"
     },
     {
      "ar": "ركبنا الباص الصبح والطريق كان مزدحم.",
@@ -150280,7 +149513,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s1.mp3"
     },
     {
      "ar": "لما وصلنا، مشينا بالبلد القديمة.",
@@ -150431,7 +149664,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s2.mp3"
     },
     {
      "ar": "الشوارع كانت ضيقة ومليانة دكاكين.",
@@ -150552,7 +149785,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s3.mp3"
     },
     {
      "ar": "اشترينا حلويات وبهارات وريحة الكل حلوة.",
@@ -150777,7 +150010,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s4.mp3"
     },
     {
      "ar": "قعدنا نشرب قهوة ونتفرج عالناس.",
@@ -150960,7 +150193,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s5.mp3"
     },
     {
      "ar": "زرنا أماكن قديمة وصورنا صور كتير.",
@@ -151159,7 +150392,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s6.mp3"
     },
     {
      "ar": "بالمسا، تعشينا فلافل وحمص.",
@@ -151320,7 +150553,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s7.mp3"
     },
     {
      "ar": "رجعنا عالبيت متعبين بس اليوم كان بيستاهل.",
@@ -151439,12 +150672,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-09/s8.mp3"
     }
    ],
    "_dir": "story-int-09",
    "_words": 50,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-10",
@@ -151612,7 +150845,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s0.mp3"
     },
     {
      "ar": "درست طول الأسبوع ونمت قليل.",
@@ -151865,7 +151098,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s1.mp3"
     },
     {
      "ar": "ليلة الامتحان، ما قدرت أنام من التوتر.",
@@ -151924,52 +151157,14 @@ window.LIBRARY = {
        "root": "ق.د.ر",
        "lemma": "قِدِر",
        "form": "قِدِر",
-       "caphi_raw": "q||g i d i r",
-       "caphi": "q||gidir",
-       "gloss": "cooking_pot",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "25320",
+       "caphi_raw": "Q i d i r",
+       "caphi": "Qidir",
+       "gloss": "can;manage_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "25338",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "25320",
-         "root": "ق.د.ر",
-         "gloss": "cooking_pot",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25324",
-         "root": "ق.د.ر",
-         "gloss": "fate;destiny",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25333",
-         "root": "ق.د.ر",
-         "gloss": "appreciate;destine;enable_or_make_sb_cap",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "25338",
-         "root": "ق.د.ر",
-         "gloss": "can;manage_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25339",
-         "root": "ق.د.ر",
-         "gloss": "appreciate;destine;enable_or_make_sb_cap",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25329",
-         "root": "ق.د.ر",
-         "gloss": "cooking_pot_[auto]",
-         "analysis": "NOUN:P"
-        }
-       ],
-       "caphi_urban": "qidir",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2idir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -152092,7 +151287,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s2.mp3"
     },
     {
      "ar": "الصبح، شربت قهوة وراجعت شوي.",
@@ -152269,7 +151464,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s3.mp3"
     },
     {
      "ar": "لما وصلت المدرسة، كل الطلاب كانوا خايفين.",
@@ -152408,7 +151603,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s4.mp3"
     },
     {
      "ar": "المعلمة وزعت الأسئلة وقالت ابدأوا.",
@@ -152623,7 +151818,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s5.mp3"
     },
     {
      "ar": "بالأول، حسيت إني نسيت كل شي.",
@@ -152810,7 +152005,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s6.mp3"
     },
     {
      "ar": "بس بعد شوي، هديت وتذكرت الدروس.",
@@ -153021,7 +152216,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s7.mp3"
     },
     {
      "ar": "خلصت الامتحان وطلعت مرتاح.",
@@ -153182,7 +152377,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s8.mp3"
     },
     {
      "ar": "بعد أسبوع، طلعت النتيجة وكنت من الأوائل.",
@@ -153335,12 +152530,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-10/s9.mp3"
     }
    ],
    "_dir": "story-int-10",
    "_words": 58,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-11",
@@ -153586,7 +152781,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s0.mp3"
     },
     {
      "ar": "أبوي نزل وفتح غطا السيارة يتفرج.",
@@ -153805,7 +153000,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s1.mp3"
     },
     {
      "ar": "قال إنه في مشكلة بالمي ولازم نستنى.",
@@ -153958,7 +153153,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s2.mp3"
     },
     {
      "ar": "الجو كان سخن والولاد بلشوا يزعلوا.",
@@ -154159,7 +153354,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s3.mp3"
     },
     {
      "ar": "بعد شوي، وقف جنبنا رجال طيب بسيارته.",
@@ -154404,7 +153599,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s4.mp3"
     },
     {
      "ar": "سأل شو المشكلة وحاول يساعد أبوي.",
@@ -154617,7 +153812,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s5.mp3"
     },
     {
      "ar": "جاب مي وصلح السيارة بربع ساعة.",
@@ -154880,7 +154075,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s6.mp3"
     },
     {
      "ar": "شكرناه كتير وكملنا طريقنا.",
@@ -155025,7 +154220,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s7.mp3"
     },
     {
      "ar": "تعلمنا يومها إنه لازم نحمل مي زيادة.",
@@ -155258,12 +154453,12 @@ window.LIBRARY = {
        "caphi_urban": "ziyaad"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-11/s8.mp3"
     }
    ],
    "_dir": "story-int-11",
    "_words": 57,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-12",
@@ -155487,7 +154682,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s0.mp3"
     },
     {
      "ar": "قربت شوي وعرفت إنه صاحبي القديم زياد.",
@@ -155740,7 +154935,7 @@ window.LIBRARY = {
        "caphi_urban": "ziyaad"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s1.mp3"
     },
     {
      "ar": "ما كنا شفنا بعض من أيام المدرسة.",
@@ -155911,7 +155106,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s2.mp3"
     },
     {
      "ar": "عانقنا بعض وضحكنا وتذكرنا الأيام.",
@@ -156112,7 +155307,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s3.mp3"
     },
     {
      "ar": "قعدنا بقهوة قريبة وحكينا ساعتين.",
@@ -156255,7 +155450,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s4.mp3"
     },
     {
      "ar": "حكالي إنه صار عنده عيلة وولاد.",
@@ -156420,7 +155615,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilwlaad"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s5.mp3"
     },
     {
      "ar": "وأنا حكيتله عن شغلي وحياتي.",
@@ -156607,7 +155802,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s6.mp3"
     },
     {
      "ar": "قبل ما نفترق، تبادلنا الأرقام.",
@@ -156712,7 +155907,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s7.mp3"
     },
     {
      "ar": "من يومها، صرنا نشوف بعض كل أسبوع.",
@@ -156959,12 +156154,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-12/s8.mp3"
     }
    ],
    "_dir": "story-int-12",
    "_words": 54,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-13",
@@ -157194,7 +156389,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s0.mp3"
     },
     {
      "ar": "كنت لازم أروح عالشغل بس الطريق كان مليان مي.",
@@ -157443,7 +156638,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s1.mp3"
     },
     {
      "ar": "لبست معطف وحملت شمسية وطلعت.",
@@ -157656,7 +156851,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s2.mp3"
     },
     {
      "ar": "الريح كانت قوية وقلبت الشمسية.",
@@ -157847,7 +157042,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s3.mp3"
     },
     {
      "ar": "انبليت كلي بس ضحكت على حالي.",
@@ -158022,7 +157217,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s4.mp3"
     },
     {
      "ar": "لما وصلت الشغل، زملائي جابولي منشفة وشاي سخن.",
@@ -158227,7 +157422,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s5.mp3"
     },
     {
      "ar": "قعدنا نحكي عن الشتا ونضحك.",
@@ -158404,7 +157599,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s6.mp3"
     },
     {
      "ar": "آخر النهار، وقفت الشتا وطلعت الشمس.",
@@ -158629,7 +157824,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s7.mp3"
     },
     {
      "ar": "رجعت عالبيت والدنيا صافية وحلوة.",
@@ -158812,12 +158007,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-13/s8.mp3"
     }
    ],
    "_dir": "story-int-13",
    "_words": 58,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-14",
@@ -159037,7 +158232,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s0.mp3"
     },
     {
      "ar": "قررت أعمل مجدرة لأنها سهلة.",
@@ -159220,7 +158415,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s1.mp3"
     },
     {
      "ar": "غسلت العدس والرز وقطعت البصل.",
@@ -159415,7 +158610,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s2.mp3"
     },
     {
      "ar": "حطيت الزيت عالنار وقليت البصل.",
@@ -159604,7 +158799,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s3.mp3"
     },
     {
      "ar": "بس نسيت أخفف النار، والبصل احترق شوي.",
@@ -159817,7 +159012,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s4.mp3"
     },
     {
      "ar": "خفت إنه الأكل يخرب، بس كملت.",
@@ -160010,7 +159205,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s5.mp3"
     },
     {
      "ar": "حطيت العدس والرز والمي وستنيت.",
@@ -160165,7 +159360,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s6.mp3"
     },
     {
      "ar": "بعد نص ساعة، فتحت الغطا وطلع ريحة حلوة.",
@@ -160478,7 +159673,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s7.mp3"
     },
     {
      "ar": "ذقت الأكل وكان طيب أكتر مما توقعت.",
@@ -160707,7 +159902,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s8.mp3"
     },
     {
      "ar": "لما رجعت إمي، طبختلها وفتخرت فيي.",
@@ -160806,12 +160001,12 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-14/s9.mp3"
     }
    ],
    "_dir": "story-int-14",
    "_words": 62,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-15",
@@ -161057,7 +160252,7 @@ window.LIBRARY = {
        "caphi_urban": "saami"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s0.mp3"
     },
     {
      "ar": "كل واحد جاب شي: واحد حلويات وواحد فواكه.",
@@ -161230,7 +160425,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s1.mp3"
     },
     {
      "ar": "قعدنا بالصالون نشرب شاي ونحكي.",
@@ -161393,7 +160588,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s2.mp3"
     },
     {
      "ar": "حكينا نكت وضحكنا لآخر الليل.",
@@ -161646,7 +160841,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s3.mp3"
     },
     {
      "ar": "سامي طلع العود وصار يعزف ويغني.",
@@ -161833,7 +161028,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s4.mp3"
     },
     {
      "ar": "كلنا غنينا معه أغاني قديمة.",
@@ -161984,7 +161179,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s5.mp3"
     },
     {
      "ar": "بنص الليل، عملنا قهوة وكملنا السهرة.",
@@ -162191,7 +161386,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s6.mp3"
     },
     {
      "ar": "نسينا الوقت وصرنا نحكي عن المستقبل.",
@@ -162408,7 +161603,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s7.mp3"
     },
     {
      "ar": "رجعنا عبيوتنا الصبح بدري ومبسوطين.",
@@ -162495,12 +161690,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-15/s8.mp3"
     }
    ],
    "_dir": "story-int-15",
    "_words": 53,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-16",
@@ -162720,7 +161915,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s0.mp3"
     },
     {
      "ar": "قربت منه وسألته وين إمه.",
@@ -162863,7 +162058,7 @@ window.LIBRARY = {
        "caphi_urban": "2immo"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s1.mp3"
     },
     {
      "ar": "قال إنه ضيع إمه بين الناس.",
@@ -162992,7 +162187,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s2.mp3"
     },
     {
      "ar": "مسكت إيده وقلتله ما تخاف، رح نلاقيها.",
@@ -163223,7 +162418,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s3.mp3"
     },
     {
      "ar": "مشينا بين الدكاكين وسألنا الناس عنها.",
@@ -163416,7 +162611,7 @@ window.LIBRARY = {
        "caphi_urban": "3an"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s4.mp3"
     },
     {
      "ar": "بعد شوي، سمعنا ست عم تنادي عاسم الولد.",
@@ -163743,7 +162938,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s5.mp3"
     },
     {
      "ar": "الولد ركض عليها وعانقها.",
@@ -163892,7 +163087,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s6.mp3"
     },
     {
      "ar": "إمه شكرتني كتير ودمعت عيونها.",
@@ -164035,7 +163230,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s7.mp3"
     },
     {
      "ar": "مشيت من هناك والقلب مبسوط.",
@@ -164198,12 +163393,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-16/s8.mp3"
     }
    ],
    "_dir": "story-int-16",
    "_words": 54,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-17",
@@ -164417,7 +163612,7 @@ window.LIBRARY = {
        "caphi_urban": "samiir"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s0.mp3"
     },
     {
      "ar": "الدكان كان صغير بس فيه كل شي.",
@@ -164550,7 +163745,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s1.mp3"
     },
     {
      "ar": "أبو سمير كان يعرف كل زبون باسمه.",
@@ -164735,7 +163930,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s2.mp3"
     },
     {
      "ar": "لما كنا صغار، كنا نشتري منه حلوى.",
@@ -164920,7 +164115,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s3.mp3"
     },
     {
      "ar": "كان دايما يعطينا قطعة زيادة ويضحك.",
@@ -165065,7 +164260,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s4.mp3"
     },
     {
      "ar": "مرة، ما كان معي مصاري وحبيت شوكولاتة.",
@@ -165210,7 +164405,7 @@ window.LIBRARY = {
        "caphi_urban": "shokolaata"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s5.mp3"
     },
     {
      "ar": "أبو سمير عطاني ياها وقال ادفع بكرا.",
@@ -165415,7 +164610,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s6.mp3"
     },
     {
      "ar": "بعد سنين، الدكان سكر بس بنتذكره.",
@@ -165570,7 +164765,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s7.mp3"
     },
     {
      "ar": "أبو سمير كان أكتر من بياع، كان صاحب.",
@@ -165801,12 +164996,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-17/s8.mp3"
     }
    ],
    "_dir": "story-int-17",
    "_words": 63,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-18",
@@ -166058,7 +165253,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s0.mp3"
     },
     {
      "ar": "حملنا مي وأكل ولبسنا كنادر مريحة.",
@@ -166303,7 +165498,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s1.mp3"
     },
     {
      "ar": "الطلعة كانت صعبة والجو كان بارد.",
@@ -166496,7 +165691,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s2.mp3"
     },
     {
      "ar": "بس المنظر من فوق كان بيوخذ العقل.",
@@ -166725,7 +165920,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s3.mp3"
     },
     {
      "ar": "شفنا الضيع الصغيرة والشجر الأخضر.",
@@ -166942,7 +166137,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s4.mp3"
     },
     {
      "ar": "قعدنا عصخرة كبيرة وأكلنا وارتحنا.",
@@ -167085,7 +166280,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s5.mp3"
     },
     {
      "ar": "الهوا كان نقي والدنيا هادية.",
@@ -167262,7 +166457,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s6.mp3"
     },
     {
      "ar": "قبل الغروب، بلشنا ننزل عالبيت.",
@@ -167399,7 +166594,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s7.mp3"
     },
     {
      "ar": "رجعنا تعبانين بس مليانين طاقة.",
@@ -167564,12 +166759,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-18/s8.mp3"
     }
    ],
    "_dir": "story-int-18",
    "_words": 50,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-19",
@@ -167813,7 +167008,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s0.mp3"
     },
     {
      "ar": "بالأول، ما كنا نعرف عنه إشي.",
@@ -167986,7 +167181,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s1.mp3"
     },
     {
      "ar": "إمي قالت لازم نرحب فيه متل ما بتعمل الناس.",
@@ -168195,7 +167390,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s2.mp3"
     },
     {
      "ar": "طبخت صحن أكل وبعتتني أوديه عنده.",
@@ -168412,7 +167607,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s3.mp3"
     },
     {
      "ar": "دقيت الباب وقدمتله الصحن ورحبت فيه.",
@@ -168583,7 +167778,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s4.mp3"
     },
     {
      "ar": "فرح كتير وقال إنه لسا جديد بالبلد.",
@@ -168778,7 +167973,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s5.mp3"
     },
     {
      "ar": "بعد يومين، رد علينا بصحن حلويات.",
@@ -168895,7 +168090,7 @@ window.LIBRARY = {
        "caphi_urban": "7alawiyyaat"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s6.mp3"
     },
     {
      "ar": "من يومها، صار من أحسن جيراننا.",
@@ -169074,7 +168269,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s7.mp3"
     },
     {
      "ar": "تعلمنا إنه ترحيب صغير بيفتح قلوب كبيرة.",
@@ -169241,12 +168436,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-19/s8.mp3"
     }
    ],
    "_dir": "story-int-19",
    "_words": 59,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-20",
@@ -169474,7 +168669,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s0.mp3"
     },
     {
      "ar": "بالأول، ما كنت متحمس كتير.",
@@ -169593,7 +168788,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s1.mp3"
     },
     {
      "ar": "بس أول ما بلشت، ما قدرت أوقف.",
@@ -169698,52 +168893,14 @@ window.LIBRARY = {
        "root": "ق.د.ر",
        "lemma": "قِدِر",
        "form": "قِدِر",
-       "caphi_raw": "q||g i d i r",
-       "caphi": "q||gidir",
-       "gloss": "cooking_pot",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "25320",
+       "caphi_raw": "Q i d i r",
+       "caphi": "Qidir",
+       "gloss": "can;manage_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "25338",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "25320",
-         "root": "ق.د.ر",
-         "gloss": "cooking_pot",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25324",
-         "root": "ق.د.ر",
-         "gloss": "fate;destiny",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25333",
-         "root": "ق.د.ر",
-         "gloss": "appreciate;destine;enable_or_make_sb_cap",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "25338",
-         "root": "ق.د.ر",
-         "gloss": "can;manage_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25339",
-         "root": "ق.د.ر",
-         "gloss": "appreciate;destine;enable_or_make_sb_cap",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25329",
-         "root": "ق.د.ر",
-         "gloss": "cooking_pot_[auto]",
-         "analysis": "NOUN:P"
-        }
-       ],
-       "caphi_urban": "qidir",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2idir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -169764,7 +168921,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s2.mp3"
     },
     {
      "ar": "القصة كانت عن ولد عاش بضيعة صغيرة.",
@@ -169961,7 +169118,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s3.mp3"
     },
     {
      "ar": "كل ليلة، كنت أقرا فصل قبل ما أنام.",
@@ -170172,7 +169329,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s4.mp3"
     },
     {
      "ar": "حسيت إني عايش مع الشخصيات بالكتاب.",
@@ -170327,7 +169484,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s5.mp3"
     },
     {
      "ar": "بالآخر، القصة خلصت بشكل ما توقعته.",
@@ -170512,7 +169669,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s6.mp3"
     },
     {
      "ar": "سكرت الكتاب وقعدت أفكر فيه.",
@@ -170701,7 +169858,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s7.mp3"
     },
     {
      "ar": "رجعت الكتاب لصاحبي وقلتله شكرا.",
@@ -170862,7 +170019,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s8.mp3"
     },
     {
      "ar": "من يومها، صرت أحب القراية أكتر.",
@@ -171067,12 +170224,12 @@ window.LIBRARY = {
        "caphi_urban": "2aktar"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-20/s9.mp3"
     }
    ],
    "_dir": "story-int-20",
    "_words": 61,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-21",
@@ -171262,7 +170419,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s0.mp3"
     },
     {
      "ar": "إمي قامت الصبح بكير وبلشت تطبخ.",
@@ -171455,7 +170612,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s1.mp3"
     },
     {
      "ar": "طبخت مقلوبة وورق عنب وسلطات.",
@@ -171638,7 +170795,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s2.mp3"
     },
     {
      "ar": "ريحة الأكل ملت البيت كله.",
@@ -171751,7 +170908,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilo"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s3.mp3"
     },
     {
      "ar": "لما إجوا، رحبنا فيهم وقعدناهم بالصالون.",
@@ -171872,7 +171029,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s4.mp3"
     },
     {
      "ar": "قدمنا القهوة والولاد لعبوا مع بعض.",
@@ -172071,7 +171228,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s5.mp3"
     },
     {
      "ar": "بوقت الغدا، قعدنا كلنا حول الطاولة.",
@@ -172226,7 +171383,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s6.mp3"
     },
     {
      "ar": "الأكل كان بيتهني والحكي ما وقف.",
@@ -172355,7 +171512,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s7.mp3"
     },
     {
      "ar": "بعد الغدا، شربنا شاي وأكلنا حلويات.",
@@ -172534,7 +171691,7 @@ window.LIBRARY = {
        "caphi_urban": "7alawiyyaat"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s8.mp3"
     },
     {
      "ar": "راحوا آخر النهار والبيت كان مليان فرح.",
@@ -172825,12 +171982,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-21/s9.mp3"
     }
    ],
    "_dir": "story-int-21",
    "_words": 59,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-22",
@@ -173068,7 +172225,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s0.mp3"
     },
     {
      "ar": "ركبت الباص الصبح والطريق كان طويل.",
@@ -173273,7 +172430,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s1.mp3"
     },
     {
      "ar": "نزلت بالضيعة وسألت عن الصيدلية.",
@@ -173412,7 +172569,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s2.mp3"
     },
     {
      "ar": "رجال طيب دلني عليها ومشى معي شوي.",
@@ -173657,7 +172814,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s3.mp3"
     },
     {
      "ar": "اشتريت الدوا وشكرت الصيدلي.",
@@ -173812,7 +172969,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s4.mp3"
     },
     {
      "ar": "قبل ما أرجع، مريت عالسوق وشريت خضرة.",
@@ -173979,7 +173136,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s5.mp3"
     },
     {
      "ar": "الناس بالضيعة كانوا بسطاء وطيبين.",
@@ -174116,7 +173273,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s6.mp3"
     },
     {
      "ar": "رجعت عالبيت بالمسا ومعي الدوا والخضرة.",
@@ -174253,7 +173410,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s7.mp3"
     },
     {
      "ar": "جدي فرح فيي كتير ودعالي.",
@@ -174376,12 +173533,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-22/s8.mp3"
     }
    ],
    "_dir": "story-int-22",
    "_words": 53,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-23",
@@ -174531,7 +173688,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s0.mp3"
     },
     {
      "ar": "إمي كانت تخبز كعك وتحضر الحلويات.",
@@ -174748,7 +173905,7 @@ window.LIBRARY = {
        "caphi_urban": "7alawiyyaat"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s1.mp3"
     },
     {
      "ar": "إحنا الولاد، كنا نساعد ونذوق سرا.",
@@ -174907,7 +174064,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s2.mp3"
     },
     {
      "ar": "أبوي جاب لكل واحد أواعي جديدة.",
@@ -175138,7 +174295,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s3.mp3"
     },
     {
      "ar": "الصبح، لبسنا الجديد ورحنا نسلم عالأهل.",
@@ -175355,7 +174512,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s4.mp3"
     },
     {
      "ar": "كل واحد كان يعطينا عيدية ومصاري.",
@@ -175500,7 +174657,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s5.mp3"
     },
     {
      "ar": "بعدين، رحنا عالحديقة نلعب مع الولاد.",
@@ -175681,7 +174838,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilwlaad"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s6.mp3"
     },
     {
      "ar": "بالمسا، اجتمعت العيلة كلها عالعشا.",
@@ -175840,7 +174997,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s7.mp3"
     },
     {
      "ar": "كانت أحلى ليلة بالسنة كلها.",
@@ -175941,12 +175098,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-23/s8.mp3"
     }
    ],
    "_dir": "story-int-23",
    "_words": 52,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-24",
@@ -176150,7 +175307,7 @@ window.LIBRARY = {
        "caphi_urban": "3am"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s0.mp3"
     },
     {
      "ar": "صحينا بكير لأنه القطاف بدو وقت.",
@@ -176251,7 +175408,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s1.mp3"
     },
     {
      "ar": "فرشنا شراشف تحت الشجر وبلشنا نقطف.",
@@ -176458,7 +175615,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s2.mp3"
     },
     {
      "ar": "الشغل كان تعبان بس الجو كان حلو.",
@@ -176681,7 +175838,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s3.mp3"
     },
     {
      "ar": "بوقت الغدا، أكلنا خبز وزيت وزعتر تحت الشجر.",
@@ -176938,7 +176095,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s4.mp3"
     },
     {
      "ar": "الولاد كانوا يلعبوا ويجمعوا الزيتون اللي وقع.",
@@ -177161,7 +176318,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s5.mp3"
     },
     {
      "ar": "آخر النهار، جمعنا أكياس كتير.",
@@ -177324,7 +176481,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s6.mp3"
     },
     {
      "ar": "أخذنا الزيتون عالمعصرة نعمله زيت.",
@@ -177577,7 +176734,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s7.mp3"
     },
     {
      "ar": "ريحة الزيت الجديد ما في أحلى منها.",
@@ -177734,7 +176891,7 @@ window.LIBRARY = {
        "caphi_urban": "min"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s8.mp3"
     },
     {
      "ar": "رجعنا تعبانين بس البيت مليان بركة.",
@@ -177921,12 +177078,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-24/s9.mp3"
     }
    ],
    "_dir": "story-int-24",
    "_words": 64,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-25",
@@ -178080,7 +177237,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s0.mp3"
     },
     {
      "ar": "كنا خايفين عليها كتير.",
@@ -178151,7 +177308,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s1.mp3"
     },
     {
      "ar": "الدكتور فحصها وقال إنه ما في خطر.",
@@ -178398,7 +177555,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s2.mp3"
     },
     {
      "ar": "قال إنها بس تعبانة وبدها راحة.",
@@ -178431,45 +177588,7 @@ window.LIBRARY = {
        "analysis": "CONJ",
        "maknuune_id": "615",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "615",
-         "root": "ء.ن.ن",
-         "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
-         "analysis": "CONJ"
-        },
-        {
-         "id": "616",
-         "root": "NTWS",
-         "gloss": "if",
-         "analysis": "CONJ_SUB"
-        },
-        {
-         "id": "619",
-         "root": "ء.ن.ن",
-         "gloss": "(to)_want_sth",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "621",
-         "root": "NTWS",
-         "gloss": "it_is",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "624",
-         "root": "ء.ن.ن",
-         "gloss": "moan_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "618",
-         "root": "NTWS",
-         "gloss": "suspicious;questionable",
-         "analysis": "VERB_PSEUDO:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2ann",
        "vocalized": "إَنّها",
        "vocalized_from": "derived:affix"
@@ -178603,7 +177722,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s3.mp3"
     },
     {
      "ar": "ارتحنا كلنا لما سمعنا الحكي.",
@@ -178752,7 +177871,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s4.mp3"
     },
     {
      "ar": "قعدنا جنبها بالغرفة وحكينا معها.",
@@ -178915,7 +178034,7 @@ window.LIBRARY = {
        "caphi_urban": "ma3"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s5.mp3"
     },
     {
      "ar": "بعد يومين، طابت ورجعناها عالبيت.",
@@ -179020,7 +178139,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s6.mp3"
     },
     {
      "ar": "طبخنالها أكل خفيف وقعدنا نهتم فيها.",
@@ -179173,7 +178292,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s7.mp3"
     },
     {
      "ar": "بعد أسبوع، رجعت متل ما كانت.",
@@ -179334,7 +178453,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s8.mp3"
     },
     {
      "ar": "تعلمنا يومها إنه الصحة أغلى شي.",
@@ -179553,12 +178672,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-25/s9.mp3"
     }
    ],
    "_dir": "story-int-25",
    "_words": 56,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-26",
@@ -179728,7 +178847,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s0.mp3"
     },
     {
      "ar": "وصلت المحطة بكير وقعدت أستنى.",
@@ -179849,7 +178968,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s1.mp3"
     },
     {
      "ar": "لما إجا القطار، ركبت وقعدت جنب الشباك.",
@@ -179984,45 +179103,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "4568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "4568",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4575",
-         "root": "ج.ن.ب",
-         "gloss": "next_to",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "4588",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "4590",
-         "root": "ج.ن.ب",
-         "gloss": "make_sb_avoid",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "4570",
-         "root": "ج.ن.ب",
-         "gloss": "do_what_is_convenient",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "4571",
-         "root": "ج.ن.ب",
-         "gloss": "beat_sb_severely",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "janb,jamb",
        "vocalized": "جَنْب",
        "vocalized_from": "lexicon:exact"
@@ -180058,7 +179139,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s2.mp3"
     },
     {
      "ar": "بلش القطار يمشي والمنظر يتغير.",
@@ -180223,7 +179304,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s3.mp3"
     },
     {
      "ar": "شفت حقول وبيوت وجبال بتمر بسرعة.",
@@ -180380,7 +179461,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s4.mp3"
     },
     {
      "ar": "جنبي قعد رجال كبير وحكالي عن سفراته.",
@@ -180553,7 +179634,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s5.mp3"
     },
     {
      "ar": "الوقت مر بسرعة ونحنا عم نحكي.",
@@ -180758,7 +179839,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s6.mp3"
     },
     {
      "ar": "لما وصلت، ودعت الرجال وشكرته.",
@@ -180901,7 +179982,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s7.mp3"
     },
     {
      "ar": "رحلة القطار خلتني أحب السفر أكتر.",
@@ -181068,12 +180149,12 @@ window.LIBRARY = {
        "caphi_urban": "2aktar"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-26/s8.mp3"
     }
    ],
    "_dir": "story-int-26",
    "_words": 54,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-27",
@@ -181201,7 +180282,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s0.mp3"
     },
     {
      "ar": "وأنا بغسل، وقع مني فنجان قهوة وانكسر.",
@@ -181456,7 +180537,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s1.mp3"
     },
     {
      "ar": "الفنجان كان قديم وغالي على إمي.",
@@ -181611,7 +180692,7 @@ window.LIBRARY = {
        "caphi_urban": "2immi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s2.mp3"
     },
     {
      "ar": "خفت كتير وما عرفت شو أقول.",
@@ -181804,7 +180885,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s3.mp3"
     },
     {
      "ar": "رحت لإمي وقلتلها الحقيقة.",
@@ -181893,7 +180974,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s4.mp3"
     },
     {
      "ar": "توقعت إنها تزعل، بس هي بس ابتسمت.",
@@ -181964,45 +181045,7 @@ window.LIBRARY = {
        "analysis": "CONJ",
        "maknuune_id": "615",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "615",
-         "root": "ء.ن.ن",
-         "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
-         "analysis": "CONJ"
-        },
-        {
-         "id": "616",
-         "root": "NTWS",
-         "gloss": "if",
-         "analysis": "CONJ_SUB"
-        },
-        {
-         "id": "619",
-         "root": "ء.ن.ن",
-         "gloss": "(to)_want_sth",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "621",
-         "root": "NTWS",
-         "gloss": "it_is",
-         "analysis": "VERB_PSEUDO"
-        },
-        {
-         "id": "624",
-         "root": "ء.ن.ن",
-         "gloss": "moan_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "618",
-         "root": "NTWS",
-         "gloss": "suspicious;questionable",
-         "analysis": "VERB_PSEUDO:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2ann",
        "vocalized": "إَنّها",
        "vocalized_from": "derived:affix"
@@ -182160,7 +181203,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s5.mp3"
     },
     {
      "ar": "قالت إنه الأشيا بتنكسر، بس الصدق أهم.",
@@ -182299,7 +181342,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s6.mp3"
     },
     {
      "ar": "ارتحت كتير لما سمعت حكيها.",
@@ -182460,7 +181503,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s7.mp3"
     },
     {
      "ar": "من يومها، بحاول أكون صادق دايما.",
@@ -182665,12 +181708,12 @@ window.LIBRARY = {
        "caphi_urban": "daayman"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-27/s8.mp3"
     }
    ],
    "_dir": "story-int-27",
    "_words": 54,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-28",
@@ -182940,7 +181983,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s0.mp3"
     },
     {
      "ar": "كان خايف وجناحه موجوع.",
@@ -183049,7 +182092,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s1.mp3"
     },
     {
      "ar": "أخذناه عالبيت وحطيناه بعلبة فيها قطن.",
@@ -183174,7 +182217,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s2.mp3"
     },
     {
      "ar": "أطعمناه فتات خبز وحطينا جنبه مي.",
@@ -183311,7 +182354,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s3.mp3"
     },
     {
      "ar": "كل يوم، كنا نهتم فيه ونتفرج عليه.",
@@ -183450,7 +182493,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s4.mp3"
     },
     {
      "ar": "بعد أسبوع، بلش جناحه يطيب.",
@@ -183647,7 +182690,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s5.mp3"
     },
     {
      "ar": "وصار يقفز بالعلبة ويحاول يطير.",
@@ -183746,7 +182789,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s6.mp3"
     },
     {
      "ar": "يوم، فتحنا الشباك وطلعناه عالإيد.",
@@ -183921,7 +182964,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s7.mp3"
     },
     {
      "ar": "طار العصفور بالسما ونحنا عم نتفرج.",
@@ -184140,7 +183183,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s8.mp3"
     },
     {
      "ar": "زعلنا إنه راح، بس فرحنا إنه صار حر.",
@@ -184403,12 +183446,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-28/s9.mp3"
     }
    ],
    "_dir": "story-int-28",
    "_words": 60,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-29",
@@ -184628,7 +183671,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s0.mp3"
     },
     {
      "ar": "نزل تلج بالليل وغطى كل إشي.",
@@ -184807,7 +183850,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s1.mp3"
     },
     {
      "ar": "الولاد فرحوا كتير وركضوا عالحديقة.",
@@ -184984,7 +184027,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s2.mp3"
     },
     {
      "ar": "عملوا رجل تلج كبير وحطولوا جزرة.",
@@ -185199,7 +184242,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s3.mp3"
     },
     {
      "ar": "تراشقنا بكرات التلج وضحكنا كتير.",
@@ -185380,7 +184423,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s4.mp3"
     },
     {
      "ar": "إمي عملتلنا شوكولاتة سخنة.",
@@ -185487,7 +184530,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s5.mp3"
     },
     {
      "ar": "قعدنا حوالي الصوبا نتدفى.",
@@ -185578,7 +184621,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s6.mp3"
     },
     {
      "ar": "من الشباك، كنا نتفرج عالتلج ينزل.",
@@ -185755,7 +184798,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s7.mp3"
     },
     {
      "ar": "كان يوم ما بننساه أبدا.",
@@ -185854,12 +184897,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-29/s8.mp3"
     }
    ],
    "_dir": "story-int-29",
    "_words": 48,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-int-30",
@@ -186033,7 +185076,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s0.mp3"
     },
     {
      "ar": "المكتبة كانت كبيرة وهادية.",
@@ -186150,7 +185193,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s1.mp3"
     },
     {
      "ar": "الرفوف كانت مليانة كتب من كل نوع.",
@@ -186357,7 +185400,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s2.mp3"
     },
     {
      "ar": "مشيت بين الرفوف وقريت عناوين كتير.",
@@ -186510,7 +185553,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s3.mp3"
     },
     {
      "ar": "لقيت كتاب قصص قديمة وقعدت أتصفحه.",
@@ -186659,7 +185702,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s4.mp3"
     },
     {
      "ar": "الوقت مر وأنا ما حسيت فيه.",
@@ -186826,7 +185869,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s5.mp3"
     },
     {
      "ar": "الموظفة قالت إنه المكتبة رح تسكر.",
@@ -186975,7 +186018,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s6.mp3"
     },
     {
      "ar": "استعرت الكتاب وطلعت.",
@@ -187126,7 +186169,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s7.mp3"
     },
     {
      "ar": "بالطريق، كنت متحمس أبلش أقراه.",
@@ -187289,7 +186332,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s8.mp3"
     },
     {
      "ar": "من يومها، صرت أروح عالمكتبة كل أسبوع.",
@@ -187538,12 +186581,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-30/s9.mp3"
     }
    ],
    "_dir": "story-int-30",
    "_words": 58,
-   "_audio": false
+   "_audio": true
   }
  ],
  "drills": [
