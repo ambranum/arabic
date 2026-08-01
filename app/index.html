@@ -523,6 +523,52 @@
   .sk-ref-en{font-size:12.5px; color:var(--muted); margin-top:2px}
   .sk-shadow{border:1px solid var(--rule); border-radius:8px; padding:11px 12px; margin-bottom:8px}
   .sk-shadow .ar{font-family:var(--arabic); font-size:20px; line-height:1.7; margin-bottom:8px}
+  /* ---- Books ---- */
+  .bk-cover{display:block; width:100%; text-align:left; font:inherit; cursor:pointer; color:var(--ink);
+    border:1px solid var(--rule); border-left:4px solid var(--rubric); border-radius:8px;
+    background:var(--paper-2); padding:18px 16px; margin-bottom:12px}
+  .bk-cover:hover{border-color:var(--verdigris); border-left-color:var(--rubric)}
+  .bk-cover-ar{font-family:var(--arabic); direction:rtl; font-size:26px; line-height:1.5}
+  .bk-cover-en{font-family:var(--serif); font-size:17px; margin-top:4px}
+  .bk-cover-s{font-size:12px; color:var(--muted); margin-top:6px}
+  .bk-hero{text-align:center; padding:10px 0 6px; margin-bottom:14px}
+  .bk-hero-ar{font-family:var(--arabic); direction:rtl; font-size:34px; line-height:1.5}
+  .bk-hero-en{font-family:var(--serif); font-size:20px; margin-top:4px}
+  .bk-hero-s{font-size:12px; color:var(--muted); margin-top:6px}
+  .bk-ch{display:flex; align-items:center; gap:12px; width:100%; text-align:left; font:inherit; cursor:pointer;
+    color:var(--ink); border:1px solid var(--rule); border-radius:8px; background:none; padding:11px 13px; margin-bottom:8px}
+  .bk-ch:hover{border-color:var(--verdigris)}
+  .bk-ch-n{flex:none; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:13px; color:var(--muted); border:1px solid var(--rule)}
+  .bk-ch-n.read{color:#fff; background:var(--verdigris); border-color:var(--verdigris)}
+  .bk-ch-t{display:flex; flex-direction:column; min-width:0}
+  .bk-ch-t b{font-family:var(--arabic); direction:rtl; font-size:18px; font-weight:400}
+  .bk-ch-t span{font-size:12px; color:var(--muted)}
+  .bk-chnav{margin-top:20px; padding-top:16px; border-top:1px solid var(--rule)}
+  /* printable book (screen preview) */
+  .bk-print{max-width:640px; margin:0 auto}
+  .bk-print-title{text-align:center; padding:20px 0 26px; border-bottom:2px solid var(--rule); margin-bottom:22px}
+  .bk-print-title .ar{font-family:var(--arabic); direction:rtl; font-size:34px; line-height:1.5}
+  .bk-print-title .en{font-family:var(--serif); font-size:22px; margin-top:6px}
+  .bk-print-title .sub{font-size:13px; color:var(--muted); margin-top:10px}
+  .bk-print-title .sub2{font-size:11px; color:var(--ochre); margin-top:4px}
+  .bk-print-ch h2{font-family:var(--arabic); direction:rtl; font-size:24px; margin:24px 0 2px; font-weight:400}
+  .bk-print-ch h3{font-family:var(--serif); font-size:15px; color:var(--muted); font-weight:400; margin:0 0 14px}
+  .bk-print-s{margin-bottom:12px}
+  .bk-print-s .ar{font-family:var(--arabic); direction:rtl; font-size:21px; line-height:1.9}
+  .bk-print-s .en{font-size:13px; color:var(--muted); line-height:1.5; margin-top:1px}
+  @media print {
+    .top, .tray, .sidebar, .side-scrim, .bk-noprint { display:none !important; }
+    html, body { background:#fff !important; color:#000 !important; }
+    .wrap, #view { margin:0 !important; padding:0 !important; max-width:none !important; }
+    .bk-print { max-width:none; }
+    .bk-print-title .ar, .bk-print-ch h2, .bk-print-s .ar { color:#000 !important; }
+    .bk-print-s .en, .bk-print-ch h3 { color:#333 !important; }
+    .bk-print-title { border-color:#000; }
+    .bk-print-ch { page-break-before:always; }
+    .bk-print-title + .bk-print-ch, .bk-print-ch:first-of-type { page-break-before:avoid; }
+    .bk-print-s { page-break-inside:avoid; }
+  }
   /* guided shadow */
   .gs-launch{display:block; width:100%; text-align:left; font:inherit; cursor:pointer;
     border:1px solid var(--verdigris); background:var(--verdigris-2); color:var(--verdigris);
@@ -819,6 +865,7 @@ const ICON = {
   stories: '<path d="M12 7c-2-1.4-5-1.4-8 0v12c3-1.4 6-1.4 8 0 2-1.4 5-1.4 8 0V7c-3-1.4-6-1.4-8 0z"/><path d="M12 7v12"/>',
   plan:    '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M8.5 14.5l2 2 4-4.5"/>',
   ext:     '<path d="M14 4h6v6"/><path d="M20 4l-8 8"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>',
+  books:   '<path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 1 2-2h12"/>',
 };
 const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
   stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[n]}</svg>`;
@@ -830,6 +877,7 @@ const SECTIONS = [
   {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
+  {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
 ];
 
 // Short-story reading levels, in order. label shown on tiles; blurb sets expectations.
@@ -875,6 +923,7 @@ function route() {
     if (sec.route === 'verbs')   return verbsSection(id);
     if (sec.route === 'grammar') return grammarSection(id);
     if (sec.route === 'stories') return storiesSection(id);
+    if (sec.route === 'books')   return booksSection(id, arg);
     return emptySection(sec); }
   renderNav('home');
   home();
@@ -941,6 +990,7 @@ function home(){
       : sec.route === 'vocab' ? (marked.size ? dueCards().length + ' due · ' + marked.size + ' cards' : 'Your flashcards')
       : sec.route === 'plan' ? (planCfg() ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name) : 'Build your study plan')
       : sec.route === 'grammar' ? GRAM.length + ' spoken structures'
+      : sec.route === 'books' ? (booksList().length ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read' : 'Full graded readers')
       : 'Coming soon';
     return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
       <div class="tile-t">${esc(sec.label)}</div>
@@ -951,7 +1001,7 @@ function home(){
   // Existing practice content that predates the sections. Kept reachable rather than
   // orphaned; morning-coffee could later live under Short Stories.
   const drill = LIB.drills[0];
-  const coffee = LIB.texts.find(t => t.kind !== 'news');
+  const coffee = LIB.texts.find(t => t.kind !== 'news' && t.kind !== 'book-chapter' && t.kind !== 'story');
   if (drill || coffee) {
     h += '<div class="sec">Practice</div>';
     if (drill) h += card(drill, 'drill');
@@ -984,6 +1034,90 @@ function newsSection(){
     h += `<div class="unval"><b>Today's isn't in yet.</b> The morning job writes it around
       5am; until then the latest is ${esc(news[0].date)}.</div>`;
   h += news.map(t => card(t, 'text')).join('');
+  $('view').innerHTML = h;
+}
+
+// ---------- Books (full graded readers, with print-to-PDF) ----------
+// A book is a set of texts with kind "book-chapter", grouped by their `book` id and ordered by
+// `chapter`. Reading a chapter reuses the normal reader; the whole book can be printed to PDF.
+function booksList() {
+  const byBook = {};
+  LIB.texts.filter(t => t.kind === 'book-chapter').forEach(t => (byBook[t.book] = byBook[t.book] || []).push(t));
+  return Object.keys(byBook).map(id => {
+    const chapters = byBook[id].slice().sort((a, b) => (a.chapter || 0) - (b.chapter || 0));
+    return {id, title: chapters[0].book_title || {en: id, ar: ''}, level: chapters[0].level, chapters};
+  });
+}
+const bookById = id => booksList().find(b => b.id === id);
+const chTitleAr = c => (c.title.ar || '').replace(/^الفصل[^—]*—\s*/, '');
+const chTitleEn = c => (c.title.en || '').replace(/^Chapter \d+ — /, '');
+
+function booksSection(sub, arg) {
+  $('back').hidden = false;
+  if (sub && arg === 'print') return bookPrintView(sub);
+  if (sub) return bookView(sub);
+  return booksHome();
+}
+
+function booksHome() {
+  $('title').textContent = 'Books';
+  const books = booksList();
+  let h = `<p class="hint">Whole stories to read start to finish — graded for learners, in spoken
+    Palestinian, with tap-any-word for every word. A connected book, with vocabulary that comes back
+    again and again, sticks far better than scattered paragraphs. Read online or download a PDF.
+    The retellings are adapted by Claude (not native-checked); every word’s meaning and root is from the lexicon.</p>`;
+  h += books.length ? books.map(b => `<button class="bk-cover" onclick="location.hash='/books/${esc(b.id)}'">
+      <div class="bk-cover-ar" dir="rtl">${esc(b.title.ar)}</div>
+      <div class="bk-cover-en">${esc(b.title.en)}</div>
+      <div class="bk-cover-s">${b.chapters.length} chapters · ${esc(b.level || '')}</div></button>`).join('')
+    : `<p class="hint">No books yet.</p>`;
+  $('view').innerHTML = h;
+}
+
+function bookView(id) {
+  const b = bookById(id); if (!b) return booksHome();
+  $('title').textContent = b.title.en;
+  const seen = contentSeen();
+  const readN = b.chapters.filter(c => seen.has(c.id)).length;
+  let h = `<div class="bk-hero"><div class="bk-hero-ar" dir="rtl">${esc(b.title.ar)}</div>
+     <div class="bk-hero-en">${esc(b.title.en)}</div>
+     <div class="bk-hero-s">Adapted for learners · ${b.chapters.length} chapters · ${readN} read</div></div>`;
+  h += `<div class="unval"><b>Not checked by a native speaker.</b> This retelling is written by Claude —
+     every word’s root and meaning is from the lexicon, but read it for practice; don’t memorise the phrasing.</div>`;
+  h += `<div class="ctl">
+     <button class="tog go" onclick="location.hash='/text/${esc(b.chapters[0].id)}'">${readN ? 'Keep reading' : 'Start reading'}</button>
+     <button class="tog" onclick="location.hash='/books/${esc(b.id)}/print'">⬇ Download as PDF</button></div>`;
+  h += `<div class="sec">Chapters</div>`;
+  h += b.chapters.map(c => { const done = seen.has(c.id);
+    return `<button class="bk-ch" onclick="location.hash='/text/${esc(c.id)}'">
+      <span class="bk-ch-n${done ? ' read' : ''}">${done ? '✓' : c.chapter}</span>
+      <span class="bk-ch-t"><b dir="rtl">${esc(chTitleAr(c))}</b><span>${esc(chTitleEn(c))}</span></span></button>`;
+  }).join('');
+  $('view').innerHTML = h;
+}
+
+// The printable whole book. On screen it's a clean reading layout; the print stylesheet strips the
+// app chrome so "Save as PDF" yields just the book. Browsers shape Arabic RTL better than any PDF lib.
+function bookPrintView(id) {
+  const b = bookById(id); if (!b) return booksHome();
+  $('title').textContent = b.title.en;
+  let h = `<div class="ctl bk-noprint">
+      <button class="tog go" onclick="window.print()">⬇ Save as PDF / Print</button>
+      <button class="tog" onclick="location.hash='/books/${esc(b.id)}'">Back to book</button></div>
+    <p class="hint bk-noprint">This opens your browser’s print dialog — pick <b>Save as PDF</b> as the destination
+      to download the whole book, laid out cleanly with one chapter per page.</p>
+    <div class="bk-print">
+      <div class="bk-print-title"><div class="ar" dir="rtl">${esc(b.title.ar)}</div>
+        <div class="en">${esc(b.title.en)}</div>
+        <div class="sub">Adapted for learners of spoken Palestinian Arabic</div>
+        <div class="sub2">Retelling written by Claude — not checked by a native speaker · word data from the Maknuune lexicon</div></div>`;
+  b.chapters.forEach(c => {
+    h += `<div class="bk-print-ch"><h2 dir="rtl">${esc(c.title.ar)}</h2><h3>${esc(chTitleEn(c))}</h3>`;
+    c.sentences.forEach(s => { h += `<div class="bk-print-s"><div class="ar" dir="rtl">${esc(s.ar)}</div>
+        <div class="en">${esc(s.en)}</div></div>`; });
+    h += `</div>`;
+  });
+  h += `</div>`;
   $('view').innerHTML = h;
 }
 
@@ -1956,7 +2090,20 @@ function reader(t) {
     h += player(s.audio);
     h += `<button class="peek" data-peek="${si}">Peek at English</button></div>`;
   });
-  $('view').innerHTML = h + '</div>';
+  // book-chapter navigation: previous / all chapters / mark-read-and-next
+  let bnav = '';
+  if (t.book) {
+    const b = bookById(t.book);
+    if (b) {
+      const i = b.chapters.findIndex(c => c.id === t.id), prev = b.chapters[i - 1], next = b.chapters[i + 1];
+      bnav = `<div class="ctl bk-chnav">
+        ${prev ? `<button class="tog" onclick="location.hash='/text/${esc(prev.id)}'">← Previous</button>` : ''}
+        <button class="tog" onclick="location.hash='/books/${esc(b.id)}'">All chapters</button>
+        ${next ? `<button class="tog go" onclick="markSeen('${esc(t.id)}',true);location.hash='/text/${esc(next.id)}'">Mark read &amp; next →</button>`
+               : `<button class="tog go" onclick="markSeen('${esc(t.id)}',true);location.hash='/books/${esc(b.id)}'">Mark read &amp; finish ✓</button>`}</div>`;
+    }
+  }
+  $('view').innerHTML = h + '</div>' + bnav;
   paint();
 
   $('tVoc').onclick = e => {

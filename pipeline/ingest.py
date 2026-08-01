@@ -114,6 +114,8 @@ def main():
     art = {"id": src['id'], "title": src['title'], "dialect": src.get('dialect', 'pal'),
            "kind": src.get('kind', 'lesson'), "date": src.get('date'),
            "level": src.get('level'),          # beginner/intermediate/advanced (stories)
+           "book": src.get('book'), "chapter": src.get('chapter'),   # book grouping (book chapters)
+           "book_title": src.get('book_title'),
            "subdialect": SUB,
            "source": src.get('source', 'original'), "sentences": []}
     stats = {}
