@@ -134,10 +134,10 @@ def main():
             else:
                 v, vp = vocalize(w['surface'], w.get('form'), w.get('analysis'))
                 w['vocalized'], w['vocalized_from'] = v, vp
-        sent = {"ar": s['ar'], "en": s['en'], "words": words, "audio": None}
+        sent = {"ar": s['ar'], "en": s['en'], "p": s.get('p'), "words": words, "audio": None}
         if do_audio:
-            p = os.path.join(outdir, 'audio', f"s{si}.mp3")
-            ok, how = tts(s['ar'], p, key, voice)
+            ap = os.path.join(outdir, 'audio', f"s{si}.mp3")
+            ok, how = tts(s['ar'], ap, key, voice)
             sent['audio'] = f"audio/s{si}.mp3" if ok else None
             print(f"  audio s{si}: {how}")
         art['sentences'].append(sent)

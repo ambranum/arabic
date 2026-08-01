@@ -554,20 +554,25 @@
   .bk-print-title .sub2{font-size:11px; color:var(--ochre); margin-top:4px}
   .bk-print-ch h2{font-family:var(--arabic); direction:rtl; font-size:24px; margin:24px 0 2px; font-weight:400}
   .bk-print-ch h3{font-family:var(--serif); font-size:15px; color:var(--muted); font-weight:400; margin:0 0 14px}
-  .bk-print-s{margin-bottom:12px}
-  .bk-print-s .ar{font-family:var(--arabic); direction:rtl; font-size:21px; line-height:1.9}
-  .bk-print-s .en{font-size:13px; color:var(--muted); line-height:1.5; margin-top:1px}
+  /* bilingual paragraphs, English left / Arabic right */
+  .bk-print-p{display:grid; grid-template-columns:1fr 1fr; gap:14px 26px; margin-bottom:18px; align-items:start}
+  .bk-print-p .ar{font-family:var(--arabic); direction:rtl; font-size:20px; line-height:1.95}
+  .bk-print-p .en{font-size:14px; color:var(--muted); line-height:1.7}
+  @media (max-width:640px){ .bk-print-p{grid-template-columns:1fr; gap:5px} }
+  /* reader in paragraph mode (books) */
+  .rd-para .ar{line-height:2}
+  .rd-para{margin-bottom:20px}
   @media print {
     .top, .tray, .sidebar, .side-scrim, .bk-noprint { display:none !important; }
     html, body { background:#fff !important; color:#000 !important; }
     .wrap, #view { margin:0 !important; padding:0 !important; max-width:none !important; }
     .bk-print { max-width:none; }
-    .bk-print-title .ar, .bk-print-ch h2, .bk-print-s .ar { color:#000 !important; }
-    .bk-print-s .en, .bk-print-ch h3 { color:#333 !important; }
+    .bk-print-title .ar, .bk-print-ch h2, .bk-print-p .ar { color:#000 !important; }
+    .bk-print-p .en, .bk-print-ch h3 { color:#333 !important; }
     .bk-print-title { border-color:#000; }
     .bk-print-ch { page-break-before:always; }
     .bk-print-title + .bk-print-ch, .bk-print-ch:first-of-type { page-break-before:avoid; }
-    .bk-print-s { page-break-inside:avoid; }
+    .bk-print-p { page-break-inside:avoid; }
   }
   /* guided shadow */
   .gs-launch{display:block; width:100%; text-align:left; font:inherit; cursor:pointer;
@@ -1113,8 +1118,13 @@ function bookPrintView(id) {
         <div class="sub2">Retelling written by Claude — not checked by a native speaker · word data from the Maknuune lexicon</div></div>`;
   b.chapters.forEach(c => {
     h += `<div class="bk-print-ch"><h2 dir="rtl">${esc(c.title.ar)}</h2><h3>${esc(chTitleEn(c))}</h3>`;
-    c.sentences.forEach(s => { h += `<div class="bk-print-s"><div class="ar" dir="rtl">${esc(s.ar)}</div>
-        <div class="en">${esc(s.en)}</div></div>`; });
+    // group sentences into paragraphs, English and Arabic side by side
+    let cur = null, ar = [], en = [];
+    const flush = () => { if (!ar.length) return;
+      h += `<div class="bk-print-p"><div class="en">${esc(en.join(' '))}</div>
+        <div class="ar" dir="rtl">${esc(ar.join(' '))}</div></div>`; ar = []; en = []; };
+    c.sentences.forEach(s => { if (cur !== null && s.p !== cur) flush(); cur = s.p; ar.push(s.ar); en.push(s.en); });
+    flush();
     h += `</div>`;
   });
   h += `</div>`;
@@ -2075,21 +2085,32 @@ function reader(t) {
          by Claude. Fine for reading practice; don't memorise the phrasing yet.</div>`
       : '') +
     `<div class="rd" id="rd" data-en="off" data-voc="on">`;
-  t.sentences.forEach((s, si) => {
-    h += '<div class="sent"><div class="ar">';
-    s.words.forEach((w, wi) => {
-      const gap = !w.lemma;
-      // Both spellings ship; the toggle swaps which is shown. A word we could not
-      // vocalize honestly falls back to its plain spelling and says so in the card.
-      const voc = w.vocalized || w.surface;
-      h += `<span class="w${gap ? ' gap' : ''}${w.vocalized ? '' : ' novoc'}"
-              data-s="${si}" data-w="${wi}" tabindex="0"
-             ><span class="v">${esc(voc)}</span><span class="p">${esc(w.surface)}</span></span> `;
+  // Both spellings ship; the vowels toggle swaps which is shown. A word we couldn't vocalize
+  // honestly falls back to its plain spelling and says so in the card.
+  const wspan = (w, si, wi) => { const voc = w.vocalized || w.surface;
+    return `<span class="w${!w.lemma ? ' gap' : ''}${w.vocalized ? '' : ' novoc'}"
+      data-s="${si}" data-w="${wi}" tabindex="0"><span class="v">${esc(voc)}</span><span class="p">${esc(w.surface)}</span></span> `; };
+  // Books carry paragraph markers (`p`): render as flowing bilingual paragraphs (nicer for reading a
+  // book). Stories/news have no markers → the classic one-sentence-at-a-time layout, unchanged.
+  const hasPara = t.sentences.some(s => s.p != null);
+  if (hasPara) {
+    let cur_p = null, group = [];
+    const flush = () => { if (!group.length) return;
+      h += '<div class="sent rd-para"><div class="ar">';
+      group.forEach(si => t.sentences[si].words.forEach((w, wi) => { h += wspan(w, si, wi); }));
+      h += '</div><p class="en">' + group.map(si => esc(t.sentences[si].en)).join(' ') + '</p>';
+      h += `<button class="peek" data-peek="${group[0]}">Peek at English</button></div>`; group = []; };
+    t.sentences.forEach((s, si) => { if (cur_p !== null && s.p !== cur_p) flush(); cur_p = s.p; group.push(si); });
+    flush();
+  } else {
+    t.sentences.forEach((s, si) => {
+      h += '<div class="sent"><div class="ar">';
+      s.words.forEach((w, wi) => { h += wspan(w, si, wi); });
+      h += `</div><p class="en">${esc(s.en)}</p>`;
+      h += player(s.audio);
+      h += `<button class="peek" data-peek="${si}">Peek at English</button></div>`;
     });
-    h += `</div><p class="en">${esc(s.en)}</p>`;
-    h += player(s.audio);
-    h += `<button class="peek" data-peek="${si}">Peek at English</button></div>`;
-  });
+  }
   // book-chapter navigation: previous / all chapters / mark-read-and-next
   let bnav = '';
   if (t.book) {
