@@ -417,8 +417,17 @@
   .pt-top{display:flex; gap:8px; align-items:baseline}
   .pt-title{font-family:var(--serif); font-size:15.5px; line-height:1.25}
   .pmin{margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--muted); white-space:nowrap}
+  .pt-seq{font-size:11px; color:var(--verdigris); font-weight:600; margin-top:2px}
   .pt-sub{font-size:11.5px; color:var(--muted); margin-top:3px}
   .pt-slot{color:var(--verdigris)}
+  /* numbered story list */
+  .story-row{display:flex; align-items:stretch; gap:10px; margin-bottom:10px}
+  .story-n{flex:none; width:30px; display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:13px; color:var(--muted); border:1px solid var(--rule);
+    border-radius:7px; align-self:stretch}
+  .story-n.read{color:#fff; background:var(--verdigris); border-color:var(--verdigris)}
+  .story-c{flex:1; min-width:0}
+  .story-c .card{margin-bottom:0}
   .pt-instr{font-size:12.5px; color:var(--ink-soft); line-height:1.5; margin-top:6px}
   .pt-note{font-size:11.5px; color:var(--ochre); line-height:1.5; margin-top:5px}
   .pt-act{display:flex; gap:7px; align-items:center; margin-top:9px; flex-wrap:wrap}
@@ -1007,8 +1016,13 @@ function storiesLevel(lvl){
   const [key, label, blurb] = lvl;
   $('title').textContent = label + ' Stories';
   const list = storiesAt(key);
+  const seen = contentSeen();
+  const readN = list.filter(t => seen.has(t.id)).length;
   let h = `<p class="hint">${esc(blurb)}</p>`;
-  h += list.length ? list.map(t => card(t, 'text')).join('')
+  if (list.length) h += `<div class="sec">Read them in order — ${readN} of ${list.length} done</div>`;
+  h += list.length ? list.map((t, i) =>
+        `<div class="story-row"><span class="story-n${seen.has(t.id) ? ' read' : ''}">${seen.has(t.id) ? '✓' : (i + 1)}</span>
+         <div class="story-c">${card(t, 'text')}</div></div>`).join('')
                    : `<p class="hint">No stories here yet.</p>`;
   h += `<div class="sec" style="margin-top:20px">Levels</div><div class="ctl">` +
     STORY_LEVELS.map(([k, l]) => `<button class="tog"${k === key ? ' aria-pressed="true"' : ''}
@@ -1222,14 +1236,35 @@ function projDateISO(cfg, targetMin) {
   return addDaysISO(todayISO(), Math.ceil(remain / (wk / 7)));
 }
 
-// ---- content pools: resolve an abstract pool to concrete in-app content ----
+// ---- content progression: which texts you've worked through (so the plan walks a real path) ----
+const CSEEN_KEY = 'alp.plan.seen.v1';
+function contentSeen() { try { return new Set(JSON.parse(localStorage.getItem(CSEEN_KEY) || '[]')); } catch (e) { return new Set(); } }
+function markSeen(id, on) { if (!id) return; const s = contentSeen();
+  if (on) s.add(id); else s.delete(id); try { localStorage.setItem(CSEEN_KEY, JSON.stringify([...s])); } catch (e) {} }
+
+// ---- content pools: resolve an abstract pool to a concrete, ORDERED list of content ----
+const POOL_LABEL = {beginner: 'Beginner story', intermediate: 'Intermediate story', advanced: 'Advanced story'};
 function planPool(pool) {
-  if (pool === 'reaction') return LIB.drills.map(d => ({title: d.title.en, link: '/drill/' + d.id}));
+  if (pool === 'reaction') return LIB.drills.map(d => ({id: d.id, title: d.title.en, link: '/drill/' + d.id}));
   if (pool === 'news') return LIB.texts.filter(t => t.kind === 'news')
-    .sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(t => ({title: t.title.en, link: '/text/' + t.id}));
-  return storiesAt(pool).map(t => ({title: t.title.en, link: '/text/' + t.id}));   // beginner/intermediate/advanced
+    .sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(t => ({id: t.id, title: t.title.en, link: '/text/' + t.id}));
+  return storiesAt(pool).map(t => ({id: t.id, title: t.title.en, link: '/text/' + t.id}));   // ordered by id
 }
-function planPick(pool, idx) { const a = planPool(pool); return a.length ? a[((idx % a.length) + a.length) % a.length] : null; }
+// Serve content IN ORDER: the ord-th story you HAVEN'T done yet, with its position in the full set
+// (so a task can say "Beginner story 4 of 30"). When everything's been read, cycle back for re-reading.
+function poolPick(pool, ord) {
+  const all = planPool(pool); if (!all.length) return null;
+  const seen = contentSeen();
+  const unseen = all.filter(x => !seen.has(x.id));
+  const list = unseen.length ? unseen : all;
+  const pick = list[((ord % list.length) + list.length) % list.length];
+  return {...pick, pos: all.findIndex(x => x.id === pick.id) + 1, total: all.length, allSeen: !unseen.length};
+}
+// The phase's primary reading level — used for "study more" bonus content.
+function phaseReadPool(phase) {
+  const r = (phase.mix || []).find(sp => sp.act === 'read' && POOL_LABEL[sp.pool]);
+  return r ? r.pool : 'beginner';
+}
 
 // The one study day of the week that carries a tutor session: the highest-budget day.
 function weeklyTutorDay(cfg) { let best = -1, bestH = -1; for (let i = 0; i < 7; i++) if ((cfg.hours[i] || 0) > bestH) { bestH = cfg.hours[i] || 0; best = i; } return bestH > 0 ? best : -1; }
@@ -1244,7 +1279,6 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
   if (totalMin <= 0) return {rest: true, tasks: [], phase: ph, totalMin: 0, phaseIndex};
   const carAvail = !!(cfg.car && cfg.car.has && (cfg.car.days || []).includes(wd));
   const speakAvail = carAvail || cfg.speakHome;
-  const dayNo = Math.max(0, daysBetween(cfg.start, dateISO));
   const tutorDay = weeklyTutorDay(cfg);
 
   const base = ph.mix.filter(sp => {
@@ -1278,18 +1312,24 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
 
   chosen.sort((a, b) => (CUR.activities[a.act].order) - (CUR.activities[b.act].order));
   const tasks = []; let used = 0, k = 0;
+  const readOrd = {};                                        // per-pool sequential index for READING
   for (const sp of chosen) {
     const remaining = totalMin - used;
     if (remaining < 5) break;
-    tasks.push(resolveTask(cfg, sp, dayNo, k++, Math.min(sp.min, remaining), carAvail));
+    let ord = 0;
+    if (sp.pool) {                                           // reading walks the list in order; shadow/4-3-2
+      if (sp.act === 'read') { ord = readOrd[sp.pool] || 0; readOrd[sp.pool] = ord + 1; }
+      else ord = 0;                                          // pair with the day's current (first) story
+    }
+    tasks.push(resolveTask(cfg, sp, ord, k++, Math.min(sp.min, remaining), carAvail));
     used += Math.min(sp.min, remaining);
   }
   const banked = totalMin - used >= 20 ? totalMin - used : 0;             // unfilled minutes at this phase
   return {rest: false, tasks, phase: ph, totalMin, usedMin: used, banked, phaseIndex, spoken: tasks.some(t => t.speak)};
 }
 
-// Turn a phase-mix spec into a concrete, linkable task.
-function resolveTask(cfg, sp, dayNo, k, minutes, carAvail) {
+// Turn a phase-mix spec into a concrete, linkable task. `ord` = which item in a content pool.
+function resolveTask(cfg, sp, ord, k, minutes, carAvail) {
   const A = CUR.activities[sp.act] || {};
   const t = {id: 'k' + k + '-' + sp.act, act: sp.act, label: A.label, instr: A.instr,
     builds: A.builds, minutes, order: A.order || 3, source: sp.src, speak: !!A.speak,
@@ -1301,7 +1341,7 @@ function resolveTask(cfg, sp, dayNo, k, minutes, carAvail) {
     const R = CUR.external[key] || {};
     t.title = R.name || A.label; t.url = R.url; t.note = R.note;
   } else if (sp.pool) {
-    const pick = planPick(sp.pool, dayNo + k * 3);
+    const pick = poolPick(sp.pool, ord);
     if (pick) {
       // Speaking activities open the Speak view (4/3/2 + shadow); reading opens the reader.
       // Reaction chunks already ARE a speaking drill (cue→say→check), so leave those as-is.
@@ -1309,6 +1349,9 @@ function resolveTask(cfg, sp, dayNo, k, minutes, carAvail) {
       if ((sp.act === 'shadow' || sp.act === 'drill432') && link.startsWith('/text/'))
         link = link.replace('/text/', '/speak/');
       t.title = pick.title; t.link = link;
+      if (sp.act === 'read') t.cid = pick.id;                // only reading advances the systematic path
+      if (POOL_LABEL[sp.pool]) t.seq = POOL_LABEL[sp.pool] + ' ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
+      else if (sp.pool === 'news') t.seq = 'Latest news';
     } else { t.title = A.label; t.note = 'No ' + sp.pool + ' content loaded yet.'; }
   } else if (sp.act === 'srs') {
     t.title = 'Review your due flashcards'; t.link = '/vocab/review';
@@ -1465,6 +1508,8 @@ function planToday() {
       practice actually sets. ${due ? `You do have <b>${due}</b> card${due === 1 ? '' : 's'} due if you want a quick round.` : 'See you tomorrow.'}</p>
       ${due ? `<div class="ctl" style="justify-content:center"><button class="tog go" onclick="location.hash='/vocab/review'">Review ${due} card${due === 1 ? '' : 's'}</button></div>` : ''}
       </div>`;
+    h += planExtraHTML(cfg, day.phase, date, doneMap, 0);   // studying on an off-day is allowed
+    h += planMoreBtn(date, true);
     h += planFooterCtls();
     $('view').innerHTML = h; return;
   }
@@ -1481,8 +1526,34 @@ function planToday() {
      That’s a full session for <b>${esc(day.phase.name)}</b> — this early phase is deliberately short, so
      the other ~${Math.round(day.banked / 60 * 10) / 10}h today is yours. Quality over hours; the plan
      leans in as you advance.</div>`;
+  const schedReads = day.tasks.filter(t => t.act === 'read' && t.cid).length;
+  h += planExtraHTML(cfg, day.phase, date, doneMap, schedReads);
+  h += planMoreBtn(date, false);
   h += planFooterCtls();
   $('view').innerHTML = h;
+}
+
+// ---- "study more": extra content on demand (extra time, or an off day) ----
+const PXKEY = 'alp.plan.extra.v1';
+function planExtra() { try { return JSON.parse(localStorage.getItem(PXKEY) || '{}') || {}; } catch (e) { return {}; } }
+function addPlanExtra(date) { const x = planExtra(); x[date] = (x[date] || 0) + 1;
+  try { localStorage.setItem(PXKEY, JSON.stringify(x)); } catch (e) {} planToday(); }
+// The next unseen stories for the current phase's level, as extra checkable reading tasks.
+function planExtraHTML(cfg, phase, date, doneMap, offset) {
+  const nx = planExtra()[date] || 0;
+  if (nx <= 0) return '';
+  const pool = phaseReadPool(phase);
+  let h = `<div class="sec">Extra practice — you asked for more</div>`;
+  for (let j = 0; j < nx; j++) {
+    const t = resolveTask(cfg, {act: 'read', src: 'inapp', pool, min: 20}, offset + j, 0, 20, false);
+    t.id = 'x' + j + '-read';                               // stable per-day id for the log
+    h += planTaskRow(t, date, t.id in doneMap);
+  }
+  return h;
+}
+function planMoreBtn(date, restday) {
+  return `<div class="ctl" style="margin-top:14px;justify-content:center">
+     <button class="tog go" onclick="addPlanExtra('${date}')">＋ ${restday ? 'Study anyway' : 'Study more'}</button></div>`;
 }
 
 function planTaskRow(t, date, done) {
@@ -1490,19 +1561,23 @@ function planTaskRow(t, date, done) {
   const open = t.link ? `<button class="tog" onclick="location.hash='${t.link}'">Open</button>`
     : t.url ? `<a class="tog pext" href="${esc(t.url)}" target="_blank" rel="noopener">Open ${svg('ext')}</a>` : '';
   return `<div class="ptask${done ? ' done' : ''}">
-      <button class="pcheck" onclick="planToggle('${date}','${esc(t.id)}',${t.minutes})" aria-label="Mark done">${done ? '✓' : ''}</button>
+      <button class="pcheck" onclick="planToggle('${date}','${esc(t.id)}',${t.minutes},'${t.cid || ''}')" aria-label="Mark done">${done ? '✓' : ''}</button>
       <div class="pt-main">
         <div class="pt-top"><span class="pt-title">${esc(t.title)}</span><span class="pmin">${t.minutes}m</span></div>
+        ${t.seq ? `<div class="pt-seq">${esc(t.seq)}</div>` : ''}
         <div class="pt-sub">${esc(t.label)} · ${esc(t.builds)} · <span class="pt-slot">${esc(t.ideal)}</span></div>
         <div class="pt-instr">${esc(t.instr)}</div>
         ${t.note ? `<div class="pt-note">${esc(t.note)}</div>` : ''}
         <div class="pt-act">${open}${srcPill}</div>
       </div></div>`;
 }
-function planToggle(date, tid, minutes) {
+function planToggle(date, tid, minutes, cid) {
   const L = planLog(); const d = L[date] || (L[date] = {done: {}}); d.done = d.done || {};
-  if (d.done[tid] != null) delete d.done[tid]; else d.done[tid] = minutes;
-  savePlanLog(L); planToday();
+  const nowDone = d.done[tid] == null;
+  if (nowDone) d.done[tid] = minutes; else delete d.done[tid];
+  savePlanLog(L);
+  if (cid) markSeen(cid, nowDone);                          // checking a reading task walks the path forward
+  planToday();
 }
 function planFooterCtls() {
   return `<div class="ctl" style="margin-top:18px">
