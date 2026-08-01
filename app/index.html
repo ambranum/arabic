@@ -2471,12 +2471,14 @@ $('view').addEventListener('input', e => {
 // per-user row in Supabase (protected by row-level security) and keep devices in step. Signed out
 // or offline, the app is exactly as before — everything stays local. First sign-in on a device MERGES
 // local + cloud (union of cards/decks/read-stories/plan-log) so nothing is lost when two devices meet.
+// Capture whether we arrived via a magic-link redirect BEFORE the client cleans the URL.
+const _hadAuthHash = /access_token=|type=(magiclink|recovery|signup)|error_code=/.test(location.hash || '');
 const _sb = (window.SUPA && window.supabase)
   ? window.supabase.createClient(window.SUPA.url, window.SUPA.anon,
-      {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: false}})
+      {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}})
   : null;
 let _user = null, _syncing = false, _applyingRemote = false, _syncTimer = null;
-let _loginEmail = '', _codeSent = false;
+let _loginEmail = '', _linkSent = false, _navdAfterLogin = false;
 const SYNC_AT = 'alp.sync.at';
 
 function collectProgress() {
@@ -2569,7 +2571,11 @@ async function pullMerge() {
 async function onAuth(session) {
   _user = session ? session.user : null;
   renderAccountBadge();
-  if (_user) await pullMerge();
+  if (_user) {
+    await pullMerge();
+    // If we just landed here from a magic-link email, show the account page once.
+    if (_hadAuthHash && !_navdAfterLogin) { _navdAfterLogin = true; location.hash = '#/account'; }
+  }
 }
 if (_sb) {
   _sb.auth.getSession().then(({data}) => onAuth(data.session));
@@ -2595,43 +2601,38 @@ function accountSection() {
       <div class="note">Sign in with the same email on your phone and your computer, and your flashcards,
         study plan, and reading progress stay in step. Signed out, the app still works — it just keeps
         everything on this one device.</div>`;
-  } else if (_codeSent) {
-    h = `<p class="hint">We emailed a 6-digit code to <b>${esc(_loginEmail)}</b>. Enter it here to sign in.</p>
-      <input id="acct-code" class="vsearch" inputmode="numeric" autocomplete="one-time-code" placeholder="6-digit code">
-      <div class="ctl" style="margin-top:10px">
-        <button class="tog go" onclick="acctVerify()">Sign in</button>
-        <button class="tog" onclick="_codeSent=false;accountSection()">Use a different email</button></div>
-      <div id="acct-msg" class="hint" style="margin-top:10px"></div>`;
+  } else if (_linkSent) {
+    h = `<div class="hero"><div class="big">
+        <div class="k">Check your email</div><div class="t">Sign-in link sent</div>
+        <div class="s">We emailed a one-tap sign-in link to <b>${esc(_loginEmail)}</b>. Open that email and tap
+          <b>Sign in</b> — it brings you back here, signed in. Open it on this device or another.</div></div></div>
+      <div class="ctl"><button class="tog" onclick="acctSendLink()">Resend link</button>
+        <button class="tog" onclick="_linkSent=false;accountSection()">Use a different email</button></div>
+      <div id="acct-msg" class="hint" style="margin-top:10px">Opened the link in a different tab? This page
+        updates on its own — or just reload it.</div>`;
   } else {
     h = `<div class="hero"><div class="big">
         <div class="k">Sync across devices</div><div class="t">Sign in to save your progress</div>
-        <div class="s">Enter your email and we’ll send a 6-digit code — no password to create or remember.
-          Your flashcards, study plan, and reading progress will then follow you to any device.</div></div></div>
+        <div class="s">Enter your email and we’ll send a one-tap sign-in link — no password to create or
+          remember. Your flashcards, study plan, and reading progress will then follow you to any device.</div></div></div>
       <input id="acct-email" class="vsearch" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
-      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSendCode()">Email me a code</button></div>
+      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSendLink()">Email me a sign-in link</button></div>
       <div id="acct-msg" class="hint" style="margin-top:10px"></div>
       <div class="note">Signed out, everything works and stays on this device. Signing in just adds cloud
         backup + sync — you can sign out any time.</div>`;
   }
   $('view').innerHTML = h;
 }
-async function acctSendCode() {
-  const email = (($('acct-email') || {}).value || '').trim();
+async function acctSendLink() {
+  const email = (($('acct-email') || {}).value || _loginEmail || '').trim();
   const msg = $('acct-msg');
   if (!email) { if (msg) msg.textContent = 'Enter your email first.'; return; }
   if (msg) msg.textContent = 'Sending…';
-  const {error} = await _sb.auth.signInWithOtp({email, options: {shouldCreateUser: true}});
-  if (error) { if (msg) msg.textContent = 'Couldn’t send the code: ' + error.message; return; }
-  _loginEmail = email; _codeSent = true; accountSection();
-}
-async function acctVerify() {
-  const token = (($('acct-code') || {}).value || '').trim();
-  const msg = $('acct-msg');
-  if (!token) { if (msg) msg.textContent = 'Enter the 6-digit code.'; return; }
-  if (msg) msg.textContent = 'Checking…';
-  const {error} = await _sb.auth.verifyOtp({email: _loginEmail, token, type: 'email'});
-  if (error) { if (msg) msg.textContent = 'That code didn’t work: ' + error.message; return; }
-  _codeSent = false;                                 // onAuthStateChange → onAuth → pullMerge + re-render
+  // Works with Supabase's DEFAULT email (a magic link) — no custom SMTP or template edit needed.
+  const {error} = await _sb.auth.signInWithOtp({email,
+    options: {shouldCreateUser: true, emailRedirectTo: location.origin + location.pathname}});
+  if (error) { if (msg) msg.textContent = 'Couldn’t send the link: ' + error.message; return; }
+  _loginEmail = email; _linkSent = true; accountSection();
 }
 async function acctSignOut() { try { await _sb.auth.signOut(); } catch (e) {} _user = null; accountSection(); }
 async function acctSyncNow() { await pushProgress(); await pullMerge();
