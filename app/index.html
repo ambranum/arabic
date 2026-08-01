@@ -634,6 +634,8 @@
 <script src="data/vocab_audio.js"></script>
 <script src="data/curriculum.js"></script>
 <script src="data/grammar.js"></script>
+<script src="vendor/supabase.js"></script>
+<script src="data/supaconfig.js"></script>
 <script>
 // ---------- persistence: the memorization deck ----------
 // localStorage, on this device, no server. Each word you "don't know" becomes a CARD keyed
@@ -871,6 +873,7 @@ const ICON = {
   plan:    '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M8.5 14.5l2 2 4-4.5"/>',
   ext:     '<path d="M14 4h6v6"/><path d="M20 4l-8 8"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>',
   books:   '<path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 1 2-2h12"/>',
+  user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
 };
 const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
   stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[n]}</svg>`;
@@ -883,6 +886,7 @@ const SECTIONS = [
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
   {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
+  {route: 'account', icon: 'user',    label: 'Account',         ready: true},
 ];
 
 // Short-story reading levels, in order. label shown on tiles; blurb sets expectations.
@@ -929,6 +933,7 @@ function route() {
     if (sec.route === 'grammar') return grammarSection(id);
     if (sec.route === 'stories') return storiesSection(id);
     if (sec.route === 'books')   return booksSection(id, arg);
+    if (sec.route === 'account') return accountSection();
     return emptySection(sec); }
   renderNav('home');
   home();
@@ -996,6 +1001,7 @@ function home(){
       : sec.route === 'plan' ? (planCfg() ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name) : 'Build your study plan')
       : sec.route === 'grammar' ? GRAM.length + ' spoken structures'
       : sec.route === 'books' ? (booksList().length ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read' : 'Full graded readers')
+      : sec.route === 'account' ? (_user ? esc(_user.email) : 'Sign in to sync your progress')
       : 'Coming soon';
     return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
       <div class="tile-t">${esc(sec.label)}</div>
@@ -2459,6 +2465,177 @@ $('view').addEventListener('input', e => {
   const sk = e.target.closest('.player .seek');
   if (sk) seekTo(sk.closest('.player'), parseFloat(sk.value));
 });
+
+// ---------- accounts & cloud sync (Supabase) ----------
+// All progress lives under the alp.* localStorage prefix. Signed in, we mirror that blob to a
+// per-user row in Supabase (protected by row-level security) and keep devices in step. Signed out
+// or offline, the app is exactly as before — everything stays local. First sign-in on a device MERGES
+// local + cloud (union of cards/decks/read-stories/plan-log) so nothing is lost when two devices meet.
+const _sb = (window.SUPA && window.supabase)
+  ? window.supabase.createClient(window.SUPA.url, window.SUPA.anon,
+      {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: false}})
+  : null;
+let _user = null, _syncing = false, _applyingRemote = false, _syncTimer = null;
+let _loginEmail = '', _codeSent = false;
+const SYNC_AT = 'alp.sync.at';
+
+function collectProgress() {
+  const o = {};
+  for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i);
+    if (k && k.startsWith('alp.') && k !== SYNC_AT) o[k] = localStorage.getItem(k); }
+  return o;
+}
+function applyProgress(o) {
+  _applyingRemote = true;
+  try {
+    const kill = []; for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i);
+      if (k && k.startsWith('alp.') && k !== SYNC_AT) kill.push(k); }
+    kill.forEach(k => localStorage.removeItem(k));
+    for (const k in o) localStorage.setItem(k, o[k]);
+  } finally { _applyingRemote = false; }
+  reloadState();
+}
+// re-read the in-memory structures after localStorage changed underneath us, then re-render
+function reloadState() {
+  try { marked = new Map(JSON.parse(localStorage.getItem(KEY) || 'null') || []); } catch (e) { marked = new Map(); }
+  try { decks = JSON.parse(localStorage.getItem(DKEY) || 'null') || [{id: 'default', name: 'My words', created: now()}]; } catch (e) {}
+  if (!decks || !decks.length) decks = [{id: 'default', name: 'My words', created: now()}];
+  SPEED = parseFloat(localStorage.getItem(SKEY)) || 1;
+  count(); route();
+}
+const localChangedAt = () => +(localStorage.getItem(SYNC_AT) || 0);
+function markChanged() { try { localStorage.setItem(SYNC_AT, String(now())); } catch (e) {} }
+
+// hook every alp.* write: a change bumps the local timestamp and (when signed in) schedules a push
+const _origSet = localStorage.setItem.bind(localStorage);
+localStorage.setItem = function (k, v) {
+  _origSet(k, v);
+  if (!_applyingRemote && typeof k === 'string' && k.startsWith('alp.') && k !== SYNC_AT) {
+    _origSet(SYNC_AT, String(now()));
+    if (_user) scheduleSync();
+  }
+};
+function scheduleSync() { if (_syncTimer) clearTimeout(_syncTimer); _syncTimer = setTimeout(pushProgress, 1500); }
+
+// ---- merge: never lose collection progress when two devices first meet ----
+const _pj = s => { try { return JSON.parse(s); } catch (e) { return null; } };
+function mergeCards(a, b) {                         // arrays of [lemma, card]; keep the more-reviewed
+  const m = new Map(); (a || []).forEach(([k, c]) => m.set(k, c));
+  (b || []).forEach(([k, c]) => { const e = m.get(k); if (!e || (c.reps || 0) > (e.reps || 0)) m.set(k, c); });
+  return [...m];
+}
+function unionById(a, b) { const m = new Map(); (a || []).forEach(x => m.set(x.id, x));
+  (b || []).forEach(x => { if (!m.has(x.id)) m.set(x.id, x); }); return [...m.values()]; }
+function unionArr(a, b) { return [...new Set([...(a || []), ...(b || [])])]; }
+function mergeLog(a, b) { const out = {...(b || {})};
+  for (const d in (a || {})) { out[d] = out[d] || {done: {}}; out[d].done = {...(out[d].done || {}), ...((a[d] || {}).done || {})}; }
+  return out; }
+function mergeExtra(a, b) { const out = {...(b || {})}; for (const d in (a || {})) out[d] = Math.max(out[d] || 0, a[d] || 0); return out; }
+function mergeProgress(loc, rem, cloudNewer) {
+  const scalarSrc = cloudNewer ? rem : loc;        // config/scalars follow the more recently used device
+  const out = {}; const keys = new Set([...Object.keys(loc || {}), ...Object.keys(rem || {})]);
+  keys.forEach(k => { out[k] = (scalarSrc && scalarSrc[k] != null) ? scalarSrc[k] : (loc[k] != null ? loc[k] : rem[k]); });
+  const both = (k, fn) => { if (loc[k] || rem[k]) out[k] = JSON.stringify(fn(_pj(loc[k]), _pj(rem[k]))); };
+  both('alp.cards.v1', mergeCards);
+  both('alp.decks.v1', unionById);
+  both('alp.plan.seen.v1', unionArr);
+  both('alp.plan.log.v1', mergeLog);
+  both('alp.plan.extra.v1', mergeExtra);
+  return out;
+}
+
+async function pushProgress() {
+  if (!_sb || !_user) return;
+  _syncing = true; renderAccountBadge();
+  try { await _sb.from('progress').upsert({user_id: _user.id, data: collectProgress(), updated_at: new Date().toISOString()}); }
+  catch (e) {}
+  _syncing = false; renderAccountBadge();
+}
+async function pullMerge() {
+  if (!_sb || !_user) return;
+  _syncing = true; renderAccountBadge();
+  try {
+    const {data} = await _sb.from('progress').select('data, updated_at').eq('user_id', _user.id).maybeSingle();
+    const local = collectProgress();
+    if (data && data.data) {
+      const merged = mergeProgress(local, data.data, +new Date(data.updated_at) >= localChangedAt());
+      applyProgress(merged); markChanged();
+      await pushProgress();                          // push the merged result so both sides converge
+    } else { await pushProgress(); }                 // first device seeds the cloud
+  } catch (e) {}
+  _syncing = false; renderAccountBadge();
+}
+
+async function onAuth(session) {
+  _user = session ? session.user : null;
+  renderAccountBadge();
+  if (_user) await pullMerge();
+}
+if (_sb) {
+  _sb.auth.getSession().then(({data}) => onAuth(data.session));
+  _sb.auth.onAuthStateChange((_e, session) => onAuth(session));
+}
+
+// ---- account section (email → 6-digit code → signed in) ----
+function renderAccountBadge() { if ((location.hash || '').startsWith('#/account')) accountSection(); }
+
+function accountSection() {
+  $('back').hidden = false;
+  $('title').textContent = 'Account';
+  if (!_sb) { $('view').innerHTML = `<div class="empty"><div class="empty-t">Sync isn’t set up</div>
+      <p>Cloud sync isn’t configured for this build.</p></div>`; return; }
+  let h;
+  if (_user) {
+    h = `<div class="hero"><div class="big">
+        <div class="k">Signed in</div><div class="t">${esc(_user.email)}</div>
+        <div class="s" id="acct-sync">${_syncing ? 'Syncing…' : '✓ Your progress is synced across your devices.'}</div>
+      </div></div>
+      <div class="ctl"><button class="tog go" onclick="acctSyncNow()">Sync now</button>
+        <button class="tog" onclick="acctSignOut()">Sign out</button></div>
+      <div class="note">Sign in with the same email on your phone and your computer, and your flashcards,
+        study plan, and reading progress stay in step. Signed out, the app still works — it just keeps
+        everything on this one device.</div>`;
+  } else if (_codeSent) {
+    h = `<p class="hint">We emailed a 6-digit code to <b>${esc(_loginEmail)}</b>. Enter it here to sign in.</p>
+      <input id="acct-code" class="vsearch" inputmode="numeric" autocomplete="one-time-code" placeholder="6-digit code">
+      <div class="ctl" style="margin-top:10px">
+        <button class="tog go" onclick="acctVerify()">Sign in</button>
+        <button class="tog" onclick="_codeSent=false;accountSection()">Use a different email</button></div>
+      <div id="acct-msg" class="hint" style="margin-top:10px"></div>`;
+  } else {
+    h = `<div class="hero"><div class="big">
+        <div class="k">Sync across devices</div><div class="t">Sign in to save your progress</div>
+        <div class="s">Enter your email and we’ll send a 6-digit code — no password to create or remember.
+          Your flashcards, study plan, and reading progress will then follow you to any device.</div></div></div>
+      <input id="acct-email" class="vsearch" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
+      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSendCode()">Email me a code</button></div>
+      <div id="acct-msg" class="hint" style="margin-top:10px"></div>
+      <div class="note">Signed out, everything works and stays on this device. Signing in just adds cloud
+        backup + sync — you can sign out any time.</div>`;
+  }
+  $('view').innerHTML = h;
+}
+async function acctSendCode() {
+  const email = (($('acct-email') || {}).value || '').trim();
+  const msg = $('acct-msg');
+  if (!email) { if (msg) msg.textContent = 'Enter your email first.'; return; }
+  if (msg) msg.textContent = 'Sending…';
+  const {error} = await _sb.auth.signInWithOtp({email, options: {shouldCreateUser: true}});
+  if (error) { if (msg) msg.textContent = 'Couldn’t send the code: ' + error.message; return; }
+  _loginEmail = email; _codeSent = true; accountSection();
+}
+async function acctVerify() {
+  const token = (($('acct-code') || {}).value || '').trim();
+  const msg = $('acct-msg');
+  if (!token) { if (msg) msg.textContent = 'Enter the 6-digit code.'; return; }
+  if (msg) msg.textContent = 'Checking…';
+  const {error} = await _sb.auth.verifyOtp({email: _loginEmail, token, type: 'email'});
+  if (error) { if (msg) msg.textContent = 'That code didn’t work: ' + error.message; return; }
+  _codeSent = false;                                 // onAuthStateChange → onAuth → pullMerge + re-render
+}
+async function acctSignOut() { try { await _sb.auth.signOut(); } catch (e) {} _user = null; accountSection(); }
+async function acctSyncNow() { await pushProgress(); await pullMerge();
+  const s = $('acct-sync'); if (s) s.textContent = '✓ Synced just now.'; }
 
 count();
 route();
