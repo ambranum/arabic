@@ -101,6 +101,12 @@ def main():
 
     SUB = os.environ.get('PAL_SUBDIALECT', 'urban')
     src = json.load(open(a.source, encoding='utf-8'))
+    # Some files under texts/ aren't sentence-texts (e.g. the reaction DRILL uses `items`, not
+    # `sentences`, and gets its audio from car_session.py). Skip those cleanly so a batch loop
+    # over texts/*.json doesn't crash on them.
+    if 'sentences' not in src:
+        print(f"skip {os.path.basename(a.source)}: not a sentence-text (no 'sentences' key)")
+        return
     lex, res = Lexicon(), load_resolutions()
     outdir = os.path.join(ROOT, 'build', src['id'])
     os.makedirs(os.path.join(outdir, 'audio'), exist_ok=True)
