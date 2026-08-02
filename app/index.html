@@ -1463,6 +1463,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
   chosen.sort((a, b) => (CUR.activities[a.act].order) - (CUR.activities[b.act].order));
   const tasks = []; let used = 0, k = 0;
   const readOrd = {};                                        // per-pool sequential index for READING
+  const seenKeys = new Set();                                // avoid duplicate in-app items in one day
   for (const sp of chosen) {
     const remaining = totalMin - used;
     if (remaining < 5) break;
@@ -1471,8 +1472,13 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
       if (sp.act === 'read') { ord = readOrd[sp.pool] || 0; readOrd[sp.pool] = ord + 1; }
       else ord = 0;                                          // pair with the day's current (first) story
     }
-    tasks.push(resolveTask(cfg, sp, ord, k++, Math.min(sp.min, remaining), carAvail));
-    used += Math.min(sp.min, remaining);
+    const t = resolveTask(cfg, sp, ord, k, Math.min(sp.min, remaining), carAvail);
+    // Never schedule the same in-app content (or the same open-ended task like "talk about your day")
+    // twice in one day. External courses/podcasts MAY repeat — that's just "do another lesson".
+    const key = t.url ? null : (t.act + '|' + (t.link || t.title || ''));
+    if (key && seenKeys.has(key)) continue;
+    if (key) seenKeys.add(key);
+    k++; tasks.push(t); used += t.minutes;
   }
   const banked = totalMin - used >= 20 ? totalMin - used : 0;             // unfilled minutes at this phase
   return {rest: false, tasks, phase: ph, totalMin, usedMin: used, banked, phaseIndex, spoken: tasks.some(t => t.speak)};
