@@ -496,6 +496,26 @@
   .gex-src{font:inherit; font-size:11.5px; color:var(--verdigris); background:none; border:none;
     padding:6px 0 0; cursor:pointer; text-align:right}
   .gex-src:hover{text-decoration:underline}
+  /* ---- Translate ---- */
+  .tr-entry{border:1px solid var(--rule); border-radius:9px; padding:13px 14px; margin-bottom:12px}
+  .tr-head{display:flex; align-items:baseline; gap:10px}
+  .tr-word{font-family:var(--arabic); direction:rtl; font-size:24px; line-height:1.4}
+  .tr-head .say{align-self:center}
+  .tr-gloss{margin-left:auto; font-family:var(--serif); font-size:15px; color:var(--ink); text-align:right}
+  .tr-root{font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:4px}
+  .tr-exs{margin-top:12px; padding-top:10px; border-top:1px solid var(--rule)}
+  .tr-exs-h{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:8px}
+  .tr-ex{cursor:pointer; padding:8px 10px; border-radius:7px; margin-bottom:5px; border:1px solid transparent}
+  .tr-ex:hover{background:var(--paper-2); border-color:var(--rule)}
+  .tr-ex-ar{font-family:var(--arabic); direction:rtl; font-size:19px; line-height:1.75}
+  .tr-ex-ar .tr-hl{color:var(--rubric); font-weight:700}
+  .tr-ex-en{font-size:12.5px; color:var(--muted); line-height:1.5; margin-top:2px}
+  .tr-ex-src{color:var(--verdigris)}
+  .tr-wbw{display:grid; gap:6px; margin-bottom:6px}
+  .tr-tok{display:flex; align-items:baseline; gap:12px; border:1px solid var(--rule); border-radius:7px; padding:9px 12px}
+  .tr-tok-ar{font-family:var(--arabic); direction:rtl; font-size:20px; min-width:90px}
+  .tr-tok-gl{font-size:13.5px; color:var(--ink-soft)}
+  .tr-tok-gl i{color:var(--muted)}
   /* ---- Speaking practice ---- */
   .sk-go{border-color:var(--verdigris); color:var(--verdigris)}
   .sk-hd{margin:2px 0 14px}
@@ -874,12 +894,14 @@ const ICON = {
   ext:     '<path d="M14 4h6v6"/><path d="M20 4l-8 8"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>',
   books:   '<path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 1 2-2h12"/>',
   user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
+  translate: '<path d="M4 5h9M8.5 3v2c0 4-2.2 7-5.5 8.5"/><path d="M5 10c0 2 2.2 4 5.5 5"/><path d="M12.5 20l4.5-9 4.5 9M14.5 17h5"/>',
 };
 const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
   stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[n]}</svg>`;
 
 const SECTIONS = [
   {route: 'plan',    icon: 'plan',    label: 'My Plan',         ready: true},
+  {route: 'translate', icon: 'translate', label: 'Translate',   ready: true},
   {route: 'news',    icon: 'news',    label: "Today's News",    ready: true},
   {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',      ready: true},
   {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
@@ -927,6 +949,7 @@ function route() {
   const sec = SECTIONS.find(x => x.route === kind);
   if (sec) { renderNav(sec.route);
     if (sec.route === 'plan')    return planSection(id, arg);
+    if (sec.route === 'translate') return translateSection();
     if (sec.route === 'news')    return newsSection();
     if (sec.route === 'vocab')   return vocabSection(id, arg);
     if (sec.route === 'verbs')   return verbsSection(id);
@@ -1002,6 +1025,7 @@ function home(){
       : sec.route === 'grammar' ? GRAM.length + ' spoken structures'
       : sec.route === 'books' ? (booksList().length ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read' : 'Full graded readers')
       : sec.route === 'account' ? (_user ? esc(_user.email) : 'Sign in to sync your progress')
+      : sec.route === 'translate' ? 'Words & phrases in context'
       : 'Coming soon';
     return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
       <div class="tile-t">${esc(sec.label)}</div>
@@ -1794,6 +1818,107 @@ function planCalendar() {
      <button class="tog" onclick="location.hash='/plan/new'">Adjust my time</button></div>`;
   $('view').innerHTML = h;
 }
+
+// ---------- Translate (Reverso-Context style: dictionary + real in-context examples) ----------
+// Fully offline, from the app's own looked-up data: an index of every word that appears in the
+// corpus (stories / news / book) and the bilingual sentences it lives in. No machine translation,
+// no external calls — so every line shown is real Palestinian dialect with a source you can open.
+function arNorm(s) { return (s || '').replace(/[ً-ْٰـ]/g, '')
+  .replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').trim(); }
+const glossWords = g => String(g || '').toLowerCase().replace(/_/g, ' ').split(/[;·,()\/\s]+/).filter(Boolean);
+
+let _tridx = null, _trQ = '', _trT = null;
+function trIndex() {
+  if (_tridx) return _tridx;
+  const byKey = new Map();
+  LIB.texts.forEach(t => (t.sentences || []).forEach((s, si) => s.words.forEach((w, wi) => {
+    if (!w.lemma) return;
+    const key = arNorm(w.lemma); if (!key) return;
+    let e = byKey.get(key);
+    if (!e) { e = {key, raw: w.lemma, lemma: w.vocalized || w.form || w.lemma, gloss: w.gloss || '',
+                   root: w.root || '', caphi: w.caphi_urban || w.caphi || '', hits: [], surf: new Set()};
+      byKey.set(key, e); }
+    if (!e.gloss && w.gloss) e.gloss = w.gloss;
+    e.surf.add(arNorm(w.surface));
+    if (e.hits.length < 80) e.hits.push({tid: t.id, si, wi});
+  })));
+  _tridx = {all: [...byKey.values()], byKey};
+  return _tridx;
+}
+const trDedupe = list => { const seen = new Set(), out = []; list.forEach(e => { if (!seen.has(e.key)) { seen.add(e.key); out.push(e); } }); return out; };
+function trLookupAr(idx, tk) { const k = arNorm(tk); return idx.byKey.get(k) || idx.all.find(e => e.surf.has(k)) || null; }
+function trMatchAr(idx, q) { const k = arNorm(q);
+  const exact = idx.all.filter(e => e.key === k || e.surf.has(k));
+  return (exact.length ? exact : idx.all.filter(e => e.key.includes(k) || [...e.surf].some(s => s.includes(k)))).slice(0, 12); }
+function trSearch(q) {
+  q = (q || '').trim(); if (!q) return {type: 'empty'};
+  const idx = trIndex();
+  if (/[؀-ۿ]/.test(q)) {
+    const toks = q.split(/\s+/).filter(Boolean);
+    if (toks.length > 1) return {type: 'ar-sentence', q, toks: toks.map(tk => ({tk, e: trLookupAr(idx, tk)}))};
+    return {type: 'ar-word', q, entries: trMatchAr(idx, q)};
+  }
+  const ql = q.toLowerCase();
+  const score = e => { const g = (e.gloss || '').toLowerCase().replace(/_/g, ' '); const gw = glossWords(e.gloss);
+    if (g === ql) return 0; if (gw[0] === ql) return 1; if (gw.includes(ql)) return 2; if (g.includes(ql)) return 3; return 9; };
+  const entries = trDedupe(idx.all.filter(e => score(e) < 9)
+    .sort((a, b) => score(a) - score(b) || (a.gloss || '').length - (b.gloss || '').length)).slice(0, 15);
+  return {type: 'en', q, entries};
+}
+
+function translateSection() {
+  $('back').hidden = false; $('title').textContent = 'Translate';
+  $('view').innerHTML = `
+    <p class="hint">Type a word or phrase — Arabic <b>or</b> English — to see what it means and, Reverso-style,
+      real sentences from the app’s stories, news and book where it’s actually used. Everything is from the
+      lexicon and the app’s own texts, so it’s true Palestinian dialect with a source for every line.</p>
+    <input id="tr-q" class="vsearch" type="search" inputmode="search" autocomplete="off"
+      placeholder="بيت · راح · house · tired…" value="${esc(_trQ)}" oninput="trOnInput(this.value)">
+    <div id="tr-out"></div>`;
+  const inp = $('tr-q'); if (inp) { inp.focus(); if (_trQ) trRender(_trQ); }
+}
+function trOnInput(v) { _trQ = v; if (_trT) clearTimeout(_trT); _trT = setTimeout(() => trRender(v), 250); }
+function trRender(v) {
+  const out = $('tr-out'); if (!out) return;
+  const r = trSearch(v);
+  if (r.type === 'empty') { out.innerHTML = ''; return; }
+  if (r.type === 'ar-sentence') { out.innerHTML = trSentenceHTML(r); return; }
+  out.innerHTML = r.entries.length ? r.entries.map(trEntryHTML).join('') : trNotFound(v);
+}
+function trEntryHTML(e) {
+  const ex = e.hits.slice(0, 6).map(trExHTML).filter(Boolean).join('');
+  return `<div class="tr-entry">
+    <div class="tr-head">
+      <span class="tr-word" dir="rtl">${esc(e.lemma)}</span>
+      <button class="say" onclick="playWord({lemma:'${cssq(e.raw)}',vocalized:'${cssq(e.lemma)}',caphi:'${cssq(e.caphi)}'})" aria-label="Pronounce">${svg('spk')}</button>
+      <span class="tr-gloss">${esc(pretty(e.gloss) || '—')}</span>
+    </div>
+    ${e.root ? `<div class="tr-root">root ${esc((e.root || '').replace(/\./g, ' · '))}${e.caphi ? ' &nbsp;·&nbsp; ' + esc(e.caphi) : ''}</div>` : ''}
+    ${ex ? `<div class="tr-exs"><div class="tr-exs-h">In context</div>${ex}</div>` : ''}
+  </div>`;
+}
+function trExHTML(hit) {
+  const t = LIB.texts.find(x => x.id === hit.tid); if (!t) return '';
+  const s = t.sentences[hit.si]; if (!s) return '';
+  const ar = s.words.map((w, i) => `<span class="${i === hit.wi ? 'tr-hl' : ''}">${esc(w.vocalized || w.surface)}</span>`).join(' ');
+  return `<div class="tr-ex" onclick="location.hash='/text/${esc(hit.tid)}'">
+    <div class="tr-ex-ar" dir="rtl">${ar}</div>
+    <div class="tr-ex-en">${esc(s.en)} <span class="tr-ex-src">— ${esc((t.title && t.title.en) || t.id)}</span></div></div>`;
+}
+function trSentenceHTML(r) {
+  let h = `<div class="tr-exs-h">Word by word</div><div class="tr-wbw">`;
+  h += r.toks.map(({tk, e}) => `<div class="tr-tok">
+      <span class="tr-tok-ar" dir="rtl">${esc(tk)}</span>
+      <span class="tr-tok-gl">${e ? esc(pretty(e.gloss) || '—') : '<i>not in the app’s words</i>'}</span></div>`).join('');
+  h += `</div>`;
+  const best = r.toks.filter(x => x.e && x.tk.length >= 3).sort((a, b) => b.tk.length - a.tk.length)[0];
+  if (best) { const ex = best.e.hits.slice(0, 5).map(trExHTML).filter(Boolean).join('');
+    if (ex) h += `<div class="tr-exs"><div class="tr-exs-h">Sentences using “${esc(best.tk)}”</div>${ex}</div>`; }
+  return h;
+}
+function trNotFound(v) { return `<div class="empty"><div class="empty-t">No match yet</div>
+  <p>“${esc(v)}” isn’t among the words in the app’s texts and lexicon-backed vocabulary. Try a simpler or more
+  common form of the word — the library grows as more stories and books are added.</p></div>`; }
 
 // ---------- Grammar lessons ----------
 // Spoken-Palestinian structures. Explanations + the closed-class paradigm tables are
