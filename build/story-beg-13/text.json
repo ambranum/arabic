@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "beginner",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "الساعة تنتين بنتغدى.",
    "en": "At two o'clock we have lunch.",
+   "p": null,
    "words": [
     {
      "surface": "الساعة",
@@ -116,11 +120,12 @@
      "vocalized_from": "derived:verb"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
    "ar": "اليوم إمي طبخت ملوخية ورز.",
    "en": "Today my mom cooked mulukhiyah and rice.",
+   "p": null,
    "words": [
     {
      "surface": "اليوم",
@@ -241,11 +246,12 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
    "ar": "كلنا بنقعد حول الطاولة.",
    "en": "We all sit around the table.",
+   "p": null,
    "words": [
     {
      "surface": "كلنا",
@@ -378,11 +384,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
    "ar": "الأكل بيتهني لما نكون سوا.",
    "en": "The food is more enjoyable when we're together.",
+   "p": null,
    "words": [
     {
      "surface": "الأكل",
@@ -517,11 +524,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
    "ar": "بعد الغدا، بننام شوي.",
    "en": "After lunch, we nap a little.",
+   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -582,45 +590,13 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "17238",
-       "root": "ش.و.ي",
-       "gloss": "a_little_bit",
-       "analysis": "ADV"
-      },
-      {
-       "id": "17239",
-       "root": "ش.و.ي",
-       "gloss": "grilling;barbecue",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "17244",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "17241",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "17242",
-       "root": "ش.و.ي",
-       "gloss": "grill",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   }
  ]
 }

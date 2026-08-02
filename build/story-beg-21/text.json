@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "beginner",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "كل يوم بركب الباص عالشغل.",
    "en": "Every day I take the bus to work.",
+   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -130,11 +134,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
    "ar": "الباص بيجي الساعة تمنية.",
    "en": "The bus comes at eight o'clock.",
+   "p": null,
    "words": [
     {
      "surface": "الباص",
@@ -239,11 +244,12 @@
      "caphi_urban": "minni"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
    "ar": "بقعد جنب الشباك وأتفرج عالطريق.",
    "en": "I sit by the window and watch the road.",
+   "p": null,
    "words": [
     {
      "surface": "بقعد",
@@ -398,11 +404,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
    "ar": "الناس بالباص كتير بالصبح.",
    "en": "There are many people on the bus in the morning.",
+   "p": null,
    "words": [
     {
      "surface": "الناس",
@@ -469,11 +476,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
    "ar": "بعد نص ساعة، بوصل عالشغل.",
    "en": "After half an hour, I arrive at work.",
+   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -518,45 +526,7 @@
      "analysis": "NOUN:FS",
      "maknuune_id": "15247",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "15247",
-       "root": "س.و.ع",
-       "gloss": "hour;watch",
-       "analysis": "NOUN:FS"
-      },
-      {
-       "id": "15249",
-       "root": "س.و.ع",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "15250",
-       "root": "س.و.ع",
-       "gloss": "The_Day_of_the_Judgment",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "15251",
-       "root": "س.و.ع",
-       "gloss": "then",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "15252",
-       "root": "س.و.ع",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "15253",
-       "root": "س.و.ع",
-       "gloss": "it_is_an_idiomatic_expression_that_means",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "saa3a",
      "vocalized": "سَاعَة",
      "vocalized_from": "lexicon:exact"
@@ -634,7 +604,7 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   }
  ]
 }

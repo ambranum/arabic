@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "قبل ما يوصل الكهربا عالضيعة، كان الناس يستعملوا قناديل.",
    "en": "Before electricity reached the village, people used lanterns.",
+   "p": null,
    "words": [
     {
      "surface": "قبل",
@@ -192,11 +196,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
    "ar": "جدي كان عنده قنديل قديم بيضويله الليل.",
    "en": "My grandfather had an old lantern that lit up his night.",
+   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -387,11 +392,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
    "ar": "كل مسا، كان يشعله ويحطه عالطاولة.",
    "en": "Every evening, he would light it and put it on the table.",
+   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -524,11 +530,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
    "ar": "حواليه، كانت العيلة تجتمع تحكي وتضحك.",
    "en": "Around it, the family would gather to talk and laugh.",
+   "p": null,
    "words": [
     {
      "surface": "حواليه",
@@ -663,11 +670,12 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
    "ar": "جدي كان يحكينا قصص عالضو الخافت.",
    "en": "My grandfather would tell us stories by the dim light.",
+   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -832,11 +840,12 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   },
   {
    "ar": "كنا نسمعه ونحن مشدودين، وظلالنا عالحيط.",
    "en": "We would listen to him, captivated, our shadows on the wall.",
+   "p": null,
    "words": [
     {
      "surface": "كنا",
@@ -1039,11 +1048,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s5.mp3"
+   "audio": null
   },
   {
    "ar": "لما إجت الكهربا، الكل فرح بالضو الجديد.",
    "en": "When electricity came, everyone was happy with the new light.",
+   "p": null,
    "words": [
     {
      "surface": "لما",
@@ -1228,11 +1238,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s6.mp3"
+   "audio": null
   },
   {
    "ar": "بس جدي ضل يحب قنديله القديم.",
    "en": "But my grandfather kept loving his old lantern.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -1403,11 +1414,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s7.mp3"
+   "audio": null
   },
   {
    "ar": "قلتله: يا جدي، الكهربا أحسن وأقوى.",
    "en": "I told him: grandpa, electricity is better and stronger.",
+   "p": null,
    "words": [
     {
      "surface": "قلتله",
@@ -1580,11 +1592,12 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": "audio/s8.mp3"
+   "audio": null
   },
   {
    "ar": "ابتسم وقال: الضو القوي بيوري كل شي.",
    "en": "He smiled and said: strong light shows everything.",
+   "p": null,
    "words": [
     {
      "surface": "ابتسم",
@@ -1626,55 +1639,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "الضو",
@@ -1803,11 +1778,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s9.mp3"
+   "audio": null
   },
   {
    "ar": "قال: بس ضو القنديل بيخلي القلوب تقرب.",
    "en": "He said: but the lantern's light makes hearts draw closer.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -2012,11 +1988,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s10.mp3"
+   "audio": null
   },
   {
    "ar": "ما فهمت حكيه وأنا صغير.",
    "en": "I didn't understand his words when I was young.",
+   "p": null,
    "words": [
     {
      "surface": "ما",
@@ -2213,11 +2190,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s11.mp3"
+   "audio": null
   },
   {
    "ar": "بس هلأ، وكل واحد غارق بتلفونه، فهمت.",
    "en": "But now, with everyone lost in their phone, I understand.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -2406,11 +2384,12 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s12.mp3"
+   "audio": null
   },
   {
    "ar": "لسا محتفظ بقنديل جدي لهلأ.",
    "en": "I still keep my grandfather's lantern to this day.",
+   "p": null,
    "words": [
     {
      "surface": "لسا",
@@ -2539,11 +2518,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s13.mp3"
+   "audio": null
   },
   {
    "ar": "وكل ما أشعله، بترجع تلك الليالي الدافية.",
    "en": "And every time I light it, those warm nights come back.",
+   "p": null,
    "words": [
     {
      "surface": "وكل",
@@ -2786,7 +2766,7 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s14.mp3"
+   "audio": null
   }
  ]
 }

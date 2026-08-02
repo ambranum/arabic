@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "beginner",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "بالليل، البيت بيصير هادي.",
    "en": "At night, the house becomes quiet.",
+   "p": null,
    "words": [
     {
      "surface": "بالليل",
@@ -80,11 +84,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
    "ar": "كل الناس بيناموا بكير.",
    "en": "Everyone sleeps early.",
+   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -151,11 +156,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
    "ar": "بطفي الضو وبفتح الشباك شوي.",
    "en": "I turn off the light and open the window a little.",
+   "p": null,
    "words": [
     {
      "surface": "بطفي",
@@ -306,49 +312,18 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "17238",
-       "root": "ش.و.ي",
-       "gloss": "a_little_bit",
-       "analysis": "ADV"
-      },
-      {
-       "id": "17239",
-       "root": "ش.و.ي",
-       "gloss": "grilling;barbecue",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "17244",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "17241",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "17242",
-       "root": "ش.و.ي",
-       "gloss": "grill",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
    "ar": "الهوا بارد والسما مليانة نجوم.",
    "en": "The air is cool and the sky is full of stars.",
+   "p": null,
    "words": [
     {
      "surface": "الهوا",
@@ -509,11 +484,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
    "ar": "بسكر عيوني وبنام مبسوط.",
    "en": "I close my eyes and sleep happy.",
+   "p": null,
    "words": [
     {
      "surface": "بسكر",
@@ -628,7 +604,7 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   }
  ]
 }

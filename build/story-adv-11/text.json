@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "رجال كان عنده عصفور حلو بقفص ذهبي.",
    "en": "A man had a beautiful bird in a golden cage.",
+   "p": null,
    "words": [
     {
      "surface": "رجال",
@@ -314,11 +318,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
    "ar": "كان يطعمه أحسن أكل ويهتم فيه كتير.",
    "en": "He would feed it the best food and care for it a lot.",
+   "p": null,
    "words": [
     {
      "surface": "كان",
@@ -485,11 +490,12 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
    "ar": "بس العصفور ما كان يغني أبدا.",
    "en": "But the bird never used to sing.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -660,11 +666,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
    "ar": "الرجال حار، ليش عصفوره حزين؟",
    "en": "The man was puzzled, why was his bird sad?",
+   "p": null,
    "words": [
     {
      "surface": "الرجال",
@@ -857,11 +864,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
    "ar": "جاب له قفص أكبر وأحلى، بس ما فرقت.",
    "en": "He got it a bigger and nicer cage, but it made no difference.",
+   "p": null,
    "words": [
     {
      "surface": "جاب",
@@ -1120,11 +1128,12 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   },
   {
    "ar": "مرة، إجاه ضيف حكيم وشاف العصفور.",
    "en": "Once, a wise guest came to him and saw the bird.",
+   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -1307,11 +1316,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s5.mp3"
+   "audio": null
   },
   {
    "ar": "قال: هالعصفور ما بيغني لأنه مش حر.",
    "en": "He said: this bird doesn't sing because it isn't free.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -1422,21 +1432,7 @@
      "analysis": "PART_NEG",
      "maknuune_id": "30759",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "30759",
-       "root": "NTWS",
-       "gloss": "not",
-       "analysis": "PART_NEG"
-      },
-      {
-       "id": "30760",
-       "root": "NTWS",
-       "gloss": "not",
-       "analysis": "PART_NEG"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "mish",
      "vocalized": "مِش",
      "vocalized_from": "lexicon:exact"
@@ -1444,39 +1440,26 @@
     {
      "surface": "حر",
      "root": "ح.ر.ر",
-     "lemma": "حُرّ",
-     "form": "حُرّ",
-     "caphi_raw": "7 u r r",
-     "caphi": "7urr",
-     "gloss": "free;open;uncontrained",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "5566",
+     "lemma": "حَرّ",
+     "form": "حَرّ",
+     "caphi_raw": "7 a r r",
+     "caphi": "7arr",
+     "gloss": "hot",
+     "analysis": "ADJ/NOUN",
+     "maknuune_id": "5568",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "5566",
-       "root": "ح.ر.ر",
-       "gloss": "free;open;uncontrained",
-       "analysis": "ADJ:MS"
-      },
-      {
-       "id": "5568",
-       "root": "ح.ر.ر",
-       "gloss": "hot",
-       "analysis": "ADJ/NOUN"
-      }
-     ],
-     "caphi_urban": "7urr",
-     "vocalized": "حُرّ",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "7arr",
+     "vocalized": "حَرّ",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s6.mp3"
+   "audio": null
   },
   {
    "ar": "الرجال قال: بس أنا بحبه وبهتم فيه.",
    "en": "The man said: but I love it and I care for it.",
+   "p": null,
    "words": [
     {
      "surface": "الرجال",
@@ -1611,11 +1594,12 @@
      "caphi_urban": "fi"
     }
    ],
-   "audio": "audio/s7.mp3"
+   "audio": null
   },
   {
    "ar": "الحكيم رد: المحبة الحقيقية إنك تطلق اللي بتحبه.",
    "en": "The wise man replied: true love is to release the one you love.",
+   "p": null,
    "words": [
     {
      "surface": "الحكيم",
@@ -1824,11 +1808,12 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s8.mp3"
+   "audio": null
   },
   {
    "ar": "الرجال فكر طويل بهالحكي.",
    "en": "The man thought for a long time about these words.",
+   "p": null,
    "words": [
     {
      "surface": "الرجال",
@@ -1965,11 +1950,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s9.mp3"
+   "audio": null
   },
   {
    "ar": "الصبح التاني، حمل القفص وطلع عالحديقة.",
    "en": "The next morning, he carried the cage and went out to the garden.",
+   "p": null,
    "words": [
     {
      "surface": "الصبح",
@@ -2172,11 +2158,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s10.mp3"
+   "audio": null
   },
   {
    "ar": "فتح باب القفص وقال: روح، إنت حر.",
    "en": "He opened the cage door and said: go, you are free.",
+   "p": null,
    "words": [
     {
      "surface": "فتح",
@@ -2282,55 +2269,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "روح",
@@ -2431,39 +2380,26 @@
     {
      "surface": "حر",
      "root": "ح.ر.ر",
-     "lemma": "حُرّ",
-     "form": "حُرّ",
-     "caphi_raw": "7 u r r",
-     "caphi": "7urr",
-     "gloss": "free;open;uncontrained",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "5566",
+     "lemma": "حَرّ",
+     "form": "حَرّ",
+     "caphi_raw": "7 a r r",
+     "caphi": "7arr",
+     "gloss": "hot",
+     "analysis": "ADJ/NOUN",
+     "maknuune_id": "5568",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "5566",
-       "root": "ح.ر.ر",
-       "gloss": "free;open;uncontrained",
-       "analysis": "ADJ:MS"
-      },
-      {
-       "id": "5568",
-       "root": "ح.ر.ر",
-       "gloss": "hot",
-       "analysis": "ADJ/NOUN"
-      }
-     ],
-     "caphi_urban": "7urr",
-     "vocalized": "حُرّ",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "7arr",
+     "vocalized": "حَرّ",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s11.mp3"
+   "audio": null
   },
   {
    "ar": "العصفور طار عالشجرة القريبة.",
    "en": "The bird flew to the nearby tree.",
+   "p": null,
    "words": [
     {
      "surface": "العصفور",
@@ -2646,11 +2582,12 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s12.mp3"
+   "audio": null
   },
   {
    "ar": "وقف هناك، وبلش يغني أحلى غنا.",
    "en": "It stood there, and started to sing the most beautiful song.",
+   "p": null,
    "words": [
     {
      "surface": "وقف",
@@ -2797,11 +2734,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s13.mp3"
+   "audio": null
   },
   {
    "ar": "الرجال حس بفرح ما حسه من قبل.",
    "en": "The man felt a joy he had never felt before.",
+   "p": null,
    "words": [
     {
      "surface": "الرجال",
@@ -3014,11 +2952,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s14.mp3"
+   "audio": null
   },
   {
    "ar": "فهم يومها إنه الحرية أغلى من الذهب.",
    "en": "That day he understood that freedom is more precious than gold.",
+   "p": null,
    "words": [
     {
      "surface": "فهم",
@@ -3255,7 +3194,7 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s15.mp3"
+   "audio": null
   }
  ]
 }

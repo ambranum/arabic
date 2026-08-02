@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "زمان، كان في رجال طيب اسمه أبو حسن.",
    "en": "Long ago, there was a kind man named Abu Hasan.",
+   "p": null,
    "words": [
     {
      "surface": "زمان",
@@ -286,11 +290,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
    "ar": "مرة، ضاق حاله، ودان مصاري من جاره.",
    "en": "Once, times got hard, and he borrowed money from his neighbor.",
+   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -473,11 +478,12 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
    "ar": "الجار عطاه بدون تردد، وقال: خذ وقتك.",
    "en": "The neighbor gave it without hesitation, and said: take your time.",
+   "p": null,
    "words": [
     {
      "surface": "الجار",
@@ -585,55 +591,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "خذ",
@@ -720,11 +688,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
    "ar": "أبو حسن اشتغل ليل نهار عشان يرد الدين.",
    "en": "Abu Hasan worked day and night to repay the debt.",
+   "p": null,
    "words": [
     {
      "surface": "أبو",
@@ -1023,11 +992,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
    "ar": "كل ما يجمع شوي، كان يصير في حاجة تصرفه.",
    "en": "Every time he saved a little, some need would spend it.",
+   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -1102,39 +1072,7 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "17238",
-       "root": "ش.و.ي",
-       "gloss": "a_little_bit",
-       "analysis": "ADV"
-      },
-      {
-       "id": "17239",
-       "root": "ش.و.ي",
-       "gloss": "grilling;barbecue",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "17244",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "17241",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "17242",
-       "root": "ش.و.ي",
-       "gloss": "grill",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
@@ -1258,11 +1196,12 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   },
   {
    "ar": "بس هو ما نسي دينه أبدا.",
    "en": "But he never forgot his debt.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -1451,11 +1390,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s5.mp3"
+   "audio": null
   },
   {
    "ar": "بعد سنة، جمع المبلغ كامل.",
    "en": "After a year, he gathered the full amount.",
+   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -1596,11 +1536,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s6.mp3"
+   "audio": null
   },
   {
    "ar": "راح لجاره، ومد له المصاري.",
    "en": "He went to his neighbor, and handed him the money.",
+   "p": null,
    "words": [
     {
      "surface": "راح",
@@ -1791,11 +1732,12 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s7.mp3"
+   "audio": null
   },
   {
    "ar": "الجار رفض، وقال: أنا سامحتك من زمان.",
    "en": "The neighbor refused, and said: I forgave you long ago.",
+   "p": null,
    "words": [
     {
      "surface": "الجار",
@@ -1873,55 +1815,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "أنا",
@@ -2012,11 +1916,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s8.mp3"
+   "audio": null
   },
   {
    "ar": "أبو حسن قال: لأ، الدين دين، ولازم يترد.",
    "en": "Abu Hasan said: no, a debt is a debt, and it must be repaid.",
+   "p": null,
    "words": [
     {
      "surface": "أبو",
@@ -2317,11 +2222,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s9.mp3"
+   "audio": null
   },
   {
    "ar": "الجار تأثر من صدقه وأمانته.",
    "en": "The neighbor was moved by his honesty and integrity.",
+   "p": null,
    "words": [
     {
      "surface": "الجار",
@@ -2454,11 +2360,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s10.mp3"
+   "audio": null
   },
   {
    "ar": "أخذ المصاري، بس رجعله نصها هدية.",
    "en": "He took the money, but gave him back half as a gift.",
+   "p": null,
    "words": [
     {
      "surface": "أخذ",
@@ -2645,11 +2552,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s11.mp3"
+   "audio": null
   },
   {
    "ar": "قال: هاي مكافأة على أمانتك.",
    "en": "He said: this is a reward for your integrity.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -2730,11 +2638,12 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": "audio/s12.mp3"
+   "audio": null
   },
   {
    "ar": "من يومها، صاروا أحسن أصحاب.",
    "en": "From that day, they became the best of friends.",
+   "p": null,
    "words": [
     {
      "surface": "من",
@@ -2893,11 +2802,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s13.mp3"
+   "audio": null
   },
   {
    "ar": "والحارة كلها حكت عن أمانة أبو حسن.",
    "en": "And the whole neighborhood spoke of Abu Hasan's integrity.",
+   "p": null,
    "words": [
     {
      "surface": "والحارة",
@@ -3136,7 +3046,7 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s14.mp3"
+   "audio": null
   }
  ]
 }
