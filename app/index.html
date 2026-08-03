@@ -231,6 +231,24 @@
   }
   .wc .hw{font-family:var(--arabic); direction:rtl; font-size:32px; line-height:1.6}
   .wc .ph{font-family:var(--mono); font-size:13px; color:var(--verdigris); margin-top:2px}
+  .wc .wtype{display:inline-block; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    font-weight:700; color:var(--ochre); border:1px solid var(--ochre); border-radius:4px;
+    padding:2px 7px; margin-top:8px}
+  .wcj{border:1px solid var(--rule); border-radius:8px; margin:12px 0 4px; overflow:hidden}
+  .wcj-h{display:flex; justify-content:space-between; align-items:baseline; padding:8px 10px;
+    background:var(--paper-2); font-size:11px; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--muted); font-weight:700}
+  .wcj-h a{color:var(--verdigris); text-transform:none; letter-spacing:0; font-weight:600}
+  .wcj-tbl{padding:4px 8px 8px}
+  .wcj-row{display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr; gap:6px; align-items:center; padding:4px 2px; border-bottom:1px solid var(--rule)}
+  .wcj-row:last-child{border-bottom:none}
+  .wcj-hdr{font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em}
+  .wcj-hdr span{padding:0}
+  .wcj-pr{font-family:var(--arabic); direction:rtl; font-size:15px}
+  .wcj-pr em{display:block; font-family:var(--sans); font-style:normal; font-size:9.5px; color:var(--muted)}
+  .wcj-c{display:flex; flex-direction:column; line-height:1.15}
+  .wcj-ar{font-family:var(--arabic); direction:rtl; font-size:16px}
+  .wcj-ph{font-family:var(--mono); font-size:9.5px; color:var(--verdigris)}
   .wc .gl{font-family:var(--serif); font-size:18px; margin:10px 0 14px; line-height:1.4}
   .wc dl{display:grid; grid-template-columns:auto 1fr; gap:6px 14px; margin:0 0 14px;
          padding-top:12px; border-top:1px solid var(--rule); font-size:13.5px}
@@ -405,6 +423,17 @@
   .pt-h-r{font-family:var(--mono); font-size:11.5px; color:var(--muted)}
   .pdone{border:1px solid var(--verdigris); color:var(--verdigris); background:var(--verdigris-2);
          border-radius:7px; padding:9px 12px; font-size:13px; margin-bottom:12px}
+  /* production exercise */
+  .pex{border:1px solid var(--rule); border-radius:8px; padding:12px 13px; margin-bottom:10px}
+  .pex-q{font-family:var(--serif); font-size:15.5px; line-height:1.4; margin-bottom:9px}
+  .pex-in{width:100%; font:inherit; font-family:var(--arabic); font-size:20px; padding:9px 11px;
+    border:1px solid var(--rule); border-radius:7px; background:var(--paper); color:var(--ink)}
+  .pex-in:focus-visible{outline:2px solid var(--verdigris); outline-offset:1px}
+  .pex-res{margin-top:9px}
+  .pex-v{font-size:12.5px; font-weight:600; margin-bottom:4px}
+  .pex-v.ok{color:var(--verdigris)} .pex-v.close{color:var(--ochre)} .pex-v.no{color:var(--muted)}
+  .pex-ans{font-family:var(--arabic); direction:rtl; font-size:21px; line-height:1.7;
+    padding:8px 11px; background:var(--paper-2); border-radius:7px}
   .ptask{display:flex; gap:11px; border:1px solid var(--rule); border-radius:8px; padding:12px; margin-bottom:9px}
   .ptask.done{opacity:.62; background:var(--paper-2)}
   .ptask.done .pt-title{text-decoration:line-through}
@@ -1497,11 +1526,11 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
       else ord = 0;                                          // pair with the day's current (first) story
     }
     const t = resolveTask(cfg, sp, ord, k, Math.min(sp.min, remaining), carAvail);
-    // Never schedule the same in-app content (or the same open-ended task like "talk about your day")
-    // twice in one day. External courses/podcasts MAY repeat — that's just "do another lesson".
-    const key = t.url ? null : (t.act + '|' + (t.link || t.title || ''));
-    if (key && seenKeys.has(key)) continue;
-    if (key) seenKeys.add(key);
+    // Never schedule the same item twice in one day — same in-app content, same external resource
+    // (e.g. two "Pimsleur" rows), or the same open-ended task ("talk about your day").
+    const key = t.act + '|' + (t.link || t.url || t.title || '');
+    if (seenKeys.has(key)) continue;
+    seenKeys.add(key);
     k++; tasks.push(t); used += t.minutes;
   }
   const banked = totalMin - used >= 20 ? totalMin - used : 0;             // unfilled minutes at this phase
@@ -1709,9 +1738,59 @@ function planToday() {
   const schedReads = day.tasks.filter(t => t.act === 'read' && t.cid).length;
   h += planExtraHTML(cfg, day.phase, date, doneMap, schedReads);
   h += planMoreBtn(date, false);
+  h += planExerciseHTML(day, date);
   h += planFooterCtls();
   $('view').innerHTML = h;
 }
+
+// ---- production exercise: say today's material in Arabic (retrieval practice) ----
+// Pulls English→Arabic pairs from the texts/drills scheduled today, and asks you to produce the
+// Arabic from the English before revealing the answer. Auto-checks leniently (order/diacritics don't matter).
+let _planEx = [];
+function planExerciseItems(day, date) {
+  const seen = new Set(), pool = [];
+  (day.tasks || []).forEach(t => {
+    const tm = (t.link || '').match(/^\/(?:text|speak)\/(.+)$/);
+    if (tm) { const tx = LIB.texts.find(x => x.id === tm[1]);
+      if (tx) (tx.sentences || []).forEach(s => { if (s.en && s.ar && !seen.has(s.ar)) { seen.add(s.ar); pool.push({en: s.en, ar: s.ar}); } }); }
+    const dm = (t.link || '').match(/^\/drill\/(.+)$/);
+    if (dm) { const d = LIB.drills.find(x => x.id === dm[1]);
+      if (d) (d.items || []).forEach(it => { if (it.cue && it.answer && !seen.has(it.answer)) { seen.add(it.answer); pool.push({en: it.cue, ar: it.answer}); } }); }
+  });
+  if (!pool.length) return [];
+  const seed = Math.abs(daysBetween('2020-01-01', date));   // deterministic per day
+  return pool.map((it, i) => [it, (i * 9301 + seed * 49297) % 233280]).sort((a, b) => a[1] - b[1]).slice(0, 5).map(x => x[0]);
+}
+function planExerciseHTML(day, date) {
+  _planEx = planExerciseItems(day, date);
+  if (!_planEx.length) return '';
+  let h = `<div class="sec" style="margin-top:22px">Exercise — say it in Arabic</div>
+    <p class="hint" style="margin-bottom:10px">From today’s material. Producing it from memory (not just
+      rereading) is what makes it stick — try each one before you check.</p>`;
+  h += _planEx.map((it, i) => `<div class="pex">
+      <div class="pex-q">${esc(it.en)}</div>
+      <input class="pex-in" id="pex-in-${i}" dir="rtl" autocomplete="off" placeholder="اكتب بالعربي…"
+        onkeydown="if(event.key==='Enter')planExCheck(${i})">
+      <div class="ctl" style="margin-top:8px">
+        <button class="tog go" onclick="planExCheck(${i})">Check</button>
+        <button class="tog" onclick="planExShow(${i})">Show answer</button></div>
+      <div class="pex-res" id="pex-res-${i}"></div></div>`).join('');
+  return h;
+}
+const _exNorm = s => arNorm(s).replace(/[،.؟!:؛…"«»”“\-—()]/g, '').replace(/\s+/g, ' ').trim();
+function planExCheck(i) {
+  const it = _planEx[i], res = $('pex-res-' + i); if (!it || !res) return;
+  const ans = _exNorm((($('pex-in-' + i) || {}).value) || ''), gold = _exNorm(it.ar);
+  const at = new Set(ans.split(' ').filter(Boolean)), gt = new Set(gold.split(' ').filter(Boolean));
+  const overlap = gt.size ? [...gt].filter(x => at.has(x)).length / gt.size : 0;
+  let cls, verdict;
+  if (ans && (ans === gold || overlap >= 0.85)) { cls = 'ok'; verdict = '✓ Nailed it'; }
+  else if (overlap >= 0.5) { cls = 'close'; verdict = 'Close — compare with the answer'; }
+  else { cls = 'no'; verdict = ans ? 'Not quite — here’s the answer' : 'Here’s the answer'; }
+  res.innerHTML = `<div class="pex-v ${cls}">${verdict}</div><div class="pex-ans" dir="rtl">${esc(it.ar)}</div>`;
+}
+function planExShow(i) { const it = _planEx[i], res = $('pex-res-' + i);
+  if (it && res) res.innerHTML = `<div class="pex-ans" dir="rtl">${esc(it.ar)}</div>`; }
 
 // ---- "study more": extra content on demand (extra time, or an off day) ----
 const PXKEY = 'alp.plan.extra.v1';
@@ -2292,9 +2371,43 @@ function paint() {
 }
 
 // ---------- word card ----------
+// human-readable word type from the Maknuune analysis code (VERB:I → "verb", NOUN:MS → "noun"…)
+const WTYPE = {VERB: 'verb', NOUN: 'noun', ADJ: 'adjective', ADV: 'adverb', PREP: 'preposition',
+  PRON: 'pronoun', PRON_REL: 'relative pronoun', PRON_DEM: 'demonstrative', PRON_INTERR: 'question word',
+  CONJ: 'conjunction', CONJ_SUB: 'conjunction', NOUN_PROP: 'proper noun', NOUN_NUM: 'number',
+  NOUN_QUANT: 'quantifier', ADJ_COMP: 'comparative', PART: 'particle', PART_PROG: 'particle (‑ing marker)',
+  PART_NEG: 'negation', PART_FUT: 'future marker', INTERJ: 'interjection', ABBREV: 'abbreviation'};
+function wordType(analysis) { if (!analysis) return null; const a = String(analysis);
+  return WTYPE[a] || WTYPE[a.split(':')[0]] || a.split(':')[0].toLowerCase().replace(/_/g, ' '); }
+
+// index the conjugating verbs by root, so a tapped verb can show its full table
+const _vbByRoot = (() => { const m = new Map();
+  VB.forEach(v => { if (v.root && v.conj) { if (!m.has(v.root)) m.set(v.root, []); m.get(v.root).push(v); } });
+  return m; })();
+function findVerb(w) {
+  if (!w || !w.root || !String(w.analysis || '').startsWith('VERB')) return null;
+  const cands = _vbByRoot.get(w.root); if (!cands) return null;
+  const form = (String(w.analysis).match(/VERB:([IVXQ]+)/) || [])[1];
+  return cands.find(v => v.form === form) || cands[0] || null;
+}
+function conjPopupHTML(v) {
+  const c = v.conj; if (!c) return '';
+  const cell = k => c[k] ? `<span class="wcj-ar">${esc(c[k].ar)}</span><span class="wcj-ph">${esc(c[k].ph)}</span>` : '—';
+  let h = `<div class="wcj"><div class="wcj-h"><span>Conjugation${WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''} Form ${esc(v.form)}</span>
+      <a href="#/verb/${v._i}" onclick="hideCard()">full page →</a></div>
+    <div class="wcj-tbl"><div class="wcj-row wcj-hdr"><span></span><span>Past</span><span>Pres.</span><span>+بـ</span></div>`;
+  PERSONS.forEach(([key, en, ar]) => { h += `<div class="wcj-row">
+      <span class="wcj-pr">${esc(ar)}<em>${esc(en)}</em></span>
+      <span class="wcj-c">${cell('perf|' + key)}</span><span class="wcj-c">${cell('impf|' + key)}</span><span class="wcj-c">${cell('bimpf|' + key)}</span></div>`; });
+  h += `</div></div>`;
+  return h;
+}
+
 function showCard(si, wi) {
   const w = cur.sentences[si].words[wi];
   const on = w.lemma && marked.has(w.lemma);
+  const wt = wordType(w.analysis);
+  const vb = findVerb(w);
   const CUR = {'curated:function-word':'hand-curated · common function word',
                'curated:proper-noun'  :'hand-curated · name, no lexicon has these',
                'curated:modern-term'  :'hand-curated · too new for the lexicon'};
@@ -2305,13 +2418,15 @@ function showCard(si, wi) {
     `<div class="hw">${esc(w.vocalized || w.surface)}
        ${w.lemma ? `<button class="say" data-a="say" aria-label="Pronounce">${svg('spk')}</button>` : ''}</div>
      <div class="ph">${esc(w.caphi_urban || w.caphi || '')}</div>
+     ${wt ? `<div class="wtype">${esc(wt)}</div>` : ''}
      <div class="gl">${esc(pretty(w.gloss)) || '<span style="color:var(--muted)">no entry</span>'}</div>
+     ${vb ? conjPopupHTML(vb) : ''}
      <dl>
        <dt>As written</dt><dd class="rtl">${esc(w.surface)}</dd>
        <dt>Vowels</dt><dd>${esc(VOCSRC[w.vocalized_from] || w.vocalized_from || '—')}</dd>
        <dt>Dictionary</dt><dd class="rtl">${esc(w.form || '—')}</dd>
        <dt>Root</dt><dd class="rtl">${esc(w.root || '—')}</dd>
-       <dt>Type</dt><dd>${esc(w.analysis || '—')}</dd>
+       <dt>Type</dt><dd>${esc(wt ? wt + (w.analysis && w.analysis.includes(':') ? ' (' + w.analysis + ')' : '') : (w.analysis || '—'))}</dd>
      </dl>
      <div class="src">${src}${on ? ' · in your deck (' + esc(deckName(marked.get(w.lemma).deck)) + ')' : ''}</div>
      <div class="acts">
