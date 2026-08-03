@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "intermediate",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "أول مرة حاولت أطبخ لحالي، كانت إمي مسافرة.",
    "en": "The first time I tried to cook by myself, my mom was traveling.",
+   "p": null,
    "words": [
     {
      "surface": "أول",
@@ -51,35 +55,15 @@
      "surface": "حاولت",
      "root": "ح.و.ل",
      "lemma": "حَاوَل",
-     "form": "حَاوِل",
-     "caphi_raw": "7 aa w i l",
-     "caphi": "7aawil",
+     "form": "حَاوَل",
+     "caphi_raw": "7 aa w a l",
+     "caphi": "7aawal",
      "gloss": "try_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "7357",
+     "analysis": "VERB:P",
+     "maknuune_id": "7373",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "7357",
-       "root": "ح.و.ل",
-       "gloss": "try_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "7373",
-       "root": "ح.و.ل",
-       "gloss": "try_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "7366",
-       "root": "ح.و.ل",
-       "gloss": "try",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "7aawil",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "7aawal",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
@@ -221,6 +205,7 @@
   {
    "ar": "قررت أعمل مجدرة لأنها سهلة.",
    "en": "I decided to make mujaddara because it's easy.",
+   "p": null,
    "words": [
     {
      "surface": "قررت",
@@ -404,6 +389,7 @@
   {
    "ar": "غسلت العدس والرز وقطعت البصل.",
    "en": "I washed the lentils and rice and cut the onions.",
+   "p": null,
    "words": [
     {
      "surface": "غسلت",
@@ -599,6 +585,7 @@
   {
    "ar": "حطيت الزيت عالنار وقليت البصل.",
    "en": "I put oil on the fire and fried the onions.",
+   "p": null,
    "words": [
     {
      "surface": "حطيت",
@@ -788,6 +775,7 @@
   {
    "ar": "بس نسيت أخفف النار، والبصل احترق شوي.",
    "en": "But I forgot to lower the heat, and the onions burned a little.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -958,39 +946,7 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "17238",
-       "root": "ش.و.ي",
-       "gloss": "a_little_bit",
-       "analysis": "ADV"
-      },
-      {
-       "id": "17239",
-       "root": "ش.و.ي",
-       "gloss": "grilling;barbecue",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "17244",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "17241",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "17242",
-       "root": "ش.و.ي",
-       "gloss": "grill",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
@@ -1001,6 +957,7 @@
   {
    "ar": "خفت إنه الأكل يخرب، بس كملت.",
    "en": "I was afraid the food would be ruined, but I continued.",
+   "p": null,
    "words": [
     {
      "surface": "خفت",
@@ -1194,6 +1151,7 @@
   {
    "ar": "حطيت العدس والرز والمي وستنيت.",
    "en": "I added the lentils, rice, and water and waited.",
+   "p": null,
    "words": [
     {
      "surface": "حطيت",
@@ -1349,6 +1307,7 @@
   {
    "ar": "بعد نص ساعة، فتحت الغطا وطلع ريحة حلوة.",
    "en": "After half an hour, I opened the lid and a nice smell came out.",
+   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -1393,45 +1352,7 @@
      "analysis": "NOUN:FS",
      "maknuune_id": "15247",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "15247",
-       "root": "س.و.ع",
-       "gloss": "hour;watch",
-       "analysis": "NOUN:FS"
-      },
-      {
-       "id": "15249",
-       "root": "س.و.ع",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "15250",
-       "root": "س.و.ع",
-       "gloss": "The_Day_of_the_Judgment",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "15251",
-       "root": "س.و.ع",
-       "gloss": "then",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "15252",
-       "root": "س.و.ع",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "15253",
-       "root": "س.و.ع",
-       "gloss": "it_is_an_idiomatic_expression_that_means",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "saa3a",
      "vocalized": "سَاعَة",
      "vocalized_from": "lexicon:exact"
@@ -1662,6 +1583,7 @@
   {
    "ar": "ذقت الأكل وكان طيب أكتر مما توقعت.",
    "en": "I tasted the food and it was better than I expected.",
+   "p": null,
    "words": [
     {
      "surface": "ذقت",
@@ -1891,6 +1813,7 @@
   {
    "ar": "لما رجعت إمي، طبختلها وفتخرت فيي.",
    "en": "When my mom came back, I cooked for her and she was proud of me.",
+   "p": null,
    "words": [
     {
      "surface": "لما",

@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "بوسط أرض جدي، كان في شجرة زيتون كبيرة وقديمة.",
    "en": "In the middle of my grandfather's land, there was a big, old olive tree.",
+   "p": null,
    "words": [
     {
      "surface": "بوسط",
@@ -287,6 +291,7 @@
   {
    "ar": "جدي كان يقول إنها أكبر منه بكتير.",
    "en": "My grandfather used to say it was much older than him.",
+   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -458,6 +463,7 @@
   {
    "ar": "كل خريف، كانت العيلة كلها تجتمع تحتها لتقطف.",
    "en": "Every fall, the whole family would gather under it to harvest.",
+   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -669,6 +675,7 @@
   {
    "ar": "لما كنت صغير، سألت جدي: ليش هالشجرة مهمة هيك؟",
    "en": "When I was little, I asked my grandfather: why is this tree so important?",
+   "p": null,
    "words": [
     {
      "surface": "لما",
@@ -896,6 +903,7 @@
   {
    "ar": "ابتسم وقال: هاي الشجرة زرعها أبو جدي بإيده.",
    "en": "He smiled and said: this tree was planted by my great-grandfather with his own hands.",
+   "p": null,
    "words": [
     {
      "surface": "ابتسم",
@@ -937,55 +945,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "هاي",
@@ -1203,6 +1173,7 @@
   {
    "ar": "قال إنها شافت أجيال وأجيال من عيلتنا.",
    "en": "He said it had seen generations upon generations of our family.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -1354,6 +1325,7 @@
   {
    "ar": "كل غصن فيها بيحكي قصة، وكل زيتونة فيها بركة.",
    "en": "Every branch in it tells a story, and every olive in it is a blessing.",
+   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -1625,6 +1597,7 @@
   {
    "ar": "مرة، إجا رجال وعرض يشتري الأرض والشجرة.",
    "en": "Once, a man came and offered to buy the land and the tree.",
+   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -1854,59 +1827,22 @@
   {
    "ar": "عرض مصاري كتير، بس جدي رفض على طول.",
    "en": "He offered a lot of money, but my grandfather refused right away.",
+   "p": null,
    "words": [
     {
      "surface": "عرض",
      "root": "ع.ر.ض",
-     "lemma": "عَرْض",
-     "form": "عَرْض",
-     "caphi_raw": "3 a r D.",
-     "caphi": "3arD.",
-     "gloss": "width",
+     "lemma": "عَرِض",
+     "form": "عَرِض",
+     "caphi_raw": "3 a r i D.",
+     "caphi": "3ariD.",
+     "gloss": "offer;sale",
      "analysis": "NOUN:MS",
-     "maknuune_id": "20478",
+     "maknuune_id": "20479",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "20478",
-       "root": "ع.ر.ض",
-       "gloss": "width",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "20479",
-       "root": "ع.ر.ض",
-       "gloss": "offer;sale",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "20480",
-       "root": "ع.ر.ض",
-       "gloss": "offer;sale",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "20481",
-       "root": "ع.ر.ض",
-       "gloss": "honour;reputation",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "20493",
-       "root": "ع.ر.ض",
-       "gloss": "widen;expose_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "20505",
-       "root": "ع.ر.ض",
-       "gloss": "display;offer_[auto]",
-       "analysis": "VERB:P"
-      }
-     ],
-     "caphi_urban": "3arD.",
-     "vocalized": "عَرْض",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "3ariD.",
+     "vocalized": "عَرِض",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -2091,6 +2027,7 @@
   {
    "ar": "قال: الأرض مش للبيع، والذكريات ما إلها تمن.",
    "en": "He said: the land is not for sale, and memories have no price.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -2135,21 +2072,7 @@
      "analysis": "PART_NEG",
      "maknuune_id": "30759",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "30759",
-       "root": "NTWS",
-       "gloss": "not",
-       "analysis": "PART_NEG"
-      },
-      {
-       "id": "30760",
-       "root": "NTWS",
-       "gloss": "not",
-       "analysis": "PART_NEG"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "mish",
      "vocalized": "مِش",
      "vocalized_from": "lexicon:exact"
@@ -2165,45 +2088,7 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "2775",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "2775",
-       "root": "ب.ي.ع",
-       "gloss": "selling",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "2786",
-       "root": "ب.ي.ع",
-       "gloss": "sell_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "2787",
-       "root": "ب.ي.ع",
-       "gloss": "make_sb_sell_(causative_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "2791",
-       "root": "ب.ي.ع",
-       "gloss": "make_sb_sell_(causative_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "2779",
-       "root": "ب.ي.ع",
-       "gloss": "deal",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "2781",
-       "root": "ب.ي.ع",
-       "gloss": "force_sb_sell_all_his_properties_to_pay_",
-       "analysis": "VERB:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "bee3",
      "vocalized": "البَيع",
      "vocalized_from": "derived:affix"
@@ -2292,6 +2177,7 @@
   {
    "ar": "بعد سنين، توفى جدي، وورثنا الأرض والشجرة.",
    "en": "After years, my grandfather passed away, and we inherited the land and the tree.",
+   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -2487,6 +2373,7 @@
   {
    "ar": "وقفت تحت الشجرة وحسيت إنه جدي لسا معي.",
    "en": "I stood under the tree and felt my grandfather was still with me.",
+   "p": null,
    "words": [
     {
      "surface": "وقفت",
@@ -2660,6 +2547,7 @@
   {
    "ar": "علمت ولادي نفس الشي اللي علمني ياه.",
    "en": "I taught my children the same thing he taught me.",
+   "p": null,
    "words": [
     {
      "surface": "علمت",
@@ -2847,6 +2735,7 @@
   {
    "ar": "الشجرة ما زالت واقفة، تشهد على محبتنا للأرض.",
    "en": "The tree is still standing, a witness to our love for the land.",
+   "p": null,
    "words": [
     {
      "surface": "الشجرة",
@@ -3102,6 +2991,7 @@
   {
    "ar": "وكل خريف، بنجتمع تحتها متل زمان.",
    "en": "And every fall, we gather under it like the old days.",
+   "p": null,
    "words": [
     {
      "surface": "وكل",

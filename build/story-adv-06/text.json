@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "كان في أخوين، الكبير اسمه أحمد والصغير محمود.",
    "en": "There were two brothers, the elder named Ahmad and the younger Mahmoud.",
+   "p": null,
    "words": [
     {
      "surface": "كان",
@@ -195,6 +199,7 @@
   {
    "ar": "لما توفى أبوهم، ترك إلهم أرض وبيت.",
    "en": "When their father passed away, he left them land and a house.",
+   "p": null,
    "words": [
     {
      "surface": "لما",
@@ -462,6 +467,7 @@
   {
    "ar": "بلشوا يتخانقوا مين ياخذ إيش.",
    "en": "They started arguing over who would take what.",
+   "p": null,
    "words": [
     {
      "surface": "بلشوا",
@@ -603,6 +609,7 @@
   {
    "ar": "كل واحد كان بدو الأرض الأحسن.",
    "en": "Each one wanted the better land.",
+   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -744,6 +751,7 @@
   {
    "ar": "الخناق زاد، وصاروا ما يحكوا مع بعض.",
    "en": "The dispute grew, and they stopped talking to each other.",
+   "p": null,
    "words": [
     {
      "surface": "الخناق",
@@ -961,6 +969,7 @@
   {
    "ar": "العيلة كلها زعلت من هالوضع.",
    "en": "The whole family was saddened by the situation.",
+   "p": null,
    "words": [
     {
      "surface": "العيلة",
@@ -1084,6 +1093,7 @@
   {
    "ar": "مرة، مرض أحمد مرض شديد.",
    "en": "Once, Ahmad became seriously ill.",
+   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -1171,6 +1181,7 @@
   {
    "ar": "محمود سمع الخبر ونسي كل الخناق.",
    "en": "Mahmoud heard the news and forgot all the fighting.",
+   "p": null,
    "words": [
     {
      "surface": "محمود",
@@ -1402,6 +1413,7 @@
   {
    "ar": "ركض على المستشفى وقعد جنب أخوه.",
    "en": "He ran to the hospital and sat next to his brother.",
+   "p": null,
    "words": [
     {
      "surface": "ركض",
@@ -1581,6 +1593,7 @@
   {
    "ar": "أحمد فتح عيونه وشاف أخوه، فبكى.",
    "en": "Ahmad opened his eyes and saw his brother, and he cried.",
+   "p": null,
    "words": [
     {
      "surface": "أحمد",
@@ -1774,6 +1787,7 @@
   {
    "ar": "قال: سامحني يا أخوي، الدنيا ما بتسوى خناق.",
    "en": "He said: forgive me, brother, the world isn't worth fighting over.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -1979,6 +1993,7 @@
   {
    "ar": "محمود حضنه وقال: إنت أغلى من كل الأرض.",
    "en": "Mahmoud hugged him and said: you are more precious than all the land.",
+   "p": null,
    "words": [
     {
      "surface": "محمود",
@@ -2016,55 +2031,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "إنت",
@@ -2204,6 +2181,7 @@
   {
    "ar": "من هديك اليوم، رجعوا متل ما كانوا.",
    "en": "From that day, they went back to how they used to be.",
+   "p": null,
    "words": [
     {
      "surface": "من",
@@ -2294,54 +2272,16 @@
     {
      "surface": "رجعوا",
      "root": "ر.ج.ع",
-     "lemma": "رَجَّع",
-     "form": "رَجِّع",
-     "caphi_raw": "r a J J i 3",
-     "caphi": "raJJi3",
-     "gloss": "return_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "11200",
+     "lemma": "رِجِع",
+     "form": "رِجِع",
+     "caphi_raw": "r i J i 3",
+     "caphi": "riJi3",
+     "gloss": "return;come_back_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "11206",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "11200",
-       "root": "ر.ج.ع",
-       "gloss": "return_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "11206",
-       "root": "ر.ج.ع",
-       "gloss": "return;come_back_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "11208",
-       "root": "ر.ج.ع",
-       "gloss": "return_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "11196",
-       "root": "ر.ج.ع",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "11198",
-       "root": "ر.ج.ع",
-       "gloss": "return;come_back_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "11202",
-       "root": "ر.ج.ع",
-       "gloss": "return;come_back",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "rajji3",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "riji3",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
@@ -2437,6 +2377,7 @@
   {
    "ar": "قسموا الأرض بالعدل وبدون خناق.",
    "en": "They divided the land fairly and without fighting.",
+   "p": null,
    "words": [
     {
      "surface": "قسموا",
@@ -2610,6 +2551,7 @@
   {
    "ar": "تعلموا إنه الدم ما بيصير مي.",
    "en": "They learned that blood doesn't turn to water.",
+   "p": null,
    "words": [
     {
      "surface": "تعلموا",

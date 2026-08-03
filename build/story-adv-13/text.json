@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "بقرية عالبحر، كان في صياد قديم اسمه أبو موسى.",
    "en": "In a village by the sea, there was an old fisherman named Abu Musa.",
+   "p": null,
    "words": [
     {
      "surface": "بقرية",
@@ -261,6 +265,7 @@
   {
    "ar": "كل الصبح، كان يطلع عالبحر بقاربه الصغير.",
    "en": "Every morning, he would go out to sea in his small boat.",
+   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -458,6 +463,7 @@
   {
    "ar": "كان يعرف البحر متل ما يعرف إيده.",
    "en": "He knew the sea like he knew his own hand.",
+   "p": null,
    "words": [
     {
      "surface": "كان",
@@ -516,45 +522,7 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "812",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "812",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "813",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "814",
-       "root": "ب.ح.ر",
-       "gloss": "meter_(poetry)",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "815",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "816",
-       "root": "ب.ح.ر",
-       "gloss": "meter_(poetry);sea",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "819",
-       "root": "ب.ح.ر",
-       "gloss": "It_is_an_expression_that_means_that_the_",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "ba7ar",
      "vocalized": "البَحَر",
      "vocalized_from": "derived:affix"
@@ -719,6 +687,7 @@
   {
    "ar": "الناس كانوا يقولوا إنه بيحكي مع الموج.",
    "en": "People used to say he talked to the waves.",
+   "p": null,
    "words": [
     {
      "surface": "الناس",
@@ -898,6 +867,7 @@
   {
    "ar": "مرة، طلع بيوم والجو صافي.",
    "en": "Once, he went out on a clear day.",
+   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -918,55 +888,17 @@
     {
      "surface": "طلع",
      "root": "ط.ل.ع",
-     "lemma": "طَلَّع",
-     "form": "طَلِّع",
-     "caphi_raw": "t. a l l i 3",
-     "caphi": "t.alli3",
-     "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "19369",
+     "lemma": "طِلِع",
+     "form": "طِلِع",
+     "caphi_raw": "t. i l i 3",
+     "caphi": "t.ili3",
+     "gloss": "exit;go_out;rise;seem_that_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "19378",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "19369",
-       "root": "ط.ل.ع",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "19378",
-       "root": "ط.ل.ع",
-       "gloss": "exit;go_out;rise;seem_that_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "19379",
-       "root": "ط.ل.ع",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "19361",
-       "root": "ط.ل.ع",
-       "gloss": "take_after_sb",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "19362",
-       "root": "ط.ل.ع",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "19364",
-       "root": "ط.ل.ع",
-       "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-       "analysis": "VERB:PHRASE"
-      }
-     ],
-     "caphi_urban": "t.alli3",
-     "vocalized": "طَلِّع",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "t.ili3",
+     "vocalized": "طِلِع",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -1113,6 +1045,7 @@
   {
    "ar": "بس فجأة، هبت ريح قوية وصارت عاصفة.",
    "en": "But suddenly, a strong wind blew and a storm arose.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -1247,45 +1180,7 @@
      "analysis": "ADJ:MS",
      "maknuune_id": "27050",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27050",
-       "root": "ق.و.ي",
-       "gloss": "strong;malicious;wicked",
-       "analysis": "ADJ:MS"
-      },
-      {
-       "id": "27057",
-       "root": "ق.و.ي",
-       "gloss": "strengthen;make_sth_strong_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "27065",
-       "root": "ق.و.ي",
-       "gloss": "become_strong_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "27066",
-       "root": "ق.و.ي",
-       "gloss": "strengthen;make_sth_strong_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "27051",
-       "root": "ق.و.ي",
-       "gloss": "strong;malicious;wicked_[auto]",
-       "analysis": "ADJ:P"
-      },
-      {
-       "id": "27052",
-       "root": "ق.و.ي",
-       "gloss": "strong;malicious;wicked_[auto]",
-       "analysis": "ADJ:P"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "2awi",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
@@ -1368,6 +1263,7 @@
   {
    "ar": "الموج علا، والقارب صار يترنح.",
    "en": "The waves rose, and the boat began to sway.",
+   "p": null,
    "words": [
     {
      "surface": "الموج",
@@ -1509,6 +1405,7 @@
   {
    "ar": "الناس عالشط خافوا عليه كتير.",
    "en": "The people on the shore were very afraid for him.",
+   "p": null,
    "words": [
     {
      "surface": "الناس",
@@ -1616,6 +1513,7 @@
   {
    "ar": "بس أبو موسى ما خاف، لأنه يعرف البحر.",
    "en": "But Abu Musa wasn't afraid, because he knew the sea.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -1832,45 +1730,7 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "812",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "812",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "813",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "814",
-       "root": "ب.ح.ر",
-       "gloss": "meter_(poetry)",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "815",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "816",
-       "root": "ب.ح.ر",
-       "gloss": "meter_(poetry);sea",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "819",
-       "root": "ب.ح.ر",
-       "gloss": "It_is_an_expression_that_means_that_the_",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "ba7ar",
      "vocalized": "البَحَر",
      "vocalized_from": "derived:affix"
@@ -1881,6 +1741,7 @@
   {
    "ar": "مسك الدفة بقوة وصبر عالعاصفة.",
    "en": "He gripped the rudder tightly and endured the storm.",
+   "p": null,
    "words": [
     {
      "surface": "مسك",
@@ -2078,6 +1939,7 @@
   {
    "ar": "بعد ساعات، هدت الريح وصفى الجو.",
    "en": "After hours, the wind calmed and the weather cleared.",
+   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -2335,6 +2197,7 @@
   {
    "ar": "أبو موسى رجع عالشط، تعبان بس بأمان.",
    "en": "Abu Musa returned to the shore, tired but safe.",
+   "p": null,
    "words": [
     {
      "surface": "أبو",
@@ -2526,6 +2389,7 @@
   {
    "ar": "الناس استقبلوه بالفرح والحمد لله.",
    "en": "The people welcomed him with joy and thanks to God.",
+   "p": null,
    "words": [
     {
      "surface": "الناس",
@@ -2645,6 +2509,7 @@
   {
    "ar": "سألوه: ما خفت تغرق؟",
    "en": "They asked him: weren't you afraid you'd drown?",
+   "p": null,
    "words": [
     {
      "surface": "سألوه",
@@ -2790,6 +2655,7 @@
   {
    "ar": "ضحك وقال: البحر بيحترم اللي بيحترمه.",
    "en": "He laughed and said: the sea respects those who respect it.",
+   "p": null,
    "words": [
     {
      "surface": "ضحك",
@@ -2849,55 +2715,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "البحر",
@@ -2910,45 +2738,7 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "812",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "812",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "813",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "814",
-       "root": "ب.ح.ر",
-       "gloss": "meter_(poetry)",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "815",
-       "root": "ب.ح.ر",
-       "gloss": "sea",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "816",
-       "root": "ب.ح.ر",
-       "gloss": "meter_(poetry);sea",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "819",
-       "root": "ب.ح.ر",
-       "gloss": "It_is_an_expression_that_means_that_the_",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "ba7ar",
      "vocalized": "البَحَر",
      "vocalized_from": "derived:affix"

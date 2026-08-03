@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "intermediate",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "مرة، كنت بساعد إمي بغسيل الصحون.",
    "en": "Once, I was helping my mom wash the dishes.",
+   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -90,21 +94,7 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "22565",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "22565",
-       "root": "غ.س.ل",
-       "gloss": "washing;laundry",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "22569",
-       "root": "غ.س.ل",
-       "gloss": "well-groomed",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "ghasiil",
      "vocalized": "بَغَسِيل",
      "vocalized_from": "derived:verb"
@@ -129,6 +119,7 @@
   {
    "ar": "وأنا بغسل، وقع مني فنجان قهوة وانكسر.",
    "en": "While washing, a coffee cup fell from me and broke.",
+   "p": null,
    "words": [
     {
      "surface": "وأنا",
@@ -217,55 +208,17 @@
     {
      "surface": "وقع",
      "root": "و.ق.ع",
-     "lemma": "وَقَّع",
-     "form": "وَقِّع",
-     "caphi_raw": "w a Q Q i 3",
-     "caphi": "waQQi3",
-     "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "35899",
+     "lemma": "وِقِع",
+     "form": "وِقِع",
+     "caphi_raw": "w i Q i 3",
+     "caphi": "wiQi3",
+     "gloss": "fall_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "35906",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "35899",
-       "root": "و.ق.ع",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "35906",
-       "root": "و.ق.ع",
-       "gloss": "fall_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "35907",
-       "root": "و.ق.ع",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "35893",
-       "root": "و.ق.ع",
-       "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "35894",
-       "root": "و.ق.ع",
-       "gloss": "sb_was_made_a_scapegoat_for_what_happene",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "35896",
-       "root": "و.ق.ع",
-       "gloss": "lest_you_fall_down",
-       "analysis": "VERB:PHRASE"
-      }
-     ],
-     "caphi_urban": "wa22i3",
-     "vocalized": "وَقِّع",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "wi2i3",
+     "vocalized": "وِقِع",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -384,6 +337,7 @@
   {
    "ar": "الفنجان كان قديم وغالي على إمي.",
    "en": "The cup was old and precious to my mom.",
+   "p": null,
    "words": [
     {
      "surface": "الفنجان",
@@ -539,6 +493,7 @@
   {
    "ar": "خفت كتير وما عرفت شو أقول.",
    "en": "I got very scared and didn't know what to say.",
+   "p": null,
    "words": [
     {
      "surface": "خفت",
@@ -732,6 +687,7 @@
   {
    "ar": "رحت لإمي وقلتلها الحقيقة.",
    "en": "I went to my mom and told her the truth.",
+   "p": null,
    "words": [
     {
      "surface": "رحت",
@@ -821,6 +777,7 @@
   {
    "ar": "توقعت إنها تزعل، بس هي بس ابتسمت.",
    "en": "I expected her to be upset, but she just smiled.",
+   "p": null,
    "words": [
     {
      "surface": "توقعت",
@@ -1050,6 +1007,7 @@
   {
    "ar": "قالت إنه الأشيا بتنكسر، بس الصدق أهم.",
    "en": "She said things break, but honesty is more important.",
+   "p": null,
    "words": [
     {
      "surface": "قالت",
@@ -1189,6 +1147,7 @@
   {
    "ar": "ارتحت كتير لما سمعت حكيها.",
    "en": "I felt very relieved when I heard her words.",
+   "p": null,
    "words": [
     {
      "surface": "ارتحت",
@@ -1350,6 +1309,7 @@
   {
    "ar": "من يومها، بحاول أكون صادق دايما.",
    "en": "Since that day, I try to always be honest.",
+   "p": null,
    "words": [
     {
      "surface": "من",

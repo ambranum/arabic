@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "intermediate",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "بأيام الخريف، رحنا نقطف زيتون ببيارة عمي.",
    "en": "In the fall days, we went to pick olives at my uncle's orchard.",
+   "p": null,
    "words": [
     {
      "surface": "بأيام",
@@ -205,6 +209,7 @@
   {
    "ar": "صحينا بكير لأنه القطاف بدو وقت.",
    "en": "We woke up early because picking takes time.",
+   "p": null,
    "words": [
     {
      "surface": "صحينا",
@@ -306,6 +311,7 @@
   {
    "ar": "فرشنا شراشف تحت الشجر وبلشنا نقطف.",
    "en": "We spread sheets under the trees and started picking.",
+   "p": null,
    "words": [
     {
      "surface": "فرشنا",
@@ -513,6 +519,7 @@
   {
    "ar": "الشغل كان تعبان بس الجو كان حلو.",
    "en": "The work was tiring but the weather was nice.",
+   "p": null,
    "words": [
     {
      "surface": "الشغل",
@@ -736,6 +743,7 @@
   {
    "ar": "بوقت الغدا، أكلنا خبز وزيت وزعتر تحت الشجر.",
    "en": "At lunchtime, we ate bread, oil, and za'tar under the trees.",
+   "p": null,
    "words": [
     {
      "surface": "بوقت",
@@ -993,6 +1001,7 @@
   {
    "ar": "الولاد كانوا يلعبوا ويجمعوا الزيتون اللي وقع.",
    "en": "The kids were playing and gathering the olives that fell.",
+   "p": null,
    "words": [
     {
      "surface": "الولاد",
@@ -1159,55 +1168,17 @@
     {
      "surface": "وقع",
      "root": "و.ق.ع",
-     "lemma": "وَقَّع",
-     "form": "وَقِّع",
-     "caphi_raw": "w a Q Q i 3",
-     "caphi": "waQQi3",
-     "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "35899",
+     "lemma": "وِقِع",
+     "form": "وِقِع",
+     "caphi_raw": "w i Q i 3",
+     "caphi": "wiQi3",
+     "gloss": "fall_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "35906",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "35899",
-       "root": "و.ق.ع",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "35906",
-       "root": "و.ق.ع",
-       "gloss": "fall_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "35907",
-       "root": "و.ق.ع",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "35893",
-       "root": "و.ق.ع",
-       "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "35894",
-       "root": "و.ق.ع",
-       "gloss": "sb_was_made_a_scapegoat_for_what_happene",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "35896",
-       "root": "و.ق.ع",
-       "gloss": "lest_you_fall_down",
-       "analysis": "VERB:PHRASE"
-      }
-     ],
-     "caphi_urban": "wa22i3",
-     "vocalized": "وَقِّع",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "wi2i3",
+     "vocalized": "وِقِع",
      "vocalized_from": "lexicon:exact"
     }
    ],
@@ -1216,6 +1187,7 @@
   {
    "ar": "آخر النهار، جمعنا أكياس كتير.",
    "en": "At the end of the day, we gathered many bags.",
+   "p": null,
    "words": [
     {
      "surface": "آخر",
@@ -1379,6 +1351,7 @@
   {
    "ar": "أخذنا الزيتون عالمعصرة نعمله زيت.",
    "en": "We took the olives to the press to make oil.",
+   "p": null,
    "words": [
     {
      "surface": "أخذنا",
@@ -1632,6 +1605,7 @@
   {
    "ar": "ريحة الزيت الجديد ما في أحلى منها.",
    "en": "There's nothing nicer than the smell of new oil.",
+   "p": null,
    "words": [
     {
      "surface": "ريحة",
@@ -1789,6 +1763,7 @@
   {
    "ar": "رجعنا تعبانين بس البيت مليان بركة.",
    "en": "We came back tired but the house was full of blessing.",
+   "p": null,
    "words": [
     {
      "surface": "رجعنا",

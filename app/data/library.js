@@ -304,7 +304,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s0.mp3"
     },
     {
      "ar": "كان رجل غني، بس محدا كان يعرف من وين جابها المصاري، ولا شو تاريخه.",
@@ -674,7 +674,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s1.mp3"
     },
     {
      "ar": "ما كان له مرا ولا ولاد ولا أصحاب كتار.",
@@ -862,7 +862,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s2.mp3"
     },
     {
      "ar": "كان عضو بنادي محترم اسمه نادي الإصلاح، وهناك كان يقضي معظم وقته.",
@@ -1220,7 +1220,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s3.mp3"
     },
     {
      "ar": "أهم إشي بحياة فوغ كان الدقة والنظام.",
@@ -1410,7 +1410,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s4.mp3"
     },
     {
      "ar": "كل إشي عنده كان لازم يصير بوقته بالزبط، لا دقيقة أكتر ولا دقيقة أقل.",
@@ -1756,7 +1756,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s5.mp3"
     },
     {
      "ar": "بهاليوم بالذات، طرد خادمه القديم لأنه جاب له مي حلاقة حرارتها غلط بشوية.",
@@ -2120,7 +2120,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s6.mp3"
     },
     {
      "ar": "فصار لازم يلاقي خادم جديد.",
@@ -2232,7 +2232,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s7.mp3"
     },
     {
      "ar": "إجا رجل فرنسي اسمه باسبارتو ليقدم على الشغل.",
@@ -2398,7 +2398,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s8.mp3"
     },
     {
      "ar": "كان رجل قوي ومرح، وعمل بحياته شغلات كتيرة: كان مغني، ولاعب سيرك، وأستاذ رياضة.",
@@ -2832,7 +2832,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s9.mp3"
     },
     {
      "ar": "قال باسبارتو: أنا تعبت من الحياة المتحركة، وبدّي شغل هادي عند سيد مرتب.",
@@ -3172,7 +3172,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s10.mp3"
     },
     {
      "ar": "فوغ سأله كم سؤال قصير، وبعدين قال: مقبول. من هلق إنت خادمي.",
@@ -3484,12 +3484,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch01/s11.mp3"
     }
    ],
    "_dir": "book-atw80-ch01",
    "_words": 135,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch02",
@@ -3532,55 +3532,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -3738,7 +3700,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch02/s0.mp3"
     },
     {
      "ar": "راح باسبارتو يتفرج على بيته الجديد، ولقاه نظيف ومرتب زي الساعة.",
@@ -4028,7 +3990,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch02/s1.mp3"
     },
     {
      "ar": "على الحيط، كان في ورقة مكتوب فيها كل شغلة ووقتها بالثانية.",
@@ -4366,7 +4328,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch02/s2.mp3"
     },
     {
      "ar": "باسبارتو انبسط كتير وقال: هاد الرجل زي الآلة، وهاي الحياة الي بحلم فيها.",
@@ -4612,7 +4574,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch02/s3.mp3"
     },
     {
      "ar": "بس بنفس الليلة، رجع فوغ عالبيت بغير وقته، وهاد إشي ما بيصير أبدًا.",
@@ -4892,7 +4854,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch02/s4.mp3"
     },
     {
      "ar": "قال لباسبارتو بهدوء: بعد عشر دقايق، أنا وإنت رح نسافر حول العالم.",
@@ -5186,7 +5148,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch02/s5.mp3"
     },
     {
      "ar": "باسبارتو ما صدّق أذنيه، وفكر إنه سيده عم يمزح.",
@@ -5436,7 +5398,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch02/s6.mp3"
     },
     {
      "ar": "بس فوغ ما كان يمزح ولا مرة بحياته.",
@@ -5568,12 +5530,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch02/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch02",
    "_words": 84,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch03",
@@ -5890,7 +5852,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s0.mp3"
     },
     {
      "ar": "بنفس النهار، كان فوغ قاعد بالنادي مع كم واحد من أصحابه.",
@@ -6126,7 +6088,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s1.mp3"
     },
     {
      "ar": "كانوا يقروا بالجريدة عن سرقة كبيرة صارت من البنك المركزي.",
@@ -6366,7 +6328,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s2.mp3"
     },
     {
      "ar": "حدا سرق خمسة وخمسين ألف جنيه، والشرطة عم تدوّر عليه بكل مكان.",
@@ -6658,7 +6620,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s3.mp3"
     },
     {
      "ar": "بعدين صار الحكي عن الدنيا، وقديش صار السفر أسرع وأسهل من زمان.",
@@ -7046,7 +7008,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s4.mp3"
     },
     {
      "ar": "قال واحد منهم: صحيح، بس لسا ما بتقدر تلف الأرض كلها بوقت قصير.",
@@ -7354,7 +7316,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s5.mp3"
     },
     {
      "ar": "قال فوغ بهدوء: بالعكس، الواحد بقدر يلف الدنيا بثمانين يوم بس.",
@@ -7626,7 +7588,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s6.mp3"
     },
     {
      "ar": "ضحكوا كلهم وقالوا: هاد إشي على الورق بس، مش بالحقيقة.",
@@ -7890,7 +7852,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s7.mp3"
     },
     {
      "ar": "قال فوغ: أنا مستعد أراهن على عشرين ألف جنيه إني بعملها بنفسي.",
@@ -8160,7 +8122,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s8.mp3"
     },
     {
      "ar": "صار في صمت، وبعدين وافقوا كلهم على الرهان.",
@@ -8380,7 +8342,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s9.mp3"
     },
     {
      "ar": "قال فوغ: القطار لباريس بيطلع الليلة الساعة تمانية وخمسة وأربعين دقيقة.",
@@ -8670,7 +8632,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s10.mp3"
     },
     {
      "ar": "لازم أرجع لهالنادي بعد ثمانين يوم بالزبط، يوم السبت المسا، وإلا بخسر كل إشي.",
@@ -8970,12 +8932,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch03/s11.mp3"
     }
    ],
    "_dir": "book-atw80-ch03",
    "_words": 131,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch04",
@@ -9050,54 +9012,16 @@ window.LIBRARY = {
       {
        "surface": "وحكى",
        "root": "ح.ك.ي",
-       "lemma": "حَكِي",
-       "form": "حَكِي",
-       "caphi_raw": "7 a k i",
-       "caphi": "7aki",
-       "gloss": "speech",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "6618",
+       "lemma": "حَكَى",
+       "form": "حَكَى",
+       "caphi_raw": "7 a K a",
+       "caphi": "7aKa",
+       "gloss": "talk;tell;recount_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "6628",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "6618",
-         "root": "ح.ك.ي",
-         "gloss": "speech",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "6628",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6630",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "6632",
-         "root": "ح.ك.ي",
-         "gloss": "talk;tell;recount_(repeatedly)",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6620",
-         "root": "ح.ك.ي",
-         "gloss": "pontificate_on_sth",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "6621",
-         "root": "ح.ك.ي",
-         "gloss": "I_forgot_to_mention_sth_about_X",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
-       "caphi_urban": "7aki",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7aka",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-prefix"
       },
@@ -9216,7 +9140,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch04/s0.mp3"
     },
     {
      "ar": "قال له فوغ: خود شنطة صغيرة، وحط فيها بس شوية أواعي.",
@@ -9502,7 +9426,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch04/s1.mp3"
     },
     {
      "ar": "وحط بالشنطة مبلغ كبير من المصاري، عشرين ألف جنيه، للطريق.",
@@ -9800,7 +9724,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch04/s2.mp3"
     },
     {
      "ar": "طلعوا عالمحطة وركبوا القطار الساعة تمانية وخمسة وأربعين بالزبط.",
@@ -10072,7 +9996,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch04/s3.mp3"
     },
     {
      "ar": "فوغ كان هادي، قاعد بمكانه، ما عليه ولا هم بالدنيا.",
@@ -10328,7 +10252,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch04/s4.mp3"
     },
     {
      "ar": "أما باسبارتو، فتذكر فجأة إنه نسي يطفي ضو الغاز بغرفته!",
@@ -10628,7 +10552,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch04/s5.mp3"
     },
     {
      "ar": "قال لسيده، وفوغ رد ببرود: طيب، بتظل شغالة على حسابك لحد ما نرجع.",
@@ -11008,7 +10932,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch04/s6.mp3"
     },
     {
      "ar": "باسبارتو تنهد، وفهم إنه هالرحلة رح تكون طويلة وغريبة.",
@@ -11254,12 +11178,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch04/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch04",
    "_words": 80,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch05",
@@ -11482,7 +11406,7 @@ window.LIBRARY = {
        "caphi_urban": "3an"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch05/s0.mp3"
     },
     {
      "ar": "في ناس راهنوا إنه فوغ رح ينجح، وناس تانيين راهنوا إنه رح يفشل.",
@@ -11764,7 +11688,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch05/s1.mp3"
     },
     {
      "ar": "بس فجأة، طلع إشي غيّر كل إشي.",
@@ -11806,55 +11730,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -11922,7 +11808,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch05/s2.mp3"
     },
     {
      "ar": "الشرطة قالت إنه وصف حرامي البنك يشبه فيلياس فوغ كتير.",
@@ -12202,7 +12088,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch05/s3.mp3"
     },
     {
      "ar": "صار في ناس تشك إنه فوغ سرق البنك، وإنه هالرحلة بس حجة ليهرب.",
@@ -12588,7 +12474,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch05/s4.mp3"
     },
     {
      "ar": "مخبر شاطر اسمه فيكس كان بدّه يمسك الحرامي ليصير مشهور وياخد مكافأة.",
@@ -12870,7 +12756,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch05/s5.mp3"
     },
     {
      "ar": "سمع إنه فوغ مسافر عالشرق، فحزم حاله وراح يلحقه.",
@@ -13182,7 +13068,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch05/s6.mp3"
     },
     {
      "ar": "قال فيكس بينه وبين حاله: أنا رح أمسك هالحرامي، ولو لفّيت الأرض كلها وراه.",
@@ -13482,12 +13368,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch05/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch05",
    "_words": 88,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch06",
@@ -13722,7 +13608,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch06/s0.mp3"
     },
     {
      "ar": "فيكس كان قلقان، لأنه الورقة الرسمية الي بتخليه يمسك فوغ لسا ما وصلت من لندن.",
@@ -14056,7 +13942,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch06/s1.mp3"
     },
     {
      "ar": "بدون الورقة، ما بيقدر يعمل إشي بره إنجلترا.",
@@ -14256,7 +14142,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch06/s2.mp3"
     },
     {
      "ar": "فقرر يستنى ويراقب، ويمشي وراهم لحد ما توصل الورقة.",
@@ -14544,7 +14430,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch06/s3.mp3"
     },
     {
      "ar": "نزل فوغ من المركب بس ليختم جواز سفره عند القنصل.",
@@ -14794,7 +14680,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch06/s4.mp3"
     },
     {
      "ar": "فيكس شافه من بعيد، ودقّق فيه، وصار أكتر متأكد إنه هو الحرامي.",
@@ -15100,7 +14986,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch06/s5.mp3"
     },
     {
      "ar": "بس محتاج يعرف وين رايح ليقدر يلحقه صح.",
@@ -15350,7 +15236,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch06/s6.mp3"
     },
     {
      "ar": "فراح لعند خادمه باسبارتو ليحاول يطلّع منه المعلومات.",
@@ -15592,12 +15478,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch06/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch06",
    "_words": 79,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch07",
@@ -15980,7 +15866,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch07/s0.mp3"
     },
     {
      "ar": "باسبارتو كان تعبان، وفرحان إنه لقى حدا يحكي معه بلغته.",
@@ -16222,7 +16108,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch07/s1.mp3"
     },
     {
      "ar": "سأله فيكس عن سيده وعن رحلته، وباسبارتو رد بكل بساطة وبراءة.",
@@ -16476,7 +16362,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch07/s2.mp3"
     },
     {
      "ar": "حكى له عن الرهان، وقال: سيدي بدّه يلف الأرض بثمانين يوم!",
@@ -16660,7 +16546,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch07/s3.mp3"
     },
     {
      "ar": "فيكس ما صدّق حظه، وقال بينه وبين حاله: هاد الرهان بس حجة ليهرب بالمصاري.",
@@ -17014,7 +16900,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch07/s4.mp3"
     },
     {
      "ar": "قال لباسبارتو: كل هالمصاري الي معكم، لازم تكون كتيرة.",
@@ -17200,7 +17086,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch07/s5.mp3"
     },
     {
      "ar": "باسبارتو رد: أه، ومعنا شنطة مليانة، وسيدي بيدفع كاش بكل مكان.",
@@ -17520,7 +17406,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch07/s6.mp3"
     },
     {
      "ar": "فيكس ابتسم، وصار أكيد إنه على الطريق الصح.",
@@ -17726,12 +17612,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch07/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch07",
    "_words": 86,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch08",
@@ -18022,7 +17908,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch08/s0.mp3"
     },
     {
      "ar": "باسبارتو صار يشوف فيكس بكل مكان، بكل مركب وبكل محطة.",
@@ -18264,7 +18150,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch08/s1.mp3"
     },
     {
      "ar": "بس ما شكّ فيه، وفكر إنه صار صاحبه.",
@@ -18496,7 +18382,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch08/s2.mp3"
     },
     {
      "ar": "كل مرة كان يحكي معه أكتر، ويطلّع له كل أسرار الرحلة بدون ما ينتبه.",
@@ -18768,7 +18654,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch08/s3.mp3"
     },
     {
      "ar": "فوغ ظلّ بغرفته، هادي، بيلعب الورق، وما بيهتم لا بالبحر ولا بالناس.",
@@ -19042,7 +18928,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch08/s4.mp3"
     },
     {
      "ar": "كان بس يكتب بدفتره: وصلنا هون بهاليوم، متقدمين ولا متأخرين.",
@@ -19272,7 +19158,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch08/s5.mp3"
     },
     {
      "ar": "لهلق كل إشي كان ماشي حسب الخطة بالزبط.",
@@ -19464,7 +19350,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch08/s6.mp3"
     },
     {
      "ar": "بس فيكس كان مستني الفرصة، وعينه على فوغ طول الوقت.",
@@ -19730,12 +19616,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch08/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch08",
    "_words": 83,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch09",
@@ -19874,45 +19760,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -20066,7 +19914,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch09/s0.mp3"
     },
     {
      "ar": "الركاب كانوا يتعبوا من الحر، بس فوغ ما تأثر ولا شوي.",
@@ -20180,31 +20028,17 @@ window.LIBRARY = {
       {
        "surface": "الحر",
        "root": "ح.ر.ر",
-       "lemma": "حُرّ",
-       "form": "حُرّ",
-       "caphi_raw": "7 u r r",
-       "caphi": "7urr",
-       "gloss": "free;open;uncontrained",
-       "analysis": "ADJ:MS",
-       "maknuune_id": "5566",
+       "lemma": "حَرّ",
+       "form": "حَرّ",
+       "caphi_raw": "7 a r r",
+       "caphi": "7arr",
+       "gloss": "hot",
+       "analysis": "ADJ/NOUN",
+       "maknuune_id": "5568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "5566",
-         "root": "ح.ر.ر",
-         "gloss": "free;open;uncontrained",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "5568",
-         "root": "ح.ر.ر",
-         "gloss": "hot",
-         "analysis": "ADJ/NOUN"
-        }
-       ],
-       "caphi_urban": "7urr",
-       "vocalized": "الحُرّ",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7arr",
+       "vocalized": "الحَرّ",
        "vocalized_from": "derived:affix"
       },
       {
@@ -20340,7 +20174,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch09/s1.mp3"
     },
     {
      "ar": "بالمسا، كان يلعب الورق مع كم راكب، ويربح دايمًا بهدوء.",
@@ -20556,7 +20390,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch09/s2.mp3"
     },
     {
      "ar": "باسبارتو كان مبسوط، بيتفرج على المدن والموانئ الغريبة.",
@@ -20702,7 +20536,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch09/s3.mp3"
     },
     {
      "ar": "بعد أيام، وصلوا مدينة عدن، وبعدها كمّلوا على المحيط الهندي.",
@@ -20966,7 +20800,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilhind"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch09/s4.mp3"
     },
     {
      "ar": "البحر كان هادي، والريح كانت مناسبة، فمشيوا بسرعة منيحة.",
@@ -20984,45 +20818,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -21222,7 +21018,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch09/s5.mp3"
     },
     {
      "ar": "وصلوا بومباي قبل الوقت المتوقع بيومين.",
@@ -21402,7 +21198,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch09/s6.mp3"
     },
     {
      "ar": "فوغ ما فرح ولا زعل؛ بس كتب الأرقام بدفتره زي عادته.",
@@ -21716,12 +21512,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch09/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch09",
    "_words": 74,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch10",
@@ -21926,7 +21722,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s0.mp3"
     },
     {
      "ar": "فوغ ظلّ بالمحطة يستنى القطار، بس باسبارتو راح يتمشى ويتفرج.",
@@ -22168,7 +21964,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s1.mp3"
     },
     {
      "ar": "كل إشي كان جديد بعينه، وحس حاله زي بحلم.",
@@ -22372,7 +22168,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s2.mp3"
     },
     {
      "ar": "وبدون ما ينتبه، فوت على معبد كبير وهو لابس جزمته.",
@@ -22630,7 +22426,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s3.mp3"
     },
     {
      "ar": "هالإشي كان ممنوع وعيب كبير عند الناس هناك.",
@@ -22802,7 +22598,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s4.mp3"
     },
     {
      "ar": "هجموا عليه بغضب، وشلحوه جزمته، وضربوه.",
@@ -22900,7 +22696,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s5.mp3"
     },
     {
      "ar": "باسبارتو هرب بأسرع ما يقدر، وطلع من المعبد بلا جزمة.",
@@ -23234,7 +23030,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s6.mp3"
     },
     {
      "ar": "رجع لعند فوغ خايف، بس ما حكى له عن المشكلة، خوفًا يزعل منه.",
@@ -23498,7 +23294,7 @@ window.LIBRARY = {
        "caphi_urban": "min"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s7.mp3"
     },
     {
      "ar": "ركبوا القطار الي بيعبر الهند من بومباي لكلكتا.",
@@ -23684,7 +23480,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s8.mp3"
     },
     {
      "ar": "فيكس شاف كل إشي صار بالمعبد، وفرح كتير.",
@@ -23926,7 +23722,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s9.mp3"
     },
     {
      "ar": "قال بينه وبين حاله: هلق معي حجة أوقّف فيها فوغ بالهند، لأنها أرض إنجليزية.",
@@ -24256,7 +24052,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s10.mp3"
     },
     {
      "ar": "بس قرر يستنى الوقت المناسب.",
@@ -24364,12 +24160,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch10/s11.mp3"
     }
    ],
    "_dir": "book-atw80-ch10",
    "_words": 110,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch11",
@@ -24682,7 +24478,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s0.mp3"
     },
     {
      "ar": "طلع إنه السكة لسا ما خلصوها، والجرايد بلندن كانت غلطانة.",
@@ -24692,55 +24488,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -24896,7 +24654,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s1.mp3"
     },
     {
      "ar": "كل الركاب زعلوا ونزلوا، وصاروا يدوّروا على طريقة يكملوا فيها.",
@@ -25122,27 +24880,7 @@ window.LIBRARY = {
        "analysis": "VERB:I",
        "maknuune_id": "10506",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "10506",
-         "root": "د.و.ر",
-         "gloss": "search_for_sth;switch_on_sth;turn_on_(th",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "10507",
-         "root": "د.و.ر",
-         "gloss": "confuse;make_sb_feel_dizzy",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "10633",
-         "root": "د.ي.ر",
-         "gloss": "go;go_around;walk;run_after",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ydawwir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -25240,7 +24978,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s2.mp3"
     },
     {
      "ar": "فوغ ظلّ هادي، وقال: لازم نلاقي حل، مش نوقف.",
@@ -25530,7 +25268,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s3.mp3"
     },
     {
      "ar": "لقى باسبارتو رجل هندي معه فيل كبير وقوي.",
@@ -25655,56 +25393,18 @@ window.LIBRARY = {
       },
       {
        "surface": "فيل",
-       "root": "NTWS",
-       "lemma": "فَيَّل",
-       "form": "فَيِّل",
-       "caphi_raw": "f a y y i l",
-       "caphi": "fayyil",
-       "gloss": "put_papers_in_a_file",
-       "analysis": "VERB:C",
-       "maknuune_id": "24999",
+       "root": "ف.ي.ل",
+       "lemma": "فِيل",
+       "form": "فِيل",
+       "caphi_raw": "f ii l",
+       "caphi": "fiil",
+       "gloss": "elephant",
+       "analysis": "NOUN:MS",
+       "maknuune_id": "25004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24999",
-         "root": "NTWS",
-         "gloss": "put_papers_in_a_file",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "25001",
-         "root": "NTWS",
-         "gloss": "put_papers_in_a_file",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25003",
-         "root": "NTWS",
-         "gloss": "file",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25004",
-         "root": "ف.ي.ل",
-         "gloss": "elephant",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25000",
-         "root": "NTWS",
-         "gloss": "put_papers_in_a_file",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "25005",
-         "root": "ف.ي.ل",
-         "gloss": "elephant_[auto]",
-         "analysis": "NOUN:P"
-        }
-       ],
-       "caphi_urban": "fayyil",
-       "vocalized": "فَيِّل",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "fiil",
+       "vocalized": "فِيل",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -25778,7 +25478,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s4.mp3"
     },
     {
      "ar": "فوغ عرض عليه مصاري كتيرة ليشتري الفيل، والرجل رفض بالأول.",
@@ -26118,7 +25818,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s5.mp3"
     },
     {
      "ar": "كل ما زاد فوغ بالسعر، زاد الرجل بالرفض، لحد ما وصلوا لسعر خيالي.",
@@ -26478,7 +26178,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s6.mp3"
     },
     {
      "ar": "بالآخر وافق الرجل، وأخدوا كمان دليل شاب يعرف الطريق بالغابة.",
@@ -26814,7 +26514,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s7.mp3"
     },
     {
      "ar": "ركبوا على ظهر الفيل: فوغ وباسبارتو والدليل.",
@@ -27052,7 +26752,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s8.mp3"
     },
     {
      "ar": "مشيوا بغابة كثيفة وطريق وعرة لساعات.",
@@ -27308,7 +27008,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s9.mp3"
     },
     {
      "ar": "باسبارتو كان مكشوش، لأنه ما ركب فيل بحياته من قبل.",
@@ -27409,56 +27109,18 @@ window.LIBRARY = {
       },
       {
        "surface": "فيل",
-       "root": "NTWS",
-       "lemma": "فَيَّل",
-       "form": "فَيِّل",
-       "caphi_raw": "f a y y i l",
-       "caphi": "fayyil",
-       "gloss": "put_papers_in_a_file",
-       "analysis": "VERB:C",
-       "maknuune_id": "24999",
+       "root": "ف.ي.ل",
+       "lemma": "فِيل",
+       "form": "فِيل",
+       "caphi_raw": "f ii l",
+       "caphi": "fiil",
+       "gloss": "elephant",
+       "analysis": "NOUN:MS",
+       "maknuune_id": "25004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24999",
-         "root": "NTWS",
-         "gloss": "put_papers_in_a_file",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "25001",
-         "root": "NTWS",
-         "gloss": "put_papers_in_a_file",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25003",
-         "root": "NTWS",
-         "gloss": "file",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25004",
-         "root": "ف.ي.ل",
-         "gloss": "elephant",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25000",
-         "root": "NTWS",
-         "gloss": "put_papers_in_a_file",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "25005",
-         "root": "ف.ي.ل",
-         "gloss": "elephant_[auto]",
-         "analysis": "NOUN:P"
-        }
-       ],
-       "caphi_urban": "fayyil",
-       "vocalized": "فَيِّل",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "fiil",
+       "vocalized": "فِيل",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -27508,7 +27170,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s10.mp3"
     },
     {
      "ar": "الفيل كان يمشي بثبات، والدليل بيوجهه بمهارة.",
@@ -27692,12 +27354,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch11/s11.mp3"
     }
    ],
    "_dir": "book-atw80-ch11",
    "_words": 111,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch12",
@@ -28046,7 +27708,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch12/s0.mp3"
     },
     {
      "ar": "الدليل قال لهم: خبّوا حالكم، هدول ناس بيعملوا طقس قديم وخطير.",
@@ -28364,7 +28026,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch12/s1.mp3"
     },
     {
      "ar": "قرّبوا بهدوء، وشافوا موكب كبير حوالين امرأة شابة وحلوة.",
@@ -28374,54 +28036,16 @@ window.LIBRARY = {
       {
        "surface": "قرّبوا",
        "root": "ق.ر.ب",
-       "lemma": "قُرْب",
-       "form": "قُرْب",
-       "caphi_raw": "Q u r b",
-       "caphi": "Qurb",
-       "gloss": "proximity",
-       "analysis": "NOUN:MS",
-       "maknuune_id": "25440",
+       "lemma": "قَرَّب",
+       "form": "قَرَّب",
+       "caphi_raw": "Q a r r a b",
+       "caphi": "Qarrab",
+       "gloss": "approach;come_closer;have_sexual_intercourse_with_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "25456",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "25440",
-         "root": "ق.ر.ب",
-         "gloss": "proximity",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "25442",
-         "root": "ق.ر.ب",
-         "gloss": "A_tool_for_filling_water,_which_is_the_s",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "25448",
-         "root": "ق.ر.ب",
-         "gloss": "approach;come_closer;have_sexual_interco",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "25456",
-         "root": "ق.ر.ب",
-         "gloss": "approach;come_closer;have_sexual_interco",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "25447",
-         "root": "ق.ر.ب",
-         "gloss": "want_to_propose_to_a_lady",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "25452",
-         "root": "ق.ر.ب",
-         "gloss": "approach;come_closer;have_sexual_interco",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "2urb",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2arrab",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -28690,7 +28314,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch12/s2.mp3"
     },
     {
      "ar": "الدليل حكى: هاي أميرة اسمها عودا، مات جوزها العجوز.",
@@ -28968,7 +28592,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch12/s3.mp3"
     },
     {
      "ar": "حسب عادة قاسية، بدهم يحرقوها حية مع جثة جوزها بكرة الصبح.",
@@ -29224,21 +28848,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "3587",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "3587",
-         "root": "ج.ث.ث",
-         "gloss": "corpse;dead_body",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "3586",
-         "root": "ج.ث.ث",
-         "gloss": "corpse;dead_body_[auto]",
-         "analysis": "NOUN:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "juSSe",
        "vocalized": "جُثِّة",
        "vocalized_from": "lexicon:exact"
@@ -29350,7 +28960,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch12/s4.mp3"
     },
     {
      "ar": "كانوا مخدّرينها بالقوة عشان ما تقاوم.",
@@ -29472,7 +29082,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch12/s5.mp3"
     },
     {
      "ar": "فوغ سكت شوية، وبعدين قال: عنا وقت لنص الليل. لازم ننقذها.",
@@ -29790,7 +29400,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch12/s6.mp3"
     },
     {
      "ar": "الدليل خاف وقال: هاد إشي خطير كتير. بس فوغ كان مصمّم.",
@@ -30012,12 +29622,12 @@ window.LIBRARY = {
        "caphi_urban": "mus.ammam"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch12/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch12",
    "_words": 78,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch13",
@@ -30318,7 +29928,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s0.mp3"
     },
     {
      "ar": "حاولوا يوصلوا للأميرة، بس كان في حراس كتار حواليها.",
@@ -30558,7 +30168,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s1.mp3"
     },
     {
      "ar": "كل خطة جربوها فشلت، وقرب وقت الصبح، وصار فوغ حزين إنه ما قدر يعمل إشي.",
@@ -30942,7 +30552,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s2.mp3"
     },
     {
      "ar": "بس باسبارتو كان اختفى، ومحدا عرف وين راح.",
@@ -31154,7 +30764,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s3.mp3"
     },
     {
      "ar": "بوقت الصبح، حطوا جثة الجوز عالنار، وحطوا الأميرة جنبها.",
@@ -31246,21 +30856,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "3587",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "3587",
-         "root": "ج.ث.ث",
-         "gloss": "corpse;dead_body",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "3586",
-         "root": "ج.ث.ث",
-         "gloss": "corpse;dead_body_[auto]",
-         "analysis": "NOUN:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "juSSe",
        "vocalized": "جُثِّة",
        "vocalized_from": "lexicon:exact"
@@ -31500,7 +31096,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s4.mp3"
     },
     {
      "ar": "وفجأة، الجثة قامت وقفت، وحملت الأميرة، وكل الناس خافوا وهربوا!",
@@ -31874,7 +31470,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s5.mp3"
     },
     {
      "ar": "طلع إنه باسبارتو تسلل ولبس مكان الجوز الميت، وعمل هالحيلة الذكية.",
@@ -31884,55 +31480,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -32272,7 +31830,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s6.mp3"
     },
     {
      "ar": "ركض بالأميرة عالفيل، وهربوا كلهم بأسرع ما يقدروا.",
@@ -32562,7 +32120,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s7.mp3"
     },
     {
      "ar": "عودا كانت لسا مخدّرة شوي، وما فهمت شو صار.",
@@ -32778,7 +32336,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s8.mp3"
     },
     {
      "ar": "لما صحيت، عرفت إنهم أنقذوها من موت أكيد.",
@@ -32926,7 +32484,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s9.mp3"
     },
     {
      "ar": "صارت شاكرة كتير، وفوغ عاملها باحترام وأدب.",
@@ -33132,7 +32690,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s10.mp3"
     },
     {
      "ar": "قرر ياخدها معه لمكان أمان، وصارت رابع واحد بالرحلة.",
@@ -33404,12 +32962,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch13/s11.mp3"
     }
    ],
    "_dir": "book-atw80-ch13",
    "_words": 113,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch14",
@@ -33664,7 +33222,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch14/s0.mp3"
     },
     {
      "ar": "فوغ عطاه الفيل هدية، لأنه ما عاد محتاجه.",
@@ -33888,7 +33446,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch14/s1.mp3"
     },
     {
      "ar": "ركبوا القطار، ونزلوا مع النهر باتجاه كلكتا.",
@@ -34096,7 +33654,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch14/s2.mp3"
     },
     {
      "ar": "عودا صارت تحكي معهم، وتشكر فوغ على شهامته.",
@@ -34264,7 +33822,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch14/s3.mp3"
     },
     {
      "ar": "سألت عودا: ليش عملت كل هالإشي عشان وحدة ما بتعرفها؟",
@@ -34512,7 +34070,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch14/s4.mp3"
     },
     {
      "ar": "فوغ رد بهدوء: هاد الإشي الصح، وعنا وقت، وبس.",
@@ -34758,7 +34316,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch14/s5.mp3"
     },
     {
      "ar": "باسبارتو حس بفخر لسيده، لأنه رجل شجاع وطيب.",
@@ -35014,7 +34572,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch14/s6.mp3"
     },
     {
      "ar": "لهلق، كانوا لسا بالوقت، والرحلة ماشية منيح.",
@@ -35214,12 +34772,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch14/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch14",
    "_words": 64,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch15",
@@ -35530,7 +35088,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch15/s0.mp3"
     },
     {
      "ar": "بس أول ما نزلوا، جت الشرطة وأمسكت فوغ وباسبارتو.",
@@ -35714,7 +35272,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch15/s1.mp3"
     },
     {
      "ar": "السبب كان مشكلة المعبد الي صارت ببومباي.",
@@ -35886,7 +35444,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch15/s2.mp3"
     },
     {
      "ar": "فيكس كان هو الي رتّب هالإشي، ليأخّرهم لحد ما توصل الورقة.",
@@ -36148,7 +35706,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch15/s3.mp3"
     },
     {
      "ar": "راحوا عالمحكمة، والقاضي حكم عليهم بحبس وغرامة كبيرة.",
@@ -36298,45 +35856,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "6587",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "6587",
-         "root": "ح.ك.م",
-         "gloss": "judgment",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "6595",
-         "root": "ح.ك.م",
-         "gloss": "make_sb_control_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "6607",
-         "root": "ح.ك.م",
-         "gloss": "rule;judge;pass_a_judgment_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6608",
-         "root": "ح.ك.م",
-         "gloss": "make_sb_control_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "6589",
-         "root": "ح.ك.م",
-         "gloss": "judgment_[auto]",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "6592",
-         "root": "ح.ك.م",
-         "gloss": "those_who_have_power_are_the_decision-ma",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "7ukum",
        "vocalized": "حُكُم",
        "vocalized_from": "lexicon:exact"
@@ -36420,7 +35940,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch15/s4.mp3"
     },
     {
      "ar": "باسبارتو زعل كتير، لأنه هو السبب بالغلط الي صار.",
@@ -36622,7 +36142,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch15/s5.mp3"
     },
     {
      "ar": "بس فوغ ظلّ هادي، ودفع الغرامة فورًا بدون ما يتردد.",
@@ -36904,7 +36424,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch15/s6.mp3"
     },
     {
      "ar": "طلعوا من المحكمة بسرعة، وركبوا مركب اسمه رانغون باتجاه هونغ كونغ.",
@@ -37152,12 +36672,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch15/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch15",
    "_words": 74,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch16",
@@ -37326,55 +36846,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -37480,7 +36962,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch16/s0.mp3"
     },
     {
      "ar": "ركب نفس المركب، رانغون، وظلّ يراقبهم من بعيد.",
@@ -37692,7 +37174,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch16/s1.mp3"
     },
     {
      "ar": "بس هالمرة، باسبارتو صار يشك فيه شوي.",
@@ -37808,7 +37290,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch16/s2.mp3"
     },
     {
      "ar": "قال بينه وبين حاله: ليش هالرجل معنا بكل مكان؟ في إشي مش مظبوط.",
@@ -38078,7 +37560,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch16/s3.mp3"
     },
     {
      "ar": "عودا صارت جزء من المجموعة، وكانت تعامل فوغ بلطف وحنان.",
@@ -38372,7 +37854,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch16/s4.mp3"
     },
     {
      "ar": "بس فوغ ظلّ هادي، ما بيّن مشاعره، بس كان يهتم فيها بصمت.",
@@ -38616,7 +38098,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch16/s5.mp3"
     },
     {
      "ar": "باسبارتو لاحظ هالإشي، وابتسم بينه وبين حاله.",
@@ -38772,7 +38254,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch16/s6.mp3"
     },
     {
      "ar": "المركب كمّل طريقه، وفيكس كان لسا بلا ورقة، وقلقان.",
@@ -39090,12 +38572,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch16/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch16",
    "_words": 78,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch17",
@@ -39322,7 +38804,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch17/s0.mp3"
     },
     {
      "ar": "نزل فوغ وعودا يتمشوا شوي، وكانت المدينة خضرا وحلوة.",
@@ -39564,7 +39046,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch17/s1.mp3"
     },
     {
      "ar": "فوغ قطف لعودا وردة، وهاد كان أول إشي رومانسي يعمله.",
@@ -39784,7 +39266,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch17/s2.mp3"
     },
     {
      "ar": "رجعوا عالمركب، وكمّلوا الطريق لهونغ كونغ.",
@@ -39992,7 +39474,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch17/s3.mp3"
     },
     {
      "ar": "بس بالطريق، إجت عاصفة قوية أخّرت المركب.",
@@ -40234,7 +39716,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch17/s4.mp3"
     },
     {
      "ar": "باسبارتو صار يخاف على الوقت، بس فوغ ظلّ هادي زي عادته.",
@@ -40438,7 +39920,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch17/s5.mp3"
     },
     {
      "ar": "فيكس، من ناحية تانية، كان مبسوط بالتأخير.",
@@ -40596,7 +40078,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch17/s6.mp3"
     },
     {
      "ar": "لأنه هونغ كونغ آخر أرض إنجليزية، وهناك آخر فرصة يمسك فوغ.",
@@ -40932,12 +40414,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch17/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch17",
    "_words": 68,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch18",
@@ -41262,7 +40744,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch18/s0.mp3"
     },
     {
      "ar": "راح باسبارتو يسأل عن هالقريب، بس رجع بخبر مش منيح.",
@@ -41478,7 +40960,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch18/s1.mp3"
     },
     {
      "ar": "القريب سافر من زمان، وراح يعيش بأوروبا.",
@@ -41714,7 +41196,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch18/s2.mp3"
     },
     {
      "ar": "فقال فوغ لعودا: إذا بدّك، تعي معنا لحد لندن، وهناك بتكوني بأمان.",
@@ -42012,7 +41494,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch18/s3.mp3"
     },
     {
      "ar": "عودا وافقت وهي مبسوطة، لأنها ما بدها تفارقهم.",
@@ -42204,7 +41686,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch18/s4.mp3"
     },
     {
      "ar": "بنفس الوقت، فيكس كان محتار كتير.",
@@ -42320,7 +41802,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch18/s5.mp3"
     },
     {
      "ar": "الورقة لسا ما وصلت، وفوغ رح يطلع من هونغ كونغ بكرة.",
@@ -42576,7 +42058,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch18/s6.mp3"
     },
     {
      "ar": "قرر يعمل أي إشي ليوقف فوغ، ولو بطريقة مش شريفة.",
@@ -42880,12 +42362,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch18/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch18",
    "_words": 76,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch19",
@@ -43152,7 +42634,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s0.mp3"
     },
     {
      "ar": "قال له: أنا مخبر، وسيدك متهم بسرقة بنك بلندن.",
@@ -43386,7 +42868,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s1.mp3"
     },
     {
      "ar": "باسبارتو انصدم وزعل كتير، وما صدّق ولا كلمة.",
@@ -43666,7 +43148,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s2.mp3"
     },
     {
      "ar": "قال: سيدي رجل شريف، وإنت كذاب! ما بسمح لك تأذيه.",
@@ -43908,7 +43390,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s3.mp3"
     },
     {
      "ar": "فيكس خاف إنه باسبارتو رح يخبّر فوغ ويطلعوا بكير.",
@@ -44094,7 +43576,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s4.mp3"
     },
     {
      "ar": "فأخده على مكان بيبيعوا فيه الأفيون، وطلب له مشروب.",
@@ -44370,7 +43852,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s5.mp3"
     },
     {
      "ar": "باسبارتو، وهو زعلان، شرب بدون ما ينتبه، وكان في دوا بينوّم.",
@@ -44642,7 +44124,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s6.mp3"
     },
     {
      "ar": "صار دايخ، ونام على الأرض، ونسي كل إشي.",
@@ -44854,7 +44336,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s7.mp3"
     },
     {
      "ar": "بس قبل ما ينام، كان باسبارتو سمع خبر مهم.",
@@ -45080,7 +44562,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s8.mp3"
     },
     {
      "ar": "الباخرة لليابان، اسمها كارناتيك، رح تطلع الليلة، مش بكرة.",
@@ -45288,7 +44770,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s9.mp3"
     },
     {
      "ar": "بدّه يخبّر فوغ، بس الدوا كان أقوى منه.",
@@ -45450,7 +44932,7 @@ window.LIBRARY = {
        "caphi_urban": "min"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s10.mp3"
     },
     {
      "ar": "ظلّ نايم، وفوغ ما عرف إنه الباخرة رح تطلع بكير.",
@@ -45708,12 +45190,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch19/s11.mp3"
     }
    ],
    "_dir": "book-atw80-ch19",
    "_words": 108,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch20",
@@ -46004,7 +45486,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch20/s0.mp3"
     },
     {
      "ar": "راح مع عودا عالميناء، بس الباخرة كارناتيك كانت طلعت من الليل.",
@@ -46248,7 +45730,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch20/s1.mp3"
     },
     {
      "ar": "ما فقد أعصابه، وقال بهدوء: لازم نلاقي طريقة تانية.",
@@ -46274,55 +45756,17 @@ window.LIBRARY = {
       {
        "surface": "فقد",
        "root": "ف.ق.د",
-       "lemma": "فَقَّد",
-       "form": "فَقِّد",
-       "caphi_raw": "f a Q Q i d",
-       "caphi": "faQQid",
-       "gloss": "check_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "24372",
+       "lemma": "فَقَد",
+       "form": "فَقَد",
+       "caphi_raw": "f a Q a d",
+       "caphi": "faQad",
+       "gloss": "miss;lose;check_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "24383",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24372",
-         "root": "ف.ق.د",
-         "gloss": "check_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24383",
-         "root": "ف.ق.د",
-         "gloss": "miss;lose;check_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "24384",
-         "root": "ف.ق.د",
-         "gloss": "check_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "24371",
-         "root": "ف.ق.د",
-         "gloss": "miss;lose;check_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24377",
-         "root": "ف.ق.د",
-         "gloss": "miss;lose;check",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "24378",
-         "root": "ف.ق.د",
-         "gloss": "check",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "fa22id",
-       "vocalized": "فَقِّد",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "fa2ad",
+       "vocalized": "فَقَد",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -46504,7 +45948,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch20/s2.mp3"
     },
     {
      "ar": "دوّر عالميناء لحد ما لقى مركب صغير وسريع اسمه تانكاديرا.",
@@ -46776,7 +46220,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch20/s3.mp3"
     },
     {
      "ar": "اتفق مع صاحب المركب إنه ياخده هو وعودا لليابان.",
@@ -47028,7 +46472,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch20/s4.mp3"
     },
     {
      "ar": "بالآخر لحظة، إجا فيكس وطلب يركب معهم.",
@@ -47186,7 +46630,7 @@ window.LIBRARY = {
        "caphi_urban": "ma3"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch20/s5.mp3"
     },
     {
      "ar": "فوغ وافق بلا ما يعرف مين هو بالحقيقة.",
@@ -47380,7 +46824,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch20/s6.mp3"
     },
     {
      "ar": "فيكس صار محتار: بدّه فوغ يوصل إنجلترا ليمسكه، بس مش بسرعة كتير.",
@@ -47594,12 +47038,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch20/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch20",
    "_words": 74,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch21",
@@ -47978,7 +47422,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s0.mp3"
     },
     {
      "ar": "بس بنص الطريق، إجت عاصفة كبيرة وقوية.",
@@ -48188,7 +47632,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s1.mp3"
     },
     {
      "ar": "الموج صار زي الجبال، والمركب صار يرتفع وينزل بعنف.",
@@ -48420,7 +47864,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s2.mp3"
     },
     {
      "ar": "الكل خاف، بس فوغ ظلّ واقف هادي، بلا خوف.",
@@ -48674,7 +48118,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s3.mp3"
     },
     {
      "ar": "صاحب المركب قال: لازم نوقف، وإلا رح نغرق كلنا.",
@@ -49010,7 +48454,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s4.mp3"
     },
     {
      "ar": "بس فوغ عرض عليه مصاري زيادة ليكمّل بأي طريقة.",
@@ -49220,7 +48664,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s5.mp3"
     },
     {
      "ar": "طمع صاحب المركب بالمكافأة، فقرر يكمّل رغم الخطر.",
@@ -49516,7 +48960,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s6.mp3"
     },
     {
      "ar": "بعد أيام صعبة، هدّت العاصفة، ووصلوا قريب من اليابان.",
@@ -49788,7 +49232,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s7.mp3"
     },
     {
      "ar": "بس هلق، لازم يلاقوا باسبارتو الي ضاع منهم بهونغ كونغ.",
@@ -49968,7 +49412,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s8.mp3"
     },
     {
      "ar": "عودا كانت قلقانة عليه، لأنها صارت تحبه زي أخ.",
@@ -50214,7 +49658,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s9.mp3"
     },
     {
      "ar": "فوغ قال: رح نلاقيه، لا تخافي.",
@@ -50412,7 +49856,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s10.mp3"
     },
     {
      "ar": "وصلوا مدينة يوكوهاما، ورايحين يدوّروا عليه.",
@@ -50562,27 +50006,7 @@ window.LIBRARY = {
        "analysis": "VERB:I",
        "maknuune_id": "10506",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "10506",
-         "root": "د.و.ر",
-         "gloss": "search_for_sth;switch_on_sth;turn_on_(th",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "10507",
-         "root": "د.و.ر",
-         "gloss": "confuse;make_sb_feel_dizzy",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "10633",
-         "root": "د.ي.ر",
-         "gloss": "go;go_around;walk;run_after",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ydawwir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -50604,12 +50028,12 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch21/s11.mp3"
     }
    ],
    "_dir": "book-atw80-ch21",
    "_words": 100,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch22",
@@ -50904,7 +50328,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch22/s0.mp3"
     },
     {
      "ar": "طلع إنه لما كان دايخ، حدا ساعده وركّبه المركب بالغلط.",
@@ -50914,55 +50338,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -51240,7 +50626,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch22/s1.mp3"
     },
     {
      "ar": "الباخرة أخدته لليابان وهو نايم، بلا سيده.",
@@ -51460,7 +50846,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch22/s2.mp3"
     },
     {
      "ar": "وصل يوكوهاما، وما كان معه ولا قرش بجيبه.",
@@ -51646,7 +51032,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch22/s3.mp3"
     },
     {
      "ar": "صار جوعان وتعبان، وما بيعرف شو يعمل بأرض غريبة.",
@@ -51904,7 +51290,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch22/s4.mp3"
     },
     {
      "ar": "باع شوية من أواعيه عشان ياكل ويعيش.",
@@ -52122,7 +51508,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch22/s5.mp3"
     },
     {
      "ar": "لبس أواعي يابانية غريبة، وصار يتمشى بالشوارع.",
@@ -52306,7 +51692,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch22/s6.mp3"
     },
     {
      "ar": "كان حزين، بس ظلّ عنده أمل إنه يلاقي سيده.",
@@ -52624,12 +52010,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch22/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch22",
    "_words": 66,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch23",
@@ -52856,7 +52242,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch23/s0.mp3"
     },
     {
      "ar": "اشتغل معهم عشان ياكل، وصار جزء من عرض كبير ومشهور.",
@@ -53078,7 +52464,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch23/s1.mp3"
     },
     {
      "ar": "العرض اسمه \"الأنوف الطويلة\"، وكانوا يلبسوا أنوف طويلة مضحكة.",
@@ -53368,7 +52754,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch23/s2.mp3"
     },
     {
      "ar": "كانوا يعملوا برج كبير من ناس واقفين فوق بعض.",
@@ -53518,45 +52904,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "24923",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24923",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "ADV"
-        },
-        {
-         "id": "24924",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "24933",
-         "root": "ف.و.ق",
-         "gloss": "exceed;surpass",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24927",
-         "root": "ف.و.ق",
-         "gloss": "when_pigs_fly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24928",
-         "root": "ف.و.ق",
-         "gloss": "to_do_sth_in_a_hurry_and_not_duly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24929",
-         "root": "ف.و.ق",
-         "gloss": "very_crowded",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "foo2",
        "vocalized": "فَوق",
        "vocalized_from": "lexicon:exact"
@@ -53578,7 +52926,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch23/s3.mp3"
     },
     {
      "ar": "باسبارتو كان تحت البرج، لأنه قوي، وبيتحمّل الوزن.",
@@ -53746,7 +53094,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch23/s4.mp3"
     },
     {
      "ar": "صار يعمل حركات مضحكة، والناس تضحك وتصفّق له.",
@@ -53956,7 +53304,7 @@ window.LIBRARY = {
        "caphi_urban": "2ilo"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch23/s5.mp3"
     },
     {
      "ar": "بس من جوّاته، كان بس يفكر بسيده ووينه.",
@@ -54148,7 +53496,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch23/s6.mp3"
     },
     {
      "ar": "ما كان يعرف إنه فوغ وصل يوكوهاما، وعم يدوّر عليه.",
@@ -54346,12 +53694,12 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch23/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch23",
    "_words": 69,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch24",
@@ -54494,27 +53842,7 @@ window.LIBRARY = {
        "analysis": "VERB:I",
        "maknuune_id": "10506",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "10506",
-         "root": "د.و.ر",
-         "gloss": "search_for_sth;switch_on_sth;turn_on_(th",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "10507",
-         "root": "د.و.ر",
-         "gloss": "confuse;make_sb_feel_dizzy",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "10633",
-         "root": "د.ي.ر",
-         "gloss": "go;go_around;walk;run_after",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ydawwir",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -54614,7 +53942,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s0.mp3"
     },
     {
      "ar": "بالصدفة، راحوا يتفرجوا على عرض السيرك عشان يرتاحوا شوي.",
@@ -54844,7 +54172,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s1.mp3"
     },
     {
      "ar": "كانوا قاعدين بين الناس، ما بيعرفوا إنه باسبارتو هناك.",
@@ -55028,7 +54356,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s2.mp3"
     },
     {
      "ar": "وفجأة، باسبارتو شاف سيده فوغ بين المتفرجين!",
@@ -55214,7 +54542,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s3.mp3"
     },
     {
      "ar": "من الفرحة، نسي حاله وطلع من مكانه بالبرج.",
@@ -55498,7 +54826,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s4.mp3"
     },
     {
      "ar": "والبرج كله وقع فوق بعض، وصار في فوضى ومنظر مضحك.",
@@ -55584,45 +54912,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "24923",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24923",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "ADV"
-        },
-        {
-         "id": "24924",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "24933",
-         "root": "ف.و.ق",
-         "gloss": "exceed;surpass",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24927",
-         "root": "ف.و.ق",
-         "gloss": "when_pigs_fly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24928",
-         "root": "ف.و.ق",
-         "gloss": "to_do_sth_in_a_hurry_and_not_duly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24929",
-         "root": "ف.و.ق",
-         "gloss": "very_crowded",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "foo2",
        "vocalized": "فَوق",
        "vocalized_from": "lexicon:exact"
@@ -55744,7 +55034,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s5.mp3"
     },
     {
      "ar": "ركض باسبارتو على سيده، وحضنه وهو مبسوط كتير.",
@@ -55992,7 +55282,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s6.mp3"
     },
     {
      "ar": "عودا كمان فرحت كتير، لأنها كانت خايفة عليه.",
@@ -56216,7 +55506,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s7.mp3"
     },
     {
      "ar": "فوغ ارتاح إنه لقى خادمه سالم، بس ما بيّن مشاعره كتير.",
@@ -56474,7 +55764,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s8.mp3"
     },
     {
      "ar": "باسبارتو دفع للسيرك تعويض عن البرج الي وقع.",
@@ -56704,7 +55994,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s9.mp3"
     },
     {
      "ar": "طلعوا كلهم سوا، ومعهم فيكس، وركبوا باخرة كبيرة لأمريكا.",
@@ -56958,7 +56248,7 @@ window.LIBRARY = {
        "caphi_urban": "2ameerka"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s10.mp3"
     },
     {
      "ar": "كانت الباخرة اسمها \"جنرال غرانت\".",
@@ -57056,12 +56346,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch24/s11.mp3"
     }
    ],
    "_dir": "book-atw80-ch24",
    "_words": 103,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch25",
@@ -57432,7 +56722,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch25/s0.mp3"
     },
     {
      "ar": "فوغ ظلّ يحسب الأيام بدقة، وكان لسا بالوقت.",
@@ -57670,7 +56960,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch25/s1.mp3"
     },
     {
      "ar": "عودا صارت مشاعرها لفوغ أقوى، بس ما حكت.",
@@ -57854,7 +57144,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch25/s2.mp3"
     },
     {
      "ar": "كانت تراقبه بهدوء، وتعجب من قلبه الطيب تحت وشه البارد.",
@@ -58156,7 +57446,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch25/s3.mp3"
     },
     {
      "ar": "باسبارتو صار يشك بفيكس أكتر، وقرر يراقبه.",
@@ -58292,7 +57582,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch25/s4.mp3"
     },
     {
      "ar": "قال بينه وبين حاله: هالرجل بيتبعنا لسبب، بس شو السبب؟",
@@ -58524,7 +57814,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch25/s5.mp3"
     },
     {
      "ar": "لسا ما ربط الأمور مع بعض.",
@@ -58664,7 +57954,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch25/s6.mp3"
     },
     {
      "ar": "وبدون ما يعرفوا، وهم عم يعبروا المحيط، ربحوا يوم كامل بالحساب.",
@@ -58946,12 +58236,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch25/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch25",
    "_words": 69,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch26",
@@ -59192,7 +58482,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch26/s0.mp3"
     },
     {
      "ar": "راحوا يختموا الجوازات، وبعدين يتمشوا بالشارع.",
@@ -59372,7 +58662,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch26/s1.mp3"
     },
     {
      "ar": "بس صار في مظاهرة سياسية كبيرة، وصار في عراك بين الناس.",
@@ -59568,7 +58858,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch26/s2.mp3"
     },
     {
      "ar": "فوغ وفيكس انحشروا بالنص، وصار في دفع وضرب.",
@@ -59790,7 +59080,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch26/s3.mp3"
     },
     {
      "ar": "واحد كبير حاول يضرب فوغ، بس فيكس وقف قدامه وأخد الضربة.",
@@ -60072,7 +59362,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch26/s4.mp3"
     },
     {
      "ar": "فوغ شكره، وقال: رح أرد لك الجميل يوم من الأيام.",
@@ -60326,7 +59616,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch26/s5.mp3"
     },
     {
      "ar": "طلعوا من العراك بالسلامة، وأواعيهم مخربطة شوي.",
@@ -60502,7 +59792,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch26/s6.mp3"
     },
     {
      "ar": "بعدها راحوا عالمحطة، وركبوا القطار الكبير الي بيعبر أمريكا.",
@@ -60758,12 +60048,12 @@ window.LIBRARY = {
        "caphi_urban": "2ameerka"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch26/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch26",
    "_words": 71,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch27",
@@ -60808,55 +60098,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -60950,7 +60202,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch27/s0.mp3"
     },
     {
      "ar": "الطريق كان طويل كتير، بيعبر جبال وسهول وصحاري وأنهار.",
@@ -61230,7 +60482,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch27/s1.mp3"
     },
     {
      "ar": "باسبارتو كان يتفرج من الشباك على بلد كبيرة وغريبة.",
@@ -61446,7 +60698,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch27/s2.mp3"
     },
     {
      "ar": "كل إشي كان واسع: الأرض، والسما، والمسافات الي بلا نهاية.",
@@ -61698,7 +60950,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch27/s3.mp3"
     },
     {
      "ar": "فوغ ظلّ قاعد بمكانه، بيلعب الورق زي عادته.",
@@ -61922,7 +61174,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch27/s4.mp3"
     },
     {
      "ar": "عودا كانت جنبه، وصاروا يحكوا شوي شوي.",
@@ -62118,7 +61370,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch27/s5.mp3"
     },
     {
      "ar": "باسبارتو كان مبسوط، بس عينه على فيكس دايمًا.",
@@ -62264,7 +61516,7 @@ window.LIBRARY = {
        "caphi_urban": "daayman"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch27/s6.mp3"
     },
     {
      "ar": "كان لسا بالوقت، بس الطريق قدامهم كان فيه مفاجآت كتيرة.",
@@ -62564,12 +61816,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch27/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch27",
    "_words": 69,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch28",
@@ -62860,7 +62112,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch28/s0.mp3"
     },
     {
      "ar": "باسبارتو قعد يسمع، وكان كل إشي جديد وغريب عليه.",
@@ -63076,7 +62328,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch28/s1.mp3"
     },
     {
      "ar": "تعلّم شوي عن الناس الي بيعيشوا بهالأرض الواسعة.",
@@ -63264,7 +62516,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch28/s2.mp3"
     },
     {
      "ar": "بس ما طوّل، لأنه القطار كان دايمًا مستعجل.",
@@ -63438,7 +62690,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch28/s3.mp3"
     },
     {
      "ar": "فوغ ما اهتم بالقصص؛ اهتمامه كان بس بالوقت والمسافة.",
@@ -63634,7 +62886,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch28/s4.mp3"
     },
     {
      "ar": "كل ساعة كان يشوف الخريطة، ويحسب وين صاروا.",
@@ -63832,7 +63084,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch28/s5.mp3"
     },
     {
      "ar": "كانوا متقدمين شوي، وهاد فرّح باسبارتو.",
@@ -63970,7 +63222,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch28/s6.mp3"
     },
     {
      "ar": "بس القطار قرّب من مكان فيه مشاكل كتيرة.",
@@ -64176,12 +63428,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch28/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch28",
    "_words": 67,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch29",
@@ -64372,7 +63624,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch29/s0.mp3"
     },
     {
      "ar": "كان في قطيع جاموس ضخم عم يعبر السكة، آلاف مؤلفة.",
@@ -64606,7 +63858,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch29/s1.mp3"
     },
     {
      "ar": "ما كان في إشي يعملوه غير إنهم يستنوا لحد ما يخلصوا.",
@@ -64806,7 +64058,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch29/s2.mp3"
     },
     {
      "ar": "ظلّوا يعبروا لساعات طويلة، والقطار واقف.",
@@ -65000,7 +64252,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch29/s3.mp3"
     },
     {
      "ar": "باسبارتو انجنّ من الغضب على هالتأخير.",
@@ -65126,7 +64378,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch29/s4.mp3"
     },
     {
      "ar": "صار يصرخ ويلوّح بإيديه، بس الجاموس ما اهتم فيه.",
@@ -65322,7 +64574,7 @@ window.LIBRARY = {
        "caphi_urban": "fi"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch29/s5.mp3"
     },
     {
      "ar": "فوغ ظلّ هادي، قاعد بمكانه، ما عليه ولا هم.",
@@ -65550,7 +64802,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch29/s6.mp3"
     },
     {
      "ar": "بالآخر خلص القطيع، وكمّل القطار طريقه.",
@@ -65744,12 +64996,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch29/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch29",
    "_words": 64,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch30",
@@ -65956,45 +65208,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "24923",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24923",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "ADV"
-        },
-        {
-         "id": "24924",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "24933",
-         "root": "ف.و.ق",
-         "gloss": "exceed;surpass",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24927",
-         "root": "ف.و.ق",
-         "gloss": "when_pigs_fly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24928",
-         "root": "ف.و.ق",
-         "gloss": "to_do_sth_in_a_hurry_and_not_duly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24929",
-         "root": "ف.و.ق",
-         "gloss": "very_crowded",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "foo2",
        "vocalized": "فَوق",
        "vocalized_from": "lexicon:exact"
@@ -66064,7 +65278,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch30/s0.mp3"
     },
     {
      "ar": "السائق خاف، وقال: الجسر مش قوي، ممكن يوقع تحت وزن القطار.",
@@ -66338,7 +65552,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch30/s1.mp3"
     },
     {
      "ar": "صار في نقاش بين الركاب: نستنى، ولا نجرب نعبر؟",
@@ -66592,7 +65806,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch30/s2.mp3"
     },
     {
      "ar": "واحد اقترح فكرة جريئة: نعبر بأسرع سرعة، عشان القطار ما يثقّل على الجسر.",
@@ -66934,7 +66148,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch30/s3.mp3"
     },
     {
      "ar": "رجّع القطار لورا، وبعدين اندفع قدام بسرعة جنونية.",
@@ -67126,7 +66340,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch30/s4.mp3"
     },
     {
      "ar": "الكل حبس نفسه من الخوف وهو عم يعبر.",
@@ -67328,7 +66542,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch30/s5.mp3"
     },
     {
      "ar": "عبر القطار الجسر بسلامة، وبعد ما عبر بلحظات، وقع الجسر بالنهر!",
@@ -67726,7 +66940,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch30/s6.mp3"
     },
     {
      "ar": "الكل ارتاح، وباسبارتو مسح العرق عن جبينه.",
@@ -67954,12 +67168,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch30/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch30",
    "_words": 77,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch31",
@@ -68194,7 +67408,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch31/s0.mp3"
     },
     {
      "ar": "صار في قتال وخوف كبير بين الركاب.",
@@ -68370,7 +67584,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch31/s1.mp3"
     },
     {
      "ar": "فوغ وفيكس وباسبارتو حاربوا مع الناس ليدافعوا عن حالهم.",
@@ -68574,7 +67788,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch31/s2.mp3"
     },
     {
      "ar": "فوغ كان شجاع، وحارب بهدوء وثبات، بلا خوف.",
@@ -68800,7 +68014,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch31/s3.mp3"
     },
     {
      "ar": "باسبارتو كان بطل؛ زحف تحت العربات ليوقف القطار عند الحصن.",
@@ -69066,7 +68280,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch31/s4.mp3"
     },
     {
      "ar": "نجح إنه يوقفه، وهيك خلّص الركاب من الخطر.",
@@ -69338,7 +68552,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch31/s5.mp3"
     },
     {
      "ar": "بس بالهجمة، انخطف هو وكم راكب تانيين.",
@@ -69478,7 +68692,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch31/s6.mp3"
     },
     {
      "ar": "لما وقف القطار عند الحصن، اكتشفوا إنه باسبارتو مخطوف.",
@@ -69682,12 +68896,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch31/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch31",
    "_words": 67,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch32",
@@ -69896,7 +69110,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch32/s0.mp3"
     },
     {
      "ar": "طلب من ضباط الحصن يعطوه جنود ليدوّر على باسبارتو.",
@@ -70104,7 +69318,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch32/s1.mp3"
     },
     {
      "ar": "راح فوغ بنفسه مع الجنود بالتلج والبرد.",
@@ -70294,7 +69508,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch32/s2.mp3"
     },
     {
      "ar": "عودا ظلّت بالحصن، قلقانة كتير عليهم.",
@@ -70442,7 +69656,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch32/s3.mp3"
     },
     {
      "ar": "فيكس كان بدّه يمسك فوغ، بس هلق حس إنه لازم يساعده.",
@@ -70674,7 +69888,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch32/s4.mp3"
     },
     {
      "ar": "قال لعودا: أنا رح أستنى فوغ هون، لا تخافي.",
@@ -70932,7 +70146,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch32/s5.mp3"
     },
     {
      "ar": "بعد ساعات، رجع فوغ وقد أنقذ باسبارتو والباقيين.",
@@ -71180,7 +70394,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch32/s6.mp3"
     },
     {
      "ar": "عودا فرحت كتير، بس القطار كان مشي وتركهم.",
@@ -71428,12 +70642,12 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch32/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch32",
    "_words": 66,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch33",
@@ -71642,7 +70856,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch33/s0.mp3"
     },
     {
      "ar": "لقوا رجل معه زحّافة بتمشي عالتلج بقوة الهوا والشراع.",
@@ -71890,7 +71104,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch33/s1.mp3"
     },
     {
      "ar": "ركبوا فيها، ومشيت بسرعة كبيرة فوق التلج الأبيض.",
@@ -72064,45 +71278,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "24923",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24923",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "ADV"
-        },
-        {
-         "id": "24924",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "24933",
-         "root": "ف.و.ق",
-         "gloss": "exceed;surpass",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24927",
-         "root": "ف.و.ق",
-         "gloss": "when_pigs_fly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24928",
-         "root": "ف.و.ق",
-         "gloss": "to_do_sth_in_a_hurry_and_not_duly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24929",
-         "root": "ف.و.ق",
-         "gloss": "very_crowded",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "foo2",
        "vocalized": "فَوق",
        "vocalized_from": "lexicon:exact"
@@ -72166,7 +71342,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch33/s2.mp3"
     },
     {
      "ar": "الجو كان بارد جدًا، بس ما كان في وقت للراحة.",
@@ -72422,7 +71598,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch33/s3.mp3"
     },
     {
      "ar": "الزحّافة طارت فوق التلج زي الطير.",
@@ -72490,45 +71666,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "24923",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24923",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "ADV"
-        },
-        {
-         "id": "24924",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "24933",
-         "root": "ف.و.ق",
-         "gloss": "exceed;surpass",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24927",
-         "root": "ف.و.ق",
-         "gloss": "when_pigs_fly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24928",
-         "root": "ف.و.ق",
-         "gloss": "to_do_sth_in_a_hurry_and_not_duly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24929",
-         "root": "ف.و.ق",
-         "gloss": "very_crowded",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "foo2",
        "vocalized": "فَوق",
        "vocalized_from": "lexicon:exact"
@@ -72628,7 +71766,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch33/s4.mp3"
     },
     {
      "ar": "وصلوا لمحطة قطار تانية بأسرع ما توقعوا.",
@@ -72800,7 +71938,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch33/s5.mp3"
     },
     {
      "ar": "ركبوا القطار من جديد، ورايحين لمدينة نيويورك.",
@@ -73008,7 +72146,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch33/s6.mp3"
     },
     {
      "ar": "فوغ حسب الوقت، وكان لسا في أمل صغير.",
@@ -73256,12 +72394,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch33/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch33",
    "_words": 63,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch34",
@@ -73486,7 +72624,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch34/s0.mp3"
     },
     {
      "ar": "بس الباخرة الي لأوروبا كانت طلعت قبلهم بشوية بس.",
@@ -73688,7 +72826,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch34/s1.mp3"
     },
     {
      "ar": "مرة تانية، ضيّعوا الباخرة بفرق دقايق.",
@@ -73858,7 +72996,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch34/s2.mp3"
     },
     {
      "ar": "باسبارتو حس بالذنب، لأنه بسببه صار كل هالتأخير.",
@@ -74060,7 +73198,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch34/s3.mp3"
     },
     {
      "ar": "بس فوغ ما استسلم، وراح يدوّر على أي مركب تاني.",
@@ -74356,7 +73494,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch34/s4.mp3"
     },
     {
      "ar": "لقى مركب صغير اسمه هنريتّا، بس صاحبه ما بدّه يروح لإنجلترا.",
@@ -74658,7 +73796,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch34/s5.mp3"
     },
     {
      "ar": "فوغ عرض عليه مصاري كتيرة، بس الكابتن رفض.",
@@ -74854,7 +73992,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch34/s6.mp3"
     },
     {
      "ar": "فوغ اتفق معه إنه بس ياخدهم لفرنسا، وركبوا المركب.",
@@ -75106,12 +74244,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch34/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch34",
    "_words": 68,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch35",
@@ -75368,7 +74506,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch35/s0.mp3"
     },
     {
      "ar": "حبسوا الكابتن بغرفته، وصار فوغ هو المسؤول عن المركب.",
@@ -75598,7 +74736,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch35/s1.mp3"
     },
     {
      "ar": "وجّه المركب باتجاه إنجلترا، والوقت عم يركض.",
@@ -75826,7 +74964,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch35/s2.mp3"
     },
     {
      "ar": "كان لازم يوصل بأسرع ما يمكن، مهما كلّف الأمر.",
@@ -76036,7 +75174,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch35/s3.mp3"
     },
     {
      "ar": "بس بالطريق، الفحم الي بيشغّل المركب خلص.",
@@ -76278,7 +75416,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch35/s4.mp3"
     },
     {
      "ar": "فأمر فوغ إنهم يحرقوا خشب المركب نفسه عشان يكمّلوا.",
@@ -76564,7 +75702,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch35/s5.mp3"
     },
     {
      "ar": "حرقوا كل إشي من خشب: الكراسي، والأبواب، والسطح.",
@@ -76780,7 +75918,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch35/s6.mp3"
     },
     {
      "ar": "لحد ما ضلّ بس هيكل الحديد، ووصلوا بر إنجلترا.",
@@ -77036,12 +76174,12 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch35/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch35",
    "_words": 68,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch36",
@@ -77260,7 +76398,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch36/s0.mp3"
     },
     {
      "ar": "بس أول ما نزل، إجا فيكس وحط إيده على كتفه.",
@@ -77540,7 +76678,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch36/s1.mp3"
     },
     {
      "ar": "قال: باسم القانون، إنت معتقل!",
@@ -77668,7 +76806,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch36/s2.mp3"
     },
     {
      "ar": "هالمرة كانت الورقة الرسمية وصلت، فحطّوا فوغ بالحبس.",
@@ -77876,7 +77014,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch36/s3.mp3"
     },
     {
      "ar": "باسبارتو انجنّ من الغضب، لأنه عرف إنه فيكس كان السبب بكل التأخير.",
@@ -78098,7 +77236,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch36/s4.mp3"
     },
     {
      "ar": "عودا كانت حزينة كتير، وحست إنه كل إشي ضاع.",
@@ -78332,7 +77470,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch36/s5.mp3"
     },
     {
      "ar": "فوغ ظلّ هادي بالحبس، بس من جوّاته كان يعرف إنه الوقت عم يروح.",
@@ -78598,7 +77736,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch36/s6.mp3"
     },
     {
      "ar": "كل دقيقة بالحبس كانت تقرّبه أكتر من خسارة الرهان.",
@@ -78808,12 +77946,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch36/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch36",
    "_words": 76,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch37",
@@ -79050,7 +78188,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch37/s0.mp3"
     },
     {
      "ar": "فيكس إجا وهو مكسوف، وقال: سامحني يا سيد فوغ.",
@@ -79234,7 +78372,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch37/s1.mp3"
     },
     {
      "ar": "طلع إنه الحرامي الحقيقي انمسك من كم يوم بلندن.",
@@ -79244,55 +78382,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -79512,7 +78612,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch37/s2.mp3"
     },
     {
      "ar": "فوغ كان بريء، وما كان له علاقة بالسرقة أبدًا.",
@@ -79704,7 +78804,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch37/s3.mp3"
     },
     {
      "ar": "فوغ، لأول مرة بحياته، فقد أعصابه، وضرب فيكس ضربة وحدة.",
@@ -79806,55 +78906,17 @@ window.LIBRARY = {
       {
        "surface": "فقد",
        "root": "ف.ق.د",
-       "lemma": "فَقَّد",
-       "form": "فَقِّد",
-       "caphi_raw": "f a Q Q i d",
-       "caphi": "faQQid",
-       "gloss": "check_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "24372",
+       "lemma": "فَقَد",
+       "form": "فَقَد",
+       "caphi_raw": "f a Q a d",
+       "caphi": "faQad",
+       "gloss": "miss;lose;check_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "24383",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24372",
-         "root": "ف.ق.د",
-         "gloss": "check_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24383",
-         "root": "ف.ق.د",
-         "gloss": "miss;lose;check_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "24384",
-         "root": "ف.ق.د",
-         "gloss": "check_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "24371",
-         "root": "ف.ق.د",
-         "gloss": "miss;lose;check_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24377",
-         "root": "ف.ق.د",
-         "gloss": "miss;lose;check",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "24378",
-         "root": "ف.ق.د",
-         "gloss": "check",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "fa22id",
-       "vocalized": "فَقِّد",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "fa2ad",
+       "vocalized": "فَقَد",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -80008,7 +79070,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch37/s4.mp3"
     },
     {
      "ar": "وبعدين رجع هادي، وطلع من الحبس بسرعة مع عودا وباسبارتو.",
@@ -80236,7 +79298,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch37/s5.mp3"
     },
     {
      "ar": "ركبوا قطار خاص لأسرع ما يقدروا للندن.",
@@ -80444,7 +79506,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch37/s6.mp3"
     },
     {
      "ar": "بس لما وصلوا، كان الوقت راح، وفوغ حس إنه خسر الرهان.",
@@ -80772,12 +79834,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch37/s7.mp3"
     }
    ],
    "_dir": "book-atw80-ch37",
    "_words": 71,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "book-atw80-ch38",
@@ -80960,7 +80022,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s0.mp3"
     },
     {
      "ar": "حس إنه خسر كل إشي: المصاري، والرهان، والتعب كله على الفاضي.",
@@ -81252,7 +80314,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:no-alignment"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s1.mp3"
     },
     {
      "ar": "قعد لحاله بغرفته المظلمة، ما بدّه يشوف حدا.",
@@ -81478,7 +80540,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s2.mp3"
     },
     {
      "ar": "بس عودا دقّت الباب، وقعدت جنبه.",
@@ -81694,7 +80756,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s3.mp3"
     },
     {
      "ar": "قالت عودا: يا سيد فوغ، أنا خسرت كل إشي زيّك، بس صار عندي إنت.",
@@ -82082,7 +81144,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s4.mp3"
     },
     {
      "ar": "قالت بحياء: بتقبل تتجوزني؟ أنا بحبك.",
@@ -82238,7 +81300,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:verb"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s5.mp3"
     },
     {
      "ar": "فوغ، لأول مرة، بان الفرح على وشه.",
@@ -82414,7 +81476,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s6.mp3"
     },
     {
      "ar": "قال: أنا كمان بحبك، وهاد أغلى إشي ربحته بهالرحلة.",
@@ -82622,7 +81684,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s7.mp3"
     },
     {
      "ar": "بعت باسبارتو فورًا ليجهّز الزواج عند القسّيس.",
@@ -82796,7 +81858,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s8.mp3"
     },
     {
      "ar": "ركض باسبارتو عالكنيسة، وبعد شوي رجع يركض ويصرخ.",
@@ -83042,7 +82104,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-prefix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s9.mp3"
     },
     {
      "ar": "قال: يا سيدي! في غلط بالحساب! اليوم مش الأحد، اليوم السبت!",
@@ -83296,7 +82358,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s10.mp3"
     },
     {
      "ar": "لأنهم لفّوا الأرض باتجاه الشرق، ربحوا يوم كامل بلا ما ينتبهوا.",
@@ -83602,7 +82664,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s11.mp3"
     },
     {
      "ar": "لسا في وقت! الرهان لسا ممكن يربحوه!",
@@ -83720,7 +82782,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s12.mp3"
     },
     {
      "ar": "ركض فوغ عالنادي بأسرع ما يقدر، والكل مستنيه.",
@@ -83926,7 +82988,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s13.mp3"
     },
     {
      "ar": "دخل الباب بآخر ثانية، قبل ما يخلص الوقت بالزبط.",
@@ -84180,7 +83242,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s14.mp3"
     },
     {
      "ar": "ربح الرهان، وربح العشرين ألف جنيه.",
@@ -84356,7 +83418,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s15.mp3"
     },
     {
      "ar": "بس أهم من الرهان، إنه ربح عودا، وصار مبسوط بحياته لأول مرة.",
@@ -84584,7 +83646,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s16.mp3"
     },
     {
      "ar": "وهيك، الرجل الدقيق الي ما كان يعرف الحب، لف الأرض ولقى قلبه.",
@@ -84936,12 +83998,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/book-atw80-ch38/s17.mp3"
     }
    ],
    "_dir": "book-atw80-ch38",
    "_words": 162,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "morning-coffee",
@@ -84953,12 +84015,16 @@ window.LIBRARY = {
    "kind": "lesson",
    "date": null,
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "original (Claude-written; sentences reviewed by a native Levantine speaker, 0/5 flagged)",
    "sentences": [
     {
      "ar": "كل يوم الصبح، بصحى بكير وبعمل قهوة.",
      "en": "Every morning I wake up early and make coffee.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -85078,6 +84144,7 @@ window.LIBRARY = {
     {
      "ar": "ريحة الهيل بتملا البيت.",
      "en": "The smell of cardamom fills the house.",
+     "p": null,
      "words": [
       {
        "surface": "ريحة",
@@ -85149,6 +84216,7 @@ window.LIBRARY = {
     {
      "ar": "بقعد عالبلكونة وبشرب فنجاني على مهلي.",
      "en": "I sit on the balcony and drink my cup slowly.",
+     "p": null,
      "words": [
       {
        "surface": "بقعد",
@@ -85252,6 +84320,7 @@ window.LIBRARY = {
     {
      "ar": "الشارع لسه هادي.",
      "en": "The street is still quiet.",
+     "p": null,
      "words": [
       {
        "surface": "الشارع",
@@ -85307,6 +84376,7 @@ window.LIBRARY = {
     {
      "ar": "هاي أحلى لحظة بالنهار.",
      "en": "This is the most beautiful moment of the day.",
+     "p": null,
      "words": [
       {
        "surface": "هاي",
@@ -85390,12 +84460,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-18",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "طيارات أوكرانية بدون طيار ضربت مخازن كبيرة لشركة تسوق روسية قرب موسكو، وفي ناس ماتت.",
      "en": "Ukrainian drones struck big warehouses of a Russian shopping company near Moscow, and some people were killed.",
+     "p": null,
      "words": [
       {
        "surface": "طيارات",
@@ -85643,6 +84717,7 @@ window.LIBRARY = {
     {
      "ar": "كتير جنود أوكرانيين زعلانين لأنهم شالوا وزير الدفاع، وصار في مظاهرات هناك.",
      "en": "Many Ukrainian soldiers are upset because they removed the defence minister, and protests broke out there.",
+     "p": null,
      "words": [
       {
        "surface": "كتير",
@@ -85842,6 +84917,7 @@ window.LIBRARY = {
     {
      "ar": "أمريكا عم تضرب إيران لسابع ليلة على التوالي، وإيران ردّت وضربت محطة مي وكهربا بالكويت.",
      "en": "The US has been striking Iran for the seventh night in a row, and Iran retaliated by hitting a water and power plant in Kuwait.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -86121,6 +85197,7 @@ window.LIBRARY = {
     {
      "ar": "ترامب عم يهدد كندا بضرايب جديدة، لأنه دخان الحرايق عم يوصل هوا وسخ لمدن أمريكية.",
      "en": "Trump is threatening Canada with new tariffs, because the wildfire smoke is bringing dirty air into American cities.",
+     "p": null,
      "words": [
       {
        "surface": "ترامب",
@@ -86368,6 +85445,7 @@ window.LIBRARY = {
     {
      "ar": "شركة هندية ناشئة أطلقت أول صاروخ تجاري هندي مصمم يوصل للمدار.",
      "en": "An Indian start-up launched India's first commercial rocket designed to reach orbit.",
+     "p": null,
      "words": [
       {
        "surface": "شركة",
@@ -86551,6 +85629,7 @@ window.LIBRARY = {
     {
      "ar": "صار زلزال قوته ٧.٣ قدام سواحل المكسيك، وسجّلوا أمواج صغيرة بعد الهزة.",
      "en": "A magnitude 7.3 earthquake struck off Mexico's coast, and they recorded small waves after the tremor.",
+     "p": null,
      "words": [
       {
        "surface": "صار",
@@ -86798,6 +85877,7 @@ window.LIBRARY = {
     {
      "ar": "حريق بميتم للأطفال قتل ١١ واحد، والبوليس بقول إنه مكيّف هو اللي سبّب الحريق.",
      "en": "A fire at a children's orphanage killed 11 people, and police say an air conditioner sparked the blaze.",
+     "p": null,
      "words": [
       {
        "surface": "حريق",
@@ -87029,6 +86109,7 @@ window.LIBRARY = {
     {
      "ar": "للمرة التانية بتلات شهور، قراصنة يمكن صوماليين خطفوا ناقلة نفط قدام سواحل اليمن.",
      "en": "For the second time in three months, suspected Somali pirates hijacked a tanker off the coast of Yemen.",
+     "p": null,
      "words": [
       {
        "surface": "للمرة",
@@ -87244,6 +86325,7 @@ window.LIBRARY = {
     {
      "ar": "حريق كبير بالنرويج حرق أكتر من ١٠٠ بيت، والهليكوبترات عم ترمي مي عشان تطفيه.",
      "en": "A big fire in Norway destroyed more than 100 homes, and helicopters are dumping water to put it out.",
+     "p": null,
      "words": [
       {
        "surface": "حريق",
@@ -87563,12 +86645,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-19",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أمريكا وإيران عم يتبادلوا الضربات بعد ما انقتلوا جنديين أمريكان بالأردن، وهاي لتمن ليلة على التوالي القوات الأمريكية عم تضرب مواقع إيرانية.",
      "en": "The US and Iran are exchanging strikes after two American soldiers were killed in Jordan, and this is the eighth night in a row that US forces are hitting Iranian sites.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -87922,6 +87008,7 @@ window.LIBRARY = {
     {
      "ar": "روسيا عملت هجوم صواريخ كبير كتير على كييف، وواحد مات، والرئيس زيلينسكي قال إنه من أكبر الهجمات اللي صارت على العاصمة.",
      "en": "Russia carried out a very large missile attack on Kyiv, one person died, and President Zelensky said it was one of the biggest attacks on the capital.",
+     "p": null,
      "words": [
       {
        "surface": "روسيا",
@@ -88263,6 +87350,7 @@ window.LIBRARY = {
     {
      "ar": "الأخوين تيت انعتقلوا بأمريكا، وبريطانيا زادت التهم عليهم لتصير تسعة وخمسين، بس محاميهم بقول إنهم أبرياء.",
      "en": "The Tate brothers were arrested in the US, and Britain added charges against them bringing the total to 59, but their lawyer says they are innocent.",
+     "p": null,
      "words": [
       {
        "surface": "الأخوين",
@@ -88522,6 +87610,7 @@ window.LIBRARY = {
     {
      "ar": "نظام الحدود الجديد بأوروبا عم يخلي الوقت عند الجوازات يزيد تلات مرات، وشركة راين اير حذّرت الناس المسافرين هالصيف يستنوا كتير.",
      "en": "The new EU border system is tripling the time at passport control, and Ryanair warned travelers this summer to expect long waits.",
+     "p": null,
      "words": [
       {
        "surface": "نظام",
@@ -88857,6 +87946,7 @@ window.LIBRARY = {
     {
      "ar": "عبّارة فيها مية وستطعش راكب غرقت قبالة سواحل غيانا، ولحد هلأ نقذوا تلاتة وخمسين واحد.",
      "en": "A ferry carrying 116 passengers sank off the coast of Guyana, and so far 53 people have been rescued.",
+     "p": null,
      "words": [
       {
        "surface": "عبّارة",
@@ -89098,6 +88188,7 @@ window.LIBRARY = {
     {
      "ar": "رئيس المجر وافق إنه يترك منصبه بعد ما البرلمان صوّت لإقالته، وهاد الزلمة محسوب على أوربان.",
      "en": "Hungary's president agreed to step down after parliament voted to remove him, and this man is considered an Orbán loyalist.",
+     "p": null,
      "words": [
       {
        "surface": "رئيس",
@@ -89355,6 +88446,7 @@ window.LIBRARY = {
     {
      "ar": "سياسي ألماني اسمه ينس شبان استقال بسبب قصة إنه استعمل أم بديلة لطفله، مع إنه هو نفسه كان مؤيد لمنع هالشي.",
      "en": "A German politician named Jens Spahn resigned over a controversy about using a surrogate for his child, even though he himself had backed a ban on it.",
+     "p": null,
      "words": [
       {
        "surface": "سياسي",
@@ -89692,6 +88784,7 @@ window.LIBRARY = {
     {
      "ar": "شركة فضاء ناشئة بالهند طلّعت أول صاروخ تجاري هندي مصمم للمدار، واسمه فيكرام-وان، والإطلاق نجح يوم السبت.",
      "en": "A space start-up in India launched the country's first commercial rocket designed for orbit, called Vikram-1, and the launch succeeded on Saturday.",
+     "p": null,
      "words": [
       {
        "surface": "شركة",
@@ -90023,6 +89116,7 @@ window.LIBRARY = {
     {
      "ar": "بالنرويج في حريق كبير بمدينة درامن دمّر أكتر من مية بيت ووصل لغابة قريبة، والهليكوبترات عم تكب مي عليه.",
      "en": "In Norway a big fire in the city of Drammen destroyed more than 100 homes and spread to a nearby forest, and helicopters are dumping water on it.",
+     "p": null,
      "words": [
       {
        "surface": "بالنرويج",
@@ -90344,12 +89438,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-20",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جندي أمريكاني انقتل وواحد تاني انجرح بعد هجوم إيراني بالعراق، وهاد بعد يوم من موت جنديين تانيين بالأردن.",
      "en": "A US soldier was killed and another wounded after an Iranian attack in Iraq, a day after two other soldiers died in Jordan.",
+     "p": null,
      "words": [
       {
        "surface": "جندي",
@@ -90641,6 +89739,7 @@ window.LIBRARY = {
     {
      "ar": "ترامب قال إن أمريكا ضربت إيران على شرف الجنود اللي انقتلوا، وإيران ردت بهجمات بسوريا والأردن، وفي سفينتين انفجروا بمضيق هرمز.",
      "en": "Trump said the US struck Iran in honour of the killed soldiers, Iran responded with attacks in Syria and Jordan, and two ships reportedly exploded in the Strait of Hormuz.",
+     "p": null,
      "words": [
       {
        "surface": "ترامب",
@@ -90976,6 +90075,7 @@ window.LIBRARY = {
     {
      "ar": "روسيا عملت هجوم صواريخ كبير على مدن أوكرانية، تمن ناس ماتوا وعشرات انجرحوا، وكييف لسه عم تضرب بنية تحتية روسية.",
      "en": "Russia launched a big missile attack on Ukrainian cities, eight people died and dozens were injured, while Kyiv keeps striking Russian infrastructure.",
+     "p": null,
      "words": [
       {
        "surface": "روسيا",
@@ -91303,6 +90403,7 @@ window.LIBRARY = {
     {
      "ar": "بإسبانيا، ولد عمره تلتعشر سنة مات وقت الاحتفالات بكأس العالم لما وقعت نافورة جزئياً، وفي شبين تانيين انجرحوا.",
      "en": "In Spain, a 13-year-old boy died during the World Cup celebrations when a fountain partially collapsed, and two other young people were injured.",
+     "p": null,
      "words": [
       {
        "surface": "بإسبانيا",
@@ -91590,6 +90691,7 @@ window.LIBRARY = {
     {
      "ar": "إسبانيا فازت بكأس العالم على الأرجنتين، وفي حفلة نص المباراة غنّى شاكيرا ومادونا وجاستن بيبر و BTS.",
      "en": "Spain won the World Cup against Argentina, and at the half-time show Shakira, Madonna, Justin Bieber, and BTS performed.",
+     "p": null,
      "words": [
       {
        "surface": "إسبانيا",
@@ -91855,6 +90957,7 @@ window.LIBRARY = {
     {
      "ar": "إخوان تيت انعتقلوا بأمريكا، والتهم عليهم ببريطانيا صارت تسعة وخمسين، وبريطانيا طالبة تسليمهم، بس محاميهم بقول إنهم أبرياء.",
      "en": "The Tate brothers were arrested in the US, their UK charges reached 59, Britain requested their extradition, but their lawyer says they are innocent.",
+     "p": null,
      "words": [
       {
        "surface": "إخوان",
@@ -92144,6 +91247,7 @@ window.LIBRARY = {
     {
      "ar": "عبّارة ركاب انقلبت قدام غويانا، أنقذوا سبعة وستين شخص، بس بقولوا إنه كان فيها أكتر من مية وتلاتين واحد.",
      "en": "A passenger ferry capsized off Guyana; 67 people were rescued, but it's believed there were more than 130 aboard.",
+     "p": null,
      "words": [
       {
        "surface": "عبّارة",
@@ -92453,6 +91557,7 @@ window.LIBRARY = {
     {
      "ar": "بالصين، عامل توصيل أكل اسمه وانغ جيبينغ ربح أكبر جايزة أدبية بالبلد، وهو من العمّال اللي عم ياخدوا اهتمام بكتاباتهم.",
      "en": "In China, a food delivery rider named Wang Jibing won the country's top literary prize, one of several blue-collar workers gaining attention for their writing.",
+     "p": null,
      "words": [
       {
        "surface": "بالصين",
@@ -92770,6 +91875,7 @@ window.LIBRARY = {
     {
      "ar": "جي دي فانس قال إن مرته أوشا وابنه بخير بعد ما إجاهم رابع ولد يوم الأحد الصبح.",
      "en": "JD Vance said his wife Usha and son are doing well after their fourth child was born on Sunday morning.",
+     "p": null,
      "words": [
       {
        "surface": "جي",
@@ -93055,12 +92161,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-21",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "ترامب حط ضرايب خمسين بالمية على كندا، والكنديين قالوا رح يزيدوا مفاوضات التجارة عشان يحلوا المشكلة.",
      "en": "Trump imposed 50% tariffs on Canada, and the Canadians said they'll intensify trade talks to solve the problem.",
+     "p": null,
      "words": [
       {
        "surface": "ترامب",
@@ -93322,6 +92432,7 @@ window.LIBRARY = {
     {
      "ar": "أمريكا عم تضرب إيران من جديد، وترامب حذّر إنه رح يرد على موت جنوده هناك.",
      "en": "America is striking Iran again, and Trump warned he'll retaliate for the deaths of his soldiers there.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -93569,6 +92680,7 @@ window.LIBRARY = {
     {
      "ar": "الجيش اللبناني قال إنه عم ينتشر بمنطقة صغيرة بعد ما انسحب الجيش الإسرائيلي منها.",
      "en": "The Lebanese army said it's deploying in a small area after the Israeli army withdrew from it.",
+     "p": null,
      "words": [
       {
        "surface": "الجيش",
@@ -93796,6 +92908,7 @@ window.LIBRARY = {
     {
      "ar": "الحوثيين باليمن أعلنوا حصار بحري على السعودية، وقالوا هاد رد على حصار السعودية لموانيهم.",
      "en": "The Houthis in Yemen announced a maritime blockade on Saudi Arabia, saying it's a response to the Saudi blockade of their ports.",
+     "p": null,
      "words": [
       {
        "surface": "الحوثيين",
@@ -94019,6 +93132,7 @@ window.LIBRARY = {
     {
      "ar": "حماس اختارت خليل الحية قائد جديد إلها، وهو بيحل محل يحيى السنوار اللي إسرائيل قتلته سنة ٢٠٢٤.",
      "en": "Hamas chose Khalil al-Hayya as its new leader, replacing Yahya Sinwar whom Israel killed in 2024.",
+     "p": null,
      "words": [
       {
        "surface": "حماس",
@@ -94292,6 +93406,7 @@ window.LIBRARY = {
     {
      "ar": "عبّارة ركاب انقلبت قدام غيانا، وفي أكتر من ٢٧ ماتوا و٨٣ لسه مفقودين.",
      "en": "A passenger ferry capsized off Guyana, and more than 27 died with 83 still missing.",
+     "p": null,
      "words": [
       {
        "surface": "عبّارة",
@@ -94503,6 +93618,7 @@ window.LIBRARY = {
     {
      "ar": "الأخوين تيت طلعوا قدام محكمة أمريكية بخصوص تسليمهم، وعليهم تهم زي الاغتصاب اللي بينكروها.",
      "en": "The Tate brothers appeared in a US court over their extradition, facing charges like rape which they deny.",
+     "p": null,
      "words": [
       {
        "surface": "الأخوين",
@@ -94732,6 +93848,7 @@ window.LIBRARY = {
     {
      "ar": "زعيم كارتل مخدرات مشهور اسمه المايو انحكم عليه بالسجن مدى الحياة بأمريكا، وكمان لازم يدفع ١٥ مليار دولار.",
      "en": "A famous drug cartel leader nicknamed El Mayo was sentenced to life in a US prison, and also has to pay $15 billion.",
+     "p": null,
      "words": [
       {
        "surface": "زعيم",
@@ -95023,6 +94140,7 @@ window.LIBRARY = {
     {
      "ar": "بأستراليا انولدوا أربع بنات توأم متطابقين، وهاد إشي كتير نادر وأهلهم انصدموا بالحمل.",
      "en": "In Australia four identical quadruplet girls were born — something very rare, and their parents were shocked by the pregnancy.",
+     "p": null,
      "words": [
       {
        "surface": "بأستراليا",
@@ -95244,12 +94362,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-22",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أميركا رجعت تضرب إيران، وترامب عم يهدد إنه بدو يضرب موقع نووي تحت الأرض. هاي الليلة الحادية عشر ورا بعض من الهجمات.",
      "en": "The US has resumed striking Iran, and Trump is threatening to hit an underground nuclear site. This is the 11th night in a row of attacks.",
+     "p": null,
      "words": [
       {
        "surface": "أميركا",
@@ -95605,6 +94727,7 @@ window.LIBRARY = {
     {
      "ar": "وزير الدفاع الأميركي هيغسيث حكى إنه الحرب مع إيران كلّفتهم لحد هلأ تلاتة وتلاتين مليار ونص دولار، وعم يطلب مصاري أكتر من الكونغرس.",
      "en": "US Defense Secretary Hegseth said the Iran war has cost them $37.5bn so far, and he's asking Congress for more money.",
+     "p": null,
      "words": [
       {
        "surface": "وزير",
@@ -95972,6 +95095,7 @@ window.LIBRARY = {
     {
      "ar": "زيلينسكي أقال قائد الجيش الأوكراني الكبير سيرسكي بعد كم يوم من المظاهرات ضده.",
      "en": "Zelensky sacked Ukraine's top army commander Syrskyi after days of protests against him.",
+     "p": null,
      "words": [
       {
        "surface": "زيلينسكي",
@@ -96181,6 +95305,7 @@ window.LIBRARY = {
     {
      "ar": "طيارات درون أوكرانية ضربت مستودعات لشركة بيع أونلاين روسية اسمها وايلدبيريز بالليل.",
      "en": "Ukrainian drones struck warehouses of a Russian online retailer called Wildberries overnight.",
+     "p": null,
      "words": [
       {
        "surface": "طيارات",
@@ -96376,6 +95501,7 @@ window.LIBRARY = {
     {
      "ar": "بالهند في مظاهرات كبيرة اسمها مظاهرات \"الصراصير\" عم تكبر، وألوف طلعوا يطالبوا بتغيير نظام التعليم. حكومة مودي عم تنحط تحت ضغط.",
      "en": "In India big 'cockroach' protests are growing, with thousands demanding education reform. Modi's government is under increasing pressure.",
+     "p": null,
      "words": [
       {
        "surface": "بالهند",
@@ -96717,6 +95843,7 @@ window.LIBRARY = {
     {
      "ar": "بالنمسا حوّلوا بيت ولادة هتلر لمركز شرطة، عشان يمنعوا النازيين الجدد إنهم يزوروه.",
      "en": "In Austria they turned Hitler's birthplace into a police station, to stop neo-Nazis from visiting it.",
+     "p": null,
      "words": [
       {
        "surface": "بالنمسا",
@@ -96926,6 +96053,7 @@ window.LIBRARY = {
     {
      "ar": "فرنسا مرّرت قانون بيمنع اللي عمرهم أقل من خمستعش سنة من مواقع التواصل، ولازم كل المستخدمين يثبتوا أعمارهم من كانون التاني.",
      "en": "France passed a law banning under-15s from social media, and all users will have to verify their age from January.",
+     "p": null,
      "words": [
       {
        "surface": "فرنسا",
@@ -97265,6 +96393,7 @@ window.LIBRARY = {
     {
      "ar": "بالهند صار انهيار بنفق وقتل أربعتعش عامل، ولسه عم يحاولوا يوصلوا للناس اللي جوا بس الوضع خطير كتير.",
      "en": "In India a tunnel collapsed and killed 14 workers; they're still trying to reach those inside but conditions are very dangerous.",
+     "p": null,
      "words": [
       {
        "surface": "بالهند",
@@ -97558,6 +96687,7 @@ window.LIBRARY = {
     {
      "ar": "بليبيريا ضبطوا كوكايين بقيمة تلتميت وسبعين مليون دولار، وهاي أكبر عملية ضبط مخدرات بتاريخهم.",
      "en": "In Liberia they seized cocaine worth $370m — the biggest drug bust in their history.",
+     "p": null,
      "words": [
       {
        "surface": "بليبيريا",
@@ -97795,12 +96925,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-23",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أمريكا وقّعت اتفاق نووي كبير مع السعودية. وزارة الطاقة الأمريكية بتقول إنه الاتفاق سلمي، ورح يعطي الشركات الأمريكية فرصة كبيرة يشتغلوا ببرنامج الطاقة النووية السعودي.",
      "en": "The US signed a major nuclear deal with Saudi Arabia. The US Energy Department says the deal is peaceful and will give American companies a big chance to work in the Saudi nuclear energy program.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -98200,6 +97334,7 @@ window.LIBRARY = {
     {
      "ar": "بهاد الاتفاق ترامب تخلى عن شرط قديم. الرؤساء اللي قبله كانوا عم بيطلبوا إنه السعودية تطبّع مع إسرائيل مقابل التكنولوجيا النووية.",
      "en": "With this deal Trump dropped an old condition. Previous presidents used to demand that Saudi Arabia normalize with Israel in exchange for the nuclear technology.",
+     "p": null,
      "words": [
       {
        "surface": "بهاد",
@@ -98535,6 +97670,7 @@ window.LIBRARY = {
     {
      "ar": "الحوثيين قالوا إنهم ضربوا ناقلات نفط بالبحر الأحمر، وبنفس الوقت أمريكا عم بتضرب إيران أكتر. هاي أول هجمة من وقت ما أعلنوا حصار بحري على السعودية.",
      "en": "The Houthis said they hit oil tankers in the Red Sea, and at the same time the US is launching more strikes on Iran. This is the first attack since they announced a maritime embargo on Saudi Arabia.",
+     "p": null,
      "words": [
       {
        "surface": "الحوثيين",
@@ -98954,6 +98090,7 @@ window.LIBRARY = {
     {
      "ar": "بفرنسا فلّوا آلاف الناس بسبب الحرايق. ولسه رجّال إطفاء تالت مات وهو عم بيطفي الحرايق اللي منتشرة بأوروبا.",
      "en": "In France thousands of people were evacuated because of the fires. And a third firefighter has died while battling the wildfires spread across Europe.",
+     "p": null,
      "words": [
       {
        "surface": "بفرنسا",
@@ -99241,6 +98378,7 @@ window.LIBRARY = {
     {
      "ar": "بروسيا الشركات عم بتتضرر كتير. مسيّرات أوكرانية ضربت كذا مستودع لأكبر شركة بيع أونلاين اسمها Wildberries خلال كم يوم.",
      "en": "In Russia businesses are being hit hard. Ukrainian drones struck several warehouses of the biggest online retailer, called Wildberries, within a few days.",
+     "p": null,
      "words": [
       {
        "surface": "بروسيا",
@@ -99548,6 +98686,7 @@ window.LIBRARY = {
     {
      "ar": "بالهند في ناشط اسمه سونام وانغتشوك صايم عن الأكل من ٢٦ يوم، وخسر ١١ كيلو. بيقول \"أنا لسه عايش\" وهو أهم واحد بمظاهرات دلهي.",
      "en": "In India there's an activist named Sonam Wangchuk who's been on hunger strike for 26 days and lost 11 kilos. He says 'I'm still alive' and he's the main figure in the Delhi protests.",
+     "p": null,
      "words": [
       {
        "surface": "بالهند",
@@ -99935,6 +99074,7 @@ window.LIBRARY = {
     {
      "ar": "غوغل عم بتصرف مصاري كتير عشان الذكاء الاصطناعي. قالوا هاي السنة إنهم متوقعين يصرفوا لَحد ١٩٠ مليار دولار.",
      "en": "Google is burning through a lot of money because of AI. They said earlier this year they expect to spend up to $190 billion.",
+     "p": null,
      "words": [
       {
        "surface": "غوغل",
@@ -100226,6 +99366,7 @@ window.LIBRARY = {
     {
      "ar": "ببيرو حريق قتل عشر أشخاص من نفس العيلة بمدينة ليما. الشرطة عم بتحقّق، والإعلام المحلي بيقول يمكن الحريق كان مفتعل.",
      "en": "In Peru a fire killed ten people from the same family in Lima. The police are investigating, and local media say the fire may have been deliberate.",
+     "p": null,
      "words": [
       {
        "surface": "ببيرو",
@@ -100551,6 +99692,7 @@ window.LIBRARY = {
     {
      "ar": "إسرائيل أطلقت سراح ٣٥ معتقل من غزة.",
      "en": "Israel released 35 detainees from Gaza.",
+     "p": null,
      "words": [
       {
        "surface": "إسرائيل",
@@ -100678,12 +99820,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-24",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "في فرنسا، عم يهربوا عشرات الآلاف من الناس من منطقة سياحية بسبب حريق كبير عم ينتشر من كام يوم.",
      "en": "In France, tens of thousands of people are being evacuated from a tourist area because of a big fire that's been spreading for several days.",
+     "p": null,
      "words": [
       {
        "surface": "في",
@@ -100991,6 +100137,7 @@ window.LIBRARY = {
     {
      "ar": "أمريكا حطت رسوم جمركية جديدة على عشرات الدول، وهاي بتيجي بدل رسوم مؤقتة كانت المحكمة العليا ألغتها.",
      "en": "The US imposed new tariffs on dozens of countries, and these replace temporary tariffs that the Supreme Court had struck down.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -101260,6 +100407,7 @@ window.LIBRARY = {
     {
      "ar": "أمريكا وإيران عم يتبادلوا ضربات بالخليج، والناس خايفة يكبر الوضع أكتر.",
      "en": "The US and Iran are trading strikes in the Gulf, and people are afraid the situation will escalate further.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -101439,6 +100587,7 @@ window.LIBRARY = {
     {
      "ar": "سعر النفط وصل لمية دولار للبرميل، أول مرة من شهر خمسة، بسبب الحرب اللي عم تكبر بالشرق الأوسط.",
      "en": "Oil hit $100 a barrel for the first time since May, because of the war escalating in the Middle East.",
+     "p": null,
      "words": [
       {
        "surface": "سعر",
@@ -101734,6 +100883,7 @@ window.LIBRARY = {
     {
      "ar": "ترامب بيقول إنه السعودية لازم تعترف بإسرائيل عشان تصير في اتفاقية نووية معهم.",
      "en": "Trump says Saudi Arabia has to recognise Israel in order to get a nuclear deal with them.",
+     "p": null,
      "words": [
       {
        "surface": "ترامب",
@@ -101943,6 +101093,7 @@ window.LIBRARY = {
     {
      "ar": "رئيس جنوب أفريقيا رمافوزا كسب طلبه وأوقف مؤقتاً تحقيق مساءلة بخصوص قضية سرقة مصاري من مزرعته.",
      "en": "South Africa's president Ramaphosa won his bid and temporarily halted an impeachment inquiry over money stolen from his farm.",
+     "p": null,
      "words": [
       {
        "surface": "رئيس",
@@ -102198,6 +101349,7 @@ window.LIBRARY = {
     {
      "ar": "بكوريا الجنوبية، محكمة أمرت رئيس شركة كبيرة إنه يدفع لمرته السابقة أكتر من ٦٠٠ مليون دولار بالطلاق.",
      "en": "In South Korea, a court ordered the chairman of a big company to pay his ex-wife over $600 million in the divorce.",
+     "p": null,
      "words": [
       {
        "surface": "بكوريا",
@@ -102473,6 +101625,7 @@ window.LIBRARY = {
     {
      "ar": "أسهم غوغل وتيسلا نزلت كتير، لأنه المستثمرين قلقانين من كل المصاري اللي عم تنصرف على الذكاء الاصطناعي.",
      "en": "Google and Tesla shares dropped a lot because investors are worried about all the money being spent on AI.",
+     "p": null,
      "words": [
       {
        "surface": "أسهم",
@@ -102748,6 +101901,7 @@ window.LIBRARY = {
     {
      "ar": "جماعة الحوثي باليمن هددوا إنهم بدهم يضربوا سفن سعودية، وهاد بخلي الناس تخاف من حرب أوسع بالمنطقة.",
      "en": "The Houthis in Yemen threatened to target Saudi ships, which is making people fear a wider war in the region.",
+     "p": null,
      "words": [
       {
        "surface": "جماعة",
@@ -103035,12 +102189,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-25",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "ترامب رجع هاجم الصحافة بحفلة مراسلين البيت الأبيض، مع إنه الحفلة كانت عشان يحتفلوا بحرية الصحافة.",
      "en": "Trump attacked the press again at the White House Correspondents' Dinner, even though the event was meant to celebrate press freedom.",
+     "p": null,
      "words": [
       {
        "surface": "ترامب",
@@ -103304,6 +102462,7 @@ window.LIBRARY = {
     {
      "ar": "الحوثيين اللي بتدعمهم إيران قالوا إنهم ضربوا السعودية بصاروخ، والجيش الأمريكي بيقول إنه عطّل ناقلة كانت عم تحاول تهرب من الحصار على موانئ إيران.",
      "en": "The Iran-backed Houthis said they hit Saudi Arabia with a missile, and the US military says it disabled a tanker trying to evade the blockade on Iranian ports.",
+     "p": null,
      "words": [
       {
        "surface": "الحوثيين",
@@ -103689,6 +102848,7 @@ window.LIBRARY = {
     {
      "ar": "عشر ناس انقتلوا بهجوم روسي على معرض طيارات مسيّرة قريب من كييف، ضربوه بصواريخ بنص النهار.",
      "en": "Ten people were killed in a Russian attack on a drone exhibition near Kyiv, hit by missiles in the middle of the day.",
+     "p": null,
      "words": [
       {
        "surface": "عشر",
@@ -103950,6 +103110,7 @@ window.LIBRARY = {
     {
      "ar": "زيلينسكي عم يحاول يحل الأزمة بعد ما شال وزير الدفاع، والاحتجاجات لسه مكمّلة وناس كتير بتقول إنه انضرب سياسياً.",
      "en": "Zelensky is trying to solve the crisis after removing the defence minister, but protests are still going on and many say he's been politically damaged.",
+     "p": null,
      "words": [
       {
        "surface": "زيلينسكي",
@@ -104257,6 +103418,7 @@ window.LIBRARY = {
     {
      "ar": "أربع فلسطينية وإسرائيليّين انقتلوا بإطلاق نار بالضفة، والفلسطينية بيقولوا إنه مستوطنين هجموا على القرية، والجيش الإسرائيلي بيقول غير هيك.",
      "en": "Four Palestinians and two Israelis were killed in a West Bank shooting; Palestinians say settlers attacked the village, while the Israeli military tells a different story.",
+     "p": null,
      "words": [
       {
        "surface": "أربع",
@@ -104564,6 +103726,7 @@ window.LIBRARY = {
     {
      "ar": "شالوا كبير المدّعين بمحكمة الجنايات الدولية بسبب اتهامات بسوء سلوك جنسي، بس كريم خان بينكر كل الاتهامات.",
      "en": "The ICC's chief prosecutor was removed over sexual misconduct allegations, but Karim Khan denies all the accusations.",
+     "p": null,
      "words": [
       {
        "surface": "شالوا",
@@ -104831,6 +103994,7 @@ window.LIBRARY = {
     {
      "ar": "ترامب بدّه يفتح تحقيق مع الاتحاد الأوروبي عشان غرّم شركات تكنولوجيا أمريكية زي جوجل وأبل، وبيقول لازم يرجّعوا الغرامات كلها.",
      "en": "Trump wants to investigate the EU for fining US tech companies like Google and Apple, saying all the fines should be reversed.",
+     "p": null,
      "words": [
       {
        "surface": "ترامب",
@@ -105152,6 +104316,7 @@ window.LIBRARY = {
     {
      "ar": "أمريكا فرضت رسوم جمركية جديدة على عشرات الدول، وقالوا السبب مخاوف من العمل القسري.",
      "en": "The US imposed new tariffs on dozens of countries, citing concerns about forced labour.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -105375,6 +104540,7 @@ window.LIBRARY = {
     {
      "ar": "حرايق كبيرة عم تنتشر بإسبانيا وفرنسا، وإسبانيا أعلنت حالة طوارئ وفرنسا طلبت مساعدة دولية، وهجّروا حوالي مية تلتين ألف واحد.",
      "en": "Big wildfires are spreading across Spain and France; Spain declared a national emergency and France asked for international help, with around 200,000 people evacuated.",
+     "p": null,
      "words": [
       {
        "surface": "حرايق",
@@ -105702,12 +104868,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-26",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "في ألمانيا، واحد ركب سيارته ودخلها بالناس اللي كانوا بمسيرة براية المثليين ببرلين. الشرطة لسه عم تدور عليه.",
      "en": "In Germany, a man drove his car into people who were at a Pride march in Berlin. The police are still searching for him.",
+     "p": null,
      "words": [
       {
        "surface": "في",
@@ -105995,6 +105165,7 @@ window.LIBRARY = {
     {
      "ar": "بفرنسا في حرايق كبيرة كتير، لدرجة صاروا يطلعوا زوابع نار. أكتر من ٣٤٠ ألف واحد اضطروا يتركوا بيوتهم بفرنسا وإسبانيا.",
      "en": "In France there are huge wildfires, so bad that fire whirlwinds are forming. More than 340,000 people had to leave their homes in France and Spain.",
+     "p": null,
      "words": [
       {
        "surface": "بفرنسا",
@@ -106316,6 +105487,7 @@ window.LIBRARY = {
     {
      "ar": "بالضفة الغربية، الفلسطينية بيقولوا إنه مستوطنين حرقوا جوامع وسيارات وأراضي زراعية. هاد صار بعد يومين من اشتباك قرب قرية تل قتل فيه أربع فلسطينية وإسرائيليين.",
      "en": "In the West Bank, Palestinians say settlers set fire to mosques, cars, and farmland. This happened two days after a clash near the village of Tell that killed four Palestinians and two Israelis.",
+     "p": null,
      "words": [
       {
        "surface": "بالضفة",
@@ -106719,6 +105891,7 @@ window.LIBRARY = {
     {
      "ar": "بالهند، الوزير تبع التعليم استقال، وبعدها المتظاهرين وقفوا احتجاجهم اللي كانوا مسمينه \"الصراصير\".",
      "en": "In India, the education minister resigned, and after that the protesters called off their demonstration, which they had named the \"cockroach\" protest.",
+     "p": null,
      "words": [
       {
        "surface": "بالهند",
@@ -106932,6 +106105,7 @@ window.LIBRARY = {
     {
      "ar": "قرب كييف، هجوم روسي بصواريخ ضرب معرض للطيارات المسيّرة وقتل عشر أشخاص. كان في ناس مهمين من صناعة الدفاع الأوكرانية.",
      "en": "Near Kyiv, a Russian missile attack hit a drone exhibition and killed ten people. Important figures from the Ukrainian defense industry were there.",
+     "p": null,
      "words": [
       {
        "surface": "قرب",
@@ -107259,6 +106433,7 @@ window.LIBRARY = {
     {
      "ar": "الحوثيين اللي مدعومين من إيران بيقولوا إنهم ضربوا السعودية بصاروخ. والجيش الأمريكي بيقول إنه عطّل ناقلة كانت عم تحاول تهرب من الحصار على موانئ إيران.",
      "en": "The Iran-backed Houthis say they hit Saudi Arabia with a missile. The US military says it disabled a tanker that was trying to evade the blockade on Iran's ports.",
+     "p": null,
      "words": [
       {
        "surface": "الحوثيين",
@@ -107658,6 +106833,7 @@ window.LIBRARY = {
     {
      "ar": "المدعي العام تبع المحكمة الجنائية الدولية انعزل عن شغله بسبب اتهامات بسوء سلوك جنسي. كريم خان بينكر الاتهامات كلها.",
      "en": "The chief prosecutor of the International Criminal Court was removed from his job over sexual misconduct allegations. Karim Khan denies all the accusations.",
+     "p": null,
      "words": [
       {
        "surface": "المدعي",
@@ -107957,6 +107133,7 @@ window.LIBRARY = {
     {
      "ar": "ترامب بدّه يفتح تحقيق بالاتحاد الأوروبي لأنه غرّم شركات تكنولوجيا أمريكية زي جوجل وآبل وميتا. بيقول لازم يرجعوا الغرامات كلها.",
      "en": "Trump wants to open an investigation into the EU because it fined American tech companies like Google, Apple, and Meta. He says all the fines should be reversed.",
+     "p": null,
      "words": [
       {
        "surface": "ترامب",
@@ -108276,6 +107453,7 @@ window.LIBRARY = {
     {
      "ar": "بلبنان، ناس هربوا من الحرب ومش قادرين يرجعوا لبيوتهم، صاروا يشتروا صور من الأقمار الصناعية عشان يشوفوا إذا بيوتهم لسه واقفة.",
      "en": "In Lebanon, people who fled the war and can't return home have started buying satellite images to see whether their houses are still standing.",
+     "p": null,
      "words": [
       {
        "surface": "بلبنان",
@@ -108625,12 +107803,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-27",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "سعر البترول نزل كتير اليوم، لأنه أمريكا وإيران وقفوا الهجمات عشان يعطوا فرصة للمفاوضات.",
      "en": "Oil prices dropped a lot today, because the US and Iran halted their attacks to give the talks a chance.",
+     "p": null,
      "words": [
       {
        "surface": "سعر",
@@ -108858,6 +108040,7 @@ window.LIBRARY = {
     {
      "ar": "في إطلاق نار صار بمهرجان أكل قريب من سياتل، تلاتة ماتوا وكم واحد انجرحوا، وقالوا اتنين كانوا عم يطلقوا النار على بعض.",
      "en": "There was a shooting at a food festival near Seattle — three died and several were injured, and they said two people were shooting at each other.",
+     "p": null,
      "words": [
       {
        "surface": "في",
@@ -109215,6 +108398,7 @@ window.LIBRARY = {
     {
      "ar": "نتنياهو اتهم رئيس بلدية نيويورك ممداني إنه عم يشجع الكراهية، بعد ما ممداني هدد إنه بدو يعتقله بس رجع تراجع لأنه ما إلوش الصلاحية.",
      "en": "Netanyahu accused NYC Mayor Mamdani of fomenting hate, after Mamdani threatened to arrest him but then backed off because he had no legal power to do so.",
+     "p": null,
      "words": [
       {
        "surface": "نتنياهو",
@@ -109596,6 +108780,7 @@ window.LIBRARY = {
     {
      "ar": "المستوطنين حرقوا مساجد وسيارات وأراضي زراعية بالضفة، هيك بقولوا الفلسطينيين، وهاد صار بعد يومين من اشتباك قرب قرية تل مات فيه أربع فلسطينيين واتنين إسرائيليين.",
      "en": "Settlers set fire to mosques, cars and farmland in the West Bank, according to Palestinians — this came two days after a clash near the village of Tal that left four Palestinians and two Israelis dead.",
+     "p": null,
      "words": [
       {
        "surface": "المستوطنين",
@@ -109999,6 +109184,7 @@ window.LIBRARY = {
     {
      "ar": "طالبة من غزة اسمها صبا رباح طلعت الأولى على فلسطين بالتوجيهي، رغم الحرب والتهجير.",
      "en": "A student from Gaza named Saba Rabah came first in Palestine's national high school exams, despite the war and displacement.",
+     "p": null,
      "words": [
       {
        "surface": "طالبة",
@@ -110226,6 +109412,7 @@ window.LIBRARY = {
     {
      "ar": "في هجوم صار بمسيرة الفخر ببرلين، واحد ساق سيارته وداس بالناس، والشرطة قتلت المشتبه فيه لما هجم عليهم بسكين.",
      "en": "There was an attack at Berlin Pride where a man drove his car into the crowd, and police shot and killed the suspect when he charged at them with a knife.",
+     "p": null,
      "words": [
       {
        "surface": "في",
@@ -110531,6 +109718,7 @@ window.LIBRARY = {
     {
      "ar": "رئيس وزرا بريطانيا الجديد قال إنه رح يضل يدعم أوكرانيا، وهاد قبل زيارة زيلينسكي اللي رح يكون أول ضيف دولي إله.",
      "en": "The new UK prime minister said he'll continue supporting Ukraine, ahead of Zelensky's visit — he'll be his first international guest since taking office.",
+     "p": null,
      "words": [
       {
        "surface": "رئيس",
@@ -110868,6 +110056,7 @@ window.LIBRARY = {
     {
      "ar": "بالهند، وزير التعليم استقال بعد مظاهرات كبيرة قادها الشباب، والناس عم يحتفلوا وبقولوا هاي بس البداية.",
      "en": "In India, the education minister resigned after big youth-led protests, and people are celebrating and saying this is just the beginning.",
+     "p": null,
      "words": [
       {
        "surface": "بالهند",
@@ -111131,6 +110320,7 @@ window.LIBRARY = {
     {
      "ar": "شركة صيني بتصنع رقائق إلكترونية، أسهمها طلعت بحوالي أربعمية وسبعين بالمية أول يوم بالبورصة، لأنه الطلب على الذكاء الاصطناعي عم يزيد.",
      "en": "A Chinese chipmaker's shares surged around 470% on their first day on the stock market, because demand driven by the AI boom is growing.",
+     "p": null,
      "words": [
       {
        "surface": "شركة",
@@ -111480,12 +110670,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-28",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "زيلينسكي رايح على واشنطن يحكي مع ترامب، بدو يضمن إنو أمريكا تساعد أوكرانيا بالدفاعات الجوية، لأنو روسيا صعّدت هجماتها.",
      "en": "Zelensky is going to Washington to talk with Trump; he wants to make sure the US helps Ukraine with air defences, because Russia has escalated its attacks.",
+     "p": null,
      "words": [
       {
        "surface": "زيلينسكي",
@@ -111787,6 +110981,7 @@ window.LIBRARY = {
     {
      "ar": "أمريكا طلعت من اجتماع مجلس الأمن وقت كانت فرنسا عم تحكي، بعد ما صوّتت مع كوريا الشمالية وروسيا ضد تمديد ولاية مفوض حقوق الإنسان.",
      "en": "The US walked out of a Security Council meeting while France was speaking, after it voted with North Korea and Russia against extending the human rights commissioner's term.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -112168,6 +111363,7 @@ window.LIBRARY = {
     {
      "ar": "زيدان صار رسمياً مدرب منتخب فرنسا، هو اللي كان قبل هيك مدرب ريال مدريد.",
      "en": "Zidane has officially become the coach of the France national team; he was previously the manager of Real Madrid.",
+     "p": null,
      "words": [
       {
        "surface": "زيدان",
@@ -112389,6 +111585,7 @@ window.LIBRARY = {
     {
      "ar": "أريانا غراندي رفعت قضية على ناس هكروا وسرّبوا أغانيها وفيديوهاتها اللي لسه ما طلعت، بدها تعرف مين هم.",
      "en": "Ariana Grande has filed a lawsuit against hackers who leaked her unreleased songs and videos; she wants to find out who they are.",
+     "p": null,
      "words": [
       {
        "surface": "أريانا",
@@ -112676,6 +111873,7 @@ window.LIBRARY = {
     {
      "ar": "شركة جونسون آند جونسون عارضة تدفع لحد ٥.٥ مليار دولار عشان تسكّر قضايا بودرة الأطفال اللي بيقولوا إنها بتسبب سرطان.",
      "en": "Johnson & Johnson is offering to pay up to $5.5 billion to settle the baby powder lawsuits that claim it causes cancer.",
+     "p": null,
      "words": [
       {
        "surface": "شركة",
@@ -113011,6 +112209,7 @@ window.LIBRARY = {
     {
      "ar": "المغني الأمريكي D4vd رح يتحاكم بتهمة قتل بنت عمرها ١٤ سنة، لقيوا جثتها بسيارة تسلا مسجلة على عنوانه.",
      "en": "The US singer D4vd will stand trial on a charge of killing a 14-year-old girl, whose body was found in a Tesla registered to his address.",
+     "p": null,
      "words": [
       {
        "surface": "المغني",
@@ -113304,6 +112503,7 @@ window.LIBRARY = {
     {
      "ar": "بكندا، ضربوا نار على القنصلية الأمريكية بتورنتو للمرة التانية هالسنة، والشرطة طاردت الشخص بس ما قدرت تمسكه.",
      "en": "In Canada, shots were fired at the US consulate in Toronto for the second time this year; police chased the person but couldn't catch him.",
+     "p": null,
      "words": [
       {
        "surface": "بكندا",
@@ -113577,6 +112777,7 @@ window.LIBRARY = {
     {
      "ar": "حرايق كبيرة عم تصير بأوروبا، حريق جنب بوردو أكل أكتر من ٤٢٠ كيلومتر مربع بأقل من أربع أيام، وأكتر من ٣٠٠ ألف واحد اضطروا يتركوا بيوتهم.",
      "en": "Huge wildfires are happening in Europe; a fire near Bordeaux burned more than 420 square km in less than four days, and over 300,000 people had to leave their homes.",
+     "p": null,
      "words": [
       {
        "surface": "حرايق",
@@ -113996,6 +113197,7 @@ window.LIBRARY = {
     {
      "ar": "بالضفة الغربية، هجمات المستوطنين وصلت أرقام قياسية، وصار في هجوم على قرية التواني.",
      "en": "In the West Bank, settler attacks have reached record highs, and there was an attack on the village of at-Tuwani.",
+     "p": null,
      "words": [
       {
        "surface": "بالضفة",
@@ -114219,12 +113421,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-29",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "في اليابان صار زلزال كبير قتل تلتاعش واحد، ولسه عم يجيهم هزات تانية أكتر من مية.",
      "en": "A big earthquake in Japan killed 13 people, and they're still getting more than a hundred aftershocks.",
+     "p": null,
      "words": [
       {
        "surface": "في",
@@ -114484,6 +113690,7 @@ window.LIBRARY = {
     {
      "ar": "الفرق عم تحاول تطلّع الناس اللي تحت الردم بأسرع وقت، والزلزال كان قوته ٦.٨.",
      "en": "Teams are trying to pull people out from under the rubble as fast as possible; the quake was magnitude 6.8.",
+     "p": null,
      "words": [
       {
        "surface": "الفرق",
@@ -114731,6 +113938,7 @@ window.LIBRARY = {
     {
      "ar": "السعودية شاركت مع أمريكا بضربات على ميليشيات مدعومة من إيران بالعراق، بعد ما هاي المجموعات هجمت على قواعد أمريكية.",
      "en": "Saudi Arabia joined the US in strikes on Iran-backed militias in Iraq, after those groups attacked American bases.",
+     "p": null,
      "words": [
       {
        "surface": "السعودية",
@@ -115034,6 +114242,7 @@ window.LIBRARY = {
     {
      "ar": "بإسبانيا في ألوف رجعوا لبيوتهم، بس في موجة حر جديدة خلّت الناس تخاف من حرايق الغابات.",
      "en": "In Spain thousands returned home, but a new heatwave has people worried about wildfires.",
+     "p": null,
      "words": [
       {
        "surface": "بإسبانيا",
@@ -115295,6 +114504,7 @@ window.LIBRARY = {
     {
      "ar": "روسيا وجّهت تهمة لمؤسس تلغرام بافيل دوروف، بتقول إنه ساعد على الإرهاب لأنه ما شال حسابات معينة.",
      "en": "Russia charged Telegram's founder Pavel Durov, saying he facilitated terrorism because he didn't remove certain accounts.",
+     "p": null,
      "words": [
       {
        "surface": "روسيا",
@@ -115570,6 +114780,7 @@ window.LIBRARY = {
     {
      "ar": "أربع نساء اتهموا الممثل والمغني جاريد ليتو بسلوك جنسي إجرامي، والعدد كله صار عشر نساء.",
      "en": "Four women have accused actor and musician Jared Leto of criminal sexual conduct; the total is now ten women.",
+     "p": null,
      "words": [
       {
        "surface": "أربع",
@@ -115811,6 +115022,7 @@ window.LIBRARY = {
     {
      "ar": "زيلينسكي ونتنياهو اجتمعوا مع ترامب بالبيت الأبيض، وكل واحد حكى معه عن الحرب بمنطقته.",
      "en": "Zelensky and Netanyahu met Trump at the White House, each discussing the war in his region.",
+     "p": null,
      "words": [
       {
        "surface": "زيلينسكي",
@@ -116074,6 +115286,7 @@ window.LIBRARY = {
     {
      "ar": "بغانا الناس عم تنعي أطول رجل عندهم، مات وعمره تلاتة وتلاتين سنة بعد ما كان مريض بمرض العملقة.",
      "en": "In Ghana people are mourning their tallest man, who died at 33 after suffering from gigantism.",
+     "p": null,
      "words": [
       {
        "surface": "بغانا",
@@ -116362,11 +115575,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": "audio/news-2026-07-29/s7.mp3"
+     "audio": null
     },
     {
      "ar": "فيفا عرض أربعين مليون دولار للدول اللي بتوافق على خطة تمويل جديدة، بس أوروبا مش راضية عنها.",
      "en": "FIFA offered $40 million to countries that back a new funding plan, but Europe isn't happy with it.",
+     "p": null,
      "words": [
       {
        "surface": "فيفا",
@@ -116654,12 +115868,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-30",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أمريكا ضربت إيران ضربات قوية بعد ما إيران حاولت تهاجم جنود أمريكان. كانت الأمور هادية شوي، بس هلأ الطرفين رجعوا عالصواريخ.",
      "en": "The US launched heavy strikes on Iran after Iran tried to attack American troops. Things had calmed down a bit, but now both sides are firing missiles again.",
+     "p": null,
      "words": [
       {
        "surface": "أمريكا",
@@ -116999,6 +116217,7 @@ window.LIBRARY = {
     {
      "ar": "السعودية بوضع صعب، عم تحاول تضل برا الحرب بين أمريكا وإيران. لازم تقرر إذا بدها ترد أو تحاول تهدّي الوضع.",
      "en": "Saudi Arabia is in a tough spot, trying to stay out of the US-Iran war. It has to decide whether to hit back or try to calm things down.",
+     "p": null,
      "words": [
       {
        "surface": "السعودية",
@@ -117324,6 +116543,7 @@ window.LIBRARY = {
     {
      "ar": "صاروخ وقع جوّا بولندا وعمل حفرة عرضها عشر أمتار. رئيس وزرا بولندا قال إنه على الأغلب روسي.",
      "en": "A missile landed deep inside Poland and left a crater ten meters wide. The Polish PM said it was probably Russian.",
+     "p": null,
      "words": [
       {
        "surface": "صاروخ",
@@ -117597,6 +116817,7 @@ window.LIBRARY = {
     {
      "ar": "بجزيرة كريت باليونان، فلّوا آلاف الناس بسبب حرايق الغابات. الهوا القوي عم يزيد النار.",
      "en": "On the island of Crete in Greece, thousands of people were evacuated because of wildfires. Strong winds are making the fire worse.",
+     "p": null,
      "words": [
       {
        "surface": "بجزيرة",
@@ -117826,6 +117047,7 @@ window.LIBRARY = {
     {
      "ar": "باليابان صار زلزال قوي قتل تلتاعش شخص، وبعده إجت أكتر من مية هزة ارتدادية. الناس عم يقولولهم انتبهوا.",
      "en": "In Japan a powerful earthquake killed 13 people, and more than a hundred aftershocks followed. People are being told to stay alert.",
+     "p": null,
      "words": [
       {
        "surface": "باليابان",
@@ -118113,6 +117335,7 @@ window.LIBRARY = {
     {
      "ar": "بغزة، غارات إسرائيلية بالليل ضربت كذا منطقة وقتلت وجرحت أطفال، من ضمنها خيام فيها ناس نازحين بالمواصي.",
      "en": "In Gaza, Israeli strikes overnight hit several areas and killed and wounded children, including tents sheltering displaced people in al-Mawasi.",
+     "p": null,
      "words": [
       {
        "surface": "بغزة",
@@ -118386,6 +117609,7 @@ window.LIBRARY = {
     {
      "ar": "بالضفة الغربية، الغارات الإسرائيلية وهجمات المستوطنين عم تزيد بكل المناطق.",
      "en": "In the occupied West Bank, Israeli raids and settler attacks are intensifying everywhere.",
+     "p": null,
      "words": [
       {
        "surface": "بالضفة",
@@ -118551,6 +117775,7 @@ window.LIBRARY = {
     {
      "ar": "روسيا ضربت مدن أوكرانية وقتلت على الأقل تمن مدنيين وجرحت عشرات. عم تزيد قصفها اليومي.",
      "en": "Russia struck Ukrainian cities and killed at least eight civilians and wounded dozens. It's ramping up its almost daily bombardment.",
+     "p": null,
      "words": [
       {
        "surface": "روسيا",
@@ -118798,6 +118023,7 @@ window.LIBRARY = {
     {
      "ar": "الرجل اللي هاجم الكاتب سلمان رشدي انحكم عليه بتهم إرهاب، لإنه حاول يساعد حزب الله لما هجم عليه.",
      "en": "The man who attacked author Salman Rushdie was convicted on terror charges, for trying to help Hezbollah when he attacked him.",
+     "p": null,
      "words": [
       {
        "surface": "الرجل",
@@ -119105,12 +118331,16 @@ window.LIBRARY = {
    "kind": "news",
    "date": "2026-07-31",
    "level": null,
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "حماس قالت إنها وافقت تسلّم سلاحها بعد ما ترامب أعلن عن خطة سلام جديدة.",
      "en": "Hamas said it agreed to disarm after Trump announced a new peace plan.",
+     "p": null,
      "words": [
       {
        "surface": "حماس",
@@ -119342,6 +118572,7 @@ window.LIBRARY = {
     {
      "ar": "إذا هاي الخطة نجحت، ممكن تكون أول خطوة جدية لإنهاء الحرب على غزة.",
      "en": "If this plan holds, it could be the first serious step toward ending the war on Gaza.",
+     "p": null,
      "words": [
       {
        "surface": "إذا",
@@ -119557,6 +118788,7 @@ window.LIBRARY = {
     {
      "ar": "بس الناس في غزة لسه مش مصدقين، وعم يسألوا إذا هاد بيجيب تغيير بالفعل.",
      "en": "But people in Gaza still don't believe it, and are asking whether it will really bring change.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -119786,6 +119018,7 @@ window.LIBRARY = {
     {
      "ar": "حوالي تسعة وأربعين ألف مهاجر دخلوا مدينة سبتة الإسبانية بأربع وعشرين ساعة بس.",
      "en": "About 49,000 migrants entered the Spanish city of Ceuta in just 24 hours.",
+     "p": null,
      "words": [
       {
        "surface": "حوالي",
@@ -119999,6 +119232,7 @@ window.LIBRARY = {
     {
      "ar": "وإسبانيا عم تبعت جيش عالحدود، وفي على الأقل تمنتاعش واحد غرقوا وهم عم يحاولوا يعبروا.",
      "en": "Spain is sending troops to the border, and at least 18 people drowned trying to cross.",
+     "p": null,
      "words": [
       {
        "surface": "وإسبانيا",
@@ -120242,6 +119476,7 @@ window.LIBRARY = {
     {
      "ar": "لاعب ميلان وإيطاليا الكبير فرانكو باريزي مات وعمره ستة وستين سنة.",
      "en": "AC Milan and Italy great Franco Baresi has died at 66.",
+     "p": null,
      "words": [
       {
        "surface": "لاعب",
@@ -120417,6 +119652,7 @@ window.LIBRARY = {
     {
      "ar": "صاروخ روسي ضرب قرية جنب كريفي ريه بأوكرانيا، وقتل خمسة من نفس العيلة، فيهم بنت عمرها ست سنين.",
      "en": "A Russian missile hit a village near Kryvyi Rih in Ukraine, killing five from the same family, including a six-year-old girl.",
+     "p": null,
      "words": [
       {
        "surface": "صاروخ",
@@ -120710,6 +119946,7 @@ window.LIBRARY = {
     {
      "ar": "اليويفا هدد إنه بيقاطع كأس العالم إذا الفيفا ما تراجع عن خطته، وقال \"كأس العالم مش للبيع\".",
      "en": "Uefa threatened to boycott the World Cup if Fifa doesn't back down, saying \"the World Cup is not for sale.\"",
+     "p": null,
      "words": [
       {
        "surface": "اليويفا",
@@ -120983,6 +120220,7 @@ window.LIBRARY = {
     {
      "ar": "بكريت، آلاف الناس اضطروا يتركوا بيوتهم بسبب حرايق كتير عم تهدد المنتجعات السياحية.",
      "en": "In Crete, thousands had to leave their homes because of wildfires threatening tourist resorts.",
+     "p": null,
      "words": [
       {
        "surface": "بكريت",
@@ -124347,7 +123585,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s0.mp3"
     },
     {
      "ar": "بحكي إن إيران ودول تانية بالمنطقة طلبوا من أمريكا تستنى ومتضربش.",
@@ -124529,7 +123767,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s1.mp3"
     },
     {
      "ar": "في إسبانيا صار زحمة كبيرة عالحدود، حوالي ستين ألف مهاجر عبروا لسبتة من المغرب.",
@@ -124759,7 +123997,7 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s2.mp3"
     },
     {
      "ar": "عبّارة بإندونيسيا شبّت فيها النار، خمسة ماتوا ولسه في واحد وأربعين مفقودين.",
@@ -124957,7 +124195,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s3.mp3"
     },
     {
      "ar": "طيارة سياحية وقعت بالبيرو فوق خطوط نازكا، وتلتاعش واحد ماتوا.",
@@ -125119,7 +124357,7 @@ window.LIBRARY = {
        "vocalized_from": "unvocalized:unknown-suffix"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s4.mp3"
     },
     {
      "ar": "إيطاليا حاطة كل مدنها الكبيرة تقريباً على أعلى درجة إنذار من الحر، منهم روما وميلانو.",
@@ -125359,7 +124597,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s5.mp3"
     },
     {
      "ar": "لقيوا جثة المتسلق نيرمال بورجا بعد الانهيار الجليدي بباكستان، ولسه في سبعة مفقودين عم يدوّروا عليهم.",
@@ -125613,7 +124851,7 @@ window.LIBRARY = {
        "caphi_urban": "3ala"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s6.mp3"
     },
     {
      "ar": "محكمة عسكرية إسرائيلية حكمت على أربعتاعش جندي بالسجن بسبب انسحابهم من سدي تيمان بدون إذن.",
@@ -125855,7 +125093,7 @@ window.LIBRARY = {
        "vocalized_from": "lexicon:exact"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s7.mp3"
     },
     {
      "ar": "الضغط عم يزيد على رئيس الفيفا إنفانتينو بعد ما لغى خطته لبيع حصص من كأس العالم.",
@@ -126113,12 +125351,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/news-2026-08-02/s8.mp3"
     }
    ],
    "_dir": "news-2026-08-02",
    "_words": 122,
-   "_audio": false
+   "_audio": true
   },
   {
    "id": "story-adv-01",
@@ -126130,12 +125368,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بوسط أرض جدي، كان في شجرة زيتون كبيرة وقديمة.",
      "en": "In the middle of my grandfather's land, there was a big, old olive tree.",
+     "p": null,
      "words": [
       {
        "surface": "بوسط",
@@ -126409,6 +125651,7 @@ window.LIBRARY = {
     {
      "ar": "جدي كان يقول إنها أكبر منه بكتير.",
      "en": "My grandfather used to say it was much older than him.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -126580,6 +125823,7 @@ window.LIBRARY = {
     {
      "ar": "كل خريف، كانت العيلة كلها تجتمع تحتها لتقطف.",
      "en": "Every fall, the whole family would gather under it to harvest.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -126791,6 +126035,7 @@ window.LIBRARY = {
     {
      "ar": "لما كنت صغير، سألت جدي: ليش هالشجرة مهمة هيك؟",
      "en": "When I was little, I asked my grandfather: why is this tree so important?",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -127018,6 +126263,7 @@ window.LIBRARY = {
     {
      "ar": "ابتسم وقال: هاي الشجرة زرعها أبو جدي بإيده.",
      "en": "He smiled and said: this tree was planted by my great-grandfather with his own hands.",
+     "p": null,
      "words": [
       {
        "surface": "ابتسم",
@@ -127059,55 +126305,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "هاي",
@@ -127325,6 +126533,7 @@ window.LIBRARY = {
     {
      "ar": "قال إنها شافت أجيال وأجيال من عيلتنا.",
      "en": "He said it had seen generations upon generations of our family.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -127476,6 +126685,7 @@ window.LIBRARY = {
     {
      "ar": "كل غصن فيها بيحكي قصة، وكل زيتونة فيها بركة.",
      "en": "Every branch in it tells a story, and every olive in it is a blessing.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -127747,6 +126957,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، إجا رجال وعرض يشتري الأرض والشجرة.",
      "en": "Once, a man came and offered to buy the land and the tree.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -127976,59 +127187,22 @@ window.LIBRARY = {
     {
      "ar": "عرض مصاري كتير، بس جدي رفض على طول.",
      "en": "He offered a lot of money, but my grandfather refused right away.",
+     "p": null,
      "words": [
       {
        "surface": "عرض",
        "root": "ع.ر.ض",
-       "lemma": "عَرْض",
-       "form": "عَرْض",
-       "caphi_raw": "3 a r D.",
-       "caphi": "3arD.",
-       "gloss": "width",
+       "lemma": "عَرِض",
+       "form": "عَرِض",
+       "caphi_raw": "3 a r i D.",
+       "caphi": "3ariD.",
+       "gloss": "offer;sale",
        "analysis": "NOUN:MS",
-       "maknuune_id": "20478",
+       "maknuune_id": "20479",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "20478",
-         "root": "ع.ر.ض",
-         "gloss": "width",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "20479",
-         "root": "ع.ر.ض",
-         "gloss": "offer;sale",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "20480",
-         "root": "ع.ر.ض",
-         "gloss": "offer;sale",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "20481",
-         "root": "ع.ر.ض",
-         "gloss": "honour;reputation",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "20493",
-         "root": "ع.ر.ض",
-         "gloss": "widen;expose_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "20505",
-         "root": "ع.ر.ض",
-         "gloss": "display;offer_[auto]",
-         "analysis": "VERB:P"
-        }
-       ],
-       "caphi_urban": "3arD.",
-       "vocalized": "عَرْض",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "3ariD.",
+       "vocalized": "عَرِض",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -128213,6 +127387,7 @@ window.LIBRARY = {
     {
      "ar": "قال: الأرض مش للبيع، والذكريات ما إلها تمن.",
      "en": "He said: the land is not for sale, and memories have no price.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -128257,21 +127432,7 @@ window.LIBRARY = {
        "analysis": "PART_NEG",
        "maknuune_id": "30759",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "30759",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        },
-        {
-         "id": "30760",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "mish",
        "vocalized": "مِش",
        "vocalized_from": "lexicon:exact"
@@ -128287,45 +127448,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "2775",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "2775",
-         "root": "ب.ي.ع",
-         "gloss": "selling",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "2786",
-         "root": "ب.ي.ع",
-         "gloss": "sell_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "2787",
-         "root": "ب.ي.ع",
-         "gloss": "make_sb_sell_(causative_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "2791",
-         "root": "ب.ي.ع",
-         "gloss": "make_sb_sell_(causative_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "2779",
-         "root": "ب.ي.ع",
-         "gloss": "deal",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "2781",
-         "root": "ب.ي.ع",
-         "gloss": "force_sb_sell_all_his_properties_to_pay_",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "bee3",
        "vocalized": "البَيع",
        "vocalized_from": "derived:affix"
@@ -128414,6 +127537,7 @@ window.LIBRARY = {
     {
      "ar": "بعد سنين، توفى جدي، وورثنا الأرض والشجرة.",
      "en": "After years, my grandfather passed away, and we inherited the land and the tree.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -128609,6 +127733,7 @@ window.LIBRARY = {
     {
      "ar": "وقفت تحت الشجرة وحسيت إنه جدي لسا معي.",
      "en": "I stood under the tree and felt my grandfather was still with me.",
+     "p": null,
      "words": [
       {
        "surface": "وقفت",
@@ -128782,6 +127907,7 @@ window.LIBRARY = {
     {
      "ar": "علمت ولادي نفس الشي اللي علمني ياه.",
      "en": "I taught my children the same thing he taught me.",
+     "p": null,
      "words": [
       {
        "surface": "علمت",
@@ -128969,6 +128095,7 @@ window.LIBRARY = {
     {
      "ar": "الشجرة ما زالت واقفة، تشهد على محبتنا للأرض.",
      "en": "The tree is still standing, a witness to our love for the land.",
+     "p": null,
      "words": [
       {
        "surface": "الشجرة",
@@ -129224,6 +128351,7 @@ window.LIBRARY = {
     {
      "ar": "وكل خريف، بنجتمع تحتها متل زمان.",
      "en": "And every fall, we gather under it like the old days.",
+     "p": null,
      "words": [
       {
        "surface": "وكل",
@@ -129479,12 +128607,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "زمان، قبل ما يصير في تلفونات، الناس كانت تبعت رسائل.",
      "en": "Long ago, before there were phones, people used to send letters.",
+     "p": null,
      "words": [
       {
        "surface": "زمان",
@@ -129651,45 +128783,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "2833",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "2833",
-         "root": "ت.ب.ع",
-         "gloss": "owned_by",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "2836",
-         "root": "ت.ب.ع",
-         "gloss": "follow_up_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "2841",
-         "root": "ت.ب.ع",
-         "gloss": "follow_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "2842",
-         "root": "ت.ب.ع",
-         "gloss": "follow_up_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "2835",
-         "root": "ت.ب.ع",
-         "gloss": "follow_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "2838",
-         "root": "ت.ب.ع",
-         "gloss": "follow",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "taba3",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -129716,6 +128810,7 @@ window.LIBRARY = {
     {
      "ar": "خالي سافر برا البلد يشتغل ويجمع مصاري.",
      "en": "My uncle traveled abroad to work and save money.",
+     "p": null,
      "words": [
       {
        "surface": "خالي",
@@ -129907,6 +129002,7 @@ window.LIBRARY = {
     {
      "ar": "كل شهر، كان يبعت رسالة لإمه، جدتي.",
      "en": "Every month, he would send a letter to his mother, my grandmother.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -130060,6 +129156,7 @@ window.LIBRARY = {
     {
      "ar": "جدتي ما كانت تعرف تقرا، فكانت تجيبني أقرالها.",
      "en": "My grandmother didn't know how to read, so she would bring me to read to her.",
+     "p": null,
      "words": [
       {
        "surface": "جدتي",
@@ -130267,6 +129364,7 @@ window.LIBRARY = {
     {
      "ar": "كنت أقعد جنبها وأقرا الرسالة بصوت عالي.",
      "en": "I would sit next to her and read the letter out loud.",
+     "p": null,
      "words": [
       {
        "surface": "كنت",
@@ -130482,6 +129580,7 @@ window.LIBRARY = {
     {
      "ar": "كانت تسمع وعيونها تدمع من الشوق.",
      "en": "She would listen and her eyes would water from longing.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -130643,6 +129742,7 @@ window.LIBRARY = {
     {
      "ar": "بعدين، كانت تملي عليي الرد، وأنا أكتب.",
      "en": "Then, she would dictate the reply to me, and I would write.",
+     "p": null,
      "words": [
       {
        "surface": "بعدين",
@@ -130860,6 +129960,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، تأخرت رسالة خالي شهرين.",
      "en": "Once, my uncle's letter was two months late.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -131043,6 +130144,7 @@ window.LIBRARY = {
     {
      "ar": "جدتي قلقت كتير وما عادت تنام.",
      "en": "My grandmother worried a lot and stopped sleeping.",
+     "p": null,
      "words": [
       {
        "surface": "جدتي",
@@ -131248,6 +130350,7 @@ window.LIBRARY = {
     {
      "ar": "كل يوم، كانت تسأل: وصلت رسالة؟",
      "en": "Every day, she would ask: did a letter arrive?",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -131409,6 +130512,7 @@ window.LIBRARY = {
     {
      "ar": "وأنا أرد: لسا يا جدتي، بكرا إن شاء الله.",
      "en": "And I would answer: not yet, grandma, tomorrow, God willing.",
+     "p": null,
      "words": [
       {
        "surface": "وأنا",
@@ -131632,6 +130736,7 @@ window.LIBRARY = {
     {
      "ar": "بالآخر، إجت الرسالة، وكان خالي مريض بس طاب.",
      "en": "Finally, the letter came, and my uncle had been sick but recovered.",
+     "p": null,
      "words": [
       {
        "surface": "بالآخر",
@@ -131782,33 +130887,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "30490",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "30490",
-         "root": "م.ر.ض",
-         "gloss": "ill;sick;patient",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "30491",
-         "root": "م.ر.ض",
-         "gloss": "ill;sick;patient_[auto]",
-         "analysis": "ADJ:P"
-        },
-        {
-         "id": "30492",
-         "root": "م.ر.ض",
-         "gloss": "ill;sick;patient_[auto]",
-         "analysis": "ADJ:P"
-        },
-        {
-         "id": "12450",
-         "root": "ر.و.ض",
-         "gloss": "leaning",
-         "analysis": "NOUN_ACT:MS"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "mariiD.",
        "vocalized": "مَرِيض",
        "vocalized_from": "lexicon:exact"
@@ -131871,6 +130950,7 @@ window.LIBRARY = {
     {
      "ar": "جدتي بكت من الفرح وحضنت الرسالة.",
      "en": "My grandmother cried from joy and hugged the letter.",
+     "p": null,
      "words": [
       {
        "surface": "جدتي",
@@ -132052,6 +131132,7 @@ window.LIBRARY = {
     {
      "ar": "قالت: الحمد لله اللي رجعلي خبر منه.",
      "en": "She said: thank God that news of him came back to me.",
+     "p": null,
      "words": [
       {
        "surface": "قالت",
@@ -132227,6 +131308,7 @@ window.LIBRARY = {
     {
      "ar": "لهلأ، بحتفظ بهديك الرسائل بصندوق قديم.",
      "en": "To this day, I keep those letters in an old box.",
+     "p": null,
      "words": [
       {
        "surface": "لهلأ",
@@ -132402,6 +131484,7 @@ window.LIBRARY = {
     {
      "ar": "كل ما أقراها، بتذكر جدتي وشوقها.",
      "en": "Every time I read them, I remember my grandmother and her longing.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -132601,12 +131684,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "ليلة شتوية باردة، كنا قاعدين حوالي الصوبا.",
      "en": "One cold winter night, we were sitting around the heater.",
+     "p": null,
      "words": [
       {
        "surface": "ليلة",
@@ -132760,6 +131847,7 @@ window.LIBRARY = {
     {
      "ar": "فجأة، سمعنا دق عالباب.",
      "en": "Suddenly, we heard a knock on the door.",
+     "p": null,
      "words": [
       {
        "surface": "فجأة",
@@ -132907,6 +131995,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي فتح، ولقى رجال غريب مبلول من الشتا.",
      "en": "My dad opened, and found a strange man soaked from the rain.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -133180,6 +132269,7 @@ window.LIBRARY = {
     {
      "ar": "الرجال قال: سيارتي وقفت بالطريق، وأنا تايه.",
      "en": "The man said: my car broke down on the road, and I'm lost.",
+     "p": null,
      "words": [
       {
        "surface": "الرجال",
@@ -133393,6 +132483,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي قاله على طول: تفضل، البيت بيتك.",
      "en": "My dad said to him right away: come in, my house is your house.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -133666,6 +132757,7 @@ window.LIBRARY = {
     {
      "ar": "قعدناه جنب الصوبا وجبناله أواعي ناشفة.",
      "en": "We seated him by the heater and brought him dry clothes.",
+     "p": null,
      "words": [
       {
        "surface": "قعدناه",
@@ -133799,6 +132891,7 @@ window.LIBRARY = {
     {
      "ar": "إمي سخنت شوربة وقدمتله عشا.",
      "en": "My mom heated soup and served him dinner.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -133954,6 +133047,7 @@ window.LIBRARY = {
     {
      "ar": "الرجال قال: ما بعرف كيف أشكركم.",
      "en": "The man said: I don't know how to thank you.",
+     "p": null,
      "words": [
       {
        "surface": "الرجال",
@@ -134167,6 +133261,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي رد: هاي واجب، وإحنا بنكرم الضيف.",
      "en": "My dad replied: this is a duty, and we honor the guest.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -134440,6 +133535,7 @@ window.LIBRARY = {
     {
      "ar": "سهرنا معه وحكالنا عن حياته وسفراته.",
      "en": "We stayed up with him and he told us about his life and travels.",
+     "p": null,
      "words": [
       {
        "surface": "سهرنا",
@@ -134575,6 +133671,7 @@ window.LIBRARY = {
     {
      "ar": "الصبح، طلعت الشمس ووقفت الشتا.",
      "en": "In the morning, the sun came out and the rain stopped.",
+     "p": null,
      "words": [
       {
        "surface": "الصبح",
@@ -134746,6 +133843,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي ساعده يصلح سيارته.",
      "en": "My dad helped him fix his car.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -134887,6 +133985,7 @@ window.LIBRARY = {
     {
      "ar": "قبل ما يمشي، الرجال قال: مش رح أنساكم أبدا.",
      "en": "Before he left, the man said: I will never forget you.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -135019,21 +134118,7 @@ window.LIBRARY = {
        "analysis": "PART_NEG",
        "maknuune_id": "30759",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "30759",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        },
-        {
-         "id": "30760",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "mish",
        "vocalized": "مِش",
        "vocalized_from": "lexicon:exact"
@@ -135104,6 +134189,7 @@ window.LIBRARY = {
     {
      "ar": "بعد شهر، وصلنا هدية كبيرة وورقة مكتوب فيها شكرا.",
      "en": "After a month, a big gift arrived with a note saying thank you.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -135333,6 +134419,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي قال: الخير اللي بتعمله، بيرجعلك.",
      "en": "My dad said: the good you do comes back to you.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -135510,6 +134597,7 @@ window.LIBRARY = {
     {
      "ar": "من هديك الليلة، تعلمت شو يعني الكرم.",
      "en": "From that night, I learned what generosity means.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -135763,12 +134851,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جدتي كانت أحسن طباخة بالعيلة كلها.",
      "en": "My grandmother was the best cook in the whole family.",
+     "p": null,
      "words": [
       {
        "surface": "جدتي",
@@ -135910,6 +135002,7 @@ window.LIBRARY = {
     {
      "ar": "أكلها كان له طعمة ما في متلها.",
      "en": "Her food had a taste like no other.",
+     "p": null,
      "words": [
       {
        "surface": "أكلها",
@@ -136105,6 +135198,7 @@ window.LIBRARY = {
     {
      "ar": "كل النسوان بالعيلة حاولوا يقلدوا أكلها.",
      "en": "All the women in the family tried to imitate her cooking.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -136242,6 +135336,7 @@ window.LIBRARY = {
     {
      "ar": "بس ولا وحدة قدرت توصل لنفس الطعمة.",
      "en": "But not one of them could reach the same taste.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -136433,6 +135528,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، سألتها إمي: شو سرك يا حجة؟",
      "en": "Once, my mom asked her: what's your secret, hajjeh?",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -136628,6 +135724,7 @@ window.LIBRARY = {
     {
      "ar": "جدتي ضحكت وقالت: السر مش بالبهارات.",
      "en": "My grandmother laughed and said: the secret isn't in the spices.",
+     "p": null,
      "words": [
       {
        "surface": "جدتي",
@@ -136806,21 +135903,7 @@ window.LIBRARY = {
        "analysis": "PART_NEG",
        "maknuune_id": "30759",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "30759",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        },
-        {
-         "id": "30760",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "mish",
        "vocalized": "مِش",
        "vocalized_from": "lexicon:exact"
@@ -136861,6 +135944,7 @@ window.LIBRARY = {
     {
      "ar": "قالت: السر إنك تطبخي وقلبك مليان محبة.",
      "en": "She said: the secret is that you cook with your heart full of love.",
+     "p": null,
      "words": [
       {
        "surface": "قالت",
@@ -137140,6 +136224,7 @@ window.LIBRARY = {
     {
      "ar": "إمي ما فهمت الحكي بالأول.",
      "en": "My mom didn't understand the words at first.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -137323,6 +136408,7 @@ window.LIBRARY = {
     {
      "ar": "بس بعد ما توفت جدتي، بلشت تفهم.",
      "en": "But after my grandmother passed away, she began to understand.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -137476,6 +136562,7 @@ window.LIBRARY = {
     {
      "ar": "صارت إمي تطبخ لنا نفس الأكلات.",
      "en": "My mom started cooking us the same dishes.",
+     "p": null,
      "words": [
       {
        "surface": "صارت",
@@ -137651,6 +136738,7 @@ window.LIBRARY = {
     {
      "ar": "وكانت تحط فيها كل محبتها لإلنا.",
      "en": "And she would put all her love for us into them.",
+     "p": null,
      "words": [
       {
        "surface": "وكانت",
@@ -137830,6 +136918,7 @@ window.LIBRARY = {
     {
      "ar": "شوي شوي، صار أكل إمي يشبه أكل جدتي.",
      "en": "Little by little, my mom's food started to resemble my grandmother's.",
+     "p": null,
      "words": [
       {
        "surface": "شوي",
@@ -137842,39 +136931,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -137890,39 +136947,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -138049,6 +137074,7 @@ window.LIBRARY = {
     {
      "ar": "يوم، ذقت أكلها وحسيت إنه جدتي رجعت.",
      "en": "One day, I tasted her food and felt my grandmother had come back.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -138166,6 +137192,7 @@ window.LIBRARY = {
     {
      "ar": "قلتلها: هيك بالضبط كانت تطبخ جدتي.",
      "en": "I told her: this is exactly how grandma used to cook.",
+     "p": null,
      "words": [
       {
        "surface": "قلتلها",
@@ -138325,6 +137352,7 @@ window.LIBRARY = {
     {
      "ar": "إمي دمعت وقالت: عرفت السر أخيرا.",
      "en": "My mom teared up and said: I finally learned the secret.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -138540,12 +137568,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بعد عشرين سنة بالغربة، قررت أرجع عالضيعة.",
      "en": "After twenty years abroad, I decided to return to the village.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -138717,6 +137749,7 @@ window.LIBRARY = {
     {
      "ar": "كنت خايف إنه كل شي تغير.",
      "en": "I was afraid that everything had changed.",
+     "p": null,
      "words": [
       {
        "surface": "كنت",
@@ -138846,6 +137879,7 @@ window.LIBRARY = {
     {
      "ar": "لما وصلت، لقيت الشوارع نفسها بس أضيق.",
      "en": "When I arrived, I found the same streets but narrower.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -139041,6 +138075,7 @@ window.LIBRARY = {
     {
      "ar": "البيوت القديمة لسا واقفة، بس ناسها كبروا.",
      "en": "The old houses were still standing, but their people had aged.",
+     "p": null,
      "words": [
       {
        "surface": "البيوت",
@@ -139262,6 +138297,7 @@ window.LIBRARY = {
     {
      "ar": "مشيت بالحارة، وكل خطوة كانت تفكرني بشي.",
      "en": "I walked through the neighborhood, and every step reminded me of something.",
+     "p": null,
      "words": [
       {
        "surface": "مشيت",
@@ -139418,21 +138454,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "8409",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "8409",
-         "root": "خ.ط.ي",
-         "gloss": "step",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "8410",
-         "root": "خ.ط.ي",
-         "gloss": "steps;footsteps",
-         "analysis": "NOUN:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "khut.we",
        "vocalized": "خُطْوِة",
        "vocalized_from": "lexicon:exact"
@@ -139527,6 +138549,7 @@ window.LIBRARY = {
     {
      "ar": "لقيت بيت جدي، وقفت قدامه طويل.",
      "en": "I found my grandfather's house and stood in front of it for a long time.",
+     "p": null,
      "words": [
       {
        "surface": "لقيت",
@@ -139688,6 +138711,7 @@ window.LIBRARY = {
     {
      "ar": "الباب كان مسكر، والحديقة صارت يابسة.",
      "en": "The door was closed, and the garden had become dry.",
+     "p": null,
      "words": [
       {
        "surface": "الباب",
@@ -139883,6 +138907,7 @@ window.LIBRARY = {
     {
      "ar": "جار قديم شافني وعرفني رغم السنين.",
      "en": "An old neighbor saw me and recognized me despite the years.",
+     "p": null,
      "words": [
       {
        "surface": "جار",
@@ -140014,6 +139039,7 @@ window.LIBRARY = {
     {
      "ar": "قال: يا هلا فيك، وينك من زمان؟",
      "en": "He said: welcome back, where have you been all this time?",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -140217,6 +139243,7 @@ window.LIBRARY = {
     {
      "ar": "عزمني عالبيت، وقعدنا نتذكر الأيام.",
      "en": "He invited me to his house, and we sat remembering the old days.",
+     "p": null,
      "words": [
       {
        "surface": "عزمني",
@@ -140400,6 +139427,7 @@ window.LIBRARY = {
     {
      "ar": "حكالي مين توفى ومين سافر ومين لسا هون.",
      "en": "He told me who had passed away, who traveled, and who was still here.",
+     "p": null,
      "words": [
       {
        "surface": "حكالي",
@@ -140661,6 +139689,7 @@ window.LIBRARY = {
     {
      "ar": "حسيت إنه الزمن مشى، بس الضيعة ضلت بقلبي.",
      "en": "I felt that time had passed, but the village stayed in my heart.",
+     "p": null,
      "words": [
       {
        "surface": "حسيت",
@@ -140950,6 +139979,7 @@ window.LIBRARY = {
     {
      "ar": "قبل ما أمشي، قطفت زيتونة من شجرة جدي.",
      "en": "Before I left, I picked an olive from my grandfather's tree.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -141195,6 +140225,7 @@ window.LIBRARY = {
     {
      "ar": "حطيتها بجيبي متل الكنز.",
      "en": "I put it in my pocket like a treasure.",
+     "p": null,
      "words": [
       {
        "surface": "حطيتها",
@@ -141338,6 +140369,7 @@ window.LIBRARY = {
     {
      "ar": "عرفت يومها إنه الإنسان بيرجع دايما لجذوره.",
      "en": "That day I learned that a person always returns to their roots.",
+     "p": null,
      "words": [
       {
        "surface": "عرفت",
@@ -141521,12 +140553,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "كان في أخوين، الكبير اسمه أحمد والصغير محمود.",
      "en": "There were two brothers, the elder named Ahmad and the younger Mahmoud.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -141708,6 +140744,7 @@ window.LIBRARY = {
     {
      "ar": "لما توفى أبوهم، ترك إلهم أرض وبيت.",
      "en": "When their father passed away, he left them land and a house.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -141975,6 +141012,7 @@ window.LIBRARY = {
     {
      "ar": "بلشوا يتخانقوا مين ياخذ إيش.",
      "en": "They started arguing over who would take what.",
+     "p": null,
      "words": [
       {
        "surface": "بلشوا",
@@ -142116,6 +141154,7 @@ window.LIBRARY = {
     {
      "ar": "كل واحد كان بدو الأرض الأحسن.",
      "en": "Each one wanted the better land.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -142257,6 +141296,7 @@ window.LIBRARY = {
     {
      "ar": "الخناق زاد، وصاروا ما يحكوا مع بعض.",
      "en": "The dispute grew, and they stopped talking to each other.",
+     "p": null,
      "words": [
       {
        "surface": "الخناق",
@@ -142474,6 +141514,7 @@ window.LIBRARY = {
     {
      "ar": "العيلة كلها زعلت من هالوضع.",
      "en": "The whole family was saddened by the situation.",
+     "p": null,
      "words": [
       {
        "surface": "العيلة",
@@ -142597,6 +141638,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، مرض أحمد مرض شديد.",
      "en": "Once, Ahmad became seriously ill.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -142684,6 +141726,7 @@ window.LIBRARY = {
     {
      "ar": "محمود سمع الخبر ونسي كل الخناق.",
      "en": "Mahmoud heard the news and forgot all the fighting.",
+     "p": null,
      "words": [
       {
        "surface": "محمود",
@@ -142915,6 +141958,7 @@ window.LIBRARY = {
     {
      "ar": "ركض على المستشفى وقعد جنب أخوه.",
      "en": "He ran to the hospital and sat next to his brother.",
+     "p": null,
      "words": [
       {
        "surface": "ركض",
@@ -143094,6 +142138,7 @@ window.LIBRARY = {
     {
      "ar": "أحمد فتح عيونه وشاف أخوه، فبكى.",
      "en": "Ahmad opened his eyes and saw his brother, and he cried.",
+     "p": null,
      "words": [
       {
        "surface": "أحمد",
@@ -143287,6 +142332,7 @@ window.LIBRARY = {
     {
      "ar": "قال: سامحني يا أخوي، الدنيا ما بتسوى خناق.",
      "en": "He said: forgive me, brother, the world isn't worth fighting over.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -143492,6 +142538,7 @@ window.LIBRARY = {
     {
      "ar": "محمود حضنه وقال: إنت أغلى من كل الأرض.",
      "en": "Mahmoud hugged him and said: you are more precious than all the land.",
+     "p": null,
      "words": [
       {
        "surface": "محمود",
@@ -143529,55 +142576,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "إنت",
@@ -143717,6 +142726,7 @@ window.LIBRARY = {
     {
      "ar": "من هديك اليوم، رجعوا متل ما كانوا.",
      "en": "From that day, they went back to how they used to be.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -143807,54 +142817,16 @@ window.LIBRARY = {
       {
        "surface": "رجعوا",
        "root": "ر.ج.ع",
-       "lemma": "رَجَّع",
-       "form": "رَجِّع",
-       "caphi_raw": "r a J J i 3",
-       "caphi": "raJJi3",
-       "gloss": "return_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "11200",
+       "lemma": "رِجِع",
+       "form": "رِجِع",
+       "caphi_raw": "r i J i 3",
+       "caphi": "riJi3",
+       "gloss": "return;come_back_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "11206",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "11200",
-         "root": "ر.ج.ع",
-         "gloss": "return_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "11206",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "11208",
-         "root": "ر.ج.ع",
-         "gloss": "return_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "11196",
-         "root": "ر.ج.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "11198",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "11202",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "rajji3",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "riji3",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -143950,6 +142922,7 @@ window.LIBRARY = {
     {
      "ar": "قسموا الأرض بالعدل وبدون خناق.",
      "en": "They divided the land fairly and without fighting.",
+     "p": null,
      "words": [
       {
        "surface": "قسموا",
@@ -144123,6 +143096,7 @@ window.LIBRARY = {
     {
      "ar": "تعلموا إنه الدم ما بيصير مي.",
      "en": "They learned that blood doesn't turn to water.",
+     "p": null,
      "words": [
       {
        "surface": "تعلموا",
@@ -144314,12 +143288,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بضيعة صغيرة، كان في بنت اسمها ليلى.",
      "en": "In a small village, there was a girl named Layla.",
+     "p": null,
      "words": [
       {
        "surface": "بضيعة",
@@ -144491,6 +143469,7 @@ window.LIBRARY = {
     {
      "ar": "ليلى كانت تحب المدرسة أكتر من أي شي.",
      "en": "Layla loved school more than anything.",
+     "p": null,
      "words": [
       {
        "surface": "ليلى",
@@ -144742,6 +143721,7 @@ window.LIBRARY = {
     {
      "ar": "بس المدرسة كانت بعيدة، بساعة مشي.",
      "en": "But the school was far, an hour's walk away.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -144955,6 +143935,7 @@ window.LIBRARY = {
     {
      "ar": "كل الصبح، كانت تصحى بدري وتمشي لحالها.",
      "en": "Every morning, she would wake up early and walk by herself.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -145188,6 +144169,7 @@ window.LIBRARY = {
     {
      "ar": "بالشتا، كانت تمشي تحت المطر والبرد.",
      "en": "In winter, she would walk under the rain and cold.",
+     "p": null,
      "words": [
       {
        "surface": "بالشتا",
@@ -145345,6 +144327,7 @@ window.LIBRARY = {
     {
      "ar": "ناس الضيعة قالوا: ليش تتعب حالها هيك؟",
      "en": "The village people said: why does she tire herself like this?",
+     "p": null,
      "words": [
       {
        "surface": "ناس",
@@ -145598,6 +144581,7 @@ window.LIBRARY = {
     {
      "ar": "بس أبوها كان يقول: بنتي رح تصير شي كبير.",
      "en": "But her father would say: my daughter will become something great.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -145801,6 +144785,7 @@ window.LIBRARY = {
     {
      "ar": "ليلى كانت الأولى على صفها كل سنة.",
      "en": "Layla was first in her class every year.",
+     "p": null,
      "words": [
       {
        "surface": "ليلى",
@@ -145996,6 +144981,7 @@ window.LIBRARY = {
     {
      "ar": "المعلمين كانوا يفتخروا فيها.",
      "en": "The teachers were proud of her.",
+     "p": null,
      "words": [
       {
        "surface": "المعلمين",
@@ -146081,6 +145067,7 @@ window.LIBRARY = {
     {
      "ar": "لما كبرت، راحت عالجامعة بالمدينة.",
      "en": "When she grew up, she went to the university in the city.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -146284,6 +145271,7 @@ window.LIBRARY = {
     {
      "ar": "درست ليل نهار، ونجحت بتفوق.",
      "en": "She studied day and night, and succeeded with excellence.",
+     "p": null,
      "words": [
       {
        "surface": "درست",
@@ -146513,6 +145501,7 @@ window.LIBRARY = {
     {
      "ar": "رجعت عالضيعة، بس هالمرة كمعلمة.",
      "en": "She returned to the village, but this time as a teacher.",
+     "p": null,
      "words": [
       {
        "surface": "رجعت",
@@ -146644,6 +145633,7 @@ window.LIBRARY = {
     {
      "ar": "فتحت مدرسة قريبة عشان البنات ما يتعبوا متلها.",
      "en": "She opened a school nearby so girls wouldn't struggle like her.",
+     "p": null,
      "words": [
       {
        "surface": "فتحت",
@@ -146921,6 +145911,7 @@ window.LIBRARY = {
     {
      "ar": "صارت قدوة لكل بنت بالضيعة.",
      "en": "She became a role model for every girl in the village.",
+     "p": null,
      "words": [
       {
        "surface": "صارت",
@@ -147058,6 +146049,7 @@ window.LIBRARY = {
     {
      "ar": "وأبوها كان أفخر أب بالدنيا.",
      "en": "And her father was the proudest father in the world.",
+     "p": null,
      "words": [
       {
        "surface": "وأبوها",
@@ -147259,12 +146251,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "سنة من السنين، ما نزلت شتا أبدا.",
      "en": "One year, no rain fell at all.",
+     "p": null,
      "words": [
       {
        "surface": "سنة",
@@ -147412,6 +146408,7 @@ window.LIBRARY = {
     {
      "ar": "الأرض يبست، والزرع مات.",
      "en": "The land dried up, and the crops died.",
+     "p": null,
      "words": [
       {
        "surface": "الأرض",
@@ -147521,6 +146518,7 @@ window.LIBRARY = {
     {
      "ar": "الفلاحين وقفوا حائرين، ما بيعرفوا شو يعملوا.",
      "en": "The farmers stood bewildered, not knowing what to do.",
+     "p": null,
      "words": [
       {
        "surface": "الفلاحين",
@@ -147668,6 +146666,7 @@ window.LIBRARY = {
     {
      "ar": "الآبار جفت، والمي صارت قليلة.",
      "en": "The wells ran dry, and water became scarce.",
+     "p": null,
      "words": [
       {
        "surface": "الآبار",
@@ -147825,6 +146824,7 @@ window.LIBRARY = {
     {
      "ar": "الناس بلشوا يخافوا عالسنة الجاي.",
      "en": "The people started to fear for the coming year.",
+     "p": null,
      "words": [
       {
        "surface": "الناس",
@@ -147984,6 +146984,7 @@ window.LIBRARY = {
     {
      "ar": "بهديك السنة، الغني والفقير صاروا سوا.",
      "en": "In that year, the rich and the poor became the same.",
+     "p": null,
      "words": [
       {
        "surface": "بهديك",
@@ -148185,6 +147186,7 @@ window.LIBRARY = {
     {
      "ar": "رجال غني بالضيعة فتح مخزنه للكل.",
      "en": "A rich man in the village opened his storehouse to everyone.",
+     "p": null,
      "words": [
       {
        "surface": "رجال",
@@ -148412,6 +147414,7 @@ window.LIBRARY = {
     {
      "ar": "قال: اللي عنده، لازم يساعد اللي ما عنده.",
      "en": "He said: whoever has must help whoever doesn't.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -148623,6 +147626,7 @@ window.LIBRARY = {
     {
      "ar": "وزع القمح والزيت عالعيال الفقيرة.",
      "en": "He distributed wheat and oil to the poor families.",
+     "p": null,
      "words": [
       {
        "surface": "وزع",
@@ -148786,6 +147790,7 @@ window.LIBRARY = {
     {
      "ar": "الناس كلها وقفت مع بعض بهديك الأيام.",
      "en": "All the people stood together in those days.",
+     "p": null,
      "words": [
       {
        "surface": "الناس",
@@ -148937,6 +147942,7 @@ window.LIBRARY = {
     {
      "ar": "بالآخر، بعد شهور طويلة، نزلت الشتا.",
      "en": "In the end, after long months, the rain fell.",
+     "p": null,
      "words": [
       {
        "surface": "بالآخر",
@@ -149080,6 +148086,7 @@ window.LIBRARY = {
     {
      "ar": "الناس طلعوا عالشوارع يرقصوا تحت المطر.",
      "en": "The people went out to the streets to dance under the rain.",
+     "p": null,
      "words": [
       {
        "surface": "الناس",
@@ -149203,6 +148210,7 @@ window.LIBRARY = {
     {
      "ar": "الأرض شربت، والزرع رجع أخضر.",
      "en": "The land drank, and the crops turned green again.",
+     "p": null,
      "words": [
       {
        "surface": "الأرض",
@@ -149366,6 +148374,7 @@ window.LIBRARY = {
     {
      "ar": "تعلمت الضيعة إنه بالشدة، بيبان معدن الناس.",
      "en": "The village learned that in hardship, people's true character shows.",
+     "p": null,
      "words": [
       {
        "surface": "تعلمت",
@@ -149583,6 +148592,7 @@ window.LIBRARY = {
     {
      "ar": "وإنه التعاون بيقهر أصعب الظروف.",
      "en": "And that cooperation overcomes the hardest of circumstances.",
+     "p": null,
      "words": [
       {
        "surface": "وإنه",
@@ -149734,12 +148744,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "لما كنت بالمدرسة، كان في معلم اسمه أستاذ سعيد.",
      "en": "When I was in school, there was a teacher named Ustaz Sa'id.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -149939,6 +148953,7 @@ window.LIBRARY = {
     {
      "ar": "كان مختلف عن باقي المعلمين.",
      "en": "He was different from the other teachers.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -150066,6 +149081,7 @@ window.LIBRARY = {
     {
      "ar": "ما كان بس يعلمنا دروس، كان يعلمنا حياة.",
      "en": "He didn't just teach us lessons, he taught us life.",
+     "p": null,
      "words": [
       {
        "surface": "ما",
@@ -150261,6 +149277,7 @@ window.LIBRARY = {
     {
      "ar": "أنا كنت طالب كسلان، ما بحب أدرس.",
      "en": "I was a lazy student, I didn't like to study.",
+     "p": null,
      "words": [
       {
        "surface": "أنا",
@@ -150400,6 +149417,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، أستاذ سعيد ناداني بعد الدرس.",
      "en": "Once, Ustaz Sa'id called me after class.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -150575,6 +149593,7 @@ window.LIBRARY = {
     {
      "ar": "توقعت إنه رح يوبخني، بس هو ابتسم.",
      "en": "I expected him to scold me, but he smiled.",
+     "p": null,
      "words": [
       {
        "surface": "توقعت",
@@ -150750,6 +149769,7 @@ window.LIBRARY = {
     {
      "ar": "قال: أنا شايف فيك ذكاء، بس إنت مش شايفه.",
      "en": "He said: I see intelligence in you, but you don't see it.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -150914,21 +149934,7 @@ window.LIBRARY = {
        "analysis": "PART_NEG",
        "maknuune_id": "30759",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "30759",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        },
-        {
-         "id": "30760",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "mish",
        "vocalized": "مِش",
        "vocalized_from": "lexicon:exact"
@@ -150969,6 +149975,7 @@ window.LIBRARY = {
     {
      "ar": "حكيه دخل قلبي وغير شي فيي.",
      "en": "His words entered my heart and changed something in me.",
+     "p": null,
      "words": [
       {
        "surface": "حكيه",
@@ -151212,6 +150219,7 @@ window.LIBRARY = {
     {
      "ar": "بلشت أدرس، مش عشان الامتحان، عشان حالي.",
      "en": "I started to study, not for the exam, but for myself.",
+     "p": null,
      "words": [
       {
        "surface": "بلشت",
@@ -151270,21 +150278,7 @@ window.LIBRARY = {
        "analysis": "PART_NEG",
        "maknuune_id": "30759",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "30759",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        },
-        {
-         "id": "30760",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "mish",
        "vocalized": "مِش",
        "vocalized_from": "lexicon:exact"
@@ -151373,6 +150367,7 @@ window.LIBRARY = {
     {
      "ar": "درجاتي تحسنت، وثقتي بحالي كبرت.",
      "en": "My grades improved, and my confidence in myself grew.",
+     "p": null,
      "words": [
       {
        "surface": "درجاتي",
@@ -151572,6 +150567,7 @@ window.LIBRARY = {
     {
      "ar": "كل ما كنت أوقع، أستاذ سعيد كان يوقفني.",
      "en": "Every time I would fall, Ustaz Sa'id would pick me up.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -151719,6 +150715,7 @@ window.LIBRARY = {
     {
      "ar": "بعد سنين، تخرجت وصرت مهندس.",
      "en": "After years, I graduated and became an engineer.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -151870,6 +150867,7 @@ window.LIBRARY = {
     {
      "ar": "رجعت عالمدرسة أدور عليه لأشكره.",
      "en": "I went back to the school to look for him to thank him.",
+     "p": null,
      "words": [
       {
        "surface": "رجعت",
@@ -152015,6 +151013,7 @@ window.LIBRARY = {
     {
      "ar": "لقيته كبر بالعمر، بس ابتسامته نفسها.",
      "en": "I found him aged, but his smile was the same.",
+     "p": null,
      "words": [
       {
        "surface": "لقيته",
@@ -152220,6 +151219,7 @@ window.LIBRARY = {
     {
      "ar": "قلتله: إنت السبب إني صرت اللي أنا عليه.",
      "en": "I told him: you are the reason I became who I am.",
+     "p": null,
      "words": [
       {
        "surface": "قلتله",
@@ -152419,6 +151419,7 @@ window.LIBRARY = {
     {
      "ar": "دمعت عيونه وقال: هاي أحلى هدية لمعلم.",
      "en": "His eyes teared up and he said: this is the nicest gift for a teacher.",
+     "p": null,
      "words": [
       {
        "surface": "دمعت",
@@ -152514,55 +151515,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "هاي",
@@ -152674,12 +151637,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "لما كنا صغار، أنا وصاحبي سامي كنا ما ننفصل.",
      "en": "When we were young, my friend Sami and I were inseparable.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -152883,6 +151850,7 @@ window.LIBRARY = {
     {
      "ar": "كل يوم كنا نلعب سوا ونحلم سوا.",
      "en": "Every day we would play together and dream together.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -153106,6 +152074,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، وقفنا عالتلة اللي فوق الضيعة.",
      "en": "Once, we stood on the hill above the village.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -153220,45 +152189,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "24923",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24923",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "ADV"
-        },
-        {
-         "id": "24924",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "24933",
-         "root": "ف.و.ق",
-         "gloss": "exceed;surpass",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24927",
-         "root": "ف.و.ق",
-         "gloss": "when_pigs_fly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24928",
-         "root": "ف.و.ق",
-         "gloss": "to_do_sth_in_a_hurry_and_not_duly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24929",
-         "root": "ف.و.ق",
-         "gloss": "very_crowded",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "foo2",
        "vocalized": "فَوق",
        "vocalized_from": "lexicon:exact"
@@ -153317,6 +152248,7 @@ window.LIBRARY = {
     {
      "ar": "سامي قال: تعا نوعد بعض نضل أصحاب للأبد.",
      "en": "Sami said: let's promise each other to stay friends forever.",
+     "p": null,
      "words": [
       {
        "surface": "سامي",
@@ -153564,6 +152496,7 @@ window.LIBRARY = {
     {
      "ar": "مديت إيدي وقلتله: وعد.",
      "en": "I extended my hand and told him: promise.",
+     "p": null,
      "words": [
       {
        "surface": "مديت",
@@ -153656,49 +152589,11 @@ window.LIBRARY = {
        "form": "وَعِد",
        "caphi_raw": "w a 3 i d",
        "caphi": "wa3id",
-       "gloss": "I_promise!",
-       "analysis": "INTERJ",
-       "maknuune_id": "35719",
+       "gloss": "promise",
+       "analysis": "NOUN:MS",
+       "maknuune_id": "35721",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "35719",
-         "root": "و.ع.د",
-         "gloss": "I_promise!",
-         "analysis": "INTERJ"
-        },
-        {
-         "id": "35721",
-         "root": "و.ع.د",
-         "gloss": "promise",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "35734",
-         "root": "و.ع.د",
-         "gloss": "promise_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35723",
-         "root": "و.ع.د",
-         "gloss": "promise_[auto]",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "35726",
-         "root": "و.ع.د",
-         "gloss": "promise_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "35729",
-         "root": "و.ع.د",
-         "gloss": "promise",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "wa3id",
        "vocalized": "وَعِد",
        "vocalized_from": "lexicon:exact"
@@ -153709,6 +152604,7 @@ window.LIBRARY = {
     {
      "ar": "بس الحياة فرقتنا، هو سافر وأنا ضليت.",
      "en": "But life separated us; he traveled and I stayed.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -153882,6 +152778,7 @@ window.LIBRARY = {
     {
      "ar": "مرت سنين طويلة وما سمعت عنه خبر.",
      "en": "Long years passed and I heard no news of him.",
+     "p": null,
      "words": [
       {
        "surface": "مرت",
@@ -154129,6 +153026,7 @@ window.LIBRARY = {
     {
      "ar": "كنت أفكر فيه كل ما أطلع عالتلة.",
      "en": "I would think of him every time I climbed the hill.",
+     "p": null,
      "words": [
       {
        "surface": "كنت",
@@ -154300,6 +153198,7 @@ window.LIBRARY = {
     {
      "ar": "يوم، وأنا قاعد بالبيت، دق التلفون.",
      "en": "One day, while I was sitting at home, the phone rang.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -154513,6 +153412,7 @@ window.LIBRARY = {
     {
      "ar": "صوت قال: بتذكر الوعد اللي وعدناه؟",
      "en": "A voice said: do you remember the promise we made?",
+     "p": null,
      "words": [
       {
        "surface": "صوت",
@@ -154648,6 +153548,7 @@ window.LIBRARY = {
     {
      "ar": "عرفت الصوت على طول، كان سامي.",
      "en": "I recognized the voice right away, it was Sami.",
+     "p": null,
      "words": [
       {
        "surface": "عرفت",
@@ -154809,6 +153710,7 @@ window.LIBRARY = {
     {
      "ar": "قال إنه راجع عالضيعة بعد كل هالسنين.",
      "en": "He said he was returning to the village after all these years.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -154978,6 +153880,7 @@ window.LIBRARY = {
     {
      "ar": "اتفقنا نتقابل عالتلة، نفس المكان.",
      "en": "We agreed to meet on the hill, the same spot.",
+     "p": null,
      "words": [
       {
        "surface": "اتفقنا",
@@ -155133,6 +154036,7 @@ window.LIBRARY = {
     {
      "ar": "لما شفته، عرفته رغم إنه كبر.",
      "en": "When I saw him, I recognized him even though he had aged.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -155270,6 +154174,7 @@ window.LIBRARY = {
     {
      "ar": "عانقنا بعض وضحكنا وبكينا بنفس الوقت.",
      "en": "We hugged and laughed and cried at the same time.",
+     "p": null,
      "words": [
       {
        "surface": "عانقنا",
@@ -155477,6 +154382,7 @@ window.LIBRARY = {
     {
      "ar": "قال: قلتلك رح نضل أصحاب للأبد.",
      "en": "He said: I told you we'd stay friends forever.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -155666,12 +154572,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "رجال كان عنده عصفور حلو بقفص ذهبي.",
      "en": "A man had a beautiful bird in a golden cage.",
+     "p": null,
      "words": [
       {
        "surface": "رجال",
@@ -155977,6 +154887,7 @@ window.LIBRARY = {
     {
      "ar": "كان يطعمه أحسن أكل ويهتم فيه كتير.",
      "en": "He would feed it the best food and care for it a lot.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -156148,6 +155059,7 @@ window.LIBRARY = {
     {
      "ar": "بس العصفور ما كان يغني أبدا.",
      "en": "But the bird never used to sing.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -156323,6 +155235,7 @@ window.LIBRARY = {
     {
      "ar": "الرجال حار، ليش عصفوره حزين؟",
      "en": "The man was puzzled, why was his bird sad?",
+     "p": null,
      "words": [
       {
        "surface": "الرجال",
@@ -156520,6 +155433,7 @@ window.LIBRARY = {
     {
      "ar": "جاب له قفص أكبر وأحلى، بس ما فرقت.",
      "en": "He got it a bigger and nicer cage, but it made no difference.",
+     "p": null,
      "words": [
       {
        "surface": "جاب",
@@ -156783,6 +155697,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، إجاه ضيف حكيم وشاف العصفور.",
      "en": "Once, a wise guest came to him and saw the bird.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -156970,6 +155885,7 @@ window.LIBRARY = {
     {
      "ar": "قال: هالعصفور ما بيغني لأنه مش حر.",
      "en": "He said: this bird doesn't sing because it isn't free.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -157080,21 +155996,7 @@ window.LIBRARY = {
        "analysis": "PART_NEG",
        "maknuune_id": "30759",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "30759",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        },
-        {
-         "id": "30760",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "mish",
        "vocalized": "مِش",
        "vocalized_from": "lexicon:exact"
@@ -157102,31 +156004,17 @@ window.LIBRARY = {
       {
        "surface": "حر",
        "root": "ح.ر.ر",
-       "lemma": "حُرّ",
-       "form": "حُرّ",
-       "caphi_raw": "7 u r r",
-       "caphi": "7urr",
-       "gloss": "free;open;uncontrained",
-       "analysis": "ADJ:MS",
-       "maknuune_id": "5566",
+       "lemma": "حَرّ",
+       "form": "حَرّ",
+       "caphi_raw": "7 a r r",
+       "caphi": "7arr",
+       "gloss": "hot",
+       "analysis": "ADJ/NOUN",
+       "maknuune_id": "5568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "5566",
-         "root": "ح.ر.ر",
-         "gloss": "free;open;uncontrained",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "5568",
-         "root": "ح.ر.ر",
-         "gloss": "hot",
-         "analysis": "ADJ/NOUN"
-        }
-       ],
-       "caphi_urban": "7urr",
-       "vocalized": "حُرّ",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7arr",
+       "vocalized": "حَرّ",
        "vocalized_from": "lexicon:exact"
       }
      ],
@@ -157135,6 +156023,7 @@ window.LIBRARY = {
     {
      "ar": "الرجال قال: بس أنا بحبه وبهتم فيه.",
      "en": "The man said: but I love it and I care for it.",
+     "p": null,
      "words": [
       {
        "surface": "الرجال",
@@ -157274,6 +156163,7 @@ window.LIBRARY = {
     {
      "ar": "الحكيم رد: المحبة الحقيقية إنك تطلق اللي بتحبه.",
      "en": "The wise man replied: true love is to release the one you love.",
+     "p": null,
      "words": [
       {
        "surface": "الحكيم",
@@ -157487,6 +156377,7 @@ window.LIBRARY = {
     {
      "ar": "الرجال فكر طويل بهالحكي.",
      "en": "The man thought for a long time about these words.",
+     "p": null,
      "words": [
       {
        "surface": "الرجال",
@@ -157628,6 +156519,7 @@ window.LIBRARY = {
     {
      "ar": "الصبح التاني، حمل القفص وطلع عالحديقة.",
      "en": "The next morning, he carried the cage and went out to the garden.",
+     "p": null,
      "words": [
       {
        "surface": "الصبح",
@@ -157835,6 +156727,7 @@ window.LIBRARY = {
     {
      "ar": "فتح باب القفص وقال: روح، إنت حر.",
      "en": "He opened the cage door and said: go, you are free.",
+     "p": null,
      "words": [
       {
        "surface": "فتح",
@@ -157940,55 +156833,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "روح",
@@ -158089,31 +156944,17 @@ window.LIBRARY = {
       {
        "surface": "حر",
        "root": "ح.ر.ر",
-       "lemma": "حُرّ",
-       "form": "حُرّ",
-       "caphi_raw": "7 u r r",
-       "caphi": "7urr",
-       "gloss": "free;open;uncontrained",
-       "analysis": "ADJ:MS",
-       "maknuune_id": "5566",
+       "lemma": "حَرّ",
+       "form": "حَرّ",
+       "caphi_raw": "7 a r r",
+       "caphi": "7arr",
+       "gloss": "hot",
+       "analysis": "ADJ/NOUN",
+       "maknuune_id": "5568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "5566",
-         "root": "ح.ر.ر",
-         "gloss": "free;open;uncontrained",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "5568",
-         "root": "ح.ر.ر",
-         "gloss": "hot",
-         "analysis": "ADJ/NOUN"
-        }
-       ],
-       "caphi_urban": "7urr",
-       "vocalized": "حُرّ",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7arr",
+       "vocalized": "حَرّ",
        "vocalized_from": "lexicon:exact"
       }
      ],
@@ -158122,6 +156963,7 @@ window.LIBRARY = {
     {
      "ar": "العصفور طار عالشجرة القريبة.",
      "en": "The bird flew to the nearby tree.",
+     "p": null,
      "words": [
       {
        "surface": "العصفور",
@@ -158309,6 +157151,7 @@ window.LIBRARY = {
     {
      "ar": "وقف هناك، وبلش يغني أحلى غنا.",
      "en": "It stood there, and started to sing the most beautiful song.",
+     "p": null,
      "words": [
       {
        "surface": "وقف",
@@ -158460,6 +157303,7 @@ window.LIBRARY = {
     {
      "ar": "الرجال حس بفرح ما حسه من قبل.",
      "en": "The man felt a joy he had never felt before.",
+     "p": null,
      "words": [
       {
        "surface": "الرجال",
@@ -158677,6 +157521,7 @@ window.LIBRARY = {
     {
      "ar": "فهم يومها إنه الحرية أغلى من الذهب.",
      "en": "That day he understood that freedom is more precious than gold.",
+     "p": null,
      "words": [
       {
        "surface": "فهم",
@@ -158930,12 +157775,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "قبل العرس بأسبوع، البيت انقلب رأسا على عقب.",
      "en": "A week before the wedding, the house turned upside down.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -159155,6 +158004,7 @@ window.LIBRARY = {
     {
      "ar": "النسوان كانوا يحضروا والرجال يرتبوا.",
      "en": "The women were preparing and the men were organizing.",
+     "p": null,
      "words": [
       {
        "surface": "النسوان",
@@ -159296,6 +158146,7 @@ window.LIBRARY = {
     {
      "ar": "إمي قالت للعروس: هاي أحلى أيام عمرك.",
      "en": "My mom said to the bride: these are the best days of your life.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -159467,6 +158318,7 @@ window.LIBRARY = {
     {
      "ar": "العروس كانت مبسوطة بس خايفة بنفس الوقت.",
      "en": "The bride was happy but scared at the same time.",
+     "p": null,
      "words": [
       {
        "surface": "العروس",
@@ -159614,6 +158466,7 @@ window.LIBRARY = {
     {
      "ar": "قالت: رح أوحشكم كتير.",
      "en": "She said: I'll miss you all a lot.",
+     "p": null,
      "words": [
       {
        "surface": "قالت",
@@ -159705,6 +158558,7 @@ window.LIBRARY = {
     {
      "ar": "ليلة العرس، القاعة كانت مليانة ضو وناس.",
      "en": "On the wedding night, the hall was full of lights and people.",
+     "p": null,
      "words": [
       {
        "surface": "ليلة",
@@ -159928,6 +158782,7 @@ window.LIBRARY = {
     {
      "ar": "الدبكة اشتغلت، والكل صار يرقص.",
      "en": "The dabke started, and everyone began to dance.",
+     "p": null,
      "words": [
       {
        "surface": "الدبكة",
@@ -160055,6 +158910,7 @@ window.LIBRARY = {
     {
      "ar": "جدتي، رغم كبر سنها، رقصت شوي.",
      "en": "My grandmother, despite her old age, danced a little.",
+     "p": null,
      "words": [
       {
        "surface": "جدتي",
@@ -160261,39 +159117,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -160304,6 +159128,7 @@ window.LIBRARY = {
     {
      "ar": "العريس إجا ولابس بدلة وواقف بفخر.",
      "en": "The groom came wearing a suit and standing proudly.",
+     "p": null,
      "words": [
       {
        "surface": "العريس",
@@ -160455,6 +159280,7 @@ window.LIBRARY = {
     {
      "ar": "لما شاف العروس، عيونه لمعت.",
      "en": "When he saw the bride, his eyes sparkled.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -160608,6 +159434,7 @@ window.LIBRARY = {
     {
      "ar": "الأهل زغردوا، والفرح عم بالمكان.",
      "en": "The relatives ululated, and joy filled the place.",
+     "p": null,
      "words": [
       {
        "surface": "الأهل",
@@ -160763,6 +159590,7 @@ window.LIBRARY = {
     {
      "ar": "أبو العروس وقف يحكي، وصوته كان مخنوق.",
      "en": "The bride's father stood to speak, and his voice was choked.",
+     "p": null,
      "words": [
       {
        "surface": "أبو",
@@ -160986,6 +159814,7 @@ window.LIBRARY = {
     {
      "ar": "قال: بنتي، بيتك الجديد قريب من قلبنا.",
      "en": "He said: my daughter, your new home is close to our hearts.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -161163,6 +159992,7 @@ window.LIBRARY = {
     {
      "ar": "رقصنا وغنينا لطلوع الفجر.",
      "en": "We danced and sang until dawn.",
+     "p": null,
      "words": [
       {
        "surface": "رقصنا",
@@ -161338,6 +160168,7 @@ window.LIBRARY = {
     {
      "ar": "كانت ليلة ما بتننسى، مليانة محبة وفرح.",
      "en": "It was an unforgettable night, full of love and joy.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -161541,12 +160372,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بقرية عالبحر، كان في صياد قديم اسمه أبو موسى.",
      "en": "In a village by the sea, there was an old fisherman named Abu Musa.",
+     "p": null,
      "words": [
       {
        "surface": "بقرية",
@@ -161794,6 +160629,7 @@ window.LIBRARY = {
     {
      "ar": "كل الصبح، كان يطلع عالبحر بقاربه الصغير.",
      "en": "Every morning, he would go out to sea in his small boat.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -161991,6 +160827,7 @@ window.LIBRARY = {
     {
      "ar": "كان يعرف البحر متل ما يعرف إيده.",
      "en": "He knew the sea like he knew his own hand.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -162049,45 +160886,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -162252,6 +161051,7 @@ window.LIBRARY = {
     {
      "ar": "الناس كانوا يقولوا إنه بيحكي مع الموج.",
      "en": "People used to say he talked to the waves.",
+     "p": null,
      "words": [
       {
        "surface": "الناس",
@@ -162431,6 +161231,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، طلع بيوم والجو صافي.",
      "en": "Once, he went out on a clear day.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -162451,55 +161252,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -162646,6 +161409,7 @@ window.LIBRARY = {
     {
      "ar": "بس فجأة، هبت ريح قوية وصارت عاصفة.",
      "en": "But suddenly, a strong wind blew and a storm arose.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -162780,45 +161544,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "27050",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27050",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "27057",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "27065",
-         "root": "ق.و.ي",
-         "gloss": "become_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27066",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27051",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        },
-        {
-         "id": "27052",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2awi",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -162901,6 +161627,7 @@ window.LIBRARY = {
     {
      "ar": "الموج علا، والقارب صار يترنح.",
      "en": "The waves rose, and the boat began to sway.",
+     "p": null,
      "words": [
       {
        "surface": "الموج",
@@ -163042,6 +161769,7 @@ window.LIBRARY = {
     {
      "ar": "الناس عالشط خافوا عليه كتير.",
      "en": "The people on the shore were very afraid for him.",
+     "p": null,
      "words": [
       {
        "surface": "الناس",
@@ -163149,6 +161877,7 @@ window.LIBRARY = {
     {
      "ar": "بس أبو موسى ما خاف، لأنه يعرف البحر.",
      "en": "But Abu Musa wasn't afraid, because he knew the sea.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -163365,45 +162094,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -163414,6 +162105,7 @@ window.LIBRARY = {
     {
      "ar": "مسك الدفة بقوة وصبر عالعاصفة.",
      "en": "He gripped the rudder tightly and endured the storm.",
+     "p": null,
      "words": [
       {
        "surface": "مسك",
@@ -163611,6 +162303,7 @@ window.LIBRARY = {
     {
      "ar": "بعد ساعات، هدت الريح وصفى الجو.",
      "en": "After hours, the wind calmed and the weather cleared.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -163868,6 +162561,7 @@ window.LIBRARY = {
     {
      "ar": "أبو موسى رجع عالشط، تعبان بس بأمان.",
      "en": "Abu Musa returned to the shore, tired but safe.",
+     "p": null,
      "words": [
       {
        "surface": "أبو",
@@ -164059,6 +162753,7 @@ window.LIBRARY = {
     {
      "ar": "الناس استقبلوه بالفرح والحمد لله.",
      "en": "The people welcomed him with joy and thanks to God.",
+     "p": null,
      "words": [
       {
        "surface": "الناس",
@@ -164178,6 +162873,7 @@ window.LIBRARY = {
     {
      "ar": "سألوه: ما خفت تغرق؟",
      "en": "They asked him: weren't you afraid you'd drown?",
+     "p": null,
      "words": [
       {
        "surface": "سألوه",
@@ -164323,6 +163019,7 @@ window.LIBRARY = {
     {
      "ar": "ضحك وقال: البحر بيحترم اللي بيحترمه.",
      "en": "He laughed and said: the sea respects those who respect it.",
+     "p": null,
      "words": [
       {
        "surface": "ضحك",
@@ -164382,55 +163079,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "البحر",
@@ -164443,45 +163102,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -164580,12 +163201,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بحارتنا، كان في جار فقير اسمه أبو علي.",
      "en": "In our neighborhood, there was a poor neighbor named Abu Ali.",
+     "p": null,
      "words": [
       {
        "surface": "بحارتنا",
@@ -164803,6 +163428,7 @@ window.LIBRARY = {
     {
      "ar": "كان يشتغل نهار وليل عشان يطعم ولاده.",
      "en": "He worked day and night to feed his children.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -164988,6 +163614,7 @@ window.LIBRARY = {
     {
      "ar": "رغم فقره، كان دايما مبتسم وطيب.",
      "en": "Despite his poverty, he was always smiling and kind.",
+     "p": null,
      "words": [
       {
        "surface": "رغم",
@@ -165127,6 +163754,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، مرض ولده وما كان معه مصاري للدوا.",
      "en": "Once, his child got sick and he had no money for medicine.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -165338,6 +163966,7 @@ window.LIBRARY = {
     {
      "ar": "كان محتار ومهموم، ما بيعرف شو يعمل.",
      "en": "He was confused and worried, not knowing what to do.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -165485,6 +164114,7 @@ window.LIBRARY = {
     {
      "ar": "ناس الحارة سمعوا بالخبر.",
      "en": "The people of the neighborhood heard the news.",
+     "p": null,
      "words": [
       {
        "surface": "ناس",
@@ -165608,6 +164238,7 @@ window.LIBRARY = {
     {
      "ar": "بدون ما يقول حدا، جمعوا مصاري بينهم.",
      "en": "Without anyone saying so, they collected money among themselves.",
+     "p": null,
      "words": [
       {
        "surface": "بدون",
@@ -165805,6 +164436,7 @@ window.LIBRARY = {
     {
      "ar": "حطوها بمغلف وحطوه تحت باب أبو علي.",
      "en": "They put it in an envelope and placed it under Abu Ali's door.",
+     "p": null,
      "words": [
       {
        "surface": "حطوها",
@@ -165996,6 +164628,7 @@ window.LIBRARY = {
     {
      "ar": "الصبح، أبو علي لقى المغلف واستغرب.",
      "en": "In the morning, Abu Ali found the envelope and was surprised.",
+     "p": null,
      "words": [
       {
        "surface": "الصبح",
@@ -166195,6 +164828,7 @@ window.LIBRARY = {
     {
      "ar": "أخذ ولده عالدكتور واشترى الدوا.",
      "en": "He took his child to the doctor and bought the medicine.",
+     "p": null,
      "words": [
       {
        "surface": "أخذ",
@@ -166418,6 +165052,7 @@ window.LIBRARY = {
     {
      "ar": "الولد طاب، وأبو علي ما عرف مين ساعده.",
      "en": "The child recovered, and Abu Ali never knew who helped him.",
+     "p": null,
      "words": [
       {
        "surface": "الولد",
@@ -166651,6 +165286,7 @@ window.LIBRARY = {
     {
      "ar": "سأل الجيران، بس محدا اعترف.",
      "en": "He asked the neighbors, but no one admitted it.",
+     "p": null,
      "words": [
       {
        "surface": "سأل",
@@ -166802,6 +165438,7 @@ window.LIBRARY = {
     {
      "ar": "قال: الله يجازي اللي عمل هالخير.",
      "en": "He said: may God reward whoever did this good deed.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -166941,6 +165578,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، صار أبو علي يساعد كل محتاج.",
      "en": "From that day, Abu Ali started helping everyone in need.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -167166,6 +165804,7 @@ window.LIBRARY = {
     {
      "ar": "قال: الخير اللي وصلني، لازم أمرره لغيري.",
      "en": "He said: the good that reached me, I must pass on to others.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -167409,12 +166048,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جدي كان فلاح طول عمره.",
      "en": "My grandfather was a farmer his whole life.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -167540,6 +166183,7 @@ window.LIBRARY = {
     {
      "ar": "الأرض كانت كل حياته، وهو ما بيعرف غيرها.",
      "en": "The land was his whole life, and he knew nothing else.",
+     "p": null,
      "words": [
       {
        "surface": "الأرض",
@@ -167725,6 +166369,7 @@ window.LIBRARY = {
     {
      "ar": "لما كبر بالعمر، صار الشغل صعب عليه.",
      "en": "When he grew old, the work became hard for him.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -167889,45 +166534,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "17778",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17778",
-         "root": "ص.ع.ب",
-         "gloss": "difficult",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "17784",
-         "root": "ص.ع.ب",
-         "gloss": "make_sth_more_difficult_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17789",
-         "root": "ص.ع.ب",
-         "gloss": "become_more_difficult;sth_evokes_pity_[a",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17790",
-         "root": "ص.ع.ب",
-         "gloss": "make_sth_more_difficult_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17783",
-         "root": "ص.ع.ب",
-         "gloss": "become_more_difficult;sth_evokes_pity_[a",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17786",
-         "root": "ص.ع.ب",
-         "gloss": "become_more_difficult;sth_evokes_pity",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "s.a3ib",
        "vocalized": "صَعِب",
        "vocalized_from": "lexicon:exact"
@@ -167954,6 +166561,7 @@ window.LIBRARY = {
     {
      "ar": "بس كل موسم، كان يصر يحصد بإيده.",
      "en": "But every season, he insisted on harvesting with his own hands.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -168115,6 +166723,7 @@ window.LIBRARY = {
     {
      "ar": "سنة، حسينا إنه هاي رح تكون آخر حصاد إله.",
      "en": "One year, we felt this would be his last harvest.",
+     "p": null,
      "words": [
       {
        "surface": "سنة",
@@ -168198,37 +166807,17 @@ window.LIBRARY = {
        "surface": "تكون",
        "root": "ك.و.ن",
        "lemma": "تْكَوَّن",
-       "form": "تْكَوَّن",
-       "caphi_raw": "t k a w w a n",
-       "caphi": "tkawwan",
+       "form": "يِتْكَوَّن",
+       "caphi_raw": "y i t k a w w a n",
+       "caphi": "yitkawwan",
        "gloss": "be_formed",
-       "analysis": "VERB:P",
-       "maknuune_id": "28572",
+       "analysis": "VERB:I",
+       "maknuune_id": "28571",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "28572",
-         "root": "ك.و.ن",
-         "gloss": "be_formed",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "28570",
-         "root": "ك.و.ن",
-         "gloss": "be_formed",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "28571",
-         "root": "ك.و.ن",
-         "gloss": "be_formed",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "tkawwan",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "yitkawwan",
        "vocalized": "تْكَوَّن",
-       "vocalized_from": "lexicon:exact"
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "آخر",
@@ -168322,6 +166911,7 @@ window.LIBRARY = {
     {
      "ar": "العيلة كلها إجت تساعده بالحصاد.",
      "en": "The whole family came to help him with the harvest.",
+     "p": null,
      "words": [
       {
        "surface": "العيلة",
@@ -168447,6 +167037,7 @@ window.LIBRARY = {
     {
      "ar": "جدي وقف بوسط الحقل، وعيونه مليانة دموع.",
      "en": "My grandfather stood in the middle of the field, his eyes full of tears.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -168600,6 +167191,7 @@ window.LIBRARY = {
     {
      "ar": "قال: هالأرض عمرتها بعرق جبيني.",
      "en": "He said: I built up this land with the sweat of my brow.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -168711,6 +167303,7 @@ window.LIBRARY = {
     {
      "ar": "قال: خذوا منها العبرة، الأرض ما بتخون.",
      "en": "He said: take a lesson from it, the land never betrays.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -168878,6 +167471,7 @@ window.LIBRARY = {
     {
      "ar": "حصدنا سوا من الصبح للمسا.",
      "en": "We harvested together from morning to evening.",
+     "p": null,
      "words": [
       {
        "surface": "حصدنا",
@@ -169031,6 +167625,7 @@ window.LIBRARY = {
     {
      "ar": "جدي كان يعلم الأحفاد كيف يمسكوا المنجل.",
      "en": "My grandfather taught the grandchildren how to hold the sickle.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -169236,6 +167831,7 @@ window.LIBRARY = {
     {
      "ar": "آخر النهار، جلسنا كلنا نأكل تحت الشجرة.",
      "en": "At the end of the day, we all sat eating under the tree.",
+     "p": null,
      "words": [
       {
        "surface": "آخر",
@@ -169507,6 +168103,7 @@ window.LIBRARY = {
     {
      "ar": "جدي نظر للحقل المحصود وابتسم بارتياح.",
      "en": "My grandfather looked at the harvested field and smiled with contentment.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -169680,6 +168277,7 @@ window.LIBRARY = {
     {
      "ar": "بعد هديك السنة، توفى جدي بهدوء.",
      "en": "After that year, my grandfather passed away peacefully.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -169821,6 +168419,7 @@ window.LIBRARY = {
     {
      "ar": "بس كل موسم حصاد، بنحس إنه معنا بالحقل.",
      "en": "But every harvest season, we feel he is with us in the field.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -170010,12 +168609,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "لما توفت جدتي، ورثنا بيتها القديم.",
      "en": "When my grandmother passed away, we inherited her old house.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -170197,6 +168800,7 @@ window.LIBRARY = {
     {
      "ar": "بين أغراضها، لقينا مفتاح حديد قديم.",
      "en": "Among her things, we found an old iron key.",
+     "p": null,
      "words": [
       {
        "surface": "بين",
@@ -170340,6 +168944,7 @@ window.LIBRARY = {
     {
      "ar": "محدا عرف هالمفتاح لأي باب.",
      "en": "No one knew which door this key belonged to.",
+     "p": null,
      "words": [
       {
        "surface": "محدا",
@@ -170501,6 +169106,7 @@ window.LIBRARY = {
     {
      "ar": "جربناه على كل أبواب البيت، بس ما فتح.",
      "en": "We tried it on every door of the house, but it didn't open any.",
+     "p": null,
      "words": [
       {
        "surface": "جربناه",
@@ -170634,6 +169240,7 @@ window.LIBRARY = {
     {
      "ar": "إمي تذكرت إنه جدتي كانت تحكي عن صندوق.",
      "en": "My mom remembered that grandma used to talk about a chest.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -170827,6 +169434,7 @@ window.LIBRARY = {
     {
      "ar": "دورنا بالبيت كله لحتى لقينا الصندوق بالعلية.",
      "en": "We searched the whole house until we found the chest in the attic.",
+     "p": null,
      "words": [
       {
        "surface": "دورنا",
@@ -171004,6 +169612,7 @@ window.LIBRARY = {
     {
      "ar": "حطينا المفتاح، ودار، وانفتح الصندوق.",
      "en": "We put the key in, it turned, and the chest opened.",
+     "p": null,
      "words": [
       {
        "surface": "حطينا",
@@ -171205,6 +169814,7 @@ window.LIBRARY = {
     {
      "ar": "جوا، لقينا صور قديمة ورسائل ودفتر.",
      "en": "Inside, we found old pictures, letters, and a notebook.",
+     "p": null,
      "words": [
       {
        "surface": "جوا",
@@ -171354,6 +169964,7 @@ window.LIBRARY = {
     {
      "ar": "الدفتر كان مذكرات جدتي من أيام شبابها.",
      "en": "The notebook was my grandmother's diary from her youth.",
+     "p": null,
      "words": [
       {
        "surface": "الدفتر",
@@ -171519,6 +170130,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا نقرا، وعرفنا قصص ما سمعناها من قبل.",
      "en": "We sat reading, and learned stories we'd never heard before.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -171728,6 +170340,7 @@ window.LIBRARY = {
     {
      "ar": "عرفنا كيف تعرفت على جدي، وكيف تجوزوا.",
      "en": "We learned how she met my grandfather, and how they married.",
+     "p": null,
      "words": [
       {
        "surface": "عرفنا",
@@ -172037,6 +170650,7 @@ window.LIBRARY = {
     {
      "ar": "كل صفحة كانت تحكي عن محبة وصبر.",
      "en": "Every page spoke of love and patience.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -172220,6 +170834,7 @@ window.LIBRARY = {
     {
      "ar": "حسينا إنه جدتي رجعت تحكيلنا بصوتها.",
      "en": "We felt that grandma had come back to tell us in her voice.",
+     "p": null,
      "words": [
       {
        "surface": "حسينا",
@@ -172319,6 +170934,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، حطينا الصندوق بمكان أمين.",
      "en": "From that day, we put the chest in a safe place.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -172548,6 +171164,7 @@ window.LIBRARY = {
     {
      "ar": "وصار متل الكنز اللي بيربط الأجيال ببعض.",
      "en": "And it became like a treasure that ties the generations together.",
+     "p": null,
      "words": [
       {
        "surface": "وصار",
@@ -172751,12 +171368,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "ليلة، كنت راجع عالبيت والشتا نازلة بقوة.",
      "en": "One night, I was going home while the rain poured heavily.",
+     "p": null,
      "words": [
       {
        "surface": "ليلة",
@@ -172924,6 +171545,7 @@ window.LIBRARY = {
     {
      "ar": "عالطريق، شفت رجال كبير واقف تحت المطر.",
      "en": "On the road, I saw an old man standing under the rain.",
+     "p": null,
      "words": [
       {
        "surface": "عالطريق",
@@ -173121,6 +171743,7 @@ window.LIBRARY = {
     {
      "ar": "كان مبلول وعم يرتجف من البرد.",
      "en": "He was soaked and trembling from the cold.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -173256,6 +171879,7 @@ window.LIBRARY = {
     {
      "ar": "وقفت جنبه وسألته: عمو، شو بك واقف هون؟",
      "en": "I stopped next to him and asked: uncle, why are you standing here?",
+     "p": null,
      "words": [
       {
        "surface": "وقفت",
@@ -173471,6 +172095,7 @@ window.LIBRARY = {
     {
      "ar": "قال: ضيعت طريقي، وما بعرف وين أروح.",
      "en": "He said: I lost my way, and I don't know where to go.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -173708,6 +172333,7 @@ window.LIBRARY = {
     {
      "ar": "قلتله: تعا معي، ما بينفع تضل بالبرد.",
      "en": "I told him: come with me, you can't stay in the cold.",
+     "p": null,
      "words": [
       {
        "surface": "قلتله",
@@ -173807,57 +172433,19 @@ window.LIBRARY = {
       },
       {
        "surface": "تضل",
-       "root": "ض.ل.ل",
-       "lemma": "ضَلّ",
-       "form": "ضِلّ",
-       "caphi_raw": "D. i l l",
-       "caphi": "D.ill",
-       "gloss": "be_disoriented;lose_the_right_path_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "18543",
+       "root": "ظ.ل.ل",
+       "lemma": "ظَلّ",
+       "form": "ظَلّ",
+       "caphi_raw": "D. a l l",
+       "caphi": "D.all",
+       "gloss": "remain;lstay;ast;continue_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19848",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "18543",
-         "root": "ض.ل.ل",
-         "gloss": "be_disoriented;lose_the_right_path_[auto",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "18546",
-         "root": "ض.ل.ل",
-         "gloss": "be_disoriented;lose_the_right_path_[auto",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "18544",
-         "root": "ض.ل.ل",
-         "gloss": "be_disoriented;lose_the_right_path",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "19843",
-         "root": "ظ.ل.ل",
-         "gloss": "shadow",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "19846",
-         "root": "ظ.ل.ل",
-         "gloss": "remain;lstay;ast;continue_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19848",
-         "root": "ظ.ل.ل",
-         "gloss": "remain;lstay;ast;continue_[auto]",
-         "analysis": "VERB:P"
-        }
-       ],
-       "caphi_urban": "D.ill",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "D.all",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "بالبرد",
@@ -173895,6 +172483,7 @@ window.LIBRARY = {
     {
      "ar": "أخذته عالبيت، وإمي سخنتله أكل وشاي.",
      "en": "I took him home, and my mom heated food and tea for him.",
+     "p": null,
      "words": [
       {
        "surface": "أخذته",
@@ -173994,6 +172583,7 @@ window.LIBRARY = {
     {
      "ar": "قعد يتدفى، وحكالنا إنه بيدور على ابنه.",
      "en": "He sat warming up, and told us he was looking for his son.",
+     "p": null,
      "words": [
       {
        "surface": "قعد",
@@ -174169,6 +172759,7 @@ window.LIBRARY = {
     {
      "ar": "قال إنه ما شاف ابنه من سنين طويلة.",
      "en": "He said he hadn't seen his son in long years.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -174400,6 +172991,7 @@ window.LIBRARY = {
     {
      "ar": "الصبح، ساعدته ندور على عنوان ابنه.",
      "en": "In the morning, I helped him look for his son's address.",
+     "p": null,
      "words": [
       {
        "surface": "الصبح",
@@ -174591,6 +173183,7 @@ window.LIBRARY = {
     {
      "ar": "بعد تعب، لقينا البيت، ودقينا الباب.",
      "en": "After some effort, we found the house and knocked on the door.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -174768,6 +173361,7 @@ window.LIBRARY = {
     {
      "ar": "فتح شاب، وأول ما شاف الرجال، جمد بمكانه.",
      "en": "A young man opened, and the moment he saw the old man, he froze in place.",
+     "p": null,
      "words": [
       {
        "surface": "فتح",
@@ -175095,6 +173689,7 @@ window.LIBRARY = {
     {
      "ar": "قال بصوت مرتجف: بابا؟ إنت؟",
      "en": "He said in a trembling voice: dad? is it you?",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -175206,6 +173801,7 @@ window.LIBRARY = {
     {
      "ar": "عانقوا بعض وبكوا، ونسيوا كل السنين.",
      "en": "They hugged and cried, and forgot all the years.",
+     "p": null,
      "words": [
       {
        "surface": "عانقوا",
@@ -175385,6 +173981,7 @@ window.LIBRARY = {
     {
      "ar": "مشيت من هناك، وقلبي مليان بفرح غريب.",
      "en": "I walked away from there, my heart full of a strange joy.",
+     "p": null,
      "words": [
       {
        "surface": "مشيت",
@@ -175640,12 +174237,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بضيعة بعيدة عن البحر، عاش ولد اسمه ماجد.",
      "en": "In a village far from the sea, lived a boy named Majid.",
+     "p": null,
      "words": [
       {
        "surface": "بضيعة",
@@ -175734,45 +174335,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -175879,6 +174442,7 @@ window.LIBRARY = {
     {
      "ar": "ماجد ما كان شاف البحر بحياته.",
      "en": "Majid had never seen the sea in his life.",
+     "p": null,
      "words": [
       {
        "surface": "ماجد",
@@ -175987,45 +174551,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -176050,6 +174576,7 @@ window.LIBRARY = {
     {
      "ar": "بس كان يحلم فيه كل ليلة.",
      "en": "But he dreamed of it every night.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -176153,6 +174680,7 @@ window.LIBRARY = {
     {
      "ar": "جده حكاله عن البحر، عن زرقته واتساعه.",
      "en": "His grandfather told him about the sea, its blueness and vastness.",
+     "p": null,
      "words": [
       {
        "surface": "جده",
@@ -176249,45 +174777,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -176344,6 +174834,7 @@ window.LIBRARY = {
     {
      "ar": "ماجد قال: يوم من الأيام، رح أشوف البحر.",
      "en": "Majid said: one day, I will see the sea.",
+     "p": null,
      "words": [
       {
        "surface": "ماجد",
@@ -176500,45 +174991,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -176549,6 +175002,7 @@ window.LIBRARY = {
     {
      "ar": "كبر ماجد، واشتغل وجمع مصاري شوي شوي.",
      "en": "Majid grew up, worked, and saved money little by little.",
+     "p": null,
      "words": [
       {
        "surface": "كبر",
@@ -176737,39 +175191,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -176785,39 +175207,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -176828,6 +175218,7 @@ window.LIBRARY = {
     {
      "ar": "لما صار معه كفاية، قرر يسافر عالبحر.",
      "en": "When he had enough, he decided to travel to the sea.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -177019,6 +175410,7 @@ window.LIBRARY = {
     {
      "ar": "الطريق كان طويل، بس قلبه كان طاير من الفرح.",
      "en": "The road was long, but his heart was flying with joy.",
+     "p": null,
      "words": [
       {
        "surface": "الطريق",
@@ -177248,6 +175640,7 @@ window.LIBRARY = {
     {
      "ar": "لما وصل، وقف عالشط وشاف البحر لأول مرة.",
      "en": "When he arrived, he stood on the shore and saw the sea for the first time.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -177372,45 +175765,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -177485,6 +175840,7 @@ window.LIBRARY = {
     {
      "ar": "وقف صامت، وعيونه مليانة دموع.",
      "en": "He stood silent, his eyes full of tears.",
+     "p": null,
      "words": [
       {
        "surface": "وقف",
@@ -177592,6 +175948,7 @@ window.LIBRARY = {
     {
      "ar": "البحر كان أكبر وأحلى من كل أحلامه.",
      "en": "The sea was bigger and more beautiful than all his dreams.",
+     "p": null,
      "words": [
       {
        "surface": "البحر",
@@ -177604,45 +175961,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "812",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "812",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "813",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "814",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry)",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "815",
-         "root": "ب.ح.ر",
-         "gloss": "sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "816",
-         "root": "ب.ح.ر",
-         "gloss": "meter_(poetry);sea",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "819",
-         "root": "ب.ح.ر",
-         "gloss": "It_is_an_expression_that_means_that_the_",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ba7ar",
        "vocalized": "البَحَر",
        "vocalized_from": "derived:affix"
@@ -177787,6 +176106,7 @@ window.LIBRARY = {
     {
      "ar": "نزل عالمي، وحس ببرودتها على قدميه.",
      "en": "He went into the water, and felt its coolness on his feet.",
+     "p": null,
      "words": [
       {
        "surface": "نزل",
@@ -177938,6 +176258,7 @@ window.LIBRARY = {
     {
      "ar": "ضحك متل الولاد، وصرخ من الفرح.",
      "en": "He laughed like children, and shouted from joy.",
+     "p": null,
      "words": [
       {
        "surface": "ضحك",
@@ -178155,6 +176476,7 @@ window.LIBRARY = {
     {
      "ar": "قعد لآخر النهار يتفرج عالموج.",
      "en": "He sat until the end of the day watching the waves.",
+     "p": null,
      "words": [
       {
        "surface": "قعد",
@@ -178300,6 +176622,7 @@ window.LIBRARY = {
     {
      "ar": "قال لحاله: الأحلام بتتحقق للي بيصبر.",
      "en": "He said to himself: dreams come true for those who are patient.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -178481,12 +176804,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بالضيعة، كانت في ست كبيرة الكل يحترمها.",
      "en": "In the village, there was an old lady everyone respected.",
+     "p": null,
      "words": [
       {
        "surface": "بالضيعة",
@@ -178561,33 +176888,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "13642",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "13642",
-         "root": "س.ت.ت",
-         "gloss": "lady;woman",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "13643",
-         "root": "س.ت.ت",
-         "gloss": "housewife;the_lady_who_can_cook_and_clea",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "13644",
-         "root": "س.ت.ت",
-         "gloss": "it_is_an_idiomatic_expression_that_is_us",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "13645",
-         "root": "س.ت.ت",
-         "gloss": "it_is_an_idiomatic_expression_that_is_us",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "sitt",
        "vocalized": "سِتّ",
        "vocalized_from": "lexicon:exact"
@@ -178660,6 +176961,7 @@ window.LIBRARY = {
     {
      "ar": "كانوا يسموها الحجة أم يوسف.",
      "en": "They called her Hajjeh Um Yusuf.",
+     "p": null,
      "words": [
       {
        "surface": "كانوا",
@@ -178783,6 +177085,7 @@ window.LIBRARY = {
     {
      "ar": "لما يصير في مشكلة، الناس تروح تستشيرها.",
      "en": "When a problem arose, people would go to consult her.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -178954,6 +177257,7 @@ window.LIBRARY = {
     {
      "ar": "كانت تسمع الكل بصبر، وبعدين تحكي.",
      "en": "She would listen to everyone with patience, then speak.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -179091,6 +177395,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، جارين اتخانقوا على حد الأرض.",
      "en": "Once, two neighbors argued over the boundary of the land.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -179284,6 +177589,7 @@ window.LIBRARY = {
     {
      "ar": "راحوا عند الحجة، وكل واحد حكى قصته.",
      "en": "They went to the Hajjeh, and each one told his side.",
+     "p": null,
      "words": [
       {
        "surface": "راحوا",
@@ -179515,6 +177821,7 @@ window.LIBRARY = {
     {
      "ar": "الحجة سمعتهم، وبعدين سألت سؤال بسيط.",
      "en": "The Hajjeh listened to them, then asked a simple question.",
+     "p": null,
      "words": [
       {
        "surface": "الحجة",
@@ -179706,6 +178013,7 @@ window.LIBRARY = {
     {
      "ar": "قالت: شو بتسوى الأرض إذا خسرتوا بعض؟",
      "en": "She said: what is the land worth if you lose each other?",
+     "p": null,
      "words": [
       {
        "surface": "قالت",
@@ -179851,6 +178159,7 @@ window.LIBRARY = {
     {
      "ar": "الجارين سكتوا وفكروا بالحكي.",
      "en": "The two neighbors fell silent and thought about the words.",
+     "p": null,
      "words": [
       {
        "surface": "الجارين",
@@ -180026,6 +178335,7 @@ window.LIBRARY = {
     {
      "ar": "قالت: الجار قبل الدار، والصاحب قبل الأرض.",
      "en": "She said: the neighbor before the house, the friend before the land.",
+     "p": null,
      "words": [
       {
        "surface": "قالت",
@@ -180217,6 +178527,7 @@ window.LIBRARY = {
     {
      "ar": "الجارين نظروا لبعض، وحسوا بالخجل.",
      "en": "The two neighbors looked at each other, and felt ashamed.",
+     "p": null,
      "words": [
       {
        "surface": "الجارين",
@@ -180422,6 +178733,7 @@ window.LIBRARY = {
     {
      "ar": "مدوا إيديهم وتصالحوا قدام الحجة.",
      "en": "They extended their hands and reconciled in front of the Hajjeh.",
+     "p": null,
      "words": [
       {
        "surface": "مدوا",
@@ -180603,6 +178915,7 @@ window.LIBRARY = {
     {
      "ar": "الحجة ابتسمت وقالت: هيك بيكون العقلاء.",
      "en": "The Hajjeh smiled and said: this is how wise people act.",
+     "p": null,
      "words": [
       {
        "surface": "الحجة",
@@ -180814,58 +179127,21 @@ window.LIBRARY = {
     {
      "ar": "رجعوا عبيوتهم، والقلوب صافية.",
      "en": "They returned to their homes, their hearts clear.",
+     "p": null,
      "words": [
       {
        "surface": "رجعوا",
        "root": "ر.ج.ع",
-       "lemma": "رَجَّع",
-       "form": "رَجِّع",
-       "caphi_raw": "r a J J i 3",
-       "caphi": "raJJi3",
-       "gloss": "return_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "11200",
+       "lemma": "رِجِع",
+       "form": "رِجِع",
+       "caphi_raw": "r i J i 3",
+       "caphi": "riJi3",
+       "gloss": "return;come_back_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "11206",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "11200",
-         "root": "ر.ج.ع",
-         "gloss": "return_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "11206",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "11208",
-         "root": "ر.ج.ع",
-         "gloss": "return_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "11196",
-         "root": "ر.ج.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "11198",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "11202",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "rajji3",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "riji3",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -180941,6 +179217,7 @@ window.LIBRARY = {
     {
      "ar": "حكمة الحجة ضلت تتناقل بالضيعة لأجيال.",
      "en": "The Hajjeh's wisdom kept being passed down in the village for generations.",
+     "p": null,
      "words": [
       {
        "surface": "حكمة",
@@ -181172,12 +179449,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أول مرة سافرت لحالي، كنت بعمر التمنتعش.",
      "en": "The first time I traveled alone, I was eighteen years old.",
+     "p": null,
      "words": [
       {
        "surface": "أول",
@@ -181369,6 +179650,7 @@ window.LIBRARY = {
     {
      "ar": "كنت رايح عالمدينة أكمل دراستي.",
      "en": "I was going to the city to continue my studies.",
+     "p": null,
      "words": [
       {
        "surface": "كنت",
@@ -181496,6 +179778,7 @@ window.LIBRARY = {
     {
      "ar": "إمي حضرتلي شنطة مليانة أكل وأواعي.",
      "en": "My mom prepared me a bag full of food and clothes.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -181657,6 +179940,7 @@ window.LIBRARY = {
     {
      "ar": "عالمحطة، أبوي حطلي إيده على كتفي.",
      "en": "At the station, my dad put his hand on my shoulder.",
+     "p": null,
      "words": [
       {
        "surface": "عالمحطة",
@@ -181848,6 +180132,7 @@ window.LIBRARY = {
     {
      "ar": "قال: يا ابني، احترم حالك يحترموك الناس.",
      "en": "He said: my son, respect yourself and people will respect you.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -182035,6 +180320,7 @@ window.LIBRARY = {
     {
      "ar": "إمي بكت، وأنا حاولت ما أبكي قدامها.",
      "en": "My mom cried, and I tried not to cry in front of her.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -182146,35 +180432,15 @@ window.LIBRARY = {
        "surface": "حاولت",
        "root": "ح.و.ل",
        "lemma": "حَاوَل",
-       "form": "حَاوِل",
-       "caphi_raw": "7 aa w i l",
-       "caphi": "7aawil",
+       "form": "حَاوَل",
+       "caphi_raw": "7 aa w a l",
+       "caphi": "7aawal",
        "gloss": "try_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "7357",
+       "analysis": "VERB:P",
+       "maknuune_id": "7373",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "7357",
-         "root": "ح.و.ل",
-         "gloss": "try_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "7373",
-         "root": "ح.و.ل",
-         "gloss": "try_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "7366",
-         "root": "ح.و.ل",
-         "gloss": "try",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "7aawil",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7aawal",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -182264,6 +180530,7 @@ window.LIBRARY = {
     {
      "ar": "ركبت الباص، وطل رأسي من الشباك أودعهم.",
      "en": "I got on the bus, and stuck my head out the window to say goodbye.",
+     "p": null,
      "words": [
       {
        "surface": "ركبت",
@@ -182537,6 +180804,7 @@ window.LIBRARY = {
     {
      "ar": "الباص مشى، والضيعة صارت تصغر ورايا.",
      "en": "The bus moved, and the village grew smaller behind me.",
+     "p": null,
      "words": [
       {
        "surface": "الباص",
@@ -182728,6 +180996,7 @@ window.LIBRARY = {
     {
      "ar": "لأول مرة، حسيت إني لحالي بهالدنيا.",
      "en": "For the first time, I felt I was alone in this world.",
+     "p": null,
      "words": [
       {
        "surface": "لأول",
@@ -182913,6 +181182,7 @@ window.LIBRARY = {
     {
      "ar": "المدينة كانت كبيرة وغريبة ومليانة ناس.",
      "en": "The city was big and strange and full of people.",
+     "p": null,
      "words": [
       {
        "surface": "المدينة",
@@ -183070,6 +181340,7 @@ window.LIBRARY = {
     {
      "ar": "بالأول، تهت وما عرفت وين أروح.",
      "en": "At first, I got lost and didn't know where to go.",
+     "p": null,
      "words": [
       {
        "surface": "بالأول",
@@ -183271,6 +181542,7 @@ window.LIBRARY = {
     {
      "ar": "بس شوي شوي، تعلمت وتعودت.",
      "en": "But little by little, I learned and got used to it.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -183299,39 +181571,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -183347,39 +181587,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -183498,6 +181706,7 @@ window.LIBRARY = {
     {
      "ar": "كل ليلة، كنت أتصل بأهلي وأطمنهم.",
      "en": "Every night, I would call my family and reassure them.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -183655,6 +181864,7 @@ window.LIBRARY = {
     {
      "ar": "بعد سنين، تخرجت، ورجعت عالضيعة مهندس.",
      "en": "After years, I graduated and returned to the village an engineer.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -183866,6 +182076,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي وإمي استقبلوني عالباب، وعيونهم تلمع بالفخر.",
      "en": "My dad and mom welcomed me at the door, their eyes shining with pride.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -184053,12 +182264,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بحديقة بيتنا، عشش عصفور صغير عالشجرة.",
      "en": "In our house garden, a little sparrow nested in the tree.",
+     "p": null,
      "words": [
       {
        "surface": "بحديقة",
@@ -184272,6 +182487,7 @@ window.LIBRARY = {
     {
      "ar": "كل الصبح، كان يصحينا بغناه الحلو.",
      "en": "Every morning, it would wake us with its beautiful singing.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -184441,6 +182657,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد كانوا يحطولوا فتات خبز ومي.",
      "en": "The kids would put out bread crumbs and water for it.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -184580,6 +182797,7 @@ window.LIBRARY = {
     {
      "ar": "صار العصفور يعرفنا وما يخاف منا.",
      "en": "The sparrow came to know us and wasn't afraid of us.",
+     "p": null,
      "words": [
       {
        "surface": "صار",
@@ -184733,6 +182951,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، هبت عاصفة قوية بالليل.",
      "en": "Once, a strong storm blew at night.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -184833,45 +183052,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "27050",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27050",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "27057",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "27065",
-         "root": "ق.و.ي",
-         "gloss": "become_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27066",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27051",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        },
-        {
-         "id": "27052",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2awi",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -184898,6 +183079,7 @@ window.LIBRARY = {
     {
      "ar": "الصبح، لقينا العش وقع عالأرض.",
      "en": "In the morning, we found the nest had fallen to the ground.",
+     "p": null,
      "words": [
       {
        "surface": "الصبح",
@@ -184970,55 +183152,17 @@ window.LIBRARY = {
       {
        "surface": "وقع",
        "root": "و.ق.ع",
-       "lemma": "وَقَّع",
-       "form": "وَقِّع",
-       "caphi_raw": "w a Q Q i 3",
-       "caphi": "waQQi3",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "35899",
+       "lemma": "وِقِع",
+       "form": "وِقِع",
+       "caphi_raw": "w i Q i 3",
+       "caphi": "wiQi3",
+       "gloss": "fall_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "35906",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "35899",
-         "root": "و.ق.ع",
-         "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "35906",
-         "root": "و.ق.ع",
-         "gloss": "fall_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35907",
-         "root": "و.ق.ع",
-         "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35893",
-         "root": "و.ق.ع",
-         "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "35894",
-         "root": "و.ق.ع",
-         "gloss": "sb_was_made_a_scapegoat_for_what_happene",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "35896",
-         "root": "و.ق.ع",
-         "gloss": "lest_you_fall_down",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "wa22i3",
-       "vocalized": "وَقِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "wi2i3",
+       "vocalized": "وِقِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -185081,6 +183225,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد زعلوا، وخافوا إنه العصفور مات.",
      "en": "The kids got upset, and feared the sparrow had died.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -185280,6 +183425,7 @@ window.LIBRARY = {
     {
      "ar": "بس لقيناه واقف عالغصن، سليم.",
      "en": "But we found it standing on the branch, safe.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -185377,6 +183523,7 @@ window.LIBRARY = {
     {
      "ar": "جمعنا العش وحطيناه بمكان أعلى وأأمن.",
      "en": "We gathered the nest and put it in a higher, safer place.",
+     "p": null,
      "words": [
       {
        "surface": "جمعنا",
@@ -185594,6 +183741,7 @@ window.LIBRARY = {
     {
      "ar": "العصفور رجعله، وكأنه بيشكرنا.",
      "en": "The sparrow returned to it, as if thanking us.",
+     "p": null,
      "words": [
       {
        "surface": "العصفور",
@@ -185753,6 +183901,7 @@ window.LIBRARY = {
     {
      "ar": "بعد أسابيع، طلعت من العش عصافير صغيرة.",
      "en": "After weeks, little sparrows emerged from the nest.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -185892,6 +184041,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد فرحوا كأنه في مواليد جداد بالعيلة.",
      "en": "The kids were as happy as if there were new babies in the family.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -186101,6 +184251,7 @@ window.LIBRARY = {
     {
      "ar": "راقبناهم لما كبروا وتعلموا الطيران.",
      "en": "We watched them until they grew and learned to fly.",
+     "p": null,
      "words": [
       {
        "surface": "راقبناهم",
@@ -186262,6 +184413,7 @@ window.LIBRARY = {
     {
      "ar": "يوم، طاروا كلهم، وضل العش فاضي.",
      "en": "One day, they all flew away, and the nest stayed empty.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -186501,6 +184653,7 @@ window.LIBRARY = {
     {
      "ar": "بس كل ربيع، بيرجع عصفور يعشش بنفس الشجرة.",
      "en": "But every spring, a sparrow comes back to nest in the same tree.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -186752,12 +184905,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "زمان، كان في رجال طيب اسمه أبو حسن.",
      "en": "Long ago, there was a kind man named Abu Hasan.",
+     "p": null,
      "words": [
       {
        "surface": "زمان",
@@ -187035,6 +185192,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، ضاق حاله، ودان مصاري من جاره.",
      "en": "Once, times got hard, and he borrowed money from his neighbor.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -187222,6 +185380,7 @@ window.LIBRARY = {
     {
      "ar": "الجار عطاه بدون تردد، وقال: خذ وقتك.",
      "en": "The neighbor gave it without hesitation, and said: take your time.",
+     "p": null,
      "words": [
       {
        "surface": "الجار",
@@ -187329,55 +185488,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "خذ",
@@ -187469,6 +185590,7 @@ window.LIBRARY = {
     {
      "ar": "أبو حسن اشتغل ليل نهار عشان يرد الدين.",
      "en": "Abu Hasan worked day and night to repay the debt.",
+     "p": null,
      "words": [
       {
        "surface": "أبو",
@@ -187772,6 +185894,7 @@ window.LIBRARY = {
     {
      "ar": "كل ما يجمع شوي، كان يصير في حاجة تصرفه.",
      "en": "Every time he saved a little, some need would spend it.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -187846,39 +185969,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -188007,6 +186098,7 @@ window.LIBRARY = {
     {
      "ar": "بس هو ما نسي دينه أبدا.",
      "en": "But he never forgot his debt.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -188200,6 +186292,7 @@ window.LIBRARY = {
     {
      "ar": "بعد سنة، جمع المبلغ كامل.",
      "en": "After a year, he gathered the full amount.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -188345,6 +186438,7 @@ window.LIBRARY = {
     {
      "ar": "راح لجاره، ومد له المصاري.",
      "en": "He went to his neighbor, and handed him the money.",
+     "p": null,
      "words": [
       {
        "surface": "راح",
@@ -188540,6 +186634,7 @@ window.LIBRARY = {
     {
      "ar": "الجار رفض، وقال: أنا سامحتك من زمان.",
      "en": "The neighbor refused, and said: I forgave you long ago.",
+     "p": null,
      "words": [
       {
        "surface": "الجار",
@@ -188617,55 +186712,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "أنا",
@@ -188761,6 +186818,7 @@ window.LIBRARY = {
     {
      "ar": "أبو حسن قال: لأ، الدين دين، ولازم يترد.",
      "en": "Abu Hasan said: no, a debt is a debt, and it must be repaid.",
+     "p": null,
      "words": [
       {
        "surface": "أبو",
@@ -189066,6 +187124,7 @@ window.LIBRARY = {
     {
      "ar": "الجار تأثر من صدقه وأمانته.",
      "en": "The neighbor was moved by his honesty and integrity.",
+     "p": null,
      "words": [
       {
        "surface": "الجار",
@@ -189203,6 +187262,7 @@ window.LIBRARY = {
     {
      "ar": "أخذ المصاري، بس رجعله نصها هدية.",
      "en": "He took the money, but gave him back half as a gift.",
+     "p": null,
      "words": [
       {
        "surface": "أخذ",
@@ -189394,6 +187454,7 @@ window.LIBRARY = {
     {
      "ar": "قال: هاي مكافأة على أمانتك.",
      "en": "He said: this is a reward for your integrity.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -189479,6 +187540,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، صاروا أحسن أصحاب.",
      "en": "From that day, they became the best of friends.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -189642,6 +187704,7 @@ window.LIBRARY = {
     {
      "ar": "والحارة كلها حكت عن أمانة أبو حسن.",
      "en": "And the whole neighborhood spoke of Abu Hasan's integrity.",
+     "p": null,
      "words": [
       {
        "surface": "والحارة",
@@ -189897,12 +187960,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بآخر الحارة، كان في بيت قديم مهجور.",
      "en": "At the end of the neighborhood, there was an old abandoned house.",
+     "p": null,
      "words": [
       {
        "surface": "بآخر",
@@ -190036,6 +188103,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد كانوا يخافوا يقربوا منه.",
      "en": "The kids were afraid to go near it.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -190123,6 +188191,7 @@ window.LIBRARY = {
     {
      "ar": "كانوا يقولوا إنه مسكون وفيه أشباح.",
      "en": "They used to say it was haunted and had ghosts.",
+     "p": null,
      "words": [
       {
        "surface": "كانوا",
@@ -190254,6 +188323,7 @@ window.LIBRARY = {
     {
      "ar": "أنا كنت فضولي، وحبيت أعرف الحقيقة.",
      "en": "I was curious, and wanted to know the truth.",
+     "p": null,
      "words": [
       {
        "surface": "أنا",
@@ -190401,6 +188471,7 @@ window.LIBRARY = {
     {
      "ar": "يوم، جمعت شجاعتي وقربت من البيت.",
      "en": "One day, I gathered my courage and approached the house.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -190594,6 +188665,7 @@ window.LIBRARY = {
     {
      "ar": "الباب كان مفتوح شوي، فدخلت بحذر.",
      "en": "The door was slightly open, so I entered cautiously.",
+     "p": null,
      "words": [
       {
        "surface": "الباب",
@@ -190706,39 +188778,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -190813,6 +188853,7 @@ window.LIBRARY = {
     {
      "ar": "جوا، كان في غبار وعناكب وأثاث قديم.",
      "en": "Inside, there was dust, spiders, and old furniture.",
+     "p": null,
      "words": [
       {
        "surface": "جوا",
@@ -190928,6 +188969,7 @@ window.LIBRARY = {
     {
      "ar": "بس ما كان في أشباح، بس ذكريات قديمة.",
      "en": "But there were no ghosts, only old memories.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -191089,6 +189131,7 @@ window.LIBRARY = {
     {
      "ar": "لقيت صور معلقة عالحيط لعيلة زمان.",
      "en": "I found pictures hung on the wall of a family from long ago.",
+     "p": null,
      "words": [
       {
        "surface": "لقيت",
@@ -191314,6 +189357,7 @@ window.LIBRARY = {
     {
      "ar": "عرفت إنه البيت كان مليان حياة ومحبة.",
      "en": "I realized the house had been full of life and love.",
+     "p": null,
      "words": [
       {
        "surface": "عرفت",
@@ -191485,6 +189529,7 @@ window.LIBRARY = {
     {
      "ar": "سألت جدي عن هالبيت، فحكالي قصته.",
      "en": "I asked my grandfather about this house, and he told me its story.",
+     "p": null,
      "words": [
       {
        "surface": "سألت",
@@ -191620,6 +189665,7 @@ window.LIBRARY = {
     {
      "ar": "قال إنه أهله سافروا برا وما رجعوا.",
      "en": "He said its people traveled abroad and never returned.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -191778,54 +189824,16 @@ window.LIBRARY = {
       {
        "surface": "رجعوا",
        "root": "ر.ج.ع",
-       "lemma": "رَجَّع",
-       "form": "رَجِّع",
-       "caphi_raw": "r a J J i 3",
-       "caphi": "raJJi3",
-       "gloss": "return_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "11200",
+       "lemma": "رِجِع",
+       "form": "رِجِع",
+       "caphi_raw": "r i J i 3",
+       "caphi": "riJi3",
+       "gloss": "return;come_back_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "11206",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "11200",
-         "root": "ر.ج.ع",
-         "gloss": "return_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "11206",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "11208",
-         "root": "ر.ج.ع",
-         "gloss": "return_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "11196",
-         "root": "ر.ج.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "11198",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "11202",
-         "root": "ر.ج.ع",
-         "gloss": "return;come_back",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "rajji3",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "riji3",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       }
@@ -191835,6 +189843,7 @@ window.LIBRARY = {
     {
      "ar": "حسيت بحزن على بيت نساه أهله.",
      "en": "I felt sad for a house forgotten by its people.",
+     "p": null,
      "words": [
       {
        "surface": "حسيت",
@@ -191994,6 +190003,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، ما عدت أخاف منه.",
      "en": "From that day, I was no longer afraid of it.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -192193,6 +190203,7 @@ window.LIBRARY = {
     {
      "ar": "عرفت إنه أكتر شي مخيف، هو النسيان.",
      "en": "I learned that the scariest thing is being forgotten.",
+     "p": null,
      "words": [
       {
        "surface": "عرفت",
@@ -192322,12 +190333,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جاري أبو نبيل كان يعزف عود من زمان.",
      "en": "My neighbor Abu Nabil used to play the oud long ago.",
+     "p": null,
      "words": [
       {
        "surface": "جاري",
@@ -192605,6 +190620,7 @@ window.LIBRARY = {
     {
      "ar": "كل مسا، كنا نسمع صوت عوده من الشباك.",
      "en": "Every evening, we would hear the sound of his oud from the window.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -192838,6 +190854,7 @@ window.LIBRARY = {
     {
      "ar": "اللحن كان حزين حلو، بيمس القلب.",
      "en": "The melody was sad and sweet, touching the heart.",
+     "p": null,
      "words": [
       {
        "surface": "اللحن",
@@ -193055,6 +191072,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، سألته: ليش ألحانك حزينة يا عمو؟",
      "en": "Once, I asked him: why are your melodies sad, uncle?",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -193224,6 +191242,7 @@ window.LIBRARY = {
     {
      "ar": "حط العود جنبه، وحكالي قصته.",
      "en": "He put the oud beside him, and told me his story.",
+     "p": null,
      "words": [
       {
        "surface": "حط",
@@ -193371,6 +191390,7 @@ window.LIBRARY = {
     {
      "ar": "قال إنه كان عنده بنت بتحب الموسيقى.",
      "en": "He said he had a daughter who loved music.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -193528,6 +191548,7 @@ window.LIBRARY = {
     {
      "ar": "كانت تقعد جنبه وتسمعه وهو يعزف.",
      "en": "She used to sit beside him and listen as he played.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -193707,6 +191728,7 @@ window.LIBRARY = {
     {
      "ar": "بس البنت مرضت وتوفت وهي صغيرة.",
      "en": "But the daughter got sick and passed away while young.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -193886,6 +191908,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، صار يعزف عشانها هي.",
      "en": "From that day, he started playing for her.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -194079,6 +192102,7 @@ window.LIBRARY = {
     {
      "ar": "قال: العزف بيخليها قريبة من قلبي.",
      "en": "He said: playing keeps her close to my heart.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -194220,6 +192244,7 @@ window.LIBRARY = {
     {
      "ar": "سمعت قصته، ودمعت عيوني.",
      "en": "I heard his story, and my eyes teared up.",
+     "p": null,
      "words": [
       {
        "surface": "سمعت",
@@ -194385,6 +192410,7 @@ window.LIBRARY = {
     {
      "ar": "من هديك اليوم، صرت أسمع عزفه بشكل تاني.",
      "en": "From that day, I began to hear his playing differently.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -194636,6 +192662,7 @@ window.LIBRARY = {
     {
      "ar": "كل لحن كان يحكي عن محبة أب لبنته.",
      "en": "Every melody spoke of a father's love for his daughter.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -194867,6 +192894,7 @@ window.LIBRARY = {
     {
      "ar": "قلتله: عزفك بيخلي بنتك حية بقلوبنا كلنا.",
      "en": "I told him: your playing keeps your daughter alive in all our hearts.",
+     "p": null,
      "words": [
       {
        "surface": "قلتله",
@@ -195086,6 +193114,7 @@ window.LIBRARY = {
     {
      "ar": "ابتسم بحزن، ورجع يعزف لحنه الحلو.",
      "en": "He smiled sadly, and went back to playing his sweet melody.",
+     "p": null,
      "words": [
       {
        "surface": "ابتسم",
@@ -195355,12 +193384,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بعد صيف طويل وحار، الكل كان يستنى الشتا.",
      "en": "After a long, hot summer, everyone was waiting for the rain.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -195574,6 +193607,7 @@ window.LIBRARY = {
     {
      "ar": "الأرض كانت عطشانة، والزرع كان محتاج مي.",
      "en": "The land was thirsty, and the crops needed water.",
+     "p": null,
      "words": [
       {
        "surface": "الأرض",
@@ -195727,6 +193761,7 @@ window.LIBRARY = {
     {
      "ar": "يوم، صارت السما رمادية، وهبت ريح باردة.",
      "en": "One day, the sky turned gray, and a cold wind blew.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -195954,6 +193989,7 @@ window.LIBRARY = {
     {
      "ar": "ريحة التراب قبل المطر ملت الجو.",
      "en": "The smell of the earth before the rain filled the air.",
+     "p": null,
      "words": [
       {
        "surface": "ريحة",
@@ -196135,6 +194171,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد وقفوا عالشبابيك يستنوا.",
      "en": "The kids stood at the windows waiting.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -196204,6 +194241,7 @@ window.LIBRARY = {
     {
      "ar": "وفجأة، نزلت أول قطرة، وبعدها انهمرت الشتا.",
      "en": "And suddenly, the first drop fell, and then the rain poured down.",
+     "p": null,
      "words": [
       {
        "surface": "وفجأة",
@@ -196357,6 +194395,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد صرخوا من الفرح وركضوا عالحديقة.",
      "en": "The kids screamed with joy and ran to the garden.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -196550,6 +194589,7 @@ window.LIBRARY = {
     {
      "ar": "لعبوا تحت المطر وانبلوا كلهم.",
      "en": "They played in the rain and got completely soaked.",
+     "p": null,
      "words": [
       {
        "surface": "لعبوا",
@@ -196711,6 +194751,7 @@ window.LIBRARY = {
     {
      "ar": "الكبار وقفوا عالبواب، يتفرجوا ويبتسموا.",
      "en": "The grown-ups stood at the doors, watching and smiling.",
+     "p": null,
      "words": [
       {
        "surface": "الكبار",
@@ -196798,6 +194839,7 @@ window.LIBRARY = {
     {
      "ar": "جدي مد إيده وحس بالمطر على كفه.",
      "en": "My grandfather extended his hand and felt the rain on his palm.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -197069,6 +195111,7 @@ window.LIBRARY = {
     {
      "ar": "قال: هاي بركة من الله عالأرض والناس.",
      "en": "He said: this is a blessing from God on the land and the people.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -197264,6 +195307,7 @@ window.LIBRARY = {
     {
      "ar": "الأرض شربت، وريحتها طلعت حلوة.",
      "en": "The land drank, and its smell became sweet.",
+     "p": null,
      "words": [
       {
        "surface": "الأرض",
@@ -197425,6 +195469,7 @@ window.LIBRARY = {
     {
      "ar": "بالمسا، وقفت الشتا، وطلع قوس قزح.",
      "en": "In the evening, the rain stopped, and a rainbow appeared.",
+     "p": null,
      "words": [
       {
        "surface": "بالمسا",
@@ -197636,6 +195681,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد وقفوا يتفرجوا عليه بدهشة.",
      "en": "The kids stood watching it in wonder.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -197723,6 +195769,7 @@ window.LIBRARY = {
     {
      "ar": "كانت أول شتوية، وأحلى يوم بالخريف.",
      "en": "It was the first rain, and the nicest day of the fall.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -197890,12 +195937,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جدي كان دايما يقول: عنا كنز بالبيت.",
      "en": "My grandfather always used to say: we have a treasure in the house.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -198081,6 +196132,7 @@ window.LIBRARY = {
     {
      "ar": "إحنا الولاد، كنا ندور عليه بكل زاوية.",
      "en": "We kids used to search for it in every corner.",
+     "p": null,
      "words": [
       {
        "surface": "إحنا",
@@ -198252,6 +196304,7 @@ window.LIBRARY = {
     {
      "ar": "فتشنا بالخزاين، وتحت السراير، وبالعلية.",
      "en": "We searched the cabinets, under the beds, and in the attic.",
+     "p": null,
      "words": [
       {
        "surface": "فتشنا",
@@ -198411,6 +196464,7 @@ window.LIBRARY = {
     {
      "ar": "بس ما لقينا لا ذهب ولا مصاري.",
      "en": "But we found neither gold nor money.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -198606,6 +196660,7 @@ window.LIBRARY = {
     {
      "ar": "سألنا جدي: وين الكنز؟ ما لقيناه.",
      "en": "We asked our grandfather: where is the treasure? We didn't find it.",
+     "p": null,
      "words": [
       {
        "surface": "سألنا",
@@ -198785,6 +196840,7 @@ window.LIBRARY = {
     {
      "ar": "ضحك جدي وقال: الكنز مش شي بتلاقوه بإيدكم.",
      "en": "My grandfather laughed and said: the treasure isn't something you find with your hands.",
+     "p": null,
      "words": [
       {
        "surface": "ضحك",
@@ -198860,55 +196916,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "الكنز",
@@ -198957,21 +196975,7 @@ window.LIBRARY = {
        "analysis": "PART_NEG",
        "maknuune_id": "30759",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "30759",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        },
-        {
-         "id": "30760",
-         "root": "NTWS",
-         "gloss": "not",
-         "analysis": "PART_NEG"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "mish",
        "vocalized": "مِش",
        "vocalized_from": "lexicon:exact"
@@ -199028,6 +197032,7 @@ window.LIBRARY = {
     {
      "ar": "كبرنا، وكل واحد راح بطريقه.",
      "en": "We grew up, and each of us went their own way.",
+     "p": null,
      "words": [
       {
        "surface": "كبرنا",
@@ -199267,6 +197272,7 @@ window.LIBRARY = {
     {
      "ar": "بس كل عيد، كنا نرجع نجتمع ببيت جدي.",
      "en": "But every holiday, we would come back to gather at grandpa's house.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -199492,6 +197498,7 @@ window.LIBRARY = {
     {
      "ar": "كنا نقعد حوالي الطاولة، ونحكي ونضحك.",
      "en": "We would sit around the table, talking and laughing.",
+     "p": null,
      "words": [
       {
        "surface": "كنا",
@@ -199723,6 +197730,7 @@ window.LIBRARY = {
     {
      "ar": "جدي كان ينظر إلنا، وعيونه مليانة فرح.",
      "en": "My grandfather would look at us, his eyes full of joy.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -199920,6 +197928,7 @@ window.LIBRARY = {
     {
      "ar": "يوم، قبل ما يتوفى، جمعنا كلنا حواليه.",
      "en": "One day, before he passed away, he gathered us all around him.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -200075,6 +198084,7 @@ window.LIBRARY = {
     {
      "ar": "قال: هلأ فهمتوا شو هو الكنز؟",
      "en": "He said: now do you understand what the treasure is?",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -200210,6 +198220,7 @@ window.LIBRARY = {
     {
      "ar": "نظر لوجوهنا، وقال: إنتوا الكنز، عيلتي.",
      "en": "He looked at our faces, and said: you are the treasure, my family.",
+     "p": null,
      "words": [
       {
        "surface": "نظر",
@@ -200299,55 +198310,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "إنتوا",
@@ -200499,6 +198472,7 @@ window.LIBRARY = {
     {
      "ar": "سكتنا كلنا، وحسينا بمعنى كلامه.",
      "en": "We all fell silent, and felt the meaning of his words.",
+     "p": null,
      "words": [
       {
        "surface": "سكتنا",
@@ -200668,6 +198642,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، عرفنا إنه أغلى كنز هو الأهل.",
      "en": "From that day, we knew that the most precious treasure is family.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -200993,12 +198968,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "زمان، الطريق عالمدرسة كان طويل وصعب.",
      "en": "Long ago, the road to school was long and hard.",
+     "p": null,
      "words": [
       {
        "surface": "زمان",
@@ -201250,6 +199229,7 @@ window.LIBRARY = {
     {
      "ar": "كنا نمشي نص ساعة بين الحقول والجبال.",
      "en": "We used to walk half an hour between the fields and mountains.",
+     "p": null,
      "words": [
       {
        "surface": "كنا",
@@ -201348,45 +199328,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "15247",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "15247",
-         "root": "س.و.ع",
-         "gloss": "hour;watch",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "15249",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15250",
-         "root": "س.و.ع",
-         "gloss": "The_Day_of_the_Judgment",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15251",
-         "root": "س.و.ع",
-         "gloss": "then",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15252",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15253",
-         "root": "س.و.ع",
-         "gloss": "it_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "saa3a",
        "vocalized": "سَاعَة",
        "vocalized_from": "lexicon:exact"
@@ -201459,6 +199401,7 @@ window.LIBRARY = {
     {
      "ar": "بالشتا، الطريق كان يصير طين ومي.",
      "en": "In winter, the road would turn to mud and water.",
+     "p": null,
      "words": [
       {
        "surface": "بالشتا",
@@ -201690,6 +199633,7 @@ window.LIBRARY = {
     {
      "ar": "وبالصيف، الشمس كانت تحرقنا.",
      "en": "And in summer, the sun would burn us.",
+     "p": null,
      "words": [
       {
        "surface": "وبالصيف",
@@ -201829,6 +199773,7 @@ window.LIBRARY = {
     {
      "ar": "بس رغم هيك، كنا نروح كل يوم مبسوطين.",
      "en": "But despite this, we would go every day happily.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -202002,6 +199947,7 @@ window.LIBRARY = {
     {
      "ar": "بالطريق، كنا نلعب ونضحك ونتسابق.",
      "en": "On the way, we would play, laugh, and race.",
+     "p": null,
      "words": [
       {
        "surface": "بالطريق",
@@ -202223,6 +200169,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، لقينا كلب صغير تايه وجعان.",
      "en": "Once, we found a small lost and hungry dog.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -202364,6 +200311,7 @@ window.LIBRARY = {
     {
      "ar": "أطعمناه من زوادتنا، وصار يمشي معنا.",
      "en": "We fed it from our lunch, and it started walking with us.",
+     "p": null,
      "words": [
       {
        "surface": "أطعمناه",
@@ -202483,6 +200431,7 @@ window.LIBRARY = {
     {
      "ar": "كل يوم، كان يستنانا عند نفس الشجرة.",
      "en": "Every day, it would wait for us by the same tree.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -202638,6 +200587,7 @@ window.LIBRARY = {
     {
      "ar": "سميناه صاحب، وصار جزء من طريقنا.",
      "en": "We named it Sahib, and it became part of our journey.",
+     "p": null,
      "words": [
       {
        "surface": "سميناه",
@@ -202835,6 +200785,7 @@ window.LIBRARY = {
     {
      "ar": "لما كبرنا وخلصنا المدرسة، افترقنا.",
      "en": "When we grew up and finished school, we parted.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -203016,6 +200967,7 @@ window.LIBRARY = {
     {
      "ar": "بس لهلأ، بتذكر هديك الطريق وصحابي.",
      "en": "But to this day, I remember that road and my friends.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -203235,6 +201187,7 @@ window.LIBRARY = {
     {
      "ar": "الطريق كان صعب، بس علمنا الصبر.",
      "en": "The road was hard, but it taught us patience.",
+     "p": null,
      "words": [
       {
        "surface": "الطريق",
@@ -203317,45 +201270,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "17778",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17778",
-         "root": "ص.ع.ب",
-         "gloss": "difficult",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "17784",
-         "root": "ص.ع.ب",
-         "gloss": "make_sth_more_difficult_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17789",
-         "root": "ص.ع.ب",
-         "gloss": "become_more_difficult;sth_evokes_pity_[a",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17790",
-         "root": "ص.ع.ب",
-         "gloss": "make_sth_more_difficult_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17783",
-         "root": "ص.ع.ب",
-         "gloss": "become_more_difficult;sth_evokes_pity_[a",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17786",
-         "root": "ص.ع.ب",
-         "gloss": "become_more_difficult;sth_evokes_pity",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "s.a3ib",
        "vocalized": "صَعِب",
        "vocalized_from": "lexicon:exact"
@@ -203478,6 +201393,7 @@ window.LIBRARY = {
     {
      "ar": "وعلمنا إنه الرفقة بتخفف أصعب طريق.",
      "en": "And it taught us that companionship eases the hardest road.",
+     "p": null,
      "words": [
       {
        "surface": "وعلمنا",
@@ -203622,45 +201538,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "19028",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19028",
-         "root": "ط.ر.ق",
-         "gloss": "way;road;path",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "19030",
-         "root": "ط.ر.ق",
-         "gloss": "way;road;path_[auto]",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "19031",
-         "root": "ط.ر.ق",
-         "gloss": "way;road;path_[auto]",
-         "analysis": "NOUN:P"
-        },
-        {
-         "id": "19036",
-         "root": "ط.ر.ق",
-         "gloss": "about_to_happen;about_to_ocuur;be_alread",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "19037",
-         "root": "ط.ر.ق",
-         "gloss": "sb_is_about_to_arrive",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "19038",
-         "root": "ط.ر.ق",
-         "gloss": "have_a_safe_trip!/_May_Allab_bless_you!",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "t.arii2",
        "vocalized": "طَرِيق",
        "vocalized_from": "lexicon:exact"
@@ -203671,6 +201549,7 @@ window.LIBRARY = {
     {
      "ar": "لهلأ، كل ما أشوف مدرسة، بتذكر مشوارنا.",
      "en": "To this day, every time I see a school, I remember our journey.",
+     "p": null,
      "words": [
       {
        "surface": "لهلأ",
@@ -203902,12 +201781,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "قدام بيتنا، كانت في شجرة توت كبيرة.",
      "en": "In front of our house, there was a big mulberry tree.",
+     "p": null,
      "words": [
       {
        "surface": "قدام",
@@ -204091,6 +201974,7 @@ window.LIBRARY = {
     {
      "ar": "كانت تتغير مع كل فصل بالسنة.",
      "en": "It would change with every season of the year.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -204272,6 +202156,7 @@ window.LIBRARY = {
     {
      "ar": "بالربيع، كانت تلبس ورق أخضر وزهر.",
      "en": "In spring, it would wear green leaves and blossoms.",
+     "p": null,
      "words": [
       {
        "surface": "بالربيع",
@@ -204453,6 +202338,7 @@ window.LIBRARY = {
     {
      "ar": "بالصيف، كانت تعطينا ظل وتوت حلو.",
      "en": "In summer, it would give us shade and sweet mulberries.",
+     "p": null,
      "words": [
       {
        "surface": "بالصيف",
@@ -204678,6 +202564,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد كانوا يطلعوا عليها ياكلوا التوت.",
      "en": "The kids would climb it to eat the mulberries.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -204781,6 +202668,7 @@ window.LIBRARY = {
     {
      "ar": "بالخريف، ورقها كان يصفر ويوقع.",
      "en": "In fall, its leaves would yellow and fall.",
+     "p": null,
      "words": [
       {
        "surface": "بالخريف",
@@ -204920,6 +202808,7 @@ window.LIBRARY = {
     {
      "ar": "كنا نلعب بالورق اليابس ونجمعه.",
      "en": "We would play with the dry leaves and gather them.",
+     "p": null,
      "words": [
       {
        "surface": "كنا",
@@ -205103,6 +202992,7 @@ window.LIBRARY = {
     {
      "ar": "وبالشتا، كانت تصير عريانة، بس واقفة بقوة.",
      "en": "And in winter, it would become bare, but standing strong.",
+     "p": null,
      "words": [
       {
        "surface": "وبالشتا",
@@ -205218,6 +203108,7 @@ window.LIBRARY = {
     {
      "ar": "جدي كان يقول: هالشجرة متل الإنسان.",
      "en": "My grandfather would say: this tree is like a human being.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -205371,6 +203262,7 @@ window.LIBRARY = {
     {
      "ar": "قال: بتمر بفصول، حلوة وصعبة.",
      "en": "He said: it goes through seasons, good and hard.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -205554,6 +203446,7 @@ window.LIBRARY = {
     {
      "ar": "قال: المهم تضل واقف متل الشجرة بالشتا.",
      "en": "He said: what matters is to stay standing like the tree in winter.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -205615,57 +203508,19 @@ window.LIBRARY = {
       },
       {
        "surface": "تضل",
-       "root": "ض.ل.ل",
-       "lemma": "ضَلّ",
-       "form": "ضِلّ",
-       "caphi_raw": "D. i l l",
-       "caphi": "D.ill",
-       "gloss": "be_disoriented;lose_the_right_path_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "18543",
+       "root": "ظ.ل.ل",
+       "lemma": "ظَلّ",
+       "form": "ظَلّ",
+       "caphi_raw": "D. a l l",
+       "caphi": "D.all",
+       "gloss": "remain;lstay;ast;continue_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19848",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "18543",
-         "root": "ض.ل.ل",
-         "gloss": "be_disoriented;lose_the_right_path_[auto",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "18546",
-         "root": "ض.ل.ل",
-         "gloss": "be_disoriented;lose_the_right_path_[auto",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "18544",
-         "root": "ض.ل.ل",
-         "gloss": "be_disoriented;lose_the_right_path",
-         "analysis": "VERB:I"
-        },
-        {
-         "id": "19843",
-         "root": "ظ.ل.ل",
-         "gloss": "shadow",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "19846",
-         "root": "ظ.ل.ل",
-         "gloss": "remain;lstay;ast;continue_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19848",
-         "root": "ظ.ل.ل",
-         "gloss": "remain;lstay;ast;continue_[auto]",
-         "analysis": "VERB:P"
-        }
-       ],
-       "caphi_urban": "D.ill",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "D.all",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "واقف",
@@ -205827,6 +203682,7 @@ window.LIBRARY = {
     {
      "ar": "كبرت، وفهمت حكمة جدي أكتر.",
      "en": "I grew up, and understood my grandfather's wisdom more.",
+     "p": null,
      "words": [
       {
        "surface": "كبرت",
@@ -205990,6 +203846,7 @@ window.LIBRARY = {
     {
      "ar": "الحياة إلها فصول، وكل فصل بيعدي.",
      "en": "Life has seasons, and every season passes.",
+     "p": null,
      "words": [
       {
        "surface": "الحياة",
@@ -206195,6 +204052,7 @@ window.LIBRARY = {
     {
      "ar": "والصعب بيروح، متل ما الشتا بيروح.",
      "en": "And hardship goes away, just as winter goes away.",
+     "p": null,
      "words": [
       {
        "surface": "والصعب",
@@ -206416,6 +204274,7 @@ window.LIBRARY = {
     {
      "ar": "والشجرة، متل الأمل، بترجع تخضر من جديد.",
      "en": "And the tree, like hope, turns green again.",
+     "p": null,
      "words": [
       {
        "surface": "والشجرة",
@@ -206689,12 +204548,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "قرب عيد ميلاد إمي، وأنا كنت صغير.",
      "en": "My mom's birthday was near, and I was little.",
+     "p": null,
      "words": [
       {
        "surface": "قرب",
@@ -206890,6 +204753,7 @@ window.LIBRARY = {
     {
      "ar": "ما كان معي مصاري أشتريلها هدية.",
      "en": "I had no money to buy her a gift.",
+     "p": null,
      "words": [
       {
        "surface": "ما",
@@ -207005,6 +204869,7 @@ window.LIBRARY = {
     {
      "ar": "فكرت كتير، شو ممكن أعطيها.",
      "en": "I thought a lot about what I could give her.",
+     "p": null,
      "words": [
       {
        "surface": "فكرت",
@@ -207182,6 +205047,7 @@ window.LIBRARY = {
     {
      "ar": "قررت أعملها هدية بإيدي.",
      "en": "I decided to make her a gift with my own hands.",
+     "p": null,
      "words": [
       {
        "surface": "قررت",
@@ -207325,6 +205191,7 @@ window.LIBRARY = {
     {
      "ar": "قعدت أرسم وأكتب لأيام.",
      "en": "I sat drawing and writing for days.",
+     "p": null,
      "words": [
       {
        "surface": "قعدت",
@@ -207434,6 +205301,7 @@ window.LIBRARY = {
     {
      "ar": "عملتلها بطاقة، وكتبت فيها كل محبتي.",
      "en": "I made her a card, and wrote all my love in it.",
+     "p": null,
      "words": [
       {
        "surface": "عملتلها",
@@ -207585,6 +205453,7 @@ window.LIBRARY = {
     {
      "ar": "جمعت ورد من الحديقة، وحطيته بالبطاقة.",
      "en": "I gathered flowers from the garden, and put them in the card.",
+     "p": null,
      "words": [
       {
        "surface": "جمعت",
@@ -207792,6 +205661,7 @@ window.LIBRARY = {
     {
      "ar": "يوم عيدها، خبيت الهدية ورا ظهري.",
      "en": "On her birthday, I hid the gift behind my back.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -208011,6 +205881,7 @@ window.LIBRARY = {
     {
      "ar": "قلتلها: إمي، عندي إلك مفاجأة.",
      "en": "I told her: mom, I have a surprise for you.",
+     "p": null,
      "words": [
       {
        "surface": "قلتلها",
@@ -208148,6 +206019,7 @@ window.LIBRARY = {
     {
      "ar": "مديت إيدي وعطيتها البطاقة.",
      "en": "I extended my hand and gave her the card.",
+     "p": null,
      "words": [
       {
        "surface": "مديت",
@@ -208269,6 +206141,7 @@ window.LIBRARY = {
     {
      "ar": "قرأتها، وعيونها امتلت بالدموع.",
      "en": "She read it, and her eyes filled with tears.",
+     "p": null,
      "words": [
       {
        "surface": "قرأتها",
@@ -208376,6 +206249,7 @@ window.LIBRARY = {
     {
      "ar": "حضنتني بقوة، وقالت: هاي أحلى هدية بحياتي.",
      "en": "She hugged me tightly, and said: this is the nicest gift of my life.",
+     "p": null,
      "words": [
       {
        "surface": "حضنتني",
@@ -208559,6 +206433,7 @@ window.LIBRARY = {
     {
      "ar": "قلتلها: بس هي بسيطة، ما فيها مصاري.",
      "en": "I told her: but it's simple, it has no money in it.",
+     "p": null,
      "words": [
       {
        "surface": "قلتلها",
@@ -208690,6 +206565,7 @@ window.LIBRARY = {
     {
      "ar": "قالت: أغلى الهدايا هي اللي من القلب.",
      "en": "She said: the most precious gifts are the ones from the heart.",
+     "p": null,
      "words": [
       {
        "surface": "قالت",
@@ -208887,6 +206763,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، عرفت إنه المحبة أغلى من كل مصاري الدنيا.",
      "en": "From that day, I knew that love is more precious than all the money in the world.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -209168,12 +207045,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "advanced",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "قبل ما يوصل الكهربا عالضيعة، كان الناس يستعملوا قناديل.",
      "en": "Before electricity reached the village, people used lanterns.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -209357,6 +207238,7 @@ window.LIBRARY = {
     {
      "ar": "جدي كان عنده قنديل قديم بيضويله الليل.",
      "en": "My grandfather had an old lantern that lit up his night.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -209552,6 +207434,7 @@ window.LIBRARY = {
     {
      "ar": "كل مسا، كان يشعله ويحطه عالطاولة.",
      "en": "Every evening, he would light it and put it on the table.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -209689,6 +207572,7 @@ window.LIBRARY = {
     {
      "ar": "حواليه، كانت العيلة تجتمع تحكي وتضحك.",
      "en": "Around it, the family would gather to talk and laugh.",
+     "p": null,
      "words": [
       {
        "surface": "حواليه",
@@ -209828,6 +207712,7 @@ window.LIBRARY = {
     {
      "ar": "جدي كان يحكينا قصص عالضو الخافت.",
      "en": "My grandfather would tell us stories by the dim light.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -209997,6 +207882,7 @@ window.LIBRARY = {
     {
      "ar": "كنا نسمعه ونحن مشدودين، وظلالنا عالحيط.",
      "en": "We would listen to him, captivated, our shadows on the wall.",
+     "p": null,
      "words": [
       {
        "surface": "كنا",
@@ -210204,6 +208090,7 @@ window.LIBRARY = {
     {
      "ar": "لما إجت الكهربا، الكل فرح بالضو الجديد.",
      "en": "When electricity came, everyone was happy with the new light.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -210393,6 +208280,7 @@ window.LIBRARY = {
     {
      "ar": "بس جدي ضل يحب قنديله القديم.",
      "en": "But my grandfather kept loving his old lantern.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -210568,6 +208456,7 @@ window.LIBRARY = {
     {
      "ar": "قلتله: يا جدي، الكهربا أحسن وأقوى.",
      "en": "I told him: grandpa, electricity is better and stronger.",
+     "p": null,
      "words": [
       {
        "surface": "قلتله",
@@ -210745,6 +208634,7 @@ window.LIBRARY = {
     {
      "ar": "ابتسم وقال: الضو القوي بيوري كل شي.",
      "en": "He smiled and said: strong light shows everything.",
+     "p": null,
      "words": [
       {
        "surface": "ابتسم",
@@ -210786,55 +208676,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "الضو",
@@ -210968,6 +208820,7 @@ window.LIBRARY = {
     {
      "ar": "قال: بس ضو القنديل بيخلي القلوب تقرب.",
      "en": "He said: but the lantern's light makes hearts draw closer.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -211177,6 +209030,7 @@ window.LIBRARY = {
     {
      "ar": "ما فهمت حكيه وأنا صغير.",
      "en": "I didn't understand his words when I was young.",
+     "p": null,
      "words": [
       {
        "surface": "ما",
@@ -211378,6 +209232,7 @@ window.LIBRARY = {
     {
      "ar": "بس هلأ، وكل واحد غارق بتلفونه، فهمت.",
      "en": "But now, with everyone lost in their phone, I understand.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -211571,6 +209426,7 @@ window.LIBRARY = {
     {
      "ar": "لسا محتفظ بقنديل جدي لهلأ.",
      "en": "I still keep my grandfather's lantern to this day.",
+     "p": null,
      "words": [
       {
        "surface": "لسا",
@@ -211704,6 +209560,7 @@ window.LIBRARY = {
     {
      "ar": "وكل ما أشعله، بترجع تلك الليالي الدافية.",
      "en": "And every time I light it, those warm nights come back.",
+     "p": null,
      "words": [
       {
        "surface": "وكل",
@@ -211963,12 +209820,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "كل يوم بصحى الساعة سبعة.",
      "en": "Every day I wake up at seven.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -212094,6 +209955,7 @@ window.LIBRARY = {
     {
      "ar": "بروح عالمطبخ وبعمل قهوة.",
      "en": "I go to the kitchen and make coffee.",
+     "p": null,
      "words": [
       {
        "surface": "بروح",
@@ -212179,6 +210041,7 @@ window.LIBRARY = {
     {
      "ar": "بحب القهوة سادة، بدون سكر.",
      "en": "I like my coffee plain, without sugar.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -212324,6 +210187,7 @@ window.LIBRARY = {
     {
      "ar": "بقعد عالشباك وبشرب قهوتي على مهل.",
      "en": "I sit by the window and drink my coffee slowly.",
+     "p": null,
      "words": [
       {
        "surface": "بقعد",
@@ -212467,6 +210331,7 @@ window.LIBRARY = {
     {
      "ar": "الجو حلو والشمس طالعة.",
      "en": "The weather is nice and the sun is up.",
+     "p": null,
      "words": [
       {
        "surface": "الجو",
@@ -212640,6 +210505,7 @@ window.LIBRARY = {
     {
      "ar": "بعدين بلبس وبروح عالشغل.",
      "en": "Then I get dressed and go to work.",
+     "p": null,
      "words": [
       {
        "surface": "بعدين",
@@ -212797,12 +210663,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أنا اسمي سامي وعندي عيلة كبيرة.",
      "en": "My name is Sami and I have a big family.",
+     "p": null,
      "words": [
       {
        "surface": "أنا",
@@ -213008,6 +210878,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي بشتغل بالسوق وإمي بتطبخ أحلى أكل.",
      "en": "My dad works at the market and my mom cooks the best food.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -213179,6 +211050,7 @@ window.LIBRARY = {
     {
      "ar": "عندي أخ وأخت، وهمة أصغر مني.",
      "en": "I have a brother and a sister, and they're younger than me.",
+     "p": null,
      "words": [
       {
        "surface": "عندي",
@@ -213320,6 +211192,7 @@ window.LIBRARY = {
     {
      "ar": "جدّتي بتسكن معنا بالبيت.",
      "en": "My grandmother lives with us in the house.",
+     "p": null,
      "words": [
       {
        "surface": "جدّتي",
@@ -213405,6 +211278,7 @@ window.LIBRARY = {
     {
      "ar": "كل مسا بنقعد سوا ونحكي كتير.",
      "en": "Every evening we sit together and talk a lot.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -213594,6 +211468,7 @@ window.LIBRARY = {
     {
      "ar": "بحب عيلتي كتير.",
      "en": "I love my family a lot.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -213699,12 +211574,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بيتنا صغير بس حلو.",
      "en": "Our house is small but nice.",
+     "p": null,
      "words": [
       {
        "surface": "بيتنا",
@@ -213814,6 +211693,7 @@ window.LIBRARY = {
     {
      "ar": "فيه غرفتين ومطبخ وحمام.",
      "en": "It has two rooms, a kitchen, and a bathroom.",
+     "p": null,
      "words": [
       {
        "surface": "فيه",
@@ -213929,6 +211809,7 @@ window.LIBRARY = {
     {
      "ar": "قدام البيت في حديقة صغيرة.",
      "en": "In front of the house there is a small garden.",
+     "p": null,
      "words": [
       {
        "surface": "قدام",
@@ -214030,6 +211911,7 @@ window.LIBRARY = {
     {
      "ar": "إمي بتزرع ورد وشوية نعنع.",
      "en": "My mom plants flowers and some mint.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -214215,6 +212097,7 @@ window.LIBRARY = {
     {
      "ar": "بحب أقعد بالحديقة بعد الظهر.",
      "en": "I like to sit in the garden in the afternoon.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -214328,12 +212211,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "عنا قطة صغيرة اسمها مشمش.",
      "en": "We have a little cat named Mishmish.",
+     "p": null,
      "words": [
       {
        "surface": "عنا",
@@ -214473,6 +212360,7 @@ window.LIBRARY = {
     {
      "ar": "لونها أبيض وعيونها خضر.",
      "en": "She is white and her eyes are green.",
+     "p": null,
      "words": [
       {
        "surface": "لونها",
@@ -214620,6 +212508,7 @@ window.LIBRARY = {
     {
      "ar": "كل الصبح بتنط عالسرير وبتصحيني.",
      "en": "Every morning she jumps on the bed and wakes me up.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -214725,6 +212614,7 @@ window.LIBRARY = {
     {
      "ar": "بحب تاكل سمك وبتشرب حليب.",
      "en": "She likes to eat fish and drinks milk.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -214884,6 +212774,7 @@ window.LIBRARY = {
     {
      "ar": "بالليل بتنام جنبي.",
      "en": "At night she sleeps next to me.",
+     "p": null,
      "words": [
       {
        "surface": "بالليل",
@@ -215003,12 +212894,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "كل يوم بنفطر مع بعض.",
      "en": "Every day we have breakfast together.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -215116,6 +213011,7 @@ window.LIBRARY = {
     {
      "ar": "بناكل خبز وزيت وزعتر وجبنة.",
      "en": "We eat bread, oil, za'tar, and cheese.",
+     "p": null,
      "words": [
       {
        "surface": "بناكل",
@@ -215325,6 +213221,7 @@ window.LIBRARY = {
     {
      "ar": "إمي بتعمل بيض وشاي بالنعنع.",
      "en": "My mom makes eggs and mint tea.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -215464,6 +213361,7 @@ window.LIBRARY = {
     {
      "ar": "أنا بحب الزيت والزعتر كتير.",
      "en": "I really like oil and za'tar.",
+     "p": null,
      "words": [
       {
        "surface": "أنا",
@@ -215621,6 +213519,7 @@ window.LIBRARY = {
     {
      "ar": "بعد الفطور، كل واحد بروح على شغله.",
      "en": "After breakfast, everyone goes to their work.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -215752,12 +213651,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "يوم الجمعة بروح عالسوق.",
      "en": "On Friday I go to the market.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -215881,6 +213784,7 @@ window.LIBRARY = {
     {
      "ar": "السوق مليان ناس وأصوات.",
      "en": "The market is full of people and sounds.",
+     "p": null,
      "words": [
       {
        "surface": "السوق",
@@ -215986,6 +213890,7 @@ window.LIBRARY = {
     {
      "ar": "بشتري خضرة وفواكه ولحمة.",
      "en": "I buy vegetables, fruit, and meat.",
+     "p": null,
      "words": [
       {
        "surface": "بشتري",
@@ -216109,6 +214014,7 @@ window.LIBRARY = {
     {
      "ar": "البياع بيعرفني وبيضحك.",
      "en": "The seller knows me and smiles.",
+     "p": null,
      "words": [
       {
        "surface": "البياع",
@@ -216190,6 +214096,7 @@ window.LIBRARY = {
     {
      "ar": "بشتري كل شي وبرجع عالبيت.",
      "en": "I buy everything and go back home.",
+     "p": null,
      "words": [
       {
        "surface": "بشتري",
@@ -216317,12 +214224,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "صاحبي اسمه كريم.",
      "en": "My friend's name is Karim.",
+     "p": null,
      "words": [
       {
        "surface": "صاحبي",
@@ -216416,6 +214327,7 @@ window.LIBRARY = {
     {
      "ar": "بنشوف بعض كل يوم بعد المدرسة.",
      "en": "We see each other every day after school.",
+     "p": null,
      "words": [
       {
        "surface": "بنشوف",
@@ -216553,6 +214465,7 @@ window.LIBRARY = {
     {
      "ar": "بنلعب كورة بالشارع.",
      "en": "We play ball in the street.",
+     "p": null,
      "words": [
       {
        "surface": "بنلعب",
@@ -216648,6 +214561,7 @@ window.LIBRARY = {
     {
      "ar": "كريم بيضحك كتير وبيحكي نكت.",
      "en": "Karim laughs a lot and tells jokes.",
+     "p": null,
      "words": [
       {
        "surface": "كريم",
@@ -216813,6 +214727,7 @@ window.LIBRARY = {
     {
      "ar": "هو أحسن صاحب عندي.",
      "en": "He's my best friend.",
+     "p": null,
      "words": [
       {
        "surface": "هو",
@@ -217010,12 +214925,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "اليوم الجو بارد شوي.",
      "en": "Today the weather is a bit cold.",
+     "p": null,
      "words": [
       {
        "surface": "اليوم",
@@ -217128,39 +215047,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -217171,6 +215058,7 @@ window.LIBRARY = {
     {
      "ar": "السما رمادية والغيم كتير.",
      "en": "The sky is gray and there are many clouds.",
+     "p": null,
      "words": [
       {
        "surface": "السما",
@@ -217300,6 +215188,7 @@ window.LIBRARY = {
     {
      "ar": "بلبس جاكيت قبل ما أطلع.",
      "en": "I put on a jacket before I go out.",
+     "p": null,
      "words": [
       {
        "surface": "بلبس",
@@ -217427,6 +215316,7 @@ window.LIBRARY = {
     {
      "ar": "يمكن اليوم تنزل شتا.",
      "en": "Maybe it will rain today.",
+     "p": null,
      "words": [
       {
        "surface": "يمكن",
@@ -217550,6 +215440,7 @@ window.LIBRARY = {
     {
      "ar": "بحب صوت المطر عالشباك.",
      "en": "I like the sound of rain on the window.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -217647,12 +215538,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بعد الغدا، بنشرب شاي.",
      "en": "After lunch, we drink tea.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -217724,6 +215619,7 @@ window.LIBRARY = {
     {
      "ar": "إمي بتحط نعنع بالشاي.",
      "en": "My mom puts mint in the tea.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -217809,6 +215705,7 @@ window.LIBRARY = {
     {
      "ar": "جدّي بيحب الشاي تقيل وحلو.",
      "en": "My grandpa likes his tea strong and sweet.",
+     "p": null,
      "words": [
       {
        "surface": "جدّي",
@@ -217934,6 +215831,7 @@ window.LIBRARY = {
     {
      "ar": "بنقعد بالصالون ونحكي.",
      "en": "We sit in the living room and talk.",
+     "p": null,
      "words": [
       {
        "surface": "بنقعد",
@@ -218041,6 +215939,7 @@ window.LIBRARY = {
     {
      "ar": "الشاي بالنعنع أحلى شي بالمسا.",
      "en": "Mint tea is the nicest thing in the evening.",
+     "p": null,
      "words": [
       {
        "surface": "الشاي",
@@ -218174,12 +216073,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جنب بيتنا في حديقة كبيرة.",
      "en": "Next to our house there is a big garden.",
+     "p": null,
      "words": [
       {
        "surface": "جنب",
@@ -218281,6 +216184,7 @@ window.LIBRARY = {
     {
      "ar": "فيها شجر زيتون وليمون.",
      "en": "It has olive and lemon trees.",
+     "p": null,
      "words": [
       {
        "surface": "فيها",
@@ -218424,6 +216328,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد بيلعبوا بالحديقة كل يوم.",
      "en": "The kids play in the garden every day.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -218539,6 +216444,7 @@ window.LIBRARY = {
     {
      "ar": "بحب أقعد تحت الشجرة وأقرا كتاب.",
      "en": "I like to sit under the tree and read a book.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -218718,6 +216624,7 @@ window.LIBRARY = {
     {
      "ar": "الجو هناك هادي وحلو.",
      "en": "The atmosphere there is quiet and nice.",
+     "p": null,
      "words": [
       {
        "surface": "الجو",
@@ -218833,12 +216740,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بحب أمشي بالبلد القديمة.",
      "en": "I like to walk in the old town.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -218950,6 +216861,7 @@ window.LIBRARY = {
     {
      "ar": "الشوارع ضيقة والحجار قديمة.",
      "en": "The streets are narrow and the stones are old.",
+     "p": null,
      "words": [
       {
        "surface": "الشوارع",
@@ -219061,6 +216973,7 @@ window.LIBRARY = {
     {
      "ar": "في دكاكين بتبيع حلويات وبهارات.",
      "en": "There are shops selling sweets and spices.",
+     "p": null,
      "words": [
       {
        "surface": "في",
@@ -219190,6 +217103,7 @@ window.LIBRARY = {
     {
      "ar": "ريحة القهوة والخبز بكل مكان.",
      "en": "The smell of coffee and bread is everywhere.",
+     "p": null,
      "words": [
       {
        "surface": "ريحة",
@@ -219367,6 +217281,7 @@ window.LIBRARY = {
     {
      "ar": "بشتري كنافة وبقعد أكلها.",
      "en": "I buy knafeh and sit and eat it.",
+     "p": null,
      "words": [
       {
        "surface": "بشتري",
@@ -219492,12 +217407,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جيراننا ناس طيبين.",
      "en": "Our neighbors are good people.",
+     "p": null,
      "words": [
       {
        "surface": "جيراننا",
@@ -219591,6 +217510,7 @@ window.LIBRARY = {
     {
      "ar": "أم أحمد بتسكن جنبنا.",
      "en": "Um Ahmad lives next to us.",
+     "p": null,
      "words": [
       {
        "surface": "أم",
@@ -219714,6 +217634,7 @@ window.LIBRARY = {
     {
      "ar": "كل يوم بتبعت لإمي صحن أكل.",
      "en": "Every day she sends my mom a plate of food.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -219857,6 +217778,7 @@ window.LIBRARY = {
     {
      "ar": "وإمي بترد عليها بصحن تاني.",
      "en": "And my mom sends her back another plate.",
+     "p": null,
      "words": [
       {
        "surface": "وإمي",
@@ -219958,6 +217880,7 @@ window.LIBRARY = {
     {
      "ar": "هيك الجيرة بتصير حلوة.",
      "en": "That's how being neighbors becomes nice.",
+     "p": null,
      "words": [
       {
        "surface": "هيك",
@@ -220105,12 +218028,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "الساعة تنتين بنتغدى.",
      "en": "At two o'clock we have lunch.",
+     "p": null,
      "words": [
       {
        "surface": "الساعة",
@@ -220218,6 +218145,7 @@ window.LIBRARY = {
     {
      "ar": "اليوم إمي طبخت ملوخية ورز.",
      "en": "Today my mom cooked mulukhiyah and rice.",
+     "p": null,
      "words": [
       {
        "surface": "اليوم",
@@ -220343,6 +218271,7 @@ window.LIBRARY = {
     {
      "ar": "كلنا بنقعد حول الطاولة.",
      "en": "We all sit around the table.",
+     "p": null,
      "words": [
       {
        "surface": "كلنا",
@@ -220480,6 +218409,7 @@ window.LIBRARY = {
     {
      "ar": "الأكل بيتهني لما نكون سوا.",
      "en": "The food is more enjoyable when we're together.",
+     "p": null,
      "words": [
       {
        "surface": "الأكل",
@@ -220619,6 +218549,7 @@ window.LIBRARY = {
     {
      "ar": "بعد الغدا، بننام شوي.",
      "en": "After lunch, we nap a little.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -220679,39 +218610,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -220734,12 +218633,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بروح عالمدرسة كل الصبح.",
      "en": "I go to school every morning.",
+     "p": null,
      "words": [
       {
        "surface": "بروح",
@@ -220831,6 +218734,7 @@ window.LIBRARY = {
     {
      "ar": "المدرسة قريبة من بيتنا.",
      "en": "The school is close to our house.",
+     "p": null,
      "words": [
       {
        "surface": "المدرسة",
@@ -220922,6 +218826,7 @@ window.LIBRARY = {
     {
      "ar": "بحب درس العربي والرسم.",
      "en": "I like Arabic class and drawing.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -221033,6 +218938,7 @@ window.LIBRARY = {
     {
      "ar": "المعلمة طيبة وبتساعدنا.",
      "en": "The teacher is kind and helps us.",
+     "p": null,
      "words": [
       {
        "surface": "المعلمة",
@@ -221116,6 +219022,7 @@ window.LIBRARY = {
     {
      "ar": "بعد المدرسة بلعب مع صحابي.",
      "en": "After school I play with my friends.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -221249,12 +219156,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "عندي كتاب حلو بأوضتي.",
      "en": "I have a nice book in my room.",
+     "p": null,
      "words": [
       {
        "surface": "عندي",
@@ -221402,6 +219313,7 @@ window.LIBRARY = {
     {
      "ar": "فيه قصص وصور كتير.",
      "en": "It has stories and many pictures.",
+     "p": null,
      "words": [
       {
        "surface": "فيه",
@@ -221499,6 +219411,7 @@ window.LIBRARY = {
     {
      "ar": "كل ليلة بقرا صفحة أو تنتين.",
      "en": "Every night I read a page or two.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -221642,6 +219555,7 @@ window.LIBRARY = {
     {
      "ar": "القراية بتساعدني أنام.",
      "en": "Reading helps me sleep.",
+     "p": null,
      "words": [
       {
        "surface": "القراية",
@@ -221733,6 +219647,7 @@ window.LIBRARY = {
     {
      "ar": "بحب القصص القديمة.",
      "en": "I like the old stories.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -221826,12 +219741,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "اليوم نزلت شتا من الصبح.",
      "en": "Today it rained from the morning.",
+     "p": null,
      "words": [
       {
        "surface": "اليوم",
@@ -221933,6 +219852,7 @@ window.LIBRARY = {
     {
      "ar": "الشوارع صارت مليانة مي.",
      "en": "The streets got full of water.",
+     "p": null,
      "words": [
       {
        "surface": "الشوارع",
@@ -222024,6 +219944,7 @@ window.LIBRARY = {
     {
      "ar": "قعدت بالبيت وشربت شاي سخن.",
      "en": "I stayed home and drank hot tea.",
+     "p": null,
      "words": [
       {
        "surface": "قعدت",
@@ -222187,6 +220108,7 @@ window.LIBRARY = {
     {
      "ar": "بحب أتفرج عالمطر من الشباك.",
      "en": "I like watching the rain from the window.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -222288,6 +220210,7 @@ window.LIBRARY = {
     {
      "ar": "الجو بارد بس البيت دافي.",
      "en": "The weather is cold but the house is warm.",
+     "p": null,
      "words": [
       {
        "surface": "الجو",
@@ -222439,12 +220362,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أوضتي صغيرة بس مرتبة.",
      "en": "My room is small but tidy.",
+     "p": null,
      "words": [
       {
        "surface": "أوضتي",
@@ -222530,6 +220457,7 @@ window.LIBRARY = {
     {
      "ar": "فيها سرير وطاولة وكرسي.",
      "en": "It has a bed, a table, and a chair.",
+     "p": null,
      "words": [
       {
        "surface": "فيها",
@@ -222673,6 +220601,7 @@ window.LIBRARY = {
     {
      "ar": "عالحيط في صورة للبحر.",
      "en": "On the wall there is a picture of the sea.",
+     "p": null,
      "words": [
       {
        "surface": "عالحيط",
@@ -222834,6 +220763,7 @@ window.LIBRARY = {
     {
      "ar": "بحب أقعد عالطاولة وأكتب.",
      "en": "I like to sit at the table and write.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -222957,6 +220887,7 @@ window.LIBRARY = {
     {
      "ar": "بالليل، بطفي الضو وبنام.",
      "en": "At night, I turn off the light and sleep.",
+     "p": null,
      "words": [
       {
        "surface": "بالليل",
@@ -223100,12 +221031,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "اليوم بدي أساعد إمي بالطبخ.",
      "en": "Today I want to help my mom cook.",
+     "p": null,
      "words": [
       {
        "surface": "اليوم",
@@ -223253,6 +221188,7 @@ window.LIBRARY = {
     {
      "ar": "بنغسل الخضرة وبنقطعها.",
      "en": "We wash the vegetables and cut them.",
+     "p": null,
      "words": [
       {
        "surface": "بنغسل",
@@ -223342,6 +221278,7 @@ window.LIBRARY = {
     {
      "ar": "إمي بتحط البهارات وأنا بحرك.",
      "en": "My mom adds the spices and I stir.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -223507,6 +221444,7 @@ window.LIBRARY = {
     {
      "ar": "ريحة الأكل بتملى البيت.",
      "en": "The smell of food fills the house.",
+     "p": null,
      "words": [
       {
        "surface": "ريحة",
@@ -223610,6 +221548,7 @@ window.LIBRARY = {
     {
      "ar": "بحب أتعلم الطبخ من إمي.",
      "en": "I like learning to cook from my mom.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -223747,12 +221686,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "قريب من بيتنا في فرن.",
      "en": "Near our house there is a bakery.",
+     "p": null,
      "words": [
       {
        "surface": "قريب",
@@ -223860,6 +221803,7 @@ window.LIBRARY = {
     {
      "ar": "كل الصبح بيطلع منه ريحة خبز.",
      "en": "Every morning the smell of bread comes out of it.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -223983,6 +221927,7 @@ window.LIBRARY = {
     {
      "ar": "بروح بشتري خبز سخن.",
      "en": "I go and buy hot bread.",
+     "p": null,
      "words": [
       {
        "surface": "بروح",
@@ -224106,6 +222051,7 @@ window.LIBRARY = {
     {
      "ar": "الخباز بيعرفني وبيعطيني قطعة زيادة.",
      "en": "The baker knows me and gives me an extra piece.",
+     "p": null,
      "words": [
       {
        "surface": "الخباز",
@@ -224217,6 +222163,7 @@ window.LIBRARY = {
     {
      "ar": "الخبز السخن أحلى شي.",
      "en": "Hot bread is the nicest thing.",
+     "p": null,
      "words": [
       {
        "surface": "الخبز",
@@ -224376,12 +222323,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بعد الظهر، الولاد بينزلوا عالشارع.",
      "en": "In the afternoon, the kids go out to the street.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -224483,6 +222434,7 @@ window.LIBRARY = {
     {
      "ar": "بيلعبوا ويجروا ويضحكوا.",
      "en": "They play, run, and laugh.",
+     "p": null,
      "words": [
       {
        "surface": "بيلعبوا",
@@ -224566,6 +222518,7 @@ window.LIBRARY = {
     {
      "ar": "واحد بيركض والتاني بيلحقه.",
      "en": "One runs and the other chases him.",
+     "p": null,
      "words": [
       {
        "surface": "واحد",
@@ -224689,6 +222642,7 @@ window.LIBRARY = {
     {
      "ar": "أصواتهم بتملى الحارة.",
      "en": "Their voices fill the neighborhood.",
+     "p": null,
      "words": [
       {
        "surface": "أصواتهم",
@@ -224790,6 +222744,7 @@ window.LIBRARY = {
     {
      "ar": "بحب أتفرج عليهم من الشباك.",
      "en": "I like to watch them from the window.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -224903,12 +222858,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "كل يوم بركب الباص عالشغل.",
      "en": "Every day I take the bus to work.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -225030,6 +222989,7 @@ window.LIBRARY = {
     {
      "ar": "الباص بيجي الساعة تمنية.",
      "en": "The bus comes at eight o'clock.",
+     "p": null,
      "words": [
       {
        "surface": "الباص",
@@ -225139,6 +223099,7 @@ window.LIBRARY = {
     {
      "ar": "بقعد جنب الشباك وأتفرج عالطريق.",
      "en": "I sit by the window and watch the road.",
+     "p": null,
      "words": [
       {
        "surface": "بقعد",
@@ -225298,6 +223259,7 @@ window.LIBRARY = {
     {
      "ar": "الناس بالباص كتير بالصبح.",
      "en": "There are many people on the bus in the morning.",
+     "p": null,
      "words": [
       {
        "surface": "الناس",
@@ -225369,6 +223331,7 @@ window.LIBRARY = {
     {
      "ar": "بعد نص ساعة، بوصل عالشغل.",
      "en": "After half an hour, I arrive at work.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -225413,45 +223376,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "15247",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "15247",
-         "root": "س.و.ع",
-         "gloss": "hour;watch",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "15249",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15250",
-         "root": "س.و.ع",
-         "gloss": "The_Day_of_the_Judgment",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15251",
-         "root": "س.و.ع",
-         "gloss": "then",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15252",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15253",
-         "root": "س.و.ع",
-         "gloss": "it_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "saa3a",
        "vocalized": "سَاعَة",
        "vocalized_from": "lexicon:exact"
@@ -225546,12 +223471,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بالمسا، بنقعد كلنا بالصالون.",
      "en": "In the evening, we all sit in the living room.",
+     "p": null,
      "words": [
       {
        "surface": "بالمسا",
@@ -225657,6 +223586,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي بيتفرج عالأخبار.",
      "en": "My dad watches the news.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -225750,6 +223680,7 @@ window.LIBRARY = {
     {
      "ar": "إمي بتخيط وأنا بقرا.",
      "en": "My mom sews and I read.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -225873,6 +223804,7 @@ window.LIBRARY = {
     {
      "ar": "بنشرب شاي وناكل بسكوت.",
      "en": "We drink tea and eat biscuits.",
+     "p": null,
      "words": [
       {
        "surface": "بنشرب",
@@ -226002,6 +223934,7 @@ window.LIBRARY = {
     {
      "ar": "المسا بالبيت أحلى وقت.",
      "en": "The evening at home is the nicest time.",
+     "p": null,
      "words": [
       {
        "surface": "المسا",
@@ -226105,12 +224038,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جدّتي كبيرة بالعمر بس قلبها شاب.",
      "en": "My grandmother is old but her heart is young.",
+     "p": null,
      "words": [
       {
        "surface": "جدّتي",
@@ -226304,6 +224241,7 @@ window.LIBRARY = {
     {
      "ar": "بتحكيلي قصص من زمان.",
      "en": "She tells me stories from long ago.",
+     "p": null,
      "words": [
       {
        "surface": "بتحكيلي",
@@ -226399,6 +224337,7 @@ window.LIBRARY = {
     {
      "ar": "بتعرف تطبخ أكلات قديمة كتير.",
      "en": "She knows how to cook many old dishes.",
+     "p": null,
      "words": [
       {
        "surface": "بتعرف",
@@ -226608,6 +224547,7 @@ window.LIBRARY = {
     {
      "ar": "كل يوم بنقعد سوا ونحكي.",
      "en": "Every day we sit together and talk.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -226761,6 +224701,7 @@ window.LIBRARY = {
     {
      "ar": "بحب جدّتي كتير.",
      "en": "I love my grandmother a lot.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -226828,12 +224769,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بالصيف، بنروح عالبحر.",
      "en": "In the summer, we go to the sea.",
+     "p": null,
      "words": [
       {
        "surface": "بالصيف",
@@ -226941,6 +224886,7 @@ window.LIBRARY = {
     {
      "ar": "المي زرقا والرملة دافية.",
      "en": "The water is blue and the sand is warm.",
+     "p": null,
      "words": [
       {
        "surface": "المي",
@@ -227070,6 +225016,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد بيسبحوا ويلعبوا بالرملة.",
      "en": "The kids swim and play in the sand.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -227169,6 +225116,7 @@ window.LIBRARY = {
     {
      "ar": "بنقعد تحت الشمس وناكل بطيخ.",
      "en": "We sit under the sun and eat watermelon.",
+     "p": null,
      "words": [
       {
        "surface": "بنقعد",
@@ -227340,6 +225288,7 @@ window.LIBRARY = {
     {
      "ar": "بحب صوت الموج كتير.",
      "en": "I really like the sound of the waves.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -227443,12 +225392,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بحب أشتري خضرة طازة.",
      "en": "I like to buy fresh vegetables.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -227566,6 +225519,7 @@ window.LIBRARY = {
     {
      "ar": "بالسوق في بندورة وخيار وكوسا.",
      "en": "At the market there are tomatoes, cucumbers, and zucchini.",
+     "p": null,
      "words": [
       {
        "surface": "بالسوق",
@@ -227697,6 +225651,7 @@ window.LIBRARY = {
     {
      "ar": "البياع بيقول إنها من بستانه.",
      "en": "The seller says they are from his garden.",
+     "p": null,
      "words": [
       {
        "surface": "البياع",
@@ -227818,6 +225773,7 @@ window.LIBRARY = {
     {
      "ar": "بشتري شوية وبرجع عالبيت.",
      "en": "I buy some and go back home.",
+     "p": null,
      "words": [
       {
        "surface": "بشتري",
@@ -227949,6 +225905,7 @@ window.LIBRARY = {
     {
      "ar": "إمي بتعمل منها سلطة حلوة.",
      "en": "My mom makes a nice salad from them.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -228106,12 +226063,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جارنا عنده كلب اسمه لولو.",
      "en": "Our neighbor has a dog named Lulu.",
+     "p": null,
      "words": [
       {
        "surface": "جارنا",
@@ -228307,6 +226268,7 @@ window.LIBRARY = {
     {
      "ar": "لونه بني وذيله طويل.",
      "en": "He is brown and has a long tail.",
+     "p": null,
      "words": [
       {
        "surface": "لونه",
@@ -228518,6 +226480,7 @@ window.LIBRARY = {
     {
      "ar": "كل الصبح بيلعب بالحديقة.",
      "en": "Every morning he plays in the garden.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -228617,6 +226580,7 @@ window.LIBRARY = {
     {
      "ar": "لما يشوفني، بيجي بيركض.",
      "en": "When he sees me, he comes running.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -228686,6 +226650,7 @@ window.LIBRARY = {
     {
      "ar": "بحب ألعب معه شوي.",
      "en": "I like to play with him a little.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -228746,39 +226711,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -228801,12 +226734,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بالشتا، الجو بارد كتير.",
      "en": "In winter, the weather is very cold.",
+     "p": null,
      "words": [
       {
        "surface": "بالشتا",
@@ -228944,6 +226881,7 @@ window.LIBRARY = {
     {
      "ar": "بنشعل الصوبا ونقعد حواليها.",
      "en": "We light the heater and sit around it.",
+     "p": null,
      "words": [
       {
        "surface": "بنشعل",
@@ -229051,6 +226989,7 @@ window.LIBRARY = {
     {
      "ar": "إمي بتعمل شوربة عدس سخنة.",
      "en": "My mom makes hot lentil soup.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -229208,6 +227147,7 @@ window.LIBRARY = {
     {
      "ar": "برا بتنزل شتا والريح قوية.",
      "en": "Outside it rains and the wind is strong.",
+     "p": null,
      "words": [
       {
        "surface": "برا",
@@ -229332,45 +227272,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "27050",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27050",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "27057",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "27065",
-         "root": "ق.و.ي",
-         "gloss": "become_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27066",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27051",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        },
-        {
-         "id": "27052",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2awi",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -229381,6 +227283,7 @@ window.LIBRARY = {
     {
      "ar": "بس جوا البيت دافي ومريح.",
      "en": "But inside the house is warm and cozy.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -229494,12 +227397,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بالصيف، النهار طويل والجو سخن.",
      "en": "In summer, the day is long and the weather is hot.",
+     "p": null,
      "words": [
       {
        "surface": "بالصيف",
@@ -229683,6 +227590,7 @@ window.LIBRARY = {
     {
      "ar": "بنقعد برا بالمسا لأنه أبرد.",
      "en": "We sit outside in the evening because it's cooler.",
+     "p": null,
      "words": [
       {
        "surface": "بنقعد",
@@ -229804,6 +227712,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد بياكلوا بوظة.",
      "en": "The kids eat ice cream.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -229859,6 +227768,7 @@ window.LIBRARY = {
     {
      "ar": "بنسقي الحديقة كل مسا.",
      "en": "We water the garden every evening.",
+     "p": null,
      "words": [
       {
        "surface": "بنسقي",
@@ -229990,6 +227900,7 @@ window.LIBRARY = {
     {
      "ar": "بحب ليالي الصيف الطويلة.",
      "en": "I like the long summer nights.",
+     "p": null,
      "words": [
       {
        "surface": "بحب",
@@ -230119,12 +228030,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "اليوم لازم أروح مشوار.",
      "en": "Today I have to run an errand.",
+     "p": null,
      "words": [
       {
        "surface": "اليوم",
@@ -230230,6 +228145,7 @@ window.LIBRARY = {
     {
      "ar": "بدي أشتري خبز وحليب وبيض.",
      "en": "I want to buy bread, milk, and eggs.",
+     "p": null,
      "words": [
       {
        "surface": "بدي",
@@ -230369,6 +228285,7 @@ window.LIBRARY = {
     {
      "ar": "بمشي عالدكان لأنه قريب.",
      "en": "I walk to the shop because it's close.",
+     "p": null,
      "words": [
       {
        "surface": "بمشي",
@@ -230474,6 +228391,7 @@ window.LIBRARY = {
     {
      "ar": "بشوف ناس بعرفهم بالطريق وبسلم عليهم.",
      "en": "I see people I know on the way and greet them.",
+     "p": null,
      "words": [
       {
        "surface": "بشوف",
@@ -230663,6 +228581,7 @@ window.LIBRARY = {
     {
      "ar": "بشتري كل شي وبرجع بسرعة.",
      "en": "I buy everything and come back quickly.",
+     "p": null,
      "words": [
       {
        "surface": "بشتري",
@@ -230790,12 +228709,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "beginner",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بالليل، البيت بيصير هادي.",
      "en": "At night, the house becomes quiet.",
+     "p": null,
      "words": [
       {
        "surface": "بالليل",
@@ -230867,6 +228790,7 @@ window.LIBRARY = {
     {
      "ar": "كل الناس بيناموا بكير.",
      "en": "Everyone sleeps early.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -230938,6 +228862,7 @@ window.LIBRARY = {
     {
      "ar": "بطفي الضو وبفتح الشباك شوي.",
      "en": "I turn off the light and open the window a little.",
+     "p": null,
      "words": [
       {
        "surface": "بطفي",
@@ -231088,39 +229013,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -231131,6 +229024,7 @@ window.LIBRARY = {
     {
      "ar": "الهوا بارد والسما مليانة نجوم.",
      "en": "The air is cool and the sky is full of stars.",
+     "p": null,
      "words": [
       {
        "surface": "الهوا",
@@ -231296,6 +229190,7 @@ window.LIBRARY = {
     {
      "ar": "بسكر عيوني وبنام مبسوط.",
      "en": "I close my eyes and sleep happy.",
+     "p": null,
      "words": [
       {
        "surface": "بسكر",
@@ -231427,12 +229322,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "الصيف الماضي، قررنا نروح عالبحر مع العيلة.",
      "en": "Last summer, we decided to go to the sea with the family.",
+     "p": null,
      "words": [
       {
        "surface": "الصيف",
@@ -231648,6 +229547,7 @@ window.LIBRARY = {
     {
      "ar": "صحينا الصبح بكير وحضرنا الأكل والشراب.",
      "en": "We woke up early in the morning and prepared food and drinks.",
+     "p": null,
      "words": [
       {
        "surface": "صحينا",
@@ -231787,6 +229687,7 @@ window.LIBRARY = {
     {
      "ar": "ركبنا السيارة والطريق كان طويل بس حلو.",
      "en": "We got in the car and the road was long but nice.",
+     "p": null,
      "words": [
       {
        "surface": "ركبنا",
@@ -232060,6 +229961,7 @@ window.LIBRARY = {
     {
      "ar": "لما وصلنا، الولاد نزلوا عالمي على طول.",
      "en": "When we arrived, the kids went into the water right away.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -232231,6 +230133,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا تحت الشمس وأكلنا بطيخ بارد.",
      "en": "We sat under the sun and ate cold watermelon.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -232424,6 +230327,7 @@ window.LIBRARY = {
     {
      "ar": "بعد الظهر، الجو صار أبرد شوي.",
      "en": "In the afternoon, the weather got a bit cooler.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -232548,39 +230452,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -232591,6 +230463,7 @@ window.LIBRARY = {
     {
      "ar": "لعبنا بالرملة وجمعنا صدف.",
      "en": "We played in the sand and collected seashells.",
+     "p": null,
      "words": [
       {
        "surface": "لعبنا",
@@ -232776,6 +230649,7 @@ window.LIBRARY = {
     {
      "ar": "قبل ما نرجع، تفرجنا عالغروب.",
      "en": "Before we went back, we watched the sunset.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -232937,6 +230811,7 @@ window.LIBRARY = {
     {
      "ar": "رجعنا عالبيت تعبانين بس مبسوطين.",
      "en": "We came home tired but happy.",
+     "p": null,
      "words": [
       {
        "surface": "رجعنا",
@@ -233050,6 +230925,7 @@ window.LIBRARY = {
     {
      "ar": "كان يوم ما بننساه.",
      "en": "It was a day we won't forget.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -233131,12 +231007,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أول يوم بالشغل، كنت خايف شوي.",
      "en": "On my first day at work, I was a bit scared.",
+     "p": null,
      "words": [
       {
        "surface": "أول",
@@ -233243,39 +231123,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -233286,6 +231134,7 @@ window.LIBRARY = {
     {
      "ar": "صحيت بكير ولبست أحسن أواعي عندي.",
      "en": "I woke up early and put on my best clothes.",
+     "p": null,
      "words": [
       {
        "surface": "صحيت",
@@ -233517,6 +231366,7 @@ window.LIBRARY = {
     {
      "ar": "وصلت المكتب قبل الوقت بنص ساعة.",
      "en": "I got to the office half an hour early.",
+     "p": null,
      "words": [
       {
        "surface": "وصلت",
@@ -233623,45 +231473,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "15247",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "15247",
-         "root": "س.و.ع",
-         "gloss": "hour;watch",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "15249",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15250",
-         "root": "س.و.ع",
-         "gloss": "The_Day_of_the_Judgment",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15251",
-         "root": "س.و.ع",
-         "gloss": "then",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15252",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15253",
-         "root": "س.و.ع",
-         "gloss": "it_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "saa3a",
        "vocalized": "سَاعَة",
        "vocalized_from": "lexicon:exact"
@@ -233672,6 +231484,7 @@ window.LIBRARY = {
     {
      "ar": "المدير استقبلني وعرفني عالموظفين.",
      "en": "The manager welcomed me and introduced me to the employees.",
+     "p": null,
      "words": [
       {
        "surface": "المدير",
@@ -233753,6 +231566,7 @@ window.LIBRARY = {
     {
      "ar": "كانوا كلهم طيبين وساعدوني كتير.",
      "en": "They were all kind and helped me a lot.",
+     "p": null,
      "words": [
       {
        "surface": "كانوا",
@@ -233914,6 +231728,7 @@ window.LIBRARY = {
     {
      "ar": "بالأول ما كنت بعرف وين الأشيا.",
      "en": "At first I didn't know where things were.",
+     "p": null,
      "words": [
       {
        "surface": "بالأول",
@@ -234083,6 +231898,7 @@ window.LIBRARY = {
     {
      "ar": "بس بعد شوي، تعودت عالشغل.",
      "en": "But after a while, I got used to the work.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -234127,39 +231943,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -234260,6 +232044,7 @@ window.LIBRARY = {
     {
      "ar": "بوقت الغدا، قعدت مع زملائي وحكينا.",
      "en": "At lunchtime, I sat with my colleagues and we talked.",
+     "p": null,
      "words": [
       {
        "surface": "بوقت",
@@ -234401,6 +232186,7 @@ window.LIBRARY = {
     {
      "ar": "آخر النهار، حسيت إني تعلمت كتير.",
      "en": "At the end of the day, I felt I had learned a lot.",
+     "p": null,
      "words": [
       {
        "surface": "آخر",
@@ -234594,6 +232380,7 @@ window.LIBRARY = {
     {
      "ar": "رجعت عالبيت مبسوط ومتحمس لبكرا.",
      "en": "I went home happy and excited for tomorrow.",
+     "p": null,
      "words": [
       {
        "surface": "رجعت",
@@ -234691,12 +232478,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "يوم من الأيام، رجعت عالبيت ولقيت حالي بدون مفتاح.",
      "en": "One day, I came home and found myself without a key.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -234920,6 +232711,7 @@ window.LIBRARY = {
     {
      "ar": "فتشت بجيبي وبالشنطة بس ما لقيته.",
      "en": "I searched my pocket and my bag but didn't find it.",
+     "p": null,
      "words": [
       {
        "surface": "فتشت",
@@ -235069,6 +232861,7 @@ window.LIBRARY = {
     {
      "ar": "تذكرت إني كنت بالسوق قبل شوي.",
      "en": "I remembered I had been at the market a little earlier.",
+     "p": null,
      "words": [
       {
        "surface": "تذكرت",
@@ -235213,39 +233006,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -235256,6 +233017,7 @@ window.LIBRARY = {
     {
      "ar": "رجعت عالسوق ورحت عند كل دكان زرتها.",
      "en": "I went back to the market and visited every shop I'd been to.",
+     "p": null,
      "words": [
       {
        "surface": "رجعت",
@@ -235401,6 +233163,7 @@ window.LIBRARY = {
     {
      "ar": "سألت البياعين إذا حدا لقى مفتاح.",
      "en": "I asked the sellers if anyone had found a key.",
+     "p": null,
      "words": [
       {
        "surface": "سألت",
@@ -235640,6 +233403,7 @@ window.LIBRARY = {
     {
      "ar": "واحد منهم ضحك وطلعلي المفتاح من الدرج.",
      "en": "One of them laughed and took the key out of the drawer.",
+     "p": null,
      "words": [
       {
        "surface": "واحد",
@@ -235841,6 +233605,7 @@ window.LIBRARY = {
     {
      "ar": "قال إني نسيته لما دفعت حق الخضرة.",
      "en": "He said I forgot it when I paid for the vegetables.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -236048,6 +233813,7 @@ window.LIBRARY = {
     {
      "ar": "شكرته كتير ورجعت عالبيت مرتاح.",
      "en": "I thanked him a lot and went home relieved.",
+     "p": null,
      "words": [
       {
        "surface": "شكرته",
@@ -236185,6 +233951,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، بربط المفتاح بخيط بجيبي.",
      "en": "Since that day, I tie the key with a string in my pocket.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -236372,12 +234139,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "الأسبوع الماضي، كان في عرس ابن عمي.",
      "en": "Last week, there was my cousin's wedding.",
+     "p": null,
      "words": [
       {
        "surface": "الأسبوع",
@@ -236575,6 +234346,7 @@ window.LIBRARY = {
     {
      "ar": "العيلة كلها اجتمعت من كل البلاد.",
      "en": "The whole family gathered from all the towns.",
+     "p": null,
      "words": [
       {
        "surface": "العيلة",
@@ -236724,6 +234496,7 @@ window.LIBRARY = {
     {
      "ar": "النسوان حضروا الأكل والحلويات.",
      "en": "The women prepared the food and the sweets.",
+     "p": null,
      "words": [
       {
        "surface": "النسوان",
@@ -236847,6 +234620,7 @@ window.LIBRARY = {
     {
      "ar": "لبسنا أحلى أواعينا ورحنا عالقاعة.",
      "en": "We put on our nicest clothes and went to the hall.",
+     "p": null,
      "words": [
       {
        "surface": "لبسنا",
@@ -237024,6 +234798,7 @@ window.LIBRARY = {
     {
      "ar": "كان في دبكة وغنا وناس كتير.",
      "en": "There was dabke, singing, and lots of people.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -237165,6 +234940,7 @@ window.LIBRARY = {
     {
      "ar": "العروس كانت لابسة أبيض وحلوة كتير.",
      "en": "The bride was wearing white and was very beautiful.",
+     "p": null,
      "words": [
       {
        "surface": "العروس",
@@ -237396,6 +235172,7 @@ window.LIBRARY = {
     {
      "ar": "رقصنا وضحكنا لآخر الليل.",
      "en": "We danced and laughed until late at night.",
+     "p": null,
      "words": [
       {
        "surface": "رقصنا",
@@ -237595,6 +235372,7 @@ window.LIBRARY = {
     {
      "ar": "جدتي كانت أسعد وحدة بالعرس.",
      "en": "My grandmother was the happiest one at the wedding.",
+     "p": null,
      "words": [
       {
        "surface": "جدتي",
@@ -237728,6 +235506,7 @@ window.LIBRARY = {
     {
      "ar": "رجعنا عالبيت تعبانين بس القلب مبسوط.",
      "en": "We went home tired but our hearts were happy.",
+     "p": null,
      "words": [
       {
        "surface": "رجعنا",
@@ -237907,12 +235686,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "جارتنا أم خالد كانت ست كبيرة وطيبة.",
      "en": "Our neighbor Um Khaled was an old and kind lady.",
+     "p": null,
      "words": [
       {
        "surface": "جارتنا",
@@ -237987,33 +235770,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "13642",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "13642",
-         "root": "س.ت.ت",
-         "gloss": "lady;woman",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "13643",
-         "root": "س.ت.ت",
-         "gloss": "housewife;the_lady_who_can_cook_and_clea",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "13644",
-         "root": "س.ت.ت",
-         "gloss": "it_is_an_idiomatic_expression_that_is_us",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "13645",
-         "root": "س.ت.ت",
-         "gloss": "it_is_an_idiomatic_expression_that_is_us",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "sitt",
        "vocalized": "سِتّ",
        "vocalized_from": "lexicon:exact"
@@ -238094,6 +235851,7 @@ window.LIBRARY = {
     {
      "ar": "كل يوم كانت تقعد عالباب وتسلم عالناس.",
      "en": "Every day she used to sit by the door and greet people.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -238289,6 +236047,7 @@ window.LIBRARY = {
     {
      "ar": "كانت تعرف كل واحد بالحارة باسمه.",
      "en": "She knew everyone in the neighborhood by name.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -238412,6 +236171,7 @@ window.LIBRARY = {
     {
      "ar": "لما كنت صغير، كانت تعطيني حلوى.",
      "en": "When I was little, she used to give me sweets.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -238551,6 +236311,7 @@ window.LIBRARY = {
     {
      "ar": "وكانت تحكيلي قصص من زمان.",
      "en": "And she used to tell me stories from the old days.",
+     "p": null,
      "words": [
       {
        "surface": "وكانت",
@@ -238700,6 +236461,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، مرضت وقعدت بالبيت أسبوع.",
      "en": "Once, she got sick and stayed home for a week.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -238845,6 +236607,7 @@ window.LIBRARY = {
     {
      "ar": "كل الجيران زاروها وجابولها أكل.",
      "en": "All the neighbors visited her and brought her food.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -238928,6 +236691,7 @@ window.LIBRARY = {
     {
      "ar": "لما طابت، رجعت تقعد عالباب من جديد.",
      "en": "When she got better, she went back to sitting by the door again.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -239067,6 +236831,7 @@ window.LIBRARY = {
     {
      "ar": "أم خالد كانت روح الحارة كلها.",
      "en": "Um Khaled was the soul of the whole neighborhood.",
+     "p": null,
      "words": [
       {
        "surface": "أم",
@@ -239234,12 +236999,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "لما كنت صغير، كنت أسكن ببيت جدي.",
      "en": "When I was little, I used to live in my grandfather's house.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -239373,6 +237142,7 @@ window.LIBRARY = {
     {
      "ar": "كان البيت قديم وفيه حديقة كبيرة.",
      "en": "The house was old and had a big garden.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -239490,6 +237260,7 @@ window.LIBRARY = {
     {
      "ar": "كل الصبح، كنت أصحى على صوت العصافير.",
      "en": "Every morning, I would wake up to the sound of birds.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -239629,6 +237400,7 @@ window.LIBRARY = {
     {
      "ar": "جدي كان يعلمني كيف أزرع وأسقي الشجر.",
      "en": "My grandfather used to teach me how to plant and water the trees.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -239836,6 +237608,7 @@ window.LIBRARY = {
     {
      "ar": "بعد الظهر، كنت ألعب مع ولاد الحارة.",
      "en": "In the afternoon, I would play with the neighborhood kids.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -239969,6 +237742,7 @@ window.LIBRARY = {
     {
      "ar": "كنا نلعب لآخر النهار ونرجع تعبانين.",
      "en": "We would play until the end of the day and come back tired.",
+     "p": null,
      "words": [
       {
        "surface": "كنا",
@@ -240212,6 +237986,7 @@ window.LIBRARY = {
     {
      "ar": "بالليل، جدتي كانت تطبخ أكل بيتهني.",
      "en": "At night, my grandmother would cook delicious food.",
+     "p": null,
      "words": [
       {
        "surface": "بالليل",
@@ -240353,6 +238128,7 @@ window.LIBRARY = {
     {
      "ar": "كانت أيام بسيطة بس حلوة كتير.",
      "en": "They were simple days but very lovely.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -240494,6 +238270,7 @@ window.LIBRARY = {
     {
      "ar": "لهلأ، بتذكرها وبشتاقلها.",
      "en": "To this day, I remember them and miss them.",
+     "p": null,
      "words": [
       {
        "surface": "لهلأ",
@@ -240599,12 +238376,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "يوم الجمعة، رحنا نزور جدتي بالضيعة.",
      "en": "On Friday, we went to visit my grandmother in the village.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -240798,6 +238579,7 @@ window.LIBRARY = {
     {
      "ar": "الطريق عالضيعة كان طويل وفيه جبال.",
      "en": "The road to the village was long and had mountains.",
+     "p": null,
      "words": [
       {
        "surface": "الطريق",
@@ -241011,6 +238793,7 @@ window.LIBRARY = {
     {
      "ar": "لما وصلنا، جدتي كانت مستنيتنا عالباب.",
      "en": "When we arrived, my grandmother was waiting for us at the door.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -241112,6 +238895,7 @@ window.LIBRARY = {
     {
      "ar": "عزمتنا على غدا كبير طبخته من الصبح.",
      "en": "She invited us to a big lunch she had cooked since morning.",
+     "p": null,
      "words": [
       {
        "surface": "عزمتنا",
@@ -241227,6 +239011,7 @@ window.LIBRARY = {
     {
      "ar": "أكلنا مقلوبة وسلطة وشربنا لبن.",
      "en": "We ate maqluba and salad and drank ayran.",
+     "p": null,
      "words": [
       {
        "surface": "أكلنا",
@@ -241454,6 +239239,7 @@ window.LIBRARY = {
     {
      "ar": "بعد الغدا، قعدنا بالحديقة نشرب شاي.",
      "en": "After lunch, we sat in the garden drinking tea.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -241609,6 +239395,7 @@ window.LIBRARY = {
     {
      "ar": "جدتي حكتلنا عن أيام زمان.",
      "en": "My grandmother told us about the old days.",
+     "p": null,
      "words": [
       {
        "surface": "جدتي",
@@ -241720,6 +239507,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد لعبوا مع القطط بالحوش.",
      "en": "The kids played with the cats in the yard.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -241845,6 +239633,7 @@ window.LIBRARY = {
     {
      "ar": "قبل ما نرجع، عبتلنا جدتي أكل نوخذه.",
      "en": "Before we left, my grandmother packed us food to take.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -242026,6 +239815,7 @@ window.LIBRARY = {
     {
      "ar": "رجعنا عالبيت والقلب مليان محبة.",
      "en": "We went home with our hearts full of love.",
+     "p": null,
      "words": [
       {
        "surface": "رجعنا",
@@ -242183,12 +239973,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "مرة، قطتنا مشمش طلعت من الشباك وضاعت.",
      "en": "Once, our cat Mishmish went out the window and got lost.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -242340,6 +240134,7 @@ window.LIBRARY = {
     {
      "ar": "دورنا عليها بكل الحارة بس ما لقيناها.",
      "en": "We looked for her all over the neighborhood but didn't find her.",
+     "p": null,
      "words": [
       {
        "surface": "دورنا",
@@ -242509,6 +240304,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد زعلوا كتير وبكوا.",
      "en": "The kids got very upset and cried.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -242618,6 +240414,7 @@ window.LIBRARY = {
     {
      "ar": "سألنا الجيران إذا حدا شافها.",
      "en": "We asked the neighbors if anyone had seen her.",
+     "p": null,
      "words": [
       {
        "surface": "سألنا",
@@ -242796,11 +240593,12 @@ window.LIBRARY = {
        "vocalized_from": "derived:affix"
       }
      ],
-     "audio": null
+     "audio": "audio/story-int-08/s3.mp3"
     },
     {
      "ar": "بعد يومين، سمعنا صوت مواء من عالسطح.",
      "en": "After two days, we heard a meowing sound from the roof.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -242970,6 +240768,7 @@ window.LIBRARY = {
     {
      "ar": "طلعنا لفوق ولقينا مشمش خايفة بالزاوية.",
      "en": "We went up and found Mishmish scared in the corner.",
+     "p": null,
      "words": [
       {
        "surface": "طلعنا",
@@ -243201,6 +241000,7 @@ window.LIBRARY = {
     {
      "ar": "نزلناها وأكلناها وسقيناها.",
      "en": "We brought her down, fed her, and gave her water.",
+     "p": null,
      "words": [
       {
        "surface": "نزلناها",
@@ -243250,6 +241050,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، بنسكر الشباك بالليل.",
      "en": "Since that day, we close the window at night.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -243403,6 +241204,7 @@ window.LIBRARY = {
     {
      "ar": "مشمش صارت تقعد جنبنا وما بتحب تطلع.",
      "en": "Mishmish now stays next to us and doesn't like to go out.",
+     "p": null,
      "words": [
       {
        "surface": "مشمش",
@@ -243598,12 +241400,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "قررنا نروح رحلة عالقدس مع الاصحاب.",
      "en": "We decided to take a trip to Jerusalem with our friends.",
+     "p": null,
      "words": [
       {
        "surface": "قررنا",
@@ -243759,6 +241565,7 @@ window.LIBRARY = {
     {
      "ar": "ركبنا الباص الصبح والطريق كان مزدحم.",
      "en": "We took the bus in the morning and the road was crowded.",
+     "p": null,
      "words": [
       {
        "surface": "ركبنا",
@@ -243936,6 +241743,7 @@ window.LIBRARY = {
     {
      "ar": "لما وصلنا، مشينا بالبلد القديمة.",
      "en": "When we arrived, we walked through the old city.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -244087,6 +241895,7 @@ window.LIBRARY = {
     {
      "ar": "الشوارع كانت ضيقة ومليانة دكاكين.",
      "en": "The streets were narrow and full of shops.",
+     "p": null,
      "words": [
       {
        "surface": "الشوارع",
@@ -244208,6 +242017,7 @@ window.LIBRARY = {
     {
      "ar": "اشترينا حلويات وبهارات وريحة الكل حلوة.",
      "en": "We bought sweets and spices and everything smelled nice.",
+     "p": null,
      "words": [
       {
        "surface": "اشترينا",
@@ -244433,6 +242243,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا نشرب قهوة ونتفرج عالناس.",
      "en": "We sat drinking coffee and watching the people.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -244616,6 +242427,7 @@ window.LIBRARY = {
     {
      "ar": "زرنا أماكن قديمة وصورنا صور كتير.",
      "en": "We visited old places and took many pictures.",
+     "p": null,
      "words": [
       {
        "surface": "زرنا",
@@ -244815,6 +242627,7 @@ window.LIBRARY = {
     {
      "ar": "بالمسا، تعشينا فلافل وحمص.",
      "en": "In the evening, we had falafel and hummus for dinner.",
+     "p": null,
      "words": [
       {
        "surface": "بالمسا",
@@ -244976,6 +242789,7 @@ window.LIBRARY = {
     {
      "ar": "رجعنا عالبيت متعبين بس اليوم كان بيستاهل.",
      "en": "We went home tired but the day was worth it.",
+     "p": null,
      "words": [
       {
        "surface": "رجعنا",
@@ -245107,12 +242921,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "كان عندي امتحان مهم يوم الاتنين.",
      "en": "I had an important exam on Monday.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -245268,6 +243086,7 @@ window.LIBRARY = {
     {
      "ar": "درست طول الأسبوع ونمت قليل.",
      "en": "I studied all week and slept little.",
+     "p": null,
      "words": [
       {
        "surface": "درست",
@@ -245521,6 +243340,7 @@ window.LIBRARY = {
     {
      "ar": "ليلة الامتحان، ما قدرت أنام من التوتر.",
      "en": "The night of the exam, I couldn't sleep from the stress.",
+     "p": null,
      "words": [
       {
        "surface": "ليلة",
@@ -245710,6 +243530,7 @@ window.LIBRARY = {
     {
      "ar": "الصبح، شربت قهوة وراجعت شوي.",
      "en": "In the morning, I drank coffee and reviewed a little.",
+     "p": null,
      "words": [
       {
        "surface": "الصبح",
@@ -245844,39 +243665,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -245887,6 +243676,7 @@ window.LIBRARY = {
     {
      "ar": "لما وصلت المدرسة، كل الطلاب كانوا خايفين.",
      "en": "When I got to school, all the students were scared.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -246026,6 +243816,7 @@ window.LIBRARY = {
     {
      "ar": "المعلمة وزعت الأسئلة وقالت ابدأوا.",
      "en": "The teacher handed out the questions and said 'begin.'",
+     "p": null,
      "words": [
       {
        "surface": "المعلمة",
@@ -246241,6 +244032,7 @@ window.LIBRARY = {
     {
      "ar": "بالأول، حسيت إني نسيت كل شي.",
      "en": "At first, I felt I had forgotten everything.",
+     "p": null,
      "words": [
       {
        "surface": "بالأول",
@@ -246428,6 +244220,7 @@ window.LIBRARY = {
     {
      "ar": "بس بعد شوي، هديت وتذكرت الدروس.",
      "en": "But after a while, I calmed down and remembered the lessons.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -246472,39 +244265,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -246639,6 +244400,7 @@ window.LIBRARY = {
     {
      "ar": "خلصت الامتحان وطلعت مرتاح.",
      "en": "I finished the exam and came out relieved.",
+     "p": null,
      "words": [
       {
        "surface": "خلصت",
@@ -246800,6 +244562,7 @@ window.LIBRARY = {
     {
      "ar": "بعد أسبوع، طلعت النتيجة وكنت من الأوائل.",
      "en": "After a week, the results came out and I was among the top.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -246965,12 +244728,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "كنا رايحين رحلة، وفجأة السيارة وقفت بنص الطريق.",
      "en": "We were going on a trip, and suddenly the car stopped in the middle of the road.",
+     "p": null,
      "words": [
       {
        "surface": "كنا",
@@ -247204,6 +244971,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي نزل وفتح غطا السيارة يتفرج.",
      "en": "My dad got out and opened the hood to look.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -247423,6 +245191,7 @@ window.LIBRARY = {
     {
      "ar": "قال إنه في مشكلة بالمي ولازم نستنى.",
      "en": "He said there was a problem with the water and we had to wait.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -247576,6 +245345,7 @@ window.LIBRARY = {
     {
      "ar": "الجو كان سخن والولاد بلشوا يزعلوا.",
      "en": "The weather was hot and the kids started to get upset.",
+     "p": null,
      "words": [
       {
        "surface": "الجو",
@@ -247777,6 +245547,7 @@ window.LIBRARY = {
     {
      "ar": "بعد شوي، وقف جنبنا رجال طيب بسيارته.",
      "en": "After a while, a kind man stopped next to us in his car.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -247805,39 +245576,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -248022,6 +245761,7 @@ window.LIBRARY = {
     {
      "ar": "سأل شو المشكلة وحاول يساعد أبوي.",
      "en": "He asked what the problem was and tried to help my dad.",
+     "p": null,
      "words": [
       {
        "surface": "سأل",
@@ -248235,6 +245975,7 @@ window.LIBRARY = {
     {
      "ar": "جاب مي وصلح السيارة بربع ساعة.",
      "en": "He brought water and fixed the car in fifteen minutes.",
+     "p": null,
      "words": [
       {
        "surface": "جاب",
@@ -248449,45 +246190,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "15247",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "15247",
-         "root": "س.و.ع",
-         "gloss": "hour;watch",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "15249",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15250",
-         "root": "س.و.ع",
-         "gloss": "The_Day_of_the_Judgment",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15251",
-         "root": "س.و.ع",
-         "gloss": "then",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15252",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15253",
-         "root": "س.و.ع",
-         "gloss": "it_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "saa3a",
        "vocalized": "سَاعَة",
        "vocalized_from": "lexicon:exact"
@@ -248498,6 +246201,7 @@ window.LIBRARY = {
     {
      "ar": "شكرناه كتير وكملنا طريقنا.",
      "en": "We thanked him a lot and continued on our way.",
+     "p": null,
      "words": [
       {
        "surface": "شكرناه",
@@ -248643,6 +246347,7 @@ window.LIBRARY = {
     {
      "ar": "تعلمنا يومها إنه لازم نحمل مي زيادة.",
      "en": "That day we learned we should carry extra water.",
+     "p": null,
      "words": [
       {
        "surface": "تعلمنا",
@@ -248888,12 +246593,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "مرة، كنت ماشي بالسوق وشفت وجه بعرفه.",
      "en": "Once, I was walking in the market and saw a face I knew.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -249105,6 +246814,7 @@ window.LIBRARY = {
     {
      "ar": "قربت شوي وعرفت إنه صاحبي القديم زياد.",
      "en": "I got a bit closer and realized it was my old friend Ziad.",
+     "p": null,
      "words": [
       {
        "surface": "قربت",
@@ -249171,39 +246881,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -249358,6 +247036,7 @@ window.LIBRARY = {
     {
      "ar": "ما كنا شفنا بعض من أيام المدرسة.",
      "en": "We hadn't seen each other since our school days.",
+     "p": null,
      "words": [
       {
        "surface": "ما",
@@ -249529,6 +247208,7 @@ window.LIBRARY = {
     {
      "ar": "عانقنا بعض وضحكنا وتذكرنا الأيام.",
      "en": "We hugged and laughed and remembered the old days.",
+     "p": null,
      "words": [
       {
        "surface": "عانقنا",
@@ -249730,6 +247410,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا بقهوة قريبة وحكينا ساعتين.",
      "en": "We sat at a nearby café and talked for two hours.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -249873,6 +247554,7 @@ window.LIBRARY = {
     {
      "ar": "حكالي إنه صار عنده عيلة وولاد.",
      "en": "He told me he now had a family and children.",
+     "p": null,
      "words": [
       {
        "surface": "حكالي",
@@ -250038,6 +247720,7 @@ window.LIBRARY = {
     {
      "ar": "وأنا حكيتله عن شغلي وحياتي.",
      "en": "And I told him about my work and my life.",
+     "p": null,
      "words": [
       {
        "surface": "وأنا",
@@ -250225,6 +247908,7 @@ window.LIBRARY = {
     {
      "ar": "قبل ما نفترق، تبادلنا الأرقام.",
      "en": "Before we parted, we exchanged numbers.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -250330,6 +248014,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، صرنا نشوف بعض كل أسبوع.",
      "en": "Since that day, we started seeing each other every week.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -250589,12 +248274,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "يوم من أيام الشتا، نزلت شتا قوية من الصبح.",
      "en": "One winter day, heavy rain fell from the morning.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -250731,45 +248420,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "27050",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27050",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "27057",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "27065",
-         "root": "ق.و.ي",
-         "gloss": "become_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27066",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27051",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        },
-        {
-         "id": "27052",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2awi",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -250812,6 +248463,7 @@ window.LIBRARY = {
     {
      "ar": "كنت لازم أروح عالشغل بس الطريق كان مليان مي.",
      "en": "I had to go to work but the road was full of water.",
+     "p": null,
      "words": [
       {
        "surface": "كنت",
@@ -251061,6 +248713,7 @@ window.LIBRARY = {
     {
      "ar": "لبست معطف وحملت شمسية وطلعت.",
      "en": "I put on a coat, carried an umbrella, and went out.",
+     "p": null,
      "words": [
       {
        "surface": "لبست",
@@ -251274,6 +248927,7 @@ window.LIBRARY = {
     {
      "ar": "الريح كانت قوية وقلبت الشمسية.",
      "en": "The wind was strong and flipped the umbrella.",
+     "p": null,
      "words": [
       {
        "surface": "الريح",
@@ -251332,45 +248986,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "27050",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27050",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "27057",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "27065",
-         "root": "ق.و.ي",
-         "gloss": "become_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27066",
-         "root": "ق.و.ي",
-         "gloss": "strengthen;make_sth_strong_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "27051",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        },
-        {
-         "id": "27052",
-         "root": "ق.و.ي",
-         "gloss": "strong;malicious;wicked_[auto]",
-         "analysis": "ADJ:P"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "2awi",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -251465,6 +249081,7 @@ window.LIBRARY = {
     {
      "ar": "انبليت كلي بس ضحكت على حالي.",
      "en": "I got completely soaked but laughed at myself.",
+     "p": null,
      "words": [
       {
        "surface": "انبليت",
@@ -251640,6 +249257,7 @@ window.LIBRARY = {
     {
      "ar": "لما وصلت الشغل، زملائي جابولي منشفة وشاي سخن.",
      "en": "When I got to work, my colleagues brought me a towel and hot tea.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -251845,6 +249463,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا نحكي عن الشتا ونضحك.",
      "en": "We sat talking about the rain and laughing.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -252022,6 +249641,7 @@ window.LIBRARY = {
     {
      "ar": "آخر النهار، وقفت الشتا وطلعت الشمس.",
      "en": "At the end of the day, the rain stopped and the sun came out.",
+     "p": null,
      "words": [
       {
        "surface": "آخر",
@@ -252247,6 +249867,7 @@ window.LIBRARY = {
     {
      "ar": "رجعت عالبيت والدنيا صافية وحلوة.",
      "en": "I went home and the world was clear and beautiful.",
+     "p": null,
      "words": [
       {
        "surface": "رجعت",
@@ -252442,12 +250063,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أول مرة حاولت أطبخ لحالي، كانت إمي مسافرة.",
      "en": "The first time I tried to cook by myself, my mom was traveling.",
+     "p": null,
      "words": [
       {
        "surface": "أول",
@@ -252485,35 +250110,15 @@ window.LIBRARY = {
        "surface": "حاولت",
        "root": "ح.و.ل",
        "lemma": "حَاوَل",
-       "form": "حَاوِل",
-       "caphi_raw": "7 aa w i l",
-       "caphi": "7aawil",
+       "form": "حَاوَل",
+       "caphi_raw": "7 aa w a l",
+       "caphi": "7aawal",
        "gloss": "try_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "7357",
+       "analysis": "VERB:P",
+       "maknuune_id": "7373",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "7357",
-         "root": "ح.و.ل",
-         "gloss": "try_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "7373",
-         "root": "ح.و.ل",
-         "gloss": "try_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "7366",
-         "root": "ح.و.ل",
-         "gloss": "try",
-         "analysis": "VERB:I"
-        }
-       ],
-       "caphi_urban": "7aawil",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7aawal",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
       },
@@ -252655,6 +250260,7 @@ window.LIBRARY = {
     {
      "ar": "قررت أعمل مجدرة لأنها سهلة.",
      "en": "I decided to make mujaddara because it's easy.",
+     "p": null,
      "words": [
       {
        "surface": "قررت",
@@ -252838,6 +250444,7 @@ window.LIBRARY = {
     {
      "ar": "غسلت العدس والرز وقطعت البصل.",
      "en": "I washed the lentils and rice and cut the onions.",
+     "p": null,
      "words": [
       {
        "surface": "غسلت",
@@ -253033,6 +250640,7 @@ window.LIBRARY = {
     {
      "ar": "حطيت الزيت عالنار وقليت البصل.",
      "en": "I put oil on the fire and fried the onions.",
+     "p": null,
      "words": [
       {
        "surface": "حطيت",
@@ -253222,6 +250830,7 @@ window.LIBRARY = {
     {
      "ar": "بس نسيت أخفف النار، والبصل احترق شوي.",
      "en": "But I forgot to lower the heat, and the onions burned a little.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -253392,39 +251001,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -253435,6 +251012,7 @@ window.LIBRARY = {
     {
      "ar": "خفت إنه الأكل يخرب، بس كملت.",
      "en": "I was afraid the food would be ruined, but I continued.",
+     "p": null,
      "words": [
       {
        "surface": "خفت",
@@ -253628,6 +251206,7 @@ window.LIBRARY = {
     {
      "ar": "حطيت العدس والرز والمي وستنيت.",
      "en": "I added the lentils, rice, and water and waited.",
+     "p": null,
      "words": [
       {
        "surface": "حطيت",
@@ -253783,6 +251362,7 @@ window.LIBRARY = {
     {
      "ar": "بعد نص ساعة، فتحت الغطا وطلع ريحة حلوة.",
      "en": "After half an hour, I opened the lid and a nice smell came out.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -253827,45 +251407,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "15247",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "15247",
-         "root": "س.و.ع",
-         "gloss": "hour;watch",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "15249",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15250",
-         "root": "س.و.ع",
-         "gloss": "The_Day_of_the_Judgment",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15251",
-         "root": "س.و.ع",
-         "gloss": "then",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15252",
-         "root": "س.و.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "15253",
-         "root": "س.و.ع",
-         "gloss": "it_is_an_idiomatic_expression_that_means",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "saa3a",
        "vocalized": "سَاعَة",
        "vocalized_from": "lexicon:exact"
@@ -254096,6 +251638,7 @@ window.LIBRARY = {
     {
      "ar": "ذقت الأكل وكان طيب أكتر مما توقعت.",
      "en": "I tasted the food and it was better than I expected.",
+     "p": null,
      "words": [
       {
        "surface": "ذقت",
@@ -254325,6 +251868,7 @@ window.LIBRARY = {
     {
      "ar": "لما رجعت إمي، طبختلها وفتخرت فيي.",
      "en": "When my mom came back, I cooked for her and she was proud of me.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -254436,12 +251980,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "ليلة الخميس، اتفقنا نسهر عند صاحبنا سامي.",
      "en": "Thursday night, we agreed to hang out at our friend Sami's place.",
+     "p": null,
      "words": [
       {
        "surface": "ليلة",
@@ -254675,6 +252223,7 @@ window.LIBRARY = {
     {
      "ar": "كل واحد جاب شي: واحد حلويات وواحد فواكه.",
      "en": "Everyone brought something: one sweets and one fruit.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -254848,6 +252397,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا بالصالون نشرب شاي ونحكي.",
      "en": "We sat in the living room drinking tea and talking.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -255011,6 +252561,7 @@ window.LIBRARY = {
     {
      "ar": "حكينا نكت وضحكنا لآخر الليل.",
      "en": "We told jokes and laughed until late at night.",
+     "p": null,
      "words": [
       {
        "surface": "حكينا",
@@ -255264,6 +252815,7 @@ window.LIBRARY = {
     {
      "ar": "سامي طلع العود وصار يعزف ويغني.",
      "en": "Sami got out the oud and started playing and singing.",
+     "p": null,
      "words": [
       {
        "surface": "سامي",
@@ -255284,55 +252836,17 @@ window.LIBRARY = {
       {
        "surface": "طلع",
        "root": "ط.ل.ع",
-       "lemma": "طَلَّع",
-       "form": "طَلِّع",
-       "caphi_raw": "t. a l l i 3",
-       "caphi": "t.alli3",
-       "gloss": "take_sth_or_sb_out;put_sth_outide;fart;break_wind_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "19369",
+       "lemma": "طِلِع",
+       "form": "طِلِع",
+       "caphi_raw": "t. i l i 3",
+       "caphi": "t.ili3",
+       "gloss": "exit;go_out;rise;seem_that_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "19378",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "19369",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "19378",
-         "root": "ط.ل.ع",
-         "gloss": "exit;go_out;rise;seem_that_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19379",
-         "root": "ط.ل.ع",
-         "gloss": "take_sth_or_sb_out;put_sth_outide;fart;b",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "19361",
-         "root": "ط.ل.ع",
-         "gloss": "take_after_sb",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19362",
-         "root": "ط.ل.ع",
-         "gloss": "It_is_an_idiomatic_expression_that_means",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "19364",
-         "root": "ط.ل.ع",
-         "gloss": "sb_is_entitled_to_do_sth;sb_can_do_sth_w",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "t.alli3",
-       "vocalized": "طَلِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "t.ili3",
+       "vocalized": "طِلِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -255451,6 +252965,7 @@ window.LIBRARY = {
     {
      "ar": "كلنا غنينا معه أغاني قديمة.",
      "en": "We all sang old songs with him.",
+     "p": null,
      "words": [
       {
        "surface": "كلنا",
@@ -255602,6 +253117,7 @@ window.LIBRARY = {
     {
      "ar": "بنص الليل، عملنا قهوة وكملنا السهرة.",
      "en": "In the middle of the night, we made coffee and continued the evening.",
+     "p": null,
      "words": [
       {
        "surface": "بنص",
@@ -255809,6 +253325,7 @@ window.LIBRARY = {
     {
      "ar": "نسينا الوقت وصرنا نحكي عن المستقبل.",
      "en": "We lost track of time and started talking about the future.",
+     "p": null,
      "words": [
       {
        "surface": "نسينا",
@@ -256026,6 +253543,7 @@ window.LIBRARY = {
     {
      "ar": "رجعنا عبيوتنا الصبح بدري ومبسوطين.",
      "en": "We went to our homes early in the morning, happy.",
+     "p": null,
      "words": [
       {
        "surface": "رجعنا",
@@ -256125,12 +253643,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "مرة بالسوق، شفت ولد صغير عم يبكي لحاله.",
      "en": "Once at the market, I saw a little boy crying by himself.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -256338,6 +253860,7 @@ window.LIBRARY = {
     {
      "ar": "قربت منه وسألته وين إمه.",
      "en": "I got close to him and asked where his mom was.",
+     "p": null,
      "words": [
       {
        "surface": "قربت",
@@ -256481,6 +254004,7 @@ window.LIBRARY = {
     {
      "ar": "قال إنه ضيع إمه بين الناس.",
      "en": "He said he had lost his mom among the people.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -256610,6 +254134,7 @@ window.LIBRARY = {
     {
      "ar": "مسكت إيده وقلتله ما تخاف، رح نلاقيها.",
      "en": "I held his hand and told him not to be scared, we'd find her.",
+     "p": null,
      "words": [
       {
        "surface": "مسكت",
@@ -256841,6 +254366,7 @@ window.LIBRARY = {
     {
      "ar": "مشينا بين الدكاكين وسألنا الناس عنها.",
      "en": "We walked among the shops and asked people about her.",
+     "p": null,
      "words": [
       {
        "surface": "مشينا",
@@ -257034,6 +254560,7 @@ window.LIBRARY = {
     {
      "ar": "بعد شوي، سمعنا ست عم تنادي عاسم الولد.",
      "en": "After a while, we heard a woman calling the boy's name.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -257062,39 +254589,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -257164,33 +254659,7 @@ window.LIBRARY = {
        "analysis": "NOUN:FS",
        "maknuune_id": "13642",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "13642",
-         "root": "س.ت.ت",
-         "gloss": "lady;woman",
-         "analysis": "NOUN:FS"
-        },
-        {
-         "id": "13643",
-         "root": "س.ت.ت",
-         "gloss": "housewife;the_lady_who_can_cook_and_clea",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "13644",
-         "root": "س.ت.ت",
-         "gloss": "it_is_an_idiomatic_expression_that_is_us",
-         "analysis": "NOUN:PHRASE"
-        },
-        {
-         "id": "13645",
-         "root": "س.ت.ت",
-         "gloss": "it_is_an_idiomatic_expression_that_is_us",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "sitt",
        "vocalized": "سِتّ",
        "vocalized_from": "lexicon:exact"
@@ -257361,6 +254830,7 @@ window.LIBRARY = {
     {
      "ar": "الولد ركض عليها وعانقها.",
      "en": "The boy ran to her and hugged her.",
+     "p": null,
      "words": [
       {
        "surface": "الولد",
@@ -257510,6 +254980,7 @@ window.LIBRARY = {
     {
      "ar": "إمه شكرتني كتير ودمعت عيونها.",
      "en": "His mom thanked me a lot and her eyes teared up.",
+     "p": null,
      "words": [
       {
        "surface": "إمه",
@@ -257653,6 +255124,7 @@ window.LIBRARY = {
     {
      "ar": "مشيت من هناك والقلب مبسوط.",
      "en": "I walked away from there with a happy heart.",
+     "p": null,
      "words": [
       {
        "surface": "مشيت",
@@ -257828,12 +255300,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بآخر الحارة، كان في دكان قديم لأبو سمير.",
      "en": "At the end of the neighborhood, there was an old shop belonging to Abu Samir.",
+     "p": null,
      "words": [
       {
        "surface": "بآخر",
@@ -258035,6 +255511,7 @@ window.LIBRARY = {
     {
      "ar": "الدكان كان صغير بس فيه كل شي.",
      "en": "The shop was small but had everything.",
+     "p": null,
      "words": [
       {
        "surface": "الدكان",
@@ -258168,6 +255645,7 @@ window.LIBRARY = {
     {
      "ar": "أبو سمير كان يعرف كل زبون باسمه.",
      "en": "Abu Samir knew every customer by name.",
+     "p": null,
      "words": [
       {
        "surface": "أبو",
@@ -258353,6 +255831,7 @@ window.LIBRARY = {
     {
      "ar": "لما كنا صغار، كنا نشتري منه حلوى.",
      "en": "When we were little, we used to buy sweets from him.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -258538,6 +256017,7 @@ window.LIBRARY = {
     {
      "ar": "كان دايما يعطينا قطعة زيادة ويضحك.",
      "en": "He always used to give us an extra piece and smile.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -258683,6 +256163,7 @@ window.LIBRARY = {
     {
      "ar": "مرة، ما كان معي مصاري وحبيت شوكولاتة.",
      "en": "Once, I had no money and wanted chocolate.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -258828,6 +256309,7 @@ window.LIBRARY = {
     {
      "ar": "أبو سمير عطاني ياها وقال ادفع بكرا.",
      "en": "Abu Samir gave it to me and said pay tomorrow.",
+     "p": null,
      "words": [
       {
        "surface": "أبو",
@@ -258947,55 +256429,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "ادفع",
@@ -259033,6 +256477,7 @@ window.LIBRARY = {
     {
      "ar": "بعد سنين، الدكان سكر بس بنتذكره.",
      "en": "After years, the shop closed but we remember it.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -259188,6 +256633,7 @@ window.LIBRARY = {
     {
      "ar": "أبو سمير كان أكتر من بياع، كان صاحب.",
      "en": "Abu Samir was more than a seller, he was a friend.",
+     "p": null,
      "words": [
       {
        "surface": "أبو",
@@ -259431,12 +256877,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "قررنا نطلع عالجبل نتمشى بيوم عطلة.",
      "en": "We decided to climb the mountain to hike on a day off.",
+     "p": null,
      "words": [
       {
        "surface": "قررنا",
@@ -259676,6 +257126,7 @@ window.LIBRARY = {
     {
      "ar": "حملنا مي وأكل ولبسنا كنادر مريحة.",
      "en": "We carried water and food and wore comfortable shoes.",
+     "p": null,
      "words": [
       {
        "surface": "حملنا",
@@ -259921,6 +257372,7 @@ window.LIBRARY = {
     {
      "ar": "الطلعة كانت صعبة والجو كان بارد.",
      "en": "The climb was hard and the weather was cold.",
+     "p": null,
      "words": [
       {
        "surface": "الطلعة",
@@ -260114,6 +257566,7 @@ window.LIBRARY = {
     {
      "ar": "بس المنظر من فوق كان بيوخذ العقل.",
      "en": "But the view from the top was breathtaking.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -260194,45 +257647,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "24923",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "24923",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "ADV"
-        },
-        {
-         "id": "24924",
-         "root": "ف.و.ق",
-         "gloss": "above;up",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "24933",
-         "root": "ف.و.ق",
-         "gloss": "exceed;surpass",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "24927",
-         "root": "ف.و.ق",
-         "gloss": "when_pigs_fly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24928",
-         "root": "ف.و.ق",
-         "gloss": "to_do_sth_in_a_hurry_and_not_duly",
-         "analysis": "ADV:PHRASE"
-        },
-        {
-         "id": "24929",
-         "root": "ف.و.ق",
-         "gloss": "very_crowded",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "foo2",
        "vocalized": "فَوق",
        "vocalized_from": "lexicon:exact"
@@ -260343,6 +257758,7 @@ window.LIBRARY = {
     {
      "ar": "شفنا الضيع الصغيرة والشجر الأخضر.",
      "en": "We saw the small villages and the green trees.",
+     "p": null,
      "words": [
       {
        "surface": "شفنا",
@@ -260560,6 +257976,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا عصخرة كبيرة وأكلنا وارتحنا.",
      "en": "We sat on a big rock, ate, and rested.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -260703,6 +258120,7 @@ window.LIBRARY = {
     {
      "ar": "الهوا كان نقي والدنيا هادية.",
      "en": "The air was fresh and the world was quiet.",
+     "p": null,
      "words": [
       {
        "surface": "الهوا",
@@ -260849,27 +258267,7 @@ window.LIBRARY = {
        "analysis": "ADJ:MS",
        "maknuune_id": "34207",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "34207",
-         "root": "ه.د.ي",
-         "gloss": "calm",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "34212",
-         "root": "ه.د.ي",
-         "gloss": "sb_is_about_to_begin_a_new_task/job/miss",
-         "analysis": "ADJ:PHRASE"
-        },
-        {
-         "id": "33886",
-         "root": "NTWS",
-         "gloss": "this",
-         "analysis": "PRON_DEM:FS"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "haadi",
        "vocalized": null,
        "vocalized_from": "unvocalized:unknown-suffix"
@@ -260880,6 +258278,7 @@ window.LIBRARY = {
     {
      "ar": "قبل الغروب، بلشنا ننزل عالبيت.",
      "en": "Before sunset, we started going down home.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -261017,6 +258416,7 @@ window.LIBRARY = {
     {
      "ar": "رجعنا تعبانين بس مليانين طاقة.",
      "en": "We came back tired but full of energy.",
+     "p": null,
      "words": [
       {
        "surface": "رجعنا",
@@ -261194,12 +258594,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "الشهر الماضي، سكن جنبنا جار جديد.",
      "en": "Last month, a new neighbor moved in next to us.",
+     "p": null,
      "words": [
       {
        "surface": "الشهر",
@@ -261431,6 +258835,7 @@ window.LIBRARY = {
     {
      "ar": "بالأول، ما كنا نعرف عنه إشي.",
      "en": "At first, we didn't know anything about him.",
+     "p": null,
      "words": [
       {
        "surface": "بالأول",
@@ -261604,6 +259009,7 @@ window.LIBRARY = {
     {
      "ar": "إمي قالت لازم نرحب فيه متل ما بتعمل الناس.",
      "en": "My mom said we should welcome him like people do.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -261813,6 +259219,7 @@ window.LIBRARY = {
     {
      "ar": "طبخت صحن أكل وبعتتني أوديه عنده.",
      "en": "She cooked a plate of food and sent me to take it to him.",
+     "p": null,
      "words": [
       {
        "surface": "طبخت",
@@ -262030,6 +259437,7 @@ window.LIBRARY = {
     {
      "ar": "دقيت الباب وقدمتله الصحن ورحبت فيه.",
      "en": "I knocked on the door, gave him the plate, and welcomed him.",
+     "p": null,
      "words": [
       {
        "surface": "دقيت",
@@ -262201,6 +259609,7 @@ window.LIBRARY = {
     {
      "ar": "فرح كتير وقال إنه لسا جديد بالبلد.",
      "en": "He was very happy and said he was new to the town.",
+     "p": null,
      "words": [
       {
        "surface": "فرح",
@@ -262276,55 +259685,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "إنه",
@@ -262396,6 +259767,7 @@ window.LIBRARY = {
     {
      "ar": "بعد يومين، رد علينا بصحن حلويات.",
      "en": "After two days, he returned the gesture with a plate of sweets.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -262513,6 +259885,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، صار من أحسن جيراننا.",
      "en": "Since that day, he became one of our best neighbors.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -262692,6 +260065,7 @@ window.LIBRARY = {
     {
      "ar": "تعلمنا إنه ترحيب صغير بيفتح قلوب كبيرة.",
      "en": "We learned that a small welcome opens big hearts.",
+     "p": null,
      "words": [
       {
        "surface": "تعلمنا",
@@ -262871,12 +260245,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "صاحبي عطاني كتاب وقال لازم تقراه.",
      "en": "My friend gave me a book and said I had to read it.",
+     "p": null,
      "words": [
       {
        "surface": "صاحبي",
@@ -262966,55 +260344,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "لازم",
@@ -263092,6 +260432,7 @@ window.LIBRARY = {
     {
      "ar": "بالأول، ما كنت متحمس كتير.",
      "en": "At first, I wasn't very excited.",
+     "p": null,
      "words": [
       {
        "surface": "بالأول",
@@ -263211,6 +260552,7 @@ window.LIBRARY = {
     {
      "ar": "بس أول ما بلشت، ما قدرت أوقف.",
      "en": "But as soon as I started, I couldn't stop.",
+     "p": null,
      "words": [
       {
        "surface": "بس",
@@ -263344,6 +260686,7 @@ window.LIBRARY = {
     {
      "ar": "القصة كانت عن ولد عاش بضيعة صغيرة.",
      "en": "The story was about a boy who lived in a small village.",
+     "p": null,
      "words": [
       {
        "surface": "القصة",
@@ -263541,6 +260884,7 @@ window.LIBRARY = {
     {
      "ar": "كل ليلة، كنت أقرا فصل قبل ما أنام.",
      "en": "Every night, I would read a chapter before sleeping.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -263752,6 +261096,7 @@ window.LIBRARY = {
     {
      "ar": "حسيت إني عايش مع الشخصيات بالكتاب.",
      "en": "I felt like I was living with the characters in the book.",
+     "p": null,
      "words": [
       {
        "surface": "حسيت",
@@ -263907,6 +261252,7 @@ window.LIBRARY = {
     {
      "ar": "بالآخر، القصة خلصت بشكل ما توقعته.",
      "en": "In the end, the story finished in a way I didn't expect.",
+     "p": null,
      "words": [
       {
        "surface": "بالآخر",
@@ -264092,6 +261438,7 @@ window.LIBRARY = {
     {
      "ar": "سكرت الكتاب وقعدت أفكر فيه.",
      "en": "I closed the book and sat thinking about it.",
+     "p": null,
      "words": [
       {
        "surface": "سكرت",
@@ -264281,6 +261628,7 @@ window.LIBRARY = {
     {
      "ar": "رجعت الكتاب لصاحبي وقلتله شكرا.",
      "en": "I returned the book to my friend and thanked him.",
+     "p": null,
      "words": [
       {
        "surface": "رجعت",
@@ -264442,6 +261790,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، صرت أحب القراية أكتر.",
      "en": "Since that day, I started to love reading more.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -264659,12 +262008,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "يوم الجمعة، عزمنا عمي وعيلته عالغدا.",
      "en": "On Friday, we invited my uncle and his family for lunch.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -264842,6 +262195,7 @@ window.LIBRARY = {
     {
      "ar": "إمي قامت الصبح بكير وبلشت تطبخ.",
      "en": "My mom got up early in the morning and started cooking.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -265035,6 +262389,7 @@ window.LIBRARY = {
     {
      "ar": "طبخت مقلوبة وورق عنب وسلطات.",
      "en": "She cooked maqluba, stuffed grape leaves, and salads.",
+     "p": null,
      "words": [
       {
        "surface": "طبخت",
@@ -265218,6 +262573,7 @@ window.LIBRARY = {
     {
      "ar": "ريحة الأكل ملت البيت كله.",
      "en": "The smell of food filled the whole house.",
+     "p": null,
      "words": [
       {
        "surface": "ريحة",
@@ -265331,6 +262687,7 @@ window.LIBRARY = {
     {
      "ar": "لما إجوا، رحبنا فيهم وقعدناهم بالصالون.",
      "en": "When they came, we welcomed them and seated them in the living room.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -265452,6 +262809,7 @@ window.LIBRARY = {
     {
      "ar": "قدمنا القهوة والولاد لعبوا مع بعض.",
      "en": "We served coffee and the kids played together.",
+     "p": null,
      "words": [
       {
        "surface": "قدمنا",
@@ -265651,6 +263009,7 @@ window.LIBRARY = {
     {
      "ar": "بوقت الغدا، قعدنا كلنا حول الطاولة.",
      "en": "At lunchtime, we all sat around the table.",
+     "p": null,
      "words": [
       {
        "surface": "بوقت",
@@ -265806,6 +263165,7 @@ window.LIBRARY = {
     {
      "ar": "الأكل كان بيتهني والحكي ما وقف.",
      "en": "The food was delicious and the talking didn't stop.",
+     "p": null,
      "words": [
       {
        "surface": "الأكل",
@@ -265935,6 +263295,7 @@ window.LIBRARY = {
     {
      "ar": "بعد الغدا، شربنا شاي وأكلنا حلويات.",
      "en": "After lunch, we drank tea and ate sweets.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -266114,6 +263475,7 @@ window.LIBRARY = {
     {
      "ar": "راحوا آخر النهار والبيت كان مليان فرح.",
      "en": "They left at the end of the day and the house was full of joy.",
+     "p": null,
      "words": [
       {
        "surface": "راحوا",
@@ -266417,12 +263779,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "مرة، طلب مني جدي أروح عالضيعة أجيبله دوا.",
      "en": "Once, my grandfather asked me to go to the village to get him medicine.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -266648,6 +264014,7 @@ window.LIBRARY = {
     {
      "ar": "ركبت الباص الصبح والطريق كان طويل.",
      "en": "I took the bus in the morning and the road was long.",
+     "p": null,
      "words": [
       {
        "surface": "ركبت",
@@ -266853,6 +264220,7 @@ window.LIBRARY = {
     {
      "ar": "نزلت بالضيعة وسألت عن الصيدلية.",
      "en": "I got off in the village and asked about the pharmacy.",
+     "p": null,
      "words": [
       {
        "surface": "نزلت",
@@ -266992,6 +264360,7 @@ window.LIBRARY = {
     {
      "ar": "رجال طيب دلني عليها ومشى معي شوي.",
      "en": "A kind man showed me to it and walked with me a bit.",
+     "p": null,
      "words": [
       {
        "surface": "رجال",
@@ -267194,39 +264563,7 @@ window.LIBRARY = {
        "analysis": "ADV",
        "maknuune_id": "17238",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "17238",
-         "root": "ش.و.ي",
-         "gloss": "a_little_bit",
-         "analysis": "ADV"
-        },
-        {
-         "id": "17239",
-         "root": "ش.و.ي",
-         "gloss": "grilling;barbecue",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "17244",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "17241",
-         "root": "ش.و.ي",
-         "gloss": "grill_[auto]",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "17242",
-         "root": "ش.و.ي",
-         "gloss": "grill",
-         "analysis": "VERB:I"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "shwayy",
        "vocalized": "شْوَيّ",
        "vocalized_from": "lexicon:exact"
@@ -267237,6 +264574,7 @@ window.LIBRARY = {
     {
      "ar": "اشتريت الدوا وشكرت الصيدلي.",
      "en": "I bought the medicine and thanked the pharmacist.",
+     "p": null,
      "words": [
       {
        "surface": "اشتريت",
@@ -267392,6 +264730,7 @@ window.LIBRARY = {
     {
      "ar": "قبل ما أرجع، مريت عالسوق وشريت خضرة.",
      "en": "Before going back, I passed by the market and bought vegetables.",
+     "p": null,
      "words": [
       {
        "surface": "قبل",
@@ -267559,6 +264898,7 @@ window.LIBRARY = {
     {
      "ar": "الناس بالضيعة كانوا بسطاء وطيبين.",
      "en": "The people in the village were simple and kind.",
+     "p": null,
      "words": [
       {
        "surface": "الناس",
@@ -267696,6 +265036,7 @@ window.LIBRARY = {
     {
      "ar": "رجعت عالبيت بالمسا ومعي الدوا والخضرة.",
      "en": "I went home in the evening with the medicine and the vegetables.",
+     "p": null,
      "words": [
       {
        "surface": "رجعت",
@@ -267833,6 +265174,7 @@ window.LIBRARY = {
     {
      "ar": "جدي فرح فيي كتير ودعالي.",
      "en": "My grandfather was very happy with me and blessed me.",
+     "p": null,
      "words": [
       {
        "surface": "جدي",
@@ -267968,12 +265310,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "ليلة العيد، البيت كان مليان حركة.",
      "en": "The night of Eid, the house was full of activity.",
+     "p": null,
      "words": [
       {
        "surface": "ليلة",
@@ -268111,6 +265457,7 @@ window.LIBRARY = {
     {
      "ar": "إمي كانت تخبز كعك وتحضر الحلويات.",
      "en": "My mom was baking ka'ak and preparing the sweets.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -268328,6 +265675,7 @@ window.LIBRARY = {
     {
      "ar": "إحنا الولاد، كنا نساعد ونذوق سرا.",
      "en": "We kids used to help and taste secretly.",
+     "p": null,
      "words": [
       {
        "surface": "إحنا",
@@ -268487,6 +265835,7 @@ window.LIBRARY = {
     {
      "ar": "أبوي جاب لكل واحد أواعي جديدة.",
      "en": "My dad brought each of us new clothes.",
+     "p": null,
      "words": [
       {
        "surface": "أبوي",
@@ -268718,6 +266067,7 @@ window.LIBRARY = {
     {
      "ar": "الصبح، لبسنا الجديد ورحنا نسلم عالأهل.",
      "en": "In the morning, we wore the new clothes and went to greet the relatives.",
+     "p": null,
      "words": [
       {
        "surface": "الصبح",
@@ -268935,6 +266285,7 @@ window.LIBRARY = {
     {
      "ar": "كل واحد كان يعطينا عيدية ومصاري.",
      "en": "Everyone would give us Eid gifts and money.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -269080,6 +266431,7 @@ window.LIBRARY = {
     {
      "ar": "بعدين، رحنا عالحديقة نلعب مع الولاد.",
      "en": "Then, we went to the garden to play with the kids.",
+     "p": null,
      "words": [
       {
        "surface": "بعدين",
@@ -269261,6 +266613,7 @@ window.LIBRARY = {
     {
      "ar": "بالمسا، اجتمعت العيلة كلها عالعشا.",
      "en": "In the evening, the whole family gathered for dinner.",
+     "p": null,
      "words": [
       {
        "surface": "بالمسا",
@@ -269420,6 +266773,7 @@ window.LIBRARY = {
     {
      "ar": "كانت أحلى ليلة بالسنة كلها.",
      "en": "It was the nicest night in the whole year.",
+     "p": null,
      "words": [
       {
        "surface": "كانت",
@@ -269533,12 +266887,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "بأيام الخريف، رحنا نقطف زيتون ببيارة عمي.",
      "en": "In the fall days, we went to pick olives at my uncle's orchard.",
+     "p": null,
      "words": [
       {
        "surface": "بأيام",
@@ -269730,6 +267088,7 @@ window.LIBRARY = {
     {
      "ar": "صحينا بكير لأنه القطاف بدو وقت.",
      "en": "We woke up early because picking takes time.",
+     "p": null,
      "words": [
       {
        "surface": "صحينا",
@@ -269831,6 +267190,7 @@ window.LIBRARY = {
     {
      "ar": "فرشنا شراشف تحت الشجر وبلشنا نقطف.",
      "en": "We spread sheets under the trees and started picking.",
+     "p": null,
      "words": [
       {
        "surface": "فرشنا",
@@ -270038,6 +267398,7 @@ window.LIBRARY = {
     {
      "ar": "الشغل كان تعبان بس الجو كان حلو.",
      "en": "The work was tiring but the weather was nice.",
+     "p": null,
      "words": [
       {
        "surface": "الشغل",
@@ -270261,6 +267622,7 @@ window.LIBRARY = {
     {
      "ar": "بوقت الغدا، أكلنا خبز وزيت وزعتر تحت الشجر.",
      "en": "At lunchtime, we ate bread, oil, and za'tar under the trees.",
+     "p": null,
      "words": [
       {
        "surface": "بوقت",
@@ -270518,6 +267880,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد كانوا يلعبوا ويجمعوا الزيتون اللي وقع.",
      "en": "The kids were playing and gathering the olives that fell.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -270684,55 +268047,17 @@ window.LIBRARY = {
       {
        "surface": "وقع",
        "root": "و.ق.ع",
-       "lemma": "وَقَّع",
-       "form": "وَقِّع",
-       "caphi_raw": "w a Q Q i 3",
-       "caphi": "waQQi3",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "35899",
+       "lemma": "وِقِع",
+       "form": "وِقِع",
+       "caphi_raw": "w i Q i 3",
+       "caphi": "wiQi3",
+       "gloss": "fall_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "35906",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "35899",
-         "root": "و.ق.ع",
-         "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "35906",
-         "root": "و.ق.ع",
-         "gloss": "fall_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35907",
-         "root": "و.ق.ع",
-         "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35893",
-         "root": "و.ق.ع",
-         "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "35894",
-         "root": "و.ق.ع",
-         "gloss": "sb_was_made_a_scapegoat_for_what_happene",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "35896",
-         "root": "و.ق.ع",
-         "gloss": "lest_you_fall_down",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "wa22i3",
-       "vocalized": "وَقِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "wi2i3",
+       "vocalized": "وِقِع",
        "vocalized_from": "lexicon:exact"
       }
      ],
@@ -270741,6 +268066,7 @@ window.LIBRARY = {
     {
      "ar": "آخر النهار، جمعنا أكياس كتير.",
      "en": "At the end of the day, we gathered many bags.",
+     "p": null,
      "words": [
       {
        "surface": "آخر",
@@ -270904,6 +268230,7 @@ window.LIBRARY = {
     {
      "ar": "أخذنا الزيتون عالمعصرة نعمله زيت.",
      "en": "We took the olives to the press to make oil.",
+     "p": null,
      "words": [
       {
        "surface": "أخذنا",
@@ -271157,6 +268484,7 @@ window.LIBRARY = {
     {
      "ar": "ريحة الزيت الجديد ما في أحلى منها.",
      "en": "There's nothing nicer than the smell of new oil.",
+     "p": null,
      "words": [
       {
        "surface": "ريحة",
@@ -271314,6 +268642,7 @@ window.LIBRARY = {
     {
      "ar": "رجعنا تعبانين بس البيت مليان بركة.",
      "en": "We came back tired but the house was full of blessing.",
+     "p": null,
      "words": [
       {
        "surface": "رجعنا",
@@ -271513,12 +268842,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "مرة، جدتي تعبت ورحنا فيها عالمستشفى.",
      "en": "Once, my grandmother got sick and we took her to the hospital.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -271660,6 +268993,7 @@ window.LIBRARY = {
     {
      "ar": "كنا خايفين عليها كتير.",
      "en": "We were very worried about her.",
+     "p": null,
      "words": [
       {
        "surface": "كنا",
@@ -271731,6 +269065,7 @@ window.LIBRARY = {
     {
      "ar": "الدكتور فحصها وقال إنه ما في خطر.",
      "en": "The doctor examined her and said there was no danger.",
+     "p": null,
      "words": [
       {
        "surface": "الدكتور",
@@ -271820,55 +269155,17 @@ window.LIBRARY = {
        "surface": "وقال",
        "root": "ق.و.ل",
        "lemma": "قَال",
-       "form": "قَال",
-       "caphi_raw": "Q aa l",
-       "caphi": "Qaal",
+       "form": "قُول",
+       "caphi_raw": "Q uu l",
+       "caphi": "Quul",
        "gloss": "say_[auto]",
-       "analysis": "VERB:P",
-       "maknuune_id": "27011",
+       "analysis": "VERB:C",
+       "maknuune_id": "27004",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "27011",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "26994",
-         "root": "ق.و.ل",
-         "gloss": "gossip",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26995",
-         "root": "ق.و.ل",
-         "gloss": "Unbelievable!",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26996",
-         "root": "ق.و.ل",
-         "gloss": "It_is_an_expression_that_the_speaker_say",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "26998",
-         "root": "ق.و.ل",
-         "gloss": "care_about",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "27004",
-         "root": "ق.و.ل",
-         "gloss": "say_[auto]",
-         "analysis": "VERB:C"
-        }
-       ],
-       "caphi_urban": "2aal",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "2uul",
        "vocalized": null,
-       "vocalized_from": "unvocalized:unknown-prefix"
+       "vocalized_from": "unvocalized:no-alignment"
       },
       {
        "surface": "إنه",
@@ -271978,6 +269275,7 @@ window.LIBRARY = {
     {
      "ar": "قال إنها بس تعبانة وبدها راحة.",
      "en": "He said she was just tired and needed rest.",
+     "p": null,
      "words": [
       {
        "surface": "قال",
@@ -272145,6 +269443,7 @@ window.LIBRARY = {
     {
      "ar": "ارتحنا كلنا لما سمعنا الحكي.",
      "en": "We all felt relieved when we heard that.",
+     "p": null,
      "words": [
       {
        "surface": "ارتحنا",
@@ -272294,6 +269593,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا جنبها بالغرفة وحكينا معها.",
      "en": "We sat next to her in the room and talked with her.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -272457,6 +269757,7 @@ window.LIBRARY = {
     {
      "ar": "بعد يومين، طابت ورجعناها عالبيت.",
      "en": "After two days, she got better and we took her home.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -272562,6 +269863,7 @@ window.LIBRARY = {
     {
      "ar": "طبخنالها أكل خفيف وقعدنا نهتم فيها.",
      "en": "We cooked her light food and took care of her.",
+     "p": null,
      "words": [
       {
        "surface": "طبخنالها",
@@ -272715,6 +270017,7 @@ window.LIBRARY = {
     {
      "ar": "بعد أسبوع، رجعت متل ما كانت.",
      "en": "After a week, she went back to how she was.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -272876,6 +270179,7 @@ window.LIBRARY = {
     {
      "ar": "تعلمنا يومها إنه الصحة أغلى شي.",
      "en": "That day we learned that health is the most precious thing.",
+     "p": null,
      "words": [
       {
        "surface": "تعلمنا",
@@ -273107,12 +270411,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "أول مرة ركبت قطار، كنت متحمس كتير.",
      "en": "The first time I rode a train, I was very excited.",
+     "p": null,
      "words": [
       {
        "surface": "أول",
@@ -273270,6 +270578,7 @@ window.LIBRARY = {
     {
      "ar": "وصلت المحطة بكير وقعدت أستنى.",
      "en": "I got to the station early and sat waiting.",
+     "p": null,
      "words": [
       {
        "surface": "وصلت",
@@ -273391,6 +270700,7 @@ window.LIBRARY = {
     {
      "ar": "لما إجا القطار، ركبت وقعدت جنب الشباك.",
      "en": "When the train came, I got on and sat by the window.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -273562,6 +270872,7 @@ window.LIBRARY = {
     {
      "ar": "بلش القطار يمشي والمنظر يتغير.",
      "en": "The train started moving and the scenery changed.",
+     "p": null,
      "words": [
       {
        "surface": "بلش",
@@ -273727,6 +271038,7 @@ window.LIBRARY = {
     {
      "ar": "شفت حقول وبيوت وجبال بتمر بسرعة.",
      "en": "I saw fields, houses, and mountains passing by quickly.",
+     "p": null,
      "words": [
       {
        "surface": "شفت",
@@ -273884,6 +271196,7 @@ window.LIBRARY = {
     {
      "ar": "جنبي قعد رجال كبير وحكالي عن سفراته.",
      "en": "Next to me sat an old man who told me about his travels.",
+     "p": null,
      "words": [
       {
        "surface": "جنبي",
@@ -274057,6 +271370,7 @@ window.LIBRARY = {
     {
      "ar": "الوقت مر بسرعة ونحنا عم نحكي.",
      "en": "Time passed quickly while we were talking.",
+     "p": null,
      "words": [
       {
        "surface": "الوقت",
@@ -274262,6 +271576,7 @@ window.LIBRARY = {
     {
      "ar": "لما وصلت، ودعت الرجال وشكرته.",
      "en": "When I arrived, I said goodbye to the man and thanked him.",
+     "p": null,
      "words": [
       {
        "surface": "لما",
@@ -274405,6 +271720,7 @@ window.LIBRARY = {
     {
      "ar": "رحلة القطار خلتني أحب السفر أكتر.",
      "en": "The train trip made me love traveling more.",
+     "p": null,
      "words": [
       {
        "surface": "رحلة",
@@ -274584,12 +271900,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "مرة، كنت بساعد إمي بغسيل الصحون.",
      "en": "Once, I was helping my mom wash the dishes.",
+     "p": null,
      "words": [
       {
        "surface": "مرة",
@@ -274666,21 +271986,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "22565",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "22565",
-         "root": "غ.س.ل",
-         "gloss": "washing;laundry",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "22569",
-         "root": "غ.س.ل",
-         "gloss": "well-groomed",
-         "analysis": "NOUN:PHRASE"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "ghasiil",
        "vocalized": "بَغَسِيل",
        "vocalized_from": "derived:verb"
@@ -274705,6 +272011,7 @@ window.LIBRARY = {
     {
      "ar": "وأنا بغسل، وقع مني فنجان قهوة وانكسر.",
      "en": "While washing, a coffee cup fell from me and broke.",
+     "p": null,
      "words": [
       {
        "surface": "وأنا",
@@ -274793,55 +272100,17 @@ window.LIBRARY = {
       {
        "surface": "وقع",
        "root": "و.ق.ع",
-       "lemma": "وَقَّع",
-       "form": "وَقِّع",
-       "caphi_raw": "w a Q Q i 3",
-       "caphi": "waQQi3",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "35899",
+       "lemma": "وِقِع",
+       "form": "وِقِع",
+       "caphi_raw": "w i Q i 3",
+       "caphi": "wiQi3",
+       "gloss": "fall_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "35906",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "35899",
-         "root": "و.ق.ع",
-         "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "35906",
-         "root": "و.ق.ع",
-         "gloss": "fall_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35907",
-         "root": "و.ق.ع",
-         "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35893",
-         "root": "و.ق.ع",
-         "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "35894",
-         "root": "و.ق.ع",
-         "gloss": "sb_was_made_a_scapegoat_for_what_happene",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "35896",
-         "root": "و.ق.ع",
-         "gloss": "lest_you_fall_down",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "wa22i3",
-       "vocalized": "وَقِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "wi2i3",
+       "vocalized": "وِقِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -274960,6 +272229,7 @@ window.LIBRARY = {
     {
      "ar": "الفنجان كان قديم وغالي على إمي.",
      "en": "The cup was old and precious to my mom.",
+     "p": null,
      "words": [
       {
        "surface": "الفنجان",
@@ -275115,6 +272385,7 @@ window.LIBRARY = {
     {
      "ar": "خفت كتير وما عرفت شو أقول.",
      "en": "I got very scared and didn't know what to say.",
+     "p": null,
      "words": [
       {
        "surface": "خفت",
@@ -275308,6 +272579,7 @@ window.LIBRARY = {
     {
      "ar": "رحت لإمي وقلتلها الحقيقة.",
      "en": "I went to my mom and told her the truth.",
+     "p": null,
      "words": [
       {
        "surface": "رحت",
@@ -275397,6 +272669,7 @@ window.LIBRARY = {
     {
      "ar": "توقعت إنها تزعل، بس هي بس ابتسمت.",
      "en": "I expected her to be upset, but she just smiled.",
+     "p": null,
      "words": [
       {
        "surface": "توقعت",
@@ -275626,6 +272899,7 @@ window.LIBRARY = {
     {
      "ar": "قالت إنه الأشيا بتنكسر، بس الصدق أهم.",
      "en": "She said things break, but honesty is more important.",
+     "p": null,
      "words": [
       {
        "surface": "قالت",
@@ -275765,6 +273039,7 @@ window.LIBRARY = {
     {
      "ar": "ارتحت كتير لما سمعت حكيها.",
      "en": "I felt very relieved when I heard her words.",
+     "p": null,
      "words": [
       {
        "surface": "ارتحت",
@@ -275926,6 +273201,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، بحاول أكون صادق دايما.",
      "en": "Since that day, I try to always be honest.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -276143,12 +273419,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "صبح يوم، لقينا عصفور صغير وقع من عشه.",
      "en": "One morning, we found a little bird that had fallen from its nest.",
+     "p": null,
      "words": [
       {
        "surface": "صبح",
@@ -276297,55 +273577,17 @@ window.LIBRARY = {
       {
        "surface": "وقع",
        "root": "و.ق.ع",
-       "lemma": "وَقَّع",
-       "form": "وَقِّع",
-       "caphi_raw": "w a Q Q i 3",
-       "caphi": "waQQi3",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
-       "analysis": "VERB:C",
-       "maknuune_id": "35899",
+       "lemma": "وِقِع",
+       "form": "وِقِع",
+       "caphi_raw": "w i Q i 3",
+       "caphi": "wiQi3",
+       "gloss": "fall_[auto]",
+       "analysis": "VERB:P",
+       "maknuune_id": "35906",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "35899",
-         "root": "و.ق.ع",
-         "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "35906",
-         "root": "و.ق.ع",
-         "gloss": "fall_[auto]",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35907",
-         "root": "و.ق.ع",
-         "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "35893",
-         "root": "و.ق.ع",
-         "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "35894",
-         "root": "و.ق.ع",
-         "gloss": "sb_was_made_a_scapegoat_for_what_happene",
-         "analysis": "VERB:PHRASE"
-        },
-        {
-         "id": "35896",
-         "root": "و.ق.ع",
-         "gloss": "lest_you_fall_down",
-         "analysis": "VERB:PHRASE"
-        }
-       ],
-       "caphi_urban": "wa22i3",
-       "vocalized": "وَقِّع",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "wi2i3",
+       "vocalized": "وِقِع",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -276406,6 +273648,7 @@ window.LIBRARY = {
     {
      "ar": "كان خايف وجناحه موجوع.",
      "en": "It was scared and its wing was hurt.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -276515,6 +273758,7 @@ window.LIBRARY = {
     {
      "ar": "أخذناه عالبيت وحطيناه بعلبة فيها قطن.",
      "en": "We took it home and put it in a box with cotton.",
+     "p": null,
      "words": [
       {
        "surface": "أخذناه",
@@ -276640,6 +273884,7 @@ window.LIBRARY = {
     {
      "ar": "أطعمناه فتات خبز وحطينا جنبه مي.",
      "en": "We fed it bread crumbs and put water next to it.",
+     "p": null,
      "words": [
       {
        "surface": "أطعمناه",
@@ -276777,6 +274022,7 @@ window.LIBRARY = {
     {
      "ar": "كل يوم، كنا نهتم فيه ونتفرج عليه.",
      "en": "Every day, we took care of it and watched it.",
+     "p": null,
      "words": [
       {
        "surface": "كل",
@@ -276916,6 +274162,7 @@ window.LIBRARY = {
     {
      "ar": "بعد أسبوع، بلش جناحه يطيب.",
      "en": "After a week, its wing started to heal.",
+     "p": null,
      "words": [
       {
        "surface": "بعد",
@@ -277113,6 +274360,7 @@ window.LIBRARY = {
     {
      "ar": "وصار يقفز بالعلبة ويحاول يطير.",
      "en": "It started hopping in the box and trying to fly.",
+     "p": null,
      "words": [
       {
        "surface": "وصار",
@@ -277212,6 +274460,7 @@ window.LIBRARY = {
     {
      "ar": "يوم، فتحنا الشباك وطلعناه عالإيد.",
      "en": "One day, we opened the window and held it out on our hand.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -277387,6 +274636,7 @@ window.LIBRARY = {
     {
      "ar": "طار العصفور بالسما ونحنا عم نتفرج.",
      "en": "The bird flew into the sky while we watched.",
+     "p": null,
      "words": [
       {
        "surface": "طار",
@@ -277606,6 +274856,7 @@ window.LIBRARY = {
     {
      "ar": "زعلنا إنه راح، بس فرحنا إنه صار حر.",
      "en": "We were sad it left, but happy it became free.",
+     "p": null,
      "words": [
       {
        "surface": "زعلنا",
@@ -277836,31 +275087,17 @@ window.LIBRARY = {
       {
        "surface": "حر",
        "root": "ح.ر.ر",
-       "lemma": "حُرّ",
-       "form": "حُرّ",
-       "caphi_raw": "7 u r r",
-       "caphi": "7urr",
-       "gloss": "free;open;uncontrained",
-       "analysis": "ADJ:MS",
-       "maknuune_id": "5566",
+       "lemma": "حَرّ",
+       "form": "حَرّ",
+       "caphi_raw": "7 a r r",
+       "caphi": "7arr",
+       "gloss": "hot",
+       "analysis": "ADJ/NOUN",
+       "maknuune_id": "5568",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "5566",
-         "root": "ح.ر.ر",
-         "gloss": "free;open;uncontrained",
-         "analysis": "ADJ:MS"
-        },
-        {
-         "id": "5568",
-         "root": "ح.ر.ر",
-         "gloss": "hot",
-         "analysis": "ADJ/NOUN"
-        }
-       ],
-       "caphi_urban": "7urr",
-       "vocalized": "حُرّ",
+       "provenance": "maknuune:resolved",
+       "caphi_urban": "7arr",
+       "vocalized": "حَرّ",
        "vocalized_from": "lexicon:exact"
       }
      ],
@@ -277881,12 +275118,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "شتا من الشتوات، صحينا ولقينا الدنيا بيضا.",
      "en": "One winter, we woke up and found the world white.",
+     "p": null,
      "words": [
       {
        "surface": "شتا",
@@ -278094,6 +275335,7 @@ window.LIBRARY = {
     {
      "ar": "نزل تلج بالليل وغطى كل إشي.",
      "en": "Snow had fallen at night and covered everything.",
+     "p": null,
      "words": [
       {
        "surface": "نزل",
@@ -278273,6 +275515,7 @@ window.LIBRARY = {
     {
      "ar": "الولاد فرحوا كتير وركضوا عالحديقة.",
      "en": "The kids were very happy and ran to the garden.",
+     "p": null,
      "words": [
       {
        "surface": "الولاد",
@@ -278450,6 +275693,7 @@ window.LIBRARY = {
     {
      "ar": "عملوا رجل تلج كبير وحطولوا جزرة.",
      "en": "They made a big snowman and gave it a carrot.",
+     "p": null,
      "words": [
       {
        "surface": "عملوا",
@@ -278516,45 +275760,7 @@ window.LIBRARY = {
        "analysis": "NOUN:MS",
        "maknuune_id": "11240",
        "village": null,
-       "provenance": "AMBIGUOUS-needs-resolution",
-       "options": [
-        {
-         "id": "11240",
-         "root": "ر.ج.ل",
-         "gloss": "man",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "11244",
-         "root": "ر.ج.ل",
-         "gloss": "leg;foot",
-         "analysis": "NOUN:MS"
-        },
-        {
-         "id": "11262",
-         "root": "ر.ج.ل",
-         "gloss": "strenghten_a_man;make_sb_more_manly_[aut",
-         "analysis": "VERB:C"
-        },
-        {
-         "id": "11273",
-         "root": "ر.ج.ل",
-         "gloss": "strenghten_a_man;make_sb_more_manly_[aut",
-         "analysis": "VERB:P"
-        },
-        {
-         "id": "11238",
-         "root": "ر.ج.ل",
-         "gloss": "man_[auto]",
-         "analysis": "NOUN:MP"
-        },
-        {
-         "id": "11239",
-         "root": "ر.ج.ل",
-         "gloss": "man_[auto]",
-         "analysis": "NOUN:MP"
-        }
-       ],
+       "provenance": "maknuune:resolved",
        "caphi_urban": "rajul",
        "vocalized": "رَجُل",
        "vocalized_from": "lexicon:exact"
@@ -278665,6 +275871,7 @@ window.LIBRARY = {
     {
      "ar": "تراشقنا بكرات التلج وضحكنا كتير.",
      "en": "We threw snowballs at each other and laughed a lot.",
+     "p": null,
      "words": [
       {
        "surface": "تراشقنا",
@@ -278846,6 +276053,7 @@ window.LIBRARY = {
     {
      "ar": "إمي عملتلنا شوكولاتة سخنة.",
      "en": "My mom made us hot chocolate.",
+     "p": null,
      "words": [
       {
        "surface": "إمي",
@@ -278953,6 +276161,7 @@ window.LIBRARY = {
     {
      "ar": "قعدنا حوالي الصوبا نتدفى.",
      "en": "We sat around the heater to warm up.",
+     "p": null,
      "words": [
       {
        "surface": "قعدنا",
@@ -279044,6 +276253,7 @@ window.LIBRARY = {
     {
      "ar": "من الشباك، كنا نتفرج عالتلج ينزل.",
      "en": "From the window, we watched the snow fall.",
+     "p": null,
      "words": [
       {
        "surface": "من",
@@ -279221,6 +276431,7 @@ window.LIBRARY = {
     {
      "ar": "كان يوم ما بننساه أبدا.",
      "en": "It was a day we'll never forget.",
+     "p": null,
      "words": [
       {
        "surface": "كان",
@@ -279332,12 +276543,16 @@ window.LIBRARY = {
    "kind": "story",
    "date": null,
    "level": "intermediate",
+   "book": null,
+   "chapter": null,
+   "book_title": null,
    "subdialect": "urban",
    "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
    "sentences": [
     {
      "ar": "يوم من الأيام، رحت عالمكتبة أدور على كتاب.",
      "en": "One day, I went to the library to look for a book.",
+     "p": null,
      "words": [
       {
        "surface": "يوم",
@@ -279499,6 +276714,7 @@ window.LIBRARY = {
     {
      "ar": "المكتبة كانت كبيرة وهادية.",
      "en": "The library was big and quiet.",
+     "p": null,
      "words": [
       {
        "surface": "المكتبة",
@@ -279616,6 +276832,7 @@ window.LIBRARY = {
     {
      "ar": "الرفوف كانت مليانة كتب من كل نوع.",
      "en": "The shelves were full of books of every kind.",
+     "p": null,
      "words": [
       {
        "surface": "الرفوف",
@@ -279823,6 +277040,7 @@ window.LIBRARY = {
     {
      "ar": "مشيت بين الرفوف وقريت عناوين كتير.",
      "en": "I walked between the shelves and read many titles.",
+     "p": null,
      "words": [
       {
        "surface": "مشيت",
@@ -279976,6 +277194,7 @@ window.LIBRARY = {
     {
      "ar": "لقيت كتاب قصص قديمة وقعدت أتصفحه.",
      "en": "I found a book of old stories and sat leafing through it.",
+     "p": null,
      "words": [
       {
        "surface": "لقيت",
@@ -280125,6 +277344,7 @@ window.LIBRARY = {
     {
      "ar": "الوقت مر وأنا ما حسيت فيه.",
      "en": "Time passed and I didn't feel it.",
+     "p": null,
      "words": [
       {
        "surface": "الوقت",
@@ -280292,6 +277512,7 @@ window.LIBRARY = {
     {
      "ar": "الموظفة قالت إنه المكتبة رح تسكر.",
      "en": "The employee said the library was about to close.",
+     "p": null,
      "words": [
       {
        "surface": "الموظفة",
@@ -280441,6 +277662,7 @@ window.LIBRARY = {
     {
      "ar": "استعرت الكتاب وطلعت.",
      "en": "I borrowed the book and left.",
+     "p": null,
      "words": [
       {
        "surface": "استعرت",
@@ -280592,6 +277814,7 @@ window.LIBRARY = {
     {
      "ar": "بالطريق، كنت متحمس أبلش أقراه.",
      "en": "On the way, I was excited to start reading it.",
+     "p": null,
      "words": [
       {
        "surface": "بالطريق",
@@ -280755,6 +277978,7 @@ window.LIBRARY = {
     {
      "ar": "من يومها، صرت أروح عالمكتبة كل أسبوع.",
      "en": "Since that day, I started going to the library every week.",
+     "p": null,
      "words": [
       {
        "surface": "من",

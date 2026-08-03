@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "قدام بيتنا، كانت في شجرة توت كبيرة.",
    "en": "In front of our house, there was a big mulberry tree.",
+   "p": null,
    "words": [
     {
      "surface": "قدام",
@@ -197,6 +201,7 @@
   {
    "ar": "كانت تتغير مع كل فصل بالسنة.",
    "en": "It would change with every season of the year.",
+   "p": null,
    "words": [
     {
      "surface": "كانت",
@@ -378,6 +383,7 @@
   {
    "ar": "بالربيع، كانت تلبس ورق أخضر وزهر.",
    "en": "In spring, it would wear green leaves and blossoms.",
+   "p": null,
    "words": [
     {
      "surface": "بالربيع",
@@ -559,6 +565,7 @@
   {
    "ar": "بالصيف، كانت تعطينا ظل وتوت حلو.",
    "en": "In summer, it would give us shade and sweet mulberries.",
+   "p": null,
    "words": [
     {
      "surface": "بالصيف",
@@ -784,6 +791,7 @@
   {
    "ar": "الولاد كانوا يطلعوا عليها ياكلوا التوت.",
    "en": "The kids would climb it to eat the mulberries.",
+   "p": null,
    "words": [
     {
      "surface": "الولاد",
@@ -887,6 +895,7 @@
   {
    "ar": "بالخريف، ورقها كان يصفر ويوقع.",
    "en": "In fall, its leaves would yellow and fall.",
+   "p": null,
    "words": [
     {
      "surface": "بالخريف",
@@ -1026,6 +1035,7 @@
   {
    "ar": "كنا نلعب بالورق اليابس ونجمعه.",
    "en": "We would play with the dry leaves and gather them.",
+   "p": null,
    "words": [
     {
      "surface": "كنا",
@@ -1209,6 +1219,7 @@
   {
    "ar": "وبالشتا، كانت تصير عريانة، بس واقفة بقوة.",
    "en": "And in winter, it would become bare, but standing strong.",
+   "p": null,
    "words": [
     {
      "surface": "وبالشتا",
@@ -1324,6 +1335,7 @@
   {
    "ar": "جدي كان يقول: هالشجرة متل الإنسان.",
    "en": "My grandfather would say: this tree is like a human being.",
+   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -1477,6 +1489,7 @@
   {
    "ar": "قال: بتمر بفصول، حلوة وصعبة.",
    "en": "He said: it goes through seasons, good and hard.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -1660,6 +1673,7 @@
   {
    "ar": "قال: المهم تضل واقف متل الشجرة بالشتا.",
    "en": "He said: what matters is to stay standing like the tree in winter.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -1721,57 +1735,19 @@
     },
     {
      "surface": "تضل",
-     "root": "ض.ل.ل",
-     "lemma": "ضَلّ",
-     "form": "ضِلّ",
-     "caphi_raw": "D. i l l",
-     "caphi": "D.ill",
-     "gloss": "be_disoriented;lose_the_right_path_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "18543",
+     "root": "ظ.ل.ل",
+     "lemma": "ظَلّ",
+     "form": "ظَلّ",
+     "caphi_raw": "D. a l l",
+     "caphi": "D.all",
+     "gloss": "remain;lstay;ast;continue_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "19848",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "18543",
-       "root": "ض.ل.ل",
-       "gloss": "be_disoriented;lose_the_right_path_[auto",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "18546",
-       "root": "ض.ل.ل",
-       "gloss": "be_disoriented;lose_the_right_path_[auto",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "18544",
-       "root": "ض.ل.ل",
-       "gloss": "be_disoriented;lose_the_right_path",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "19843",
-       "root": "ظ.ل.ل",
-       "gloss": "shadow",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "19846",
-       "root": "ظ.ل.ل",
-       "gloss": "remain;lstay;ast;continue_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "19848",
-       "root": "ظ.ل.ل",
-       "gloss": "remain;lstay;ast;continue_[auto]",
-       "analysis": "VERB:P"
-      }
-     ],
-     "caphi_urban": "D.ill",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "D.all",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "واقف",
@@ -1933,6 +1909,7 @@
   {
    "ar": "كبرت، وفهمت حكمة جدي أكتر.",
    "en": "I grew up, and understood my grandfather's wisdom more.",
+   "p": null,
    "words": [
     {
      "surface": "كبرت",
@@ -2096,6 +2073,7 @@
   {
    "ar": "الحياة إلها فصول، وكل فصل بيعدي.",
    "en": "Life has seasons, and every season passes.",
+   "p": null,
    "words": [
     {
      "surface": "الحياة",
@@ -2301,6 +2279,7 @@
   {
    "ar": "والصعب بيروح، متل ما الشتا بيروح.",
    "en": "And hardship goes away, just as winter goes away.",
+   "p": null,
    "words": [
     {
      "surface": "والصعب",
@@ -2522,6 +2501,7 @@
   {
    "ar": "والشجرة، متل الأمل، بترجع تخضر من جديد.",
    "en": "And the tree, like hope, turns green again.",
+   "p": null,
    "words": [
     {
      "surface": "والشجرة",

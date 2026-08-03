@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "جدي كان دايما يقول: عنا كنز بالبيت.",
    "en": "My grandfather always used to say: we have a treasure in the house.",
+   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -199,6 +203,7 @@
   {
    "ar": "إحنا الولاد، كنا ندور عليه بكل زاوية.",
    "en": "We kids used to search for it in every corner.",
+   "p": null,
    "words": [
     {
      "surface": "إحنا",
@@ -370,6 +375,7 @@
   {
    "ar": "فتشنا بالخزاين، وتحت السراير، وبالعلية.",
    "en": "We searched the cabinets, under the beds, and in the attic.",
+   "p": null,
    "words": [
     {
      "surface": "فتشنا",
@@ -529,6 +535,7 @@
   {
    "ar": "بس ما لقينا لا ذهب ولا مصاري.",
    "en": "But we found neither gold nor money.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -724,6 +731,7 @@
   {
    "ar": "سألنا جدي: وين الكنز؟ ما لقيناه.",
    "en": "We asked our grandfather: where is the treasure? We didn't find it.",
+   "p": null,
    "words": [
     {
      "surface": "سألنا",
@@ -903,6 +911,7 @@
   {
    "ar": "ضحك جدي وقال: الكنز مش شي بتلاقوه بإيدكم.",
    "en": "My grandfather laughed and said: the treasure isn't something you find with your hands.",
+   "p": null,
    "words": [
     {
      "surface": "ضحك",
@@ -978,55 +987,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "الكنز",
@@ -1075,21 +1046,7 @@
      "analysis": "PART_NEG",
      "maknuune_id": "30759",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "30759",
-       "root": "NTWS",
-       "gloss": "not",
-       "analysis": "PART_NEG"
-      },
-      {
-       "id": "30760",
-       "root": "NTWS",
-       "gloss": "not",
-       "analysis": "PART_NEG"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "mish",
      "vocalized": "مِش",
      "vocalized_from": "lexicon:exact"
@@ -1146,6 +1103,7 @@
   {
    "ar": "كبرنا، وكل واحد راح بطريقه.",
    "en": "We grew up, and each of us went their own way.",
+   "p": null,
    "words": [
     {
      "surface": "كبرنا",
@@ -1385,6 +1343,7 @@
   {
    "ar": "بس كل عيد، كنا نرجع نجتمع ببيت جدي.",
    "en": "But every holiday, we would come back to gather at grandpa's house.",
+   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -1610,6 +1569,7 @@
   {
    "ar": "كنا نقعد حوالي الطاولة، ونحكي ونضحك.",
    "en": "We would sit around the table, talking and laughing.",
+   "p": null,
    "words": [
     {
      "surface": "كنا",
@@ -1841,6 +1801,7 @@
   {
    "ar": "جدي كان ينظر إلنا، وعيونه مليانة فرح.",
    "en": "My grandfather would look at us, his eyes full of joy.",
+   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -2038,6 +1999,7 @@
   {
    "ar": "يوم، قبل ما يتوفى، جمعنا كلنا حواليه.",
    "en": "One day, before he passed away, he gathered us all around him.",
+   "p": null,
    "words": [
     {
      "surface": "يوم",
@@ -2193,6 +2155,7 @@
   {
    "ar": "قال: هلأ فهمتوا شو هو الكنز؟",
    "en": "He said: now do you understand what the treasure is?",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -2328,6 +2291,7 @@
   {
    "ar": "نظر لوجوهنا، وقال: إنتوا الكنز، عيلتي.",
    "en": "He looked at our faces, and said: you are the treasure, my family.",
+   "p": null,
    "words": [
     {
      "surface": "نظر",
@@ -2417,55 +2381,17 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "2aal",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "إنتوا",
@@ -2617,6 +2543,7 @@
   {
    "ar": "سكتنا كلنا، وحسينا بمعنى كلامه.",
    "en": "We all fell silent, and felt the meaning of his words.",
+   "p": null,
    "words": [
     {
      "surface": "سكتنا",
@@ -2786,6 +2713,7 @@
   {
    "ar": "من يومها، عرفنا إنه أغلى كنز هو الأهل.",
    "en": "From that day, we knew that the most precious treasure is family.",
+   "p": null,
    "words": [
     {
      "surface": "من",

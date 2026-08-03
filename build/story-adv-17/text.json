@@ -8,12 +8,16 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
+ "book": null,
+ "chapter": null,
+ "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "ليلة، كنت راجع عالبيت والشتا نازلة بقوة.",
    "en": "One night, I was going home while the rain poured heavily.",
+   "p": null,
    "words": [
     {
      "surface": "ليلة",
@@ -181,6 +185,7 @@
   {
    "ar": "عالطريق، شفت رجال كبير واقف تحت المطر.",
    "en": "On the road, I saw an old man standing under the rain.",
+   "p": null,
    "words": [
     {
      "surface": "عالطريق",
@@ -378,6 +383,7 @@
   {
    "ar": "كان مبلول وعم يرتجف من البرد.",
    "en": "He was soaked and trembling from the cold.",
+   "p": null,
    "words": [
     {
      "surface": "كان",
@@ -513,6 +519,7 @@
   {
    "ar": "وقفت جنبه وسألته: عمو، شو بك واقف هون؟",
    "en": "I stopped next to him and asked: uncle, why are you standing here?",
+   "p": null,
    "words": [
     {
      "surface": "وقفت",
@@ -728,6 +735,7 @@
   {
    "ar": "قال: ضيعت طريقي، وما بعرف وين أروح.",
    "en": "He said: I lost my way, and I don't know where to go.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -965,6 +973,7 @@
   {
    "ar": "قلتله: تعا معي، ما بينفع تضل بالبرد.",
    "en": "I told him: come with me, you can't stay in the cold.",
+   "p": null,
    "words": [
     {
      "surface": "قلتله",
@@ -1064,57 +1073,19 @@
     },
     {
      "surface": "تضل",
-     "root": "ض.ل.ل",
-     "lemma": "ضَلّ",
-     "form": "ضِلّ",
-     "caphi_raw": "D. i l l",
-     "caphi": "D.ill",
-     "gloss": "be_disoriented;lose_the_right_path_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "18543",
+     "root": "ظ.ل.ل",
+     "lemma": "ظَلّ",
+     "form": "ظَلّ",
+     "caphi_raw": "D. a l l",
+     "caphi": "D.all",
+     "gloss": "remain;lstay;ast;continue_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "19848",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "18543",
-       "root": "ض.ل.ل",
-       "gloss": "be_disoriented;lose_the_right_path_[auto",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "18546",
-       "root": "ض.ل.ل",
-       "gloss": "be_disoriented;lose_the_right_path_[auto",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "18544",
-       "root": "ض.ل.ل",
-       "gloss": "be_disoriented;lose_the_right_path",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "19843",
-       "root": "ظ.ل.ل",
-       "gloss": "shadow",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "19846",
-       "root": "ظ.ل.ل",
-       "gloss": "remain;lstay;ast;continue_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "19848",
-       "root": "ظ.ل.ل",
-       "gloss": "remain;lstay;ast;continue_[auto]",
-       "analysis": "VERB:P"
-      }
-     ],
-     "caphi_urban": "D.ill",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "D.all",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "بالبرد",
@@ -1152,6 +1123,7 @@
   {
    "ar": "أخذته عالبيت، وإمي سخنتله أكل وشاي.",
    "en": "I took him home, and my mom heated food and tea for him.",
+   "p": null,
    "words": [
     {
      "surface": "أخذته",
@@ -1251,6 +1223,7 @@
   {
    "ar": "قعد يتدفى، وحكالنا إنه بيدور على ابنه.",
    "en": "He sat warming up, and told us he was looking for his son.",
+   "p": null,
    "words": [
     {
      "surface": "قعد",
@@ -1426,6 +1399,7 @@
   {
    "ar": "قال إنه ما شاف ابنه من سنين طويلة.",
    "en": "He said he hadn't seen his son in long years.",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -1657,6 +1631,7 @@
   {
    "ar": "الصبح، ساعدته ندور على عنوان ابنه.",
    "en": "In the morning, I helped him look for his son's address.",
+   "p": null,
    "words": [
     {
      "surface": "الصبح",
@@ -1848,6 +1823,7 @@
   {
    "ar": "بعد تعب، لقينا البيت، ودقينا الباب.",
    "en": "After some effort, we found the house and knocked on the door.",
+   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -2025,6 +2001,7 @@
   {
    "ar": "فتح شاب، وأول ما شاف الرجال، جمد بمكانه.",
    "en": "A young man opened, and the moment he saw the old man, he froze in place.",
+   "p": null,
    "words": [
     {
      "surface": "فتح",
@@ -2352,6 +2329,7 @@
   {
    "ar": "قال بصوت مرتجف: بابا؟ إنت؟",
    "en": "He said in a trembling voice: dad? is it you?",
+   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -2463,6 +2441,7 @@
   {
    "ar": "عانقوا بعض وبكوا، ونسيوا كل السنين.",
    "en": "They hugged and cried, and forgot all the years.",
+   "p": null,
    "words": [
     {
      "surface": "عانقوا",
@@ -2642,6 +2621,7 @@
   {
    "ar": "مشيت من هناك، وقلبي مليان بفرح غريب.",
    "en": "I walked away from there, my heart full of a strange joy.",
+   "p": null,
    "words": [
     {
      "surface": "مشيت",
