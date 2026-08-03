@@ -24,6 +24,23 @@ MODE="${1:-all}"
 : "${ELEVENLABS_API_KEY:?set ELEVENLABS_API_KEY in your terminal}"
 : "${ELEVENLABS_VOICE_ID:?set ELEVENLABS_VOICE_ID in your terminal}"
 
+# PREFLIGHT — verify the key + voice actually work BEFORE deleting anything. This script deletes the
+# old clips so the new voice regenerates; if the key is invalid/expired/out-of-credits, that delete
+# would leave you with NO audio (which is exactly how the sentence audio got wiped once). So we do a
+# real 1-word test synthesis first and abort — deleting nothing — if it fails.
+echo "Preflight: testing the ElevenLabs key + voice…"
+_tmp="$(mktemp -t elabtest).mp3"
+_code=$(curl -s -o "$_tmp" -w '%{http_code}' -X POST \
+  "https://api.elevenlabs.io/v1/text-to-speech/${ELEVENLABS_VOICE_ID}" \
+  -H "xi-api-key: ${ELEVENLABS_API_KEY}" -H "Content-Type: application/json" \
+  -d "{\"text\":\"مرحبا\",\"model_id\":\"${ELEVENLABS_MODEL:-eleven_multilingual_v2}\"}")
+if [ "$_code" != "200" ] || [ ! -s "$_tmp" ]; then
+  echo "!! ElevenLabs test FAILED (HTTP $_code). Likely: bad/expired key, out of credits, or the voice"
+  echo "   id '${ELEVENLABS_VOICE_ID}' isn't saved in your account. NOTHING was deleted — safe to retry."
+  echo "   (Server said:)"; head -c 300 "$_tmp" 2>/dev/null; echo; rm -f "$_tmp"; exit 1
+fi
+rm -f "$_tmp"; echo "  key + voice OK — proceeding."
+
 if [ "$MODE" = "words" ]; then
   echo "Re-voicing FLASHCARD WORDS ONLY with voice: $ELEVENLABS_VOICE_ID"
   echo "  (sentence audio for stories/news/books is left as-is — run 'all' later for those)"
