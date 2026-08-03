@@ -149,6 +149,30 @@ def m_past(w):   # a perfect verb with a 1st/2nd-person subject SUFFIX (رحت،
             return [surf(x)]
     return None
 
+def m_fi(w):     # في / فيه = "there is/are" (the token itself)
+    hits = [surf(x) for x in w if clean(surf(x)) in ('في', 'فيه', 'فيها', 'فينا')]
+    return hits[:1] or None
+
+# adverbial "nouns" (بعد الغدا = after lunch) read like an idafa but aren't possessive — skip them
+IDAFA_BLOCK = {'بعد', 'قبل', 'كل', 'نص', 'وسط', 'جنب', 'حول', 'طول', 'عند', 'مع', 'بين', 'فوق',
+               'تحت', 'قدام', 'ورا', 'جوا', 'برا', 'مثل', 'متل', 'زي', 'غير', 'بدون', 'ضد', 'أول', 'آخر'}
+def m_idafa(w):  # possession by juxtaposition: plain BARE NOUN + definite NOUN (باب البيت)
+    for i in range(len(w) - 1):
+        a, b = w[i], w[i + 1]; ca = clean(surf(a))
+        # first noun must be bare — no ال and no clitic prefix (بال/عال/لل = adverbial "in/at/to the …")
+        if (anal(a).startswith('NOUN:') and ca not in IDAFA_BLOCK
+                and not ca.startswith(('ال', 'بال', 'عال', 'لل', 'وال', 'فال', 'كال', 'بل'))
+                and clean(surf(b)).startswith('ال') and anal(b).startswith('NOUN')):
+            return [surf(a), surf(b)]
+    return None
+
+def m_gender(w):  # prefer a feminine ADJECTIVE (shows agreement); else a feminine noun (analysis :F)
+    adj = [surf(x) for x in w if anal(x).startswith('ADJ') and clean(surf(x)).endswith('ة')]
+    if adj:
+        return adj[:1]
+    hits = [surf(x) for x in w if anal(x).startswith('NOUN') and ':F' in anal(x)]
+    return hits[:1] or None
+
 # ---- the lessons ----
 # body: paragraphs. tables: [{title, rows:[[ar, tr, en], ...]}]. match: predicate.
 LESSONS = [
@@ -292,6 +316,39 @@ LESSONS = [
         '<b>حلو</b> → <b>أحلى</b> “sweeter/nicer”, <b>كتير</b> → <b>أكتر</b> “more.” Add <b>من</b> for '
         '“than”: <b>أكبر من بيتنا</b> “bigger than our house.”'],
      'match': m_compar},
+
+    # ---- extra: the things that trip up English speakers specifically ----
+    {'id': 'fi', 'title': '“There is / there are” — في (and “in” is بـ)', 'sub': 'في أكل · ما في وقت · بالبيت',
+     'body': [
+        'This one confuses English speakers because <b>في</b> <i>looks</i> like it should mean “in” — and in '
+        'Modern Standard Arabic it does. But in spoken Palestinian, <b>في</b> (fi) usually means '
+        '<b>“there is / there are”</b>: <b>في أكل</b> “there’s food”, <b>في ناس كتير</b> “there are a lot of '
+        'people.” The negative is <b>ما في</b>: <b>ما في وقت</b> “there’s no time.”',
+        'So how do you say <b>“in / at”</b>? Palestinian sticks <b>بـ</b> (b-) onto the noun instead: '
+        '<b>بالبيت</b> “in the house”, <b>بالسيارة</b> “in the car”, <b>بالشغل</b> “at work.” Keep the two '
+        'apart — <b>في</b> = there is, <b>بـ</b> = in — and في stops feeling random.'],
+     'match': m_fi},
+
+    {'id': 'idafa', 'title': 'No word for “of” — just stack the nouns', 'sub': 'باب البيت = the door of the house',
+     'body': [
+        'English links nouns with “of” or “’s” (“the door <i>of</i> the house”, “the house<i>’s</i> door”). '
+        'Arabic just sets the two nouns next to each other, the owned thing first, with <b>no</b> word for “of”: '
+        '<b>باب البيت</b> “the door of the house”, <b>بيت الرجل</b> “the man’s house”, <b>اسم البنت</b> '
+        '“the girl’s name.”',
+        'Watch the “the”: only the <i>second</i> noun takes الـ — <b>باب البيت</b>, literally “door the-house” '
+        '(never الباب البيت). For a looser “belonging to,” spoken Palestinian also has <b>تبع</b>: '
+        '<b>الكتاب تبع أحمد</b> “Ahmad’s book.”'],
+     'match': m_idafa},
+
+    {'id': 'gender', 'title': 'Masculine & feminine', 'sub': 'ولد كبير · بنت كبيرة',
+     'body': [
+        'Arabic sorts every noun as masculine or feminine, and the words around it must match — something '
+        'English never does. The usual sign of feminine is a <b>ة</b> ending: <b>بنت</b> “girl”, <b>سيارة</b> '
+        '“car”, <b>قهوة</b> “coffee” are feminine; most other nouns are masculine.',
+        'Adjectives and verbs agree with it. Masculine <b>ولد كبير</b> “a big boy” → feminine <b>بنت كبيرة</b> '
+        '“a big girl” (add ة). <b>هو راح</b> “he went” → <b>هي راحت</b> “she went.” Learn each noun’s gender '
+        'together with the word — there’s no shortcut, but the ة gives most of them away.'],
+     'match': m_gender},
 ]
 
 # ---- pick the best example sentences for each lesson ----
