@@ -1,17 +1,15 @@
 name: Daily news
 
-# Runs at 10:00 UTC = 5am EST / 6am EDT.
+# Runs at 01:30 UTC — ready by ~5am ISRAEL time.
 #
-# Deliberately an hour EARLY in winter rather than an hour late: GitHub's scheduler
-# has no timezone support and cron can't follow DST, and content that isn't ready
-# before the drive is content that doesn't get used. To shift it, change the number
-# below (it is UTC) — 10 = 5am EST, 11 = 6am EST.
-#
-# GitHub also delays scheduled jobs under load, sometimes by 10+ minutes. Treat the
-# time as "before the morning drive", not as an alarm clock.
+# GitHub cron is UTC with no DST support, and Israel changes offset (IDT = UTC+3 in
+# summer, IST = UTC+2 in winter). 01:30 UTC = 4:30am IDT (summer) / 3:30am IST (winter),
+# so it lands BEFORE 5am year-round — deliberately a touch early rather than late, with
+# buffer for GitHub delaying scheduled jobs (often 10+ minutes). To shift it, change the
+# UTC time below: 02:00 UTC = 5am IDT exactly (summer), but risks running a few min late.
 on:
   schedule:
-    - cron: '0 10 * * *'    # 5am EST / 6am EDT — writes fresh news, then deploys
+    - cron: '30 1 * * *'    # ~5am Israel — writes fresh news, then deploys
   workflow_dispatch:        # run by hand from the Actions tab
   push:
     branches: [main]
