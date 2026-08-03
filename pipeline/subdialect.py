@@ -21,6 +21,13 @@ never collides with emphatic D.=ض.
 
 This MUST match the TTS voice. Ours is Voice-Designed "from Ramallah" = urban, so urban
 is the default. A mismatch here would print one pronunciation and speak another.
+
+Regionally: "urban" is the city speech of Jerusalem/Ramallah/Haifa and the inter-dialect
+koine. WADI ARA and the Triangle (Umm il-Fahm, 3Ar3ara, Kufur Qari3, Baqa) are
+traditionally RURAL — central fellahi: q->k, k->ch, interdentals kept. The app's
+spoken/audio layer stays urban (it must match the voice); the Wadi Ara forms are
+surfaced in the UI as a computed variant of the same CAPHI++ template (word card +
+the wadi-ara grammar lesson).
 """
 
 REALIZATION = {
@@ -28,9 +35,15 @@ REALIZATION = {
     # NB: J->j (dʒ), NOT zh. [ʒ] is Lebanese/Syrian jim; Palestinian keeps the affricate.
     # Getting this wrong would give the learner a Beirut accent while the voice says Ramallah.
     "urban":   {"Q": "2",  "J": "j",  "K": "k",   "T": "t",  "D": "d",  "Z": "z"},
-    # fellahi / village — interdentals preserved
-    "rural":   {"Q": "k",  "J": "dj", "K": "tsh", "T": "th", "D": "dh", "Z": "z"},
-    "bedouin": {"Q": "g",  "J": "dj", "K": "k",   "T": "th", "D": "dh", "Z": "z"},
+    # fellahi / village — central rural Palestinian: the Triangle incl. WADI ARA and the
+    # highland villages. ق→k and ك→ch work as a chain shift — ك vacated to ch, freeing k
+    # for ق (قلب kalb "heart" vs كلب chalb "dog" — never confused). Interdentals are
+    # preserved, INCLUDING the ذ‖ظ alternation class Z: realizing Z as urban z would hand
+    # the village a city merger it doesn't have. "ch" = č as in church (dialectology's tš).
+    # J is "j" in BOTH: Palestinian jim is the same affricate dʒ city and village — writing
+    # them differently would fake a distinction (and spam the UI's variant line).
+    "rural":   {"Q": "k",  "J": "j",  "K": "ch",  "T": "th", "D": "dh", "Z": "dh"},
+    "bedouin": {"Q": "g",  "J": "j",  "K": "k",   "T": "th", "D": "dh", "Z": "dh"},
     # keep the variables visible — useful for debugging, useless for learners
     "raw":     {},
 }

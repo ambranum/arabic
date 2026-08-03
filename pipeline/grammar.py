@@ -18,6 +18,7 @@ Integrity, the same as everywhere else in this project:
 Run:  python3 pipeline/grammar.py    →  app/data/grammar.js  (window.GRAMMAR)
 """
 import json, os, glob, re
+from subdialect import realize
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 OUT = os.path.join(ROOT, 'app', 'data', 'grammar.js')
@@ -173,6 +174,31 @@ def m_gender(w):  # prefer a feminine ADJECTIVE (shows agreement); else a femini
     hits = [surf(x) for x in w if anal(x).startswith('NOUN') and ':F' in anal(x)]
     return hits[:1] or None
 
+# ---- Wadi Ara (central rural) support ------------------------------------------------
+# The corpus's Maknuune CAPHI++ templates carry the sub-dialect variables; realize() them
+# both ways to SHOW the correspondence — nothing invented, same lexicon data either way.
+WADI_WORDS = [('وَقِت', 'time'), ('قَدِيم', 'old'), ('طَرِيق', 'road'),
+              ('حَكَى', 'he spoke'), ('ثَانِي', 'second, other'), ('كْثِير', 'a lot, many')]
+def _rawfor(lemma):
+    for s in SENTS:
+        for w in s['words']:
+            if w.get('lemma') == lemma and w.get('caphi_raw'):
+                return str(w['caphi_raw']).split(',')[0].strip()
+    return None
+def _wadi_rows():
+    rows = []
+    for lemma, en in WADI_WORDS:
+        raw = _rawfor(lemma)
+        if raw:
+            rows.append([lemma, '%s → %s' % (realize(raw, 'urban'), realize(raw, 'rural')), en])
+    return rows
+
+def _hasvar(tok):   # a CAPHI++ sub-dialect variable: uppercase, not an emphatic (no '.')
+    return '.' not in tok and any(c in 'QKTDZ' for c in tok)   # J excluded: j = j in both accents
+def m_wadi(w):
+    hits = [surf(x) for x in w if any(_hasvar(t) for t in str(x.get('caphi_raw') or '').split())]
+    return hits[:2] or None
+
 # ---- the lessons ----
 # body: paragraphs. tables: [{title, rows:[[ar, tr, en], ...]}]. match: predicate.
 LESSONS = [
@@ -192,7 +218,8 @@ LESSONS = [
         'When the noun starts with a “sun letter” (ت ث د ذ ر ز س ش ص ض ط ظ ل ن), the <b>ل</b> of الـ '
         'assimilates: <b>الشمس</b> is written al-shams but <i>said</i> <b>ish-shams</b>, <b>الرمل</b> '
         'is <b>ir-raml</b>. With the other “moon letters”, you hear the l normally: <b>القمر</b> '
-        '<b>il-qamar</b>. You don’t have to memorise the list — your ear picks it up fast.'],
+        '<b>il-2amar</b> (the ق is a glottal stop in city speech). You don’t have to memorise '
+        'the list — your ear picks it up fast.'],
      'match': m_definite},
 
     {'id': 'pronouns', 'title': 'The people: I, you, he, she…', 'sub': 'subject pronouns',
@@ -277,7 +304,7 @@ LESSONS = [
      'tables': [{'title': 'Question words', 'rows': [
         ['شو', 'shu', 'what'], ['مين', 'miin', 'who'], ['وين', 'ween', 'where'],
         ['إيمتى', 'eemta', 'when'], ['ليش', 'leesh', 'why'], ['كيف', 'kiif', 'how'],
-        ['قدّيش', 'addeesh', 'how much'], ['كم', 'kam', 'how many']]}],
+        ['قدّيش', '2addeesh', 'how much'], ['كم', 'kam', 'how many']]}],
      'match': m_q},
 
     {'id': 'demonstratives', 'title': 'This and these', 'sub': 'هاد، هاي، هدول',
@@ -349,6 +376,41 @@ LESSONS = [
         '“a big girl” (add ة). <b>هو راح</b> “he went” → <b>هي راحت</b> “she went.” Learn each noun’s gender '
         'together with the word — there’s no shortcut, but the ة gives most of them away.'],
      'match': m_gender},
+
+    {'id': 'wadi-ara', 'title': 'The Wadi Ara accent', 'sub': 'وادي عارة — how the Triangle villages sound',
+     'body': [
+        'This app teaches <b>urban Palestinian</b> — the city speech of Jerusalem, Ramallah and Haifa '
+        'that works everywhere, Wadi Ara included. But the home accent of Wadi Ara — Umm il-Faḥm, '
+        'ʿArʿara, Kufur Qariʿ, Bāqa — is <b>central rural Palestinian</b> (“fallāḥi”), the village '
+        'dialect of the Triangle and the central hills. Same grammar, same words; what changes is a '
+        'handful of sounds, and they change <i>systematically</i> — learn four correspondences and '
+        'you can convert anything you know on the fly.',
+        'First: <b>ق is said k</b>. وقت “time” is city <i>wa2it</i>, village <i>wakit</i>; قهوة is '
+        '<i>2ahwe</i> in town, <i>kahwe</i> in the village. And <b>ك is said ch</b> (č, as in '
+        '“church”): كيف <i>kiif</i> → <i>chiif</i>, حكى&lrm; <i>7aka</i> → <i>7acha</i>; “your (f.)” '
+        '<b>ـِك</b> becomes <i>-ich</i>. The two shifts work as a pair — ك moved to <i>ch</i> and '
+        'freed <i>k</i> for ق — so in Wadi Ara <i>kalb</i> is قلب “heart”, while “dog” (كلب) is '
+        '<i>chalb</i>. No confusion, ever.',
+        'The <b>interdentals survive</b> in the village where the city dropped them: ث stays '
+        '<i>th</i> (ثاني city <i>taani</i>, village <i>thaani</i>) and ذ stays <i>dh</i> (هاد ~ '
+        '<i>haadh</i>). Traditional village speech also keeps the <b>feminine plurals</b> the city '
+        'lost — إنتن <i>intin</i> “you (f. pl.)”, هنّ <i>hinne</i> “they (f.)”, verbs ending in '
+        '<i>ـِن</i> — today mostly from older speakers. Younger Wadi Ara speakers mix city forms '
+        'freely, but the <i>ch</i> stays a proud local badge.',
+        'Everything in this app — spelling, tables, audio — stays in the urban koine, because that '
+        'is what the recorded voice speaks and what every Palestinian understands. The word cards '
+        'show the Wadi Ara form automatically whenever it differs, and the examples below are corpus '
+        'sentences containing words a Wadi Ara speaker says differently — try converting them as '
+        'you read.'],
+     'tables': [
+        {'title': 'The four correspondences', 'rows': [
+            ['ق', 'city: 2 (glottal stop)', 'Wadi Ara: k'],
+            ['ك', 'city: k', 'Wadi Ara: ch (č, as in “church”)'],
+            ['ث', 'city: t', 'Wadi Ara: th (as in “three”)'],
+            ['ذ', 'city: d', 'Wadi Ara: dh (as in “this”)']]},
+        {'title': 'Same word, two accents — computed from the lexicon’s own templates',
+         'rows': _wadi_rows()}],
+     'match': m_wadi},
 ]
 
 # ---- pick the best example sentences for each lesson ----

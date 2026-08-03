@@ -231,6 +231,9 @@
   }
   .wc .hw{font-family:var(--arabic); direction:rtl; font-size:32px; line-height:1.6}
   .wc .ph{font-family:var(--mono); font-size:13px; color:var(--verdigris); margin-top:2px}
+  .wc .phwa{font-family:var(--mono); font-size:12px; color:var(--muted); margin-top:1px}
+  .wc .phwa b{font-weight:600; font-size:9px; letter-spacing:.08em; text-transform:uppercase;
+              margin-right:6px; opacity:.85}
   .wc .wtype{display:inline-block; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
     font-weight:700; color:var(--ochre); border:1px solid var(--ochre); border-radius:4px;
     padding:2px 7px; margin-top:8px}
@@ -2403,8 +2406,27 @@ function conjPopupHTML(v) {
   return h;
 }
 
+// Wadi Ara (central rural) realization of the word's Maknuune CAPHI++ template. Mirrors
+// pipeline/subdialect.py: uppercase letters in the template are the sub-dialect variables;
+// the Wadi Ara / Triangle villages say q as k, k as ch, and keep the interdentals.
+// Emphatics (tokens containing a period) never vary. Returns null when the village form
+// is identical to the urban one — no variant line for words that don't differ.
+const WADI = {Q:'k', J:'j', K:'ch', T:'th', D:'dh', Z:'dh'};
+function wadiAra(w) {
+  const raw = w.caphi_raw, urb = w.caphi_urban || w.caphi;
+  if (!raw) return null;
+  const out = String(raw).split(' ').map(tok => {
+    if (!tok) return '';
+    if (tok.includes('||')) { const [a, b] = tok.split('||'); return WADI[b.trim()] || a.trim(); }
+    if (WADI[tok]) return WADI[tok];
+    if (!tok.includes('.')) for (const v in WADI) tok = tok.split(v).join(WADI[v]);
+    return tok;
+  }).join('');
+  return out && out !== urb ? out : null;
+}
 function showCard(si, wi) {
   const w = cur.sentences[si].words[wi];
+  const wa = wadiAra(w);
   const on = w.lemma && marked.has(w.lemma);
   const wt = wordType(w.analysis);
   const vb = findVerb(w);
@@ -2418,6 +2440,7 @@ function showCard(si, wi) {
     `<div class="hw">${esc(w.vocalized || w.surface)}
        ${w.lemma ? `<button class="say" data-a="say" aria-label="Pronounce">${svg('spk')}</button>` : ''}</div>
      <div class="ph">${esc(w.caphi_urban || w.caphi || '')}</div>
+     ${wa ? `<div class="phwa"><b>Wadi Ara</b>${esc(wa)}</div>` : ''}
      ${wt ? `<div class="wtype">${esc(wt)}</div>` : ''}
      <div class="gl">${esc(pretty(w.gloss)) || '<span style="color:var(--muted)">no entry</span>'}</div>
      ${vb ? conjPopupHTML(vb) : ''}
