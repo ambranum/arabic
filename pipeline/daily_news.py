@@ -246,7 +246,9 @@ def main():
         print(f"  resolved {len(picks)}/{len(amb)}")
         if not ingest(src): return 1
 
-    if os.environ.get("ELEVENLABS_API_KEY") and os.environ.get("ELEVENLABS_VOICE_ID"):
+    # Voice comes from pipeline/voice.py — the Action deliberately does NOT pass a voice
+    # secret, so the daily news can't drift onto a different voice than the rest of the app.
+    if os.environ.get("ELEVENLABS_API_KEY"):
         print("generating audio…")
         subprocess.run([sys.executable, os.path.join(HERE, "ingest.py"), src, "--audio"],
                        cwd=ROOT)

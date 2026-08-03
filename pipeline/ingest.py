@@ -23,6 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from maknuune import Lexicon, entry_to_word, norm
 from subdialect import realize
 from vocalize import vocalize
+from voice import voice_id
 import curated
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -111,10 +112,12 @@ def main():
     outdir = os.path.join(ROOT, 'build', src['id'])
     os.makedirs(os.path.join(outdir, 'audio'), exist_ok=True)
 
-    key, voice = os.environ.get('ELEVENLABS_API_KEY'), os.environ.get('ELEVENLABS_VOICE_ID')
+    # Voice comes from pipeline/voice.py (env var overrides) so it can never silently
+    # differ between runs — only the KEY has to be supplied.
+    key, voice = os.environ.get('ELEVENLABS_API_KEY'), voice_id()
     do_audio = a.audio and key and voice
     if a.audio and not do_audio:
-        print("!! --audio requested but ELEVENLABS_API_KEY / ELEVENLABS_VOICE_ID not set;"
+        print("!! --audio requested but ELEVENLABS_API_KEY not set;"
               " emitting artifact with audio: null\n")
 
     art = {"id": src['id'], "title": src['title'], "dialect": src.get('dialect', 'pal'),

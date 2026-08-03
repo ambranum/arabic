@@ -5,11 +5,13 @@ content (stories, news, lessons), so memorization cards can play your real Ramal
 Runtime TTS from a public web page would expose your key, so we pre-generate here instead.
 Cards whose lemma isn't in the emitted manifest fall back to the browser's built-in voice.
 
-Run:  ELEVENLABS_API_KEY=... ELEVENLABS_VOICE_ID=... python3 pipeline/vocab_audio.py
-Without the keys it just reports how many clips WOULD be generated and writes nothing.
+Run:  ELEVENLABS_API_KEY=... python3 pipeline/vocab_audio.py
+The voice comes from pipeline/voice.py (ELEVENLABS_VOICE_ID overrides it if you set one).
+Without the key it just reports how many clips WOULD be generated and writes nothing.
 Clips are cached by content hash, so re-runs only synthesize new words.
 """
 import json, os, glob, hashlib, urllib.request, ssl, urllib.error
+from voice import voice_id
 
 # macOS python.org builds ship without wired-up CA certs, so HTTPS verification fails with
 # CERTIFICATE_VERIFY_FAILED. Use certifi's bundle when it's installed (it is, via pip).
@@ -57,13 +59,13 @@ def tts(text, out_path, key, voice):
 
 def main():
     vocab = collect()
-    key, voice = os.environ.get('ELEVENLABS_API_KEY'), os.environ.get('ELEVENLABS_VOICE_ID')
+    key, voice = os.environ.get('ELEVENLABS_API_KEY'), voice_id()
     print('%d unique vocabulary words in content.' % len(vocab))
-    if not (key and voice):
-        print('No ELEVENLABS_API_KEY / ELEVENLABS_VOICE_ID set — nothing generated.')
-        print('Set them and re-run to synthesize your Palestinian voice for each word.')
+    if not key:
+        print('No ELEVENLABS_API_KEY set — nothing generated.')
+        print('Set it and re-run to synthesize your Palestinian voice for each word.')
         return
-    print('model: %s' % MODEL)
+    print('voice: %s   model: %s' % (voice, MODEL))
     os.makedirs(OUTDIR, exist_ok=True)
     manifest, gen, cached, failed = {}, 0, 0, 0
     items = sorted(vocab.items())

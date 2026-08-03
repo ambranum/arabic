@@ -7,22 +7,27 @@
 # a given word/sentence always maps to the same filename. So to actually SWITCH voices we must
 # remove the old clips first; otherwise the cached (old-voice) files are reused.
 #
-# Usage (your key stays in your terminal; never commit it):
+# The VOICE is pinned in pipeline/voice.py — you don't pass it. Only the key, which stays
+# in your terminal and is never committed.
+#
+# Usage:
 #   # cheap + fast: re-voice ONLY the flashcard words (the most-heard audio) so you can audition the voice
-#   ELEVENLABS_API_KEY=... ELEVENLABS_VOICE_ID=oJQlz7pz2yWd7MRmDUXm bash pipeline/regen_audio.sh words
+#   ELEVENLABS_API_KEY=... bash pipeline/regen_audio.sh words
 #
 #   # just the sentences: re-voice stories/news/book (keeps the flashcard words as-is)
-#   ELEVENLABS_API_KEY=... ELEVENLABS_VOICE_ID=oJQlz7pz2yWd7MRmDUXm bash pipeline/regen_audio.sh sentences
+#   ELEVENLABS_API_KEY=... bash pipeline/regen_audio.sh sentences
 #
 #   # everything: flashcard words + every story/news/book sentence (~2,300 clips — real credits)
-#   ELEVENLABS_API_KEY=... ELEVENLABS_VOICE_ID=oJQlz7pz2yWd7MRmDUXm bash pipeline/regen_audio.sh all
+#   ELEVENLABS_API_KEY=... bash pipeline/regen_audio.sh all
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 MODE="${1:-all}"
 
 : "${ELEVENLABS_API_KEY:?set ELEVENLABS_API_KEY in your terminal}"
-: "${ELEVENLABS_VOICE_ID:?set ELEVENLABS_VOICE_ID in your terminal}"
+# Pinned voice (env var still overrides, for one-off experiments).
+ELEVENLABS_VOICE_ID="${ELEVENLABS_VOICE_ID:-$(python3 -c 'import sys; sys.path.insert(0,"pipeline"); import voice; print(voice.VOICE_ID)')}"
+export ELEVENLABS_VOICE_ID
 
 # PREFLIGHT — verify the key + voice actually work BEFORE deleting anything. This script deletes the
 # old clips so the new voice regenerates; if the key is invalid/expired/out-of-credits, that delete

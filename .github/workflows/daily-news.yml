@@ -46,7 +46,9 @@ jobs:
         env:
           ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
           ELEVENLABS_API_KEY:  ${{ secrets.ELEVENLABS_API_KEY }}
-          ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+          # NB: no ELEVENLABS_VOICE_ID here, deliberately. The voice is pinned in
+          # pipeline/voice.py so every clip in the app is the same voice. Passing the old
+          # repo secret here is what kept generating each new day's news in the OLD voice.
         run: python3 pipeline/daily_news.py --sentences 9
 
       - name: Commit the day's text (advisory — never blocks the deploy)
