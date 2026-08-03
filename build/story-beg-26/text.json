@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "beginner",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "جارنا عنده كلب اسمه لولو.",
    "en": "Our neighbor has a dog named Lulu.",
-   "p": null,
    "words": [
     {
      "surface": "جارنا",
@@ -208,12 +204,11 @@
      "caphi_urban": "luulu"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "لونه بني وذيله طويل.",
    "en": "He is brown and has a long tail.",
-   "p": null,
    "words": [
     {
      "surface": "لونه",
@@ -420,12 +415,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "كل الصبح بيلعب بالحديقة.",
    "en": "Every morning he plays in the garden.",
-   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -520,12 +514,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "لما يشوفني، بيجي بيركض.",
    "en": "When he sees me, he comes running.",
-   "p": null,
    "words": [
     {
      "surface": "لما",
@@ -590,12 +583,11 @@
      "vocalized_from": "derived:verb"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "بحب ألعب معه شوي.",
    "en": "I like to play with him a little.",
-   "p": null,
    "words": [
     {
      "surface": "بحب",
@@ -656,13 +648,45 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17238",
+       "root": "ش.و.ي",
+       "gloss": "a_little_bit",
+       "analysis": "ADV"
+      },
+      {
+       "id": "17239",
+       "root": "ش.و.ي",
+       "gloss": "grilling;barbecue",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "17244",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17241",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17242",
+       "root": "ش.و.ي",
+       "gloss": "grill",
+       "analysis": "VERB:I"
+      }
+     ],
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   }
  ]
 }

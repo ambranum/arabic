@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "بحديقة بيتنا، عشش عصفور صغير عالشجرة.",
    "en": "In our house garden, a little sparrow nested in the tree.",
-   "p": null,
    "words": [
     {
      "surface": "بحديقة",
@@ -226,12 +222,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "كل الصبح، كان يصحينا بغناه الحلو.",
    "en": "Every morning, it would wake us with its beautiful singing.",
-   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -396,12 +391,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "الولاد كانوا يحطولوا فتات خبز ومي.",
    "en": "The kids would put out bread crumbs and water for it.",
-   "p": null,
    "words": [
     {
      "surface": "الولاد",
@@ -536,12 +530,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "صار العصفور يعرفنا وما يخاف منا.",
    "en": "The sparrow came to know us and wasn't afraid of us.",
-   "p": null,
    "words": [
     {
      "surface": "صار",
@@ -690,12 +683,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "مرة، هبت عاصفة قوية بالليل.",
    "en": "Once, a strong storm blew at night.",
-   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -796,7 +788,45 @@
      "analysis": "ADJ:MS",
      "maknuune_id": "27050",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "27050",
+       "root": "ق.و.ي",
+       "gloss": "strong;malicious;wicked",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "27057",
+       "root": "ق.و.ي",
+       "gloss": "strengthen;make_sth_strong_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "27065",
+       "root": "ق.و.ي",
+       "gloss": "become_strong_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "27066",
+       "root": "ق.و.ي",
+       "gloss": "strengthen;make_sth_strong_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "27051",
+       "root": "ق.و.ي",
+       "gloss": "strong;malicious;wicked_[auto]",
+       "analysis": "ADJ:P"
+      },
+      {
+       "id": "27052",
+       "root": "ق.و.ي",
+       "gloss": "strong;malicious;wicked_[auto]",
+       "analysis": "ADJ:P"
+      }
+     ],
      "caphi_urban": "2awi",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
@@ -818,12 +848,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "الصبح، لقينا العش وقع عالأرض.",
    "en": "In the morning, we found the nest had fallen to the ground.",
-   "p": null,
    "words": [
     {
      "surface": "الصبح",
@@ -896,17 +925,55 @@
     {
      "surface": "وقع",
      "root": "و.ق.ع",
-     "lemma": "وِقِع",
-     "form": "وِقِع",
-     "caphi_raw": "w i Q i 3",
-     "caphi": "wiQi3",
-     "gloss": "fall_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "35906",
+     "lemma": "وَقَّع",
+     "form": "وَقِّع",
+     "caphi_raw": "w a Q Q i 3",
+     "caphi": "waQQi3",
+     "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "35899",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "wi2i3",
-     "vocalized": "وِقِع",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "35899",
+       "root": "و.ق.ع",
+       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "35906",
+       "root": "و.ق.ع",
+       "gloss": "fall_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35907",
+       "root": "و.ق.ع",
+       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35893",
+       "root": "و.ق.ع",
+       "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "35894",
+       "root": "و.ق.ع",
+       "gloss": "sb_was_made_a_scapegoat_for_what_happene",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "35896",
+       "root": "و.ق.ع",
+       "gloss": "lest_you_fall_down",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "wa22i3",
+     "vocalized": "وَقِّع",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -964,12 +1031,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "الولاد زعلوا، وخافوا إنه العصفور مات.",
    "en": "The kids got upset, and feared the sparrow had died.",
-   "p": null,
    "words": [
     {
      "surface": "الولاد",
@@ -1164,12 +1230,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "بس لقيناه واقف عالغصن، سليم.",
    "en": "But we found it standing on the branch, safe.",
-   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -1262,12 +1327,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "جمعنا العش وحطيناه بمكان أعلى وأأمن.",
    "en": "We gathered the nest and put it in a higher, safer place.",
-   "p": null,
    "words": [
     {
      "surface": "جمعنا",
@@ -1480,12 +1544,11 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   },
   {
    "ar": "العصفور رجعله، وكأنه بيشكرنا.",
    "en": "The sparrow returned to it, as if thanking us.",
-   "p": null,
    "words": [
     {
      "surface": "العصفور",
@@ -1640,12 +1703,11 @@
      "vocalized_from": "derived:verb"
     }
    ],
-   "audio": null
+   "audio": "audio/s9.mp3"
   },
   {
    "ar": "بعد أسابيع، طلعت من العش عصافير صغيرة.",
    "en": "After weeks, little sparrows emerged from the nest.",
-   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -1780,12 +1842,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s10.mp3"
   },
   {
    "ar": "الولاد فرحوا كأنه في مواليد جداد بالعيلة.",
    "en": "The kids were as happy as if there were new babies in the family.",
-   "p": null,
    "words": [
     {
      "surface": "الولاد",
@@ -1990,12 +2051,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s11.mp3"
   },
   {
    "ar": "راقبناهم لما كبروا وتعلموا الطيران.",
    "en": "We watched them until they grew and learned to fly.",
-   "p": null,
    "words": [
     {
      "surface": "راقبناهم",
@@ -2152,12 +2212,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s12.mp3"
   },
   {
    "ar": "يوم، طاروا كلهم، وضل العش فاضي.",
    "en": "One day, they all flew away, and the nest stayed empty.",
-   "p": null,
    "words": [
     {
      "surface": "يوم",
@@ -2392,12 +2451,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s13.mp3"
   },
   {
    "ar": "بس كل ربيع، بيرجع عصفور يعشش بنفس الشجرة.",
    "en": "But every spring, a sparrow comes back to nest in the same tree.",
-   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -2632,7 +2690,7 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s14.mp3"
   }
  ]
 }

@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "intermediate",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "مرة، طلب مني جدي أروح عالضيعة أجيبله دوا.",
    "en": "Once, my grandfather asked me to go to the village to get him medicine.",
-   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -238,12 +234,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "ركبت الباص الصبح والطريق كان طويل.",
    "en": "I took the bus in the morning and the road was long.",
-   "p": null,
    "words": [
     {
      "surface": "ركبت",
@@ -444,12 +439,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "نزلت بالضيعة وسألت عن الصيدلية.",
    "en": "I got off in the village and asked about the pharmacy.",
-   "p": null,
    "words": [
     {
      "surface": "نزلت",
@@ -584,12 +578,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "رجال طيب دلني عليها ومشى معي شوي.",
    "en": "A kind man showed me to it and walked with me a bit.",
-   "p": null,
    "words": [
     {
      "surface": "رجال",
@@ -792,18 +785,49 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17238",
+       "root": "ش.و.ي",
+       "gloss": "a_little_bit",
+       "analysis": "ADV"
+      },
+      {
+       "id": "17239",
+       "root": "ش.و.ي",
+       "gloss": "grilling;barbecue",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "17244",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17241",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17242",
+       "root": "ش.و.ي",
+       "gloss": "grill",
+       "analysis": "VERB:I"
+      }
+     ],
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "اشتريت الدوا وشكرت الصيدلي.",
    "en": "I bought the medicine and thanked the pharmacist.",
-   "p": null,
    "words": [
     {
      "surface": "اشتريت",
@@ -954,12 +978,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "قبل ما أرجع، مريت عالسوق وشريت خضرة.",
    "en": "Before going back, I passed by the market and bought vegetables.",
-   "p": null,
    "words": [
     {
      "surface": "قبل",
@@ -1122,12 +1145,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "الناس بالضيعة كانوا بسطاء وطيبين.",
    "en": "The people in the village were simple and kind.",
-   "p": null,
    "words": [
     {
      "surface": "الناس",
@@ -1260,12 +1282,11 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "رجعت عالبيت بالمسا ومعي الدوا والخضرة.",
    "en": "I went home in the evening with the medicine and the vegetables.",
-   "p": null,
    "words": [
     {
      "surface": "رجعت",
@@ -1398,12 +1419,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "جدي فرح فيي كتير ودعالي.",
    "en": "My grandfather was very happy with me and blessed me.",
-   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -1522,7 +1542,7 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   }
  ]
 }

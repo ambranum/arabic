@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "intermediate",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "مرة، كنت ماشي بالسوق وشفت وجه بعرفه.",
    "en": "Once, I was walking in the market and saw a face I knew.",
-   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -224,12 +220,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "قربت شوي وعرفت إنه صاحبي القديم زياد.",
    "en": "I got a bit closer and realized it was my old friend Ziad.",
-   "p": null,
    "words": [
     {
      "surface": "قربت",
@@ -296,7 +291,39 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17238",
+       "root": "ش.و.ي",
+       "gloss": "a_little_bit",
+       "analysis": "ADV"
+      },
+      {
+       "id": "17239",
+       "root": "ش.و.ي",
+       "gloss": "grilling;barbecue",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "17244",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17241",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17242",
+       "root": "ش.و.ي",
+       "gloss": "grill",
+       "analysis": "VERB:I"
+      }
+     ],
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
@@ -446,12 +473,11 @@
      "caphi_urban": "ziyaad"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "ما كنا شفنا بعض من أيام المدرسة.",
    "en": "We hadn't seen each other since our school days.",
-   "p": null,
    "words": [
     {
      "surface": "ما",
@@ -618,12 +644,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "عانقنا بعض وضحكنا وتذكرنا الأيام.",
    "en": "We hugged and laughed and remembered the old days.",
-   "p": null,
    "words": [
     {
      "surface": "عانقنا",
@@ -820,12 +845,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "قعدنا بقهوة قريبة وحكينا ساعتين.",
    "en": "We sat at a nearby café and talked for two hours.",
-   "p": null,
    "words": [
     {
      "surface": "قعدنا",
@@ -964,12 +988,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "حكالي إنه صار عنده عيلة وولاد.",
    "en": "He told me he now had a family and children.",
-   "p": null,
    "words": [
     {
      "surface": "حكالي",
@@ -1130,12 +1153,11 @@
      "caphi_urban": "2ilwlaad"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "وأنا حكيتله عن شغلي وحياتي.",
    "en": "And I told him about my work and my life.",
-   "p": null,
    "words": [
     {
      "surface": "وأنا",
@@ -1318,12 +1340,11 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "قبل ما نفترق، تبادلنا الأرقام.",
    "en": "Before we parted, we exchanged numbers.",
-   "p": null,
    "words": [
     {
      "surface": "قبل",
@@ -1424,12 +1445,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "من يومها، صرنا نشوف بعض كل أسبوع.",
    "en": "Since that day, we started seeing each other every week.",
-   "p": null,
    "words": [
     {
      "surface": "من",
@@ -1672,7 +1692,7 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   }
  ]
 }

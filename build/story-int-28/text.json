@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "intermediate",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "صبح يوم، لقينا عصفور صغير وقع من عشه.",
    "en": "One morning, we found a little bird that had fallen from its nest.",
-   "p": null,
    "words": [
     {
      "surface": "صبح",
@@ -166,17 +162,55 @@
     {
      "surface": "وقع",
      "root": "و.ق.ع",
-     "lemma": "وِقِع",
-     "form": "وِقِع",
-     "caphi_raw": "w i Q i 3",
-     "caphi": "wiQi3",
-     "gloss": "fall_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "35906",
+     "lemma": "وَقَّع",
+     "form": "وَقِّع",
+     "caphi_raw": "w a Q Q i 3",
+     "caphi": "waQQi3",
+     "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "35899",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "wi2i3",
-     "vocalized": "وِقِع",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "35899",
+       "root": "و.ق.ع",
+       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "35906",
+       "root": "و.ق.ع",
+       "gloss": "fall_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35907",
+       "root": "و.ق.ع",
+       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35893",
+       "root": "و.ق.ع",
+       "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "35894",
+       "root": "و.ق.ع",
+       "gloss": "sb_was_made_a_scapegoat_for_what_happene",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "35896",
+       "root": "و.ق.ع",
+       "gloss": "lest_you_fall_down",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "wa22i3",
+     "vocalized": "وَقِّع",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -232,12 +266,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "كان خايف وجناحه موجوع.",
    "en": "It was scared and its wing was hurt.",
-   "p": null,
    "words": [
     {
      "surface": "كان",
@@ -342,12 +375,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "أخذناه عالبيت وحطيناه بعلبة فيها قطن.",
    "en": "We took it home and put it in a box with cotton.",
-   "p": null,
    "words": [
     {
      "surface": "أخذناه",
@@ -468,12 +500,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "أطعمناه فتات خبز وحطينا جنبه مي.",
    "en": "We fed it bread crumbs and put water next to it.",
-   "p": null,
    "words": [
     {
      "surface": "أطعمناه",
@@ -606,12 +637,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "كل يوم، كنا نهتم فيه ونتفرج عليه.",
    "en": "Every day, we took care of it and watched it.",
-   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -746,12 +776,11 @@
      "caphi_urban": "3ala"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "بعد أسبوع، بلش جناحه يطيب.",
    "en": "After a week, its wing started to heal.",
-   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -944,12 +973,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "وصار يقفز بالعلبة ويحاول يطير.",
    "en": "It started hopping in the box and trying to fly.",
-   "p": null,
    "words": [
     {
      "surface": "وصار",
@@ -1044,12 +1072,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "يوم، فتحنا الشباك وطلعناه عالإيد.",
    "en": "One day, we opened the window and held it out on our hand.",
-   "p": null,
    "words": [
     {
      "surface": "يوم",
@@ -1220,12 +1247,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "طار العصفور بالسما ونحنا عم نتفرج.",
    "en": "The bird flew into the sky while we watched.",
-   "p": null,
    "words": [
     {
      "surface": "طار",
@@ -1440,12 +1466,11 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   },
   {
    "ar": "زعلنا إنه راح، بس فرحنا إنه صار حر.",
    "en": "We were sad it left, but happy it became free.",
-   "p": null,
    "words": [
     {
      "surface": "زعلنا",
@@ -1676,21 +1701,35 @@
     {
      "surface": "حر",
      "root": "ح.ر.ر",
-     "lemma": "حَرّ",
-     "form": "حَرّ",
-     "caphi_raw": "7 a r r",
-     "caphi": "7arr",
-     "gloss": "hot",
-     "analysis": "ADJ/NOUN",
-     "maknuune_id": "5568",
+     "lemma": "حُرّ",
+     "form": "حُرّ",
+     "caphi_raw": "7 u r r",
+     "caphi": "7urr",
+     "gloss": "free;open;uncontrained",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "5566",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "7arr",
-     "vocalized": "حَرّ",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "5566",
+       "root": "ح.ر.ر",
+       "gloss": "free;open;uncontrained",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "5568",
+       "root": "ح.ر.ر",
+       "gloss": "hot",
+       "analysis": "ADJ/NOUN"
+      }
+     ],
+     "caphi_urban": "7urr",
+     "vocalized": "حُرّ",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s9.mp3"
   }
  ]
 }

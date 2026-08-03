@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "جدي كان فلاح طول عمره.",
    "en": "My grandfather was a farmer his whole life.",
-   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -138,12 +134,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "الأرض كانت كل حياته، وهو ما بيعرف غيرها.",
    "en": "The land was his whole life, and he knew nothing else.",
-   "p": null,
    "words": [
     {
      "surface": "الأرض",
@@ -324,12 +319,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "لما كبر بالعمر، صار الشغل صعب عليه.",
    "en": "When he grew old, the work became hard for him.",
-   "p": null,
    "words": [
     {
      "surface": "لما",
@@ -494,7 +488,45 @@
      "analysis": "ADJ:MS",
      "maknuune_id": "17778",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17778",
+       "root": "ص.ع.ب",
+       "gloss": "difficult",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "17784",
+       "root": "ص.ع.ب",
+       "gloss": "make_sth_more_difficult_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17789",
+       "root": "ص.ع.ب",
+       "gloss": "become_more_difficult;sth_evokes_pity_[a",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17790",
+       "root": "ص.ع.ب",
+       "gloss": "make_sth_more_difficult_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17783",
+       "root": "ص.ع.ب",
+       "gloss": "become_more_difficult;sth_evokes_pity_[a",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17786",
+       "root": "ص.ع.ب",
+       "gloss": "become_more_difficult;sth_evokes_pity",
+       "analysis": "VERB:I"
+      }
+     ],
      "caphi_urban": "s.a3ib",
      "vocalized": "صَعِب",
      "vocalized_from": "lexicon:exact"
@@ -516,12 +548,11 @@
      "caphi_urban": "3ala"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "بس كل موسم، كان يصر يحصد بإيده.",
    "en": "But every season, he insisted on harvesting with his own hands.",
-   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -678,12 +709,11 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "سنة، حسينا إنه هاي رح تكون آخر حصاد إله.",
    "en": "One year, we felt this would be his last harvest.",
-   "p": null,
    "words": [
     {
      "surface": "سنة",
@@ -767,17 +797,37 @@
      "surface": "تكون",
      "root": "ك.و.ن",
      "lemma": "تْكَوَّن",
-     "form": "يِتْكَوَّن",
-     "caphi_raw": "y i t k a w w a n",
-     "caphi": "yitkawwan",
+     "form": "تْكَوَّن",
+     "caphi_raw": "t k a w w a n",
+     "caphi": "tkawwan",
      "gloss": "be_formed",
-     "analysis": "VERB:I",
-     "maknuune_id": "28571",
+     "analysis": "VERB:P",
+     "maknuune_id": "28572",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "yitkawwan",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "28572",
+       "root": "ك.و.ن",
+       "gloss": "be_formed",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "28570",
+       "root": "ك.و.ن",
+       "gloss": "be_formed",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "28571",
+       "root": "ك.و.ن",
+       "gloss": "be_formed",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "tkawwan",
      "vocalized": "تْكَوَّن",
-     "vocalized_from": "derived:affix"
+     "vocalized_from": "lexicon:exact"
     },
     {
      "surface": "آخر",
@@ -866,12 +916,11 @@
      "caphi_urban": "2ilo"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "العيلة كلها إجت تساعده بالحصاد.",
    "en": "The whole family came to help him with the harvest.",
-   "p": null,
    "words": [
     {
      "surface": "العيلة",
@@ -992,12 +1041,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "جدي وقف بوسط الحقل، وعيونه مليانة دموع.",
    "en": "My grandfather stood in the middle of the field, his eyes full of tears.",
-   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -1146,12 +1194,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "قال: هالأرض عمرتها بعرق جبيني.",
    "en": "He said: I built up this land with the sweat of my brow.",
-   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -1258,12 +1305,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "قال: خذوا منها العبرة، الأرض ما بتخون.",
    "en": "He said: take a lesson from it, the land never betrays.",
-   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -1426,12 +1472,11 @@
      "vocalized_from": "derived:verb"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   },
   {
    "ar": "حصدنا سوا من الصبح للمسا.",
    "en": "We harvested together from morning to evening.",
-   "p": null,
    "words": [
     {
      "surface": "حصدنا",
@@ -1580,12 +1625,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s9.mp3"
   },
   {
    "ar": "جدي كان يعلم الأحفاد كيف يمسكوا المنجل.",
    "en": "My grandfather taught the grandchildren how to hold the sickle.",
-   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -1786,12 +1830,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s10.mp3"
   },
   {
    "ar": "آخر النهار، جلسنا كلنا نأكل تحت الشجرة.",
    "en": "At the end of the day, we all sat eating under the tree.",
-   "p": null,
    "words": [
     {
      "surface": "آخر",
@@ -2058,12 +2101,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s11.mp3"
   },
   {
    "ar": "جدي نظر للحقل المحصود وابتسم بارتياح.",
    "en": "My grandfather looked at the harvested field and smiled with contentment.",
-   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -2232,12 +2274,11 @@
      "vocalized_from": "derived:verb"
     }
    ],
-   "audio": null
+   "audio": "audio/s12.mp3"
   },
   {
    "ar": "بعد هديك السنة، توفى جدي بهدوء.",
    "en": "After that year, my grandfather passed away peacefully.",
-   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -2374,12 +2415,11 @@
      "vocalized_from": "derived:verb"
     }
    ],
-   "audio": null
+   "audio": "audio/s13.mp3"
   },
   {
    "ar": "بس كل موسم حصاد، بنحس إنه معنا بالحقل.",
    "en": "But every harvest season, we feel he is with us in the field.",
-   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -2552,7 +2592,7 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s14.mp3"
   }
  ]
 }

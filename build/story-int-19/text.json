@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "intermediate",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "الشهر الماضي، سكن جنبنا جار جديد.",
    "en": "Last month, a new neighbor moved in next to us.",
-   "p": null,
    "words": [
     {
      "surface": "الشهر",
@@ -244,12 +240,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "بالأول، ما كنا نعرف عنه إشي.",
    "en": "At first, we didn't know anything about him.",
-   "p": null,
    "words": [
     {
      "surface": "بالأول",
@@ -418,12 +413,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "إمي قالت لازم نرحب فيه متل ما بتعمل الناس.",
    "en": "My mom said we should welcome him like people do.",
-   "p": null,
    "words": [
     {
      "surface": "إمي",
@@ -628,12 +622,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "طبخت صحن أكل وبعتتني أوديه عنده.",
    "en": "She cooked a plate of food and sent me to take it to him.",
-   "p": null,
    "words": [
     {
      "surface": "طبخت",
@@ -846,12 +839,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "دقيت الباب وقدمتله الصحن ورحبت فيه.",
    "en": "I knocked on the door, gave him the plate, and welcomed him.",
-   "p": null,
    "words": [
     {
      "surface": "دقيت",
@@ -1018,12 +1010,11 @@
      "caphi_urban": "fi"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "فرح كتير وقال إنه لسا جديد بالبلد.",
    "en": "He was very happy and said he was new to the town.",
-   "p": null,
    "words": [
     {
      "surface": "فرح",
@@ -1099,17 +1090,55 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قُول",
-     "caphi_raw": "Q uu l",
-     "caphi": "Quul",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
      "gloss": "say_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "27004",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "2uul",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "27011",
+       "root": "ق.و.ل",
+       "gloss": "say_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26994",
+       "root": "ق.و.ل",
+       "gloss": "gossip",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26995",
+       "root": "ق.و.ل",
+       "gloss": "Unbelievable!",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26996",
+       "root": "ق.و.ل",
+       "gloss": "It_is_an_expression_that_the_speaker_say",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26998",
+       "root": "ق.و.ل",
+       "gloss": "care_about",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27004",
+       "root": "ق.و.ل",
+       "gloss": "say_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "2aal",
      "vocalized": null,
-     "vocalized_from": "unvocalized:no-alignment"
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "إنه",
@@ -1176,12 +1205,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "بعد يومين، رد علينا بصحن حلويات.",
    "en": "After two days, he returned the gesture with a plate of sweets.",
-   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -1294,12 +1322,11 @@
      "caphi_urban": "7alawiyyaat"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "من يومها، صار من أحسن جيراننا.",
    "en": "Since that day, he became one of our best neighbors.",
-   "p": null,
    "words": [
     {
      "surface": "من",
@@ -1474,12 +1501,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "تعلمنا إنه ترحيب صغير بيفتح قلوب كبيرة.",
    "en": "We learned that a small welcome opens big hearts.",
-   "p": null,
    "words": [
     {
      "surface": "تعلمنا",
@@ -1642,7 +1668,7 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   }
  ]
 }

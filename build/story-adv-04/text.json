@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "جدتي كانت أحسن طباخة بالعيلة كلها.",
    "en": "My grandmother was the best cook in the whole family.",
-   "p": null,
    "words": [
     {
      "surface": "جدتي",
@@ -154,12 +150,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "أكلها كان له طعمة ما في متلها.",
    "en": "Her food had a taste like no other.",
-   "p": null,
    "words": [
     {
      "surface": "أكلها",
@@ -350,12 +345,11 @@
      "vocalized_from": "unvocalized:no-alignment"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "كل النسوان بالعيلة حاولوا يقلدوا أكلها.",
    "en": "All the women in the family tried to imitate her cooking.",
-   "p": null,
    "words": [
     {
      "surface": "كل",
@@ -488,12 +482,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "بس ولا وحدة قدرت توصل لنفس الطعمة.",
    "en": "But not one of them could reach the same taste.",
-   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -680,12 +673,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "مرة، سألتها إمي: شو سرك يا حجة؟",
    "en": "Once, my mom asked her: what's your secret, hajjeh?",
-   "p": null,
    "words": [
     {
      "surface": "مرة",
@@ -876,12 +868,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "جدتي ضحكت وقالت: السر مش بالبهارات.",
    "en": "My grandmother laughed and said: the secret isn't in the spices.",
-   "p": null,
    "words": [
     {
      "surface": "جدتي",
@@ -1060,7 +1051,21 @@
      "analysis": "PART_NEG",
      "maknuune_id": "30759",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30759",
+       "root": "NTWS",
+       "gloss": "not",
+       "analysis": "PART_NEG"
+      },
+      {
+       "id": "30760",
+       "root": "NTWS",
+       "gloss": "not",
+       "analysis": "PART_NEG"
+      }
+     ],
      "caphi_urban": "mish",
      "vocalized": "مِش",
      "vocalized_from": "lexicon:exact"
@@ -1096,12 +1101,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "قالت: السر إنك تطبخي وقلبك مليان محبة.",
    "en": "She said: the secret is that you cook with your heart full of love.",
-   "p": null,
    "words": [
     {
      "surface": "قالت",
@@ -1376,12 +1380,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "إمي ما فهمت الحكي بالأول.",
    "en": "My mom didn't understand the words at first.",
-   "p": null,
    "words": [
     {
      "surface": "إمي",
@@ -1560,12 +1563,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "بس بعد ما توفت جدتي، بلشت تفهم.",
    "en": "But after my grandmother passed away, she began to understand.",
-   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -1714,12 +1716,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   },
   {
    "ar": "صارت إمي تطبخ لنا نفس الأكلات.",
    "en": "My mom started cooking us the same dishes.",
-   "p": null,
    "words": [
     {
      "surface": "صارت",
@@ -1890,12 +1891,11 @@
      "vocalized_from": "unvocalized:no-alignment"
     }
    ],
-   "audio": null
+   "audio": "audio/s9.mp3"
   },
   {
    "ar": "وكانت تحط فيها كل محبتها لإلنا.",
    "en": "And she would put all her love for us into them.",
-   "p": null,
    "words": [
     {
      "surface": "وكانت",
@@ -2070,12 +2070,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s10.mp3"
   },
   {
    "ar": "شوي شوي، صار أكل إمي يشبه أكل جدتي.",
    "en": "Little by little, my mom's food started to resemble my grandmother's.",
-   "p": null,
    "words": [
     {
      "surface": "شوي",
@@ -2088,7 +2087,39 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17238",
+       "root": "ش.و.ي",
+       "gloss": "a_little_bit",
+       "analysis": "ADV"
+      },
+      {
+       "id": "17239",
+       "root": "ش.و.ي",
+       "gloss": "grilling;barbecue",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "17244",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17241",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17242",
+       "root": "ش.و.ي",
+       "gloss": "grill",
+       "analysis": "VERB:I"
+      }
+     ],
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
@@ -2104,7 +2135,39 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17238",
+       "root": "ش.و.ي",
+       "gloss": "a_little_bit",
+       "analysis": "ADV"
+      },
+      {
+       "id": "17239",
+       "root": "ش.و.ي",
+       "gloss": "grilling;barbecue",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "17244",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17241",
+       "root": "ش.و.ي",
+       "gloss": "grill_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17242",
+       "root": "ش.و.ي",
+       "gloss": "grill",
+       "analysis": "VERB:I"
+      }
+     ],
      "caphi_urban": "shwayy",
      "vocalized": "شْوَيّ",
      "vocalized_from": "lexicon:exact"
@@ -2226,12 +2289,11 @@
      "caphi_urban": "jiddti"
     }
    ],
-   "audio": null
+   "audio": "audio/s11.mp3"
   },
   {
    "ar": "يوم، ذقت أكلها وحسيت إنه جدتي رجعت.",
    "en": "One day, I tasted her food and felt my grandmother had come back.",
-   "p": null,
    "words": [
     {
      "surface": "يوم",
@@ -2344,12 +2406,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s12.mp3"
   },
   {
    "ar": "قلتلها: هيك بالضبط كانت تطبخ جدتي.",
    "en": "I told her: this is exactly how grandma used to cook.",
-   "p": null,
    "words": [
     {
      "surface": "قلتلها",
@@ -2504,12 +2565,11 @@
      "caphi_urban": "jiddti"
     }
    ],
-   "audio": null
+   "audio": "audio/s13.mp3"
   },
   {
    "ar": "إمي دمعت وقالت: عرفت السر أخيرا.",
    "en": "My mom teared up and said: I finally learned the secret.",
-   "p": null,
    "words": [
     {
      "surface": "إمي",
@@ -2708,7 +2768,7 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s14.mp3"
   }
  ]
 }

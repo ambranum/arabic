@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "ليلة شتوية باردة، كنا قاعدين حوالي الصوبا.",
    "en": "One cold winter night, we were sitting around the heater.",
-   "p": null,
    "words": [
     {
      "surface": "ليلة",
@@ -166,12 +162,11 @@
      "caphi_urban": "2is.s.oba"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "فجأة، سمعنا دق عالباب.",
    "en": "Suddenly, we heard a knock on the door.",
-   "p": null,
    "words": [
     {
      "surface": "فجأة",
@@ -314,12 +309,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "أبوي فتح، ولقى رجال غريب مبلول من الشتا.",
    "en": "My dad opened, and found a strange man soaked from the rain.",
-   "p": null,
    "words": [
     {
      "surface": "أبوي",
@@ -588,12 +582,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "الرجال قال: سيارتي وقفت بالطريق، وأنا تايه.",
    "en": "The man said: my car broke down on the road, and I'm lost.",
-   "p": null,
    "words": [
     {
      "surface": "الرجال",
@@ -802,12 +795,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "أبوي قاله على طول: تفضل، البيت بيتك.",
    "en": "My dad said to him right away: come in, my house is your house.",
-   "p": null,
    "words": [
     {
      "surface": "أبوي",
@@ -1076,12 +1068,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "قعدناه جنب الصوبا وجبناله أواعي ناشفة.",
    "en": "We seated him by the heater and brought him dry clothes.",
-   "p": null,
    "words": [
     {
      "surface": "قعدناه",
@@ -1210,12 +1201,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "إمي سخنت شوربة وقدمتله عشا.",
    "en": "My mom heated soup and served him dinner.",
-   "p": null,
    "words": [
     {
      "surface": "إمي",
@@ -1366,12 +1356,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "الرجال قال: ما بعرف كيف أشكركم.",
    "en": "The man said: I don't know how to thank you.",
-   "p": null,
    "words": [
     {
      "surface": "الرجال",
@@ -1580,12 +1569,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "أبوي رد: هاي واجب، وإحنا بنكرم الضيف.",
    "en": "My dad replied: this is a duty, and we honor the guest.",
-   "p": null,
    "words": [
     {
      "surface": "أبوي",
@@ -1854,12 +1842,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   },
   {
    "ar": "سهرنا معه وحكالنا عن حياته وسفراته.",
    "en": "We stayed up with him and he told us about his life and travels.",
-   "p": null,
    "words": [
     {
      "surface": "سهرنا",
@@ -1990,12 +1977,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s9.mp3"
   },
   {
    "ar": "الصبح، طلعت الشمس ووقفت الشتا.",
    "en": "In the morning, the sun came out and the rain stopped.",
-   "p": null,
    "words": [
     {
      "surface": "الصبح",
@@ -2162,12 +2148,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s10.mp3"
   },
   {
    "ar": "أبوي ساعده يصلح سيارته.",
    "en": "My dad helped him fix his car.",
-   "p": null,
    "words": [
     {
      "surface": "أبوي",
@@ -2304,12 +2289,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s11.mp3"
   },
   {
    "ar": "قبل ما يمشي، الرجال قال: مش رح أنساكم أبدا.",
    "en": "Before he left, the man said: I will never forget you.",
-   "p": null,
    "words": [
     {
      "surface": "قبل",
@@ -2442,7 +2426,21 @@
      "analysis": "PART_NEG",
      "maknuune_id": "30759",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30759",
+       "root": "NTWS",
+       "gloss": "not",
+       "analysis": "PART_NEG"
+      },
+      {
+       "id": "30760",
+       "root": "NTWS",
+       "gloss": "not",
+       "analysis": "PART_NEG"
+      }
+     ],
      "caphi_urban": "mish",
      "vocalized": "مِش",
      "vocalized_from": "lexicon:exact"
@@ -2508,12 +2506,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s12.mp3"
   },
   {
    "ar": "بعد شهر، وصلنا هدية كبيرة وورقة مكتوب فيها شكرا.",
    "en": "After a month, a big gift arrived with a note saying thank you.",
-   "p": null,
    "words": [
     {
      "surface": "بعد",
@@ -2738,12 +2735,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s13.mp3"
   },
   {
    "ar": "أبوي قال: الخير اللي بتعمله، بيرجعلك.",
    "en": "My dad said: the good you do comes back to you.",
-   "p": null,
    "words": [
     {
      "surface": "أبوي",
@@ -2916,12 +2912,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s14.mp3"
   },
   {
    "ar": "من هديك الليلة، تعلمت شو يعني الكرم.",
    "en": "From that night, I learned what generosity means.",
-   "p": null,
    "words": [
     {
      "surface": "من",
@@ -3158,7 +3153,7 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s15.mp3"
   }
  ]
 }

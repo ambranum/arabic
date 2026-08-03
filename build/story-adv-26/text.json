@@ -8,16 +8,12 @@
  "kind": "story",
  "date": null,
  "level": "advanced",
- "book": null,
- "chapter": null,
- "book_title": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
   {
    "ar": "جدي كان دايما يقول: عنا كنز بالبيت.",
    "en": "My grandfather always used to say: we have a treasure in the house.",
-   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -198,12 +194,11 @@
      "caphi_urban": "bilbeet"
     }
    ],
-   "audio": null
+   "audio": "audio/s0.mp3"
   },
   {
    "ar": "إحنا الولاد، كنا ندور عليه بكل زاوية.",
    "en": "We kids used to search for it in every corner.",
-   "p": null,
    "words": [
     {
      "surface": "إحنا",
@@ -370,12 +365,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s1.mp3"
   },
   {
    "ar": "فتشنا بالخزاين، وتحت السراير، وبالعلية.",
    "en": "We searched the cabinets, under the beds, and in the attic.",
-   "p": null,
    "words": [
     {
      "surface": "فتشنا",
@@ -530,12 +524,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s2.mp3"
   },
   {
    "ar": "بس ما لقينا لا ذهب ولا مصاري.",
    "en": "But we found neither gold nor money.",
-   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -726,12 +719,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s3.mp3"
   },
   {
    "ar": "سألنا جدي: وين الكنز؟ ما لقيناه.",
    "en": "We asked our grandfather: where is the treasure? We didn't find it.",
-   "p": null,
    "words": [
     {
      "surface": "سألنا",
@@ -906,12 +898,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s4.mp3"
   },
   {
    "ar": "ضحك جدي وقال: الكنز مش شي بتلاقوه بإيدكم.",
    "en": "My grandfather laughed and said: the treasure isn't something you find with your hands.",
-   "p": null,
    "words": [
     {
      "surface": "ضحك",
@@ -987,17 +978,55 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قُول",
-     "caphi_raw": "Q uu l",
-     "caphi": "Quul",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
      "gloss": "say_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "27004",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "2uul",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "27011",
+       "root": "ق.و.ل",
+       "gloss": "say_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26994",
+       "root": "ق.و.ل",
+       "gloss": "gossip",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26995",
+       "root": "ق.و.ل",
+       "gloss": "Unbelievable!",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26996",
+       "root": "ق.و.ل",
+       "gloss": "It_is_an_expression_that_the_speaker_say",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26998",
+       "root": "ق.و.ل",
+       "gloss": "care_about",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27004",
+       "root": "ق.و.ل",
+       "gloss": "say_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "2aal",
      "vocalized": null,
-     "vocalized_from": "unvocalized:no-alignment"
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "الكنز",
@@ -1046,7 +1075,21 @@
      "analysis": "PART_NEG",
      "maknuune_id": "30759",
      "village": null,
-     "provenance": "maknuune:resolved",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30759",
+       "root": "NTWS",
+       "gloss": "not",
+       "analysis": "PART_NEG"
+      },
+      {
+       "id": "30760",
+       "root": "NTWS",
+       "gloss": "not",
+       "analysis": "PART_NEG"
+      }
+     ],
      "caphi_urban": "mish",
      "vocalized": "مِش",
      "vocalized_from": "lexicon:exact"
@@ -1098,12 +1141,11 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": null
+   "audio": "audio/s5.mp3"
   },
   {
    "ar": "كبرنا، وكل واحد راح بطريقه.",
    "en": "We grew up, and each of us went their own way.",
-   "p": null,
    "words": [
     {
      "surface": "كبرنا",
@@ -1338,12 +1380,11 @@
      "vocalized_from": "derived:verb"
     }
    ],
-   "audio": null
+   "audio": "audio/s6.mp3"
   },
   {
    "ar": "بس كل عيد، كنا نرجع نجتمع ببيت جدي.",
    "en": "But every holiday, we would come back to gather at grandpa's house.",
-   "p": null,
    "words": [
     {
      "surface": "بس",
@@ -1564,12 +1605,11 @@
      "caphi_urban": "jiddi"
     }
    ],
-   "audio": null
+   "audio": "audio/s7.mp3"
   },
   {
    "ar": "كنا نقعد حوالي الطاولة، ونحكي ونضحك.",
    "en": "We would sit around the table, talking and laughing.",
-   "p": null,
    "words": [
     {
      "surface": "كنا",
@@ -1796,12 +1836,11 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": null
+   "audio": "audio/s8.mp3"
   },
   {
    "ar": "جدي كان ينظر إلنا، وعيونه مليانة فرح.",
    "en": "My grandfather would look at us, his eyes full of joy.",
-   "p": null,
    "words": [
     {
      "surface": "جدي",
@@ -1994,12 +2033,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s9.mp3"
   },
   {
    "ar": "يوم، قبل ما يتوفى، جمعنا كلنا حواليه.",
    "en": "One day, before he passed away, he gathered us all around him.",
-   "p": null,
    "words": [
     {
      "surface": "يوم",
@@ -2150,12 +2188,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": null
+   "audio": "audio/s10.mp3"
   },
   {
    "ar": "قال: هلأ فهمتوا شو هو الكنز؟",
    "en": "He said: now do you understand what the treasure is?",
-   "p": null,
    "words": [
     {
      "surface": "قال",
@@ -2286,12 +2323,11 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s11.mp3"
   },
   {
    "ar": "نظر لوجوهنا، وقال: إنتوا الكنز، عيلتي.",
    "en": "He looked at our faces, and said: you are the treasure, my family.",
-   "p": null,
    "words": [
     {
      "surface": "نظر",
@@ -2381,17 +2417,55 @@
      "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قُول",
-     "caphi_raw": "Q uu l",
-     "caphi": "Quul",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
      "gloss": "say_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "27004",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "2uul",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "27011",
+       "root": "ق.و.ل",
+       "gloss": "say_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26994",
+       "root": "ق.و.ل",
+       "gloss": "gossip",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26995",
+       "root": "ق.و.ل",
+       "gloss": "Unbelievable!",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26996",
+       "root": "ق.و.ل",
+       "gloss": "It_is_an_expression_that_the_speaker_say",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26998",
+       "root": "ق.و.ل",
+       "gloss": "care_about",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27004",
+       "root": "ق.و.ل",
+       "gloss": "say_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "2aal",
      "vocalized": null,
-     "vocalized_from": "unvocalized:no-alignment"
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "إنتوا",
@@ -2538,12 +2612,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s12.mp3"
   },
   {
    "ar": "سكتنا كلنا، وحسينا بمعنى كلامه.",
    "en": "We all fell silent, and felt the meaning of his words.",
-   "p": null,
    "words": [
     {
      "surface": "سكتنا",
@@ -2708,12 +2781,11 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": null
+   "audio": "audio/s13.mp3"
   },
   {
    "ar": "من يومها، عرفنا إنه أغلى كنز هو الأهل.",
    "en": "From that day, we knew that the most precious treasure is family.",
-   "p": null,
    "words": [
     {
      "surface": "من",
@@ -3022,7 +3094,7 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": null
+   "audio": "audio/s14.mp3"
   }
  ]
 }
