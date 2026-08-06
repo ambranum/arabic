@@ -144,8 +144,15 @@ def main():
                 v, vp = vocalize(w['surface'], w.get('form'), w.get('analysis'))
                 w['vocalized'], w['vocalized_from'] = v, vp
         sent = {"ar": s['ar'], "en": s['en'], "p": s.get('p'), "words": words, "audio": None}
-        if do_audio:
-            ap = os.path.join(outdir, 'audio', f"s{si}.mp3")
+        # ALWAYS adopt a clip that already exists on disk — with or without an API key, and
+        # whether or not this run generates audio. This used to say `if do_audio:` only, so a
+        # re-ingest without a key (or a run that hit an ElevenLabs credit limit part-way) wrote
+        # audio:null over texts whose mp3s were sitting right there, and the app showed
+        # "no audio yet" for material we already had.
+        ap = os.path.join(outdir, 'audio', f"s{si}.mp3")
+        if os.path.exists(ap):
+            sent['audio'] = f"audio/s{si}.mp3"
+        elif do_audio:
             ok, how = tts(s['ar'], ap, key, voice)
             sent['audio'] = f"audio/s{si}.mp3" if ok else None
             print(f"  audio s{si}: {how}")
