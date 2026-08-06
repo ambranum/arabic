@@ -25,8 +25,21 @@ cd "$ROOT"
 MODE="${1:-all}"
 
 : "${ELEVENLABS_API_KEY:?set ELEVENLABS_API_KEY in your terminal}"
-# Pinned voice (env var still overrides, for one-off experiments).
-ELEVENLABS_VOICE_ID="${ELEVENLABS_VOICE_ID:-$(python3 -c 'import sys; sys.path.insert(0,"pipeline"); import voice; print(voice.VOICE_ID)')}"
+
+# The pinned voice WINS over any ELEVENLABS_VOICE_ID left exported in this terminal. A stale
+# export is what once re-voiced the whole corpus back into the OLD voice — the run looked
+# perfect and only the audio timbre revealed it.
+PINNED="$(python3 -c 'import sys; sys.path.insert(0,"pipeline"); import voice; print(voice.VOICE_ID)')"
+if [ -n "${ELEVENLABS_VOICE_ID:-}" ] && [ "$ELEVENLABS_VOICE_ID" != "$PINNED" ]; then
+  if [ "${ELEVENLABS_VOICE_OVERRIDE:-}" = "1" ]; then
+    echo "!! using OVERRIDE voice $ELEVENLABS_VOICE_ID instead of the pinned $PINNED"
+    PINNED="$ELEVENLABS_VOICE_ID"
+  else
+    echo "!! your terminal exports ELEVENLABS_VOICE_ID=$ELEVENLABS_VOICE_ID — IGNORING it."
+    echo "   Using the pinned voice $PINNED. (ELEVENLABS_VOICE_OVERRIDE=1 to force the other.)"
+  fi
+fi
+ELEVENLABS_VOICE_ID="$PINNED"
 export ELEVENLABS_VOICE_ID
 
 # PREFLIGHT — verify the key + voice actually work BEFORE deleting anything. This script deletes the
@@ -44,7 +57,17 @@ if [ "$_code" != "200" ] || [ ! -s "$_tmp" ]; then
   echo "   id '${ELEVENLABS_VOICE_ID}' isn't saved in your account. NOTHING was deleted — safe to retry."
   echo "   (Server said:)"; head -c 300 "$_tmp" 2>/dev/null; echo; rm -f "$_tmp"; exit 1
 fi
-rm -f "$_tmp"; echo "  key + voice OK — proceeding."
+rm -f "$_tmp"
+# Print the voice's NAME, not just its id. An id is unreadable; a name makes a wrong voice
+# obvious BEFORE spending credits and overwriting a whole corpus.
+_name=$(curl -s -H "xi-api-key: ${ELEVENLABS_API_KEY}" \
+        "https://api.elevenlabs.io/v1/voices/${ELEVENLABS_VOICE_ID}" \
+        | python3 -c 'import sys,json;
+try: print(json.load(sys.stdin).get("name","(unnamed)"))
+except Exception: print("(could not read name)")' 2>/dev/null)
+echo "  key OK — synthesizing with voice: ${ELEVENLABS_VOICE_ID}  [\"${_name}\"]"
+echo "  ^ if that is NOT the voice you want, Ctrl-C NOW (nothing has been deleted yet)."
+sleep 4
 
 if [ "$MODE" = "words" ]; then
   echo "Re-voicing FLASHCARD WORDS ONLY with voice: $ELEVENLABS_VOICE_ID"
