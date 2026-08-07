@@ -14,7 +14,9 @@ import re, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from conjugate import (conjugate, conjugate_hollow, conjugate_defective,
                        conjugate_geminate, conjugate_II, conjugate_II_defective, conjugate_III, conjugate_IV,
-                       conjugate_V, conjugate_VI, conjugate_VII, conjugate_VIII, conjugate_X)
+                       conjugate_V, conjugate_VI, conjugate_VII, conjugate_VIII, conjugate_X,
+                       conjugate_assimilated, conjugate_hamzated_akal, conjugate_VIII_defective,
+                       conjugate_X_gemdef, conjugate_ija)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 PDF = os.path.join(ROOT, 'reference', 'Palestinian_Arabic_Verbs_-_Lingualism.pdf')
@@ -39,7 +41,8 @@ def canon(t):
     for a, b in [('ā','aa'),('ī','ii'),('ū','uu'),('ē','ee'),('ō','oo'),('á','a'),('í','i'),('ú','u')]:
         s = s.replace(a, b)
     return (s.replace('ʔ','2').replace('g','2').replace('š','sh').replace('x','kh')
-             .replace('ɧ','7').replace('ʈ','T.').replace('ɖ','D.').replace('ʂ','S.').replace('ž','j'))
+             .replace('ɧ','7').replace('ʈ','T.').replace('ɖ','D.').replace('ʂ','S.').replace('ž','j')
+             .replace('ɣ','gh'))
 
 def book_table(r, pg):
     L = [l.strip() for l in (r.pages[pg-1].extract_text() or '').split('\n')]
@@ -73,7 +76,7 @@ def run_class(r, cls, engine, skip):
     """Verify one class. engine(p3,i3)->cells. skip(raw_p3)->bool excludes cross-class rows."""
     global CLASS
     CLASS = cls
-    pages = [i+1 for i in range(13,120)
+    pages = [i+1 for i in range(12,120)
              if len((r.pages[i].extract_text() or '').split('\n')) > 1
              and re.match(r'^\d+\s+' + cls + r'\s+to', (r.pages[i].extract_text() or '').split('\n')[1].strip())]
     tot = ok = 0; fails = []; skipped = []
@@ -117,6 +120,17 @@ def main():
         ('sound measure VII', lambda p, i: conjugate_VII('X.X.X', p, i), lambda raw: False),
         ('sound measure VIII', lambda p, i: conjugate_VIII('X.X.X', p, i), lambda raw: False),
         ('sound measure X', lambda p, i: conjugate_X('X.X.X', p, i), lambda raw: False),
+        # everyday irregulars — the classes that cover أكل/أخذ/وصل/اشترى/استنى/إجا
+        ('sound measure I', lambda p, i: conjugate_assimilated('و.ص.ل', p, i),
+            lambda raw: False),                                # only w-initial tables parse
+        ('irregular measure I', lambda p, i: conjugate_hamzated_akal('ء.ك.ل', p, i),
+            lambda raw: False),
+        ('defective measure VIII', lambda p, i: conjugate_VIII_defective('ش.ر.ي', p, i),
+            lambda raw: False),
+        ('irregular measure X', lambda p, i: conjugate_X_gemdef('ء.ن.ي', p, i),
+            lambda raw: False),
+        ('irregular defective measure I', lambda p, i: conjugate_ija(),
+            lambda raw: False),
     ]
     for cls, engine, skip in specs:
         tot, ok, fails, skipped = run_class(r, cls, engine, skip)

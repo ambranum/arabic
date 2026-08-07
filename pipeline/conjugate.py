@@ -693,7 +693,11 @@ def conjugate_VIII(root, past3ms, pres3ms):
     if not r: return None
     g, pp = _deglottal(past3ms)
     p = _match(pp, ['i','C','t','a','C','a','C'])
-    im = _match(_phon(str(pres3ms)), ['y','i','C','t','i','C','i','C'])
+    # Maknuune sometimes records the imperfect with an a-stem (yishtaghil) where the book
+    # conjugates the i-stem (yishtighil) — both are real speech. Accept either on input;
+    # generation stays the book-verified i-stem.
+    im = (_match(_phon(str(pres3ms)), ['y','i','C','t','i','C','i','C'])
+          or _match(_phon(str(pres3ms)), ['y','i','C','t','a','C','i','C']))
     if not p or not im or p != im: return None
     c1, c2, c3 = p
     r1, r2, r3 = (_ar_letter(c1, r[0]), _ar_letter(c2, r[1]), _ar_letter(c3, r[2]))
@@ -713,6 +717,253 @@ def conjugate_X(root, past3ms, pres3ms):
     return _derived(J_('ista',c1,c2,'a',c3), J_('ا','س','ت',r1,r2,r3), False,
                     J_('sta',c1,c2,'i',c3), J_('س','ت',r1,r2,r3), 'i', False, 'sound',
                     J_('ista',c1,c2,'i',c3), part_syn=False, glottal=g)
+
+
+# ---- assimilated Form I (w-initial: وصل wiSil/yuuSal, وقف wi2if/yuu2af) ----------------
+# The perfect behaves like a sound i-stem; in the imperfect the w vocalizes to uu for every
+# person EXCEPT ana, which keeps it as a consonant (awS.al / bawS.al). Verified against the
+# book's w-initial 'sound measure I' tables (to arrive), which the sound spec deliberately
+# skips.
+def conjugate_assimilated(root, past3ms, pres3ms):
+    rl = [x for x in str(root).split('.') if x]
+    if len(rl) != 3:
+        return None
+    p = _phon(str(past3ms))
+    if len(p) != 5 or p[0] != 'w' or _is_cons(p[1]) or _is_cons(p[3]):
+        return None
+    c1, pv, c2, pv2, c3 = p
+    if pv != pv2 or pv in ('aa', 'ii', 'uu', 'ee', 'oo'):
+        return None
+    im = _phon(str(pres3ms))                        # y uu C V C
+    if (len(im) != 5 or im[0] != 'y' or im[1] != 'uu'
+            or not (_is_cons(im[2]) and _is_cons(im[4])) or _is_cons(im[3])
+            or [im[2], im[4]] != [c2, c3]):
+        return None
+    iv = im[3]
+    r1, r2, r3 = rl
+    J = lambda *x: ''.join(x)
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+
+    # PERFECT — sound-engine rules (i-stem drops the first vowel before consonant suffixes)
+    cs = (lambda s: J(c1, pv, c2, pv, c3, s)) if pv == 'a' else (lambda s: J(c1, c2, pv, c3, s))
+    ars = lambda s: J(r1, r2, r3, s)
+    put('perf', 'huwwe', J(c1, pv, c2, pv, c3), J(r1, r2, r3))
+    put('perf', 'hiyye', J(c1, pv, c2, c3, 'at'), ars('ت'))
+    put('perf', 'humme', J(c1, pv, c2, pv, c3, 'u') if pv == 'a' else J(c1, pv, c2, c3, 'u'), ars('وا'))
+    put('perf', 'ana',  cs('it'), ars('ت'))
+    put('perf', 'inta', cs('it'), ars('ت'))
+    put('perf', 'inti', cs('ti'), ars('تي'))
+    put('perf', 'i7na', cs('na'), ars('نا'))
+    put('perf', 'intu', cs('tu'), ars('تو'))
+
+    # IMPERFECT — ana keeps the w (awS.al); everyone else vocalizes it (nuuS.al, yuuS.al).
+    # Vowel suffixes attach WITHOUT syncope (tuuS.ali, yuuS.alu — the long stem carries them).
+    stem_uu = J('uu', c2, iv, c3)
+    put('impf', 'ana',   J('a', c1, c2, iv, c3), J('أ', r1, r2, r3))
+    for per, pfx in (('i7na','n'), ('inta','t'), ('hiyye','t'), ('huwwe','y')):
+        put('impf', per, pfx + stem_uu, J(_PFX_AR[per], r1, r2, r3))
+    put('impf', 'inti',  't' + stem_uu + 'i', J('ت', r1, r2, r3, 'ي'))
+    put('impf', 'intu',  't' + stem_uu + 'u', J('ت', r1, r2, r3, 'وا'))
+    put('impf', 'humme', 'y' + stem_uu + 'u', J('ي', r1, r2, r3, 'وا'))
+
+    # BI-IMPERFECT — the generic rule (b+y -> b; ana keeps its a)
+    for per in PERSONS:
+        imf = cells['impf|' + per]
+        ph = 'b' + imf['ph'][1:] if imf['ph'][0] == 'y' else 'b' + imf['ph']
+        ar = 'ب' + (imf['ar'][1:] if per == 'ana' else imf['ar'])
+        put('bimpf', per, ph, ar)
+
+    # IMPERATIVE — follows the imperfect stem vowel: a-imperfects vocalize the w
+    # (uuS.al! أوصل), i-imperfects keep it as a consonant (iw3id! اوعد).
+    if iv == 'a':
+        imp, impar = stem_uu, J('أ', r1, r2, r3)
+    else:
+        imp, impar = J('i', c1, c2, iv, c3), J('ا', r1, r2, r3)
+    put('imp', 'inta', imp,       impar)
+    put('imp', 'inti', imp + 'i', impar + 'ي')
+    put('imp', 'intu', imp + 'u', impar + 'وا')
+
+    # ACTIVE PARTICIPLE — regular faa3il with w as a plain consonant (waaS.il)
+    put('ap', 'm', J(c1, 'aa', c2, 'i', c3), J(r1, 'ا', r2, r3))
+    put('ap', 'f', J(c1, 'aa', c2, c3, 'a'), J(r1, 'ا', r2, r3, 'ة'))
+    put('ap', 'p', J(c1, 'aa', c2, c3, 'iin'), J(r1, 'ا', r2, r3, 'ين'))
+    return cells
+
+
+# ---- irregular Form I: أكل / أخذ (2aCaC / yaaCuC) ------------------------------------
+# The twins every learner meets in week one. Long-vowel imperfect (yaakul), suppletive
+# short imperative (kul!, khud!), and an m- participle (maakil) — all against the book's
+# two 'irregular measure I' tables.
+def conjugate_hamzated_akal(root, past3ms, pres3ms):
+    rl = [x for x in str(root).split('.') if x]
+    if len(rl) != 3:
+        return None
+    p = _match(_phon(str(past3ms)), ['2', 'a', 'C', 'a', 'C'])
+    im = _match(_phon(str(pres3ms)), ['y', 'aa', 'C', 'u', 'C'])
+    if not p or not im or p != im:
+        return None
+    c2, c3 = p
+    ar2 = _ar_letter(c2, rl[1]); ar3 = _ar_letter(c3, rl[2])
+    J = lambda *x: ''.join(x)
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+
+    # PERFECT — a-stem sound behaviour on a 2aCaC base (2akalit, 2akhadti, 2aklat)
+    ars = lambda s: J('أ', ar2, ar3, s)
+    put('perf', 'huwwe', J('2a', c2, 'a', c3), J('أ', ar2, ar3))
+    put('perf', 'hiyye', J('2a', c2, c3, 'at'), ars('ت'))
+    put('perf', 'humme', J('2a', c2, 'a', c3, 'u'), ars('وا'))
+    for per, s in (('ana','it'), ('inta','it'), ('inti','ti'), ('i7na','na'), ('intu','tu')):
+        put('perf', per, J('2a', c2, 'a', c3, s), ars({'it':'ت','ti':'تي','na':'نا','tu':'تو'}[s]))
+
+    # IMPERFECT — long aa stem; the u drops before vowel suffixes (taakli, yaaklu)
+    put('impf', 'ana',   J('2aa', c2, 'u', c3), J('آ', ar2, ar3))
+    for per, pfx in (('i7na','n'), ('inta','t'), ('hiyye','t'), ('huwwe','y')):
+        put('impf', per, J(pfx, 'aa', c2, 'u', c3), J(_PFX_AR[per], 'ا', ar2, ar3))
+    put('impf', 'inti',  J('taa', c2, c3, 'i'), J('ت', 'ا', ar2, ar3, 'ي'))
+    put('impf', 'intu',  J('taa', c2, c3, 'u'), J('ت', 'ا', ar2, ar3, 'وا'))
+    put('impf', 'humme', J('yaa', c2, c3, 'u'), J('ي', 'ا', ar2, ar3, 'وا'))
+
+    # BI-IMPERFECT — b sits on the long vowel; 3rd persons KEEP the y (byaakul, byaaklu)
+    put('bimpf', 'ana',   J('baa', c2, 'u', c3), J('ب', 'ا', ar2, ar3))
+    put('bimpf', 'i7na',  J('bnaa', c2, 'u', c3), J('بن', 'ا', ar2, ar3))
+    for per in ('inta', 'hiyye'):
+        put('bimpf', per, J('btaa', c2, 'u', c3), J('بت', 'ا', ar2, ar3))
+    put('bimpf', 'inti',  J('btaa', c2, c3, 'i'), J('بت', 'ا', ar2, ar3, 'ي'))
+    put('bimpf', 'intu',  J('btaa', c2, c3, 'u'), J('بت', 'ا', ar2, ar3, 'وا'))
+    put('bimpf', 'huwwe', J('byaa', c2, 'u', c3), J('بي', 'ا', ar2, ar3))
+    put('bimpf', 'humme', J('byaa', c2, c3, 'u'), J('بي', 'ا', ar2, ar3, 'وا'))
+
+    # IMPERATIVE — the famous short forms: kul / kuli / kulu, khud / khudi / khudu
+    put('imp', 'inta', J(c2, 'u', c3),       J(ar2, ar3))
+    put('imp', 'inti', J(c2, 'u', c3, 'i'),  J(ar2, ar3, 'ي'))
+    put('imp', 'intu', J(c2, 'u', c3, 'u'),  J(ar2, ar3, 'وا'))
+
+    # ACTIVE PARTICIPLE — m-initial, unlike regular Form I: maakil / maakla / maakliin
+    put('ap', 'm', J('maa', c2, 'i', c3), J('م', 'ا', ar2, ar3))
+    put('ap', 'f', J('maa', c2, c3, 'a'), J('م', 'ا', ar2, ar3, 'ة'))
+    put('ap', 'p', J('maa', c2, c3, 'iin'), J('م', 'ا', ar2, ar3, 'ين'))
+    return cells
+
+
+# ---- defective Form VIII (اشترى ishtara / yishtiri) ----------------------------------
+def conjugate_VIII_defective(root, past3ms, pres3ms):
+    rl = _radicals3(root)
+    if not rl:
+        return None
+    g, pp = _deglottal(past3ms)
+    p = _match(pp, ['i', 'C', 't', 'a', 'C', 'a'])
+    im = _match(_phon(str(pres3ms)), ['y', 'i', 'C', 't', 'i', 'C', 'i'])
+    if not p or not im or p != im:
+        return None
+    c1, c2 = p
+    a1 = _ar_letter(c1, rl[0]); a2 = _ar_letter(c2, rl[1])
+    J = lambda *x: ''.join(x)
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+
+    base = J('i', c1, 'ta', c2)                     # ishtara-
+    arb = J('ا', a1, 'ت', a2)
+    put('perf', 'huwwe', base + 'a', arb + 'ى')
+    put('perf', 'hiyye', base + 'at', arb + 'ت')
+    put('perf', 'humme', base + 'u', arb + 'وا')
+    for per, s, a in (('ana','eet','يت'), ('inta','eet','يت'), ('inti','eeti','يتي'),
+                      ('i7na','eena','ينا'), ('intu','eetu','يتو')):
+        put('perf', per, base + s, arb + a)
+
+    stem = J(c1, 'ti', c2)                          # -shtiri-
+    put('impf', 'ana', J('a', stem, 'i'), J('أ', a1, 'ت', a2, 'ي'))
+    for per, pfx, arp in (('i7na','ni','ن'), ('inta','ti','ت'), ('hiyye','ti','ت'), ('huwwe','yi','ي')):
+        put('impf', per, J(pfx, stem, 'i'), J(arp, a1, 'ت', a2, 'ي'))
+    put('impf', 'inti', J('ti', stem, 'i'), J('ت', a1, 'ت', a2, 'ي'))       # f = m for -i finals
+    put('impf', 'intu', J('ti', stem, 'u'), J('ت', a1, 'ت', a2, 'وا'))
+    put('impf', 'humme', J('yi', stem, 'u'), J('ي', a1, 'ت', a2, 'وا'))
+
+    for per in PERSONS:
+        imf = cells['impf|' + per]
+        ph = 'b' + imf['ph'][1:] if imf['ph'][0] == 'y' else 'b' + imf['ph']
+        ar = 'ب' + (imf['ar'][1:] if per == 'ana' else imf['ar'])
+        put('bimpf', per, ph, ar)
+
+    put('imp', 'inta', J('i', stem, 'i'), J('ا', a1, 'ت', a2, 'ي'))
+    put('imp', 'inti', J('i', stem, 'i'), J('ا', a1, 'ت', a2, 'ي'))
+    put('imp', 'intu', J('i', stem, 'u'), J('ا', a1, 'ت', a2, 'وا'))
+
+    put('ap', 'm', J('mi', stem, 'i'), J('م', a1, 'ت', a2, 'ي'))
+    put('ap', 'f', J('mi', stem, 'ya'), J('م', a1, 'ت', a2, 'ية'))
+    put('ap', 'p', J('mi', stem, 'yiin'), J('م', a1, 'ت', a2, 'يين'))
+    return cells
+
+
+# ---- irregular Form X (استنى istanna / yistanna — geminate + defective) ---------------
+def conjugate_X_gemdef(root, past3ms, pres3ms):
+    rl = [x for x in str(root).split('.') if x]
+    g, pp = _deglottal(past3ms)
+    p = _match(pp, ['i', 's', 't', 'a', 'C', 'C', 'a'])
+    im = _match(_phon(str(pres3ms)), ['y', 'i', 's', 't', 'a', 'C', 'C', 'a'])
+    if not p or not im or p != im or p[0] != p[1]:
+        return None
+    c = p[0]
+    ac = _ar_letter(c, rl[1] if len(rl) == 3 else 'ن')
+    J = lambda *x: ''.join(x)
+    cells = {}
+    def put(sec, per, ph, ar): cells[sec + '|' + per] = {'ph': ph, 'ar': ar}
+
+    base = J('ista', c, c)                          # istann-
+    arb = J('است', ac)                              # geminate shown single, as written
+    put('perf', 'huwwe', base + 'a', arb + 'ى')
+    put('perf', 'hiyye', base + 'at', arb + 'ت')
+    put('perf', 'humme', base + 'u', arb + 'وا')
+    for per, s, a in (('ana','eet','يت'), ('inta','eet','يت'), ('inti','eeti','يتي'),
+                      ('i7na','eena','ينا'), ('intu','eetu','يتو')):
+        put('perf', per, base + s, arb + a)
+
+    stem = J('sta', c, c)
+    put('impf', 'ana', J('a', stem, 'a'), J('أ', 'ست', ac, 'ى'))
+    for per, pfx, arp in (('i7na','ni','ن'), ('inta','ti','ت'), ('hiyye','ti','ت'), ('huwwe','yi','ي')):
+        put('impf', per, J(pfx, stem, 'a'), J(arp, 'ست', ac, 'ى'))
+    put('impf', 'inti', J('ti', stem, 'i'), J('ت', 'ست', ac, 'ي'))
+    put('impf', 'intu', J('ti', stem, 'u'), J('ت', 'ست', ac, 'وا'))
+    put('impf', 'humme', J('yi', stem, 'u'), J('ي', 'ست', ac, 'وا'))
+
+    for per in PERSONS:
+        imf = cells['impf|' + per]
+        ph = 'b' + imf['ph'][1:] if imf['ph'][0] == 'y' else 'b' + imf['ph']
+        ar = 'ب' + (imf['ar'][1:] if per == 'ana' else imf['ar'])
+        put('bimpf', per, ph, ar)
+
+    put('imp', 'inta', J('i', stem, 'a'), arb + 'ى')
+    put('imp', 'inti', J('i', stem, 'i'), arb + 'ي')
+    put('imp', 'intu', J('i', stem, 'u'), arb + 'وا')
+
+    put('ap', 'm', J('mi', stem, 'i'), J('م', 'ست', ac, 'ي'))
+    put('ap', 'f', J('mi', stem, 'ya'), J('م', 'ست', ac, 'ية'))
+    put('ap', 'p', J('mi', stem, 'iin'), J('م', 'ست', ac, 'يين'))
+    return cells
+
+
+# ---- the fully irregular إجا "to come" ------------------------------------------------
+# Maknuune has no VERB entry for it, and no rule generates it: only the 3rd-person perfects
+# begin with a-, and the imperative (ta3aal) is a different word entirely. This table is
+# taken from the reference's 'irregular defective measure I' page — the same book every
+# engine above is verified against — and is checked against it cell-for-cell in
+# verify_conjugation.py. Looked up, not invented.
+def conjugate_ija():
+    T = {
+      'perf': {'ana': ('jiit','جيت'), 'inta': ('jiit','جيت'), 'inti': ('jiiti','جيتي'),
+               'huwwe': ('aja','أجا'), 'hiyye': ('ajat','أجت'), 'i7na': ('jiina','جينا'),
+               'intu': ('jiitu','جيتو'), 'humme': ('aju','أجوا')},
+      'impf': {'ana': ('aaji','آجي'), 'inta': ('tiiji','تيجي'), 'inti': ('tiiji','تيجي'),
+               'huwwe': ('yiiji','ييجي'), 'hiyye': ('tiiji','تيجي'), 'i7na': ('niiji','نيجي'),
+               'intu': ('tiiju','تيجوا'), 'humme': ('yiiju','ييجوا')},
+      'bimpf': {'ana': ('baaji','باجي'), 'inta': ('btiiji','بتيجي'), 'inti': ('btiiji','بتيجي'),
+                'huwwe': ('biiji','بيجي'), 'hiyye': ('btiiji','بتيجي'), 'i7na': ('bniiji','بنيجي'),
+                'intu': ('btiiju','بتيجوا'), 'humme': ('biiju','بيجوا')},
+      'imp': {'inta': ('ta3aal','تعال'), 'inti': ('ta3aali','تعالي'), 'intu': ('ta3aalu','تعالوا')},
+      'ap': {'m': ('jaay','جاي'), 'f': ('jaaya','جاية'), 'p': ('jaayiin','جايين')},
+    }
+    return {sec + '|' + k: {'ph': ph, 'ar': ar} for sec, m in T.items() for k, (ph, ar) in m.items()}
 
 
 if __name__ == '__main__':

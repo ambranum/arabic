@@ -36,7 +36,7 @@ CORE_VERBS = """
 أكل شرب طبخ لبس غسل نظّف اشترى باع دفع صرف ذاق شمّ
 اشتغل درس تعلّم علّم كتب قرا عمل سوّى ساعد جرّب بلّش خلّص بطّل شغّل
 صار ضلّ بقي كان قدر لزم احتاج قبل رفض قرّر
-عطى أخذ جاب حطّ شال مسك رمى لقى ضيّع لبّس ناول
+عطى أخذ جاب حطّ شال مسك رمى لقى ضيّع لبّس ناول ترك
 زار قابل تجوّز مات عاش ضحك بكى لعب رقص غنّى سكن ولد نسي
 فتح سكّر كسر صلّح بنى غيّر حرّك دقّ ضرب قتل قصّ كبّر صغّر
 بعث ودّى اتّصل استلم وصّل وعد سمّى أرسل
@@ -125,13 +125,22 @@ for x in top[:20]:
 from conjugate import (conjugate, conjugate_hollow, conjugate_defective, conjugate_geminate,
                        conjugate_II, conjugate_II_defective, conjugate_III, conjugate_IV,
                        conjugate_V, conjugate_VI,
-                       conjugate_VII, conjugate_VIII, conjugate_X)
+                       conjugate_VII, conjugate_VIII, conjugate_X,
+                       conjugate_assimilated, conjugate_hamzated_akal,
+                       conjugate_VIII_defective, conjugate_X_gemdef, conjugate_ija)
 # Dispatch by measure. Form I splits by weak class; derived measures have one engine each
 # (parsers reject anything not matching the measure's template → principal parts only).
+# hamzated chains: أكل/أخذ take the irregular engine; hamza-final verbs like قرا (2ara/yi2ra)
+# behave as defectives; anything else falls through to sound (سأل-type) or stays parts-only.
 _FORM1 = {'sound': conjugate, 'hollow': conjugate_hollow,
-          'defective': conjugate_defective, 'doubled': conjugate_geminate}
+          'defective': conjugate_defective, 'doubled': conjugate_geminate,
+          'assimilated': conjugate_assimilated,
+          'hamzated': (lambda rt,pa,pr: conjugate_hamzated_akal(rt,pa,pr)
+                       or conjugate_defective(rt,pa,pr) or conjugate(rt,pa,pr))}
 _MEASURE = {2: (lambda rt,pa,pr: conjugate_II(rt,pa,pr) or conjugate_II_defective(rt,pa,pr)), 3: conjugate_III, 4: conjugate_IV, 5: conjugate_V,
-            6: conjugate_VI, 7: conjugate_VII, 8: conjugate_VIII, 10: conjugate_X}
+            6: conjugate_VI, 7: conjugate_VII,
+            8: (lambda rt,pa,pr: conjugate_VIII(rt,pa,pr) or conjugate_VIII_defective(rt,pa,pr)),
+            10: (lambda rt,pa,pr: conjugate_X(rt,pa,pr) or conjugate_X_gemdef(rt,pa,pr))}
 def paradigm(x):
     if not x['pres']:
         return None
@@ -156,6 +165,20 @@ def slim(x):
     if conj: d['conj'] = conj
     return d
 data = {'verbs': [slim(x) for x in top]}
+
+# إجا "to come" — the most common motion verb in the language, and the one everyday verb
+# Maknuune has no VERB entry for (the build's own report shows it omitted). Its paradigm is
+# NOT invented: it is the 'irregular defective measure I' table of the same Lingualism
+# reference every engine here is verified against (checked cell-for-cell by
+# verify_conjugation.py). Provenance carried in `src` so the UI can say so.
+data['verbs'].insert(0, {
+    'lemma': 'أَجَا', 'root': 'ج.ي.ء', 'gloss': 'come',
+    'form': 'I', 'weak': 'irregular', 'core': True, 'src': 'book',
+    'past': {'ar': 'أَجَا', 'caphi': 'aja'},
+    'pres': {'ar': 'يِيجِي', 'caphi': 'yiiji'},
+    'imp':  {'ar': 'تَعَال', 'caphi': 'ta3aal'},
+    'conj': conjugate_ija(),
+})
 _nconj = sum(1 for v in data['verbs'] if 'conj' in v)
 _bycls = Counter(v['weak'] for v in data['verbs'] if 'conj' in v)
 print('\nfull paradigms attached (Form I): %d verbs — %s' % (_nconj, dict(_bycls)))
