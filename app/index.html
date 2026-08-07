@@ -407,6 +407,29 @@
   .mc-o.mc-good{border-color:var(--verdigris); color:var(--verdigris); font-weight:600}
   .mc-o.mc-bad{border-color:var(--rubric); color:var(--rubric); opacity:.75}
   .mc-next{margin-top:16px; text-align:center}
+  /* practice: paradigm grid */
+  .gr-head{text-align:center; margin-bottom:6px}
+  .gr-lemma{font-size:30px; line-height:1.5}
+  .gr-gloss{font-size:13px; color:var(--muted)}
+  .gr-root{font-size:12px; color:var(--muted); font-family:var(--mono); margin-top:2px}
+  .cj-in{font:inherit; font-size:15px; width:100%; max-width:120px; padding:5px 7px;
+    background:var(--bg); color:var(--ink); border:1px solid var(--verdigris); border-radius:6px}
+  .cj-in:focus{outline:2px solid var(--verdigris); outline-offset:1px}
+  .cj-ok{color:var(--verdigris)}
+  .cj-no{color:var(--rubric)}
+  .cj-you{display:block; font-size:10.5px; color:var(--rubric); opacity:.85}
+  .gr-score{text-align:center; margin-top:14px; font-size:14px; color:var(--muted)}
+  .lnk{font:inherit; font-size:inherit; background:none; border:0; padding:0; cursor:pointer;
+    color:var(--verdigris); text-decoration:underline}
+  /* practice: matching */
+  .mt-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px}
+  .mt-col{display:grid; gap:8px; align-content:start}
+  .mt-t{font:inherit; font-size:15px; padding:11px 10px; cursor:pointer; text-align:center;
+    background:transparent; color:var(--ink); border:1px solid var(--rule); border-radius:9px}
+  .mt-t:hover:not(:disabled){border-color:var(--verdigris)}
+  .mt-t.mt-sel{border-color:var(--verdigris); color:var(--verdigris)}
+  .mt-t.mt-bad{border-color:var(--rubric); color:var(--rubric)}
+  .mt-t.mt-done{opacity:.35; cursor:default; border-style:dashed}
   .rv-g{font:inherit; cursor:pointer; border:1px solid var(--rule); background:none; color:var(--ink);
       border-radius:7px; padding:11px 4px; display:flex; flex-direction:column; gap:3px}
   .rv-g span{font-size:14px; font-weight:600}
@@ -972,6 +995,7 @@ const ICON = {
   home:    '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>',
   news:    '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
   verbs:   '<path d="M13 2 4 14h6l-1 8 9-12h-6z"/>',
+  practice:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/>',
   vocab:   '<rect x="4" y="3" width="14" height="18" rx="2"/><path d="M8 3v18"/><path d="M11 8h4M11 12h4"/>',
   spk:     '<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8a5 5 0 0 1 0 8"/>',
   grammar: '<path d="M5 4h13a1 1 0 0 1 1 1v15H6a1 1 0 0 1-1-1z"/><path d="M5 17h14"/>',
@@ -991,6 +1015,7 @@ const SECTIONS = [
   {route: 'news',    icon: 'news',    label: "Today's News",    ready: true},
   {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',      ready: true},
   {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
+  {route: 'practice', icon: 'practice', label: 'Practice',      ready: true},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
   {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
@@ -1039,6 +1064,7 @@ function route() {
     if (sec.route === 'news')    return newsSection();
     if (sec.route === 'vocab')   return vocabSection(id, arg);
     if (sec.route === 'verbs')   return verbsSection(id);
+    if (sec.route === 'practice') return practiceSection(id, arg);
     if (sec.route === 'grammar') return grammarSection(id);
     if (sec.route === 'stories') return storiesSection(id);
     if (sec.route === 'books')   return booksSection(id, arg);
@@ -1542,6 +1568,204 @@ function vocabCardView(c, showing, remaining, forceSelf){
              <span>${lbl}</span><em>${prev[g]}</em></button>`).join('')}</div>`;
   }
   $('view').innerHTML = h;
+}
+
+// ---------- Practice: paradigm grid + matching --------------------------------------
+// Drill formats (four-option choice, paradigm fill, matching round) are inspired by
+// willmanidis2/arabic-drill (MIT). No code or card content is taken from it — every item
+// here is generated at runtime from our own data: the verb paradigms derived by
+// pipeline/build_verbs.py and the Maknuune-looked-up lemmas in your deck.
+//
+// Both modes grade the SAME cards on the SAME schedule as review — a paradigm round moves
+// the verb's own card, so there is no second deck and no second due-count to keep up with.
+
+// Typed answers are forgiving in exactly two ways, and no further. `conj[k].ar` is stored
+// unvocalized, so arNorm's diacritic/hamza folding lets أروح match اروح — what a learner on
+// a phone keyboard actually types. The وا -> و fold matters because 4,272 cells end in وا
+// and the bare و is a normal spelling. Each cell is checked against its OWN gold, so neither
+// fold can produce a false accept.
+const cjNorm = s => arNorm(String(s || '')).replace(/\s+/g, '').replace(/وا$/, 'و');
+
+const GRID_BLOCKS = [['perf', 'Past'], ['impf', 'Pres.'], ['bimpf', '+بـ']];
+let _gr = null;   // {v, masked:[key], vals:{}, checked:bool}
+
+// Prefer verbs you're actually learning (in your deck), then common ones. A paradigm you've
+// never met is a spelling test, not recall.
+function gridPickVerb(){
+  const pool = VB.filter(v => v.conj);
+  const mine = pool.filter(v => marked.has(v.lemma));
+  const src = mine.length ? mine : pool.filter(v => v.core);
+  return (src.length ? src : pool)[Math.floor(Math.random() * (src.length ? src.length : pool.length))];
+}
+function gridStart(v){
+  const keys = [];
+  GRID_BLOCKS.forEach(([b]) => PERSONS.forEach(([p]) => { if (v.conj[b + '|' + p]) keys.push(b + '|' + p); }));
+  const masked = mcShuffle(keys.slice()).slice(0, 5);      // 5 of 24 — enough to think, not a slog
+  _gr = {v, masked, vals: {}, checked: false};
+}
+function gridRound(arg){
+  $('title').textContent = 'Fill the paradigm';
+  const v = arg != null && VB[arg] && VB[arg].conj ? VB[arg] : null;
+  if (!_gr || (v && _gr.v !== v)) gridStart(v || gridPickVerb());
+  gridRender();
+}
+function gridRender(){
+  const {v, masked, vals, checked} = _gr;
+  const inDeck = marked.has(v.lemma);
+  const cell = k => {
+    const c = v.conj[k]; if (!c) return '<div class="cj-cell">—</div>';
+    if (!masked.includes(k))
+      return `<div class="cj-cell"><span class="wcj-ar">${esc(c.ar)}</span><span class="wcj-ph">${esc(c.ph)}</span></div>`;
+    if (!checked)
+      return `<div class="cj-cell"><input class="cj-in" dir="rtl" autocomplete="off"
+        autocapitalize="off" spellcheck="false" value="${esc(vals[k] || '')}"
+        oninput="_gr.vals['${k}']=this.value" aria-label="conjugation"></div>`;
+    const good = cjNorm(vals[k]) === cjNorm(c.ar) && cjNorm(vals[k]) !== '';
+    // Reveal the real spelling, never the normalized one.
+    return `<div class="cj-cell"><span class="wcj-ar ${good ? 'cj-ok' : 'cj-no'}">${esc(c.ar)}</span>
+      <span class="wcj-ph">${esc(c.ph)}</span>
+      ${good ? '' : `<span class="cj-you">${vals[k] ? 'you: ' + esc(vals[k]) : 'blank'}</span>`}</div>`;
+  };
+  let h = `<div class="gr-head"><div class="gr-lemma" dir="rtl">${esc(v.past ? v.past.ar : v.lemma)}</div>
+      <div class="gr-gloss">${esc(pretty(v.gloss))} · Form ${esc(v.form)}${
+        WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''}</div>
+      <div class="gr-root" dir="rtl">${esc((v.root || '').replace(/\./g, ' · '))}</div></div>
+    <p class="hint">Fill the blanks from memory. ${masked.length} cells are hidden — say each one
+      out loud before you type it.</p>
+    <div class="cj-tbl"><div class="cj-row cj-hdr"><span></span>
+      ${GRID_BLOCKS.map(b => `<span>${esc(b[1])}</span>`).join('')}</div>`;
+  PERSONS.forEach(([key, en, ar]) => {
+    h += `<div class="cj-row"><span class="cj-pr">${esc(ar)}<em>${esc(en)}</em></span>
+      ${GRID_BLOCKS.map(b => cell(b[0] + '|' + key)).join('')}</div>`;
+  });
+  h += `</div>`;
+  if (!checked){
+    h += `<div class="ctl"><button class="tog on" onclick="gridCheck()">Check</button>
+      <button class="tog" onclick="_gr=null;gridRound()">Skip to another verb</button></div>`;
+  } else {
+    const got = masked.filter(k => cjNorm(_gr.vals[k]) === cjNorm(v.conj[k].ar) && _gr.vals[k]).length;
+    h += `<div class="gr-score">${got} of ${masked.length} right${
+      inDeck ? ' · your card for this verb was graded' :
+      ' · <button class="lnk" onclick="gridAddDeck()">add this verb to your deck</button> to have it scheduled'}</div>
+      <div class="ctl"><button class="tog on" onclick="_gr=null;gridRound()">Next verb</button>
+      <button class="tog" onclick="location.hash='/verb/${v._i}'">See the full table</button></div>`;
+  }
+  h += `<div class="note">Every form here is generated by the conjugation engine from the verb's
+    root and pattern, and checked against the reference grammar. Typing is forgiving about
+    vowel marks and the final ـوا, nothing else.</div>`;
+  $('view').innerHTML = h;
+}
+function gridCheck(){
+  const {v, masked, vals} = _gr;
+  _gr.checked = true;
+  const wrong = masked.filter(k => !(vals[k] && cjNorm(vals[k]) === cjNorm(v.conj[k].ar))).length;
+  // Shared schedule: a paradigm round grades the verb's own card. Only if you actually have
+  // one — silently creating cards would inflate your deck without you asking.
+  if (marked.has(v.lemma)){
+    marked.set(v.lemma, srsGrade(marked.get(v.lemma), wrong === 0 ? 2 : wrong === 1 ? 1 : 0));
+    save(); count();
+  }
+  gridRender();
+}
+function gridAddDeck(){
+  const v = _gr.v;
+  if (!marked.has(v.lemma))
+    marked.set(v.lemma, srsInit({lemma: v.lemma, vocalized: v.past ? v.past.ar : v.lemma,
+      root: v.root, caphi: v.past ? v.past.caphi : '', gloss: v.gloss, analysis: 'VERB',
+      deck: activeDeck()}));
+  save(); count(); gridRender();
+}
+
+// ---- matching round ----
+let _mt = null;   // {pairs, left, right, sel, done:Set, miss:{}}
+function matchRound(){
+  $('title').textContent = 'Match them up';
+  if (!_mt) matchStart();
+  matchRender();
+}
+function matchStart(){
+  // Due cards first — matching should reinforce what's actually up for review.
+  let pool = dueCards().filter(c => c.lemma && mcGloss(c.gloss));
+  if (pool.length < 5) pool = [...marked.values()].filter(c => c.lemma && mcGloss(c.gloss));
+  const pairs = mcShuffle(pool.slice()).slice(0, 6).map(c => ({
+    lemma: c.lemma, ar: c.vocalized || c.lemma, en: mcGloss(c.gloss)}));
+  _mt = {pairs, left: mcShuffle(pairs.map(p => p.lemma)),
+         right: mcShuffle(pairs.map(p => p.lemma)), sel: null, done: new Set(), miss: {}, bad: null};
+}
+function matchRender(){
+  if (!_mt.pairs.length){
+    $('view').innerHTML = `<div class="empty"><div class="empty-t">Nothing to match yet</div>
+      <p>Matching uses the words in your deck. Tap words while reading and choose
+      “Don’t know it” to start building one.</p></div>`;
+    return;
+  }
+  const by = l => _mt.pairs.find(p => p.lemma === l);
+  const tile = (l, side) => {
+    const done = _mt.done.has(l), sel = _mt.sel === l, bad = _mt.bad === l;
+    return `<button class="mt-t ${done ? 'mt-done' : ''} ${sel ? 'mt-sel' : ''} ${bad ? 'mt-bad' : ''}"
+      ${done ? 'disabled' : ''} ${side === 'ar' ? 'dir="rtl"' : ''}
+      onclick="matchTap('${cssq(l)}','${side}')">${esc(side === 'ar' ? by(l).ar : by(l).en)}</button>`;
+  };
+  const finished = _mt.done.size === _mt.pairs.length;
+  let h = `<p class="hint">Tap a word, then its meaning.</p>
+    <div class="mt-grid"><div class="mt-col">${_mt.left.map(l => tile(l, 'ar')).join('')}</div>
+      <div class="mt-col">${_mt.right.map(l => tile(l, 'en')).join('')}</div></div>`;
+  if (finished){
+    const clean = _mt.pairs.filter(p => !_mt.miss[p.lemma]).length;
+    h += `<div class="gr-score">${clean} of ${_mt.pairs.length} matched first try · your cards
+      were graded</div><div class="ctl"><button class="tog on"
+      onclick="_mt=null;matchRound()">Another round</button></div>`;
+  }
+  $('view').innerHTML = h;
+}
+function matchTap(lemma, side){
+  if (_mt.done.has(lemma)) return;
+  _mt.bad = null;
+  if (_mt.sel === null){ _mt.sel = lemma; _mt.selSide = side; return matchRender(); }
+  if (_mt.sel === lemma && _mt.selSide === side){ _mt.sel = null; return matchRender(); }
+  if (_mt.sel === lemma){                                  // same word, other column — a match
+    _mt.done.add(lemma); _mt.sel = null;
+    if (_mt.done.size === _mt.pairs.length) matchGrade();
+  } else {
+    _mt.miss[lemma] = (_mt.miss[lemma] || 0) + 1;
+    _mt.miss[_mt.sel] = (_mt.miss[_mt.sel] || 0) + 1;
+    _mt.bad = lemma; _mt.sel = null;
+  }
+  matchRender();
+}
+function matchGrade(){
+  _mt.pairs.forEach(p => {
+    if (!marked.has(p.lemma)) return;
+    const m = _mt.miss[p.lemma] || 0;
+    marked.set(p.lemma, srsGrade(marked.get(p.lemma), m === 0 ? 2 : m === 1 ? 1 : 0));
+  });
+  save(); count();
+}
+
+function practiceSection(sub, arg){
+  if (sub === 'grid')  { if (!_gr || arg != null) _gr = null; return gridRound(arg); }
+  if (sub === 'match') { return matchRound(); }
+  _gr = null; _mt = null;
+  $('title').textContent = 'Practice';
+  const due = dueCards().length, deck = marked.size;
+  $('view').innerHTML = `
+    <p class="hint">Retrieval practice — producing an answer, not recognising one. Both rounds
+      grade the same cards on the same schedule as review, so this replaces review time rather
+      than adding to it.</p>
+    <div class="tiles">
+      <button class="tile" onclick="location.hash='/practice/grid'">
+        <div class="tile-t">Fill a paradigm</div>
+        <div class="tile-s">Five cells hidden from a verb's full table — type them from memory.
+          ${VB.filter(v => v.conj).length} verbs available.</div></button>
+      <button class="tile" onclick="location.hash='/practice/match'">
+        <div class="tile-t">Match them up</div>
+        <div class="tile-s">Six words against six meanings, both shuffled.
+          ${deck ? deck + ' words in your deck' + (due ? ' · ' + due + ' due' : '') : 'your deck is empty'}</div></button>
+    </div>
+    <div class="note">Drill formats are inspired by
+      <a href="https://github.com/willmanidis2/arabic-drill" target="_blank" rel="noopener">willmanidis2/arabic-drill</a>
+      (MIT). No code or content is used from it — every item is built from this app's own
+      lexicon-verified data.</div>`;
 }
 
 function vocabDecks(){
@@ -3011,7 +3235,12 @@ function scheduleSync() { if (_syncTimer) clearTimeout(_syncTimer); _syncTimer =
 const _pj = s => { try { return JSON.parse(s); } catch (e) { return null; } };
 function mergeCards(a, b) {                         // arrays of [lemma, card]; keep the more-reviewed
   const m = new Map(); (a || []).forEach(([k, c]) => m.set(k, c));
-  (b || []).forEach(([k, c]) => { const e = m.get(k); if (!e || (c.reps || 0) > (e.reps || 0)) m.set(k, c); });
+  // `reps` alone can't separate two copies of a card that are both mid-ladder: reps stays 0
+  // for the whole 10m/30m/2h climb, so the local copy silently won and the further-along
+  // device lost its progress. Fall back to the later `due`, which does advance every step.
+  (b || []).forEach(([k, c]) => { const e = m.get(k);
+    if (!e || (c.reps || 0) > (e.reps || 0) ||
+        ((c.reps || 0) === (e.reps || 0) && (c.due || 0) > (e.due || 0))) m.set(k, c); });
   return [...m];
 }
 function unionById(a, b) { const m = new Map(); (a || []).forEach(x => m.set(x.id, x));
