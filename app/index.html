@@ -394,42 +394,6 @@
       border-top:1px solid var(--rule); padding-top:12px; margin-top:6px; width:100%}
   .rv-exen{font-family:var(--serif); font-style:italic; font-size:14px; color:var(--muted)}
   .rv-grades{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:16px}
-  /* multiple choice */
-  .rv-mode{float:right; text-transform:none; letter-spacing:0}
-  .rv-mode button{font:inherit; font-size:11px; padding:3px 9px; margin-left:5px; cursor:pointer;
-    background:transparent; color:var(--muted); border:1px solid var(--rule); border-radius:99px}
-  .rv-mode button.on{color:var(--bg); background:var(--verdigris); border-color:var(--verdigris)}
-  .mc-opts{display:grid; gap:9px; margin-top:20px}
-  .mc-o{font:inherit; font-size:16px; padding:13px 16px; cursor:pointer; text-align:center;
-    background:transparent; color:var(--ink); border:1px solid var(--rule); border-radius:10px}
-  .mc-o:hover:not(:disabled){border-color:var(--verdigris)}
-  .mc-o:disabled{cursor:default}
-  .mc-o.mc-good{border-color:var(--verdigris); color:var(--verdigris); font-weight:600}
-  .mc-o.mc-bad{border-color:var(--rubric); color:var(--rubric); opacity:.75}
-  .mc-next{margin-top:16px; text-align:center}
-  /* practice: paradigm grid */
-  .gr-head{text-align:center; margin-bottom:6px}
-  .gr-lemma{font-size:30px; line-height:1.5}
-  .gr-gloss{font-size:13px; color:var(--muted)}
-  .gr-root{font-size:12px; color:var(--muted); font-family:var(--mono); margin-top:2px}
-  .cj-in{font:inherit; font-size:15px; width:100%; max-width:120px; padding:5px 7px;
-    background:var(--bg); color:var(--ink); border:1px solid var(--verdigris); border-radius:6px}
-  .cj-in:focus{outline:2px solid var(--verdigris); outline-offset:1px}
-  .cj-ok{color:var(--verdigris)}
-  .cj-no{color:var(--rubric)}
-  .cj-you{display:block; font-size:10.5px; color:var(--rubric); opacity:.85}
-  .gr-score{text-align:center; margin-top:14px; font-size:14px; color:var(--muted)}
-  .lnk{font:inherit; font-size:inherit; background:none; border:0; padding:0; cursor:pointer;
-    color:var(--verdigris); text-decoration:underline}
-  /* practice: matching */
-  .mt-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px}
-  .mt-col{display:grid; gap:8px; align-content:start}
-  .mt-t{font:inherit; font-size:15px; padding:11px 10px; cursor:pointer; text-align:center;
-    background:transparent; color:var(--ink); border:1px solid var(--rule); border-radius:9px}
-  .mt-t:hover:not(:disabled){border-color:var(--verdigris)}
-  .mt-t.mt-sel{border-color:var(--verdigris); color:var(--verdigris)}
-  .mt-t.mt-bad{border-color:var(--rubric); color:var(--rubric)}
-  .mt-t.mt-done{opacity:.35; cursor:default; border-style:dashed}
   .rv-g{font:inherit; cursor:pointer; border:1px solid var(--rule); background:none; color:var(--ink);
       border-radius:7px; padding:11px 4px; display:flex; flex-direction:column; gap:3px}
   .rv-g span{font-size:14px; font-weight:600}
@@ -756,66 +720,32 @@ const activeDeck = () => { const id = localStorage.getItem(AKEY);
   return decks.some(d => d.id === id) ? id : 'default'; };
 const setActiveDeck = id => { try { localStorage.setItem(AKEY, id); } catch (e) {} };
 
-// Same-day learning steps. A brand-new word used to jump straight to a 1-day interval on its
-// first correct answer, which is far too big a leap for something you've seen once — the whole
-// point of the ladder is to catch it again while it's still fragile. Mechanic borrowed from
-// willmanidis2/arabic-drill (MIT).
-const LEARN_STEPS = [6e5, 18e5, 72e5];        // 10 min · 30 min · 2 hours, then graduate to days
-// `step` is the index into LEARN_STEPS; null means graduated to day-level intervals.
-// Cards saved before learning steps existed have no `step` at all, so derive it from history:
-// anything with reps already behaves exactly as it did before (graduated), and only genuinely
-// new cards enter the ladder. Real decks are in use — this must not reschedule them.
-const srsStep = c => c.step === undefined ? (c.reps > 0 ? null : 0) : c.step;
-
-// Fresh SM-2 state for a new card (due immediately, on the first learning step).
+// Fresh SM-2 state for a new card (due immediately, in the learning phase).
 function srsInit(c) {
   return {deck: 'default', ...c, ease: 2.5, interval: 0, due: now(), reps: 0, lapses: 0,
-          lapses_: 0, step: 0, created: c.created || now()};
+          lapses_: 0, created: c.created || now()};
 }
 // Anki-style SM-2 scheduler. g: 0 Again · 1 Hard · 2 Good · 3 Easy. Returns the next state.
 function srsGrade(c, g) {
   let {ease = 2.5, interval = 0, reps = 0, lapses = 0} = c;
-  const step = srsStep(c);
-
-  if (g === 0) {                              // Again — drop to the bottom of the ladder
-    return {...c, ease: Math.max(1.3, ease - 0.2), interval: 0, reps: 0, step: 0,
-            lapses: lapses + 1, due: now() + LEARN_STEPS[0]};
+  if (g === 0) {                              // Again — relearn, back in ~10 min this session
+    return {...c, ease: Math.max(1.3, ease - 0.2), interval: 0, reps: 0,
+            lapses: lapses + 1, due: now() + 6e5};
   }
-  // Still learning — walk the ladder. `step` counts how many learning intervals have been
-  // SERVED, so a new card (step 0) gets LEARN_STEPS[0] on its first correct answer; graduation
-  // happens only once every rung has been climbed.
-  if (step !== null) {
-    if (g === 3)                              // Easy — skip the rest of the ladder
-      return {...c, ease, interval: 4, reps: reps + 1, lapses, step: null, due: now() + 4 * DAY};
-    if (g === 1)                              // Hard — sit on the rung you just did
-      return {...c, ease, interval: 0, reps, lapses, step,
-              due: now() + LEARN_STEPS[Math.max(0, step - 1)]};
-    if (step >= LEARN_STEPS.length)           // Good, ladder finished — graduate to days
-      return {...c, ease, interval: 1, reps: reps + 1, lapses, step: null, due: now() + DAY};
-    return {...c, ease, interval: 0, reps, lapses, step: step + 1,
-            due: now() + LEARN_STEPS[step]};
-  }
-
-  reps += 1;                                  // graduated — unchanged day-level SM-2
+  reps += 1;
   if (g === 1) ease = Math.max(1.3, ease - 0.15);
   if (g === 3) ease += 0.15;
   if (reps === 1)      interval = g === 3 ? 4 : 1;
   else if (reps === 2) interval = g === 1 ? 3 : 6;
   else                 interval = Math.max(interval + 1,
                           Math.round(interval * (g === 1 ? 1.2 : g === 3 ? ease * 1.3 : ease)));
-  return {...c, ease, interval, reps, lapses, step: null, due: now() + interval * DAY};
+  return {...c, ease, interval, reps, lapses, due: now() + interval * DAY};
 }
 // What the four buttons would schedule, in human terms (shown under each grade button).
-// Sub-day waits are now real and varied (10m/30m/2h), so report the actual figure rather than
-// the old hardcoded "<10m", which lied as soon as a card climbed the ladder.
 function srsPreview(c) {
-  const fmt = ms => {
-    if (ms < 36e5)  return Math.max(1, Math.round(ms / 6e4)) + 'm';
-    if (ms < DAY)   return Math.round(ms / 36e5) + 'h';
-    const d = Math.round(ms / DAY);
-    return d < 30 ? d + 'd' : Math.round(d / 30) + 'mo';
-  };
-  return [0, 1, 2, 3].map(g => fmt(srsGrade(c, g).due - now()));
+  const fmt = ms => { const d = Math.round(ms / DAY);
+    return ms < DAY ? '<10m' : d < 1 ? '1d' : d < 30 ? d + 'd' : Math.round(d / 30) + 'mo'; };
+  return [0, 1, 2, 3].map(g => g === 0 ? '<10m' : fmt(srsGrade(c, g).due - now()));
 }
 const dueCards = () => [...marked.values()].filter(c => (c.due || 0) <= now());
 const cardsInDeck = id => [...marked.values()].filter(c => (c.deck || 'default') === id);
@@ -995,7 +925,6 @@ const ICON = {
   home:    '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/>',
   news:    '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/>',
   verbs:   '<path d="M13 2 4 14h6l-1 8 9-12h-6z"/>',
-  practice:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/>',
   vocab:   '<rect x="4" y="3" width="14" height="18" rx="2"/><path d="M8 3v18"/><path d="M11 8h4M11 12h4"/>',
   spk:     '<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8a5 5 0 0 1 0 8"/>',
   grammar: '<path d="M5 4h13a1 1 0 0 1 1 1v15H6a1 1 0 0 1-1-1z"/><path d="M5 17h14"/>',
@@ -1015,7 +944,6 @@ const SECTIONS = [
   {route: 'news',    icon: 'news',    label: "Today's News",    ready: true},
   {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',      ready: true},
   {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
-  {route: 'practice', icon: 'practice', label: 'Practice',      ready: true},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
   {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
@@ -1064,7 +992,6 @@ function route() {
     if (sec.route === 'news')    return newsSection();
     if (sec.route === 'vocab')   return vocabSection(id, arg);
     if (sec.route === 'verbs')   return verbsSection(id);
-    if (sec.route === 'practice') return practiceSection(id, arg);
     if (sec.route === 'grammar') return grammarSection(id);
     if (sec.route === 'stories') return storiesSection(id);
     if (sec.route === 'books')   return booksSection(id, arg);
@@ -1364,24 +1291,12 @@ function vocabHome(){
 }
 
 // ---- SM-2 review flow ----
-// A card on a learning step may be shown this many ms before it is strictly due, so the ladder
-// actually plays out inside one sitting. Without this the queue was a one-way snapshot: a card
-// you got wrong was spliced back with a 10-minute due date, immediately failed the `due <= now()`
-// test, and was dropped — so "Again · 10m" meant "leave this screen and come back later", which
-// is not what anyone reading that button expects.
-const SESSION_AHEAD = 12e5;                     // 20 minutes
-const _revDue = l => {                          // is this lemma showable right now?
-  const c = marked.get(l);
-  if (!c) return false;
-  const slack = srsStep(c) !== null ? SESSION_AHEAD : 0;   // only learning cards run ahead
-  return (c.due || 0) <= now() + slack;
-};
 let _revq = null;
 function vocabReview(){
   $('title').textContent = 'Review';
   if (!_revq) _revq = dueCards().sort((a,b)=>(a.due||0)-(b.due||0)).map(c => c.lemma);
-  // drop any that are no longer showable (e.g. graded away to a day-level interval)
-  while (_revq.length && !_revDue(_revq[0])) _revq.shift();
+  // drop any that are no longer due (e.g. graded away)
+  while (_revq.length && !(marked.has(_revq[0]) && (marked.get(_revq[0]).due||0) <= now())) _revq.shift();
   if (!_revq.length){
     _revq = null;
     $('view').innerHTML = `<div class="empty"><div class="empty-t">Done for now 🎉</div>
@@ -1391,166 +1306,20 @@ function vocabReview(){
     return;
   }
   const c = marked.get(_revq[0]);
-  // Count what's left in THIS session, not dueCards() — a card coming back on a learning step is
-  // still ahead of you even though its due date has moved into the future.
-  vocabCardView(c, false, _revq.length);
+  const total = dueCards().length;
+  vocabCardView(c, false, total);
 }
-function vocabShow(){ vocabCardView(marked.get(_revq[0]), true, _revq.length); }
+function vocabShow(){ vocabCardView(marked.get(_revq[0]), true, dueCards().length); }
 function vocabAnswer(g){
   const lemma = _revq[0];
-  const c = srsGrade(marked.get(lemma), g);
-  marked.set(lemma, c);
-  save(); _revq.shift();
-  // Still on the ladder and coming back soon? Requeue it a few cards down so other words get
-  // between the two sightings — spaced retrieval, not an immediate re-read.
-  if (srsStep(c) !== null && (c.due || 0) <= now() + SESSION_AHEAD)
-    _revq.splice(Math.min(3, _revq.length), 0, lemma);
-  count(); vocabReview();
+  marked.set(lemma, srsGrade(marked.get(lemma), g));
+  save(); _revq.shift(); count(); vocabReview();
 }
-// ---- multiple choice ----------------------------------------------------------------
-// Recognition practice on the SAME card and the SAME schedule as self-grading — it's another
-// way to answer, not a second deck. Four options with semantic distractors, after
-// willmanidis2/arabic-drill (MIT).
-//
-// The distractors are the whole mechanic. Random words make the answer obvious by elimination,
-// and near-synonyms make the question unfair because two options are defensible. So: same part
-// of speech, and never a candidate whose gloss shares a content word with the answer's.
-const MKEY = 'alp.revmode.v1';
-const revMode = () => localStorage.getItem(MKEY) === 'mc' ? 'mc' : 'self';
-function setRevMode(m){ try { localStorage.setItem(MKEY, m); } catch(e){} _mc = null; vocabReview(); }
-
-const MC_STOP = new Set(['the','a','an','to','of','in','on','at','for','with','and','or','be',
-  'is','are','was','it','that','this','someone','something','sth','sb','one','make','made',
-  'become','get','have','his','her','its','their','you','your']);
-// NOUN_PROP is deliberately its OWN class, not folded into NOUN: place and person names carry
-// encyclopedic glosses ("Medina is a city in western Saudi Arabia") that are obviously not
-// answers to "what does طريق mean" — they'd give the question away at a glance.
-const mcPos = a => { a = String(a || '');
-  return a.startsWith('NOUN_PROP') ? 'PROP' : a.startsWith('VERB') ? 'VERB'
-       : a.startsWith('NOUN') ? 'NOUN' : a.startsWith('ADJ') ? 'ADJ'
-       : a.startsWith('ADV') ? 'ADV' : 'OTHER'; };
-// An option has to read as a label, not a sentence. Anything longer is a definition, and a
-// definition among three short glosses is a free answer by elimination.
-const mcUsable = g => g.length <= 30 && g.split(/\s+/).length <= 5;
-const mcTokens = g => new Set(String(pretty(g) || '').toLowerCase()
-  .replace(/[^a-z\s]/g, ' ').split(/\s+/).filter(t => t.length > 2 && !MC_STOP.has(t)));
-const mcShuffle = a => { for (let i = a.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-// Lexicon glosses stack every sense with tags — "be;become_[auto]", "bring;score;pick_sb_up…".
-// Fine on a word card, unreadable on a button, so show at most two senses. The SYNONYM GUARD
-// still reads the full gloss, so trimming the label can't let a synonym slip through.
-const mcGloss = g => String(g || '').replace(/\[[^\]]*\]/g, '').replace(/_/g, ' ')
-  .split(';').map(s => s.trim()).filter(Boolean).slice(0, 2).join(' · ');
-// How common a word is in our own corpus, in coarse bands — the distractors should sit in the
-// same band as the answer so nothing stands out by sheer familiarity.
-const mcBand = f => f >= 20 ? 0 : f >= 5 ? 1 : f >= 2 ? 2 : 3;
-
-// Build 4 options for a card. dir: 'ar2en' (pick the meaning) | 'en2ar' (pick the Arabic).
-// Returns null when the corpus can't supply 3 honest distractors — the caller falls back to
-// self-grading rather than showing a rigged question.
-function mcOptions(card, dir){
-  const gold = mcGloss(card.gloss) || '';
-  if (!gold || !mcUsable(gold)) return null;   // long/encyclopedic answer — self-grade instead
-  const pos = mcPos(card.analysis), goldTok = mcTokens(card.gloss);
-  const seenGloss = new Set([gold.toLowerCase()]), seenAr = new Set([arNorm(card.lemma)]);
-  const pool = [];
-  const consider = (lemma, glossRaw, analysis, freq) => {
-    const g = mcGloss(glossRaw) || '';
-    if (!g || !lemma || !mcUsable(g)) return;
-    if (mcPos(analysis) !== pos) return;                       // same part of speech
-    if (seenAr.has(arNorm(lemma)) || seenGloss.has(g.toLowerCase())) return;
-    for (const t of mcTokens(glossRaw)) if (goldTok.has(t)) return;   // no shared meaning
-    seenGloss.add(g.toLowerCase()); seenAr.add(arNorm(lemma));
-    pool.push({ar: lemma, en: g, band: mcBand(freq)});
-  };
-  let goldFreq = 0;
-  try {
-    const idx = trIndex();
-    const self = idx.byKey.get(arNorm(card.lemma));
-    goldFreq = self ? self.hits.length : 0;
-    idx.all.forEach(e => consider(e.lemma, e.gloss, e.analysis, e.hits.length));
-  } catch (e) {}
-  [...marked.values()].forEach(x => consider(x.vocalized || x.lemma, x.gloss, x.analysis, 0));
-  if (pool.length < 3) return null;
-  // Keep the options in the same frequency band. A rare word beside three everyday ones is a
-  // giveaway — you can pick the answer on familiarity alone without knowing what it means.
-  const goldBand = mcBand(goldFreq);
-  mcShuffle(pool).sort((a, b) => Math.abs(a.band - goldBand) - Math.abs(b.band - goldBand));
-  const picks = mcShuffle(pool.slice(0, 14)).slice(0, 3);
-  const correct = {ar: card.vocalized || card.lemma, en: gold};
-  const opts = mcShuffle([correct, ...picks]);
-  return {dir, opts, correct: opts.indexOf(correct),
-          prompt: dir === 'ar2en' ? correct.ar : correct.en,
-          show: o => dir === 'ar2en' ? o.en : o.ar};
-}
-
-let _mc = null;          // {lemma, q, wrong:Set, done:bool}
-function vocabMCView(c, remaining){
-  if (!_mc || _mc.lemma !== c.lemma){
-    // Alternate direction as a card matures so you can both recognise AND produce it.
-    const q = mcOptions(c, ((c.reps || 0) % 2) ? 'en2ar' : 'ar2en');
-    if (!q) return vocabCardView(c, false, remaining, true);   // not enough distractors — self-grade
-    _mc = {lemma: c.lemma, q, wrong: new Set(), done: false};
-  }
-  const {q, wrong, done} = _mc;
-  const rtl = q.dir === 'ar2en';
-  let h = `<div class="rv-top">${remaining} to go ${modeToggleHTML()}</div>
-    <div class="rv-card">
-      <div class="rv-front" ${rtl ? 'dir="rtl"' : ''}>${esc(q.prompt)}
-        ${rtl ? `<button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))"
-          aria-label="Pronounce">${svg('spk')}</button>` : ''}</div>
-      <div class="mc-opts">`;
-  q.opts.forEach((o, i) => {
-    const isRight = i === q.correct, picked = wrong.has(i);
-    const cls = picked ? 'mc-bad' : (done && isRight) ? 'mc-good' : '';
-    h += `<button class="mc-o ${cls}" ${picked || done ? 'disabled' : ''}
-       ${q.dir === 'en2ar' ? 'dir="rtl"' : ''} onclick="mcPick(${i})">${esc(q.show(o))}</button>`;
-  });
-  h += `</div>`;
-  if (done) h += `<div class="mc-next"><button class="rv-showbtn" onclick="mcNext()">
-      Continue</button></div>`;
-  h += `</div>`;
-  $('view').innerHTML = h;
-}
-function mcPick(i){
-  if (!_mc || _mc.done) return;
-  const c = marked.get(_mc.lemma);
-  if (i === _mc.q.correct){
-    _mc.done = true;
-    // Right first time is a Good; right after fumbling is a Hard; two misses is a lapse.
-    const g = _mc.wrong.size === 0 ? 2 : _mc.wrong.size === 1 ? 1 : 0;
-    vocabMCGrade(g);
-  } else {
-    _mc.wrong.add(i);
-    if (_mc.wrong.size >= 2){ _mc.done = true; vocabMCGrade(0); }
-    else vocabMCView(c, _revq.length);
-  }
-}
-// Grade through the normal path, then hold the screen so you can read the right answer.
-function vocabMCGrade(g){
-  const lemma = _mc.lemma, c = srsGrade(marked.get(lemma), g);
-  marked.set(lemma, c); save(); count();
-  _mc.graded = true;
-  vocabMCView(marked.get(lemma), _revq.length);
-}
-function mcNext(){
-  const lemma = _mc.lemma, c = marked.get(lemma);
-  _revq.shift();
-  if (srsStep(c) !== null && (c.due || 0) <= now() + SESSION_AHEAD)
-    _revq.splice(Math.min(3, _revq.length), 0, lemma);
-  _mc = null; vocabReview();
-}
-const modeToggleHTML = () => `<span class="rv-mode">
-  ${[['self','Self-grade'],['mc','Multiple choice']].map(([m,l]) =>
-    `<button class="${revMode()===m?'on':''}" onclick="setRevMode('${m}')">${l}</button>`).join('')}
-  </span>`;
-
-function vocabCardView(c, showing, remaining, forceSelf){
-  if (!forceSelf && revMode() === 'mc' && !showing) return vocabMCView(c, remaining);
+function vocabCardView(c, showing, remaining){
   const prev = srsPreview(c);
   const ex = c.example_ar ? `<div class="rv-ex" dir="rtl">${esc(c.example_ar)}</div>
       <div class="rv-exen">${esc(c.example_en || '')}</div>` : '';
-  let h = `<div class="rv-top">${remaining} to go ${modeToggleHTML()}</div>
+  let h = `<div class="rv-top">${remaining} to go</div>
     <div class="rv-card">
       <div class="rv-front">${esc(c.vocalized || c.lemma)}
         <button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))"
@@ -1568,204 +1337,6 @@ function vocabCardView(c, showing, remaining, forceSelf){
              <span>${lbl}</span><em>${prev[g]}</em></button>`).join('')}</div>`;
   }
   $('view').innerHTML = h;
-}
-
-// ---------- Practice: paradigm grid + matching --------------------------------------
-// Drill formats (four-option choice, paradigm fill, matching round) are inspired by
-// willmanidis2/arabic-drill (MIT). No code or card content is taken from it — every item
-// here is generated at runtime from our own data: the verb paradigms derived by
-// pipeline/build_verbs.py and the Maknuune-looked-up lemmas in your deck.
-//
-// Both modes grade the SAME cards on the SAME schedule as review — a paradigm round moves
-// the verb's own card, so there is no second deck and no second due-count to keep up with.
-
-// Typed answers are forgiving in exactly two ways, and no further. `conj[k].ar` is stored
-// unvocalized, so arNorm's diacritic/hamza folding lets أروح match اروح — what a learner on
-// a phone keyboard actually types. The وا -> و fold matters because 4,272 cells end in وا
-// and the bare و is a normal spelling. Each cell is checked against its OWN gold, so neither
-// fold can produce a false accept.
-const cjNorm = s => arNorm(String(s || '')).replace(/\s+/g, '').replace(/وا$/, 'و');
-
-const GRID_BLOCKS = [['perf', 'Past'], ['impf', 'Pres.'], ['bimpf', '+بـ']];
-let _gr = null;   // {v, masked:[key], vals:{}, checked:bool}
-
-// Prefer verbs you're actually learning (in your deck), then common ones. A paradigm you've
-// never met is a spelling test, not recall.
-function gridPickVerb(){
-  const pool = VB.filter(v => v.conj);
-  const mine = pool.filter(v => marked.has(v.lemma));
-  const src = mine.length ? mine : pool.filter(v => v.core);
-  return (src.length ? src : pool)[Math.floor(Math.random() * (src.length ? src.length : pool.length))];
-}
-function gridStart(v){
-  const keys = [];
-  GRID_BLOCKS.forEach(([b]) => PERSONS.forEach(([p]) => { if (v.conj[b + '|' + p]) keys.push(b + '|' + p); }));
-  const masked = mcShuffle(keys.slice()).slice(0, 5);      // 5 of 24 — enough to think, not a slog
-  _gr = {v, masked, vals: {}, checked: false};
-}
-function gridRound(arg){
-  $('title').textContent = 'Fill the paradigm';
-  const v = arg != null && VB[arg] && VB[arg].conj ? VB[arg] : null;
-  if (!_gr || (v && _gr.v !== v)) gridStart(v || gridPickVerb());
-  gridRender();
-}
-function gridRender(){
-  const {v, masked, vals, checked} = _gr;
-  const inDeck = marked.has(v.lemma);
-  const cell = k => {
-    const c = v.conj[k]; if (!c) return '<div class="cj-cell">—</div>';
-    if (!masked.includes(k))
-      return `<div class="cj-cell"><span class="wcj-ar">${esc(c.ar)}</span><span class="wcj-ph">${esc(c.ph)}</span></div>`;
-    if (!checked)
-      return `<div class="cj-cell"><input class="cj-in" dir="rtl" autocomplete="off"
-        autocapitalize="off" spellcheck="false" value="${esc(vals[k] || '')}"
-        oninput="_gr.vals['${k}']=this.value" aria-label="conjugation"></div>`;
-    const good = cjNorm(vals[k]) === cjNorm(c.ar) && cjNorm(vals[k]) !== '';
-    // Reveal the real spelling, never the normalized one.
-    return `<div class="cj-cell"><span class="wcj-ar ${good ? 'cj-ok' : 'cj-no'}">${esc(c.ar)}</span>
-      <span class="wcj-ph">${esc(c.ph)}</span>
-      ${good ? '' : `<span class="cj-you">${vals[k] ? 'you: ' + esc(vals[k]) : 'blank'}</span>`}</div>`;
-  };
-  let h = `<div class="gr-head"><div class="gr-lemma" dir="rtl">${esc(v.past ? v.past.ar : v.lemma)}</div>
-      <div class="gr-gloss">${esc(pretty(v.gloss))} · Form ${esc(v.form)}${
-        WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''}</div>
-      <div class="gr-root" dir="rtl">${esc((v.root || '').replace(/\./g, ' · '))}</div></div>
-    <p class="hint">Fill the blanks from memory. ${masked.length} cells are hidden — say each one
-      out loud before you type it.</p>
-    <div class="cj-tbl"><div class="cj-row cj-hdr"><span></span>
-      ${GRID_BLOCKS.map(b => `<span>${esc(b[1])}</span>`).join('')}</div>`;
-  PERSONS.forEach(([key, en, ar]) => {
-    h += `<div class="cj-row"><span class="cj-pr">${esc(ar)}<em>${esc(en)}</em></span>
-      ${GRID_BLOCKS.map(b => cell(b[0] + '|' + key)).join('')}</div>`;
-  });
-  h += `</div>`;
-  if (!checked){
-    h += `<div class="ctl"><button class="tog on" onclick="gridCheck()">Check</button>
-      <button class="tog" onclick="_gr=null;gridRound()">Skip to another verb</button></div>`;
-  } else {
-    const got = masked.filter(k => cjNorm(_gr.vals[k]) === cjNorm(v.conj[k].ar) && _gr.vals[k]).length;
-    h += `<div class="gr-score">${got} of ${masked.length} right${
-      inDeck ? ' · your card for this verb was graded' :
-      ' · <button class="lnk" onclick="gridAddDeck()">add this verb to your deck</button> to have it scheduled'}</div>
-      <div class="ctl"><button class="tog on" onclick="_gr=null;gridRound()">Next verb</button>
-      <button class="tog" onclick="location.hash='/verb/${v._i}'">See the full table</button></div>`;
-  }
-  h += `<div class="note">Every form here is generated by the conjugation engine from the verb's
-    root and pattern, and checked against the reference grammar. Typing is forgiving about
-    vowel marks and the final ـوا, nothing else.</div>`;
-  $('view').innerHTML = h;
-}
-function gridCheck(){
-  const {v, masked, vals} = _gr;
-  _gr.checked = true;
-  const wrong = masked.filter(k => !(vals[k] && cjNorm(vals[k]) === cjNorm(v.conj[k].ar))).length;
-  // Shared schedule: a paradigm round grades the verb's own card. Only if you actually have
-  // one — silently creating cards would inflate your deck without you asking.
-  if (marked.has(v.lemma)){
-    marked.set(v.lemma, srsGrade(marked.get(v.lemma), wrong === 0 ? 2 : wrong === 1 ? 1 : 0));
-    save(); count();
-  }
-  gridRender();
-}
-function gridAddDeck(){
-  const v = _gr.v;
-  if (!marked.has(v.lemma))
-    marked.set(v.lemma, srsInit({lemma: v.lemma, vocalized: v.past ? v.past.ar : v.lemma,
-      root: v.root, caphi: v.past ? v.past.caphi : '', gloss: v.gloss, analysis: 'VERB',
-      deck: activeDeck()}));
-  save(); count(); gridRender();
-}
-
-// ---- matching round ----
-let _mt = null;   // {pairs, left, right, sel, done:Set, miss:{}}
-function matchRound(){
-  $('title').textContent = 'Match them up';
-  if (!_mt) matchStart();
-  matchRender();
-}
-function matchStart(){
-  // Due cards first — matching should reinforce what's actually up for review.
-  let pool = dueCards().filter(c => c.lemma && mcGloss(c.gloss));
-  if (pool.length < 5) pool = [...marked.values()].filter(c => c.lemma && mcGloss(c.gloss));
-  const pairs = mcShuffle(pool.slice()).slice(0, 6).map(c => ({
-    lemma: c.lemma, ar: c.vocalized || c.lemma, en: mcGloss(c.gloss)}));
-  _mt = {pairs, left: mcShuffle(pairs.map(p => p.lemma)),
-         right: mcShuffle(pairs.map(p => p.lemma)), sel: null, done: new Set(), miss: {}, bad: null};
-}
-function matchRender(){
-  if (!_mt.pairs.length){
-    $('view').innerHTML = `<div class="empty"><div class="empty-t">Nothing to match yet</div>
-      <p>Matching uses the words in your deck. Tap words while reading and choose
-      “Don’t know it” to start building one.</p></div>`;
-    return;
-  }
-  const by = l => _mt.pairs.find(p => p.lemma === l);
-  const tile = (l, side) => {
-    const done = _mt.done.has(l), sel = _mt.sel === l, bad = _mt.bad === l;
-    return `<button class="mt-t ${done ? 'mt-done' : ''} ${sel ? 'mt-sel' : ''} ${bad ? 'mt-bad' : ''}"
-      ${done ? 'disabled' : ''} ${side === 'ar' ? 'dir="rtl"' : ''}
-      onclick="matchTap('${cssq(l)}','${side}')">${esc(side === 'ar' ? by(l).ar : by(l).en)}</button>`;
-  };
-  const finished = _mt.done.size === _mt.pairs.length;
-  let h = `<p class="hint">Tap a word, then its meaning.</p>
-    <div class="mt-grid"><div class="mt-col">${_mt.left.map(l => tile(l, 'ar')).join('')}</div>
-      <div class="mt-col">${_mt.right.map(l => tile(l, 'en')).join('')}</div></div>`;
-  if (finished){
-    const clean = _mt.pairs.filter(p => !_mt.miss[p.lemma]).length;
-    h += `<div class="gr-score">${clean} of ${_mt.pairs.length} matched first try · your cards
-      were graded</div><div class="ctl"><button class="tog on"
-      onclick="_mt=null;matchRound()">Another round</button></div>`;
-  }
-  $('view').innerHTML = h;
-}
-function matchTap(lemma, side){
-  if (_mt.done.has(lemma)) return;
-  _mt.bad = null;
-  if (_mt.sel === null){ _mt.sel = lemma; _mt.selSide = side; return matchRender(); }
-  if (_mt.sel === lemma && _mt.selSide === side){ _mt.sel = null; return matchRender(); }
-  if (_mt.sel === lemma){                                  // same word, other column — a match
-    _mt.done.add(lemma); _mt.sel = null;
-    if (_mt.done.size === _mt.pairs.length) matchGrade();
-  } else {
-    _mt.miss[lemma] = (_mt.miss[lemma] || 0) + 1;
-    _mt.miss[_mt.sel] = (_mt.miss[_mt.sel] || 0) + 1;
-    _mt.bad = lemma; _mt.sel = null;
-  }
-  matchRender();
-}
-function matchGrade(){
-  _mt.pairs.forEach(p => {
-    if (!marked.has(p.lemma)) return;
-    const m = _mt.miss[p.lemma] || 0;
-    marked.set(p.lemma, srsGrade(marked.get(p.lemma), m === 0 ? 2 : m === 1 ? 1 : 0));
-  });
-  save(); count();
-}
-
-function practiceSection(sub, arg){
-  if (sub === 'grid')  { if (!_gr || arg != null) _gr = null; return gridRound(arg); }
-  if (sub === 'match') { return matchRound(); }
-  _gr = null; _mt = null;
-  $('title').textContent = 'Practice';
-  const due = dueCards().length, deck = marked.size;
-  $('view').innerHTML = `
-    <p class="hint">Retrieval practice — producing an answer, not recognising one. Both rounds
-      grade the same cards on the same schedule as review, so this replaces review time rather
-      than adding to it.</p>
-    <div class="tiles">
-      <button class="tile" onclick="location.hash='/practice/grid'">
-        <div class="tile-t">Fill a paradigm</div>
-        <div class="tile-s">Five cells hidden from a verb's full table — type them from memory.
-          ${VB.filter(v => v.conj).length} verbs available.</div></button>
-      <button class="tile" onclick="location.hash='/practice/match'">
-        <div class="tile-t">Match them up</div>
-        <div class="tile-s">Six words against six meanings, both shuffled.
-          ${deck ? deck + ' words in your deck' + (due ? ' · ' + due + ' due' : '') : 'your deck is empty'}</div></button>
-    </div>
-    <div class="note">Drill formats are inspired by
-      <a href="https://github.com/willmanidis2/arabic-drill" target="_blank" rel="noopener">willmanidis2/arabic-drill</a>
-      (MIT). No code or content is used from it — every item is built from this app's own
-      lexicon-verified data.</div>`;
 }
 
 function vocabDecks(){
@@ -1940,7 +1511,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
   // repeats it, pulling FRESH content each time (new story, etc.), capped per activity so we
   // don't schedule eight identical reads or a second tutor. Short early phases may not fill a
   // long day — that's honest (you shouldn't cram 3h of sound drills), and we say so via `banked`.
-  const CAPS = {course: 2, sound: 2, encode: 1, tutor: 1, srs: 1, recall: 1, grammar: 2, read: 5, listen: 3, shadow: 3, drill432: 3, produce: 3};
+  const CAPS = {course: 2, sound: 2, encode: 1, tutor: 1, srs: 1, grammar: 2, read: 5, listen: 3, shadow: 3, drill432: 3, produce: 3};
   const chosen = []; const cnt = {}; let planned = 0;
   for (let pass = 0; pass < 9 && planned < totalMin; pass++) {
     let addedThisPass = false;
@@ -1964,7 +1535,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
       if (sp.act === 'read') { ord = readOrd[sp.pool] || 0; readOrd[sp.pool] = ord + 1; }
       else ord = 0;                                          // pair with the day's current (first) story
     }
-    const t = resolveTask(cfg, sp, ord, k, Math.min(sp.min, remaining), carAvail, dateISO);
+    const t = resolveTask(cfg, sp, ord, k, Math.min(sp.min, remaining), carAvail);
     // Never schedule the same item twice in one day — same in-app content, same external resource
     // (e.g. two "Pimsleur" rows), or the same open-ended task ("talk about your day").
     const key = t.act + '|' + (t.link || t.url || t.title || '');
@@ -1977,7 +1548,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
 }
 
 // Turn a phase-mix spec into a concrete, linkable task. `ord` = which item in a content pool.
-function resolveTask(cfg, sp, ord, k, minutes, carAvail, dateISO) {
+function resolveTask(cfg, sp, ord, k, minutes, carAvail) {
   const A = CUR.activities[sp.act] || {};
   const t = {id: 'k' + k + '-' + sp.act, act: sp.act, label: A.label, instr: A.instr,
     builds: A.builds, minutes, order: A.order || 3, source: sp.src, speak: !!A.speak,
@@ -2003,11 +1574,6 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail, dateISO) {
     } else { t.title = A.label; t.note = 'No ' + sp.pool + ' content loaded yet.'; }
   } else if (sp.act === 'srs') {
     t.title = 'Review your due flashcards'; t.link = '/vocab/review';
-  } else if (sp.act === 'recall') {
-    // Alternate the two rounds day to day so neither becomes a routine you can sleepwalk.
-    const grid = !dateISO || Math.abs(daysBetween('2020-01-01', dateISO)) % 2 === 0;
-    t.title = grid ? 'Fill a verb paradigm from memory' : 'Match words to their meanings';
-    t.link = grid ? '/practice/grid' : '/practice/match';
   } else if (sp.act === 'grammar') {
     const g = SECTIONS.find(s => s.route === 'grammar');
     if (g && g.ready) { t.title = 'Grammar lesson'; t.link = '/grammar'; }
@@ -2248,7 +1814,7 @@ function planExtraHTML(cfg, phase, date, doneMap, offset) {
   const pool = phaseReadPool(phase);
   let h = `<div class="sec">Extra practice — you asked for more</div>`;
   for (let j = 0; j < nx; j++) {
-    const t = resolveTask(cfg, {act: 'read', src: 'inapp', pool, min: 20}, offset + j, 0, 20, false, date);
+    const t = resolveTask(cfg, {act: 'read', src: 'inapp', pool, min: 20}, offset + j, 0, 20, false);
     t.id = 'x' + j + '-read';                               // stable per-day id for the log
     h += planTaskRow(t, date, t.id in doneMap);
   }
@@ -2359,19 +1925,12 @@ function trIndex() {
     const key = arNorm(w.lemma); if (!key) return;
     let e = byKey.get(key);
     if (!e) { e = {key, raw: w.lemma, lemma: w.vocalized || w.form || w.lemma, gloss: w.gloss || '',
-                   root: w.root || '', caphi: w.caphi_urban || w.caphi || '',
-                   analysis: '', _an: {},   // kept so drill distractors can match part of speech
-                   hits: [], surf: new Set()};
+                   root: w.root || '', caphi: w.caphi_urban || w.caphi || '', hits: [], surf: new Set()};
       byKey.set(key, e); }
-    // `analysis` is a SURFACE analysis — the same verb is VERB:P in one sentence and VERB:I in
-    // another — so tally and keep the most common rather than whichever came first.
-    if (w.analysis) e._an[w.analysis] = (e._an[w.analysis] || 0) + 1;
     if (!e.gloss && w.gloss) e.gloss = w.gloss;
     e.surf.add(arNorm(w.surface));
     if (e.hits.length < 80) e.hits.push({tid: t.id, si, wi});
   })));
-  byKey.forEach(e => { e.analysis =
-    Object.keys(e._an).sort((a, b) => e._an[b] - e._an[a])[0] || ''; });
   _tridx = {all: [...byKey.values()], byKey};
   return _tridx;
 }
@@ -3240,12 +2799,7 @@ function scheduleSync() { if (_syncTimer) clearTimeout(_syncTimer); _syncTimer =
 const _pj = s => { try { return JSON.parse(s); } catch (e) { return null; } };
 function mergeCards(a, b) {                         // arrays of [lemma, card]; keep the more-reviewed
   const m = new Map(); (a || []).forEach(([k, c]) => m.set(k, c));
-  // `reps` alone can't separate two copies of a card that are both mid-ladder: reps stays 0
-  // for the whole 10m/30m/2h climb, so the local copy silently won and the further-along
-  // device lost its progress. Fall back to the later `due`, which does advance every step.
-  (b || []).forEach(([k, c]) => { const e = m.get(k);
-    if (!e || (c.reps || 0) > (e.reps || 0) ||
-        ((c.reps || 0) === (e.reps || 0) && (c.due || 0) > (e.due || 0))) m.set(k, c); });
+  (b || []).forEach(([k, c]) => { const e = m.get(k); if (!e || (c.reps || 0) > (e.reps || 0)) m.set(k, c); });
   return [...m];
 }
 function unionById(a, b) { const m = new Map(); (a || []).forEach(x => m.set(x.id, x));
