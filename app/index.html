@@ -261,6 +261,21 @@
   .phlab input{display:block; width:100%; margin-top:5px; font:inherit; font-size:15px;
     text-transform:none; letter-spacing:0; padding:8px 10px; border-radius:8px;
     border:1px solid var(--rule); background:var(--bg); color:var(--ink)}
+  .phlab input:focus{outline:2px solid var(--verdigris); outline-offset:1px}
+  .phlab input.phbad{border-color:var(--rubric); outline:2px solid var(--rubric)}
+  /* where the meaning comes from */
+  .phsug{margin-top:12px; text-align:left}
+  .phsug-t{font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted);
+    margin-bottom:5px}
+  .phsug-b{display:block; width:100%; text-align:left; font:inherit; cursor:pointer;
+    margin-bottom:5px; padding:7px 10px; border-radius:8px; border:1px solid var(--rule);
+    background:transparent; color:var(--ink)}
+  .phsug-b:hover{border-color:var(--verdigris)}
+  .phsug-en{display:block; font-size:14px}
+  .phsug-w{display:block; font-size:10.5px; color:var(--muted); margin-top:2px}
+  .phsug-ctx{font-size:16px; line-height:1.7}
+  .phsug-en2{font-size:13px; color:var(--ink-soft); margin-top:2px}
+  .phwrap{margin-top:12px; text-align:left}
   .rv-front.rv-phrase{font-size:26px; line-height:1.6}
   .vcc-ph{font-size:9.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--verdigris);
     border:1px solid var(--verdigris); border-radius:99px; padding:1px 7px; margin-inline-start:6px}
@@ -2540,6 +2555,38 @@ function showCard(si, wi) {
 const phKey = ar => '¶' + arNorm(ar);
 let _ph = null;                       // {si, wi} — the anchor while picking a phrase
 
+// Where a phrase's MEANING comes from. Never invented — three real sources, best first:
+//   1. the span is the whole sentence, so the sentence's own translation IS the meaning;
+//   2. the same phrase occurs elsewhere in the corpus, and those sentences are translated —
+//      the Reverso-style trick the Translate section already uses, applied to a chunk;
+//   3. failing both, the sentence it came from, shown so you can read the meaning off it.
+// The word-by-word glosses are reference material, not a translation, and are no longer
+// pretending to be one by sitting in the answer box.
+// Match on the WORD SEQUENCE, not the raw sentence text: sentences carry commas and full
+// stops between words ("الصبح، بصحى"), so a substring test against s.ar misses the phrase
+// even in the very sentence it was lifted from.
+const phSeq = words => words.map(w => arNorm(w.surface)).join(' ');
+function phraseMeanings(words, si, whole) {
+  const out = [], seen = new Set();
+  const needle = phSeq(words);
+  const here = cur && cur.sentences[si];
+  // The sentence it came from is always the first offer — for a sub-span it's the honest
+  // starting point you trim down, not a perfect answer.
+  if (here && here.en) {
+    out.push({en: here.en, why: whole ? 'this sentence' : 'the sentence it’s from — trim it down'});
+    seen.add(here.en);
+  }
+  try {
+    LIB.texts.forEach(t => (t.sentences || []).forEach(s => {
+      if (out.length >= 5 || !s.en || seen.has(s.en) || !s.words) return;
+      if (!phSeq(s.words).includes(needle)) return;
+      seen.add(s.en);
+      out.push({en: s.en, why: 'the same phrase in “' + esc(t.title.en || t.id) + '”'});
+    }));
+  } catch (e) {}
+  return out;
+}
+
 function startPhrase(si, wi) {
   _ph = {si, wi};
   hideCard();
@@ -2571,25 +2618,36 @@ function phrasePick(si, wi) {
     const i = +x.dataset.w;
     x.classList.toggle('phsel', +x.dataset.s === si && i >= a && i <= b);
   });
-  const glossChain = words.map(w => pretty(w.gloss) || '?').join(' · ');
   const already = marked.has(key);
+  const whole = a === 0 && b === s.words.length - 1;
+  const sugg = phraseMeanings(words, si, whole);
   // The prompt bar has done its job — leave it up and it sits on top of this sheet's input.
   const bar = $('phbar'); if (bar) bar.classList.remove('on');
   $('wc').innerHTML =
     `<div class="hw" dir="rtl">${esc(ar)}</div>
      <div class="ph">${esc(words.map(w => w.caphi_urban || w.caphi || '').filter(Boolean).join(' '))}</div>
      <div class="wtype">phrase · ${words.length} words</div>
-     <div class="phw">${words.map(w => `<span><b dir="rtl">${esc(w.vocalized || w.surface)}</b>
-        ${esc(pretty(w.gloss) || '—')}</span>`).join('')}</div>
-     <label class="phlab">What it means — edit it into your own words
-       <input id="phen" value="${esc(glossChain)}" autocomplete="off"></label>
-     <div class="src">Each word's meaning is from the lexicon; the phrasing above is yours.
+     <label class="phlab">What the phrase means
+       <input id="phen" value="${esc(whole && sugg.length ? sugg[0].en : '')}"
+         placeholder="say it in natural English" autocomplete="off"></label>
+     ${sugg.length ? `<div class="phsug"><div class="phsug-t">${
+        whole ? 'The translation of this sentence' : 'Tap to start from a real translation'}</div>
+       ${sugg.map(x => `<button class="phsug-b" data-en="${esc(x.en)}">
+          <span class="phsug-en">${esc(x.en)}</span>
+          <span class="phsug-w">${esc(x.why)}</span></button>`).join('')}</div>` : ''}
+     <div class="phwrap"><div class="phsug-t">Word by word, from the lexicon</div>
+       <div class="phw">${words.map(w => `<span><b dir="rtl">${esc(w.vocalized || w.surface)}</b>
+          ${esc(pretty(w.gloss) || '—')}</span>`).join('')}</div></div>
+     <div class="src">Meanings are the app's own translations; the wording you save is yours.
        Wrong end? Cancel and pick again.</div>
      <div class="acts">
        <button data-a="close">Cancel</button>
        <button class="mk" id="phadd" ${already ? 'disabled' : ''}>${
          already ? '✓ Already in your deck' : '+ Add phrase'}</button>
      </div>`;
+  $('wc').querySelectorAll('.phsug-b').forEach(btn => btn.onclick = () => {
+    const inp = $('phen'); if (inp) { inp.value = btn.dataset.en; inp.focus(); }
+  });
   $('cw').classList.add('on');
   $('wc').querySelector('[data-a="close"]').onclick = () => { hideCard(); cancelPhrase(); };
   const add = $('phadd');
@@ -2599,7 +2657,12 @@ function addPhrase(si, a, b) {
   const s = cur.sentences[si];
   const words = s.words.slice(a, b + 1);
   const ar = words.map(w => w.vocalized || w.surface).join(' ');
-  const en = (($('phen') || {}).value || '').trim() || words.map(w => pretty(w.gloss) || '?').join(' · ');
+  // No silent fallback to the word-by-word chain — a card whose "meaning" is
+  // "day · morning · wake up" is worse than no card, and that is exactly what you'd get by
+  // tapping Add without reading. Make the meaning a deliberate act.
+  const en = (($('phen') || {}).value || '').trim();
+  if (!en) { const i = $('phen'); if (i) { i.focus(); i.classList.add('phbad');
+      setTimeout(() => i.classList.remove('phbad'), 1200); } return; }
   const whole = a === 0 && b === s.words.length - 1;            // the span IS the whole sentence
   marked.set(phKey(ar), srsInit({
     kind: 'phrase', lemma: phKey(ar), phrase: ar, vocalized: ar, surface: ar, gloss: en,
