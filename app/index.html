@@ -1940,7 +1940,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
   // repeats it, pulling FRESH content each time (new story, etc.), capped per activity so we
   // don't schedule eight identical reads or a second tutor. Short early phases may not fill a
   // long day — that's honest (you shouldn't cram 3h of sound drills), and we say so via `banked`.
-  const CAPS = {course: 2, sound: 2, encode: 1, tutor: 1, srs: 1, grammar: 2, read: 5, listen: 3, shadow: 3, drill432: 3, produce: 3};
+  const CAPS = {course: 2, sound: 2, encode: 1, tutor: 1, srs: 1, recall: 1, grammar: 2, read: 5, listen: 3, shadow: 3, drill432: 3, produce: 3};
   const chosen = []; const cnt = {}; let planned = 0;
   for (let pass = 0; pass < 9 && planned < totalMin; pass++) {
     let addedThisPass = false;
@@ -1964,7 +1964,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
       if (sp.act === 'read') { ord = readOrd[sp.pool] || 0; readOrd[sp.pool] = ord + 1; }
       else ord = 0;                                          // pair with the day's current (first) story
     }
-    const t = resolveTask(cfg, sp, ord, k, Math.min(sp.min, remaining), carAvail);
+    const t = resolveTask(cfg, sp, ord, k, Math.min(sp.min, remaining), carAvail, dateISO);
     // Never schedule the same item twice in one day — same in-app content, same external resource
     // (e.g. two "Pimsleur" rows), or the same open-ended task ("talk about your day").
     const key = t.act + '|' + (t.link || t.url || t.title || '');
@@ -1977,7 +1977,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
 }
 
 // Turn a phase-mix spec into a concrete, linkable task. `ord` = which item in a content pool.
-function resolveTask(cfg, sp, ord, k, minutes, carAvail) {
+function resolveTask(cfg, sp, ord, k, minutes, carAvail, dateISO) {
   const A = CUR.activities[sp.act] || {};
   const t = {id: 'k' + k + '-' + sp.act, act: sp.act, label: A.label, instr: A.instr,
     builds: A.builds, minutes, order: A.order || 3, source: sp.src, speak: !!A.speak,
@@ -2003,6 +2003,11 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail) {
     } else { t.title = A.label; t.note = 'No ' + sp.pool + ' content loaded yet.'; }
   } else if (sp.act === 'srs') {
     t.title = 'Review your due flashcards'; t.link = '/vocab/review';
+  } else if (sp.act === 'recall') {
+    // Alternate the two rounds day to day so neither becomes a routine you can sleepwalk.
+    const grid = !dateISO || Math.abs(daysBetween('2020-01-01', dateISO)) % 2 === 0;
+    t.title = grid ? 'Fill a verb paradigm from memory' : 'Match words to their meanings';
+    t.link = grid ? '/practice/grid' : '/practice/match';
   } else if (sp.act === 'grammar') {
     const g = SECTIONS.find(s => s.route === 'grammar');
     if (g && g.ready) { t.title = 'Grammar lesson'; t.link = '/grammar'; }
@@ -2243,7 +2248,7 @@ function planExtraHTML(cfg, phase, date, doneMap, offset) {
   const pool = phaseReadPool(phase);
   let h = `<div class="sec">Extra practice — you asked for more</div>`;
   for (let j = 0; j < nx; j++) {
-    const t = resolveTask(cfg, {act: 'read', src: 'inapp', pool, min: 20}, offset + j, 0, 20, false);
+    const t = resolveTask(cfg, {act: 'read', src: 'inapp', pool, min: 20}, offset + j, 0, 20, false, date);
     t.id = 'x' + j + '-read';                               // stable per-day id for the log
     h += planTaskRow(t, date, t.id in doneMap);
   }
