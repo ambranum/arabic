@@ -208,12 +208,25 @@
   .player .seek:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--verdigris)}
 
   .pspd{display:inline-flex; border:1px solid var(--rule); border-radius:13px; overflow:hidden}
-  .pspd .sb{font:inherit; font-size:11px; padding:4px 9px; border:none; cursor:pointer;
+  /* Four rungs now, so the padding is trimmed to keep the group on one line next to the
+     seek bar on a phone. */
+  .pspd .sb{font:inherit; font-size:11px; padding:4px 7px; border:none; cursor:pointer;
       border-left:1px solid var(--rule); background:none; color:var(--ink-soft);
-      font-variant-numeric:tabular-nums}
+      font-variant-numeric:tabular-nums; white-space:nowrap}
   .pspd .sb:first-child{border-left:none}
   .pspd .sb[aria-pressed="true"]{background:var(--verdigris); color:var(--paper); font-weight:600}
   .pspd .sb:focus-visible{outline:2px solid var(--verdigris); outline-offset:-2px}
+  /* On a phone the fourth speed pushed the group past the row and the whole player wrapped
+     onto two lines — doubling the height of every player in a story. Tighten the buttons and
+     let the seek bar give up some width instead, so it stays one line down to ~320px. */
+  @media(max-width:430px){
+    .pspd .sb{padding:4px 5px; font-size:10px}
+    .player{gap:7px}
+    .player .seek{min-width:64px; flex:1 1 64px}
+  }
+  /* Below ~360px there isn't room for both. The elapsed/duration numbers go rather than the
+     speed control: the seek bar already shows position, and these clips are a few seconds. */
+  @media(max-width:360px){ .player .t-cur, .player .t-dur{display:none} }
 
   /* ---------- word card: bottom sheet on phone, popover on desktop ---------- */
   .cardwrap{position:fixed; inset:0; z-index:60; display:none}
@@ -781,6 +794,11 @@ function speakWord(card) {                    // browser SpeechSynthesis fallbac
 const SKEY = 'alp.speed.v1';
 let SPEED = parseFloat(localStorage.getItem(SKEY)) || 1;
 const setSpeed = v => { SPEED = v; try { localStorage.setItem(SKEY, String(v)); } catch (e) {} };
+// One list, used by every speed control — the inline players and the guided-shadow view had
+// their own copies and would drift apart. 0.75 is the useful middle rung: 0.5 is for picking
+// a sentence apart word by word, 0.9 is "almost native", and the gap between them was too big
+// to shadow comfortably.
+const SPEEDS = [[0.5, '0.5×'], [0.75, '0.75×'], [0.9, '0.9×'], [1, '1×']];
 
 // ---------- one real audio engine, many inline players ----------
 // A single <audio> is reused for every line. Only one clip is ever audible; hitting play
@@ -863,7 +881,7 @@ function player(src) {
              aria-label="Seek" style="--fill:0%">
       <span class="t-dur">0:00</span>
       <div class="pspd" role="group" aria-label="Speed">
-        ${[[0.5,'0.5×'],[0.9,'0.9×'],[1,'1×']].map(([v,t]) =>
+        ${SPEEDS.map(([v,t]) =>
           `<button class="sb" data-spd="${v}" aria-pressed="${SPEED===v}">${t}</button>`).join('')}
       </div>
     </div>`;
@@ -2661,7 +2679,7 @@ function gsSpeed(v) { if (!_gs) return; _gs.speed = v; if (_gs.audio) _gs.audio.
 function gsRender() {
   if (!_gs) return;
   const s = _gs.sents[_gs.i], n = _gs.sents.length, p = _gs.phase;
-  const speeds = `<div class="pspd" role="group" aria-label="Speed">${[[0.5, '0.5×'], [0.9, '0.9×'], [1, '1×']].map(([v, l]) =>
+  const speeds = `<div class="pspd" role="group" aria-label="Speed">${SPEEDS.map(([v, l]) =>
     `<button class="sb" aria-pressed="${_gs.speed === v}" onclick="gsSpeed(${v})">${l}</button>`).join('')}</div>`;
 
   if (p === 'done') {
@@ -2728,8 +2746,14 @@ $('exp').onclick = () => ankiExport();
 $('view').addEventListener('click', e => {
   const pp = e.target.closest('.player .pp');
   if (pp) { toggleSrc(pp.closest('.player')); return; }   // play / pause
+  // Only the inline players tag their buttons with data-spd. The guided-shadow view reuses
+  // the same .pspd markup but drives itself through gsSpeed(), so without this guard the
+  // delegated handler also fired there, parsed undefined, and wrote NaN over the saved
+  // speed — which then read back as 1x on the next visit.
   const sb = e.target.closest('.pspd .sb');
-  if (sb) { applySpeed(parseFloat(sb.dataset.spd), sb.closest('.player')); return; }
+  if (sb) { const v = parseFloat(sb.dataset.spd);
+    if (!isNaN(v)) applySpeed(v, sb.closest('.player'));
+    return; }
   const pk = e.target.closest('[data-peek]');
   if (pk) { pk.closest('.sent').classList.add('peek'); return; }
   const w = e.target.closest('.rd .w');
