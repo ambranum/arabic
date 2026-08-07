@@ -966,6 +966,97 @@ def conjugate_ija():
     return {sec + '|' + k: {'ph': ph, 'ar': ar} for sec, m in T.items() for k, (ph, ar) in m.items()}
 
 
+# ---- vowel marks on the generated forms -----------------------------------------------
+# The tables shipped bare skeletons (رحت) while only the three principal parts carried
+# harakat from Maknuune. The vowels were never unknown — every engine above already computes
+# them exactly, in the `ph` romanization (ru7it). This renders that same, book-verified
+# derivation into Arabic script; it invents nothing that wasn't already in `ph`.
+#
+# It is deliberately strict. The skeleton and the romanization are walked in lockstep, and if
+# they ever fail to line up the cell returns None and the app falls back to the plain
+# spelling. A wrong vowel teaches a wrong word, so "no vowels" must always beat "a guess".
+_FAT, _KAS, _DAM = 'َ', 'ِ', 'ُ'
+_SUKUN, _SHADDA = 'ْ', 'ّ'
+_HARAKA = {'a': _FAT, 'i': _KAS, 'u': _DAM, 'e': _KAS, 'o': _DAM}
+_LONG_LETTER = {'aa': 'ا', 'uu': 'و', 'oo': 'و', 'ii': 'ي', 'ee': 'ي'}
+_LONG_SHORT = {'aa': 'a', 'uu': 'u', 'oo': 'u', 'ii': 'i', 'ee': 'i'}
+_ALIFS = 'اأإآ'
+# Arabic letter -> the romanization tokens it can stand for. ق maps to 2 as well as q because
+# the app realizes qaf as a glottal stop (urban), which is what `ph` records.
+_LETTER_PH = {
+    'ب': ('b',), 'ت': ('t',), 'ث': ('th',), 'ج': ('j',), 'ح': ('7',), 'خ': ('kh',),
+    'د': ('d',), 'ذ': ('dh',), 'ر': ('r',), 'ز': ('z',), 'س': ('s',), 'ش': ('sh',),
+    'ص': ('s.',), 'ض': ('d.',), 'ط': ('t.',), 'ظ': ('z.',), 'ع': ('3',), 'غ': ('gh',),
+    'ف': ('f',), 'ق': ('2', 'q'), 'ك': ('k',), 'ل': ('l',), 'م': ('m',), 'ن': ('n',),
+    'ه': ('h',), 'و': ('w',), 'ي': ('y',), 'أ': ('2',), 'إ': ('2',), 'آ': ('2',), 'ء': ('2',),
+    'ا': ('2',),          # bare alif also spells a word-initial hamza (استسلم = 2istaslam)
+}
+
+def vocalize_cell(ar, ph):
+    """Arabic skeleton + its romanization -> the skeleton with harakat, or None if unsure."""
+    ar, toks = str(ar or ''), _phon(str(ph or ''))
+    if not ar or not toks:
+        return None
+    out, i, j, n, m = [], 0, 0, len(ar), len(toks)
+
+    def short_after():
+        """Attach whatever vowel follows the consonant just emitted."""
+        nonlocal i, j
+        if j >= m:
+            return True                                   # word ends here: no final sukuun
+        t = toks[j]
+        if t in _HARAKA and t not in _LONG_LETTER:
+            out.append(_HARAKA[t]); j += 1
+            # Palestinian spells the b-imperfect prefix بي / بو, where the ي or و is just a
+            # seat for the short vowel we have already written (بيروح = bi-ruu7). Swallow it,
+            # but only when a consonant follows — a real y/w consonant must keep its own slot.
+            if (i < n and ar[i] in ('ي', 'و')
+                    and ((t in ('i', 'e') and ar[i] == 'ي') or (t in ('u', 'o') and ar[i] == 'و'))
+                    and j < m and toks[j] not in ('y', 'w')
+                    and toks[j] not in _HARAKA and toks[j] not in _LONG_LETTER):
+                out.append(ar[i]); i += 1
+            return True
+        if t in _LONG_LETTER:                             # long vowel: needs its ا/و/ي
+            if i < n and ar[i] == _LONG_LETTER[t]:
+                out.append(_HARAKA[_LONG_SHORT[t]]); out.append(ar[i]); i += 1; j += 1
+                return True
+            return False                                  # skeleton disagrees → give up
+        out.append(_SUKUN); return True                   # another consonant follows
+
+    while i < n:
+        c = ar[i]
+        if j >= m:                                        # trailing silent letters (plural وا)
+            out.append(c); i += 1; continue
+        t = toks[j]
+        # an alif/hamza carrying a bare initial vowel (2aakul, uktub, aja)
+        if c in _ALIFS and t in _HARAKA and t not in _LONG_LETTER:
+            out.append(c); out.append(_HARAKA[t]); i += 1; j += 1; continue
+        if c in _ALIFS and t in _LONG_LETTER and _LONG_LETTER[t] == 'ا':
+            out.append(c); i += 1; j += 1; continue       # آ / initial aa
+        # آ is hamza + long aa in one letter (آكل = 2aakul)
+        if c == 'آ' and t == '2' and j + 1 < m and toks[j + 1] == 'aa':
+            out.append(c); i += 1; j += 2; continue
+        opts = _LETTER_PH.get(c)
+        if opts and t in opts:
+            out.append(c); j += 1; i += 1
+            # the same consonant twice in the sound but once in writing = shadda
+            if j < m and toks[j] in opts and not (i < n and ar[i] == c):
+                out.append(_SHADDA); j += 1
+            if not short_after():
+                return None
+            continue
+        # a long vowel letter standing on its own (و/ي/ا not preceded by its consonant)
+        if t in _LONG_LETTER and c == _LONG_LETTER[t]:
+            out.append(c); i += 1; j += 1; continue
+        if c == 'ة' and t in ('a', 'e'):
+            out.append(_HARAKA[t]) if out and out[-1] not in (_FAT, _KAS, _DAM) else None
+            out.append(c); i += 1; j += 1; continue
+        if c in ('ى', 'ة'):                               # silent/defective final
+            out.append(c); i += 1; continue
+        return None                                       # anything unexpected: no guessing
+    return ''.join(out) if j >= m else None
+
+
 if __name__ == '__main__':
     import json
     for root, p, i in [('ك.ت.ب','katab','yiktub'), ('ح.ر.ك','7arrak','y7arrik'),

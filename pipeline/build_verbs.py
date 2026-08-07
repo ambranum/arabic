@@ -127,7 +127,8 @@ from conjugate import (conjugate, conjugate_hollow, conjugate_defective, conjuga
                        conjugate_V, conjugate_VI,
                        conjugate_VII, conjugate_VIII, conjugate_X,
                        conjugate_assimilated, conjugate_hamzated_akal,
-                       conjugate_VIII_defective, conjugate_X_gemdef, conjugate_ija)
+                       conjugate_VIII_defective, conjugate_X_gemdef, conjugate_ija,
+                       vocalize_cell)
 # Dispatch by measure. Form I splits by weak class; derived measures have one engine each
 # (parsers reject anything not matching the measure's template → principal parts only).
 # hamzated chains: أكل/أخذ take the irregular engine; hamza-final verbs like قرا (2ara/yi2ra)
@@ -162,7 +163,14 @@ def slim(x):
         'past': part(x['past']), 'pres': part(x['pres']), 'imp': part(x['imp']),
     }
     conj = paradigm(x)
-    if conj: d['conj'] = conj
+    if conj:
+        # `arv` = the same form with harakat, rendered from the romanization the engine already
+        # derived. Cells the renderer can't align exactly get no `arv` and the app shows the
+        # plain spelling — a wrong vowel teaches a wrong word.
+        for cell in conj.values():
+            v = vocalize_cell(cell['ar'], cell['ph'])
+            if v: cell['arv'] = v
+        d['conj'] = conj
     return d
 data = {'verbs': [slim(x) for x in top]}
 
@@ -179,6 +187,10 @@ data['verbs'].insert(0, {
     'imp':  {'ar': 'تَعَال', 'caphi': 'ta3aal'},
     'conj': conjugate_ija(),
 })
+_cells = [c for v in data['verbs'] for c in (v.get('conj') or {}).values()]
+print('vocalized cells: %d/%d (%.1f%%) — the rest show unvocalized rather than guess'
+      % (sum(1 for c in _cells if 'arv' in c), len(_cells),
+         100 * sum(1 for c in _cells if 'arv' in c) / max(len(_cells), 1)))
 _nconj = sum(1 for v in data['verbs'] if 'conj' in v)
 _bycls = Counter(v['weak'] for v in data['verbs'] if 'conj' in v)
 print('\nfull paradigms attached (Form I): %d verbs — %s' % (_nconj, dict(_bycls)))

@@ -2218,7 +2218,7 @@ function verbDetail(i){
   }
 
   // three tenses side by side, one row per person
-  const cell = k => c[k] ? `<div class="cj-cell"><span class="cj-ar">${esc(c[k].ar)}</span>
+  const cell = k => c[k] ? `<div class="cj-cell"><span class="cj-ar">${esc(c[k].arv || c[k].ar)}</span>
       <span class="cj-ph">${esc(c[k].ph)}</span></div>` : `<div class="cj-cell">—</div>`;
   h += `<div class="cj-tbl">
     <div class="cj-row cj-hdr"><div class="cj-pr"></div>
@@ -2234,7 +2234,7 @@ function verbDetail(i){
   const mini = (title, rows) => `<div class="cj-mini"><div class="sec">${title}</div>
     <div class="cj-mini-row">${rows.map(([lbl,k]) => c[k] ?
       `<div class="cj-cell"><span class="cj-k">${esc(lbl)}</span>
-        <span class="cj-ar">${esc(c[k].ar)}</span><span class="cj-ph">${esc(c[k].ph)}</span></div>` : ''
+        <span class="cj-ar">${esc(c[k].arv || c[k].ar)}</span><span class="cj-ph">${esc(c[k].ph)}</span></div>` : ''
     ).join('')}</div></div>`;
   h += mini('Command (imperative)', [['you (m)','imp|inta'],['you (f)','imp|inti'],['you (pl)','imp|intu']]);
   h += mini('Active participle (doing / having done)',
@@ -2468,7 +2468,7 @@ function findVerb(w) {
 }
 function conjPopupHTML(v) {
   const c = v.conj; if (!c) return '';
-  const cell = k => c[k] ? `<span class="wcj-ar">${esc(c[k].ar)}</span><span class="wcj-ph">${esc(c[k].ph)}</span>` : '—';
+  const cell = k => c[k] ? `<span class="wcj-ar">${esc(c[k].arv || c[k].ar)}</span><span class="wcj-ph">${esc(c[k].ph)}</span>` : '—';
   let h = `<div class="wcj"><div class="wcj-h"><span>Conjugation${WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''} Form ${esc(v.form)}</span>
       <a href="#/verb/${v._i}" onclick="hideCard()">full page →</a></div>
     <div class="wcj-tbl"><div class="wcj-row wcj-hdr"><span></span><span>Past</span><span>Pres.</span><span>+بـ</span></div>`;
