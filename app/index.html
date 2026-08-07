@@ -244,6 +244,26 @@
   }
   .wc .hw{font-family:var(--arabic); direction:rtl; font-size:32px; line-height:1.6}
   .wc .ph{font-family:var(--mono); font-size:13px; color:var(--verdigris); margin-top:2px}
+  /* phrase capture */
+  .rd .w.phsel{background:var(--verdigris); color:var(--paper); border-radius:4px}
+  .phbar{position:fixed; left:0; right:0; bottom:0; z-index:70; display:none;
+    align-items:center; justify-content:center; gap:12px; padding:12px 16px;
+    background:var(--verdigris); color:var(--paper); font-size:14px}
+  .phbar.on{display:flex}
+  .phbar button{font:inherit; font-size:13px; padding:5px 12px; cursor:pointer;
+    border:1px solid var(--paper); border-radius:99px; background:transparent; color:var(--paper)}
+  .phw{display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-top:10px}
+  .phw span{font-size:11.5px; color:var(--muted); border:1px solid var(--rule);
+    border-radius:7px; padding:4px 8px; text-align:center}
+  .phw b{display:block; font-size:15px; color:var(--ink); font-weight:400}
+  .phlab{display:block; margin-top:14px; font-size:11px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--muted); text-align:left}
+  .phlab input{display:block; width:100%; margin-top:5px; font:inherit; font-size:15px;
+    text-transform:none; letter-spacing:0; padding:8px 10px; border-radius:8px;
+    border:1px solid var(--rule); background:var(--bg); color:var(--ink)}
+  .rv-front.rv-phrase{font-size:26px; line-height:1.6}
+  .vcc-ph{font-size:9.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--verdigris);
+    border:1px solid var(--verdigris); border-radius:99px; padding:1px 7px; margin-inline-start:6px}
   .wc .phwa{font-family:var(--mono); font-size:12px; color:var(--muted); margin-top:1px}
   .wc .phwa b{font-weight:600; font-size:9px; letter-spacing:.08em; text-transform:uppercase;
               margin-right:6px; opacity:.85}
@@ -774,7 +794,10 @@ const au = src => !src ? src : (AUDIO_V ? src + (src.includes('?') ? '&' : '?') 
 const VA = window.VOCAB_AUDIO || {};
 let _wa = null;
 function playWord(card) {
-  const clip = VA[card.lemma];
+  // A phrase card carries its own clip when the span was a whole recorded sentence; otherwise
+  // there is no Palestinian recording of that particular chunk and we fall back to the
+  // browser voice, same as any word we never generated audio for.
+  const clip = (card.kind === 'phrase' ? card.audio : null) || VA[card.lemma];
   if (clip) { try { (_wa = _wa || new Audio()).src = au(clip); _wa.playbackRate = SPEED;
                     _wa.play().catch(() => speakWord(card)); return; } catch (e) {} }
   speakWord(card);
@@ -1301,7 +1324,10 @@ function vocabHome(){
       <div class="en">${esc(d.name)}${d.id === activeDeck() ? ' <span class="pill on">active</span>' : ''}</div>
       <div class="meta"><span>${n} card${n===1?'':'s'}</span>${dn ? `<span style="color:var(--ochre)">${dn} due</span>` : ''}</div>
     </button>`; }).join('');
-  h += `<div class="ctl" style="margin-top:12px">
+  h += `<p class="hint" style="margin-top:14px">Whole <b>phrases</b> stick better than single
+     words. While reading, tap a word → <b>+ Phrase…</b> → tap the last word of the chunk.</p>`;
+  h += `<div class="ctl" style="margin-top:6px">
+     <button class="tog" onclick="addPhraseManual()">+ Add a phrase</button>
      <button class="tog" onclick="location.hash='/vocab/decks'">Manage decks</button>
      <button class="tog" onclick="location.hash='/vocab/browse'">Browse all</button>
      <button class="tog" onclick="ankiExport()">Export to Anki</button></div>`;
@@ -1337,9 +1363,10 @@ function vocabCardView(c, showing, remaining){
   const prev = srsPreview(c);
   const ex = c.example_ar ? `<div class="rv-ex" dir="rtl">${esc(c.example_ar)}</div>
       <div class="rv-exen">${esc(c.example_en || '')}</div>` : '';
+  const isPh = c.kind === 'phrase';
   let h = `<div class="rv-top">${remaining} to go</div>
     <div class="rv-card">
-      <div class="rv-front">${esc(c.vocalized || c.lemma)}
+      <div class="rv-front${isPh ? ' rv-phrase' : ''}" ${isPh ? 'dir="rtl"' : ''}>${esc(c.vocalized || c.lemma)}
         <button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))"
           aria-label="Pronounce">${svg('spk')}</button></div>`;
   if (!showing){
@@ -1347,7 +1374,12 @@ function vocabCardView(c, showing, remaining){
   } else {
     h += `<div class="rv-ph">${esc(c.caphi || '')}</div>
       <div class="rv-gl">${esc(pretty(c.gloss) || '—')}</div>
-      <div class="rv-root">root ${esc((c.root||'—').replace(/\./g,' · '))}</div>
+      ${isPh
+        ? (c.parts && c.parts.length
+            ? `<div class="phw">${c.parts.map(p => `<span><b dir="rtl">${esc(p.ar)}</b>
+                 ${esc(p.gloss)}</span>`).join('')}</div>`
+            : `<div class="rv-root">your own phrase — not from a text</div>`)
+        : `<div class="rv-root">root ${esc((c.root||'—').replace(/\./g,' · '))}</div>`}
       ${ex}</div>
       <div class="rv-grades">
         ${[['Again',0],['Hard',1],['Good',2],['Easy',3]].map(([lbl,g]) =>
@@ -1395,7 +1427,8 @@ function vocabCardList(title, list, deckId){
   h += `<div class="sec">${list.length} card${list.length===1?'':'s'}</div>`;
   h += list.map(c => { const due = (c.due||0) <= now();
     return `<div class="vccard">
-      <div class="vcc-h"><span class="vcc-ar">${esc(c.vocalized || c.lemma)}</span>
+      <div class="vcc-h"><span class="vcc-ar"${c.kind === 'phrase' ? ' dir="rtl"' : ''}>${esc(c.vocalized || c.lemma)}</span>
+        ${c.kind === 'phrase' ? '<span class="vcc-ph">phrase</span>' : ''}
         <button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))" aria-label="Pronounce">${svg('spk')}</button>
         <span class="vcc-gl">${esc(pretty(c.gloss) || '—')}</span>
         <span class="vcc-due">${due ? 'due' : 'in ' + Math.max(0,Math.round(((c.due||0)-now())/864e5)) + 'd'}</span></div>
@@ -2479,11 +2512,14 @@ function showCard(si, wi) {
      <div class="src">${src}${on ? ' · in your deck (' + esc(deckName(marked.get(w.lemma).deck)) + ')' : ''}</div>
      <div class="acts">
        <button data-a="close">Close</button>
+       <button data-a="phrase">+ Phrase…</button>
        <button class="mk" data-a="mark" data-on="${on ? 1 : 0}" ${w.lemma ? '' : 'disabled'}>
          ${on ? '✓ In your deck' : "+ Don't know it"}</button>
      </div>`;
   $('cw').classList.add('on');
   $('wc').querySelector('[data-a="close"]').onclick = hideCard;
+  const phb = $('wc').querySelector('[data-a="phrase"]');
+  if (phb) phb.onclick = () => startPhrase(si, wi);
   const say = $('wc').querySelector('[data-a="say"]');
   if (say) say.onclick = () => playWord(marked.get(w.lemma) || cardFromWord(w));
   const mk = $('wc').querySelector('[data-a="mark"]');
@@ -2493,6 +2529,104 @@ function showCard(si, wi) {
     save(); paint(); showCard(si, wi);
   };
 }
+// ---------- phrase cards ------------------------------------------------------------
+// LEARNING-SYSTEM.md's finding: teach CHUNKS, not words. "بشرب قهوة" is one thing your mouth
+// learns to say; drilling بشرب and قهوة separately never assembles it. A phrase card is an
+// ordinary SRS card — same deck, same schedule, same grading — it just holds a span of words.
+//
+// The map is keyed by `lemma`, so phrases get a synthetic key with a ¶ prefix. That keeps
+// every existing path working untouched (delete, move, grade, sync) and can never collide
+// with a real lemma — which also means the reader's marked-word highlighting ignores them.
+const phKey = ar => '¶' + arNorm(ar);
+let _ph = null;                       // {si, wi} — the anchor while picking a phrase
+
+function startPhrase(si, wi) {
+  _ph = {si, wi};
+  hideCard();
+  document.querySelectorAll('.rd .w.phsel').forEach(x => x.classList.remove('phsel'));
+  const el = document.querySelector(`.rd .w[data-s="${si}"][data-w="${wi}"]`);
+  if (el) el.classList.add('phsel');
+  let bar = $('phbar');
+  if (!bar) { bar = document.createElement('div'); bar.id = 'phbar'; bar.className = 'phbar';
+    document.body.appendChild(bar); }
+  bar.innerHTML = `<span>Tap the <b>last word</b> of the phrase</span>
+    <button onclick="cancelPhrase()">Cancel</button>`;
+  bar.classList.add('on');
+}
+function cancelPhrase() {
+  _ph = null;
+  document.querySelectorAll('.rd .w.phsel').forEach(x => x.classList.remove('phsel'));
+  const bar = $('phbar'); if (bar) bar.classList.remove('on');
+}
+// Second tap: build the span and show it for confirmation. Order doesn't matter — tapping
+// right-to-left is natural in Arabic, so we just take the min/max.
+function phrasePick(si, wi) {
+  if (!_ph || _ph.si !== si) return startPhrase(si, wi);       // different sentence → re-anchor
+  const a = Math.min(_ph.wi, wi), b = Math.max(_ph.wi, wi);
+  const s = cur.sentences[si];
+  const words = s.words.slice(a, b + 1);
+  const ar = words.map(w => w.vocalized || w.surface).join(' ');
+  const key = phKey(ar);
+  document.querySelectorAll('.rd .w').forEach(x => {
+    const i = +x.dataset.w;
+    x.classList.toggle('phsel', +x.dataset.s === si && i >= a && i <= b);
+  });
+  const glossChain = words.map(w => pretty(w.gloss) || '?').join(' · ');
+  const already = marked.has(key);
+  // The prompt bar has done its job — leave it up and it sits on top of this sheet's input.
+  const bar = $('phbar'); if (bar) bar.classList.remove('on');
+  $('wc').innerHTML =
+    `<div class="hw" dir="rtl">${esc(ar)}</div>
+     <div class="ph">${esc(words.map(w => w.caphi_urban || w.caphi || '').filter(Boolean).join(' '))}</div>
+     <div class="wtype">phrase · ${words.length} words</div>
+     <div class="phw">${words.map(w => `<span><b dir="rtl">${esc(w.vocalized || w.surface)}</b>
+        ${esc(pretty(w.gloss) || '—')}</span>`).join('')}</div>
+     <label class="phlab">What it means — edit it into your own words
+       <input id="phen" value="${esc(glossChain)}" autocomplete="off"></label>
+     <div class="src">Each word's meaning is from the lexicon; the phrasing above is yours.
+       Wrong end? Cancel and pick again.</div>
+     <div class="acts">
+       <button data-a="close">Cancel</button>
+       <button class="mk" id="phadd" ${already ? 'disabled' : ''}>${
+         already ? '✓ Already in your deck' : '+ Add phrase'}</button>
+     </div>`;
+  $('cw').classList.add('on');
+  $('wc').querySelector('[data-a="close"]').onclick = () => { hideCard(); cancelPhrase(); };
+  const add = $('phadd');
+  if (add && !already) add.onclick = () => addPhrase(si, a, b);
+}
+function addPhrase(si, a, b) {
+  const s = cur.sentences[si];
+  const words = s.words.slice(a, b + 1);
+  const ar = words.map(w => w.vocalized || w.surface).join(' ');
+  const en = (($('phen') || {}).value || '').trim() || words.map(w => pretty(w.gloss) || '?').join(' · ');
+  const whole = a === 0 && b === s.words.length - 1;            // the span IS the whole sentence
+  marked.set(phKey(ar), srsInit({
+    kind: 'phrase', lemma: phKey(ar), phrase: ar, vocalized: ar, surface: ar, gloss: en,
+    caphi: words.map(w => w.caphi_urban || w.caphi || '').filter(Boolean).join(' '),
+    parts: words.map(w => ({ar: w.vocalized || w.surface, gloss: pretty(w.gloss) || '—',
+                            caphi: w.caphi_urban || w.caphi || ''})),
+    analysis: 'PHRASE', root: '', audio: whole ? s.audio || null : null,
+    example_ar: s.ar, example_en: s.en, text: cur ? cur.id : null, deck: activeDeck(),
+  }));
+  save(); count(); paint();
+  hideCard(); cancelPhrase();
+}
+// Heard something out in the world? Add it without a text to tap. Marked user-supplied,
+// because nothing here went through the lexicon.
+function addPhraseManual() {
+  const ar = (prompt('The Arabic phrase — type or paste it:') || '').trim();
+  if (!ar) return;
+  const en = (prompt('What does it mean?') || '').trim();
+  if (!en) return;
+  const key = phKey(ar);
+  if (marked.has(key)) { alert('That phrase is already in your deck.'); return; }
+  marked.set(key, srsInit({kind: 'phrase', lemma: key, phrase: ar, vocalized: ar, surface: ar,
+    gloss: en, caphi: '', parts: [], analysis: 'PHRASE', root: '',
+    provenance: 'user', deck: activeDeck()}));
+  save(); count(); route();
+}
+
 // Build a fresh SRS card from a tapped word + the sentence it was found in.
 function cardFromWord(w) {
   const s = cur && cur.sentences ? cur.sentences.find(x => x.words.includes(w)) : null;
@@ -2757,7 +2891,10 @@ $('view').addEventListener('click', e => {
   const pk = e.target.closest('[data-peek]');
   if (pk) { pk.closest('.sent').classList.add('peek'); return; }
   const w = e.target.closest('.rd .w');
-  if (w) { showCard(+w.dataset.s, +w.dataset.w); return; }
+  // Mid-phrase, a tap means "this is the other end of the chunk" rather than "open this word".
+  if (w) { const si = +w.dataset.s, wi = +w.dataset.w;
+    if (_ph) phrasePick(si, wi); else showCard(si, wi);
+    return; }
   const a = e.target.closest('.ch .a');
   if (a) { a.classList.toggle('show'); return; }
 });
