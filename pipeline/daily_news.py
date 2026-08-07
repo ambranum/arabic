@@ -248,15 +248,32 @@ def main():
 
     # Voice comes from pipeline/voice.py — the Action deliberately does NOT pass a voice
     # secret, so the daily news can't drift onto a different voice than the rest of the app.
-    if os.environ.get("ELEVENLABS_API_KEY"):
-        print("generating audio…")
+    from voice import voice_id
+    have_key = bool(os.environ.get("ELEVENLABS_API_KEY"))
+    if have_key:
+        print(f"generating audio… (voice {voice_id()})")
         subprocess.run([sys.executable, os.path.join(HERE, "ingest.py"), src, "--audio"],
                        cwd=ROOT)
     else:
-        print("audio: skipped (no ElevenLabs keys)")
+        print("audio: skipped (no ELEVENLABS_API_KEY)")
 
     subprocess.run([sys.executable, os.path.join(HERE, "build_app.py")], cwd=ROOT)
-    print(f"\ndone — {tid}")
+
+    # FAIL LOUDLY on silent news. This step used to exit 0 whether or not any audio came
+    # back, so a revoked/expired key produced a green run and a day of silent news that
+    # nobody noticed until a learner opened it. A red run is the whole point of having CI.
+    art = os.path.join(ROOT, "build", tid, "text.json")
+    voiced = total = 0
+    if os.path.exists(art):
+        d = json.load(open(art, encoding="utf-8"))
+        total = len(d.get("sentences") or [])
+        voiced = sum(1 for s in d.get("sentences") or [] if s.get("audio"))
+    print(f"\ndone — {tid}  (audio {voiced}/{total})")
+    if total and voiced < total:
+        print(f"!! {tid} has {total - voiced} sentence(s) with NO audio.")
+        print("   Usual cause: the ELEVENLABS_API_KEY repo secret is missing, revoked or out of")
+        print("   credits. Update it in Settings > Secrets and variables > Actions, then re-run.")
+        return 1
     return 0
 
 if __name__ == "__main__":
