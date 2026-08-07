@@ -394,6 +394,19 @@
       border-top:1px solid var(--rule); padding-top:12px; margin-top:6px; width:100%}
   .rv-exen{font-family:var(--serif); font-style:italic; font-size:14px; color:var(--muted)}
   .rv-grades{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:16px}
+  /* multiple choice */
+  .rv-mode{float:right; text-transform:none; letter-spacing:0}
+  .rv-mode button{font:inherit; font-size:11px; padding:3px 9px; margin-left:5px; cursor:pointer;
+    background:transparent; color:var(--muted); border:1px solid var(--rule); border-radius:99px}
+  .rv-mode button.on{color:var(--bg); background:var(--verdigris); border-color:var(--verdigris)}
+  .mc-opts{display:grid; gap:9px; margin-top:20px}
+  .mc-o{font:inherit; font-size:16px; padding:13px 16px; cursor:pointer; text-align:center;
+    background:transparent; color:var(--ink); border:1px solid var(--rule); border-radius:10px}
+  .mc-o:hover:not(:disabled){border-color:var(--verdigris)}
+  .mc-o:disabled{cursor:default}
+  .mc-o.mc-good{border-color:var(--verdigris); color:var(--verdigris); font-weight:600}
+  .mc-o.mc-bad{border-color:var(--rubric); color:var(--rubric); opacity:.75}
+  .mc-next{margin-top:16px; text-align:center}
   .rv-g{font:inherit; cursor:pointer; border:1px solid var(--rule); background:none; color:var(--ink);
       border-radius:7px; padding:11px 4px; display:flex; flex-direction:column; gap:3px}
   .rv-g span{font-size:14px; font-weight:600}
@@ -1368,11 +1381,150 @@ function vocabAnswer(g){
     _revq.splice(Math.min(3, _revq.length), 0, lemma);
   count(); vocabReview();
 }
-function vocabCardView(c, showing, remaining){
+// ---- multiple choice ----------------------------------------------------------------
+// Recognition practice on the SAME card and the SAME schedule as self-grading — it's another
+// way to answer, not a second deck. Four options with semantic distractors, after
+// willmanidis2/arabic-drill (MIT).
+//
+// The distractors are the whole mechanic. Random words make the answer obvious by elimination,
+// and near-synonyms make the question unfair because two options are defensible. So: same part
+// of speech, and never a candidate whose gloss shares a content word with the answer's.
+const MKEY = 'alp.revmode.v1';
+const revMode = () => localStorage.getItem(MKEY) === 'mc' ? 'mc' : 'self';
+function setRevMode(m){ try { localStorage.setItem(MKEY, m); } catch(e){} _mc = null; vocabReview(); }
+
+const MC_STOP = new Set(['the','a','an','to','of','in','on','at','for','with','and','or','be',
+  'is','are','was','it','that','this','someone','something','sth','sb','one','make','made',
+  'become','get','have','his','her','its','their','you','your']);
+// NOUN_PROP is deliberately its OWN class, not folded into NOUN: place and person names carry
+// encyclopedic glosses ("Medina is a city in western Saudi Arabia") that are obviously not
+// answers to "what does طريق mean" — they'd give the question away at a glance.
+const mcPos = a => { a = String(a || '');
+  return a.startsWith('NOUN_PROP') ? 'PROP' : a.startsWith('VERB') ? 'VERB'
+       : a.startsWith('NOUN') ? 'NOUN' : a.startsWith('ADJ') ? 'ADJ'
+       : a.startsWith('ADV') ? 'ADV' : 'OTHER'; };
+// An option has to read as a label, not a sentence. Anything longer is a definition, and a
+// definition among three short glosses is a free answer by elimination.
+const mcUsable = g => g.length <= 30 && g.split(/\s+/).length <= 5;
+const mcTokens = g => new Set(String(pretty(g) || '').toLowerCase()
+  .replace(/[^a-z\s]/g, ' ').split(/\s+/).filter(t => t.length > 2 && !MC_STOP.has(t)));
+const mcShuffle = a => { for (let i = a.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+// Lexicon glosses stack every sense with tags — "be;become_[auto]", "bring;score;pick_sb_up…".
+// Fine on a word card, unreadable on a button, so show at most two senses. The SYNONYM GUARD
+// still reads the full gloss, so trimming the label can't let a synonym slip through.
+const mcGloss = g => String(g || '').replace(/\[[^\]]*\]/g, '').replace(/_/g, ' ')
+  .split(';').map(s => s.trim()).filter(Boolean).slice(0, 2).join(' · ');
+// How common a word is in our own corpus, in coarse bands — the distractors should sit in the
+// same band as the answer so nothing stands out by sheer familiarity.
+const mcBand = f => f >= 20 ? 0 : f >= 5 ? 1 : f >= 2 ? 2 : 3;
+
+// Build 4 options for a card. dir: 'ar2en' (pick the meaning) | 'en2ar' (pick the Arabic).
+// Returns null when the corpus can't supply 3 honest distractors — the caller falls back to
+// self-grading rather than showing a rigged question.
+function mcOptions(card, dir){
+  const gold = mcGloss(card.gloss) || '';
+  if (!gold || !mcUsable(gold)) return null;   // long/encyclopedic answer — self-grade instead
+  const pos = mcPos(card.analysis), goldTok = mcTokens(card.gloss);
+  const seenGloss = new Set([gold.toLowerCase()]), seenAr = new Set([arNorm(card.lemma)]);
+  const pool = [];
+  const consider = (lemma, glossRaw, analysis, freq) => {
+    const g = mcGloss(glossRaw) || '';
+    if (!g || !lemma || !mcUsable(g)) return;
+    if (mcPos(analysis) !== pos) return;                       // same part of speech
+    if (seenAr.has(arNorm(lemma)) || seenGloss.has(g.toLowerCase())) return;
+    for (const t of mcTokens(glossRaw)) if (goldTok.has(t)) return;   // no shared meaning
+    seenGloss.add(g.toLowerCase()); seenAr.add(arNorm(lemma));
+    pool.push({ar: lemma, en: g, band: mcBand(freq)});
+  };
+  let goldFreq = 0;
+  try {
+    const idx = trIndex();
+    const self = idx.byKey.get(arNorm(card.lemma));
+    goldFreq = self ? self.hits.length : 0;
+    idx.all.forEach(e => consider(e.lemma, e.gloss, e.analysis, e.hits.length));
+  } catch (e) {}
+  [...marked.values()].forEach(x => consider(x.vocalized || x.lemma, x.gloss, x.analysis, 0));
+  if (pool.length < 3) return null;
+  // Keep the options in the same frequency band. A rare word beside three everyday ones is a
+  // giveaway — you can pick the answer on familiarity alone without knowing what it means.
+  const goldBand = mcBand(goldFreq);
+  mcShuffle(pool).sort((a, b) => Math.abs(a.band - goldBand) - Math.abs(b.band - goldBand));
+  const picks = mcShuffle(pool.slice(0, 14)).slice(0, 3);
+  const correct = {ar: card.vocalized || card.lemma, en: gold};
+  const opts = mcShuffle([correct, ...picks]);
+  return {dir, opts, correct: opts.indexOf(correct),
+          prompt: dir === 'ar2en' ? correct.ar : correct.en,
+          show: o => dir === 'ar2en' ? o.en : o.ar};
+}
+
+let _mc = null;          // {lemma, q, wrong:Set, done:bool}
+function vocabMCView(c, remaining){
+  if (!_mc || _mc.lemma !== c.lemma){
+    // Alternate direction as a card matures so you can both recognise AND produce it.
+    const q = mcOptions(c, ((c.reps || 0) % 2) ? 'en2ar' : 'ar2en');
+    if (!q) return vocabCardView(c, false, remaining, true);   // not enough distractors — self-grade
+    _mc = {lemma: c.lemma, q, wrong: new Set(), done: false};
+  }
+  const {q, wrong, done} = _mc;
+  const rtl = q.dir === 'ar2en';
+  let h = `<div class="rv-top">${remaining} to go ${modeToggleHTML()}</div>
+    <div class="rv-card">
+      <div class="rv-front" ${rtl ? 'dir="rtl"' : ''}>${esc(q.prompt)}
+        ${rtl ? `<button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))"
+          aria-label="Pronounce">${svg('spk')}</button>` : ''}</div>
+      <div class="mc-opts">`;
+  q.opts.forEach((o, i) => {
+    const isRight = i === q.correct, picked = wrong.has(i);
+    const cls = picked ? 'mc-bad' : (done && isRight) ? 'mc-good' : '';
+    h += `<button class="mc-o ${cls}" ${picked || done ? 'disabled' : ''}
+       ${q.dir === 'en2ar' ? 'dir="rtl"' : ''} onclick="mcPick(${i})">${esc(q.show(o))}</button>`;
+  });
+  h += `</div>`;
+  if (done) h += `<div class="mc-next"><button class="rv-showbtn" onclick="mcNext()">
+      Continue</button></div>`;
+  h += `</div>`;
+  $('view').innerHTML = h;
+}
+function mcPick(i){
+  if (!_mc || _mc.done) return;
+  const c = marked.get(_mc.lemma);
+  if (i === _mc.q.correct){
+    _mc.done = true;
+    // Right first time is a Good; right after fumbling is a Hard; two misses is a lapse.
+    const g = _mc.wrong.size === 0 ? 2 : _mc.wrong.size === 1 ? 1 : 0;
+    vocabMCGrade(g);
+  } else {
+    _mc.wrong.add(i);
+    if (_mc.wrong.size >= 2){ _mc.done = true; vocabMCGrade(0); }
+    else vocabMCView(c, _revq.length);
+  }
+}
+// Grade through the normal path, then hold the screen so you can read the right answer.
+function vocabMCGrade(g){
+  const lemma = _mc.lemma, c = srsGrade(marked.get(lemma), g);
+  marked.set(lemma, c); save(); count();
+  _mc.graded = true;
+  vocabMCView(marked.get(lemma), _revq.length);
+}
+function mcNext(){
+  const lemma = _mc.lemma, c = marked.get(lemma);
+  _revq.shift();
+  if (srsStep(c) !== null && (c.due || 0) <= now() + SESSION_AHEAD)
+    _revq.splice(Math.min(3, _revq.length), 0, lemma);
+  _mc = null; vocabReview();
+}
+const modeToggleHTML = () => `<span class="rv-mode">
+  ${[['self','Self-grade'],['mc','Multiple choice']].map(([m,l]) =>
+    `<button class="${revMode()===m?'on':''}" onclick="setRevMode('${m}')">${l}</button>`).join('')}
+  </span>`;
+
+function vocabCardView(c, showing, remaining, forceSelf){
+  if (!forceSelf && revMode() === 'mc' && !showing) return vocabMCView(c, remaining);
   const prev = srsPreview(c);
   const ex = c.example_ar ? `<div class="rv-ex" dir="rtl">${esc(c.example_ar)}</div>
       <div class="rv-exen">${esc(c.example_en || '')}</div>` : '';
-  let h = `<div class="rv-top">${remaining} to go</div>
+  let h = `<div class="rv-top">${remaining} to go ${modeToggleHTML()}</div>
     <div class="rv-card">
       <div class="rv-front">${esc(c.vocalized || c.lemma)}
         <button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))"
@@ -1978,12 +2130,19 @@ function trIndex() {
     const key = arNorm(w.lemma); if (!key) return;
     let e = byKey.get(key);
     if (!e) { e = {key, raw: w.lemma, lemma: w.vocalized || w.form || w.lemma, gloss: w.gloss || '',
-                   root: w.root || '', caphi: w.caphi_urban || w.caphi || '', hits: [], surf: new Set()};
+                   root: w.root || '', caphi: w.caphi_urban || w.caphi || '',
+                   analysis: '', _an: {},   // kept so drill distractors can match part of speech
+                   hits: [], surf: new Set()};
       byKey.set(key, e); }
+    // `analysis` is a SURFACE analysis — the same verb is VERB:P in one sentence and VERB:I in
+    // another — so tally and keep the most common rather than whichever came first.
+    if (w.analysis) e._an[w.analysis] = (e._an[w.analysis] || 0) + 1;
     if (!e.gloss && w.gloss) e.gloss = w.gloss;
     e.surf.add(arNorm(w.surface));
     if (e.hits.length < 80) e.hits.push({tid: t.id, si, wi});
   })));
+  byKey.forEach(e => { e.analysis =
+    Object.keys(e._an).sort((a, b) => e._an[b] - e._an[a])[0] || ''; });
   _tridx = {all: [...byKey.values()], byKey};
   return _tridx;
 }
