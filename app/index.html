@@ -244,6 +244,13 @@
   }
   .wc .hw{font-family:var(--arabic); direction:rtl; font-size:32px; line-height:1.6}
   .wc .ph{font-family:var(--mono); font-size:13px; color:var(--verdigris); margin-top:2px}
+  /* Pimsleur progress card */
+  .pimc{margin-top:18px; padding:13px 15px; border:1px solid var(--rule); border-radius:11px}
+  .pimc-t{font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted)}
+  .pimc-now{font-size:19px; margin-top:3px}
+  .pimc-bar{height:5px; border-radius:3px; background:var(--paper-3); margin-top:9px; overflow:hidden}
+  .pimc-bar i{display:block; height:100%; background:var(--verdigris)}
+  .pimc-sub{font-size:12px; color:var(--muted); margin-top:6px}
   /* phrase capture */
   .rd .w.phsel{background:var(--verdigris); color:var(--paper); border-radius:4px}
   .phbar{position:fixed; left:0; right:0; bottom:0; z-index:70; display:none;
@@ -1621,10 +1628,23 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail) {
     ideal: A.slot === 'car' ? (carAvail ? 'in the car' : 'somewhere you can speak')
       : A.slot === 'desk' ? 'at a desk' : A.slot === 'break' ? 'on a break' : 'in the evening'};
   if (sp.src === 'external') {
+    // With both courses enabled the first audio block of the day goes to Pimsleur — it's the
+    // one being paid for and it tracks a specific lesson — and Language Transfer takes the
+    // second, instead of Language Transfer silently winning every slot as it used to.
+    const bothCourses = cfg.external.languageTransfer && cfg.external.pimsleur;
     const key = (sp.act === 'course' || sp.act === 'sound')
-      ? (cfg.external.languageTransfer ? 'languageTransfer' : 'pimsleur') : sp.res;
+      ? (bothCourses ? (ord % 2 === 0 ? 'pimsleur' : 'languageTransfer')
+         : (cfg.external.pimsleur ? 'pimsleur' : 'languageTransfer'))
+      : sp.res;
     const R = CUR.external[key] || {};
     t.title = R.name || A.label; t.url = R.url; t.note = R.note;
+    // Name the actual lesson so the task is "do this next thing", not "do some Pimsleur".
+    if (key === 'pimsleur' && pimOn()) {
+      t.title = 'Pimsleur — ' + pimLabel();
+      t.seq = 'Eastern Arabic (Levantine) · lesson ' + (pim().lesson || 1) + ' of ' + PIM_LESSONS;
+      t.pim = true;
+      t.note = 'Listen in the Pimsleur app, then tick this off — the app moves you to the next lesson.';
+    }
   } else if (sp.pool) {
     const pick = poolPick(sp.pool, ord);
     if (pick) {
@@ -1793,6 +1813,7 @@ function planToday() {
       practice actually sets. ${due ? `You do have <b>${due}</b> card${due === 1 ? '' : 's'} due if you want a quick round.` : 'See you tomorrow.'}</p>
       ${due ? `<div class="ctl" style="justify-content:center"><button class="tog go" onclick="location.hash='/vocab/review'">Review ${due} card${due === 1 ? '' : 's'}</button></div>` : ''}
       </div>`;
+    if (cfg.external && cfg.external.pimsleur) h += pimCardHTML();
     h += planExtraHTML(cfg, day.phase, date, doneMap, 0);   // studying on an off-day is allowed
     h += planMoreBtn(date, true);
     h += planFooterCtls();
@@ -1815,6 +1836,8 @@ function planToday() {
   h += planExtraHTML(cfg, day.phase, date, doneMap, schedReads);
   h += planMoreBtn(date, false);
   h += planExerciseHTML(day, date);
+  // Only offer the Pimsleur tracker to people who told the intake they have it.
+  if (cfg.external && cfg.external.pimsleur) h += pimCardHTML();
   h += planFooterCtls();
   $('view').innerHTML = h;
 }
@@ -1896,7 +1919,7 @@ function planTaskRow(t, date, done) {
   const open = t.link ? `<button class="tog" onclick="location.hash='${t.link}'">Open</button>`
     : t.url ? `<a class="tog pext" href="${esc(t.url)}" target="_blank" rel="noopener">Open ${svg('ext')}</a>` : '';
   return `<div class="ptask${done ? ' done' : ''}">
-      <button class="pcheck" onclick="planToggle('${date}','${esc(t.id)}',${t.minutes},'${t.cid || ''}')" aria-label="Mark done">${done ? '✓' : ''}</button>
+      <button class="pcheck" onclick="planToggle('${date}','${esc(t.id)}',${t.minutes},'${t.cid || ''}',${t.pim ? 1 : 0})" aria-label="Mark done">${done ? '✓' : ''}</button>
       <div class="pt-main">
         <div class="pt-top"><span class="pt-title">${esc(t.title)}</span><span class="pmin">${t.minutes}m</span></div>
         ${t.seq ? `<div class="pt-seq">${esc(t.seq)}</div>` : ''}
@@ -1906,14 +1929,88 @@ function planTaskRow(t, date, done) {
         <div class="pt-act">${open}${srcPill}</div>
       </div></div>`;
 }
-function planToggle(date, tid, minutes, cid) {
+function planToggle(date, tid, minutes, cid, isPim) {
   const L = planLog(); const d = L[date] || (L[date] = {done: {}}); d.done = d.done || {};
   const nowDone = d.done[tid] == null;
   if (nowDone) d.done[tid] = minutes; else delete d.done[tid];
   savePlanLog(L);
   if (cid) markSeen(cid, nowDone);                          // checking a reading task walks the path forward
+  if (isPim) pimAdvance(nowDone);                           // finishing a Pimsleur lesson moves you on
   planToday();
 }
+// ---- Pimsleur progress ---------------------------------------------------------------
+// Pimsleur has no public API and its audio is DRM-protected subscription content, so nothing
+// here touches their servers or their recordings. What it does is stop the plan from saying
+// a vague "do Pimsleur" every day: it remembers which level and lesson you're on, schedules
+// the NEXT one by name, advances when you tick it off, and counts the minutes like any other
+// task. The listening still happens in their app.
+const PIMKEY = 'alp.pimsleur.v1';
+const PIM_LESSONS = 30;                        // every Pimsleur level is 30 half-hour lessons
+function pim() {
+  try { return JSON.parse(localStorage.getItem(PIMKEY) || 'null') || {}; } catch (e) { return {}; }
+}
+function pimSave(p) { try { localStorage.setItem(PIMKEY, JSON.stringify(p)); } catch (e) {} }
+const pimOn = () => { const p = pim(); return !!p.on; };
+const pimLabel = () => { const p = pim();
+  return 'Level ' + (p.level || 1) + ' · Lesson ' + (p.lesson || 1); };
+// Ticking the task off moves you to the next lesson; unticking puts it back.
+function pimAdvance(forward) {
+  const p = pim(); if (!p.on) return;
+  let lv = p.level || 1, ls = p.lesson || 1;
+  if (forward) { ls++; if (ls > PIM_LESSONS) { ls = 1; lv = Math.min(5, lv + 1); } }
+  else { ls--; if (ls < 1) { lv = Math.max(1, lv - 1); ls = PIM_LESSONS; } }
+  p.level = lv; p.lesson = ls; p.done = Math.max(0, (p.done || 0) + (forward ? 1 : -1));
+  pimSave(p);
+}
+function pimSetup() {
+  const p = pim();
+  const lv = prompt('Which Pimsleur level are you on? (1–5)', String(p.level || 1));
+  if (lv === null) return;
+  const ls = prompt('Which lesson are you up to? (1–30)', String(p.lesson || 1));
+  if (ls === null) return;
+  const L = Math.min(5, Math.max(1, parseInt(lv, 10) || 1));
+  const N = Math.min(PIM_LESSONS, Math.max(1, parseInt(ls, 10) || 1));
+  pimSave({...p, on: true, level: L, lesson: N, done: p.done || 0});
+  route();
+}
+function pimOff() { pimSave({...pim(), on: false}); route(); }
+// The curriculum only schedules an audio course in the early phases — later on the plan
+// deliberately spends your time on production and a tutor instead. But a Pimsleur
+// subscription runs to Level 5, so let a lesson be logged on any day: it advances the
+// counter and records the half hour against today, so real work still counts toward the
+// phase you're in.
+function pimLogLesson() {
+  const p = pim(); if (!p.on) return;
+  const date = todayISO();
+  const L = planLog(); const d = L[date] || (L[date] = {done: {}}); d.done = d.done || {};
+  d.done['pim-' + ((p.done || 0) + 1)] = 30;
+  savePlanLog(L);
+  pimAdvance(true);
+  route();
+}
+function pimCardHTML() {
+  const p = pim();
+  if (!p.on) {
+    return `<div class="pimc"><div class="pimc-t">Have a Pimsleur subscription?</div>
+      <p class="hint" style="margin:4px 0 0">Tell the app which lesson you're on and it will
+        schedule the next one by name, then move you forward as you finish them.</p>
+      <div class="ctl" style="margin-top:8px">
+        <button class="tog" onclick="pimSetup()">Set up Pimsleur</button></div></div>`;
+  }
+  const pct = Math.round(((p.level - 1) * PIM_LESSONS + p.lesson - 1) / (5 * PIM_LESSONS) * 100);
+  return `<div class="pimc"><div class="pimc-t">Pimsleur — Eastern Arabic</div>
+    <div class="pimc-now">${esc(pimLabel())}</div>
+    <div class="pimc-bar"><i style="width:${pct}%"></i></div>
+    <div class="pimc-sub">${p.done || 0} lesson${(p.done || 0) === 1 ? '' : 's'} logged here ·
+      ${pct}% through the five levels</div>
+    <div class="ctl" style="margin-top:8px">
+      <a class="tog pext" href="https://www.pimsleur.com/learn-arabic" target="_blank"
+         rel="noopener">Open Pimsleur ${svg('ext')}</a>
+      <button class="tog go" onclick="pimLogLesson()">✓ Logged lesson ${p.lesson}</button>
+      <button class="tog" onclick="pimSetup()">Change lesson</button>
+      <button class="tog" onclick="pimOff()">Turn off</button></div></div>`;
+}
+
 function planFooterCtls() {
   return `<div class="ctl" style="margin-top:18px">
      <button class="tog" onclick="location.hash='/plan/calendar'">See the plan ahead</button>
