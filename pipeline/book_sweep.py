@@ -41,6 +41,20 @@ def clean(toks):
     return [t for t in toks if len(t) > 1 and t not in JUNK
             and any(v in t.lower() for v in 'aeiouáíúāīū')]
 
+def onset_key(s):
+    """Comparison key across the two romanizations. Folds the word-initial glottal onset
+    (ista3mal vs 2ista3mal, it3allam vs t3allam) AND the case of the emphatic markers —
+    the book extraction yields T./S./D./Z., the app's data t./s./d./z. Without the case
+    fold, eleven emphatic verbs the app has (S.aar, 7aT.T., T.abakh…) reported as missing."""
+    s = str(s or '')
+    if s.startswith('2'): s = s[1:]
+    if s.startswith('i') and len(s) > 2: s = s[1:]
+    for A, a in (('T.', 't.'), ('S.', 's.'), ('D.', 'd.'), ('Z.', 'z.')):
+        s = s.replace(A, a)
+    # The PDF's ṣ loses its dot in extraction (inbasat. for inbas.at.), so emphatic dots
+    # can't be trusted for MATCHING at all — drop them from the key. Display never uses this.
+    return s.replace('.', '')
+
 def book_tables():
     """[(page, class, gloss, perfect3ms, imperfect3ms)] for every conjugation table."""
     r = PdfReader(PDF)
@@ -68,19 +82,16 @@ def main():
     src = open(os.path.join(ROOT, 'app', 'data', 'verbs.js'), encoding='utf-8').read()
     verbs = json.loads(src[src.index('{'): src.rindex(';')])['verbs']
 
-    # The two sources write a word-initial glottal onset differently — the book prints
-    # ista3mal / it3allam / i7marr, we print 2ista3mal / t3allam / 2i7marr. Same words,
-    # different convention, and comparing them raw reports nine "disagreements" that are
-    # purely orthographic. Normalize the onset away so only real vowel differences surface.
-    def key(s):
-        s = str(s or '')
-        if s.startswith('2'): s = s[1:]
-        if s.startswith('i') and len(s) > 2: s = s[1:]
-        return s
+    # Comparing raw strings reports "disagreements" that are purely the onset-notation
+    # difference (see onset_key) — normalize so only real vowel differences surface.
+    key = onset_key
 
     by_past = {}
     for v in verbs:
-        by_past.setdefault(key((v.get('past') or {}).get('caphi')), []).append(v)
+        # Maknuune sometimes records alternations as "kazab,kadhab" — register every
+        # variant, or the app looks like it disagrees with a form it actually carries.
+        for var in str((v.get('past') or {}).get('caphi') or '').split(','):
+            by_past.setdefault(key(var.strip()), []).append(v)
 
     tables = book_tables()
     agree, missing, disagree = 0, [], []

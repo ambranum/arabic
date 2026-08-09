@@ -984,8 +984,11 @@ _ALIFS = 'اأإآ'
 # Arabic letter -> the romanization tokens it can stand for. ق maps to 2 as well as q because
 # the app realizes qaf as a glottal stop (urban), which is what `ph` records.
 _LETTER_PH = {
-    'ب': ('b',), 'ت': ('t',), 'ث': ('th',), 'ج': ('j',), 'ح': ('7',), 'خ': ('kh',),
-    'د': ('d',), 'ذ': ('dh',), 'ر': ('r',), 'ز': ('z',), 'س': ('s',), 'ش': ('sh',),
+    # ث and ذ list their URBAN realizations too (t/s, d/z) — the app's pronunciations are
+    # realized, so كذب is kazab and أخذ is 2akhad, and accepting only the interdental made
+    # every ث/ذ verb silently decline to vocalize.
+    'ب': ('b',), 'ت': ('t',), 'ث': ('th', 't', 's'), 'ج': ('j',), 'ح': ('7',), 'خ': ('kh',),
+    'د': ('d',), 'ذ': ('dh', 'd', 'z'), 'ر': ('r',), 'ز': ('z',), 'س': ('s',), 'ش': ('sh',),
     'ص': ('s.',), 'ض': ('d.',), 'ط': ('t.',), 'ظ': ('z.',), 'ع': ('3',), 'غ': ('gh',),
     'ف': ('f',), 'ق': ('2', 'q'), 'ك': ('k',), 'ل': ('l',), 'م': ('m',), 'ن': ('n',),
     'ه': ('h',), 'و': ('w',), 'ي': ('y',), 'أ': ('2',), 'إ': ('2',), 'آ': ('2',), 'ء': ('2',),

@@ -28,6 +28,21 @@ OVERRIDES = {
         # happened to record only that variant, which is what the app had been showing.
         'note': 'The book conjugates this with fatha (3amal). Some speakers say عِمِل instead.',
     },
+    ('ك.ذ.ب', 'I', 'kizib'): {
+        'past': 'kazab', 'pres': 'yikzib',
+        'past_ar': 'كَذَب', 'pres_ar': 'يِكْذِب',
+        # Surfaced by book_sweep.py: the book's table (p99) conjugates kázab; Maknuune
+        # recorded the kasra variant. Same عمل pattern — the grammar wins on conjugation.
+        'note': 'The book conjugates this with fatha (kazab). Some speakers say كِذِب instead.',
+    },
+}
+
+# Records SUPERSEDED by an override. Maknuune sometimes carries the same verb twice — كذب
+# exists both as the comma-alternation record (kazab,kadhab) and as kizib. The override
+# turns kizib into the book's kazab with a full paradigm; shipping the comma twin as well
+# would list the same verb twice, so it is dropped, not silently but here, by name.
+DROP = {
+    ('ك.ذ.ب', 'I', 'kazab,kadhab'),
 }
 
 def override_for(root, form, past_caphi):
