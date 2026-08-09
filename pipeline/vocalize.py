@@ -69,8 +69,13 @@ def _stem_match(surf_bare, form_pairs):
                 return (i, i + len(body), True)
     return None
 
-def vocalize(surface, form, analysis=None):
-    """-> (vocalized_or_None, provenance)"""
+def vocalize(surface, form, analysis=None, subject=None):
+    """-> (vocalized_or_None, provenance)
+
+    `subject` disambiguates the b-imperfect, which is genuinely ambiguous in writing:
+    بشتغل is بَشتِغِل "I work" and بِشتِغِل "he works". Pass '1sg' or '3' when the sentence
+    makes it clear; pass nothing and an ambiguous word stays unvocalized rather than guess.
+    """
     if not form: return None, 'unvocalized:no-entry'
     surf_bare = strip(surface)
     form_pairs = split(form)
@@ -85,6 +90,11 @@ def vocalize(surface, form, analysis=None):
 
     # Diacritics for the matched stem come straight from the lexicon.
     offset = len(form_pairs) - (end - start)
+    # When the citation form's own imperfect prefix was dropped (يُسْكُن -> سكن), keep the
+    # vowel that sat on it: بت/بن/بي need it, or they end up with two sukuuns in a row.
+    pfx_vowel = ''
+    if offset > 0 and form_pairs[offset - 1][0] in 'يتنأا':
+        pfx_vowel = ''.join(ch for ch in form_pairs[offset - 1][1] if ch in (FATHA, KASRA, DAMMA))
     # Keep the SURFACE letter, take the LEXICON's diacritics. Where a weak final letter
     # differs (ى vs ا), the surface spelling is what the reader sees and must win.
     stem = []
@@ -114,16 +124,26 @@ def vocalize(surface, form, analysis=None):
             if stem and stem[0][0] in SUN:                     # sun-letter assimilation
                 stem[0] = (stem[0][0], SHADDA + stem[0][1].replace(SUKUN, ''))
             prov = 'derived:affix'
-        elif p in ('ب', 'بت', 'بن', 'بي'):
+        elif p in ('ب', 'بت', 'بن', 'بي') and str(analysis or '').startswith('VERB'):
             # b-imperfect. The STEM is the lexicon's; the PREFIX VOWEL is our judgment.
-            # Palestinian paradigm: 1sg بَـ (ba-), but 2/3/1pl take kasra —
-            # بِتْ (bit-), بِنْ (bin-), بِيْ (biy-). Getting this uniform would be wrong.
-            # 1sg attaches b- straight to the stem (بَصْحَى ba-ṣḥa). But if the stem
-            # still carries its own ي- imperfect prefix, this is 3rd person and takes
-            # kasra (بِينْتِشِر bi-yintishir, not ba-yintishir).
+            # NB the VERB guard above: بـ is also the preposition "in/with", and without the
+            # guard every بسبب / بمدينة / بطريقة was being handed a verb prefix vowel.
             third = bool(stem) and stem[0][0] == 'ي'
-            lead.append(('ب', KASRA if (p != 'ب' or third) else FATHA))
-            for extra in p[1:]: lead.append((extra, SUKUN))
+            if p == 'ب':
+                # Genuinely ambiguous in writing: بشتغل is both بَشتِغِل "I work" and
+                # بِشتِغِل "he works". Only the subject decides, so ask the caller — and if
+                # the caller can't say, refuse rather than teach the wrong person.
+                if third:                          person = KASRA
+                elif subject == '1sg':             person = FATHA
+                elif subject == '3':               person = KASRA
+                else: return None, 'unvocalized:ambiguous-person'
+                lead.append(('ب', person))
+            else:
+                # بت / بن / بي. The affix consonant takes the imperfect's OWN prefix vowel,
+                # which the citation form carries (يُسْكُن -> بِتُسْكُن). Blindly writing a
+                # sukuun there produced بِتْسْكُن — three consonants in a row, unsayable.
+                lead.append(('ب', KASRA))
+                for extra in p[1:]: lead.append((extra, pfx_vowel or SUKUN))
             prov = 'derived:verb'
         elif p in ('ع', 'ل', 'ب', 'ف', 'ك'):
             lead.append((p, FATHA if p in 'عف' else KASRA)); prov = 'derived:affix'

@@ -132,8 +132,19 @@ def main():
         words = [annotate_word(lex, w, res) for w in tokenize(s['ar'])]
         for w in words:
             stats[w['provenance']] = stats.get(w['provenance'], 0) + 1
-        for w in words:
+        for wi, w in enumerate(words):
             w['caphi_urban'] = realize(w.get('caphi_raw') or w.get('caphi'), SUB)
+            # Who is doing the verb? بشتغل is "I work" AND "he works" — same letters, and
+            # only the subject tells them apart. The word before it usually says: an explicit
+            # أنا makes it first person, a noun or a he/she/they pronoun makes it third.
+            prev = words[wi - 1] if wi else None
+            ps = (prev or {}).get('surface', '')
+            pa = str((prev or {}).get('analysis') or '')
+            subj = None
+            if ps in ('أنا', 'انا', 'وأنا', 'وانا'): subj = '1sg'
+            elif pa.startswith(('NOUN', 'ADJ')) or ps in ('هو', 'هي', 'هم', 'همه', 'هنّ', 'هُمّة'):
+                subj = '3'
+            w['_subject'] = subj
             # SPEC 7.4.6: vocalize the SURFACE form from the lexicon's citation form.
             # Curated entries already carry their own vocalization and must NOT be
             # relabelled as lexicon-sourced — that would launder hand-written data.
@@ -141,8 +152,9 @@ def main():
                 w.setdefault('vocalized', w.get('form'))
                 w['vocalized_from'] = 'curated'
             else:
-                v, vp = vocalize(w['surface'], w.get('form'), w.get('analysis'))
+                v, vp = vocalize(w['surface'], w.get('form'), w.get('analysis'), w.get('_subject'))
                 w['vocalized'], w['vocalized_from'] = v, vp
+            w.pop('_subject', None)
         sent = {"ar": s['ar'], "en": s['en'], "p": s.get('p'), "words": words, "audio": None}
         # ALWAYS adopt a clip that already exists on disk — with or without an API key, and
         # whether or not this run generates audio. This used to say `if do_audio:` only, so a

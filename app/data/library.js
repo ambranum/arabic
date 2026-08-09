@@ -4519,8 +4519,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi7lam",
-       "vocalized": "بَحْلَم",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "فيها",
@@ -4589,8 +4589,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ynaffis",
-       "vocalized": "بَنَفِّس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الليلة",
@@ -4667,7 +4667,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yghayyir",
-       "vocalized": "بَغَيِّر",
+       "vocalized": "بِغَيِّر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -4869,8 +4869,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "بعد",
@@ -5851,8 +5851,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ynaffis",
-       "vocalized": "بَنَفِّس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "النهار",
@@ -6533,8 +6533,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "مكان",
@@ -7133,7 +7133,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi2dar",
-       "vocalized": "بِتْقْدَر",
+       "vocalized": "بِتِقْدَر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -7223,7 +7223,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ywa22it",
-       "vocalized": "بَوَقِّت",
+       "vocalized": "بِوَقِّت",
        "vocalized_from": "derived:verb"
       },
       {
@@ -7331,8 +7331,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "بالعكس",
@@ -7431,7 +7431,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi2dar",
-       "vocalized": "بَقْدَر",
+       "vocalized": "بِقْدَر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -8041,8 +8041,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi3mal",
-       "vocalized": "بَعْمَلها",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "بنفسي",
@@ -8083,7 +8083,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yifsi",
-       "vocalized": "بِنْفْسِي",
+       "vocalized": "بِنِفْسِي",
        "vocalized_from": "derived:verb"
       }
      ],
@@ -8861,8 +8861,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yikhsar",
-       "vocalized": "بَخْسَر",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "كل",
@@ -10637,8 +10637,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "buruud",
-       "vocalized": "بَبُرُود",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِبُرُود",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "طيب",
@@ -13471,8 +13471,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "mus.irr",
-       "vocalized": "بَمُصِرّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمُصِرّ",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وكان",
@@ -15671,8 +15671,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yult.uf",
-       "vocalized": "بَلْطُف",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وكإنه",
@@ -16277,7 +16277,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
+       "vocalized": "بِكِلّ",
        "vocalized_from": "derived:verb"
       },
       {
@@ -17305,7 +17305,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
+       "vocalized": "بِكِلّ",
        "vocalized_from": "derived:verb"
       },
       {
@@ -17741,8 +17741,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2ttijaah",
-       "vocalized": "بَاِتِّجَاه",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِتِّجَاه",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "بومباي",
@@ -17953,8 +17953,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "مكان",
@@ -18017,7 +18017,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
+       "vocalized": "بِكِلّ",
        "vocalized_from": "derived:verb"
       },
       {
@@ -20285,8 +20285,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/book-atw80-ch09/s2.mp3"
@@ -22011,7 +22011,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi7lam",
-       "vocalized": "بَحْلَم",
+       "vocalized": "بِحْلَم",
        "vocalized_from": "derived:verb"
       }
      ],
@@ -22497,8 +22497,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yighD.ab",
-       "vocalized": "بَغْضَب",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وشلحوه",
@@ -24217,8 +24217,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "makaan",
-       "vocalized": "بَمَكَان",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَكَان",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "بعيد",
@@ -27131,8 +27131,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "Sabaat",
-       "vocalized": "بَثَبَات",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِثَبَات",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "والدليل",
@@ -27909,8 +27909,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وشافوا",
@@ -28597,7 +28597,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yidham",
-       "vocalized": "بَدْهَم",
+       "vocalized": "بِدْهَم",
        "vocalized_from": "derived:verb"
       },
       {
@@ -30631,8 +30631,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ywa22it",
-       "vocalized": "بَوَقِّت",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الصبح",
@@ -32479,8 +32479,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "2i7tiram",
-       "vocalized": "بَاِحْتِرَام",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِحْتِرَام",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وأدب",
@@ -33483,8 +33483,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2ttijaah",
-       "vocalized": "بَاِتِّجَاه",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِتِّجَاه",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "كلكتا",
@@ -33913,7 +33913,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi3raf",
-       "vocalized": "بِتْعْرَفها",
+       "vocalized": "بِتِعْرَفها",
        "vocalized_from": "derived:verb"
       }
      ],
@@ -33967,8 +33967,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "هاد",
@@ -34245,7 +34245,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yifkhar",
-       "vocalized": "بَفْخَر",
+       "vocalized": "بِفْخَر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -35287,8 +35287,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "bumba",
-       "vocalized": "بَبُومْبَاي",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِبُومْبَاي",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/book-atw80-ch15/s2.mp3"
@@ -35737,8 +35737,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi7bis",
-       "vocalized": "بَحْبِس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وغرامة",
@@ -36449,8 +36449,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2ttijaah",
-       "vocalized": "بَاِتِّجَاه",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِتِّجَاه",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "هونغ",
@@ -37255,8 +37255,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "مكان",
@@ -37643,8 +37643,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yult.uf",
-       "vocalized": "بَلْطُف",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وحنان",
@@ -38543,8 +38543,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "madiine",
-       "vocalized": "بَمَدِينِة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَدِينِة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "سنغافورة",
@@ -40719,8 +40719,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykhabbir",
-       "vocalized": "بَخَبِّر",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "مش",
@@ -41123,8 +41123,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ydikk",
-       "vocalized": "بَدِكّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "تعي",
@@ -41529,8 +41529,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ynaffis",
-       "vocalized": "بَنَفِّس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الوقت",
@@ -42109,8 +42109,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "t.arii2a",
-       "vocalized": "بَطَرِيقَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِطَرِيقَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "مش",
@@ -43167,8 +43167,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yisma7",
-       "vocalized": "بَسْمَح",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "لك",
@@ -45229,8 +45229,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "2ee",
-       "vocalized": "بَأَي",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِأَي",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "مكان",
@@ -45623,8 +45623,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "لازم",
@@ -47655,8 +47655,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "y3annif",
-       "vocalized": "بَعَنِّف",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       }
      ],
      "audio": "audio/book-atw80-ch21/s2.mp3"
@@ -48425,8 +48425,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "2ee",
-       "vocalized": "بَأَي",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِأَي",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "طريقة",
@@ -51013,8 +51013,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "2arD.",
-       "vocalized": "بَأَرْض",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِأَرْض",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "غريبة",
@@ -51963,7 +51963,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi3mal",
-       "vocalized": "بِتْعْمَل",
+       "vocalized": "بِتِعْمَل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -53509,8 +53509,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ynaffis",
-       "vocalized": "بَنَفِّس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "اليوم",
@@ -53647,8 +53647,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "مكان",
@@ -56963,8 +56963,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وتعجب",
@@ -59833,8 +59833,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2ttijaah",
-       "vocalized": "بَاِتِّجَاه",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِتِّجَاه",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "نيويورك",
@@ -66325,8 +66325,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "salaame",
-       "vocalized": "بَسَلَامِة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِسَلَامِة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وبعد",
@@ -67485,8 +67485,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وثبات",
@@ -68529,8 +68529,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yruu7",
-       "vocalized": "بَرُوح",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وأترك",
@@ -70331,8 +70331,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yikht.ur",
-       "vocalized": "بَخْطُر",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       }
      ],
      "audio": "audio/book-atw80-ch33/s0.mp3"
@@ -70475,7 +70475,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yimshi",
-       "vocalized": "بِتْمْشِي",
+       "vocalized": "بِتِمْشِي",
        "vocalized_from": "derived:verb"
       },
       {
@@ -70533,8 +70533,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2uwwe",
-       "vocalized": "بَقُوِّة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقُوِّة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الهوا",
@@ -72455,7 +72455,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yifru2",
-       "vocalized": "بَفْرُق",
+       "vocalized": "بِفْرُق",
        "vocalized_from": "derived:verb"
       },
       {
@@ -74337,8 +74337,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2ttijaah",
-       "vocalized": "بَاِتِّجَاه",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِتِّجَاه",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "إنجلترا",
@@ -76695,7 +76695,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
+       "vocalized": "بِكِلّ",
        "vocalized_from": "derived:verb"
       },
       {
@@ -80653,8 +80653,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "7aya",
-       "vocalized": "بَحَيَاء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِحَيَاء",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "بتقبل",
@@ -80683,7 +80683,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi2bal",
-       "vocalized": "بِتْقْبَل",
+       "vocalized": "بِتِقْبَل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -81031,8 +81031,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi7bik",
-       "vocalized": "بَحْبِك",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وهاد",
@@ -81917,8 +81917,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2ttijaah",
-       "vocalized": "بَاِتِّجَاه",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِتِّجَاه",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الشرق",
@@ -83470,7 +83470,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yis.7a",
-       "vocalized": "بَصْحَى",
+       "vocalized": "بِصْحَى",
        "vocalized_from": "derived:verb"
       },
       {
@@ -83614,8 +83614,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yu23ud",
-       "vocalized": "بَقْعُد",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "عالبلكونة",
@@ -84659,8 +84659,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "D.araayib",
-       "vocalized": "بَضَرَايِب",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِضَرَايِب",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "جديدة",
@@ -85291,8 +85291,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "maytam",
-       "vocalized": "بَمَيْتَم",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَيْتَم",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "للأطفال",
@@ -85387,7 +85387,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "y2uul",
-       "vocalized": "بَقُول",
+       "vocalized": "بِقُول",
        "vocalized_from": "derived:verb"
       },
       {
@@ -86952,7 +86952,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "y2uul",
-       "vocalized": "بَقُول",
+       "vocalized": "بِقُول",
        "vocalized_from": "derived:verb"
       },
       {
@@ -87936,8 +87936,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "قصة",
@@ -88578,8 +88578,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "madiine",
-       "vocalized": "بَمَدِينِة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَدِينِة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "درامن",
@@ -89925,8 +89925,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "kaas",
-       "vocalized": "بَكَأس",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِكَأس",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "العالم",
@@ -90119,8 +90119,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "kaas",
-       "vocalized": "بَكَأس",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِكَأس",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "العالم",
@@ -90589,7 +90589,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "y2uul",
-       "vocalized": "بَقُول",
+       "vocalized": "بِقُول",
        "vocalized_from": "derived:verb"
       },
       {
@@ -91395,7 +91395,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykhayyir",
-       "vocalized": "بَخَيِّر",
+       "vocalized": "بِخَيِّر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -93112,8 +93112,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "khus.uus.",
-       "vocalized": "بَخُصُوص",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِخُصُوص",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "تسليمهم",
@@ -95089,8 +95089,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "taghyiir",
-       "vocalized": "بَتَغْيِير",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِتَغْيِير",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "نظام",
@@ -95839,7 +95839,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yunfuq",
-       "vocalized": "بَنْفُق",
+       "vocalized": "بِنْفُق",
        "vocalized_from": "derived:verb"
       },
       {
@@ -96287,8 +96287,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "taariikh",
-       "vocalized": "بَتَارِيخهم",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِتَارِيخهم",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/news-2026-07-22/s8.mp3"
@@ -96664,8 +96664,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "barnaamaj",
-       "vocalized": "بَبَرْنَامَج",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِبَرْنَامَج",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الطاقة",
@@ -97258,7 +97258,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yiD.rub",
-       "vocalized": "بِتْضْرُب",
+       "vocalized": "بِتِضْرُب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -97550,7 +97550,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
+       "vocalized": "بِسَبِّب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -98502,7 +98502,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yis.rif",
-       "vocalized": "بِتْصْرِف",
+       "vocalized": "بِتِصْرِف",
        "vocalized_from": "derived:verb"
       },
       {
@@ -98764,8 +98764,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "biiro",
-       "vocalized": "بَبِيرُو",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِبِيرُو",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "حريق",
@@ -98892,8 +98892,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "madiine",
-       "vocalized": "بَمَدِينِة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَدِينِة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "ليما",
@@ -99399,8 +99399,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "حريق",
@@ -100161,7 +100161,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
+       "vocalized": "بِسَبِّب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -100645,8 +100645,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "khus.uus.",
-       "vocalized": "بَخُصُوص",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِخُصُوص",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "قضية",
@@ -101377,8 +101377,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yidham",
-       "vocalized": "بَدْهَم",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "يضربوا",
@@ -101455,8 +101455,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "ykhalli",
-       "vocalized": "بَخَلِّي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الناس",
@@ -101660,8 +101660,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "7afle",
-       "vocalized": "بَحَفْلِة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِحَفْلِة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "مراسلين",
@@ -101890,7 +101890,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yid3am",
-       "vocalized": "بِتْدْعَمهم",
+       "vocalized": "بِتِدْعَمهم",
        "vocalized_from": "derived:verb"
       },
       {
@@ -102294,8 +102294,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "hujuum",
-       "vocalized": "بَهُجُوم",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُجُوم",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "روسي",
@@ -102452,8 +102452,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "s.awaariikh",
-       "vocalized": "بَصَوَارِيخ",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِصَوَارِيخ",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "بنص",
@@ -102878,8 +102878,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "2it.laaq",
-       "vocalized": "بَإِطْلَاق",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِإِطْلَاق",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "نار",
@@ -103170,8 +103170,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "ma7kame",
-       "vocalized": "بَمَحْكَمِة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَحْكَمِة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الجنايات",
@@ -103214,8 +103214,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "اتهامات",
@@ -103244,8 +103244,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysuu2",
-       "vocalized": "بَسُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "سلوك",
@@ -104415,8 +104415,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "masiira",
-       "vocalized": "بَمَسِيرَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَسِيرَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "براية",
@@ -105567,8 +105567,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "s.awaariikh",
-       "vocalized": "بَصَوَارِيخ",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِصَوَارِيخ",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "ضرب",
@@ -106369,7 +106369,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
+       "vocalized": "بِسَبِّب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -106399,8 +106399,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysuu2",
-       "vocalized": "بَسُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "سلوك",
@@ -107502,8 +107502,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "mahrajaan",
-       "vocalized": "بَمَهْرَجَان",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَهْرَجَان",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "أكل",
@@ -108858,8 +108858,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "masiira",
-       "vocalized": "بَمَسِيرَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَسِيرَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الفخر",
@@ -111813,8 +111813,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "sayyaara",
-       "vocalized": "بَسَيَّارَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِسَيَّارَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "تسلا",
@@ -112285,7 +112285,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "ywarrid",
-       "vocalized": "بَوَرِّدو",
+       "vocalized": "بِوَرِّدو",
        "vocalized_from": "derived:verb"
       },
       {
@@ -114938,7 +114938,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yimraD.",
-       "vocalized": "بَمْرَض",
+       "vocalized": "بِمْرَض",
        "vocalized_from": "derived:verb"
       },
       {
@@ -116215,8 +116215,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "jaziira",
-       "vocalized": "بَجَزِيرَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِجَزِيرَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "كريت",
@@ -116309,7 +116309,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
+       "vocalized": "بِسَبِّب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -117133,8 +117133,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "المناطق",
@@ -118558,8 +118558,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "2arba3",
-       "vocalized": "بَأَرْبَع",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِأَرْبَع",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وعشرين",
@@ -119714,7 +119714,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
+       "vocalized": "بِسَبِّب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -121881,8 +121881,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "ra2iis",
-       "vocalized": "بَرَئِيس",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِرَئِيس",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الفيفا",
@@ -122683,8 +122683,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "ghasiil",
-       "vocalized": "بَغَسِيل",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِغَسِيل",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "أموال",
@@ -122988,8 +122988,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yi7ki",
-       "vocalized": "بَحْكِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "إن",
@@ -124378,8 +124378,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "انسحابهم",
@@ -124835,8 +124835,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "7uduud",
-       "vocalized": "بَحُدُود",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِحُدُود",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "أقوى",
@@ -126101,7 +126101,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
+       "vocalized": "بِسَبِّب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -126317,8 +126317,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "wilaaye",
-       "vocalized": "بَوِلَايِة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِوِلَايِة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "واشنطن",
@@ -126859,8 +126859,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2infijaar",
-       "vocalized": "بَاِنْفِجَار",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِنْفِجَار",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "لما",
@@ -128016,8 +128016,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2uwwe",
-       "vocalized": "بَقُوِّة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقُوِّة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "من",
@@ -128168,8 +128168,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2uwwe",
-       "vocalized": "بَقُوِّة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقُوِّة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "إذا",
@@ -128584,7 +128584,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yshakkil",
-       "vocalized": "بَشَكِّل",
+       "vocalized": "بِشَكِّل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -129332,8 +129332,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "2it.laaq",
-       "vocalized": "بَإِطْلَاق",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِإِطْلَاق",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "نار",
@@ -131157,8 +131157,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "mat.aar",
-       "vocalized": "بَمَطَار",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَطَار",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "قريب",
@@ -132380,7 +132380,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yimlik",
-       "vocalized": "بِتْمْلِك",
+       "vocalized": "بِتِمْلِك",
        "vocalized_from": "derived:verb"
       },
       {
@@ -132596,8 +132596,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "t.arii2a",
-       "vocalized": "بَطَرِيقَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِطَرِيقَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "استخدام",
@@ -132934,8 +132934,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yishhir",
-       "vocalized": "بَشْهِر",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "تموز",
@@ -133148,8 +133148,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yidham",
-       "vocalized": "بَدْهَم",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "يقللوا",
@@ -133738,7 +133738,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yidkhul",
-       "vocalized": "بِتْدْخُل",
+       "vocalized": "بِتِدْخُل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -133754,8 +133754,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "s.inaa3a",
-       "vocalized": "بَصِنَاعَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِصِنَاعَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الرقائق",
@@ -134624,8 +134624,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "s.awaariikh",
-       "vocalized": "بَصَوَارِيخ",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِصَوَارِيخ",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "ومسيّرات",
@@ -134948,7 +134948,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysabbib",
-       "vocalized": "بَسَبِّب",
+       "vocalized": "بِسَبِّب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -135167,8 +135167,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ywas.s.it.",
-       "vocalized": "بَوَسِّط",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "أرض",
@@ -138211,7 +138211,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yijtimi3",
-       "vocalized": "بِنْجْتِمِع",
+       "vocalized": "بِنِجْتِمِع",
        "vocalized_from": "derived:verb"
       },
       {
@@ -139330,7 +139330,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ys.awwit",
-       "vocalized": "بَصَوِّت",
+       "vocalized": "بِصَوِّت",
        "vocalized_from": "derived:verb"
       },
       {
@@ -141134,8 +141134,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi7tifiZ.",
-       "vocalized": "بَحْتِفِظ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "بهديك",
@@ -141182,8 +141182,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yihda",
-       "vocalized": "بَهْدَيك",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الرسائل",
@@ -141234,8 +141234,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "s.unduu2",
-       "vocalized": "بَصَنْدُوق",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِصَنْدُوق",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "قديم",
@@ -141380,7 +141380,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yizkur",
-       "vocalized": "بِتْذْكُر",
+       "vocalized": "بِتِذْكُر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -142919,8 +142919,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi3raf",
-       "vocalized": "بَعْرَف",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "كيف",
@@ -143247,7 +143247,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yikram",
-       "vocalized": "بِنْكْرَم",
+       "vocalized": "بِنِكْرَم",
        "vocalized_from": "derived:verb"
       },
       {
@@ -148295,8 +148295,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "shii",
-       "vocalized": "بَشِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِشِي",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/story-adv-05/s4.mp3"
@@ -149725,8 +149725,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi2lib",
-       "vocalized": "بَقْلِبي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       }
      ],
      "audio": "audio/story-adv-05/s11.mp3"
@@ -150025,8 +150025,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yjayyib",
-       "vocalized": "بَجَيِّبي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "متل",
@@ -156714,8 +156714,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yihda",
-       "vocalized": "بَهْدَيك",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "السنة",
@@ -157600,7 +157600,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yihda",
-       "vocalized": "بَهْدَيك",
+       "vocalized": "بِهْدَيك",
        "vocalized_from": "derived:verb"
       },
       {
@@ -158667,7 +158667,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "mukhtalif",
-       "vocalized": "مْخْتَلِف",
+       "vocalized": "مُخْتَلِف",
        "vocalized_from": "lexicon:exact"
       },
       {
@@ -163130,7 +163130,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yizkur",
-       "vocalized": "بِتْذْكُر",
+       "vocalized": "بِتِذْكُر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -164008,8 +164008,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ynaffis",
-       "vocalized": "بَنَفِّس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الوقت",
@@ -164475,8 +164475,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "2afas.",
-       "vocalized": "بَقَفَص",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقَفَص",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "ذهبي",
@@ -167067,7 +167067,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yifra7",
-       "vocalized": "بَفْرَح",
+       "vocalized": "بِفْرَح",
        "vocalized_from": "derived:verb"
       },
       {
@@ -167522,8 +167522,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "2usbuu3",
-       "vocalized": "بَأُسْبُوع",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِأُسْبُوع",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "البيت",
@@ -168092,7 +168092,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ynaffis",
-       "vocalized": "بَنَفِّس",
+       "vocalized": "بِنَفِّس",
        "vocalized_from": "derived:verb"
       },
       {
@@ -168922,7 +168922,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yifkhar",
-       "vocalized": "بَفْخَر",
+       "vocalized": "بِفْخَر",
        "vocalized_from": "derived:verb"
       }
      ],
@@ -170968,7 +170968,7 @@ window.LIBRARY = {
        ],
        "caphi_urban": "yoom",
        "vocalized": "بِيَوم",
-       "vocalized_from": "derived:verb"
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "والجو",
@@ -171861,8 +171861,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2uwwe",
-       "vocalized": "بَقُوِّة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقُوِّة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وصبر",
@@ -174116,8 +174116,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "mughallaf",
-       "vocalized": "بَمُغَلَّف",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمُغَلَّف",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وحطوه",
@@ -176735,8 +176735,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ywas.s.it.",
-       "vocalized": "بَوَسِّط",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الحقل",
@@ -176915,8 +176915,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi3ra2",
-       "vocalized": "بَعْرَق",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "جبيني",
@@ -177919,8 +177919,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2irtiyaa7",
-       "vocalized": "بَاِرْتِيَاح",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِاِرْتِيَاح",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/story-adv-15/s12.mp3"
@@ -178061,8 +178061,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "huduu2",
-       "vocalized": "بَهُدُوء",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِهُدُوء",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/story-adv-15/s13.mp3"
@@ -178177,7 +178177,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yin7as",
-       "vocalized": "بَنْحَس",
+       "vocalized": "بِنْحَس",
        "vocalized_from": "derived:verb"
       },
       {
@@ -180576,8 +180576,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ys.awwit",
-       "vocalized": "بَصَوِّتها",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       }
      ],
      "audio": "audio/story-adv-16/s12.mp3"
@@ -180752,8 +180752,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "makaan",
-       "vocalized": "بَمَكَان",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَكَان",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "أمين",
@@ -180998,8 +180998,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ba3D.",
-       "vocalized": "بَبَعْض",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِبَعْض",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/story-adv-16/s14.mp3"
@@ -181187,8 +181187,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2uwwe",
-       "vocalized": "بَقُوِّة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقُوِّة",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/story-adv-17/s0.mp3"
@@ -181903,8 +181903,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi3raf",
-       "vocalized": "بَعْرَف",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وين",
@@ -183371,8 +183371,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ys.awwit",
-       "vocalized": "بَصَوِّت",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "مرتجف",
@@ -183817,7 +183817,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yifra7",
-       "vocalized": "بَفْرَح",
+       "vocalized": "بِفْرَح",
        "vocalized_from": "derived:verb"
       },
       {
@@ -186368,7 +186368,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yit7aqqaq",
-       "vocalized": "بِتْتْحَقَّق",
+       "vocalized": "بِتِتْحَقَّق",
        "vocalized_from": "derived:verb"
       },
       {
@@ -186985,7 +186985,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yus.bur",
-       "vocalized": "بَصْبُر",
+       "vocalized": "بِصْبُر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -187635,7 +187635,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ys.ayyit.",
-       "vocalized": "بَسَيِّط",
+       "vocalized": "بِسَيِّط",
        "vocalized_from": "derived:verb"
       }
      ],
@@ -189256,8 +189256,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi3mar",
-       "vocalized": "بَعْمَر",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "التمنتعش",
@@ -191450,8 +191450,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "y2ahhil",
-       "vocalized": "بَأَهِّلي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وأطمنهم",
@@ -191933,8 +191933,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "7adiiqa",
-       "vocalized": "بَحَدِيقَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِحَدِيقَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "بيتنا",
@@ -193305,8 +193305,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "makaan",
-       "vocalized": "بَمَكَان",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَكَان",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "أعلى",
@@ -194461,8 +194461,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ynaffis",
-       "vocalized": "بَنَفِّس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الشجرة",
@@ -199467,8 +199467,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi7zan",
-       "vocalized": "بَحْزَن",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "على",
@@ -202196,7 +202196,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yshakkil",
-       "vocalized": "بَشَكِّل",
+       "vocalized": "بِشَكِّل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -202744,8 +202744,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi7zan",
-       "vocalized": "بَحْزَن",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "ورجع",
@@ -205824,8 +205824,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "زاوية",
@@ -206784,8 +206784,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "t.arii2a",
-       "vocalized": "بَطَرِيقَه",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِطَرِيقَه",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/story-adv-26/s6.mp3"
@@ -206994,8 +206994,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ybayyit",
-       "vocalized": "بَبَيِّت",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "جدي",
@@ -208106,8 +208106,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ma3na",
-       "vocalized": "بَمَعْنَى",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِمَعْنَى",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "كلامه",
@@ -210575,7 +210575,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yizkur",
-       "vocalized": "بِتْذْكُر",
+       "vocalized": "بِتِذْكُر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -211251,7 +211251,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yizkur",
-       "vocalized": "بِتْذْكُر",
+       "vocalized": "بِتِذْكُر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -212620,8 +212620,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2uwwe",
-       "vocalized": "بَقُوِّة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقُوِّة",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/story-adv-28/s7.mp3"
@@ -212850,8 +212850,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "fs.uul",
-       "vocalized": "بَفْصُول",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِفْصُول",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "حلوة",
@@ -213986,7 +213986,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yirja3",
-       "vocalized": "بِتْرْجَع",
+       "vocalized": "بِتِرْجَع",
        "vocalized_from": "derived:verb"
       },
       {
@@ -215799,8 +215799,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2uwwe",
-       "vocalized": "بَقُوِّة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقُوِّة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "وقالت",
@@ -219020,8 +219020,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "qandiil",
-       "vocalized": "بَقَنْدِيل",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقَنْدِيل",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "جدي",
@@ -219234,7 +219234,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yirja3",
-       "vocalized": "بِتْرْجَع",
+       "vocalized": "بِتِرْجَع",
        "vocalized_from": "derived:verb"
       },
       {
@@ -219397,7 +219397,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yis.7a",
-       "vocalized": "بَصْحَى",
+       "vocalized": "بِصْحَى",
        "vocalized_from": "derived:verb"
       },
       {
@@ -219491,8 +219491,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yruu7",
-       "vocalized": "بَرُوح",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "عالمطبخ",
@@ -219723,8 +219723,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yu23ud",
-       "vocalized": "بَقْعُد",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "عالشباك",
@@ -220097,8 +220097,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yilbis",
-       "vocalized": "بَلْبَس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وبروح",
@@ -220468,7 +220468,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yishtaghil",
-       "vocalized": "بَشْتِغِل",
+       "vocalized": "بِشْتِغِل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -220530,7 +220530,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yut.bukh",
-       "vocalized": "بِتْطْبُخ",
+       "vocalized": "بِتُطْبُخ",
        "vocalized_from": "derived:verb"
       },
       {
@@ -220758,7 +220758,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yuskun",
-       "vocalized": "بِتْسْكُن",
+       "vocalized": "بِتُسْكُن",
        "vocalized_from": "derived:verb"
       },
       {
@@ -220880,7 +220880,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yu23ud",
-       "vocalized": "بِنْقْعُد",
+       "vocalized": "بِنُقْعُد",
        "vocalized_from": "derived:verb"
       },
       {
@@ -222491,7 +222491,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yift.ar",
-       "vocalized": "بِنْفْطَر",
+       "vocalized": "بِنِفْطَر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -222773,7 +222773,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi3mal",
-       "vocalized": "بِتْعْمَل",
+       "vocalized": "بِتِعْمَل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -223119,7 +223119,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yruu7",
-       "vocalized": "بَرُوح",
+       "vocalized": "بِرُوح",
        "vocalized_from": "derived:verb"
       },
       {
@@ -223266,7 +223266,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yruu7",
-       "vocalized": "بَرُوح",
+       "vocalized": "بِرُوح",
        "vocalized_from": "derived:verb"
       },
       {
@@ -223420,8 +223420,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yishtiri",
-       "vocalized": "بَشْتِرِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "خضرة",
@@ -223626,8 +223626,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yishtiri",
-       "vocalized": "بَشْتِرِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "كل",
@@ -223995,7 +223995,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yil3ab",
-       "vocalized": "بِنْلْعَب",
+       "vocalized": "بِنِلْعَب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -224692,8 +224692,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yilbis",
-       "vocalized": "بَلْبَس",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "جاكيت",
@@ -225031,7 +225031,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yishrab",
-       "vocalized": "بِنْشْرَب",
+       "vocalized": "بِنِشْرَب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -225297,7 +225297,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yu23ud",
-       "vocalized": "بِنْقْعُد",
+       "vocalized": "بِنُقْعُد",
        "vocalized_from": "derived:verb"
       },
       {
@@ -226661,7 +226661,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
+       "vocalized": "بِكِلّ",
        "vocalized_from": "derived:verb"
       },
       {
@@ -226747,8 +226747,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yishtiri",
-       "vocalized": "بَشْتِرِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "كنافة",
@@ -227008,7 +227008,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yuskun",
-       "vocalized": "بِتْسْكُن",
+       "vocalized": "بِتُسْكُن",
        "vocalized_from": "derived:verb"
       },
       {
@@ -227292,8 +227292,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "s.a7in",
-       "vocalized": "بَصَحِن",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِصَحِن",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "تاني",
@@ -227573,7 +227573,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yitghadda",
-       "vocalized": "بِنْتْغَدَّى",
+       "vocalized": "بِنِتْغَدَّى",
        "vocalized_from": "derived:verb"
       }
      ],
@@ -227753,7 +227753,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yu23ud",
-       "vocalized": "بِنْقْعُد",
+       "vocalized": "بِنُقْعُد",
        "vocalized_from": "derived:verb"
       },
       {
@@ -228094,8 +228094,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yruu7",
-       "vocalized": "بَرُوح",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "عالمدرسة",
@@ -228540,7 +228540,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yil3ab",
-       "vocalized": "بَلْعَب",
+       "vocalized": "بِلْعَب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -228909,7 +228909,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi2ra",
-       "vocalized": "بَقْرَا",
+       "vocalized": "بِقْرَا",
        "vocalized_from": "derived:verb"
       },
       {
@@ -230369,7 +230369,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yit.fi",
-       "vocalized": "بَطْفِي",
+       "vocalized": "بِطْفِي",
        "vocalized_from": "derived:verb"
       },
       {
@@ -230654,7 +230654,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yighsil",
-       "vocalized": "بِنْغْسِل",
+       "vocalized": "بِنِغْسِل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -231379,8 +231379,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yruu7",
-       "vocalized": "بَرُوح",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "بشتري",
@@ -231409,8 +231409,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yishtiri",
-       "vocalized": "بَشْتِرِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "خبز",
@@ -232365,7 +232365,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yirkab",
-       "vocalized": "بَرْكَب",
+       "vocalized": "بِرْكَب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -232551,8 +232551,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yu23ud",
-       "vocalized": "بَقْعُد",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "جنب",
@@ -232851,7 +232851,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yuus.al",
-       "vocalized": "بَوصَل",
+       "vocalized": "بِوصَل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -232982,7 +232982,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yu23ud",
-       "vocalized": "بِنْقْعُد",
+       "vocalized": "بِنُقْعُد",
        "vocalized_from": "derived:verb"
       },
       {
@@ -233256,7 +233256,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yishrab",
-       "vocalized": "بِنْشْرَب",
+       "vocalized": "بِنِشْرَب",
        "vocalized_from": "derived:verb"
       },
       {
@@ -233362,8 +233362,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "sukuut",
-       "vocalized": "بَسُكُوت",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِسُكُوت",
+       "vocalized_from": "derived:affix"
       }
      ],
      "audio": "audio/story-beg-22/s3.mp3"
@@ -233809,7 +233809,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi3raf",
-       "vocalized": "بِتْعْرَف",
+       "vocalized": "بِتِعْرَف",
        "vocalized_from": "derived:verb"
       },
       {
@@ -234045,7 +234045,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yu23ud",
-       "vocalized": "بِنْقْعُد",
+       "vocalized": "بِنُقْعُد",
        "vocalized_from": "derived:verb"
       },
       {
@@ -234582,7 +234582,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yu23ud",
-       "vocalized": "بِنْقْعُد",
+       "vocalized": "بِنُقْعُد",
        "vocalized_from": "derived:verb"
       },
       {
@@ -235239,8 +235239,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yishtiri",
-       "vocalized": "بَشْتِرِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "شوية",
@@ -235373,7 +235373,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi3mal",
-       "vocalized": "بِتْعْمَل",
+       "vocalized": "بِتِعْمَل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -236457,7 +236457,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi3mal",
-       "vocalized": "بِتْعْمَل",
+       "vocalized": "بِتِعْمَل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -236635,7 +236635,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yinzil",
-       "vocalized": "بِتْنْزِل",
+       "vocalized": "بِتِنْزِل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -237056,7 +237056,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yu23ud",
-       "vocalized": "بِنْقْعُد",
+       "vocalized": "بِنُقْعُد",
        "vocalized_from": "derived:verb"
       },
       {
@@ -237246,8 +237246,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yinsi2i",
-       "vocalized": "بَنْسِقِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الحديقة",
@@ -237757,8 +237757,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yimshi",
-       "vocalized": "بَمْشِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "عالدكان",
@@ -237857,8 +237857,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yshawwif",
-       "vocalized": "بَشَوِّف",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "ناس",
@@ -237903,7 +237903,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi3raf",
-       "vocalized": "بَعْرَفهم",
+       "vocalized": "بِعْرَفهم",
        "vocalized_from": "derived:verb"
       },
       {
@@ -238047,8 +238047,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yishtiri",
-       "vocalized": "بَشْتِرِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "كل",
@@ -238328,8 +238328,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yit.fi",
-       "vocalized": "بَطْفِي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الضو",
@@ -238656,8 +238656,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yiskar",
-       "vocalized": "بَسْكَر",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "عيوني",
@@ -241274,8 +241274,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yi3raf",
-       "vocalized": "بَعْرَف",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وين",
@@ -241496,8 +241496,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ywa22it",
-       "vocalized": "بَوَقِّت",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الغدا",
@@ -242213,8 +242213,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yjayyib",
-       "vocalized": "بَجَيِّبي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "وبالشنطة",
@@ -243473,7 +243473,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yurbut.",
-       "vocalized": "بَرْبُط",
+       "vocalized": "بِرْبُط",
        "vocalized_from": "derived:verb"
       },
       {
@@ -243525,7 +243525,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykhayyit.",
-       "vocalized": "بَخَيِّط",
+       "vocalized": "بِخَيِّط",
        "vocalized_from": "derived:verb"
       },
       {
@@ -243555,8 +243555,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yjayyib",
-       "vocalized": "بَجَيِّبي",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       }
      ],
      "audio": "audio/story-int-03/s8.mp3"
@@ -246554,8 +246554,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "ybayyit",
-       "vocalized": "بَبَيِّت",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "جدي",
@@ -247778,7 +247778,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yizkur",
-       "vocalized": "بِتْذْكُرها",
+       "vocalized": "بِتِذْكُرها",
        "vocalized_from": "derived:verb"
       },
       {
@@ -249636,8 +249636,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ykill",
-       "vocalized": "بَكِلّ",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الحارة",
@@ -250566,7 +250566,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yiskar",
-       "vocalized": "بِنْسْكَر",
+       "vocalized": "بِنِسْكَر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -255593,8 +255593,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "rubu3",
-       "vocalized": "بَرُبُع",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِرُبُع",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "ساعة",
@@ -256878,8 +256878,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "2ahwe",
-       "vocalized": "بَقَهْوِة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِقَهْوِة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "قريبة",
@@ -268533,7 +268533,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "yi3mal",
-       "vocalized": "بِتْعْمَل",
+       "vocalized": "بِتِعْمَل",
        "vocalized_from": "derived:verb"
       },
       {
@@ -269199,8 +269199,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "s.a7in",
-       "vocalized": "بَصَحِن",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِصَحِن",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "حلويات",
@@ -270724,8 +270724,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "yshakkil",
-       "vocalized": "بَشَكِّل",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "ما",
@@ -272349,8 +272349,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ywa22it",
-       "vocalized": "بَوَقِّت",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الغدا",
@@ -276196,8 +276196,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "2ayyaam",
-       "vocalized": "بَأَيَّام",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِأَيَّام",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الخريف",
@@ -276348,8 +276348,8 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "byaara",
-       "vocalized": "بَبْيَارَة",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِبْيَارَة",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "عمي",
@@ -276922,8 +276922,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ywa22it",
-       "vocalized": "بَوَقِّت",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "الغدا",
@@ -281221,8 +281221,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "ysaa3id",
-       "vocalized": "بَسَاعِد",
-       "vocalized_from": "derived:verb"
+       "vocalized": null,
+       "vocalized_from": "unvocalized:ambiguous-person"
       },
       {
        "surface": "إمي",
@@ -281253,8 +281253,8 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:resolved",
        "caphi_urban": "ghasiil",
-       "vocalized": "بَغَسِيل",
-       "vocalized_from": "derived:verb"
+       "vocalized": "بِغَسِيل",
+       "vocalized_from": "derived:affix"
       },
       {
        "surface": "الصحون",
@@ -282247,7 +282247,7 @@ window.LIBRARY = {
         }
        ],
        "caphi_urban": "yinkisir",
-       "vocalized": "بِتْنْكِسِر",
+       "vocalized": "بِتِنْكِسِر",
        "vocalized_from": "derived:verb"
       },
       {
@@ -282551,7 +282551,7 @@ window.LIBRARY = {
        "village": null,
        "provenance": "maknuune:unique",
        "caphi_urban": "y7aawil",
-       "vocalized": "بَحَاوِل",
+       "vocalized": "بِحَاوِل",
        "vocalized_from": "derived:verb"
       },
       {
