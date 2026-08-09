@@ -412,6 +412,8 @@
   .cj-cell{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;
       text-align:center; background:var(--paper-2); border:1px solid var(--rule); border-radius:6px;
       padding:8px 5px}
+  .vd-note{margin:10px 0 2px; padding:9px 12px; border-radius:9px; font-size:13px;
+    color:var(--ink-soft); background:var(--paper-2); border:1px solid var(--rule)}
   .cj-ar{font-family:var(--arabic); direction:rtl; font-size:21px; line-height:1.4; color:var(--ink)}
   .cj-ph{font-family:var(--mono); font-size:10.5px; color:var(--verdigris); word-break:break-all}
   .cj-k{font-size:9px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
@@ -2299,6 +2301,9 @@ function verbDetail(i){
     <div class="vd-ar">${esc(v.past ? v.past.ar : '')}</div>
     <div class="vd-meta"><div class="vd-gl">${esc(v.gloss || '—')}</div>
       <div class="vd-sub">${root} &nbsp;·&nbsp; ${badges}</div></div></div>`;
+  // Where the reference grammar and the lexicon disagree on how a verb is vowelled, the
+  // grammar wins and we say so — the variant is real speech, not an error to hide.
+  if (v.note) h += `<div class="vd-note">${esc(v.note)}</div>`;
 
   const c = v.conj;
   if (!c) {

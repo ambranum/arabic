@@ -154,7 +154,16 @@ def paradigm(x):
 
 # Roman numerals for display; group label per Form.
 ROMAN = {1:'I',2:'II',3:'III',4:'IV',5:'V',6:'VI',7:'VII',8:'VIII',10:'X','Q':'Q'}
+from book_overrides import override_for
 def slim(x):
+    # The reference grammar outranks the lexicon on how a verb CONJUGATES: Maknuune records
+    # one citation form and can't say which of two competing vowellings people actually use.
+    ov = override_for(x['root'], ROMAN.get(x['form'], '?'),
+                      (x['past'] or {}).get('caphi'))
+    if ov:
+        x = dict(x, past={'ar': ov['past_ar'], 'caphi': ov['past']},
+                 pres={'ar': ov['pres_ar'], 'caphi': ov['pres']},
+                 lemma=ov['past_ar'], _note=ov['note'])
     part = lambda pp: pp and {'ar': pp['ar'], 'caphi': pp['caphi']}
     d = {
         'lemma': x['lemma'], 'root': x['root'],
@@ -162,6 +171,7 @@ def slim(x):
         'form': ROMAN.get(x['form'], '?'), 'weak': x['weak'], 'core': x['core'],
         'past': part(x['past']), 'pres': part(x['pres']), 'imp': part(x['imp']),
     }
+    if x.get('_note'): d['note'] = x['_note']; d['src'] = 'book'
     conj = paradigm(x)
     if conj:
         # `arv` = the same form with harakat, rendered from the romanization the engine already
