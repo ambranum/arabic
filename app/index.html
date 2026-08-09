@@ -672,7 +672,6 @@
   .bib-ch:hover{border-color:var(--verdigris); color:var(--verdigris)}
   .bib-nav{display:flex; align-items:center; justify-content:space-between; gap:8px; margin:4px 0 14px}
   .bib-nav>*{flex:0 0 auto}
-  .bib-audio{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:0 0 16px}
   .bib-read{max-width:900px; margin:0 auto}
   .bib-v{display:grid; grid-template-columns:1fr 1fr; gap:18px; padding:9px 0; border-bottom:1px solid var(--rule-soft,rgba(128,128,128,.12))}
   .bib-en{font-family:var(--serif); font-size:16px; line-height:1.65}
@@ -1070,7 +1069,6 @@ function route() {
   if (typeof closeSide === 'function') closeSide();
   if (typeof spkStop === 'function') spkStop();           // stop any running speaking timer
   if (typeof gsStop === 'function') { gsStop(); _gs = null; }   // stop guided-shadow audio
-  if (typeof bibAudioStop === 'function') bibAudioStop();   // stop ESV chapter audio on nav
   const cw = $('cw'); if (cw) cw.classList.remove('on');   // close the word sheet on nav
   const h = location.hash.slice(1) || '/';
   const [, kind, id, arg] = h.split('/');
@@ -1289,58 +1287,6 @@ function esvSplit(text) {
   return map;
 }
 
-// ---- chapter audio ----
-// English: Crossway's own narration, streamed from the ESV audio endpoint with the user's
-// key (the <audio> tag can't send an Authorization header, so we fetch to a blob and play
-// that). Arabic: the free FCBH recording on bible.is — copyrighted-but-free-to-stream on
-// their site, so we LINK to it per chapter rather than host or embed it. Same honest split
-// as the text: what we may serve, we serve; what we may not, we point at.
-let _bibA = null, _bibAState = 'idle', _bibARef = '';
-function bibAudioStop() {
-  if (_bibA) { try { _bibA.pause(); } catch (e) {} }
-  _bibAState = 'idle'; _bibARef = '';
-}
-async function esvPlay(id, ch) {
-  const ref = id + '.' + ch;
-  if (_bibA && _bibARef === ref) {                         // same chapter → toggle
-    if (_bibAState === 'playing') { _bibA.pause(); _bibAState = 'paused'; }
-    else { _bibA.play(); _bibAState = 'playing'; }
-    return bibAudioPaint(id, ch);
-  }
-  bibAudioStop();
-  if (!esvKey()) { location.hash = '/bible/settings'; return; }
-  _bibAState = 'loading'; _bibARef = ref; bibAudioPaint(id, ch);
-  try {
-    const url = 'https://api.esv.org/v3/passage/audio/?q=' +
-      encodeURIComponent(bibById(id).en + ' ' + ch);
-    const r = await fetch(url, {headers: {Authorization: 'Token ' + esvKey()}});
-    if (!r.ok) throw new Error(r.status === 401 ? 'key' : 'http ' + r.status);
-    const blob = await r.blob();
-    if (_bibARef !== ref) return;                          // user navigated away mid-fetch
-    if (_bibA && _bibA._url) URL.revokeObjectURL(_bibA._url);
-    _bibA = _bibA || new Audio();
-    _bibA._url = URL.createObjectURL(blob); _bibA.src = _bibA._url;
-    _bibA.onended = () => { _bibAState = 'idle'; bibAudioPaint(id, ch); };
-    await _bibA.play(); _bibAState = 'playing';
-  } catch (e) { _bibAState = 'err:' + e.message; }
-  bibAudioPaint(id, ch);
-}
-function bibAudioPaint(id, ch) {
-  const el = $('bibAudio'); if (el) el.innerHTML = bibAudioBar(id, ch);
-}
-function bibAudioBar(id, ch) {
-  const playing = _bibARef === (id + '.' + ch);
-  const st = playing ? _bibAState : 'idle';
-  const enLabel = st === 'loading' ? 'Loading…' : st === 'playing' ? '❚❚ English'
-    : st.startsWith('err') ? 'Audio failed — check key' : '▶ Listen (English)';
-  const en = esvKey()
-    ? `<button class="tog${st === 'playing' ? ' on' : ''}" onclick="esvPlay('${id}',${ch})">${enLabel}</button>`
-    : `<button class="tog" onclick="location.hash='/bible/settings'">▶ English audio — add key</button>`;
-  const ar = `<a class="tog pext" href="https://live.bible.is/bible/ARBVDV/${id}/${ch}"
-       target="_blank" rel="noopener">▶ Listen in Arabic ${svg('ext')}</a>`;
-  return en + ar;
-}
-
 function bibleSection(sub, arg) {
   $('back').hidden = false;
   if (sub === 'settings') return bibleSettings();
@@ -1391,8 +1337,7 @@ async function bibleChapter(id, ch) {
     let n = ch < b.chapters.length ? `<button class="tog" onclick="location.hash='/bible/${id}/${ch + 1}'">${ch + 1} →</button>` : '<span></span>';
     return `<div class="bib-nav">${t}<button class="tog" onclick="location.hash='/bible/${id}'">${esc(b.en)} ${ch}</button>${n}</div>`;
   };
-  $('view').innerHTML = `${nav('top')}<div class="bib-audio" id="bibAudio">${bibAudioBar(id, ch)}</div>
-     <div class="bib-read" id="bibRead">
+  $('view').innerHTML = `${nav('top')}<div class="bib-read" id="bibRead">
      <div class="hint" style="text-align:center">Loading…</div></div>`;
 
   const [arCh, esv] = await Promise.all([loadBibBook(id), loadEsv(id, ch)]);
@@ -1418,8 +1363,7 @@ async function bibleChapter(id, ch) {
        <button class="lnk" onclick="location.hash='/bible/settings'">Check your key →</button></div>`;
   const foot = `${gal ? `<div class="ctl" style="justify-content:center">
       <a class="tog pext" href="${gal}" target="_blank" rel="noopener">Read this chapter in spoken Galilean Arabic ${svg('ext')}</a></div>` : ''}
-    <div class="note">Left: ESV®, © Crossway, played/shown via your API key. Right: Van Dyck (1865),
-      public domain; Arabic audio streams free on bible.is (Faith Comes By Hearing).</div>`;
+    <div class="note">Left: ESV®, © Crossway, shown via your API key. Right: Van Dyck (1865), public domain.</div>`;
   const el = $('bibRead'); if (el) el.innerHTML = head + rows + foot + nav('bot');
 }
 
