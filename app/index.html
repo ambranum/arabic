@@ -654,6 +654,33 @@
   .bk-ch-t b{font-family:var(--arabic); direction:rtl; font-size:18px; font-weight:400}
   .bk-ch-t span{font-size:12px; color:var(--muted)}
   .bk-chnav{margin-top:20px; padding-top:16px; border-top:1px solid var(--rule)}
+  /* Bible: book grid, chapter grid, parallel reader */
+  .bib-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:8px; margin:6px 0 16px}
+  .bib-b{display:flex; align-items:baseline; justify-content:space-between; gap:8px; width:100%;
+    font:inherit; cursor:pointer; text-align:left; color:var(--ink); background:none;
+    border:1px solid var(--rule); border-radius:9px; padding:10px 12px}
+  .bib-b:hover{border-color:var(--verdigris)}
+  .bib-b-en{font-size:15px}
+  .bib-b-ar{font-family:var(--arabic); font-size:15px; color:var(--muted)}
+  .bib-hd{text-align:center; padding-bottom:14px; border-bottom:1px solid var(--rule); margin-bottom:16px}
+  .bib-hd-en{font-family:var(--serif); font-size:26px}
+  .bib-hd-ar{font-family:var(--arabic); direction:rtl; font-size:22px; color:var(--muted); margin-top:2px}
+  .bib-hd-s{font-size:12px; color:var(--muted); margin-top:4px}
+  .bib-chs{display:grid; grid-template-columns:repeat(auto-fill,minmax(48px,1fr)); gap:8px}
+  .bib-ch{aspect-ratio:1; font:inherit; font-size:16px; cursor:pointer; color:var(--ink);
+    background:none; border:1px solid var(--rule); border-radius:8px; font-variant-numeric:tabular-nums}
+  .bib-ch:hover{border-color:var(--verdigris); color:var(--verdigris)}
+  .bib-nav{display:flex; align-items:center; justify-content:space-between; gap:8px; margin:4px 0 14px}
+  .bib-nav>*{flex:0 0 auto}
+  .bib-read{max-width:900px; margin:0 auto}
+  .bib-v{display:grid; grid-template-columns:1fr 1fr; gap:18px; padding:9px 0; border-bottom:1px solid var(--rule-soft,rgba(128,128,128,.12))}
+  .bib-en{font-family:var(--serif); font-size:16px; line-height:1.65}
+  .bib-ar{font-family:var(--arabic); direction:rtl; font-size:20px; line-height:1.9}
+  .bib-vn{font-size:11px; color:var(--verdigris); font-family:var(--mono); vertical-align:super; margin-inline-start:2px}
+  @media(max-width:640px){
+    .bib-v{grid-template-columns:1fr; gap:4px; padding:11px 0}
+    .bib-en{font-size:15px; opacity:.92} .bib-ar{font-size:19px}
+  }
   /* printable book (screen preview) */
   .bk-print{max-width:640px; margin:0 auto}
   .bk-print-title{text-align:center; padding:20px 0 26px; border-bottom:2px solid var(--rule); margin-bottom:22px}
@@ -743,6 +770,7 @@
 <script src="data/vocab_audio.js"></script>
 <script src="data/curriculum.js"></script>
 <script src="data/grammar.js"></script>
+<script src="data/bible-index.js"></script>
 <script src="vendor/supabase.js"></script>
 <script src="data/supaconfig.js"></script>
 <script>
@@ -997,6 +1025,7 @@ const ICON = {
   plan:    '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><path d="M8.5 14.5l2 2 4-4.5"/>',
   ext:     '<path d="M14 4h6v6"/><path d="M20 4l-8 8"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>',
   books:   '<path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 1 2-2h12"/>',
+  bible:   '<path d="M5 4a2 2 0 0 1 2-2h11v18H7a2 2 0 0 0-2 2z"/><path d="M11.5 6.5v6M9 9h5"/>',
   user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
   translate: '<path d="M4 5h9M8.5 3v2c0 4-2.2 7-5.5 8.5"/><path d="M5 10c0 2 2.2 4 5.5 5"/><path d="M12.5 20l4.5-9 4.5 9M14.5 17h5"/>',
 };
@@ -1012,6 +1041,7 @@ const SECTIONS = [
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
   {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
+  {route: 'bible',   icon: 'bible',   label: 'Bible',           ready: true},
   {route: 'account', icon: 'user',    label: 'Account',         ready: true},
 ];
 
@@ -1060,6 +1090,7 @@ function route() {
     if (sec.route === 'grammar') return grammarSection(id);
     if (sec.route === 'stories') return storiesSection(id);
     if (sec.route === 'books')   return booksSection(id, arg);
+    if (sec.route === 'bible')   return bibleSection(id, arg);
     if (sec.route === 'account') return accountSection();
     return emptySection(sec); }
   renderNav('home');
@@ -1190,6 +1221,184 @@ function booksList() {
 const bookById = id => booksList().find(b => b.id === id);
 const chTitleAr = c => (c.title.ar || '').replace(/^الفصل[^—]*—\s*/, '');
 const chTitleEn = c => (c.title.en || '').replace(/^Chapter \d+ — /, '');
+
+// ============ Bible: ESV (your key) ‖ Van Dyck (public domain), side by side ============
+// The Arabic is the public-domain Van Dyck, split into one JSON per book and fetched only
+// when a book is opened (data/bible/<ID>.json), so the whole app doesn't carry ~5 MB up
+// front. The ESV is fetched at runtime from Crossway with the reader's OWN api key — their
+// licence forbids redistributing the text, so nothing ESV is ever stored in this repo. The
+// key lives in localStorage only (alp.esv.key), never committed, never synced.
+const BIB = window.BIBLE_INDEX || [];
+const bibById = id => BIB.find(b => b.id === id);
+const ESV_KEY = 'alp.esv.key';
+const esvKey = () => { try { return localStorage.getItem(ESV_KEY) || ''; } catch (e) { return ''; } };
+const _bibCache = {};                 // in-memory Van Dyck book jsons this session
+const _esvCache = {};                 // fetched ESV chapters, also mirrored to localStorage
+
+// A spoken-dialect New Testament exists (Galilean) but only inside YouVersion — display
+// only, nothing embeddable. So for NT books we link out to it, chapter by chapter.
+const GALILEAN = {  // usfm id -> YouVersion book slug in the Galilean NT (version 2437)
+  MAT:'MAT',MRK:'MRK',LUK:'LUK',JHN:'JHN',ACT:'ACT',ROM:'ROM','1CO':'1CO','2CO':'2CO',
+  GAL:'GAL',EPH:'EPH',PHP:'PHP',COL:'COL','1TH':'1TH','2TH':'2TH','1TI':'1TI','2TI':'2TI',
+  TIT:'TIT',PHM:'PHM',HEB:'HEB',JAS:'JAS','1PE':'1PE','2PE':'2PE','1JN':'1JN','2JN':'2JN',
+  '3JN':'3JN',JUD:'JUD',REV:'REV'};
+const galileanUrl = (id, ch) => GALILEAN[id]
+  ? `https://www.bible.com/bible/2437/${GALILEAN[id]}.${ch}` : null;
+
+async function loadBibBook(id) {
+  if (_bibCache[id]) return _bibCache[id];
+  const r = await fetch('data/bible/' + id + '.json');
+  const d = await r.json();
+  _bibCache[id] = d.chapters;
+  return d.chapters;
+}
+// Crossway passage-text API. We ask for clean verse-numbered prose, no footnotes/headings,
+// and cache each chapter (localStorage) so a re-open doesn't spend another API call.
+async function loadEsv(id, ch) {
+  const ref = bibById(id).en + ' ' + ch;
+  const ck = id + '.' + ch;
+  if (_esvCache[ck]) return _esvCache[ck];
+  try { const s = localStorage.getItem('alp.esv.' + ck); if (s) return (_esvCache[ck] = JSON.parse(s)); } catch (e) {}
+  const key = esvKey();
+  if (!key) return {error: 'nokey'};
+  const url = 'https://api.esv.org/v3/passage/text/?q=' + encodeURIComponent(ref) +
+    '&include-headings=false&include-footnotes=false&include-verse-numbers=true' +
+    '&include-short-copyright=false&include-passage-references=false';
+  try {
+    const r = await fetch(url, {headers: {Authorization: 'Token ' + key}});
+    if (r.status === 401) return {error: 'badkey'};
+    if (!r.ok) return {error: 'http ' + r.status};
+    const d = await r.json();
+    const out = {verses: esvSplit((d.passages || []).join('\n'))};
+    _esvCache[ck] = out;
+    try { localStorage.setItem('alp.esv.' + ck, JSON.stringify(out)); } catch (e) {}
+    return out;
+  } catch (e) { return {error: 'network'}; }
+}
+// The API returns one block of text with inline [n] verse markers; split it back to a
+// {num: text} map so each ESV verse can sit beside its Van Dyck counterpart.
+function esvSplit(text) {
+  const map = {}; const re = /\[(\d+)\]\s*/g; let m, last = null, li = 0;
+  while ((m = re.exec(text))) {
+    if (last !== null) map[last] = text.slice(li, m.index).trim();
+    last = +m[1]; li = re.lastIndex;
+  }
+  if (last !== null) map[last] = text.slice(li).replace(/\s+/g, ' ').trim();
+  return map;
+}
+
+function bibleSection(sub, arg) {
+  $('back').hidden = false;
+  if (sub === 'settings') return bibleSettings();
+  if (sub && arg) return bibleChapter(sub, +arg);
+  if (sub) return bibleBook(sub);
+  return bibleHome();
+}
+
+function bibleHome() {
+  $('title').textContent = 'Bible';
+  const grid = test => BIB.filter(b => b.test === test).map(b =>
+    `<button class="bib-b" onclick="location.hash='/bible/${b.id}'">
+       <span class="bib-b-en">${esc(b.en)}</span>
+       <span class="bib-b-ar" dir="rtl">${esc(b.ar)}</span></button>`).join('');
+  let h = `<p class="hint">Read Scripture side by side — <b>ESV</b> in English on the left,
+     the classical Arabic <b>Van Dyck</b> on the right, the version read aloud in Arabic
+     churches. Tap a book, then a chapter.
+     ${esvKey() ? '' : '<button class="lnk" onclick="location.hash=\'/bible/settings\'">Add your ESV key</button> to show the English.'}</p>
+    <div class="sec">Old Testament</div><div class="bib-grid">${grid('OT')}</div>
+    <div class="sec">New Testament</div><div class="bib-grid">${grid('NT')}</div>
+    <div class="note">Arabic: Van Dyck (1865), public domain. English: ESV, fetched live with
+      your own Crossway key — <button class="lnk" onclick="location.hash='/bible/settings'">key
+      settings</button>. The spoken Palestinian/Galilean New Testament isn’t freely available as
+      text; where it exists, each New-Testament chapter links out to it.</div>`;
+  $('view').innerHTML = h;
+}
+
+function bibleBook(id) {
+  const b = bibById(id); if (!b) return bibleHome();
+  $('title').textContent = b.en;
+  let h = `<div class="bib-hd"><div class="bib-hd-en">${esc(b.en)}</div>
+     <div class="bib-hd-ar" dir="rtl">${esc(b.ar)}</div>
+     <div class="bib-hd-s">${b.chapters.length} chapter${b.chapters.length === 1 ? '' : 's'}</div></div>
+    <div class="bib-chs">`;
+  for (let c = 1; c <= b.chapters.length; c++)
+    h += `<button class="bib-ch" onclick="location.hash='/bible/${id}/${c}'">${c}</button>`;
+  h += `</div>`;
+  $('view').innerHTML = h;
+}
+
+async function bibleChapter(id, ch) {
+  const b = bibById(id); if (!b || ch < 1 || ch > b.chapters.length) return bibleBook(id);
+  $('title').textContent = b.en + ' ' + ch;
+  const gal = galileanUrl(id, ch);
+  const nav = pos => {
+    const prev = pos === 'top';
+    let t = ch > 1 ? `<button class="tog" onclick="location.hash='/bible/${id}/${ch - 1}'">← ${ch - 1}</button>` : '<span></span>';
+    let n = ch < b.chapters.length ? `<button class="tog" onclick="location.hash='/bible/${id}/${ch + 1}'">${ch + 1} →</button>` : '<span></span>';
+    return `<div class="bib-nav">${t}<button class="tog" onclick="location.hash='/bible/${id}'">${esc(b.en)} ${ch}</button>${n}</div>`;
+  };
+  $('view').innerHTML = `${nav('top')}<div class="bib-read" id="bibRead">
+     <div class="hint" style="text-align:center">Loading…</div></div>`;
+
+  const [arCh, esv] = await Promise.all([loadBibBook(id), loadEsv(id, ch)]);
+  const verses = arCh[ch - 1] || [];
+  let rows = '';
+  for (let i = 0; i < verses.length; i++) {
+    const n = i + 1;
+    const en = esv.verses ? (esv.verses[n] || '') : '';
+    rows += `<div class="bib-v">
+       <div class="bib-en">${esv.error ? '' : esc(en)}</div>
+       <div class="bib-ar" dir="rtl"><span class="bib-vn">${n}</span> ${esc(verses[i])}</div></div>`;
+  }
+  let head = '';
+  if (esv.error === 'nokey')
+    head = `<div class="unval">The English side is empty until you add your free ESV key.
+       <button class="lnk" onclick="location.hash='/bible/settings'">Add it now →</button></div>`;
+  else if (esv.error === 'badkey')
+    head = `<div class="unval">That ESV key was rejected (401).
+       <button class="lnk" onclick="location.hash='/bible/settings'">Check it →</button></div>`;
+  else if (esv.error)
+    head = `<div class="unval">Couldn’t load the English (${esc(esv.error)}). Usually that’s a
+       wrong or expired ESV key, or a dropped connection — the Arabic still reads below.
+       <button class="lnk" onclick="location.hash='/bible/settings'">Check your key →</button></div>`;
+  const foot = `${gal ? `<div class="ctl" style="justify-content:center">
+      <a class="tog pext" href="${gal}" target="_blank" rel="noopener">Read this chapter in spoken Galilean Arabic ${svg('ext')}</a></div>` : ''}
+    <div class="note">Left: ESV®, © Crossway, shown via your API key. Right: Van Dyck (1865), public domain.</div>`;
+  const el = $('bibRead'); if (el) el.innerHTML = head + rows + foot + nav('bot');
+}
+
+function bibleSettings() {
+  $('title').textContent = 'ESV key';
+  const has = esvKey();
+  $('view').innerHTML = `
+    <p class="hint">The English column uses the <b>ESV</b>, which can’t be bundled into a free
+      app — but Crossway gives out a free API key that lets this app fetch it for your own
+      reading. It’s stored only on this device and never leaves it except to Crossway.</p>
+    <ol class="hint" style="line-height:1.9">
+      <li>Go to <a href="https://api.esv.org/" target="_blank" rel="noopener">api.esv.org</a> and create a free API key.</li>
+      <li>Paste it here.</li></ol>
+    <label class="phlab">ESV API key
+      <input id="esvk" value="${esc(has)}" placeholder="paste your key" autocomplete="off"></label>
+    <div class="ctl" style="margin-top:12px">
+      <button class="tog go" onclick="bibleSaveKey()">Save</button>
+      ${has ? '<button class="tog" onclick="bibleClearKey()">Remove key</button>' : ''}
+      <button class="tog" onclick="location.hash='/bible'">Back to the Bible</button></div>
+    <div class="note">Stored in this browser only (localStorage), never committed to the app
+      and never sent anywhere but Crossway. Fetched chapters are cached here so you don’t
+      re-spend API calls re-reading.</div>`;
+}
+function bibleSaveKey() {
+  const v = ($('esvk') || {}).value || '';
+  try { localStorage.setItem(ESV_KEY, v.trim()); } catch (e) {}
+  location.hash = '/bible';
+}
+function bibleClearKey() {
+  try { localStorage.removeItem(ESV_KEY);
+    Object.keys(localStorage).filter(k => k.startsWith('alp.esv.')).forEach(k => localStorage.removeItem(k));
+  } catch (e) {}
+  _esvCache && Object.keys(_esvCache).forEach(k => delete _esvCache[k]);
+  location.hash = '/bible/settings';
+}
 
 function booksSection(sub, arg) {
   $('back').hidden = false;

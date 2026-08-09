@@ -21,3 +21,28 @@ redistribution. That's permitted — with the notice above kept intact.
 
 Not derived from Maknuune, and not covered by its licence: the pipeline code, the app,
 and the Palestinian sentences written by Claude.
+
+---
+
+# Bible section — two sources, two very different statuses
+
+## Arabic column — Van Dyck (1865). PUBLIC DOMAIN.
+
+`data/bible-vandyck/*.usfm` is the Smith & Van Dyke Arabic translation, downloaded from
+ebible.org (id `arb-vd`), which states its status as **Public Domain**. It is committed here
+(source) and processed by `pipeline/bible.py` into `app/data/bible/*.json` +
+`app/data/bible-index.js`. Public domain imposes no obligation; the note here is courtesy.
+
+## English column — ESV. NOT stored; fetched with the user's own key.
+
+The English Standard Version is © Crossway and **may not be redistributed**, so **no ESV
+text is stored anywhere in this repository**. The app fetches passages at runtime from
+`api.esv.org` using an API key the user obtains themselves from Crossway and pastes into the
+app; the key lives only in that browser's localStorage (`alp.esv.key`), is never committed,
+and is sent only to Crossway. Fetched chapters are cached in the user's own browser for their
+personal reading. Each user is responsible for their own key and Crossway's API terms.
+
+## Spoken dialect New Testament — linked, never copied.
+
+A spoken Galilean/Palestinian New Testament exists but only inside YouVersion (display-only,
+not redistributable), so it is **linked out to, chapter by chapter**, never embedded.
