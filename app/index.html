@@ -709,6 +709,8 @@
   /* the "whole passage" header that sits above the split sentences */
   .para-head{padding-bottom:22px; border-bottom:1px solid var(--paper-3); margin-bottom:26px}
   .pl-cap{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:10px}
+  /* sentence punctuation (periods, commas, ؟) re-inserted between the tappable word spans */
+  .rd .pu{font-family:var(--arabic); color:var(--ink)}
   @media print {
     .top, .tray, .sidebar, .side-scrim, .bk-noprint { display:none !important; }
     html, body { background:#fff !important; color:#000 !important; }
@@ -2794,9 +2796,28 @@ function reader(t) {
     `<div class="rd" id="rd" data-en="off" data-voc="on">`;
   // Both spellings ship; the vowels toggle swaps which is shown. A word we couldn't vocalize
   // honestly falls back to its plain spelling and says so in the card.
-  const wspan = (w, si, wi) => { const voc = w.vocalized || w.surface;
+  const wspan = (w, si, wi, trail) => { const voc = w.vocalized || w.surface;
     return `<span class="w${!w.lemma ? ' gap' : ''}${w.vocalized ? '' : ' novoc'}"
-      data-s="${si}" data-w="${wi}" tabindex="0"><span class="v">${esc(voc)}</span><span class="p">${esc(w.surface)}</span></span> `; };
+      data-s="${si}" data-w="${wi}" tabindex="0"><span class="v">${esc(voc)}</span><span class="p">${esc(w.surface)}</span></span>${trail === false ? '' : ' '}`; };
+  // The tokenizer (pipeline/ingest.py) splits on punctuation, so s.words has none — but s.ar
+  // keeps it. Walk s.ar alongside s.words to drop each word's trailing punctuation (. ، ؟ ! …)
+  // back in, hugging the word, so the reader shows real sentences instead of a bare word list.
+  const PUNCT = '،.؟!:؛…"«»“”\'()-—';
+  const isPunct = ch => PUNCT.indexOf(ch) >= 0;
+  const arHTML = (s, si) => {
+    const ar = s.ar || ''; let pos = 0, out = '';
+    s.words.forEach((w, wi) => {
+      if (wi > 0) out += ' ';
+      const idx = ar.indexOf(w.surface, pos);
+      out += wspan(w, si, wi, false);
+      if (idx < 0) return;                      // alignment lost — skip punctuation for this word
+      pos = idx + w.surface.length;
+      let p = '';                               // punctuation immediately after the word, no space
+      while (pos < ar.length && !/\s/.test(ar[pos]) && isPunct(ar[pos])) { p += ar[pos]; pos++; }
+      if (p) out += `<span class="pu">${esc(p)}</span>`;
+    });
+    return out;
+  };
   // Books carry paragraph markers (`p`): render as flowing bilingual paragraphs (nicer for reading a
   // book). Stories/news have no markers → the classic one-sentence-at-a-time layout, unchanged.
   const hasPara = t.sentences.some(s => s.p != null);
@@ -2804,7 +2825,7 @@ function reader(t) {
     let cur_p = null, group = [];
     const flush = () => { if (!group.length) return;
       h += '<div class="sent rd-para"><div class="ar">';
-      group.forEach(si => t.sentences[si].words.forEach((w, wi) => { h += wspan(w, si, wi); }));
+      group.forEach((si, gi) => { if (gi > 0) h += ' '; h += arHTML(t.sentences[si], si); });
       h += '</div><p class="en">' + group.map(si => esc(t.sentences[si].en)).join(' ') + '</p>';
       h += `<button class="peek" data-peek="${group[0]}">Peek at English</button></div>`; group = []; };
     t.sentences.forEach((s, si) => { if (cur_p !== null && s.p !== cur_p) flush(); cur_p = s.p; group.push(si); });
@@ -2815,14 +2836,14 @@ function reader(t) {
     // all work), same English peek, same transport UI.
     paraClips = t.sentences.map(s => s.audio ? au(s.audio) : null).filter(Boolean);
     h += '<div class="sent rd-para para-head"><div class="pl-cap">Whole passage</div><div class="ar">';
-    t.sentences.forEach((s, si) => s.words.forEach((w, wi) => { h += wspan(w, si, wi); }));
+    t.sentences.forEach((s, si) => { if (si > 0) h += ' '; h += arHTML(s, si); });
     h += '</div><p class="en">' + t.sentences.map(s => esc(s.en)).join(' ') + '</p>';
     if (paraClips.length) h += paraPlayer();
     h += `<button class="peek" data-peek="0">Peek at English</button></div>`;
 
     t.sentences.forEach((s, si) => {
       h += '<div class="sent"><div class="ar">';
-      s.words.forEach((w, wi) => { h += wspan(w, si, wi); });
+      h += arHTML(s, si);
       h += `</div><p class="en">${esc(s.en)}</p>`;
       h += player(s.audio);
       h += `<button class="peek" data-peek="${si}">Peek at English</button></div>`;
