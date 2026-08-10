@@ -46,3 +46,17 @@ personal reading. Each user is responsible for their own key and Crossway's API 
 
 A spoken Galilean/Palestinian New Testament exists but only inside YouVersion (display-only,
 not redistributable), so it is **linked out to, chapter by chapter**, never embedded.
+
+---
+
+# Videos section — Shami Speaker (YouTube). EMBEDDED, never copied.
+
+The Videos section embeds playlists from the **Shami Speaker** YouTube channel
+(https://www.youtube.com/@ShamiSpeaker), a Levantine Arabic learning channel with a northern-
+Palestinian / southern-Lebanon-camp focus. Playback uses YouTube's official privacy-enhanced
+iframe (`youtube-nocookie.com`); **no video or audio is downloaded, transcribed, or re-hosted**,
+and the content is deliberately kept OUTSIDE the lexicon pipeline (no tappable words, no decks),
+so the app's own dialect-verified material stays distinct from this broader-Levantine immersion.
+Only the public playlist ids are stored (in `app/index.html`). Each playlist credits the channel
+and links back to it. This is embedding/linking under YouTube's Terms of Service — not
+redistribution of the creator's content.

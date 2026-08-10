@@ -711,6 +711,13 @@
   .pl-cap{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:10px}
   /* sentence punctuation (periods, commas, ؟) re-inserted between the tappable word spans */
   .rd .pu{font-family:var(--arabic); color:var(--ink)}
+  /* embedded YouTube (Videos section) — responsive 16:9, rounded to match the app */
+  .yt-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#000;
+    border-radius:12px; overflow:hidden; border:1px solid var(--paper-3)}
+  .yt-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .yt-meta{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    gap:10px; margin-top:12px; color:var(--muted); font-size:13px}
+  .yt-meta a{color:var(--verdigris)}
   @media print {
     .top, .tray, .sidebar, .side-scrim, .bk-noprint { display:none !important; }
     html, body { background:#fff !important; color:#000 !important; }
@@ -1128,6 +1135,7 @@ const ICON = {
   ext:     '<path d="M14 4h6v6"/><path d="M20 4l-8 8"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/>',
   books:   '<path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 1 2-2h12"/>',
   bible:   '<path d="M5 4a2 2 0 0 1 2-2h11v18H7a2 2 0 0 0-2 2z"/><path d="M11.5 6.5v6M9 9h5"/>',
+  video:   '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
   user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
   translate: '<path d="M4 5h9M8.5 3v2c0 4-2.2 7-5.5 8.5"/><path d="M5 10c0 2 2.2 4 5.5 5"/><path d="M12.5 20l4.5-9 4.5 9M14.5 17h5"/>',
 };
@@ -1143,6 +1151,7 @@ const SECTIONS = [
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
   {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
+  {route: 'videos',  icon: 'video',   label: 'Videos',          ready: true},
   {route: 'bible',   icon: 'bible',   label: 'Bible',           ready: true},
   {route: 'account', icon: 'user',    label: 'Account',         ready: true},
 ];
@@ -1193,6 +1202,7 @@ function route() {
     if (sec.route === 'grammar') return grammarSection(id);
     if (sec.route === 'stories') return storiesSection(id);
     if (sec.route === 'books')   return booksSection(id, arg);
+    if (sec.route === 'videos')  return videosSection(id);
     if (sec.route === 'bible')   return bibleSection(id, arg);
     if (sec.route === 'account') return accountSection();
     return emptySection(sec); }
@@ -1265,6 +1275,7 @@ function home(){
       : sec.route === 'account' ? (_user ? esc(_user.email) : 'Sign in to sync your progress')
       : sec.route === 'translate' ? 'Words & phrases in context'
       : sec.route === 'bible' ? 'ESV ‖ Arabic, side by side'
+      : sec.route === 'videos' ? VIDEOS.length + ' playlists · Shami Speaker'
       : 'Coming soon';
     return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
       <div class="tile-t">${esc(sec.label)}</div>
@@ -1619,6 +1630,73 @@ function storiesLevel(lvl){
     STORY_LEVELS.map(([k, l]) => `<button class="tog"${k === key ? ' aria-pressed="true"' : ''}
         onclick="location.hash='/stories/${k}'">${esc(l)}</button>`).join('') + `</div>`;
   $('view').innerHTML = h;
+}
+
+// ---------- videos (Shami Speaker, embedded) ----------
+// Supplementary immersion from the Shami Speaker YouTube channel (Levantine, with a northern-
+// Palestinian / southern-Lebanon camp focus). EMBEDDED via YouTube's official iframe — nothing
+// is downloaded or re-hosted, and this content is NOT run through the lexicon pipeline, so it's
+// deliberately kept separate from the app's own dialect-verified material. `pl` is the YouTube
+// playlist id; `cat` groups the playlists the way the rest of the app is organised.
+const VIDEOS = [
+  {slug:'grammar',  pl:'PLtMbzvT4n03oW8Grw7m4ooYwOvnrYGKW_', title:'Grammar in Levantine Arabic', n:17, cat:'Lessons'},
+  {slug:'verbs',    pl:'PLtMbzvT4n03rz4hTUdJ_oN3-GmJrLdSL0', title:'Verbs in Levantine Arabic', n:7, cat:'Lessons'},
+  {slug:'vocab',    pl:'PLtMbzvT4n03rL_Lnf-xRE8dCDnGM81_95', title:'Vocabulary in Levantine Arabic', n:52, cat:'Lessons'},
+  {slug:'letters',  pl:'PLtMbzvT4n03q7SbY9SxKRC1n7EUBcwyGA', title:'Arabic Letters', n:3, cat:'Lessons'},
+  {slug:'vlogs',    pl:'PLtMbzvT4n03rQo0_pgwoFZ68O5lQc93Yi', title:'Vlogs & Listening Comprehension', n:7, cat:'Listening'},
+  {slug:'drama',    pl:'PLtMbzvT4n03rWi2DHGB6qLZgh9OXTKuIn', title:'Master Mix: Drama with Subtitles', n:16, cat:'Listening'},
+  {slug:'tv',       pl:'PLtMbzvT4n03rs5dniarLMfujIzO6B0J2R', title:'Learn with TV Series', n:11, cat:'Listening'},
+  {slug:'music',    pl:'PLtMbzvT4n03p4hY5Ef6wbl_drHfP0pqYn', title:'Music Resources', n:16, cat:'Listening'},
+  {slug:'culture',  pl:'PLtMbzvT4n03p3N1F0hl-qVGN0g8abfa_u', title:'Cultural Lessons of the Levant', n:10, cat:'Culture & practice'},
+  {slug:'quizzes',  pl:'PLtMbzvT4n03qSWHbWAC1UZBON5-dqXHM3', title:'Quizzes in Levantine Arabic', n:3, cat:'Culture & practice'},
+];
+const CHANNEL_URL = 'https://www.youtube.com/@ShamiSpeaker';
+
+function videosSection(sub){
+  $('back').hidden = false;
+  const v = VIDEOS.find(x => x.slug === sub);
+  return v ? videosPlay(v) : videosHome();
+}
+
+function videosHome(){
+  $('title').textContent = 'Videos';
+  let h = `<p class="hint">Video lessons and listening practice from
+    <a href="${CHANNEL_URL}" target="_blank" rel="noopener">Shami Speaker</a> — a Levantine
+    Arabic channel with a northern-Palestinian and southern-Lebanon focus. These play here from
+    YouTube; they're <b>supplementary immersion</b>, not part of the app's own lexicon-verified
+    material, so the dialect is broader Levantine (some Syrian/Lebanese/Jordanian too).</p>`;
+  const cats = [...new Set(VIDEOS.map(v => v.cat))];
+  cats.forEach(cat => {
+    h += `<div class="sec">${esc(cat)}</div><div class="vtiles">`;
+    h += VIDEOS.filter(v => v.cat === cat).map(v =>
+      `<button class="vtile wide" onclick="location.hash='/videos/${v.slug}'">
+        <div class="vtile-h"><span class="vtile-t">${esc(v.title)}</span>
+          <span class="vtile-n">${v.n}</span></div>
+        <div class="vtile-s">Playlist · ${v.n} video${v.n === 1 ? '' : 's'}</div></button>`).join('');
+    h += '</div>';
+  });
+  $('view').innerHTML = h;
+}
+
+function videosPlay(v){
+  $('title').textContent = v.title;
+  // youtube-nocookie: privacy-enhanced embed. videoseries?list= plays the whole playlist.
+  const embed = `https://www.youtube-nocookie.com/embed/videoseries?list=${encodeURIComponent(v.pl)}&rel=0`;
+  const watch = `https://www.youtube.com/playlist?list=${encodeURIComponent(v.pl)}`;
+  $('view').innerHTML =
+    `<div class="reading">
+       <div class="yt-wrap"><iframe src="${embed}" title="${esc(v.title)}"
+         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+       <div class="yt-meta">
+         <div>Playlist of ${v.n} video${v.n === 1 ? '' : 's'} · by
+           <a href="${CHANNEL_URL}" target="_blank" rel="noopener">Shami Speaker</a></div>
+         <a class="tog" href="${watch}" target="_blank" rel="noopener">Open on YouTube ↗</a>
+       </div>
+       <div class="sec" style="margin-top:22px">More playlists</div><div class="ctl">` +
+    VIDEOS.map(x => `<button class="tog"${x.slug === v.slug ? ' aria-pressed="true"' : ''}
+        onclick="location.hash='/videos/${x.slug}'">${esc(x.title.split(':')[0])}</button>`).join('') +
+    `</div></div>`;
 }
 
 // ---------- vocabulary / memorization (Anki SM-2) ----------
