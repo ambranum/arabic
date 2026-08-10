@@ -76,6 +76,29 @@ def main():
         json.dump({"texts": texts, "drills": drills}, f, ensure_ascii=False, indent=1)
         f.write(";\n")
 
+    # Stamp the service worker's cache name with a hash of the app shell + all data, so every
+    # deploy gets a fresh cache and the SW's activate step drops the stale one — no learner stuck
+    # on old JS/data behind the cache. (The HTML is fetched network-first regardless; this covers
+    # the cache-first data/JS assets.)
+    sw_path = os.path.join(ROOT, 'app', 'service-worker.js')
+    if os.path.exists(sw_path):
+        import re as _re
+        ash = hashlib.md5()
+        shell = [os.path.join(ROOT, 'app', 'index.html')] + \
+            sorted(glob.glob(os.path.join(ROOT, 'app', 'data', '*.js')))
+        for p in shell:
+            try:
+                ash.update(open(p, 'rb').read())
+            except OSError:
+                pass
+        appver = ash.hexdigest()[:10]
+        sw = open(sw_path, encoding='utf-8').read()
+        sw2 = _re.sub(r"const CACHE_VERSION = '[^']*';",
+                      "const CACHE_VERSION = 'alp-%s';" % appver, sw, count=1)
+        if sw2 != sw:
+            open(sw_path, 'w', encoding='utf-8').write(sw2)
+        print(f"sw cache version: alp-{appver}")
+
     print(f"audio version: {audio_version}")
     print(f"texts : {len(texts)}")
     for t in texts:

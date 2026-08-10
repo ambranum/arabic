@@ -11,6 +11,16 @@ window.CURRICULUM = {
   // Used only to project a finish line from real weekly hours — it is an estimate, shown honestly.
   totalHours: 2000,
 
+  // ---- content leveling (beginner → fluent), indexed by phase 0..6 ----
+  // grammarCap: the furthest of the 20 ordered grammar lessons a phase unlocks (so Reaction
+  //   never serves "the past tense"). verbTier: which verb difficulty tier is reachable —
+  //   1=sound Form I, 2=+hollow/doubled, 3=+defective/assimilated/hamzated & higher forms.
+  //   videoPhaseMax mirrors this for the Shami playlists (see VIDEOS `phase` in the app).
+  grammarCap: [4, 8, 12, 15, 17, 19, 20],
+  verbTier:   [1, 1, 2, 2, 3, 3, 3],
+  // Spaced re-exposure for grammar/verbs once first learned (days). SRS handles vocab itself.
+  reviewDays: [2, 7, 21],
+
   // ---- the activity library (§2.3) ----
   // slot: which kind of moment the activity needs.
   //   car     = voice free + alone (the speaking engine); audio-first, eyes may be busy
@@ -30,6 +40,10 @@ window.CURRICULUM = {
                instr:'Read, tap any word you don’t know, and hit “Don’t know it” to send it to your deck.'},
     grammar:  {label:'One grammar pattern',      slot:'desk',    order:2, speak:false, builds:'A reusable structure',
                instr:'Learn one pattern, then say five of your OWN sentences with it.'},
+    verbs:    {label:'A verb, conjugated',       slot:'desk',    order:2, speak:false, builds:'A verb you can actually use',
+               instr:'Study the full table, then say the past, present and command out loud with a real subject.'},
+    watch:    {label:'Watch & retell',           slot:'desk',    order:2, speak:false, builds:'Real speech & listening',
+               instr:'Watch one video. Pause and repeat lines out loud; at the end, retell it in a sentence or two.'},
     listen:   {label:'Listen & retell',          slot:'car',     order:2, speak:true,  builds:'Ear training (active)',
                instr:'Listen to a short clip, then retell it out loud in your own words. Never just let it play (§2.4).'},
     srs:      {label:'Flashcard review',         slot:'break',   order:3, speak:false, builds:'Retention (spaced repetition)',
@@ -80,6 +94,9 @@ window.CURRICULUM = {
      mix:[
        {act:'course', min:25, src:'external', res:'languageTransfer'},
        {act:'sound',  min:15, src:'external', res:'languageTransfer'},
+       {act:'grammar',min:15, src:'inapp'},
+       {act:'verbs',  min:10, src:'inapp'},
+       {act:'watch',  min:10, src:'inapp'},
        {act:'srs',    min:10, src:'inapp'},
        {act:'read',   min:15, src:'inapp', pool:'beginner'},
      ]},
@@ -91,6 +108,8 @@ window.CURRICULUM = {
        {act:'drill432', min:15, src:'inapp', pool:'reaction'},
        {act:'read',     min:20, src:'inapp', pool:'beginner'},
        {act:'grammar',  min:15, src:'inapp'},
+       {act:'verbs',    min:10, src:'inapp'},
+       {act:'watch',    min:15, src:'inapp'},
        {act:'srs',      min:10, src:'inapp'},
        {act:'produce',  min:15, src:'inapp'},
        {act:'listen',   min:15, src:'external', res:'podcasts'},
@@ -104,6 +123,8 @@ window.CURRICULUM = {
        {act:'read',    min:25, src:'inapp', pool:'beginner'},
        {act:'produce', min:20, src:'inapp'},
        {act:'grammar', min:15, src:'inapp'},
+       {act:'verbs',   min:10, src:'inapp'},
+       {act:'watch',   min:20, src:'inapp'},
        {act:'srs',     min:15, src:'inapp'},
        {act:'listen',  min:20, src:'external', res:'podcasts'},
        {act:'course',  min:20, src:'external', res:'languageTransfer'},
@@ -117,6 +138,8 @@ window.CURRICULUM = {
        {act:'read',    min:25, src:'inapp', pool:'intermediate'},
        {act:'produce', min:20, src:'inapp'},
        {act:'grammar', min:15, src:'inapp'},
+       {act:'verbs',   min:10, src:'inapp'},
+       {act:'watch',   min:20, src:'inapp'},
        {act:'srs',     min:15, src:'inapp'},
        {act:'listen',  min:20, src:'external', res:'podcasts'},
        {act:'tutor',   min:45, src:'external', res:'tutor', cadence:'weekly'},
@@ -130,6 +153,8 @@ window.CURRICULUM = {
        {act:'drill432', min:20, src:'inapp', pool:'intermediate'},
        {act:'produce',  min:20, src:'inapp'},
        {act:'grammar',  min:15, src:'inapp'},
+       {act:'verbs',    min:10, src:'inapp'},
+       {act:'watch',    min:20, src:'inapp'},
        {act:'srs',      min:15, src:'inapp'},
        {act:'listen',   min:20, src:'external', res:'podcasts'},
        {act:'tutor',    min:60, src:'external', res:'tutor', cadence:'weekly'},
@@ -140,6 +165,9 @@ window.CURRICULUM = {
      mix:[
        {act:'read',    min:25, src:'inapp', pool:'advanced'},
        {act:'produce', min:25, src:'inapp'},
+       {act:'watch',   min:25, src:'inapp'},
+       {act:'grammar', min:15, src:'inapp'},
+       {act:'verbs',   min:10, src:'inapp'},
        {act:'listen',  min:25, src:'external', res:'youtube'},
        {act:'read',    min:15, src:'inapp', pool:'news'},
        {act:'srs',     min:15, src:'inapp'},
@@ -151,8 +179,10 @@ window.CURRICULUM = {
      mix:[
        {act:'listen',  min:30, src:'external', res:'dialogue'},
        {act:'produce', min:25, src:'inapp'},
+       {act:'watch',   min:25, src:'inapp'},
        {act:'read',    min:20, src:'inapp', pool:'news'},
        {act:'read',    min:15, src:'inapp', pool:'advanced'},
+       {act:'verbs',   min:10, src:'inapp'},
        {act:'srs',     min:15, src:'inapp'},
        {act:'tutor',   min:60, src:'external', res:'tutor', cadence:'weekly'},
      ]},

@@ -4,7 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#EDEDE6">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Palestinian">
+<meta name="theme-color" content="#EDEDE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16171B" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icon-192.png">
 <title>Palestinian Arabic</title>
 <style>
   :root{
@@ -718,6 +725,31 @@
   .yt-meta{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
     gap:10px; margin-top:12px; color:var(--muted); font-size:13px}
   .yt-meta a{color:var(--verdigris)}
+  /* plan extras: streak, warm-up, record, and the dashboard */
+  .streak{font-size:12px; color:var(--ochre); font-weight:600; margin-right:8px}
+  .warmup, .recard{border:1px solid var(--rule); border-radius:9px; padding:12px 14px; margin-bottom:14px; background:var(--paper-2)}
+  .warmup.done, .recard.done{opacity:.6}
+  .warmup-h{display:flex; align-items:center; gap:10px}
+  .warmup-t{font-weight:600; flex:1}
+  .wex{display:flex; align-items:center; gap:10px; margin:6px 0; font-size:14px}
+  .wex-q{flex:1; color:var(--muted)}
+  .wex-a{font-family:var(--arabic); font-size:18px; color:var(--ink)}
+  #recBtn.rec-on{background:var(--brick,#B4372A); color:#fff}
+  .dstats{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:6px 0 4px}
+  @media (max-width:560px){ .dstats{grid-template-columns:repeat(2,1fr)} }
+  .dstat{border:1px solid var(--rule); border-radius:9px; padding:12px; text-align:center}
+  .dstat-v{font-size:22px; font-weight:700; color:var(--ink)}
+  .dstat-k{font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); margin-top:3px}
+  .dchart{display:flex; align-items:flex-end; gap:5px; height:120px; padding:6px 2px 0}
+  .dbar{flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end}
+  .dbar i{display:block; width:100%; max-width:22px; background:var(--verdigris); border-radius:3px 3px 0 0; min-height:2px}
+  .dbar-x{font-size:9px; color:var(--muted); margin-top:4px}
+  .dcov{margin:8px 0}
+  .dcov-h{display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin-bottom:4px}
+  .dtrouble{display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--paper-3)}
+  .dtrouble > span[dir="rtl"]{font-family:var(--arabic); font-size:19px; min-width:80px}
+  .dtr-gl{flex:1; color:var(--muted); font-size:14px}
+  .dtr-e{font-family:var(--mono); font-size:11px; color:var(--ochre)}
   @media print {
     .top, .tray, .sidebar, .side-scrim, .bk-noprint { display:none !important; }
     html, body { background:#fff !important; color:#000 !important; }
@@ -1212,8 +1244,16 @@ function route() {
 addEventListener('hashchange', route);
 
 // ---------- home ----------
-function todayISO(){ const d=new Date(); return d.getFullYear()+'-'+
-  String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+// "Today" is Israel civil time everywhere — the plan resets and the news freshens at midnight
+// Jerusalem, regardless of the device's timezone (the daily news is written on Israel time too).
+// en-CA formats as YYYY-MM-DD; a fixed timeZone makes the day boundary Israel-local.
+const _ILDATE = (() => { try { return new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Jerusalem',
+  year: 'numeric', month: '2-digit', day: '2-digit'}); } catch (e) { return null; } })();
+function todayISO(){
+  if (_ILDATE) return _ILDATE.format(new Date());       // e.g. "2026-08-10"
+  const d = new Date(); return d.getFullYear() + '-' +
+    String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
 
 function home(){
   $('back').hidden = true;
@@ -1227,7 +1267,7 @@ function home(){
   let h = '';
   const _pc = planCfg();
   if (_pc) {
-    const day = buildDay(_pc, curPhaseIndex(_pc), today, dueCards().length);
+    const day = getDay(_pc, today, dueCards().length);
     const doneMap = (planLog()[today] && planLog()[today].done) || {};
     const doneN = day.tasks.filter(t => t.id in doneMap).length;
     h += `<div class="hero"><button class="big" onclick="location.hash='/plan'">
@@ -1638,17 +1678,19 @@ function storiesLevel(lvl){
 // is downloaded or re-hosted, and this content is NOT run through the lexicon pipeline, so it's
 // deliberately kept separate from the app's own dialect-verified material. `pl` is the YouTube
 // playlist id; `cat` groups the playlists the way the rest of the app is organised.
+// `phase` = the earliest plan phase (0..6) at which the Plan will start scheduling this playlist,
+// so a beginner's "watch" task is letters/vocab, not a full TV drama. Higher phases unlock the rest.
 const VIDEOS = [
-  {slug:'grammar',  pl:'PLtMbzvT4n03oW8Grw7m4ooYwOvnrYGKW_', title:'Grammar in Levantine Arabic', n:17, cat:'Lessons'},
-  {slug:'verbs',    pl:'PLtMbzvT4n03rz4hTUdJ_oN3-GmJrLdSL0', title:'Verbs in Levantine Arabic', n:7, cat:'Lessons'},
-  {slug:'vocab',    pl:'PLtMbzvT4n03rL_Lnf-xRE8dCDnGM81_95', title:'Vocabulary in Levantine Arabic', n:52, cat:'Lessons'},
-  {slug:'letters',  pl:'PLtMbzvT4n03q7SbY9SxKRC1n7EUBcwyGA', title:'Arabic Letters', n:3, cat:'Lessons'},
-  {slug:'vlogs',    pl:'PLtMbzvT4n03rQo0_pgwoFZ68O5lQc93Yi', title:'Vlogs & Listening Comprehension', n:7, cat:'Listening'},
-  {slug:'drama',    pl:'PLtMbzvT4n03rWi2DHGB6qLZgh9OXTKuIn', title:'Master Mix: Drama with Subtitles', n:16, cat:'Listening'},
-  {slug:'tv',       pl:'PLtMbzvT4n03rs5dniarLMfujIzO6B0J2R', title:'Learn with TV Series', n:11, cat:'Listening'},
-  {slug:'music',    pl:'PLtMbzvT4n03p4hY5Ef6wbl_drHfP0pqYn', title:'Music Resources', n:16, cat:'Listening'},
-  {slug:'culture',  pl:'PLtMbzvT4n03p3N1F0hl-qVGN0g8abfa_u', title:'Cultural Lessons of the Levant', n:10, cat:'Culture & practice'},
-  {slug:'quizzes',  pl:'PLtMbzvT4n03qSWHbWAC1UZBON5-dqXHM3', title:'Quizzes in Levantine Arabic', n:3, cat:'Culture & practice'},
+  {slug:'letters',  pl:'PLtMbzvT4n03q7SbY9SxKRC1n7EUBcwyGA', title:'Arabic Letters', n:3, cat:'Lessons', phase:0},
+  {slug:'vocab',    pl:'PLtMbzvT4n03rL_Lnf-xRE8dCDnGM81_95', title:'Vocabulary in Levantine Arabic', n:52, cat:'Lessons', phase:0},
+  {slug:'grammar',  pl:'PLtMbzvT4n03oW8Grw7m4ooYwOvnrYGKW_', title:'Grammar in Levantine Arabic', n:17, cat:'Lessons', phase:1},
+  {slug:'verbs',    pl:'PLtMbzvT4n03rz4hTUdJ_oN3-GmJrLdSL0', title:'Verbs in Levantine Arabic', n:7, cat:'Lessons', phase:1},
+  {slug:'quizzes',  pl:'PLtMbzvT4n03qSWHbWAC1UZBON5-dqXHM3', title:'Quizzes in Levantine Arabic', n:3, cat:'Culture & practice', phase:1},
+  {slug:'culture',  pl:'PLtMbzvT4n03p3N1F0hl-qVGN0g8abfa_u', title:'Cultural Lessons of the Levant', n:10, cat:'Culture & practice', phase:2},
+  {slug:'vlogs',    pl:'PLtMbzvT4n03rQo0_pgwoFZ68O5lQc93Yi', title:'Vlogs & Listening Comprehension', n:7, cat:'Listening', phase:2},
+  {slug:'drama',    pl:'PLtMbzvT4n03rWi2DHGB6qLZgh9OXTKuIn', title:'Master Mix: Drama with Subtitles', n:16, cat:'Listening', phase:3},
+  {slug:'music',    pl:'PLtMbzvT4n03p4hY5Ef6wbl_drHfP0pqYn', title:'Music Resources', n:16, cat:'Listening', phase:3},
+  {slug:'tv',       pl:'PLtMbzvT4n03rs5dniarLMfujIzO6B0J2R', title:'Learn with TV Series', n:11, cat:'Listening', phase:4},
 ];
 const CHANNEL_URL = 'https://www.youtube.com/@ShamiSpeaker';
 
@@ -1947,6 +1989,75 @@ function phaseReadPool(phase) {
 
 // The one study day of the week that carries a tutor session: the highest-budget day.
 function weeklyTutorDay(cfg) { let best = -1, bestH = -1; for (let i = 0; i < 7; i++) if ((cfg.hours[i] || 0) > bestH) { bestH = cfg.hours[i] || 0; best = i; } return bestH > 0 ? best : -1; }
+// One weekly consolidation day — the lowest-budget study day — leans on review over new material.
+function weeklyReviewDay(cfg) { let best = -1, bestH = Infinity; for (let i = 0; i < 7; i++) { const h = cfg.hours[i] || 0; if (h > 0 && h < bestH) { bestH = h; best = i; } } return best; }
+
+// ---- leveled walkers for grammar / verbs / videos (beginner → fluent) ----
+// Each walks its ORDERED list and serves the next item you haven't done, capped by phase so
+// difficulty ramps. `seen` keys are namespaced (g:/v:/w:) so they never collide with story ids.
+const GRAM_LIST = () => GRAM.map((l, i) => ({key: 'g:' + l.id, id: l.id, title: l.title, link: '/grammar/' + l.id}));
+const VERB_TIER = {sound: 1, doubled: 2, hollow: 2, defective: 3, assimilated: 3, hamzated: 3, irregular: 3, quad: 3};
+let _verbPlan = null;
+function verbPlan() {
+  if (_verbPlan) return _verbPlan;
+  const list = VB.filter(v => v.conj && (v.gloss || '').trim());
+  list.sort((a, b) => (b.core ? 1 : 0) - (a.core ? 1 : 0)                 // core verbs first
+    || (VERB_TIER[a.weak] || 2) - (VERB_TIER[b.weak] || 2)               // then easiest weak class
+    || (a.form === 'I' ? 0 : 1) - (b.form === 'I' ? 0 : 1)               // then Form I before derived
+    || (a.gloss || '').localeCompare(b.gloss || ''));
+  _verbPlan = list.map(v => ({key: 'v:' + v._i, i: v._i, title: v.gloss || v.lemma,
+    ar: (v.past && v.past.ar) || v.lemma, weak: v.weak, tier: VERB_TIER[v.weak] || 2, link: '/verb/' + v._i}));
+  return _verbPlan;
+}
+// Serve the ord-th not-yet-done item from a namespaced list; cycle back once all are seen (mirrors poolPick).
+function walkPick(items, ord, seen) {
+  if (!items.length) return null;
+  const unseen = items.filter(x => !seen.has(x.key));
+  const list = unseen.length ? unseen : items;
+  const pick = list[((ord % list.length) + list.length) % list.length];
+  return {...pick, pos: items.findIndex(x => x.key === pick.key) + 1, total: items.length, allSeen: !unseen.length};
+}
+function pickGrammar(phaseIndex, ord) {
+  const cap = (CUR.grammarCap || [])[Math.min(phaseIndex, 6)] || GRAM.length;
+  return walkPick(GRAM_LIST().slice(0, cap), ord || 0, contentSeen());
+}
+function pickVerb(phaseIndex, ord) {
+  const tier = (CUR.verbTier || [])[Math.min(phaseIndex, 6)] || 3;
+  return walkPick(verbPlan().filter(v => v.tier <= tier), ord || 0, contentSeen());
+}
+function pickVideo(phaseIndex, ord) {
+  const list = VIDEOS.filter(v => (v.phase || 0) <= phaseIndex)
+    .map(v => ({key: 'w:' + v.slug, slug: v.slug, title: v.title, n: v.n, link: '/videos/' + v.slug}));
+  return walkPick(list, ord || 0, contentSeen());
+}
+
+// ---- spaced re-exposure for grammar & verbs (SRS already handles vocab) ----
+// When you first complete a lesson/verb we remember the date; the generator then resurfaces it
+// as a short "review" task after 2, then 7, then 21 days — the expanding intervals memory wants.
+const PRKEY = 'alp.plan.review.v1';
+function planReview() { try { return JSON.parse(localStorage.getItem(PRKEY) || '{}') || {}; } catch (e) { return {}; } }
+function savePlanReview(r) { try { localStorage.setItem(PRKEY, JSON.stringify(r)); } catch (e) {} }
+function noteReview(key) { if (!key) return; const r = planReview();
+  if (!r[key]) { r[key] = {first: todayISO(), last: todayISO(), reps: 0}; savePlanReview(r); } }
+function advanceReview(key, forward) { const r = planReview(), it = r[key]; if (!it) return;
+  it.reps = Math.max(0, (it.reps || 0) + (forward ? 1 : -1)); if (forward) it.last = todayISO(); savePlanReview(r); }
+function dueReviewKeys(dateISO) {
+  const r = planReview(), iv = CUR.reviewDays || [2, 7, 21], out = [];
+  for (const k in r) { const it = r[k], n = it.reps || 0; if (n >= iv.length) continue;
+    if (daysBetween(it.last || it.first, dateISO) >= iv[n]) out.push(k); }
+  return out;                                            // grammar (g:) and verb (v:) keys due for review
+}
+// Build a short review task from a due key.
+function reviewTaskFor(key, k) {
+  const isG = key.startsWith('g:');
+  const t = {id: 'rv-' + k, act: isG ? 'grammar' : 'verbs', label: isG ? 'Grammar review' : 'Verb review',
+    instr: 'You met this before — recall it first, then open to check. Spacing is what makes it stick.',
+    builds: 'Spaced review', minutes: 8, order: 2, source: 'inapp', speak: false, ideal: 'at a desk',
+    review: true, rkey: key, cid: key};
+  if (isG) { const g = gramById(key.slice(2)); if (g) { t.title = 'Review — ' + g.title; t.link = '/grammar/' + g.id; } }
+  else { const v = VB[+key.slice(2)]; if (v) { t.title = 'Review verb — ' + (v.gloss || v.lemma); t.link = '/verb/' + (+key.slice(2)); } }
+  return t.title ? t : null;
+}
 
 // ---- the generator: one day → an ordered, budget-fitted task list ----
 // Pure given (cfg, phaseIndex, dateISO, dueCount): same inputs → same plan (deterministic).
@@ -1977,7 +2088,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
   // repeats it, pulling FRESH content each time (new story, etc.), capped per activity so we
   // don't schedule eight identical reads or a second tutor. Short early phases may not fill a
   // long day — that's honest (you shouldn't cram 3h of sound drills), and we say so via `banked`.
-  const CAPS = {course: 2, sound: 2, encode: 1, tutor: 1, srs: 1, grammar: 2, read: 5, listen: 3, shadow: 3, drill432: 3, produce: 3};
+  const CAPS = {course: 2, sound: 2, encode: 1, tutor: 1, srs: 1, grammar: 1, verbs: 1, watch: 1, read: 5, listen: 3, shadow: 3, drill432: 3, produce: 3};
   const chosen = []; const cnt = {}; let planned = 0;
   for (let pass = 0; pass < 9 && planned < totalMin; pass++) {
     let addedThisPass = false;
@@ -2001,7 +2112,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
       if (sp.act === 'read') { ord = readOrd[sp.pool] || 0; readOrd[sp.pool] = ord + 1; }
       else ord = 0;                                          // pair with the day's current (first) story
     }
-    const t = resolveTask(cfg, sp, ord, k, Math.min(sp.min, remaining), carAvail);
+    const t = resolveTask(cfg, sp, ord, k, Math.min(sp.min, remaining), carAvail, phaseIndex);
     // Never schedule the same item twice in one day — same in-app content, same external resource
     // (e.g. two "Pimsleur" rows), or the same open-ended task ("talk about your day").
     const key = t.act + '|' + (t.link || t.url || t.title || '');
@@ -2013,8 +2124,41 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
   return {rest: false, tasks, phase: ph, totalMin, usedMin: used, banked, phaseIndex, spoken: tasks.some(t => t.speak)};
 }
 
+// ---- freeze the day: build ONCE, then rehydrate ----
+// The user's rule: today's list is fixed. Completing an item checks it off and it stays done —
+// it never swaps in a new one. So the first time a date is opened we generate it, fold in any due
+// spaced-review + the weekly consolidation, and STORE the snapshot under L[date].day; every later
+// render reads that snapshot. Content only advances across days (a fresh date builds the next
+// items from what's still unseen — a missed item simply reappears tomorrow: reflow, for free).
+function getDay(cfg, dateISO, dueCount) {
+  const L = planLog();
+  if (L[dateISO] && L[dateISO].day) return L[dateISO].day;           // frozen — rehydrate
+  const day = buildDay(cfg, curPhaseIndex(cfg), dateISO, dueCount);
+  if (!day.rest) {
+    // spaced review: 1 due item on a normal day, up to 3 on the weekly consolidation day.
+    const isReviewDay = weeklyReviewDay(cfg) === isoToDate(dateISO).getDay();
+    const due = dueReviewKeys(dateISO);
+    const nRev = Math.min(isReviewDay ? 3 : 1, due.length);
+    const revs = [];
+    for (let r = 0; r < nRev; r++) { const rt = reviewTaskFor(due[r], 'r' + r); if (rt) revs.push(rt); }
+    day.tasks = revs.concat(day.tasks);
+    day.tasks.sort((a, b) => (a.order || 3) - (b.order || 3));
+    day.review = isReviewDay;
+    day.totalMin += revs.reduce((s, t) => s + t.minutes, 0);
+  }
+  // Persist only real days (today/past). Future calendar projections stay dynamic.
+  if (dateISO <= todayISO()) {
+    const d = L[dateISO] || (L[dateISO] = {done: {}});
+    d.day = day;
+    for (const kk in L) if (kk !== dateISO && L[kk] && L[kk].day) delete L[kk].day;   // keep the log small
+    savePlanLog(L);
+  }
+  return day;
+}
+
 // Turn a phase-mix spec into a concrete, linkable task. `ord` = which item in a content pool.
-function resolveTask(cfg, sp, ord, k, minutes, carAvail) {
+function resolveTask(cfg, sp, ord, k, minutes, carAvail, phaseIndex) {
+  if (phaseIndex == null) phaseIndex = curPhaseIndex(cfg);
   const A = CUR.activities[sp.act] || {};
   const t = {id: 'k' + k + '-' + sp.act, act: sp.act, label: A.label, instr: A.instr,
     builds: A.builds, minutes, order: A.order || 3, source: sp.src, speak: !!A.speak,
@@ -2054,10 +2198,21 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail) {
   } else if (sp.act === 'srs') {
     t.title = 'Review your due flashcards'; t.link = '/vocab/review';
   } else if (sp.act === 'grammar') {
-    const g = SECTIONS.find(s => s.route === 'grammar');
-    if (g && g.ready) { t.title = 'Grammar lesson'; t.link = '/grammar'; }
-    else { const R = CUR.external.languageTransfer; t.source = 'external'; t.title = R.name; t.url = R.url;
-      t.note = 'Our grammar section is coming; for now, pick up one structure here.'; }
+    const pick = pickGrammar(phaseIndex, ord);
+    if (pick) { t.title = pick.title; t.link = pick.link; t.cid = pick.key; t.rkey = pick.key;
+      t.seq = 'Grammar ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : ''); }
+    else { t.title = 'Grammar lesson'; t.link = '/grammar'; }
+  } else if (sp.act === 'verbs') {
+    const pick = pickVerb(phaseIndex, ord);
+    if (pick) { t.title = 'Verb — ' + pick.title + (pick.ar ? ' · ' + pick.ar : ''); t.link = pick.link;
+      t.cid = pick.key; t.rkey = pick.key;
+      t.seq = (WEAK_INFO[pick.weak] ? WEAK_INFO[pick.weak][0] : 'Verb') + ' · ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : ''); }
+    else { t.title = 'Study a verb'; t.link = '/verbs'; }
+  } else if (sp.act === 'watch') {
+    const pick = pickVideo(phaseIndex, ord);
+    if (pick) { t.title = pick.title; t.link = pick.link; t.cid = pick.key; t.source = 'inapp';
+      t.seq = 'Video playlist · ' + pick.n + ' clip' + (pick.n === 1 ? '' : 's') + (pick.allSeen ? ' · revisiting' : ''); }
+    else { t.title = 'Watch a lesson'; t.link = '/videos'; }
   } else if (sp.act === 'produce') {
     t.title = 'Talk about your day, out loud';
   } else if (sp.act === 'encode') {
@@ -2074,7 +2229,72 @@ function planSection(sub, arg) {
   if (sub === 'new') return planIntake();
   if (!planCfg()) return planWelcome();
   if (sub === 'calendar') return planCalendar();
+  if (sub === 'dashboard') return planDashboard();
   return planToday();
+}
+
+// ---- streak: consecutive days with at least one completed task (frequency is the method) ----
+function planStreak() {
+  const L = planLog();
+  const doneOn = day => { const r = L[day]; return !!(r && r.done && Object.keys(r.done).length); };
+  let d = todayISO(), n = 0;
+  if (!doneOn(d)) d = addDaysISO(d, -1);        // today not started yet → streak runs up to yesterday
+  while (doneOn(d)) { n++; d = addDaysISO(d, -1); }
+  return n;
+}
+const streakChip = () => { const s = planStreak(); return s > 0 ? `<span class="streak">🔥 ${s}-day streak</span>` : ''; };
+
+// ---- daily warm-up: recall a few of YESTERDAY'S items before meeting new material ----
+let _warmEx = [];
+function planWarmupHTML(date, doneMap) {
+  const y = addDaysISO(date, -1), yr = planLog()[y];
+  if (!yr || !yr.day) return '';
+  _warmEx = planExerciseItems(yr.day, y).slice(0, 3);
+  if (!_warmEx.length) return '';
+  const done = 'warmup' in doneMap;
+  let h = `<div class="warmup${done ? ' done' : ''}">
+    <div class="warmup-h"><button class="pcheck" onclick="planToggle('${date}','warmup',3,'',0,'',0)" aria-label="Mark done">${done ? '✓' : ''}</button>
+      <span class="warmup-t">Warm-up — recall yesterday</span><span class="pmin">3m</span></div>
+    <p class="hint" style="margin:2px 0 8px 34px">Say each in Arabic from memory first — a 30-second retrieval primes today.</p>`;
+  h += _warmEx.map((it, i) => `<div class="wex" style="margin-left:34px">
+      <span class="wex-q">${esc(it.en)}</span>
+      <button class="tog" onclick="planWarmShow(${i})">Show</button>
+      <span class="wex-a" id="wex-a-${i}" dir="rtl"></span></div>`).join('');
+  return h + '</div>';
+}
+function planWarmShow(i) { const it = _warmEx[i], el = $('wex-a-' + i); if (it && el) el.textContent = it.ar; }
+
+// ---- record yourself: produce speech, play it back. Local only — nothing is uploaded or kept. ----
+let _rec = {mr: null, chunks: [], url: null, on: false};
+function planRecordHTML(date, doneMap, topic) {
+  const done = 'record' in doneMap;
+  return `<div class="recard${done ? ' done' : ''}">
+    <div class="warmup-h"><button class="pcheck" onclick="planToggle('${date}','record',10,'',0,'',0)" aria-label="Mark done">${done ? '✓' : ''}</button>
+      <span class="warmup-t">Record yourself</span><span class="pmin">10m</span></div>
+    <p class="hint" style="margin:2px 0 8px 34px">${esc(topic)} — record ~30–60s out loud, then play it back and notice what you couldn't say. Stays on your device; nothing is uploaded.</p>
+    <div class="ctl" style="margin-left:34px">
+      <button class="tog go" id="recBtn" onclick="recToggle()">● Record</button>
+      <audio id="recAudio" controls style="display:none;vertical-align:middle"></audio></div>
+    <div class="pt-note" id="recNote" style="margin-left:34px;display:none"></div></div>`;
+}
+async function recToggle() {
+  const btn = $('recBtn'), au = $('recAudio'), note = $('recNote');
+  if (_rec.on && _rec.mr) { _rec.mr.stop(); return; }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({audio: true});
+    _rec.chunks = []; _rec.mr = new MediaRecorder(stream);
+    _rec.mr.ondataavailable = e => { if (e.data.size) _rec.chunks.push(e.data); };
+    _rec.mr.onstop = () => { stream.getTracks().forEach(t => t.stop()); _rec.on = false;
+      if (_rec.url) URL.revokeObjectURL(_rec.url);
+      _rec.url = URL.createObjectURL(new Blob(_rec.chunks, {type: 'audio/webm'}));
+      if (au) { au.src = _rec.url; au.style.display = 'inline-block'; }
+      if (btn) { btn.textContent = '● Record again'; btn.classList.remove('rec-on'); } };
+    _rec.mr.start(); _rec.on = true;
+    if (btn) { btn.textContent = '■ Stop'; btn.classList.add('rec-on'); }
+    if (note) note.style.display = 'none';
+  } catch (e) {
+    if (note) { note.style.display = 'block'; note.textContent = 'Microphone unavailable — allow mic access, or just do it out loud and tick it off.'; }
+  }
 }
 
 function planWelcome() {
@@ -2190,15 +2410,16 @@ function planToday() {
   const date = todayISO();
   const pi = curPhaseIndex(cfg);
   const due = dueCards().length;
-  const day = buildDay(cfg, pi, date, due);
+  const day = getDay(cfg, date, due);
   const L = planLog(); const doneMap = (L[date] && L[date].done) || {};
   const journeyPct = Math.min(100, Math.round(planProgressMin(cfg) / (CUR.totalHours * 60) * 100));
 
   let h = `<div class="pjourney">
       <div class="pj-top"><span>Phase ${day.phase.id + 1} · <b>${esc(day.phase.name)}</b></span>
-        <span class="pj-pct">${journeyPct}% of the way</span></div>
+        <span class="pj-pct">${streakChip()} ${journeyPct}% of the way</span></div>
       <div class="pj-bar"><i style="width:${Math.max(2, journeyPct)}%;background:${PHASE_COLOR[day.phase.id] || 'var(--verdigris)'}"></i></div>
-      <div class="pj-goal">${esc(day.phase.focus)}</div></div>`;
+      <div class="pj-goal">${esc(day.phase.focus)}</div>
+      <div class="ctl" style="margin-top:10px"><button class="tog" onclick="location.hash='/plan/dashboard'">📊 Dashboard</button></div></div>`;
 
   if (day.rest) {
     h += `<div class="empty"><div class="empty-t">Rest day</div>
@@ -2219,7 +2440,10 @@ function planToday() {
      <div class="pt-h-r">${doneN}/${total} done · ${Math.round(day.totalMin / 60 * 10) / 10}h</div></div>
      <div class="pj-bar sm"><i style="width:${total ? Math.round(doneN / total * 100) : 0}%"></i></div>`;
   if (doneN === total && total) h += `<div class="pdone">✓ Done for today — nicely done.</div>`;
+  if (day.review) h += `<div class="pt-note" style="border:1px solid var(--verdigris);border-radius:7px;padding:10px 12px;color:var(--muted);margin-bottom:12px">
+     <b>Review day.</b> Lighter on new material — today leans on re-surfacing what you met this week, which is when it actually sets.</div>`;
 
+  h += planWarmupHTML(date, doneMap);
   h += day.tasks.map(t => planTaskRow(t, date, t.id in doneMap)).join('');
   if (day.banked) h += `<div class="pt-note" style="border:1px solid var(--rule);border-radius:7px;padding:10px 12px;color:var(--muted)">
      That’s a full session for <b>${esc(day.phase.name)}</b> — this early phase is deliberately short, so
@@ -2229,6 +2453,7 @@ function planToday() {
   h += planExtraHTML(cfg, day.phase, date, doneMap, schedReads);
   h += planMoreBtn(date, false);
   h += planExerciseHTML(day, date);
+  if (day.spoken || cfg.speakHome) h += planRecordHTML(date, doneMap, day.phase.focus.split('.')[0]);
   // Only offer the Pimsleur tracker to people who told the intake they have it.
   if (cfg.external && cfg.external.pimsleur) h += pimCardHTML();
   h += planFooterCtls();
@@ -2296,7 +2521,7 @@ function planExtraHTML(cfg, phase, date, doneMap, offset) {
   const pool = phaseReadPool(phase);
   let h = `<div class="sec">Extra practice — you asked for more</div>`;
   for (let j = 0; j < nx; j++) {
-    const t = resolveTask(cfg, {act: 'read', src: 'inapp', pool, min: 20}, offset + j, 0, 20, false);
+    const t = resolveTask(cfg, {act: 'read', src: 'inapp', pool, min: 20}, offset + j, 0, 20, false, curPhaseIndex(cfg));
     t.id = 'x' + j + '-read';                               // stable per-day id for the log
     h += planTaskRow(t, date, t.id in doneMap);
   }
@@ -2312,7 +2537,7 @@ function planTaskRow(t, date, done) {
   const open = t.link ? `<button class="tog" onclick="location.hash='${t.link}'">Open</button>`
     : t.url ? `<a class="tog pext" href="${esc(t.url)}" target="_blank" rel="noopener">Open ${svg('ext')}</a>` : '';
   return `<div class="ptask${done ? ' done' : ''}">
-      <button class="pcheck" onclick="planToggle('${date}','${esc(t.id)}',${t.minutes},'${t.cid || ''}',${t.pim ? 1 : 0})" aria-label="Mark done">${done ? '✓' : ''}</button>
+      <button class="pcheck" onclick="planToggle('${date}','${esc(t.id)}',${t.minutes},'${cssq(t.cid || '')}',${t.pim ? 1 : 0},'${cssq(t.rkey || '')}',${t.review ? 1 : 0})" aria-label="Mark done">${done ? '✓' : ''}</button>
       <div class="pt-main">
         <div class="pt-top"><span class="pt-title">${esc(t.title)}</span><span class="pmin">${t.minutes}m</span></div>
         ${t.seq ? `<div class="pt-seq">${esc(t.seq)}</div>` : ''}
@@ -2322,13 +2547,15 @@ function planTaskRow(t, date, done) {
         <div class="pt-act">${open}${srcPill}</div>
       </div></div>`;
 }
-function planToggle(date, tid, minutes, cid, isPim) {
+function planToggle(date, tid, minutes, cid, isPim, rkey, isReview) {
   const L = planLog(); const d = L[date] || (L[date] = {done: {}}); d.done = d.done || {};
   const nowDone = d.done[tid] == null;
-  if (nowDone) d.done[tid] = minutes; else delete d.done[tid];
+  if (nowDone) d.done[tid] = +minutes || 0; else delete d.done[tid];
   savePlanLog(L);
-  if (cid) markSeen(cid, nowDone);                          // checking a reading task walks the path forward
+  if (cid) markSeen(cid, nowDone);                          // checking a content task walks the path forward
   if (isPim) pimAdvance(nowDone);                           // finishing a Pimsleur lesson moves you on
+  if (rkey) { if (isReview) advanceReview(rkey, nowDone);   // a review rep → widen its next interval
+              else if (nowDone) noteReview(rkey); }         // first time learning it → schedule reviews
   planToday();
 }
 // ---- Pimsleur progress ---------------------------------------------------------------
@@ -2406,8 +2633,79 @@ function pimCardHTML() {
 
 function planFooterCtls() {
   return `<div class="ctl" style="margin-top:18px">
+     <button class="tog" onclick="location.hash='/plan/dashboard'">📊 Dashboard</button>
      <button class="tog" onclick="location.hash='/plan/calendar'">See the plan ahead</button>
      <button class="tog" onclick="location.hash='/plan/new'">Adjust my time</button></div>`;
+}
+
+// ---- dashboard: the numbers that keep you honest (activity, streak, coverage, trouble cards) ----
+function planDashboard() {
+  const cfg = planCfg(); if (!cfg) { location.hash = '/plan'; return; }
+  $('title').textContent = 'Dashboard';
+  const L = planLog(), seen = contentSeen();
+  const totalH = Math.round(loggedMinutes() / 60 * 10) / 10;
+  const pct = Math.min(100, Math.round(planProgressMin(cfg) / (CUR.totalHours * 60) * 100));
+  const flu = projDateISO(cfg, CUR.totalHours * 60);
+  const streak = planStreak();
+  const seenPre = pre => [...seen].filter(k => k.startsWith(pre)).length;
+
+  // 14-day activity (minutes completed per day)
+  const bars14 = []; for (let i = 13; i >= 0; i--) { const d = addDaysISO(todayISO(), -i);
+    const done = (L[d] && L[d].done) || {}; let m = 0; for (const k in done) m += done[k] || 0; bars14.push({d, m}); }
+  const maxM = Math.max(30, ...bars14.map(x => x.m));
+  const chart = bars14.map(x => `<div class="dbar" title="${x.d}: ${x.m} min"><i style="height:${Math.max(2, Math.round(x.m / maxM * 100))}%${x.m ? '' : ';opacity:.25'}"></i>
+      <span class="dbar-x">${isoToDate(x.d).getDate()}</span></div>`).join('');
+
+  // content coverage
+  const stories = STORY_LEVELS.map(([k, label]) => ({label, done: storiesAt(k).filter(t => seen.has(t.id)).length, tot: storiesAt(k).length}));
+  const gTot = GRAM.length, gDone = seenPre('g:');
+  const vDone = seenPre('v:'), wDone = seenPre('w:'), wTot = VIDEOS.length;
+  const cover = (label, done, tot) => `<div class="dcov"><div class="dcov-h"><span>${label}</span><span>${done}${tot ? ' / ' + tot : ''}</span></div>
+     <div class="pj-bar sm"><i style="width:${tot ? Math.round(done / tot * 100) : (done ? 100 : 0)}%"></i></div></div>`;
+
+  // vocab deck
+  const cards = [...marked.values()];
+  const dueN = dueCards().length;
+  const mature = cards.filter(c => (c.interval || 0) >= 21).length;
+  const learning = cards.length - mature;
+  const trouble = cards.filter(c => (c.reps || 0) > 0).sort((a, b) => (a.ease || 2.5) - (b.ease || 2.5)).slice(0, 5);
+
+  const stat = (k, v) => `<div class="dstat"><div class="dstat-v">${v}</div><div class="dstat-k">${k}</div></div>`;
+  let h = `<div class="dstats">
+      ${stat('Day streak', '🔥 ' + streak)}
+      ${stat('Hours logged', totalH)}
+      ${stat('Journey', pct + '%')}
+      ${stat('Cards due', dueN)}
+    </div>
+    <div class="pj-goal" style="margin:2px 0 18px">Phase ${curPhaseIndex(cfg) + 1} · <b>${esc(CUR.phases[curPhaseIndex(cfg)].name)}</b>${flu ? ' · on pace for ~' + fmtMY(flu) : ''}</div>
+
+    <div class="sec">Last 14 days</div>
+    <div class="dchart">${chart}</div>
+
+    <div class="sec" style="margin-top:22px">Content covered</div>`;
+  stories.forEach(s => h += cover(s.label + ' stories', s.done, s.tot));
+  h += cover('Grammar lessons', gDone, gTot);
+  h += cover('Verbs practiced', vDone, 0);
+  h += cover('Video playlists', wDone, wTot);
+
+  h += `<div class="sec" style="margin-top:22px">Flashcards</div>
+    <div class="dstats">
+      ${stat('Total', cards.length)}
+      ${stat('Learning', learning)}
+      ${stat('Mature', mature)}
+      ${stat('Due now', dueN)}
+    </div>`;
+  if (trouble.length) {
+    h += `<div class="sec" style="margin-top:18px">Trouble cards — the ones fighting you</div>`;
+    h += trouble.map(c => `<div class="dtrouble"><span dir="rtl">${esc(c.vocalized || c.lemma)}</span>
+       <span class="dtr-gl">${esc(c.gloss || '')}</span>
+       <span class="dtr-e">ease ${(c.ease || 2.5).toFixed(2)}</span>
+       <button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))" aria-label="Pronounce">${svg('spk')}</button></div>`).join('');
+  } else {
+    h += `<p class="hint">No flashcards yet — tap any word in a story and hit “Don’t know it” to start a deck.</p>`;
+  }
+  h += `<div class="ctl" style="margin-top:20px"><button class="tog" onclick="location.hash='/plan'">← Back to today</button></div>`;
+  $('view').innerHTML = h;
 }
 
 // ---- the plan ahead: projection + a 4-week look-ahead ----
@@ -3670,6 +3968,12 @@ async function acctSyncNow() { await pushProgress(); await pullMerge();
 
 count();
 route();
+
+// Register the service worker so the app is installable to the home screen and works offline.
+// The SW fetches the HTML network-first, so a new deploy is never masked by a stale cache.
+if ('serviceWorker' in navigator) {
+  addEventListener('load', () => navigator.serviceWorker.register('service-worker.js').catch(() => {}));
+}
 </script>
 </body>
 </html>

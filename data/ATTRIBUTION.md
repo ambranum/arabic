@@ -60,3 +60,13 @@ so the app's own dialect-verified material stays distinct from this broader-Leva
 Only the public playlist ids are stored (in `app/index.html`). Each playlist credits the channel
 and links back to it. This is embedding/linking under YouTube's Terms of Service — not
 redistribution of the creator's content.
+
+---
+
+# Plan dashboard / streak / notification model — arabic-drill (MIT), design credit.
+
+The Plan's **dashboard, streak, and the (follow-up) lock-screen Web-Push model** are inspired by
+`github.com/willmanidis2/arabic-drill` (MIT) — its home-screen "due count, streak, session
+modes", its analytics page (14-day chart, deck spread, trouble cards), and its VAPID-signed Web
+Push flow that turns due work into a real lock-screen notification. No code or content is copied
+from that repo; only the interaction design is credited here.
