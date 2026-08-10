@@ -706,6 +706,9 @@
   /* reader in paragraph mode (books) */
   .rd-para .ar{line-height:2}
   .rd-para{margin-bottom:20px}
+  /* the "whole passage" header that sits above the split sentences */
+  .para-head{padding-bottom:22px; border-bottom:1px solid var(--paper-3); margin-bottom:26px}
+  .pl-cap{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:10px}
   @media print {
     .top, .tray, .sidebar, .side-scrim, .bk-noprint { display:none !important; }
     html, body { background:#fff !important; color:#000 !important; }
@@ -906,6 +909,7 @@ function resetPlayer(pl) {
 }
 
 function playSrc(pl) {
+  paraStop();                             // an inline line and the paragraph never play at once
   const src = pl.dataset.src;
   if (activeSrc !== src) {
     resetPlayer(activePlayer());          // hand the audio over from the old line
@@ -949,6 +953,7 @@ function seekTo(pl, pct) {
 function applySpeed(v, pl) {
   setSpeed(v);
   A.playbackRate = v;
+  PA.playbackRate = v;
   document.querySelectorAll('.pspd .sb').forEach(b =>
     b.setAttribute('aria-pressed', String(parseFloat(b.dataset.spd) === v)));
 }
@@ -968,6 +973,93 @@ function player(src) {
           `<button class="sb" data-spd="${v}" aria-pressed="${SPEED===v}">${t}</button>`).join('')}
       </div>
     </div>`;
+}
+
+// ---------- paragraph player ----------
+// The whole passage read as one continuous take. There is no single combined MP3 — the
+// audio is per-sentence — so this plays the sentence clips back-to-back behind one transport
+// and presents them as a single timeline (cumulative time, one scrubber). It has its own
+// <audio> (PA) so it never fights the per-line players, which keep the shared A element.
+const PA = new Audio();
+PA.preservesPitch = true; PA.mozPreservesPitch = true; PA.webkitPreservesPitch = true;
+let PARA = null;   // {el, srcs:[url…], dur:[secs…], i}  — one paragraph player per reader
+
+// Same component as player(), minus a data-src: it's driven by index, not by one clip.
+function paraPlayer() {
+  return `<div class="player para" data-para="1" dir="ltr">
+      <button class="pp" aria-label="Play / pause the whole passage"></button>
+      <span class="t-cur">0:00</span>
+      <input class="seek" type="range" min="0" max="100" value="0" step="0.5"
+             aria-label="Seek" style="--fill:0%">
+      <span class="t-dur">0:00</span>
+      <div class="pspd" role="group" aria-label="Speed">
+        ${SPEEDS.map(([v,t]) =>
+          `<button class="sb" data-spd="${v}" aria-pressed="${SPEED===v}">${t}</button>`).join('')}
+      </div>
+    </div>`;
+}
+
+function paraStop() { PA.pause(); if (PARA) PARA.el.classList.remove('playing'); }
+
+function paraSetup(el, srcs) {
+  paraStop();
+  PARA = { el, srcs, dur: srcs.map(() => 0), i: 0 };
+  // Preload each clip's duration so the combined scrubber and total time are accurate from
+  // the first play rather than only after a full listen-through.
+  srcs.forEach((src, k) => { const a = new Audio(); a.preload = 'metadata';
+    a.addEventListener('loadedmetadata', () => { if (PARA) { PARA.dur[k] = a.duration || 0; paraRecalc(); } });
+    a.src = src; });
+}
+const paraTotal = () => PARA ? PARA.dur.reduce((x, y) => x + (isFinite(y) ? y : 0), 0) : 0;
+function paraRecalc() { if (!PARA) return; const tot = paraTotal();
+  const d = PARA.el.querySelector('.t-dur'); if (d && tot) d.textContent = fmt(tot); }
+
+function paraPlayIdx() {
+  resetPlayer(activePlayer()); A.pause(); activeSrc = null;   // take audio off the inline lines
+  PA.src = PARA.srcs[PARA.i]; PA.playbackRate = SPEED;
+  PA.play().catch(() => {});
+  PARA.el.classList.add('playing');
+}
+function paraToggle() {
+  if (!PARA || !PARA.srcs.length) return;
+  if (!PA.paused) { PA.pause(); PARA.el.classList.remove('playing'); } else paraPlayIdx();
+}
+function paraReset() { if (!PARA) return; PARA.i = 0; PARA.el.classList.remove('playing');
+  const sk = PARA.el.querySelector('.seek'); if (sk) { sk.value = 0; sk.style.setProperty('--fill', '0%'); }
+  const c = PARA.el.querySelector('.t-cur'); if (c) c.textContent = '0:00'; }
+
+PA.addEventListener('ended', () => {
+  if (!PARA) return;
+  PARA.dur[PARA.i] = PA.duration || PARA.dur[PARA.i]; paraRecalc();
+  if (PARA.i < PARA.srcs.length - 1) {          // roll straight into the next sentence
+    PARA.i++; PA.src = PARA.srcs[PARA.i]; PA.playbackRate = SPEED; PA.play().catch(() => {});
+  } else paraReset();
+});
+PA.addEventListener('timeupdate', () => {
+  if (!PARA) return;
+  const before = PARA.dur.slice(0, PARA.i).reduce((x, y) => x + (isFinite(y) ? y : 0), 0);
+  const elapsed = before + PA.currentTime, tot = paraTotal();
+  const pct = tot > 0 ? elapsed / tot * 100
+    : (PARA.i + (PA.duration ? PA.currentTime / PA.duration : 0)) / PARA.srcs.length * 100;
+  const sk = PARA.el.querySelector('.seek');
+  if (sk && document.activeElement !== sk) { sk.value = pct; sk.style.setProperty('--fill', pct + '%'); }
+  const c = PARA.el.querySelector('.t-cur'); if (c) c.textContent = fmt(elapsed);
+});
+PA.addEventListener('loadedmetadata', () => {
+  if (PARA) { PARA.dur[PARA.i] = PA.duration || PARA.dur[PARA.i]; paraRecalc(); } });
+PA.addEventListener('pause', () => { if (PARA) PARA.el.classList.remove('playing'); });
+
+// Map a scrubber percentage onto (sentence, offset-within-sentence) using the known durations.
+function paraSeek(pct) {
+  if (!PARA) return; const tot = paraTotal(); if (!tot) return;
+  let target = pct / 100 * tot, acc = 0, k = 0;
+  for (; k < PARA.srcs.length - 1; k++) { const d = PARA.dur[k] || 0; if (acc + d >= target) break; acc += d; }
+  PARA.i = k; const within = Math.max(0, target - acc);
+  const wasPlaying = !PA.paused;
+  PA.src = PARA.srcs[k]; PA.playbackRate = SPEED;
+  const go = () => { PA.currentTime = Math.min(within, PA.duration || within); if (wasPlaying || PARA.el.classList.contains('playing')) PA.play().catch(() => {}); };
+  if (PA.readyState >= 1) go(); else PA.addEventListener('loadedmetadata', go, { once: true });
+  const sk = PARA.el.querySelector('.seek'); if (sk) sk.style.setProperty('--fill', pct + '%');
 }
 
 const VOCSRC = {
@@ -1077,6 +1169,7 @@ function route() {
   if (typeof closeSide === 'function') closeSide();
   if (typeof spkStop === 'function') spkStop();           // stop any running speaking timer
   if (typeof gsStop === 'function') { gsStop(); _gs = null; }   // stop guided-shadow audio
+  if (typeof paraStop === 'function') paraStop();               // stop the paragraph player
   const cw = $('cw'); if (cw) cw.classList.remove('on');   // close the word sheet on nav
   const h = location.hash.slice(1) || '/';
   const [, kind, id, arg] = h.split('/');
@@ -2683,6 +2776,8 @@ function card(t, kind){
 let cur = null;
 function reader(t) {
   cur = t;
+  PARA = null; paraStop();                // a fresh reader starts with no paragraph audio
+  let paraClips = [];
   $('back').hidden = false;
   $('title').textContent = t.title.en;
   let h = `<div class="ctl">
@@ -2715,6 +2810,16 @@ function reader(t) {
     t.sentences.forEach((s, si) => { if (cur_p !== null && s.p !== cur_p) flush(); cur_p = s.p; group.push(si); });
     flush();
   } else {
+    // The whole passage first, as one flowing paragraph with one continuous player — then the
+    // exact same material split sentence-by-sentence below. Same words (so vowels/marked/tap
+    // all work), same English peek, same transport UI.
+    paraClips = t.sentences.map(s => s.audio ? au(s.audio) : null).filter(Boolean);
+    h += '<div class="sent rd-para para-head"><div class="pl-cap">Whole passage</div><div class="ar">';
+    t.sentences.forEach((s, si) => s.words.forEach((w, wi) => { h += wspan(w, si, wi); }));
+    h += '</div><p class="en">' + t.sentences.map(s => esc(s.en)).join(' ') + '</p>';
+    if (paraClips.length) h += paraPlayer();
+    h += `<button class="peek" data-peek="0">Peek at English</button></div>`;
+
     t.sentences.forEach((s, si) => {
       h += '<div class="sent"><div class="ar">';
       s.words.forEach((w, wi) => { h += wspan(w, si, wi); });
@@ -2740,6 +2845,8 @@ function reader(t) {
   // a 1200px line of text is hard to read. Grids and lists still use the full width.
   $('view').innerHTML = '<div class="reading">' + h + '</div>' + bnav + '</div>';
   paint();
+  const pel = $('view').querySelector('.player.para');
+  if (pel && paraClips.length) paraSetup(pel, paraClips);
 
   $('tVoc').onclick = e => {
     const on = e.target.getAttribute('aria-pressed') !== 'true';
@@ -3264,7 +3371,8 @@ $('exp').onclick = () => ankiExport();
 // handler serves reader, drill, and word cards alike.
 $('view').addEventListener('click', e => {
   const pp = e.target.closest('.player .pp');
-  if (pp) { toggleSrc(pp.closest('.player')); return; }   // play / pause
+  if (pp) { const pl = pp.closest('.player');
+    if (pl.dataset.para) paraToggle(); else toggleSrc(pl); return; }   // play / pause
   // Only the inline players tag their buttons with data-spd. The guided-shadow view reuses
   // the same .pspd markup but drives itself through gsSpeed(), so without this guard the
   // delegated handler also fired there, parsed undefined, and wrote NaN over the saved
@@ -3285,7 +3393,8 @@ $('view').addEventListener('click', e => {
 });
 $('view').addEventListener('input', e => {
   const sk = e.target.closest('.player .seek');
-  if (sk) seekTo(sk.closest('.player'), parseFloat(sk.value));
+  if (sk) { const pl = sk.closest('.player');
+    if (pl.dataset.para) paraSeek(parseFloat(sk.value)); else seekTo(pl, parseFloat(sk.value)); }
 });
 
 // ---------- accounts & cloud sync (Supabase) ----------
