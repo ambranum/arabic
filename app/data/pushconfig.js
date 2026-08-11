@@ -11,4 +11,4 @@
 //   pip3 install pywebpush && python3 pipeline/gen_vapid.py
 //
 // Until this is filled in, the app simply hides the reminders toggle — everything else works.
-window.PUSH_PUBLIC_KEY = "";
+window.PUSH_PUBLIC_KEY = "BJ4qcicnF5irtdJLWkIh0O4mVkL2ByHEbYq2dpKssCmSKN4NRLYAHR9grQAzFbNwq6hD7yl0wh9bVtGT4M8ofio";
