@@ -3807,7 +3807,7 @@ const _sb = (window.SUPA && window.supabase)
       {auth: {persistSession: true, autoRefreshToken: true, detectSessionInUrl: true}})
   : null;
 let _user = null, _syncing = false, _applyingRemote = false, _syncTimer = null;
-let _loginEmail = '', _linkSent = false, _navdAfterLogin = false;
+let _loginEmail = '', _navdAfterLogin = false;
 const SYNC_AT = 'alp.sync.at';
 
 function collectProgress() {
@@ -3931,24 +3931,16 @@ function accountSection() {
         study plan, and reading progress stay in step. Signed out, the app still works — it just keeps
         everything on this one device.</div>
       <div id="push-card" style="margin-top:14px"></div>`;
-  } else if (_linkSent) {
-    h = `<div class="hero"><div class="big">
-        <div class="k">Check your email</div><div class="t">Enter your sign-in code</div>
-        <div class="s">We emailed a 6-digit code to <b>${esc(_loginEmail)}</b>. Type it here to sign in —
-          this works right inside the app, no link to open.</div></div></div>
-      <input id="acct-code" class="vsearch" type="text" inputmode="numeric" autocomplete="one-time-code"
-        maxlength="6" placeholder="123456" onkeydown="if(event.key==='Enter')acctVerifyCode()">
-      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctVerifyCode()">Verify code</button>
-        <button class="tog" onclick="acctSendCode()">Resend</button>
-        <button class="tog" onclick="_linkSent=false;accountSection()">Use a different email</button></div>
-      <div id="acct-msg" class="hint" style="margin-top:10px">On a computer? The same email also has a one-tap link you can click instead.</div>`;
   } else {
     h = `<div class="hero"><div class="big">
         <div class="k">Sync across devices</div><div class="t">Sign in to save your progress</div>
-        <div class="s">Enter your email and we’ll send a 6-digit sign-in code — no password to create or
-          remember. Your flashcards, study plan, and reading progress will then follow you to any device.</div></div></div>
+        <div class="s">Use an email and a password — it signs you in right here in the app, phone or
+          computer, and your flashcards, study plan and reading progress follow you across them.</div></div></div>
       <input id="acct-email" class="vsearch" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
-      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSendCode()">Email me a code</button></div>
+      <input id="acct-pass" class="vsearch" type="password" autocomplete="current-password"
+        placeholder="Password (6+ characters)" style="margin-top:8px" onkeydown="if(event.key==='Enter')acctSignIn()">
+      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSignIn()">Sign in</button>
+        <button class="tog" onclick="acctSignUp()">Create account</button></div>
       <div id="acct-msg" class="hint" style="margin-top:10px"></div>
       <div class="note">Signed out, everything works and stays on this device. Signing in just adds cloud
         backup + sync — you can sign out any time.</div>
@@ -3957,28 +3949,30 @@ function accountSection() {
   $('view').innerHTML = h;
   renderPushCard();
 }
-async function acctSendCode() {
-  const email = (($('acct-email') || {}).value || _loginEmail || '').trim();
-  const msg = $('acct-msg');
-  if (!email) { if (msg) msg.textContent = 'Enter your email first.'; return; }
-  if (msg) msg.textContent = 'Sending…';
-  // Sends an OTP. The email carries a 6-digit CODE ({{ .Token }} in the Supabase email template) —
-  // typed into the app, so it works inside a standalone iOS PWA where a magic LINK would open Safari
-  // instead. The same email still includes the one-tap link for desktop use.
-  const {error} = await _sb.auth.signInWithOtp({email,
-    options: {shouldCreateUser: true, emailRedirectTo: location.origin + location.pathname}});
-  if (error) { if (msg) msg.textContent = 'Couldn’t send it: ' + error.message; return; }
-  _loginEmail = email; _linkSent = true; accountSection();
+// Email + password. This is the one method that works inside an installed iOS PWA: no email round
+// trip and no magic LINK (which would open Safari, a separate storage jar, so the PWA never gets the
+// session). Sign-up needs Supabase Auth → Email → "Confirm email" OFF, so the account is usable at
+// once; with it on, signUp returns no session until the (template-gated) confirmation email is used.
+function _acctCreds() {
+  return {email: (($('acct-email') || {}).value || '').trim(), pass: (($('acct-pass') || {}).value || '')};
 }
-async function acctVerifyCode() {
-  const code = (($('acct-code') || {}).value || '').replace(/\D/g, '');
-  const msg = $('acct-msg');
-  if (code.length < 6) { if (msg) msg.textContent = 'Enter the 6-digit code from the email.'; return; }
-  if (msg) msg.textContent = 'Verifying…';
-  const {error} = await _sb.auth.verifyOtp({email: _loginEmail, token: code, type: 'email'});
-  // Success fires onAuthStateChange → onAuth(), which re-renders the account page as signed-in.
-  if (error) { if (msg) msg.textContent = 'That code didn’t work — check it or resend: ' + error.message; }
-  else { _linkSent = false; }
+async function acctSignIn() {
+  const {email, pass} = _acctCreds(), msg = $('acct-msg');
+  if (!email || !pass) { if (msg) msg.textContent = 'Enter your email and password.'; return; }
+  if (msg) msg.textContent = 'Signing in…';
+  const {error} = await _sb.auth.signInWithPassword({email, password: pass});
+  if (error) { if (msg) msg.textContent = /invalid login/i.test(error.message)
+    ? 'Wrong email or password. New here? Tap “Create account”.' : 'Couldn’t sign in: ' + error.message; }
+  // success → onAuthStateChange → onAuth() re-renders as signed-in
+}
+async function acctSignUp() {
+  const {email, pass} = _acctCreds(), msg = $('acct-msg');
+  if (!email || pass.length < 6) { if (msg) msg.textContent = 'Enter an email and a password of at least 6 characters.'; return; }
+  if (msg) msg.textContent = 'Creating your account…';
+  const {data, error} = await _sb.auth.signUp({email, password: pass});
+  if (error) { if (msg) msg.textContent = 'Couldn’t create the account: ' + error.message; return; }
+  if (!data.session && msg) msg.textContent = 'Account created — now tap “Sign in”. (If it asks you to confirm by email, turn off Auth → Email → “Confirm email” in Supabase.)';
+  // if a session came back (Confirm email OFF) → onAuth() re-renders as signed-in
 }
 async function acctSignOut() { try { await _sb.auth.signOut(); } catch (e) {} _user = null; accountSection(); }
 
