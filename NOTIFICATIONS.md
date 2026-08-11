@@ -18,11 +18,13 @@ in the repo.
 ## Setup
 
 ### 1. Generate a VAPID key pair
-Easiest:
+No Node needed — use the Python generator (install the one dependency first):
 ```bash
-npx web-push generate-vapid-keys
+pip3 install pywebpush
+python3 pipeline/gen_vapid.py
 ```
-It prints a **Public Key** and a **Private Key** (both base64url strings).
+It prints a **PUBLIC KEY** and a **PRIVATE KEY** (both single-line base64url). The private key is
+yours to keep — it's only printed so you can copy it into a GitHub secret; nothing is sent anywhere.
 
 ### 2. Put the PUBLIC key in the app
 Edit [`app/data/pushconfig.js`](app/data/pushconfig.js) and set:
