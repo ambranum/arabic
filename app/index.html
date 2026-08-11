@@ -3933,20 +3933,22 @@ function accountSection() {
       <div id="push-card" style="margin-top:14px"></div>`;
   } else if (_linkSent) {
     h = `<div class="hero"><div class="big">
-        <div class="k">Check your email</div><div class="t">Sign-in link sent</div>
-        <div class="s">We emailed a one-tap sign-in link to <b>${esc(_loginEmail)}</b>. Open that email and tap
-          <b>Sign in</b> — it brings you back here, signed in. Open it on this device or another.</div></div></div>
-      <div class="ctl"><button class="tog" onclick="acctSendLink()">Resend link</button>
+        <div class="k">Check your email</div><div class="t">Enter your sign-in code</div>
+        <div class="s">We emailed a 6-digit code to <b>${esc(_loginEmail)}</b>. Type it here to sign in —
+          this works right inside the app, no link to open.</div></div></div>
+      <input id="acct-code" class="vsearch" type="text" inputmode="numeric" autocomplete="one-time-code"
+        maxlength="6" placeholder="123456" onkeydown="if(event.key==='Enter')acctVerifyCode()">
+      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctVerifyCode()">Verify code</button>
+        <button class="tog" onclick="acctSendCode()">Resend</button>
         <button class="tog" onclick="_linkSent=false;accountSection()">Use a different email</button></div>
-      <div id="acct-msg" class="hint" style="margin-top:10px">Opened the link in a different tab? This page
-        updates on its own — or just reload it.</div>`;
+      <div id="acct-msg" class="hint" style="margin-top:10px">On a computer? The same email also has a one-tap link you can click instead.</div>`;
   } else {
     h = `<div class="hero"><div class="big">
         <div class="k">Sync across devices</div><div class="t">Sign in to save your progress</div>
-        <div class="s">Enter your email and we’ll send a one-tap sign-in link — no password to create or
+        <div class="s">Enter your email and we’ll send a 6-digit sign-in code — no password to create or
           remember. Your flashcards, study plan, and reading progress will then follow you to any device.</div></div></div>
       <input id="acct-email" class="vsearch" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
-      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSendLink()">Email me a sign-in link</button></div>
+      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSendCode()">Email me a code</button></div>
       <div id="acct-msg" class="hint" style="margin-top:10px"></div>
       <div class="note">Signed out, everything works and stays on this device. Signing in just adds cloud
         backup + sync — you can sign out any time.</div>
@@ -3955,16 +3957,28 @@ function accountSection() {
   $('view').innerHTML = h;
   renderPushCard();
 }
-async function acctSendLink() {
+async function acctSendCode() {
   const email = (($('acct-email') || {}).value || _loginEmail || '').trim();
   const msg = $('acct-msg');
   if (!email) { if (msg) msg.textContent = 'Enter your email first.'; return; }
   if (msg) msg.textContent = 'Sending…';
-  // Works with Supabase's DEFAULT email (a magic link) — no custom SMTP or template edit needed.
+  // Sends an OTP. The email carries a 6-digit CODE ({{ .Token }} in the Supabase email template) —
+  // typed into the app, so it works inside a standalone iOS PWA where a magic LINK would open Safari
+  // instead. The same email still includes the one-tap link for desktop use.
   const {error} = await _sb.auth.signInWithOtp({email,
     options: {shouldCreateUser: true, emailRedirectTo: location.origin + location.pathname}});
-  if (error) { if (msg) msg.textContent = 'Couldn’t send the link: ' + error.message; return; }
+  if (error) { if (msg) msg.textContent = 'Couldn’t send it: ' + error.message; return; }
   _loginEmail = email; _linkSent = true; accountSection();
+}
+async function acctVerifyCode() {
+  const code = (($('acct-code') || {}).value || '').replace(/\D/g, '');
+  const msg = $('acct-msg');
+  if (code.length < 6) { if (msg) msg.textContent = 'Enter the 6-digit code from the email.'; return; }
+  if (msg) msg.textContent = 'Verifying…';
+  const {error} = await _sb.auth.verifyOtp({email: _loginEmail, token: code, type: 'email'});
+  // Success fires onAuthStateChange → onAuth(), which re-renders the account page as signed-in.
+  if (error) { if (msg) msg.textContent = 'That code didn’t work — check it or resend: ' + error.message; }
+  else { _linkSent = false; }
 }
 async function acctSignOut() { try { await _sb.auth.signOut(); } catch (e) {} _user = null; accountSection(); }
 
