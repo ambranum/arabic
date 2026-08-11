@@ -1,0 +1,43 @@
+name: Practice reminders
+
+# Lock-screen Web Push nudges. Two quiet times a day; the sender skips anyone who already practised
+# today (Israel), so it never nags. GitHub cron is UTC with no DST — these land mid-morning and
+# evening in Israel (UTC+2/+3) year-round.
+on:
+  schedule:
+    - cron: '30 6 * * *'     # ~08:30–09:30 Israel
+    - cron: '0 17 * * *'     # ~19:00–20:00 Israel
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Send to everyone (ignore "already practised today")'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: push-reminders
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Send reminders
+        env:
+          # All four are GitHub Actions secrets — never committed. See NOTIFICATIONS.md for setup.
+          SUPABASE_URL:          ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE: ${{ secrets.SUPABASE_SERVICE_ROLE }}
+          VAPID_PRIVATE_KEY:     ${{ secrets.VAPID_PRIVATE_KEY }}
+          VAPID_SUBJECT:         ${{ secrets.VAPID_SUBJECT }}
+        run: >
+          python3 pipeline/send_push.py
+          ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.force == 'true') && '--force' || '' }}

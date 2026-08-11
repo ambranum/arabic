@@ -825,6 +825,7 @@
 <script src="data/bible-index.js"></script>
 <script src="vendor/supabase.js"></script>
 <script src="data/supaconfig.js"></script>
+<script src="data/pushconfig.js"></script>
 <script>
 // ---------- persistence: the memorization deck ----------
 // localStorage, on this device, no server. Each word you "don't know" becomes a CARD keyed
@@ -3928,7 +3929,8 @@ function accountSection() {
         <button class="tog" onclick="acctSignOut()">Sign out</button></div>
       <div class="note">Sign in with the same email on your phone and your computer, and your flashcards,
         study plan, and reading progress stay in step. Signed out, the app still works — it just keeps
-        everything on this one device.</div>`;
+        everything on this one device.</div>
+      <div id="push-card" style="margin-top:14px"></div>`;
   } else if (_linkSent) {
     h = `<div class="hero"><div class="big">
         <div class="k">Check your email</div><div class="t">Sign-in link sent</div>
@@ -3947,9 +3949,11 @@ function accountSection() {
       <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSendLink()">Email me a sign-in link</button></div>
       <div id="acct-msg" class="hint" style="margin-top:10px"></div>
       <div class="note">Signed out, everything works and stays on this device. Signing in just adds cloud
-        backup + sync — you can sign out any time.</div>`;
+        backup + sync — you can sign out any time.</div>
+      <div id="push-card" style="margin-top:14px"></div>`;
   }
   $('view').innerHTML = h;
+  renderPushCard();
 }
 async function acctSendLink() {
   const email = (($('acct-email') || {}).value || _loginEmail || '').trim();
@@ -3963,6 +3967,68 @@ async function acctSendLink() {
   _loginEmail = email; _linkSent = true; accountSection();
 }
 async function acctSignOut() { try { await _sb.auth.signOut(); } catch (e) {} _user = null; accountSection(); }
+
+// ---- push notifications: lock-screen practice reminders --------------------------------------
+// Web Push. The browser subscribes with the VAPID PUBLIC key; we store the subscription in Supabase
+// (`push_subscriptions`); a scheduled GitHub Action (pipeline/send_push.py) signs and sends the
+// reminders with the VAPID PRIVATE key. That private key and the Supabase service_role key live ONLY
+// in GitHub secrets — never in this file. iOS delivers web push ONLY after the app is added to the
+// Home Screen (a PWA), on iOS 16.4+, with permission granted.
+const PUSH_PUB = ((window.PUSH_PUBLIC_KEY || '') + '').trim();
+const pushConfigured = () => PUSH_PUB.length > 20;
+const pushSupported = () => 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+function urlB64ToUint8(b64) {
+  const pad = '='.repeat((4 - b64.length % 4) % 4);
+  const s = (b64 + pad).replace(/-/g, '+').replace(/_/g, '/');
+  const raw = atob(s), arr = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+  return arr;
+}
+async function pushCurrentSub() {
+  try { const reg = await navigator.serviceWorker.ready; return await reg.pushManager.getSubscription(); }
+  catch (e) { return null; }
+}
+async function savePushSub(sub) {
+  if (!_sb) return; const j = sub.toJSON();
+  await _sb.from('push_subscriptions').upsert({
+    endpoint: j.endpoint, p256dh: j.keys.p256dh, auth: j.keys.auth,
+    user_id: (_user && _user.id) || null, tz: 'Asia/Jerusalem', updated_at: new Date().toISOString()
+  }, {onConflict: 'endpoint'});
+}
+async function deletePushSub(endpoint) { if (_sb) { try { await _sb.from('push_subscriptions').delete().eq('endpoint', endpoint); } catch (e) {} } }
+async function pushEnable() {
+  const msg = $('push-msg');
+  if (!pushSupported() || !pushConfigured()) return;
+  try {
+    const perm = await Notification.requestPermission();
+    if (perm !== 'granted') { if (msg) msg.textContent = 'Notifications are blocked — allow them for this site in your browser settings, then try again.'; return; }
+    const reg = await navigator.serviceWorker.ready;
+    const sub = await reg.pushManager.subscribe({userVisibleOnly: true, applicationServerKey: urlB64ToUint8(PUSH_PUB)});
+    await savePushSub(sub);
+    accountSection();
+  } catch (e) { if (msg) msg.textContent = 'Could not enable reminders: ' + (e.message || e); }
+}
+async function pushDisable() {
+  const sub = await pushCurrentSub();
+  if (sub) { await deletePushSub(sub.endpoint); try { await sub.unsubscribe(); } catch (e) {} }
+  accountSection();
+}
+function pushCardHTML(on) {
+  const wrap = inner => `<div class="pimc"><div class="pimc-t">Practice reminders</div>${inner}</div>`;
+  if (!pushSupported()) return wrap(`<p class="hint" style="margin:4px 0 0">This browser can't do reminders.
+     On iPhone, add the app to your Home Screen (Share → Add to Home Screen), open it from there, then come back.</p>`);
+  if (!pushConfigured()) return wrap(`<p class="hint" style="margin:4px 0 0">Reminders aren't switched on for this site yet.</p>`);
+  return wrap(`<p class="hint" style="margin:4px 0 8px">A gentle lock-screen nudge on days you haven't practised yet —
+     it keeps the streak alive, and stops once you've done something. Nothing else is ever sent.</p>
+    <div class="ctl">${on
+      ? `<button class="tog" onclick="pushDisable()">Turn off reminders</button>`
+      : `<button class="tog go" onclick="pushEnable()">Turn on reminders</button>`}</div>
+    <div id="push-msg" class="hint" style="margin-top:8px"></div>`);
+}
+async function renderPushCard() {
+  const el = $('push-card'); if (!el) return;
+  el.innerHTML = pushCardHTML(!!(await pushCurrentSub()));
+}
 async function acctSyncNow() { await pushProgress(); await pullMerge();
   const s = $('acct-sync'); if (s) s.textContent = '✓ Synced just now.'; }
 
