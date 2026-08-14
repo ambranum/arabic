@@ -101,10 +101,11 @@ def main():
             sent += 1
         except WebPushException as e:
             code = getattr(getattr(e, 'response', None), 'status_code', None)
-            if code in (404, 410):
-                supa_delete(s['endpoint']); pruned += 1        # gone/expired → drop it
+            msg = str(e)
+            if code in (404, 410) or (code is None and 'key' in msg.lower()):
+                supa_delete(s['endpoint']); pruned += 1        # gone/expired, or a permanently bad key
             else:
-                failed += 1; print('  push failed:', str(e)[:120])
+                failed += 1; print('  push failed:', msg[:120])
         except Exception as e:
             # A malformed subscription (bad p256dh/auth base64) throws before the HTTP call and would
             # otherwise crash the whole run. Prune it (service_role bypasses RLS) and carry on.
