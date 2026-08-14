@@ -361,6 +361,20 @@
   .rx-drill{border:1px solid var(--rule); border-radius:12px; padding:22px 18px; text-align:center; max-width:520px; margin:0 auto}
   .rx-drill-n{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
   .rx-cue{font-family:var(--serif); font-size:24px; margin:10px 0 14px; color:var(--ink)}
+  /* Sounds */
+  .snd-target{font-family:var(--arabic); font-size:22px; color:var(--verdigris); margin:0 0 12px}
+  .snd-target span{font-size:26px}
+  .snd-tip{margin:0 0 18px}
+  .snd-row{display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid var(--paper-3); flex-wrap:wrap}
+  .snd-cell{display:flex; align-items:center; gap:9px; flex:1; min-width:150px}
+  .snd-cell.dim{opacity:.72}
+  .snd-vs{color:var(--muted); font-size:16px; flex:none}
+  .snd-ar{font-family:var(--arabic); direction:rtl; font-size:24px; color:var(--ink)}
+  .snd-tr{font-family:var(--mono); font-size:12.5px; color:var(--verdigris)}
+  .snd-gl{font-size:12.5px; color:var(--muted)}
+  .say.sm{width:26px; height:26px; flex:none}
+  .ear{border:1px solid var(--rule); border-radius:10px; padding:16px; text-align:center; max-width:420px}
+  .ear [dir="rtl"]{font-family:var(--arabic); font-size:22px}
   .hint{font-size:12.5px; color:var(--muted); line-height:1.55; margin:0 0 16px}
 
   /* ---------- tray ---------- */
@@ -838,6 +852,7 @@
 <script src="data/curriculum.js"></script>
 <script src="data/grammar.js"></script>
 <script src="data/reactions.js"></script>
+<script src="data/sounds.js"></script>
 <script src="data/bible-index.js"></script>
 <script src="vendor/supabase.js"></script>
 <script src="data/supaconfig.js"></script>
@@ -1186,6 +1201,7 @@ const ICON = {
   bible:   '<path d="M5 4a2 2 0 0 1 2-2h11v18H7a2 2 0 0 0-2 2z"/><path d="M11.5 6.5v6M9 9h5"/>',
   video:   '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
   react:   '<path d="M20 4H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4v4l5-4h7a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/><path d="M12 7.5v3.5M12 13.4v.2"/>',
+  sound:   '<path d="M3 10v4M7 7v10M11 4v16M15 8v8M19 11v2"/>',
   user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
   translate: '<path d="M4 5h9M8.5 3v2c0 4-2.2 7-5.5 8.5"/><path d="M5 10c0 2 2.2 4 5.5 5"/><path d="M12.5 20l4.5-9 4.5 9M14.5 17h5"/>',
 };
@@ -1199,6 +1215,7 @@ const SECTIONS = [
   {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',      ready: true},
   {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
+  {route: 'sounds',  icon: 'sound',  label: 'Sounds',           ready: true},
   {route: 'reactions', icon: 'react', label: 'Reactions',       ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
   {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
@@ -1251,6 +1268,7 @@ function route() {
     if (sec.route === 'vocab')   return vocabSection(id, arg);
     if (sec.route === 'verbs')   return verbsSection(id);
     if (sec.route === 'grammar') return grammarSection(id);
+    if (sec.route === 'sounds') return soundsSection(id);
     if (sec.route === 'reactions') return reactionsSection(id);
     if (sec.route === 'stories') return storiesSection(id);
     if (sec.route === 'books')   return booksSection(id, arg);
@@ -1337,6 +1355,7 @@ function home(){
       : sec.route === 'bible' ? 'ESV ‖ Arabic, side by side'
       : sec.route === 'videos' ? VIDEOS.length + ' playlists · Shami Speaker'
       : sec.route === 'reactions' ? (RX.items ? RX.items.length + ' quick replies, by feel' : 'Conversation reflexes')
+      : sec.route === 'sounds' ? (SND.lessons ? SND.lessons.length + ' sound contrasts to master' : 'Get the ear & mouth right')
       : 'Coming soon';
     return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
       <div class="tile-t">${esc(sec.label)}</div>
@@ -1876,6 +1895,87 @@ function rxAnswer(g) {
   const b = $('rx-drill-box'); if (b) b.innerHTML = rxCurrent();
 }
 
+// ---------- Sounds (Phase 0: get the ear and the mouth right first) ----------
+// Six pronunciation contrasts of urban Palestinian (ق→ء, ع, ح/خ/ه, emphatics, ث/ذ→t/d, ē/ō) —
+// matches pipeline/subdialect.py, the same model the voice uses. Leads with an articulation TIP,
+// because for the throat sounds and emphatics a synthetic clip is less trustworthy than the note.
+const SND = window.SOUNDS || {lessons: []};
+const sndLesson = id => (SND.lessons || []).find(L => L.id === id);
+let _sndA = null;
+function sndPlay(src) { if (!src) return; try { (_sndA = _sndA || new Audio()).src = au(src); _sndA.playbackRate = SPEED; _sndA.play().catch(() => {}); } catch (e) {} }
+
+function soundsSection(sub) {
+  $('back').hidden = false;
+  const L = sndLesson(sub);
+  return L ? soundsLesson(L) : soundsHome();
+}
+
+function soundsHome() {
+  $('title').textContent = 'Sounds';
+  let h = `<p class="hint">Six contrasts that trip up every learner of city Palestinian. Get these into
+    your ear and your mouth <b>first</b> — a sound is much harder to fix once it sets. Everything here is
+    the <b>urban</b> pronunciation (Jerusalem / Ramallah / Nablus), matching the app's voice.</p>
+    <div class="unval"><b>Read the tip, then listen.</b> The clips are synthesized for reference —
+    for the throat sounds (ع، ح) and the heavy letters, a real speaker beats any voice model, so treat
+    those clips as a hint, not gospel.</div>
+    <div class="vtiles">`;
+  h += (SND.lessons || []).map(L => `<button class="vtile wide" onclick="location.hash='/sounds/${L.id}'">
+      <div class="vtile-h"><span class="vtile-t">${esc(L.en)}</span><span class="vtile-n" dir="rtl">${esc(L.ar)}</span></div>
+      <div class="vtile-s">${esc(L.target)}</div></button>`).join('');
+  h += `</div>`;
+  $('view').innerHTML = h;
+}
+
+const _sndCell = w => `${w.audio ? `<button class="say sm" onclick="sndPlay('${cssq(w.audio)}')" aria-label="Play">${svg('spk')}</button>` : ''}
+    <span class="snd-ar" dir="rtl">${esc(w.ar)}</span>
+    <span class="snd-tr">${esc(w.tr)}</span>
+    <span class="snd-gl">${esc(w.en)}</span>`;
+function soundsLesson(L) {
+  $('title').textContent = L.en;
+  let h = `<div class="snd-target"><span dir="rtl">${esc(L.ar)}</span> · ${esc(L.target)}</div>
+    <div class="note snd-tip">${esc(L.tip)}</div>
+    <div class="sec">Minimal pairs & examples</div>`;
+  h += L.examples.map(e => `<div class="snd-row">
+      <div class="snd-cell">${_sndCell(e)}</div>
+      ${e.contrast ? `<div class="snd-vs">≠</div><div class="snd-cell dim">${_sndCell(e.contrast)}</div>` : ''}
+    </div>`).join('');
+  const anyAudio = L.examples.some(e => e.audio || (e.contrast && e.contrast.audio));
+  if (!anyAudio) h += `<p class="hint" style="margin-top:12px">🔊 Audio is pending — for now, use the
+     romanization and the tip. (Run <code>pipeline/sounds.py --audio</code> to add reference clips.)</p>`;
+  else h += earTestHTML(L);
+  h += `<div class="sec" style="margin-top:22px">Other sounds</div><div class="ctl">` +
+    (SND.lessons || []).map(x => `<button class="tog"${x.id === L.id ? ' aria-pressed="true"' : ''}
+        onclick="location.hash='/sounds/${x.id}'">${esc(x.target)}</button>`).join('') + `</div>`;
+  $('view').innerHTML = h;
+}
+
+// Test your ear: play one word of a minimal pair, choose which you heard. Only when both have audio.
+let _ear = {pairs: [], i: 0, target: ''};
+function earTestHTML(L) {
+  const pairs = L.examples.filter(e => e.contrast && e.audio && e.contrast.audio);
+  if (!pairs.length) return '';
+  _ear = {pairs, i: 0, target: ''};
+  return `<div class="sec" style="margin-top:22px">Test your ear</div>
+    <p class="hint">Tap play, then choose which word you heard.</p>
+    <div id="ear-box">${earCurrent()}</div>`;
+}
+function earCurrent() {
+  const p = _ear.pairs[_ear.i];
+  if (!p) return `<div class="pdone">✓ Nice ear.</div>`;
+  const w = Math.random() < 0.5 ? p : p.contrast; _ear.target = w.ar;
+  return `<div class="ear">
+      <button class="tog go" onclick="sndPlay('${cssq(w.audio)}')">🔊 Play</button>
+      <div class="ctl" style="margin-top:10px">
+        <button class="tog" onclick="earPick('${cssq(p.ar)}')" dir="rtl">${esc(p.ar)}</button>
+        <button class="tog" onclick="earPick('${cssq(p.contrast.ar)}')" dir="rtl">${esc(p.contrast.ar)}</button>
+      </div><div id="ear-fb" class="hint" style="margin-top:8px"></div></div>`;
+}
+function earPick(ar) {
+  const fb = $('ear-fb'); const ok = ar === _ear.target;
+  if (fb) fb.innerHTML = ok ? '✓ Right' : `✗ It was <span dir="rtl">${esc(_ear.target)}</span>`;
+  setTimeout(() => { _ear.i++; const b = $('ear-box'); if (b) b.innerHTML = earCurrent(); }, 950);
+}
+
 // ---------- vocabulary / memorization (Anki SM-2) ----------
 function vocabSection(sub, arg){
   $('back').hidden = false;
@@ -2156,6 +2256,8 @@ function pickGrammar(phaseIndex, ord) {
   const cap = (CUR.grammarCap || [])[Math.min(phaseIndex, 6)] || GRAM.length;
   return walkPick(GRAM_LIST().slice(0, cap), ord || 0, contentSeen());
 }
+const SND_LIST = () => (SND.lessons || []).map(L => ({key: 'snd:' + L.id, id: L.id, title: L.en, link: '/sounds/' + L.id}));
+function pickSound(ord) { return walkPick(SND_LIST(), ord || 0, contentSeen()); }
 function pickVerb(phaseIndex, ord) {
   const tier = (CUR.verbTier || [])[Math.min(phaseIndex, 6)] || 3;
   return walkPick(verbPlan().filter(v => v.tier <= tier), ord || 0, contentSeen());
@@ -2333,6 +2435,11 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail, phaseIndex) {
     } else { t.title = A.label; t.note = 'No ' + sp.pool + ' content loaded yet.'; }
   } else if (sp.act === 'srs') {
     t.title = 'Review your due flashcards'; t.link = '/vocab/review';
+  } else if (sp.act === 'sound') {
+    const pick = pickSound(ord);
+    if (pick) { t.title = pick.title; t.link = pick.link; t.cid = pick.key;
+      t.seq = 'Sound ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : ''); }
+    else { t.title = 'Sound & ear drill'; t.link = '/sounds'; }
   } else if (sp.act === 'grammar') {
     const pick = pickGrammar(phaseIndex, ord);
     if (pick) { t.title = pick.title; t.link = pick.link; t.cid = pick.key; t.rkey = pick.key;

@@ -93,7 +93,7 @@ window.CURRICULUM = {
      milestone:'You can hear and make the sounds that trip up every beginner.',
      mix:[
        {act:'course', min:25, src:'external', res:'languageTransfer'},
-       {act:'sound',  min:15, src:'external', res:'languageTransfer'},
+       {act:'sound',  min:15, src:'inapp'},
        {act:'grammar',min:15, src:'inapp'},
        {act:'verbs',  min:10, src:'inapp'},
        {act:'watch',  min:10, src:'inapp'},
