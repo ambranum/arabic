@@ -177,7 +177,7 @@ window.CURRICULUM = {
      focus:'Multi-party listening, overlap, noise, the hospitality ritual. The final skill — trained deliberately, not left to chance.',
      milestone:'You can follow several people at once and be yourself at a Palestinian family dinner.',
      mix:[
-       {act:'listen',  min:30, src:'external', res:'dialogue'},
+       {act:'listen',  min:30, src:'inapp', pool:'dialogue'},
        {act:'produce', min:25, src:'inapp'},
        {act:'watch',   min:25, src:'inapp'},
        {act:'read',    min:20, src:'inapp', pool:'news'},
