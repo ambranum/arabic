@@ -4036,33 +4036,42 @@ async function pushCurrentSub() {
   try { const reg = await navigator.serviceWorker.ready; return await reg.pushManager.getSubscription(); }
   catch (e) { return null; }
 }
-// Bearer token for a REST write: the signed-in user's JWT if we have one, else the anon key.
-async function _supaAuth() {
-  try { const {data} = await _sb.auth.getSession(); return (data.session && data.session.access_token) || window.SUPA.anon; }
-  catch (e) { return window.SUPA.anon; }
-}
 // Saved via a DIRECT REST call with Prefer: return=minimal — NOT supabase-js .upsert(), which asks
 // for the row back (return=representation) and RLS rejects that whole write because the table has no
 // SELECT policy (subscriptions are read only by the server). return=minimal skips the RETURNING.
-async function savePushSub(sub) {
-  if (!_sb || !window.SUPA) return {error: {message: 'sync not configured'}};
-  const j = sub.toJSON(), auth = await _supaAuth();
+// We authenticate with the ANON key (role `anon`) even when signed in: the anon INSERT policy is the
+// one that actually accepts the write, and check(true) lets us still stamp our own user_id in the row.
+// A plain INSERT (return=minimal). Deliberately NOT an upsert: only the INSERT RLS policy is
+// effective on this table (the ON-CONFLICT/UPDATE variants 401), so we insert and treat a duplicate
+// (409/23505 — this endpoint already registered) as success. p256dh/auth are fixed per endpoint, so
+// the existing row is already correct; nothing to update.
+async function _pushInsert(body) {
   try {
     const r = await fetch(window.SUPA.url + '/rest/v1/push_subscriptions', {
       method: 'POST',
-      headers: {apikey: window.SUPA.anon, Authorization: 'Bearer ' + auth,
-        'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates,return=minimal'},
-      body: JSON.stringify({endpoint: j.endpoint, p256dh: j.keys.p256dh, auth: j.keys.auth,
-        user_id: (_user && _user.id) || null, tz: 'Asia/Jerusalem', updated_at: new Date().toISOString()})
+      headers: {apikey: window.SUPA.anon, Authorization: 'Bearer ' + window.SUPA.anon,
+        'Content-Type': 'application/json', Prefer: 'return=minimal'},
+      body: JSON.stringify(body)
     });
-    return r.ok ? {} : {error: {message: 'HTTP ' + r.status + ' ' + (await r.text()).slice(0, 140)}};
-  } catch (e) { return {error: {message: String(e.message || e)}}; }
+    return {ok: r.ok || r.status === 409, status: r.status, text: r.ok ? '' : (await r.text()).slice(0, 140)};
+  } catch (e) { return {ok: false, status: 0, text: String(e.message || e)}; }
+}
+async function savePushSub(sub) {
+  if (!window.SUPA) return {error: {message: 'sync not configured'}};
+  const j = sub.toJSON();
+  const body = {endpoint: j.endpoint, p256dh: j.keys.p256dh, auth: j.keys.auth,
+    tz: 'Asia/Jerusalem', updated_at: new Date().toISOString()};
+  if (_user && _user.id) body.user_id = _user.id;
+  let r = await _pushInsert(body);
+  if (r.ok) return {};
+  if (body.user_id) { const b2 = {...body}; delete b2.user_id; r = await _pushInsert(b2); if (r.ok) return {}; }  // fall back to an anonymous sub
+  return {error: {message: 'HTTP ' + r.status + ' ' + r.text}};
 }
 async function deletePushSub(endpoint) {
-  if (!_sb || !window.SUPA) return; const auth = await _supaAuth();
+  if (!window.SUPA) return;
   try {
     await fetch(window.SUPA.url + '/rest/v1/push_subscriptions?endpoint=eq.' + encodeURIComponent(endpoint),
-      {method: 'DELETE', headers: {apikey: window.SUPA.anon, Authorization: 'Bearer ' + auth, Prefer: 'return=minimal'}});
+      {method: 'DELETE', headers: {apikey: window.SUPA.anon, Authorization: 'Bearer ' + window.SUPA.anon, Prefer: 'return=minimal'}});
   } catch (e) {}
 }
 async function pushEnable() {
