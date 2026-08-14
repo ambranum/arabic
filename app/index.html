@@ -506,6 +506,17 @@
   .rv-ph{font-family:var(--mono); font-size:14px; color:var(--verdigris)}
   .rv-gl{font-family:var(--serif); font-size:22px; line-height:1.3}
   .rv-root{font-family:var(--arabic); direction:rtl; font-size:15px; color:var(--muted)}
+  .rv-hepast{font-size:14px; color:var(--ink-soft); margin:2px 0 4px; display:flex;
+    align-items:baseline; gap:8px; justify-content:center; flex-wrap:wrap}
+  .rv-hepast b{color:var(--verdigris); font-weight:700; font-size:10px; letter-spacing:.08em;
+    text-transform:uppercase}
+  .rv-hepast .rt{font-family:var(--arabic); direction:rtl; font-size:20px; color:var(--ink)}
+  .rv-hepast .hp{font-family:var(--mono); font-size:12.5px; color:var(--muted)}
+  .vcc-hepast{font-size:12.5px; color:var(--muted); margin-top:3px; display:flex;
+    align-items:baseline; gap:7px}
+  .vcc-hepast b{color:var(--verdigris); font-weight:700; font-size:9.5px; letter-spacing:.06em;
+    text-transform:uppercase}
+  .vcc-hepast .rt{font-family:var(--arabic); direction:rtl; font-size:16px; color:var(--ink-soft)}
   .rv-ex{font-family:var(--arabic); direction:rtl; font-size:20px; line-height:1.9; color:var(--ink-soft);
       border-top:1px solid var(--rule); padding-top:12px; margin-top:6px; width:100%}
   .rv-exen{font-family:var(--serif); font-style:italic; font-size:14px; color:var(--muted)}
@@ -2439,8 +2450,10 @@ function vocabCardView(c, showing, remaining){
   if (!showing){
     h += `<button class="rv-showbtn" onclick="vocabShow()">Show answer</button></div>`;
   } else {
+    const hp = cardHePast(c);
     h += `<div class="rv-ph">${esc(c.caphi || '')}</div>
       <div class="rv-gl">${esc(pretty(c.gloss) || '—')}</div>
+      ${hp ? hePastHTML(hp, 'rv-hepast') : ''}
       ${isPh
         ? (c.parts && c.parts.length
             ? `<div class="phw">${c.parts.map(p => `<span><b dir="rtl">${esc(p.ar)}</b>
@@ -2492,13 +2505,14 @@ function vocabCardList(title, list, deckId){
       :`<button class="tog" onclick="setActiveDeck('${deckId}');route()">Make this the active deck</button>`}
       <button class="tog" onclick="location.hash='/vocab/decks'">All decks</button></div>` : '';
   h += `<div class="sec">${list.length} card${list.length===1?'':'s'}</div>`;
-  h += list.map(c => { const due = (c.due||0) <= now();
+  h += list.map(c => { const due = (c.due||0) <= now(); const hp = cardHePast(c);
     return `<div class="vccard">
       <div class="vcc-h"><span class="vcc-ar"${c.kind === 'phrase' ? ' dir="rtl"' : ''}>${esc(c.vocalized || c.lemma)}</span>
         ${c.kind === 'phrase' ? '<span class="vcc-ph">phrase</span>' : ''}
         <button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))" aria-label="Pronounce">${svg('spk')}</button>
         <span class="vcc-gl">${esc(pretty(c.gloss) || '—')}</span>
         <span class="vcc-due">${due ? 'due' : 'in ' + Math.max(0,Math.round(((c.due||0)-now())/864e5)) + 'd'}</span></div>
+      ${hp ? hePastHTML(hp, 'vcc-hepast') : ''}
       ${c.example_ar ? `<div class="vcc-ex" dir="rtl">${esc(c.example_ar)}</div>` : ''}
       <div class="ctl" style="margin-top:6px">
         <button class="tog" onclick="moveCard('${cssq(c.lemma)}')">Move</button>
@@ -4139,13 +4153,34 @@ function addPhraseManual() {
 // Build a fresh SRS card from a tapped word + the sentence it was found in.
 function cardFromWord(w) {
   const s = cur && cur.sentences ? cur.sentences.find(x => x.words.includes(w)) : null;
+  const vb = findVerb(w);       // for verbs, anchor the card to the "he" past (the citation form)
   return srsInit({
     lemma: w.lemma, vocalized: w.vocalized || w.form || w.lemma, surface: w.surface,
     root: w.root, caphi: w.caphi_urban || w.caphi, gloss: w.gloss, analysis: w.analysis,
+    he_past: vb && vb.past ? {ar: vb.past.ar, caphi: vb.past.caphi} : null,
     example_ar: s ? s.ar : null, example_en: s ? s.en : null,
     text: cur ? cur.id : null, deck: activeDeck(),
   });
 }
+// The 3rd-person-masculine-singular past ("he" form) — Arabic's dictionary form for a verb. Stored
+// on the card when it's added; for verb cards saved before this existed, look it up from the deck's
+// root + form. Returns null for non-verbs, and when the card's headword IS already that past form.
+function cardHePast(c) {
+  if (!c || c.kind === 'phrase') return null;
+  let hp = c.he_past;
+  if (!hp) {
+    if (!String(c.analysis || '').startsWith('VERB') || !c.root) return null;
+    const cands = _vbByRoot.get(c.root); if (!cands) return null;
+    const form = (String(c.analysis).match(/VERB:([IVXQ]+)/) || [])[1];
+    const v = cands.find(x => x.form === form) || cands[0];
+    hp = v && v.past ? {ar: v.past.ar, caphi: v.past.caphi} : null;
+  }
+  if (!hp || !hp.ar) return null;
+  if (arNorm(hp.ar) === arNorm(c.vocalized || c.lemma || '')) return null;   // headword already IS it
+  return hp;
+}
+const hePastHTML = (hp, cls) => `<div class="${cls}"><b>he · past</b>
+  <span class="rt">${esc(hp.ar)}</span>${hp.caphi ? `<span class="hp">${esc(hp.caphi)}</span>` : ''}</div>`;
 const hideCard = () => $('cw').classList.remove('on');
 $('scrim').onclick = hideCard;
 addEventListener('keydown', e => { if (e.key === 'Escape') hideCard(); });
