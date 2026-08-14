@@ -346,6 +346,21 @@
          transition:filter .12s}
   .ch .a.show{filter:none}
   .ch .u{font-size:11.5px; color:var(--muted); margin-top:5px; line-height:1.45}
+  /* Reactions */
+  .rx-card{border:1px solid var(--rule); border-radius:9px; padding:13px 15px; margin-bottom:9px}
+  .rx-card.got{border-color:var(--verdigris); background:var(--paper-2)}
+  .rx-top{display:flex; align-items:center; justify-content:space-between; gap:10px}
+  .rx-ar{font-family:var(--arabic); direction:rtl; font-size:26px; line-height:1.6; color:var(--ink)}
+  .rx-ar.big{font-size:38px; text-align:center; margin:6px 0 10px}
+  .rx-en{font-size:15px; color:var(--ink); margin-top:2px}
+  .rx-use{font-size:12px; color:var(--muted); margin-top:5px; line-height:1.5}
+  .rx-reply{font-size:12px; color:var(--verdigris); margin-top:5px}
+  .rx-reply span{font-family:var(--arabic); font-size:16px}
+  .rx-noaud{font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em}
+  .rx-flag{color:var(--ochre); font-weight:700}
+  .rx-drill{border:1px solid var(--rule); border-radius:12px; padding:22px 18px; text-align:center; max-width:520px; margin:0 auto}
+  .rx-drill-n{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+  .rx-cue{font-family:var(--serif); font-size:24px; margin:10px 0 14px; color:var(--ink)}
   .hint{font-size:12.5px; color:var(--muted); line-height:1.55; margin:0 0 16px}
 
   /* ---------- tray ---------- */
@@ -822,6 +837,7 @@
 <script src="data/vocab_audio.js"></script>
 <script src="data/curriculum.js"></script>
 <script src="data/grammar.js"></script>
+<script src="data/reactions.js"></script>
 <script src="data/bible-index.js"></script>
 <script src="vendor/supabase.js"></script>
 <script src="data/supaconfig.js"></script>
@@ -902,7 +918,7 @@ function playWord(card) {
   // A phrase card carries its own clip when the span was a whole recorded sentence; otherwise
   // there is no Palestinian recording of that particular chunk and we fall back to the
   // browser voice, same as any word we never generated audio for.
-  const clip = (card.kind === 'phrase' ? card.audio : null) || VA[card.lemma];
+  const clip = (card.kind === 'phrase' || card.kind === 'reaction' ? card.audio : null) || VA[card.lemma];
   if (clip) { try { (_wa = _wa || new Audio()).src = au(clip); _wa.playbackRate = SPEED;
                     _wa.play().catch(() => speakWord(card)); return; } catch (e) {} }
   speakWord(card);
@@ -1169,6 +1185,7 @@ const ICON = {
   books:   '<path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19a2 2 0 0 1 2-2h12"/>',
   bible:   '<path d="M5 4a2 2 0 0 1 2-2h11v18H7a2 2 0 0 0-2 2z"/><path d="M11.5 6.5v6M9 9h5"/>',
   video:   '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
+  react:   '<path d="M20 4H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h4v4l5-4h7a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/><path d="M12 7.5v3.5M12 13.4v.2"/>',
   user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
   translate: '<path d="M4 5h9M8.5 3v2c0 4-2.2 7-5.5 8.5"/><path d="M5 10c0 2 2.2 4 5.5 5"/><path d="M12.5 20l4.5-9 4.5 9M14.5 17h5"/>',
 };
@@ -1182,6 +1199,7 @@ const SECTIONS = [
   {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',      ready: true},
   {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
+  {route: 'reactions', icon: 'react', label: 'Reactions',       ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
   {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
   {route: 'videos',  icon: 'video',   label: 'Videos',          ready: true},
@@ -1233,6 +1251,7 @@ function route() {
     if (sec.route === 'vocab')   return vocabSection(id, arg);
     if (sec.route === 'verbs')   return verbsSection(id);
     if (sec.route === 'grammar') return grammarSection(id);
+    if (sec.route === 'reactions') return reactionsSection(id);
     if (sec.route === 'stories') return storiesSection(id);
     if (sec.route === 'books')   return booksSection(id, arg);
     if (sec.route === 'videos')  return videosSection(id);
@@ -1317,6 +1336,7 @@ function home(){
       : sec.route === 'translate' ? 'Words & phrases in context'
       : sec.route === 'bible' ? 'ESV ‖ Arabic, side by side'
       : sec.route === 'videos' ? VIDEOS.length + ' playlists · Shami Speaker'
+      : sec.route === 'reactions' ? (RX.items ? RX.items.length + ' quick replies, by feel' : 'Conversation reflexes')
       : 'Coming soon';
     return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
       <div class="tile-t">${esc(sec.label)}</div>
@@ -1742,6 +1762,120 @@ function videosPlay(v){
     `</div></div>`;
 }
 
+// ---------- Reactions (Phase 1: the reflexes of conversation) ----------
+// Curated conversational chunks grouped by the job they do (surprise, agreement, sympathy…).
+// Drilling one grades it into the SAME SM-2 deck as vocabulary (kind:'reaction'), so reactions
+// come back on a spacing schedule and interleave — that's what stops it being the same 30 daily.
+const RX = window.REACTIONS || {cats: [], items: []};
+const rxCat = id => (RX.cats || []).find(c => c.id === id);
+const rxItemsIn = cat => (RX.items || []).filter(r => r.cat === cat);
+const rxKey = ar => '®' + arNorm(ar);                        // SRS key, namespaced like phrase '¶'
+const rxGot = ar => marked.has(rxKey(ar));                    // "have I started learning this one?"
+function rxCard(it) {
+  return {kind: 'reaction', lemma: rxKey(it.ar), phrase: it.ar, vocalized: it.ar, surface: it.ar,
+          gloss: it.en, audio: it.audio || null, cat: it.cat};
+}
+// Grade a reaction into the deck. g: 2 Good ("Got it") · 0 Again ("Not yet").
+function rxGrade(ar, g) {
+  const it = (RX.items || []).find(r => r.ar === ar); if (!it) return;
+  const key = rxKey(ar);
+  if (!marked.has(key)) marked.set(key, srsInit(rxCard(it)));
+  marked.set(key, srsGrade(marked.get(key), g));
+  save(); count();
+}
+const _rxUnval = it => (it.provenance || '').includes('needs-native-validation');
+
+function reactionsSection(sub) {
+  $('back').hidden = false;
+  const c = rxCat(sub);
+  return c ? reactionsCat(c) : reactionsHome();
+}
+
+function reactionsHome() {
+  $('title').textContent = 'Reactions';
+  let h = `<p class="hint">The <b>reflexes</b> of conversation — the short chunks you fire back without
+    thinking: <span dir="rtl">والله؟</span> (Really?), <span dir="rtl">يا حرام</span> (Poor thing),
+    <span dir="rtl">صحتين</span> (Bon appétit). They let you be a real presence at a table long before
+    you can build sentences. Pick a feeling, drill it until it comes automatically, and it slides into
+    your flashcards to come back on schedule.</p>
+    <div class="unval"><b>Curated, not native-checked.</b> These are common, idiomatic reactions —
+    but confirm the exact feel with a native speaker before you lean on the rarer ones.</div>
+    <div class="vtiles">`;
+  h += (RX.cats || []).map(c => {
+    const items = rxItemsIn(c.id), got = items.filter(r => rxGot(r.ar)).length;
+    return `<button class="vtile wide" onclick="location.hash='/reactions/${c.id}'">
+      <div class="vtile-h"><span class="vtile-t">${esc(c.en)}</span>
+        <span class="vtile-n">${got}/${items.length}</span></div>
+      <div class="vtile-s">${esc(c.blurb || '')}</div></button>`;
+  }).join('');
+  h += `</div>`;
+  $('view').innerHTML = h;
+}
+
+// One category: browse the reactions, or drill them (cue → say → reveal + hear → grade).
+let _rxMode = 'browse';
+function reactionsCat(c) {
+  $('title').textContent = c.en;
+  const items = rxItemsIn(c.id);
+  let h = `<p class="hint">${esc(c.blurb || '')}</p>
+    <div class="ctl" style="margin-bottom:14px">
+      <button class="tog" id="rx-browse" aria-pressed="${_rxMode !== 'drill'}" onclick="rxSetMode('browse','${c.id}')">Browse</button>
+      <button class="tog" id="rx-drill" aria-pressed="${_rxMode === 'drill'}" onclick="rxSetMode('drill','${c.id}')">Drill</button>
+    </div>`;
+  h += _rxMode === 'drill' ? rxDrillHTML(items, c) : rxBrowseHTML(items);
+  h += `<div class="sec" style="margin-top:22px">Other feelings</div><div class="ctl">` +
+    (RX.cats || []).map(x => `<button class="tog"${x.id === c.id ? ' aria-pressed="true"' : ''}
+        onclick="location.hash='/reactions/${x.id}'">${esc(x.en)}</button>`).join('') + `</div>`;
+  $('view').innerHTML = h;
+}
+function rxSetMode(m, cat) { _rxMode = m; reactionsCat(rxCat(cat)); }
+
+function rxBrowseHTML(items) {
+  return items.map(it => `<div class="rx-card${rxGot(it.ar) ? ' got' : ''}">
+      <div class="rx-top">
+        <div class="rx-ar" dir="rtl">${esc(it.ar)}</div>
+        ${it.audio ? `<button class="say" onclick="playWord({kind:'reaction',audio:'${cssq(it.audio)}',lemma:'${cssq(rxKey(it.ar))}',vocalized:'${cssq(it.ar)}'})" aria-label="Play">${svg('spk')}</button>`
+          : `<span class="rx-noaud">audio pending</span>`}
+      </div>
+      <div class="rx-en">${esc(it.en)}${_rxUnval(it) ? ' <span class="rx-flag" title="Not native-checked">•</span>' : ''}</div>
+      <div class="rx-use">${esc(it.use || '')}</div>
+      ${it.reply ? `<div class="rx-reply">reply: <span dir="rtl">${esc(it.reply)}</span></div>` : ''}
+    </div>`).join('');
+}
+
+// Drill: one reaction at a time. Read the English, SAY it out loud, reveal to check + hear it, grade.
+let _rxDrill = {items: [], i: 0, shown: false};
+function rxDrillHTML(items, c) {
+  _rxDrill = {items, i: 0, shown: false, cat: c.id};
+  return `<div id="rx-drill-box">${rxCurrent()}</div>`;
+}
+function rxCurrent() {
+  const d = _rxDrill, it = d.items[d.i];
+  if (!it) return `<div class="pdone">✓ Went through all ${d.items.length}. They're in your flashcards now — review brings them back.</div>
+    <div class="ctl" style="margin-top:10px;justify-content:center"><button class="tog go" onclick="location.hash='/vocab/review'">Review flashcards</button></div>`;
+  return `<div class="rx-drill">
+      <div class="rx-drill-n">${d.i + 1} / ${d.items.length}</div>
+      <div class="rx-cue">${esc(it.en)}</div>
+      ${d.shown
+        ? `<div class="rx-ar big" dir="rtl">${esc(it.ar)}</div>
+           ${it.audio ? `<button class="tog" onclick="playWord({kind:'reaction',audio:'${cssq(it.audio)}',lemma:'${cssq(rxKey(it.ar))}',vocalized:'${cssq(it.ar)}'})">🔊 Hear it</button>` : ''}
+           <div class="rx-use">${esc(it.use || '')}</div>
+           ${it.reply ? `<div class="rx-reply">reply: <span dir="rtl">${esc(it.reply)}</span></div>` : ''}
+           <div class="ctl" style="margin-top:12px;justify-content:center">
+             <button class="rv-g rv-g0" onclick="rxAnswer(0)">Not yet</button>
+             <button class="rv-g rv-g2" onclick="rxAnswer(2)">Got it</button></div>`
+        : `<p class="hint" style="text-align:center">Say it out loud, then reveal.</p>
+           <div class="ctl" style="justify-content:center"><button class="tog go" onclick="rxReveal()">Show answer</button></div>`}
+    </div>`;
+}
+function rxReveal() { _rxDrill.shown = true; const b = $('rx-drill-box'); if (b) b.innerHTML = rxCurrent();
+  const it = _rxDrill.items[_rxDrill.i]; if (it && it.audio) playWord({kind: 'reaction', audio: it.audio, lemma: rxKey(it.ar), vocalized: it.ar}); }
+function rxAnswer(g) {
+  const it = _rxDrill.items[_rxDrill.i]; if (it) rxGrade(it.ar, g);
+  _rxDrill.i++; _rxDrill.shown = false;
+  const b = $('rx-drill-box'); if (b) b.innerHTML = rxCurrent();
+}
+
 // ---------- vocabulary / memorization (Anki SM-2) ----------
 function vocabSection(sub, arg){
   $('back').hidden = false;
@@ -1967,7 +2101,7 @@ function markSeen(id, on) { if (!id) return; const s = contentSeen();
 // ---- content pools: resolve an abstract pool to a concrete, ORDERED list of content ----
 const POOL_LABEL = {beginner: 'Beginner story', intermediate: 'Intermediate story', advanced: 'Advanced story'};
 function planPool(pool) {
-  if (pool === 'reaction') return LIB.drills.map(d => ({id: d.id, title: d.title.en, link: '/drill/' + d.id}));
+  if (pool === 'reaction') return (RX.cats || []).map(c => ({id: 'rx:' + c.id, title: c.en + ' reactions', link: '/reactions/' + c.id}));
   if (pool === 'news') return LIB.texts.filter(t => t.kind === 'news')
     .sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(t => ({id: t.id, title: t.title.en, link: '/text/' + t.id}));
   return storiesAt(pool).map(t => ({id: t.id, title: t.title.en, link: '/text/' + t.id}));   // ordered by id
@@ -2192,9 +2326,10 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail, phaseIndex) {
       if ((sp.act === 'shadow' || sp.act === 'drill432') && link.startsWith('/text/'))
         link = link.replace('/text/', '/speak/');
       t.title = pick.title; t.link = link;
-      if (sp.act === 'read') t.cid = pick.id;                // only reading advances the systematic path
+      if (sp.act === 'read' || sp.pool === 'reaction') t.cid = pick.id;   // advances the systematic path
       if (POOL_LABEL[sp.pool]) t.seq = POOL_LABEL[sp.pool] + ' ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
       else if (sp.pool === 'news') t.seq = 'Latest news';
+      else if (sp.pool === 'reaction') t.seq = 'Reactions · set ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
     } else { t.title = A.label; t.note = 'No ' + sp.pool + ' content loaded yet.'; }
   } else if (sp.act === 'srs') {
     t.title = 'Review your due flashcards'; t.link = '/vocab/review';
