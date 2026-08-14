@@ -4036,14 +4036,35 @@ async function pushCurrentSub() {
   try { const reg = await navigator.serviceWorker.ready; return await reg.pushManager.getSubscription(); }
   catch (e) { return null; }
 }
-async function savePushSub(sub) {
-  if (!_sb) return; const j = sub.toJSON();
-  await _sb.from('push_subscriptions').upsert({
-    endpoint: j.endpoint, p256dh: j.keys.p256dh, auth: j.keys.auth,
-    user_id: (_user && _user.id) || null, tz: 'Asia/Jerusalem', updated_at: new Date().toISOString()
-  }, {onConflict: 'endpoint'});
+// Bearer token for a REST write: the signed-in user's JWT if we have one, else the anon key.
+async function _supaAuth() {
+  try { const {data} = await _sb.auth.getSession(); return (data.session && data.session.access_token) || window.SUPA.anon; }
+  catch (e) { return window.SUPA.anon; }
 }
-async function deletePushSub(endpoint) { if (_sb) { try { await _sb.from('push_subscriptions').delete().eq('endpoint', endpoint); } catch (e) {} } }
+// Saved via a DIRECT REST call with Prefer: return=minimal — NOT supabase-js .upsert(), which asks
+// for the row back (return=representation) and RLS rejects that whole write because the table has no
+// SELECT policy (subscriptions are read only by the server). return=minimal skips the RETURNING.
+async function savePushSub(sub) {
+  if (!_sb || !window.SUPA) return {error: {message: 'sync not configured'}};
+  const j = sub.toJSON(), auth = await _supaAuth();
+  try {
+    const r = await fetch(window.SUPA.url + '/rest/v1/push_subscriptions', {
+      method: 'POST',
+      headers: {apikey: window.SUPA.anon, Authorization: 'Bearer ' + auth,
+        'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates,return=minimal'},
+      body: JSON.stringify({endpoint: j.endpoint, p256dh: j.keys.p256dh, auth: j.keys.auth,
+        user_id: (_user && _user.id) || null, tz: 'Asia/Jerusalem', updated_at: new Date().toISOString()})
+    });
+    return r.ok ? {} : {error: {message: 'HTTP ' + r.status + ' ' + (await r.text()).slice(0, 140)}};
+  } catch (e) { return {error: {message: String(e.message || e)}}; }
+}
+async function deletePushSub(endpoint) {
+  if (!_sb || !window.SUPA) return; const auth = await _supaAuth();
+  try {
+    await fetch(window.SUPA.url + '/rest/v1/push_subscriptions?endpoint=eq.' + encodeURIComponent(endpoint),
+      {method: 'DELETE', headers: {apikey: window.SUPA.anon, Authorization: 'Bearer ' + auth, Prefer: 'return=minimal'}});
+  } catch (e) {}
+}
 async function pushEnable() {
   const msg = $('push-msg');
   if (!pushSupported() || !pushConfigured()) return;
@@ -4052,7 +4073,8 @@ async function pushEnable() {
     if (perm !== 'granted') { if (msg) msg.textContent = 'Notifications are blocked — allow them for this site in your browser settings, then try again.'; return; }
     const reg = await navigator.serviceWorker.ready;
     const sub = await reg.pushManager.subscribe({userVisibleOnly: true, applicationServerKey: urlB64ToUint8(PUSH_PUB)});
-    await savePushSub(sub);
+    const res = await savePushSub(sub);
+    if (res && res.error) { if (msg) msg.textContent = 'Subscribed on this device, but saving it failed: ' + res.error.message; return; }
     accountSection();
   } catch (e) { if (msg) msg.textContent = 'Could not enable reminders: ' + (e.message || e); }
 }
