@@ -857,6 +857,19 @@
     border:1px solid var(--rule); background:none; color:var(--ink-soft); cursor:pointer; line-height:1.4}
   .tut-chip:hover{border-color:var(--verdigris); background:var(--verdigris-2)}
   .tut-chip .rt{font-family:var(--arabic)}
+  .tut-saves{align-self:flex-start; max-width:88%; margin:-4px 0 2px; display:flex;
+    flex-direction:column; gap:6px; padding:10px 0 2px}
+  .tut-saves-h{font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+    font-weight:700; margin-bottom:1px}
+  .tut-save{font:inherit; font-size:13px; text-align:left; padding:7px 11px; border-radius:10px;
+    border:1px dashed var(--verdigris); background:var(--verdigris-2); color:var(--ink);
+    cursor:pointer; line-height:1.35}
+  .tut-save:hover{border-style:solid}
+  .tut-save.done{border-style:solid; border-color:var(--rule); background:var(--paper-2);
+    color:var(--muted); cursor:default}
+  .tut-save .rt{font-family:var(--arabic); font-size:1.12em}
+  .tut-loop{font-size:12.5px; color:var(--ink-soft); border:1px solid var(--verdigris);
+    background:var(--verdigris-2); border-radius:8px; padding:9px 12px; margin:0 0 14px; line-height:1.5}
   .phlab select{display:block; width:100%; margin-top:5px; font:inherit; font-size:15px;
     text-transform:none; letter-spacing:0; padding:8px 10px; border-radius:8px;
     border:1px solid var(--rule); background:var(--bg); color:var(--ink)}
@@ -1690,6 +1703,13 @@ function tutorSystemPrompt() {
     "- Honesty first: if you're not sure a form is specifically Palestinian (vs. general Levantine), say so plainly. Never invent a proverb, a “they always say…”, or confident detail you're unsure of. It's fine to say you're not certain.",
     "- You can explain grammar, translate, compare near-synonyms, give example sentences, and role-play short dinner-table exchanges. Match the learner's level; be encouraging and concrete.",
     "",
+    "SAVING PHRASES (important): when your answer teaches a specific Palestinian word or phrase the learner can reuse — above all for “how do I say…” questions — finish your ENTIRE reply with a machine-readable block listing the 1–4 most useful save-worthy items, each on its own line as “Arabic = English” (Arabic script only in this block, NO transliteration):",
+    "<save>",
+    "بدي = I want",
+    "بدي أروح عالبيت = I want to go home",
+    "</save>",
+    "Only list phrases genuinely worth memorizing as-is. For a pure grammar explanation with no single save-worthy phrase, omit the block entirely. Write nothing after </save>.",
+    "",
     "This app already teaches the learner these things — reference them naturally, don't just list them:",
     "• Grammar structures: " + (gram || "(various spoken structures)"),
     "• Pronunciation contrasts: " + (snds || "(urban sound contrasts)"),
@@ -1753,10 +1773,14 @@ function tutorHome() {
         onclick="location.hash='/tutor/settings'">Add your Claude key →</button></div>`;
     return;
   }
+  const savedN = tutorSavedCount();
   let h = `<p class="hint">Ask anything about spoken Palestinian — grammar, a word, how to say
-    something, or “is this how a Palestinian would put it?” Answers come back in dialect with a
-    transliteration. <button class="lnk" style="background:none;border:none;color:var(--verdigris);cursor:pointer;font:inherit;padding:0"
+    something, or “is this how a Palestinian would put it?” When it teaches you a phrase, tap
+    <b>+ Save</b> and it becomes a flashcard — so what you couldn't say today comes back in your
+    daily review. <button class="lnk" style="background:none;border:none;color:var(--verdigris);cursor:pointer;font:inherit;padding:0"
     onclick="location.hash='/tutor/settings'">Settings</button></p>
+    ${savedN ? `<div class="tut-loop">🗂 <b>${savedN}</b> phrase${savedN === 1 ? '' : 's'} saved from your tutor ${savedN === 1 ? 'is' : 'are'} in your review rotation.
+      <button class="lnk" style="background:none;border:none;color:var(--verdigris);cursor:pointer;font:inherit;padding:0" onclick="location.hash='/vocab/review'">Review now →</button></div>` : ''}
     <div class="tut-log" id="tut-log"></div>`;
   if (!_tutorMsgs.length) {
     h += `<div class="sec" style="margin-top:2px">Try one of these</div>
@@ -1787,12 +1811,56 @@ function tutFmt(t) {
   return s.replace(/\n/g, '<br>');
 }
 
+// Pull the tutor's machine-readable <save>…</save> block into [{ar,en}] — the phrases worth keeping.
+function tutorParseSaves(txt) {
+  const m = /<save>([\s\S]*?)<\/save>/i.exec(txt || '');
+  if (!m) return [];
+  const out = [], seen = new Set();
+  m[1].split('\n').forEach(line => {
+    const l = line.replace(/^[\s\-•*]+/, '').trim();
+    const eq = l.indexOf('=');
+    if (eq < 1) return;
+    const ar = l.slice(0, eq).trim(), en = l.slice(eq + 1).trim();
+    if (!ar || !en || !/[؀-ۿ]/.test(ar) || seen.has(ar)) return;
+    seen.add(ar);
+    out.push({ar, en});
+  });
+  return out.slice(0, 4);
+}
+
+// The loop: a saved phrase becomes a real SRS card (kind 'phrase', tagged from the tutor), so it
+// flows into daily review and the Plan's spaced-review task exactly like any other flashcard.
+function tutorSaveCard(mi, si) {
+  const m = _tutorMsgs[mi]; if (!m || !m.saves) return;
+  const sv = m.saves[si]; if (!sv) return;
+  const key = phKey(sv.ar);
+  if (!marked.has(key)) {
+    marked.set(key, srsInit({kind: 'phrase', lemma: key, phrase: sv.ar, vocalized: sv.ar,
+      surface: sv.ar, gloss: sv.en, caphi: '', parts: [], analysis: 'PHRASE', root: '',
+      provenance: 'tutor', source: 'tutor', deck: activeDeck()}));
+    save(); count();
+  }
+  sv.saved = true;
+  tutorRenderLog();
+}
+const tutorSavedCount = () => { try { return [...marked.values()].filter(c => c.source === 'tutor').length; } catch (e) { return 0; } };
+
 function tutorRenderLog() {
   const log = $('tut-log'); if (!log) return;
-  let h = _tutorMsgs.map(m => {
+  let h = _tutorMsgs.map((m, mi) => {
     if (m.error) return `<div class="tut-b err">${tutFmt(m.error)}</div>`;
     const cls = m.role === 'user' ? 'me' : 'ai';
-    return `<div class="tut-b ${cls}">${tutFmt(m.content)}</div>`;
+    let b = `<div class="tut-b ${cls}">${tutFmt(m.content)}</div>`;
+    if (m.saves && m.saves.length) {
+      b += `<div class="tut-saves"><div class="tut-saves-h">Save to your review</div>` +
+        m.saves.map((sv, si) => {
+          const done = sv.saved || marked.has(phKey(sv.ar));
+          return done
+            ? `<span class="tut-save done">✓ <span class="rt" dir="rtl">${esc(sv.ar)}</span> — ${esc(sv.en)}</span>`
+            : `<button class="tut-save" onclick="tutorSaveCard(${mi},${si})">+ <span class="rt" dir="rtl">${esc(sv.ar)}</span> — ${esc(sv.en)}</button>`;
+        }).join('') + `</div>`;
+    }
+    return b;
   }).join('');
   if (_tutorBusy) h += `<div class="tut-dots">· · ·</div>`;
   log.innerHTML = h;
@@ -1831,8 +1899,10 @@ async function tutorAsk(text) {
     } else if (data.stop_reason === 'refusal') {
       _tutorMsgs.push({role: 'assistant', error: "The model declined to answer that one — try rephrasing."});
     } else {
-      const txt = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('').trim();
-      _tutorMsgs.push({role: 'assistant', content: txt || '(no answer came back)'});
+      let txt = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('').trim();
+      const saves = tutorParseSaves(txt);            // pull out the machine-readable phrase block
+      txt = txt.replace(/<save>[\s\S]*?<\/save>\s*$/i, '').trim();
+      _tutorMsgs.push({role: 'assistant', content: txt || '(no answer came back)', saves});
     }
   } catch (e) {
     _tutorMsgs.push({role: 'assistant', error: "Network error — couldn't reach Claude. Check your connection and try again."});
