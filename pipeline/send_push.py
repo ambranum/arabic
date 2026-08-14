@@ -102,9 +102,13 @@ def main():
         except WebPushException as e:
             code = getattr(getattr(e, 'response', None), 'status_code', None)
             if code in (404, 410):
-                supa_delete(s['endpoint']); pruned += 1
+                supa_delete(s['endpoint']); pruned += 1        # gone/expired → drop it
             else:
                 failed += 1; print('  push failed:', str(e)[:120])
+        except Exception as e:
+            # A malformed subscription (bad p256dh/auth base64) throws before the HTTP call and would
+            # otherwise crash the whole run. Prune it (service_role bypasses RLS) and carry on.
+            print('  bad subscription pruned:', str(e)[:100]); supa_delete(s['endpoint']); pruned += 1
 
     print(f'sent {sent} · skipped(practised today) {skipped} · pruned(expired) {pruned} · failed {failed}')
     # A few transient failures shouldn't fail the whole run; only a total wipeout is worth a red build.
