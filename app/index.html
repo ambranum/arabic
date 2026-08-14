@@ -3906,12 +3906,19 @@ async function onAuth(session) {
     if (_hadAuthHash && !_navdAfterLogin) { _navdAfterLogin = true; location.hash = '#/account'; }
   }
 }
+let _recovery = false;                                   // in a password-reset (set a new password) flow
 if (_sb) {
   _sb.auth.getSession().then(({data}) => onAuth(data.session));
-  _sb.auth.onAuthStateChange((_e, session) => onAuth(session));
+  _sb.auth.onAuthStateChange((_e, session) => {
+    if (_e === 'PASSWORD_RECOVERY') {                     // arrived via a reset-password link
+      _recovery = true;
+      if (!(location.hash || '').startsWith('#/account')) location.hash = '#/account';
+    }
+    onAuth(session);
+  });
 }
 
-// ---- account section (email → 6-digit code → signed in) ----
+// ---- account section (email + password; sign in / create / reset) ----
 function renderAccountBadge() { if ((location.hash || '').startsWith('#/account')) accountSection(); }
 
 function accountSection() {
@@ -3919,6 +3926,17 @@ function accountSection() {
   $('title').textContent = 'Account';
   if (!_sb) { $('view').innerHTML = `<div class="empty"><div class="empty-t">Sync isn’t set up</div>
       <p>Cloud sync isn’t configured for this build.</p></div>`; return; }
+  if (_recovery) {                                       // arrived from a reset-password link
+    $('view').innerHTML = `<div class="hero"><div class="big">
+        <div class="k">Reset password</div><div class="t">Set a new password</div>
+        <div class="s">Choose a new password for <b>${esc((_user && _user.email) || 'your account')}</b>.
+          You'll use it to sign in from now on — on your phone and your computer.</div></div></div>
+      <input id="acct-newpass" class="vsearch" type="password" autocomplete="new-password"
+        placeholder="New password (6+ characters)" onkeydown="if(event.key==='Enter')acctSetPassword()">
+      <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSetPassword()">Save new password</button></div>
+      <div id="acct-msg" class="hint" style="margin-top:10px"></div>`;
+    return;
+  }
   let h;
   if (_user) {
     h = `<div class="hero"><div class="big">
@@ -3940,7 +3958,8 @@ function accountSection() {
       <input id="acct-pass" class="vsearch" type="password" autocomplete="current-password"
         placeholder="Password (6+ characters)" style="margin-top:8px" onkeydown="if(event.key==='Enter')acctSignIn()">
       <div class="ctl" style="margin-top:10px"><button class="tog go" onclick="acctSignIn()">Sign in</button>
-        <button class="tog" onclick="acctSignUp()">Create account</button></div>
+        <button class="tog" onclick="acctSignUp()">Create account</button>
+        <button class="tog" onclick="acctReset()">Forgot password?</button></div>
       <div id="acct-msg" class="hint" style="margin-top:10px"></div>
       <div class="note">Signed out, everything works and stays on this device. Signing in just adds cloud
         backup + sync — you can sign out any time.</div>
@@ -3970,9 +3989,30 @@ async function acctSignUp() {
   if (!email || pass.length < 6) { if (msg) msg.textContent = 'Enter an email and a password of at least 6 characters.'; return; }
   if (msg) msg.textContent = 'Creating your account…';
   const {data, error} = await _sb.auth.signUp({email, password: pass});
-  if (error) { if (msg) msg.textContent = 'Couldn’t create the account: ' + error.message; return; }
+  if (error) { if (msg) msg.textContent = /already|registered|exists/i.test(error.message)
+    ? 'You already have an account with this email. Tap “Sign in”, or “Forgot password?” to set a password on it.'
+    : 'Couldn’t create the account: ' + error.message; return; }
   if (!data.session && msg) msg.textContent = 'Account created — now tap “Sign in”. (If it asks you to confirm by email, turn off Auth → Email → “Confirm email” in Supabase.)';
   // if a session came back (Confirm email OFF) → onAuth() re-renders as signed-in
+}
+// Send a reset-password email. The link opens a page where a new password is set (updateUser);
+// after that you sign in with email + the new password — which works in the PWA. This is also how
+// an OLD passwordless account (created before the switch) gets its first password.
+async function acctReset() {
+  const {email} = _acctCreds(), msg = $('acct-msg');
+  if (!email) { if (msg) msg.textContent = 'Type your email above first, then tap “Forgot password?”.'; return; }
+  if (msg) msg.textContent = 'Sending a reset email…';
+  const {error} = await _sb.auth.resetPasswordForEmail(email, {redirectTo: location.origin + location.pathname});
+  if (error) { if (msg) msg.textContent = 'Couldn’t send it: ' + error.message; return; }
+  if (msg) msg.textContent = 'Check your email for a reset link. Open it, set a new password, then come back here and sign in.';
+}
+async function acctSetPassword() {
+  const pass = (($('acct-newpass') || {}).value || ''); const msg = $('acct-msg');
+  if (pass.length < 6) { if (msg) msg.textContent = 'Password must be at least 6 characters.'; return; }
+  if (msg) msg.textContent = 'Saving…';
+  const {error} = await _sb.auth.updateUser({password: pass});
+  if (error) { if (msg) msg.textContent = 'Couldn’t save: ' + error.message; return; }
+  _recovery = false; accountSection();                   // now signed in with the new password
 }
 async function acctSignOut() { try { await _sb.auth.signOut(); } catch (e) {} _user = null; accountSection(); }
 
