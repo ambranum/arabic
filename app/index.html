@@ -831,6 +831,35 @@
   .gs-done{text-align:center; padding:44px 16px}
   .gs-done-t{font-family:var(--serif); font-size:24px; color:var(--verdigris); margin-bottom:8px}
   .gs-done p{font-size:14px; color:var(--muted); line-height:1.6; margin:0}
+  /* ---- Ask a Tutor (BYOK chat) ---- */
+  .tut-log{display:flex; flex-direction:column; gap:12px; margin:6px 0 16px}
+  .tut-b{max-width:88%; padding:11px 14px; border-radius:14px; font-size:14.5px; line-height:1.55;
+    white-space:normal; word-wrap:break-word}
+  .tut-b.me{align-self:flex-end; background:var(--verdigris); color:#fff; border-bottom-right-radius:5px}
+  .tut-b.ai{align-self:flex-start; background:var(--paper-2); color:var(--ink);
+    border:1px solid var(--rule); border-bottom-left-radius:5px}
+  .tut-b.err{align-self:flex-start; background:var(--ochre-wash); color:var(--ink-soft);
+    border:1px solid var(--ochre); font-size:13px}
+  .tut-b b{font-weight:700}
+  .tut-b .rt{font-family:var(--arabic); font-size:1.15em}
+  .tut-dots{align-self:flex-start; color:var(--muted); font-size:20px; letter-spacing:3px;
+    padding:6px 4px}
+  .tut-row{display:flex; gap:8px; align-items:flex-end; margin-top:4px}
+  .tut-row textarea{flex:1; font:inherit; font-size:15px; line-height:1.4; padding:10px 12px;
+    border:1px solid var(--rule); border-radius:12px; background:var(--paper-2); color:var(--ink);
+    resize:none; min-height:44px; max-height:140px}
+  .tut-row textarea:focus{outline:2px solid var(--verdigris); outline-offset:1px}
+  .tut-send{font:inherit; font-size:14px; padding:11px 16px; border-radius:12px;
+    border:1px solid var(--verdigris); background:var(--verdigris); color:#fff; cursor:pointer;
+    white-space:nowrap}
+  .tut-send:disabled{opacity:.5; cursor:default}
+  .tut-chip{font:inherit; font-size:12.5px; text-align:left; padding:9px 12px; border-radius:10px;
+    border:1px solid var(--rule); background:none; color:var(--ink-soft); cursor:pointer; line-height:1.4}
+  .tut-chip:hover{border-color:var(--verdigris); background:var(--verdigris-2)}
+  .tut-chip .rt{font-family:var(--arabic)}
+  .phlab select{display:block; width:100%; margin-top:5px; font:inherit; font-size:15px;
+    text-transform:none; letter-spacing:0; padding:8px 10px; border-radius:8px;
+    border:1px solid var(--rule); background:var(--bg); color:var(--ink)}
 </style>
 </head>
 <body>
@@ -1221,6 +1250,7 @@ const ICON = {
   table:   '<circle cx="14" cy="12" r="6"/><circle cx="14" cy="12" r="2.5"/><path d="M4 4v6a1.5 1.5 0 0 0 3 0V4M5.5 4v16"/>',
   user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
   translate: '<path d="M4 5h9M8.5 3v2c0 4-2.2 7-5.5 8.5"/><path d="M5 10c0 2 2.2 4 5.5 5"/><path d="M12.5 20l4.5-9 4.5 9M14.5 17h5"/>',
+  tutor:   '<path d="M21 11.5a8 8 0 0 1-8 8H7l-4 3v-6.5a8 8 0 1 1 18-4.5z"/><path d="M9.3 9.4a2.8 2.8 0 0 1 5.3 1c0 1.8-2.7 2.1-2.7 3.9"/><path d="M11.9 17v.1"/>',
 };
 const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
   stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[n]}</svg>`;
@@ -1232,6 +1262,7 @@ const SECTIONS = [
   {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',      ready: true},
   {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
+  {route: 'tutor',   icon: 'tutor',   label: 'Ask a Tutor',     ready: true},
   {route: 'sounds',  icon: 'sound',  label: 'Sounds',           ready: true},
   {route: 'reactions', icon: 'react', label: 'Reactions',       ready: true},
   {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
@@ -1286,6 +1317,7 @@ function route() {
     if (sec.route === 'vocab')   return vocabSection(id, arg);
     if (sec.route === 'verbs')   return verbsSection(id);
     if (sec.route === 'grammar') return grammarSection(id);
+    if (sec.route === 'tutor')   return tutorSection(id);
     if (sec.route === 'sounds') return soundsSection(id);
     if (sec.route === 'reactions') return reactionsSection(id);
     if (sec.route === 'stories') return storiesSection(id);
@@ -1368,6 +1400,7 @@ function home(){
       : sec.route === 'vocab' ? (marked.size ? dueCards().length + ' due · ' + marked.size + ' cards' : 'Your flashcards')
       : sec.route === 'plan' ? (planCfg() ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name) : 'Build your study plan')
       : sec.route === 'grammar' ? GRAM.length + ' spoken structures'
+      : sec.route === 'tutor' ? (tutorKey() ? 'Ask anything, in dialect' : 'Add your key to ask questions')
       : sec.route === 'books' ? (booksList().length ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read' : 'Full graded readers')
       : sec.route === 'account' ? (_user ? esc(_user.email) : 'Sign in to sync your progress')
       : sec.route === 'translate' ? 'Words & phrases in context'
@@ -1613,6 +1646,199 @@ function bibleClearKey() {
   } catch (e) {}
   _esvCache && Object.keys(_esvCache).forEach(k => delete _esvCache[k]);
   location.hash = '/bible/settings';
+}
+
+// ============ Ask a Tutor — a grounded dialect chat, on the learner's OWN Claude key ============
+// The one thing the rest of the app can't do: answer a question you didn't know to ask. This is a
+// bring-your-own-key chat with Claude, hard-anchored to SPOKEN urban Palestinian (not MSA) and
+// primed with what this app actually teaches (grammar structures, sounds, reaction categories) so
+// its answers stay consistent with everything else here. The key is the learner's own, stored on
+// THIS device only (tutor.claude.key — deliberately not an alp.* key, so it never rides the
+// Supabase sync; a billable secret shouldn't leave the device). Nothing is committed or synced.
+const TUTOR_KEY = 'tutor.claude.key';
+const TUTOR_MODEL_KEY = 'tutor.model';
+const TUTOR_MODELS = [
+  {id: 'claude-sonnet-5', label: 'Sonnet — balanced (recommended)'},
+  {id: 'claude-opus-5', label: 'Opus — most capable, priciest'},
+  {id: 'claude-haiku-4-5', label: 'Haiku — fastest & cheapest'},
+];
+const tutorKey = () => { try { return localStorage.getItem(TUTOR_KEY) || ''; } catch (e) { return ''; } };
+const tutorModel = () => { try { return localStorage.getItem(TUTOR_MODEL_KEY) || 'claude-sonnet-5'; } catch (e) { return 'claude-sonnet-5'; } };
+let _tutorMsgs = [];        // in-memory conversation for this session (role, content, error?)
+let _tutorBusy = false;
+
+const TUTOR_STARTERS = [
+  "Why do Palestinians say بدي instead of أريد for “I want”?",
+  "How do I say “I've been waiting for an hour” in spoken Palestinian?",
+  "What's the difference between شو and إيش?",
+  "Give me 3 natural things to say when someone cooks me a great meal.",
+  "Is مبسوط spoken Palestinian or MSA? How do I say “I'm happy”?",
+];
+
+// Ground the model in this app's actual scope + the dialect model, so answers don't drift to MSA.
+function tutorSystemPrompt() {
+  const gram = GRAM.map(l => l.title).filter(Boolean).slice(0, 24).join('; ');
+  const snds = (SND.lessons || []).map(L => L.target || L.en).filter(Boolean).join('; ');
+  const rxc = (RX.cats || []).map(c => c.en).filter(Boolean).join('; ');
+  return [
+    "You are a warm, precise tutor for SPOKEN PALESTINIAN ARABIC — the urban Levantine city speech of Jerusalem, Ramallah, and Nablus. The learner is an English speaker in a self-study app, working toward holding their own at a Palestinian family dinner table.",
+    "",
+    "How to answer:",
+    "- Answer in SPOKEN Palestinian, NOT Modern Standard Arabic (فصحى). When the spoken form differs from MSA, give the spoken one and briefly note the difference. If the learner's own phrase is MSA or another dialect, gently flag it and give the Palestinian equivalent.",
+    "- For any Arabic you give: Arabic script, then a simple transliteration in parentheses, then the English gloss. Keep it tight — one clear answer with an example or two beats a wall of grammar.",
+    "- Urban pronunciation model to reflect in transliterations: ق is a glottal stop (ء, an apostrophe '); ث→t, ذ→d; ج is a soft “zh/j”. e.g. قهوة = ʼahwe, هيك = heek.",
+    "- Honesty first: if you're not sure a form is specifically Palestinian (vs. general Levantine), say so plainly. Never invent a proverb, a “they always say…”, or confident detail you're unsure of. It's fine to say you're not certain.",
+    "- You can explain grammar, translate, compare near-synonyms, give example sentences, and role-play short dinner-table exchanges. Match the learner's level; be encouraging and concrete.",
+    "",
+    "This app already teaches the learner these things — reference them naturally, don't just list them:",
+    "• Grammar structures: " + (gram || "(various spoken structures)"),
+    "• Pronunciation contrasts: " + (snds || "(urban sound contrasts)"),
+    "• Conversational reaction categories: " + (rxc || "(everyday reactions)"),
+  ].join("\n");
+}
+
+function tutorSection(sub) {
+  $('back').hidden = false;
+  if (sub === 'settings') return tutorSettings();
+  return tutorHome();
+}
+
+function tutorSettings() {
+  $('title').textContent = 'Tutor settings';
+  const has = tutorKey(), model = tutorModel();
+  $('view').innerHTML = `
+    <p class="hint">The tutor talks to <b>Claude</b> using <b>your own</b> Anthropic API key. It's
+      stored only on this device and is never committed, synced, or sent anywhere but Anthropic —
+      unlike the rest of your progress, this key deliberately does <b>not</b> sync to your other
+      devices, because it's a billable secret.</p>
+    <ol class="hint" style="line-height:1.9">
+      <li>Go to <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">console.anthropic.com</a>, add a little credit, and create an API key.</li>
+      <li>Paste it here. You pay Anthropic directly for what you use (a few questions costs cents).</li></ol>
+    <label class="phlab">Anthropic API key
+      <input id="tutk" value="${esc(has)}" placeholder="sk-ant-…" autocomplete="off"></label>
+    <label class="phlab">Model
+      <select id="tutm">${TUTOR_MODELS.map(m => `<option value="${m.id}"${m.id === model ? ' selected' : ''}>${esc(m.label)}</option>`).join('')}</select></label>
+    <div class="ctl" style="margin-top:14px">
+      <button class="tog go" onclick="tutorSaveKey()">Save</button>
+      ${has ? '<button class="tog" onclick="tutorClearKey()">Remove key</button>' : ''}
+      <button class="tog" onclick="location.hash='/tutor'">Back to the tutor</button></div>
+    <div class="note">Stored in this browser only (localStorage), never committed to the app and
+      never synced. The tutor's answers are AI-generated in spoken Palestinian — high quality, but
+      confirm anything you'll lean on with a native speaker.</div>`;
+}
+function tutorSaveKey() {
+  const v = ($('tutk') || {}).value || '';
+  const m = ($('tutm') || {}).value || 'claude-sonnet-5';
+  try { localStorage.setItem(TUTOR_KEY, v.trim()); localStorage.setItem(TUTOR_MODEL_KEY, m); } catch (e) {}
+  location.hash = '/tutor';
+}
+function tutorClearKey() {
+  try { localStorage.removeItem(TUTOR_KEY); } catch (e) {}
+  _tutorMsgs = [];
+  location.hash = '/tutor/settings';
+}
+
+function tutorHome() {
+  $('title').textContent = 'Ask a Tutor';
+  if (!tutorKey()) {
+    $('view').innerHTML = `
+      <p class="hint">The one thing the rest of the app can't do: answer a question you didn't know
+        to ask. Chat with an AI tutor that answers in <b>spoken Palestinian</b> (not textbook MSA) —
+        “why is it <span dir="rtl">بدي</span> and not <span dir="rtl">أريد</span>?”, “how do I say I've
+        been waiting an hour?”, “what do I say when someone cooks for me?”</p>
+      <div class="unval"><b>Bring your own key.</b> This uses your own Anthropic (Claude) API key,
+        stored only on this device — you pay Anthropic directly, usually cents. Answers are
+        AI-generated: excellent for practice, but confirm anything important with a native speaker.</div>
+      <div class="ctl"><button class="tog go" style="font-size:14px;padding:11px 20px"
+        onclick="location.hash='/tutor/settings'">Add your Claude key →</button></div>`;
+    return;
+  }
+  let h = `<p class="hint">Ask anything about spoken Palestinian — grammar, a word, how to say
+    something, or “is this how a Palestinian would put it?” Answers come back in dialect with a
+    transliteration. <button class="lnk" style="background:none;border:none;color:var(--verdigris);cursor:pointer;font:inherit;padding:0"
+    onclick="location.hash='/tutor/settings'">Settings</button></p>
+    <div class="tut-log" id="tut-log"></div>`;
+  if (!_tutorMsgs.length) {
+    h += `<div class="sec" style="margin-top:2px">Try one of these</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">` +
+      TUTOR_STARTERS.map((s, i) => `<button class="tut-chip" onclick="tutorStart(${i})">${esc(s)}</button>`).join('') +
+      `</div>`;
+  }
+  h += `<div class="tut-row">
+      <textarea id="tut-in" rows="1" placeholder="Ask in English or Arabic…"
+        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();tutorAsk(this.value)}"></textarea>
+      <button class="tut-send" id="tut-send" onclick="tutorAsk(($('tut-in')||{}).value)">Ask</button>
+    </div>
+    ${_tutorMsgs.length ? '<div class="ctl" style="margin-top:10px"><button class="tog" onclick="tutorClearChat()">Clear chat</button></div>' : ''}`;
+  $('view').innerHTML = h;
+  tutorRenderLog();
+  const inp = $('tut-in'); if (inp) inp.focus();
+}
+
+function tutorStart(i) { tutorAsk(TUTOR_STARTERS[i]); }
+function tutorClearChat() { _tutorMsgs = []; tutorHome(); }
+
+// Minimal formatter: escape, **bold**, wrap Arabic runs so they render in the Arabic face, newlines.
+function tutFmt(t) {
+  let s = esc(t);
+  s = s.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+  s = s.replace(/[؀-ۿݐ-ݿ][؀-ۿݐ-ݿً-ٟ\s\d.،؟!]*[؀-ۿݐ-ݿ]/g,
+    m => '<span class="rt">' + m + '</span>');
+  return s.replace(/\n/g, '<br>');
+}
+
+function tutorRenderLog() {
+  const log = $('tut-log'); if (!log) return;
+  let h = _tutorMsgs.map(m => {
+    if (m.error) return `<div class="tut-b err">${tutFmt(m.error)}</div>`;
+    const cls = m.role === 'user' ? 'me' : 'ai';
+    return `<div class="tut-b ${cls}">${tutFmt(m.content)}</div>`;
+  }).join('');
+  if (_tutorBusy) h += `<div class="tut-dots">· · ·</div>`;
+  log.innerHTML = h;
+  log.scrollIntoView(false);
+  const s = $('tut-send'); if (s) s.disabled = _tutorBusy;
+}
+
+// Send a turn to Claude with the learner's own key, straight from the browser.
+async function tutorAsk(text) {
+  text = (text || '').trim();
+  if (!tutorKey()) { location.hash = '/tutor/settings'; return; }
+  if (!text || _tutorBusy) return;
+  const hadStarters = !_tutorMsgs.length;   // first message: re-render to drop the starter chips
+  _tutorMsgs.push({role: 'user', content: text});
+  _tutorBusy = true;
+  const inp = $('tut-in'); if (inp) inp.value = '';
+  if (hadStarters) tutorHome(); else tutorRenderLog();
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'content-type': 'application/json', 'x-api-key': tutorKey(),
+        'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true'},
+      body: JSON.stringify({
+        model: tutorModel(), max_tokens: 2048, system: tutorSystemPrompt(),
+        messages: _tutorMsgs.filter(m => !m.error && m.content).map(m => ({role: m.role, content: m.content})),
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      const msg = (data && data.error && data.error.message) || ('HTTP ' + res.status);
+      _tutorMsgs.push({role: 'assistant', error: res.status === 401
+        ? "Your Claude API key was rejected (401). Check or re-paste it in Settings."
+        : (res.status === 400 && /credit balance/i.test(msg))
+          ? "Your Anthropic account is out of credit. Add a little at console.anthropic.com, then try again."
+          : ('Couldn’t reach Claude: ' + msg)});
+    } else if (data.stop_reason === 'refusal') {
+      _tutorMsgs.push({role: 'assistant', error: "The model declined to answer that one — try rephrasing."});
+    } else {
+      const txt = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('').trim();
+      _tutorMsgs.push({role: 'assistant', content: txt || '(no answer came back)'});
+    }
+  } catch (e) {
+    _tutorMsgs.push({role: 'assistant', error: "Network error — couldn't reach Claude. Check your connection and try again."});
+  }
+  _tutorBusy = false;
+  tutorRenderLog();
 }
 
 function booksSection(sub, arg) {
