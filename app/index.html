@@ -886,6 +886,30 @@
   .phlab select{display:block; width:100%; margin-top:5px; font:inherit; font-size:15px;
     text-transform:none; letter-spacing:0; padding:8px 10px; border-radius:8px;
     border:1px solid var(--rule); background:var(--bg); color:var(--ink)}
+  /* ---- placement assessment ---- */
+  .as-ar{display:block; font-family:var(--arabic); direction:rtl; font-size:30px; line-height:1.9;
+    color:var(--ink); margin-bottom:4px}
+  .as-en{font-family:var(--serif); font-size:15px; color:var(--ink-soft); margin-top:6px; line-height:1.5}
+  .as-sub{font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted);
+    font-weight:700; margin:12px 0 10px}
+  .as-choices{display:flex; flex-direction:column; gap:8px; max-width:520px; margin:0 auto}
+  .as-choice{font:inherit; font-size:15px; text-align:center; padding:11px 14px; border-radius:11px;
+    border:1px solid var(--rule); background:none; color:var(--ink); cursor:pointer; line-height:1.45}
+  .as-choice[dir="rtl"]{font-family:var(--arabic); font-size:19px}
+  .as-choice:hover:not(:disabled){border-color:var(--verdigris); background:var(--verdigris-2)}
+  .as-choice.good{border-color:var(--verdigris); background:var(--verdigris); color:#fff}
+  .as-choice.bad{border-color:var(--rubric); background:var(--ochre-wash); color:var(--rubric)}
+  .as-choice:disabled{cursor:default}
+  .as-prof{display:flex; flex-direction:column; gap:9px; max-width:520px}
+  .as-skill{display:grid; grid-template-columns:130px 1fr 44px; gap:10px; align-items:center; font-size:13px}
+  .as-prof.small .as-skill{font-size:12px; grid-template-columns:118px 1fr 40px}
+  .as-bar{height:7px; border-radius:4px; background:var(--paper-3); overflow:hidden}
+  .as-bar i{display:block; height:100%; border-radius:4px; background:var(--verdigris)}
+  .as-skill em{font-style:normal; font-family:var(--mono); font-size:11px; color:var(--muted); text-align:right}
+  .as-placed{font-size:13px; line-height:1.6; color:var(--ink-soft); border:1px solid var(--verdigris);
+    background:var(--verdigris-2); border-radius:8px; padding:11px 13px; margin-bottom:6px}
+  .as-placed b{color:var(--verdigris)}
+  .as-cta{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -920,6 +944,7 @@
 <script src="data/verbs.js"></script>
 <script src="data/vocab_audio.js"></script>
 <script src="data/curriculum.js"></script>
+<script src="data/assess.js"></script>
 <script src="data/grammar.js"></script>
 <script src="data/reactions.js"></script>
 <script src="data/sounds.js"></script>
@@ -2737,6 +2762,18 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
     if (A.speak && !speakAvail && sp.act !== 'tutor') return false;       // no voice slot → drop speaking (tutor is the honest fallback)
     if (sp.cadence === 'weekly' && wd !== tutorDay) return false;         // tutor ~once a week
     return true;
+  }).map(sp => {
+    // Placement-driven tilt: a few minutes a day move toward the assessed weakest skill and
+    // off the strongest. Small and bounded — the phase mix stays the plan; this is a lean.
+    const asr = cfg.assess; if (!asr || !asr.skills) return sp;
+    const accOf = s => { const k = asr.skills[s]; return k && k.n >= 2 ? k.ok / k.n : null; };
+    const rated = (AS.skills || []).filter(s => accOf(s) != null)
+      .sort((a, b) => accOf(a) - accOf(b));
+    if (rated.length < 2 || accOf(rated[0]) === accOf(rated[rated.length - 1])) return sp;
+    const nudge = AS.nudgeMin || 5;
+    if ((AS.skillActs[rated[0]] || []).includes(sp.act)) return {...sp, min: sp.min + nudge};
+    if ((AS.skillActs[rated[rated.length - 1]] || []).includes(sp.act)) return {...sp, min: Math.max(5, sp.min - nudge)};
+    return sp;
   });
 
   // Cycle the mix to fill the day's budget. A phase-mix is one ~session's worth; a longer day
@@ -2900,7 +2937,7 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail, phaseIndex) {
 // ---- section entry ----
 function planSection(sub, arg) {
   $('back').hidden = false;
-  if (sub === 'new') return planIntake();
+  if (sub === 'new') return arg === 'assess' ? assessView() : planIntake();
   if (!planCfg()) return planWelcome();
   if (sub === 'calendar') return planCalendar();
   if (sub === 'dashboard') return planDashboard();
@@ -2991,6 +3028,274 @@ function planWelcome() {
 }
 
 // ---- intake wizard ----
+// ============ Placement assessment — find where you are before the plan builds ============
+// An adaptive ~8-minute test at the start of "Build my plan". Every item is sampled at
+// runtime from content that is already verified: Maknuune-verified corpus words (with their
+// generated audio), engine-verified conjugation cells, grammar examples MINED from the corpus,
+// and Maknuune-corroborated reactions. Nothing unverified is ever shown as a "correct answer".
+// The ladder: rounds of one item per skill; a strong round moves the tier up, a weak one down;
+// the tier you converge on decides the phase your plan starts in, and the per-skill accuracy
+// tilts each day's minutes toward your weakest skill.
+const ASSESS_KEY = 'alp.plan.assess.v1';
+const AS = window.ASSESS || {};
+function assessResult() { try { return JSON.parse(localStorage.getItem(ASSESS_KEY) || 'null'); } catch (e) { return null; } }
+function assessClear() {
+  try { localStorage.removeItem(ASSESS_KEY); } catch (e) {}
+  const cfg = planCfg(); if (cfg && cfg.assess) { cfg.assess = null; savePlanCfg(cfg); }
+  route();
+}
+const _asShuf = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const _asPick = a => a[Math.floor(Math.random() * a.length)];
+const _asGloss = g => pretty(g).split('·')[0].trim();
+
+// Indices built once per session from the loaded data. ranked = corpus lemmas by frequency
+// (verified words only); sents = sentences with audio for tier-3/4 listening; rx = the
+// corroborated reactions (the only ones clean enough to be test answers).
+let _asIdx = null;
+function assessIndex() {
+  if (_asIdx) return _asIdx;
+  const freq = new Map();
+  (LIB.texts || []).forEach(t => (t.sentences || []).forEach(s => (s.words || []).forEach(w => {
+    if (!w.lemma || !w.gloss || !String(w.provenance || '').startsWith('maknuune')) return;
+    const e = freq.get(w.lemma) || {n: 0, gloss: w.gloss, voc: w.vocalized || w.lemma};
+    e.n++; freq.set(w.lemma, e);
+  })));
+  const ranked = [...freq.entries()]
+    .map(([lemma, e]) => ({lemma, gloss: e.gloss, voc: e.voc, n: e.n,
+                           audio: (window.VOCAB_AUDIO || {})[lemma] || null}))
+    .filter(x => _asGloss(x.gloss))
+    .sort((a, b) => b.n - a.n);
+  const sents = [];
+  (LIB.texts || []).forEach(t => {
+    if (t.kind !== 'news' && t.kind !== 'story') return;
+    (t.sentences || []).forEach(s => { if (s.audio && s.en && s.ar)
+      sents.push({ar: s.ar, en: s.en, audio: s.audio,
+                  hard: t.kind === 'news' || t.level === 'advanced'}); });
+  });
+  const rx = (RX.items || []).filter(r => (r.provenance || '').includes('corroborated'));
+  _asIdx = {ranked, sents, rx};
+  return _asIdx;
+}
+
+// ---- item builders: each returns {skill, prompt, sub?, audio?, choices:[{t,ok}]} or null ----
+function _asChoices(correct, distractors) {
+  const seen = new Set([correct]);
+  const ds = distractors.filter(d => d && !seen.has(d) && seen.add(d)).slice(0, 3);
+  if (ds.length < 3) return null;
+  return _asShuf([{t: correct, ok: true}, ...ds.map(t => ({t, ok: false}))]);
+}
+function asVocabItem(tier) {
+  const {ranked} = assessIndex();
+  const [a, b] = (AS.vocabBands || [])[tier - 1] || [0, 200];
+  const band = ranked.slice(a, Math.min(b, ranked.length));
+  if (band.length < 8) return null;
+  const w = _asPick(band);
+  const choices = _asChoices(_asGloss(w.gloss),
+    _asShuf(band).map(x => _asGloss(x.gloss)).filter(g => g !== _asGloss(w.gloss)));
+  if (!choices) return null;
+  return {skill: 'vocab', prompt: `<span class="as-ar" dir="rtl">${esc(w.voc)}</span>`,
+          sub: 'What does this mean?', choices};
+}
+function asListenItem(tier) {
+  const {ranked, sents} = assessIndex();
+  if (tier >= 3 && sents.length >= 8) {
+    const pool = sents.filter(s => s.hard === (tier === 4)) .length >= 8
+      ? sents.filter(s => s.hard === (tier === 4)) : sents;
+    const s = _asPick(pool);
+    const choices = _asChoices(s.en, _asShuf(pool).map(x => x.en).filter(e => e !== s.en));
+    if (!choices) return null;
+    return {skill: 'listening', prompt: '', sub: 'Listen — what does it mean?', audio: s.audio, choices};
+  }
+  const [a, b] = (AS.vocabBands || [])[tier - 1] || [0, 200];
+  const band = assessIndex().ranked.slice(a, Math.min(b, ranked.length)).filter(x => x.audio);
+  if (band.length < 8) return null;
+  const w = _asPick(band);
+  const choices = _asChoices(_asGloss(w.gloss),
+    _asShuf(band).map(x => _asGloss(x.gloss)).filter(g => g !== _asGloss(w.gloss)));
+  if (!choices) return null;
+  return {skill: 'listening', prompt: '', sub: 'Listen — what does the word mean?', audio: w.audio, choices};
+}
+function asGrammarItem(tier) {
+  const [a, b] = (AS.grammarBands || [])[tier - 1] || [0, 4];
+  const lessons = GRAM.slice(a, Math.min(b, GRAM.length))
+    .filter(l => (l.examples || []).some(e => e.hi && e.hi.length && e.ar.includes(e.hi[0])));
+  if (!lessons.length) return null;
+  const L = _asPick(lessons);
+  const ex = _asPick(L.examples.filter(e => e.hi && e.hi.length && e.ar.includes(e.hi[0])));
+  const hi = ex.hi[0];
+  const others = GRAM.filter(x => x.id !== L.id)
+    .flatMap(x => (x.examples || []).flatMap(e => e.hi || []))
+    .filter(w => w !== hi && !ex.ar.includes(w));
+  const choices = _asChoices(hi, _asShuf(others));
+  if (!choices) return null;
+  return {skill: 'grammar',
+          prompt: `<span class="as-ar" dir="rtl">${esc(ex.ar.replace(hi, '____'))}</span>
+                   <div class="as-en">“${esc(ex.en)}”</div>`,
+          sub: 'Which word completes it?', choices, rtl: true};
+}
+function asVerbItem(tier) {
+  const spec = (AS.verbSpec || [])[tier - 1]; if (!spec) return null;
+  const verbs = VB.filter(v => v.conj && v.gloss && spec.weak.includes(v.weak));
+  if (!verbs.length) return null;
+  for (let tries = 0; tries < 12; tries++) {
+    const v = _asPick(verbs), person = _asPick(spec.persons), aspect = _asPick(spec.aspects);
+    const cell = v.conj[aspect + '|' + person]; if (!cell) continue;
+    const others = spec.persons.filter(p => p !== person)
+      .map(p => (v.conj[aspect + '|' + p] || {}).ar).filter(Boolean);
+    const extra = ['inti', 'humme', 'intu', 'i7na'].map(p => (v.conj[aspect + '|' + p] || {}).ar).filter(Boolean);
+    const choices = _asChoices(cell.ar, _asShuf([...others, ...extra]));
+    if (!choices) continue;
+    const pEn = (PERSONS.find(p => p[0] === person) || [])[1] || person;
+    const aEn = aspect === 'perf' ? 'past' : aspect === 'bimpf' ? 'present (b-)' : 'present';
+    return {skill: 'verbs',
+            prompt: `<div class="as-en" style="font-size:17px"><b>${esc(_asGloss(v.gloss))}</b> — ${esc(pEn)}, ${aEn}</div>`,
+            sub: 'Pick the right form', choices, rtl: true};
+  }
+  return null;
+}
+function asChunkItem(tier) {
+  const {rx} = assessIndex(); if (rx.length < 8) return null;
+  const r = _asPick(rx);
+  const choices = _asChoices(r.ar, _asShuf(rx).map(x => x.ar).filter(a => a !== r.ar));
+  if (!choices) return null;
+  return {skill: 'chunks',
+          prompt: `<div class="as-en" style="font-size:17px">“${esc(r.en)}”</div>`,
+          sub: 'Which chunk says it?', choices, rtl: true};
+}
+const _AS_BUILDERS = {listening: asListenItem, vocab: asVocabItem, grammar: asGrammarItem,
+                      verbs: asVerbItem, chunks: asChunkItem};
+function asItem(skill, tier) {
+  let it = _AS_BUILDERS[skill](tier);
+  if (!it) it = asVocabItem(tier) || asChunkItem(tier);      // graceful fallback, same tier
+  if (it) it.skill = it.skill || skill;
+  return it;
+}
+
+// ---- the flow ----
+let _as = null;   // {tier, round, qi, order, skills:{s:{ok,n}}, cur, total, answered}
+function assessView() {
+  $('back').hidden = false;
+  $('title').textContent = 'Placement';
+  if (_as && !_as.done) return assessRender();
+  const radio = (val, label, sub) => `<label class="pf-radio">
+     <input type="radio" name="aslvl" value="${val}" ${val === 'none' ? 'checked' : ''}>
+     <span><b>${label}</b>${sub ? '<em>' + sub + '</em>' : ''}</span></label>`;
+  $('view').innerHTML = `
+    <p class="hint">About <b>8 minutes</b>, ${(AS.rounds || 4) * 5} quick questions across listening,
+      vocabulary, grammar, verbs and conversation chunks. It adapts as you go — getting things wrong
+      is fine, that's how it finds your level. Your plan starts where this says you are.</p>
+    <div class="sec">First, your own guess</div>
+    ${radio('none', 'Brand new', 'Never really studied Arabic')}
+    ${radio('greetings', 'A few greetings', 'Salaam, shukran, the basics')}
+    ${radio('conversation', 'Simple conversations', 'I can introduce myself and get by')}
+    ${radio('comfortable', 'Fairly comfortable', 'I can tell a story, with effort')}
+    <div class="ctl" style="margin-top:18px">
+      <button class="tog go" style="font-size:14px;padding:11px 20px" onclick="assessStart()">Start →</button>
+      <button class="tog" onclick="location.hash='/plan/new'">Back</button>
+    </div>`;
+}
+function assessStart() {
+  const guess = (document.querySelector('input[name=aslvl]:checked') || {}).value || 'none';
+  const tier = (AS.selfStart || {})[guess] || 1;
+  _as = {tier, round: 0, qi: 0, roundOk: 0, total: (AS.rounds || 4) * 5, answered: 0,
+         skills: {}, order: _asShuf(AS.skills.slice()), done: false};
+  assessNextItem();
+}
+function assessNextItem() {
+  const skill = _as.order[_as.qi % _as.order.length];
+  _as.cur = asItem(skill, _as.tier);
+  if (!_as.cur) { _as.qi++; _as.answered++; if (!_asAdvance()) return; return assessNextItem(); }
+  assessRender();
+  if (_as.cur.audio) setTimeout(() => sndPlay(_as.cur.audio), 250);
+}
+function assessRender() {
+  const it = _as.cur;
+  $('title').textContent = 'Placement';
+  $('view').innerHTML = `
+    <div class="rv-top">Question ${_as.answered + 1} of ${_as.total} · ${esc((AS.skillLabels || {})[it.skill] || it.skill)}</div>
+    <div class="rv-card" style="padding-bottom:18px">
+      ${it.audio ? `<button class="tog go" style="margin-bottom:12px" onclick="sndPlay('${cssq(it.audio)}')">🔊 Play it again</button>` : ''}
+      ${it.prompt}
+      <div class="as-sub">${esc(it.sub || '')}</div>
+      <div class="as-choices">${it.choices.map((c, i) =>
+        `<button class="as-choice" ${it.rtl && /[؀-ۿ]/.test(c.t) ? 'dir="rtl"' : ''}
+           onclick="assessAnswer(${i})">${esc(c.t)}</button>`).join('')}</div>
+    </div>`;
+}
+function assessAnswer(i) {
+  const it = _as.cur; if (!it) return;
+  const ok = !!it.choices[i].ok;
+  const sk = _as.skills[it.skill] = _as.skills[it.skill] || {ok: 0, n: 0};
+  sk.n++; if (ok) { sk.ok++; _as.roundOk++; }
+  const btns = document.querySelectorAll('.as-choice');
+  if (btns[i]) btns[i].classList.add(ok ? 'good' : 'bad');
+  if (!ok) { const ci = it.choices.findIndex(c => c.ok); if (btns[ci]) btns[ci].classList.add('good'); }
+  btns.forEach(b => b.disabled = true);
+  _as.qi++; _as.answered++;
+  setTimeout(() => { if (_asAdvance()) assessNextItem(); }, ok ? 350 : 900);
+}
+// End-of-round tier moves; returns false when the test is finished (and renders the result).
+function _asAdvance() {
+  if (_as.qi % _as.order.length === 0) {                     // a round just ended
+    if (_as.roundOk >= (AS.upAt || 4)) _as.tier = Math.min(4, _as.tier + 1);
+    else if (_as.roundOk <= (AS.downAt || 2)) _as.tier = Math.max(1, _as.tier - 1);
+    _as.roundOk = 0; _as.round++;
+    _as.order = _asShuf(AS.skills.slice());
+    if (_as.round >= (AS.rounds || 4)) { assessFinish(); return false; }
+  }
+  return true;
+}
+function assessFinish() {
+  _as.done = true;
+  const res = {tier: _as.tier, skills: _as.skills, at: todayISO()};
+  try { localStorage.setItem(ASSESS_KEY, JSON.stringify(res)); } catch (e) {}
+  // Seed grammar lessons BELOW the learner's band as already-known, so the plan's grammar
+  // walker doesn't re-teach what the test just watched them do.
+  const g = res.skills.grammar || {ok: 0, n: 0};
+  if (res.tier >= 2 && g.n && g.ok / g.n >= (AS.seedGrammarMin || 0.5)) {
+    const upto = (AS.grammarBands || [])[res.tier - 1][0] || 0;
+    GRAM.slice(0, upto).forEach(l => markSeen('g:' + l.id, true));
+  }
+  // An existing plan re-bases immediately; a new user carries the result into the intake.
+  const cfg = planCfg();
+  if (cfg) {
+    cfg.assess = res;
+    cfg.startPhase = (AS.tierPhase || [0, 2, 3, 5])[res.tier - 1] || 0;
+    cfg.baseMinutes = phaseStartMin(cfg.startPhase);
+    savePlanCfg(cfg);
+  }
+  assessResultView(res);
+}
+const _asPct = s => s && s.n ? Math.round(100 * s.ok / s.n) : null;
+function assessProfileHTML(res, small) {
+  return `<div class="as-prof${small ? ' small' : ''}">` + (AS.skills || []).map(s => {
+    const p = _asPct((res.skills || {})[s]);
+    return `<div class="as-skill"><span>${esc((AS.skillLabels || {})[s] || s)}</span>
+      <div class="as-bar"><i style="width:${p == null ? 0 : p}%"></i></div>
+      <em>${p == null ? '—' : p + '%'}</em></div>`;
+  }).join('') + `</div>`;
+}
+function assessResultView(res) {
+  const phase = (AS.tierPhase || [0, 2, 3, 5])[res.tier - 1] || 0;
+  const ph = CUR.phases[phase] || {name: '—'};
+  $('title').textContent = 'Your placement';
+  $('view').innerHTML = `
+    <div class="hero"><div class="big" style="cursor:default">
+      <div class="k">Placed</div>
+      <div class="t">${esc((AS.tierNames || [])[res.tier - 1] || 'Tier ' + res.tier)}</div>
+      <div class="s">Your plan starts in <b>Phase ${phase + 1} · ${esc(ph.name)}</b>. Grammar you
+        already showed you know is marked done, and your daily mix tilts toward your weakest skill.</div>
+    </div></div>
+    <div class="sec">Skill profile</div>
+    ${assessProfileHTML(res)}
+    <div class="ctl" style="margin-top:18px">
+      ${planCfg()
+        ? `<button class="tog go" style="font-size:14px;padding:11px 20px" onclick="location.hash='/plan'">Back to my plan →</button>`
+        : `<button class="tog go" style="font-size:14px;padding:11px 20px" onclick="location.hash='/plan/new'">Continue — build my plan →</button>`}
+      <button class="tog" onclick="_as=null;location.hash='/plan/new/assess';route()">Retake</button>
+    </div>`;
+}
+
 function planIntake() {
   $('title').textContent = 'Create my plan';
   const c = planCfg() || {};
@@ -3025,10 +3330,21 @@ function planIntake() {
     ${chk('headph', c.headphones !== false, 'I usually have headphones', 'For audio and shadowing')}
 
     <div class="sec">3 · Where you’re starting</div>
-    ${radio('lvl', 'none', lvl, 'Brand new', 'Never really studied Arabic')}
-    ${radio('lvl', 'greetings', lvl, 'A few greetings', 'Salaam, shukran, the basics')}
-    ${radio('lvl', 'conversation', lvl, 'Simple conversations', 'I can introduce myself and get by')}
-    ${radio('lvl', 'comfortable', lvl, 'Fairly comfortable', 'I can tell a story, with effort')}
+    ${(() => { const as = assessResult();
+      if (as) { const phase = (AS.tierPhase || [0,2,3,5])[as.tier - 1] || 0;
+        return `<div class="as-placed"><b>Placed by assessment</b> (${esc(as.at)}):
+          ${esc((AS.tierNames || [])[as.tier - 1] || 'Tier ' + as.tier)} — your plan starts in
+          Phase ${phase + 1} · ${esc((CUR.phases[phase] || {}).name || '')}.
+          <div class="ctl" style="margin-top:9px">
+            <button class="tog" onclick="_as=null;location.hash='/plan/new/assess'">Re-take the test</button>
+            <button class="tog" onclick="assessClear()">Use self-rating instead</button></div></div>`; }
+      return `<div class="as-cta"><button class="tog go" style="font-size:13.5px;padding:10px 16px"
+          onclick="location.hash='/plan/new/assess'">Take the 8-minute placement →</button>
+          <span class="hint" style="margin:0">finds your real level — or just rate yourself:</span></div>
+        ${radio('lvl', 'none', lvl, 'Brand new', 'Never really studied Arabic')}
+        ${radio('lvl', 'greetings', lvl, 'A few greetings', 'Salaam, shukran, the basics')}
+        ${radio('lvl', 'conversation', lvl, 'Simple conversations', 'I can introduce myself and get by')}
+        ${radio('lvl', 'comfortable', lvl, 'Fairly comfortable', 'I can tell a story, with effort')}`; })()}
 
     <div class="sec">4 · Pace</div>
     ${radio('pace', 'sustainable', pace, 'Sustainable', 'Something I can keep up for the long haul')}
@@ -3057,8 +3373,14 @@ function planCreate() {
   const carDays = []; for (let i = 0; i < 7; i++) if ($('cd' + i) && $('cd' + i).checked) carDays.push(i);
   const lvl = (document.querySelector('input[name=lvl]:checked') || {}).value || 'none';
   const pace = (document.querySelector('input[name=pace]:checked') || {}).value || 'sustainable';
-  const startPhase = LVL_PHASE[lvl] || 0;
   const prev = planCfg();
+  // Placement: an assessment result beats the self-rating radios. Without one, re-running the
+  // intake with the SAME self-rating must not re-derive the phase (no silent teleporting) —
+  // only an actually-changed rating moves the start.
+  const as = assessResult();
+  const startPhase = as ? ((AS.tierPhase || [0, 2, 3, 5])[as.tier - 1] || 0)
+    : (prev && !prev.assess && prev.level === lvl && prev.startPhase != null) ? prev.startPhase
+    : (LVL_PHASE[lvl] || 0);
   const cfg = {
     created: (prev && prev.created) || now(),
     start: (prev && prev.start) || todayISO(),
@@ -3066,7 +3388,7 @@ function planCreate() {
     car: {has: $('carHas').checked, minutes: Math.max(5, parseInt($('carMin').value, 10) || 45), days: carDays},
     speakHome: $('spkHome').checked,
     headphones: $('headph').checked,
-    level: lvl, pace,
+    level: lvl, pace, assess: as || null,
     startPhase, baseMinutes: phaseStartMin(startPhase),
     external: {
       languageTransfer: $('extLT').checked, pimsleur: $('extPim').checked,
@@ -3361,6 +3683,17 @@ function planDashboard() {
   h += cover('Grammar lessons', gDone, gTot);
   h += cover('Verbs practiced', vDone, 0);
   h += cover('Video playlists', wDone, wTot);
+
+  // placement: the assessed skill profile, and the door to re-assessing as you improve
+  const asr = cfg.assess || assessResult();
+  h += `<div class="sec" style="margin-top:22px">Your level</div>`;
+  if (asr) {
+    h += `<p class="hint" style="margin-bottom:8px">Placed <b>${esc((AS.tierNames || [])[asr.tier - 1] || 'tier ' + asr.tier)}</b> on ${esc(asr.at)}. Re-assess when it starts feeling easy — the plan re-bases to the result.</p>`
+      + assessProfileHTML(asr, true);
+  } else {
+    h += `<p class="hint" style="margin-bottom:8px">You self-rated at intake. An 8-minute adaptive test places you more honestly — per skill.</p>`;
+  }
+  h += `<div class="ctl" style="margin:10px 0 4px"><button class="tog" onclick="_as=null;location.hash='/plan/new/assess'">${asr ? 'Re-assess my level' : 'Take the placement test'}</button></div>`;
 
   h += `<div class="sec" style="margin-top:22px">Flashcards</div>
     <div class="dstats">
