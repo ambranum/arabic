@@ -80,6 +80,8 @@
       font-family:var(--arabic); font-size:26px; direction:rtl; color:#fff; line-height:1}
   .side-brand span{font-family:var(--serif); font-size:13px; direction:ltr; color:#8b90a0}
   .side-sep{height:1px; background:rgba(255,255,255,.09); margin:8px 10px}
+  .side-group{font-size:9.5px; letter-spacing:.13em; text-transform:uppercase; font-weight:700;
+    color:#7c818f; padding:14px 14px 5px}
 
   #nav{display:flex; flex-direction:column; gap:3px}
   .navb{display:flex; align-items:center; gap:12px; width:100%; text-align:left;
@@ -1279,23 +1281,59 @@ const ICON = {
 const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
   stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[n]}</svg>`;
 
-const SECTIONS = [
-  {route: 'plan',    icon: 'plan',    label: 'My Plan',         ready: true},
-  {route: 'translate', icon: 'translate', label: 'Translate',   ready: true},
-  {route: 'news',    icon: 'news',    label: "Today's News",    ready: true},
-  {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',      ready: true},
-  {route: 'verbs',   icon: 'verbs',   label: 'Verbs',           ready: true},
-  {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons', ready: true},
-  {route: 'tutor',   icon: 'tutor',   label: 'Ask a Tutor',     ready: true},
-  {route: 'sounds',  icon: 'sound',  label: 'Sounds',           ready: true},
-  {route: 'reactions', icon: 'react', label: 'Reactions',       ready: true},
-  {route: 'stories', icon: 'stories', label: 'Short Stories',   ready: true},
-  {route: 'table',   icon: 'table',   label: 'The Dinner Table', ready: true},
-  {route: 'books',   icon: 'books',   label: 'Books',           ready: true},
-  {route: 'videos',  icon: 'video',   label: 'Videos',          ready: true},
-  {route: 'bible',   icon: 'bible',   label: 'Bible',           ready: true},
-  {route: 'account', icon: 'user',    label: 'Account',         ready: true},
+// The menu grew section by section into a long flat list. It's organized now into a few
+// intent-groups — Practice (the skill drills the Plan schedules), Read & Listen (graded input),
+// and Ask (look-things-up tools) — with My Plan pinned on top as the spine and Account at the
+// bottom. `group` drives both the sidebar and the home tiles; order within a group is the
+// learning arc (sounds → reactions → grammar → verbs → vocab, etc.).
+const GROUPS = [
+  {id: 'practice', label: 'Practice',      blurb: 'The daily drills your plan walks you through.'},
+  {id: 'input',    label: 'Read & Listen', blurb: 'Graded Palestinian to read and hear.'},
+  {id: 'ask',      label: 'Ask & look up', blurb: 'Answers and lookups, on demand.'},
 ];
+const SECTIONS = [
+  {route: 'plan',    icon: 'plan',    label: 'My Plan',          ready: true, group: 'plan'},
+  {route: 'sounds',  icon: 'sound',   label: 'Sounds',           ready: true, group: 'practice'},
+  {route: 'reactions', icon: 'react', label: 'Reactions',        ready: true, group: 'practice'},
+  {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons',  ready: true, group: 'practice'},
+  {route: 'verbs',   icon: 'verbs',   label: 'Verbs',            ready: true, group: 'practice'},
+  {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',       ready: true, group: 'practice'},
+  {route: 'news',    icon: 'news',    label: "Today's News",     ready: true, group: 'input'},
+  {route: 'stories', icon: 'stories', label: 'Short Stories',    ready: true, group: 'input'},
+  {route: 'table',   icon: 'table',   label: 'The Dinner Table', ready: true, group: 'input'},
+  {route: 'books',   icon: 'books',   label: 'Books',            ready: true, group: 'input'},
+  {route: 'videos',  icon: 'video',   label: 'Videos',           ready: true, group: 'input'},
+  {route: 'bible',   icon: 'bible',   label: 'Bible',            ready: true, group: 'input'},
+  {route: 'tutor',   icon: 'tutor',   label: 'Ask a Tutor',      ready: true, group: 'ask'},
+  {route: 'translate', icon: 'translate', label: 'Translate',    ready: true, group: 'ask'},
+  {route: 'account', icon: 'user',    label: 'Account',          ready: true, group: 'you'},
+];
+// One home tile + its live status line. Kept as a named helper so the home view can lay the
+// sections out group by group instead of one flat wall.
+function secStatus(sec) {
+  return sec.route === 'news'
+      ? LIB.texts.filter(t => t.kind === 'news').length + ' articles'
+      : sec.route === 'verbs' ? VB.length + ' verbs, by form'
+      : sec.route === 'stories' ? LIB.texts.filter(t => t.kind === 'story').length + ' stories, 3 levels'
+      : sec.route === 'vocab' ? (marked.size ? dueCards().length + ' due · ' + marked.size + ' cards' : 'Your flashcards')
+      : sec.route === 'plan' ? (planCfg() ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name) : 'Build your study plan')
+      : sec.route === 'grammar' ? GRAM.length + ' spoken structures'
+      : sec.route === 'tutor' ? (tutorKey() ? 'Ask anything, in dialect' : 'Add your key to ask questions')
+      : sec.route === 'books' ? (booksList().length ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read' : 'Full graded readers')
+      : sec.route === 'account' ? (_user ? esc(_user.email) : 'Sign in to sync your progress')
+      : sec.route === 'translate' ? 'Words & phrases in context'
+      : sec.route === 'bible' ? 'ESV ‖ Arabic, side by side'
+      : sec.route === 'videos' ? VIDEOS.length + ' playlists · Shami Speaker'
+      : sec.route === 'reactions' ? (RX.items ? RX.items.length + ' quick replies, by feel' : 'Conversation reflexes')
+      : sec.route === 'sounds' ? (SND.lessons ? SND.lessons.length + ' sound contrasts to master' : 'Get the ear & mouth right')
+      : sec.route === 'table' ? (TBL.dialogues ? TBL.dialogues.length + ' conversations · follow the room' : 'The north-star skill')
+      : 'Coming soon';
+}
+function homeTile(sec) {
+  return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
+      <div class="tile-t">${esc(sec.label)}</div>
+      <div class="tile-s">${secStatus(sec)}</div></button>`;
+}
 
 // Short-story reading levels, in order. label shown on tiles; blurb sets expectations.
 const STORY_LEVELS = [
@@ -1310,10 +1348,16 @@ function renderNav(active){
   const item = (route, icon, label, ready) =>
     `<button class="navb${route===active?' on':''}" onclick="location.hash='/${route==='home'?'':route}'">
        ${svg(icon)}<span>${esc(label)}</span>${ready===false?'<em>soon</em>':''}</button>`;
-  $('nav').innerHTML =
-    item('home', 'home', 'Home', true) +
-    `<div class="side-sep"></div>` +
-    SECTIONS.map(sec => item(sec.route, sec.icon, sec.label, sec.ready)).join('');
+  const sec = s => item(s.route, s.icon, s.label, s.ready);
+  const inGroup = g => SECTIONS.filter(s => s.group === g);
+  let h = item('home', 'home', 'Home', true) + `<div class="side-sep"></div>` +
+    inGroup('plan').map(sec).join('');
+  GROUPS.forEach(g => {
+    const items = inGroup(g.id); if (!items.length) return;
+    h += `<div class="side-group">${esc(g.label)}</div>` + items.map(sec).join('');
+  });
+  h += `<div class="side-sep"></div>` + inGroup('you').map(sec).join('');
+  $('nav').innerHTML = h;
 }
 
 // ---------- routing (hash so Back works, and it survives a reload) ----------
@@ -1414,38 +1458,22 @@ function home(){
   }
   h += '</div>';
 
-  // The menu as tiles — mirrors the bar, with a status line per section.
-  h += '<div class="sec">Sections</div><div class="tiles">';
-  h += SECTIONS.map(sec => {
-    const count = sec.route === 'news'
-      ? LIB.texts.filter(t => t.kind === 'news').length + ' articles'
-      : sec.route === 'verbs' ? VB.length + ' verbs, by form'
-      : sec.route === 'stories' ? LIB.texts.filter(t => t.kind === 'story').length + ' stories, 3 levels'
-      : sec.route === 'vocab' ? (marked.size ? dueCards().length + ' due · ' + marked.size + ' cards' : 'Your flashcards')
-      : sec.route === 'plan' ? (planCfg() ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name) : 'Build your study plan')
-      : sec.route === 'grammar' ? GRAM.length + ' spoken structures'
-      : sec.route === 'tutor' ? (tutorKey() ? 'Ask anything, in dialect' : 'Add your key to ask questions')
-      : sec.route === 'books' ? (booksList().length ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read' : 'Full graded readers')
-      : sec.route === 'account' ? (_user ? esc(_user.email) : 'Sign in to sync your progress')
-      : sec.route === 'translate' ? 'Words & phrases in context'
-      : sec.route === 'bible' ? 'ESV ‖ Arabic, side by side'
-      : sec.route === 'videos' ? VIDEOS.length + ' playlists · Shami Speaker'
-      : sec.route === 'reactions' ? (RX.items ? RX.items.length + ' quick replies, by feel' : 'Conversation reflexes')
-      : sec.route === 'sounds' ? (SND.lessons ? SND.lessons.length + ' sound contrasts to master' : 'Get the ear & mouth right')
-      : sec.route === 'table' ? (TBL.dialogues ? TBL.dialogues.length + ' conversations · follow the room' : 'The north-star skill')
-      : 'Coming soon';
-    return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
-      <div class="tile-t">${esc(sec.label)}</div>
-      <div class="tile-s">${count}</div></button>`;
-  }).join('');
-  h += '</div>';
+  // The menu as tiles — grouped by intent (Practice · Read & Listen · Ask), so the growing set
+  // of sections stays scannable. My Plan is the hero above; Account sits on its own at the end.
+  GROUPS.forEach(g => {
+    const items = SECTIONS.filter(s => s.group === g.id); if (!items.length) return;
+    h += `<div class="sec">${esc(g.label)}</div><div class="tiles">` +
+      items.map(homeTile).join('') + '</div>';
+  });
+  h += `<div class="sec">Account</div><div class="tiles">` +
+    SECTIONS.filter(s => s.group === 'you').map(homeTile).join('') + '</div>';
 
   // Existing practice content that predates the sections. Kept reachable rather than
   // orphaned; morning-coffee could later live under Short Stories.
   const drill = LIB.drills[0];
   const coffee = LIB.texts.find(t => t.kind !== 'news' && t.kind !== 'book-chapter' && t.kind !== 'story');
   if (drill || coffee) {
-    h += '<div class="sec">Practice</div>';
+    h += '<div class="sec">Extras</div>';
     if (drill) h += card(drill, 'drill');
     if (coffee) h += card(coffee, 'text');
   }
@@ -2704,7 +2732,7 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
     if (sp.src === 'external') {
       if (sp.act === 'course' || sp.act === 'sound') return !!(cfg.external.languageTransfer || cfg.external.pimsleur);
       if (sp.act === 'listen') return !!cfg.external.podcasts;
-      if (sp.act === 'tutor') return !!cfg.external.tutor;
+      if (sp.act === 'tutor') return true;   // in-app Ask a Tutor is always available (a real tutor is a bonus)
     }
     if (A.speak && !speakAvail && sp.act !== 'tutor') return false;       // no voice slot → drop speaking (tutor is the honest fallback)
     if (sp.cadence === 'weekly' && wd !== tutorDay) return false;         // tutor ~once a week
@@ -2791,6 +2819,18 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail, phaseIndex) {
     builds: A.builds, minutes, order: A.order || 3, source: sp.src, speak: !!A.speak,
     ideal: A.slot === 'car' ? (carAvail ? 'in the car' : 'somewhere you can speak')
       : A.slot === 'desk' ? 'at a desk' : A.slot === 'break' ? 'on a break' : 'in the evening'};
+  // The tutor conversation now has an in-app home: Ask a Tutor, primed on spoken Palestinian.
+  // Point the task there and fold in the "what you couldn't say" loop; a real tutor stays the
+  // gold-standard bonus when they have one.
+  if (sp.act === 'tutor') {
+    t.title = 'Ask a Tutor — the things you couldn’t say';
+    t.link = '/tutor'; t.source = 'inapp';
+    t.instr = 'Open Ask a Tutor and work through what you got stuck on this week. Tap “Save” on any phrase it gives you to send it to your flashcards.';
+    t.note = (cfg.external && cfg.external.tutor)
+      ? 'And when you can, a live session with a real Palestinian tutor is the gold standard.'
+      : '';
+    return t;
+  }
   if (sp.src === 'external') {
     // With both courses enabled the first audio block of the day goes to Pimsleur — it's the
     // one being paid for and it tracks a specific lesson — and Language Transfer takes the
