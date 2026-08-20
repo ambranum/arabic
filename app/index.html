@@ -915,6 +915,18 @@
     border:1px dashed var(--rule); border-radius:8px; margin-bottom:10px; background:var(--paper-2)}
   .lsn-produce{font-size:14.5px; line-height:1.65; border-left:3px solid var(--verdigris);
     padding:4px 0 4px 14px; color:var(--ink-soft)}
+  .lsn-dlg{border:1px solid var(--rule); border-radius:8px; padding:6px 14px}
+  .lsn-line{padding:8px 0; border-bottom:1px solid var(--rule)}
+  .lsn-line:last-child{border-bottom:none}
+  .lsn-sp{display:block; font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--verdigris); font-weight:700; margin-bottom:2px; direction:rtl; text-align:right}
+  .lsn-lar{display:block; font-family:var(--arabic); direction:rtl; font-size:19px; line-height:1.9}
+  .lsn-len{display:block; font-size:12.5px; color:var(--muted); margin-top:2px}
+  .lsn-text{font-family:var(--arabic); font-size:19px; line-height:2.1; border-left:3px solid var(--rule);
+    padding:2px 14px}
+  .lsn-text p{margin:0 0 10px}
+  .lsn-ten{display:block; font-family:var(--sans); direction:ltr; text-align:left; font-size:12.5px;
+    color:var(--muted); font-style:normal; line-height:1.5; margin-top:2px}
   .lsn-finish{margin-top:22px; padding-top:16px; border-top:1px solid var(--rule)}
   .lsn-prog{font-size:12.5px; color:var(--muted); margin-bottom:9px}
   .lsn-prog b{color:var(--ochre)}
@@ -2055,7 +2067,9 @@ function lessonsHome() {
 const _lsnKey = ar => phKey(ar);
 function lsnSaved(ar) { return marked.has(_lsnKey(ar)); }
 const lsnLeft = u => (u.chunks || []).filter(c => c.ar && !lsnSaved(c.ar)).length;
-const lsnAllSaved = u => u && (u.chunks || []).length > 0 && lsnLeft(u) === 0;
+// A unit with nothing to check off (the dialogue- and reading-driven ones) has nothing to gate —
+// otherwise it could never be completed and would wedge the plan on that day.
+const lsnAllSaved = u => !!u && lsnLeft(u) === 0;
 // A lesson chunk becomes a real SRS phrase card — same loop as the tutor's saved phrases:
 // what a unit teaches comes back in daily review and the plan with zero extra wiring.
 // Tapping again UNCHECKS it (mis-taps happen); a card you've already reviewed asks first,
@@ -2139,12 +2153,32 @@ function lessonView(u) {
         ${u.gram_id && gramById(u.gram_id) ? `<button class="tog" onclick="location.hash='/grammar/${u.gram_id}'">Full lesson: ${esc(gramById(u.gram_id).title)} →</button>` : ''}
       </div>`;
   }
-  h += `<div class="sec">The chunks</div>`;
-  let lastGroup = null;
-  u.chunks.forEach((c, ci) => {
-    if ((c.group || null) !== lastGroup) { lastGroup = c.group || null;
-      if (lastGroup) h += `<div class="lsn-group">${esc(lastGroup)}</div>`; }
-    h += lsnChunkRow(u.id, c, ci);
+  if (u.chunks.length) {
+    h += `<div class="sec">The chunks</div>`;
+    let lastGroup = null;
+    u.chunks.forEach((c, ci) => {
+      if ((c.group || null) !== lastGroup) { lastGroup = c.group || null;
+        if (lastGroup) h += `<div class="lsn-group">${esc(lastGroup)}</div>`; }
+      h += lsnChunkRow(u.id, c, ci);
+    });
+  }
+  // Dialogues and readings come straight off the page, untranslated as the book prints them —
+  // read them aloud. Speaker labels are kept so you can hear who is talking.
+  (u.dialogues || []).forEach(d => {
+    h += `<div class="sec">${esc(d.title || 'Dialogue')}</div><div class="lsn-dlg">` +
+      d.lines.map(l => `<div class="lsn-line">
+        ${l.sp ? `<span class="lsn-sp">${esc(l.sp)}</span>` : ''}
+        <span class="lsn-lar" dir="rtl">${esc(l.ar)}</span>
+        ${l.en ? `<span class="lsn-len">${esc(l.en)}</span>` : ''}</div>`).join('') +
+      `</div><div class="note">From ${esc(d.src)}.</div>`;
+  });
+  (u.texts || []).forEach(t => {
+    h += `<div class="sec">${esc(t.title || 'Reading')}</div><div class="lsn-text" dir="rtl">` +
+      t.sentences.map(s => {
+        const ar = typeof s === 'string' ? s : (s.ar || '');
+        const en = typeof s === 'string' ? null : s.en;
+        return `<p>${esc(ar)}${en ? `<em class="lsn-ten">${esc(en)}</em>` : ''}</p>`;
+      }).join('') + `</div><div class="note">From ${esc(t.src)}.</div>`;
   });
   (u.drills || []).forEach(d => { h += lsnDrillHTML(u, d); });
   if (u.produce) h += `<div class="sec">Now produce</div><div class="lsn-produce">${esc(u.produce)}</div>`;
@@ -2152,8 +2186,10 @@ function lessonView(u) {
   const next = (LSN.units || [])[i + 1];
   const left = lsnLeft(u), all = lsnAllSaved(u), fin = lsnDone(u.id);
   h += `<div class="lsn-finish">
-      <div class="lsn-prog">${(u.chunks.length - left)} of ${u.chunks.length} chunks checked${
-        left ? ` · <b>${left}</b> to go` : ' · all done'}</div>
+      <div class="lsn-prog">${u.chunks.length
+        ? `${u.chunks.length - left} of ${u.chunks.length} chunks checked${
+            left ? ` · <b>${left}</b> to go` : ' · all done'}`
+        : 'Work through the dialogue and the drills out loud, then mark it done.'}</div>
       <button class="tog go lsn-fin" ${all || fin ? '' : 'disabled'} onclick="lsnFinish('${u.id}')">${
         fin ? '✓ Unit complete — tap to reopen' : 'Mark unit complete'}</button>
       ${!all && !fin ? `<div class="lsn-gate">Check off every chunk above before finishing the unit —

@@ -1215,6 +1215,5066 @@ window.LESSONS = {
    ],
    "produce": "Out loud: what you do, what two family members do, and what you wanted to be as a kid — the book’s own question: شو كان بِدَّك تِشْتْغِل لَمّا كُنْت زغير؟",
    "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-05",
+   "n": 5,
+   "phase": 2,
+   "title": {
+    "ar": "أيَّام الأُسْبوع",
+    "en": "Days, times & when things happen"
+   },
+   "objective": "Say what day it is, what time it is, and when something happened or will happen. Note that Arabic tells the time with no verb at all — الساعة وحدة is literally \"the hour one\".",
+   "src": "speaking 10-10, speaking 29-29, speaking 24-25",
+   "gram_id": "nominal",
+   "grammar": {
+    "point": "Telling the time takes no verb",
+    "body": "This is the no-“is” sentence you already know, doing real work: الساعة plus a number IS the sentence. The book’s own examples run through the clock and then add the part of day — morning, afternoon, evening — on the end.",
+    "examples": [
+     {
+      "ar": "إلسّاعة وَحدِة.",
+      "en": "It's one o'clock (the hour is one)."
+     },
+     {
+      "ar": "إلسّاعة ثِنْتين.",
+      "en": "It's two o'clock (the hour is two)."
+     },
+     {
+      "ar": "إلسّاعة ثمانية.",
+      "en": "It's eight o'clock (the hour is eight)."
+     },
+     {
+      "ar": "إلسّاعة سَبْعة ورُبع.",
+      "en": "It's a quarter after seven (seven and a quarter)."
+     },
+     {
+      "ar": "إلسّاعة سَبْعة وثِلِث.",
+      "en": "It's twenty after seven (seven and a third)."
+     },
+     {
+      "ar": "إلسّاعة سَبْعة إلّا ثُلْث.",
+      "en": "It's twenty to seven (seven minus a third)."
+     },
+     {
+      "ar": "الساعة خَمْسِة الصُّبح.",
+      "en": "It's five in the morning."
+     },
+     {
+      "ar": "الساعة ثلاثِة بَعْدِ الظُّهُر.",
+      "en": "It's three in the afternoon."
+     }
+    ],
+    "src": "speaking p.24",
+    "topics": [
+     "Telling the time",
+     "a.m. / p.m."
+    ]
+   },
+   "chunks": [
+    {
+     "ar": "يُوم الأَحَد",
+     "en": "Sunday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "يُوم الثِّنِين",
+     "en": "Monday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "يُوم الثَّلاثا",
+     "en": "Tuesday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "يُوم الأَرْبَعا \\ الأَرْبِعا",
+     "en": "Wednesday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "يُوم الْخَميس",
+     "en": "Thursday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "يُوم الْجُمْعَة",
+     "en": "Friday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "يُوم السَّبْت",
+     "en": "Saturday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "أُسْبُوع ج أَسابِيع",
+     "en": "week",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "يُوم ج أَيَّام ، إيَّام",
+     "en": "day",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "مُقَدَّس",
+     "en": "holy",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "إمْبارِح",
+     "en": "yesterday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "أوَّل إمْبارِح",
+     "en": "before yesterday",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "بُكْرَة",
+     "en": "tomorrow",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "بَعِد بُكْرَة",
+     "en": "after tomorrow",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "إلأسْبوع الْجاي",
+     "en": "next week",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "إلأسْبوع إلّي فات",
+     "en": "last week",
+     "src": "speaking p.10"
+    },
+    {
+     "ar": "يُوم ج أيَّام",
+     "en": "day",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "أسْبوع ج أسابيع",
+     "en": "week",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "جُمْعة ج جُمَع",
+     "en": "week",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "شَهِر ج شُهور",
+     "en": "month",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "ساعة ج ات",
+     "en": "hour",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "دَقيقة ج دَقايِق",
+     "en": "minute",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "لَحْظَة ج ات",
+     "en": "second",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "صُبِح",
+     "en": "morning",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "ظُهِر",
+     "en": "noon",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "بَعْدِ الظُّهُر",
+     "en": "after noon",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "مسا، مَغْرِب",
+     "en": "evening",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "نْهار",
+     "en": "day time",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "لِيل ج لَيالي",
+     "en": "night",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "بُكْرة",
+     "en": "tomorrow",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "بَعِد بُكْرة",
+     "en": "a day after tomorrow",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "وَقْت ، زَمَن، زمان",
+     "en": "time",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "إلأسْبوع الْماضي",
+     "en": "last week",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "إلسَّنِة الْجاي",
+     "en": "next year",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "إلسِّنِة إلّي فاتَت \\ إلسَّنِة الْماضْيِة",
+     "en": "last year",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "ساعِتْها",
+     "en": "then",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "بُكْرة في المِشْمِش",
+     "en": "it will never happened",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "أجا الوَقْت",
+     "en": "time has come",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "مِن زَمان، زمان",
+     "en": "long time ago\\ it's been a long time since",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "حالًا \\ عَلى طول",
+     "en": "right away",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "أبَدًا",
+     "en": "never",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "مَرات \\ أحْيانًا",
+     "en": "sometimes",
+     "src": "speaking p.29"
+    },
+    {
+     "ar": "دايْمًا",
+     "en": "always",
+     "src": "speaking p.29"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة:",
+     "instructions": "وظيفة:",
+     "items": [
+      {
+       "cue": "1. قولوا أيّام الاسبوع مِن الذاكِرة. (Memorize the days and say them without looking at the page.)",
+       "answer": null
+      },
+      {
+       "cue": "2. أيّ يُوم الْيُوم؟ (What day is it today?)",
+       "answer": null
+      },
+      {
+       "cue": "3. أيّ يُوم يكون بُكْرة؟ (What day will be tomorrow?)",
+       "answer": null
+      },
+      {
+       "cue": "4. أيّ يُوم كان إمْبارِح؟ (What day was yesterday?)",
+       "answer": null
+      },
+      {
+       "cue": "5. أيّ يُوم مُقَدَّس لَكُلّ دين؟ (What day is holy for every religion?)",
+       "answer": null
+      },
+      {
+       "cue": "6. أيّ يُوم بِتْحِبّ وليش؟ (What day you like and why?)",
+       "answer": null
+      },
+      {
+       "cue": "7. إسْتَعْمِل \"أنا بَشوف .. بَروح .. بَزور .. بكون.. بَقوم.. بَصوم.. بَفوت.. بَقول\" مَع أيّام الأُسْبوع؟ (Use the verbs \"baruuH, bazuur...\" to describe what you do during the days of the week?)",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.10"
+    },
+    {
+     "type": "qa",
+     "title": "وظيفة",
+     "instructions": "وظيفة",
+     "items": [
+      {
+       "cue": "1. قُل جُمَل مَع الكلمات الجْديدة.",
+       "answer": null
+      },
+      {
+       "cue": "2. إحْكي شو عْمِلِت في الأسْبوع الأخير، وبَدَل أيّام الأسْبوع إسْتَعْمِل: لِيلِة إمْبارح، أوّل إمباريح، بَعِد بُكْرة إلَخ.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.29"
+    },
+    {
+     "type": "qa",
+     "title": "Translate into Arabic:",
+     "instructions": "Translate into Arabic:",
+     "items": [
+      {
+       "cue": "7:00 It's exactly seven o'clock.",
+       "answer": null
+      },
+      {
+       "cue": "7:05 It's five after seven.",
+       "answer": null
+      },
+      {
+       "cue": "7:10 It's ten after seven.",
+       "answer": null
+      },
+      {
+       "cue": "7:15 It's a quarter after seven.",
+       "answer": null
+      },
+      {
+       "cue": "7:20 It's twenty after seven.",
+       "answer": null
+      },
+      {
+       "cue": "7:25 It's twenty-five after seven. (It's seven thirty five minus.)",
+       "answer": null
+      },
+      {
+       "cue": "7:30 It's seven thirty.",
+       "answer": null
+      },
+      {
+       "cue": "7:35 It's seven thirty-five.",
+       "answer": null
+      },
+      {
+       "cue": "7:40 It's twenty to eight.",
+       "answer": null
+      },
+      {
+       "cue": "7:45 It's a quarter to eight.",
+       "answer": null
+      },
+      {
+       "cue": "7:45 It's ten to eight. [sic — printed 7:45; presumably 7:50]",
+       "answer": null
+      },
+      {
+       "cue": "7:55 It's five to eight",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.25"
+    },
+    {
+     "type": "qa",
+     "title": "Drills:",
+     "instructions": "Drills:",
+     "items": [
+      {
+       "cue": "1) Say different times of the day as in 3.",
+       "answer": null
+      },
+      {
+       "cue": "2) The teacher will write an hour in numbers – use words to say it.",
+       "answer": null
+      },
+      {
+       "cue": "3) Describe your day, use hours.",
+       "answer": null
+      },
+      {
+       "cue": "4) Describe your last Saturday. Use hours.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.25"
+    }
+   ],
+   "produce": "Out loud: today’s day and date, the time right now, what time you got up, and what time you’ll eat dinner.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-06",
+   "n": 6,
+   "phase": 2,
+   "title": {
+    "ar": "إلْمَدِينِة وِالْقَرْيِة",
+    "en": "The town and the village"
+   },
+   "objective": "Describe where you live — the buildings, the streets, what your area has and hasn’t got. This is the vocabulary a host will use in the first ten minutes of showing you around.",
+   "src": "speaking 11-13",
+   "gram_id": "fi",
+   "grammar": {
+    "point": "في — “there is”, and “in”",
+    "body": "The same little word does both jobs: في المَدينة سينما (\"there’s a cinema in town\") uses في twice over — once as \"in\", once as \"there is\". Negate it with ما في."
+   },
+   "chunks": [
+    {
+     "ar": "مَدينة ج مُدُن",
+     "en": "town",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "قِرْيِة، بَلَد ج قُرَى",
+     "en": "village",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "دَوّار ج دَوّارات",
+     "en": "square",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "مَرْكَز تِجاري ج مَراكِز تِجارِيِّة",
+     "en": "shopping center",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "مُجَمَّع ج مُجَمَّعات",
+     "en": "mall, complex",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "حَديقَة حَيْوانات",
+     "en": "zoo",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "حَديقَة عامَّة ج حَدايِق عامَّة",
+     "en": "public garden",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "بِرْكِة سِباحَة ج بِرَك سِباحَة",
+     "en": "swimming pool",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "كُلِّيِّة ج كُلِّيّات",
+     "en": "college",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "مَحَلّ ج مَحَلّات",
+     "en": "place, shop",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "دُكّان، دُكّانِة ج دَكاكين",
+     "en": "grocery store",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "وَسْطِ الْبَلَد",
+     "en": "down town",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "مَسْرَح ج مَسارِح",
+     "en": "theater",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "مَتْحَف ج مَتاحِف",
+     "en": "museum",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "بارك ج باركات",
+     "en": "park",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "جِسِر ج جُسور",
+     "en": "bridge",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "مَسْجِد ج مَساجِد",
+     "en": "mosque",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "كَنيسِة ج كَنايِس",
+     "en": "church",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "كَنيس ج كُنُس",
+     "en": "synagogue",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "شارِع ج شَوارِع",
+     "en": "street",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "رَقْم الْبِيت",
+     "en": "home number",
+     "src": "speaking p.11"
+    },
+    {
+     "ar": "جامعة",
+     "en": "university",
+     "src": "speaking p.11",
+     "group": "Handwritten additions at the bottom of p011 (student pencil)"
+    },
+    {
+     "ar": "رمزور",
+     "en": "stoplight (handwritten; Hebrew loanword)",
+     "src": "speaking p.11",
+     "group": "Handwritten additions at the bottom of p011 (student pencil)"
+    },
+    {
+     "ar": "مفترق",
+     "en": "intersection",
+     "src": "speaking p.11",
+     "group": "Handwritten additions at the bottom of p011 (student pencil)"
+    },
+    {
+     "ar": "مدخل",
+     "en": "entrance",
+     "src": "speaking p.11",
+     "group": "Handwritten additions at the bottom of p011 (student pencil)"
+    },
+    {
+     "ar": "ملعب",
+     "en": "playground",
+     "src": "speaking p.11",
+     "group": "Handwritten additions at the bottom of p011 (student pencil)"
+    },
+    {
+     "ar": "كمّل دغري (؟)",
+     "en": "stay on / keep straight (handwritten, partly illegible; transliterated 'dugary')",
+     "src": "speaking p.11",
+     "group": "Handwritten additions at the bottom of p011 (student pencil)"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وَظيفِة:",
+     "instructions": "وَظيفِة:",
+     "items": [
+      {
+       "cue": "1. وصِّف مَدينتَك أو قَرْيِتَك. (Describe your home town.)",
+       "answer": null
+      },
+      {
+       "cue": "2. أيّ مَدينة في الْعالَم بِتْحِبّ وليش؟",
+       "answer": null
+      },
+      {
+       "cue": "3. إعْمَل مُقارَنِة (comparison) بين قَرْيِة زَيّ باقة ومَدينة زَيّ تل-أبيب أو نيو يورك. (Compare a village as Baqa with a town as Tel Aviv or New York.)",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.11"
+    }
+   ],
+   "produce": "Describe your own town out loud in five sentences: what there is, what there isn’t, and what you like about it.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-07",
+   "n": 7,
+   "phase": 2,
+   "title": {
+    "ar": "الدار",
+    "en": "The house"
+   },
+   "objective": "Name the rooms and the things in them — so you can be shown around a home, offered a seat, and asked to pass something, without losing the thread.",
+   "src": "speaking 37-37",
+   "gram_id": "fi",
+   "grammar": {
+    "point": "Rooms, and what’s in them",
+    "body": "Pair each room word with في and a thing that lives there. The book’s list is ordered the way you’d walk through a house, which is also the order you’ll be shown one."
+   },
+   "chunks": [
+    {
+     "ar": "باب ج (أ)بْواب",
+     "en": "door",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "شُبّاك ج شَبابيك",
+     "en": "window",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "طاوْلِة السُّفْرَة ج طاوْلات",
+     "en": "door",
+     "src": "speaking p.37",
+     "note": "book: sic — printed gloss is \"door\"; presumably dining table"
+    },
+    {
+     "ar": "قَعْدِة ج ات",
+     "en": "sitting era, salon",
+     "src": "speaking p.37",
+     "note": "book: sic: area"
+    },
+    {
+     "ar": "حَمّام ج ات",
+     "en": "toilet, shower",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "بِيت خارِج",
+     "en": "toilet",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "غُرْفِة ج غُرَف",
+     "en": "room",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "كَنَباي ج ات",
+     "en": "sofa",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "غُرْفِة نُوم",
+     "en": "sleeping room",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "غُرْفِة أوْلاد",
+     "en": "children room",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "غُرْفِة الضِّيوف",
+     "en": "salon",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "تَخِت ج تْخُوت",
+     "en": "bed",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "غَطا",
+     "en": "cover",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "دَرَجِة ج دَرَج، أدْراج",
+     "en": "stairs",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "شَقَّة ج شُقَق",
+     "en": "flat",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "بُسْتان، حَديقَة، جْنِينِة",
+     "en": "garden",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "سَطِح ج سُطوح",
+     "en": "roof",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "ثَلّاجِة ج ات",
+     "en": "refrigerator",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "خْزانِة ج ات",
+     "en": "cupboard",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "طابِق ج طوابِق",
+     "en": "floor",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "أرْض، أرْضِيَّة",
+     "en": "floor",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "سَقْف ج أسْقُف، سقوف",
+     "en": "ceiling",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "مَخْزَن ج مَخازِن",
+     "en": "storage",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "مَوْقِف سَيّارات ج مَواقِف",
+     "en": "parking",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "ساحة ج ات",
+     "en": "yard",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "سور ج أسْوار",
+     "en": "wall (around house)",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "جِدار، سِياج",
+     "en": "fence",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "حِيط ج حيطان",
+     "en": "wall (of house)",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "كُرْسي ج كَراسي",
+     "en": "chair",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "مِصْعَد ج مَصاعِد",
+     "en": "elevator",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "مَطْبَخ",
+     "en": "kitchen",
+     "src": "speaking p.37"
+    },
+    {
+     "ar": "بَالْكُون ، بَرَنْدَة",
+     "en": "balcony",
+     "src": "speaking p.37"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1. وَصّف (describe) بيتَك.",
+       "answer": null
+      },
+      {
+       "cue": "2. إحْكي عَن بيت أحْلامَك – المكان, الحَجْم (size) الألْوان, كَم غُرْفِة...",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.37"
+    }
+   ],
+   "produce": "Walk through your own home out loud, room by room, saying one thing that’s in each.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-08",
+   "n": 8,
+   "phase": 2,
+   "title": {
+    "ar": null,
+    "en": "Your day, start to finish"
+   },
+   "objective": "Narrate an ordinary day — waking, eating, working, coming home. Everyday habitual actions are exactly what the b- present is for, so this unit is where that pattern starts paying off.",
+   "src": "speaking 35-36",
+   "gram_id": "bpresent",
+   "grammar": {
+    "point": "The b- present is the everyday tense",
+    "body": "بَصْحى، بَاكُل، بَشْتْغِل — the بـ on the front marks what you habitually do. It is the workhorse tense of ordinary talk, and a daily routine is the cleanest place to drill it."
+   },
+   "chunks": [
+    {
+     "ar": "صِحي (أنا بَصْحا الصُبح....)",
+     "en": "to wake up",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "صَلَّى (أنا بَصَلّي ....)",
+     "en": "to pray",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "مَشَّط (أنا بَمَشِّط شَعْري....)",
+     "en": "to comb (the hair)",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "غَسَل -ه (أنا بَغْسِل وَجْهي....)",
+     "en": "to wash",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "تْحَمَّم (أنا بَتْحَمَّم....)",
+     "en": "to take a shower",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "فَرْشَى الأسْنان (أنا بَفَرْشي أسناني ....)",
+     "en": "to clean teeth",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "أفْطَر (بَفْطُر ....)",
+     "en": "to eat breakfast",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "تْغَدَّى (بَتْغَدَّى ....)",
+     "en": "to eat lunch",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "تْعَشّى (بَتْعَشّى ....)",
+     "en": "to eat dinner",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "شِرِب (بشْرَب ....)",
+     "en": "to drink",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "عِمِل وَظيفة البِيت (بَعْمَل ....)",
+     "en": "to make home work",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "نام (بَنام ....)",
+     "en": "to sleep",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "إرْتاح (بَرْتاح ....)",
+     "en": "to rest",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "سَهَر -ه (بَسْهَر ....)",
+     "en": "to spend time at night",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "شَمّ هوا (بَشِمّ هوا)",
+     "en": "to go out and have a good time (lit: to breath air)",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "دَرَس\\تْعَلَّم (بَدْرُس\\بَتْعَلَّم....)",
+     "en": "to study",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "سافَر (بَسافِر ....)",
+     "en": "to travel",
+     "src": "speaking p.35",
+     "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)"
+    },
+    {
+     "ar": "عِمِل رِياضَة (بَعْمَل رياضة ....)",
+     "en": "to do sport",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "حَضَر تِلْفِزيون (بَحْضَر ....)",
+     "en": "to watch",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "اشْتَغَل (بَشْتْغِل ....)",
+     "en": "to work",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "حَضَّر أكِل (بَحَضِّر أكِل ....)",
+     "en": "to prepare food",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "فَحَص البَريد الإلكتروني (بَفْحَص البريد....)",
+     "en": "to check mail",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "قرا كُتاب (بَقْرأ كُتاب )",
+     "en": "to read a book",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "حَكى بالتلَفون\\اسكايب (بَحْكي مع أهْلي)",
+     "en": "to speak by skype",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "تْمَشّى \\ لَفْلَف (بَتْمَشَّى \\ بَلَفْلِف أنا وصْحابي )",
+     "en": "to go out, walk around",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "سِمِع موسيقى (بَسْمَع موسيقى )",
+     "en": "listen to music",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "رَتَّب ونَظَّف الغُرْفة (بَرَتِّب وبَنَظِّف غُرُفْتي )",
+     "en": "to tidy and clean the room",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "غسَل الملابِس \\ أواعي (بَغْسِل مَلابسي / أواعيي)",
+     "en": "to wash clothes",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "رَوَّح (أنا بَرَوّح....)",
+     "en": "to return home",
+     "src": "speaking p.36"
+    },
+    {
+     "ar": "وَدَّى (أنا بَوَدّي....)",
+     "en": "to take someone by car to",
+     "src": "speaking p.36"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1) Prepare to speak about your weekly routine in Givat Haviva,",
+       "answer": null
+      },
+      {
+       "cue": "2) Speak about your routine as a student in your country and a Saturday routine.",
+       "answer": null
+      },
+      {
+       "cue": "3) Speak about your preferred daily routine.",
+       "answer": null
+      },
+      {
+       "cue": "4) Do you like routine?",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.36"
+    }
+   ],
+   "produce": "Tell your whole day in order, out loud, in the b- present. Then tell it again about someone else in your family (he/she forms).",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-09",
+   "n": 9,
+   "phase": 2,
+   "title": {
+    "ar": "هُوِيِّة",
+    "en": "Who I am"
+   },
+   "objective": "The paperwork of being a person — name, age, where you’re from, what you are. The questions you get asked first, and the ones you’ll be asked at every border.",
+   "src": "speaking 38-38",
+   "gram_id": "pronouns",
+   "grammar": {
+    "point": "I, you, he — and the words that follow them",
+    "body": "This unit is where the pronouns stop being a table and start being sentences: أنا plus a noun, إنت plus a question. No verb needed for any of it."
+   },
+   "chunks": [
+    {
+     "ar": "هُوِيِّة",
+     "en": "identity",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "بِطاقَة هُوِيِّة",
+     "en": "identity card",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "مُتَدَيِّن",
+     "en": "religious",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "عِلْماني",
+     "en": "secular",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "عَرَبيّ ج عَرَب",
+     "en": "Arab",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "يَهوديّ ج يَهود",
+     "en": "Jew, Jewish",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "دُرْزيّ ج دُروز",
+     "en": "Druze",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "إنْسان",
+     "en": "human being",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "مُتَشَدِّد",
+     "en": "extreme, fundamentalist",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "وَسَطيّ",
+     "en": "moderate",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "مُتَساهِل",
+     "en": "tolerant",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "بَحِسّ",
+     "en": "I feel",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "بَفَكِّر",
+     "en": "I think",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "بَنْتَمي",
+     "en": "I belong",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "تَمْييز",
+     "en": "Discrimination",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "عُنْصُرِيَّة",
+     "en": "Racism",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "عُنْصُرِيِّ",
+     "en": "Racist",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "أقَلِّيِّة",
+     "en": "minority",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "أغْلَبِيِّة",
+     "en": "majority",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "يَسَّاريّ",
+     "en": "leftist",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "يَمينيّ",
+     "en": "rightist",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "روحاني",
+     "en": "spiritual",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "مادّي",
+     "en": "materialistic",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "طائِفة ج طَوائف",
+     "en": "religious-ethnic group",
+     "src": "speaking p.38"
+    },
+    {
+     "ar": "طَبَقة اجْتِماعِيِّة",
+     "en": "social class",
+     "src": "speaking p.38"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وَظيفة: 1. إحْكي عن نَفْسَك:",
+     "instructions": "وَظيفة: 1. إحْكي عن نَفْسَك:",
+     "items": [
+      {
+       "cue": "كيف بِتْعَرِّف نَفْسَك؟",
+       "answer": null
+      },
+      {
+       "cue": "بْإيش بِتْآمِن؟",
+       "answer": null
+      },
+      {
+       "cue": "إنْتِ مِتْدَيِّن ولا عِلْماني",
+       "answer": null
+      },
+      {
+       "cue": "وين إنتِ في الخارِطة السياسية؟",
+       "answer": null
+      },
+      {
+       "cue": "السياسة بِتْهِمَّك؟",
+       "answer": null
+      },
+      {
+       "cue": "إنْتِ روحاني ولا مادّي؟",
+       "answer": null
+      },
+      {
+       "cue": "بِتْحِسّ مُنتَمي لَوَطَنَك؟",
+       "answer": null
+      },
+      {
+       "cue": "شو رايَك عَن مُشْكِلِة اللاجِئين في العالَم؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.38"
+    }
+   ],
+   "produce": "Introduce yourself out loud in six sentences, then do it again as if introducing someone else in your family.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-10",
+   "n": 10,
+   "phase": 2,
+   "title": {
+    "ar": "هِوايات",
+    "en": "Hobbies & free time"
+   },
+   "objective": "Say what you like doing, what you do at weekends, and what you’d rather be doing — the reliable escape hatch when dinner conversation runs dry.",
+   "src": "speaking 23-23",
+   "gram_id": "baddi",
+   "grammar": {
+    "point": "بحِبّ + a verb — “I like to…”",
+    "body": "بَحِبّ اقرا, بَحِبّ اسْبَح — like/want words take a following verb with no “to”. Pair it with بدّي from the grammar lessons and you can express most of what you feel like doing."
+   },
+   "chunks": [
+    {
+     "ar": "بَحِبّ أطْلَع رِحْلِة",
+     "en": "I like going on trips",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَحِبّ أروح مَشي في الطَبيعَة",
+     "en": "I like going for walks in nature",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَحِبّ أعْمَل رياضة \\ يوجا",
+     "en": "I like to do sport \\ yoga",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَحِبّ أقْرا كُتُب",
+     "en": "read books",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَسْمَع موسيقى",
+     "en": "I listen to music",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَعْزِف عَلى...",
+     "en": "play (an instrument)",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَطْبُخ",
+     "en": "I cook",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَحِبّ أتْعَلَّم",
+     "en": "I like learning",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَحِب أغَنّي",
+     "en": "I like to sing",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَحِبّ أسافِر",
+     "en": "I like travelling",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَحِبّ أنام",
+     "en": "I like to sleep",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَحِبّ أوكِل في مَطاعِم",
+     "en": "I like eating in restaurants",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَحبّ أقْعُد في قَهَاوي",
+     "en": "I like sitting in cafés",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَرْسُم",
+     "en": "I draw",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَصَوِّر",
+     "en": "I film",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَرْكَب بُسيكْلِيت \\ خِيل",
+     "en": "I ride bicycles \\ horse",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَسْبَح",
+     "en": "I swim",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَحْكي مَع أصحابي",
+     "en": "I talk with my friends",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَقْعُد في قَهاوي",
+     "en": "I sit in cafés",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَعْمَل مُشْتَرَيات",
+     "en": "I go shopping",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَتْطَوَّع",
+     "en": "I volunteer",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَلْعَب فوتبول \\ تينيس \\ كَرَّة سَلَّة",
+     "en": "I play football / tennis / basketball",
+     "src": "speaking p.23",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَحِبّ أمَثِّل...",
+     "en": "I like to act",
+     "src": "speaking p.23"
+    },
+    {
+     "ar": "بَحب أتْفَرَّج على أفلام \\ مَسْرَحيات ...",
+     "en": "I like to watch movies and shows",
+     "src": "speaking p.23"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وَظيفة",
+     "instructions": "وَظيفة",
+     "items": [
+      {
+       "cue": "1. إحكي عن هِواياتك.",
+       "answer": null
+      },
+      {
+       "cue": "2. حَسَب رايَك, مُهِم إنُّه لَكُلّ واحَد بِتْكون هِوايِة؟ ليش؟ (Do you think it is important to have a hobby? Why?)",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.23"
+    }
+   ],
+   "produce": "Say three things you like doing, one you hate, and one you want to try — out loud, with a reason for each.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-11",
+   "n": 11,
+   "phase": 2,
+   "title": {
+    "ar": "خَضْرَوات \\ خَضَر \\ خَضَار",
+    "en": "Food & the vegetable market"
+   },
+   "objective": "Name what’s on the table and what’s on the stall. This is the single most useful vocabulary list in the book for a dinner guest.",
+   "src": "speaking 17-18",
+   "gram_id": "idafa",
+   "grammar": {
+    "point": "Stacking nouns instead of saying “of”",
+    "body": "There is no word for “of”: سَلَطَة خُضْرَة is \"salad (of) vegetables\", كيلو بَنْدُورة is \"a kilo (of) tomatoes\". Just put the two nouns together, in that order."
+   },
+   "chunks": [
+    {
+     "ar": "أبُوكادو",
+     "en": "avocado",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "بَزيلِة",
+     "en": "peas",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "قَرِع",
+     "en": "pumpkin",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "قَمْبوط، زَهْرَة، قَرْنَبيط",
+     "en": "cauliflower",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "فِجِل",
+     "en": "radish",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "ثُومِة",
+     "en": "garlic",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "شُومَر",
+     "en": "dill",
+     "src": "speaking p.17",
+     "note": "book: sic: fennel"
+    },
+    {
+     "ar": "بَطاطا",
+     "en": "potato",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "سَبانِخ",
+     "en": "spinach",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "كوسى",
+     "en": "squash",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "رِيحان",
+     "en": "basilica",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "نَعْنَع",
+     "en": "nana",
+     "src": "speaking p.17",
+     "note": "book: handwritten 'mint'"
+    },
+    {
+     "ar": "زَيْتون",
+     "en": "olives",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "شَمَنْدَر",
+     "en": "fennel",
+     "src": "speaking p.17",
+     "note": "book: sic: beet"
+    },
+    {
+     "ar": "مَنْدَلينا",
+     "en": "mandarin",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "تُفّاح",
+     "en": "apples",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "إنْجاص",
+     "en": "pears",
+     "src": "speaking p.17",
+     "note": "book: sic: pears; handwritten correction above; printed in the book as \"pairs\""
+    },
+    {
+     "ar": "مُوز",
+     "en": "banana",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "رُمّان",
+     "en": "pomegranate",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "تين",
+     "en": "figs",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "تَمُر",
+     "en": "dates",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "زْبيب",
+     "en": "raisins",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "جُوز",
+     "en": "nuts",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "لُوز",
+     "en": "almonds",
+     "src": "speaking p.17"
+    },
+    {
+     "ar": "فَرَوْلَة",
+     "en": "strawberries",
+     "src": "speaking p.17",
+     "group": "فواكه – Fruits",
+     "note": "book: handwritten 'tut'"
+    },
+    {
+     "ar": "لَمون",
+     "en": "lemon",
+     "src": "speaking p.17",
+     "group": "فواكه – Fruits"
+    },
+    {
+     "ar": "خُوخ",
+     "en": "peach",
+     "src": "speaking p.17",
+     "group": "فواكه – Fruits"
+    },
+    {
+     "ar": "عِنَب",
+     "en": "grapes",
+     "src": "speaking p.17",
+     "group": "فواكه – Fruits"
+    },
+    {
+     "ar": "بُرْتُقال",
+     "en": "oranges",
+     "src": "speaking p.17",
+     "group": "فواكه – Fruits"
+    },
+    {
+     "ar": "بَرْقوق",
+     "en": "prunes",
+     "src": "speaking p.17",
+     "group": "فواكه – Fruits"
+    },
+    {
+     "ar": "شُمام",
+     "en": "melon",
+     "src": "speaking p.17",
+     "group": "فواكه – Fruits",
+     "note": "book: handwritten 'cantelope'"
+    },
+    {
+     "ar": "خُبْز",
+     "en": "bread",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "لَحْم",
+     "en": "meat",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "بِيضة (بِيض)",
+     "en": "egg",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "جِبْنِة",
+     "en": "cheese",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "لَبَنِة",
+     "en": "sour cheese",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "حُمُّص",
+     "en": "humus",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "عَسَل",
+     "en": "honey",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "زِبْدة",
+     "en": "butter",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "تَتْلي",
+     "en": "jam",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "فول",
+     "en": "fava beans",
+     "src": "speaking p.17",
+     "group": "other foods"
+    },
+    {
+     "ar": "رُزّ",
+     "en": "rice",
+     "src": "speaking p.17",
+     "group": "other foods"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "أسئلة للنقاش والمُحادَثِة:",
+     "instructions": "أسئلة للنقاش والمُحادَثِة:",
+     "items": [
+      {
+       "cue": "1. أيّ خُضْرَوات وفَوَاكِه بتحبّوا؟",
+       "answer": null
+      },
+      {
+       "cue": "2. أيّ خُضْرَوات وفَوَاكِه ما بتحبّوا؟",
+       "answer": null
+      },
+      {
+       "cue": "3. لِيش مُهِمّ نُوكل خُضْرَوات وفَواكِه؟",
+       "answer": null
+      },
+      {
+       "cue": "4. مين في عِيلِتْكُم بِروح عَ-السُّوق؟",
+       "answer": null
+      },
+      {
+       "cue": "5. شو لازم نُوكِل لَمّا بِدْنا نِعْمل رِجيم، وشو مَمْنُوع نُوكِل؟",
+       "answer": null
+      },
+      {
+       "cue": "6. شو لازم نُوكِل إذا بِدْنا صِحِّتْنا تْكون مُمْتازِة؟",
+       "answer": null
+      },
+      {
+       "cue": "7. شو بْتُوكِل في الفْطُور وشو في الْغَداء وشو في العَشاء؟",
+       "answer": null
+      },
+      {
+       "cue": "8. كيف بِخْتْلِف الأكِل في أمريكا أو أُوروبا عَنِ الأكِل الشَّرْق أوْسَطي؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.18"
+    }
+   ],
+   "produce": "Out loud: order a kilo of three things, then say what you ate yesterday and what you never eat.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-12",
+   "n": 12,
+   "phase": 3,
+   "title": {
+    "ar": "ألْوان",
+    "en": "Colours & opposites"
+   },
+   "objective": "Describe things — and their opposites. Colours behave like adjectives, which means they have to agree with what they describe, and that agreement is the point of the unit.",
+   "src": "speaking 31-31, speaking 32-32",
+   "gram_id": "gender",
+   "grammar": {
+    "point": "Adjectives agree with their noun",
+    "body": "A masculine thing takes the plain adjective, a feminine thing takes the ة form: بيت أَبْيَض but سَيّارة بيضا. The opposites list is the fastest way to double this vocabulary."
+   },
+   "chunks": [
+    {
+     "ar": "لون ج ألْوان",
+     "en": "color",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "فاتِح \\ فاتْحة",
+     "en": "light",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "غامِق \\ غامْقَة",
+     "en": "dark",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أحْمَر حَمْرا حُمُر",
+     "en": "red",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أصْفَر صَفْرا صُفُر",
+     "en": "yellow",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أخْضَر خَضْرا خُضُر",
+     "en": "green",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أبْيَض بِيضا بيض",
+     "en": "white",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أزْرَق زَرْقا زُرُق",
+     "en": "blue",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أسْوَد سُودا سود",
+     "en": "black",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أشْقَر شَقْرا شُقُر",
+     "en": "blond",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أسْمَر سَمْرا سُمُر",
+     "en": "brown-black (tan)",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "زَهْري \\ زَهْرِيِّة",
+     "en": "pink",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "سَماوِي \\ سَماوِيِّة",
+     "en": "sky blue",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "بُنّي \\ بُنِّيِّة",
+     "en": "brown",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "بُرْتُقالي \\ بُرْتُقالِيِّة",
+     "en": "orange",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "بَنَفْسَجي \\ بَنَفْسَجِيّة",
+     "en": "light purple",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "ذَهَبي \\ ذَهَبِيِّة",
+     "en": "gold",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "فِضّي \\ فِضِّيِّة",
+     "en": "silver",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "بْرُونْزي \\ بْرُونْزِيِّة",
+     "en": "bronze",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "سَكَني، رَمادي \\ سَكَنِيِّة، رَمادِيِّة",
+     "en": "gray",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "أُرْجواني \\ أُرْجوانِيِّة",
+     "en": "crimson",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "بيج \\ بيج",
+     "en": "beige",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "عَسَلي \\ عَسَلِيِّة",
+     "en": "honey",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "زَيْتي \\ زَيْتِيِّة",
+     "en": "olive",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "لِيلَكي \\ لِيلَكِيِّة",
+     "en": "lilac",
+     "src": "speaking p.31"
+    },
+    {
+     "ar": "بِتِنْجاني \\ بِتِنْجانِيِّة",
+     "en": "dark perple",
+     "src": "speaking p.31",
+     "note": "book: sic: purple"
+    },
+    {
+     "ar": "كْبير – زْغير",
+     "en": "bid, old- small, young",
+     "src": "speaking p.32",
+     "note": "book: sic: big"
+    },
+    {
+     "ar": "قْصير – طَويل",
+     "en": "short – tall, long",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "ضعيف – قَوِيّ",
+     "en": "weak - strong",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "حِلُو \\ جَميل – شِنِع \\ بِشِع",
+     "en": "beautiful – ugly",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "فَقير – غَنيّ",
+     "en": "poor - rich",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "عالي – واطي",
+     "en": "high - low",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "سُخُن – بارِد",
+     "en": "hot (water, food) - cold",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "مَسْموح – مَمْنوع",
+     "en": "allowed – forbidden",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "حَلال – حَرام",
+     "en": "allowed – forbidden (according Islam)",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "صعيب – سهِل",
+     "en": "hard – easy",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "ثْقيل – خْفيف",
+     "en": "heavy – light",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "نور \\ ظَيّ – عَتْمِة",
+     "en": "light – darkness",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "نْظيف – وَسِخ",
+     "en": "clean – dirty",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "سَريع – بَطيء",
+     "en": "fast – slow",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "بْعيد – قَريب",
+     "en": "far - close",
+     "src": "speaking p.32",
+     "note": "book: printed gloss \"hard – easy\" struck out; \"far - close\" handwritten"
+    },
+    {
+     "ar": "ناصِح – ضعيف",
+     "en": "fat – thin",
+     "src": "speaking p.32"
+    },
+    {
+     "ar": "مِيِّت – حَيّ",
+     "en": "dead – alive",
+     "src": "speaking p.32"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة",
+     "instructions": "وظيفة",
+     "items": [
+      {
+       "cue": "1. أيّ ألوان بتحب؟ ليش؟",
+       "answer": null
+      },
+      {
+       "cue": "2. أي ألوان ما بتحِبّش؟ ليش؟",
+       "answer": null
+      },
+      {
+       "cue": "3. وَصّف ألوان أواعيك (your clothes).",
+       "answer": null
+      },
+      {
+       "cue": "4. شُغُل بأزْواج – كُلّ واحد بِسْأل في دُورُه أسْئلِة زَيّ: \"شو لون البَحَر؟\"",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.31"
+    },
+    {
+     "type": "qa",
+     "title": "5: تَرْجِموا لَلإنجليزي:",
+     "instructions": "5: تَرْجِموا لَلإنجليزي:",
+     "items": [
+      {
+       "cue": "1. إلصَّليب الأحْمَر.",
+       "answer": null
+      },
+      {
+       "cue": "2. عُيُونها زُرُق.",
+       "answer": null
+      },
+      {
+       "cue": "3. إحْفَظ قِرْشَك الْأبْيَض لَيُومَك الْأسْوَد.",
+       "answer": null
+      },
+      {
+       "cue": "4. الله يْبَيِّض وُجْهَك.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.31"
+    }
+   ],
+   "produce": "Look around the room and describe five things out loud, each with a colour and one other adjective — watching the agreement.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-13",
+   "n": 13,
+   "phase": 3,
+   "title": {
+    "ar": "فُصول السَّنِة",
+    "en": "Seasons & weather"
+   },
+   "objective": "Talk about the weather — the universal opener, and in this region a real topic: heat, rain, and which season everything happens in.",
+   "src": "speaking 26-26",
+   "gram_id": "nominal",
+   "grammar": {
+    "point": "Weather sentences need no verb either",
+    "body": "إلجَوّ حِلو, إلدُّنْيا شوب — subject then description, nothing in between. Same nominal sentence, new vocabulary."
+   },
+   "chunks": [
+    {
+     "ar": "فَصِل ج فُصول",
+     "en": "season",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "سَنِة ج سْنين",
+     "en": "year",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "شَهِر ج شْهور",
+     "en": "month",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "رَبيع",
+     "en": "spring",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "صِيف",
+     "en": "summer",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "خَريف",
+     "en": "autumn",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "شِتاء",
+     "en": "winter",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "شَهِر واحَد (يناير)",
+     "en": "month one (January)",
+     "src": "speaking p.26",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "شَهِر إثْنِين (فبراير)",
+     "en": "month two (February)",
+     "src": "speaking p.26",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "شَهِر ثلاثة (مارس)",
+     "en": "month three (March)",
+     "src": "speaking p.26",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "شَهِر أرْبَعة (أبريل)",
+     "en": "month four (April)",
+     "src": "speaking p.26",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "شَهِر خَمْسِة (مايو)...",
+     "en": "month five (May)…",
+     "src": "speaking p.26",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "(يوليو)...(أغُسْطُس)... (سَبْتَمْبَر)... (أُكْتوبِر)... (نُوفِمْبِر)... (ديسِمْبِر)",
+     "en": "(July)… (August)… (September)… (October)… (November)… (December)",
+     "src": "speaking p.26",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَرْد",
+     "en": "cold",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "شُوب، حَم، حَرّ",
+     "en": "hot",
+     "src": "speaking p.26"
+    },
+    {
+     "ar": "مَطَر",
+     "en": "rain",
+     "src": "speaking p.26"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1. فصل الربيع في بلادك – من أي شهر لأي شهر؟",
+       "answer": null
+      },
+      {
+       "cue": "2. فَصِل الصّيف في بْلادَك – من أيّ شَهِر لَأيّ شَهِر؟",
+       "answer": null
+      },
+      {
+       "cue": "3. أيّ فَصِل بِتْحِبّ وليش؟",
+       "answer": null
+      },
+      {
+       "cue": "4. أي فَصِل ما بِتْحِبّ ولِيش؟",
+       "answer": null
+      },
+      {
+       "cue": "5. أي شَهِر بِتحِبّ وليش؟",
+       "answer": null
+      },
+      {
+       "cue": "6. في أيّ شَهِر بْتِطْلَع عُطْلِة؟",
+       "answer": null
+      },
+      {
+       "cue": "7. في أيّ شَهِر بِبْدا التَعليم في الْجامْعَة في بَلادَك؟",
+       "answer": null
+      },
+      {
+       "cue": "8. لَوين بِتْحِبّ تْروح في الصّيف؟",
+       "answer": null
+      },
+      {
+       "cue": "9. شو بْتِعْمَل في الشِّتاء؟",
+       "answer": null
+      },
+      {
+       "cue": "10. شو بْتِعْمَل في الصّيف؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.26"
+    }
+   ],
+   "produce": "Describe today’s weather, your favourite season and why, and what the weather was like last week — out loud.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-14",
+   "n": 14,
+   "phase": 3,
+   "title": {
+    "ar": "حيوانات",
+    "en": "Animals"
+   },
+   "objective": "Farm animals, house animals, and the ones that turn up in every proverb and children’s story you’ll ever be told.",
+   "src": "speaking 27-28",
+   "gram_id": "gender",
+   "grammar": {
+    "point": "Sound and broken plurals, in one list",
+    "body": "Animal words show off both plural types at once — some add an ending, many change shape internally (كَلْب ← كْلاب). Learn each plural with its singular; there is no shortcut."
+   },
+   "chunks": [
+    {
+     "ar": "حيوان ج حَيوانات",
+     "en": "animals",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "حَيَّة، إفْعي",
+     "en": "snake",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "نَمْلِة ج نَمِل",
+     "en": "ant",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "أرْنَب ج أرانِب",
+     "en": "rabbit",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "حَلَزون ج ات",
+     "en": "snail",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "زَرافَة",
+     "en": "giraffe",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "فيل ج أفْيال",
+     "en": "elephant",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "سَرَطان",
+     "en": "crab",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "عَقْرَب ج عَقارِب",
+     "en": "scorpion",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "ضُفْدَعة ج ضفادِع",
+     "en": "frog",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "قُنْفُذ ج قنافِذ",
+     "en": "hedgehog",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "ذِبّان ج ذِبانِة",
+     "en": "flies",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "هِسْهِس",
+     "en": "mosquitoes",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "خُنْفوس",
+     "en": "beetle",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "غَزال \\ غُزْلان",
+     "en": "deer",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "سُلْحَفاة ج سَلاحِف",
+     "en": "turtle",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "سَمَكِة ج سَمَك",
+     "en": "fish",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "فار ج فيران",
+     "en": "mouse",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "قِرْد",
+     "en": "monkey",
+     "src": "speaking p.27",
+     "group": "حَيَوانات بَرِيّة"
+    },
+    {
+     "ar": "ذيب ج ذْياب",
+     "en": "wolf",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "أسَد ج أُسودة",
+     "en": "lion",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "سَبِع \\ أُسامَة",
+     "en": "lion",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "نِمِر ج نُمور",
+     "en": "tiger",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "فَهِد",
+     "en": "leopard",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "ضَبِع",
+     "en": "hyena",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "ثَعْلَب ج ثَعالِب",
+     "en": "fox",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "واوي ج واوِيات",
+     "en": "jackal",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "دُبّ ج دُبَبَة",
+     "en": "bear",
+     "src": "speaking p.27",
+     "group": "حَيَوانات مُفْتَرِسة"
+    },
+    {
+     "ar": "عُصْفور ج عَصافير",
+     "en": "bird",
+     "src": "speaking p.27",
+     "group": "طُيور"
+    },
+    {
+     "ar": "طير ج طُيور",
+     "en": "bird",
+     "src": "speaking p.27",
+     "group": "طُيور"
+    },
+    {
+     "ar": "نِسْر ج نُسور",
+     "en": "vulture",
+     "src": "speaking p.27",
+     "group": "طُيور"
+    },
+    {
+     "ar": "عَقاب",
+     "en": "eagle",
+     "src": "speaking p.27",
+     "group": "طُيور"
+    },
+    {
+     "ar": "صَقْر ج صُقور",
+     "en": "falcon",
+     "src": "speaking p.27",
+     "group": "طُيور"
+    },
+    {
+     "ar": "غُراب",
+     "en": "crow",
+     "src": "speaking p.27",
+     "group": "طُيور"
+    },
+    {
+     "ar": "عَنْدَليب",
+     "en": "nightingale",
+     "src": "speaking p.27",
+     "group": "طُيور"
+    },
+    {
+     "ar": "حُصان، فَرَس ج خِيل",
+     "en": "hors, mare",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة",
+     "note": "book: sic"
+    },
+    {
+     "ar": "جَمَل ج جْمال",
+     "en": "camel",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "ناقَة",
+     "en": "she camel",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "حْمار ج حَمير",
+     "en": "donkey",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "كَلْب ج كْلاب",
+     "en": "dog",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "ثُور ج ثيران",
+     "en": "bull",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "بَقَرَة ج بَقَر",
+     "en": "caw",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة",
+     "note": "book: sic: cow"
+    },
+    {
+     "ar": "خَنْزير ج خَنازير",
+     "en": "pig",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "عِنْزِة ج مِعْزِة",
+     "en": "goat",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "وَزِّة ج وَزّ",
+     "en": "gees",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة",
+     "note": "book: sic: geese"
+    },
+    {
+     "ar": "طاوُوس",
+     "en": "peacock",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "بَطَّة ج بَطّ",
+     "en": "duck",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "بِسّ ج بْساس (قِطّ ج قِطَط)",
+     "en": "cat",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "جاجة ج جاج",
+     "en": "hen",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "ديك ج دْيُوك",
+     "en": "rooster",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    },
+    {
+     "ar": "خَروف ج خِرْفان",
+     "en": "sheep",
+     "src": "speaking p.28",
+     "group": "حَيوانات أليفة"
+    }
+   ],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": "أمثال (proverbs, for reading & translating)",
+     "sentences": [
+      {
+       "ar": "إلْحمار حْمار وَلَو يِحْمِل على ظَهْرُه كْتاب.",
+       "en": null
+      },
+      {
+       "ar": "ذَنَب الْكَلْب أعْوَج.",
+       "en": null
+      },
+      {
+       "ar": "أُرْبُط لِحْمار مَطْرَح-ما بقول-لَك صاحْبُه.",
+       "en": null
+      },
+      {
+       "ar": "لِسانك حِصانك: إنْ صُنْتُه صانك، وإنْ خُنْتُه خانك.",
+       "en": null
+      },
+      {
+       "ar": "قالوا لَلِحْمار لَوين؟ قال: يا لَلْحَطَب، يا لَلْعين.",
+       "en": null
+      },
+      {
+       "ar": "سنَتَّى يا جَديش حَتّى يِطْلَع الْحَشيش.",
+       "en": null
+      },
+      {
+       "ar": "عُصْفورِين بِحَجَر.",
+       "en": null
+      },
+      {
+       "ar": "إبن الْبَطّ عَوّام.",
+       "en": null
+      },
+      {
+       "ar": "رَكَّبْناه عَ-الْجَمَل، مَدّ إيدُه عَ-الْخُرْج.",
+       "en": null
+      },
+      {
+       "ar": "راح القِطّ، أجا الفار بِنِطّ.",
+       "en": null
+      },
+      {
+       "ar": "كُلّ كَلْب بيجي يُومُه!",
+       "en": null
+      },
+      {
+       "ar": "كُلّ ديك عَلى مَزْبَلْتُه بِصيح.",
+       "en": null
+      },
+      {
+       "ar": "كَلْب إبِن كَلْب!",
+       "en": null
+      },
+      {
+       "ar": "راح عَلى ذيب ورِجِع على الْكَلْب.",
+       "en": null
+      },
+      {
+       "ar": "إلْقِرْد بْعين إمُّه غَزال.",
+       "en": null
+      },
+      {
+       "ar": "إذا أنا أمير وإنْتِ أمير، مين بِسوق الْحَمير؟",
+       "en": null
+      },
+      {
+       "ar": "كَلْب فالِت أحْسَن مِن أسَد مَرْبوط.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.28"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة",
+     "instructions": "وظيفة",
+     "items": [
+      {
+       "cue": "1. إنْتِ بِتْرَبّي (grow) أو رَبِّيت حَيوانات؟",
+       "answer": null
+      },
+      {
+       "cue": "2. إذا إنْوَلَدِت حَيوان، أيّ واحد كُنْت بِتْحِبّ تْكون؟",
+       "answer": null
+      },
+      {
+       "cue": "3. ليش النّاس بِحِبّوا يْرَبّوا كَلْب أو بِسّة؟",
+       "answer": null
+      },
+      {
+       "cue": "4. شو رايَك عَن \"الْعِلاج (therapy) بالحيوانات\"؟",
+       "answer": null
+      },
+      {
+       "cue": "5. إحْكي لَصاحْبَك قِصّة مَضْحِكة صارت-لَك مَع حيوان.",
+       "answer": null
+      },
+      {
+       "cue": "6. إقرا وتَرْجم الأمْثال التالية:",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.28"
+    }
+   ],
+   "produce": "Name five animals with their plurals out loud, and say which you’d keep and which you’d never have in the house.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-15",
+   "n": 15,
+   "phase": 3,
+   "title": {
+    "ar": "أحاسيس وعَواطِف",
+    "en": "Feelings & emotions"
+   },
+   "objective": "Say how you actually feel, and ask how someone else does — the interiority that makes you a person at the table rather than a polite guest reciting facts.",
+   "src": "speaking 44-45",
+   "gram_id": "nominal",
+   "grammar": {
+    "point": "أنا + how you are",
+    "body": "مَبْسوط، زَعْلان، تَعْبان — these are adjectives, so they agree with you: مَبْسوط if you’re a man, مَبْسوطة if you’re a woman. No verb; just أنا and the state."
+   },
+   "chunks": [
+    {
+     "ar": "أنا بحِسّ",
+     "en": "I feel",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "أنا حاسِس، أنا حاسّة",
+     "en": "I feel",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "أنا بحِسّ حالي...",
+     "en": "I feel my self",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "فَرْحان",
+     "en": "happy",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "سَعيد",
+     "en": "happy, in bliss",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "حَزين\\ حَزْنَان",
+     "en": "sad",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "قَوِي",
+     "en": "strong",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "ضعيف",
+     "en": "weak",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "مُكْتَئِب",
+     "en": "depressed",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "بَرْدان",
+     "en": "cold",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "عَيّان، مَريض",
+     "en": "sick",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "تَعْبان",
+     "en": "tired",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "جُوعان",
+     "en": "hungry",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "بَغار",
+     "en": "I am jealous",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "مَبْسوط",
+     "en": "glad, happy",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "هَلْكان",
+     "en": "exhausted",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "زَعْلان",
+     "en": "angry, hurt",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "زَهْقان (زهِقْت\\ابَزْهَق مِن)",
+     "en": "bored, tired of",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "عَصَبِي",
+     "en": "nervous",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "مِتْوَتِّر",
+     "en": "tense",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "حَمْيان",
+     "en": "hot",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "بَحِبّ (حُبّ)",
+     "en": "I love",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "مَضْغوط",
+     "en": "stressed",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "مِتْحَمِّس",
+     "en": "enthusiastic, exited",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "مِرْتاح",
+     "en": "relaxed",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "هادي",
+     "en": "relaxed, quiet",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "كَسْلان",
+     "en": "lazy",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "ميكِل هَوا",
+     "en": "feel really bad (\"eating air\")",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "دَمُه خْفيف",
+     "en": "nice person, simpatico",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "دَمُه ثْقيل",
+     "en": "rude, not nice",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "بِفْرِقِش مَعاي",
+     "en": "I don't mind",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "بِهِمّني... ما بِهِمّنيش...",
+     "en": "I care, it's important to me",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "مُنْفَعِل",
+     "en": "moved, exited",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "مْكَيِّف",
+     "en": "having fun",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "يَأْسان",
+     "en": "hopeless",
+     "src": "speaking p.44"
+    },
+    {
+     "ar": "شَبْعان",
+     "en": "full",
+     "src": "speaking p.44"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "أسئلة للنقاش:",
+     "instructions": "أسئلة للنقاش:",
+     "items": [
+      {
+       "cue": "1. في أيّ حالات بِتْحِسّوا حالْكُم فَرْحانين ومَبْسوطين؟ كَمّلوا: أنا سَعيد\\سَعيدِة لَمّا.....",
+       "answer": null
+      },
+      {
+       "cue": "2. في أيّ حالات بِتْحِسّوا حالْكُم زَهْقانين؟ كَمّلوا: أنا بَزْهَق لَمّا.....",
+       "answer": null
+      },
+      {
+       "cue": "3. في أيّ حالات بِتْحِسّوا حالْكُم عَصَبِيِّين؟ كَمّلوا: أنا عَصَبي\\عَصَبِيِّة لَمّا.....",
+       "answer": null
+      },
+      {
+       "cue": "4. شو بْخَلّيكُم تِزْعلوا؟",
+       "answer": null
+      },
+      {
+       "cue": "5. على إيش بِتْغاروا؟",
+       "answer": null
+      },
+      {
+       "cue": "6. في أيّ حالات بِتْحِسّوا حالكُم مَضْغوطين؟",
+       "answer": null
+      },
+      {
+       "cue": "7. شو بِهِمّكُم في حياتكُم؟",
+       "answer": null
+      },
+      {
+       "cue": "8. كَمّلوا: بِفْرِقِش مَعاي إنُّه\\لَمّا...",
+       "answer": null
+      },
+      {
+       "cue": "9. كَمّلوا: بِهِمّني ال...\\ لَمّا...",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.45"
+    }
+   ],
+   "produce": "Say how you feel right now and why; then how you felt yesterday and why it changed.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-16",
+   "n": 16,
+   "phase": 3,
+   "title": {
+    "ar": "قِيَم",
+    "en": "Values — what matters to you"
+   },
+   "objective": "The vocabulary of what you believe in and care about. This is where dinner conversation goes once the pleasantries are done.",
+   "src": "speaking 46-47",
+   "gram_id": "baddi",
+   "grammar": {
+    "point": "Saying what matters",
+    "body": "Abstract nouns behave like any other noun — الصِّدْق مُهِمّ (\"honesty is important\") is still just a nominal sentence. Stack these with بدّي and بَحِبّ to say what you want and value.",
+    "examples": [],
+    "src": "speaking p.47"
+   },
+   "chunks": [
+    {
+     "ar": "قيمِة ج قِيَم",
+     "en": "value",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "حُبّ ، مَحَبِّة",
+     "en": "love",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "إحْتِرام",
+     "en": "respect",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "شَرَف",
+     "en": "honor",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "عَطاء",
+     "en": "giving",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "شَراكة",
+     "en": "sharing",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "صَبِر",
+     "en": "patience",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "مُسامَحَة",
+     "en": "tolerance",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "مُساواة",
+     "en": "equality",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "إخْلاص",
+     "en": "loyalty",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "مُساعَدِة",
+     "en": "help",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "شَفافِية",
+     "en": "transparency",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "مِصْداقِيِّة",
+     "en": "credibility",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "صَراحَة",
+     "en": "honesty",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "سماح",
+     "en": "forgiveness",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "صداقة",
+     "en": "friendship",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "مُساهَمِة إجْتِماعِية",
+     "en": "social activism",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "سَعادِة",
+     "en": "happiness",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "شَجاعة",
+     "en": "be brave",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "سَيْطَرة",
+     "en": "control",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "أمَل",
+     "en": "hope",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "تَعاوُن",
+     "en": "ccoperate",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "إتِّصال",
+     "en": "communication",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "سَلام",
+     "en": "peace",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "حُرِّيِّة",
+     "en": "freedom",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "رُوحانِيِّة",
+     "en": "spirituality",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "تَعايُش",
+     "en": "coexistence",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "إسْتِقْلالِيِّة",
+     "en": "independence",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "هُدوء",
+     "en": "quiet",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "عَدْل",
+     "en": "justice",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "بَساطة",
+     "en": "simplicity",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "مُحافَظِة على البيئَة",
+     "en": "preserve the environment",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "التَّحَكُّم في النَّفْسي",
+     "en": "self discipline",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "إلْتِزام",
+     "en": "commitment",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "قَوِّة",
+     "en": "power",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "عَمَلي",
+     "en": "practicality",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "شَفَقَة",
+     "en": "compassion",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "إيمان",
+     "en": "believe",
+     "src": "speaking p.46"
+    },
+    {
+     "ar": "أَمان",
+     "en": "safety",
+     "src": "speaking p.46"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة:",
+     "instructions": "وظيفة:",
+     "items": [
+      {
+       "cue": "1) عَمَل بمَجموعات: كُل طالِب بِخْتار 5 أهمّ قِيَم حَسَب رايُه. بَعدها كُلّ مَجموعة لازم تُوصَل ل-5 أهَم قِيَم. في النهاية كل مَجموعة تِحْكي عن اخْتِيارها لَكُلّ الصَّف.",
+       "answer": null
+      },
+      {
+       "cue": "2) إعْمَل بَحْث (research) زْغير – أُطْلُب مِن صْحابَك العَرَب يِخْتاروا (to choose) خَمِس أهَمّ قِيَم مِن القائمِة (list) وإحْكي لَلصَّفَ شو اخْتاروا.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.47"
+    },
+    {
+     "type": "qa",
+     "title": "الشَرَف والاخْتِرام — أسئلة:",
+     "instructions": "الشَرَف والاخْتِرام — أسئلة:",
+     "items": [
+      {
+       "cue": "1. شو أهَمّ قيمة مِن بين الثِنْتِين حَسَب رايَك؟",
+       "answer": null
+      },
+      {
+       "cue": "2. إنتِ بْتِحْتَرِم مين؟",
+       "answer": null
+      },
+      {
+       "cue": "3. مين هو الإنسان المُحْتَرَم في نَظَرَك ومين هو الإنسان الشريف؟",
+       "answer": null
+      },
+      {
+       "cue": "4. في مُجْتَمَعَك – شو أهَمّ قيمة حسَب رايَك؟",
+       "answer": null
+      },
+      {
+       "cue": "5. شو أهَمّ قيمة مِن بين الثِنْتِين في المُجْتَمَع العَرَبي؟ (إعْمَل بَحث زغير في الْمَوْضوع).",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.47"
+    }
+   ],
+   "produce": "Name three things you value and say why, out loud, one sentence each.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-17",
+   "n": 17,
+   "phase": 3,
+   "title": {
+    "ar": "شو رايَك؟",
+    "en": "شو رايَك؟ — saying what you think"
+   },
+   "objective": "The book closes with five rounds of exactly one question: what do you think? Agreeing, disagreeing, hedging, giving a reason. This is the unit that turns vocabulary into opinion.",
+   "src": "speaking 58-58, speaking 59-59, speaking 60-60, speaking 61-61, speaking 62-62",
+   "gram_id": "questions",
+   "grammar": {
+    "point": "Asking for and giving an opinion",
+    "body": "شو رايَك؟ literally \"what is your opinion?\" — رأي plus the possessive ending you already know. Answer with بَعْتِقِد (\"I think\"), بِالنِّسْبِة إلي (\"for me\"), or straight agreement/disagreement."
+   },
+   "chunks": [
+    {
+     "ar": "حُرِّيَّة التَعْبير",
+     "en": "freedom of speech",
+     "src": "speaking p.58"
+    },
+    {
+     "ar": "أعْمى",
+     "en": "blind",
+     "src": "speaking p.58"
+    },
+    {
+     "ar": "حِجاب",
+     "en": "veil",
+     "src": "speaking p.58"
+    },
+    {
+     "ar": "مَرَة مْحَجَّبِة",
+     "en": "veiled woman",
+     "src": "speaking p.58"
+    },
+    {
+     "ar": "غِطَاء عُيون",
+     "en": "eye cover",
+     "src": "speaking p.58"
+    },
+    {
+     "ar": "حُرِّيِّة",
+     "en": "freedom",
+     "src": "speaking p.59"
+    },
+    {
+     "ar": "حُرّ ج أحْرار",
+     "en": "free",
+     "src": "speaking p.59"
+    },
+    {
+     "ar": "عُطْلِة",
+     "en": "vacation",
+     "src": "speaking p.59"
+    },
+    {
+     "ar": "أسير ج أسْرى",
+     "en": "prisoner",
+     "src": "speaking p.59"
+    },
+    {
+     "ar": "قَفَص ج أقفاص",
+     "en": "cage",
+     "src": "speaking p.59"
+    },
+    {
+     "ar": "تَغيير",
+     "en": "change",
+     "src": "speaking p.60"
+    },
+    {
+     "ar": "مُجْتَمَع",
+     "en": "society",
+     "src": "speaking p.60"
+    },
+    {
+     "ar": "تاريخ",
+     "en": "history",
+     "src": "speaking p.60"
+    },
+    {
+     "ar": "أشار",
+     "en": "point",
+     "src": "speaking p.60"
+    },
+    {
+     "ar": "عامود",
+     "en": "pillar",
+     "src": "speaking p.60"
+    },
+    {
+     "ar": "مَرْبوط",
+     "en": "tied",
+     "src": "speaking p.60"
+    },
+    {
+     "ar": "حَبِل",
+     "en": "rope",
+     "src": "speaking p.60"
+    },
+    {
+     "ar": "حَتْلَن",
+     "en": "to update",
+     "src": "speaking p.61"
+    },
+    {
+     "ar": "الوَصايا العَشَرَة",
+     "en": "the ten commandments",
+     "src": "speaking p.61"
+    },
+    {
+     "ar": "أخْلاق",
+     "en": "morals",
+     "src": "speaking p.61"
+    },
+    {
+     "ar": "تِكْنولوجيا",
+     "en": "technology",
+     "src": "speaking p.61"
+    },
+    {
+     "ar": "حَديث \\ مودِرن",
+     "en": "modern",
+     "src": "speaking p.61"
+    },
+    {
+     "ar": "إسْتِهْلاك",
+     "en": "consumption",
+     "src": "speaking p.62"
+    },
+    {
+     "ar": "مُسْتَهْلِك",
+     "en": "consumer",
+     "src": "speaking p.62"
+    },
+    {
+     "ar": "مَصْنَع ج مَصانِع",
+     "en": "factory",
+     "src": "speaking p.62"
+    },
+    {
+     "ar": "دُخان",
+     "en": "smoke",
+     "src": "speaking p.62"
+    },
+    {
+     "ar": "أوكْسِجين",
+     "en": "oxygen",
+     "src": "speaking p.62",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "لَوَّث (تَلْويث)",
+     "en": "to pollute",
+     "src": "speaking p.62"
+    },
+    {
+     "ar": "بيئَة",
+     "en": "environment",
+     "src": "speaking p.62"
+    },
+    {
+     "ar": "مُحافَظَة على البيئة",
+     "en": "environmental preservation",
+     "src": "speaking p.62"
+    },
+    {
+     "ar": "إعادَة تَدْوير",
+     "en": "recycling",
+     "src": "speaking p.62"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1) وَصّفوا كُلّ إلّي بِتْشوفوا في الصورة.",
+       "answer": null
+      },
+      {
+       "cue": "2) شو الصورة بِدْها تِحْكي-لْنا؟",
+       "answer": null
+      },
+      {
+       "cue": "3) إعْطوا عُنْوان لَلصّورة.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.58"
+    },
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1) وَصّفوا كُلّ إلّي بِتْشوفوا في الصورة.",
+       "answer": null
+      },
+      {
+       "cue": "2) شو الصورة بِدْها تِحْكي-لْنا؟",
+       "answer": null
+      },
+      {
+       "cue": "3) إعْطوا عُنْوان لَلصّورة.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.59"
+    },
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1) وَصّفوا كُلّ إلّي بِتْشوفوا في الصورة.",
+       "answer": null
+      },
+      {
+       "cue": "2) شو الصورة بِدْها تِحْكي-لْنا؟",
+       "answer": null
+      },
+      {
+       "cue": "3) إعْطوا عُنْوان (title) لَلصّورة.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.60"
+    },
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1) وَصّفوا كُلّ إلّي بِتْشوفوا في الصورة.",
+       "answer": null
+      },
+      {
+       "cue": "2) شو الصورة بِدْها تِحْكي-لْنا؟",
+       "answer": null
+      },
+      {
+       "cue": "3) إعْطوا عُنْوان لَلصّورة.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.61"
+    },
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1) وَصّفوا كُلّ إلّي بِتْشوفوا في الصورة.",
+       "answer": null
+      },
+      {
+       "cue": "2) شو الصورة بِدْها تِحْكي-لْنا؟",
+       "answer": null
+      },
+      {
+       "cue": "3) إعْطوا عُنْوان لَلصّورة.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.62"
+    }
+   ],
+   "produce": "Take any topic from the drills and speak for sixty seconds: your opinion, one reason, one thing you’d concede to someone who disagreed.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-18",
+   "n": 18,
+   "phase": 3,
+   "title": {
+    "ar": "مَسْموح ومَمْنوع",
+    "en": "Allowed & forbidden"
+   },
+   "objective": "مَمْنوع and مَسْموح — the language of rules, permission and refusal, including how to say no to a third helping without offending anyone.",
+   "src": "speaking 52-52",
+   "gram_id": "negation",
+   "grammar": {
+    "point": "Saying no, and saying not allowed",
+    "body": "ما and مش negate different things — and مَمْنوع does the job on its own. The dialogues here show refusal done politely, which is the version you actually need."
+   },
+   "chunks": [],
+   "dialogues": [
+    {
+     "title": "محادثة أولى",
+     "lines": [
+      {
+       "sp": "إمّ عُمَر",
+       "ar": "مَرْحَبا عُمَر. شو ما لَك بْتِبْكي؟ صُوت عْياطَك واصِل لَبَرّة. شو فيه؟",
+       "en": null
+      },
+      {
+       "sp": "عُمَر",
+       "ar": "حَمادَة ضَرَبْني، مِش قادِر-لُه. بِدّي أنادي ابوي.",
+       "en": null
+      },
+      {
+       "sp": "إمّ عُمَر",
+       "ar": "عيب هَ-الْحَكي يا عُمَر! مَمْنوع تِبْكي، إنْتِ زَلَمِة! ومَمْنوع تْنادي أبوك!",
+       "en": null
+      },
+      {
+       "sp": "عُمَر",
+       "ar": "بَسّ أنا مش قادِر أغالِب حمادة، شو أسَوّي؟",
+       "en": null
+      },
+      {
+       "sp": "إمّ عُمَر",
+       "ar": "قوم، كِتّ (shake) أواعيك وروح دَبِّر حالَك لَحالَك, عيب هِيك، مَمْنوع!",
+       "en": null
+      }
+     ],
+     "src": "speaking p.52"
+    },
+    {
+     "title": "مُحادَثِة ثانية",
+     "lines": [
+      {
+       "sp": "إمّ عُمَر",
+       "ar": "شو مالْكِن يا بَنات، صُوتْكِن طالع، عيب هِيك، وَطِّين صُوتْكِن، مَمْنوع!",
+       "en": null
+      },
+      {
+       "sp": "بَنات",
+       "ar": "بْنِضْحَك، إحنا مَبْسوطات. بِدْنا نِطْلَع نْزور مَيْسا.",
+       "en": null
+      },
+      {
+       "sp": "إمّ عُمَر",
+       "ar": "وين بِدْكِن تِطْلَعِن بِ-هَ-اللّيل؟ مِتْأخِّر الْوَقْت. فِشّ طْلُوع هسّا!",
+       "en": null
+      },
+      {
+       "sp": "بَنات",
+       "ar": "بَسّ يَمّا، إلسّاعَة بَعِدْها سَبْعَة.",
+       "en": null
+      },
+      {
+       "sp": "إمّ عُمَر",
+       "ar": "إلدِنيا شِتا وعَتْمِة بَرّة، مَمْنوع الْبَنات يِطْلَعِن باللَّيل! خَلّيْنها لَبُكْرَة.\\ مَسْموح-لَكِن بَسّ تِطْلَعِن لَدار سيدْكِن.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.52"
+    }
+   ],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة:",
+     "instructions": "وظيفة:",
+     "items": [
+      {
+       "cue": "1) الطُّلاب بِكَمّلوا كُلّ مُحادثة بِلُعْبِة أدوار بِمَجْموعات مِن طالْبِين أو ثَلَث طُلّاب.",
+       "answer": null
+      },
+      {
+       "cue": "2) شو الْفَرْق بين الْمَمْنوع والْمَسْموح في المُحادثة الأولى والثانِيِة؟",
+       "answer": null
+      },
+      {
+       "cue": "3) شو كمان مَمنوع ومَسْموح لَلنِّسْوان ولَلزْلام في الثَّقافَة العَرَبِيِّة-إسْلامِيِّة؟",
+       "answer": null
+      },
+      {
+       "cue": "4) لَو كانَت المُحادثة في أمريكا أو بَريطانيا أو فَرَنْسا، في أشْياء بِتِتْغَيِّر؟ شو هِيَّ؟",
+       "answer": null
+      },
+      {
+       "cue": "5) عَدّدوا أشْياء مَسْموحة ومَمْنوعة في بِيتْكُم.",
+       "answer": null
+      },
+      {
+       "cue": "6) عَدّدوا أشْياء مَسْموحة ومَمْنوعة في ثَقافَتْكُم.",
+       "answer": null
+      },
+      {
+       "cue": "7) لَمّا بِتْكونوا آباء وإمَّيّات – شو بْتِمْنَعوا وشو بْتِسْمَحوا لَوْلادْكُم؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.52"
+    }
+   ],
+   "produce": "Out loud: three things forbidden where you live, one thing you’re not allowed to do, and a polite refusal of food you don’t want.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-19",
+   "n": 19,
+   "phase": 4,
+   "title": {
+    "ar": "رِحْلات",
+    "en": "Travelling — journeys & the bus"
+   },
+   "objective": "Getting somewhere: tickets, stops, asking where the bus goes, and telling the story of a trip afterwards.",
+   "src": "speaking 20-20, speaking 21-22",
+   "gram_id": "past",
+   "grammar": {
+    "point": "Telling it in the past",
+    "body": "A journey is a story, so it lives in the past tense: سافَرْت، وِصِلْت، رِكِبْت. The dialogue here is two friends arguing about buses — read it, then retell it as something that happened to you."
+   },
+   "chunks": [
+    {
+     "ar": "رِحْلِة",
+     "en": "trip",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "طِلِع رِحْلِة",
+     "en": "took a trip",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "ترين",
+     "en": "train",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "سَفينِة ج سُفُن",
+     "en": "ship",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "طَيّارَة ج ات",
+     "en": "plain",
+     "src": "speaking p.20",
+     "note": "book: sic: plane"
+    },
+    {
+     "ar": "بُسيكليِت",
+     "en": "bicycles",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "راح مَشي",
+     "en": "to walk",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "كَمَرا ج ات",
+     "en": "camera",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "شَنْطَة ج ات",
+     "en": "suitcase",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "شَنْطَة ظَهْر",
+     "en": "back pack",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "جُزْدان",
+     "en": "purse",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "جَواز سَفَر",
+     "en": "passport",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "تأشيرَة",
+     "en": "visa",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "مَطار ج ات",
+     "en": "airport",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "تَذْكِرة ج تَذاكِر",
+     "en": "ticket",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "حَمام ج ات",
+     "en": "toilets",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "غُرْفِة ج غُرَف",
+     "en": "room",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "خِيمِة ج خِيَم",
+     "en": "tent",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "نام",
+     "en": "to sleep",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "أنا نِمِت",
+     "en": "I slept",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "أنا بَنام",
+     "en": "I am sleeping",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "صَوَّر",
+     "en": "to take pictures",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "خَارِج الْبْلاد",
+     "en": "abroad",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "مُرْشِد\\اة ج ين",
+     "en": "guide",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "سَفْرَة",
+     "en": "a period of a trip spend in the vehicle",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "خَطَّط",
+     "en": "to plan",
+     "src": "speaking p.20"
+    },
+    {
+     "ar": "شو أعْمَل؟",
+     "en": "What can I do?",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "غْلِطِت",
+     "en": "I made a mistake",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "بِدي أقْعُد قُدّام \\ وَرا \\ في النُصّ",
+     "en": "I want to sit in front \\ in the back \\ in the middle",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "مُمْكِن تِفْتَح الراديو؟",
+     "en": "Can you turn on the radio?",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "شوفير، مِن فَضْلَك، عَلّي صوت الراديو شْوَيّ",
+     "en": "Driver, please increase the volume a bit",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "شوفير، مِن فَضْلَك، وَطّي صوت الراديو شْوَيّ بِدْنا نْنام",
+     "en": "Driver, please lower",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "بِدْناش نِسْمَع الأخْبار",
+     "en": "We don't want to hear news",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "بِدي اسْمَع موسيقى",
+     "en": "I want to hear music",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "لَو سَمَحِت، وينتى رح نُوصَل لَشارِع....",
+     "en": "Excuse me, when do we get to street",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "إلْباص بْيُوقَف في كْثير مَحَطّات؟",
+     "en": "Does the bus stops in many stops?",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "إلْباص مَلان ناس، فِش مَحَلّ أقْعُد فيه.",
+     "en": "The bus is full of people. There is no place to sit",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "إلشوفير مِسْتَعْجِل",
+     "en": "The driver is in a hurry",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "بِسوق بِسُرْعَة",
+     "en": "He drives fast",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "هاذا الْمَوْجود",
+     "en": "That's what you get",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "شو رَقَم هاذا الْباص؟",
+     "en": "What is the number of this bus?",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    },
+    {
+     "ar": "وين الْجَرَس, بِدي أنْزِل، لازم أرِنّ لَلشُفير.",
+     "en": "Where is the bell, I want to ring the driver",
+     "src": "speaking p.22",
+     "group": "قاموس"
+    }
+   ],
+   "dialogues": [
+    {
+     "title": "إلسَّفَر بِالباص (heavily annotated in pencil with English glosses: rest, usually, check, the driver, must be, station, travel, according to, cheaper than, is that your opinion?, hardwork, existing)",
+     "lines": [
+      {
+       "sp": "أمير",
+       "ar": "قول-لي، بِتْحِبّ تْسافِر بِالْباص؟",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "لا؟ ليش بْتِسْأل؟",
+       "en": null
+      },
+      {
+       "sp": "أمير",
+       "ar": "لِأَنَّك رايِح جاي طولِ النّهار في الْباصات.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "أنا بَحِبِّش الْباصات، بَسّ فِشّ عِنْدي سيّارة، شو أعْمَل؟",
+       "en": null
+      },
+      {
+       "sp": "أمير",
+       "ar": "طَيِّب، قول-لي، السَّفَر بالْباص مُريح؟ بِيوصَل لَكُلّ الْمَحَلّات؟",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "عادةً مُريح، بَسّ لَمّا فِشّ مَحَلّ فاضي، بِبَطِل يْكون مُريح، بَعْدِين لازم تِفْحَص لَوين بْيُوصَل كُلّ باص قَبِل-ما تِرْكَبُه.",
+       "en": null
+      },
+      {
+       "sp": "أمير",
+       "ar": "أسْأل مين؟ إلسَّوّاق (الشوفير)؟",
+       "en": null
+      },
+      {
+       "sp": "جميل",
+       "ar": "مُمْكِن. ومُمْكِن تِفْحَص شو مَكْتوب عَ-الْمَحَطَّة، لازِم يكون مَكْتوب هُناك وكمان مُمْكِن تِفْحَص بالإنترنِت.",
+       "en": null
+      },
+      {
+       "sp": "أمير",
+       "ar": "طَيِّب، وقَدّيش بِكَلِّف المِشوار؟",
+       "en": null
+      },
+      {
+       "sp": "جميل",
+       "ar": "حَسَب لَوين رايِح. بَسّ أكيد أرْخَص مِنِ السَّيّارة.",
+       "en": null
+      },
+      {
+       "sp": "أمير",
+       "ar": "هيك رايَك؟ مِش غَلْبِة؟",
+       "en": null
+      },
+      {
+       "sp": "جميل",
+       "ar": "مَبَلى، يَعْني شو نِعْمَل، هاذا الْمَوْجود.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.21"
+    }
+   ],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وَظيفِة:",
+     "instructions": "وَظيفِة:",
+     "items": [
+      {
+       "cue": "1. إحْكي عَن رِحْلِة عَمِلْتَها: كيف خَطَّطِت الرِحلة؟ مَع مين سافَرِت؟ كيف سافَرْت؟ وين نِمِت؟ رُحِت مَشي كمان؟ أيّ مَحَلّات زُرِت؟ شو حَبِّيت أكْثَر شي؟",
+       "answer": null
+      },
+      {
+       "cue": "2. أيّ نُوع (type) من الرِّحْلات بِتفَضِّل (you prefer)؟",
+       "answer": null
+      },
+      {
+       "cue": "3. خَطِّط مع طالِب ثاني رِحْلِة مُسْتَقْبَلِيِّة (future trip).",
+       "answer": null
+      },
+      {
+       "cue": "4. حَضِّر عَرْض مُحَوْسَب (slide show) عن رِحْلِة عَمِلْتها (أو فَرْجينا (show us) صور من الفيسْبوك عن الرِّحْلة)",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.20"
+    },
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1) شو أحْسَن مِن الناحْيِة الاقْتِصادِية والْبيئِية والسُّرْعَة: السَّفَر بالْباص أو الترين أو البُسيكنيت أو التَكْسي أو السيارة أو المَشي؟",
+       "answer": null
+      },
+      {
+       "cue": "2) قولوا القطعة بالمُؤَنَّث مع أميرة وجميلة.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.21"
+    }
+   ],
+   "produce": "Tell the story of a real journey out loud in the past tense: where, how, how long, what went wrong.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-20",
+   "n": 20,
+   "phase": 4,
+   "title": {
+    "ar": "أيّام زَمان",
+    "en": "Old times"
+   },
+   "objective": "How things used to be — the register every older relative at the table will reach for within about twenty minutes.",
+   "src": "speaking 41-43",
+   "gram_id": "kaan",
+   "grammar": {
+    "point": "كان — was, were, used to",
+    "body": "كان plus the b- present is \"used to\": كان بِيشْتْغِل (\"he used to work\"). That one combination unlocks every \"back in the day\" story you will ever be told."
+   },
+   "chunks": [],
+   "dialogues": [
+    {
+     "title": "أيّام زَمان 1: وَليد بِحْكي مَع سيدُه",
+     "lines": [
+      {
+       "sp": "وَليد",
+       "ar": "يا سيدي، قَدّيش عُمْرَك الْيُوم؟",
+       "en": null
+      },
+      {
+       "sp": "إلسّيد",
+       "ar": "أنا خْلِقِت قَبْل الْحَرْب الْعالَمِيِّة بشويّ، قَبِل مَوْسِم الزَّيْتون.",
+       "en": null
+      },
+      {
+       "sp": "وَليد",
+       "ar": "يَعْني في أيّ سنة تَقْريبًا؟",
+       "en": null
+      },
+      {
+       "sp": "إلسّيد",
+       "ar": "ما بَعْرِفِش بِالزَّبْط.",
+       "en": null
+      },
+      {
+       "sp": "وَليد",
+       "ar": "ولَمّا كُنِت زْغير، كيف كانَت بَرامِج التِلْفِزْيُون في أيّامْكُم؟",
+       "en": null
+      },
+      {
+       "sp": "إلسّيد",
+       "ar": "تِلْفِزْيُون؟ ما كانِش عِنْدْنا كَهْرَباء لَحَتّى نْشوف تِلْفِزْيُون.",
+       "en": null
+      },
+      {
+       "sp": "وَليد",
+       "ar": "يَعْني كمان ما كانِش عِنْدْكُم حاسوب؟",
+       "en": null
+      },
+      {
+       "sp": "إلسّيد",
+       "ar": "قُلْت-لَك إنُّه ما كانِش عِندنا كَهْرَباء بِالْمَرَّة.",
+       "en": null
+      },
+      {
+       "sp": "وليد",
+       "ar": "كيف كُنْتوا عايْشين هيك؟",
+       "en": null
+      },
+      {
+       "sp": "إلسيد",
+       "ar": "كان عِنْدْنا كْثير وَقْت وكُنّا نُقْعُد مَع بَعَض ونِحْكي ونِشْرَب قَهْوِة ونْدَخِّن أرْجيلِة.",
+       "en": null
+      },
+      {
+       "sp": "وليد",
+       "ar": "وكان عِندكم سَيارات؟",
+       "en": null
+      },
+      {
+       "sp": "إلسيد",
+       "ar": "لا، كان عِنّا حْمار وعَرَباي (carriage).",
+       "en": null
+      },
+      {
+       "sp": "وليد",
+       "ar": "وينتى أوّل مَرَّة سافَرِت في سَيّارة؟",
+       "en": null
+      },
+      {
+       "sp": "إلسيد",
+       "ar": "هاذا كان في سَنَواتِ الْخَمْسين، لَمّا الْمُخْتار (head of village) جاب جيب عَ-الْبَلَد ويُومها كُلّ أهْلِ البَلَد راحوا فيو مِشْوار (trip).",
+       "en": null
+      }
+     ],
+     "src": "speaking p.41"
+    },
+    {
+     "title": "أيام زمان 2: سَمَر بِتِحْكي مع سِتّها",
+     "lines": [
+      {
+       "sp": "سَمَر",
+       "ar": "إنتِ خْلِقْتِ هُون يا سِتّي؟",
+       "en": null
+      },
+      {
+       "sp": "الست",
+       "ar": "لا، أنا خْلِقِت في سوريا وجيت لَهون لَمّا كان عُمْري أرْبَعتَعْشَر سَنِة.",
+       "en": null
+      },
+      {
+       "sp": "سمر",
+       "ar": "جيت لَحالِك؟",
+       "en": null
+      },
+      {
+       "sp": "الست",
+       "ar": "لا ، جيت مع جوزي وأهْلُه.",
+       "en": null
+      },
+      {
+       "sp": "سمر",
+       "ar": "شو؟! إمْتى تْجَوَّزْتِ يا سِتِّي؟",
+       "en": null
+      },
+      {
+       "sp": "الست",
+       "ar": "تْجَوَّزْت لَمّا كان عُمري ثَنَعشَر سَنِة.",
+       "en": null
+      },
+      {
+       "sp": "سمر",
+       "ar": "بَسّ إنتِ كُنْتِ زْغيرة كْثير.",
+       "en": null
+      },
+      {
+       "sp": "الست",
+       "ar": "أيْوة، وسيدِك كان كْبير كْثير وخُفِت مِنُّه. يُوم الْعُرْس بكيت وما كان بِدّي أتْرُك بِيتي وأفارِق إمّي وأبوي وإخْوَتي وخَواتي.",
+       "en": null
+      },
+      {
+       "sp": "سمر",
+       "ar": "رُحْتِ عَ-الْمَدْرَسِة يا سِتّي؟",
+       "en": null
+      },
+      {
+       "sp": "الست",
+       "ar": "مَدْرَسِة؟ أيّ مَدْرَسِة؟ أيّامها ما كُنّاش بِنْروح عَ-الْمَدْرَسِة. بَسّ لِوْلاد هُمّ إلّي كانوا بِيتْعَلَّمُوا.",
+       "en": null
+      },
+      {
+       "sp": "سمر",
+       "ar": "وإنْتِ ما بْتِعِرْفي تِكِتْبي وتِقْري؟",
+       "en": null
+      },
+      {
+       "sp": "الست",
+       "ar": "لا، أبدًا! ما بَعْرَفِش...",
+       "en": null
+      },
+      {
+       "sp": "سمر",
+       "ar": "بِدَّك أعَلّمِك الْحُروف الْعَرَبِيَّة يا سِتِّي؟",
+       "en": null
+      },
+      {
+       "sp": "الست",
+       "ar": "لا، أنا صِرت خِتْيارَة وما بَشوفش مْنيح وكمان تْعَوَّدِت، وِالْيُوم فيه تلفيزيون، بَسّ شكرًا يا حَبيبتي. تَعالي إسّا عَ-الْمَطْبَخ وساعْديني. أنا سامْعة سيدِك جاي مِن السُّوق ولازِم نْحَضِّر الْغَداء",
+       "en": null
+      }
+     ],
+     "src": "speaking p.42"
+    }
+   ],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة:",
+     "instructions": "وظيفة:",
+     "items": [
+      {
+       "cue": "1. شو الفرق بين عصر الحفيد\\ة وعصر السيد\\الستّ في القِطْعَتَين؟",
+       "answer": null
+      },
+      {
+       "cue": "2. بأزواج: وليد يحكي لصاحبه عن سيده. شو بيقول-له؟",
+       "answer": null
+      },
+      {
+       "cue": "4. بأزواج: سمر تحكي لصاحبتها عن حياة ستها. شو بتقول-لها؟",
+       "answer": null
+      },
+      {
+       "cue": "5. إحْكوا شو بْتِعِرفوا عَن أجدادكو وعَصِرْهُم وخاصّةً قِصَص من حَياتهُم.",
+       "answer": null
+      },
+      {
+       "cue": "6. إسْمَعوا الغُنَوِيِّة \"جِدّي عِنْدُه حْمار\" (ص  ) وجاوبوا: \"كيف بيشوف الحفيد سيدُه؟\"",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.43"
+    }
+   ],
+   "produce": "Describe how something used to be — your town, your job, your family — in five sentences with كان.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-21",
+   "n": 21,
+   "phase": 4,
+   "title": {
+    "ar": "مَعاني صار",
+    "en": "صار — the verb that does seven jobs"
+   },
+   "objective": "One verb, seven distinct meanings, all of them common: it happened, it became, it’s been X years, he started to, he already has, now there is, and \"that’s not on\". Learning صار properly is one of the biggest single jumps in sounding fluent.",
+   "src": "",
+   "gram_id": "past",
+   "grammar": {
+    "point": "Seven meanings of صار",
+    "body": "The book lays them out one at a time with examples. Read each meaning, then say the examples out loud until the pattern of each one is in your ear — they are distinguished by what follows صار, not by the verb itself."
+   },
+   "chunks": [
+    {
+     "ar": "شو صار؟",
+     "en": "What happened?",
+     "group": "meaning 1: To happened",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "شو صار لَك\\ لِك؟",
+     "en": "What happened to you? (m / f)",
+     "group": "meaning 1: To happened",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "شو بِصير بُكْرَة؟",
+     "en": "What’s happening tomorrow?",
+     "group": "meaning 1: To happened",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "صار وَلَد كْبير.",
+     "en": "He’s become a big boy.",
+     "group": "meaning 2: To become",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "هي صارَت إسرائيليّة. مِش مْبَيِّن عَليها أنّه اتْوَلَدَت في أمريكا.",
+     "en": "She became Israeli — you’d never guess she was born in America.",
+     "group": "meaning 2: To become",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "حَبيبي صايِر رومانسي. بِجيب لي شوكولاطة وزْهور.",
+     "en": "My love has turned romantic. He brings me chocolate and flowers.",
+     "group": "meaning 2: To become",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "صار لي خَمْسِ سْنين ساكِن في الْقُدْس.",
+     "en": "I’ve been living in Jerusalem for five years.",
+     "group": "meaning 3: A period of time you do something: I have been studying for...",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "صارِ – لْنا ثْلَثِ سنين مِتْجَوّزين.",
+     "en": "We’ve been married three years.",
+     "group": "meaning 3: A period of time you do something: I have been studying for...",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "مْحَمَّد صار لُه سَنْتِين بِتْعَلَّم في الْجَامْعَة.",
+     "en": "Mohammed has been studying at the university for two years.",
+     "group": "meaning 3: A period of time you do something: I have been studying for...",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "قَدّيش صارِ–لْكُم هُون؟",
+     "en": "How long have you (pl.) been here?",
+     "group": "meaning 3: A period of time you do something: I have been studying for...",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "صارِ–لها أُسْبُوعِين ما شافت إمّها.",
+     "en": "It’s been two weeks since she saw her mother.",
+     "group": "meaning 3: A period of time you do something: I have been studying for...",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "صار بِفْهَم عَرَبي.",
+     "en": "He started understanding Arabic.",
+     "group": "meaning 4: To begin: صار + verb in the future/infinitive",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "هي صارت تِبْكي.",
+     "en": "She started crying.",
+     "group": "meaning 4: To begin: صار + verb in the future/infinitive",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "صِرْت أحْكي مَعُه.",
+     "en": "I started talking to him.",
+     "group": "meaning 4: To begin: صار + verb in the future/infinitive",
+     "src": "verb-drills p.32",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "– شُفِت مْحَمَّد؟ – صار مْسافِر مِن أُسْبُوع.",
+     "en": "— Have you seen Mohammed? — He’s already been travelling for a week.",
+     "group": "meaning 5: Already (صار + verb in the present or AP)",
+     "src": "verb-drills p.33",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "بِنْتي بَدَت تِتْعَلَّم قَبِل شَهْرِين وصارَت تُكْتُب وتِقْرا.",
+     "en": "My daughter started learning two months ago and she can already write and read.",
+     "group": "meaning 5: Already (صار + verb in the present or AP)",
+     "src": "verb-drills p.33",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "أمير جاب–لَك الْمَصاري؟ أيْوة، صار حاطِط نُصّ الْمَبْلَغ.",
+     "en": "— Did Amir bring you the money? — Yes, he’s already put down half the amount.",
+     "group": "meaning 5: Already (صار + verb in the present or AP)",
+     "src": "verb-drills p.33",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "إمبارِح ما كان بَنْدُورة في السُّوق والْيُوم صار فيه.",
+     "en": "Yesterday there were no tomatoes in the market, and today there are.",
+     "group": "meaning 6: To have something after aperod of time it was absent",
+     "src": "verb-drills p.33",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "مَحْمود كان فَقير وهَسّا صار عِنْدُه بيت وكُلّ إشي.",
+     "en": "Mahmoud used to be poor, and now he has a house and everything.",
+     "group": "meaning 6: To have something after aperod of time it was absent",
+     "src": "verb-drills p.33",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "كُلّ الصُّبِح ما كان كَهْرِباء (electricity). وفَجْأة صار فيه. مين صَلَّح الْكَهْرَباء؟",
+     "en": "There was no electricity all morning. Suddenly there was. Who fixed it?",
+     "group": "meaning 6: To have something after aperod of time it was absent",
+     "src": "verb-drills p.33",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "ما صَلَّحوا الْكَهْرَبا! بِصيرِش هيك!",
+     "en": "They haven’t fixed the electricity! That’s not on!",
+     "group": "meaning 7: The expression \"it can't be\" \"it's not right\": بصيرش",
+     "src": "verb-drills p.33",
+     "note": "English added by this app — the book prints these untranslated"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [],
+   "produce": "Make one sentence of your own for each of the seven meanings, out loud. This is hard; do it anyway — it is the whole point of the unit.",
+   "provenance": "ref:verb-drills"
+  },
+  {
+   "id": "unit-22",
+   "n": 22,
+   "phase": 4,
+   "title": {
+    "ar": "بَرامِج لَلْمُسْتَقْبَل",
+    "en": "Plans for the future"
+   },
+   "objective": "What you’re going to do — next week, next year, one day. رح plus a verb, and the vocabulary of intention.",
+   "src": "speaking 56-56",
+   "gram_id": "future",
+   "grammar": {
+    "point": "رح — the future",
+    "body": "رح plus the bare present makes the future: رح أسافِر (\"I’ll travel\"). Pair it with بدّي (\"I want to\") and لازِم (\"I have to\") to say not just what will happen but why."
+   },
+   "chunks": [],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "بِدّي أحْكي-لكُم عَن عِيلة ساكْنِة جَنْبْنا, جيران يَعْني.",
+       "en": null
+      },
+      {
+       "ar": "أحْمَد مِن الناس المْنَظَّمين (organized). دايْمًا عارف شو إلُه وشو عَليه (what are his duties and rights). كُلّ يوم بِخَطِّط (plans) شو بِدُّه يِعْمَل في اليوم الثاني، فِشّ عِنْدُه وَقْت ضايع (lost time) وعِنْدُه كثير بَرامِج لَقُدّام. بِعْمَل كُلّ إشي في وَقْتُه وما بِأَجِّل (delay) شَغلات لَبُكْرة.",
+       "en": null
+      },
+      {
+       "ar": "بَيْنَما (while) مَرَتُه مَيْسون، إنْسانِة عَفَوِية (spontaneous) وبِتْحِبّش تِحْسَب كْثير. بِتْفَكِّر كُلّ يوم بْيُومُه بِدون تَخْطيط (planing) شو بِدْها تِعْمَل الْيُوم.",
+       "en": null
+      },
+      {
+       "ar": "عِنْدهُم وَلَد وبِنْت. إلْبِنْت طالْعَة مِثل أبوها: مْرَتَّبِة ومْنَظَّمِة، غُرْفِتْها نْظيفة دايْمًا وما بْتِنْسى تِعْمَل إشي. والْوَلَد على (like) إمُّه: طَيُّوب وأمور (good and sweet)، بَسّ فَوضَوِيّ وما بِفَكِّر كثير شو لازِم يِعْمَل وشو عَليه وَظايف وشَغلات.",
+       "en": null
+      },
+      {
+       "ar": "هاي الْعِيلة عايْشِة بِسلام، بِتقاتَلوا وبِصْطَلْحوا (fight and re conciliate)، بِفَعْفِلوا (make a mess) وبِرَتّبوا، إلْبِنِت تْساعِد أبوها والْوَلَد بِسانِد (support) إمُّه.",
+       "en": null
+      },
+      {
+       "ar": "بَرامِج لَلْمُسْتَقْبَل؟ هاي وظيفة أحْمَد. مَيْسون بِتْفَكِّر في الحاضِر (present) – شو بِدْنا نُوكِل الْيُوم.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.56"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة:",
+     "instructions": "وظيفة:",
+     "items": [
+      {
+       "cue": "1) كيف الْوَضِع عِنْدْكُم في العِيلة؟ مين بِخَطِّط وبِحْسِب (plan and calculate) لَقُدّام؟ مين بِعيش في الحاضِر (present)؟ مين بِأَجِّل كُلّ إشي لَبُكْرة؟ مين مُنَظَّم ومين فَوْضَوِيّ؟",
+       "answer": null
+      },
+      {
+       "cue": "2) أيّ نوع إنْسان إنْتِ؟",
+       "answer": null
+      },
+      {
+       "cue": "3) شو بَرامْجَك لَلْمُسْتَقْبَل: شو حابِب تِتْعَلّم, وين حابِب تُسْكُن؟ حابِب تِتْجَوَّز؟",
+       "answer": null
+      },
+      {
+       "cue": "4) شو بْتِعْمَل الْيوم عشان تِقْدَر تْنَفِّذ بَرامْجَك في الْمُسْتَقْبَل؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.56"
+    }
+   ],
+   "produce": "Say three plans out loud — one for this week, one for this year, one you may never do — each with a reason.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-23",
+   "n": 23,
+   "phase": 5,
+   "title": {
+    "ar": "خَلَّى",
+    "en": "خلّى — leave it, let me, make me"
+   },
+   "objective": "The other verb that does several jobs at once: to leave something, to make someone do something, to let someone, to stay put, and to ask a favour. Enormously common and almost never taught.",
+   "src": "",
+   "gram_id": "baddi",
+   "grammar": {
+    "point": "Five meanings of خَلّى",
+    "body": "As with صار, what follows the verb decides the meaning — a noun, a person plus a verb, or an imperative. خَلّيك قاعِد (\"stay sitting\") and الله يْخَلّيك (\"please / God keep you\") are both daily-life phrases hiding in this one root."
+   },
+   "chunks": [
+    {
+     "ar": "أنا خَلّيت الحَليب في الدُّكّان.",
+     "en": "I left the milk at the shop.",
+     "group": "1) To leave s.th., to put s.th.",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "بنتي بِتْخَلّي الكتاب على الطّاوْلِة.",
+     "en": "My daughter leaves the book on the table.",
+     "group": "1) To leave s.th., to put s.th.",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "مِن فضْلَك، خَلّي شَنْطَتَك هُناك (خَلّيها هُناك).",
+     "en": "Please leave your bag there (leave it there).",
+     "group": "1) To leave s.th., to put s.th.",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيها لَحَراميها. (let it go, forget about it)",
+     "en": "Let it go — forget about it. (literally: leave it to whoever took it)",
+     "group": "1) To leave s.th., to put s.th.",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "أبوها خَلّاها تُدْرُس كُلّ الليل.",
+     "en": "Her father made her study all night.",
+     "group": "2) To make\\cause s.o do s.th",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "كَلامُه خَلّاني أفهَم إنّه بيحِبّني كْثير.",
+     "en": "What he said made me understand that he loves me a lot.",
+     "group": "2) To make\\cause s.o do s.th",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "قِصِّتْها بِتْخَلّيني أبْكِي.",
+     "en": "Her story makes me cry.",
+     "group": "2) To make\\cause s.o do s.th",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "هاذي الموسيقى خَلَّتْنا نُشْعُر كَأنّا (as if we were) في الْجَنّة.",
+     "en": "That music made us feel as if we were in paradise.",
+     "group": "2) To make\\cause s.o do s.th",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيني أجي مَعَك!",
+     "en": "Let me come with you!",
+     "group": "3) Let (me) do s.th.",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "المعلمة ما بِتْخَلّيناش نِلْعَب بَرّة.",
+     "en": "The teacher doesn’t let us play outside.",
+     "group": "3) Let (me) do s.th.",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلُّونا نْشوف الفيلم سَوَا!",
+     "en": "Let us watch the film together!",
+     "group": "3) Let (me) do s.th.",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيك قاعِد!",
+     "en": "Stay sitting! (to a man)",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيكِ قاعْدِة!",
+     "en": "Stay sitting! (to a woman)",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيكم قاعْدين!",
+     "en": "Stay sitting! (to a group)",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيكُم ساكْتين يا طُلّاب!",
+     "en": "Keep quiet, students!",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيكِن نايْمات كَمان شْوَيّ!",
+     "en": "Stay asleep a little longer! (to a group of women)",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيك هون!",
+     "en": "Stay here!",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيكِ بِالبيت!",
+     "en": "Stay at home! (to a woman)",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيك ماشي على طول",
+     "en": "Keep going straight.",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "خَلّيك لَلْآخِر (until the end)",
+     "en": "Stay till the end.",
+     "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
+     "src": "verb-drills p.40",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "الله يْخَلّيك! جِيب–لي الكُتُب مِن غُرْفَتي.",
+     "en": "Please! Bring me the books from my room.",
+     "group": "5) To ask a favor from s.o.",
+     "src": "verb-drills p.41",
+     "note": "English added by this app — the book prints these untranslated"
+    },
+    {
+     "ar": "الله يْخَلّيكِ، تعالي بَعِد ساعة.",
+     "en": "Please, come back in an hour. (to a woman)",
+     "group": "5) To ask a favor from s.o.",
+     "src": "verb-drills p.41",
+     "note": "English added by this app — the book prints these untranslated"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [],
+   "produce": "Use خَلّى three ways out loud: leave something somewhere, ask to be let do something, and ask someone a favour.",
+   "provenance": "ref:verb-drills"
+  },
+  {
+   "id": "unit-24",
+   "n": 24,
+   "phase": 5,
+   "title": {
+    "ar": "كُتُب وأفلام",
+    "en": "Books, films & the news"
+   },
+   "objective": "Talking about what you’ve read, watched and heard — including how to say \"the film that I saw\", which is where اللي earns its keep.",
+   "src": "speaking 54-55, speaking 39-39",
+   "gram_id": "relative",
+   "grammar": {
+    "point": "اللي — the one that",
+    "body": "اللي covers who, which and that: الفيلم اللي شُفْتُه (\"the film that I saw\"). It never changes shape, which makes it one of the easiest big wins in the language."
+   },
+   "chunks": [
+    {
+     "ar": "أفلام كارتون \\ صُوَر مُتَحَرِّكَة",
+     "en": "cartoons / animated films",
+     "src": "speaking p.55",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "أفلام وَثائِقِيّة",
+     "en": "documentaries",
+     "src": "speaking p.55",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "أفلام تاريخية",
+     "en": "historical films",
+     "src": "speaking p.55",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "أفلام رومانْسيّة",
+     "en": "romantic films",
+     "src": "speaking p.55",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "أفلام طبيعة",
+     "en": "nature films",
+     "src": "speaking p.55",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "برامِج عِلْمِيّة",
+     "en": "science programmes",
+     "src": "speaking p.55",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "أفلام بولوسية",
+     "en": "detective films",
+     "src": "speaking p.55",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "أفلام رُعْب",
+     "en": "horror movie",
+     "src": "speaking p.55"
+    },
+    {
+     "ar": "برامِج أطْفال",
+     "en": "children's programmes",
+     "src": "speaking p.55",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "بَرْنامَج \\ بَرامِج",
+     "en": "program",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "راديو",
+     "en": "radio",
+     "src": "speaking p.39",
+     "group": "قاموس",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "تِلْفِزيون",
+     "en": "television",
+     "src": "speaking p.39",
+     "group": "قاموس",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "إنْتِرْنِت",
+     "en": "internet",
+     "src": "speaking p.39",
+     "group": "قاموس",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "فيسبوك",
+     "en": "Facebook",
+     "src": "speaking p.39",
+     "group": "قاموس",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "شبكات الاتّصال الاجْتِماعي",
+     "en": "social networks",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "بَريد إليكتروني",
+     "en": "E-mail",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "مَحَطَّة ج ات",
+     "en": "radio station",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "قَناة ج قَنَوات",
+     "en": "T.V. channel",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "مَوْقِع \\ مَواقِع",
+     "en": "web site",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "نَقّال \\ جَوّال \\ خَلَوي",
+     "en": "cellular phone",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "جَريدِة ج جَرايِد",
+     "en": "news paper",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "رابِط ج رَوابِط",
+     "en": "link",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "حاسوب ج حَواسيب\\ كمبيوتر",
+     "en": "computer",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "حَمَّل (تَحْميل)",
+     "en": "upload",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "نَزَّل (تَنْزيل)",
+     "en": "download",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    },
+    {
+     "ar": "مَعْلومات",
+     "en": "information",
+     "src": "speaking p.39",
+     "group": "قاموس"
+    }
+   ],
+   "dialogues": [
+    {
+     "title": "مُحادَثة أولى",
+     "lines": [
+      {
+       "sp": "فَتْحي",
+       "ar": "مَرْحَبا يا أحْمَد, شو فيه مَعَك؟",
+       "en": null
+      },
+      {
+       "sp": "أحْمَد",
+       "ar": "مَعي؟ فِشّ مَعي إشي!",
+       "en": null
+      },
+      {
+       "sp": "فَتْحي",
+       "ar": "يلّا عاد، شايْفَك ماسِك (holding) إشي بْإيدَك، شو مْخَبّي (hide) وَرَا ظَهْرَك؟",
+       "en": null
+      },
+      {
+       "sp": "أحْمَد",
+       "ar": "وَلا إشي، حِلّ عَنّي (leave me alone)، روح من هون.",
+       "en": null
+      },
+      {
+       "sp": "فَتْحي",
+       "ar": "مْبَيِّن (looks like) إشي مُهِمّ ما-دامَك مْخَبّيه!",
+       "en": null
+      },
+      {
+       "sp": "أحْمَد",
+       "ar": "لا حَبيبي. تَفَضّل شوف، كْتاب. حامِل مَعي كْتاب، خُذ، جاي عَ-بالَك تِقْرا؟",
+       "en": null
+      },
+      {
+       "sp": "فَتْحي",
+       "ar": "كتاب! لا شُكْرًا. خَلّي-لَك (ا)يّاه! حَدا (Is there anyone) بِقْرا كُتُب الْيُوم؟!",
+       "en": null
+      }
+     ],
+     "src": "speaking p.54"
+    },
+    {
+     "title": "مُحادَثِة ثانية",
+     "lines": [
+      {
+       "sp": "رَمْزي",
+       "ar": "شو الْوَضِع يا شباب، إللَّيلة صباحي (night without sleeping)؟",
+       "en": null
+      },
+      {
+       "sp": "سمير",
+       "ar": "صَباحي، مَعاي فِلِم بِجَنِّن، جديد جديد, إلْيُوم نَزَّلْتُه (down loaded it).",
+       "en": null
+      },
+      {
+       "sp": "رَمْزي",
+       "ar": "عَن شو الْفِلِم؟ أنو (مين) بِمَثِّل فيه؟",
+       "en": null
+      },
+      {
+       "sp": "سمير",
+       "ar": "مِش عارِف شو إسْمُه، نْسيت، بَسّ نْشوفوه بْتِعِرْفوا.",
+       "en": null
+      },
+      {
+       "sp": "رَمْزي",
+       "ar": "أكَم ساعة الْفِلِم؟",
+       "en": null
+      },
+      {
+       "sp": "سمير",
+       "ar": "ساعة ونُصّ.",
+       "en": null
+      },
+      {
+       "sp": "رَمْزي",
+       "ar": "بَسّ!؟ وبَعْدين شو بِدّنا نِعْمَل؟ مَعاك أُخرى واحَد؟",
+       "en": null
+      },
+      {
+       "sp": "سمير",
+       "ar": "طَبَعًا مَعايْ, كَمان ثْنِين مِش واحَد.",
+       "en": null
+      },
+      {
+       "sp": "رَمْزي",
+       "ar": "هيك الحَكي وِلّا بلاش (there you speak)! وِلّا هَ-الأرْجيلِة؟",
+       "en": null
+      }
+     ],
+     "src": "speaking p.54"
+    }
+   ],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة:",
+     "instructions": "وظيفة:",
+     "items": [
+      {
+       "cue": "1) مثّلوا المُحادَثات قدام الصَفّ.",
+       "answer": null
+      },
+      {
+       "cue": "2) ليش أحْمَد بِخَبّي الِكْتاب وَرَا ظَهرُه؟",
+       "answer": null
+      },
+      {
+       "cue": "3) مثلوا بأزواج سيناريوهات مِثل: أ) محادثة بين أم وإبنها. هي بدها إِبنها يقرا كُتُب وهو ما بِدُه. ب) مرة وجوزها بِدهم يْشوفوا فِلِم وصِعِب عَليهُم يْوافقوا على نَوْع الفِلِم. ج) جوز لينا بِحكي مَعاها عشان هي بَسّ بدها تِقْرا كُتُب وبِتِتْفَرّج على أفلام وما بِدها تِطْلَع مُعُه للمطاعم أو قهاوي أو لِزِيارة صْحاب وعيلة.",
+       "answer": null
+      },
+      {
+       "cue": "4) إحكوا بأزواج عَن فِلِم شُفْتوه وحَبّيتوه.",
+       "answer": null
+      },
+      {
+       "cue": "5) إحكوا بأزواج عن كتاب أثَّر فيكُم.",
+       "answer": null
+      },
+      {
+       "cue": "6) عِنْدكُم كُتُب في الْبِيت؟",
+       "answer": null
+      },
+      {
+       "cue": "7) عَن أيّ مَواضيع بِتْحِبوا تِقروا؟ أي نوع أفلام بِتْحِبّوا تْشوفوا؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.55"
+    },
+    {
+     "type": "qa",
+     "title": "وظيفة",
+     "instructions": "وظيفة",
+     "items": [
+      {
+       "cue": "1) أيّ وسائيل إتّصال بِتْفَضّل وليش؟",
+       "answer": null
+      },
+      {
+       "cue": "2) أيّ بَرامِج بِتْحِبّ تْشُوف؟",
+       "answer": null
+      },
+      {
+       "cue": "3) أيّ بَرامج ما بِتْحِبّش؟",
+       "answer": null
+      },
+      {
+       "cue": "4) كَم ساعة في الْيُوم بتِتْفَرَّج على التلفزيون اليوم؟",
+       "answer": null
+      },
+      {
+       "cue": "5) كم ساعة كُنْت بتِتْفَرَّج لمّا كُنْت وَلَد زْغير؟",
+       "answer": null
+      },
+      {
+       "cue": "6) شو بِتْفَضّل؟ التلفزيون, الفيسبوك, الْبَريد الإلكتروني؟",
+       "answer": null
+      },
+      {
+       "cue": "7) سُؤال لِلْنِقاش: شو الْجَوانِب الإيجابيّة في التلفزيون وشو الجوانب السَلْبِيّة فيها؟",
+       "answer": null
+      },
+      {
+       "cue": "8) شو دور (role) الفيسبوك حَسَب رايَك؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.39"
+    }
+   ],
+   "produce": "Describe a book or film out loud using اللي at least twice, and say whether you’d recommend it.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-25",
+   "n": 25,
+   "phase": 6,
+   "title": {
+    "ar": "كيف بِعْمَلوا قَهْوِة عَرَبِيِّة؟",
+    "en": "At the table — visiting, coffee & what’s cooking"
+   },
+   "objective": "The hospitality unit, and the closest thing in the book to the dinner table itself: preparing to visit a family, how Arabic coffee is actually made, and a recipe read end to end in Arabic.",
+   "src": "speaking 16-16, speaking 30-30, speaking 19-19",
+   "gram_id": "indi",
+   "grammar": {
+    "point": "Being a guest",
+    "body": "Hospitality runs on fixed phrases more than grammar — the offering, the refusing once before accepting, the blessing of the cook’s hands. Take these as whole chunks; that is how they are used."
+   },
+   "chunks": [
+    {
+     "ar": "مِتْأسِّف... مِتْأسِّفِة",
+     "en": "excuse me",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "مِتْأسِّف، ما فْهِمِت",
+     "en": "excuse me, I didn't understand",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "قول \\ قولي كَمان مَرَّة",
+     "en": "say again",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "وِين الْحَمّام؟",
+     "en": "Where is the bathroom?",
+     "src": "speaking p.16",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "شْبِعِت \\ أنا شَبْعان... شَبْعانِة",
+     "en": "I am full (not hungry)",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "ما بُوكِل لَحْمِة، أنا نباتي",
+     "en": "I don't eat meat, I am vegetarian",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "ما بُوكِل جِبْنِة وبِيض، أنا خُضَري؟",
+     "en": "I don't eat meat, I am vegetarian",
+     "src": "speaking p.16",
+     "note": "book: sic — printed gloss duplicated; handwritten 'egg, cheese' above"
+    },
+    {
+     "ar": "وِين مُمْكِن...",
+     "en": "where can I",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "أنا بَحْكي عَرَبي شْوَيّ",
+     "en": "I speak a little Arabic",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "إحْكي مَعي شْوَيّ شْوَيّ",
+     "en": "talk to me slowly",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "كِيفَك \\ كيف حالَك... حالِك؟",
+     "en": "How are you?",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "كيف الشُّغُل؟",
+     "en": "how is work?",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "مُمْكِن أَساعْدَك ... أَساعْدِك؟",
+     "en": "can I help you?",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "أنا بَشْرَب بَسّ شاي \\ شاي أعْشاب.",
+     "en": "I drink only tea \\ herb tea",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "أنا بَشْرَب قَهْوِة بِدون سُكَّر.",
+     "en": "I drink coffee without sugar",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "عِنْدَك \\ عِنْدِك وَظيفِة بالإنْجليزي",
+     "en": "Do you have homework in English?",
+     "src": "speaking p.16"
+    },
+    {
+     "ar": "أيّ موسيقى بِتْحِبّ \\ بِتْحِبّي تِسْمَع \\ تِسْمَعي",
+     "en": "what music do you like to hear?",
+     "src": "speaking p.16"
+    }
+   ],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": "إلمَقادير",
+     "sentences": [
+      {
+       "ar": "مَيّة ، قَهْوِة ، سُكَّر، غَلايِة (pot for making coffee)، مِعْلَقَة (spoon)، فَناجين (small coffee cups)",
+       "en": null
+      }
+     ],
+     "src": "speaking p.30"
+    },
+    {
+     "title": "طريقة التحضير",
+     "sentences": [
+      {
+       "ar": "بِنْحُطّ مَيّة في الْغَلايِة عَلى النّار (fire)،",
+       "en": null
+      },
+      {
+       "ar": "لَمّا بْتِغْلي (boil) بِنْوَطّي (lower) النّار.",
+       "en": null
+      },
+      {
+       "ar": "بِنْزيد ثَلَث مَعالِق (spoons) قَهْوِة كْبار مَلانات",
+       "en": null
+      },
+      {
+       "ar": "ومِعْلَقْتِين سُكَّر",
+       "en": null
+      },
+      {
+       "ar": "وبِنْحَرّك (stir).",
+       "en": null
+      },
+      {
+       "ar": "نْخَلّي الْقَهْوِة تِغْلي عَلى النّار أرْبَع – خَمِس مَرّات وبِنْحَرّك كُلّ الْوَقِت.",
+       "en": null
+      },
+      {
+       "ar": "نْقَدِّم (serve) بَعِد خَمِس دَقايِق.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.30"
+    },
+    {
+     "title": "كيف بَحَضِّر (prepare) سَلَطَة تَبّولِة؟",
+     "sentences": [
+      {
+       "ar": "أنا بَحَضِّر أزْكى تَبّولِة. بَسّ مَع الْموسيقى بِتْصير أزْكى.",
+       "en": null
+      },
+      {
+       "ar": "عَشانِ التَّبولِة لازِمْني هيك:",
+       "en": null
+      },
+      {
+       "ar": "نُصّ كُبايِة (cup) بُرْغُل ناعِم (thin), ضُمِّتَين بَقْدُونِس، رُبِع ضُمَّة نَعْنَع,",
+       "en": null
+      },
+      {
+       "ar": "عصير (juice) لَمون، فِنجان زِيت زَتون، حَبَّة بَنْدورة ورَشَّة (pinch) مِلِح.",
+       "en": null
+      },
+      {
+       "ar": "كيف بَحَضِّر التَّبُولة؟",
+       "en": null
+      },
+      {
+       "ar": "أوَّل شي بَغْمُر البُرْغُل بِمَيِّة وبَحُطُّه عَ-الْجَنب لَنُصّ ساعَة.",
+       "en": null
+      },
+      {
+       "ar": "بَفْرُم (chop) البَقْدُونِس ناعِم (thin).",
+       "en": null
+      },
+      {
+       "ar": "بَفْرُم النَّعْنَع ناعِم.",
+       "en": null
+      },
+      {
+       "ar": "بَقَطِّع (cut) البَنْدورَة قِطَع (pieces) زْغيرة،",
+       "en": null
+      },
+      {
+       "ar": "بَصَفّي (filter, take out the water) البُرْغُل مِن الْمَيَّة وبَحُطُّه في صَحِن (plate).",
+       "en": null
+      },
+      {
+       "ar": "بَخْلِط (mix) مَع الْبُرْغُل الْبَقْدونِس، النَّعْنَع، الْبَنْدُورة،",
+       "en": null
+      },
+      {
+       "ar": "وبَزيد (add) عَلِيهِن عصير اللَّمون وزيت الزَّتون ورَشَّة ملِح.",
+       "en": null
+      },
+      {
+       "ar": "إلتَّبُّولِة جاهْزِة (ready). صَحْتِين وعافْيِة! (bon appétit)",
+       "en": null
+      }
+     ],
+     "src": "speaking p.19"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة",
+     "instructions": "وظيفة",
+     "items": [
+      {
+       "cue": "1) إلمُعَلِّم بِحَضِّر مَع الطلاب قَهْوِة.",
+       "answer": null
+      },
+      {
+       "cue": "2) إلطُّلاب بِوَصّفوا كيف بِحَضّروا قَهْوة، نس-قهوة, كَكاو إلَخ...",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.30"
+    },
+    {
+     "type": "qa",
+     "title": "وَظيفة:",
+     "instructions": "وَظيفة:",
+     "items": [
+      {
+       "cue": "1. وَصِّف كيف بِحَضِّروا تَبولة من الذاكِرة.",
+       "answer": null
+      },
+      {
+       "cue": "2. وَصِّف كيف بِتْحَضِّر أيّ سَلَطة ثانْيِة. إسْتَعْمِل الأفْعال الْجْديدة!",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.19"
+    }
+   ],
+   "produce": "Out loud: accept a coffee, compliment the food, refuse a third helping politely, and bless the hands that cooked it.",
+   "provenance": "ref:speaking"
   }
  ]
 };
