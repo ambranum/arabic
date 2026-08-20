@@ -883,6 +883,38 @@
   .tut-save .rt{font-family:var(--arabic); font-size:1.12em}
   .tut-loop{font-size:12.5px; color:var(--ink-soft); border:1px solid var(--verdigris);
     background:var(--verdigris-2); border-radius:8px; padding:9px 12px; margin:0 0 14px; line-height:1.5}
+  /* ---- Lessons (native-sourced teaching units) ---- */
+  .refsrc{font-size:12px; line-height:1.55; color:var(--ink-soft); border:1px solid var(--verdigris);
+    background:var(--verdigris-2); border-radius:5px; padding:10px 12px; margin-bottom:18px}
+  .refsrc b{color:var(--verdigris)}
+  .lsn-title{font-family:var(--arabic); font-size:30px; direction:rtl; text-align:left}
+  .lsn-title-en{font-family:var(--serif); font-size:19px; color:var(--ink-soft); margin:2px 0 10px}
+  .lsn-group{font-size:11px; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
+    color:var(--verdigris); margin:16px 0 6px}
+  .lsn-chunk{display:grid; grid-template-columns:minmax(120px,auto) 1fr 34px; gap:4px 14px;
+    align-items:start; padding:9px 0; border-bottom:1px solid var(--rule)}
+  .lsn-ar{font-family:var(--arabic); direction:rtl; font-size:20px; line-height:1.7; text-align:right}
+  .lsn-ar .say{margin-right:6px}
+  .lsn-en{font-size:13.5px; color:var(--ink-soft); line-height:1.5; padding-top:4px}
+  .lsn-note{font-size:11px; color:var(--muted); font-style:italic}
+  .lsn-reply{font-family:var(--arabic); direction:rtl; font-size:17px; color:var(--ink); margin-top:3px}
+  .lsn-replyen{font-size:12px; color:var(--muted)}
+  .lsn-add{font:inherit; font-size:16px; width:30px; height:30px; margin-top:3px; border-radius:8px;
+    border:1px dashed var(--verdigris); background:var(--verdigris-2); color:var(--ink); cursor:pointer}
+  .lsn-add.on{border-style:solid; border-color:var(--rule); background:var(--paper-2);
+    color:var(--muted); cursor:default}
+  .lsn-gram{border:1px solid var(--rule); border-radius:8px; padding:12px 14px; font-size:14px;
+    line-height:1.6}
+  .lsn-gram p{margin:6px 0 10px; color:var(--ink-soft)}
+  .lsn-gx{margin:4px 0 8px}
+  .lsn-gx span{font-family:var(--arabic); direction:rtl; font-size:18px; display:block}
+  .lsn-gx em{font-size:12.5px; color:var(--muted); font-style:normal}
+  .lsn-qa{font-family:var(--arabic); direction:rtl; font-size:19px; line-height:2; padding:8px 12px;
+    border:1px solid var(--rule); border-radius:8px; margin-bottom:8px}
+  .lsn-ad{font-family:var(--arabic); direction:rtl; font-size:17px; line-height:1.9; padding:12px 14px;
+    border:1px dashed var(--rule); border-radius:8px; margin-bottom:10px; background:var(--paper-2)}
+  .lsn-produce{font-size:14.5px; line-height:1.65; border-left:3px solid var(--verdigris);
+    padding:4px 0 4px 14px; color:var(--ink-soft)}
   .phlab select{display:block; width:100%; margin-top:5px; font:inherit; font-size:15px;
     text-transform:none; letter-spacing:0; padding:8px 10px; border-radius:8px;
     border:1px solid var(--rule); background:var(--bg); color:var(--ink)}
@@ -946,6 +978,7 @@
 <script src="data/curriculum.js"></script>
 <script src="data/assess.js"></script>
 <script src="data/grammar.js"></script>
+<script src="data/lessons.js"></script>
 <script src="data/reactions.js"></script>
 <script src="data/sounds.js"></script>
 <script src="data/table.js"></script>
@@ -1302,6 +1335,7 @@ const ICON = {
   user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
   translate: '<path d="M4 5h9M8.5 3v2c0 4-2.2 7-5.5 8.5"/><path d="M5 10c0 2 2.2 4 5.5 5"/><path d="M12.5 20l4.5-9 4.5 9M14.5 17h5"/>',
   tutor:   '<path d="M21 11.5a8 8 0 0 1-8 8H7l-4 3v-6.5a8 8 0 1 1 18-4.5z"/><path d="M9.3 9.4a2.8 2.8 0 0 1 5.3 1c0 1.8-2.7 2.1-2.7 3.9"/><path d="M11.9 17v.1"/>',
+  lesson:  '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 3v18"/><path d="M11.5 8h5M11.5 12h5M11.5 16h3"/>',
 };
 const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
   stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICON[n]}</svg>`;
@@ -1318,6 +1352,7 @@ const GROUPS = [
 ];
 const SECTIONS = [
   {route: 'plan',    icon: 'plan',    label: 'My Plan',          ready: true, group: 'plan'},
+  {route: 'lessons', icon: 'lesson',  label: 'Lessons',          ready: true, group: 'practice'},
   {route: 'sounds',  icon: 'sound',   label: 'Sounds',           ready: true, group: 'practice'},
   {route: 'reactions', icon: 'react', label: 'Reactions',        ready: true, group: 'practice'},
   {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons',  ready: true, group: 'practice'},
@@ -1343,6 +1378,7 @@ function secStatus(sec) {
       : sec.route === 'vocab' ? (marked.size ? dueCards().length + ' due · ' + marked.size + ' cards' : 'Your flashcards')
       : sec.route === 'plan' ? (planCfg() ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name) : 'Build your study plan')
       : sec.route === 'grammar' ? GRAM.length + ' spoken structures'
+      : sec.route === 'lessons' ? ((LSN.units || []).length ? (LSN.units || []).length + ' units, from native materials' : 'Teaching units')
       : sec.route === 'tutor' ? (tutorKey() ? 'Ask anything, in dialect' : 'Add your key to ask questions')
       : sec.route === 'books' ? (booksList().length ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read' : 'Full graded readers')
       : sec.route === 'account' ? (_user ? esc(_user.email) : 'Sign in to sync your progress')
@@ -1409,6 +1445,7 @@ function route() {
     if (sec.route === 'news')    return newsSection();
     if (sec.route === 'vocab')   return vocabSection(id, arg);
     if (sec.route === 'verbs')   return verbsSection(id);
+    if (sec.route === 'lessons') return lessonsSection(id);
     if (sec.route === 'grammar') return grammarSection(id);
     if (sec.route === 'tutor')   return tutorSection(id);
     if (sec.route === 'sounds') return soundsSection(id);
@@ -1973,6 +2010,126 @@ async function tutorAsk(text) {
   }
   _tutorBusy = false;
   tutorRenderLog();
+}
+
+// ============ Lessons — teaching units from the native reference materials ============
+// The spine of the rebuilt curriculum (Stage 3). Each unit is a coherent ~30-45 min lesson whose
+// Arabic is copied VERBATIM from the user's own teaching materials (texts/ref/ — courses written
+// and used by native/professional teachers); per-chunk src names the exact book page. This is a
+// STRONGER provenance tier than "curated": the Arabic itself comes from native teaching print.
+// English glosses are the book's where it had them, the app's where a page was Arabic-only.
+const LSN = window.LESSONS || {units: []};
+const lsnById = id => (LSN.units || []).find(u => u.id === id);
+const lsnDone = id => contentSeen().has('lsn:' + id);
+
+function lessonsSection(sub) {
+  $('back').hidden = false;
+  const u = lsnById(sub);
+  return u ? lessonView(u) : lessonsHome();
+}
+
+function lessonsHome() {
+  $('title').textContent = 'Lessons';
+  let h = `<p class="hint">Structured teaching units — the spine your plan walks through, one unit
+    at a time. Each one: the new chunks, one grammar point, and the same drills the source course
+    uses, ending with you producing real sentences about your real life.</p>
+    <div class="refsrc"><b>From native teaching materials.</b> The Arabic in these units is copied
+    verbatim from courses written by native-speaker teachers (each item names its page). English
+    glosses follow the books where given.</div>
+    <div class="vtiles">`;
+  h += (LSN.units || []).map(u => `<button class="vtile wide" onclick="location.hash='/lessons/${u.id}'">
+      <div class="vtile-h"><span class="vtile-t">Unit ${u.n} — ${esc(u.title.en)}</span>
+        <span class="vtile-n">${lsnDone(u.id) ? '✓ done' : 'Phase ' + (u.phase + 1)}</span></div>
+      <div class="vtile-s"><span dir="rtl">${esc(u.title.ar)}</span> · ${u.chunks.length} chunks · ${esc(u.src)}</div>
+    </button>`).join('');
+  h += `</div>`;
+  $('view').innerHTML = h;
+}
+
+const _lsnKey = ar => phKey(ar);
+function lsnSaved(ar) { return marked.has(_lsnKey(ar)); }
+// A lesson chunk becomes a real SRS phrase card — same loop as the tutor's saved phrases:
+// what a unit teaches comes back in daily review and the plan with zero extra wiring.
+function lsnSave(uid, ci) {
+  const u = lsnById(uid); if (!u) return;
+  const c = u.chunks[ci]; if (!c || !c.ar) return;
+  const key = _lsnKey(c.ar);
+  if (!marked.has(key)) {
+    marked.set(key, srsInit({kind: 'phrase', lemma: key, phrase: c.ar, vocalized: c.ar,
+      surface: c.ar, gloss: c.en || '', caphi: '', parts: [], analysis: 'PHRASE', root: '',
+      audio: c.audio || null, example_ar: c.reply ? c.ar + ' — ' + c.reply.ar : null,
+      example_en: c.reply ? (c.en || '') + ' — ' + (c.reply.en || '') : null,
+      provenance: 'ref', source: 'lesson', deck: activeDeck()}));
+    save(); count();
+  }
+  lessonView(u);
+}
+
+function lsnChunkRow(uid, c, ci) {
+  const say = c.audio ? `<button class="say" onclick="sndPlay('${cssq(c.audio)}')" aria-label="Play">${svg('spk')}</button>` : '';
+  const saved = lsnSaved(c.ar);
+  return `<div class="lsn-chunk">
+    <div class="lsn-ar" dir="rtl">${esc(c.ar)}${say}</div>
+    <div class="lsn-en">${esc(c.en || '')}${c.note ? ` <span class="lsn-note">${esc(c.note)}</span>` : ''}
+      ${c.reply ? `<div class="lsn-reply" dir="rtl">↩ ${esc(c.reply.ar)}</div>
+        <div class="lsn-replyen">${esc(c.reply.en || '')}</div>` : ''}</div>
+    <button class="lsn-add${saved ? ' on' : ''}" ${saved ? 'disabled' : `onclick="lsnSave('${uid}',${ci})"`}
+      aria-label="Save to flashcards">${saved ? '✓' : '+'}</button>
+  </div>`;
+}
+
+function lsnDrillHTML(u, d) {
+  let h = `<div class="sec">${esc(d.title || 'Drill')}</div>`;
+  if (d.instructions) h += `<p class="hint">${esc(d.instructions)}</p>`;
+  if (d.type === 'pairs') {
+    // The book's own format: greeting → SAY the reply → check. Reuses the drill reveal style.
+    u.chunks.filter(c => c.reply).forEach(c => {
+      h += `<div class="ch"><div class="q" dir="rtl">${esc(c.ar)}</div>
+        <div class="a" tabindex="0" dir="rtl">${esc(c.reply.ar)}</div>
+        ${c.reply.audio ? player(c.reply.audio) : ''}
+        <div class="u">${esc((c.en || '') + (c.reply.en ? ' → ' + c.reply.en : ''))}</div></div>`;
+    });
+  } else if (d.type === 'roleplay') {
+    (d.items || []).forEach(it => { h += `<div class="lsn-ad" dir="rtl">${esc(it.cue)}</div>`; });
+  } else {  // qa and anything else: numbered say-out-loud prompts
+    h += (d.items || []).map(it => `<div class="lsn-qa" dir="rtl">${esc(it.cue)}</div>`).join('');
+  }
+  if (d.src) h += `<div class="note">Drill from ${esc(d.src)}.</div>`;
+  return h;
+}
+
+function lessonView(u) {
+  $('title').textContent = 'Unit ' + u.n;
+  let h = `<div class="lsn-head">
+      <div class="lsn-title" dir="rtl">${esc(u.title.ar)}</div>
+      <div class="lsn-title-en">${esc(u.title.en)}</div>
+      <p class="hint">${esc(u.objective)}</p>
+      <div class="refsrc">From native teaching materials — ${esc(u.src)}. Tap <b>+</b> on any chunk
+        to send it to your flashcards.</div></div>`;
+  if (u.grammar) {
+    h += `<div class="sec">The grammar point</div>
+      <div class="lsn-gram"><b>${esc(u.grammar.point)}</b>
+        <p>${esc(u.grammar.body || '')}</p>
+        ${(u.grammar.examples || []).map(e => `<div class="lsn-gx"><span dir="rtl">${esc(e.ar)}</span>
+           <em>${esc(e.en)}</em></div>`).join('')}
+        ${u.gram_id && gramById(u.gram_id) ? `<button class="tog" onclick="location.hash='/grammar/${u.gram_id}'">Full lesson: ${esc(gramById(u.gram_id).title)} →</button>` : ''}
+      </div>`;
+  }
+  h += `<div class="sec">The chunks</div>`;
+  let lastGroup = null;
+  u.chunks.forEach((c, ci) => {
+    if ((c.group || null) !== lastGroup) { lastGroup = c.group || null;
+      if (lastGroup) h += `<div class="lsn-group">${esc(lastGroup)}</div>`; }
+    h += lsnChunkRow(u.id, c, ci);
+  });
+  (u.drills || []).forEach(d => { h += lsnDrillHTML(u, d); });
+  if (u.produce) h += `<div class="sec">Now produce</div><div class="lsn-produce">${esc(u.produce)}</div>`;
+  const i = (LSN.units || []).findIndex(x => x.id === u.id);
+  const next = (LSN.units || [])[i + 1];
+  h += `<div class="ctl" style="margin-top:20px">
+    ${next ? `<button class="tog go" onclick="location.hash='/lessons/${next.id}'">Next: Unit ${next.n} →</button>` : ''}
+    <button class="tog" onclick="location.hash='/lessons'">All units</button></div>`;
+  $('view').innerHTML = h;
 }
 
 function booksSection(sub, arg) {
@@ -2643,6 +2800,7 @@ function markSeen(id, on) { if (!id) return; const s = contentSeen();
 // ---- content pools: resolve an abstract pool to a concrete, ORDERED list of content ----
 const POOL_LABEL = {beginner: 'Beginner story', intermediate: 'Intermediate story', advanced: 'Advanced story'};
 function planPool(pool) {
+  if (pool === 'unit') return (LSN.units || []).map(u => ({id: 'lsn:' + u.id, title: 'Unit ' + u.n + ' — ' + u.title.en, link: '/lessons/' + u.id}));
   if (pool === 'reaction') return (RX.cats || []).map(c => ({id: 'rx:' + c.id, title: c.en + ' reactions', link: '/reactions/' + c.id}));
   if (pool === 'dialogue') return (TBL.dialogues || []).map(dg => ({id: 'tbl:' + dg.id, title: dg.title.en, link: '/table/' + dg.id}));
   if (pool === 'news') return LIB.texts.filter(t => t.kind === 'news')
@@ -2895,11 +3053,12 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail, phaseIndex) {
       if ((sp.act === 'shadow' || sp.act === 'drill432') && link.startsWith('/text/'))
         link = link.replace('/text/', '/speak/');
       t.title = pick.title; t.link = link;
-      if (sp.act === 'read' || sp.pool === 'reaction' || sp.pool === 'dialogue') t.cid = pick.id;   // advances the systematic path
+      if (sp.act === 'read' || sp.pool === 'reaction' || sp.pool === 'dialogue' || sp.pool === 'unit') t.cid = pick.id;   // advances the systematic path
       if (POOL_LABEL[sp.pool]) t.seq = POOL_LABEL[sp.pool] + ' ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
       else if (sp.pool === 'news') t.seq = 'Latest news';
       else if (sp.pool === 'reaction') t.seq = 'Reactions · set ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
       else if (sp.pool === 'dialogue') t.seq = 'Conversation ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
+      else if (sp.pool === 'unit') t.seq = 'Lesson unit ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
     } else { t.title = A.label; t.note = 'No ' + sp.pool + ' content loaded yet.'; }
   } else if (sp.act === 'srs') {
     t.title = 'Review your due flashcards'; t.link = '/vocab/review';

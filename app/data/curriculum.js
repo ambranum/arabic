@@ -30,6 +30,8 @@ window.CURRICULUM = {
   // order: the daily-loop position, so a day's tasks sort into encode→retrieve→read→reps→produce.
   // speak: true if the activity is speech (counts toward the speaking budget, needs a voice slot).
   activities: {
+    lesson:   {label:'Lesson unit',              slot:'desk',    order:1, speak:true,  builds:'The day’s new material, properly taught',
+               instr:'Work the unit top to bottom OUT LOUD: the chunks, the grammar point, the drills, then the production prompt. Tap + on any chunk to send it to your flashcards.'},
     course:   {label:'Structured audio lesson', slot:'car',     order:1, speak:true,  builds:'New structure, in the car',
                instr:'Do one lesson and answer every prompt OUT LOUD before the speaker does.'},
     shadow:   {label:'Shadow out loud',          slot:'car',     order:1, speak:true,  builds:'Pronunciation & chunk fluency',
@@ -104,6 +106,7 @@ window.CURRICULUM = {
      focus:'The connective tissue of talk — “Really?”, “Same.”, “That’s rough.”, “Wallah?”. Lets you be a real presence at a table long before you can describe your job. Huge morale payoff.',
      milestone:'~30 reaction chunks automatic — you can participate at a table.',
      mix:[
+       {act:'lesson', min:30, src:'inapp', pool:'unit'},
        {act:'shadow',   min:20, src:'inapp', pool:'reaction'},
        {act:'drill432', min:15, src:'inapp', pool:'reaction'},
        {act:'read',     min:20, src:'inapp', pool:'beginner'},
@@ -120,6 +123,7 @@ window.CURRICULUM = {
      focus:'Your life, work, family, where you’re from, your day. Dinner opens with “who are you?” — so this is YOUR vocabulary, not a generic list.',
      milestone:'You can introduce yourself and talk about your life in simple sentences.',
      mix:[
+       {act:'lesson', min:30, src:'inapp', pool:'unit'},
        {act:'read',    min:25, src:'inapp', pool:'beginner'},
        {act:'produce', min:20, src:'inapp'},
        {act:'grammar', min:15, src:'inapp'},
@@ -135,6 +139,7 @@ window.CURRICULUM = {
      focus:'Like / dislike, want, ambivalence, hedging, mild disagreement — the interiority the goal asks for.',
      milestone:'You can say what you think and how you feel, and hedge it.',
      mix:[
+       {act:'lesson', min:30, src:'inapp', pool:'unit'},
        {act:'read',    min:25, src:'inapp', pool:'intermediate'},
        {act:'produce', min:20, src:'inapp'},
        {act:'grammar', min:15, src:'inapp'},
@@ -149,6 +154,7 @@ window.CURRICULUM = {
      focus:'Past tense, sequencing, “one time I…”, timing. Stories are the currency of a dinner table.',
      milestone:'You can tell a story about something that happened, start to finish.',
      mix:[
+       {act:'lesson', min:30, src:'inapp', pool:'unit'},
        {act:'read',     min:25, src:'inapp', pool:'intermediate'},
        {act:'drill432', min:20, src:'inapp', pool:'intermediate'},
        {act:'produce',  min:20, src:'inapp'},
@@ -163,6 +169,7 @@ window.CURRICULUM = {
      focus:'Humor, sympathy, politeness, teasing, disagreeing warmly. Where “being yourself” actually lives.',
      milestone:'You can be warm, funny, and diplomatic — recognizably yourself.',
      mix:[
+       {act:'lesson', min:30, src:'inapp', pool:'unit'},
        {act:'read',    min:25, src:'inapp', pool:'advanced'},
        {act:'produce', min:25, src:'inapp'},
        {act:'watch',   min:25, src:'inapp'},
