@@ -77,7 +77,8 @@ window.REACTIONS = {
    "en": "No way!",
    "use": "Said with a rising tone — shock, not refusal.",
    "cat": "surprise",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.15",
    "audio": "audio/reactions/r2.mp3"
   },
   {
@@ -131,7 +132,8 @@ window.REACTIONS = {
    "en": "Yeah.",
    "use": "Plain yes.",
    "cat": "agree",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.34",
    "audio": "audio/reactions/r8.mp3"
   },
   {
@@ -140,7 +142,8 @@ window.REACTIONS = {
    "en": "Of course.",
    "use": "Certainty.",
    "cat": "agree",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.29",
    "audio": "audio/reactions/r9.mp3"
   },
   {
@@ -149,7 +152,8 @@ window.REACTIONS = {
    "en": "Right. / True.",
    "use": "Agreeing with a claim.",
    "cat": "agree",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.85",
    "audio": "audio/reactions/r10.mp3"
   },
   {
@@ -212,7 +216,8 @@ window.REACTIONS = {
    "en": "Oh no. / Poor thing.",
    "use": "THE sympathy phrase — use it constantly.",
    "cat": "sympathy",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "stories p.13",
    "audio": "audio/reactions/r17.mp3"
   },
   {
@@ -221,7 +226,8 @@ window.REACTIONS = {
    "en": "Never mind. / It's OK.",
    "use": "Brushing off a problem or an apology.",
    "cat": "sympathy",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.63",
    "audio": "audio/reactions/r18.mp3"
   },
   {
@@ -230,7 +236,8 @@ window.REACTIONS = {
    "en": "Get well. / Take care.",
    "use": "To someone ill or hurt. Reply: الله يسلمك.",
    "cat": "sympathy",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.43",
    "reply": "الله يسلمك",
    "audio": "audio/reactions/r19.mp3"
   },
@@ -276,7 +283,8 @@ window.REACTIONS = {
    "en": "Wow.",
    "use": "Admiration — food, a view, a story.",
    "cat": "praise",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "verb-drills p.9",
    "audio": "audio/reactions/r24.mp3"
   },
   {
@@ -294,7 +302,8 @@ window.REACTIONS = {
    "en": "Good.",
    "use": "Plainer than حلو.",
    "cat": "praise",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.27",
    "audio": "audio/reactions/r26.mp3"
   },
   {
@@ -321,7 +330,8 @@ window.REACTIONS = {
    "en": "Wonderful (God bless).",
    "use": "Admiring a person, a child, a success — and warding off the evil eye. Culturally important.",
    "cat": "praise",
-   "provenance": "needs-native-validation",
+   "provenance": "ref-corroborated",
+   "ref_src": "spoken-extra p.12",
    "audio": "audio/reactions/r29.mp3"
   },
   {
@@ -348,7 +358,8 @@ window.REACTIONS = {
    "en": "I don't know.",
    "use": "The most useful sentence for a beginner.",
    "cat": "hedge",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.49",
    "audio": "audio/reactions/r32.mp3"
   },
   {
@@ -357,7 +368,8 @@ window.REACTIONS = {
    "en": "Maybe.",
    "use": "Hedging.",
    "cat": "hedge",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.43",
    "audio": "audio/reactions/r33.mp3"
   },
   {
@@ -366,7 +378,8 @@ window.REACTIONS = {
    "en": "Not like that.",
    "use": "Gentle correction.",
    "cat": "hedge",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "spoken-extra p.21",
    "audio": "audio/reactions/r34.mp3"
   },
   {
@@ -375,7 +388,8 @@ window.REACTIONS = {
    "en": "Nothing. / Not at all.",
    "use": "Denial; also 'no problem at all'.",
    "cat": "hedge",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.54",
    "audio": "audio/reactions/r35.mp3"
   },
   {
@@ -384,7 +398,8 @@ window.REACTIONS = {
    "en": "Honestly…",
    "use": "Prefacing a frank opinion.",
    "cat": "hedge",
-   "provenance": "needs-native-validation",
+   "provenance": "ref-corroborated",
+   "ref_src": "vocab-gram p.19",
    "audio": "audio/reactions/r36.mp3"
   },
   {
@@ -402,7 +417,8 @@ window.REACTIONS = {
    "en": "It depends.",
    "use": "Non-committal — 'depends on…'.",
    "cat": "hedge",
-   "provenance": "needs-native-validation",
+   "provenance": "ref-corroborated",
+   "ref_src": "vocab-gram p.20",
    "audio": "audio/reactions/r38.mp3"
   },
   {
@@ -429,7 +445,8 @@ window.REACTIONS = {
    "en": "I mean… / Like…",
    "use": "The most-used filler in Arabic; buys thinking time.",
    "cat": "glue",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.43",
    "audio": "audio/reactions/r41.mp3"
   },
   {
@@ -447,7 +464,8 @@ window.REACTIONS = {
    "en": "What happened?",
    "use": "Invites the story.",
    "cat": "glue",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "stories p.5",
    "audio": "audio/reactions/r43.mp3"
   },
   {
@@ -474,7 +492,8 @@ window.REACTIONS = {
    "en": "Okay then. / Done.",
    "use": "Closing a topic — 'enough, settled'.",
    "cat": "glue",
-   "provenance": "needs-native-validation",
+   "provenance": "ref-corroborated",
+   "ref_src": "stories p.14",
    "audio": "audio/reactions/r46.mp3"
   },
   {
@@ -492,7 +511,8 @@ window.REACTIONS = {
    "en": "What do you think?",
    "use": "Handing the turn to the other person.",
    "cat": "glue",
-   "provenance": "needs-native-validation",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.51",
    "audio": "audio/reactions/r48.mp3"
   },
   {
@@ -501,7 +521,8 @@ window.REACTIONS = {
    "en": "Please — help yourself.",
    "use": "Hospitality; you'll hear it every 90 seconds. تفضلي to a woman.",
    "cat": "table",
-   "provenance": "maknuune-corroborated",
+   "provenance": "ref-corroborated",
+   "ref_src": "spoken-extra p.12",
    "audio": "audio/reactions/r49.mp3"
   },
   {
@@ -529,7 +550,8 @@ window.REACTIONS = {
    "en": "Welcome. / Hi there.",
    "use": "Warm greeting to a guest or a friend.",
    "cat": "table",
-   "provenance": "needs-native-validation",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.29",
    "audio": "audio/reactions/r52.mp3"
   },
   {
@@ -594,7 +616,8 @@ window.REACTIONS = {
    "en": "Goodbye. / Go in peace.",
    "use": "To the one leaving. Reply: الله يسلمك.",
    "cat": "blessing",
-   "provenance": "needs-native-validation",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.8",
    "reply": "الله يسلمك",
    "audio": "audio/reactions/r59.mp3"
   },
@@ -623,7 +646,8 @@ window.REACTIONS = {
    "en": "God bless you.",
    "use": "Thanks / good wishes; also the reply to مبروك.",
    "cat": "blessing",
-   "provenance": "needs-native-validation",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.7",
    "audio": "audio/reactions/r62.mp3"
   },
   {

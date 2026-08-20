@@ -1,92 +1,542 @@
 {
-  "id": "reactions",
-  "title": {"ar": "ردود الفعل", "en": "Reactions"},
-  "kind": "reactions",
-  "dialect": "pal",
-  "subdialect": "urban",
-  "rationale": "Phase 1 of the path to the dinner table (LEARNING-SYSTEM.md §5). Reactions are the reflexes of conversation — the short, automatic chunks that let you be a real presence at a table long before you can build sentences. Grouped by the conversational job they do, so you can drill one function at a time. Curated interjections, not lexicon sentences: common and idiomatic, but honestly flagged as not native-checked.",
-  "provenance_note": "Everyday Palestinian/Levantine reactions. The original 30 carried a Maknuune-corroboration flag; the additions are curated and marked needs-native-validation until a native speaker confirms the nuance.",
-  "cats": [
-    {"id": "surprise", "en": "Surprise & disbelief", "ar": "استغراب", "blurb": "Really?! No way. The reactions that show you're following — and a little amazed."},
-    {"id": "agree", "en": "Agreement & confirmation", "ar": "موافقة", "blurb": "Yes, exactly, of course. The 'I'm with you' chunks that keep a conversation flowing."},
-    {"id": "sympathy", "en": "Sympathy & care", "ar": "مواساة", "blurb": "Poor thing, never mind, get well. What you say when someone's having a hard time."},
-    {"id": "praise", "en": "Praise & evaluation", "ar": "مدح", "blurb": "Nice, lovely, amazing. Reacting to food, a view, a photo, a story — you'll use these constantly."},
-    {"id": "hedge", "en": "Hedging & uncertainty", "ar": "تحفّظ", "blurb": "Maybe, I don't know, sort of. Softening, buying time, not committing."},
-    {"id": "glue", "en": "Discourse glue", "ar": "روابط الكلام", "blurb": "Well…, I mean…, anyway, and then? The fillers and turn-starters that do half the work of talk."},
-    {"id": "table", "en": "Hospitality & the table", "ar": "ضيافة", "blurb": "Please, help yourself, bless your hands. The rituals you'll hear every few minutes as a guest."},
-    {"id": "blessing", "en": "Blessings & goodbyes", "ar": "دعوات ووداع", "blurb": "More power to you, God keep you, goodnight. The warm formulas that close a moment."}
-  ],
-  "items": [
-    {"cat": "surprise", "ar": "والله؟", "en": "Really?", "use": "Surprise — the single most common reaction. Rising tone.", "provenance": "maknuune-corroborated"},
-    {"cat": "surprise", "ar": "بجد؟", "en": "For real?", "use": "Stronger disbelief.", "provenance": "maknuune-corroborated"},
-    {"cat": "surprise", "ar": "لا!", "en": "No way!", "use": "Said with a rising tone — shock, not refusal.", "provenance": "maknuune-corroborated"},
-    {"cat": "surprise", "ar": "شو؟", "en": "What?", "use": "Genuine 'what?' or shocked 'what?!'.", "provenance": "maknuune-corroborated"},
-    {"cat": "surprise", "ar": "معقول؟", "en": "Seriously? / Is that possible?", "use": "Half-disbelief — 'you can't be serious'.", "provenance": "needs-native-validation"},
-    {"cat": "surprise", "ar": "ما بتقول!", "en": "You don't say!", "use": "Playful surprise at news someone just shared.", "provenance": "needs-native-validation"},
-    {"cat": "surprise", "ar": "شو بتحكي!", "en": "What are you saying!", "use": "Stronger — near disbelief at what you just heard.", "provenance": "needs-native-validation"},
-    {"cat": "surprise", "ar": "يا الله", "en": "Oh my.", "use": "General astonishment or awe.", "provenance": "needs-native-validation"},
-
-    {"cat": "agree", "ar": "أيوه", "en": "Yeah.", "use": "Plain yes.", "provenance": "maknuune-corroborated"},
-    {"cat": "agree", "ar": "أكيد", "en": "Of course.", "use": "Certainty.", "provenance": "maknuune-corroborated"},
-    {"cat": "agree", "ar": "صح", "en": "Right. / True.", "use": "Agreeing with a claim.", "provenance": "maknuune-corroborated"},
-    {"cat": "agree", "ar": "مظبوط", "en": "Exactly.", "use": "Stronger agreement — 'precisely'.", "provenance": "maknuune-corroborated"},
-    {"cat": "agree", "ar": "تمام", "en": "Okay. / Perfect.", "use": "Everything's fine; also 'got it'.", "provenance": "maknuune-corroborated"},
-    {"cat": "agree", "ar": "طبعاً", "en": "Naturally. / Obviously.", "use": "Slightly emphatic 'of course'.", "provenance": "maknuune-corroborated"},
-    {"cat": "agree", "ar": "بالضبط", "en": "Exactly. / Precisely.", "use": "Pinning down that they've got it right.", "provenance": "needs-native-validation"},
-    {"cat": "agree", "ar": "ماشي", "en": "Okay. / Deal.", "use": "Agreeing to a plan — 'fine, works for me'.", "provenance": "needs-native-validation"},
-    {"cat": "agree", "ar": "معك حق", "en": "You're right.", "use": "Conceding the other person's point.", "provenance": "needs-native-validation"},
-
-    {"cat": "sympathy", "ar": "يا حرام", "en": "Oh no. / Poor thing.", "use": "THE sympathy phrase — use it constantly.", "provenance": "maknuune-corroborated"},
-    {"cat": "sympathy", "ar": "معليش", "en": "Never mind. / It's OK.", "use": "Brushing off a problem or an apology.", "provenance": "maknuune-corroborated"},
-    {"cat": "sympathy", "ar": "سلامتك", "en": "Get well. / Take care.", "use": "To someone ill or hurt. Reply: الله يسلمك.", "reply": "الله يسلمك", "provenance": "maknuune-corroborated"},
-    {"cat": "sympathy", "ar": "الله يعينك", "en": "God help you.", "use": "To someone facing something hard or tiring.", "provenance": "needs-native-validation"},
-    {"cat": "sympathy", "ar": "الله يقويك", "en": "God give you strength.", "use": "Encouragement to someone carrying a load.", "provenance": "needs-native-validation"},
-    {"cat": "sympathy", "ar": "ما عليك", "en": "Don't worry about it.", "use": "Reassuring — 'it's nothing, forget it'.", "provenance": "needs-native-validation"},
-    {"cat": "sympathy", "ar": "الله يشفيه", "en": "May God heal them.", "use": "About someone who's sick.", "provenance": "needs-native-validation"},
-
-    {"cat": "praise", "ar": "يا سلام", "en": "Wow.", "use": "Admiration — food, a view, a story.", "provenance": "maknuune-corroborated"},
-    {"cat": "praise", "ar": "حلو", "en": "Nice. / Sweet.", "use": "Positive evaluation of almost anything.", "provenance": "maknuune-corroborated"},
-    {"cat": "praise", "ar": "منيح", "en": "Good.", "use": "Plainer than حلو.", "provenance": "maknuune-corroborated"},
-    {"cat": "praise", "ar": "كتير حلو", "en": "Very nice.", "use": "Intensified.", "provenance": "maknuune-corroborated"},
-    {"cat": "praise", "ar": "مش بطال", "en": "Not bad.", "use": "Understated approval.", "provenance": "maknuune-corroborated"},
-    {"cat": "praise", "ar": "ما شاء الله", "en": "Wonderful (God bless).", "use": "Admiring a person, a child, a success — and warding off the evil eye. Culturally important.", "provenance": "needs-native-validation"},
-    {"cat": "praise", "ar": "بيجنّن", "en": "It's amazing.", "use": "Lit. 'it drives you crazy' — food, music, a place.", "provenance": "needs-native-validation"},
-    {"cat": "praise", "ar": "تحفة", "en": "Gorgeous. / A gem.", "use": "A thing or place that's beautiful.", "provenance": "needs-native-validation"},
-
-    {"cat": "hedge", "ar": "ما بعرف", "en": "I don't know.", "use": "The most useful sentence for a beginner.", "provenance": "maknuune-corroborated"},
-    {"cat": "hedge", "ar": "يمكن", "en": "Maybe.", "use": "Hedging.", "provenance": "maknuune-corroborated"},
-    {"cat": "hedge", "ar": "مش هيك", "en": "Not like that.", "use": "Gentle correction.", "provenance": "maknuune-corroborated"},
-    {"cat": "hedge", "ar": "ولا إشي", "en": "Nothing. / Not at all.", "use": "Denial; also 'no problem at all'.", "provenance": "maknuune-corroborated"},
-    {"cat": "hedge", "ar": "بصراحة", "en": "Honestly…", "use": "Prefacing a frank opinion.", "provenance": "needs-native-validation"},
-    {"cat": "hedge", "ar": "نص نص", "en": "So-so.", "use": "Lit. 'half half' — mediocre, meh.", "provenance": "needs-native-validation"},
-    {"cat": "hedge", "ar": "حسب", "en": "It depends.", "use": "Non-committal — 'depends on…'.", "provenance": "needs-native-validation"},
-    {"cat": "hedge", "ar": "مش متأكد", "en": "I'm not sure.", "use": "Softening a claim.", "provenance": "needs-native-validation"},
-
-    {"cat": "glue", "ar": "طيب", "en": "Okay, so… / Well…", "use": "Discourse glue — starts half of all turns.", "provenance": "maknuune-corroborated"},
-    {"cat": "glue", "ar": "يعني", "en": "I mean… / Like…", "use": "The most-used filler in Arabic; buys thinking time.", "provenance": "maknuune-corroborated"},
-    {"cat": "glue", "ar": "وبعدين؟", "en": "And then?", "use": "Keeps a story going — makes you a good listener.", "provenance": "maknuune-corroborated"},
-    {"cat": "glue", "ar": "شو صار؟", "en": "What happened?", "use": "Invites the story.", "provenance": "maknuune-corroborated"},
-    {"cat": "glue", "ar": "المهم", "en": "Anyway… / The point is…", "use": "Cutting to the point after a digression.", "provenance": "needs-native-validation"},
-    {"cat": "glue", "ar": "على فكرة", "en": "By the way…", "use": "Dropping in a side remark.", "provenance": "needs-native-validation"},
-    {"cat": "glue", "ar": "خلص", "en": "Okay then. / Done.", "use": "Closing a topic — 'enough, settled'.", "provenance": "needs-native-validation"},
-    {"cat": "glue", "ar": "عادي", "en": "It's fine. / No big deal.", "use": "Playing something down — 'normal, whatever'.", "provenance": "needs-native-validation"},
-    {"cat": "glue", "ar": "شو رأيك؟", "en": "What do you think?", "use": "Handing the turn to the other person.", "provenance": "needs-native-validation"},
-
-    {"cat": "table", "ar": "تفضل", "en": "Please — help yourself.", "use": "Hospitality; you'll hear it every 90 seconds. تفضلي to a woman.", "provenance": "maknuune-corroborated"},
-    {"cat": "table", "ar": "صحتين", "en": "Bon appétit. / Enjoy.", "use": "Said to someone eating. Reply: على قلبك.", "reply": "على قلبك", "provenance": "maknuune-corroborated"},
-    {"cat": "table", "ar": "يسلمو إيديكي", "en": "Bless your hands.", "use": "TO THE COOK, after a meal — the single highest-value phrase at the table. إيديك to a man.", "provenance": "maknuune-corroborated"},
-    {"cat": "table", "ar": "أهلين", "en": "Welcome. / Hi there.", "use": "Warm greeting to a guest or a friend.", "provenance": "needs-native-validation"},
-    {"cat": "table", "ar": "نوّرت", "en": "You lit up the place.", "use": "To a guest arriving. Reply: منوّر فيك / الله ينوّر عليك. نوّرتي to a woman.", "reply": "منوّر فيك", "provenance": "needs-native-validation"},
-    {"cat": "table", "ar": "تكرم", "en": "My pleasure. / At your service.", "use": "Gracious 'of course' to a request. تكرمي to a woman.", "provenance": "needs-native-validation"},
-    {"cat": "table", "ar": "بالهنا والشفا", "en": "Enjoy your meal (to your health).", "use": "Said over food; also a reply to صحتين.", "provenance": "needs-native-validation"},
-    {"cat": "table", "ar": "عن إذنك", "en": "Excuse me. / If I may.", "use": "Leaving the table or the room politely. عن إذنكم to a group.", "provenance": "needs-native-validation"},
-
-    {"cat": "blessing", "ar": "يعطيك العافية", "en": "More power to you.", "use": "To someone working or after any effort. Reply: الله يعافيك.", "reply": "الله يعافيك", "provenance": "needs-native-validation"},
-    {"cat": "blessing", "ar": "الله معك", "en": "God be with you.", "use": "Parting, or sympathy for a hard road ahead.", "provenance": "maknuune-corroborated"},
-    {"cat": "blessing", "ar": "مع السلامة", "en": "Goodbye. / Go in peace.", "use": "To the one leaving. Reply: الله يسلمك.", "reply": "الله يسلمك", "provenance": "needs-native-validation"},
-    {"cat": "blessing", "ar": "بالتوفيق", "en": "Good luck.", "use": "Before an exam, a trip, anything new.", "provenance": "needs-native-validation"},
-    {"cat": "blessing", "ar": "تصبح على خير", "en": "Goodnight.", "use": "At night. Reply: وانت من أهل الخير. تصبحي to a woman.", "reply": "وانت من أهل الخير", "provenance": "needs-native-validation"},
-    {"cat": "blessing", "ar": "الله يبارك فيك", "en": "God bless you.", "use": "Thanks / good wishes; also the reply to مبروك.", "provenance": "needs-native-validation"},
-    {"cat": "blessing", "ar": "سلّملي عليهم", "en": "Say hi to them for me.", "use": "Closing a chat — send regards to their family.", "provenance": "needs-native-validation"}
-  ]
+ "id": "reactions",
+ "title": {
+  "ar": "ردود الفعل",
+  "en": "Reactions"
+ },
+ "kind": "reactions",
+ "dialect": "pal",
+ "subdialect": "urban",
+ "rationale": "Phase 1 of the path to the dinner table (LEARNING-SYSTEM.md §5). Reactions are the reflexes of conversation — the short, automatic chunks that let you be a real presence at a table long before you can build sentences. Grouped by the conversational job they do, so you can drill one function at a time. Curated interjections, not lexicon sentences: common and idiomatic, but honestly flagged as not native-checked.",
+ "provenance_note": "Everyday Palestinian/Levantine reactions. The original 30 carried a Maknuune-corroboration flag; the additions are curated and marked needs-native-validation until a native speaker confirms the nuance.",
+ "cats": [
+  {
+   "id": "surprise",
+   "en": "Surprise & disbelief",
+   "ar": "استغراب",
+   "blurb": "Really?! No way. The reactions that show you're following — and a little amazed."
+  },
+  {
+   "id": "agree",
+   "en": "Agreement & confirmation",
+   "ar": "موافقة",
+   "blurb": "Yes, exactly, of course. The 'I'm with you' chunks that keep a conversation flowing."
+  },
+  {
+   "id": "sympathy",
+   "en": "Sympathy & care",
+   "ar": "مواساة",
+   "blurb": "Poor thing, never mind, get well. What you say when someone's having a hard time."
+  },
+  {
+   "id": "praise",
+   "en": "Praise & evaluation",
+   "ar": "مدح",
+   "blurb": "Nice, lovely, amazing. Reacting to food, a view, a photo, a story — you'll use these constantly."
+  },
+  {
+   "id": "hedge",
+   "en": "Hedging & uncertainty",
+   "ar": "تحفّظ",
+   "blurb": "Maybe, I don't know, sort of. Softening, buying time, not committing."
+  },
+  {
+   "id": "glue",
+   "en": "Discourse glue",
+   "ar": "روابط الكلام",
+   "blurb": "Well…, I mean…, anyway, and then? The fillers and turn-starters that do half the work of talk."
+  },
+  {
+   "id": "table",
+   "en": "Hospitality & the table",
+   "ar": "ضيافة",
+   "blurb": "Please, help yourself, bless your hands. The rituals you'll hear every few minutes as a guest."
+  },
+  {
+   "id": "blessing",
+   "en": "Blessings & goodbyes",
+   "ar": "دعوات ووداع",
+   "blurb": "More power to you, God keep you, goodnight. The warm formulas that close a moment."
+  }
+ ],
+ "items": [
+  {
+   "cat": "surprise",
+   "ar": "والله؟",
+   "en": "Really?",
+   "use": "Surprise — the single most common reaction. Rising tone.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "surprise",
+   "ar": "بجد؟",
+   "en": "For real?",
+   "use": "Stronger disbelief.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "surprise",
+   "ar": "لا!",
+   "en": "No way!",
+   "use": "Said with a rising tone — shock, not refusal.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.15"
+  },
+  {
+   "cat": "surprise",
+   "ar": "شو؟",
+   "en": "What?",
+   "use": "Genuine 'what?' or shocked 'what?!'.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "surprise",
+   "ar": "معقول؟",
+   "en": "Seriously? / Is that possible?",
+   "use": "Half-disbelief — 'you can't be serious'.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "surprise",
+   "ar": "ما بتقول!",
+   "en": "You don't say!",
+   "use": "Playful surprise at news someone just shared.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "surprise",
+   "ar": "شو بتحكي!",
+   "en": "What are you saying!",
+   "use": "Stronger — near disbelief at what you just heard.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "surprise",
+   "ar": "يا الله",
+   "en": "Oh my.",
+   "use": "General astonishment or awe.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "agree",
+   "ar": "أيوه",
+   "en": "Yeah.",
+   "use": "Plain yes.",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.34"
+  },
+  {
+   "cat": "agree",
+   "ar": "أكيد",
+   "en": "Of course.",
+   "use": "Certainty.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.29"
+  },
+  {
+   "cat": "agree",
+   "ar": "صح",
+   "en": "Right. / True.",
+   "use": "Agreeing with a claim.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.85"
+  },
+  {
+   "cat": "agree",
+   "ar": "مظبوط",
+   "en": "Exactly.",
+   "use": "Stronger agreement — 'precisely'.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "agree",
+   "ar": "تمام",
+   "en": "Okay. / Perfect.",
+   "use": "Everything's fine; also 'got it'.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "agree",
+   "ar": "طبعاً",
+   "en": "Naturally. / Obviously.",
+   "use": "Slightly emphatic 'of course'.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "agree",
+   "ar": "بالضبط",
+   "en": "Exactly. / Precisely.",
+   "use": "Pinning down that they've got it right.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "agree",
+   "ar": "ماشي",
+   "en": "Okay. / Deal.",
+   "use": "Agreeing to a plan — 'fine, works for me'.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "agree",
+   "ar": "معك حق",
+   "en": "You're right.",
+   "use": "Conceding the other person's point.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "sympathy",
+   "ar": "يا حرام",
+   "en": "Oh no. / Poor thing.",
+   "use": "THE sympathy phrase — use it constantly.",
+   "provenance": "ref-corroborated",
+   "ref_src": "stories p.13"
+  },
+  {
+   "cat": "sympathy",
+   "ar": "معليش",
+   "en": "Never mind. / It's OK.",
+   "use": "Brushing off a problem or an apology.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.63"
+  },
+  {
+   "cat": "sympathy",
+   "ar": "سلامتك",
+   "en": "Get well. / Take care.",
+   "use": "To someone ill or hurt. Reply: الله يسلمك.",
+   "reply": "الله يسلمك",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.43"
+  },
+  {
+   "cat": "sympathy",
+   "ar": "الله يعينك",
+   "en": "God help you.",
+   "use": "To someone facing something hard or tiring.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "sympathy",
+   "ar": "الله يقويك",
+   "en": "God give you strength.",
+   "use": "Encouragement to someone carrying a load.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "sympathy",
+   "ar": "ما عليك",
+   "en": "Don't worry about it.",
+   "use": "Reassuring — 'it's nothing, forget it'.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "sympathy",
+   "ar": "الله يشفيه",
+   "en": "May God heal them.",
+   "use": "About someone who's sick.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "praise",
+   "ar": "يا سلام",
+   "en": "Wow.",
+   "use": "Admiration — food, a view, a story.",
+   "provenance": "ref-corroborated",
+   "ref_src": "verb-drills p.9"
+  },
+  {
+   "cat": "praise",
+   "ar": "حلو",
+   "en": "Nice. / Sweet.",
+   "use": "Positive evaluation of almost anything.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "praise",
+   "ar": "منيح",
+   "en": "Good.",
+   "use": "Plainer than حلو.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.27"
+  },
+  {
+   "cat": "praise",
+   "ar": "كتير حلو",
+   "en": "Very nice.",
+   "use": "Intensified.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "praise",
+   "ar": "مش بطال",
+   "en": "Not bad.",
+   "use": "Understated approval.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "praise",
+   "ar": "ما شاء الله",
+   "en": "Wonderful (God bless).",
+   "use": "Admiring a person, a child, a success — and warding off the evil eye. Culturally important.",
+   "provenance": "ref-corroborated",
+   "ref_src": "spoken-extra p.12"
+  },
+  {
+   "cat": "praise",
+   "ar": "بيجنّن",
+   "en": "It's amazing.",
+   "use": "Lit. 'it drives you crazy' — food, music, a place.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "praise",
+   "ar": "تحفة",
+   "en": "Gorgeous. / A gem.",
+   "use": "A thing or place that's beautiful.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "hedge",
+   "ar": "ما بعرف",
+   "en": "I don't know.",
+   "use": "The most useful sentence for a beginner.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.49"
+  },
+  {
+   "cat": "hedge",
+   "ar": "يمكن",
+   "en": "Maybe.",
+   "use": "Hedging.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.43"
+  },
+  {
+   "cat": "hedge",
+   "ar": "مش هيك",
+   "en": "Not like that.",
+   "use": "Gentle correction.",
+   "provenance": "ref-corroborated",
+   "ref_src": "spoken-extra p.21"
+  },
+  {
+   "cat": "hedge",
+   "ar": "ولا إشي",
+   "en": "Nothing. / Not at all.",
+   "use": "Denial; also 'no problem at all'.",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.54"
+  },
+  {
+   "cat": "hedge",
+   "ar": "بصراحة",
+   "en": "Honestly…",
+   "use": "Prefacing a frank opinion.",
+   "provenance": "ref-corroborated",
+   "ref_src": "vocab-gram p.19"
+  },
+  {
+   "cat": "hedge",
+   "ar": "نص نص",
+   "en": "So-so.",
+   "use": "Lit. 'half half' — mediocre, meh.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "hedge",
+   "ar": "حسب",
+   "en": "It depends.",
+   "use": "Non-committal — 'depends on…'.",
+   "provenance": "ref-corroborated",
+   "ref_src": "vocab-gram p.20"
+  },
+  {
+   "cat": "hedge",
+   "ar": "مش متأكد",
+   "en": "I'm not sure.",
+   "use": "Softening a claim.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "glue",
+   "ar": "طيب",
+   "en": "Okay, so… / Well…",
+   "use": "Discourse glue — starts half of all turns.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "glue",
+   "ar": "يعني",
+   "en": "I mean… / Like…",
+   "use": "The most-used filler in Arabic; buys thinking time.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.43"
+  },
+  {
+   "cat": "glue",
+   "ar": "وبعدين؟",
+   "en": "And then?",
+   "use": "Keeps a story going — makes you a good listener.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "glue",
+   "ar": "شو صار؟",
+   "en": "What happened?",
+   "use": "Invites the story.",
+   "provenance": "ref-corroborated",
+   "ref_src": "stories p.5"
+  },
+  {
+   "cat": "glue",
+   "ar": "المهم",
+   "en": "Anyway… / The point is…",
+   "use": "Cutting to the point after a digression.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "glue",
+   "ar": "على فكرة",
+   "en": "By the way…",
+   "use": "Dropping in a side remark.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "glue",
+   "ar": "خلص",
+   "en": "Okay then. / Done.",
+   "use": "Closing a topic — 'enough, settled'.",
+   "provenance": "ref-corroborated",
+   "ref_src": "stories p.14"
+  },
+  {
+   "cat": "glue",
+   "ar": "عادي",
+   "en": "It's fine. / No big deal.",
+   "use": "Playing something down — 'normal, whatever'.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "glue",
+   "ar": "شو رأيك؟",
+   "en": "What do you think?",
+   "use": "Handing the turn to the other person.",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.51"
+  },
+  {
+   "cat": "table",
+   "ar": "تفضل",
+   "en": "Please — help yourself.",
+   "use": "Hospitality; you'll hear it every 90 seconds. تفضلي to a woman.",
+   "provenance": "ref-corroborated",
+   "ref_src": "spoken-extra p.12"
+  },
+  {
+   "cat": "table",
+   "ar": "صحتين",
+   "en": "Bon appétit. / Enjoy.",
+   "use": "Said to someone eating. Reply: على قلبك.",
+   "reply": "على قلبك",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "table",
+   "ar": "يسلمو إيديكي",
+   "en": "Bless your hands.",
+   "use": "TO THE COOK, after a meal — the single highest-value phrase at the table. إيديك to a man.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "table",
+   "ar": "أهلين",
+   "en": "Welcome. / Hi there.",
+   "use": "Warm greeting to a guest or a friend.",
+   "provenance": "ref-corroborated",
+   "ref_src": "najah p.29"
+  },
+  {
+   "cat": "table",
+   "ar": "نوّرت",
+   "en": "You lit up the place.",
+   "use": "To a guest arriving. Reply: منوّر فيك / الله ينوّر عليك. نوّرتي to a woman.",
+   "reply": "منوّر فيك",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "table",
+   "ar": "تكرم",
+   "en": "My pleasure. / At your service.",
+   "use": "Gracious 'of course' to a request. تكرمي to a woman.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "table",
+   "ar": "بالهنا والشفا",
+   "en": "Enjoy your meal (to your health).",
+   "use": "Said over food; also a reply to صحتين.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "table",
+   "ar": "عن إذنك",
+   "en": "Excuse me. / If I may.",
+   "use": "Leaving the table or the room politely. عن إذنكم to a group.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "blessing",
+   "ar": "يعطيك العافية",
+   "en": "More power to you.",
+   "use": "To someone working or after any effort. Reply: الله يعافيك.",
+   "reply": "الله يعافيك",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "blessing",
+   "ar": "الله معك",
+   "en": "God be with you.",
+   "use": "Parting, or sympathy for a hard road ahead.",
+   "provenance": "maknuune-corroborated"
+  },
+  {
+   "cat": "blessing",
+   "ar": "مع السلامة",
+   "en": "Goodbye. / Go in peace.",
+   "use": "To the one leaving. Reply: الله يسلمك.",
+   "reply": "الله يسلمك",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.8"
+  },
+  {
+   "cat": "blessing",
+   "ar": "بالتوفيق",
+   "en": "Good luck.",
+   "use": "Before an exam, a trip, anything new.",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "blessing",
+   "ar": "تصبح على خير",
+   "en": "Goodnight.",
+   "use": "At night. Reply: وانت من أهل الخير. تصبحي to a woman.",
+   "reply": "وانت من أهل الخير",
+   "provenance": "needs-native-validation"
+  },
+  {
+   "cat": "blessing",
+   "ar": "الله يبارك فيك",
+   "en": "God bless you.",
+   "use": "Thanks / good wishes; also the reply to مبروك.",
+   "provenance": "ref-corroborated",
+   "ref_src": "speaking p.7"
+  },
+  {
+   "cat": "blessing",
+   "ar": "سلّملي عليهم",
+   "en": "Say hi to them for me.",
+   "use": "Closing a chat — send regards to their family.",
+   "provenance": "needs-native-validation"
+  }
+ ]
 }

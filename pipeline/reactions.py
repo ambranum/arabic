@@ -64,6 +64,10 @@ def main():
         rid = 'r%d' % i
         rec = {'id': rid, 'ar': it['ar'], 'en': it['en'], 'use': it.get('use', ''),
                'cat': it['cat'], 'provenance': it.get('provenance', 'needs-native-validation')}
+        # Which book page corroborates it (pipeline/verify_content.py --apply), so the card can
+        # name its evidence instead of just asserting it was checked.
+        if it.get('ref_src'):
+            rec['ref_src'] = it['ref_src']
         if it.get('reply'):
             rec['reply'] = it['reply']
         # Adopt any clip already on disk whether or not THIS run makes audio, so a keyless data-only

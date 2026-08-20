@@ -360,6 +360,8 @@
   .rx-reply span{font-family:var(--arabic); font-size:16px}
   .rx-noaud{font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em}
   .rx-flag{color:var(--ochre); font-weight:700}
+  .rx-ok{color:var(--verdigris); font-weight:700}
+  .rx-lex{color:var(--muted); font-weight:700}
   .rx-drill{border:1px solid var(--rule); border-radius:12px; padding:22px 18px; text-align:center; max-width:520px; margin:0 auto}
   .rx-drill-n{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
   .rx-cue{font-family:var(--serif); font-size:24px; margin:10px 0 14px; color:var(--ink)}
@@ -2431,6 +2433,18 @@ function rxGrade(ar, g) {
   save(); count();
 }
 const _rxUnval = it => (it.provenance || '').includes('needs-native-validation');
+// Three honest states, not two. "Corroborated" means the same phrase is printed in the native
+// teaching materials (pipeline/verify_content.py) — real evidence, but still not the same thing
+// as a native speaker reviewing THIS app's wording, and the tooltip says so.
+const _rxProv = it => {
+  const p = it.provenance || '';
+  if (p.includes('ref-corroborated'))
+    return ['✓', 'rx-ok', 'Also printed in the native teaching materials' +
+            (it.ref_src ? ' (' + it.ref_src + ')' : '') + ' — corroborated, though not a native review of this wording'];
+  if (p.includes('maknuune-corroborated'))
+    return ['·', 'rx-lex', 'Every word is in the Maknuune lexicon; the phrasing is not native-checked'];
+  return ['•', 'rx-flag', 'Not native-checked, and the reference books don’t cover it'];
+};
 
 function reactionsSection(sub) {
   $('back').hidden = false;
@@ -2445,8 +2459,13 @@ function reactionsHome() {
     <span dir="rtl">صحتين</span> (Bon appétit). They let you be a real presence at a table long before
     you can build sentences. Pick a feeling, drill it until it comes automatically, and it slides into
     your flashcards to come back on schedule.</p>
-    <div class="unval"><b>Curated, not native-checked.</b> These are common, idiomatic reactions —
-    but confirm the exact feel with a native speaker before you lean on the rarer ones.</div>
+    ${(() => { const its = RX.items || [];
+      const ok = its.filter(i => (i.provenance || '').includes('ref-corroborated')).length;
+      return `<div class="unval"><b>How checked is this?</b> ${ok} of ${its.length} of these are
+        also printed in the native teaching materials in your reference library (marked
+        <span class="rx-ok">✓</span>) — that is corroboration, not a native speaker reviewing this
+        app's exact wording. The rest (<span class="rx-flag">•</span>) are idiomatic but unconfirmed;
+        check the feel with a native speaker before leaning on the rarer ones.</div>`; })()}
     <div class="vtiles">`;
   h += (RX.cats || []).map(c => {
     const items = rxItemsIn(c.id), got = items.filter(r => rxGot(r.ar)).length;
@@ -2484,7 +2503,7 @@ function rxBrowseHTML(items) {
         ${it.audio ? `<button class="say" onclick="playWord({kind:'reaction',audio:'${cssq(it.audio)}',lemma:'${cssq(rxKey(it.ar))}',vocalized:'${cssq(it.ar)}'})" aria-label="Play">${svg('spk')}</button>`
           : `<span class="rx-noaud">audio pending</span>`}
       </div>
-      <div class="rx-en">${esc(it.en)}${_rxUnval(it) ? ' <span class="rx-flag" title="Not native-checked">•</span>' : ''}</div>
+      <div class="rx-en">${esc(it.en)} <span class="${_rxProv(it)[1]}" title="${esc(_rxProv(it)[2])}">${_rxProv(it)[0]}</span></div>
       <div class="rx-use">${esc(it.use || '')}</div>
       ${it.reply ? `<div class="rx-reply">reply: <span dir="rtl">${esc(it.reply)}</span></div>` : ''}
     </div>`).join('');
