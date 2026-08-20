@@ -16,7 +16,7 @@ import argparse, json, os, ssl, sys, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from voice import roster, cast_voices, VOICE_ID, PREVIOUS
+from voice import roster, cast_voices, cast_by_gender, cast_dialogue, VOICE_ID, PREVIOUS
 
 try:
     import certifi
@@ -45,16 +45,33 @@ def show_cast():
     r = roster()
     print('the app’s speaking cast (texts/voices.json):')
     for role in ('main', 'b', 'c', 'd', 'e'):
-        vid = r.get(role)
-        note = ''
-        if vid == VOICE_ID:
-            note = '  (the pinned app voice)'
-        elif vid in PREVIOUS:
-            note = '  (%s)' % PREVIOUS[vid][:60]
-        print('  %-5s %s%s' % (role, vid or '— not set, falls back', note))
-    print('\nresolved to %d distinct voice(s): %s' % (len(cast_voices()), ', '.join(cast_voices())))
-    if len(cast_voices()) < 4:
-        print('note: the four-way dialogues (units 20 and 24) will reuse voices until roles c/d are set.')
+        v = r.get(role)
+        if not v:
+            continue
+        pin = '  ← the pinned app voice' if v.get('id') == VOICE_ID else ''
+        print('  %-5s %-24s %-9s %s%s' % (role, v.get('id'), (v.get('name') or ''),
+                                          v.get('gender') or '?', pin))
+        if v.get('note'):
+            print('        %s' % v['note'])
+    g = cast_by_gender()
+    print('\n%d distinct voice(s) — %d male, %d female' % (len(cast_voices()), len(g['m']), len(g['f'])))
+    # Show how the real dialogues will actually be cast, before any credits are spent.
+    try:
+        import glob
+        print('\ndialogue casting (as it will be generated):')
+        for f in sorted(glob.glob(os.path.join(HERE, '..', 'texts', 'lessons', 'unit-*.json'))):
+            u = json.load(open(f, encoding='utf-8'))
+            for d in u.get('dialogues', []):
+                d['cast'] = cast_dialogue(d.get('lines', []))
+                if not d.get('cast'):
+                    continue
+                by = {v['id']: (v.get('name') or v['id'][:6]) for v in r.values() if v.get('id')}
+                who = ', '.join('%s=%s%s' % (c['sp'], by.get(c['voice'], c['voice'][:6]),
+                                             '' if c.get('gender') else '?')
+                                for c in d['cast'])
+                print('  %-9s %s' % (u['id'], who))
+    except Exception:
+        pass
     return 0
 
 

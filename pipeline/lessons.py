@@ -7,8 +7,11 @@ VERBATIM from the transcribed reference library (texts/ref/, the user's own nati
 materials) — per-chunk src fields point at the exact book page. English glosses are the
 book's where it had them, the app's where the page was Arabic-only.
 
-With --audio it generates one clip per chunk (and one per reply, for greeting-style pairs)
-with the pinned Palestinian voice: app/audio/lessons/<unit>-cNN.mp3 / -cNNr.mp3.
+With --audio it generates a clip per chunk, per reply and per dialogue line, CAST rather than
+narrated: the taught chunk is the pinned app voice, a reply is the other person answering, and
+each dialogue speaker keeps one voice for the whole scene — picked to match their gender, so a
+woman's lines are never read by a man (see texts/voices.json and voice.cast_dialogue).
+Files: app/audio/lessons/<unit>-cNN[r].mp3 and <unit>-dN-lNN.mp3.
 
 Run:
     python3 pipeline/lessons.py                 # data only
@@ -19,7 +22,7 @@ import json, os, sys, glob, argparse, ssl, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, HERE)
-from voice import voice_id, cast_voices, norm_speaker
+from voice import voice_id, cast_voices, cast_dialogue, norm_speaker
 
 try:
     import certifi
@@ -99,13 +102,8 @@ def main():
         # conversation. Speaker names are normalized first — the books vocalize the same name
         # differently from page to page, which would otherwise swap an actor mid-scene.
         for di, d in enumerate(u.get('dialogues', [])):
-            roles, cast_of = [], {}
-            for l in d.get('lines', []):
-                sp = norm_speaker(l.get('sp')) or '?'
-                if sp not in cast_of:
-                    cast_of[sp] = CAST[len(roles) % len(CAST)]
-                    roles.append(sp)
-            d['cast'] = [{'sp': sp, 'voice': cast_of[sp]} for sp in roles]
+            d['cast'] = cast_dialogue(d.get('lines', []))
+            cast_of = {c['sp']: c['voice'] for c in d['cast']}
             for li, l in enumerate(d.get('lines', [])):
                 ar = l.get('ar')
                 if not ar or wc(ar) < a.min_words:

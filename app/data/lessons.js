@@ -4619,11 +4619,13 @@ window.LESSONS = {
      "cast": [
       {
        "sp": "إم عمر",
-       "voice": "oJQlz7pz2yWd7MRmDUXm"
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
       },
       {
        "sp": "عمر",
-       "voice": "8sSDN08XkFeN2zqNwCZk"
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": "m"
       }
      ]
     },
@@ -4660,11 +4662,13 @@ window.LESSONS = {
      "cast": [
       {
        "sp": "إم عمر",
-       "voice": "oJQlz7pz2yWd7MRmDUXm"
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
       },
       {
        "sp": "بنات",
-       "voice": "8sSDN08XkFeN2zqNwCZk"
+       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "gender": "f"
       }
      ]
     }
@@ -5024,11 +5028,13 @@ window.LESSONS = {
      "cast": [
       {
        "sp": "أمير",
-       "voice": "oJQlz7pz2yWd7MRmDUXm"
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": "m"
       },
       {
        "sp": "جميل",
-       "voice": "8sSDN08XkFeN2zqNwCZk"
+       "voice": "IYnFszSKzmym2OstwHS0",
+       "gender": "m"
       }
      ]
     }
@@ -5174,11 +5180,13 @@ window.LESSONS = {
      "cast": [
       {
        "sp": "وليد",
-       "voice": "oJQlz7pz2yWd7MRmDUXm"
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": "m"
       },
       {
        "sp": "إلسيد",
-       "voice": "8sSDN08XkFeN2zqNwCZk"
+       "voice": "IYnFszSKzmym2OstwHS0",
+       "gender": "m"
       }
      ]
     },
@@ -5260,11 +5268,13 @@ window.LESSONS = {
      "cast": [
       {
        "sp": "سمر",
-       "voice": "oJQlz7pz2yWd7MRmDUXm"
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
       },
       {
        "sp": "الست",
-       "voice": "8sSDN08XkFeN2zqNwCZk"
+       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "gender": "f"
       }
      ]
     }
@@ -5948,11 +5958,13 @@ window.LESSONS = {
      "cast": [
       {
        "sp": "فتحي",
-       "voice": "oJQlz7pz2yWd7MRmDUXm"
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": "m"
       },
       {
        "sp": "أحمد",
-       "voice": "8sSDN08XkFeN2zqNwCZk"
+       "voice": "IYnFszSKzmym2OstwHS0",
+       "gender": "m"
       }
      ]
     },
@@ -6009,11 +6021,13 @@ window.LESSONS = {
      "cast": [
       {
        "sp": "رمزي",
-       "voice": "oJQlz7pz2yWd7MRmDUXm"
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": "m"
       },
       {
        "sp": "سمير",
-       "voice": "8sSDN08XkFeN2zqNwCZk"
+       "voice": "IYnFszSKzmym2OstwHS0",
+       "gender": "m"
       }
      ]
     }

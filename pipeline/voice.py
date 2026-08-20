@@ -58,30 +58,98 @@ def model_id():
 ROSTER_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "texts", "voices.json")
 
 def roster():
-    """{role: voice_id} for the speaking roles, in fallback order. 'main' is always the pin."""
-    out = {"main": voice_id()}
+    """{role: {id, name, gender, note}} for the speaking roles. 'main' is always the pin."""
+    out = {"main": {"id": voice_id(), "name": "main", "gender": "m"}}
     try:
         import json
         cfg = json.load(open(ROSTER_FILE, encoding="utf-8"))
-        for role, vid in (cfg.get("roster") or {}).items():
-            if vid and role != "main":
-                out[role] = vid
+        for role, v in (cfg.get("roster") or {}).items():
+            v = {"id": v} if isinstance(v, str) else dict(v or {})
+            if not v.get("id"):
+                continue
+            if role == "main" and v["id"] != voice_id():
+                # The pin is the one thing texts/voices.json may not quietly override — every
+                # existing word and sentence clip in the app was spoken in it.
+                print("!! %s sets main=%s but the pinned voice is %s — keeping the pin."
+                      % (ROSTER_FILE, v["id"], voice_id()))
+                out["main"].update({k: v[k] for k in ("name", "gender", "note") if k in v})
+                continue
+            out[role] = v
     except FileNotFoundError:
         pass
     except Exception as e:
         print("!! couldn't read %s (%s) — using the pinned voice for every role" % (ROSTER_FILE, e))
     return out
 
-def cast_voices():
-    """The roster as an ordered list: main first, then the extra voices. Never empty."""
-    r = roster()
+def _ordered_roles(r):
     order = ["main", "b", "c", "d", "e"]
+    return [k for k in order if k in r] + sorted(k for k in r if k not in order)
+
+def cast_voices():
+    """The roster as an ordered list of ids: main first, then the rest. Never empty."""
+    r = roster()
     seen, out = set(), []
-    for role in order + sorted(k for k in r if k not in order):
-        vid = r.get(role)
+    for role in _ordered_roles(r):
+        vid = (r[role] or {}).get("id")
         if vid and vid not in seen:
             seen.add(vid); out.append(vid)
     return out or [VOICE_ID]
+
+def cast_by_gender():
+    """{'m': [ids…], 'f': [ids…]} in roster order — so a woman's lines are never read by a man."""
+    r, out = roster(), {"m": [], "f": []}
+    for role in _ordered_roles(r):
+        v = r[role] or {}
+        g = (v.get("gender") or "").lower()[:1]
+        if v.get("id") and g in out and v["id"] not in out[g]:
+            out[g].append(v["id"])
+    return out
+
+
+# Speaker names in the books are people, and half of them are women. إم فلان is "mother of…",
+# ست is a lady/grandmother, بنات is "girls" — all unmistakably female; أبو and سيد are male. The
+# rest fall back to a small list of the given names these particular dialogues actually use.
+_F_NAMES = {"سمر", "هدى", "مي", "ميّ", "سميرة", "نور", "نهى", "امينة", "فاطمة", "ليلى", "سلمى", "رنا"}
+_M_NAMES = {"عمر", "وليد", "امير", "جميل", "احمد", "رمزي", "سمير", "فتحي", "محمد", "سامي",
+            "خالد", "كريم", "زياد", "ماهر", "يوسف", "حسن"}
+
+def speaker_gender(name):
+    """'f', 'm' or None for a dialogue speaker label. None means "cast me by position"."""
+    n = norm_speaker(name).replace("أ", "ا").replace("إ", "ا").replace("آ", "ا")
+    if not n:
+        return None
+    if n.startswith("ام ") or n.startswith("امّ") or n.startswith("ست") or "بنات" in n or "الست" in n:
+        return "f"
+    if n.startswith("ابو") or "السيد" in n or n.startswith("سيد"):
+        return "m"
+    head = n.replace("ال", "", 1) if n.startswith("ال") else n
+    head = head.split()[0] if head.split() else head
+    if head in _F_NAMES:
+        return "f"
+    if head in _M_NAMES:
+        return "m"
+    return None
+
+
+def cast_dialogue(lines):
+    """Assign a voice to each speaker in one conversation, in order of first appearance, and hold
+    it for the whole scene. Prefers an unused voice of the speaker's gender; when that gender runs
+    out (four men, two male voices) it reuses within the gender rather than letting a man read a
+    woman's lines. Returns [{sp, voice, gender}] — one entry per distinct speaker."""
+    cast_all, by_g = cast_voices(), cast_by_gender()
+    roles, used, out = {}, [], []
+    for l in lines or []:
+        sp = norm_speaker(l.get("sp") if isinstance(l, dict) else l) or "?"
+        if sp in roles:
+            continue
+        g = speaker_gender(sp)
+        pool = by_g.get(g) or []
+        pick = (next((v for v in pool if v not in used), None)
+                or next((v for v in cast_all if v not in used and (not g or v in pool)), None)
+                or (pool[len(out) % len(pool)] if pool else cast_all[len(out) % len(cast_all)]))
+        roles[sp] = pick; used.append(pick)
+        out.append({"sp": sp, "voice": pick, "gender": g})
+    return out
 
 _AR_MARKS = set("ًٌٍَُِّْٰـ")
 def norm_speaker(name):
