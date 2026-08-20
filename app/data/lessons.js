@@ -4615,7 +4615,17 @@ window.LESSONS = {
        "en": null
       }
      ],
-     "src": "speaking p.52"
+     "src": "speaking p.52",
+     "cast": [
+      {
+       "sp": "إم عمر",
+       "voice": "oJQlz7pz2yWd7MRmDUXm"
+      },
+      {
+       "sp": "عمر",
+       "voice": "8sSDN08XkFeN2zqNwCZk"
+      }
+     ]
     },
     {
      "title": "مُحادَثِة ثانية",
@@ -4646,7 +4656,17 @@ window.LESSONS = {
        "en": null
       }
      ],
-     "src": "speaking p.52"
+     "src": "speaking p.52",
+     "cast": [
+      {
+       "sp": "إم عمر",
+       "voice": "oJQlz7pz2yWd7MRmDUXm"
+      },
+      {
+       "sp": "بنات",
+       "voice": "8sSDN08XkFeN2zqNwCZk"
+      }
+     ]
     }
    ],
    "texts": [],
@@ -5000,7 +5020,17 @@ window.LESSONS = {
        "en": null
       }
      ],
-     "src": "speaking p.21"
+     "src": "speaking p.21",
+     "cast": [
+      {
+       "sp": "أمير",
+       "voice": "oJQlz7pz2yWd7MRmDUXm"
+      },
+      {
+       "sp": "جميل",
+       "voice": "8sSDN08XkFeN2zqNwCZk"
+      }
+     ]
     }
    ],
    "texts": [],
@@ -5140,7 +5170,17 @@ window.LESSONS = {
        "en": null
       }
      ],
-     "src": "speaking p.41"
+     "src": "speaking p.41",
+     "cast": [
+      {
+       "sp": "وليد",
+       "voice": "oJQlz7pz2yWd7MRmDUXm"
+      },
+      {
+       "sp": "إلسيد",
+       "voice": "8sSDN08XkFeN2zqNwCZk"
+      }
+     ]
     },
     {
      "title": "أيام زمان 2: سَمَر بِتِحْكي مع سِتّها",
@@ -5216,7 +5256,17 @@ window.LESSONS = {
        "en": null
       }
      ],
-     "src": "speaking p.42"
+     "src": "speaking p.42",
+     "cast": [
+      {
+       "sp": "سمر",
+       "voice": "oJQlz7pz2yWd7MRmDUXm"
+      },
+      {
+       "sp": "الست",
+       "voice": "8sSDN08XkFeN2zqNwCZk"
+      }
+     ]
     }
    ],
    "texts": [],
@@ -5894,7 +5944,17 @@ window.LESSONS = {
        "en": null
       }
      ],
-     "src": "speaking p.54"
+     "src": "speaking p.54",
+     "cast": [
+      {
+       "sp": "فتحي",
+       "voice": "oJQlz7pz2yWd7MRmDUXm"
+      },
+      {
+       "sp": "أحمد",
+       "voice": "8sSDN08XkFeN2zqNwCZk"
+      }
+     ]
     },
     {
      "title": "مُحادَثِة ثانية",
@@ -5945,7 +6005,17 @@ window.LESSONS = {
        "en": null
       }
      ],
-     "src": "speaking p.54"
+     "src": "speaking p.54",
+     "cast": [
+      {
+       "sp": "رمزي",
+       "voice": "oJQlz7pz2yWd7MRmDUXm"
+      },
+      {
+       "sp": "سمير",
+       "voice": "8sSDN08XkFeN2zqNwCZk"
+      }
+     ]
     }
    ],
    "texts": [],

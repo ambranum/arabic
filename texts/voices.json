@@ -1,0 +1,18 @@
+{
+  "_note": "The speaking cast. A greeting and its reply are two people; a dialogue is three or four — one voice reading every part is what makes synthesized conversation sound fake. Roles here are filled with ElevenLabs voice ids, which are PUBLIC identifiers (useless without the API key), so this file is committed like the pin in pipeline/voice.py.",
+  "_howto": "Run `python3 pipeline/voices.py --list` with your ELEVENLABS_API_KEY set to print your voice library, then paste ids below. Leave a role null and it falls back to an earlier one, so a half-filled roster just means fewer distinct voices — never a failure.",
+  "_roles": {
+    "main": "every taught chunk, and the first speaker in any dialogue — the pinned app voice",
+    "b": "the ANSWER half of greeting pairs, and the second speaker in dialogues",
+    "c": "third speaker in dialogues (the four-way conversations in units 20 and 24)",
+    "d": "fourth speaker",
+    "e": "spare"
+  },
+  "roster": {
+    "main": "oJQlz7pz2yWd7MRmDUXm",
+    "b": "8sSDN08XkFeN2zqNwCZk",
+    "c": null,
+    "d": null,
+    "e": null
+  }
+}

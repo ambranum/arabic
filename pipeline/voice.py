@@ -46,6 +46,49 @@ def voice_id():
 def model_id():
     return os.environ.get("ELEVENLABS_MODEL") or MODEL_ID
 
+
+# ---------------------------------------------------------------------------------------------
+# The cast. A greeting and its answer are two different people; a dialogue is three or four. One
+# voice reading every part is the single biggest thing that makes synthesized dialogue sound fake,
+# so lessons assign a voice PER ROLE. Roles are filled from texts/voices.json — voice ids are
+# public identifiers (useless without the API key), so that file is committed like this pin is.
+# Unfilled roles fall back to earlier ones, so a half-filled roster degrades to fewer voices
+# rather than failing.
+# ---------------------------------------------------------------------------------------------
+ROSTER_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "texts", "voices.json")
+
+def roster():
+    """{role: voice_id} for the speaking roles, in fallback order. 'main' is always the pin."""
+    out = {"main": voice_id()}
+    try:
+        import json
+        cfg = json.load(open(ROSTER_FILE, encoding="utf-8"))
+        for role, vid in (cfg.get("roster") or {}).items():
+            if vid and role != "main":
+                out[role] = vid
+    except FileNotFoundError:
+        pass
+    except Exception as e:
+        print("!! couldn't read %s (%s) — using the pinned voice for every role" % (ROSTER_FILE, e))
+    return out
+
+def cast_voices():
+    """The roster as an ordered list: main first, then the extra voices. Never empty."""
+    r = roster()
+    order = ["main", "b", "c", "d", "e"]
+    seen, out = set(), []
+    for role in order + sorted(k for k in r if k not in order):
+        vid = r.get(role)
+        if vid and vid not in seen:
+            seen.add(vid); out.append(vid)
+    return out or [VOICE_ID]
+
+_AR_MARKS = set("ًٌٍَُِّْٰـ")
+def norm_speaker(name):
+    """Same person, same voice. The books vocalize a name inconsistently across pages (وَليد on
+    one, وليد on the next); without this they'd be handed different voices mid-conversation."""
+    return "".join(c for c in str(name or "") if c not in _AR_MARKS).strip()
+
 if __name__ == "__main__":
     v = voice_id()
     print("voice: %s%s" % (v, "  (env override)" if v != VOICE_ID else "  (pinned in voice.py)"))

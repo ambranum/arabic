@@ -19,7 +19,7 @@ import json, os, sys, glob, argparse, ssl, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, HERE)
-from voice import voice_id
+from voice import voice_id, cast_voices, norm_speaker
 
 try:
     import certifi
@@ -61,6 +61,7 @@ def main():
         return len([w for w in s.replace('\\', ' ').split() if w.strip()])
 
     key, voice = os.environ.get('ELEVENLABS_API_KEY'), voice_id()
+    CAST = cast_voices()          # [main, b, c, …] — a reply and each dialogue speaker get their own
     do_audio = a.audio and key and voice and not a.estimate
     if a.audio and not (key and voice) and not a.estimate:
         print('!! --audio requested but ELEVENLABS_API_KEY not set; emitting data with no audio\n')
@@ -74,7 +75,9 @@ def main():
         u = json.load(open(f, encoding='utf-8'))
         for i, c in enumerate(u.get('chunks', [])):
             base = '%s-c%02d' % (u['id'], i)
-            for suffix, ar in (('', c.get('ar')), ('r', (c.get('reply') or {}).get('ar'))):
+            # The taught chunk is the app's own voice; its reply is the OTHER person answering.
+            for suffix, ar, vx in (('', c.get('ar'), CAST[0]),
+                                   ('r', (c.get('reply') or {}).get('ar'), CAST[1 % len(CAST)])):
                 if not ar:
                     continue
                 if wc(ar) < a.min_words:      # single words fall back to the word bank / browser voice
@@ -87,10 +90,38 @@ def main():
                 if os.path.exists(clip):
                     tgt['audio'] = rel
                 elif do_audio:
-                    ok, how = tts(ar, clip, key, voice)
+                    ok, how = tts(ar, clip, key, vx)
                     print('  %s%s %-24s %s' % (base, suffix, ar[:22], how))
                     if ok:
                         tgt['audio'] = rel
+
+        # Dialogues: one voice per speaker, assigned in order of appearance and held for the whole
+        # conversation. Speaker names are normalized first — the books vocalize the same name
+        # differently from page to page, which would otherwise swap an actor mid-scene.
+        for di, d in enumerate(u.get('dialogues', [])):
+            roles, cast_of = [], {}
+            for l in d.get('lines', []):
+                sp = norm_speaker(l.get('sp')) or '?'
+                if sp not in cast_of:
+                    cast_of[sp] = CAST[len(roles) % len(CAST)]
+                    roles.append(sp)
+            d['cast'] = [{'sp': sp, 'voice': cast_of[sp]} for sp in roles]
+            for li, l in enumerate(d.get('lines', [])):
+                ar = l.get('ar')
+                if not ar or wc(ar) < a.min_words:
+                    if ar: skipped[0] += 1
+                    continue
+                est[0] += len(ar); est[1] += 1
+                lid = '%s-d%d-l%02d' % (u['id'], di, li)
+                clip = os.path.join(AUDIO_DIR, lid + '.mp3')
+                rel = 'audio/lessons/%s.mp3' % lid
+                if os.path.exists(clip):
+                    l['audio'] = rel
+                elif do_audio:
+                    ok, how = tts(ar, clip, key, cast_of.get(norm_speaker(l.get('sp')) or '?', CAST[0]))
+                    print('  %s [%s] %-20s %s' % (lid, (l.get('sp') or '?')[:8], ar[:20], how))
+                    if ok:
+                        l['audio'] = rel
         units.append(u)
 
     units.sort(key=lambda u: u.get('n', 99))

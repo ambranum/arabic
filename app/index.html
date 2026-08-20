@@ -1221,8 +1221,15 @@ function paraPlayer() {
 
 function paraStop() { PA.pause(); if (PARA) PARA.el.classList.remove('playing'); }
 
+// A view can hold more than one continuous player (a lesson unit with two conversations). Only
+// one can be the active PARA, so each player's clips are registered against its element and the
+// player takes over on first press — see the .pp handler.
+const PARA_SRCS = new WeakMap();
+const paraRegister = (el, srcs) => { if (el && srcs && srcs.length) PARA_SRCS.set(el, srcs); };
+
 function paraSetup(el, srcs) {
   paraStop();
+  paraRegister(el, srcs);
   PARA = { el, srcs, dur: srcs.map(() => 0), i: 0 };
   // Preload each clip's duration so the combined scrubber and total time are accurate from
   // the first play rather than only after a full listen-through.
@@ -2164,13 +2171,20 @@ function lessonView(u) {
   }
   // Dialogues and readings come straight off the page, untranslated as the book prints them —
   // read them aloud. Speaker labels are kept so you can hear who is talking.
-  (u.dialogues || []).forEach(d => {
-    h += `<div class="sec">${esc(d.title || 'Dialogue')}</div><div class="lsn-dlg">` +
+  (u.dialogues || []).forEach((d, di) => {
+    const srcs = (d.lines || []).filter(l => l.audio).map(l => l.audio);
+    h += `<div class="sec">${esc(d.title || 'Dialogue')}</div>`;
+    // Same continuous player the Dinner Table uses, so the whole conversation runs start to
+    // finish — which is the point of giving each speaker their own voice.
+    if (srcs.length) h += paraPlayer();
+    h += `<div class="lsn-dlg">` +
       d.lines.map(l => `<div class="lsn-line">
-        ${l.sp ? `<span class="lsn-sp">${esc(l.sp)}</span>` : ''}
+        ${l.sp ? `<span class="lsn-sp">${esc(l.sp)}${
+          l.audio ? `<button class="say" onclick="sndPlay('${cssq(l.audio)}')" aria-label="Play line">${svg('spk')}</button>` : ''}</span>` : ''}
         <span class="lsn-lar" dir="rtl">${esc(l.ar)}</span>
         ${l.en ? `<span class="lsn-len">${esc(l.en)}</span>` : ''}</div>`).join('') +
-      `</div><div class="note">From ${esc(d.src)}.</div>`;
+      `</div><div class="note">From ${esc(d.src)}.${
+        (d.cast || []).length > 1 ? ' Each speaker has their own voice.' : ''}</div>`;
   });
   (u.texts || []).forEach(t => {
     h += `<div class="sec">${esc(t.title || 'Reading')}</div><div class="lsn-text" dir="rtl">` +
@@ -2199,6 +2213,14 @@ function lessonView(u) {
     ${next ? `<button class="tog go" onclick="location.hash='/lessons/${next.id}'">Next: Unit ${next.n} →</button>` : ''}
     <button class="tog" onclick="location.hash='/lessons'">All units</button></div>`;
   $('view').innerHTML = h;
+  // Hand each conversation's clips to its own player, in render order. The first is bound live;
+  // the others take over when pressed.
+  const players = [...$('view').querySelectorAll('.player.para')];
+  (u.dialogues || []).filter(d => (d.lines || []).some(l => l.audio)).forEach((d, k) => {
+    const el = players[k]; if (!el) return;
+    const srcs = d.lines.filter(l => l.audio).map(l => l.audio);
+    if (k === 0) paraSetup(el, srcs); else paraRegister(el, srcs);
+  });
 }
 
 function booksSection(sub, arg) {
@@ -5036,7 +5058,12 @@ $('exp').onclick = () => ankiExport();
 $('view').addEventListener('click', e => {
   const pp = e.target.closest('.player .pp');
   if (pp) { const pl = pp.closest('.player');
-    if (pl.dataset.para) paraToggle(); else toggleSrc(pl); return; }   // play / pause
+    if (pl.dataset.para) {
+      // Pressing a player that isn't the active one hands control to it first, so a second
+      // conversation on the page plays itself rather than the first one.
+      if (!PARA || PARA.el !== pl) { const s = PARA_SRCS.get(pl); if (s) paraSetup(pl, s); }
+      paraToggle();
+    } else toggleSrc(pl); return; }   // play / pause
   // Only the inline players tag their buttons with data-spd. The guided-shadow view reuses
   // the same .pspd markup but drives itself through gsSpeed(), so without this guard the
   // delegated handler also fired there, parsed undefined, and wrote NaN over the saved
