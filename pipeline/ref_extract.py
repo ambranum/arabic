@@ -66,6 +66,10 @@ def stats():
         if os.path.exists(tf):
             d = json.load(open(tf, encoding='utf-8'))
             for u in d.get('units', []):
+                pg = u.get('pages')                     # the convention the transcribers settled on
+                if isinstance(pg, list) and len(pg) == 2 and all(isinstance(x, int) for x in pg):
+                    done.update(range(pg[0], pg[1] + 1))
+                    continue
                 m = re.match(r'(\d+)\s*[-–]\s*(\d+)$', str(u.get('page_range', '')))
                 if m:
                     done.update(range(int(m.group(1)), int(m.group(2)) + 1))
