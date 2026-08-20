@@ -409,6 +409,245 @@ SPEC = [
         'are used.',
    produce='Out loud: accept a coffee, compliment the food, refuse a third helping politely, and '
            'bless the hands that cooked it.'),
+
+ # ---- the bulk mining pass: everything substantial the books still had left ----
+ # Weighted hard toward phases 4-6, which carried 1,475 of the 2,000 planned hours but only a
+ # handful of units. Story units are whole graded readings with their own قاموس and the books'
+ # retell/perspective-shift exercises — the 4/3/2 pedagogy, natively confirmed.
+
+ dict(n=26, phase=2, gram='idafa', src=[('speaking', 2)],
+   title_en='Capitals of the Arab world',
+   objective='The capitals, so a place name in the news or across the table is a place and not a '
+             'noise. Pairs directly with the countries you already learned.',
+   point='"The capital of Jordan" — no word for "of"',
+   body='عاصْمِة الأُرْدُن stacks the two nouns and lets the order do the work, exactly like '
+        'سَلَطَة خُضْرَة. The first noun never takes الـ in this construction.',
+   produce='Out loud: name five capitals with their countries, then say which you have been to.'),
+
+ dict(n=27, phase=2, gram='fi', src=[('vocab-gram', '~Prepositions')],
+   from_grammar=True,
+   title_en='Prepositions — in, on, with, from',
+   objective='The small words that put everything else in place. They are few, they are constant, '
+             'and they carry pronoun endings, which is what makes them worth a unit of their own.',
+   point='Prepositions take the possessive endings',
+   body='مَعي (with me), مِنُّه (from him), عَلَيها (on her) — the same endings you learned on nouns '
+        'attach here too. Learn the preposition and its endings as one set.',
+   produce='Say where five things in the room are, out loud, each with a different preposition.'),
+
+ dict(n=28, phase=3, gram='gender', src=[('vocab-gram', '~Adjectives')],
+   fill_en=["mature, sensible", "calm, quiet", "wide, spacious"],
+   title_en='Adjectives — describing people and things',
+   objective='A large, ordered adjective list plus the agreement rules the book states outright. '
+             'This is the vocabulary that turns bare naming into description.',
+   point='Agreement in spoken Arabic',
+   body='The book gives the rules of agreement in ʿāmmiyye directly: the adjective follows its '
+        'noun and matches it. Definite noun, definite adjective — البيت الكبير, not البيت كبير '
+        '(which is a whole sentence, "the house is big").',
+   produce='Describe three people you know out loud, two adjectives each, watching the agreement.'),
+
+ dict(n=29, phase=3, gram='relative', src=[('vocab-gram', '~Conjunctions')],
+   title_en='Joining sentences up',
+   objective='Because, but, so, when, if. Fifty-odd connectors — the difference between speaking in '
+             'fragments and speaking in paragraphs.',
+   point='Connectors carry the argument',
+   body='Every one of these lets you attach a reason, a contrast or a condition to what you just '
+        'said. Learning even ten well is what makes an opinion sound like an opinion rather than a '
+        'list of facts.',
+   produce='Say one sentence, then extend it three times with a different connector each time.'),
+
+ dict(n=30, phase=3, gram='gender', src=[('vocab-gram', '~Singular and plural')],
+   title_en='Singular & plural — the big glossary',
+   objective='Two hundred everyday nouns, each printed with its plural. Arabic plurals mostly cannot '
+             'be predicted, so they have to be learned in pairs — and this is the list to learn them from.',
+   point='Learn the plural WITH the singular',
+   body='Some plurals just add an ending; most change the word internally (كِتاب ← كُتُب). There is '
+        'no reliable rule, which is exactly why the book prints them side by side. Never learn a '
+        'noun without its plural.',
+   produce='Pick twenty from the list and say each pair out loud: one book, two books, many books.'),
+
+ dict(n=31, phase=4, gram='past', src=[('vocab-gram', '~Broken and Sound Plurals')],
+   from_grammar=True,
+   title_en='Plural patterns — the shapes behind them',
+   objective='After learning plurals one by one, this is the pattern behind them: the handful of '
+             'shapes most broken plurals actually fall into.',
+   point='مَفاعِل, فْعال, أفْعال and friends',
+   body='The book lays out the recurring templates. You still cannot predict which noun takes which, '
+        'but recognizing the shapes makes the plurals you meet in reading far easier to place.',
+   produce='Sort twenty plurals you already know into the book’s patterns, out loud.'),
+
+ dict(n=32, phase=4, gram='questions', src=[('speaking', 22)],
+   title_en='On the phone',
+   objective='A phone call is the hardest ordinary conversation: no face, no gestures, no lip-reading. '
+             'Three real dialogues of someone trying to reach a family.',
+   point='Phone-call formulas',
+   body='Calls run on fixed openers and closers — asking for someone, saying who you are, saying '
+        'they are not in, leaving a message. Take them as whole chunks; that is how they are used.',
+   produce='Role-play a call out loud: ask for someone, be told they are out, leave a message.'),
+
+ dict(n=33, phase=4, gram='past', src=[('stories', 1)],
+   title_en='The camel who wanted to learn',
+   objective='Your first full story in Palestinian, with its own glossary and the book’s retell '
+             'exercises. Read it, then tell it back — that retelling is the whole point.',
+   point='Narrative runs in the past',
+   body='A story is a chain of past-tense verbs with connectors between them. Read for the chain '
+        'first: who did what, then what happened next.',
+   produce='Tell the story from memory, out loud, in under two minutes. Then again in one.'),
+
+ dict(n=34, phase=4, gram='past', src=[('stories', 2)],
+   fill_en=["the time came"],
+   title_en='The man and the mouse',
+   objective='A longer story in five parts with a big glossary — the step up from the first one, and '
+             'the book’s pronoun-shift drill on top.',
+   point='Changing who the story is about',
+   body='The book’s exercise asks you to change the pronouns of the underlined sentences and retell. '
+        'That single drill forces every ending in the language to become active rather than recognized.',
+   produce='Retell the story as if it happened to YOU — first person throughout.'),
+
+ dict(n=35, phase=4, gram='past', src=[('stories', 3)],
+   title_en='The fisherman and the rich tourist',
+   objective='The well-known parable, in Palestinian, with its glossary and retell drills. Short, '
+             'pointed, and the kind of story that actually gets told at a table.',
+   point='Telling a story with a point',
+   body='This one has a punchline, which means the telling has to build. Notice where the book’s '
+        'text slows down and where it moves — that pacing is what you are copying.',
+   produce='Tell it to someone in under ninety seconds, landing the ending.'),
+
+ dict(n=36, phase=4, gram='kaan', src=[('stories', 4)],
+   title_en='The king and the shirt',
+   objective='A folk tale with a moral, its glossary, and the perspective-shift exercise the book is '
+             'fond of — tell it again as a different character.',
+   point='Retelling from another point of view',
+   body='The book asks each group to tell the story from a different character’s side while the rest '
+        'guess who. It is the most demanding speaking exercise in the whole reader, and the most useful.',
+   produce='Tell the story from the king’s point of view, then from the shirt-owner’s.'),
+
+ dict(n=37, phase=5, gram='wadi-ara', src=[('stories', 5)],
+   title_en='The golden lira — a story in Galilee dialect',
+   objective='A six-part story printed deliberately in the GALILEE dialect rather than the urban '
+             'speech the rest of the app teaches. Hearing the difference is the skill here.',
+   point='Not everyone speaks the way this app teaches',
+   body='The app’s baseline is urban (Jerusalem/Ramallah/Nablus). This story is northern, and prints '
+        'forms the city would say differently. That is not an error in either — it is what regional '
+        'variation looks like on the page. Compare it with the Wadi Ara accent lesson.',
+   produce='Read a passage aloud twice: once as printed, once "translated" into the urban forms.'),
+
+ dict(n=38, phase=5, gram='past', src=[('stories', 6)],
+   title_en='Kanafani — the little lamp',
+   objective='Real Palestinian literature, by Ghassan Kanafani, in five parts. No glossary and no '
+             'exercises — just the text, which is the point: this is reading for its own sake.',
+   point='Literary Arabic, read for pleasure',
+   body='This is a step above everything before it and is meant to be. Read for the shape of it; '
+        'look up what stops you and let the rest go by.',
+   produce='Say what happens, in your own words, in five sentences.'),
+
+ dict(n=39, phase=5, gram='baddi', src=[('speaking', 38)],
+   title_en='Love?',
+   objective='Three short texts on the subject every dinner table gets to eventually, with the '
+             'book’s discussion questions.',
+   point='Talking about feelings you have opinions about',
+   body='This unit is discussion, not vocabulary: the texts exist to be argued with. Use the '
+        'opinion frames from the شو رايَك؟ unit.',
+   produce='Answer the book’s questions out loud, in full sentences, with a reason for each.'),
+
+ dict(n=40, phase=5, gram='questions', src=[('speaking', 33)],
+   title_en='Women and men',
+   objective='A discussion text on roles and expectations — the kind of subject where you need to be '
+             'able to disagree politely and still be understood.',
+   point='Disagreeing without falling out',
+   body='Pair the opinion frames with hedges: بِالنِّسْبِة إلي (for me), مُمْكِن (maybe), '
+        'بَسّ (but). Softening is what keeps a strong opinion sociable.',
+   produce='Give your view, then argue the opposite side as convincingly, out loud.'),
+
+ dict(n=41, phase=5, gram='baddi', src=[('speaking', 35)],
+   title_en='Diets & eating well',
+   objective='Twenty-five terms for food, health and what you do or don’t eat — which at a Palestinian '
+             'table is genuinely practical vocabulary.',
+   point='Saying what you don’t eat',
+   body='Combine بَاكُلْش / ما بَاكُل with the food words, and pair with the polite refusals from the '
+        'hospitality unit. Refusing food gracefully is a real skill here.',
+   produce='Explain what you eat and don’t eat, and why, out loud — then refuse a dish politely.'),
+
+ dict(n=42, phase=5, gram='bpresent', src=[('speaking', 27)],
+   title_en='Learning and teaching Arabic',
+   objective='A text about learning the language, in the language — plus the book’s questions about '
+             'how you are finding it.',
+   point='Talking about the thing you are doing',
+   body='Being able to discuss your own learning — what is hard, what helps — is unusually useful: '
+        'it is the conversation you will have with every teacher and every patient friend.',
+   produce='Out loud: what you find hardest, what has helped most, what you want next.'),
+
+ dict(n=43, phase=5, gram='kaan', src=[('speaking', 32)],
+   title_en='Independence Day and the Arab minority',
+   objective='Vocabulary and questions on a subject that is unavoidable and genuinely sensitive. The '
+             'book presents it as a discussion; so does this unit.',
+   point='Sensitive subjects, carefully',
+   body='This is the vocabulary of a difficult conversation. The value is being able to listen and '
+        'ask rather than to argue — and to understand what is being said around you.',
+   produce='Practise asking, not asserting: three questions you could genuinely ask someone.'),
+
+ dict(n=44, phase=5, gram='past', src=[('spoken-extra', 3)],
+   title_en='Ziyad and Abu Siwar',
+   objective='A natural two-person conversation from the Givat Haviva packet — ordinary talk at '
+             'ordinary speed, with a short glossary.',
+   point='Following a conversation you are not in',
+   body='Listening to two other people talk is harder than being addressed, because nobody is '
+        'accommodating you. Read it, then listen without reading.',
+   produce='Summarize what the two of them settled, out loud, in three sentences.'),
+
+ dict(n=45, phase=6, gram='indi', src=[('speaking', 31)],
+   title_en='Visits on occasions',
+   objective='What you say at a wedding, a birth, a condolence visit, a holiday. Hospitality has '
+             'fixed language for every occasion, and getting it right matters more than fluency.',
+   point='The right phrase for the occasion',
+   body='These are formulas, not sentences you compose. Each occasion has its greeting and its '
+        'expected answer, exactly like the greetings unit — learn them in pairs.',
+   produce='Out loud: congratulate a new marriage, a new baby, and offer condolences.'),
+
+ dict(n=46, phase=6, gram='past', src=[('spoken-extra', 6)],
+   title_en='Majed got engaged',
+   objective='A conversation about an engagement — the single most common piece of family news, and '
+             'a scene you will sit through many times.',
+   point='Reacting to news',
+   body='This is where the Reactions unit pays off: مبروك, والله؟, ما شاء الله. Follow the '
+        'conversation and notice how much of it is reaction rather than information.',
+   produce='Someone tells you a family member got engaged. React, ask two questions, congratulate.'),
+
+ dict(n=47, phase=6, gram='baddi', src=[('spoken-extra', 7)],
+   title_en='Before the market',
+   objective='Planning a shopping trip out loud — what is needed, who is going, what it costs. '
+             'Everyday domestic negotiation.',
+   point='Working out a plan together',
+   body='Notice how the plan is made: suggestions, objections, agreement. That three-move pattern is '
+        'most of domestic conversation everywhere.',
+   produce='Plan a shopping trip out loud with an imagined partner: propose, object, agree.'),
+
+ dict(n=48, phase=6, gram='baddi', src=[('spoken-extra', 9)],
+   title_en='Rana returns some disks',
+   objective='A short transactional dialogue — wanting to exchange something. The politeness of '
+             'asking for something you are entitled to.',
+   point='Asking for something, politely',
+   body='بِدّي plus a soft opener does most of the work. Transactions are formulaic, which makes '
+        'them a cheap win: learn the frame once and swap the noun.',
+   produce='Out loud: return something to a shop and ask to exchange it.'),
+
+ dict(n=49, phase=6, gram='past', src=[('spoken-extra', 10)],
+   title_en='The mosquito and the wind',
+   objective='A short fable with a glossary — light reading to finish on, and a story short enough '
+             'to actually memorize and retell.',
+   point='A story you can carry',
+   body='Short fables are the most useful stories to know by heart: they fit in a gap in conversation '
+        'and they always land.',
+   produce='Learn it well enough to tell it from memory, out loud, with no notes.'),
+
+ dict(n=50, phase=6, gram='idafa', src=[('vocab-gram', '~Mass Nouns')],
+   from_grammar=True,
+   title_en='Counting food — mass nouns & unit words',
+   objective='How to ask for an amount of something that has no plural: a head of lettuce, a clove '
+             'of garlic, a grain of rice. The last piece of table and market language.',
+   point='حَبَّة, راس, قَرْن — the unit words',
+   body='You cannot say "two lettuces". The book gives two methods and a reference table of which '
+        'unit word goes with which produce — that table is the unit.',
+   produce='Out loud: order six different things by their correct unit word.'),
 ]
 
 

@@ -7164,6 +7164,6320 @@ window.LESSONS = {
    ],
    "produce": "Out loud: accept a coffee, compliment the food, refuse a third helping politely, and bless the hands that cooked it.",
    "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-26",
+   "n": 26,
+   "phase": 2,
+   "title": {
+    "ar": "عَواصِم",
+    "en": "Capitals of the Arab world"
+   },
+   "objective": "The capitals, so a place name in the news or across the table is a place and not a noise. Pairs directly with the countries you already learned.",
+   "src": "speaking 5-5",
+   "gram_id": "idafa",
+   "grammar": {
+    "point": "\"The capital of Jordan\" — no word for \"of\"",
+    "body": "عاصْمِة الأُرْدُن stacks the two nouns and lets the order do the work, exactly like سَلَطَة خُضْرَة. The first noun never takes الـ in this construction."
+   },
+   "chunks": [
+    {
+     "ar": "عَاصِمِة ج عَواصِم",
+     "en": "capitals",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "مَدينة ج مُدُن",
+     "en": "towns",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "عَمّان",
+     "en": "Amman",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "إلْقُدْس (أورشَليم القُدْس)",
+     "en": "Jerusalem",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "إلْقاهِرة",
+     "en": "Cairo",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "بَيْروت",
+     "en": "Beirut",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "بَغْداد",
+     "en": "Baghdad",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "إلْخَرْطوم",
+     "en": "Khartoum",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "إسْطَنْبول",
+     "en": "Istanbul",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "ألرِّياض",
+     "en": "Riyadh (handwritten 'Riyhad')",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "طَهْران",
+     "en": "Tehran",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "باريس",
+     "en": "Paris",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "مَدْريد",
+     "en": "Madrid",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "لَنْدُن",
+     "en": "London",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "طُوكُيو",
+     "en": "Tokyo",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "بَرْلين",
+     "en": "Berlin",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "واشِنْطُن",
+     "en": "Washington",
+     "src": "speaking p.5"
+    },
+    {
+     "ar": "دِمَشْق",
+     "en": "Damascus",
+     "src": "speaking p.5"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة:",
+     "instructions": "وظيفة:",
+     "items": [
+      {
+       "cue": "1. شو هِيَّ دُولِة كُلّ عاصِمِة؟ (What is the country of each capital?)",
+       "answer": null
+      },
+      {
+       "cue": "2. أيّ عاصِمِة زُرْتُوا؟ (Which capital did you visit?)",
+       "answer": null
+      },
+      {
+       "cue": "3. أيّ عاصِمِة بِتْحِبُّوا تْزُورُوا؟ (Which capital would you like to visit?)",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.5"
+    }
+   ],
+   "produce": "Out loud: name five capitals with their countries, then say which you have been to.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-27",
+   "n": 27,
+   "phase": 2,
+   "title": {
+    "ar": "حروف جَرّ",
+    "en": "Prepositions — in, on, with, from"
+   },
+   "objective": "The small words that put everything else in place. They are few, they are constant, and they carry pronoun endings, which is what makes them worth a unit of their own.",
+   "src": "",
+   "gram_id": "fi",
+   "grammar": {
+    "point": "Prepositions take the possessive endings",
+    "body": "مَعي (with me), مِنُّه (from him), عَلَيها (on her) — the same endings you learned on nouns attach here too. Learn the preposition and its endings as one set."
+   },
+   "chunks": [
+    {
+     "ar": "عَ (مكان)، لَ (مكان, شَخْص) — راح عَ-البيت \\ سافر لَإيطاليا \\ قال-لُه",
+     "en": "to",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "في, بِ — في الصبح, بالليل",
+     "en": "in",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "في، بِ ,عِنْد — هو في الدار, هو بِالمدرسة , هو عند أُخْته",
+     "en": "at",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "خِلال, في — موسى نام خِلال الدرس",
+     "en": "during",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "عَلى — سمير قَعَد على الكُرسي",
+     "en": "on",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "عَن — أحْمَد قَرا عن الشرق الأوسط",
+     "en": "about",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "مِن — رنا وِصْلَت من أمريكا، مَصنوع من خَشَب",
+     "en": "of, from",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "مَع — مَعَك مصاري؟ ، رُحِت مَعُه؟",
+     "en": "have, with",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "بِ — سافر بالباص",
+     "en": "by",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "قُدّام — المعلم قُدّام الطُّلّاب",
+     "en": "in front of",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "فُوق — الطيارة فُوق الِغْيوم",
+     "en": "above",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "مِثِل ، زَيّ — هو مِثْلي، هو زَيّي (زَيّ-ما شُفْتِ)",
+     "en": "as, like",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "وَرا — وَرا البيت",
+     "en": "behind",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "قَبِل — قبل ساعة، (قبل-ما أشوفُه)",
+     "en": "before",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "بَعِد — بعد الصّيف، (بعد-ما أشوفُه)",
+     "en": "after",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "بِين (بينا، بيناتْنا) — هو بيني وبين النهر، عاش بيناتْنا",
+     "en": "between",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "بَرّة (بَرِّيّة الْبْلاد) — إطْلَع بَرّة",
+     "en": "out",
+     "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
+     "src": "vocab-gram p.22"
+    },
+    {
+     "ar": "جُوَّة — تَعال جُوَّة",
+     "en": "inside",
+     "group": "Prepositions, continued (printed page 148)",
+     "src": "vocab-gram p.21"
+    },
+    {
+     "ar": "تَحت — تَحْت المَطَر",
+     "en": "under",
+     "group": "Prepositions, continued (printed page 148)",
+     "src": "vocab-gram p.21"
+    },
+    {
+     "ar": "عَلى — أنا وأخوي على ابن عَمّي وأنا وابِن عَمّي عَلَى الْغَريب",
+     "en": "against",
+     "group": "Prepositions, continued (printed page 148)",
+     "src": "vocab-gram p.21"
+    },
+    {
+     "ar": "دون، بِدون ، مِن غِير — بِدّي قَهْوِة بِدون \\ مِن غِير سُكَّر",
+     "en": "with out",
+     "group": "Prepositions, continued (printed page 148)",
+     "src": "vocab-gram p.21"
+    },
+    {
+     "ar": "عَشان — هٰذا الكْتاب عَشانَك",
+     "en": "for",
+     "group": "Prepositions, continued (printed page 148)",
+     "src": "vocab-gram p.21"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [],
+   "produce": "Say where five things in the room are, out loud, each with a different preposition.",
+   "provenance": "ref:vocab-gram"
+  },
+  {
+   "id": "unit-28",
+   "n": 28,
+   "phase": 3,
+   "title": {
+    "ar": "صفات",
+    "en": "Adjectives — describing people and things"
+   },
+   "objective": "A large, ordered adjective list plus the agreement rules the book states outright. This is the vocabulary that turns bare naming into description.",
+   "src": "vocab-gram 12-13",
+   "gram_id": "gender",
+   "grammar": {
+    "point": "Agreement in spoken Arabic",
+    "body": "The book gives the rules of agreement in ʿāmmiyye directly: the adjective follows its noun and matches it. Definite noun, definite adjective — البيت الكبير, not البيت كبير (which is a whole sentence, \"the house is big\").",
+    "examples": [
+     {
+      "ar": "وَلَد كْبير",
+      "en": null
+     },
+     {
+      "ar": "بِنْت كْبيرِة",
+      "en": null
+     },
+     {
+      "ar": "وْلاد كْبارا\\ مَشْغولِين",
+      "en": null
+     },
+     {
+      "ar": "بنات كْبار \\ مَشْغولات",
+      "en": null
+     },
+     {
+      "ar": "سيارات كبيرة أو كْبار",
+      "en": null
+     },
+     {
+      "ar": "وَلَدين كبار",
+      "en": null
+     },
+     {
+      "ar": "بِنْتين كبار \\ مَشْغولات",
+      "en": null
+     }
+    ],
+    "src": "vocab-gram p.13"
+   },
+   "chunks": [
+    {
+     "ar": "قصير ج قْصار",
+     "en": "short (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "طويل ج طْوال",
+     "en": "long (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "كبير ج كْبار",
+     "en": "big (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "زْغير ج زغار",
+     "en": "little (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "رخيص ج رْخاص",
+     "en": "cheap (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "قْديم ج قْدام (قُدَمَاء)",
+     "en": "old (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "جديد ج جْداد (جُدُد)",
+     "en": "new (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "نْظيف ج نْظاف",
+     "en": "clean (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "فَقير ج فَقيرين (فُقَراء)",
+     "en": "poor (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "غَنِيّ ج غَنِيِّين (أغْنِيَاء)",
+     "en": "rich (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "حَزين ج حَزينين (حُزَنَاء)",
+     "en": "sad (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "بعيد ج بْعاد (بَعيدين)",
+     "en": "far (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "ضعيف ج ضْعاف",
+     "en": "weak (handwritten gloss)",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "بَطيء ج بَطيئين",
+     "en": "slow (handwritten gloss 'slowly')",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "قَوِيّ ج قَوِيّين\\ أقْوِيا (أقْوِيَاء)",
+     "en": "strong",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "سَريع ج سَريعين",
+     "en": "fast",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "سَعيد ج سَعيدين (سُعَداء)",
+     "en": "happy",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "مْنيح\\ مْليح ج مْناح\\ مْلاح",
+     "en": "good",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "خميل ج خْمال\\ خميلين",
+     "en": "thick",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "بَخيل ج بخيلين (بُخَلاء)",
+     "en": "stingy",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+    },
+    {
+     "ar": "ناصح ج ناصْحَنين",
+     "en": "mature, sensible",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 2 (printed page 156)",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "هادي ج هادْيين",
+     "en": "calm, quiet",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 2 (printed page 156)",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "واسِع ج واسْعين \\ وسيع ج وسيعين (شوارع واسْعة\\وسيعة)",
+     "en": "wide, spacious",
+     "src": "vocab-gram p.13",
+     "group": "مجموعة 2 (printed page 156)",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "فَرْحان ج فَرْحانين",
+     "en": "(handwritten: happy)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "حَزْنان ج ين",
+     "en": "(handwritten: sad)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "بَرْدان ج ين",
+     "en": "(handwritten: cold)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "حَمْيان ج ين",
+     "en": "(handwritten: hot)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "عطشان ج ين",
+     "en": "(handwritten: thirsty)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "جوعان ج ين",
+     "en": "(handwritten: hungry)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "رَوْيان ج ين",
+     "en": "(handwritten: not thirsty, hydrated)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "عَيّان ج ين",
+     "en": "(handwritten: sick)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "تَعْبان ج ين",
+     "en": "(handwritten: tired (sleepy))",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "هلكان ج ين",
+     "en": "(handwritten: tired (very))",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "زعلان ج ين",
+     "en": "(handwritten: angry, upset)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "يَأْسَان ج ين",
+     "en": "(handwritten: desperate)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "شَبْعان ج ين",
+     "en": "(handwritten: full)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "زهقان ج ين",
+     "en": "(handwritten: boring)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "note": "book: i.e. bored"
+    },
+    {
+     "ar": "كَسْلان ج ين",
+     "en": "(handwritten: lazy)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "جَبّان ج ين",
+     "en": "(handwritten: coward)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "سَكْران ج ين",
+     "en": "(handwritten: drunk)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "حَيْران ج ين",
+     "en": "hesitant ; (handwritten: confused)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+    },
+    {
+     "ar": "مِرْتاح ج ين",
+     "en": "(handwritten: rest)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "note": "book: i.e. relaxed"
+    },
+    {
+     "ar": "مَبسوط ج ين",
+     "en": "(handwritten: happy)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مْكَيَّف ج ين",
+     "en": "enjoying",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مُنْفَعِل ج ين",
+     "en": "exited, moved",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مِتْحَمِّس ج ين",
+     "en": "(handwritten: excited)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مُكْتَئِب ج ين = حَزْنان",
+     "en": "(handwritten: depression)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "note": "book: i.e. depressed"
+    },
+    {
+     "ar": "مُحْبَط ج ين",
+     "en": "frustrated",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مَضغوط ج ين",
+     "en": "(handwritten: compressed)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "note": "book: i.e. stressed"
+    },
+    {
+     "ar": "مِتْعَصْبِن \\ مْعَصِّب ج ين",
+     "en": "get mad, blow up, get angry fast",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مْلَخْبَط ج ين",
+     "en": "confused",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مُقْرِف ج ين",
+     "en": "disgusting",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مُحافِظ ج ين",
+     "en": "conservative",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مُتَشَدِّد \\ مُتَطَرِّف ج ين",
+     "en": "conservative",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "note": "book: sic; i.e. hardline/extremist"
+    },
+    {
+     "ar": "مَضروب\\ مْخَلِّص كازُه",
+     "en": "fucked up\\ran out of gas",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مُبَذِّر ج ين",
+     "en": "spender, waster",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مْعَفِّن ج ين",
+     "en": "stinking",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مِتْعَلِّق ج ين",
+     "en": "depending",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مَحْبوب ج ين",
+     "en": "(handwritten: loving)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "note": "book: i.e. beloved"
+    },
+    {
+     "ar": "مْوَفِّر ج ين",
+     "en": "saver",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مَشْغول ج ين",
+     "en": "(handwritten: busy)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "مُتسامِح ج ين",
+     "en": "forgiving",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+    },
+    {
+     "ar": "عَصَبيّ ج عَصَبيِّين",
+     "en": "nervous",
+     "src": "vocab-gram p.12",
+     "group": "Boxed list of nisba/other adjectives (printed page 157)"
+    },
+    {
+     "ar": "تَقْليديّ ج تَقْليديين",
+     "en": "(handwritten: traditional)",
+     "src": "vocab-gram p.12",
+     "group": "Boxed list of nisba/other adjectives (printed page 157)"
+    },
+    {
+     "ar": "غَيور ج ين",
+     "en": "Jealous",
+     "src": "vocab-gram p.12",
+     "group": "Boxed list of nisba/other adjectives (printed page 157)"
+    },
+    {
+     "ar": "عُنْصُريّ ج عُنْصريِّين",
+     "en": "(handwritten:; pencil word partly illegible, looks like 'consecutive')",
+     "src": "vocab-gram p.12",
+     "group": "Boxed list of nisba/other adjectives (printed page 157)",
+     "note": "book: racist"
+    },
+    {
+     "ar": "خِتْيار ج خِتْيارِيِّة \\ خِتْيارِيّات",
+     "en": "(handwritten: old man)",
+     "src": "vocab-gram p.12",
+     "group": "Boxed list of nisba/other adjectives (printed page 157)"
+    },
+    {
+     "ar": "حِلِو ج حِلْوين",
+     "en": "(handwritten: handsome)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 5 (printed page 157)"
+    },
+    {
+     "ar": "بَشِع ج ؟؟",
+     "en": "ugly (printed; the plural is printed as '؟؟')",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 5 (printed page 157)"
+    },
+    {
+     "ar": "وَسِخ ج وَسْخين",
+     "en": "(handwritten: dirty)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 5 (printed page 157)"
+    },
+    {
+     "ar": "أهبَل ج هُبْلان",
+     "en": "(handwritten: stupid)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 5 (printed page 157)"
+    },
+    {
+     "ar": "تيس ج تْيوس",
+     "en": "(handwritten: stupid)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 5 (printed page 157)"
+    },
+    {
+     "ar": "غَبِيّ ج غَبِيِّين (أغْبِياء)",
+     "en": "(handwritten: stupid/idiot)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 5 (printed page 157)"
+    },
+    {
+     "ar": "كُوَيِّس ج كُوَيِّسين",
+     "en": "(handwritten: good)",
+     "src": "vocab-gram p.12",
+     "group": "مجموعة 5 (printed page 157)"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [],
+   "produce": "Describe three people you know out loud, two adjectives each, watching the agreement.",
+   "provenance": "ref:vocab-gram"
+  },
+  {
+   "id": "unit-29",
+   "n": 29,
+   "phase": 3,
+   "title": {
+    "ar": "حروف الاتصال في العامية",
+    "en": "Joining sentences up"
+   },
+   "objective": "Because, but, so, when, if. Fifty-odd connectors — the difference between speaking in fragments and speaking in paragraphs.",
+   "src": "vocab-gram 18-20",
+   "gram_id": "relative",
+   "grammar": {
+    "point": "Connectors carry the argument",
+    "body": "Every one of these lets you attach a reason, a contrast or a condition to what you just said. Learning even ten well is what makes an opinion sound like an opinion rather than a list of facts."
+   },
+   "chunks": [
+    {
+     "ar": "لكِن، بَسّ",
+     "en": "but",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بَسّ",
+     "en": "only, enough, just",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "ساعَتْها، يُومْها",
+     "en": "and then, at that time",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "فَ",
+     "en": "then",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بَعدين",
+     "en": "after that, also",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "أنا بَفَكِّر إنُّه",
+     "en": "I think that",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بَعْتَقِد إنُّه",
+     "en": "I believe that",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "حَتَّى",
+     "en": "even",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "حَتَّى وَلَوْ",
+     "en": "even though",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "عشان، من شان، على-شان",
+     "en": "for, because",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "لِأَنُّه (لأنّي، لأنَّك...)",
+     "en": "because",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بَدَل",
+     "en": "instead (noun)",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بَدَل-ما",
+     "en": "instead (verb)",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بِشَكِل عامّ",
+     "en": "generally speaking",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بِشَكِل خاصّ",
+     "en": "specifically speaking",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "حَسَب",
+     "en": "according to",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "على كُلّ حال",
+     "en": "any way",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بِالعَكْس",
+     "en": "the opposite",
+     "src": "vocab-gram p.20",
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+    },
+    {
+     "ar": "بالنِسبة إلي",
+     "en": "as for me",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "تقريبًا\\ شي",
+     "en": "approximately, almost",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "بِصَراحة",
+     "en": "frankly speaking",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "مْبَيِّن عَليه\\عَلِيها إنُّه...",
+     "en": "one can see that he is",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "بَدَبِّر حالي (مع)",
+     "en": "I get along (with), I manage",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "بِظْهَر إنّه",
+     "en": "it appears that",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "إلّي",
+     "en": "which, who",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "إنُّه (إنّي، إنَّك...)",
+     "en": "that",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "بِفَضْل",
+     "en": "thanks to",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "مَعْلُوم إنُّه",
+     "en": "its obvious that",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "إلّي خَلّاني",
+     "en": "what made me",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "مُمْكِن، بيجوز",
+     "en": "maybe, its possible",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "كَإنُّه",
+     "en": "as if",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "أبْصَر شو، أبْصَر مين",
+     "en": "who knows",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "بِالْمُقارَنِة، بِالْمِقْياس",
+     "en": "in comparison",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "ما-عَدا",
+     "en": "except",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "قَبِل-ما",
+     "en": "before (verb)",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "بَعِد-ما",
+     "en": "after (verb)",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "زَيّ-ما، مِثِل ما",
+     "en": "as (verb)",
+     "src": "vocab-gram p.19",
+     "group": "Conjunctions, continued (printed page 150)"
+    },
+    {
+     "ar": "بِدون ، مِن غِير",
+     "en": "with out",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "لِسّا ، لِسانّي، بَعِدْني",
+     "en": "still, still not",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "عَشان هِيك",
+     "en": "because of that",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "عَبين",
+     "en": "while",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "أبَدًا، عُمْري-ما",
+     "en": "never",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "عادَةً",
+     "en": "usually",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "دايْمًا",
+     "en": "always",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "مَرّات (أمْرار)",
+     "en": "some times",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "وهِيك",
+     "en": "and so",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "مَع إنُّه",
+     "en": "even though",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "أو ، وِلّا",
+     "en": "or",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "هِيك (رِحْلِة)",
+     "en": "such (a trip)",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "خاصّ",
+     "en": "special",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "خاصّةً",
+     "en": "specially",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    },
+    {
+     "ar": "خُصوصي",
+     "en": "privet (taxi private, private subject)",
+     "src": "vocab-gram p.18",
+     "group": "Conjunctions, continued (printed page 151)"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [],
+   "produce": "Say one sentence, then extend it three times with a different connector each time.",
+   "provenance": "ref:vocab-gram"
+  },
+  {
+   "id": "unit-30",
+   "n": 30,
+   "phase": 3,
+   "title": {
+    "ar": "مُفْرَد وجَمْع",
+    "en": "Singular & plural — the big glossary"
+   },
+   "objective": "Two hundred everyday nouns, each printed with its plural. Arabic plurals mostly cannot be predicted, so they have to be learned in pairs — and this is the list to learn them from.",
+   "src": "vocab-gram 3-11",
+   "gram_id": "gender",
+   "grammar": {
+    "point": "Learn the plural WITH the singular",
+    "body": "Some plurals just add an ending; most change the word internally (كِتاب ← كُتُب). There is no reliable rule, which is exactly why the book prints them side by side. Never learn a noun without its plural."
+   },
+   "chunks": [
+    {
+     "ar": "إسِم ج أَسْماء",
+     "en": "name",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 1 (printed page 158)"
+    },
+    {
+     "ar": "مُسْلِم ج مُسْلِمين",
+     "en": "Muslim (n, adj)",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 1 (printed page 158)"
+    },
+    {
+     "ar": "مَسيحيّ ج مَسيحيّين",
+     "en": "Christian (n, adj)",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 1 (printed page 158)"
+    },
+    {
+     "ar": "عَرَبي ج عَرَب",
+     "en": "Arab (n, adj)",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 1 (printed page 158)"
+    },
+    {
+     "ar": "أخ ج إخْوان",
+     "en": "brother (for ideology)",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 1 (printed page 158)"
+    },
+    {
+     "ar": "بِيت ج بْيوت",
+     "en": "house, home",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 1 (printed page 158)"
+    },
+    {
+     "ar": "دُرْزي ج دْروز",
+     "en": "Druze",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 1 (printed page 158)"
+    },
+    {
+     "ar": "ساكِن ج ساكْنين",
+     "en": "live, living",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 1 (printed page 158)"
+    },
+    {
+     "ar": "بِنْت ج بَنات",
+     "en": "girl, daughter",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "إبْن ج أبْناء",
+     "en": "son",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "سَنة ج سْنين",
+     "en": "year",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "جار ج جيران",
+     "en": "neighbor",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "أخ ج إخْوِة",
+     "en": "brother",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "يوم ج أيّام",
+     "en": "day",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "عَيّان ج عَيّانين",
+     "en": "sick",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "وَلَد ج وْلاد",
+     "en": "boy",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "مَبْسوط ج مَبْسوطين",
+     "en": "feeling great",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "تَعْبان ج تَعْبانين",
+     "en": "tired, unwell",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "كْبير ج كْبار",
+     "en": "big, older",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "زْغير ج زْغار",
+     "en": "little, small",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "قُدْسي ج قُدْسيّين",
+     "en": "Jerusalemite",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "حِلو ج حِلْوين",
+     "en": "sweet, handsome",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "حِلْوة ج حِلْوات",
+     "en": "sweet, pretty",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "دَكْتُور ج دَكاتْرة",
+     "en": "doctor",
+     "src": "vocab-gram p.11",
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+    },
+    {
+     "ar": "صاحِب ج صْحاب",
+     "en": "friend (m.s.)",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 3 (printed page 159)"
+    },
+    {
+     "ar": "صاحْبِة ج صاحْبات",
+     "en": "friend (f.s.)",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 3 (printed page 159)"
+    },
+    {
+     "ar": "عَمّ ج اعْمام",
+     "en": "uncle (paternal)",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 3 (printed page 159)"
+    },
+    {
+     "ar": "خال ج اخْوال",
+     "en": "uncle (maternal)",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 3 (printed page 159)"
+    },
+    {
+     "ar": "عَزّابي ج عَزّابِيّين",
+     "en": "single (m.s.)",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 3 (printed page 159)"
+    },
+    {
+     "ar": "مِتْجَوِّز ج مِتْجَوّزين",
+     "en": "married (m.s.)",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 3 (printed page 159)"
+    },
+    {
+     "ar": "إبِن عَمّ ج وْلاد عَمّ",
+     "en": "cousin (paternal)",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 3 (printed page 159)"
+    },
+    {
+     "ar": "مْنيح ج مْناح",
+     "en": "good (m.s.)",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 3 (printed page 159)"
+    },
+    {
+     "ar": "مْعَلِّم ج مْعَلّمين",
+     "en": "teacher",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "مَدْرَسِة ج مَدارِس",
+     "en": "school",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "أُخْت ج خَوات",
+     "en": "sister",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "صورة ج صُوَر",
+     "en": "picture, photo",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "شاطِر ج شاطْرين",
+     "en": "clever",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "دار ج دور",
+     "en": "house",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "عِيلِه ج عِيلات",
+     "en": "family",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "حَيّ ج أحْياء",
+     "en": "neighborhood",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "جْديد ج جْداد",
+     "en": "new",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "شايِف (m) ج شايْفين",
+     "en": "see, seeing",
+     "src": "vocab-gram p.10",
+     "group": "وحدة 4 (printed page 159)"
+    },
+    {
+     "ar": "جامْعة ج جامِعات",
+     "en": "university",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "مُشْكِلِة ج مَشَاكِل",
+     "en": "problem",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "لُغة ج لُغات",
+     "en": "language",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "حَديقة ج حَدايِق",
+     "en": "garden",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "مُسْتَشْفى ج مُسْتَشْفَيات",
+     "en": "hospital",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "مَنْظَر ج مَناظِر",
+     "en": "view",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "مَدينِة ج مُدُن",
+     "en": "town",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "شارِع ج شَوارِع",
+     "en": "street",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "بَنْك ج بُنوك",
+     "en": "bank",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "سوق ج أسْواق",
+     "en": "market",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "ساعة ج ساعات",
+     "en": "hour, watch",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "سَيّارة ج سيّارات",
+     "en": "car",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "جَبَل ج جْبال",
+     "en": "mountain",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 5 (printed page 160)"
+    },
+    {
+     "ar": "كبير ج كْبار",
+     "en": "big",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "منيح ج مْناح",
+     "en": "good",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "زْغير ج زغار",
+     "en": "small",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "بْعيد ج بْعاد",
+     "en": "far away",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "عَمّ ج (أ)عْمام",
+     "en": "uncle",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "خال ج (أ)خْوال",
+     "en": "uncle",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "خَبَر ج أخْبار",
+     "en": "news",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "وَلَد ج (أ)وْلاد",
+     "en": "children",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "إشي ج أشْياء",
+     "en": "things",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "صاحِب ج (أ)صْحاب",
+     "en": "friends",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+    },
+    {
+     "ar": "مَقْهَى ج مَقاهي",
+     "en": "coffee",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "note": "book: sic; printed in the book as \"caffee\""
+    },
+    {
+     "ar": "مُشْكِلِة ج مَشاكِل",
+     "en": "mountain",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "note": "book: sic — printed error; = problem"
+    },
+    {
+     "ar": "مَطْعَم ج مَطاعِم",
+     "en": "mountain",
+     "src": "vocab-gram p.9",
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "note": "book: sic — printed error; = restaurant"
+    },
+    {
+     "ar": "غَرَض ج اغراض",
+     "en": "item",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 7 (printed page 161)"
+    },
+    {
+     "ar": "كيس ج اكْياس",
+     "en": "bag",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 7 (printed page 161)"
+    },
+    {
+     "ar": "شايْفِة ج شايْفات",
+     "en": "see",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 7 (printed page 161)"
+    },
+    {
+     "ar": "دَقيقة ج دَقايِق",
+     "en": "minute",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 7 (printed page 161)"
+    },
+    {
+     "ar": "حَبِّة ج حَبّات",
+     "en": "one unit",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 7 (printed page 161)"
+    },
+    {
+     "ar": "راس ج روس",
+     "en": "head, unit",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 7 (printed page 161)"
+    },
+    {
+     "ar": "رْخيص ج رْخاص",
+     "en": "inexpensive, cheap",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 7 (printed page 161)"
+    },
+    {
+     "ar": "مِسْتَعْجِل ج مِسْتَعْجْلين",
+     "en": "in a hurry",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 7 (printed page 161)"
+    },
+    {
+     "ar": "عيد ج أعْياد",
+     "en": "holiday",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 8 (printed page 161)"
+    },
+    {
+     "ar": "لِيلِة ج لَيالي",
+     "en": "night",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 8 (printed page 161)"
+    },
+    {
+     "ar": "مَرّة ج مَرّات",
+     "en": "one time",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 8 (printed page 161)"
+    },
+    {
+     "ar": "فُنْدُق ج فَنادِق",
+     "en": "hotel",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 8 (printed page 161)"
+    },
+    {
+     "ar": "نِجْمِة ج نْجوم",
+     "en": "star",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 8 (printed page 161)"
+    },
+    {
+     "ar": "رِحْلِة ج رِحْلات",
+     "en": "trip",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 8 (printed page 161)"
+    },
+    {
+     "ar": "أَلْف ج آلاف",
+     "en": "thousand",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 8 (printed page 161)"
+    },
+    {
+     "ar": "مَحَلّ ج مَحلّات",
+     "en": "place, store",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 8 (printed page 161)"
+    },
+    {
+     "ar": "بَيّاع ج بَيّاعين",
+     "en": "salesperson",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+    },
+    {
+     "ar": "مُساعَدِة ج مُساعَدات",
+     "en": "help",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+    },
+    {
+     "ar": "ديسْك ج ديسْكات",
+     "en": "disc",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+    },
+    {
+     "ar": "هَدِيِّة ج هَدايا",
+     "en": "gift",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+    },
+    {
+     "ar": "صُوت ج أَصْوات",
+     "en": "voice",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+    },
+    {
+     "ar": "مُطْرِب ج مُطْرِبين",
+     "en": "singer",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+    },
+    {
+     "ar": "حْساب ج حْسابات",
+     "en": "bill",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+    },
+    {
+     "ar": "مَعْروف ج مَعْروفين",
+     "en": "well-known",
+     "src": "vocab-gram p.8",
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+    },
+    {
+     "ar": "قِصَّة ج قِصَص",
+     "en": "story",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "مَلِك ج مُلوك",
+     "en": "king",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "نَحْلِة ج نَحِل",
+     "en": "bee",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "مَلِكِة ج مَلِكات",
+     "en": "queen",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "جْنينِة ج جَنايِن",
+     "en": "garden",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "فايْدِة ج فَوائِد",
+     "en": "use, benefit, value",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "طِير ج طْيور",
+     "en": "bird",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "حَيَوان ج حَيْوانات",
+     "en": "animal",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "زَهْرَة ج زُهور",
+     "en": "flower",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "وَرْد ج وُرود",
+     "en": "rose, flower",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "رَاي ج أراء",
+     "en": "opinion",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "باقة ج باقات",
+     "en": "bouquet",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "حَكيم ج حُكَما",
+     "en": "wise",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "ذَكِيّ ج أذْكِياء",
+     "en": "clever",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "زَعْلان ج زَعْلانين",
+     "en": "sad",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "طَبيعي ج طَبيعيّين",
+     "en": "natural, real",
+     "src": "vocab-gram p.7",
+     "group": "وحدة 10 (printed page 162)"
+    },
+    {
+     "ar": "كُلِّيِّة ج كُلِّيّات",
+     "en": "college",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "شَرِكِة ج شَرِكات",
+     "en": "company",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "حاجة ج حاجات",
+     "en": "need",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "مُدير ج مُدَرا",
+     "en": "manager, director",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "مَكْتَب ج مَكاتِب",
+     "en": "office",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "وَظيفِة ج وَظايِف",
+     "en": "position, job",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "حاسوب ج حَواسيب",
+     "en": "computer",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "مَعاش ج مَعاشات",
+     "en": "salary",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "شَكّ ج شُكوك",
+     "en": "doubt",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "مُناسَبِة ج مُناسَبات",
+     "en": "occasion",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 11 (printed page 163)"
+    },
+    {
+     "ar": "فِنْجان ج فناجين",
+     "en": "coffee cup",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "شَغْلِة ج شَغْلات",
+     "en": "chore, work",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "غَسّالة ج غَسّالات",
+     "en": "washing machine",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "صَلاة ج صَلَوات",
+     "en": "prayer",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "دَوْرَة ج دَوْرات",
+     "en": "extracurricular activity",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "سَنْدْويش ج سَنْدْويشات",
+     "en": "sandwich",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "لِيل ج لَيالي",
+     "en": "night",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "راي ج آراء",
+     "en": "opinion",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "مَشْغول ج مَشْغولين",
+     "en": "busy",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "فاضي ج فاضْيين",
+     "en": "free",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "قصير ج قْصار",
+     "en": "short",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "ناقِص ج ناقْصين",
+     "en": "lacking",
+     "src": "vocab-gram p.6",
+     "group": "وحدة 12 (printed page 163)"
+    },
+    {
+     "ar": "مِفْتاح ج مَفاتيح",
+     "en": "key",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 13 (printed page 164)"
+    },
+    {
+     "ar": "مَرَة ج نِسْوان",
+     "en": "woman",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 13 (printed page 164)"
+    },
+    {
+     "ar": "قُوَّة ج قُوى، قُوّات",
+     "en": "power, force",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 13 (printed page 164)"
+    },
+    {
+     "ar": "قَرار ج قَرارات",
+     "en": "decision",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 13 (printed page 164)"
+    },
+    {
+     "ar": "زَلَمِة ج زْلام",
+     "en": "man",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 13 (printed page 164)"
+    },
+    {
+     "ar": "مْليح ج مْلاح",
+     "en": "good",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 13 (printed page 164)"
+    },
+    {
+     "ar": "مُوَظَّف ج مُوَظَّفين",
+     "en": "employee",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "كْتاب ج كُتُب",
+     "en": "book",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "دَوّار ج دَوّارات",
+     "en": "roundabout",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "لافْتِة ج لافْتات",
+     "en": "sign",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "شَعَب ج شْعوب",
+     "en": "nation",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "سَمَكِة ج سَمَك، سَمَكات",
+     "en": "fish",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "طابِق ج طَوابِق",
+     "en": "floor",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "حَرَكِة ج حَرَكات",
+     "en": "movement",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "حَفْلِة ج حَفلات",
+     "en": "party, concert",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "مُغَنّيّ ج مُغَنّيين",
+     "en": "singer",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "لَحِم , لَحْمِة ج لْحوم",
+     "en": "meat",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "كَنيسِة ج كَنايِس",
+     "en": "church",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "بِنايِة ج بِنايات",
+     "en": "building",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "مَشْهور ج مَشْهورين",
+     "en": "famous",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "قَديم ج قُدَما",
+     "en": "old, ancient",
+     "src": "vocab-gram p.5",
+     "group": "وحدة 14 (printed page 164)"
+    },
+    {
+     "ar": "باب ج بْواب",
+     "en": "door",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "شُبّاك ج شَبابيك",
+     "en": "window",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "طاوْلِة ج طاوْلات",
+     "en": "table",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "مَطْبَخ ج مَطابِخ",
+     "en": "kitchen",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "غُرْفِة ج غُرَف",
+     "en": "room",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "ضِيف ج ضْيوف",
+     "en": "guest",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "حَمّام ج حَمّامات",
+     "en": "toilets\\shower",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "كَنَباي ج كَنَبايات",
+     "en": "sofa",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "تِلفِزْيُون ج تِلفِزْيُونات",
+     "en": "TV",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "تَخِت ج تخوت",
+     "en": "bed",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "بَرَنْد ة ج بَرَنْدات",
+     "en": "balcony",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "مَحَلّ ج مَحَلّات",
+     "en": "place, store",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 15 (printed page 165)"
+    },
+    {
+     "ar": "شُوكِة ج شُوَك",
+     "en": "fork",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "سِكّينِة ج سَكاكين",
+     "en": "knife",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "مِعْلَقَة ج مَعالِق",
+     "en": "spoon",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "واجْبِة ج واجْبات",
+     "en": "meal",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "جاج، جاجة ج جاجات",
+     "en": "chicken",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "كُبايِة ج كُبايّات",
+     "en": "cup (tea)",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "صَحِن ج صْحون",
+     "en": "plate",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "مَرَّة ج مَرّات",
+     "en": "time, once",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "عادَة ج عادات",
+     "en": "habit",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "لَبَن ج أَلْبان",
+     "en": "yogurt",
+     "src": "vocab-gram p.4",
+     "group": "وحدة 16 (printed page 165)"
+    },
+    {
+     "ar": "شَنْطَة ج ات",
+     "en": "suitcase",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "جَكيت ج ات",
+     "en": "jacket",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "بْلوزِة ج بَلايِز",
+     "en": "shirt",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "قَميص ج قُمْصان",
+     "en": "shirt",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "بَنْطَلُون ج ات",
+     "en": "trousers",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "فُسْتان ج فَساتين",
+     "en": "dress",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "تَنّورة ج تنانير",
+     "en": "skirt",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "شَمْسِيُّة ج ات",
+     "en": "umbrella",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "كَلْسات ج جرابات",
+     "en": "socks",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "جُرزاي ج جَرازي",
+     "en": "sweatshirt",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "ثَلْج ج ثُلوج",
+     "en": "snow",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "مَطَر ج أمْطار",
+     "en": "rain",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "غِيم ج غُيُوم",
+     "en": "clouds",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "ريح ج رْياح",
+     "en": "wind",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "عَاصِفِة ج عَواصِف",
+     "en": "storm",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "قَصير ج قْصار",
+     "en": "short",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "طَويل ج طْوال",
+     "en": "tall, high",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "خْميل ج خْمال",
+     "en": "thick",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    },
+    {
+     "ar": "خَفيف ج خْفاف",
+     "en": "light",
+     "src": "vocab-gram p.3",
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [],
+   "produce": "Pick twenty from the list and say each pair out loud: one book, two books, many books.",
+   "provenance": "ref:vocab-gram"
+  },
+  {
+   "id": "unit-31",
+   "n": 31,
+   "phase": 4,
+   "title": {
+    "ar": null,
+    "en": "Plural patterns — the shapes behind them"
+   },
+   "objective": "After learning plurals one by one, this is the pattern behind them: the handful of shapes most broken plurals actually fall into.",
+   "src": "",
+   "gram_id": "past",
+   "grammar": {
+    "point": "مَفاعِل, فْعال, أفْعال and friends",
+    "body": "The book lays out the recurring templates. You still cannot predict which noun takes which, but recognizing the shapes makes the plurals you meet in reading far easier to place."
+   },
+   "chunks": [
+    {
+     "ar": "مَفاعِل: مَدْرَسِة – مَدارِس; مَقْهى – مَقاهي; مَطْعَم – مَطاعِم; مَرْكَز – مَراكِز; مُشْكِلِة – مَشاكِل; مَسْجِد – مَسَاجِد; مَنْظَر – مَناظِر",
+     "en": "pattern maFaa3iL",
+     "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال (printed page 167)",
+     "src": "vocab-gram p.2"
+    },
+    {
+     "ar": "فْعال: كْبير – كْبار; زْغير – زْغار; جْديد – جْداد; مْنيح – مْناح; مْليح – مْلاح; بْعيد – بْعاد; قْريب – قْراب; طَويل – طْوال; جَبَل – جْبال",
+     "en": "pattern F3aaL",
+     "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال (printed page 167)",
+     "src": "vocab-gram p.2"
+    },
+    {
+     "ar": "أفْعال: حال – أحْوال; وَلَد – (أ)وْلاد; خال – (أ)خْوال; عمّ – (أ)عْمام; كيس – (أ)كْياس; صاحِب – (أ)صْحاب; يُوم – أيّام; إسِم – أسْماء; خَبَر – أخْبار; إشي – أشْياء; غَرَض – أغْراض; سوق – أسْواق; حَيّ – أحْياء; إبِن – أبْناء; عيد – أعْياد; صُوت – أصْوات; فيلم – أفْلام",
+     "en": "pattern aF3aaL (the last three pairs are printed in smaller type)",
+     "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال (printed page 167)",
+     "src": "vocab-gram p.2"
+    },
+    {
+     "ar": "فْعول\\ فُعول: بَنْك – بُنوك; راس – روس; بيت – بْيُوت; دار – دور; مِلِك – مْلُوك; نِجْمِة – نْجُوم; بَحَر – بْحُور; دُرْزِيّ – دْرُوز; يَهودِيّ – يَهود; قَصْر – قْصور; جُنْدِيّ – جْنود",
+     "en": "pattern F3uuL/Fu3uuL",
+     "group": "Plural pattern فْعول\\ فُعول and the sound plurals (printed page 168)",
+     "src": "vocab-gram p.1"
+    },
+    {
+     "ar": "الجَمْع السّالِم الْمُذَكَّر: ين — أ) AP and PP: مَبْسوط – مَبْسوطين; عارِف – عارْفين; مُساعِد – مُساعِدين. د) foreign words: ديسك – ديسكات; تِلْفيزيون – تلفيزيونات; فاكس – فاكسات; كَميرا – كَميرات. هـ) فَعّال the pattern: فَلّاح – فلّاحات [sic]. و) some other words: مَحَلّ – مَحَلّات; مَطار – مَطارات",
+     "en": "masculine sound plural in -iin",
+     "group": "Plural pattern فْعول\\ فُعول and the sound plurals (printed page 168)",
+     "src": "vocab-gram p.1"
+    },
+    {
+     "ar": "الجَمْع السّالِم المُؤَنَّث: ات — أ) real feminine: بِنْت – بَنات; أُخْت – خَوات; إمّ – إمّيات (إمّهات). ب) nouns ending with ة: عَمَّة – عَمّات; سيارة – سيارات. ج) AP and PP: مَبْسوطة – مَبْسوطات; عارْفِة – عارْفات; مُساعِدة – مُساعِدات. د) foreign words: ديسك – ديسكات; تِلْفيزيون – تلفيزيونات; فاكس – فاكسات; كَميرا – كَميرات. هـ) فَعّال the pattern: فَلّاح – فلّاحات. و) some other words: مَحَلّ – مَحَلّات; مَطار – مَطارات",
+     "en": "feminine sound plural in -aat",
+     "group": "Plural pattern فْعول\\ فُعول and the sound plurals (printed page 168)",
+     "src": "vocab-gram p.1"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [],
+   "produce": "Sort twenty plurals you already know into the book’s patterns, out loud.",
+   "provenance": "ref:vocab-gram"
+  },
+  {
+   "id": "unit-32",
+   "n": 32,
+   "phase": 4,
+   "title": {
+    "ar": "عَ-تَلَفون: هُدى بِدها تِتِّصِل لَأمّ ميّ",
+    "en": "On the phone"
+   },
+   "objective": "A phone call is the hardest ordinary conversation: no face, no gestures, no lip-reading. Three real dialogues of someone trying to reach a family.",
+   "src": "speaking 33-34",
+   "gram_id": "questions",
+   "grammar": {
+    "point": "Phone-call formulas",
+    "body": "Calls run on fixed openers and closers — asking for someone, saying who you are, saying they are not in, leaving a message. Take them as whole chunks; that is how they are used."
+   },
+   "chunks": [],
+   "dialogues": [
+    {
+     "title": "1) محادثِة أولى: هُدى بِتْدَوّر على إمّ أحْمَد",
+     "lines": [
+      {
+       "sp": "مي",
+       "ar": "هلو، أيوا؟",
+       "en": null
+      },
+      {
+       "sp": "هُدى",
+       "ar": "مرحبا",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "أهلين",
+       "en": null
+      },
+      {
+       "sp": "هُدى",
+       "ar": "مع مين بَحْكي؟",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "أنا مي",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "إمِّك في البيت؟",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "أيوا، إمّي في البيت، مين إنتِ؟",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "أنا هُدى، بَشْتْغِل مَع إمِّك.",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "طَيِّب، بس لَحْظَة، يَمّا !هُدى بِدْها تِحْكي مَعِك.",
+       "en": null
+      },
+      {
+       "sp": "أم مي",
+       "ar": "قولي-لْها بَحْكي مَعْها أُخْرَى شْوَيّ، أنا مَشْغولِة إسّا.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.33",
+     "cast": [
+      {
+       "sp": "مي",
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
+      },
+      {
+       "sp": "هدى",
+       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "gender": "f"
+      },
+      {
+       "sp": "أم مي",
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
+      }
+     ]
+    },
+    {
+     "title": "2) محادثِة ثانْيِة",
+     "lines": [
+      {
+       "sp": "مي",
+       "ar": "هلو، أيْوة؟",
+       "en": null
+      },
+      {
+       "sp": "هُدى",
+       "ar": "مَرحبا",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "أهْلِين",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "مَع مين بَحكي؟",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "أنا مي",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "إمَّك في أْلبيت؟",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "إمّي مِش في الدار.",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "وِينتا بِتْرَوّح؟",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "طِلْعَت قَبِل ساعة وما بَعْرَف إيمتى بِتِرجَع.",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "مُمْكِن أتْرُك-لها خَبَر؟",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "شو إسْمُك؟",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "أنا هُدى بَشْتْغِل مَع إمِّك.",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "شو رَقَم تَلَفونِك؟",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "هي بْتِعْرِف الرَقَّم، بس بْحياتِك ما تِنْسيش، قولي-لْها إنّو هاذا ضَروريّ.",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "طَيَّب، بس تِرْجَع بَقول-لْها.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.33",
+     "cast": [
+      {
+       "sp": "مي",
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
+      },
+      {
+       "sp": "هدى",
+       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "gender": "f"
+      }
+     ]
+    },
+    {
+     "title": "3) محادثِة ثالْثِة",
+     "lines": [
+      {
+       "sp": "مي",
+       "ar": "هلو، أيوة",
+       "en": null
+      },
+      {
+       "sp": "هُدى",
+       "ar": "مَرْحَبْتِين",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "أهلين، أنو بِحكي مَعِي؟",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "أنا هُدى",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "كيف حالِك يا هُدى؟",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "أهْلِين فيكي حبيبتي, إمّك في البيت؟",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "أيوة، أناديها؟",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "أيوة",
+       "en": null
+      },
+      {
+       "sp": "مي",
+       "ar": "ماما، هُدى بِدْها (ا)يّاكِ.",
+       "en": null
+      },
+      {
+       "sp": "إم أحمد",
+       "ar": "هلو",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "أهلين إمّ أحمَد كيف حالِك؟",
+       "en": null
+      },
+      {
+       "sp": "إمّ أحمَد",
+       "ar": "نُشْكُر الله",
+       "en": null
+      },
+      {
+       "sp": "هدى",
+       "ar": "إتَّصلْت-لِك إليوم وإمبارِح وأوَّل إمْبارِح، وينِك؟",
+       "en": null
+      },
+      {
+       "sp": "إمّ أحْمَد",
+       "ar": "مِتْأسّفِة ... يَلّا نِحْكي هسّا...",
+       "en": null
+      }
+     ],
+     "src": "speaking p.34",
+     "cast": [
+      {
+       "sp": "مي",
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
+      },
+      {
+       "sp": "هدى",
+       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "gender": "f"
+      },
+      {
+       "sp": "إم أحمد",
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
+      }
+     ]
+    }
+   ],
+   "texts": [],
+   "drills": [],
+   "produce": "Role-play a call out loud: ask for someone, be told they are out, leave a message.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-33",
+   "n": 33,
+   "phase": 4,
+   "title": {
+    "ar": "إلْجَمَل بِدُّه يِتْعَلَّم",
+    "en": "The camel who wanted to learn"
+   },
+   "objective": "Your first full story in Palestinian, with its own glossary and the book’s retell exercises. Read it, then tell it back — that retelling is the whole point.",
+   "src": "stories 3-5",
+   "gram_id": "past",
+   "grammar": {
+    "point": "Narrative runs in the past",
+    "body": "A story is a chain of past-tense verbs with connectors between them. Read for the chain first: who did what, then what happened next."
+   },
+   "chunks": [
+    {
+     "ar": "مَلِك",
+     "en": "king",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "خادِم",
+     "en": "servant",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "جَمَل",
+     "en": "camel",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "قَصْر",
+     "en": "palace",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "بِسُرْعَة",
+     "en": "quickly",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "تَحْت أَمْرَك",
+     "en": "under your command",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "أَكْثَر مِن",
+     "en": "more than",
+     "src": "stories p.5",
+     "note": "book: printed in the book as \"more then\""
+    },
+    {
+     "ar": "مُثَقَّف",
+     "en": "educated",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "خِير انْشاالله",
+     "en": "everything is fine?",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "مِش مُمْكِن",
+     "en": "impossible",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "أَبَدًا (ما)",
+     "en": "never",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "ولا يهِمَّك",
+     "en": "don't worry",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "يا... يا...",
+     "en": "either … or",
+     "src": "stories p.5",
+     "note": "book: printed in the book as \"ether ...or\""
+    },
+    {
+     "ar": "راس",
+     "en": "head",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "مَجْنون",
+     "en": "crazy",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "شو صار",
+     "en": "what happened",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "قَطَع",
+     "en": "to cut",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "بَقْدَر أَعَلِّم",
+     "en": "I can teach",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "مَعْروف",
+     "en": "known",
+     "src": "stories p.5"
+    },
+    {
+     "ar": "دَوَّر عَلى",
+     "en": "to look for",
+     "src": "stories p.5"
+    }
+   ],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "إلْخادِم: نَعَم، يا مَلِكي.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: جيب لَهُون جَمَلي الأَبْيَض.",
+       "en": null
+      },
+      {
+       "ar": "إلْخادِم: لَوْ سَمَحِت يا مَلِكي، بِدَّك جَمَلَك يفوت ع الْقَصر؟",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: أيْوة، أيْوة. روح جيبُه! بِسُرْعة!",
+       "en": null
+      },
+      {
+       "ar": "إلْخادِم: تَحْت أَمْرَك",
+       "en": null
+      },
+      {
+       "ar": "إلْخادِم: ها هُوَّ جَمَلَك الأَبْيَض، يا مَلِكي.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: بِتِعْرِف، أنا بَحِبّ هالْجَمَل أَكْثَر مِن ولادي. بِدّي جَمَلي يكون مُثَقَّف، بِدّي جَمَلي يِتْعَلَّم يِقْرا ويِكْتِب. روح جيب-لي الْوَزير!",
+       "en": null
+      },
+      {
+       "ar": "إلْوَزير: إلسَّلامُ عَليكُم",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: وعَليكُم السَّلام.",
+       "en": null
+      },
+      {
+       "ar": "إلْوَزِير: خِير انشاالله؟",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: أنا بِدِّي جَمَلِي الأبْيَض يِتْعَلَّم يِقْرا ويِكْتِب.",
+       "en": null
+      },
+      {
+       "ar": "إلْوَزِير: بس، يا مَلِكي، هاذا مِش مُمْكِن، إلْجَمَل أَبَدًا ما بِتْعَلَّم يِقْرا ويِكْتِب.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: طَيِّب، بِنْدَوِّر عَلى وَزير غيرَك.",
+       "en": null
+      },
+      {
+       "ar": "إلْوَزِير: لأ لأ لأ، هسَّا بَروح وبَجيب-لَك مْعَلِّم مُمْتاز.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: بَلّا يَلّا روح بْسُرْعَة!",
+       "en": null
+      }
+     ],
+     "src": "stories p.3"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "إلْوَزِير: تَحْت أَمْرَك، عَلى راسي.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: مين هاذا؟",
+       "en": null
+      },
+      {
+       "ar": "إلْوَزِير: هاذا مْعَلِّم جْمال مَعْروف.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: عَنْ جَدّ؟",
+       "en": null
+      },
+      {
+       "ar": "إلْبَدَوي: أيوة، أنا بَقْدَر أَعَلِّم جَمَلَك يقْرا ويكْتِب.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: والله؟!",
+       "en": null
+      },
+      {
+       "ar": "إلْبَدَوِي: أيوة. وِالْجَمَل كَمان رَح يِحْفَظ مِن الْقُرْآن.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: عال، عال! وبعد كم سَنة يِتْعَلّم؟ وشو بِدَّك مِن شان شُغْلَك؟",
+       "en": null
+      },
+      {
+       "ar": "إلْبَدَوِي: إلْجَمَل بِدُّه عَشر سْنين تَ يِتْعَلَّم، وأنا بِدّي أَلْف دينار ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: فِش مُشْكِلِة، بَس إذا جَمَلي ما بِتْعَلَّم يِقْرا وِيكْتِب بَعِد عَشْر سنين، رَح أَقْطَع راسَك، فْهِمِت؟!",
+       "en": null
+      },
+      {
+       "ar": "إلْبَدَوِي: أيوة أيوة، بِفْهَم مْنيح يا سيدي.",
+       "en": null
+      },
+      {
+       "ar": "مَرة الْبَدَوِي: وِين كُنْت الْيُوم، حَبيبِي؟",
+       "en": null
+      },
+      {
+       "ar": "إلْبَدَوِي: شوفي! عِنّا أَلْف دينار ذَهَب!",
+       "en": null
+      },
+      {
+       "ar": "مَرة الْبَدَوِي: كيف؟ مِن وِين؟ شو صار؟",
+       "en": null
+      },
+      {
+       "ar": "إلْبَدَوِي: أنا صِرْت معَلِّم. كُل يوم بَعَلِّم جَمَل الْمَلِك يِقْرا ويِكْتِب ويحْفَظ الْقُرْآن.",
+       "en": null
+      },
+      {
+       "ar": "مَرة الْبَدَوِي: شوو... إنْتِ مَجْنون! إلْمَلِك رح يقْطَع راسك!",
+       "en": null
+      },
+      {
+       "ar": "إلْبَدَوِي: وَلا يهمّك، بَعِد عَشر سنين يا بموت الْمَلِك، يا بموت الْجَمَل.",
+       "en": null
+      }
+     ],
+     "src": "stories p.4"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "تمارين",
+     "instructions": "تمارين",
+     "items": [
+      {
+       "cue": "غَيِّروا ضمير الجُمَل التي تَحْتْها خَطّ في القصّة وقُولوها مِن جَديد.",
+       "answer": null
+      },
+      {
+       "cue": "إحْكوا القِصة مِن الذاكِرة.",
+       "answer": null
+      },
+      {
+       "cue": "في مَجْموعات: أكتبوا ومَثِّلوا شو صار بَعِد 10 سنين.",
+       "answer": null
+      },
+      {
+       "cue": "في مَجموعات: كُلّ مَجْموعة تِحكي القِصّة مِن وْجهة نظر مُخْتَلِفِة وباقي الصّفّ بِحزر. وجهات النظر: الملك، البدوي، مرة البدوي، ولاد الملك، الجمل، الوزير",
+       "answer": null
+      }
+     ],
+     "src": "stories p.5"
+    }
+   ],
+   "produce": "Tell the story from memory, out loud, in under two minutes. Then again in one.",
+   "provenance": "ref:stories"
+  },
+  {
+   "id": "unit-34",
+   "n": 34,
+   "phase": 4,
+   "title": {
+    "ar": "مَثَل الزَّلَمِة وِالْفَارة",
+    "en": "The man and the mouse"
+   },
+   "objective": "A longer story in five parts with a big glossary — the step up from the first one, and the book’s pronoun-shift drill on top.",
+   "src": "stories 6-10",
+   "gram_id": "past",
+   "grammar": {
+    "point": "Changing who the story is about",
+    "body": "The book’s exercise asks you to change the pronouns of the underlined sentences and retell. That single drill forces every ending in the language to become active rather than recognized."
+   },
+   "chunks": [
+    {
+     "ar": "فار ج فيران",
+     "en": "mouse",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "زَمان",
+     "en": "time",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "رَبّ",
+     "en": "God",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "صَبِيِّة ج صَبايا",
+     "en": "young woman",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "شَرْط ج شُروط",
+     "en": "condition",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "كَوكَب ج كَواكِب",
+     "en": "star",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "غِيم ج غْيوم",
+     "en": "cloud",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "ريح ج رِياح",
+     "en": "wind",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "جَبَل ج جْبال",
+     "en": "mountain",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "شَمْس",
+     "en": "sun",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "كَلام",
+     "en": "words",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "زَلَمِة ج زْلام",
+     "en": "man",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "عايْشين",
+     "en": "living",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "لاقى",
+     "en": "to meet",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "أَخَذ",
+     "en": "to take",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "حَوَّل",
+     "en": "to change transform",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "رَبَّى (يِرَبِّي)",
+     "en": "to raise",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "صار",
+     "en": "to become",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "نادى على",
+     "en": "to call to",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "أجا",
+     "en": "to come",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "مْوافْقَة",
+     "en": "I agree, I'm ready",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "وافَق",
+     "en": "to agree",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "قِبِل (يِقْبَل)",
+     "en": "to agree, except",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "غَطَّى (يِغَطّي)",
+     "en": "to cover",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "نَقَل (ـُ)",
+     "en": "to move s. thing",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "حَفَر (ـُ)",
+     "en": "to dig",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "حَرَّك",
+     "en": "to move by pushing",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "خَلَّف",
+     "en": "to give birth",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "عاشوا بِثَبات ونَبات",
+     "en": "lived steadily and bloomed (they lived happily ever after)",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "مَع بَعِض",
+     "en": "together",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "قَديم",
+     "en": "old, enchant",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "يا لِلْعَجَب",
+     "en": "wonder of wonders",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "أَجا الْوَقْت",
+     "en": "the time came",
+     "src": "stories p.10",
+     "note": "English added by this app — the book prints this list untranslated"
+    },
+    {
+     "ar": "قَوِي",
+     "en": "strong",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "أَقْوى",
+     "en": "stronger",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "أَقْوى إشي",
+     "en": "strongest thing",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "مين الّي؟",
+     "en": "who is the one which?",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "هيك صار",
+     "en": "and so it was",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "زَيّ-ما كان",
+     "en": "as it was",
+     "src": "stories p.10"
+    },
+    {
+     "ar": "بَعِد أكَم يُوم",
+     "en": "after a few days",
+     "src": "stories p.10"
+    }
+   ],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "كان يا ما كان في قَديمِ الزَّمانِ زَلَمِة ومَرَتُه عايْشين مَعَ بَعِض، مَبْسوطين كْثير، بَسّ ما كان عِنْدْهُم وْلاد.",
+       "en": null
+      },
+      {
+       "ar": "في يُوم مِن الأَيَّامِ الزَّلَمِة لاقَى (found) فارَة.",
+       "en": null
+      },
+      {
+       "ar": "أَخَذْها مَعُه عَ-الْبِيت على شان (عَشان) يرَبِّيها (took her) (raise her)، وطَلَب مِن رَبُّه (his God) إنُّه يْحَوِّل (turn) هاذي الفارة لَبِنْت زْغيرة.",
+       "en": null
+      },
+      {
+       "ar": "يا لِلْعَجَب (wonder of wonders)! الله حَوَّل (turned) هاذي الفارة لَبِنْت زْغيرة وحِلْوِة كْثير.",
+       "en": null
+      },
+      {
+       "ar": "رَبُّوا (they raised) هاذي الْبِنْت وصارَت صَبِيِّة (young lady).",
+       "en": null
+      },
+      {
+       "ar": "نادَى عَليها (called her) أبوها وقال: \"يا حَبيبتي، إنْتِ صِرْتِ صَبِيِّة، وأَجا الْوَقْت إنُّه تِتْجَوَّزي ويكون عِنْدِك بيت وعِيلِة\".",
+       "en": null
+      },
+      {
+       "ar": "قالَتِ الْبِنْت: \"أنا مُوافْقَة أَتْجَوَّز، بَسّ عِندي شَرْط (one condition)\".",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الأَب: \"شَرْط؟ شو هُوَّ الشَّرْط؟\"",
+       "en": null
+      },
+      {
+       "ar": "وقالتِ الْبِنْت: \"بِدِّي جُوزي يكون أَقْوَى إشي في الْعالَم (the strongest thing)\".",
+       "en": null
+      },
+      {
+       "ar": "فَكَّرِ الزَّلَمِة وقال: \"أنا بَعْرِف شو هُوَّ أَقْوَى إشي في الْعالَم! أكيدِ (surely) الشَّمْس\".",
+       "en": null
+      },
+      {
+       "ar": "وراح الزَّلَمِة لَعِنْدِ الشَّمْس ونادى عَليها (called her): \"يا شَمْس، يا أَكْبَر كَواكِب (the largest star of) الْعالَم!\"",
+       "en": null
+      },
+      {
+       "ar": "وقالتِ الشَّمْس: \"نَعَم يا زَلَمِة، شو بَقْدَر أَساعْدَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قال الزلمة: \"تِقْبَلي (do you agree to) تِتْجَوَّزي بِنْتي؟\"",
+       "en": null
+      }
+     ],
+     "src": "stories p.6"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "سَأَلَتِ الشَّمْس: \"أَتْجَوَّز بِنْتَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الأَب: \"أيْوَة، تِتْجَوَّزي بِنْتي، لأَنّها طَلَبَت تِتْجَوَّز أَقْوى إشي في الْعالَم.\"",
+       "en": null
+      },
+      {
+       "ar": "قالَتِ الشَّمْس: \"بَسّ أنا مِش أقْوى إشي في الْعالَم. في إشي أَقْوى مِنِّي.\"",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الأَب: \"مين إلّي أَقْوى مِنّك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالَتِ الشَّمْس: \"إلْغِيم (the cloud) أقْوى مِنِّي، عَشان بغَطِّيني (covers me)\".",
+       "en": null
+      },
+      {
+       "ar": "وراح الزَّلْمِة لَعِنْدِ الْغيم وقال لُه: \"يا غِيم، يا غِيم!\"",
+       "en": null
+      },
+      {
+       "ar": "وقال الْغِيم: \"نَعَم يا زَلَمِة، شو بَقْدَر أَساعْدَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الزَّلْمَة: \"تِقْبَل تِتْجَوَّز بِنْتي؟\"",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الْغِيم: \"أَتْجَوَّز بِنْتَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الأَب: \"أيْوَة، تِتْجَوَّزي بِنْتي، لِأَنْها طَلَبَت تِتْجَوَّز أَقْوى إشي في الْعالَم.\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْغِيم: \"بَسّ أنا مِش أَقْوى إشي في الْعالَم. في إشي أَقْوى مِنِّي.\"",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الأَب: \"مين إلّي أَقْوى مِنِّك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْغِيم: \"إلرِّيح (the wind) أَقْوى مِنِّي، لِأَنْها تْنُقْلْني (moves me) مِن مَكان لَمَكان، مرَّة لَلشّمال ومَرَّة لَلْجَنوب ومِن الشَّرْق لَلْغَرْب.\"",
+       "en": null
+      },
+      {
+       "ar": "وراح الزَّلْمِة لَعِنْدِ الرّيح وقال لُه: \"يا ريح، يا ريح!\"",
+       "en": null
+      },
+      {
+       "ar": "وقالِ الرّيح: \"نَعَم يا زَلَمِة، شو بَقْدَر أَساعْدَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الزَّلْمَة: \"تِقْبَل (do you agree to) تِتْجَوَّز بِنْتي؟\"",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الرّيح: \"أَتْجَوَّز بِنْتَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الأَب: \"أيْوَة، تِتْجَوَّزي بِنْتي، لِأَنْها طَلَبَت تِتْجَوَّز أَقْوى إشي في الْعَالَم.\"",
+       "en": null
+      }
+     ],
+     "src": "stories p.7"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "قالِ الرّيح: \"بَسّ أنا مِش أقْوى إشي في الْعالَم. في إشي أَقْوى مِنِّي.\"",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الأَب: \"مين إلّي أَقْوى مِنِّك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الرّيح: \"إلْجَبَل أَقْوى مِنِّي، أنا ما بَقْدَرِش أحَرِّكُه (move it).\"",
+       "en": null
+      },
+      {
+       "ar": "وراح الزَّلْمِة لَعِنْدِ الْجَبَل وقال لُه: \"يا جَبَل، يا جَبَل!\"",
+       "en": null
+      },
+      {
+       "ar": "وقالِ الْجَبَل: \"نَعَم يا زَلَمِة، شو بَقْدَر أَساعْدَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الزَّلْمِة: \"تِقْبَل تِتْجَوَّز بِنْتي؟\"",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الْجَبَل: \"أَتْجَوَّز بِنْتَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الأَب: \"أيْوَة، تِتْجَوَّز بِنْتي، لِأَنْها طَلَبَت تِتْجَوَّز أَقْوى إشي في الْعَالَم.\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْجَبَل: \"بَسّ أنا مِش أَقْوى إشي في الْعالَم. في إشي أَقْوى مِنِّي.\"",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الأَب: \"مين إلّي أَقْوى مِنّك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْجَبَل: \"إلْفار أَقْوى مِنِّي، لِأَنُّه يُحْفُر بي بيتُه.",
+       "en": null
+      },
+      {
+       "ar": "وراح الزَّلْمِة لَعِنْدِ الفار وقال لُه: \"يا فار، يا فار!\"",
+       "en": null
+      },
+      {
+       "ar": "وقالِ الْفار: \"نَعَم يا زَلَمِة، شو بَقْدَر أَساعْدَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الزَّلْمِة: \"تِقْبَل تِتْجَوَّز بِنْتي؟\"",
+       "en": null
+      },
+      {
+       "ar": "سَأَلِ الْفار: \"أَتْجَوَّز بِنْتَك؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الأَب: \"أيْوَة، تِتْجَوَّز بِنْتي، لِأَنْها طَلَبَت تِتْجَوَّز أَقْوى إشي في الْعَالَم.\"",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْفار: \"شو أَعْمَل وبِيتي زْغير وبِنْتَك كْبيرِة، وإنْتِ تِعْرِف إنُّه الْفار بِتْجَوَّز بَسّ الْفارَة.\"",
+       "en": null
+      },
+      {
+       "ar": "راحِ الزَّلْمِة عَ-بيتُه وفَكَّر بِكَلام الْفار، وبَعد أَكم يُوم طَلَب مِن رَبُّه إنُّه يْحَوِّل بِنْتُه زَيّ ما كان بِالأَوَّل وهيك صار (and so it was). وتْجَوَّزوا الْفار",
+       "en": null
+      }
+     ],
+     "src": "stories p.8"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "وِالْفارَة وعاشوا بِثَبات ونَبات (they lived happily ever after) وخَلَّفوا فيران وفارات.",
+       "en": null
+      }
+     ],
+     "src": "stories p.9"
+    },
+    {
+     "title": "كِتاب كَليلة ودِمنة",
+     "sentences": [
+      {
+       "ar": "وهي مَجموعة قِصَص رَمْزِيِّة (symbolic) مِن أَصِل هِنْدي انْكَتَبَت باللغة السَّنسكريتيّة في القَرْن (century) الرابِع الميلادي.",
+       "en": null
+      },
+      {
+       "ar": "وهي قِصّة الفَيْلَسوف بَيْدَبا إلّي حَكى قِصَص حَيْوانات لَمَلِك الهِنْدي دَبْشليم عَشان يْعَلّمُه كيف لازم المَلِك العادِل يُحْكُم شَعَبُه (a just king rule his people).",
+       "en": null
+      },
+      {
+       "ar": "مَلِك الفُرْس كِسرى أنوشَروان، إلّي سِمِع عن هٰذا الكِتاب، بَعَث (sent) الطَّبيب بَرْزَوَيْه الحَكيم على بْلاد الهِنْد عَشان يُنْقُل (to copy) الكِتاب المَشْهور ويْجيبه لَمَمْلَكْتُه.",
+       "en": null
+      },
+      {
+       "ar": "لٰكِن لَمّا وِصِل بَرْزَوَيْه عَ-الهِنْد سَمَحُو-لُه بَسّ يِقْرا الكِتاب، مِن غِير-ما يُنْقُلُه.",
+       "en": null
+      },
+      {
+       "ar": "شو عِمِل بَرْزَوَيْه؟ قَرا كُلّ الكِتاب وحِفْظُه عَن غِيب (learned it by heart)، ولَمَّا رِجِع عَ-بْلادُه، كَتَبُه مِن الذّاكِرَة وزاد (added) عَليه أكَم قِصَة هِنْدِيِّة وفارسِيِّة.",
+       "en": null
+      },
+      {
+       "ar": "وفي القَرْن الثامِن الميلادي تَرْجَم الأديب الفارسي عَبْد الله بِن المُقَفَّع الكِتاب لَلُّغة العربية وزاد أكَم فَصِل (chapters) جْديد.",
+       "en": null
+      },
+      {
+       "ar": "إسِم الكِتاب \"كَليلة ودِمنة\" هو عَلى اسمِ اثْنِين مِن أبْناء آوى (jackals) وهم أبْطال (heroes) الكثير مِن القِصَص في كْتاب كَليلة ودِمْنة.",
+       "en": null
+      }
+     ],
+     "src": "stories p.9"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "تمارين",
+     "instructions": "تمارين",
+     "items": [
+      {
+       "cue": "ما هي عِبَر (moral) القِصّة؟",
+       "answer": null
+      },
+      {
+       "cue": "ليش الفأرة\\البنت كان بِدها تِتْجَوَّز أقوى إشي في العالَم؟",
+       "answer": null
+      },
+      {
+       "cue": "مثّلوا القصّة بمجموعات.",
+       "answer": null
+      }
+     ],
+     "src": "stories p.9"
+    }
+   ],
+   "produce": "Retell the story as if it happened to YOU — first person throughout.",
+   "provenance": "ref:stories"
+  },
+  {
+   "id": "unit-35",
+   "n": 35,
+   "phase": 4,
+   "title": {
+    "ar": "صَيّادِ السَّمَك وِالسَّائِحِ الْغَني",
+    "en": "The fisherman and the rich tourist"
+   },
+   "objective": "The well-known parable, in Palestinian, with its glossary and retell drills. Short, pointed, and the kind of story that actually gets told at a table.",
+   "src": "stories 11-12",
+   "gram_id": "past",
+   "grammar": {
+    "point": "Telling a story with a point",
+    "body": "This one has a punchline, which means the telling has to build. Notice where the book’s text slows down and where it moves — that pacing is what you are copying."
+   },
+   "chunks": [
+    {
+     "ar": "صَيّادِ ج ين",
+     "en": "fisherman",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "سَمَك سَمَكِة ج ات",
+     "en": "fish",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "سائح ج سُيّاح",
+     "en": "turist",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "شَطّ الْبَحَر",
+     "en": "beach",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "صُنارَة",
+     "en": "fishing rod",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "غَني ج أغْنِياء",
+     "en": "rich",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "فَقير ج فَقيرين",
+     "en": "poor",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "صِيد",
+     "en": "fishing",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "دِنْيا (دُنْيا)",
+     "en": "world",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "شَبَكِة ج ات",
+     "en": "net",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "سَفينِة ج سُفُن",
+     "en": "ship",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "قارِب ج قوارِب",
+     "en": "yacht",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "دُولِة ج دُوَل",
+     "en": "country",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "وَجَع راس",
+     "en": "headache",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "وَقْت ج أوْقات",
+     "en": "time",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "صاد ـِ",
+     "en": "hunt, fish",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "باع ـِ",
+     "en": "to sell",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "نِزِل ـِ",
+     "en": "to stay (in a hotel)",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "جاوَب",
+     "en": "to answer",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "رَمى ـِ",
+     "en": "to throw",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "تْسَلَّى",
+     "en": "to have a good time",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "إرْتاح",
+     "en": "to rest",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "طول الْيُوم",
+     "en": "all day long",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "ساعَتْها",
+     "en": "then",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "مِثِل",
+     "en": "like as",
+     "src": "stories p.12"
+    },
+    {
+     "ar": "مِثْلي",
+     "en": "like me",
+     "src": "stories p.12"
+    }
+   ],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "مَرَّة كان زَلَمِة فَقير قاعِد عَلى شَطِّ الْبَحَر عَمّ بِصيد سَمَك بالصُّنارَة.",
+       "en": null
+      },
+      {
+       "ar": "بَعْد شْوَيّ أجَا وقَعَد جَنْبُه سائِح غَنِي كْثير وكَمان مَعُه صُنارَة وصار يْصيد سَمَك.",
+       "en": null
+      },
+      {
+       "ar": "إلْغَني سَأَلِ الْفَقير: شو بْتِشْتْغِل يا-خي؟",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْفَقير: أنا صَيّاد سَمَك.",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْغَني: صَيّاد سَمَك! مِش حَرام عَلى وَقْتَك؟ طولِ الْيُوم إنْتِ قاعِد هُون عَشّان تْصيد أرْبَع خَمِس سَمَكات؟",
+       "en": null
+      },
+      {
+       "ar": "جاوَبُه الْفَقير: يَعْني، هايِ الدُّنْيا، شو أَعْمَل؟",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْغَني: روح، إشْتْري-لَك شَبَكِة وِ(ا)رْميها في الْبَحَر، ساعَتْها بِتْصيد سَمَك كْثير وبِتْروح عَ-السّوق وبِتْبيعُه هُناك!",
+       "en": null
+      },
+      {
+       "ar": "إلْفَقير: وبَعْدين، شو أَعْمَل؟",
+       "en": null
+      },
+      {
+       "ar": "إلْغني: بِصير مَعَك مَصاري كْثير وبْتِشْتْري قارِب صِيد سَمَك وبِتْصيد سَمَك أَكْثَر وأَكْثَر وبِصير مَعَك مَصاري كْثير.",
+       "en": null
+      },
+      {
+       "ar": "إلْفَقير: وبَعْدين، شو أَعْمَل؟",
+       "en": null
+      },
+      {
+       "ar": "إلْغني: بَعْدين بِتِشْتْري سَفينِة كْبيرِة وبْتِشْتْغِل مَع دَوَلِ الْعالَم وبِتْسافِر لَدَوَلِ بْعيدِة وبِتْنِزِل في أُوتيل مْنيح.",
+       "en": null
+      },
+      {
+       "ar": "إلْفَقير: وبَعْدين، شو أَعْمَل؟",
+       "en": null
+      },
+      {
+       "ar": "إلْغني: بَعْدين بِصير عِنْدَك وَقْت عَشان تِتْسَلّى وبْتاخُذ الصُّنارَة وبِتْصيد سَمَك مِثْلي عَشان تِرْتاح.",
+       "en": null
+      },
+      {
+       "ar": "إلْفَقير: يا-خي، أنا إسّا(هسّا) بَصيد سَمَك وبَرْتاح، شو بِدّي بِكُلّ وُجَع الرّاس إلّي بْتِحْكي عَنُّه!",
+       "en": null
+      }
+     ],
+     "src": "stories p.11"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "مُهمّات",
+     "instructions": "مُهمّات",
+     "items": [
+      {
+       "cue": "مُهِمّة بِأزْواج: في الْمَسا صَيّادِ السَمَك بِرَوِّح وبِحْكي لَمَرَتُه شو صار مَعُه وقال لُه السائح الْغَني ومَرَتُه بِتْقول-لُه شو رايْها.",
+       "answer": null
+      },
+      {
+       "cue": "مُهِمّة بِأزْواج: إلسائحِ الْغَني بِرْجَع عَ-بَلَدُه وبِحْكي لَمَرَتُه شو صار بِينُه وبِين الْفَقير.",
+       "answer": null
+      }
+     ],
+     "src": "stories p.12"
+    }
+   ],
+   "produce": "Tell it to someone in under ninety seconds, landing the ending.",
+   "provenance": "ref:stories"
+  },
+  {
+   "id": "unit-36",
+   "n": 36,
+   "phase": 4,
+   "title": {
+    "ar": "إلْمَلِك وِالْقَميص",
+    "en": "The king and the shirt"
+   },
+   "objective": "A folk tale with a moral, its glossary, and the perspective-shift exercise the book is fond of — tell it again as a different character.",
+   "src": "stories 13-14",
+   "gram_id": "kaan",
+   "grammar": {
+    "point": "Retelling from another point of view",
+    "body": "The book asks each group to tell the story from a different character’s side while the rest guess who. It is the most demanding speaking exercise in the whole reader, and the most useful."
+   },
+   "chunks": [
+    {
+     "ar": "قَميص ج قُمْصان",
+     "en": "shirt",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "إنْسان ج ناس",
+     "en": "person",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "مَرَض ج أمْراض",
+     "en": "disease",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "سَليم ج ين",
+     "en": "healthy",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "إشي ج أشْياء",
+     "en": "thing",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "نِهايِة ج ات",
+     "en": "end",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "بِدايِة ج ات",
+     "en": "beginning",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "مِفْتاح ج مَفاتيح",
+     "en": "key",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "مِرِض",
+     "en": "became sick",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "شِفي (بِشْفي)",
+     "en": "to recover",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "إجْتَمَع",
+     "en": "to have a meeting",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "لِبِس",
+     "en": "to wear",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "دَوَّر عَلى",
+     "en": "to look for",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "خَلَّص",
+     "en": "to finish",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "لاقى",
+     "en": "to meet",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "أعْطى",
+     "en": "to give",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "بِين ، بِينات",
+     "en": "between",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "سَعيد ج سعيدين",
+     "en": "happy",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "وَلا واحَد",
+     "en": "no one",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "دير بالَك",
+     "en": "watch out",
+     "src": "stories p.14"
+    },
+    {
+     "ar": "دير بالَك عَلى",
+     "en": "take care of",
+     "src": "stories p.14"
+    }
+   ],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "يُوم مِن الأَيّام في مَمْلَكَة كْبيرة، مِرِضِ الْمَلِك كْثير.",
+       "en": null
+      },
+      {
+       "ar": "قالِ الْمَلِك: \"رَح أعْطي كُلّ مَمْلَكْتي لَلْإنْسان إلّي بِشْفيني مِن مَرَضي.\"",
+       "en": null
+      },
+      {
+       "ar": "إجْتَمَعوا كُلّ حُكَماءِ الْمَمْلَكَة عَشان يْشوفوا كيف رَح يْساعْدوا الْمَلِك.",
+       "en": null
+      },
+      {
+       "ar": "كان بِيناتْهُم حَكيم واحَد إلّي قال: \"أنا بَعْرِف شو بِشْفي الْمَلِك\".",
+       "en": null
+      },
+      {
+       "ar": "قالوا لُه: \"شو؟؟\"",
+       "en": null
+      },
+      {
+       "ar": "قالْهم: \"إذا بِتْلاقوا إنْسان سَعيد في الْمَمْلَكَة، خُذوا مِنُّه قَميصُه، وجيبوا الْقَميص لَلْمَلِك. ولَمّا الْمَلِك بِلْبَسِ الْقَميص رَح يِشفي\".",
+       "en": null
+      },
+      {
+       "ar": "راحوا كُلّهُمْ يِدَوِّروا على إنْسان سَعيد في الْمَمْلَكِة عَشان يْجيبوا مِنُّه الْقَميص.",
+       "en": null
+      },
+      {
+       "ar": "وصاروا يِدَوّروا مِن بِيت لَبِيت ومِن قَرْيِة لَقَرْيِة ومِن مَدينِة لَمَدينِة، بَسّ مَفِشّ وَلَا إنْسان سَعيد ومَبْسوط.",
+       "en": null
+      },
+      {
+       "ar": "إذا شافوا واحَد غَني كانَ مَريض، وإذا شافوا واحَد سَليم كان فَقير كْثير، وإذا شافوا واحَد غَني وسَليم، كانَتْ مَرَتُه مِش مْنيحَة.",
+       "en": null
+      },
+      {
+       "ar": "وفي أحَدِ الأيّام سِمِع الْوَزير واحَد بِقول: \"الْحَمْدِلله، أنا مَبْسوط في حَياتي، أنا خَلَّصِت شُغْلي، أَكَلِت، وبَعِد شْوَيّ بَنام، وشو فيه أحْسَن مِن هيك في الْعالَم؟\"",
+       "en": null
+      },
+      {
+       "ar": "فِرِح الْوَزير كْثير ودَخَل عَ-هٰذا الْبِيت عَشان يوخِذ قَميصِ الإنْسان.",
+       "en": null
+      },
+      {
+       "ar": "بَسّ، يا حَرام، شاف قُدّامُه إنْسان سَعيد كْثير لكِن فَقير كْثير ومَفِشّ عِنْدُه قَميص.",
+       "en": null
+      }
+     ],
+     "src": "stories p.13"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "جاوِب عَنِ الأَسْئِلِة",
+     "instructions": "جاوِب عَنِ الأَسْئِلِة",
+     "items": [
+      {
+       "cue": "شو هُوَّ مَرَضِ الْمَلِك؟",
+       "answer": null
+      },
+      {
+       "cue": "شو بِدُّه يِعْطي لَلْإنْسان إلّي بِشْفيه مِن مَرَضُه؟",
+       "answer": null
+      },
+      {
+       "cue": "مِين اجْتَمَع ولِيش؟",
+       "answer": null
+      },
+      {
+       "cue": "شو كانَت نَصيحَة (advice) أحَدِ الْحُكَماء؟",
+       "answer": null
+      },
+      {
+       "cue": "وين دَوَّروا عَلى الإنْسانِ السَّعيد؟",
+       "answer": null
+      },
+      {
+       "cue": "هُمّ لاقوا ناس سَعيدين؟",
+       "answer": null
+      },
+      {
+       "cue": "من إيش انْبَسَطِ الزَّلْمِة السَّعيد إلّي لاقوا في النّهايِة (end)؟",
+       "answer": null
+      },
+      {
+       "cue": "لِيش ما أَعْطوا قَميصُه لَلْمَلِك؟",
+       "answer": null
+      },
+      {
+       "cue": "مُمْكِن نُنْقُل السَعادِة مِن إنْسان لآخَر؟",
+       "answer": null
+      },
+      {
+       "cue": "أيّ أشْياء تْسَبِّب لَنا السَعادِة؟",
+       "answer": null
+      },
+      {
+       "cue": "أيّ أشْيَاء تْسَبِّب لَنا الْحُزْن وِالأَلَم؟",
+       "answer": null
+      },
+      {
+       "cue": "شو مَصْدَرِ السَّعادِة حَسَب الْحِكايِة؟",
+       "answer": null
+      }
+     ],
+     "src": "stories p.14"
+    }
+   ],
+   "produce": "Tell the story from the king’s point of view, then from the shirt-owner’s.",
+   "provenance": "ref:stories"
+  },
+  {
+   "id": "unit-37",
+   "n": 37,
+   "phase": 5,
+   "title": {
+    "ar": "الليرة الذهبية (بلهجة الجليل)",
+    "en": "The golden lira — a story in Galilee dialect"
+   },
+   "objective": "A six-part story printed deliberately in the GALILEE dialect rather than the urban speech the rest of the app teaches. Hearing the difference is the skill here.",
+   "src": "stories 15-20",
+   "gram_id": "wadi-ara",
+   "grammar": {
+    "point": "Not everyone speaks the way this app teaches",
+    "body": "The app’s baseline is urban (Jerusalem/Ramallah/Nablus). This story is northern, and prints forms the city would say differently. That is not an error in either — it is what regional variation looks like on the page. Compare it with the Wadi Ara accent lesson."
+   },
+   "chunks": [
+    {
+     "ar": "صَبِيِّة",
+     "en": "young lady",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "تْبارِك-لْهُم",
+     "en": "congratulate them",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "مَرْقَت",
+     "en": "passed",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "خِتْيار",
+     "en": "old man",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "رَبّوا",
+     "en": "raised",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "بِدّي (ا)يّاك",
+     "en": "I want you to",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "زَيّ غِيرَك",
+     "en": "like others",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "ما حَدا",
+     "en": "no one",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "غَريب",
+     "en": "strange , stranger",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "وَلا يِهِمَّك",
+     "en": "don't worry",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "وإعْمَلي مَعْروف",
+     "en": "do a favor",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "تَطَلَّع عَليها",
+     "en": "looked upon her",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "حَلّ ج حُلول",
+     "en": "solution",
+     "src": "stories p.20"
+    },
+    {
+     "ar": "مَجْبور",
+     "en": "must, compelled",
+     "src": "stories p.20"
+    }
+   ],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "كان يا ما كان في قَديمِ الزَّمان، كان في شابّ زْغير، تْعَلَّم واشْتَغَل أيّام ولَيالي، أُسْبُوع وَراء أُسْبوع، شَهِر بَعْد شَهِر وسَنِة بَعْد سَنِة.",
+       "en": null
+      },
+      {
+       "ar": "إشْتَغَل حَتَّى صار عِنْدُه مَصاري كْتير.",
+       "en": null
+      },
+      {
+       "ar": "بَنَى لُه قَصِر وصار مَلِك، وكان مَلِك مْنيح كْتير كْتير.",
+       "en": null
+      },
+      {
+       "ar": "كان يْساعِد الْفَقير قَبْل الْغَني. تْعامَل مَع كُلّ النّاس بِنَفْسِ الطَّريقَة.",
+       "en": null
+      },
+      {
+       "ar": "مين ما كان يِحِب هٰدا الْمَلِك؟ كُلّ النّاس كانَت تْحِبُّه.",
+       "en": null
+      },
+      {
+       "ar": "في يُوم مِنِ الأيّام حَبّ صَبيَّة (young lady)، حَبّها كْتير، وهِيِّ كَمان حَبَّتُه. تْجَوَّزوا وعِمْلوا عُرْس كْبير كْتير.",
+       "en": null
+      },
+      {
+       "ar": "كُلّ النّاس أجَت لَعِنْدهُم حَتَّى (عَشان) تْبارِك-لَهُم (say mabruk). وكانوا مَبْسوطين مَع بَعْض كْتير. ولٰكِن لَلْمَلِك ولَلْمَلَكِة ما كان أوْلاد.",
+       "en": null
+      },
+      {
+       "ar": "مَرْقَت (passed) سنِة وَراء سنِة، فَجْأة الْمَلَكِة حِبِلَت.",
+       "en": null
+      },
+      {
+       "ar": "وبَعد تِسْعَة أشْهُر بِالزَّبْط خَلَّفَت (gave birth). عِمْلوا حَفْلات كْتيرِة، أيّام ولَيالي، ليل نْهار على مَدار شَهِر كامِل.",
+       "en": null
+      },
+      {
+       "ar": "كُلّ النّاس أجَت لَعِنْدهُم تْبارِك-لَهُم: مَبْروك يا مَلَكة! مَبْروك يا مَلِك! إلزّغير والِكْبير، إلْبِنْت والْوَلَد إلزَّلْمَة والْمَرَة، إلْخِتْيار (old man) وِالْخِتْيارَة.",
+       "en": null
+      },
+      {
+       "ar": "كُلّ النّاس أجَت لَعِنْدهُم حَتَّى تْقول-لَهُم: مَبْروك يا مَلِك، مَبْروك يا مَلَكة!",
+       "en": null
+      },
+      {
+       "ar": "رَبّوا (raised) هٰدا الأَمير أحْسَن تَرْبايِة، قَدّ ما كان شِكْلُه حِلو قَلْبُه كَمان كان حِلو وطَيّب.",
+       "en": null
+      },
+      {
+       "ar": "كان زَيّ أبوه وإمُّه بِالزَّبْط. كان طَيّب، أَخْلاقُه عالْيِة، يْساعِد الزّغير قَبْل الِكْبير والْفَقير قَبْل الْغَني.",
+       "en": null
+      },
+      {
+       "ar": "كِبِر هٰدا الأَمير وصار شابّ. في يُوم مِن الأيّام نادى عَليه (called him) الْمَلِك عَشان ييجي لَعِنْدُه ويِحْكي مَعُه. والأَمير أجا لَعِندالْمَلِك.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: نَعَم يابا، إنْتِ ناديت عَلَيّ.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: أهْلًا وسَهْلًا يا ابْني، أهْلًا يا حَبيبي. يا إبْني، إنْتِ صِرْت كْبير وأنا بِدّي (ا)يّاك تِطْلَع (get out to) تِشْتْغِل وتْجيب لي ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: أنا!؟ أنا الأَمير! أنا أطْلَع أشْتْغِل؟؟",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: نَعَم نَعَم! إنْتِ الأَمير و إنْتِ لازم تِشْتْغِل.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بَسّ يابا، الأَمير ما بِشْتْغِل!",
+       "en": null
+      }
+     ],
+     "src": "stories p.15"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "إلْمَلِك: مين إلّي قال؟ مِثْلَك مِثِل غِيرَك، وأنا بِدّي (ا)يّاك تِطْلَع وتْجيب لي ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بَسّ يابا! إلنّاس رَح تِضْحَك عَلَيّ.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: لا، أبَدًا، ما حَدا (no one) رَح يِضْحَك عَليك. إنت لازم تِشْتْغِل زَيّ غِيرَك (like others do) وتْجيب لي ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بَسّ، يابا!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: ش ش ش! فِشّ يابا! وأنا بِدّي (ا)يّاك تِطْلَع تِشْتْغِل وتْجيب لي ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بَسّ، يابا!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: ش ش ش! تْفَضّل!",
+       "en": null
+      },
+      {
+       "ar": "أنا الأَمير، أنا أطْلَع أشْتْغِل؟ بِدُّه النّاس تِضْحَك عَلَيّ! شو بِدّي أسَوّي؟! شو بِدّي أعْمَل؟! حَدا عِنْدُه فِكْرَة؟",
+       "en": null
+      },
+      {
+       "ar": "إمّي! ما إلي غِير إمّي الْمَلَكة! هِيّ أكيد رَح تْساعِدني وراح الأَمير لَعِند إمّه الْمَلَكِة.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: يَمَا، أبوي الْمَلِك طَلَب مِنّي إنُّه أطْلَع أشْتْغِل وأجيب لُه ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: شو؟ إنْتِ الأَمير تِطْلَع تِشْتْغِل؟",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: نَعَم.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: بَسّ لِيش؟",
+       "en": null
+      },
+      {
+       "ar": "الأمير: ما بْعَرِفِش.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: غَريب (strange) طَلَب أبوك.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: مِش عارِف لِيش.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: وَلا يِهِمَّك (don't worry) يا حَبيبي، وَلا يِهِمَّك يا روحي. أنا بَحْكي مَع أبوك.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: مَرْحَبا يا مَلِكي.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: أهْلًا أهْلًا يا حَبيبْتي.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: إنْتِ طَلَبِت مِنِ الأَمير يِطْلَع يِشْتْغِل؟",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: نَعَم، أنا طَلَبِت مِنِ الأَمير يِطْلَع يِشْتْغِل ؟",
+       "en": null
+      }
+     ],
+     "src": "stories p.16"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "إلْمَلَكِة: بَسّ لِيش؟",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: هِيك! أنا بِدّي الأَمير يِطْلَع يِشْتْغِل ويجيب لي ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: يا مَلِكي ، بَسّ هَوّ الأَمير.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: بَعْرِف، بَعْرِف إنُّه هُوّ الأَمير!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: يا مَلِكي الْعَزيز، هُوّ ابْني الْوَحيد.",
+       "en": null
+      },
+      {
+       "ar": "الملك: وهُوّ كَمان ابْني الْوَحيد!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: الأَمير ما بِشْتْغِل.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: مين إلّي قال إنُّه الأَمير ما بِشْتْغِل ؟",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: يا مَلِكي...",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: إعْمَلي مَعْروف (do me a favor)! خَلّي (let) بِطْلَع يِشْتْغِل ويْجيب لي ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: أبوك بِدُّه (ا)يّاك تِطْلَع تِشْتْغِل وتْجيب لُه ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: شو أسَوّي؟! شو أعْمَل؟! كُلّ النّاس تِضْحَك عَلَيّ!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: خَلّيني (let me) أفَكِّر ...",
+       "en": null
+      },
+      {
+       "ar": "وفَكَّرَت وفَكَّرَت وفَكَّرَت... وأجَت فِكْرَة!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: آه! عِندي فِكْرَة! إنْتِ مِن بُكْرَة الصُّبِح بِتِلْبَس أواعي الشُّغْل وبِتِطْلَع يُوم وَراء يُوم لَمُدَّة أسْبوع. في آخِرِ الأُسْبوع بْتيجي لَعِندي، وبَعْطيك ليرَة مِن ذَهَب، وإنْتِ بْتَعْطيها لأَبوك.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: يا أحْلى أُمّ في الدُّنْيا!! حَبيبْتي يَمَّا!",
+       "en": null
+      },
+      {
+       "ar": "ثاني يُوم، الصُّبِح الأَمير لِبِس أواعي الشُّغْل وطِلع وكَأنُّه رايِح يِشْتْغِل. وفي نِهايِةِ الأُسْبوع أجا عِند إمُّه الْمَلَكِة، وهِيّ أعْطَتُه الْمَصاري وراح عِنْد أبوه الْمَلِك.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: تْفَضَّل يابا، ليرَة مِن ذَهَب!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك، أخَذِ اللّيرَة، تَطَلَّع (looked) عَليها، تَطَلَّع على الأَمير، وكَمان مَرَّة عَ-اللّيرَة، ورَما (threw) اللّيرَة في النّار (fire).",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بَسّ لِيش؟",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: هِيك، وأنا بِدّي (ا)يّاك تِطْلَع تِشْتْغِل وتْجيبِلي ليرَة مِن ذَهَب.",
+       "en": null
+      }
+     ],
+     "src": "stories p.17"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "إلأمير: بَسّ يابا، أنا جِبْت-لَك ليرَة مِن ذَهَب!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: بَعْرِف إنَّك جِبْت لي ليرَة مِن ذَهَب. بَسّ أنا بِدّي (ا)يّاك تِطْلَع تِشْتْغِل وتْجيب لي ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بَسّ يابا، أنا جِبْت-لَك ليرَة مِن ذَهَب!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: بَعْرِف، بَعْرِف إنَّك جِبْت لي ليرَة مِن ذَهَب. بَسّ أنا بِدّي (ا)يّاك تِطْلَع تِشْتْغِل وتْجيب لي ليرَة مِن ذَهَب. تْفَضَّل!",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: شو أعْمَل؟ شو أسَوّي؟! أنا الأمير أطْلَع أشْتْغِل؟ شو أعْمَل؟ بَروح عِنْد إمّي الْمَلَكِة وهِيّ رَح تْلاقي (find) لي حَلّ (solution).",
+       "en": null
+      },
+      {
+       "ar": "يَمَا، أبويْ رَمى اللّيرَة في النّار.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: لِيش؟",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: ما بْعَرِفِش.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: لِيش رَمى اللّيرَة في النّار ؟",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: مِش عارِف. شو أسَوّي؟ بِدُّه مِنّي كمان ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: مِش مُشْكِلِة، وَلا يْهِمَّك يا حَبيبي، أنا بَعْطيك كَمان ليرَة مِن ذَهَب وانْتِ بْتِعْطيها لأَبوك الْمَلِك. بُكْرَة الصُّبِح بْتِطْلَع وكَأنَّك (as if) رايِح عَ-الشُّغْل وبْتِرْجَع بَعْدِ الظُّهُر لَمُدَّة أسْبوع. في نِهايِة الأُسْبوع بْتيجي لَعِنْدي، بَعْطيك اللّيرَة مِن ذَهَب وِانْتِ بْتِعْطيها لأَبوك.",
+       "en": null
+      },
+      {
+       "ar": "تاني يُوم، الصُّبِح الأَمير لِبِس أواعي الشُّغْل وطِلِع وكَأنُّه رايِح يِشْتْغِل. وفي نِهايِةِ الأُسْبوع أجا عِند إمُّه الْمَلَكِة، وهِيّ أعْطَتْهالْمَصاري وراح عِنْد أبوه الْمَلِك.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: تْفَضّل يابا، ليرَة مِن ذَهَب!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك أخَذِ اللّيرَة، تَطَلَّع (looked) عَليها، تَطَلَّع عَلى الأمير، وكَمان مَرَّة عَ-اللّيرَة، ورَما (threw) اللّيرَة في النّار (fire).",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: لِيش رَمِيتْها في النّار ؟",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: هيك أنا بِدّي (ا)يّاك تِشْتْغِل وتْجيب لي ليرَة مِن ذَهَب.",
+       "en": null
+      }
+     ],
+     "src": "stories p.18"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "إلأمير: بَسّ يابا، أنا جِبْت-لَك ليرَة مِن ذَهَب!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: بَعْرِف إنَّك جِبْت لي ليرَة مِنْ ذَهَب. بَسّ أنا بِدّي (ا)يّاك تِطْلَع تِشْتْغِل وتْجيب لي ليرَة مِن ذَهَب. تْفَضَّل!",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بَسّ يابا!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك: ش ش ش! إطْلَع إشْتْغِل وجيب-لي ليرَة مِن ذَهَب. تْفَضَّل!",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: يَمَّا، أبوي رَماها كَمان مَرَّة في النّار.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلَكِة: فِشّ عِنْدَك حَلّ. مَجْبور (you must) يا ابْني تِطْلَع تِشْتْغِل؟",
+       "en": null
+      },
+      {
+       "ar": "تاني يُوم الصُّبِح الأَمير لِبِس أواعي الشُّغْل وطِلِع يْدَوِّر عَلى شُغْل. دَوَّر ودَوَّر لٰكِن النّاس ما كانت تِقْبَل (agree) تْشَغّلُه.",
+       "en": null
+      },
+      {
+       "ar": "إلنّاس: عِيب، إنْتِ الأَمير، كيف تِشْتْغِل عِنّا. إحْنا نِعْطيك مَصاري بِدون ما تِشْتْغِل.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: لا، لا، أنا مَجْبور أشْتْغِل وأَرْبَح مَصاري.",
+       "en": null
+      },
+      {
+       "ar": "إلنّاس: عيب، إنْتِ الأَمير، كيف تِشْتْغِل عِنّا.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بِدّي أشْتْغِل.",
+       "en": null
+      },
+      {
+       "ar": "بَسّ ما حَدا (no one) شَغَّلُه عِنْدُه.",
+       "en": null
+      },
+      {
+       "ar": "يُوم مِنِ الأيّام لاقَى زَلَمِة خِتْيار (old) إلّي وافَق يْشَغّلُه عِنْدُه.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: مَرْحَبا يا سِيّدّي.",
+       "en": null
+      },
+      {
+       "ar": "إلْخِتْيار: أهْلًا يا إبْني، أهْلًا، مين؟ إلأمير؟ أهْلًا فيك.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: بْتِقْدَر تْساعِدْني، يا سيدي؟",
+       "en": null
+      },
+      {
+       "ar": "إلْخِتْيار: مَعْلوم (of course) يا إبْني، رَح أساعْدَك.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: أبوي الْمَلِك طَلَب مِنّي أروح أشْتْغِل وأجيب لُه ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلْخِتيار: أبوك الْمَلِك طَلَب مِنَّك تْروح تِشْتْغِل وتْجيب لُه ليرَة مِن ذَهَب؟",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: أيْوة يا سيدي.",
+       "en": null
+      },
+      {
+       "ar": "إلْخِتْيار: آه فَهِمِت. طَيِّب أنا رَح أشَغّلَك عِنْدي وأعْطيك مَصاري عَلى شُغْلَك",
+       "en": null
+      }
+     ],
+     "src": "stories p.19"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "وافَق (agreed) الأَمير وبِدي (بَدا) يِشْتْغِل عِنْد هادا الْخِتْيار. إشْتَغَل ساعات طَويلِة، يُوم وَراء يُوم، أُسْبوع وَراء أُسْبوع لَحَتَّى صار عِنْدُه مَصاري واشْتَرَى ليرَة مِن ذَهَب. أَخَذِ اللّيرَة وأجا عِنْد أبوه.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: تْفَضّل يابا، ليرَة مِن ذَهَب.",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك أخَذِ اللّيرَة، تْطَلَّع عَليها (looked at it)، تْطَلَّع على الأَمير، وأجا بِدُّه يِرْميها في النّار.",
+       "en": null
+      },
+      {
+       "ar": "إلأمير: لا يابا، بِحْياتَك ما تِرْميهاش. إنْتِ بِتِعْرِف قَدّيش أنا اشْتَغَلِت فيها! يابا، بِحْياتَك تِرْميش اللّيرَة!",
+       "en": null
+      },
+      {
+       "ar": "إلْمَلِك ما رَمى اللّيرَة في النّار وشَرَح لَإبْنُه الأَمير ليش طَلَب مِنُّه يْروح يِشْتْغِل، والأَمير فِهِم وحَطّ راسُه عَلى كِتِف أبوه وكانوا مَبْسوطين كْتير كْتير.",
+       "en": null
+      }
+     ],
+     "src": "stories p.20"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "مُهمات",
+     "instructions": "مُهمات",
+     "items": [
+      {
+       "cue": "جاوِبوا: شو حاوَل المِلِك يْعَلِّم إبنُه؟",
+       "answer": null
+      },
+      {
+       "cue": "جاوِبوا: إنْتوا موافْقين مَع طريقة تَعْليم المِلِك؟ ليش ما شَرَح المِلِك للأمير شو بِدُّه مِن البداية؟",
+       "answer": null
+      },
+      {
+       "cue": "لَخِّصوا القِصّة بِكلماتكُم.",
+       "answer": null
+      }
+     ],
+     "src": "stories p.20"
+    }
+   ],
+   "produce": "Read a passage aloud twice: once as printed, once \"translated\" into the urban forms.",
+   "provenance": "ref:stories"
+  },
+  {
+   "id": "unit-38",
+   "n": 38,
+   "phase": 5,
+   "title": {
+    "ar": "إلقِنْديل الصّغير – غَسّان كَنَفاني",
+    "en": "Kanafani — the little lamp"
+   },
+   "objective": "Real Palestinian literature, by Ghassan Kanafani, in five parts. No glossary and no exercises — just the text, which is the point: this is reading for its own sake.",
+   "src": "stories 21-25",
+   "gram_id": "past",
+   "grammar": {
+    "point": "Literary Arabic, read for pleasure",
+    "body": "This is a step above everything before it and is meant to be. Read for the shape of it; look up what stops you and let the rest go by."
+   },
+   "chunks": [],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "في يُوم مِنِ الأيّام كان فيه مَلِك خِتْيار قَلْبُه طَيّب كثير كثير، إلنّاس تْحِبُّه لأَنُّه عادِل (just) ويْحِبّ كُلّ النّاس زَيّ بَعَض، وما يْفَرِّق بِين حدا، لا فيه غَنِيّ ولا فيه فَقير، وعاشَتِ المَدينة إلّي حَكَمْها (ruled it) سْنين في أمان وسلام ومُساواة (equality) بِين النّاس.",
+       "en": null
+      },
+      {
+       "ar": "في يوم صُبِح بَكير فاقت (woke up) المدينة على صُوت المُنادي بِقول إنُّه المَلِك مات.",
+       "en": null
+      },
+      {
+       "ar": "حِزْنَتِ النّاس كْثير وخافَت من بُكْرة وإيش رَح يْصير.",
+       "en": null
+      },
+      {
+       "ar": "لأَنُّه المَلِك المَحْبوب مات وما خَلَّف وَراه غِير (but) بِنْت زْغيرة ما بْتِقْدَر تُحْكُم.",
+       "en": null
+      },
+      {
+       "ar": "واحْتارَتِ (were confused) النّاس مين رَح يُحْكُمِ الْمَدينِة بَعدِ المَلِك؟",
+       "en": null
+      },
+      {
+       "ar": "بَسِّ المَلِك الْحَكيم خَلَّف (left) وَراه وَصِيِة (will) كَتَب فيها أكم من كِلْمة: يا بِنْتي يا زْغيرة، عَشان تْصيري مَلَكة، لازم تِحِمْلي الشَّمْس وتْفَوّتيها عَ-القَصِر. وإذا ما قْدِرْتيش تِحِمْليها وتْفَوّتيها (enter it) عَ-القَصِر بكون جَزاكِ (repayment) إنَّك تِقْضي عُمْرِك مَحْبوسِة (locked) في صُنْدوق مِن خَشَب (wooden box).",
+       "en": null
+      },
+      {
+       "ar": "ولَمّا قَرَأَت الأميرة الزّغيرة وَصِية أبوها نادَت على حَكيم القَصر وقالَت-لُه:",
+       "en": null
+      },
+      {
+       "ar": "\"يا حَكيم القَصر، يا حَكيم القَصِر!\"",
+       "en": null
+      },
+      {
+       "ar": "\"شو القِصّة يا أميرة؟\"",
+       "en": null
+      },
+      {
+       "ar": "وَصِية أبوي المَلِك صَعْبِة، أحْمِل الشّمْس، والشَّمْس كبيرة وأنا يا حكيم القَصِر كْثير زْغيرة.",
+       "en": null
+      },
+      {
+       "ar": "والعَمَل يا أميرة؟",
+       "en": null
+      },
+      {
+       "ar": "إلْوَصية بِتْقول يِحِبْسوني (lock me) في صُنْدوق خَشَبي طول عُمْري.",
+       "en": null
+      },
+      {
+       "ar": "والعَمَل يا أميرة؟",
+       "en": null
+      },
+      {
+       "ar": "ما بَدّيش أصير مَلَكة، بَدّيش، بَدّيش!",
+       "en": null
+      },
+      {
+       "ar": "إسْمَعي يا بِنْتي: قَوانين (laws) المملكة المكتوبة من زمان بِتْقول إنُّه إبِن الْمَلِك أو بِنْتُه مَمْنوع يُرْفُضوا (refuse) الْحُكُم. بِنْتِ الْمَلِك لازِم تكُون أميرة ومَمْلكَتْنا عاشَت بِسَعادة وأمان لِأَنُّه كُلّ واحَد بِعْرَف واجْبُه (his duty) وما بِتْهَرَّب مِن مَسْؤوليتُه (responsibility).",
+       "en": null
+      },
+      {
+       "ar": "وأبوك المَلِك كان حَكيم كْثير لِمّا طَلَب مِنْك إنَّك تِحِمْلي الشَّمْس وتْفَوّتيها عَ-الْقَصِر.",
+       "en": null
+      }
+     ],
+     "src": "stories p.21"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "وتَطَلَّعَتِ الأَميرِة لَبْعيد وفَكَّرَت: إلشَّمْس كُلّ يُوم بْتُمْرُق (pass) مِن جَنْبِ الْجَبَل، إذا طْلِعَت لَفُوق على راسِ الْجَبَل، بَزُقُط (catch) الشَّمْس بَحْمِلْها وبنفَوّتْها عَ-الْقَصِر. شو رأيَك، يا حَكيم؟",
+       "en": null
+      },
+      {
+       "ar": "إسْمَعي يا أميرة، لازِم تْجيبي الشَّمْس مِن غِير ما حَدا يِساعْدِك.",
+       "en": null
+      },
+      {
+       "ar": "وبَدَتِ الأميرة تِطْلَع عَ-الْجَبَل تِمْشي، تُرْكُض، تُوقَع وتْقوم حَتَّى وِصْلَت عَ-راسِ الْجَبَل.",
+       "en": null
+      },
+      {
+       "ar": "مَدَّت إيدْها لَتُزْقُطِ الشَّمْس، بَسّ الشَّمْس كانَت بْعيدة بْعيدة.",
+       "en": null
+      },
+      {
+       "ar": "نِزْلَت يَأسانة (despair)، فاتَت عَ-الْقَصِر، سَكَّرَت عَ-حالْها باب غُرْفِتْها بِالْمِفْتاح وبِدْيَت تِبْكي.",
+       "en": null
+      },
+      {
+       "ar": "وبَعد يُومين شافَت وَرَقِة زْغيرة تَحْت الْباب ورَكْضَت وقَرَأَتْها، كان فيها جُمْلة زْغيرة: كيف بِدَّك تْفَوّتي الشَّمْس عَ-الْقَصِر ومْسَكَّرَة عَ-حالِك الْباب بِالْمِفْتاح؟",
+       "en": null
+      },
+      {
+       "ar": "تْحَيَّرَتِ (was confused) الأميرة كْثير، ما عِرْفِتْش مين إلّي كَتَب الْوَرَقَة.",
+       "en": null
+      },
+      {
+       "ar": "بَسّ ضَلَّت (ظلّت) مُصَمِّمَة إنُّه لازم تْجيب الشَّمْس حَتَّى لَو انْجَبْرَت (was forced) إنّها تِطْلَع كُلّ يُوم عَلى راسِ الْجَبَلِ الْعالي.",
+       "en": null
+      },
+      {
+       "ar": "وطِلْعَتِ الأميرة مِن غُرْفِتْها، بِدْيَت تْخَرْبِش (scribble) عَلى حيطان (walls) الْقَصر كلام قالَت فيه إنُّه أَيّ واحَد بِقْدَر يِساعِدْها يِحْمِل الشَّمْس ويْفَوّتْها عَ-الْقَصِر، رَح ياخُذ مُكافَأة (reward) كيس مَلان ذَهَب ومُجَوْهَرات (gemstones).",
+       "en": null
+      },
+      {
+       "ar": "وقَرَأَتِ النّاس خَرابيش الأميرة الزّغيرة واسْتَغْرَبوا (wondering about it) كْثير, أغْلَبِ النّاس فَكّروها مَجْنونة وفيه مِنْهُم فَكّروها حَكيمة زَيّ أبوها لِأَنّها تْفَكِّر تِعْمَل الْمُسْتَحيل (the impossible), بَسّ ما حَدا قِدِر يِساعِدِ الأميرة.",
+       "en": null
+      },
+      {
+       "ar": "في يُوم صُبِح بكير إجا الْحَكيم عِند الأميرة وقال-لها: \"إسمعي يا بِنْتي، ابوك الْمَلِك وَصّاني وهُوَّ على فِراشُ الْمُوت أضْوي شَمْعَة (to light a candle) كْبيرة، وقال-لي إنُّه لازم تْجيبي الشَّمْس عَ-الْقَصِر قَبْل-ما الشَّمْعَة تْذوب (melt). وإذا ذابَتِ الشَّمْعة قَبِل-ما تْفَوّتي الشَّمْس عَ-الْقَصِر بْتِنْحَبْسي (will be locked) في صَنْدوق.",
+       "en": null
+      },
+      {
+       "ar": "وطِلِع الْحَكيم وحِزْنَتِ الأميرة وحَسَّت إنُّه بْحياتها مِش رح تْصير مَلَكة.",
+       "en": null
+      },
+      {
+       "ar": "إطَّلَعَت عَ-السَّماء وشافاتِ الْقَمَر والنُّجوم وحِلْمَت: \"ياه لَو إنّي مَلَكة كان على راسي تاج (crown) بِلْمَع (shining) زَيّ النّجوم. وكان لي فُسْتان حِلو كْثير بِجَنِّن. شو حلو فُسْتان الْمَلَكة مْلَوَّن بِزْهور صَفْرا وحَمْرا وخَضْرا وبَنَفْسَجِيِّة. وشَعَري نازِل على ظَهْري زَيّ الذَّهَب. بَسّ الشَّمْس بَعيدة بَعيدة وكْبيرة كْبيرة. وأنا الأميرة زْغيرة زْغيرة.",
+       "en": null
+      }
+     ],
+     "src": "stories p.22"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "وفَجْأة إطَّلَعَت لَتَحِت وشافت خِتيار عُمال يْحاوِل يفوت عَ-الْقَصر بِقُوَّة بَسّ الحُرّاس بِدَفّشوا فيه (pushing him away). شو عَنيد (stubborn) الخِتيار!",
+       "en": null
+      },
+      {
+       "ar": "- \"أنا جاي أساعِد الأميرة\".",
+       "en": null
+      },
+      {
+       "ar": "- \"روح من هُن يا واحَد خَرْفان\"",
+       "en": null
+      },
+      {
+       "ar": "- \"طَيَّب خَرْفان، بَسّ قول لِلأميرة إنُّه، قولو-لها إذا أنا الخِتْيار مِش قادِر أفوت عَ-القَصْر، كيف الشَّمْس، كيف الشَّمْس بَدها تْفوت؟\"",
+       "en": null
+      },
+      {
+       "ar": "ودار الخِتيار ظَهْرُه ومِشي. نِزْلَت الأَميرة مِن غُرْفِتْها رَكِض عشان تْدَوّر عَليه، بَسّ كان صار مِخْتَفي (disappeared) بَعيد بَعيد بين النّاس.",
+       "en": null
+      },
+      {
+       "ar": "رِجْعَت الأميرة على غُرْفِتها حَزينَة ويَأسانة وقَعْدَت تْفَكّر بِإلّي قالُه الخِتيار: \"إذا أنا الخِتْيار مِش قادِر أفوت عَ-القَصْر، كيف الشَّمْس، كيف الشَّمْس بَدها تْفوت؟\"",
+       "en": null
+      },
+      {
+       "ar": "- \"يا حارِس (guard) القَصْر!\"",
+       "en": null
+      },
+      {
+       "ar": "- نَعَم يا أميرة.",
+       "en": null
+      },
+      {
+       "ar": "- بْتَعْرِف مين هاذا الْخِتيار إلّي كان هُون؟",
+       "en": null
+      },
+      {
+       "ar": "- أه، كُلّ ليل بيجي والحُرّاس بِمْنَعوه يْفوت لِأَنُّه شِكْلُه (he looks) مَجْنون.",
+       "en": null
+      },
+      {
+       "ar": "- بْتِقْدَر تُوصِف (describe) لي إيّاه؟",
+       "en": null
+      },
+      {
+       "ar": "- شِكْلُه فَقير ولابِس أواعي عَتيقة ودايْمًا حامِل قَنْديل (lantern).",
+       "en": null
+      },
+      {
+       "ar": "- إذا إجا بُكْرَة خَلّي الحُرّاس يْفَوّتوه.",
+       "en": null
+      },
+      {
+       "ar": "- أمْرِك يا أميرة.",
+       "en": null
+      },
+      {
+       "ar": "بَسّ تاني يوم الخِتيار ما رِجِع. ورِجْعَت الأميرة حَزينِة وقَعْدَت تِبْكي.",
+       "en": null
+      },
+      {
+       "ar": "وفَجْأة شافَت وَرَقة تانية تَحْت الباب وقَرَت فيها: \"الشَمْعَة عَم بِتْذوب، قَرْبَت تِخْلَص، البكا والْيَأس ما بِحِلّوا الْمَشاكِل.\"",
+       "en": null
+      },
+      {
+       "ar": "حَسَّت ألأميرة إنّه لازم تِعْمَل إشي وإلّا (if not) رَح تِقْضي عُمُرْها في صُنْدوق خَشَب.",
+       "en": null
+      },
+      {
+       "ar": "ونادَتِ الأميرة: يا حارِس (guard) القَصْر!",
+       "en": null
+      },
+      {
+       "ar": "- نَعَم يا أميرة.",
+       "en": null
+      },
+      {
+       "ar": "- لازم تْجيب عَ-القَصْر كُلّ واحَد عِنده قَنْديل (lantern) في كُلّ المَملَكة.",
+       "en": null
+      },
+      {
+       "ar": "- بَس يا أميرة, مَعْقول كُل هَذا مِنْشان خِتْيار مَجْنون؟",
+       "en": null
+      }
+     ],
+     "src": "stories p.23"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "- أيْوة، لازِم أجَرِّب الْخِتْيار, بَلْكي عِنده الْحَلّ، هَذا أمِر الْمَمْلَكة.",
+       "en": null
+      },
+      {
+       "ar": "- أمْرِك يا أميرة.",
+       "en": null
+      },
+      {
+       "ar": "وثاني يوم ألصُبِح أمَر حارِس ألقَصْر كُل ألحُرّاس يفَتّشوا كُل ألمَمْلَكَة ويُقْبُضوا عَلى كُل واحَد حامِل قِنْديل ويجيبوه حالاً ع-ألقَصْر.",
+       "en": null
+      },
+      {
+       "ar": "لَما عَتَّمْت (became dark) الدِنْيا قَعَدَت الأميرة ع-الشُبّاك تِسْتَنّى ألقَناديل.",
+       "en": null
+      },
+      {
+       "ar": "وفَجْأة شافت ألأميرة مَنْظَر عَجيب (amazing)، بَعيد بَعيد، كانَت آلاف، آلاف رْجال حامْلة قَناديل وجايه بِتْقَرَّب ع-القَصر مِن كُلّ النواحي، وبَعد شْوَيّ وِصْلهن كُلّهن سَوَا وصاروا يِتْدَفّشوا ع-الأبْواب بَس ما قِدْروش يْفوتوا، إلأبْواب كانَت كْتير صغيرة.",
+       "en": null
+      },
+      {
+       "ar": "سِيعِتْها قالَت الأميرة: هِدّوا (take down) ألأبْواب، هِدّوا (demolish) كُل الأسْوار (walls) ووَسِّعوا الأبْواب عَشان كُل القَناديل تْفوت.",
+       "en": null
+      },
+      {
+       "ar": "وهَدّوا الأبْواب وهَدّوا كُل الأسْوار ووَسَّعوا الأبْواب ونِزْلَت الأميرة تُرْكُض مِن غُرْفِتْها ع-السّاحة وحَدّها حارِس القَصر عَشان يْدِلّها عَلى الخِتْيار صاحِب القِنْديل (lead her to, show her).",
+       "en": null
+      },
+      {
+       "ar": "لَمّا وِصْلَت الأميرة لَنُصّ الساحة (yard) كان ضَيّ القَنْديل ساطِع (shining) زَيّ ضَيّ الشَمْس من كُتْر الناس (do to the large number of people) وكُتُر القَناديل.",
+       "en": null
+      },
+      {
+       "ar": "احْتار (was confused) حارِس القَصر وقال لِلأميرة:",
+       "en": null
+      },
+      {
+       "ar": "مِش رَح أقْدَر أتْعَرَّف على الخِتْيار لِأَنّه وُجوه (faces) الناس كُلّها زَيّ بَعض.",
+       "en": null
+      },
+      {
+       "ar": "وما قَدَرْتْش الأميرة تْفَتَّح عينيها من قُوَّة ضَيّ القَناديل. وقالَت لِحارس القَصْر:",
+       "en": null
+      },
+      {
+       "ar": "- ما كُنْتِش أتْصَوَّر (imagine) إنّه فيه في مَمْلَكْتي كُل هاي القَناديل!",
+       "en": null
+      },
+      {
+       "ar": "وقال الحارس: إلناس حامْلة قناديل لِأنّها بِتْخاف مِن اللُّصوص.",
+       "en": null
+      },
+      {
+       "ar": "بَسّ الحَكيم قال: لا، لَمّا بِتْعَتّم الدِنيا كُل واحَد بِحْمِل قِنْديله عَشان يِعْرِف طَريقُه هيك.",
+       "en": null
+      },
+      {
+       "ar": "وتْطَلَّع الحَكيم ع-الأميرة وسَأَلْها: تِقْدَري يا أميرة تِحِمْلي كُل هاي القَناديل مَرَة وَحَدة؟",
+       "en": null
+      },
+      {
+       "ar": "- طَبْعاً لا، كيف مُمْكِن؟",
+       "en": null
+      },
+      {
+       "ar": "- وهيك الشَمْس يا أميرة، كْبيرة كْبيرة، ما حَدا بِقْدَر يِحْمِلْها لَحالُه.",
+       "en": null
+      },
+      {
+       "ar": "- آه، إسّا فَهِمِت، يا حَكيم القَصْر، إنّه كُل القَناديل مَعَ بَعضْها هي الشَمْس إلّي قَصَدْها أبوي.",
+       "en": null
+      },
+      {
+       "ar": "- صَحيح، يا أميرة، تْطَلَّعي هُناك يا أميرة, وأشَّر (pointed) بِإيده على شُبّاك غُرْفِتْها.",
+       "en": null
+      },
+      {
+       "ar": "كانَت الشَمْس عَم بِتْفوت ع-القَصْر.",
+       "en": null
+      }
+     ],
+     "src": "stories p.24"
+    },
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "وصَرْخَت الأميرة: ياها! هاي أوَّل مَرَّة بَشوف الشَمْس بِتْفوت ع-القَصْر.",
+       "en": null
+      },
+      {
+       "ar": "- طَبَعاً يا بِنْتي، هاي أوَّل مَرَّة لِأَنَّك هَدَمْتي الأسْوار ووسَّعْتي الأبْواب إلّي كانَت تِحْجِب الشَمْس وتِمْنَعْها تْفوت ع-القَصْر.",
+       "en": null
+      },
+      {
+       "ar": "وساعِتْها لَبَّس الحَكيم الأميرة التّاج المْرَصَّع بِالجَواهِر وقالْها: صُرْت مَلَكة لِأَنَّك نَفَّذْتِ وَصِّيَة أبوكي المَلِك وقْدِرْتي تِحِمْلي الشَمْس وتْفَوّتيها ع-القَصْر.",
+       "en": null
+      }
+     ],
+     "src": "stories p.25"
+    }
+   ],
+   "drills": [],
+   "produce": "Say what happens, in your own words, in five sentences.",
+   "provenance": "ref:stories"
+  },
+  {
+   "id": "unit-39",
+   "n": 39,
+   "phase": 5,
+   "title": {
+    "ar": "حُبّ؟",
+    "en": "Love?"
+   },
+   "objective": "Three short texts on the subject every dinner table gets to eventually, with the book’s discussion questions.",
+   "src": "speaking 57-57",
+   "gram_id": "baddi",
+   "grammar": {
+    "point": "Talking about feelings you have opinions about",
+    "body": "This unit is discussion, not vocabulary: the texts exist to be argued with. Use the opinion frames from the شو رايَك؟ unit."
+   },
+   "chunks": [],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": "1) مَعْقول - علاء وردي  https://www.youtube.com/watch?v=l0rCS8qpq20",
+     "sentences": [
+      {
+       "ar": "راح كُلِ اللّي كان في بالي",
+       "en": null
+      },
+      {
+       "ar": "لَمّا ابْتَسَمْتِ-لي مَوْلاي",
+       "en": null
+      },
+      {
+       "ar": "قَشْعَرْتيني لَمّا حَكيتِ",
+       "en": null
+      },
+      {
+       "ar": "مَعْقول تْحِبّي زَيّي إنْسان",
+       "en": null
+      },
+      {
+       "ar": "ياباي....",
+       "en": null
+      },
+      {
+       "ar": "هاتي إيديك تَ-أعْطيكِ",
+       "en": null
+      },
+      {
+       "ar": "قَلْبي إلّي مْوَقَّف مِن زَمان",
+       "en": null
+      },
+      {
+       "ar": "مَجْنون أنا مَشْغول فيك",
+       "en": null
+      },
+      {
+       "ar": "مَعْقول نْعيش زَيّ الأفلام",
+       "en": null
+      }
+     ],
+     "src": "speaking p.57"
+    },
+    {
+     "title": "2) جُبران خليل جُبران عَن الحُبّ:",
+     "sentences": [
+      {
+       "ar": "أمّا أنْتَ إذا أحْبَبْتَ فَلا تَقُلْ: \"إنَّ الرَّبَّ في قَلْبِي\", بَلْ قُلْ بِالْأَحْرَى: \"أنا في قَلْب الرَّبّ.\"",
+       "en": null
+      }
+     ],
+     "src": "speaking p.57"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "Practice",
+     "instructions": "Answer out loud, in Arabic, in full sentences.",
+     "items": [
+      {
+       "cue": "1) عَن أيّ حُبّ بِحْكي علاء وَرْدي في الأغنِية؟",
+       "answer": null
+      },
+      {
+       "cue": "2) شو مُشْكِلِة المُتَكَلِّم؟",
+       "answer": null
+      },
+      {
+       "cue": "3) شو أهَمّ شي في الحُبّ بين ثِنِين: زلمة ومرة, أبو وابنه، معلم وطالبه، مُسْلِم ويَهودي؟",
+       "answer": null
+      },
+      {
+       "cue": "4) عَن أيّ نوع من الحُبّ بِحْكوا جُبران والرُّومي؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.57"
+    }
+   ],
+   "produce": "Answer the book’s questions out loud, in full sentences, with a reason for each.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-40",
+   "n": 40,
+   "phase": 5,
+   "title": {
+    "ar": "نِسْوان وزْلام",
+    "en": "Women and men"
+   },
+   "objective": "A discussion text on roles and expectations — the kind of subject where you need to be able to disagree politely and still be understood.",
+   "src": "speaking 51-51",
+   "gram_id": "questions",
+   "grammar": {
+    "point": "Disagreeing without falling out",
+    "body": "Pair the opinion frames with hedges: بِالنِّسْبِة إلي (for me), مُمْكِن (maybe), بَسّ (but). Softening is what keeps a strong opinion sociable."
+   },
+   "chunks": [],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": "قِصَّة:",
+     "sentences": [
+      {
+       "ar": "مَرّة كان فيه كَوْكَبِين، واحَد فيه بَسّ زْلام، وواحَد فيه بَسّ نِسْوان. قَرَّرُوا الزّلام يِنْتِقْلوا يُسُكْنوا مَع النِّسْوان في كَوْكَبْهِن. في الْبِداية (في الأوَّل) كانوا كثير سَعيدين ومَبْسوطين مَع بَعَض، وشَرَحوا لَبَعَض عَن حياتهُم وعادَتْهُم وفَهَّموا بَعَض لُغَتْهُم وكانوا بِفَسّروا وبِتَرِجْموا كُلّ إشي. مَع الْوَقْت نِسْيوا الزّلام إنُّه النِّسْوان بِحْكين لُغَة مُخْتِلْفِة والنِسْوان كمان نِسْيِن... وهون بَدَت المَشاكِل لَلْيُوم.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.51"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "أسئلِة للنقاش:",
+     "instructions": "أسئلِة للنقاش:",
+     "items": [
+      {
+       "cue": "1) شو النِّسْوان بِقولوا عَنِ الزّلام؟ وشو الزّلام بِقولوا عَنِ النِّسْوان؟",
+       "answer": null
+      },
+      {
+       "cue": "2) بيقولوا إنُّه في أيّام زَمان النِسْوان سَيْطَروا (controlled) على الزلام وبَعْدين أجَت فَتْرة (period of time) طويلة إلّي فيها الزلام سَيْطَروا على النِسوان، واليوم بَدَت فَتْرة المُساواة بينْهُم. شو راياك عن هاذا؟ وبأيّ فَتْرة بِتْفَضّل تْعيش؟",
+       "answer": null
+      },
+      {
+       "cue": "3) أيّ صِفات بِدَّك تكون عِنْد الزَلَمِة المِثالي (Ideal man) وأيّ عِنْد المَرّة المِثالِيّة؟",
+       "answer": null
+      },
+      {
+       "cue": "4) شو رايك عن الأمثال إلّي بِتْقول:",
+       "answer": null
+      },
+      {
+       "cue": "إلنِسْوان بلاهُم بلا وبلاهم بلا",
+       "answer": null
+      },
+      {
+       "cue": "إنَّ كَيْدَهُنَّ عَظيم (من القُرْآن)",
+       "answer": null
+      },
+      {
+       "cue": "بَيْت بلا مَرَة – جِسْم بِلا روح",
+       "answer": null
+      },
+      {
+       "cue": "دُموع المَرَة – سِلاحْها",
+       "answer": null
+      },
+      {
+       "cue": "الرِجال – صَناديق مْغَلَقَة",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.51"
+    }
+   ],
+   "produce": "Give your view, then argue the opposite side as convincingly, out loud.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-41",
+   "n": 41,
+   "phase": 5,
+   "title": {
+    "ar": "أنْظِمة",
+    "en": "Diets & eating well"
+   },
+   "objective": "Twenty-five terms for food, health and what you do or don’t eat — which at a Palestinian table is genuinely practical vocabulary.",
+   "src": "speaking 53-53",
+   "gram_id": "baddi",
+   "grammar": {
+    "point": "Saying what you don’t eat",
+    "body": "Combine بَاكُلْش / ما بَاكُل with the food words, and pair with the polite refusals from the hospitality unit. Refusing food gracefully is a real skill here."
+   },
+   "chunks": [
+    {
+     "ar": "نِظام حُكُم",
+     "en": "regime, rule (n)",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "نِظام",
+     "en": "regime, order, system",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "حَكَم ـُ",
+     "en": "to rule",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "حُكومِة",
+     "en": "government",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "مُنَظَّمِة",
+     "en": "organization",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "إقْتِصاد",
+     "en": "economy",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "نِظام ديمقراطي",
+     "en": "democracy",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "نِظام مَلَكي",
+     "en": "monarchy",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "نِظام ديكتاتوري",
+     "en": "dictatorship",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "نِظام فِدْرالي",
+     "en": "federal government",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "رأسمالية",
+     "en": "capitalism",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "شُيوعِية",
+     "en": "communism",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "إشْتِراكية",
+     "en": "socialism",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "ظُلْم",
+     "en": "injustice",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "عَدْل",
+     "en": "justice",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "مُواطِنين",
+     "en": "citizens",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "عُنْف",
+     "en": "violence",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "مُوافَقة",
+     "en": "agreement",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "سَيْطَرَة",
+     "en": "control (n)",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "سَيْطَر",
+     "en": "to control",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "خَوَّف (تَخْويف)",
+     "en": "to frighten",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "إسْتَعْمَل",
+     "en": "to use",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "أمان شَخْصي",
+     "en": "personal safety",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "إنْفِلات أمْني",
+     "en": "chaos",
+     "src": "speaking p.53"
+    },
+    {
+     "ar": "فَوْضى",
+     "en": "lack of order, mess",
+     "src": "speaking p.53"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة:",
+     "instructions": "وظيفة:",
+     "items": [
+      {
+       "cue": "عَمَل بمَجْموعات: تَوزيع الصف لثلث او ارْبَع مَجْموعات. كُل مَجموعة تْمَثِّل نظام معين: النظام الملكي ( يمثله عبد الله ملك الأردن)، النظام الدكتاتوري (سوريا بسار الأسد أو صدام الحسين في عراق)، نظام دمقراطي – (إسرائيل) إلْخ. وبَعد التَّحضير في المجموعات - كل مجْموعة تُحاول تقنع باقي المجموعات إنُّه نظامها هو الأفضل وخصوصي في الشرق الأوسط.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.53"
+    }
+   ],
+   "produce": "Explain what you eat and don’t eat, and why, out loud — then refuse a dish politely.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-42",
+   "n": 42,
+   "phase": 5,
+   "title": {
+    "ar": "تَعْليم اللغة الْعَرَبِيِّة",
+    "en": "Learning and teaching Arabic"
+   },
+   "objective": "A text about learning the language, in the language — plus the book’s questions about how you are finding it.",
+   "src": "speaking 40-40",
+   "gram_id": "bpresent",
+   "grammar": {
+    "point": "Talking about the thing you are doing",
+    "body": "Being able to discuss your own learning — what is hard, what helps — is unusually useful: it is the conversation you will have with every teacher and every patient friend."
+   },
+   "chunks": [],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": null,
+     "sentences": [
+      {
+       "ar": "في إسْرائيل فيه ناس بِتْعَلَّموا عَرَبي لَأنُّهُم مَجْبورين (must) مِثِل طُلّاب الْمَدارِس إلّي لازِم يِتْعَلَّموا عَرَبي مِن الصَّفَّ السابع لَلصَّفّ التَّاسِع.",
+       "en": null
+      },
+      {
+       "ar": "فيه مَحَلّات شُغُل بِدْها ناس بِحْكوا عَرَبي لَأنُّه إلْهُم زَبايِن (clients) عَرَب أو عَلاقات (relationships) مَع عَرَب مِثِل شَرِكات التِّلِفونات.",
+       "en": null
+      },
+      {
+       "ar": "إلّي بِدُّه يْروح عَ-الْجيش (army) الإسْرائيلي – مْنيح يكون بِعْرِف عَرَبي لَإنُّه جارات دولِة إسْرائيل هنّ دُوَل عَرَبِيِة, وحَتَّى (even) اليوم ما-فيه سَلام لا مَع لُبنان ولا مَع سوريا وفي مشاكِل مَع غِيرهِن. وعَشان هِيك كثير ناس في إسرائيل بِتْعَلّموا عَرَبي لِأسْباب أمْنِيّة (security reasons).",
+       "en": null
+      },
+      {
+       "ar": "فيه ناس بِحِبّوا اللُّغات وبِدّهُم يِتْعَلَّموا عَرَبي بَسّ عشان يِفْهَموا عَرَبي أو عشان يْكونوا باحِثين (researchers) في الجامِعات.",
+       "en": null
+      },
+      {
+       "ar": "في كمان ناس إلّي بِآمنوا (believe) بِالسّلام وعِنْدْهُم أمَل (hope) إنُّه إلْوَضِع (situation) بِتْحَسَّن ويْكون عَلاقات حَميمة (warm) وصَداقَة بين الشَعْبين. هَدُول الناس بِفَكّروا إنُّه اللُّغة هي جِسِر وإذا بْتِفْهَم لُغَة غِيرَك، كمان بْتِفهَم ثَقافْتُه وهُمومُه (his culture and worries)، وهيك النّاس بِصيروا يِفْهَموا بَعَض أحْسَن ويقَرّبوا السّلام.",
+       "en": null
+      }
+     ],
+     "src": "speaking p.40"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "وظيفة",
+     "instructions": "وظيفة",
+     "items": [
+      {
+       "cue": "1) وإنْتِ شو رايَك أهَم سَبَب لِتَعليم اللُّغَة الْعَرَبِيِّة في إسْرائيل؟",
+       "answer": null
+      },
+      {
+       "cue": "2) ليش إنْتِ بْتِتْعَلَّم عَرَبي؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.40"
+    }
+   ],
+   "produce": "Out loud: what you find hardest, what has helped most, what you want next.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-43",
+   "n": 43,
+   "phase": 5,
+   "title": {
+    "ar": "عيد الاسْتِقْلال والأَقَلِّيِّة الْعَرَبِية في إسرائيل",
+    "en": "Independence Day and the Arab minority"
+   },
+   "objective": "Vocabulary and questions on a subject that is unavoidable and genuinely sensitive. The book presents it as a discussion; so does this unit.",
+   "src": "speaking 50-50",
+   "gram_id": "kaan",
+   "grammar": {
+    "point": "Sensitive subjects, carefully",
+    "body": "This is the vocabulary of a difficult conversation. The value is being able to listen and ask rather than to argue — and to understand what is being said around you."
+   },
+   "chunks": [
+    {
+     "ar": "أقلية ج ات",
+     "en": "minority",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "أغْلَبِيِّة",
+     "en": "majority",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "طائفة ج طَوَائِف",
+     "en": "religious- ethnic group",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "دين، دِيَانة",
+     "en": "religion",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "مِتْدَيِّن",
+     "en": "religious",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "عَرَب ثَماني وأرْبَعين",
+     "en": "the Palestinian minority in Israel",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "عَرَب الدَّاخِل",
+     "en": "the Palestinian minority in Israel",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "عيد الإسْتِقْلال",
+     "en": "independence day",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "إنْتِماء",
+     "en": "belong to",
+     "src": "speaking p.50"
+    },
+    {
+     "ar": "قِسم، جُزْء",
+     "en": "part",
+     "src": "speaking p.50"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "أسئلة لِلنّقاش:",
+     "instructions": "أسئلة لِلنّقاش:",
+     "items": [
+      {
+       "cue": "1. مين بِسَمّي عَرَب إسرئيل \"عَرَب الدَّاخل\" و\"عَرَب ثَماني وأرْبَعين\"؟",
+       "answer": null
+      },
+      {
+       "cue": "2. هل حسب رايك العرب في إسرائيل بِحْتِفْلوا بْعيد الاسْتِقْلال؟",
+       "answer": null
+      },
+      {
+       "cue": "3. أيّ طائِفِة حسب رايك لازم تْشارِك باحْتِفالات عيد الاستقلال؟",
+       "answer": null
+      },
+      {
+       "cue": "4. المَدارِس العربية-يهودية في إسرائيل عندها مُشْكِلِة – عيد الاستقلال هو نَفْس يوم النَكْبَة. إقْتَرَح لِلْمَدارِس كيف يْعَيِّدوا (celebrate) هذا اليوم في المَدْرَسِة.",
+       "answer": null
+      },
+      {
+       "cue": "5. كيف إنت احْتَفَلِت بْعيد الاستقلال في بْلادَك؟",
+       "answer": null
+      },
+      {
+       "cue": "6. إعْمَل بَحث زغير وإسْأل صْحابَك الْعَرَب شو بِعْمَلوا في عيد الاستقلال.",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.50"
+    }
+   ],
+   "produce": "Practise asking, not asserting: three questions you could genuinely ask someone.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-44",
+   "n": 44,
+   "phase": 5,
+   "title": {
+    "ar": "زِياد وأبو سيوار",
+    "en": "Ziyad and Abu Siwar"
+   },
+   "objective": "A natural two-person conversation from the Givat Haviva packet — ordinary talk at ordinary speed, with a short glossary.",
+   "src": "spoken-extra 9-9",
+   "gram_id": "past",
+   "grammar": {
+    "point": "Following a conversation you are not in",
+    "body": "Listening to two other people talk is harder than being addressed, because nobody is accommodating you. Read it, then listen without reading."
+   },
+   "chunks": [
+    {
+     "ar": "قَهْوِة",
+     "en": "coffee",
+     "src": "spoken-extra p.9"
+    },
+    {
+     "ar": "مُمْتازِة",
+     "en": "excellent",
+     "src": "spoken-extra p.9"
+    },
+    {
+     "ar": "أَطْيَب",
+     "en": "better",
+     "src": "spoken-extra p.9"
+    }
+   ],
+   "dialogues": [
+    {
+     "title": "زياد وأبو سيوار",
+     "lines": [
+      {
+       "sp": "زِياد",
+       "ar": "مَرْحَبا _____.",
+       "en": null
+      },
+      {
+       "sp": "أبو سيوار",
+       "ar": "مَرْحَبْتين زِياد، _____، تَعالِ اشْرَبْ قَهْوِة. تْفَضَّلِ _____.",
+       "en": null
+      },
+      {
+       "sp": "زِياد",
+       "ar": "يِسَلْمو _____.",
+       "en": null
+      },
+      {
+       "sp": "أبو سيوار",
+       "ar": "كيف حالَك؟",
+       "en": null
+      },
+      {
+       "sp": "زِياد",
+       "ar": "وَالله _____ شْوَيّ.",
+       "en": null
+      },
+      {
+       "sp": "أبو سيوار",
+       "ar": "لِيش؟ وِينْتى _____ مِنْ إيطالْيا؟",
+       "en": null
+      },
+      {
+       "sp": "زِياد",
+       "ar": "رْجِعِتِ _____.",
+       "en": null
+      },
+      {
+       "sp": "أبو سيوار",
+       "ar": "وَالله! _____ إيطالْيا؟ حِلْوِة؟",
+       "en": null
+      },
+      {
+       "sp": "زِياد",
+       "ar": "إيطالْيا _____ كْثير.",
+       "en": null
+      },
+      {
+       "sp": "أبو سيوار",
+       "ar": "وكيف _____ هُناك؟",
+       "en": null
+      },
+      {
+       "sp": "زِياد",
+       "ar": "إلْقَهْوِة الإيطالِيِّة _____، بَس قَهْوَتَك أَطْيَب.",
+       "en": null
+      },
+      {
+       "sp": "أبو سيوار",
+       "ar": "يِسَلْم ثِمَّك.",
+       "en": null
+      },
+      {
+       "sp": "زِياد",
+       "ar": "يالله _____.",
+       "en": null
+      },
+      {
+       "sp": "أبو سيوار",
+       "ar": "مَعِ _____، سَلِّم عَ-أبوك.",
+       "en": null
+      }
+     ],
+     "src": "spoken-extra p.9",
+     "cast": [
+      {
+       "sp": "زياد",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": "m"
+      },
+      {
+       "sp": "أبو سيوار",
+       "voice": "IYnFszSKzmym2OstwHS0",
+       "gender": "m"
+      }
+     ]
+    }
+   ],
+   "texts": [],
+   "drills": [],
+   "produce": "Summarize what the two of them settled, out loud, in three sentences.",
+   "provenance": "ref:spoken-extra"
+  },
+  {
+   "id": "unit-45",
+   "n": 45,
+   "phase": 6,
+   "title": {
+    "ar": "زِيارات في مُناسَبات",
+    "en": "Visits on occasions"
+   },
+   "objective": "What you say at a wedding, a birth, a condolence visit, a holiday. Hospitality has fixed language for every occasion, and getting it right matters more than fluency.",
+   "src": "speaking 48-49",
+   "gram_id": "indi",
+   "grammar": {
+    "point": "The right phrase for the occasion",
+    "body": "These are formulas, not sentences you compose. Each occasion has its greeting and its expected answer, exactly like the greetings unit — learn them in pairs."
+   },
+   "chunks": [],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": "1) إقرا القطعة التالية: شو بْتِفْهَم عَنْ عادَة (habit) الزيارة (visit) في المُجْتَمَع (society) الْعَرَبي في إسْرائِيل؟",
+     "sentences": [
+      {
+       "ar": "مِن عادَتْنا (habits) العَرَبِيِّة إنّا نْزور بَعَض (visit each other) كثير. إحنا بِنزور بَعَض مع وبِدون مُناسَبات (occasions). في بَلَدي، أُم الْفَحِم، مَفِش كثير مَحَلات للسَّهِر عشان هيك لَمن بِدْنا نْغَيِّر جَوّ (change atmosphere) ونِطْلَع بنزور قَرايِبْنا وبنزور صْحابْنا.",
+       "en": null
+      },
+      {
+       "ar": "في الْعيد مَثَلًا أبوي وعَمامي على الصُّبِح بِزورو كُلّ عَمّاتي يَعْني خَواتْهم، وبِزورو كمان كُل بَنات عَمامي وعَماتي المِتْجَوزات. كُلّ هاي الزيارات بْيوم واحد بْتُوخِذ (takes) مَعهم بَسّ 3 ساعات. يَعْني كُلّ زِيارة حَوالي 10 دَقايق.",
+       "en": null
+      },
+      {
+       "ar": "ومِن عاداتْنا (habits) نْزور المَرَه الحامِل (pragnent) اللي بِتْخَلِّف (give birth). أُخْتي بَسّ (just) خَلَّفَت، أجو كل عِيلة جُوزها وكُل عِيلِتها عْمام وعَمات وخْوال وصْحاب يْزوروها. كل وقت الزِيارة تكون غُرْفِتْها مَلانة زُوّار (visitors).",
+       "en": null
+      },
+      {
+       "ar": "وخِلال الأسبوع أهْلي عادة بِعْمَلوا زِيارْتِين – ثَلاث. أنا بَروحش مَعهم على كُلّ الزيارات، بْحِبِّش أعْمَل هَالقَدّ (so much) زيارات. إللي بِضَحّك إنُّو مَرّات وهُمّ ( يَعْني أهلي) طالْعين زيارة بيجوا عِنّا ناس يزورو، وأهلي كان بِنِجْبِروا (are forced) يْرَوّحوا. يَعْني مش كل زياراتْنا بِتكون مع مَوْعِد (scheduled ahead).",
+       "en": null
+      }
+     ],
+     "src": "speaking p.48"
+    }
+   ],
+   "drills": [
+    {
+     "type": "qa",
+     "title": "أَسْئِلِة لَلْنِقاش:",
+     "instructions": "أَسْئِلِة لَلْنِقاش:",
+     "items": [
+      {
+       "cue": "1. كَم ساعة في الأُسْبُوع بِقْضوا أهِلْكُم بالزِّيارات؟ وكَم إنتُو؟",
+       "answer": null
+      },
+      {
+       "cue": "2. هَلْ بِتْزوروا الأقارِب والأصْحاب دايْمًا (always)؟",
+       "answer": null
+      },
+      {
+       "cue": "3. هَلْ بِتْزوروا الناس بِدون مُناسَبِة (event)؟",
+       "answer": null
+      },
+      {
+       "cue": "4. هَلْ مُمْكِن تْزور الأصْحاب بِدون تَحْديد مَوْعِد (scheduling time)؟",
+       "answer": null
+      },
+      {
+       "cue": "5. هل بْتُوخْذوا هَدِيِة عِنْد الزيارة؟ أيّ هَدِية بِتْجيبوا؟",
+       "answer": null
+      },
+      {
+       "cue": "6. في أيّ مُناسَبِة (circumstances) بِتْزوروا بَعَض؟",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.49"
+    },
+    {
+     "type": "qa",
+     "title": "2) المعلم يشرح عن الزيارة في المناسبات التالية وما هي العادات في زيارة",
+     "instructions": "2) المعلم يشرح عن الزيارة في المناسبات التالية وما هي العادات في زيارة:",
+     "items": [
+      {
+       "cue": "زِيارة في الأَعْياد",
+       "answer": null
+      },
+      {
+       "cue": "زيارة بمناسبة مَوْلُود (baby) جديد؟",
+       "answer": null
+      },
+      {
+       "cue": "زيارة قبل العُرس أو بعد العُرس",
+       "answer": null
+      },
+      {
+       "cue": "زيارة في وقت المَرَض",
+       "answer": null
+      },
+      {
+       "cue": "زيارة في بيت الأجِر (condolences)؟",
+       "answer": null
+      },
+      {
+       "cue": "زيارة قَبْلِ الحَجّ وبَعْدِ الحَجّ (pilgrim to Mecca).",
+       "answer": null
+      },
+      {
+       "cue": "زيارة قبل السفرة وبعد السفرة (travel).",
+       "answer": null
+      }
+     ],
+     "src": "speaking p.49"
+    }
+   ],
+   "produce": "Out loud: congratulate a new marriage, a new baby, and offer condolences.",
+   "provenance": "ref:speaking"
+  },
+  {
+   "id": "unit-46",
+   "n": 46,
+   "phase": 6,
+   "title": {
+    "ar": null,
+    "en": "Majed got engaged"
+   },
+   "objective": "A conversation about an engagement — the single most common piece of family news, and a scene you will sit through many times.",
+   "src": "spoken-extra 12-12",
+   "gram_id": "past",
+   "grammar": {
+    "point": "Reacting to news",
+    "body": "This is where the Reactions unit pays off: مبروك, والله؟, ما شاء الله. Follow the conversation and notice how much of it is reaction rather than information."
+   },
+   "chunks": [
+    {
+     "ar": "وِلّا",
+     "en": "or",
+     "src": "spoken-extra p.12"
+    },
+    {
+     "ar": "مُحامِية",
+     "en": "lawyer",
+     "src": "spoken-extra p.12"
+    },
+    {
+     "ar": "ما شاء الله",
+     "en": "wow (what God wants)",
+     "src": "spoken-extra p.12"
+    },
+    {
+     "ar": "مَيَّة بارْدِة",
+     "en": "cold water",
+     "src": "spoken-extra p.12"
+    }
+   ],
+   "dialogues": [
+    {
+     "title": null,
+     "lines": [
+      {
+       "sp": "سَمير",
+       "ar": "تْفَضَّل.",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "_____ _____.",
+       "en": null
+      },
+      {
+       "sp": "سَمير",
+       "ar": "_____ _____ تْفَضَّل فوت. نُقْعُد في الصّالُون وِلا لا في الْبَلْكون؟",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "_____ _____. كيف حالَك؟",
+       "en": null
+      },
+      {
+       "sp": "سَمير",
+       "ar": "الْحَمْدِلله. شو بِتْحِبّ تِشْرَب، شاي _____ قَهْوة؟",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "لا لا لا _____ _____ ، _____؟",
+       "en": null
+      },
+      {
+       "sp": "سَمير",
+       "ar": "أيْوة، عِنْدي _____ (cold) كَمان! تْفَضَّل!",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "تِسْلَم، شُكْرًا.",
+       "en": null
+      },
+      {
+       "sp": "سَمير",
+       "ar": "وَلَك يا ماجِد، سمِعِت خَطَبِت، إحْكي-لي شْوَيّ عَن خَطيبْتَك رنا، هِي مِنِ الطَّيْبِة، صَحّ؟",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "أيْوة، هِي مِنِ الطَّيْبِة مِش بْعيد مِن هُون، رُبِع ساعَة بِالسَّيّارة.",
+       "en": null
+      },
+      {
+       "sp": "سَمير",
+       "ar": "هٰذا مُمْتاز. قول-لي مين أبوها ومين إمْها؟",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "_______________________.",
+       "en": null
+      },
+      {
+       "sp": "سَمير",
+       "ar": "عَن جَدّ؟ وَالله، بْرافو عَليهُم . وشو بِشْتْغِل أخوها؟",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "_______________________.",
+       "en": null
+      },
+      {
+       "sp": "سَمير",
+       "ar": "وأُخْتْها؟ وين بْتِشْتْغِل؟",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "أُخْتْها بْتِشْتْغِل سِكْرِتيرة عِنْد دَكْتور الِعْيُون (eyes).",
+       "en": null
+      },
+      {
+       "sp": "سَمير",
+       "ar": "مَا شاء الله _____ _____؟",
+       "en": null
+      },
+      {
+       "sp": "ماجِد",
+       "ar": "مَبْسوطين مَبْسوطين طَبْعا مَبْسوطين.",
+       "en": null
+      }
+     ],
+     "src": "spoken-extra p.12",
+     "cast": [
+      {
+       "sp": "سمير",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": "m"
+      },
+      {
+       "sp": "ماجد",
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": null
+      }
+     ]
+    }
+   ],
+   "texts": [],
+   "drills": [],
+   "produce": "Someone tells you a family member got engaged. React, ask two questions, congratulate.",
+   "provenance": "ref:spoken-extra"
+  },
+  {
+   "id": "unit-47",
+   "n": 47,
+   "phase": 6,
+   "title": {
+    "ar": null,
+    "en": "Before the market"
+   },
+   "objective": "Planning a shopping trip out loud — what is needed, who is going, what it costs. Everyday domestic negotiation.",
+   "src": "spoken-extra 13-13",
+   "gram_id": "baddi",
+   "grammar": {
+    "point": "Working out a plan together",
+    "body": "Notice how the plan is made: suggestions, objections, agreement. That three-move pattern is most of domestic conversation everywhere."
+   },
+   "chunks": [
+    {
+     "ar": "ناقِص",
+     "en": "missing",
+     "src": "spoken-extra p.13"
+    },
+    {
+     "ar": "خُضْرَة",
+     "en": "vegetables",
+     "src": "spoken-extra p.13"
+    },
+    {
+     "ar": "مِش أكْثَر",
+     "en": "not more",
+     "src": "spoken-extra p.13"
+    },
+    {
+     "ar": "فواكِه",
+     "en": "fruits",
+     "src": "spoken-extra p.13"
+    }
+   ],
+   "dialogues": [
+    {
+     "title": null,
+     "lines": [
+      {
+       "sp": "إلْهام",
+       "ar": "جَميل حَبيبي ,تَعال نْشوف شو ناقِص. ناقِصْنا خْيار وبَنْدُورة.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "كيلو مِن كُلّ نُوع؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "_____ _____ _____ . آه _____ الْبَصَل، وأنا بَطْبُخ كُل شي مَع بَصَل.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "_____ _____؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "ما قُلْت-لَك، جيب أرْبَعة كيلو . آه _______________________",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "يَعْني أكَم بَطّيخة بِدّك؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "_____ _____ _____ _____.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "وشو كَمان؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "جيب مُوز وعِنَب.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "_____ _____ _____.",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "_____، _____ _____ _____.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "وشو ناقِصْنا خُضْرة؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "جيب كيلو _____ ونُصّ كيلو بامْية _____ _____.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "بِدْنا قَرْنَبيط وثُومِة كَمان؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "أيْوة، روح عِنْد أبو مَحْمود، عِنْدُه كُلّ شي.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "فِشّ مُشْكِلِة، وإذا بَشوف بيتِنْجان كمان أجيب؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "_____، _____ _____ _____ _____.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "مُش أكْثَر؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "لا!، بَسّ 3 حَبّات.",
+       "en": null
+      },
+      {
+       "sp": "جَميل",
+       "ar": "_____ _____ _____؟",
+       "en": null
+      },
+      {
+       "sp": "إلْهام",
+       "ar": "_____ _____ _____.",
+       "en": null
+      }
+     ],
+     "src": "spoken-extra p.13",
+     "cast": [
+      {
+       "sp": "إلهام",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": null
+      },
+      {
+       "sp": "جميل",
+       "voice": "IYnFszSKzmym2OstwHS0",
+       "gender": "m"
+      }
+     ]
+    }
+   ],
+   "texts": [],
+   "drills": [],
+   "produce": "Plan a shopping trip out loud with an imagined partner: propose, object, agree.",
+   "provenance": "ref:spoken-extra"
+  },
+  {
+   "id": "unit-48",
+   "n": 48,
+   "phase": 6,
+   "title": {
+    "ar": null,
+    "en": "Rana returns some disks"
+   },
+   "objective": "A short transactional dialogue — wanting to exchange something. The politeness of asking for something you are entitled to.",
+   "src": "spoken-extra 15-15",
+   "gram_id": "baddi",
+   "grammar": {
+    "point": "Asking for something, politely",
+    "body": "بِدّي plus a soft opener does most of the work. Transactions are formulaic, which makes them a cheap win: learn the frame once and swap the noun."
+   },
+   "chunks": [
+    {
+     "ar": "بِدّي أَبَدِّل",
+     "en": "I want to replace, change",
+     "src": "spoken-extra p.15"
+    },
+    {
+     "ar": "ما بَحِبِّش",
+     "en": "don't like",
+     "src": "spoken-extra p.15"
+    },
+    {
+     "ar": "مَحَلِّيِّة",
+     "en": "local",
+     "src": "spoken-extra p.15"
+    }
+   ],
+   "dialogues": [
+    {
+     "title": null,
+     "lines": [
+      {
+       "sp": "رَنا",
+       "ar": "صَباح الْخير.",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "أهْلين صَباحِ النّور، تْفَضَّلي..",
+       "en": null
+      },
+      {
+       "sp": "رَنا",
+       "ar": "_______________________.",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "فِشّ مُشْكِلِة. أيّ ديسْكات؟",
+       "en": null
+      },
+      {
+       "sp": "رَنا",
+       "ar": "إمْبارِح كان عيد ميلادي وخَطيبي جاب-لي مِن عِنْدَك هَدِيِّة ديسْكات كْلاسيكِيِّة لأُم كُلْثُوم وعَبْدِ الْحَليم حافِظ ( بِتْحُطهُم عَلى الطّاوْلِة.)",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "_______________________؟",
+       "en": null
+      },
+      {
+       "sp": "رَنا",
+       "ar": "أنا بَحِبْها كْثير بَسّ عِنْدي هايِ الدّيسْكات، بِدّي ديسْك لَمُحَمَّد عَبْدِ الْوَهاب، وديسْك لَصَباح لَوْ سَمَحِت.",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "تْفَضَّلي.",
+       "en": null
+      },
+      {
+       "sp": "رَنا",
+       "ar": "بِدّي أبَدِّل كَمان ديسكات الْمُنَوَّعات هاي، أنا ما بَحِبِّش الْمُنَوَّعات بِالْمَرّة، مِش عارفِة لِيش ماجد جاب-لي مُنَوَّعات. بِدّي أشوف ديسْكات لَفَيْروز (بِتْحُطّ عَلى الطّاوْلِة 4 ديسْكات.)",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "_______________________",
+       "en": null
+      },
+      {
+       "sp": "رَنا",
+       "ar": "_______________________",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "_______________________",
+       "en": null
+      },
+      {
+       "sp": "رَنا",
+       "ar": "_______________________",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "_______________________",
+       "en": null
+      },
+      {
+       "sp": "رَنا",
+       "ar": "_______________________.",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "بِتْحِبّي تْبَدْلي كَمان إشي؟",
+       "en": null
+      },
+      {
+       "sp": "رَنا",
+       "ar": "_______________________.",
+       "en": null
+      },
+      {
+       "sp": "بَيّاع",
+       "ar": "الله يْعافيكِ.",
+       "en": null
+      }
+     ],
+     "src": "spoken-extra p.15",
+     "cast": [
+      {
+       "sp": "رنا",
+       "voice": "albaa6OioIhKtKdCEkQw",
+       "gender": "f"
+      },
+      {
+       "sp": "بياع",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
+       "gender": null
+      }
+     ]
+    }
+   ],
+   "texts": [],
+   "drills": [],
+   "produce": "Out loud: return something to a shop and ask to exchange it.",
+   "provenance": "ref:spoken-extra"
+  },
+  {
+   "id": "unit-49",
+   "n": 49,
+   "phase": 6,
+   "title": {
+    "ar": "قِصّة الْبَعوضِة وِالرّيح",
+    "en": "The mosquito and the wind"
+   },
+   "objective": "A short fable with a glossary — light reading to finish on, and a story short enough to actually memorize and retell.",
+   "src": "spoken-extra 16-16",
+   "gram_id": "past",
+   "grammar": {
+    "point": "A story you can carry",
+    "body": "Short fables are the most useful stories to know by heart: they fit in a gap in conversation and they always land."
+   },
+   "chunks": [
+    {
+     "ar": "بَعُوضة",
+     "en": "mosquito",
+     "src": "spoken-extra p.16"
+    },
+    {
+     "ar": "ريح",
+     "en": "wind",
+     "src": "spoken-extra p.16"
+    },
+    {
+     "ar": "طَيَّر",
+     "en": "blow away",
+     "src": "spoken-extra p.16"
+    },
+    {
+     "ar": "حَدَّد",
+     "en": "set up (meeting)",
+     "src": "spoken-extra p.16"
+    },
+    {
+     "ar": "مِن وَقْتها",
+     "en": "from that time on",
+     "src": "spoken-extra p.16"
+    },
+    {
+     "ar": "قاعة",
+     "en": "hall",
+     "src": "spoken-extra p.16"
+    },
+    {
+     "ar": "مَحْكَمِة",
+     "en": "court",
+     "src": "spoken-extra p.16"
+    },
+    {
+     "ar": "قَعْدَت تِسْتَنّى",
+     "en": "set and waited",
+     "src": "spoken-extra p.16"
+    }
+   ],
+   "dialogues": [],
+   "texts": [
+    {
+     "title": "قِصّة الْبَعوضِة وِالرّيح",
+     "sentences": [
+      {
+       "ar": "_____ _____ _____ _____ سْليمان _____ _____ _____ _____ _____ (put on trial) الرّيح.",
+       "en": null
+      },
+      {
+       "ar": "\"عَلى إيش بِدّك أحاكِمْها\"، سَأل الْمَلِك سْليمان الْبَعوضِة.",
+       "en": null
+      },
+      {
+       "ar": "قالَتِ الْبَعوضِة: _____ _____ _____ _____ ، _____ _____ _____ _____.",
+       "en": null
+      },
+      {
+       "ar": "فَحَدَّد الْمَلِك سْليمان يُوم لِلْمَحْكَمِة.",
+       "en": null
+      },
+      {
+       "ar": "_____ _____ _____ الرّيح، ولَمّا أجَتِ الرّيح، طَيَّرَتْها.",
+       "en": null
+      },
+      {
+       "ar": "حَدَّد الْمَلِك سْليمان مَوْعِد ثاني، بَسّ كَمان مَرّة أجَتِ الرّيح وطَيَّرَتِ الْبَعوضِة.",
+       "en": null
+      },
+      {
+       "ar": "_____ _____ _____ _____ _____ _____.",
+       "en": null
+      },
+      {
+       "ar": "ومِن وَقْتها لَحَدّ الْيُوم الْبَعوضِة _____ _____ _____ _____ قاعة الْمَحْكَمِة، لِأنها كُلّ ما قَعْدَت بِتيجي الرّيح وبِتْطَيِّرْها.",
+       "en": null
+      }
+     ],
+     "src": "spoken-extra p.16"
+    }
+   ],
+   "drills": [],
+   "produce": "Learn it well enough to tell it from memory, out loud, with no notes.",
+   "provenance": "ref:spoken-extra"
+  },
+  {
+   "id": "unit-50",
+   "n": 50,
+   "phase": 6,
+   "title": {
+    "ar": "إسْم جَماعي",
+    "en": "Counting food — mass nouns & unit words"
+   },
+   "objective": "How to ask for an amount of something that has no plural: a head of lettuce, a clove of garlic, a grain of rice. The last piece of table and market language.",
+   "src": "",
+   "gram_id": "idafa",
+   "grammar": {
+    "point": "حَبَّة, راس, قَرْن — the unit words",
+    "body": "You cannot say \"two lettuces\". The book gives two methods and a reference table of which unit word goes with which produce — that table is the unit."
+   },
+   "chunks": [
+    {
+     "ar": "خيار كبير",
+     "en": "big cucumbers",
+     "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
+     "src": "vocab-gram p.17"
+    },
+    {
+     "ar": "جَزَر حِلو",
+     "en": "sweet carrots",
+     "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
+     "src": "vocab-gram p.17"
+    },
+    {
+     "ar": "حَبَّة بَنْدورة",
+     "en": "one tomato",
+     "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
+     "src": "vocab-gram p.17"
+    },
+    {
+     "ar": "حَبَّتِين بَنْدُورة",
+     "en": "two tomatoes",
+     "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
+     "src": "vocab-gram p.17"
+    },
+    {
+     "ar": "عَشَر حَبّات بَزيلة",
+     "en": "ten peas",
+     "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
+     "src": "vocab-gram p.17"
+    },
+    {
+     "ar": "راس ثُومِة",
+     "en": "one head of garlic",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "راسِين بَصَل",
+     "en": "two onions",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "سِتّ روس بَصَل",
+     "en": "six onions",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "قَرِن فليفلة",
+     "en": "one chili pepper",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "قَرْنِين فليفلة",
+     "en": "two chili peppers",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "خَمِس قُرون مُوز",
+     "en": "five bananas",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "ظُمَّة بَقْدُونِس",
+     "en": "one bunch of parsley",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "ظُمَّتِين نَعْنع",
+     "en": "two bunchs of mint",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "ثَلَث ظِمَم سَبانِخ",
+     "en": "three bunch of spinach",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "خْيارة",
+     "en": "one cucumber",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "خيارْتِين",
+     "en": "two cucumbers",
+     "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
+     "src": "vocab-gram p.16"
+    },
+    {
+     "ar": "خَمِس خْيارات",
+     "en": "five cucumbers",
+     "group": "Method B step 3; note on both methods (printed page 154)",
+     "src": "vocab-gram p.15"
+    },
+    {
+     "ar": "راس بَصَل، بَصَلِة",
+     "en": "an onion",
+     "group": "Method B step 3; note on both methods (printed page 154)",
+     "src": "vocab-gram p.15"
+    },
+    {
+     "ar": "حَبَّة \\ حَبّات: بندورة، أبوكادو، بَطاطا، بَزِيلّة \\ بزيلّا، زَتون، فَصولْيِة، بِتِنْجان، مَنْجا، فْليفلة (Pepper)، مَنْدَلينا، بُرْتُقان، تُفَّاح، إنْجاص، خُوخ، رُمّان، تين، تَمِر، كَرَز، لوز، جوز، توت، لَمون",
+     "en": "unit word 7abbeh: tomato, avocado, potato, peas, olives, beans, eggplant, mango, pepper, mandarin, orange, apple, plum, peach, pomegranate, fig, date, cherry, almond, walnut, berry, lemon",
+     "group": "reference table of unit words with their produce (printed page 155)",
+     "src": "vocab-gram p.14"
+    },
+    {
+     "ar": "ة\\ات: موزَة، بَطيخَة، شُمامة، خْيارة، جَزَرَة، خَسَّة، قَرْعَة، كوسايِة",
+     "en": "feminine-suffix method: banana, watermelon, melon, cucumber, carrot, lettuce, pumpkin, zucchini",
+     "group": "reference table of unit words with their produce (printed page 155)",
+     "src": "vocab-gram p.14"
+    },
+    {
+     "ar": "قَرِن \\ قْرون: قرن موز، قرن فْليفلة — hot pepper",
+     "en": "unit word qarn (horn): a banana, a hot pepper",
+     "group": "reference table of unit words with their produce (printed page 155)",
+     "src": "vocab-gram p.14"
+    },
+    {
+     "ar": "قْطْف: عِنَب. One grape: حَبَّة عِنَب",
+     "en": "unit word quTf (cluster): grapes; one grape is 7abbet 3inab",
+     "group": "reference table of unit words with their produce (printed page 155)",
+     "src": "vocab-gram p.14"
+    },
+    {
+     "ar": "راس \\ روس: فِجِل، شُومر، بَصَل، ثُومِة، قَرْنَبيط، مَلْفوف",
+     "en": "unit word raas (head): radish, fennel, onion, garlic, cauliflower, cabbage",
+     "group": "reference table of unit words with their produce (printed page 155)",
+     "src": "vocab-gram p.14"
+    },
+    {
+     "ar": "ظُمَّة \\ ظِمَم: سَبانِخ، بَقْدونس، نَعْنَع، رِيحان، كُسْبَرة",
+     "en": "unit word Dhummeh (bunch): spinach, parsley, mint, basil, coriander",
+     "group": "reference table of unit words with their produce (printed page 155)",
+     "src": "vocab-gram p.14"
+    }
+   ],
+   "dialogues": [],
+   "texts": [],
+   "drills": [],
+   "produce": "Out loud: order six different things by their correct unit word.",
+   "provenance": "ref:vocab-gram"
   }
  ]
 };
