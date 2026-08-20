@@ -14,12 +14,16 @@ window.TABLE = {
     {
      "id": "K",
      "name": "خالد",
-     "en": "Khaled (the guest)"
+     "en": "Khaled (the guest)",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "A",
      "name": "أبو سامي",
-     "en": "Abu Sami (the host)"
+     "en": "Abu Sami (the host)",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
     }
    ],
    "lines": [
@@ -101,17 +105,23 @@ window.TABLE = {
     {
      "id": "M",
      "name": "أم سامي",
-     "en": "Umm Sami (the cook)"
+     "en": "Umm Sami (the cook)",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
     },
     {
      "id": "A",
      "name": "أبو سامي",
-     "en": "Abu Sami"
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "K",
      "name": "خالد",
-     "en": "Khaled"
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
     }
    ],
    "lines": [
@@ -193,22 +203,30 @@ window.TABLE = {
     {
      "id": "A",
      "name": "أبو سامي",
-     "en": "Abu Sami"
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "K",
      "name": "خالد",
-     "en": "Khaled"
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
     },
     {
      "id": "S",
      "name": "سامي",
-     "en": "Sami (the son)"
+     "en": "Sami (the son)",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "M",
      "name": "أم سامي",
-     "en": "Umm Sami"
+     "en": "Umm Sami",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
     }
    ],
    "lines": [
@@ -275,6 +293,918 @@ window.TABLE = {
     {
      "q": "What does Sami offer at the end, and does Khaled accept?",
      "a": "Tea; Khaled politely declines."
+    }
+   ]
+  },
+  {
+   "id": "coffee",
+   "title": {
+    "ar": "القَهْوة",
+    "en": "The coffee ritual"
+   },
+   "level": "beginner",
+   "scene": "The guest refuses once before accepting — the single most Palestinian exchange there is. Three voices: the host, his wife, and the guest.",
+   "cast": [
+    {
+     "id": "M",
+     "name": "أم سامي",
+     "en": "Umm Sami (the host’s wife)",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
+    },
+    {
+     "id": "A",
+     "name": "أبو سامي",
+     "en": "Abu Sami (the host)",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled (the guest)",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "M",
+     "ar": "تْفَضَّل يا خالد، شو بْتِشْرَب؟ قَهْوِة وِلّا شاي؟",
+     "en": "Please, Khaled — what will you drink? Coffee or tea?"
+    },
+    {
+     "sp": "K",
+     "ar": "لا تِتْعَبي حالِك، ما بِدّي إشي.",
+     "en": "Don’t trouble yourself, I don’t want anything."
+    },
+    {
+     "sp": "A",
+     "ar": "يا زَلَمِة، شو هالحَكي؟ بِدَّك قَهْوِة.",
+     "en": "Man, what talk is this? You’ll have coffee."
+    },
+    {
+     "sp": "K",
+     "ar": "طَيِّب، قَهْوِة، الله يْخَلّيكي.",
+     "en": "All right — coffee, bless you."
+    },
+    {
+     "sp": "M",
+     "ar": "سادَة وِلّا حِلْوِة؟",
+     "en": "Without sugar or sweet?"
+    },
+    {
+     "sp": "K",
+     "ar": "وَسَط لَو سَمَحْتي.",
+     "en": "Medium, please."
+    },
+    {
+     "sp": "M",
+     "ar": "دْقيقة وبْتْكون جاهْزِة.",
+     "en": "One minute and it’ll be ready."
+    },
+    {
+     "sp": "A",
+     "ar": "وهاتي مَعْها شْوَيِّة كْعِك.",
+     "en": "And bring some biscuits with it."
+    },
+    {
+     "sp": "K",
+     "ar": "يِسْلَمو، بَس شْوَي.",
+     "en": "Thanks — just a little."
+    },
+    {
+     "sp": "M",
+     "ar": "تْفَضَّل، صَحْتين.",
+     "en": "Here you are. Enjoy."
+    },
+    {
+     "sp": "K",
+     "ar": "يِسْلَمو إيديكي.",
+     "en": "Bless your hands."
+    },
+    {
+     "sp": "M",
+     "ar": "عَلى قَلْبَك.",
+     "en": "You’re welcome."
+    }
+   ],
+   "questions": [
+    {
+     "q": "Does Khaled refuse the drink at first, and does he end up having one?",
+     "a": "Yes — he refuses once out of politeness, then accepts coffee. The first refusal is expected, not real."
+    },
+    {
+     "q": "How does he want his coffee?",
+     "a": "Medium — وَسَط, between unsweetened and sweet."
+    },
+    {
+     "q": "What does he say to thank the person who made it?",
+     "a": "يِسْلَمو إيديكي — bless your hands."
+    }
+   ]
+  },
+  {
+   "id": "meet",
+   "title": {
+    "ar": "التَّعارُف",
+    "en": "Meeting the family"
+   },
+   "level": "beginner",
+   "scene": "The host introduces his son to the guest. Names, ages, school — the questions every guest asks and every teenager answers.",
+   "cast": [
+    {
+     "id": "A",
+     "name": "أبو سامي",
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "S",
+     "name": "سامي",
+     "en": "Sami (the son)",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    },
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "A",
+     "ar": "خالد، هَذا ابْني سامي.",
+     "en": "Khaled, this is my son Sami."
+    },
+    {
+     "sp": "S",
+     "ar": "أهْلين، تْشَرَّفْنا.",
+     "en": "Hello, pleased to meet you."
+    },
+    {
+     "sp": "K",
+     "ar": "أهْلين فيك، الشَّرَف إلي. قَدّيش عُمْرَك يا سامي؟",
+     "en": "Hello — the honour is mine. How old are you, Sami?"
+    },
+    {
+     "sp": "S",
+     "ar": "سِتَّعْش سَنة.",
+     "en": "Sixteen."
+    },
+    {
+     "sp": "K",
+     "ar": "ما شاء الله. وشو بْتِدْرُس؟",
+     "en": "Mashallah. And what are you studying?"
+    },
+    {
+     "sp": "S",
+     "ar": "بِالثانَوِيِّة، وبَحِبّ الرِّياضِيّات.",
+     "en": "I’m in secondary school, and I like maths."
+    },
+    {
+     "sp": "A",
+     "ar": "هو شاطِر بِالمَدْرَسِة، الحَمْدُ لله.",
+     "en": "He’s clever at school, praise God."
+    },
+    {
+     "sp": "K",
+     "ar": "الله يْوَفّْقَك يا سامي.",
+     "en": "May God grant you success, Sami."
+    },
+    {
+     "sp": "S",
+     "ar": "يِسْلَمَك.",
+     "en": "Bless you."
+    }
+   ],
+   "questions": [
+    {
+     "q": "Who is Sami?",
+     "a": "The host’s son."
+    },
+    {
+     "q": "How old is he and what does he like?",
+     "a": "Sixteen; he likes maths."
+    },
+    {
+     "q": "What does the guest say when he hears the boy is doing well?",
+     "a": "ما شاء الله — mashallah."
+    }
+   ]
+  },
+  {
+   "id": "more",
+   "title": {
+    "ar": "كَمان شْوَي",
+    "en": "Another helping"
+   },
+   "level": "intermediate",
+   "scene": "The host’s wife presses more food on a guest who says he is full — and the host tells her to leave him alone. Four voices, and the food keeps moving.",
+   "cast": [
+    {
+     "id": "M",
+     "name": "أم سامي",
+     "en": "Umm Sami",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
+    },
+    {
+     "id": "A",
+     "name": "أبو سامي",
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    },
+    {
+     "id": "S",
+     "name": "سامي",
+     "en": "Sami",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "M",
+     "ar": "خالد، خود كَمان شْوَي مَقْلوبِة.",
+     "en": "Khaled, have some more maqlube."
+    },
+    {
+     "sp": "K",
+     "ar": "والله شْبِعِت، صَحْتين عَلى إيديكي.",
+     "en": "Honestly I’m full — bless your hands."
+    },
+    {
+     "sp": "M",
+     "ar": "وِلا شْوَي؟ إنْتَ ما أكَلْت إشي!",
+     "en": "Not even a little? You haven’t eaten a thing!"
+    },
+    {
+     "sp": "A",
+     "ar": "خَلّيه يا أم سامي، لَمّا يْجوع بِقول.",
+     "en": "Leave him be — when he’s hungry he’ll say."
+    },
+    {
+     "sp": "K",
+     "ar": "بِجَد شْبِعِت، بَس الأكِل بِجَنِّن.",
+     "en": "I really am full — but the food is amazing."
+    },
+    {
+     "sp": "S",
+     "ar": "ماما، أنا بِدّي كَمان.",
+     "en": "Mama, I want more."
+    },
+    {
+     "sp": "M",
+     "ar": "تْفَضَّل يا حَبيبي.",
+     "en": "Here you are, my dear."
+    },
+    {
+     "sp": "K",
+     "ar": "شَكْلْها المَقْلوبِة عَجَبَت الكُلّ.",
+     "en": "Looks like the maqlube pleased everyone."
+    },
+    {
+     "sp": "A",
+     "ar": "هي أحْلى أكْلِة عِنّا.",
+     "en": "It’s the best dish we have."
+    },
+    {
+     "sp": "M",
+     "ar": "صَحْتين وعافْيِة.",
+     "en": "To your health."
+    }
+   ],
+   "questions": [
+    {
+     "q": "Why does Khaled refuse more food?",
+     "a": "He is full — though he praises the cooking as he refuses."
+    },
+    {
+     "q": "What does Abu Sami tell his wife?",
+     "a": "To leave the guest alone; he’ll ask when he’s hungry."
+    },
+    {
+     "q": "Who does want more?",
+     "a": "Sami, the son."
+    }
+   ]
+  },
+  {
+   "id": "road",
+   "title": {
+    "ar": "الطَّريق",
+    "en": "How was the road?"
+   },
+   "level": "intermediate",
+   "scene": "The small talk of arriving: traffic, how long it took, and the standard relief that you got here safely.",
+   "cast": [
+    {
+     "id": "A",
+     "name": "أبو سامي",
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    },
+    {
+     "id": "M",
+     "name": "أم سامي",
+     "en": "Umm Sami",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "A",
+     "ar": "كيف كان الطَّريق؟",
+     "en": "How was the road?"
+    },
+    {
+     "sp": "K",
+     "ar": "الحَمْدُ لله، بَس في زَحْمِة عِنْد المَفْرَق.",
+     "en": "Fine, praise God — but there’s traffic at the junction."
+    },
+    {
+     "sp": "M",
+     "ar": "دايْماً في زَحْمِة هالوَقِت.",
+     "en": "There’s always traffic at this hour."
+    },
+    {
+     "sp": "K",
+     "ar": "أخَدَت ساعة بَدَل نُصّ ساعة.",
+     "en": "It took an hour instead of half an hour."
+    },
+    {
+     "sp": "A",
+     "ar": "المُهِمّ وْصِلِت بِالسَّلامِة.",
+     "en": "What matters is you arrived safely."
+    },
+    {
+     "sp": "K",
+     "ar": "الله يْسَلْمَك.",
+     "en": "God keep you."
+    },
+    {
+     "sp": "M",
+     "ar": "تْفَضَّل اسْتَريح، الأكِل جاهِز بَعِد شْوَي.",
+     "en": "Sit and rest — the food will be ready shortly."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What delayed Khaled?",
+     "a": "Traffic at the junction — it took an hour instead of half an hour."
+    },
+    {
+     "q": "What is the standard thing to say when someone arrives?",
+     "a": "المهم وصلت بالسلامة — what matters is you arrived safely."
+    },
+    {
+     "q": "What happens next?",
+     "a": "They sit and rest; the food is nearly ready."
+    }
+   ]
+  },
+  {
+   "id": "kids",
+   "title": {
+    "ar": "الأوْلاد",
+    "en": "The children interrupt"
+   },
+   "level": "intermediate",
+   "scene": "Two children squabble in front of the guest and their mother shuts it down. Following four voices when two of them are talking over each other.",
+   "cast": [
+    {
+     "id": "L",
+     "name": "ليلى",
+     "en": "Layla (the daughter)",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
+    },
+    {
+     "id": "S",
+     "name": "سامي",
+     "en": "Sami",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "M",
+     "name": "أم سامي",
+     "en": "Umm Sami",
+     "gender": "f",
+     "voice": "a1KZUXKFVFDOb33I1uqr"
+    },
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "L",
+     "ar": "ماما! سامي أخَد الرّيموت!",
+     "en": "Mama! Sami took the remote!"
+    },
+    {
+     "sp": "S",
+     "ar": "لا ما أخَدْتُه!",
+     "en": "No I didn’t!"
+    },
+    {
+     "sp": "M",
+     "ar": "بَس، بَس. عيب قُدّام الضَّيف.",
+     "en": "Enough, enough. It’s shameful in front of the guest."
+    },
+    {
+     "sp": "K",
+     "ar": "وِلا يْهِمِّك، هيك الأوْلاد.",
+     "en": "Don’t worry about it — children are like that."
+    },
+    {
+     "sp": "M",
+     "ar": "ليلى، روحي الْعَبي بِالغُرْفِة.",
+     "en": "Layla, go and play in the room."
+    },
+    {
+     "sp": "L",
+     "ar": "بَس هو...",
+     "en": "But he—"
+    },
+    {
+     "sp": "M",
+     "ar": "ليلى.",
+     "en": "Layla."
+    },
+    {
+     "sp": "L",
+     "ar": "طَيِّب طَيِّب.",
+     "en": "Fine, fine."
+    },
+    {
+     "sp": "K",
+     "ar": "الله يْخَلّيهُم إلِك.",
+     "en": "May God keep them for you."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What are the children arguing about?",
+     "a": "The remote control."
+    },
+    {
+     "q": "What does the mother say about arguing in front of a guest?",
+     "a": "عيب — it’s shameful."
+    },
+    {
+     "q": "What does the guest say to smooth it over?",
+     "a": "ولا يهمك، هيك الأولاد — never mind, children are like that."
+    }
+   ]
+  },
+  {
+   "id": "overlap",
+   "title": {
+    "ar": "حَكي عَ-بَعْضُه",
+    "en": "Two conversations at once"
+   },
+   "level": "advanced",
+   "scene": "THE north-star scene: the men talk work while the mother sends her son for tea and a child asks about a book — three threads crossing at one table. Follow the thread you care about.",
+   "cast": [
+    {
+     "id": "A",
+     "name": "أبو سامي",
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    },
+    {
+     "id": "M",
+     "name": "أم سامي",
+     "en": "Umm Sami",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
+    },
+    {
+     "id": "S",
+     "name": "سامي",
+     "en": "Sami",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    },
+    {
+     "id": "L",
+     "name": "ليلى",
+     "en": "Layla",
+     "gender": "f",
+     "voice": "a1KZUXKFVFDOb33I1uqr"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "A",
+     "ar": "خالد، شو أخْبار الشُّغُل؟",
+     "en": "Khaled, how’s work?"
+    },
+    {
+     "sp": "K",
+     "ar": "ماشي الحال، مَشْغول شْوَي.",
+     "en": "Getting by — a bit busy."
+    },
+    {
+     "sp": "M",
+     "ar": "سامي، جيب الشاي مِن المَطْبَخ.",
+     "en": "Sami, bring the tea from the kitchen."
+    },
+    {
+     "sp": "S",
+     "ar": "حاضِر.",
+     "en": "Right away."
+    },
+    {
+     "sp": "A",
+     "ar": "وسْمِعِت إنَّك فَتَحِت مَكْتَب جْديد؟",
+     "en": "And I heard you opened a new office?"
+    },
+    {
+     "sp": "K",
+     "ar": "آه، مِن شَهْرين.",
+     "en": "Yes — two months ago."
+    },
+    {
+     "sp": "L",
+     "ar": "ماما، وين كْتابي؟",
+     "en": "Mama, where’s my book?"
+    },
+    {
+     "sp": "M",
+     "ar": "عَ-الطاوْلِة يا ليلى.",
+     "en": "On the table, Layla."
+    },
+    {
+     "sp": "K",
+     "ar": "...المُهِمّ، الشُّغُل زاد بَس الحَمْدُ لله.",
+     "en": "…anyway, the work has increased, but praise God."
+    },
+    {
+     "sp": "A",
+     "ar": "الله يْوَفّْقَك.",
+     "en": "May God grant you success."
+    },
+    {
+     "sp": "S",
+     "ar": "تْفَضَّلوا الشاي.",
+     "en": "Here’s the tea."
+    },
+    {
+     "sp": "M",
+     "ar": "حُطُّه هون يا بابا.",
+     "en": "Put it here, dear."
+    },
+    {
+     "sp": "K",
+     "ar": "يِسْلَمو.",
+     "en": "Thanks."
+    }
+   ],
+   "questions": [
+    {
+     "q": "How many separate conversations are running?",
+     "a": "Three — the men on work, the mother sending Sami for tea, and Layla asking about her book."
+    },
+    {
+     "q": "What is Khaled’s news?",
+     "a": "He opened a new office two months ago and is busier."
+    },
+    {
+     "q": "How does Khaled get back to his own thread after the interruption?",
+     "a": "المهم — \"anyway\", picking the thread back up."
+    }
+   ]
+  },
+  {
+   "id": "news",
+   "title": {
+    "ar": "خَبَر",
+    "en": "News at the table"
+   },
+   "level": "advanced",
+   "scene": "Family news arrives and everyone reacts at once — the fastest way to see how much of a Palestinian conversation is reaction rather than information.",
+   "cast": [
+    {
+     "id": "M",
+     "name": "أم سامي",
+     "en": "Umm Sami",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
+    },
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "A",
+     "name": "أبو سامي",
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    },
+    {
+     "id": "S",
+     "name": "سامي",
+     "en": "Sami",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "M",
+     "ar": "سْمِعْتوا؟ ماجِد خَطَب.",
+     "en": "Did you hear? Majed got engaged."
+    },
+    {
+     "sp": "K",
+     "ar": "والله؟ مَبْروك!",
+     "en": "Really? Congratulations!"
+    },
+    {
+     "sp": "A",
+     "ar": "مَبْروك، مين البِنِت؟",
+     "en": "Congratulations — who’s the girl?"
+    },
+    {
+     "sp": "M",
+     "ar": "بِنِت عَمُّه، مِن رام الله.",
+     "en": "His cousin, from Ramallah."
+    },
+    {
+     "sp": "K",
+     "ar": "ما شاء الله. إمْتى العُرْس؟",
+     "en": "Mashallah. When’s the wedding?"
+    },
+    {
+     "sp": "M",
+     "ar": "بِالصِّيف إن شاء الله.",
+     "en": "In the summer, God willing."
+    },
+    {
+     "sp": "S",
+     "ar": "رَح نْروح كُلّنا؟",
+     "en": "Are we all going?"
+    },
+    {
+     "sp": "A",
+     "ar": "أكيد رَح نْروح.",
+     "en": "Of course we’re going."
+    },
+    {
+     "sp": "K",
+     "ar": "عُقْبالَك يا سامي.",
+     "en": "May it be your turn next, Sami."
+    },
+    {
+     "sp": "S",
+     "ar": "يِسْلَمَك عَمّو.",
+     "en": "Bless you, uncle."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What is the news?",
+     "a": "Majed got engaged — to his cousin from Ramallah."
+    },
+    {
+     "q": "When is the wedding?",
+     "a": "In the summer."
+    },
+    {
+     "q": "What is said to an unmarried young person when someone else gets engaged?",
+     "a": "عقبالك — may it be your turn next."
+    }
+   ]
+  },
+  {
+   "id": "differ",
+   "title": {
+    "ar": "كُلّ واحَد وْشو بْناسْبُه",
+    "en": "Disagreeing politely"
+   },
+   "level": "advanced",
+   "scene": "Village life or city life. A real disagreement, conducted so that nobody has to lose — the register you need for any opinion at a table.",
+   "cast": [
+    {
+     "id": "A",
+     "name": "أبو سامي",
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    },
+    {
+     "id": "M",
+     "name": "أم سامي",
+     "en": "Umm Sami",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "A",
+     "ar": "بِالنِّسْبِة إلي، الحَياة بِالقَرْيِة أحْسَن.",
+     "en": "For me, life in the village is better."
+    },
+    {
+     "sp": "K",
+     "ar": "يِمْكِن، بَس بِالمَدينِة في شُغُل أكْتَر.",
+     "en": "Maybe — but in the city there’s more work."
+    },
+    {
+     "sp": "A",
+     "ar": "صَح، بَس النّاس بِالقَرْيِة أقْرَب لَبَعِض.",
+     "en": "True, but in the village people are closer to each other."
+    },
+    {
+     "sp": "M",
+     "ar": "كُلّ واحَد وْشو بْناسْبُه.",
+     "en": "To each what suits him."
+    },
+    {
+     "sp": "K",
+     "ar": "مَعَك حَقّ، بَس أنا تْعَوَّدِت عَ-المَدينِة.",
+     "en": "You’re right, but I’ve got used to the city."
+    },
+    {
+     "sp": "A",
+     "ar": "وِلا يْهِمَّك، ما في إشي غَلَط.",
+     "en": "Never mind — there’s nothing wrong either way."
+    },
+    {
+     "sp": "K",
+     "ar": "بِالظَّبِط، كُلّ واحَد وْظُروفُه.",
+     "en": "Exactly — everyone and his circumstances."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What are they disagreeing about?",
+     "a": "Whether village life or city life is better."
+    },
+    {
+     "q": "How does Khaled concede a point without giving up his own?",
+     "a": "معك حق، بس… — \"you’re right, but…\""
+    },
+    {
+     "q": "What phrase closes the disagreement without a winner?",
+     "a": "كل واحد وشو بناسبه — to each what suits him."
+    }
+   ]
+  },
+  {
+   "id": "bye",
+   "title": {
+    "ar": "الوَداع",
+    "en": "The long goodbye"
+   },
+   "level": "advanced",
+   "scene": "Leaving a Palestinian house takes a while. The guest announces he must go; everyone insists he stay; food is pressed on him at the door.",
+   "cast": [
+    {
+     "id": "K",
+     "name": "خالد",
+     "en": "Khaled",
+     "gender": "m",
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
+    },
+    {
+     "id": "M",
+     "name": "أم سامي",
+     "en": "Umm Sami",
+     "gender": "f",
+     "voice": "albaa6OioIhKtKdCEkQw"
+    },
+    {
+     "id": "A",
+     "name": "أبو سامي",
+     "en": "Abu Sami",
+     "gender": "m",
+     "voice": "IYnFszSKzmym2OstwHS0"
+    }
+   ],
+   "lines": [
+    {
+     "sp": "K",
+     "ar": "طَيِّب، لازِم أروح، صار الوَقِت.",
+     "en": "Right — I should go, it’s got late."
+    },
+    {
+     "sp": "M",
+     "ar": "ليش مِسْتَعْجِل؟ بَدْري.",
+     "en": "Why the hurry? It’s early."
+    },
+    {
+     "sp": "K",
+     "ar": "لأ والله، بُكْرا عِنْدي شُغُل بَدْري.",
+     "en": "No really — I have work early tomorrow."
+    },
+    {
+     "sp": "A",
+     "ar": "خَلّيك شْوَي كَمان، بَس فِنْجان قَهْوِة.",
+     "en": "Stay a little longer — just one cup of coffee."
+    },
+    {
+     "sp": "K",
+     "ar": "شْرِبِت كْتير، الله يْخَلّيكُم.",
+     "en": "I’ve drunk plenty — bless you all."
+    },
+    {
+     "sp": "M",
+     "ar": "طَيِّب خود مَعَك شْوَيِّة حِلُو.",
+     "en": "Then take some sweets with you."
+    },
+    {
+     "sp": "K",
+     "ar": "لا لا، ما بِدّي أتْعِبْكُم.",
+     "en": "No, no — I don’t want to trouble you."
+    },
+    {
+     "sp": "M",
+     "ar": "وِلا تَعَب وِلا إشي.",
+     "en": "It’s no trouble at all."
+    },
+    {
+     "sp": "K",
+     "ar": "يِسْلَمو إيديكي عَلى كُلّ إشي.",
+     "en": "Bless your hands for everything."
+    },
+    {
+     "sp": "A",
+     "ar": "البيت بيتَك، تَعال دايْماً.",
+     "en": "This house is your house — come any time."
+    },
+    {
+     "sp": "K",
+     "ar": "تِسْلَموا. مَع السَّلامِة.",
+     "en": "Bless you all. Goodbye."
+    },
+    {
+     "sp": "M",
+     "ar": "مَع السَّلامِة، بِالسَّلامِة.",
+     "en": "Goodbye — go safely."
+    }
+   ],
+   "questions": [
+    {
+     "q": "How many times is Khaled asked to stay longer?",
+     "a": "Twice — and then pressed to take sweets home."
+    },
+    {
+     "q": "What does the host say about the house?",
+     "a": "البيت بيتك — this house is your house."
+    },
+    {
+     "q": "Why does the guest say he must leave?",
+     "a": "He has work early the next morning."
     }
    ]
   }

@@ -2,10 +2,13 @@
 """Build the Dinner Table (Phase-6 multi-party listening) data (+ audio).
 
 Reads texts/table.json and emits app/data/table.js -> window.TABLE = {dialogues:[...]}. With
---audio it generates one clip PER LINE. Multi-party voices: give a cast member a "voice" (an
-ElevenLabs voice id) in texts/table.json and their lines use it; otherwise the PINNED voice is used
-for everyone (single-voice fallback). The app plays the lines back-to-back in one continuous
-player, so distinct per-speaker voices turn it into a real multi-voice conversation.
+--audio it generates one clip PER LINE, CAST rather than narrated: each speaker is assigned a
+voice from the roster in texts/voices.json, matched to the `gender` on their cast entry so the
+mother is never read by a man, and held for the whole scene. An explicit `voice` on a cast member
+overrides that. With four voices (2m/2f) a scene with three men reuses one within the gender
+rather than crossing it — adding a 5th/6th voice clears the remaining collisions. The app plays
+the lines back-to-back in one continuous player, which is what makes this multi-party LISTENING
+rather than a list of sentences.
 
 Run:
     python3 pipeline/table.py                 # data only
@@ -16,7 +19,7 @@ import json, os, sys, argparse, ssl, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, HERE)
-from voice import voice_id
+from voice import voice_id, cast_voices, cast_by_gender
 
 try:
     import certifi
@@ -61,7 +64,19 @@ def main():
     n = [0]
     dialogues = []
     for dg in d['dialogues']:
-        voice_of = {c['id']: (c.get('voice') or pinned) for c in dg['cast']}
+        # Cast the scene: an explicit `voice` on a cast member always wins; otherwise take the
+        # next unused voice of that person's gender, so the mother is never read by a man. When a
+        # gender runs out (five at the table, two male voices) reuse within the gender rather than
+        # crossing it. Held for the whole conversation.
+        byg, allv, used, voice_of = cast_by_gender(), cast_voices(), [], {}
+        for c in dg['cast']:
+            if c.get('voice'):
+                voice_of[c['id']] = c['voice']; used.append(c['voice']); continue
+            pool = byg.get((c.get('gender') or '').lower()[:1]) or []
+            pick = (next((v for v in pool if v not in used), None)
+                    or next((v for v in allv if v not in used and (not pool or v in pool)), None)
+                    or (pool[len(used) % len(pool)] if pool else allv[len(used) % len(allv)]))
+            voice_of[c['id']] = pick; used.append(pick)
         lines = []
         for li in dg['lines']:
             rid = 'd%d' % n[0]
@@ -77,7 +92,9 @@ def main():
                     rec['audio'] = 'audio/table/%s.mp3' % rid
             lines.append(rec)
         dialogues.append({'id': dg['id'], 'title': dg['title'], 'level': dg['level'],
-                          'scene': dg['scene'], 'cast': dg['cast'], 'lines': lines,
+                          'scene': dg['scene'],
+                          'cast': [dict(c, voice=voice_of.get(c['id'])) for c in dg['cast']],
+                          'lines': lines,
                           'questions': dg.get('questions', [])})
 
     os.makedirs(os.path.dirname(OUT_JS), exist_ok=True)
