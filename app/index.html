@@ -915,6 +915,12 @@
     border:1px dashed var(--rule); border-radius:8px; margin-bottom:10px; background:var(--paper-2)}
   .lsn-produce{font-size:14.5px; line-height:1.65; border-left:3px solid var(--verdigris);
     padding:4px 0 4px 14px; color:var(--ink-soft)}
+  .lsn-finish{margin-top:22px; padding-top:16px; border-top:1px solid var(--rule)}
+  .lsn-prog{font-size:12.5px; color:var(--muted); margin-bottom:9px}
+  .lsn-prog b{color:var(--ochre)}
+  .lsn-fin{font-size:14px; padding:10px 18px}
+  .lsn-fin:disabled{opacity:.45; cursor:not-allowed}
+  .lsn-gate{font-size:12px; color:var(--muted); line-height:1.5; margin-top:8px; max-width:52ch}
   .phlab select{display:block; width:100%; margin-top:5px; font:inherit; font-size:15px;
     text-transform:none; letter-spacing:0; padding:8px 10px; border-radius:8px;
     border:1px solid var(--rule); background:var(--bg); color:var(--ink)}
@@ -2048,20 +2054,37 @@ function lessonsHome() {
 
 const _lsnKey = ar => phKey(ar);
 function lsnSaved(ar) { return marked.has(_lsnKey(ar)); }
+const lsnLeft = u => (u.chunks || []).filter(c => c.ar && !lsnSaved(c.ar)).length;
+const lsnAllSaved = u => u && (u.chunks || []).length > 0 && lsnLeft(u) === 0;
 // A lesson chunk becomes a real SRS phrase card — same loop as the tutor's saved phrases:
 // what a unit teaches comes back in daily review and the plan with zero extra wiring.
-function lsnSave(uid, ci) {
+// Tapping again UNCHECKS it (mis-taps happen); a card you've already reviewed asks first,
+// since removing it would throw away real spaced-repetition progress.
+function lsnToggle(uid, ci) {
   const u = lsnById(uid); if (!u) return;
   const c = u.chunks[ci]; if (!c || !c.ar) return;
-  const key = _lsnKey(c.ar);
-  if (!marked.has(key)) {
+  const key = _lsnKey(c.ar), had = marked.get(key);
+  if (had) {
+    if ((had.reps || 0) > 0 &&
+        !confirm('You’ve already reviewed this card ' + had.reps + ' time' + (had.reps === 1 ? '' : 's') +
+                 '. Remove it and lose that progress?')) return;
+    marked.delete(key);
+  } else {
     marked.set(key, srsInit({kind: 'phrase', lemma: key, phrase: c.ar, vocalized: c.ar,
       surface: c.ar, gloss: c.en || '', caphi: '', parts: [], analysis: 'PHRASE', root: '',
       audio: c.audio || null, example_ar: c.reply ? c.ar + ' — ' + c.reply.ar : null,
       example_en: c.reply ? (c.en || '') + ' — ' + (c.reply.en || '') : null,
       provenance: 'ref', source: 'lesson', deck: activeDeck()}));
-    save(); count();
   }
+  save(); count();
+  lessonView(u);
+}
+// Finishing a unit is gated on having worked every chunk — that's what "done" means here.
+function lsnFinish(uid) {
+  const u = lsnById(uid); if (!u) return;
+  const done = lsnDone(u.id);
+  if (!done && !lsnAllSaved(u)) return;                 // button is disabled in this state anyway
+  markSeen('lsn:' + u.id, !done);
   lessonView(u);
 }
 
@@ -2073,8 +2096,9 @@ function lsnChunkRow(uid, c, ci) {
     <div class="lsn-en">${esc(c.en || '')}${c.note ? ` <span class="lsn-note">${esc(c.note)}</span>` : ''}
       ${c.reply ? `<div class="lsn-reply" dir="rtl">↩ ${esc(c.reply.ar)}</div>
         <div class="lsn-replyen">${esc(c.reply.en || '')}</div>` : ''}</div>
-    <button class="lsn-add${saved ? ' on' : ''}" ${saved ? 'disabled' : `onclick="lsnSave('${uid}',${ci})"`}
-      aria-label="Save to flashcards">${saved ? '✓' : '+'}</button>
+    <button class="lsn-add${saved ? ' on' : ''}" onclick="lsnToggle('${uid}',${ci})"
+      aria-pressed="${saved}" title="${saved ? 'Tap to uncheck' : 'Save to flashcards'}"
+      aria-label="${saved ? 'Uncheck — remove from flashcards' : 'Save to flashcards'}">${saved ? '✓' : '+'}</button>
   </div>`;
 }
 
@@ -2126,7 +2150,16 @@ function lessonView(u) {
   if (u.produce) h += `<div class="sec">Now produce</div><div class="lsn-produce">${esc(u.produce)}</div>`;
   const i = (LSN.units || []).findIndex(x => x.id === u.id);
   const next = (LSN.units || [])[i + 1];
-  h += `<div class="ctl" style="margin-top:20px">
+  const left = lsnLeft(u), all = lsnAllSaved(u), fin = lsnDone(u.id);
+  h += `<div class="lsn-finish">
+      <div class="lsn-prog">${(u.chunks.length - left)} of ${u.chunks.length} chunks checked${
+        left ? ` · <b>${left}</b> to go` : ' · all done'}</div>
+      <button class="tog go lsn-fin" ${all || fin ? '' : 'disabled'} onclick="lsnFinish('${u.id}')">${
+        fin ? '✓ Unit complete — tap to reopen' : 'Mark unit complete'}</button>
+      ${!all && !fin ? `<div class="lsn-gate">Check off every chunk above before finishing the unit —
+        that's how the material gets into your review.</div>` : ''}
+    </div>
+    <div class="ctl" style="margin-top:16px">
     ${next ? `<button class="tog go" onclick="location.hash='/lessons/${next.id}'">Next: Unit ${next.n} →</button>` : ''}
     <button class="tog" onclick="location.hash='/lessons'">All units</button></div>`;
   $('view').innerHTML = h;
@@ -3705,6 +3738,17 @@ function planTaskRow(t, date, done) {
 function planToggle(date, tid, minutes, cid, isPim, rkey, isReview) {
   const L = planLog(); const d = L[date] || (L[date] = {done: {}}); d.done = d.done || {};
   const nowDone = d.done[tid] == null;
+  // A lesson unit isn't "done" until every chunk in it has been worked through. Unchecking is
+  // always allowed; only claiming completion is gated. Missing/empty units never block.
+  if (nowDone && cid && cid.indexOf('lsn:') === 0) {
+    const u = lsnById(cid.slice(4));
+    if (u && !lsnAllSaved(u)) {
+      alert('Unit ' + u.n + ' still has ' + lsnLeft(u) + ' chunk' + (lsnLeft(u) === 1 ? '' : 's') +
+            ' to check off.\n\nOpen the unit and work through them — then you can mark it done.');
+      location.hash = '/lessons/' + u.id;
+      return;
+    }
+  }
   if (nowDone) d.done[tid] = +minutes || 0; else delete d.done[tid];
   savePlanLog(L);
   if (cid) markSeen(cid, nowDone);                          // checking a content task walks the path forward

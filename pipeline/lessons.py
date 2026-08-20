@@ -50,14 +50,24 @@ def tts(text, path, key, voice, model='eleven_multilingual_v2'):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--audio', action='store_true', help='generate per-chunk MP3s (needs ELEVENLABS_API_KEY)')
+    ap.add_argument('--min-words', type=int, default=1, metavar='N',
+                    help='only voice items of at least N words (2 = skip single words, which the '
+                         'word-audio bank and the browser voice already cover)')
+    ap.add_argument('--estimate', action='store_true',
+                    help='print the ElevenLabs character/credit cost and exit — generates nothing')
     a = ap.parse_args()
 
+    def wc(s):
+        return len([w for w in s.replace('\\', ' ').split() if w.strip()])
+
     key, voice = os.environ.get('ELEVENLABS_API_KEY'), voice_id()
-    do_audio = a.audio and key and voice
-    if a.audio and not do_audio:
+    do_audio = a.audio and key and voice and not a.estimate
+    if a.audio and not (key and voice) and not a.estimate:
         print('!! --audio requested but ELEVENLABS_API_KEY not set; emitting data with no audio\n')
     if do_audio:
         os.makedirs(AUDIO_DIR, exist_ok=True)
+    est = [0, 0]        # [characters, clips] that WOULD be generated at this --min-words
+    skipped = [0]
 
     units = []
     for f in sorted(glob.glob(SRC_GLOB)):
@@ -67,6 +77,10 @@ def main():
             for suffix, ar in (('', c.get('ar')), ('r', (c.get('reply') or {}).get('ar'))):
                 if not ar:
                     continue
+                if wc(ar) < a.min_words:      # single words fall back to the word bank / browser voice
+                    skipped[0] += 1
+                    continue
+                est[0] += len(ar); est[1] += 1
                 clip = os.path.join(AUDIO_DIR, base + suffix + '.mp3')
                 rel = 'audio/lessons/%s%s.mp3' % (base, suffix)
                 tgt = c if not suffix else c['reply']
@@ -92,6 +106,14 @@ def main():
     n_ch = sum(len(u.get('chunks', [])) for u in units)
     voiced = sum(1 for u in units for c in u.get('chunks', []) if c.get('audio'))
     print('units: %d · %d chunks · audio %d/%d' % (len(units), n_ch, voiced, n_ch))
+    if a.estimate or a.audio:
+        # ElevenLabs bills 1 credit per character on the multilingual model this pipeline uses
+        # (the faster flash/turbo models bill half). Quoted as characters so it stays true if
+        # their pricing tiers change.
+        print('audio scope at --min-words %d: %d clips · %s characters ≈ %s credits (%s on flash)'
+              % (a.min_words, est[1], format(est[0], ','), format(est[0], ','), format(est[0] // 2, ',')))
+        if skipped[0]:
+            print('  (%d shorter item(s) skipped — the word-audio bank and browser voice cover those)' % skipped[0])
     print('-> app/data/lessons.js')
     return 0
 
