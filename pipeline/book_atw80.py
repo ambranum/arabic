@@ -7,21 +7,15 @@ retelling written by Claude (NOT native-validated, flagged as such) — but, as 
 project, every WORD's metadata is looked up in Maknuune by the ingest pipeline; nothing about the
 words is invented.
 
-Content is organized in PARAGRAPHS: each chapter is a list of paragraphs, each paragraph a list of
-(arabic, english) pairs. On emit, every sentence gets a `p` (paragraph index) so the reader and the
-PDF lay the book out as flowing bilingual paragraphs.
-
-Emits texts/book-atw80-chNN.json (kind "book-chapter", book "atw80").
+Emits texts/book-atw80-chNN.json. Paragraph/sentence mechanics live in book_common.py.
 Run:  python3 pipeline/book_atw80.py    then ingest each chapter + build_app.py.
 """
-import json, os, glob
+import os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from book_common import P, emit_book
 
-ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 BOOK_ID = 'atw80'
 BOOK_TITLE = {'en': 'Around the World in 80 Days', 'ar': 'حول العالم في ثمانين يوم'}
-
-def P(*pairs):   # a paragraph: P(("ar","en"), ("ar","en"), ...)
-    return list(pairs)
 
 # (english title, arabic title, [paragraph, ...])
 CHAPTERS = [
@@ -411,31 +405,5 @@ CHAPTERS = [
     ('وهيك، الرجل الدقيق الي ما كان يعرف الحب، لف الأرض ولقى قلبه.', 'And so, the precise man who had never known love circled the earth and found his heart.'))]),
 ]
 
-def main():
-    outdir = os.path.join(ROOT, 'texts')
-    # remove any old chapter files beyond the current count
-    for old in glob.glob(os.path.join(outdir, 'book-%s-ch*.json' % BOOK_ID)):
-        os.remove(old)
-    total = 0
-    for i, (en, ar, paras) in enumerate(CHAPTERS, 1):
-        cid = 'book-%s-ch%02d' % (BOOK_ID, i)
-        sentences = []
-        for pi, para in enumerate(paras):
-            for (a, e) in para:
-                sentences.append({'ar': a, 'en': e, 'p': pi})
-        art = {
-            'id': cid,
-            'title': {'en': 'Chapter %d — %s' % (i, en), 'ar': 'الفصل %d — %s' % (i, ar)},
-            'kind': 'book-chapter', 'book': BOOK_ID, 'book_title': BOOK_TITLE, 'chapter': i,
-            'level': 'intermediate',
-            'source': 'adapted by Claude — NOT native-validated',
-            'sentences': sentences,
-        }
-        with open(os.path.join(outdir, cid + '.json'), 'w', encoding='utf-8') as f:
-            json.dump(art, f, ensure_ascii=False, indent=1)
-        total += len(sentences)
-        print('wrote %s  (%d paragraphs, %d sentences)' % (cid, len(paras), len(sentences)))
-    print('\n%d chapters, %d sentences -> texts/book-%s-ch*.json' % (len(CHAPTERS), total, BOOK_ID))
-
 if __name__ == '__main__':
-    main()
+    emit_book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=10)

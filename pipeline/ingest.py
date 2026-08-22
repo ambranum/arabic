@@ -125,6 +125,7 @@ def main():
            "level": src.get('level'),          # beginner/intermediate/advanced (stories)
            "book": src.get('book'), "chapter": src.get('chapter'),   # book grouping (book chapters)
            "book_title": src.get('book_title'),
+           "shelf": src.get('shelf', 0),       # running order of books on the Books shelf
            "subdialect": SUB,
            "source": src.get('source', 'original'), "sentences": []}
     stats = {}

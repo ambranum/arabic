@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+"""Shared emitter for the graded readers in Books.
+
+A book script is a docstring, four constants and a CHAPTERS literal — the prose is the point, and
+it should stay pleasant to write. Everything mechanical lives here: flattening paragraphs into
+sentences, numbering chapters, naming them, and writing one JSON per chapter into texts/.
+
+The house rule holds as everywhere else in this project: the PROSE is written by hand (by Claude,
+flagged NOT native-validated), but nothing about the WORDS is invented — root, lemma, gloss and
+CAPHI are looked up in Maknuune by pipeline/ingest.py after these files are written.
+
+Content is organized in PARAGRAPHS: a chapter is a list of paragraphs, a paragraph a list of
+(arabic, english) pairs. Every emitted sentence carries `p`, its paragraph index, which is what
+makes the reader and the print-to-PDF view lay a book out as flowing bilingual paragraphs rather
+than a list of sentences.
+
+    from book_common import P, emit_book
+
+    CHAPTERS = [
+      ('The Donkey and the Neighbour', 'الحمار والجار', [
+        P(('جحا كان عنده حمار.', 'Juha had a donkey.'),
+          ('إجا جاره وقال له بدي أستعير الحمار.', 'His neighbour came and said: I want to borrow the donkey.')),
+      ]),
+    ]
+    emit_book('juha', {'en': 'Juha', 'ar': 'جحا'}, 'beginner', CHAPTERS,
+              unit='Tale', unit_ar='حكاية', shelf=10)
+"""
+import json, os, glob
+
+ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+SOURCE = 'adapted by Claude — NOT native-validated'
+
+
+def P(*pairs):   # a paragraph: P(("ar","en"), ("ar","en"), ...)
+    return list(pairs)
+
+
+def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='الفصل',
+              shelf=0, source=SOURCE, outdir=None):
+    """Write texts/book-<book_id>-chNN.json, one file per chapter. Returns (chapters, sentences).
+
+    unit / unit_ar name the division, because "Chapter 3" is wrong for a book of folk tales —
+    Juha gets "Tale 3 / حكاية 3", Aesop "Fable 7 / خرافة 7".
+
+    shelf is a sort key the Books shelf orders by, so the running order of nine books is decided
+    here rather than falling out of whatever order the build directory happens to be globbed in.
+
+    WARNING when re-emitting a book that already has audio: clip filenames are POSITIONAL
+    (s0.mp3, s1.mp3 …). Adding, removing or reordering a sentence silently re-points every later
+    clip at the wrong text. Change prose freely, but then delete build/book-<id>-*/audio/ and
+    re-voice — see pipeline/README.md.
+    """
+    outdir = outdir or os.path.join(ROOT, 'texts')
+    # Drop this book's old chapter files first, so a shortened CHAPTERS leaves no orphans behind.
+    # Scoped to this book_id — two book scripts never clobber each other.
+    for old in glob.glob(os.path.join(outdir, 'book-%s-ch*.json' % book_id)):
+        os.remove(old)
+
+    total = 0
+    for i, (en, ar, paras) in enumerate(chapters, 1):
+        cid = 'book-%s-ch%02d' % (book_id, i)
+        sentences = []
+        for pi, para in enumerate(paras):
+            for (a, e) in para:
+                sentences.append({'ar': a, 'en': e, 'p': pi})
+        art = {
+            'id': cid,
+            'title': {'en': '%s %d — %s' % (unit, i, en), 'ar': '%s %d — %s' % (unit_ar, i, ar)},
+            'kind': 'book-chapter', 'book': book_id, 'book_title': title, 'chapter': i,
+            'shelf': shelf,
+            'level': level,
+            'source': source,
+            'sentences': sentences,
+        }
+        with open(os.path.join(outdir, cid + '.json'), 'w', encoding='utf-8') as f:
+            json.dump(art, f, ensure_ascii=False, indent=1)
+        total += len(sentences)
+        print('wrote %s  (%d paragraphs, %d sentences)' % (cid, len(paras), len(sentences)))
+
+    # Arabic characters ≈ ElevenLabs credits, so this line is also the voicing bill.
+    chars = sum(len(a) for (_en, _ar, paras) in chapters for para in paras for (a, _e) in para)
+    print('\n%d %ss, %d sentences, %d Arabic chars -> texts/book-%s-ch*.json'
+          % (len(chapters), unit.lower(), total, chars, book_id))
+    return len(chapters), total
