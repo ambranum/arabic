@@ -50,7 +50,8 @@
   html,body{margin:0}
   body{background:var(--paper); color:var(--ink); font-family:var(--sans);
        -webkit-font-smoothing:antialiased; overscroll-behavior-y:none}
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:20px 18px calc(var(--tray) + 34px)}
+  .wrap{max-width:var(--maxw); margin:0 auto;
+        padding:20px 18px calc(var(--tray) + 34px + var(--kbdh, 0px))}
 
   /* ---------- chrome ---------- */
   .top{display:flex; align-items:baseline; gap:12px; padding-bottom:14px;
@@ -414,6 +415,37 @@
   .note{font-size:12px; line-height:1.6; color:var(--muted); border:1px solid var(--rule);
         border-radius:5px; padding:11px 13px; margin-top:22px}
   .note b{color:var(--ink-soft)}
+  /* ---------- Arabic keyboard (shared, for anyone without one on their machine) ---------- */
+  .kbd-wrap{position:relative}
+  .kbd-tog{position:absolute; top:50%; transform:translateY(-50%); right:7px;
+    font-family:var(--arabic); font-size:17px; line-height:1; width:30px; height:30px;
+    border:1px solid var(--rule); border-radius:7px; background:var(--paper);
+    color:var(--muted); cursor:pointer; padding:0}
+  .kbd-tog:hover{color:var(--ink); border-color:var(--verdigris)}
+  .kbd-tog.on{background:var(--verdigris); border-color:var(--verdigris); color:#fff}
+  .kbd-wrap > input, .kbd-wrap > textarea{padding-right:44px}
+  /* An RTL field starts its text at the right edge — exactly where the button would sit. */
+  .kbd-wrap.rtl > .kbd-tog{right:auto; left:7px}
+  .kbd-wrap.rtl > input{padding-right:11px; padding-left:44px}
+  .kbd-tog.inline{position:static; transform:none; width:38px; height:38px; font-size:18px;
+    flex:0 0 auto; align-self:flex-end}
+  #akbd{position:fixed; left:0; right:0; bottom:var(--tray); z-index:60; background:var(--paper);
+    border-top:1px solid var(--rule); box-shadow:0 -8px 24px rgba(0,0,0,.10);
+    padding:9px 10px calc(9px + env(safe-area-inset-bottom))}
+  #akbd[hidden]{display:none}
+  .akbd-in{max-width:var(--maxw); margin:0 auto}
+  .akbd-hd{display:flex; justify-content:space-between; align-items:center; gap:10px;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:7px}
+  .akbd-x{font:inherit; font-size:12px; text-transform:none; letter-spacing:0; border:0;
+    background:none; color:var(--verdigris); cursor:pointer; padding:2px 4px}
+  .akbd-r{display:flex; justify-content:center; gap:4px; margin-bottom:4px}
+  .akbd-k{font-family:var(--arabic); font-size:19px; line-height:1; flex:1 1 0; min-width:0;
+    max-width:46px; height:38px; border:1px solid var(--rule); border-radius:7px;
+    background:var(--paper-2); color:var(--ink); cursor:pointer; padding:0}
+  .akbd-k:active{background:var(--verdigris); border-color:var(--verdigris); color:#fff}
+  .akbd-k.wide{flex:3 1 0; max-width:none; font-family:var(--sans); font-size:12px}
+  .akbd-k.fn{font-family:var(--sans); font-size:14px; max-width:60px; flex:1.4 1 0}
+  @media (max-width:420px){ .akbd-k{font-size:17px; height:34px} }
   /* ---------- verbs ---------- */
   .vsearch{width:100%; font:inherit; font-size:15px; padding:11px 14px; margin:2px 0 6px;
       border:1px solid var(--rule); border-radius:8px; background:var(--paper-2);
@@ -1372,6 +1404,104 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c =>
   ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pretty = g => String(g || '').replace(/_/g, ' ').replace(/;/g, ' · ');
 
+// ---------- Arabic keyboard ----------
+// Half the app's typing fields want Arabic, and plenty of people learning Palestinian have no
+// Arabic layout on their machine — they were stuck copy-pasting or just not using those fields.
+// One shared panel serves every field: mark an input with kbdWrap() and it gets a ع toggle.
+// The layout is the standard Arabic 101 one, so anyone who later installs a real keyboard has
+// already learnt where the letters live. Once opened it stays on for the next field you focus
+// (remembered across sessions) — someone without an Arabic layout wants it every time, and
+// someone who has one never opens it in the first place.
+const KBD_KEY = 'alp.kbd.on';
+const KBD_ROWS = [
+  ['ض','ص','ث','ق','ف','غ','ع','ه','خ','ح','ج','د'],
+  ['ش','س','ي','ب','ل','ا','ت','ن','م','ك','ط'],
+  ['ئ','ء','ؤ','ر','لا','ى','ة','و','ز','ظ'],
+  ['أ','إ','آ','،','؟'],
+];
+let _kbdEl = null;                                   // the field the panel is typing into
+const kbdOn = () => { try { return localStorage.getItem(KBD_KEY) === '1'; } catch (e) { return false; } };
+
+// Wrap a field's HTML so it carries the toggle. `inline` puts the button beside the field
+// instead of inside it (for the tutor's textarea row, where the field grows as you type).
+function kbdWrap(inputHTML, id, inline) {
+  const btn = `<button type="button" class="kbd-tog${inline ? ' inline' : ''}" id="kbdt-${id}"
+     title="Arabic keyboard" aria-label="Arabic keyboard"
+     onmousedown="event.preventDefault()" onclick="kbdToggle('${id}')">ع</button>`;
+  const rtl = /dir=["']rtl["']/.test(inputHTML) ? ' rtl' : '';
+  return inline ? inputHTML + btn : `<div class="kbd-wrap${rtl}">${inputHTML}${btn}</div>`;
+}
+function kbdToggle(id) {
+  const el = $(id); if (!el) return;
+  if (_kbdEl === el && !$('akbd').hidden) return kbdClose();
+  kbdOpen(el);
+  try { localStorage.setItem(KBD_KEY, '1'); } catch (e) {}
+}
+function kbdOpen(el) {
+  _kbdEl = el;
+  let p = $('akbd');
+  if (!p) {
+    p = document.createElement('div');
+    p.id = 'akbd'; p.hidden = true;
+    p.innerHTML = `<div class="akbd-in">
+        <div class="akbd-hd"><span>Arabic keyboard</span>
+          <button class="akbd-x" onmousedown="event.preventDefault()" onclick="kbdClose(1)">Hide</button></div>
+        ${KBD_ROWS.map(r => `<div class="akbd-r">` + r.map(k =>
+          `<button class="akbd-k" onmousedown="event.preventDefault()"
+             onclick="kbdIns('${k}')">${k}</button>`).join('') + `</div>`).join('')}
+        <div class="akbd-r">
+          <button class="akbd-k fn" onmousedown="event.preventDefault()" onclick="kbdBack()">⌫</button>
+          <button class="akbd-k wide" onmousedown="event.preventDefault()" onclick="kbdIns(' ')">space</button>
+          <button class="akbd-k fn" onmousedown="event.preventDefault()" onclick="kbdIns('.')">.</button>
+        </div></div>`;
+    document.body.appendChild(p);
+  }
+  p.hidden = false;
+  document.querySelectorAll('.kbd-tog').forEach(b => b.classList.toggle('on', b.id === 'kbdt-' + el.id));
+  el.focus({preventScroll: true});
+  // A panel pinned to the bottom would otherwise sit on top of the field it types into, and on a
+  // short page there is nothing to scroll. Grow the page by the panel's height first, then move
+  // the field clear of it.
+  document.documentElement.style.setProperty('--kbdh', p.offsetHeight + 'px');
+  const r = el.getBoundingClientRect(), top = p.getBoundingClientRect().top;
+  if (r.bottom > top - 10) window.scrollTo(0, window.scrollY + (r.bottom - top) + 18);
+}
+// `sticky` = the user asked for it to go away, so don't reopen on the next field.
+function kbdClose(sticky) {
+  const p = $('akbd'); if (p) p.hidden = true;
+  document.documentElement.style.removeProperty('--kbdh');
+  document.querySelectorAll('.kbd-tog').forEach(b => b.classList.remove('on'));
+  _kbdEl = null;
+  if (sticky) { try { localStorage.setItem(KBD_KEY, '0'); } catch (e) {} }
+}
+// Insert at the caret and tell the app: the search fields filter on `input`, so a key press
+// has to look exactly like a typed character or nothing would update.
+function kbdIns(ch) {
+  const el = _kbdEl; if (!el) return;
+  const a = el.selectionStart, b = el.selectionEnd;
+  if (a == null) el.value += ch;
+  else { el.value = el.value.slice(0, a) + ch + el.value.slice(b); const c = a + ch.length; el.setSelectionRange(c, c); }
+  el.dispatchEvent(new Event('input', {bubbles: true}));
+  el.focus({preventScroll: true});
+}
+function kbdBack() {
+  const el = _kbdEl; if (!el) return;
+  const a = el.selectionStart, b = el.selectionEnd;
+  if (a == null) el.value = el.value.slice(0, -1);
+  else if (a !== b) { el.value = el.value.slice(0, a) + el.value.slice(b); el.setSelectionRange(a, a); }
+  else if (a > 0) { el.value = el.value.slice(0, a - 1) + el.value.slice(a); el.setSelectionRange(a - 1, a - 1); }
+  el.dispatchEvent(new Event('input', {bubbles: true}));
+  el.focus({preventScroll: true});
+}
+// Focusing any Arabic-capable field brings the panel back for people who use it, and re-points
+// it at the new field for everyone (the exercise list has several inputs on one screen).
+document.addEventListener('focusin', e => {
+  const el = e.target;
+  if (!el || !el.id || !document.getElementById('kbdt-' + el.id)) return;
+  if (_kbdEl === el) return;
+  if (kbdOn() || (_kbdEl && !$('akbd').hidden)) kbdOpen(el);
+});
+
 // ---------- sections (the menu) ----------
 // Order here is the order in the menu bar. `route` is the hash; `ready:false` sections
 // render an honest "coming soon" instead of pretending to have content.
@@ -1487,6 +1617,7 @@ function renderNav(active){
 // ---------- routing (hash so Back works, and it survives a reload) ----------
 function route() {
   if (typeof closeSide === 'function') closeSide();
+  if (typeof kbdClose === 'function') kbdClose();          // its target is about to be re-rendered
   if (typeof spkStop === 'function') spkStop();           // stop any running speaking timer
   if (typeof gsStop === 'function') { gsStop(); _gs = null; }   // stop guided-shadow audio
   if (typeof paraStop === 'function') paraStop();               // stop the paragraph player
@@ -1963,8 +2094,9 @@ function tutorHome() {
       `</div>`;
   }
   h += `<div class="tut-row">
-      <textarea id="tut-in" rows="1" placeholder="Ask in English or Arabic…"
-        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();tutorAsk(this.value)}"></textarea>
+      ${kbdWrap(`<textarea id="tut-in" rows="1" placeholder="Ask in English or Arabic…"
+        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();tutorAsk(this.value)}"></textarea>`,
+        'tut-in', true)}
       <button class="tut-send" id="tut-send" onclick="tutorAsk(($('tut-in')||{}).value)">Ask</button>
     </div>
     ${_tutorMsgs.length ? '<div class="ctl" style="margin-top:10px"><button class="tog" onclick="tutorClearChat()">Clear chat</button></div>' : ''}`;
@@ -3950,8 +4082,8 @@ function planExerciseHTML(day, date) {
       rereading) is what makes it stick — try each one before you check.</p>`;
   h += _planEx.map((it, i) => `<div class="pex">
       <div class="pex-q">${esc(it.en)}</div>
-      <input class="pex-in" id="pex-in-${i}" dir="rtl" autocomplete="off" placeholder="اكتب بالعربي…"
-        onkeydown="if(event.key==='Enter')planExCheck(${i})">
+      ${kbdWrap(`<input class="pex-in" id="pex-in-${i}" dir="rtl" autocomplete="off" placeholder="اكتب بالعربي…"
+        onkeydown="if(event.key==='Enter')planExCheck(${i})">`, 'pex-in-' + i)}
       <div class="ctl" style="margin-top:8px">
         <button class="tog go" onclick="planExCheck(${i})">Check</button>
         <button class="tog" onclick="planExShow(${i})">Show answer</button></div>
@@ -4406,8 +4538,8 @@ function translateSection() {
     <p class="hint">Type a word or phrase — Arabic <b>or</b> English — to see what it means and, Reverso-style,
       real sentences from the app’s stories, news and book where it’s actually used. Everything is from the
       lexicon and the app’s own texts, so it’s true Palestinian dialect with a source for every line.</p>
-    <input id="tr-q" class="vsearch" type="search" inputmode="search" autocomplete="off"
-      placeholder="بيت · راح · house · tired…" value="${esc(_trQ)}" oninput="trOnInput(this.value)">
+    ${kbdWrap(`<input id="tr-q" class="vsearch" type="search" inputmode="search" autocomplete="off"
+      placeholder="بيت · راح · house · tired…" value="${esc(_trQ)}" oninput="trOnInput(this.value)">`, 'tr-q')}
     <div id="tr-out"></div>`;
   const inp = $('tr-q'); if (inp) { inp.focus(); if (_trQ) trRender(_trQ); }
 }
@@ -4638,10 +4770,10 @@ function verbsHome(){
     ${VB.length} verbs. Every root, gloss and pronunciation is from the Maknuune
     lexicon — the form is computed, the conjugations are not invented.</p>`;
 
-  h += `<input id="vsearch" class="vsearch" type="search" inputmode="search"
+  h += kbdWrap(`<input id="vsearch" class="vsearch" type="search" inputmode="search"
     placeholder="Search ${VB.length} verbs — English, root or Arabic…"
-    oninput="verbSearch(this.value)" aria-label="Search verbs">
-    <div id="vsearchout"></div>`;
+    oninput="verbSearch(this.value)" aria-label="Search verbs">`, 'vsearch')
+    + `<div id="vsearchout"></div>`;
 
   h += '<div class="sec">Forms</div><div class="vtiles">';
   h += FORM_ORDER.map(f => {
@@ -4671,6 +4803,7 @@ function verbSearch(q){
   // Score so the verb you meant floats up: an exact gloss sense beats a word that merely
   // starts with q, which beats a bare substring ("eat" shouldn't rank "seat" first).
   const wordRe = new RegExp('(^|[\\s·])' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const qAr = /[\u0600-\u06FF]/.test(q), qn = arNorm(q);
   const score = v => {
     const g = (v.gloss || '').toLowerCase();
     if (g.split(' · ').includes(q)) return 0;          // exact sense
@@ -4679,6 +4812,12 @@ function verbSearch(q){
     if ((v.root || '').includes(q)) return 3;          // root
     if ([v.past, v.pres, v.imp].some(p => p && (p.ar.includes(q) || p.caphi.toLowerCase().includes(q))))
       return 4;                                        // arabic / pronunciation
+    // Every form in here is fully vocalized (رَاح), but nobody types the diacritics — not on a
+    // physical Arabic keyboard and not on ours. Without this, searching Arabic never matched.
+    if (qAr) {
+      if (arNorm((v.root || '').replace(/\./g, '')).includes(qn)) return 5;
+      if ([v.past, v.pres, v.imp].some(p => p && arNorm(p.ar).includes(qn))) return 6;
+    }
     return 99;
   };
   const hits = VB.map(v => [score(v), v]).filter(x => x[0] < 99)
