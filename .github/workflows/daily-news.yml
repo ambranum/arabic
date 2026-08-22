@@ -51,7 +51,13 @@ jobs:
           # repo secret here is what kept generating each new day's news in the OLD voice.
         run: python3 pipeline/daily_news.py --sentences 9
 
-      - name: Commit the day's text (advisory — never blocks the deploy)
+      # The deploy publishes the runner's working tree, so the day's news reaches the site
+      # whether or not this lands. But if it DOESN'T land, the news exists nowhere but that one
+      # deployment: the next push-triggered run (which skips generation) rebuilds the site from
+      # git and the news silently vanishes. That is exactly what happened on 2026-08-22. So the
+      # push still can't block the deploy — but the run goes red at the end if it failed.
+      - name: Commit the day's text (can't block the deploy — checked at the end)
+        id: commit
         continue-on-error: true
         run: |
           git config user.name  "daily-news"
@@ -62,13 +68,15 @@ jobs:
           # The remote can move between checkout and push — a human commit, or an
           # earlier run. A bare `git push` then dies with "fetch first" and the whole
           # day's work (audio included) is thrown away. Rebase onto whatever landed,
-          # then push. Retry once for the narrow race where it moves again mid-rebase.
-          for attempt in 1 2 3; do
+          # then push. Six attempts with backoff, not three: on a day when someone is
+          # pushing to main every few minutes, three tries five seconds apart lose.
+          for attempt in 1 2 3 4 5 6; do
             git pull --rebase --autostash origin main && git push && exit 0
-            echo "push attempt $attempt failed; retrying"
-            sleep 5
+            echo "push attempt $attempt failed; retrying in $((attempt * 10))s"
+            sleep $((attempt * 10))
           done
-          echo "could not push after 3 attempts"
+          echo "::error::could not push the day's news after 6 attempts — it is live on the"
+          echo "::error::site but NOT in git, so the next push to main will erase it."
           exit 1
 
       - uses: actions/configure-pages@v5
@@ -76,3 +84,12 @@ jobs:
         with:
           path: app
       - uses: actions/deploy-pages@v4
+
+      # Deploy first, then complain. A green run must mean "the news is live AND it will
+      # survive the next push" — anything less is the silent failure this job already had once.
+      - name: Fail if the day's text never reached git
+        if: github.event_name != 'push' && steps.commit.outcome == 'failure'
+        run: |
+          echo "::error::Today's news deployed to the site but was never committed. It will be"
+          echo "::error::overwritten by the next push to main. Re-run this workflow to restore it."
+          exit 1
