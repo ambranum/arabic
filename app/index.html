@@ -681,6 +681,40 @@
   .pd-ph{display:block; font-size:10px; color:var(--ink-soft); font-family:var(--serif)}
   .pd-n{display:block; font-size:9px; color:var(--muted); margin-top:2px}
   .pd-rest{font-size:10px; color:var(--muted)}
+  /* ---- studying together ---- */
+  .fr-me{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+    border:1px solid var(--rule); border-radius:9px; padding:10px 12px; margin-bottom:10px;
+    background:var(--paper-2)}
+  .fr-me-l{display:flex; flex-direction:column; gap:2px}
+  .fr-me-r{display:flex; gap:6px; flex-wrap:wrap}
+  .fr-k{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+  .fr-code{font-family:var(--mono); font-size:21px; letter-spacing:.18em; color:var(--verdigris)}
+  .fr-row{display:flex; align-items:center; justify-content:space-between; gap:10px;
+    padding:9px 0; border-bottom:1px solid var(--rule)}
+  .fr-row:last-of-type{border-bottom:0}
+  .fr-n{font-family:var(--serif); font-size:14px}
+  .fr-h{font-family:var(--mono); font-size:10px; color:var(--muted); margin-left:7px; letter-spacing:.08em}
+  .fr-act{display:flex; gap:6px; align-items:center}
+  .fr-pend{font-size:11px; color:var(--muted)}
+  .fr-seen{font-size:10.5px; color:var(--muted); margin-top:1px}
+  .fr-tbl{width:100%; border-collapse:collapse; font-size:12.5px}
+  .fr-tbl th{font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+    font-weight:400; text-align:left; padding:0 6px 5px 0}
+  .fr-tbl td{padding:8px 6px 8px 0; border-top:1px solid var(--rule); vertical-align:top}
+  .fr-tbl tr.me td{background:var(--verdigris-2)}
+  .fr-tbl tr.me .fr-n{color:var(--verdigris)}
+  .fr-x{border:0; background:none; color:var(--muted); font-size:16px; line-height:1;
+    cursor:pointer; padding:0 3px}
+  .fr-x:hover{color:var(--rubric)}
+  .fr-add{display:flex; gap:8px; align-items:flex-start}
+  .fr-add input{flex:1 1 auto; margin:0; font-family:var(--mono); letter-spacing:.14em}
+  /* the one-line version on Today */
+  .fr-strip{display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center; font-size:12px;
+    color:var(--muted); border:1px solid var(--rule); border-radius:8px; padding:8px 11px;
+    margin-bottom:12px}
+  .fr-strip b{color:var(--ink-soft); font-weight:600}
+  .fr-strip a{margin-left:auto; font-size:11px}
+
   /* ---- level tag (Beginner · A1 · Phase 1) ---- */
   .lvl{display:inline-flex; align-items:baseline; gap:5px; white-space:nowrap; vertical-align:middle;
     font-family:var(--sans); font-size:10px; line-height:1.5; padding:2px 7px; border-radius:999px;
@@ -4203,6 +4237,7 @@ function planToday() {
      leans in as you advance.</div>`;
   const schedReads = day.tasks.filter(t => t.act === 'read' && t.cid).length;
   h += planExtraHTML(cfg, day.phase, date, doneMap, schedReads);
+  h += `<div id="fr-strip"></div>`;
   h += planMoreBtn(date, false);
   h += planExerciseHTML(day, date);
   if (day.spoken || cfg.speakHome) h += planRecordHTML(date, doneMap, day.phase.focus.split('.')[0]);
@@ -4210,6 +4245,26 @@ function planToday() {
   if (cfg.external && cfg.external.pimsleur) h += pimCardHTML();
   h += planFooterCtls();
   $('view').innerHTML = h;
+  frStrip();
+}
+
+// One line on Today: who else has practised, and how you compare this week. Only appears once
+// you actually have friends — an empty prompt to "add friends" on the main screen every day is
+// nagging, and the dashboard is where you go looking for it.
+async function frStrip() {
+  const el = $('fr-strip'); if (!el || !frOn()) return;
+  const d = await frLoad(); if (!d || !d.friends.length) { if (d && d.incoming.length) {
+      el.innerHTML = `<span><b>${d.incoming.length}</b> friend request waiting</span>
+        <a href="#/plan/dashboard">Open</a>`; } return; }
+  const today = d.friends.filter(f => f.stats && f.stats.last_active === todayISO());
+  const mineWk = frMyStats().week_min;
+  const ahead = d.friends.filter(f => ((f.stats || {}).week_min || 0) > mineWk).length;
+  el.innerHTML = `<span>${today.length
+      ? '<b>' + today.map(f => esc(f.profile.display_name || f.profile.handle)).slice(0, 3).join(', ')
+        + '</b> studied today'
+      : 'None of your friends have practised today yet'}</span>
+    <span>${ahead ? '<b>' + ahead + '</b> ahead of you this week' : 'you’re top this week'}</span>
+    <a href="#/plan/dashboard">Friends</a>`;
 }
 
 // ---- production exercise: say today's material in Arabic (retrieval practice) ----
@@ -4499,8 +4554,108 @@ function planDashboard() {
   } else {
     h += `<p class="hint">No flashcards yet — tap any word in a story and hit “Don’t know it” to start a deck.</p>`;
   }
+  h += `<div class="sec" style="margin-top:22px">Studying together</div><div id="fr-panel"></div>`;
   h += `<div class="ctl" style="margin-top:20px"><button class="tog" onclick="location.hash='/plan'">← Back to today</button></div>`;
   $('view').innerHTML = h;
+  frRender();                                   // fills #fr-panel once the network answers
+}
+
+// ---- the friends panel ----------------------------------------------------------------
+// Async and self-contained: the dashboard renders instantly and this fills in when the round
+// trip lands, so a slow or missing connection never holds up the numbers you already have.
+async function frRender() {
+  const el = $('fr-panel'); if (!el) return;
+  if (!_sb) return void (el.innerHTML = `<p class="hint">Cloud sync isn’t configured for this build,
+    so there’s nobody to study with yet.</p>`);
+  if (!_user) return void (el.innerHTML = `<p class="hint">
+    <a href="#/account">Sign in</a> to compare notes with friends. You’ll get a six-character code to
+    share; you each have to accept before either of you sees anything.</p>`);
+  if (!el.innerHTML) el.innerHTML = `<p class="hint">Loading…</p>`;
+  const d = await frLoad();
+  if (!d) return void (el.innerHTML = _frErr === 'setup'
+    ? `<div class="note"><b>Almost there.</b> The friends tables aren’t on the server yet. Run
+       <code>supabase/friends.sql</code> once in the Supabase SQL editor and reload — everything
+       else keeps working in the meantime.</div>`
+    : `<p class="hint">Couldn’t load your friends${_frErr ? ' — ' + esc(_frErr) : ''}.
+       <button class="tog" onclick="_frCache=null;frRender()">Try again</button></p>`);
+
+  const mine = frMyStats();
+  const nm = f => esc(f.profile.display_name || f.profile.handle);
+  let h = `<div class="fr-me">
+      <div class="fr-me-l"><span class="fr-k">Your friend code</span>
+        <span class="fr-code">${esc(d.me.handle)}</span></div>
+      <div class="fr-me-r">
+        <button class="tog" onclick="frCopy('${cssq(d.me.handle)}')">Copy</button>
+        <button class="tog" onclick="frRename()">Name: ${esc(d.me.display_name || '—')}</button></div>
+    </div>
+    <p class="hint">Send that code to someone learning too. Friends see your hours, your streak and
+      which phase you’re in — never your cards, your texts, or what you actually studied.</p>`;
+
+  if (d.incoming.length) {
+    h += `<div class="sec">Waiting on you</div>` + d.incoming.map(f => `<div class="fr-row">
+        <div class="fr-n">${nm(f)}<span class="fr-h">${esc(f.profile.handle)}</span></div>
+        <div class="fr-act">
+          <button class="tog go" onclick="frAccept(${f.link})">Accept</button>
+          <button class="tog" onclick="frRemove(${f.link},'${cssq(f.profile.display_name || '')}')">Decline</button>
+        </div></div>`).join('');
+  }
+
+  if (d.friends.length) {
+    // You are in the table too. Comparing against people who study more is the entire point, and
+    // leaving yourself out of your own leaderboard makes it a list of strangers.
+    const rows = d.friends.map(f => ({name: nm(f), handle: f.profile.handle, link: f.link,
+                                      s: f.stats, me: false}))
+      .concat([{name: 'You', handle: d.me.handle, link: null, s: mine, me: true}])
+      .sort((a, b) => ((b.s || {}).week_min || 0) - ((a.s || {}).week_min || 0));
+    const together = rows.reduce((n, r) => n + ((r.s || {}).week_min || 0), 0);
+    h += `<div class="sec">This week</div>
+      <p class="hint" style="margin-bottom:8px"><b>${frHrs(together)}</b> between the
+        ${rows.length} of you.</p>
+      <table class="fr-tbl"><thead><tr><th></th><th>Week</th><th>Streak</th><th>Level</th><th>Total</th></tr></thead><tbody>`;
+    h += rows.map(r => {
+      const s = r.s || {};
+      return `<tr class="${r.me ? 'me' : ''}">
+        <td><span class="fr-n">${esc(r.name)}${r.me ? '' : `<span class="fr-h">${esc(r.handle)}</span>`}</span>
+          <div class="fr-seen">${frSeen(s.last_active)}</div></td>
+        <td><b>${frHrs(s.week_min || 0)}</b></td>
+        <td>${s.streak ? '🔥 ' + s.streak : '—'}</td>
+        <td>${s.phase != null ? lvlTag(s.phase, true) : '—'}</td>
+        <td>${s.hours != null ? Math.round(s.hours) + 'h' : '—'}</td>
+        ${r.me ? '<td></td>' : `<td><button class="fr-x" title="Disconnect"
+           onclick="frRemove(${r.link},'${cssq(r.name)}')">×</button></td>`}</tr>`;
+    }).join('') + `</tbody></table>`;
+  }
+
+  if (d.outgoing.length) {
+    h += `<div class="sec">Waiting on them</div>` + d.outgoing.map(f => `<div class="fr-row">
+        <div class="fr-n">${nm(f)}<span class="fr-h">${esc(f.profile.handle)}</span></div>
+        <div class="fr-act"><span class="fr-pend">asked</span>
+          <button class="fr-x" onclick="frRemove(${f.link},'${cssq(f.profile.display_name || '')}')">×</button>
+        </div></div>`).join('');
+  }
+
+  if (!d.friends.length && !d.incoming.length && !d.outgoing.length) {
+    h += `<p class="hint">Nobody yet. Studying alongside someone is one of the few things that
+      reliably keeps a daily habit alive — it doesn't have to be a race.</p>`;
+  }
+  h += `<div class="sec">Add someone</div>
+    <div class="fr-add"><input id="fr-code" class="vsearch" maxlength="6" autocomplete="off"
+        placeholder="Their six-character code" style="text-transform:uppercase"
+        onkeydown="if(event.key==='Enter')frAdd(this.value)">
+      <button class="tog go" onclick="frAdd(($('fr-code')||{}).value)">Send request</button></div>
+    <div id="fr-msg" class="hint" style="margin-top:8px"></div>`;
+  el.innerHTML = h;
+}
+const frHrs = min => min >= 60 ? (Math.round(min / 6) / 10) + 'h' : (min | 0) + 'm';
+function frSeen(iso) {
+  if (!iso) return 'not started yet';
+  const n = daysBetween(iso, todayISO());
+  return n <= 0 ? 'studied today' : n === 1 ? 'yesterday' : n + ' days ago';
+}
+function frCopy(code) {
+  const done = () => { const el = $('fr-msg'); if (el) el.textContent = 'Code copied — send it over.'; };
+  if (navigator.clipboard) navigator.clipboard.writeText(code).then(done, () => {});
+  else done();
 }
 
 // ---- the plan ahead: projection + a 4-week look-ahead ----
@@ -5830,6 +5985,7 @@ async function pushProgress() {
   _syncing = true; renderAccountBadge();
   try { await _sb.from('progress').upsert({user_id: _user.id, data: collectProgress(), updated_at: new Date().toISOString()}); }
   catch (e) {}
+  try { await frPublish(); } catch (e) {}            // keep what friends see in step with the sync
   _syncing = false; renderAccountBadge();
 }
 async function pullMerge() {
@@ -5847,8 +6003,132 @@ async function pullMerge() {
   _syncing = false; renderAccountBadge();
 }
 
+// ============ Study together: friend codes, shared numbers, requests ============
+// What a friend can see is deliberately narrow: hours, this week's minutes, streak, plan phase
+// and card count — no card, no text, nothing about WHAT you studied. Those numbers live in their
+// own `stats` table (see supabase/friends.sql); the `progress` table that holds everything else
+// is never readable by anyone but you. Nothing is shared until BOTH people accept.
+let _frProfile = null, _frCache = null, _frErr = null;
+const FR_CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';        // no O/0/I/1 — codes get read aloud
+const frCode = () => Array.from({length: 6}, () =>
+  FR_CODE_CHARS[Math.floor(Math.random() * FR_CODE_CHARS.length)]).join('');
+const frOn = () => !!(_sb && _user);
+// The tables are created by hand in the Supabase editor, so a build can be live before they
+// exist. Tell those errors apart from real ones and say something useful instead of failing.
+const frMissing = e => /relation .* does not exist|schema cache|PGRST205|PGRST202/i.test(
+  (e && (e.message || e.details || e.hint)) || '');
+
+async function frEnsureProfile() {
+  if (!frOn()) return null;
+  if (_frProfile) return _frProfile;
+  const {data, error} = await _sb.from('profiles').select('*').eq('user_id', _user.id).maybeSingle();
+  if (error) { _frErr = frMissing(error) ? 'setup' : error.message; return null; }
+  if (data) { _frProfile = data; return data; }
+  // First time: claim a code. Collisions are vanishingly rare (32^6) but a unique index means a
+  // clash is a hard error, not a duplicate — so retry a few times rather than trusting luck.
+  for (let i = 0; i < 5; i++) {
+    const row = {user_id: _user.id, handle: frCode(),
+                 display_name: (_user.email || '').split('@')[0].slice(0, 24)};
+    const {data: made, error: e2} = await _sb.from('profiles').insert(row).select().maybeSingle();
+    if (!e2) { _frProfile = made; return made; }
+    if (frMissing(e2)) { _frErr = 'setup'; return null; }
+    if (!/duplicate|unique/i.test(e2.message || '')) { _frErr = e2.message; return null; }
+  }
+  _frErr = 'Could not create a friend code — try again.';
+  return null;
+}
+
+// The numbers, recomputed from the local log. Pushed alongside progress so a friend's view is
+// never staler than your own sync.
+function frMyStats() {
+  const cfg = planCfg(), L = planLog();
+  let week = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = L[addDaysISO(todayISO(), -i)];
+    if (d && d.done) for (const k in d.done) week += d.done[k] || 0;
+  }
+  const days = Object.keys(L).filter(d => L[d] && L[d].done && Object.keys(L[d].done).length).sort();
+  return {hours: Math.round(loggedMinutes() / 6) / 10, week_min: week, streak: planStreak(),
+          phase: cfg ? curPhaseIndex(cfg) : 0, cards: marked.size,
+          last_active: days.length ? days[days.length - 1] : null,
+          updated_at: new Date().toISOString()};
+}
+async function frPublish() {
+  if (!frOn()) return;
+  const me = await frEnsureProfile(); if (!me) return;
+  try { await _sb.from('stats').upsert(Object.assign({user_id: _user.id}, frMyStats())); }
+  catch (e) {}
+}
+
+// One round trip for the connections, one for the names, one for the numbers — then stitched
+// locally. Friends you've accepted come back with stats; pending ones deliberately don't.
+async function frLoad(force) {
+  if (!frOn()) return null;
+  if (_frCache && !force) return _frCache;
+  const me = await frEnsureProfile();
+  if (!me) return null;
+  const {data: links, error} = await _sb.from('friendships').select('*');
+  if (error) { _frErr = frMissing(error) ? 'setup' : error.message; return null; }
+  const others = (links || []).map(f => f.user_a === _user.id ? f.user_b : f.user_a);
+  let names = {}, nums = {};
+  if (others.length) {
+    const {data: ps} = await _sb.from('profiles').select('user_id, handle, display_name').in('user_id', others);
+    (ps || []).forEach(x => names[x.user_id] = x);
+    const {data: st} = await _sb.from('stats').select('*').in('user_id', others);
+    (st || []).forEach(x => nums[x.user_id] = x);
+  }
+  const row = f => { const id = f.user_a === _user.id ? f.user_b : f.user_a;
+    return {link: f.id, id, mine: f.requester === _user.id,
+            profile: names[id] || {handle: '??????', display_name: 'A friend'}, stats: nums[id] || null}; };
+  _frErr = null;
+  _frCache = {
+    me,
+    friends: (links || []).filter(f => f.status === 'accepted').map(row)
+      .sort((a, b) => ((b.stats || {}).week_min || 0) - ((a.stats || {}).week_min || 0)),
+    incoming: (links || []).filter(f => f.status === 'pending' && f.requester !== _user.id).map(row),
+    outgoing: (links || []).filter(f => f.status === 'pending' && f.requester === _user.id).map(row),
+  };
+  return _frCache;
+}
+
+async function frAdd(code) {
+  code = String(code || '').trim().toUpperCase();
+  const msg = t => { const el = $('fr-msg'); if (el) el.textContent = t; };
+  if (!/^[A-Z0-9]{6}$/.test(code)) return msg('A friend code is six letters and numbers.');
+  const me = await frEnsureProfile(); if (!me) return msg('Sign in first.');
+  if (code === me.handle) return msg("That's your own code — send it to a friend instead.");
+  const {data: them, error} = await _sb.from('profiles').select('user_id, display_name').eq('handle', code).maybeSingle();
+  if (error) return msg(frMissing(error) ? 'Friends aren’t set up on the server yet.' : error.message);
+  if (!them) return msg('No one has that code. Check the letters and try again.');
+  const [a, b] = [_user.id, them.user_id].sort();     // the table stores the pair in one order
+  const {error: e2} = await _sb.from('friendships').insert({user_a: a, user_b: b, requester: _user.id});
+  if (e2) return msg(/duplicate|unique/i.test(e2.message || '')
+    ? 'You two are already connected, or a request is already waiting.' : e2.message);
+  msg('Request sent to ' + (them.display_name || code) + '. They have to accept before either of you sees anything.');
+  const inp = $('fr-code'); if (inp) inp.value = '';
+  _frCache = null; frRender();
+}
+async function frAccept(linkId) {
+  await _sb.from('friendships').update({status: 'accepted'}).eq('id', linkId);
+  await frPublish();                                  // they can see me now — make sure it's current
+  _frCache = null; frRender();
+}
+async function frRemove(linkId, name) {
+  if (!confirm('Disconnect from ' + (name || 'this person') + '?\n\nYou stop seeing each other\'s progress. Nothing you have studied changes.')) return;
+  await _sb.from('friendships').delete().eq('id', linkId);
+  _frCache = null; frRender();
+}
+async function frRename() {
+  const me = await frEnsureProfile(); if (!me) return;
+  const name = prompt('What should friends see you as?', me.display_name || '');
+  if (name == null) return;
+  await _sb.from('profiles').update({display_name: name.slice(0, 24)}).eq('user_id', _user.id);
+  _frProfile = null; _frCache = null; frRender();
+}
+
 async function onAuth(session) {
   _user = session ? session.user : null;
+  _frProfile = _frCache = _frErr = null;             // never show one account another's friends
   renderAccountBadge();
   if (_user) {
     await pullMerge();
