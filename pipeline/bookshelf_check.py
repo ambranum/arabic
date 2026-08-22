@@ -153,9 +153,14 @@ def report(book, estimate=False):
     curve = new_lemma_curve(texts)
     if curve:
         front = pct(sum(curve[:max(1, len(curve) // 4)]), sum(curve))
+        peak, late = max(curve), sum(curve[len(curve) // 2:]) / max(1, len(curve) - len(curve) // 2)
         print('\n  new lemmas per chapter   %s' % spark(curve))
-        print('    first quarter of the book carries %s%% of its distinct vocabulary'
-              '   %s' % (front, 'front-loaded, good' if front >= 40 else 'flat — little reuse'))
+        print('    peak %d in one chapter · %.1f average in the second half' % (peak, late))
+        # A novel with one cast SHOULD front-load. A collection of one-off casts cannot, and that
+        # is not a defect — for those the number that matters is the peak, not the shape.
+        print('    first quarter carries %s%% of the vocabulary   %s'
+              % (front, 'front-loaded — a single cast, reused' if front >= 40
+                 else 'even — a collection of separate casts; watch the peak, not the shape'))
 
     if estimate:
         # Only what is still MISSING. Quoting the whole book overstates the bill after a partial
