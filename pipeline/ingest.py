@@ -126,6 +126,7 @@ def main():
            "book": src.get('book'), "chapter": src.get('chapter'),   # book grouping (book chapters)
            "book_title": src.get('book_title'),
            "shelf": src.get('shelf', 0),       # running order of books on the Books shelf
+           "book_meta": src.get('book_meta'),  # the public-domain work this retells
            "subdialect": SUB,
            "source": src.get('source', 'original'), "sentences": []}
     stats = {}

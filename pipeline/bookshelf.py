@@ -39,8 +39,11 @@ def P(*pairs):   # a paragraph: P(("ar","en"), ("ar","en"), ...)
     return list(pairs)
 
 
+LEVELS = ('beginner', 'intermediate', 'advanced')   # the only strings the app maps to a phase
+
+
 def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='الفصل',
-              shelf=0, source=SOURCE, outdir=None):
+              shelf=0, meta=None, source=SOURCE, outdir=None):
     """Write texts/book-<book_id>-chNN.json, one file per chapter. Returns (chapters, sentences).
 
     unit / unit_ar name the division, because "Chapter 3" is wrong for a book of folk tales —
@@ -49,11 +52,19 @@ def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='ال�
     shelf is a sort key the Books shelf orders by, so the running order of nine books is decided
     here rather than falling out of whatever order the build directory happens to be globbed in.
 
+    meta credits the source work — {work, author, year, status} — shown on the book's page and in
+    the PDF. Every reader here is a retelling of a PUBLIC DOMAIN work, and saying which one, on
+    the page, is the same diligence data/ATTRIBUTION.md gives the lexicon and the Bible text.
+
     WARNING when re-emitting a book that already has audio: clip filenames are POSITIONAL
     (s0.mp3, s1.mp3 …). Adding, removing or reordering a sentence silently re-points every later
     clip at the wrong text. Change prose freely, but then delete build/book-<id>-*/audio/ and
     re-voice — see pipeline/README.md.
     """
+    # `level` decides the phase chip in the app, and an unrecognised string silently renders as
+    # Beginner/A1 rather than failing. Catch the typo here, where it is one word to fix.
+    if level not in LEVELS:
+        raise SystemExit('!! %s: level %r must be one of %s' % (book_id, level, ', '.join(LEVELS)))
     outdir = outdir or os.path.join(ROOT, 'texts')
     # Drop this book's old chapter files first, so a shortened CHAPTERS leaves no orphans behind.
     # Scoped to this book_id — two book scripts never clobber each other.
@@ -72,6 +83,7 @@ def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='ال�
             'title': {'en': '%s %d — %s' % (unit, i, en), 'ar': '%s %d — %s' % (unit_ar, i, ar)},
             'kind': 'book-chapter', 'book': book_id, 'book_title': title, 'chapter': i,
             'shelf': shelf,
+            'book_meta': meta or None,
             'level': level,
             'source': source,
             'sentences': sentences,

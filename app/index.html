@@ -842,6 +842,9 @@
   .bk-cover-ar{font-family:var(--arabic); direction:rtl; font-size:26px; line-height:1.5}
   .bk-cover-en{font-family:var(--serif); font-size:17px; margin-top:4px}
   .bk-cover-s{font-size:12px; color:var(--muted); margin-top:6px}
+  .bk-shelf{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px;
+    margin-bottom:6px}
+  .bk-src{font-size:11.5px; color:var(--muted); margin:0 0 10px; line-height:1.5}
   .bk-hero{text-align:center; padding:10px 0 6px; margin-bottom:14px}
   .bk-hero-ar{font-family:var(--arabic); direction:rtl; font-size:34px; line-height:1.5}
   .bk-hero-en{font-family:var(--serif); font-size:20px; margin-top:4px}
@@ -1720,6 +1723,9 @@ function homeTile(sec) {
 }
 
 // Short-story reading levels, in order. label shown on tiles; blurb sets expectations.
+// Which nav tab a text belongs to. Was a nested ternary that handled news and stories and left
+// book chapters lighting nothing at all — you were inside Books with Books unlit.
+const SEC_FOR_KIND = {news: 'news', story: 'stories', 'book-chapter': 'books'};
 const STORY_LEVELS = [
   ['beginner',     'Beginner',     'Short, present-tense, everyday life. A few sentences each.'],
   ['intermediate', 'Intermediate', 'Longer past-tense stories with small plots and connectors.'],
@@ -1756,9 +1762,9 @@ function route() {
   const [, kind, id, arg] = h.split('/');
   // A text/drill belongs to whichever section it came from; light that tab when we can.
   if (kind === 'text')  { const t = LIB.texts.find(x => x.id === id);
-    if (t) { renderNav(t.kind === 'news' ? 'news' : t.kind === 'story' ? 'stories' : null); return reader(t); } }
+    if (t) { renderNav(SEC_FOR_KIND[t.kind] || null); return reader(t); } }
   if (kind === 'speak') { const t = LIB.texts.find(x => x.id === id);
-    if (t) { renderNav(t.kind === 'news' ? 'news' : t.kind === 'story' ? 'stories' : null); return speakView(t); } }
+    if (t) { renderNav(SEC_FOR_KIND[t.kind] || null); return speakView(t); } }
   if (kind === 'drill') { const d = LIB.drills.find(x => x.id === id);
     if (d) { renderNav(null); return drill(d); } }
   if (kind === 'verb') { renderNav('verbs'); return verbDetail(id); }
@@ -1906,13 +1912,20 @@ function newsSection(){
 // ---------- Books (full graded readers, with print-to-PDF) ----------
 // A book is a set of texts with kind "book-chapter", grouped by their `book` id and ordered by
 // `chapter`. Reading a chapter reuses the normal reader; the whole book can be printed to PDF.
+// Memoized: secStatus calls this three times per home render, and each call was a full scan of
+// every text in the library. With nine books that is ~350 chapters filtered nine times over.
+let _books = null;
 function booksList() {
+  if (_books) return _books;
   const byBook = {};
   LIB.texts.filter(t => t.kind === 'book-chapter').forEach(t => (byBook[t.book] = byBook[t.book] || []).push(t));
-  return Object.keys(byBook).map(id => {
+  return (_books = Object.keys(byBook).map(id => {
     const chapters = byBook[id].slice().sort((a, b) => (a.chapter || 0) - (b.chapter || 0));
-    return {id, title: chapters[0].book_title || {en: id, ar: ''}, level: chapters[0].level, chapters};
-  });
+    const c0 = chapters[0];
+    return {id, title: c0.book_title || {en: id, ar: ''}, level: c0.level,
+            shelf: c0.shelf == null ? 999 : c0.shelf, meta: c0.book_meta || null, chapters};
+    // Order decided in the pipeline, not here; id breaks a tie so it is never non-deterministic.
+  }).sort((a, b) => (a.shelf - b.shelf) || a.id.localeCompare(b.id)));
 }
 const bookById = id => booksList().find(b => b.id === id);
 const chTitleAr = c => (c.title.ar || '').replace(/^الفصل[^—]*—\s*/, '');
@@ -2603,12 +2616,29 @@ function booksHome() {
     Palestinian, with tap-any-word for every word. A connected book, with vocabulary that comes back
     again and again, sticks far better than scattered paragraphs. Read online or download a PDF.
     The retellings are adapted by Claude (not native-checked); every word’s meaning and root is from the lexicon.</p>`;
-  h += books.length ? books.map(b => `<button class="bk-cover" onclick="location.hash='/books/${esc(b.id)}'">
+  // Grouped by level, using the SAME three names and order the stories use — books and stories
+  // can then never disagree about what "intermediate" means. The chip moves to the section
+  // header, which frees the tile's last line for chapter count and how far you have read.
+  const seen = contentSeen();
+  const tile = b => { const read = b.chapters.filter(c => seen.has(c.id)).length;
+    return `<button class="bk-cover" onclick="location.hash='/books/${esc(b.id)}'">
       <div class="bk-cover-ar" dir="rtl">${esc(b.title.ar)}</div>
       <div class="bk-cover-en">${esc(b.title.en)}</div>
-      <div class="bk-cover-s">${b.chapters.length} chapters</div>
-      <div class="bk-cover-l">${lvlTagFor('book', b)}</div></button>`).join('')
-    : `<p class="hint">No books yet.</p>`;
+      <div class="bk-cover-s">${b.chapters.length} chapters${read ? ' · ' + read + ' read' : ''}</div>
+      </button>`; };
+  const placed = new Set();
+  STORY_LEVELS.forEach(([key, label]) => {
+    const at = books.filter(b => b.level === key); if (!at.length) return;
+    at.forEach(b => placed.add(b.id));
+    h += `<div class="sec">${esc(label)} ${lvlTagFor('book', {level: key}, true)}</div>
+      <div class="bk-shelf">${at.map(tile).join('')}</div>`;
+  });
+  // A book whose level isn't one of the three would otherwise be silently drawn as Beginner by
+  // the phase-0 fallthrough. Show it as unshelved instead of quietly mislabelling it.
+  const rest = books.filter(b => !placed.has(b.id));
+  if (rest.length) h += `<div class="sec">Not yet graded</div>
+      <div class="bk-shelf">${rest.map(tile).join('')}</div>`;
+  if (!books.length) h += `<p class="hint">No books yet.</p>`;
   $('view').innerHTML = h;
 }
 
@@ -2620,6 +2650,9 @@ function bookView(id) {
   let h = `<div class="bk-hero"><div class="bk-hero-ar" dir="rtl">${esc(b.title.ar)}</div>
      <div class="bk-hero-en">${esc(b.title.en)}</div>
      <div class="bk-hero-s">Adapted for learners · ${b.chapters.length} chapters · ${readN} read</div></div>`;
+  if (b.meta) h += `<div class="bk-src">Retold from ${esc(b.meta.work || b.title.en)}${
+     b.meta.author ? ' — ' + esc(b.meta.author) : ''}${b.meta.year ? ', ' + esc(b.meta.year) : ''}${
+     b.meta.status ? ' · ' + esc(b.meta.status) : ''}.</div>`;
   h += `<div class="unval"><b>Not checked by a native speaker.</b> This retelling is written by Claude —
      every word’s root and meaning is from the lexicon, but read it for practice; don’t memorise the phrasing.</div>`;
   h += `<div class="ctl">

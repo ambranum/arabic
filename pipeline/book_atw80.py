@@ -406,4 +406,6 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=10)
+    emit_book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=10,
+              meta={'work': 'Le Tour du monde en quatre-vingts jours', 'author': 'Jules Verne',
+                    'year': '1873', 'status': 'public domain'})
