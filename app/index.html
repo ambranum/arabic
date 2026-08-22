@@ -1543,10 +1543,19 @@ function home(){
       <div class="s">${news.sentences.length} sentences, in spoken Palestinian${news._audio ? ' · audio' : ''}</div>
     </button>`;
   } else {
+    // A day behind is normal (the job runs at 05:00 Israel). A WEEK behind means the job is
+    // broken — usually an expired ANTHROPIC_API_KEY or an empty balance — and the old wording
+    // ("today's isn't in yet") hid that for a fortnight. Say the number out loud past 3 days.
+    const staleDays = news ? Math.round((isoToDate(today) - isoToDate(news.date)) / 864e5) : 0;
     h += `<button class="big warn" onclick="location.hash='/news'">
       <div class="k">Today's News</div>
-      <div class="t">${news ? "Today's isn't in yet" : 'No news yet'}</div>
-      <div class="s">${news ? 'Latest is ' + esc(news.date) + '.' : 'Written fresh each morning.'} Tap to browse.</div>
+      <div class="t">${!news ? 'No news yet'
+        : staleDays > 3 ? staleDays + ' days behind' : "Today's isn't in yet"}</div>
+      <div class="s">${!news ? 'Written fresh each morning.'
+        : staleDays > 3
+          ? 'Latest is ' + esc(news.date) + '. The morning job has stopped writing — usually an '
+            + 'expired Anthropic key or an empty balance. Everything else still works.'
+          : 'Latest is ' + esc(news.date) + '.'} Tap to browse.</div>
     </button>`;
   }
   h += '</div>';

@@ -134,6 +134,39 @@ def client():
     import anthropic
     return anthropic.Anthropic()
 
+
+def explain_api_failure(e):
+    """Say WHICH thing is wrong, in words that name the fix.
+
+    An expired key and an empty balance both surface as 'the news job failed', and this job runs
+    unattended at 05:00 — the last time one of them happened it went unnoticed for two weeks while
+    the app quietly served a fortnight-old article. The exception type is enough to tell them
+    apart, so say so loudly instead of dumping a traceback nobody reads.
+    """
+    import anthropic
+    if isinstance(e, anthropic.AuthenticationError):          # 401
+        return ("the ANTHROPIC_API_KEY is invalid, revoked or expired",
+                "Make a new key at console.anthropic.com/settings/keys, then update the "
+                "ANTHROPIC_API_KEY repo secret (Settings → Secrets and variables → Actions).")
+    if isinstance(e, anthropic.PermissionDeniedError):        # 403
+        return ("the key is valid but not allowed to use this model",
+                "Check the key's workspace/permissions, or that %s is enabled for it." % MODEL)
+    if isinstance(e, anthropic.NotFoundError):                # 404
+        return ("the model id %r was rejected" % MODEL,
+                "Update MODEL in pipeline/daily_news.py to a current model.")
+    if isinstance(e, anthropic.RateLimitError):               # 429
+        return ("the account is rate limited right now",
+                "Usually transient — tomorrow's run should recover on its own.")
+    msg = str(getattr(e, "message", "") or e)
+    if isinstance(e, anthropic.BadRequestError) and "credit" in msg.lower():
+        return ("the Anthropic account is out of credit",
+                "Add credit at console.anthropic.com/settings/billing. The key itself is fine.")
+    if isinstance(e, anthropic.APIStatusError):
+        return ("the API returned %s: %s" % (getattr(e, "status_code", "?"), msg[:160]), "")
+    if isinstance(e, anthropic.APIConnectionError):
+        return ("could not reach the API (network)", "Usually transient; the next run should work.")
+    return (msg[:200] or e.__class__.__name__, "")
+
 def write_sentences(c, heads, n):
     r = c.messages.create(
         model=MODEL, max_tokens=8000,
@@ -219,7 +252,18 @@ def main():
 
     c = client()
     print(f"writing {a.sentences} sentences in Palestinian…")
-    sents = write_sentences(c, heads, a.sentences)
+    try:
+        sents = write_sentences(c, heads, a.sentences)
+    except Exception as e:
+        what, fix = explain_api_failure(e)
+        print("\n" + "!" * 72)
+        print("!! TODAY'S NEWS WAS NOT WRITTEN — %s" % what)
+        if fix:
+            print("!! FIX: %s" % fix)
+        print("!! Until then the app keeps serving the last article it has, and says so on the")
+        print("!! home screen. Nothing else in the app is affected.")
+        print("!" * 72 + "\n")
+        return 1
     for s in sents: print("   ", s["ar"])
 
     tid = f"news-{today}"
