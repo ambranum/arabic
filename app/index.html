@@ -1362,6 +1362,7 @@ const ICON = {
   user:    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6.5 8-6.5s8 2.5 8 6.5"/>',
   translate: '<path d="M4 5h9M8.5 3v2c0 4-2.2 7-5.5 8.5"/><path d="M5 10c0 2 2.2 4 5.5 5"/><path d="M12.5 20l4.5-9 4.5 9M14.5 17h5"/>',
   tutor:   '<path d="M21 11.5a8 8 0 0 1-8 8H7l-4 3v-6.5a8 8 0 1 1 18-4.5z"/><path d="M9.3 9.4a2.8 2.8 0 0 1 5.3 1c0 1.8-2.7 2.1-2.7 3.9"/><path d="M11.9 17v.1"/>',
+  ears:    '<path d="M4 14v-3a8 8 0 0 1 16 0v3"/><rect x="2" y="13" width="4" height="7" rx="1.6"/><rect x="18" y="13" width="4" height="7" rx="1.6"/>',
   lesson:  '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 3v18"/><path d="M11.5 8h5M11.5 12h5M11.5 16h3"/>',
 };
 const svg = n => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none"
@@ -1390,6 +1391,7 @@ const SECTIONS = [
   {route: 'table',   icon: 'table',   label: 'The Dinner Table', ready: true, group: 'input'},
   {route: 'books',   icon: 'books',   label: 'Books',            ready: true, group: 'input'},
   {route: 'videos',  icon: 'video',   label: 'Videos',           ready: true, group: 'input'},
+  {route: 'listening', icon: 'ears',  label: 'Listening',        ready: true, group: 'input'},
   {route: 'bible',   icon: 'bible',   label: 'Bible',            ready: true, group: 'input'},
   {route: 'tutor',   icon: 'tutor',   label: 'Ask a Tutor',      ready: true, group: 'ask'},
   {route: 'translate', icon: 'translate', label: 'Translate',    ready: true, group: 'ask'},
@@ -1412,6 +1414,7 @@ function secStatus(sec) {
       : sec.route === 'translate' ? 'Words & phrases in context'
       : sec.route === 'bible' ? 'ESV ‖ Arabic, side by side'
       : sec.route === 'videos' ? VIDEOS.length + ' playlists · Shami Speaker'
+      : sec.route === 'listening' ? LISTEN.length + ' episodes · native speed, with transcripts'
       : sec.route === 'reactions' ? (RX.items ? RX.items.length + ' quick replies, by feel' : 'Conversation reflexes')
       : sec.route === 'sounds' ? (SND.lessons ? SND.lessons.length + ' sound contrasts to master' : 'Get the ear & mouth right')
       : sec.route === 'table' ? (TBL.dialogues ? TBL.dialogues.length + ' conversations · follow the room' : 'The north-star skill')
@@ -1481,6 +1484,7 @@ function route() {
     if (sec.route === 'table') return tableSection(id);
     if (sec.route === 'books')   return booksSection(id, arg);
     if (sec.route === 'videos')  return videosSection(id);
+    if (sec.route === 'listening') return listeningSection(id);
     if (sec.route === 'bible')   return bibleSection(id, arg);
     if (sec.route === 'account') return accountSection();
     return emptySection(sec); }
@@ -2225,6 +2229,62 @@ function lessonView(u) {
   });
 }
 
+// ============ Listening — real Levantine speech, transcript on the maker's site ============
+function listeningSection(sub) {
+  $('back').hidden = false;
+  const ep = lsById(sub);
+  return ep ? listeningEp(ep) : listeningHome();
+}
+
+function listeningHome() {
+  $('title').textContent = 'Listening';
+  const seen = contentSeen();
+  let h = `<p class="hint">Adults talking at full speed about real subjects — the one thing the
+    app's own audio can't be, because everything else here was recorded for a learner. Every
+    episode has a transcript, an English translation and a vocabulary list on the makers' site.</p>
+    <div class="refsrc"><b>Real Arabic</b>, by Amer (Suweida, Syria) and Keire Murphy. The audio and
+    transcripts live on <a href="${LISTEN_HOME}" target="_blank" rel="noopener">their site</a> and
+    stay there — this is a signposted index, not a copy. If it earns its keep for you,
+    <a href="https://realarabic.weebly.com/support.html" target="_blank" rel="noopener">support
+    them</a>.</div>
+    <div class="unval"><b>Syrian and Lebanese, not Palestinian.</b> Close kin to what you're
+    learning and superb ear-training, but the ق, some vowels and a fair bit of vocabulary differ
+    from the urban Palestinian the lessons drill. Listen for the shape, not the model.</div>
+    <div class="vtiles">`;
+  h += LISTEN.slice().sort((a, b) => (a.phase - b.phase) || a.date.localeCompare(b.date))
+    .map(e => `<button class="vtile wide" onclick="location.hash='/listening/${e.slug}'">
+      <div class="vtile-h"><span class="vtile-t">${esc(e.title)}</span>
+        <span class="vtile-n">${seen.has('ls:' + e.slug) ? '✓ done' : 'Phase ' + (e.phase + 1)}</span></div>
+      <div class="vtile-s">${esc(e.date)} · transcript ${e.tr === 'pdf' ? 'as a PDF' : 'on the page'}</div>
+    </button>`).join('');
+  h += `</div>`;
+  $('view').innerHTML = h;
+}
+
+function listeningEp(e) {
+  $('title').textContent = 'Listening';
+  $('view').innerHTML = `
+    <div class="lsn-title-en">${esc(e.title)}</div>
+    <p class="hint">${esc(e.date)} · Real Arabic · transcript ${e.tr === 'pdf' ? 'as a downloadable PDF' : 'printed on the page'}</p>
+    <div class="sec">How to use it</div>
+    <ol class="hint" style="line-height:1.9">
+      <li><b>Listen once with nothing in front of you.</b> Get the gist — who is talking, what about.
+        You are not meant to catch it all.</li>
+      <li><b>Listen again with the transcript.</b> Now the words you missed attach to sounds you
+        already heard, which is the part that actually builds the ear.</li>
+      <li><b>Retell it out loud</b> in three or four sentences, in Arabic, without looking.</li>
+      <li>Note what you couldn't say — that's tomorrow's question for the tutor.</li>
+    </ol>
+    <div class="ctl" style="margin-top:14px">
+      <button class="tog go" onclick="window.open('${cssq(e.url)}','_blank','noopener')">
+        Open the episode &amp; transcript →</button>
+      <button class="tog" onclick="location.hash='/listening'">All episodes</button>
+      <button class="tog" onclick="location.hash='/tutor'">Ask about something you heard</button>
+    </div>
+    <div class="note">Opens realarabic.weebly.com in a new tab — the audio and the transcript are
+      theirs and are read there.</div>`;
+}
+
 function booksSection(sub, arg) {
   $('back').hidden = false;
   if (sub && arg === 'print') return bookPrintView(sub);
@@ -2350,6 +2410,45 @@ function storiesLevel(lvl){
 // playlist id; `cat` groups the playlists the way the rest of the app is organised.
 // `phase` = the earliest plan phase (0..6) at which the Plan will start scheduling this playlist,
 // so a beginner's "watch" task is letters/vocab, not a full TV drama. Higher phases unlock the rest.
+// ---- Real Arabic: unscripted native speech, with the transcript on their site ----
+// Amer (Suweida, Syria) and Keire Murphy make a Levantine podcast of real interviews and stories,
+// each with a transcript, English translation and vocabulary. This is the one thing the app's own
+// audio can't be: adults talking at full speed about real subjects, unedited for learners.
+//
+// WE LINK, WE DON'T COPY. The site carries no licence, so the transcripts are theirs, all rights
+// reserved — the same rule this repo already applies to the ESV and the Lingualism book. Each entry
+// below is a signpost to their page; the audio and the transcript are read there, where the two
+// people who made them get the visit. They also run a Support page and take partnerships, so if we
+// ever want the transcripts inside the app, the route is to ask them, not to scrape them.
+//
+// DIALECT NOTE: this is SYRIAN/LEBANESE Levantine, not the urban Palestinian the rest of the app
+// teaches. Close kin, and excellent ear-training — but expect ق, vowels and some vocabulary to
+// differ from what the lessons drill. That mismatch is surfaced in the UI, not hidden.
+const LISTEN = [
+  {slug:'electricity', title:"What's Up With Lebanese Electricity?", date:'2022-03-06', phase:4,
+   tr:'page', url:'https://realarabic.weebly.com/podcast-transcripts/episode-27-whats-up-with-lebanese-electricity'},
+  {slug:'dzovig', title:'Dzovig, interviewed', date:'2022-04-01', phase:4,
+   tr:'page', url:'https://realarabic.weebly.com/podcast-transcripts/episode28-dzovig-interview'},
+  {slug:'shireen', title:'شيرين أبو عاقلة', date:'2022-09-23', phase:5,
+   tr:'page', url:'https://realarabic.weebly.com/podcast-transcripts/episode'},
+  {slug:'immigration', title:'Immigration', date:'2023-01-03', phase:5,
+   tr:'pdf', url:'https://realarabic.weebly.com/podcast-transcripts/immigration'},
+  {slug:'manar', title:'Manar and Dzovig, interviewed', date:'2023-03-04', phase:5,
+   tr:'pdf', url:'https://realarabic.weebly.com/podcast-transcripts/episode-manar-and-dzovig-interviwe'},
+  {slug:'ukraine1', title:'Russia/Ukraine and the MENA region, part 1', date:'2023-03-13', phase:5,
+   tr:'pdf', url:'https://realarabic.weebly.com/podcast-transcripts/the-impact-of-the-russiaukraine-conflict-on-mena-countries-part-1'},
+  {slug:'ukraine2', title:'Russia/Ukraine and the MENA region, part 2', date:'2023-05-18', phase:6,
+   tr:'pdf', url:'https://realarabic.weebly.com/podcast-transcripts/the-impact-of-the-russiaukraine-conflict-on-mena-countries-part-2'},
+  {slug:'gibran', title:"Gibran's sanctuary — Bcharre and the Prophet's legacy", date:'2023-06-20', phase:6,
+   tr:'pdf', url:'https://realarabic.weebly.com/podcast-transcripts/our-journey-to-gibrans-sanctuary-exploring-bcharre-and-the-prophets-legacy'},
+  {slug:'firstday', title:"First day at work — Layal and Rana's story", date:'2025-06-25', phase:4,
+   tr:'pdf', url:'https://realarabic.weebly.com/podcast-transcripts/first-day-at-work-layal-and-ranas-story'},
+  {slug:'july4', title:"The history of America's Independence Day", date:'2025-07-04', phase:6,
+   tr:'pdf', url:'https://realarabic.weebly.com/podcast-transcripts/the-history-of-americas-independence-day'},
+];
+const LISTEN_HOME = 'https://realarabic.weebly.com/';
+const lsById = s => LISTEN.find(x => x.slug === s);
+
 const VIDEOS = [
   {slug:'letters',  pl:'PLtMbzvT4n03q7SbY9SxKRC1n7EUBcwyGA', title:'Arabic Letters', n:3, cat:'Lessons', phase:0},
   {slug:'vocab',    pl:'PLtMbzvT4n03rL_Lnf-xRE8dCDnGM81_95', title:'Vocabulary in Levantine Arabic', n:52, cat:'Lessons', phase:0},
@@ -2973,6 +3072,13 @@ function pickVerb(phaseIndex, ord) {
   const tier = (CUR.verbTier || [])[Math.min(phaseIndex, 6)] || 3;
   return walkPick(verbPlan().filter(v => v.tier <= tier), ord || 0, contentSeen());
 }
+// Same walk as the videos: only episodes at or below your phase, in order, advancing via seen.
+function pickListen(phaseIndex, ord) {
+  const list = LISTEN.filter(v => (v.phase || 0) <= phaseIndex)
+    .map(v => ({key: 'ls:' + v.slug, slug: v.slug, title: v.title, link: '/listening/' + v.slug}));
+  return walkPick(list, ord || 0, contentSeen());
+}
+
 function pickVideo(phaseIndex, ord) {
   const list = VIDEOS.filter(v => (v.phase || 0) <= phaseIndex)
     .map(v => ({key: 'w:' + v.slug, slug: v.slug, title: v.title, n: v.n, link: '/videos/' + v.slug}));
@@ -3024,7 +3130,9 @@ function buildDay(cfg, phaseIndex, dateISO, dueCount) {
     if (sp.act === 'srs' && dueCount === 0) return false;                 // nothing due today → skip review
     if (sp.src === 'external') {
       if (sp.act === 'course' || sp.act === 'sound') return !!(cfg.external.languageTransfer || cfg.external.pimsleur);
-      if (sp.act === 'listen') return !!cfg.external.podcasts;
+      // The Real Arabic catalogue is always available (it's just links), so listening no longer
+      // depends on the podcasts toggle — that only decides whether we ALSO suggest going wider.
+      if (sp.act === 'listen') return true;
       if (sp.act === 'tutor') return true;   // in-app Ask a Tutor is always available (a real tutor is a bonus)
     }
     if (A.speak && !speakAvail && sp.act !== 'tutor') return false;       // no voice slot → drop speaking (tutor is the honest fallback)
@@ -3127,6 +3235,19 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail, phaseIndex) {
   // The tutor conversation now has an in-app home: Ask a Tutor, primed on spoken Palestinian.
   // Point the task there and fold in the "what you couldn't say" loop; a real tutor stays the
   // gold-standard bonus when they have one.
+  // Listening resolves to a NAMED episode from the Real Arabic catalogue rather than the old
+  // "pick a short episode" search link — a real next thing, walked in order like the stories.
+  if (sp.act === 'listen') {
+    const pick = pickListen(phaseIndex, ord);
+    if (pick) {
+      const ep = lsById(pick.slug) || {};
+      t.title = pick.title; t.link = pick.link; t.cid = pick.key; t.source = 'inapp';
+      t.seq = 'Real Arabic · ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
+      t.note = 'Native speed, unscripted. Listen once without the transcript, then again with it.' +
+        (cfg.external && cfg.external.podcasts ? ' Then widen out to your own podcasts.' : '');
+      return t;
+    }
+  }
   if (sp.act === 'tutor') {
     t.title = 'Ask a Tutor — the things you couldn’t say';
     t.link = '/tutor'; t.source = 'inapp';
