@@ -437,15 +437,25 @@
   .akbd-hd{display:flex; justify-content:space-between; align-items:center; gap:10px;
     font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:7px}
   .akbd-x{font:inherit; font-size:12px; text-transform:none; letter-spacing:0; border:0;
-    background:none; color:var(--verdigris); cursor:pointer; padding:2px 4px}
+    background:none; color:var(--verdigris); cursor:pointer; padding:2px 4px; touch-action:none}
   .akbd-r{display:flex; justify-content:center; gap:4px; margin-bottom:4px}
-  .akbd-k{font-family:var(--arabic); font-size:19px; line-height:1; flex:1 1 0; min-width:0;
-    max-width:46px; height:38px; border:1px solid var(--rule); border-radius:7px;
-    background:var(--paper-2); color:var(--ink); cursor:pointer; padding:0}
+  .akbd-k{position:relative; font-family:var(--arabic); font-size:19px; line-height:1;
+    flex:1 1 0; min-width:0; max-width:46px; height:40px; border:1px solid var(--rule);
+    border-radius:7px; background:var(--paper-2); color:var(--ink); cursor:pointer; padding:0;
+    touch-action:none; user-select:none; -webkit-user-select:none}
   .akbd-k:active{background:var(--verdigris); border-color:var(--verdigris); color:#fff}
-  .akbd-k.wide{flex:3 1 0; max-width:none; font-family:var(--sans); font-size:12px}
-  .akbd-k.fn{font-family:var(--sans); font-size:14px; max-width:60px; flex:1.4 1 0}
-  @media (max-width:420px){ .akbd-k{font-size:17px; height:34px} }
+  .akbd-k.wide{flex:3.4 1 0; max-width:none; font-family:var(--sans); font-size:12px}
+  .akbd-k.fn{font-family:var(--sans); font-size:14px; max-width:62px; flex:1.5 1 0}
+  /* A hint that the key hides variants under a long press — iOS shows nothing, but nobody
+     discovers أ that way unless they already know the trick. */
+  .akbd-k.more::after{content:''; position:absolute; top:3px; inset-inline-end:4px; width:3px;
+    height:3px; border-radius:50%; background:var(--muted)}
+  .akbd-k.more:active::after{background:rgba(255,255,255,.7)}
+  .akbd-pop{position:absolute; z-index:2; display:flex; gap:4px; padding:5px;
+    background:var(--paper); border:1px solid var(--rule); border-radius:9px;
+    box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .akbd-pop .akbd-k{flex:0 0 auto; width:40px; max-width:none}
+  @media (max-width:420px){ .akbd-k{font-size:17px; height:36px} }
   /* ---------- verbs ---------- */
   .vsearch{width:100%; font:inherit; font-size:15px; padding:11px 14px; margin:2px 0 6px;
       border:1px solid var(--rule); border-radius:8px; background:var(--paper-2);
@@ -1413,13 +1423,28 @@ const pretty = g => String(g || '').replace(/_/g, ' ').replace(/;/g, ' · ');
 // (remembered across sessions) — someone without an Arabic layout wants it every time, and
 // someone who has one never opens it in the first place.
 const KBD_KEY = 'alp.kbd.on';
-const KBD_ROWS = [
-  ['ض','ص','ث','ق','ف','غ','ع','ه','خ','ح','ج','د'],
-  ['ش','س','ي','ب','ل','ا','ت','ن','م','ك','ط'],
-  ['ئ','ء','ؤ','ر','لا','ى','ة','و','ز','ظ'],
-  ['أ','إ','آ','،','؟'],
+// The iPhone Arabic layout, key for key: 11 / 11 / 9-plus-backspace, ١٢٣ and the harakat key on
+// the bottom row. Anyone who already types Arabic on a phone knows exactly where everything is,
+// and anyone who doesn't is learning the layout they'll meet everywhere else.
+const KBD_LETTERS = [
+  ['ض','ص','ث','ق','ف','غ','ع','ه','خ','ح','ج'],
+  ['ش','س','ي','ب','ل','ا','ت','ن','م','ك','ة'],
+  ['ء','ظ','ط','ذ','د','ز','ر','و','ى'],
 ];
+const KBD_NUMS = [
+  ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'],
+  ['-','/',':','؛','(',')','%','&','@','"'],
+  ['،','.','؟','!','’','«','»'],
+];
+// iOS hides the alef and hamza variants behind press-and-hold rather than giving each a key.
+// Same here — hold ا for أ إ آ, ل for the lam-alef ligatures, ّ for the full set of harakat.
+const KBD_HOLD = {
+  'ا': ['أ','إ','آ','ٱ'], 'و': ['ؤ'], 'ي': ['ى','ئ'], 'ه': ['ة'],
+  'ء': ['أ','إ','ؤ','ئ','آ'], 'ل': ['لا','لأ','لإ','لآ'],
+  'ّ': ['َ','ُ','ِ','ً','ٌ','ٍ','ْ','ّ'],
+};
 let _kbdEl = null;                                   // the field the panel is typing into
+let _kbdPage = 'ar', _kbdHoldT = null, _kbdHeld = false;
 const kbdOn = () => { try { return localStorage.getItem(KBD_KEY) === '1'; } catch (e) { return false; } };
 
 // Wrap a field's HTML so it carries the toggle. `inline` puts the button beside the field
@@ -1443,19 +1468,14 @@ function kbdOpen(el) {
   if (!p) {
     p = document.createElement('div');
     p.id = 'akbd'; p.hidden = true;
-    p.innerHTML = `<div class="akbd-in">
-        <div class="akbd-hd"><span>Arabic keyboard</span>
-          <button class="akbd-x" onmousedown="event.preventDefault()" onclick="kbdClose(1)">Hide</button></div>
-        ${KBD_ROWS.map(r => `<div class="akbd-r">` + r.map(k =>
-          `<button class="akbd-k" onmousedown="event.preventDefault()"
-             onclick="kbdIns('${k}')">${k}</button>`).join('') + `</div>`).join('')}
-        <div class="akbd-r">
-          <button class="akbd-k fn" onmousedown="event.preventDefault()" onclick="kbdBack()">⌫</button>
-          <button class="akbd-k wide" onmousedown="event.preventDefault()" onclick="kbdIns(' ')">space</button>
-          <button class="akbd-k fn" onmousedown="event.preventDefault()" onclick="kbdIns('.')">.</button>
-        </div></div>`;
     document.body.appendChild(p);
+    // Delegated, because the panel redraws whenever you switch to the ١٢٣ page.
+    p.addEventListener('pointerdown', kbdDown);
+    p.addEventListener('pointerup', kbdUp);
+    p.addEventListener('pointercancel', kbdCancelHold);
   }
+  _kbdPage = 'ar';
+  kbdDraw();
   p.hidden = false;
   document.querySelectorAll('.kbd-tog').forEach(b => b.classList.toggle('on', b.id === 'kbdt-' + el.id));
   el.focus({preventScroll: true});
@@ -1466,8 +1486,63 @@ function kbdOpen(el) {
   const r = el.getBoundingClientRect(), top = p.getBoundingClientRect().top;
   if (r.bottom > top - 10) window.scrollTo(0, window.scrollY + (r.bottom - top) + 18);
 }
+function kbdDraw() {
+  const p = $('akbd'); if (!p) return;
+  const rows = _kbdPage === 'ar' ? KBD_LETTERS : KBD_NUMS;
+  const k = ch => `<button class="akbd-k${KBD_HOLD[ch] ? ' more' : ''}" data-k="${ch}">${ch}</button>`;
+  p.innerHTML = `<div class="akbd-in">
+      <div class="akbd-hd"><span>Arabic keyboard</span>
+        <button class="akbd-x" data-a="hide">Hide</button></div>
+      ${rows.map((r, i) => `<div class="akbd-r">${r.map(k).join('')}${
+        i === rows.length - 1 ? `<button class="akbd-k fn" data-a="back">⌫</button>` : ''}</div>`).join('')}
+      <div class="akbd-r">
+        <button class="akbd-k fn" data-a="page">${_kbdPage === 'ar' ? '١٢٣' : 'ا ب ج'}</button>
+        <button class="akbd-k wide" data-k=" ">space</button>
+        ${_kbdPage === 'ar' ? `<button class="akbd-k fn more" data-k="ّ">ـّ</button>` : ''}
+      </div></div>`;
+}
+// Press-and-hold opens the variants; a normal tap types the key itself. Everything runs off
+// pointer events so one code path covers finger, mouse and trackpad.
+function kbdDown(e) {
+  const b = e.target.closest('[data-k],[data-a]');
+  kbdPopClose();
+  if (!b) return;
+  e.preventDefault();                                  // never let the field lose the caret
+  _kbdHeld = false;
+  const v = KBD_HOLD[b.dataset.k];
+  if (v) _kbdHoldT = setTimeout(() => { _kbdHoldT = null; _kbdHeld = true; kbdPop(b, v); }, 380);
+}
+function kbdUp(e) {
+  const b = e.target.closest('[data-k],[data-a]');
+  kbdCancelHold();
+  if (!b || _kbdHeld) { _kbdHeld = false; return; }
+  e.preventDefault();
+  if (b.dataset.a === 'hide') return kbdClose(1);
+  if (b.dataset.a === 'back') return kbdBack();
+  if (b.dataset.a === 'page') { _kbdPage = _kbdPage === 'ar' ? 'num' : 'ar'; return kbdDraw(); }
+  kbdIns(b.dataset.k);
+}
+function kbdCancelHold() { if (_kbdHoldT) { clearTimeout(_kbdHoldT); _kbdHoldT = null; } }
+function kbdPop(btn, variants) {
+  kbdPopClose();
+  const pop = document.createElement('div');
+  pop.className = 'akbd-pop';
+  pop.innerHTML = variants.map(v => `<button class="akbd-k" data-v="${v}">${v}</button>`).join('');
+  pop.addEventListener('pointerdown', e => {
+    const b = e.target.closest('[data-v]'); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    kbdIns(b.dataset.v); kbdPopClose();
+  });
+  $('akbd').appendChild(pop);
+  const r = btn.getBoundingClientRect(), pr = $('akbd').getBoundingClientRect();
+  pop.style.top = (r.top - pr.top - pop.offsetHeight - 6) + 'px';
+  let left = r.left - pr.left + r.width / 2 - pop.offsetWidth / 2;
+  pop.style.left = Math.max(4, Math.min(left, pr.width - pop.offsetWidth - 4)) + 'px';
+}
+function kbdPopClose() { const q = document.querySelector('.akbd-pop'); if (q) q.remove(); }
 // `sticky` = the user asked for it to go away, so don't reopen on the next field.
 function kbdClose(sticky) {
+  kbdCancelHold(); kbdPopClose();
   const p = $('akbd'); if (p) p.hidden = true;
   document.documentElement.style.removeProperty('--kbdh');
   document.querySelectorAll('.kbd-tog').forEach(b => b.classList.remove('on'));
