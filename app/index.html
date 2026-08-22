@@ -983,6 +983,8 @@
   .as-choice.good{border-color:var(--verdigris); background:var(--verdigris); color:#fff}
   .as-choice.bad{border-color:var(--rubric); background:var(--ochre-wash); color:var(--rubric)}
   .as-choice:disabled{cursor:default}
+  .as-choice.idk{margin-top:6px; font-size:13.5px; color:var(--muted); border-style:dashed}
+  .as-choice.idk:hover:not(:disabled){color:var(--ink-soft); background:none}
   .as-prof{display:flex; flex-direction:column; gap:9px; max-width:520px}
   .as-skill{display:grid; grid-template-columns:130px 1fr 44px; gap:10px; align-items:center; font-size:13px}
   .as-prof.small .as-skill{font-size:12px; grid-template-columns:118px 1fr 40px}
@@ -3623,7 +3625,8 @@ function assessView() {
   $('view').innerHTML = `
     <p class="hint">About <b>8 minutes</b>, ${(AS.rounds || 4) * 5} quick questions across listening,
       vocabulary, grammar, verbs and conversation chunks. It adapts as you go — getting things wrong
-      is fine, that's how it finds your level. Your plan starts where this says you are.</p>
+      is fine, that's how it finds your level. Your plan starts where this says you are, so
+      <b>press "I don't know" rather than guessing</b>; a lucky guess only places you too high.</p>
     <div class="sec">First, your own guess</div>
     ${radio('none', 'Brand new', 'Never really studied Arabic')}
     ${radio('greetings', 'A few greetings', 'Salaam, shukran, the basics')}
@@ -3659,20 +3662,37 @@ function assessRender() {
       <div class="as-sub">${esc(it.sub || '')}</div>
       <div class="as-choices">${it.choices.map((c, i) =>
         `<button class="as-choice" ${it.rtl && /[؀-ۿ]/.test(c.t) ? 'dir="rtl"' : ''}
-           onclick="assessAnswer(${i})">${esc(c.t)}</button>`).join('')}</div>
+           onclick="assessAnswer(${i})">${esc(c.t)}</button>`).join('')}
+        <button class="as-choice idk" onclick="assessIdk()">I don't know</button></div>
     </div>`;
 }
 function assessAnswer(i) {
   const it = _as.cur; if (!it) return;
   const ok = !!it.choices[i].ok;
-  const sk = _as.skills[it.skill] = _as.skills[it.skill] || {ok: 0, n: 0};
+  const sk = _asSkill(it.skill);
   sk.n++; if (ok) { sk.ok++; _as.roundOk++; }
-  const btns = document.querySelectorAll('.as-choice');
-  if (btns[i]) btns[i].classList.add(ok ? 'good' : 'bad');
+  _asReveal(i, ok);
+  setTimeout(() => { if (_asAdvance()) assessNextItem(); }, ok ? 350 : 900);
+}
+// Four choices means a blind guess lands one time in four, and a couple of lucky guesses are
+// enough to place someone a whole phase too high. "I don't know" is the honest exit: it scores
+// exactly like a wrong answer for placement, but it is counted separately so the result can say
+// how much of the test was actually known rather than survived.
+function assessIdk() {
+  const it = _as.cur; if (!it) return;
+  const sk = _asSkill(it.skill);
+  sk.n++; sk.idk = (sk.idk || 0) + 1;
+  _asReveal(-1, false);
+  setTimeout(() => { if (_asAdvance()) assessNextItem(); }, 900);
+}
+const _asSkill = k => (_as.skills[k] = _as.skills[k] || {ok: 0, n: 0, idk: 0});
+// Mark the chosen button, always show the right answer, lock the rest, and step the counter.
+function _asReveal(i, ok) {
+  const it = _as.cur, btns = document.querySelectorAll('.as-choice');
+  if (i >= 0 && btns[i]) btns[i].classList.add(ok ? 'good' : 'bad');
   if (!ok) { const ci = it.choices.findIndex(c => c.ok); if (btns[ci]) btns[ci].classList.add('good'); }
   btns.forEach(b => b.disabled = true);
   _as.qi++; _as.answered++;
-  setTimeout(() => { if (_asAdvance()) assessNextItem(); }, ok ? 350 : 900);
 }
 // End-of-round tier moves; returns false when the test is finished (and renders the result).
 function _asAdvance() {
@@ -3728,6 +3748,14 @@ function assessResultView(res) {
     </div></div>
     <div class="sec">Skill profile</div>
     ${assessProfileHTML(res)}
+    ${(() => {
+      const sk = Object.values(res.skills || {});
+      const idk = sk.reduce((a, s) => a + (s.idk || 0), 0), n = sk.reduce((a, s) => a + s.n, 0);
+      if (!idk) return '';
+      return `<p class="hint" style="margin-top:10px">You marked <b>${idk}</b> of ${n}
+        as "I don't know" — that's the honest signal this placement is built on, and it counts the
+        same as a wrong answer. Better here than three phases into a plan that doesn't fit.</p>`;
+    })()}
     <div class="ctl" style="margin-top:18px">
       ${planCfg()
         ? `<button class="tog go" style="font-size:14px;padding:11px 20px" onclick="location.hash='/plan'">Back to my plan →</button>`

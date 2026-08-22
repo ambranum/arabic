@@ -8,7 +8,12 @@ window.ASSESS = {
   // ---- the adaptive ladder ----
   rounds: 4,            // rounds of one item per skill → rounds*5 = 20 items ≈ 8 minutes
   upAt: 4,              // ≥4 of 5 right in a round → move up a tier
-  downAt: 2,            // ≤2 of 5 right → move down
+  // ≤1 of 5 right → move down. This was 2 when guessing was the only alternative to answering:
+  // with four choices, a learner who genuinely knew 2 of 5 scored about 2.75 and usually held
+  // their tier on the strength of a lucky guess. Now that "I don't know" is on every item, that
+  // same learner honestly scores 2 — so keeping the old threshold would simply swap systematic
+  // over-placement for systematic under-placement. One rung lower restores the calibration.
+  downAt: 1,
   skills: ['listening', 'vocab', 'grammar', 'verbs', 'chunks'],
   skillLabels: {listening: 'Listening', vocab: 'Vocabulary', grammar: 'Grammar',
                 verbs: 'Verbs', chunks: 'Conversation chunks'},
