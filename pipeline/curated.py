@@ -42,6 +42,10 @@ PROPER = {
     "إيران":    ("إيران",    "2iiraan",    "Iran", "NOUN_PROP"),
     "أمريكا":   ("أَمريكا",  "2ameerka",   "America", "NOUN_PROP"),
     "الإيبولا": ("الإيبولا", "2il2iibola", "Ebola", "NOUN_PROP"),
+    # Characters from the graded readers. جحا is the protagonist of forty tales and appears in
+    # nearly every sentence of that book — without an entry his own name reads "no entry" to a
+    # beginner on the very first word they tap.
+    "جحا":      ("جُحا",     "ju7a",       "Juha (the folk-tale trickster)", "NOUN_PROP"),
 }
 
 PROPER.update({
