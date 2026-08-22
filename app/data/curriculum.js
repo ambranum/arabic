@@ -21,6 +21,37 @@ window.CURRICULUM = {
   // Spaced re-exposure for grammar/verbs once first learned (days). SRS handles vocab itself.
   reviewDays: [2, 7, 21],
 
+  // ---- what level each phase IS, in the words learners already know ----
+  // One authority for every "how hard is this?" label in the app, indexed by phase 0..6, so a
+  // story, a lesson unit and a grammar point can all say the same thing the same way.
+  //
+  // The CEFR band is read off this plan's own cumulative hour budget (15 / 75 / 275 / 525 / 925
+  // / 1425 / 2000) against how long Arabic actually takes: the US Foreign Service Institute puts
+  // it in its hardest category at ~2200 class hours to professional working proficiency, which
+  // is roughly CEFR B2–C1. So the bands are wide where CEFR is wide — B1 spans two phases,
+  // because B1→B2 is the long middle everyone underestimates.
+  //
+  // Two honest caveats, which the app repeats to the learner rather than hiding here:
+  // CEFR describes overall ability in a language including reading and writing, while this plan
+  // trains SPOKEN Palestinian; and no one here is examining you. It is a signpost, not a
+  // certificate.
+  //
+  // `band` is the coarse three-way name the stories and books were ALREADY graded with, and the
+  // two must line up or the app contradicts itself: the plan serves beginner stories in phase 1,
+  // intermediate in phase 4 and advanced in phase 6, so those phases carry exactly those band
+  // names. Get this wrong and an "Advanced" story is tagged "Intermediate", which is how the
+  // first draft of this table read. That is why B2 is Advanced here rather than Intermediate —
+  // the split follows the content, not CEFR's own A/B/C grouping.
+  levels: [
+    {cefr: 'A1', band: 'Beginner'},      // 1 Sound              — the ear and the mouth
+    {cefr: 'A1', band: 'Beginner'},      // 2 Reaction           — automatic conversational reflexes
+    {cefr: 'A2', band: 'Beginner'},      // 3 The self           — introduce yourself, simple sentences
+    {cefr: 'B1', band: 'Intermediate'},  // 4 Feeling & opinion  — say what you think, and hedge it
+    {cefr: 'B1', band: 'Intermediate'},  // 5 Narrative          — tell a story start to finish
+    {cefr: 'B2', band: 'Advanced'},      // 6 Nuance             — warm, funny, diplomatic
+    {cefr: 'C1', band: 'Advanced'},      // 7 The table          — several speakers at once
+  ],
+
   // ---- the activity library (§2.3) ----
   // slot: which kind of moment the activity needs.
   //   car     = voice free + alone (the speaking engine); audio-first, eyes may be busy

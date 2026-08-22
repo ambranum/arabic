@@ -681,6 +681,27 @@
   .pd-ph{display:block; font-size:10px; color:var(--ink-soft); font-family:var(--serif)}
   .pd-n{display:block; font-size:9px; color:var(--muted); margin-top:2px}
   .pd-rest{font-size:10px; color:var(--muted)}
+  /* ---- level tag (Beginner · A1 · Phase 1) ---- */
+  .lvl{display:inline-flex; align-items:baseline; gap:5px; white-space:nowrap; vertical-align:middle;
+    font-family:var(--sans); font-size:10px; line-height:1.5; padding:2px 7px; border-radius:999px;
+    border:1px solid color-mix(in srgb, var(--lc) 45%, transparent);
+    background:color-mix(in srgb, var(--lc) 12%, transparent); color:var(--ink-soft)}
+  .lvl b{font-weight:600; color:var(--lc)}
+  .lvl i{font-style:normal; font-family:var(--mono); font-size:9.5px; letter-spacing:.04em;
+    color:var(--lc); font-weight:600}
+  .lvl em{font-style:normal; color:var(--muted)}
+  .lvl-row{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 12px}
+  .lvl-what{font-size:11px; color:var(--muted); text-decoration:underline; text-underline-offset:2px}
+  .vd-lvl{margin-top:6px}
+  .lvl-what:hover{color:var(--verdigris)}
+  .bk-cover-l{margin-top:6px}
+  /* the legend on the journey page */
+  .lvl-key{width:100%; border-collapse:collapse; font-size:12px; margin:2px 0 6px}
+  .lvl-key td{padding:5px 6px; border-bottom:1px solid var(--rule); vertical-align:middle}
+  .lvl-key tr:last-child td{border-bottom:0}
+  .lvl-key td:first-child{width:1%; white-space:nowrap}
+  .lvl-key .k-n{font-family:var(--serif); font-size:13px}
+  .lvl-key .k-g{color:var(--muted); font-size:11.5px; line-height:1.4}
   /* ---- The journey (whole arc to fluent) ---- */
   .jr-top{display:flex; align-items:center; gap:14px; margin-bottom:8px}
   .jr-pct{font-family:var(--serif); font-size:34px; line-height:1; color:var(--verdigris)}
@@ -2319,8 +2340,8 @@ function lessonsHome() {
     <div class="vtiles">`;
   h += (LSN.units || []).map(u => `<button class="vtile wide" onclick="location.hash='/lessons/${u.id}'">
       <div class="vtile-h"><span class="vtile-t">Unit ${u.n} — ${esc(u.title.en)}</span>
-        <span class="vtile-n">${lsnDone(u.id) ? '✓ done' : 'Phase ' + (u.phase + 1)}</span></div>
-      <div class="vtile-s"><span dir="rtl">${esc(u.title.ar)}</span> · ${u.chunks.length} chunks · ${esc(u.src)}</div>
+        <span class="vtile-n">${lsnDone(u.id) ? '✓ done' : ''}</span></div>
+      <div class="vtile-s">${lvlTagFor('unit', u)} <span dir="rtl">${esc(u.title.ar)}</span> · ${u.chunks.length} chunks · ${esc(u.src)}</div>
     </button>`).join('');
   h += `</div>`;
   $('view').innerHTML = h;
@@ -2503,8 +2524,8 @@ function listeningHome() {
   h += LISTEN.slice().sort((a, b) => (a.phase - b.phase) || a.date.localeCompare(b.date))
     .map(e => `<button class="vtile wide" onclick="location.hash='/listening/${e.slug}'">
       <div class="vtile-h"><span class="vtile-t">${esc(e.title)}</span>
-        <span class="vtile-n">${seen.has('ls:' + e.slug) ? '✓ done' : 'Phase ' + (e.phase + 1)}</span></div>
-      <div class="vtile-s">${esc(e.date)} · transcript ${e.tr === 'pdf' ? 'as a PDF' : 'on the page'}</div>
+        <span class="vtile-n">${seen.has('ls:' + e.slug) ? '✓ done' : ''}</span></div>
+      <div class="vtile-s">${lvlTagFor('listen', e)} ${esc(e.date)} · transcript ${e.tr === 'pdf' ? 'as a PDF' : 'on the page'}</div>
     </button>`).join('');
   h += `</div>`;
   $('view').innerHTML = h;
@@ -2551,7 +2572,8 @@ function booksHome() {
   h += books.length ? books.map(b => `<button class="bk-cover" onclick="location.hash='/books/${esc(b.id)}'">
       <div class="bk-cover-ar" dir="rtl">${esc(b.title.ar)}</div>
       <div class="bk-cover-en">${esc(b.title.en)}</div>
-      <div class="bk-cover-s">${b.chapters.length} chapters · ${esc(b.level || '')}</div></button>`).join('')
+      <div class="bk-cover-s">${b.chapters.length} chapters</div>
+      <div class="bk-cover-l">${lvlTagFor('book', b)}</div></button>`).join('')
     : `<p class="hint">No books yet.</p>`;
   $('view').innerHTML = h;
 }
@@ -2627,7 +2649,7 @@ function storiesHome(){
     return `<button class="vtile wide" onclick="location.hash='/stories/${key}'">
       <div class="vtile-h"><span class="vtile-t">${esc(label)}</span>
         <span class="vtile-n">${n}</span></div>
-      <div class="vtile-s">${esc(blurb)}</div></button>`;
+      <div class="vtile-s">${lvlTagFor('story', {level: key})} ${esc(blurb)}</div></button>`;
   }).join('');
   h += '</div>';
   $('view').innerHTML = h;
@@ -2639,7 +2661,9 @@ function storiesLevel(lvl){
   const list = storiesAt(key);
   const seen = contentSeen();
   const readN = list.filter(t => seen.has(t.id)).length;
-  let h = `<p class="hint">${esc(blurb)}</p>`;
+  let h = `<div class="lvl-row">${lvlTagFor('story', {level: key})}
+      <a class="lvl-what" href="#/plan/journey">what do these mean?</a></div>
+    <p class="hint">${esc(blurb)}</p>`;
   if (list.length) h += `<div class="sec">Read them in order — ${readN} of ${list.length} done</div>`;
   h += list.length ? list.map((t, i) =>
         `<div class="story-row"><span class="story-n${seen.has(t.id) ? ' read' : ''}">${seen.has(t.id) ? '✓' : (i + 1)}</span>
@@ -2802,7 +2826,9 @@ function reactionsSection(sub) {
 
 function reactionsHome() {
   $('title').textContent = 'Reactions';
-  let h = `<p class="hint">The <b>reflexes</b> of conversation — the short chunks you fire back without
+  let h = `<div class="lvl-row">${lvlTagFor('reaction', {})}
+      <a class="lvl-what" href="#/plan/journey">what do these mean?</a></div>
+    <p class="hint">The <b>reflexes</b> of conversation — the short chunks you fire back without
     thinking: <span dir="rtl">والله؟</span> (Really?), <span dir="rtl">يا حرام</span> (Poor thing),
     <span dir="rtl">صحتين</span> (Bon appétit). They let you be a real presence at a table long before
     you can build sentences. Pick a feeling, drill it until it comes automatically, and it slides into
@@ -2907,7 +2933,9 @@ function soundsSection(sub) {
 
 function soundsHome() {
   $('title').textContent = 'Sounds';
-  let h = `<p class="hint">Six contrasts that trip up every learner of city Palestinian. Get these into
+  let h = `<div class="lvl-row">${lvlTagFor('sound', {})}
+      <a class="lvl-what" href="#/plan/journey">what do these mean?</a></div>
+    <p class="hint">Six contrasts that trip up every learner of city Palestinian. Get these into
     your ear and your mouth <b>first</b> — a sound is much harder to fix once it sets. Everything here is
     the <b>urban</b> pronunciation (Jerusalem / Ramallah / Nablus), matching the app's voice.</p>
     <div class="unval"><b>Read the tip, then listen.</b> The clips are synthesized for reference —
@@ -2987,10 +3015,12 @@ function tableHome() {
   let h = `<p class="hint">The north-star skill: following <b>several people at once</b> — the
     greetings, the hospitality, the small talk that fills a Palestinian family table. Read each
     conversation, check you followed it, then <b>retell it out loud</b>. Once audio is added you'll
-    listen first and follow the room by ear.</p><div class="vtiles">`;
+    listen first and follow the room by ear. All of it is phase-7 material; <i>easier</i> and
+    <i>hardest</i> order them within that.</p><div class="vtiles">`;
   h += (TBL.dialogues || []).map(dg => `<button class="vtile wide" onclick="location.hash='/table/${dg.id}'">
-      <div class="vtile-h"><span class="vtile-t">${esc(dg.title.en)}</span><span class="vtile-n">${esc(dg.level)}</span></div>
-      <div class="vtile-s">${esc(dg.scene)}</div></button>`).join('');
+      <div class="vtile-h"><span class="vtile-t">${esc(dg.title.en)}</span>
+        <span class="vtile-n">${{beginner: 'easier', intermediate: 'harder', advanced: 'hardest'}[dg.level] || esc(dg.level)}</span></div>
+      <div class="vtile-s">${lvlTagFor('dialogue', dg)} ${esc(dg.scene)}</div></button>`).join('');
   h += `</div>`;
   $('view').innerHTML = h;
 }
@@ -3240,6 +3270,57 @@ const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct
 const fmtMD = iso => { const d = isoToDate(iso); return MON[d.getMonth()] + ' ' + d.getDate(); };
 const fmtMY = iso => { const d = isoToDate(iso); return MON[d.getMonth()] + ' ' + d.getFullYear(); };
 const PHASE_COLOR = ['#6E7DB3', '#2F8E7E', '#C8912F', '#B4372A', '#7A5EA6', '#3E8EA6', '#B5643A'];
+
+// ---------- what level is this? ----------
+// Every piece of content in the plan can name its own difficulty the same way: the coarse band,
+// the CEFR signpost, and the phase that serves it — "Beginner · A1 · Phase 1".
+//
+// The phase is DERIVED, never restated. Which phase first serves a pool is read off the mixes in
+// curriculum.js, and grammar/verb levels come from the same grammarCap/verbTier arrays the plan
+// gates on. So a tag cannot drift from what the plan actually does: change the curriculum and
+// every label in the app moves with it.
+let _poolPh = null;
+function poolPhase(pool) {
+  if (!_poolPh) {
+    _poolPh = {};
+    (CUR.phases || []).forEach((p, i) => (p.mix || []).forEach(sp => {
+      if (sp.pool && _poolPh[sp.pool] == null) _poolPh[sp.pool] = i;
+    }));
+  }
+  return _poolPh[pool] != null ? _poolPh[pool] : 0;
+}
+const _capPhase = (arr, need) => {                       // first phase whose cap reaches `need`
+  const i = (arr || []).findIndex(c => c >= need);
+  return i < 0 ? (CUR.phases || []).length - 1 : i;
+};
+const levelAt = i => {
+  const n = Math.max(0, Math.min((CUR.levels || []).length - 1, i | 0));
+  return Object.assign({phase: n}, (CUR.levels || [])[n] || {cefr: '—', band: '—'});
+};
+// The phase a piece of content belongs to. `what` is the content type; `it` the item.
+function contentPhase(what, it) {
+  switch (what) {
+    case 'story':     return poolPhase((it.level || 'beginner'));
+    case 'book':      return poolPhase((it.level || 'beginner'));
+    case 'news':      return poolPhase('news');
+    case 'unit':      return it.phase | 0;
+    case 'reaction':  return poolPhase('reaction');
+    case 'dialogue':  return poolPhase('dialogue');
+    case 'sound':     return 0;                                      // phase 1 is the sound phase
+    case 'listen':    return it.phase | 0;
+    case 'grammar':   return _capPhase(CUR.grammarCap, (it.n | 0) + 1);   // n = 0-based position
+    case 'verb':      return _capPhase(CUR.verbTier, it.tier || 2);
+    default:          return it && it.phase != null ? it.phase | 0 : 0;
+  }
+}
+// The chip. `small` drops the band for tight rows; `dot` shows the phase colour.
+function lvlTag(phaseIdx, small) {
+  const L = levelAt(phaseIdx);
+  return `<span class="lvl" title="${esc(L.band)} · CEFR ${esc(L.cefr)} · phase ${L.phase + 1} of 7 in your plan"
+     style="--lc:${PHASE_COLOR[L.phase]}">${small ? '' : `<b>${esc(L.band)}</b>`}
+     <i>${esc(L.cefr)}</i> <em>Phase ${L.phase + 1}</em></span>`;
+}
+const lvlTagFor = (what, it, small) => lvlTag(contentPhase(what, it), small);
 
 // ---- progress: phases are measured in COMPLETED minutes, not dates ----
 function phaseBounds() { let acc = 0; return CUR.phases.map(p => (acc += p.hours * 60)); }   // cumulative min at each phase end
@@ -4203,6 +4284,24 @@ function planMoreBtn(date, restday) {
      <button class="tog go" onclick="addPlanExtra('${date}')">＋ ${restday ? 'Study anyway' : 'Study more'}</button></div>`;
 }
 
+// A task's level is the level of the thing it opens — resolved from the content id, so it can't
+// disagree with the same item's tag in its own section. Tasks that open something external (a
+// course, a video) or nothing at all (SRS reps) get no tag rather than an invented one.
+function taskPhase(t) {
+  const cid = t.cid || '';
+  if (cid.startsWith('lsn:')) { const u = lsnById(cid.slice(4)); return u ? contentPhase('unit', u) : null; }
+  if (cid.startsWith('ls:'))  { const e = lsById(cid.slice(3)); return e ? contentPhase('listen', e) : null; }
+  if (cid.startsWith('rx:'))  return contentPhase('reaction', {});
+  if (cid.startsWith('tbl:')) return contentPhase('dialogue', {});
+  if (cid.startsWith('snd:')) return contentPhase('sound', {});
+  if (cid.startsWith('g:'))   { const i = (GRAM || []).findIndex(l => l.id === cid.slice(2));
+                                return i < 0 ? null : contentPhase('grammar', {n: i}); }
+  if (cid.startsWith('v:'))   { const v = verbPlan().find(x => x.key === cid);
+                                return v ? contentPhase('verb', v) : null; }
+  const tx = cid && LIB.texts.find(x => x.id === cid);
+  return tx ? contentPhase(textType(tx), tx) : null;
+}
+const textType = tx => tx.kind === 'news' ? 'news' : tx.kind === 'book-chapter' ? 'book' : 'story';
 function planTaskRow(t, date, done) {
   const srcPill = t.source === 'inapp' ? '<span class="pill on">in-app</span>' : '<span class="pill">external</span>';
   const open = t.link ? `<button class="tog" onclick="location.hash='${t.link}'">Open</button>`
@@ -4215,7 +4314,8 @@ function planTaskRow(t, date, done) {
         <div class="pt-sub">${esc(t.label)} · ${esc(t.builds)} · <span class="pt-slot">${esc(t.ideal)}</span></div>
         <div class="pt-instr">${esc(t.instr)}</div>
         ${t.note ? `<div class="pt-note">${esc(t.note)}</div>` : ''}
-        <div class="pt-act">${open}${srcPill}</div>
+        <div class="pt-act">${open}${srcPill}${
+          (() => { const ph = taskPhase(t); return ph == null ? '' : lvlTag(ph); })()}</div>
       </div></div>`;
 }
 function planToggle(date, tid, minutes, cid, isPim, rkey, isReview) {
@@ -4449,12 +4549,29 @@ function planJourney() {
       <div class="jr-ph-b">
         <div class="jr-ph-h"><b>${i + 1}. ${esc(p.name)}</b>
           <span class="jr-ph-when">${from === 'done' ? 'done' : from === 'now' ? 'now → ' + to : from + ' → ' + to}</span></div>
-        <div class="jr-ph-goal">${esc(p.milestone)}</div>
+        <div class="jr-ph-goal">${lvlTag(i)} ${esc(p.milestone)}</div>
         <div class="jr-mini"><i style="width:${within}%;background:${PHASE_COLOR[i]}"></i></div>
         <div class="jr-ph-n">${p.hours}h${i === pcur ? ` · ${Math.max(0, Math.round((endMin - done) / 60))}h to go` : ''}</div>
       </div></div>`;
   }).join('');
   h += `</div>`;
+
+  // What the tags on every story, unit and lesson in the app actually mean.
+  h += `<div class="sec">How the levels on content work</div>
+    <p class="hint">Everything in the app carries a tag like
+      ${lvlTag(2)} — the level, the CEFR band, and the phase of this plan that serves it.
+      Tags are computed from the plan itself, so content is never labelled a level the plan
+      doesn't actually give you at that point.</p>
+    <table class="lvl-key">${(CUR.levels || []).map((L, i) => `<tr>
+        <td>${lvlTag(i)}</td>
+        <td><span class="k-n">${esc((CUR.phases[i] || {}).name || '')}</span>
+          <div class="k-g">${esc((CUR.phases[i] || {}).milestone || '')}</div></td></tr>`).join('')}</table>
+    <div class="note" style="margin-bottom:18px"><b>CEFR here is a signpost, not a certificate.</b>
+      The bands come from this plan's own hour budget read against how long Arabic actually takes —
+      the US Foreign Service Institute puts it in its hardest group, ~2,200 class hours to
+      professional working proficiency. Two things to keep in mind: CEFR describes a whole language
+      including reading and writing, while this plan trains <i>spoken</i> Palestinian; and nobody
+      here is examining you. Use it to judge whether a text is worth your time, not as a score.</div>`;
 
   // Month grid: one cell per month from the start of this month to the projected finish.
   h += `<div class="sec">Every month from here to fluent</div>
@@ -4683,7 +4800,7 @@ function grammarHome(){
   h += GRAM.map((l, i) => `<button class="vtile wide" onclick="location.hash='/grammar/${l.id}'">
       <div class="vtile-h"><span class="vtile-t">${esc(l.title)}</span>
         <span class="vtile-n">${i + 1}</span></div>
-      <div class="vtile-s" dir="auto">${esc(l.sub)}</div></button>`).join('');
+      <div class="vtile-s" dir="auto">${lvlTagFor('grammar', {n: i})} ${esc(l.sub)}</div></button>`).join('');
   h += `</div>`;
   $('view').innerHTML = h;
 }
@@ -4787,7 +4904,8 @@ function verbDetail(i){
   let h = `<div class="vd-head">
     <div class="vd-ar">${esc(v.past ? v.past.ar : '')}</div>
     <div class="vd-meta"><div class="vd-gl">${esc(v.gloss || '—')}</div>
-      <div class="vd-sub">${root} &nbsp;·&nbsp; ${badges}</div></div></div>`;
+      <div class="vd-sub">${root} &nbsp;·&nbsp; ${badges}</div>
+      <div class="vd-lvl">${lvlTagFor('verb', {tier: VERB_TIER[v.weak] || 2})}</div></div></div>`;
   // Where the reference grammar and the lexicon disagree on how a verb is vowelled, the
   // grammar wins and we say so — the variant is real speech, not an error to hide.
   if (v.note) h += `<div class="vd-note">${esc(v.note)}</div>`;
@@ -4963,7 +5081,9 @@ function reader(t) {
   let paraClips = [];
   $('back').hidden = false;
   $('title').textContent = t.title.en;
-  let h = `<div class="ctl">
+  let h = `<div class="lvl-row">${lvlTagFor(textType(t), t)}
+      <a class="lvl-what" href="#/plan/journey">what do these mean?</a></div>
+    <div class="ctl">
       <button class="tog" id="tVoc" aria-pressed="true">Vowels</button>
       <button class="tog" id="tEn" aria-pressed="false">English</button>
       <button class="tog" id="tMk" aria-pressed="true">Show marked</button>
