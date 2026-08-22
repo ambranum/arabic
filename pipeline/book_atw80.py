@@ -7,12 +7,12 @@ retelling written by Claude (NOT native-validated, flagged as such) — but, as 
 project, every WORD's metadata is looked up in Maknuune by the ingest pipeline; nothing about the
 words is invented.
 
-Emits texts/book-atw80-chNN.json. Paragraph/sentence mechanics live in book_common.py.
+Emits texts/book-atw80-chNN.json. Paragraph/sentence mechanics live in bookshelf.py.
 Run:  python3 pipeline/book_atw80.py    then ingest each chapter + build_app.py.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from book_common import P, emit_book
+from bookshelf import P, emit_book
 
 BOOK_ID = 'atw80'
 BOOK_TITLE = {'en': 'Around the World in 80 Days', 'ar': 'حول العالم في ثمانين يوم'}

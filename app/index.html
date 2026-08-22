@@ -5412,7 +5412,13 @@ function showCard(si, wi) {
   const CUR = {'curated:function-word':'hand-curated · common function word',
                'curated:proper-noun'  :'hand-curated · name, no lexicon has these',
                'curated:modern-term'  :'hand-curated · too new for the lexicon'};
-  const src = w.maknuune_id ? `Maknuune #${esc(w.maknuune_id)}`
+  // An AMBIGUOUS word carries the FIRST candidate's maknuune_id — a guess among several, not a
+  // resolved sense. Checking the id first said "Maknuune #30787" for it, which is the exact
+  // failure the lookup pipeline exists to prevent, leaking back in at the display layer. Say what
+  // it actually is instead: 33% of the book's tokens are still waiting on adjudication.
+  const amb = (w.provenance || '').startsWith('AMBIGUOUS');
+  const src = amb ? 'lexicon match not yet confirmed — one of several possible entries'
+            : w.maknuune_id ? `Maknuune #${esc(w.maknuune_id)}`
             : CUR[w.provenance] || ((w.provenance||'').startsWith('curated')
               ? 'hand-curated' : 'not in the lexicon — unverified');
   $('wc').innerHTML =

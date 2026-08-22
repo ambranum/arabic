@@ -22,6 +22,13 @@ def main():
         d = json.load(open(p, encoding='utf-8'))
         d['_dir'] = os.path.basename(os.path.dirname(p))
         d['_words'] = sum(len(s['words']) for s in d['sentences'])
+        # `options` is the ambiguity audit trail: every lexicon candidate the annotator weighed
+        # before picking one. The app never reads it (grep says so) but it is ~27% of a book
+        # chapter's bytes, and library.js is a synchronous <script> parsed on every page load.
+        # It stays in build/ where adjudication happens; it does not ship to the browser.
+        for s_ in d['sentences']:
+            for w in s_['words']:
+                w.pop('options', None)
         # Rewrite audio paths to live inside app/ — a hosted folder can't reach ../build.
         for i, s_ in enumerate(d['sentences']):
             if s_.get('audio'):
@@ -73,7 +80,9 @@ def main():
         f.write("// URLs so a re-voice is never masked by a cached copy of the old voice.\n")
         f.write('window.AUDIO_VERSION = "%s";\n' % audio_version)
         f.write("window.LIBRARY = ")
-        json.dump({"texts": texts, "drills": drills}, f, ensure_ascii=False, indent=1)
+        # Compact separators: this file is generated, never read by hand, and indentation costs
+        # a third of its size in whitespace that a browser has to parse on every load.
+        json.dump({"texts": texts, "drills": drills}, f, ensure_ascii=False, separators=(',', ':'))
         f.write(";\n")
 
     # Stamp the service worker's cache name with a hash of the app shell + all data, so every

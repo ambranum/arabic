@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Shared emitter for the graded readers in Books.
+"""Shared emitter for the graded readers in the Books section.
+
+NOT to be confused with book_overrides.py / book_sweep.py / apply_book_overrides.py, which are
+about the Lingualism VERB REFERENCE book (the conjugation oracle). This file and book_<id>.py are
+about the readers on the shelf. Hence "bookshelf".
 
 A book script is a docstring, four constants and a CHAPTERS literal — the prose is the point, and
 it should stay pleasant to write. Everything mechanical lives here: flattening paragraphs into
@@ -14,7 +18,7 @@ Content is organized in PARAGRAPHS: a chapter is a list of paragraphs, a paragra
 makes the reader and the print-to-PDF view lay a book out as flowing bilingual paragraphs rather
 than a list of sentences.
 
-    from book_common import P, emit_book
+    from bookshelf import P, emit_book
 
     CHAPTERS = [
       ('The Donkey and the Neighbour', 'الحمار والجار', [
