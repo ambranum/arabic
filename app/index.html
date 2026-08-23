@@ -5311,6 +5311,13 @@ function reader(t) {
   // book). Stories/news have no markers → the classic one-sentence-at-a-time layout, unchanged.
   const hasPara = t.sentences.some(s => s.p != null);
   if (hasPara) {
+    // A chapter's clips play as ONE continuous reading, same transport the passage view uses.
+    // This branch had no player at all: books are the only content with `p` markers, so every
+    // book chapter ever voiced — all 346 of Around the World's clips — was unreachable in the
+    // reader. Nothing surfaced it, because there was no error; the audio simply wasn't offered.
+    paraClips = t.sentences.map(s => s.audio ? au(s.audio) : null).filter(Boolean);
+    if (paraClips.length) h += `<div class="sent rd-para para-head">
+      <div class="pl-cap">Listen to the whole chapter</div>${paraPlayer()}</div>`;
     let cur_p = null, group = [];
     const flush = () => { if (!group.length) return;
       h += '<div class="sent rd-para"><div class="ar">';
