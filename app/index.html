@@ -397,6 +397,76 @@
   .tbl-q-a.show{display:block}
   .hint{font-size:12.5px; color:var(--muted); line-height:1.55; margin:0 0 16px}
 
+  /* ---------- home ---------- */
+  /* The front door of an Arabic app had no Arabic on it, two identically-weighted hero boxes,
+     and sixteen outlined rectangles of equal weight. This gives it a masthead, one dominant
+     card, and a daily phrase you can actually hear. */
+  .hm-head{display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
+    padding:6px 0 16px; margin-bottom:20px; border-bottom:1px solid var(--rule)}
+  .hm-mark{font-family:var(--arabic); direction:rtl; text-align:left; font-size:40px;
+    line-height:1.15; color:var(--ink); letter-spacing:.01em}
+  .hm-sub{font-family:var(--serif); font-size:14px; color:var(--muted); margin-top:4px}
+  .hm-date{font-family:var(--mono); font-size:11px; color:var(--muted); white-space:nowrap;
+    text-align:right; line-height:1.7}
+  .hm-date b{display:block; font-family:var(--arabic); font-size:15px; color:var(--ink-soft);
+    font-weight:400; direction:rtl}
+
+  /* The two things you came for, side by side on a wide screen. */
+  .hm-top{display:grid; grid-template-columns:1.35fr 1fr; gap:12px; margin-bottom:12px}
+  @media (max-width:820px){ .hm-top{grid-template-columns:1fr} }
+
+  .hm-plan{display:block; width:100%; text-align:left; font:inherit; cursor:pointer;
+    border:1px solid var(--rule); border-radius:10px; padding:22px 22px 20px; color:var(--ink);
+    background:linear-gradient(160deg, var(--paper-2), var(--paper)); position:relative;
+    overflow:hidden}
+  .hm-plan:hover{border-color:var(--verdigris)}
+  .hm-plan::before{content:''; position:absolute; inset:0 auto 0 0; width:4px; background:var(--pc, var(--verdigris))}
+  .hm-k{font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--pc, var(--verdigris))}
+  .hm-t{font-family:var(--serif); font-size:30px; line-height:1.15; margin:8px 0 4px}
+  .hm-s{font-size:13px; color:var(--muted); line-height:1.55; max-width:46ch}
+  .hm-bar{height:5px; border-radius:3px; background:var(--rule); overflow:hidden; margin-top:16px}
+  .hm-bar i{display:block; height:100%; background:var(--pc, var(--verdigris))}
+  .hm-meta{display:flex; gap:14px; font-family:var(--mono); font-size:11px; color:var(--muted);
+    margin-top:8px; flex-wrap:wrap}
+
+  /* Phrase of the day — real Arabic on the front page, and you can hear it. */
+  .hm-phrase{border:1px solid var(--rule); border-radius:10px; padding:20px 20px 16px;
+    background:var(--paper-2); display:flex; flex-direction:column}
+  .hm-ph-ar{font-family:var(--arabic); direction:rtl; font-size:34px; line-height:1.5;
+    margin:10px 0 2px; color:var(--ink)}
+  .hm-ph-en{font-family:var(--serif); font-size:17px; margin-bottom:6px}
+  .hm-ph-use{font-size:11.5px; color:var(--muted); line-height:1.55; flex:1}
+  .hm-ph-row{display:flex; align-items:center; gap:8px; margin-top:12px}
+  .hm-ph-row .tog{padding:6px 12px; font-size:12px}
+
+  /* News, demoted from a full hero to one line you can scan past. */
+  .hm-news{display:flex; align-items:center; gap:14px; width:100%; text-align:left; font:inherit;
+    cursor:pointer; border:1px solid var(--rule); border-radius:9px; padding:13px 16px;
+    background:none; color:var(--ink); margin-bottom:26px}
+  .hm-news:hover{border-color:var(--verdigris)}
+  .hm-news.warn{border-color:var(--ochre)}
+  .hm-news .k{font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted);
+    white-space:nowrap}
+  .hm-news .t{font-family:var(--serif); font-size:15px; flex:1; min-width:0; overflow:hidden;
+    text-overflow:ellipsis; white-space:nowrap}
+  .hm-news .ar{font-family:var(--arabic); direction:rtl; font-size:17px; color:var(--ink-soft);
+    white-space:nowrap}
+  .hm-news .s{font-family:var(--mono); font-size:11px; color:var(--muted); white-space:nowrap}
+  @media (max-width:700px){ .hm-news .ar, .hm-news .s{display:none} }
+
+  /* Tiles: use the icons every section already declares, and tint each group. */
+  .hm-gh{display:flex; align-items:baseline; gap:10px; margin:22px 0 10px}
+  .hm-gh b{font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--gc, var(--muted));
+    font-weight:600}
+  .hm-gh span{font-size:11.5px; color:var(--muted)}
+  .tile-h{display:flex; align-items:center; gap:9px}
+  .tile-i{flex:0 0 auto; width:30px; height:30px; border-radius:8px; display:grid;
+    place-items:center; color:var(--gc, var(--verdigris));
+    background:color-mix(in srgb, var(--gc, var(--verdigris)) 12%, transparent)}
+  .tile:hover .tile-i{background:var(--gc, var(--verdigris)); color:var(--paper)}
+  .tile{transition:border-color .12s}
+  .tile:hover{border-color:var(--gc, var(--verdigris))}
+
   /* ---------- tray ---------- */
   .tray{position:fixed; left:0; right:0; bottom:0; z-index:50; background:var(--paper);
         border-top:1px solid var(--rule); padding-bottom:env(safe-area-inset-bottom)}
@@ -1716,9 +1786,15 @@ function secStatus(sec) {
       : sec.route === 'table' ? (TBL.dialogues ? TBL.dialogues.length + ' conversations · follow the room' : 'The north-star skill')
       : 'Coming soon';
 }
+// Each section already declares an `icon` and never used it on the home tiles — sixteen
+// identical outlined rectangles. The icon plus a per-group tint turns the wall into a set.
+const GROUP_COLOR = {practice: 'var(--verdigris)', input: 'var(--ochre)',
+                     ask: 'var(--rubric)', you: 'var(--muted)'};
 function homeTile(sec) {
-  return `<button class="tile${sec.ready ? '' : ' soon'}" onclick="location.hash='/${sec.route}'">
-      <div class="tile-t">${esc(sec.label)}</div>
+  return `<button class="tile${sec.ready ? '' : ' soon'}" style="--gc:${GROUP_COLOR[sec.group] || 'var(--verdigris)'}"
+      onclick="location.hash='/${sec.route}'">
+      <div class="tile-h"><span class="tile-i">${svg(sec.icon)}</span>
+        <span class="tile-t">${esc(sec.label)}</span></div>
       <div class="tile-s">${secStatus(sec)}</div></button>`;
 }
 
@@ -1812,62 +1888,103 @@ function home(){
   const news = LIB.texts.filter(t => t.kind === 'news')
                         .sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0];
   const fresh = news && news.date === today;
+  const d = isoToDate(today);
 
-  // Your plan for today, up top — the daily spine. Falls back to an invitation to build one.
-  let h = '';
+  // ---- masthead: the app says its own name in the language it teaches ----
+  let h = `<div class="hm-head">
+      <div><div class="hm-mark">عَرَبي فَلَسطيني</div>
+        <div class="hm-sub">Read it, hear it, say it.</div></div>
+      <div class="hm-date"><b>${esc(AR_DAYS[d.getDay()])}</b>${esc(MON[d.getMonth()])} ${d.getDate()}</div>
+    </div>`;
+
+  h += '<div class="hm-top">';
+
+  // ---- the plan, as the one dominant card, carrying its phase colour ----
   const _pc = planCfg();
   if (_pc) {
     const day = getDay(_pc, today, dueCards().length);
     const doneMap = (planLog()[today] && planLog()[today].done) || {};
     const doneN = day.tasks.filter(t => t.id in doneMap).length;
-    h += `<div class="hero"><button class="big" onclick="location.hash='/plan'">
-      <div class="k">Today's Plan · Phase ${day.phase.id + 1} ${esc(day.phase.name)}</div>
-      <div class="t">${day.rest ? 'Rest day' : (doneN === day.tasks.length && day.tasks.length ? 'Done for today ✓' : day.tasks.length + ' task' + (day.tasks.length === 1 ? '' : 's') + ' today')}</div>
-      <div class="s">${day.rest ? 'Nothing scheduled — recovery is part of the plan.' : doneN + ' of ' + day.tasks.length + ' done · ' + Math.round(day.totalMin / 60 * 10) / 10 + 'h. Tap to open your checklist.'}</div>
-    </button></div>`;
+    const pct = day.tasks.length ? Math.round(doneN / day.tasks.length * 100) : 0;
+    const L = levelAt(day.phase.id);
+    h += `<button class="hm-plan" style="--pc:${PHASE_COLOR[day.phase.id]}" onclick="location.hash='/plan'">
+      <div class="hm-k">Today · Phase ${day.phase.id + 1} · ${esc(day.phase.name)}</div>
+      <div class="hm-t">${day.rest ? 'Rest day'
+        : doneN === day.tasks.length && day.tasks.length ? 'Done for today ✓'
+        : day.tasks.length + ' task' + (day.tasks.length === 1 ? '' : 's') + ' today'}</div>
+      <div class="hm-s">${day.rest
+        ? 'Nothing scheduled — recovery is part of the plan.'
+        : esc(day.phase.milestone || '')}</div>
+      ${day.rest ? '' : `<div class="hm-bar"><i style="width:${Math.max(2, pct)}%"></i></div>`}
+      <div class="hm-meta"><span>${doneN} of ${day.tasks.length} done</span>
+        <span>${Math.round(day.totalMin / 60 * 10) / 10}h planned</span>
+        <span>${esc(L.band)} · ${esc(L.cefr)}</span>
+        ${planStreak() ? `<span>🔥 ${planStreak()}-day streak</span>` : ''}</div>
+    </button>`;
   } else {
-    h += `<div class="hero"><button class="big" onclick="location.hash='/plan/new'">
-      <div class="k">Start here</div>
-      <div class="t">Build your study plan</div>
-      <div class="s">Answer a few questions about your week and get a daily, self-adjusting path all the way to a family dinner.</div>
-    </button></div>`;
+    h += `<button class="hm-plan" onclick="location.hash='/plan/new'">
+      <div class="hm-k">Start here</div>
+      <div class="hm-t">Build your study plan</div>
+      <div class="hm-s">Tell it when you can study and roughly where you are. It builds a daily,
+        self-adjusting path — all the way to holding your own at a Palestinian family dinner.</div>
+      <div class="hm-meta"><span>~8-minute placement</span><span>7 phases</span>
+        <span>adjusts to your week</span></div>
+    </button>`;
   }
 
-  // Today's news — the thing you'd reach for first each morning.
-  h += '<div class="hero">';
+  // ---- phrase of the day: real Arabic on the front page, and audible ----
+  // Picked deterministically from the date, so it is the same phrase all day on every device and
+  // changes at midnight without anything being stored. Reactions are the right well to draw on:
+  // all 64 are lexicon-corroborated and all are voiced.
+  const rx = (RX.items || []);
+  if (rx.length) {
+    const seed = [...today].reduce((a, c) => a * 31 + c.charCodeAt(0) >>> 0, 7);
+    const it = rx[seed % rx.length];
+    h += `<div class="hm-phrase">
+      <div class="hm-k" style="color:var(--ochre)">Phrase of the day</div>
+      <div class="hm-ph-ar">${esc(it.ar)}</div>
+      <div class="hm-ph-en">${esc(it.en)}</div>
+      <div class="hm-ph-use">${esc(it.use || '')}</div>
+      <div class="hm-ph-row">
+        ${it.audio ? `<button class="tog go" onclick="sndPlay('${cssq(it.audio)}')">▶ Hear it</button>` : ''}
+        <button class="tog" onclick="location.hash='/reactions'">More like this</button>
+      </div></div>`;
+  }
+  h += '</div>';
+
+  // ---- news: one scannable line, not a second hero competing with the plan ----
   if (fresh) {
-    h += `<button class="big" onclick="location.hash='/text/${esc(news.id)}'">
-      <div class="k">Today's News</div>
-      <div class="t">${esc(news.title.en)}</div>
-      <div class="ar">${esc(news.title.ar)}</div>
-      <div class="s">${news.sentences.length} sentences, in spoken Palestinian${news._audio ? ' · audio' : ''}</div>
+    h += `<button class="hm-news" onclick="location.hash='/text/${esc(news.id)}'">
+      <span class="k">Today's news</span>
+      <span class="t">${esc(news.title.en)}</span>
+      <span class="ar">${esc(news.title.ar)}</span>
+      <span class="s">${news.sentences.length} sentences${news._audio ? ' · audio' : ''}</span>
     </button>`;
   } else {
     // A day behind is normal (the job runs at 05:00 Israel). A WEEK behind means the job is
     // broken — usually an expired ANTHROPIC_API_KEY or an empty balance — and the old wording
     // ("today's isn't in yet") hid that for a fortnight. Say the number out loud past 3 days.
     const staleDays = news ? Math.round((isoToDate(today) - isoToDate(news.date)) / 864e5) : 0;
-    h += `<button class="big warn" onclick="location.hash='/news'">
-      <div class="k">Today's News</div>
-      <div class="t">${!news ? 'No news yet'
-        : staleDays > 3 ? staleDays + ' days behind' : "Today's isn't in yet"}</div>
-      <div class="s">${!news ? 'Written fresh each morning.'
-        : staleDays > 3
-          ? 'Latest is ' + esc(news.date) + '. The morning job has stopped writing — usually an '
-            + 'expired Anthropic key or an empty balance. Everything else still works.'
-          : 'Latest is ' + esc(news.date) + '.'} Tap to browse.</div>
+    h += `<button class="hm-news${staleDays > 3 ? ' warn' : ''}" onclick="location.hash='/news'">
+      <span class="k">Today's news</span>
+      <span class="t">${!news ? 'No news yet'
+        : staleDays > 3 ? staleDays + ' days behind — the morning job has stopped writing'
+        : 'Latest is ' + esc(news.date)}</span>
+      <span class="s">${!news ? 'Written fresh each morning.'
+        : staleDays > 3 ? 'check the Anthropic key' : 'browse →'}</span>
     </button>`;
   }
-  h += '</div>';
 
   // The menu as tiles — grouped by intent (Practice · Read & Listen · Ask), so the growing set
   // of sections stays scannable. My Plan is the hero above; Account sits on its own at the end.
   GROUPS.forEach(g => {
     const items = SECTIONS.filter(s => s.group === g.id); if (!items.length) return;
-    h += `<div class="sec">${esc(g.label)}</div><div class="tiles">` +
+    h += `<div class="hm-gh" style="--gc:${GROUP_COLOR[g.id]}"><b>${esc(g.label)}</b>
+        <span>${esc(g.blurb)}</span></div><div class="tiles">` +
       items.map(homeTile).join('') + '</div>';
   });
-  h += `<div class="sec">Account</div><div class="tiles">` +
+  h += `<div class="hm-gh" style="--gc:${GROUP_COLOR.you}"><b>Account</b>
+      <span>Sync across your devices, and study with friends.</span></div><div class="tiles">` +
     SECTIONS.filter(s => s.group === 'you').map(homeTile).join('') + '</div>';
 
   // Existing practice content that predates the sections. Kept reachable rather than
@@ -3333,6 +3450,8 @@ const isofmt = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2,
 const addDaysISO = (s, n) => { const d = isoToDate(s); d.setDate(d.getDate() + n); return isofmt(d); };
 const daysBetween = (a, b) => Math.round((isoToDate(b) - isoToDate(a)) / DAY);
 const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+// Day names as they are actually said in Palestine — الأحد is "the first", التلات "the third".
+const AR_DAYS = ['الأحد', 'الاتنين', 'التلات', 'الأربعا', 'الخميس', 'الجمعة', 'السبت'];
 const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fmtMD = iso => { const d = isoToDate(iso); return MON[d.getMonth()] + ' ' + d.getDate(); };
 const fmtMY = iso => { const d = isoToDate(iso); return MON[d.getMonth()] + ' ' + d.getFullYear(); };
