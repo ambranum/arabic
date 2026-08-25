@@ -1015,6 +1015,9 @@
   .lx .lw{display:inline-block; padding:1px 2px; line-height:inherit; font-size:inherit}
   .lx .lw.gap{border-bottom:1px dotted var(--paper-3)}
   .wcut{font-size:12px; color:var(--muted); margin:-4px 0 8px; font-family:var(--sans)}
+  /* shown on a word tapped in the Van Dyck Bible — readable, not bankable */
+  .msa-note{margin:12px 0 4px; padding:10px 12px; border-radius:9px; font-size:12.5px;
+    line-height:1.5; background:var(--paper-2); border:1px solid var(--paper-3); color:var(--ink-soft)}
   /* a question carried in from a selection, waiting on a key */
   .tut-held{margin:14px 0; padding:12px 14px; border-radius:10px; font-size:14px;
     background:var(--ochre-wash); border:1px solid var(--ochre); color:var(--ink)}
@@ -2287,7 +2290,7 @@ async function bibleChapter(id, ch) {
     const en = esv.verses ? (esv.verses[n] || '') : '';
     rows += `<div class="bib-v">
        <div class="bib-en">${esv.error ? '' : esc(en)}</div>
-       <div class="bib-ar" dir="rtl"><span class="bib-vn">${n}</span> ${arLive(verses[i])}</div></div>`;
+       <div class="bib-ar" dir="rtl"><span class="bib-vn">${n}</span> ${arLive(verses[i], 'lx-msa')}</div></div>`;
   }
   let head = '';
   if (esv.error === 'nokey')
@@ -5144,6 +5147,11 @@ function trCuratedLines() {
   return out;
 }
 
+// EVERY source below is spoken Palestinian: LIB.texts (stories, news, book chapters, lessons),
+// verbs.js (Maknuune, a Palestinian lexicon), and the curated decks. The Van Dyck Bible is
+// deliberately absent — it is Classical Arabic from 1865, it ships in its own lazily-loaded
+// files, and it must stay out of both the translator and the vocabulary deck. If a new content
+// type is ever added here, check what dialect it is first.
 function trIndex() {
   if (_tridx) return _tridx;
   const byKey = new Map();
@@ -5901,12 +5909,23 @@ function lexStrip(k, ix) {
   return null;
 }
 
+// The index stores whole word RECORDS under their lemma, so a lemma key can point at a record
+// whose own surface is a different token: tapping فِي found the record for فيك and the card
+// showed فيك as the headword. The entry is still the right one — the gloss, root and analysis
+// all belong to that lemma — but the word on the card has to be the word that was tapped, and
+// its vowels are then unknown rather than borrowed from a neighbour.
+function lexAs(r, tok) {
+  if (!r) return null;
+  if (arNorm(r.surface || '') === arNorm(tok)) return r;
+  return Object.assign({}, r, {surface: tok, vocalized: '', vocalized_from: ''});
+}
+
 // The one lookup every module uses. Returns a word record (card-shaped) or null.
 function lexLook(tok) {
   const k = arNorm(tok); if (!k) return null;
   const ix = lexIndex();
   const r = ix.byKey.get(k) || ix.bySurf.get(k);
-  if (r) return lexFix(r);
+  if (r) return lexFix(lexAs(r, tok));
   const cj = lexConjIndex().get(k);
   if (cj) return lexFromVerb(cj.v, tok, cj.cell);
   const st = lexStrip(k, ix);
@@ -5995,8 +6014,14 @@ function wadiAra(w) {
 // reader's {si, wi} when there is one; without it the card simply drops the two affordances
 // that need a surrounding sentence (phrase-building, in-place re-highlighting).
 function showCard(si, wi) { showWord(cur.sentences[si].words[wi], {si, wi}); }
-function showWord(w0, ctx) {
+// `opts.msa` marks text that is NOT spoken Palestinian — today that means the Van Dyck Bible
+// (1865, Classical Arabic). Those words stay tappable, because looking one up is exactly what
+// helps while reading — but they must never reach the deck. The vocabulary the app schedules,
+// drills and syncs is Palestinian dialect; a Classical form banked from Genesis would be
+// reviewed for months as though someone might say it at a dinner table.
+function showWord(w0, ctx, opts) {
   if (!w0) return;
+  const msa = !!(opts && opts.msa);
   const w = lexFix(w0);
   const wa = wadiAra(w);
   const on = w.lemma && marked.has(w.lemma);
@@ -6035,13 +6060,17 @@ function showWord(w0, ctx) {
        <dt>Root</dt><dd class="rtl">${esc(w.root || '—')}</dd>
        <dt>Type</dt><dd>${esc(wt ? wt + (w.analysis && w.analysis.includes(':') ? ' (' + w.analysis + ')' : '') : (w.analysis || '—'))}</dd>
      </dl>
-     <div class="src">${src}${on ? ' · in your deck (' + esc(deckName(marked.get(w.lemma).deck)) + ')' : ''}</div>
+     ${msa ? `<div class="msa-note"><b>Classical Arabic, not dialect.</b> This is the Van Dyck
+        translation (1865). The meaning above comes from the Palestinian lexicon and is here to
+        help you read — but the word isn't added to your vocabulary, which stays spoken
+        Palestinian.</div>` : ''}
+     <div class="src">${src}${on && !msa ? ' · in your deck (' + esc(deckName(marked.get(w.lemma).deck)) + ')' : ''}</div>
      <div class="acts">
        <button data-a="close">Close</button>
-       ${ctx ? '<button data-a="phrase">+ Phrase…</button>' : ''}
+       ${ctx && !msa ? '<button data-a="phrase">+ Phrase…</button>' : ''}
        <button data-a="ask">Ask the tutor</button>
-       <button class="mk" data-a="mark" data-on="${on ? 1 : 0}" ${w.lemma ? '' : 'disabled'}>
-         ${on ? '✓ In your deck' : "+ Don't know it"}</button>
+       ${msa ? '' : `<button class="mk" data-a="mark" data-on="${on ? 1 : 0}" ${w.lemma ? '' : 'disabled'}>
+         ${on ? '✓ In your deck' : "+ Don't know it"}</button>`}
      </div>`;
   $('cw').classList.add('on');
   $('wc').querySelector('[data-a="close"]').onclick = hideCard;
@@ -6052,7 +6081,7 @@ function showWord(w0, ctx) {
   const ask = $('wc').querySelector('[data-a="ask"]');
   if (ask) ask.onclick = () => { hideCard(); tutorAskAbout(w.surface || w.lemma, 'a word'); };
   const mk = $('wc').querySelector('[data-a="mark"]');
-  if (w.lemma) mk.onclick = () => {
+  if (w.lemma && mk) mk.onclick = () => {
     if (marked.has(w.lemma)) marked.delete(w.lemma);
     else { marked.set(w.lemma, cardFromWord(w)); playWord(marked.get(w.lemma)); }
     save(); if (ctx) paint(); else lexPaint(); showWord(w, ctx);
@@ -6504,7 +6533,8 @@ $('view').addEventListener('click', e => {
   const pk = e.target.closest('[data-peek]');
   if (pk) { pk.closest('.sent').classList.add('peek'); return; }
   const lw = e.target.closest('.lx .lw');
-  if (lw) { showWord(lexLook(lw.dataset.lw) || {surface: lw.dataset.lw, lemma: '', gloss: ''}, null);
+  if (lw) { showWord(lexLook(lw.dataset.lw) || {surface: lw.dataset.lw, lemma: '', gloss: ''},
+      null, {msa: !!lw.closest('.lx-msa')});
     return; }
   const w = e.target.closest('.rd .w');
   // Mid-phrase, a tap means "this is the other end of the chunk" rather than "open this word".

@@ -5,7 +5,7 @@
  * a deploy invalidates old caches. IMPORTANT: the HTML document is fetched NETWORK-FIRST so a new
  * deploy shows up immediately (never a stale shell); data/audio/icons are cache-first for speed
  * and offline. */
-const CACHE_VERSION = 'alp-3b344772a9';
+const CACHE_VERSION = 'alp-42de8b4f4f';
 const SHELL = ['./index.html', './manifest.webmanifest', './icon-192.png'];
 
 self.addEventListener('install', e => {
