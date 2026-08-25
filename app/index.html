@@ -873,6 +873,8 @@
   .gex-src{font:inherit; font-size:11.5px; color:var(--verdigris); background:none; border:none;
     padding:6px 0 0; cursor:pointer; text-align:right}
   .gex-src:hover{text-decoration:underline}
+  .gex-hint{margin:-2px 0 12px}
+  .gex-more-btn{margin:4px 0 6px}
   /* ---- Translate ---- */
   .tr-entry{border:1px solid var(--rule); border-radius:9px; padding:13px 14px; margin-bottom:12px}
   .tr-head{display:flex; align-items:baseline; gap:10px}
@@ -5304,6 +5306,16 @@ function grammarHome(){
 // same stripping pipeline/grammar.py used), so we clean each token the same way to compare.
 // The highlight marks the structure the lesson is about; arLive() makes each word tappable
 // underneath it, so "what is this word?" and "what is this pattern?" are both answerable here.
+function gexMore() {
+  const box = $('gex-more'), btn = $('gex-more-btn');
+  if (!box) return;
+  box.hidden = !box.hidden;
+  btn.textContent = box.hidden
+    ? 'Show ' + box.children.length + ' more example' + (box.children.length === 1 ? '' : 's')
+    : 'Show fewer';
+  if (!box.hidden) lexPaint();     // the newly-revealed examples need their marked words painted
+}
+
 function gramHi(ar, hi){
   const set = new Set(hi || []);
   return ar.split(/(\s+)/).map(tok => {
@@ -5328,16 +5340,31 @@ function grammarLesson(id){
     h += `</div>`;
   });
 
+  // Each lesson now carries 20 examples, each from a DIFFERENT text (pipeline/grammar.py).
+  // Twenty at once is a wall, so the page opens with six and the rest are one tap away —
+  // enough to see the pattern immediately, and enough to keep reading if it hasn't landed.
   if (l.examples && l.examples.length){
-    h += `<div class="sec">In real sentences</div>`;
-    h += l.examples.map(e => {
+    const GEX_SHOWN = 6;
+    const one = e => {
       const t = LIB.texts.find(x => x.id === e.src);
       return `<div class="gex">
         <div class="gex-ar" dir="rtl">${gramHi(e.ar, e.hi)}</div>
         <div class="gex-en">${esc(e.en)}</div>
         ${t ? `<button class="gex-src" onclick="location.hash='/text/${esc(e.src)}'">Read “${esc(e.title)}” in full →</button>` : ''}
       </div>`;
-    }).join('');
+    };
+    const nsrc = new Set(l.examples.map(e => e.src)).size;
+    h += `<div class="sec">In real sentences</div>
+      <p class="hint gex-hint">${l.examples.length} sentence${l.examples.length === 1 ? '' : 's'} from
+        ${nsrc} different ${nsrc === 1 ? 'text' : 'texts'} in the app — every one real, every word
+        looked up in the lexicon.</p>`;
+    h += l.examples.slice(0, GEX_SHOWN).map(one).join('');
+    const rest = l.examples.slice(GEX_SHOWN);
+    if (rest.length) {
+      h += `<div id="gex-more" hidden>${rest.map(one).join('')}</div>
+        <button class="tog gex-more-btn" id="gex-more-btn"
+          onclick="gexMore()">Show ${rest.length} more example${rest.length === 1 ? '' : 's'}</button>`;
+    }
   }
 
   h += `<div class="note">Every example above is a real sentence from this app's texts — the words
