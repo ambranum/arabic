@@ -44,6 +44,15 @@ def annotate_word(lex, surface, res):
     c = curated.numeral(surface) or curated.lookup(surface, key)
     if not c:
         # Proper nouns take clitics too (بكييف = بـ + كييف, وأمريكا = وـ + أمريكا).
+        #
+        # NOTE: this branch can eat a real word's opening letters to reach a curated FUNCTION
+        # word: الله and الهوا both read as الـ+له "to him", كلهم as أكل "eat" — 14 tokens
+        # corpus-wide. Two one-line fixes were tried and both made things worse. Refusing
+        # short stems promotes a worse reading, because morph()'s order is load-bearing
+        # (منها stopped being مِن "from" and became اليَمَن "Yemen"); adding الله to
+        # curated.PROPER then pulled الآلة, الهوا and كلهم onto "God" as well. This needs
+        # per-token adjudication alongside the AMBIGUOUS queue, not a heuristic here.
+        # The app corrects the handful that matter at display time — see LEX_FIX in index.html.
         stems, _ = lex.morph(surface)
         for st in stems[1:]:
             c = curated.lookup(st, st)

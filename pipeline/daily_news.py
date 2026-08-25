@@ -301,6 +301,15 @@ def main():
     else:
         print("audio: skipped (no ELEVENLABS_API_KEY)")
 
+    # A news item can introduce a verb the app has never carried. build_verbs.py takes the
+    # union of the top-3000 frequency cut with every verb lemma attested in build/*/text.json,
+    # so re-running it here conjugates today's new verbs and folds them into verbs.js — the
+    # word card, the Verbs section and Translate all pick them up with no further work. It
+    # reads data/maknuune.parquet (tracked) and is deterministic, so a day with no new verbs
+    # leaves the file byte-identical and the commit step simply sees nothing to stage.
+    print("rebuilding the verb list (any new verb in today's news gets its paradigm)…")
+    subprocess.run([sys.executable, os.path.join(HERE, "build_verbs.py")], cwd=ROOT)
+
     subprocess.run([sys.executable, os.path.join(HERE, "build_app.py")], cwd=ROOT)
 
     # FAIL LOUDLY on silent news. This step used to exit 0 whether or not any audio came

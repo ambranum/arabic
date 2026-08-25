@@ -994,6 +994,31 @@
   .pl-cap{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:10px}
   /* sentence punctuation (periods, commas, ؟) re-inserted between the tappable word spans */
   .rd .pu{font-family:var(--arabic); color:var(--ink)}
+  /* arLive() output: tappable words outside the reader. Inline, so it can sit inside any
+     existing Arabic line (a reaction, a lesson chunk, a grammar example) without disturbing
+     that line's own size, direction or leading. */
+  /* the floating "Ask the tutor" that follows a selection */
+  .askbtn{position:fixed; z-index:60; padding:7px 12px; border-radius:999px;
+    border:1px solid var(--ink); background:var(--ink); color:var(--paper);
+    font-family:var(--sans); font-size:13px; font-weight:600; cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,.22); white-space:nowrap}
+  .askbtn:hover{background:var(--verdigris); border-color:var(--verdigris)}
+  @media print{.askbtn{display:none}}
+
+  /* Doubled class = specificity (0,2,0), deliberately. arLive() drops spans into containers
+     that were written before it existed, and some of them style their descendants by ELEMENT:
+     `.lsn-gx span{display:block}` caught every injected word and stacked a grammar example one
+     word per line. These rules have to outrank a plain `.thing span` selector wherever they land,
+     so the inserted markup stays invisible to layout — a run of text, exactly as before. */
+  .lx.lx{display:inline}
+  .lx .pu{display:inline; font-size:inherit; color:inherit}
+  .lx .lw{display:inline-block; padding:1px 2px; line-height:inherit; font-size:inherit}
+  .lx .lw.gap{border-bottom:1px dotted var(--paper-3)}
+  .wcut{font-size:12px; color:var(--muted); margin:-4px 0 8px; font-family:var(--sans)}
+  /* a question carried in from a selection, waiting on a key */
+  .tut-held{margin:14px 0; padding:12px 14px; border-radius:10px; font-size:14px;
+    background:var(--ochre-wash); border:1px solid var(--ochre); color:var(--ink)}
+  .tut-held-q{display:block; margin:6px 0; font-style:italic; color:var(--ink-soft)}
   /* embedded YouTube (Videos section) — responsive 16:9, rounded to match the app */
   .yt-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#000;
     border-radius:12px; overflow:hidden; border:1px solid var(--paper-3)}
@@ -1902,6 +1927,9 @@ function renderNav(active){
 // ---------- routing (hash so Back works, and it survives a reload) ----------
 function route() {
   if (typeof closeSide === 'function') closeSide();
+  if (typeof askHide === 'function') askHide();
+  // The section renders synchronously below; repaint arLive()'s words once it has.
+  setTimeout(() => { if (typeof lexPaint === 'function') lexPaint(); }, 0);
   if (typeof kbdClose === 'function') kbdClose();          // its target is about to be re-rendered
   if (typeof spkStop === 'function') spkStop();           // stop any running speaking timer
   if (typeof gsStop === 'function') { gsStop(); _gs = null; }   // stop guided-shadow audio
@@ -2025,7 +2053,7 @@ function home(){
     const it = rx[seed % rx.length];
     h += `<div class="hm-phrase">
       <div class="hm-k" style="color:var(--ochre)">Phrase of the day</div>
-      <div class="hm-ph-ar">${esc(it.ar)}</div>
+      <div class="hm-ph-ar">${arLive(it.ar)}</div>
       <div class="hm-ph-en">${esc(it.en)}</div>
       <div class="hm-ph-use">${esc(it.use || '')}</div>
       <div class="hm-ph-row">
@@ -2259,7 +2287,7 @@ async function bibleChapter(id, ch) {
     const en = esv.verses ? (esv.verses[n] || '') : '';
     rows += `<div class="bib-v">
        <div class="bib-en">${esv.error ? '' : esc(en)}</div>
-       <div class="bib-ar" dir="rtl"><span class="bib-vn">${n}</span> ${esc(verses[i])}</div></div>`;
+       <div class="bib-ar" dir="rtl"><span class="bib-vn">${n}</span> ${arLive(verses[i])}</div></div>`;
   }
   let head = '';
   if (esv.error === 'nokey')
@@ -2419,6 +2447,9 @@ function tutorHome() {
       <div class="unval"><b>Bring your own key.</b> This uses your own Anthropic (Claude) API key,
         stored only on this device — you pay Anthropic directly, usually cents. Answers are
         AI-generated: excellent for practice, but confirm anything important with a native speaker.</div>
+      ${_askPend ? `<div class="tut-held"><b>Your question is being held:</b>
+        <span class="tut-held-q">${esc(_askPend.split('\n')[0])}${_askPend.includes('\n') ? ' …' : ''}</span>
+        It will be asked as soon as you add a key.</div>` : ''}
       <div class="ctl"><button class="tog go" style="font-size:14px;padding:11px 20px"
         onclick="location.hash='/tutor/settings'">Add your Claude key →</button></div>`;
     return;
@@ -2448,6 +2479,7 @@ function tutorHome() {
   $('view').innerHTML = h;
   tutorRenderLog();
   const inp = $('tut-in'); if (inp) inp.focus();
+  tutorFlushPending();
 }
 
 function tutorStart(i) { tutorAsk(TUTOR_STARTERS[i]); }
@@ -2457,8 +2489,11 @@ function tutorClearChat() { _tutorMsgs = []; tutorHome(); }
 function tutFmt(t) {
   let s = esc(t);
   s = s.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+  // The tutor's own Arabic is tappable as well: it answers in words, and any one of them can
+  // be the word you didn't know. The run matched here holds only Arabic, digits and .،؟! —
+  // none of which esc() rewrites — so re-tokenizing it cannot double-escape anything.
   s = s.replace(/[؀-ۿݐ-ݿ][؀-ۿݐ-ݿً-ٟ\s\d.،؟!]*[؀-ۿݐ-ݿ]/g,
-    m => '<span class="rt">' + m + '</span>');
+    m => '<span class="rt">' + arLive(m) + '</span>');
   return s.replace(/\n/g, '<br>');
 }
 
@@ -2638,7 +2673,7 @@ function lsnChunkRow(uid, c, ci) {
   const say = c.audio ? `<button class="say" onclick="sndPlay('${cssq(c.audio)}')" aria-label="Play">${svg('spk')}</button>` : '';
   const saved = lsnSaved(c.ar);
   return `<div class="lsn-chunk">
-    <div class="lsn-ar" dir="rtl">${esc(c.ar)}${say}</div>
+    <div class="lsn-ar" dir="rtl">${arLive(c.ar)}${say}</div>
     <div class="lsn-en">${esc(c.en || '')}${c.note ? ` <span class="lsn-note">${esc(c.note)}</span>` : ''}
       ${c.reply ? `<div class="lsn-reply" dir="rtl">↩ ${esc(c.reply.ar)}</div>
         <div class="lsn-replyen">${esc(c.reply.en || '')}</div>` : ''}</div>
@@ -2654,7 +2689,7 @@ function lsnDrillHTML(u, d) {
   if (d.type === 'pairs') {
     // The book's own format: greeting → SAY the reply → check. Reuses the drill reveal style.
     u.chunks.filter(c => c.reply).forEach(c => {
-      h += `<div class="ch"><div class="q" dir="rtl">${esc(c.ar)}</div>
+      h += `<div class="ch"><div class="q" dir="rtl">${arLive(c.ar)}</div>
         <div class="a" tabindex="0" dir="rtl">${esc(c.reply.ar)}</div>
         ${c.reply.audio ? player(c.reply.audio) : ''}
         <div class="u">${esc((c.en || '') + (c.reply.en ? ' → ' + c.reply.en : ''))}</div></div>`;
@@ -2680,7 +2715,7 @@ function lessonView(u) {
     h += `<div class="sec">The grammar point</div>
       <div class="lsn-gram"><b>${esc(u.grammar.point)}</b>
         <p>${esc(u.grammar.body || '')}</p>
-        ${(u.grammar.examples || []).map(e => `<div class="lsn-gx"><span dir="rtl">${esc(e.ar)}</span>
+        ${(u.grammar.examples || []).map(e => `<div class="lsn-gx"><span dir="rtl">${arLive(e.ar)}</span>
            <em>${esc(e.en)}</em></div>`).join('')}
         ${u.gram_id && gramById(u.gram_id) ? `<button class="tog" onclick="location.hash='/grammar/${u.gram_id}'">Full lesson: ${esc(gramById(u.gram_id).title)} →</button>` : ''}
       </div>`;
@@ -2706,7 +2741,7 @@ function lessonView(u) {
       d.lines.map(l => `<div class="lsn-line">
         ${l.sp ? `<span class="lsn-sp">${esc(l.sp)}${
           l.audio ? `<button class="say" onclick="sndPlay('${cssq(l.audio)}')" aria-label="Play line">${svg('spk')}</button>` : ''}</span>` : ''}
-        <span class="lsn-lar" dir="rtl">${esc(l.ar)}</span>
+        <span class="lsn-lar" dir="rtl">${arLive(l.ar)}</span>
         ${l.en ? `<span class="lsn-len">${esc(l.en)}</span>` : ''}</div>`).join('') +
       `</div><div class="note">From ${esc(d.src)}.${
         (d.cast || []).length > 1 ? ' Each speaker has their own voice.' : ''}</div>`;
@@ -3142,7 +3177,7 @@ function rxSetMode(m, cat) { _rxMode = m; reactionsCat(rxCat(cat)); }
 function rxBrowseHTML(items) {
   return items.map(it => `<div class="rx-card${rxGot(it.ar) ? ' got' : ''}">
       <div class="rx-top">
-        <div class="rx-ar" dir="rtl">${esc(it.ar)}</div>
+        <div class="rx-ar" dir="rtl">${arLive(it.ar)}</div>
         ${it.audio ? `<button class="say" onclick="playWord({kind:'reaction',audio:'${cssq(it.audio)}',lemma:'${cssq(rxKey(it.ar))}',vocalized:'${cssq(it.ar)}'})" aria-label="Play">${svg('spk')}</button>`
           : `<span class="rx-noaud">audio pending</span>`}
       </div>
@@ -3166,7 +3201,7 @@ function rxCurrent() {
       <div class="rx-drill-n">${d.i + 1} / ${d.items.length}</div>
       <div class="rx-cue">${esc(it.en)}</div>
       ${d.shown
-        ? `<div class="rx-ar big" dir="rtl">${esc(it.ar)}</div>
+        ? `<div class="rx-ar big" dir="rtl">${arLive(it.ar)}</div>
            ${it.audio ? `<button class="tog" onclick="playWord({kind:'reaction',audio:'${cssq(it.audio)}',lemma:'${cssq(rxKey(it.ar))}',vocalized:'${cssq(it.ar)}'})">🔊 Hear it</button>` : ''}
            <div class="rx-use">${esc(it.use || '')}</div>
            ${it.reply ? `<div class="rx-reply">reply: <span dir="rtl">${esc(it.reply)}</span></div>` : ''}
@@ -3219,7 +3254,7 @@ function soundsHome() {
 }
 
 const _sndCell = w => `${w.audio ? `<button class="say sm" onclick="sndPlay('${cssq(w.audio)}')" aria-label="Play">${svg('spk')}</button>` : ''}
-    <span class="snd-ar" dir="rtl">${esc(w.ar)}</span>
+    <span class="snd-ar" dir="rtl">${arLive(w.ar)}</span>
     <span class="snd-tr">${esc(w.tr)}</span>
     <span class="snd-gl">${esc(w.en)}</span>`;
 function soundsLesson(L) {
@@ -3309,7 +3344,7 @@ function tableView(dg) {
   h += `<div class="tbl-lines" data-en="off">`;
   dg.lines.forEach(l => { h += `<div class="tbl-line">
       <div class="tbl-sp" dir="rtl">${esc(nameOf[l.sp] || l.sp)}</div>
-      <div class="tbl-body"><div class="tbl-ar" dir="rtl">${esc(l.ar)}</div><div class="tbl-en">${esc(l.en)}</div></div>
+      <div class="tbl-body"><div class="tbl-ar" dir="rtl">${arLive(l.ar)}</div><div class="tbl-en">${esc(l.en)}</div></div>
       ${l.audio ? `<button class="say sm" onclick="sndPlay('${cssq(l.audio)}')" aria-label="Play">${svg('spk')}</button>` : ''}
     </div>`; });
   h += `</div>`;
@@ -5081,20 +5116,69 @@ function arNorm(s) { return (s || '').replace(/[ً-ْٰـ]/g, '')
 const glossWords = g => String(g || '').toLowerCase().replace(/_/g, ' ').split(/[;·,()\/\s]+/).filter(Boolean);
 
 let _tridx = null, _trQ = '', _trT = null;
+
+// Every bilingual line the app ships OUTSIDE the corpus: reactions, pronunciation examples,
+// dinner-table dialogue, lesson chunks and their replies, grammar examples. Each is a real
+// Palestinian sentence with a real translation — exactly what Translate exists to show — but
+// none of it lived in LIB.texts, so none of it was findable. Measured before this change:
+// 3,348 distinct word-forms existed somewhere in the app and nowhere in the translator.
+let _trLines = null;
+function trCuratedLines() {
+  if (_trLines) return _trLines;
+  const out = [];
+  const add = (ar, en, where, hash) => { if (ar && en) out.push({ar, en, where, hash}); };
+  (RX.items || []).forEach(r => add(r.ar, r.en, 'Reactions', '#/reactions'));
+  (SND.lessons || []).forEach(l => (l.examples || []).forEach(x =>
+    add(x.ar, x.en, 'Sounds · ' + l.en, '#/sounds/' + l.id)));
+  (TBL.dialogues || []).forEach(d => (d.lines || []).forEach(l =>
+    add(l.ar, l.en, 'Dinner table · ' + ((d.title && d.title.en) || d.id), '#/table/' + d.id)));
+  (LSN.units || []).forEach(u => {
+    const w = 'Lesson ' + u.n + ' · ' + ((u.title && u.title.en) || '');
+    (u.chunks || []).forEach(c => { add(c.ar, c.en, w, '#/lessons/' + u.id);
+      if (c.reply) add(c.reply.ar, c.reply.en, w, '#/lessons/' + u.id); });
+    if (u.grammar) (u.grammar.examples || []).forEach(x => add(x.ar, x.en, w, '#/lessons/' + u.id));
+  });
+  GRAM.forEach(l => (l.examples || []).forEach(x =>
+    add(x.ar, x.en, 'Grammar · ' + (l.title || l.id), '#/grammar/' + l.id)));
+  _trLines = out;
+  return out;
+}
+
 function trIndex() {
   if (_tridx) return _tridx;
   const byKey = new Map();
+  const ent = (key, raw, lemma, w) => { let e = byKey.get(key);
+    if (!e) { e = {key, raw, lemma, gloss: (w && w.gloss) || '', root: (w && w.root) || '',
+                   caphi: (w && (w.caphi_urban || w.caphi)) || '', vb: null, hits: [], surf: new Set()};
+      byKey.set(key, e); }
+    if (!e.gloss && w && w.gloss) e.gloss = w.gloss;
+    if (!e.root && w && w.root) e.root = w.root;
+    return e; };
   LIB.texts.forEach(t => (t.sentences || []).forEach((s, si) => s.words.forEach((w, wi) => {
     if (!w.lemma) return;
     const key = arNorm(w.lemma); if (!key) return;
-    let e = byKey.get(key);
-    if (!e) { e = {key, raw: w.lemma, lemma: w.vocalized || w.form || w.lemma, gloss: w.gloss || '',
-                   root: w.root || '', caphi: w.caphi_urban || w.caphi || '', hits: [], surf: new Set()};
-      byKey.set(key, e); }
-    if (!e.gloss && w.gloss) e.gloss = w.gloss;
+    const e = ent(key, w.lemma, w.vocalized || w.form || w.lemma, w);
     e.surf.add(arNorm(w.surface));
     if (e.hits.length < 80) e.hits.push({tid: t.id, si, wi});
   })));
+  // Every verb that ships with a paradigm becomes findable, whether or not it was ever used in
+  // a text — 1,873 of the 3,003 had no corpus occurrence, so searching them returned nothing.
+  VB.forEach(v => { const key = arNorm(v.lemma); if (!key) return;
+    const e = ent(key, v.lemma, v.lemma, {gloss: v.gloss, root: v.root,
+                                          caphi: v.past && v.past.caphi});
+    if (e.vb == null) e.vb = v._i;
+    ['past', 'pres', 'imp'].forEach(k => { if (v[k] && v[k].ar) e.surf.add(arNorm(v[k].ar)); });
+  });
+  // Curated lines: index their words, and keep the line itself as a usable example.
+  trCuratedLines().forEach((ln, li) => {
+    String(ln.ar).split(/[\s،.؟!:؛…"«»“”'()\-—\[\]{}\\\/,;?]+/).filter(Boolean).forEach(tok => {
+      const key = arNorm(tok); if (!key) return;
+      const r = lexLook(tok);
+      const e = ent(key, (r && r.lemma) || tok, (r && (r.vocalized || r.form)) || tok, r || null);
+      e.surf.add(key);
+      if (e.hits.length < 80) e.hits.push({lit: li});
+    });
+  });
   _tridx = {all: [...byKey.values()], byKey};
   return _tridx;
 }
@@ -5147,10 +5231,18 @@ function trEntryHTML(e) {
       <span class="tr-gloss">${esc(pretty(e.gloss) || '—')}</span>
     </div>
     ${e.root ? `<div class="tr-root">root ${esc((e.root || '').replace(/\./g, ' · '))}${e.caphi ? ' &nbsp;·&nbsp; ' + esc(e.caphi) : ''}</div>` : ''}
+    ${e.vb != null && VB[e.vb] && VB[e.vb].conj
+      ? `<div class="tr-vb"><a href="#/verb/${e.vb}">See the full conjugation →</a></div>` : ''}
     ${ex ? `<div class="tr-exs"><div class="tr-exs-h">In context</div>${ex}</div>` : ''}
   </div>`;
 }
 function trExHTML(hit) {
+  if (hit.lit != null) {                      // a curated line (reaction, lesson chunk, dialogue…)
+    const ln = trCuratedLines()[hit.lit]; if (!ln) return '';
+    return `<div class="tr-ex" onclick="location.hash='${cssq(ln.hash)}'">
+      <div class="tr-ex-ar" dir="rtl">${esc(ln.ar)}</div>
+      <div class="tr-ex-en">${esc(ln.en)} <span class="tr-ex-src">— ${esc(ln.where)}</span></div></div>`;
+  }
   const t = LIB.texts.find(x => x.id === hit.tid); if (!t) return '';
   const s = t.sentences[hit.si]; if (!s) return '';
   const ar = s.words.map((w, i) => `<span class="${i === hit.wi ? 'tr-hl' : ''}">${esc(w.vocalized || w.surface)}</span>`).join(' ');
@@ -5202,11 +5294,13 @@ function grammarHome(){
 
 // Bold the tokens that demonstrate the pattern. `hi` holds cleaned surfaces (matching the
 // same stripping pipeline/grammar.py used), so we clean each token the same way to compare.
+// The highlight marks the structure the lesson is about; arLive() makes each word tappable
+// underneath it, so "what is this word?" and "what is this pattern?" are both answerable here.
 function gramHi(ar, hi){
   const set = new Set(hi || []);
   return ar.split(/(\s+)/).map(tok => {
     const c = tok.replace(/[،.؟!:؛…"«»”“\-—()]/g, '');
-    return (c && set.has(c)) ? `<b class="gx">${esc(tok)}</b>` : esc(tok);
+    return (c && set.has(c)) ? `<b class="gx">${arLive(tok)}</b>` : arLive(tok);
   }).join('');
 }
 
@@ -5599,6 +5693,251 @@ function paint() {
   count();
 }
 
+
+// ---------- ask the tutor from anywhere ----------------------------------------------------
+// The tutor answers the questions no other module can — but until now you had to leave what
+// you were reading, open /tutor, and retype the sentence you were confused by. Selecting text
+// anywhere now offers to carry it over, with its own page named as the context, so the answer
+// is about the line in front of you rather than about Palestinian Arabic in general.
+let _askPend = null;                       // {text, what} handed to the tutor across the route
+
+// Where the selection came from, in words a question can use ("in a story you're reading").
+function askWhere() {
+  const h = (location.hash.slice(1) || '/').split('/')[1] || '';
+  const M = {text: "something you're reading", story: 'a short story', news: 'a news piece',
+             books: 'a book', grammar: 'a grammar lesson', lessons: 'a lesson',
+             reactions: 'a list of reactions', sounds: 'a pronunciation lesson',
+             table: 'a dinner-table conversation', bible: 'a Bible passage',
+             verb: 'a verb page', vocab: 'a flashcard', translate: 'the translator'};
+  if (h === 'text' && cur && cur.title) return '"' + cur.title.en + '"';
+  return M[h] || 'the app';
+}
+
+function tutorAskAbout(text, what) {
+  text = String(text || '').trim(); if (!text) return;
+  if (text.length > 600) text = text.slice(0, 600) + '…';
+  const ar = /[؀-ۿ]/.test(text);
+  const q = ar
+    ? 'I came across this in ' + (what === 'a word' ? askWhere() : askWhere()) + ':\n\n'
+      + text + '\n\nWhy is it written like this? Break it down for me.'
+    : 'From ' + askWhere() + ': "' + text + '" — how would I say that in spoken Palestinian?';
+  _askPend = q;
+  askHide();
+  if ((location.hash.slice(1) || '/').split('/')[1] === 'tutor') tutorFlushPending();
+  else location.hash = '/tutor';
+}
+
+// Called by tutorHome() once the chat is on screen. Without a key we leave the question in the
+// box rather than dropping it, so adding a key and pressing Ask still sends what you selected.
+function tutorFlushPending() {
+  const q = _askPend; if (!q) return; _askPend = null;
+  if (!tutorKey()) { const i = $('tut-in'); if (i) { i.value = q; i.focus(); } return; }
+  tutorAsk(q);
+}
+
+// ---- the floating action that appears over a selection ----
+function askHide() { const b = $('askbtn'); if (b) b.hidden = true; }
+function askSelText() {
+  const sel = window.getSelection(); if (!sel || sel.isCollapsed) return '';
+  return String(sel).replace(/\s+/g, ' ').trim();
+}
+function askShowFor(sel) {
+  const t = askSelText(); if (t.length < 2) { askHide(); return; }
+  let b = $('askbtn');
+  if (!b) { b = document.createElement('button'); b.id = 'askbtn'; b.className = 'askbtn';
+    b.textContent = '💬 Ask the tutor';
+    b.addEventListener('mousedown', e => e.preventDefault());   // don't clear the selection
+    b.addEventListener('click', () => tutorAskAbout(askSelText(), 'a selection'));
+    document.body.appendChild(b); }
+  const r = sel.getRangeAt(0).getBoundingClientRect();
+  if (!r.width && !r.height) { askHide(); return; }
+  b.hidden = false;
+  const w = b.offsetWidth || 132;
+  b.style.left = Math.max(8, Math.min(window.innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + 'px';
+  b.style.top  = (r.top > 52 ? r.top - 42 : r.bottom + 10) + 'px';
+}
+document.addEventListener('selectionchange', () => {
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed || !sel.rangeCount) { askHide(); return; }
+  clearTimeout(window._askT);
+  window._askT = setTimeout(() => askShowFor(window.getSelection()), 180);
+});
+// Right-click over a selection: same action, offered where the platform menu would be. We only
+// pre-empt the browser's own menu when there is actually a selection to ask about.
+document.addEventListener('contextmenu', e => {
+  const t = askSelText(); if (t.length < 2) return;
+  e.preventDefault();
+  askShowFor(window.getSelection());
+});
+window.addEventListener('scroll', askHide, true);
+
+// ---------- LEX: one lexicon, shared by every module --------------------------------------
+// Word data used to live *inside* LIB.texts, reachable only by the reader. So only the reader
+// could make a word tappable, and only the reader's words were findable in Translate —
+// Reactions, Sounds, the Dinner Table, lesson chunks and grammar examples all rendered plain
+// Arabic with no way to ask what a word meant, even though the same lexicon sat behind them.
+//
+// LEX merges every source the app already ships into one index keyed by normalized Arabic:
+//   1. corpus word records   — richest: root, gloss, CAPHI++, analysis, Maknuune id, vowels
+//   2. verbs.js lemmas       — 3,003 verbs, most of which never appear in the corpus at all
+//   3. verbs.js conjugations — built lazily, so a *conjugated* verb in a lesson still resolves
+// Nothing here is generated. An entry is a looked-up record or it does not exist, and a word
+// LEX can't answer for stays visibly greyed rather than getting an invented gloss.
+let _lexI = null, _lexConj = null;
+
+// How much a record can actually say. Two sources can offer the same key; the fuller one wins.
+const lexRank = r => (r.gloss ? 4 : 0) + (r.maknuune_id ? 2 : 0) + ((r.caphi_urban || r.caphi) ? 1 : 0);
+
+// A handful of words the ingest pipeline resolves wrongly, corrected where they are SHOWN.
+//
+// pipeline/ingest.py falls back to stripping clitics off a token to reach a curated function
+// word, and for these it strips too much: الله and الهوا both come out as الـ + له "to him",
+// كلهم as أكل "eat". Fourteen tokens corpus-wide — but الله is the commonest word in spoken
+// Palestinian, so a learner met "to him, for him" constantly.
+//
+// Fixing it in the pipeline was tried twice and both attempts were net-negative: refusing short
+// stems promotes a worse reading (منها became اليَمَن "Yemen"), and adding الله to the curated
+// map pulled الآلة and كلهم onto "God" too. So the correction lives here instead — explicit,
+// auditable, and applied at the one place a word becomes visible, without re-annotating 380
+// texts on a heuristic. Each entry is a word whose reading is not in doubt.
+const LEX_FIX = {
+  'الله':  {lemma: 'الله',    gloss: 'God',                 analysis: 'NOUN_PROP', caphi: '2al.l.a'},
+  'لله':   {lemma: 'لله',     gloss: 'to God, for God',     analysis: 'NOUN_PROP', caphi: '2il.l.a'},
+  'الهوا': {lemma: 'الهَوا',  gloss: 'the air, the wind',   analysis: 'NOUN:MS',   caphi: '2ilhawa'},
+  'الاله': {lemma: 'الآلة',   gloss: 'the machine, the instrument', analysis: 'NOUN:FS', caphi: '2il2aale'},
+  'الامن': {lemma: 'الأَمن',  gloss: 'security, safety',    analysis: 'NOUN:MS',   caphi: '2il2amn'},
+  'كلهم':  {lemma: 'كُلُّهُم', gloss: 'all of them',         analysis: 'NOUN_QUANT',caphi: 'kullhum'},
+};
+function lexFix(w) {
+  if (!w) return w || null;
+  const f = LEX_FIX[arNorm(w.surface || '')];
+  if (!f) return w;
+  // caphi_raw carries the CAPHI++ template the Wadi Ara variant is computed from. A corrected
+  // entry has no template of its own, so clear it — otherwise the village line would render the
+  // pronunciation of the word we just decided this ISN'T (والله showed Wadi Ara "2ilo").
+  return Object.assign({}, w, f, {surface: w.surface, vocalized: f.lemma, form: f.lemma,
+    caphi_urban: '', caphi_raw: '', root: '', maknuune_id: null,
+    vocalized_from: 'curated', provenance: 'curated:app-correction'});
+}
+
+// A verbs.js entry shaped like a corpus word record, so showWord() needs no special case.
+// `_vb` carries the verb across, which is what puts the full paradigm on the card.
+function lexFromVerb(v, surface, cell) {
+  return {surface: surface || v.lemma, lemma: v.lemma, vocalized: surface || v.lemma,
+          form: v.lemma, root: v.root || '', gloss: v.gloss || '',
+          analysis: 'VERB:' + (v.form || 'I'),
+          caphi: (cell && cell.ph) || (v.past && v.past.caphi) || '',
+          provenance: 'verbs.js', _vb: v};
+}
+
+function lexIndex() {
+  if (_lexI) return _lexI;
+  const byKey = new Map(), bySurf = new Map();
+  const put = (m, k, rec) => { if (!k) return;
+    const p = m.get(k); if (!p || lexRank(rec) > lexRank(p)) m.set(k, rec); };
+  LIB.texts.forEach(t => (t.sentences || []).forEach(s => (s.words || []).forEach(w => {
+    if (!w.lemma) return;
+    put(byKey, arNorm(w.lemma), w);
+    put(bySurf, arNorm(w.surface), w);
+  })));
+  VB.forEach(v => {
+    put(byKey, arNorm(v.lemma), lexFromVerb(v));
+    ['past', 'pres', 'imp'].forEach(k => { const c = v[k];
+      if (c && c.ar) put(bySurf, arNorm(c.ar), lexFromVerb(v, c.ar, {ph: c.caphi})); });
+  });
+  _lexI = {byKey, bySurf};
+  return _lexI;
+}
+
+// Every conjugated cell -> its verb. ~2,300 paradigms x ~50 cells, so it is built only on the
+// first lookup that misses everything else — which is the only time it can possibly help.
+function lexConjIndex() {
+  if (_lexConj) return _lexConj;
+  const m = new Map();
+  VB.forEach(v => { const c = v.conj; if (!c) return;
+    for (const k in c) { const cell = c[k]; const ar = cell && (cell.arv || cell.ar);
+      if (!ar) continue; const n = arNorm(ar); if (n && !m.has(n)) m.set(n, {v, cell}); } });
+  _lexConj = m; return m;
+}
+
+// Clitics the writing system glues on: the article and one-letter prepositions/conjunctions in
+// front, object and possessive pronouns behind. SHORTEST first, so the least is cut away: with
+// longest-first, والله ("by God" — the commonest word in the app, and absent from the corpus)
+// lost وال- and came back as ه "to him". Cutting only و- finds الله. Cut as little as possible.
+const LEX_PRE = ['و', 'ب', 'ك', 'ف', 'ل', 'ال', 'لل', 'وال', 'بال', 'كال', 'فال'];
+const LEX_SUF = ['ك', 'ه', 'ي', 'ها', 'هم', 'هن', 'كم', 'كن', 'نا', 'ني'];
+const LEX_MIN = 3;                      // never leave a one- or two-letter stem behind
+
+// Last resort, and only ever a GUESS: strip a clitic and look the remainder up. It recovers 205
+// forms the exact index can't reach (بالتوفيق, خليكن, أبوك) — and it is also wrong sometimes:
+// قصتها segments to قصة+ها, but قصت happens to exist as a verb form, so the stripper takes it.
+// So the result is tagged `lexclitic` and the card says the segmentation is a guess, rather than
+// presenting a stripped match with the same confidence as a real lexicon hit.
+function lexStrip(k, ix) {
+  // lexFix here too: strip و- off والله and you land on the same mis-annotated الله record.
+  const hit = r => lexFix(ix.byKey.get(r) || ix.bySurf.get(r) || null);
+  for (const p of LEX_PRE) {
+    if (!k.startsWith(p) || k.length - p.length < LEX_MIN) continue;
+    const rest = k.slice(p.length);
+    const r = hit(rest) || hit('ال' + rest);
+    if (r) return {r, cut: p + 'ـ'};
+  }
+  for (const sf of LEX_SUF) {
+    if (!k.endsWith(sf) || k.length - sf.length < LEX_MIN) continue;
+    const rest = k.slice(0, -sf.length);
+    const r = hit(rest) || hit(rest + 'ه');
+    if (r) return {r, cut: 'ـ' + sf};
+  }
+  for (const p of LEX_PRE) {
+    if (!k.startsWith(p) || k.length - p.length < LEX_MIN + 1) continue;
+    for (const sf of LEX_SUF) {
+      if (!k.endsWith(sf)) continue;
+      const rest = k.slice(p.length, -sf.length);
+      if (rest.length < LEX_MIN) continue;
+      const r = hit(rest);
+      if (r) return {r, cut: p + 'ـ…ـ' + sf};
+    }
+  }
+  return null;
+}
+
+// The one lookup every module uses. Returns a word record (card-shaped) or null.
+function lexLook(tok) {
+  const k = arNorm(tok); if (!k) return null;
+  const ix = lexIndex();
+  const r = ix.byKey.get(k) || ix.bySurf.get(k);
+  if (r) return lexFix(r);
+  const cj = lexConjIndex().get(k);
+  if (cj) return lexFromVerb(cj.v, tok, cj.cell);
+  const st = lexStrip(k, ix);
+  if (!st) return null;
+  return Object.assign({}, st.r, {surface: tok, vocalized: tok,
+    provenance: 'lexclitic', _cut: st.cut});
+}
+
+// ---------- tappable Arabic, anywhere ------------------------------------------------------
+// The reader builds spans from per-word records the pipeline annotated. Everywhere else only
+// has a plain Arabic string — so arLive() tokenizes it and looks each token up in LEX. Same
+// span, same card, same "+ Don't know it". The token itself is the handle (no registry to keep
+// in sync with the DOM), and a word LEX can't place is dotted rather than silently plain.
+const LEX_PUNCT = '،.؟!:؛…"«»“”\'()-—[]{}–,;?';
+function arLive(str, cls) {
+  const s = String(str == null ? '' : str); if (!s) return '';
+  let out = '', buf = '';
+  const flush = () => { if (!buf) return;
+    const hit = lexLook(buf);
+    out += '<span class="w lw' + (hit ? '' : ' gap') + '" data-lw="' + esc(buf) + '" tabindex="0">'
+         + esc(buf) + '</span>';
+    buf = ''; };
+  for (const ch of s) {
+    if (/\s/.test(ch)) { flush(); out += ch; }
+    else if (LEX_PUNCT.indexOf(ch) >= 0) { flush(); out += '<span class="pu">' + esc(ch) + '</span>'; }
+    else buf += ch;
+  }
+  flush();
+  return '<span class="lx' + (cls ? ' ' + cls : '') + '">' + out + '</span>';
+}
+
 // ---------- word card ----------
 // human-readable word type from the Maknuune analysis code (VERB:I → "verb", NOUN:MS → "noun"…)
 const WTYPE = {VERB: 'verb', NOUN: 'noun', ADJ: 'adjective', ADV: 'adverb', PREP: 'preposition',
@@ -5614,6 +5953,7 @@ const _vbByRoot = (() => { const m = new Map();
   VB.forEach(v => { if (v.root && v.conj) { if (!m.has(v.root)) m.set(v.root, []); m.get(v.root).push(v); } });
   return m; })();
 function findVerb(w) {
+  if (w && w._vb) return w._vb.conj ? w._vb : null;   // came straight from verbs.js via LEX
   if (!w || !w.root || !String(w.analysis || '').startsWith('VERB')) return null;
   const cands = _vbByRoot.get(w.root); if (!cands) return null;
   const form = (String(w.analysis).match(/VERB:([IVXQ]+)/) || [])[1];
@@ -5650,8 +5990,14 @@ function wadiAra(w) {
   }).join('');
   return out && out !== urb ? out : null;
 }
-function showCard(si, wi) {
-  const w = cur.sentences[si].words[wi];
+// The card takes a word RECORD, not coordinates into the open text — that coupling was the
+// only reason a definition could be shown in the reader and nowhere else. `ctx` is the
+// reader's {si, wi} when there is one; without it the card simply drops the two affordances
+// that need a surrounding sentence (phrase-building, in-place re-highlighting).
+function showCard(si, wi) { showWord(cur.sentences[si].words[wi], {si, wi}); }
+function showWord(w0, ctx) {
+  if (!w0) return;
+  const w = lexFix(w0);
   const wa = wadiAra(w);
   const on = w.lemma && marked.has(w.lemma);
   const wt = wordType(w.analysis);
@@ -5664,13 +6010,19 @@ function showCard(si, wi) {
   // failure the lookup pipeline exists to prevent, leaking back in at the display layer. Say what
   // it actually is instead: 33% of the book's tokens are still waiting on adjudication.
   const amb = (w.provenance || '').startsWith('AMBIGUOUS');
-  const src = amb ? 'lexicon match not yet confirmed — one of several possible entries'
+  const src = w.provenance === 'curated:app-correction'
+              ? 'corrected in the app — the lexicon pipeline mis-splits this one'
+            : w.provenance === 'lexclitic'
+              ? `matched after removing ${esc(w._cut)} — the split is a guess, not a lexicon entry`
+            : w.provenance === 'verbs.js' ? 'from the verb list — paradigm below'
+            : amb ? 'lexicon match not yet confirmed — one of several possible entries'
             : w.maknuune_id ? `Maknuune #${esc(w.maknuune_id)}`
             : CUR[w.provenance] || ((w.provenance||'').startsWith('curated')
               ? 'hand-curated' : 'not in the lexicon — unverified');
   $('wc').innerHTML =
     `<div class="hw">${esc(w.vocalized || w.surface)}
        ${w.lemma ? `<button class="say" data-a="say" aria-label="Pronounce">${svg('spk')}</button>` : ''}</div>
+     ${w._cut ? `<div class="wcut">reading it as <b dir="rtl">${esc(w._cut)}</b> + <b dir="rtl">${esc(w.lemma)}</b></div>` : ''}
      <div class="ph">${esc(w.caphi_urban || w.caphi || '')}</div>
      ${wa ? `<div class="phwa"><b>Wadi Ara</b>${esc(wa)}</div>` : ''}
      ${wt ? `<div class="wtype">${esc(wt)}</div>` : ''}
@@ -5686,22 +6038,34 @@ function showCard(si, wi) {
      <div class="src">${src}${on ? ' · in your deck (' + esc(deckName(marked.get(w.lemma).deck)) + ')' : ''}</div>
      <div class="acts">
        <button data-a="close">Close</button>
-       <button data-a="phrase">+ Phrase…</button>
+       ${ctx ? '<button data-a="phrase">+ Phrase…</button>' : ''}
+       <button data-a="ask">Ask the tutor</button>
        <button class="mk" data-a="mark" data-on="${on ? 1 : 0}" ${w.lemma ? '' : 'disabled'}>
          ${on ? '✓ In your deck' : "+ Don't know it"}</button>
      </div>`;
   $('cw').classList.add('on');
   $('wc').querySelector('[data-a="close"]').onclick = hideCard;
   const phb = $('wc').querySelector('[data-a="phrase"]');
-  if (phb) phb.onclick = () => startPhrase(si, wi);
+  if (phb && ctx) phb.onclick = () => startPhrase(ctx.si, ctx.wi);
   const say = $('wc').querySelector('[data-a="say"]');
   if (say) say.onclick = () => playWord(marked.get(w.lemma) || cardFromWord(w));
+  const ask = $('wc').querySelector('[data-a="ask"]');
+  if (ask) ask.onclick = () => { hideCard(); tutorAskAbout(w.surface || w.lemma, 'a word'); };
   const mk = $('wc').querySelector('[data-a="mark"]');
   if (w.lemma) mk.onclick = () => {
     if (marked.has(w.lemma)) marked.delete(w.lemma);
     else { marked.set(w.lemma, cardFromWord(w)); playWord(marked.get(w.lemma)); }
-    save(); paint(); showCard(si, wi);
+    save(); if (ctx) paint(); else lexPaint(); showWord(w, ctx);
   };
+}
+
+// The reader repaints marked words through paint(), which walks cur.sentences. Words rendered
+// by arLive() have no sentence behind them, so they get their own repaint keyed on the token.
+function lexPaint() {
+  document.querySelectorAll('.lx .lw').forEach(el => {
+    const r = lexLook(el.dataset.lw);
+    el.classList.toggle('mk', !!(r && r.lemma && marked.has(r.lemma)));
+  });
 }
 // ---------- phrase cards ------------------------------------------------------------
 // LEARNING-SYSTEM.md's finding: teach CHUNKS, not words. "بشرب قهوة" is one thing your mouth
@@ -6139,6 +6503,9 @@ $('view').addEventListener('click', e => {
     return; }
   const pk = e.target.closest('[data-peek]');
   if (pk) { pk.closest('.sent').classList.add('peek'); return; }
+  const lw = e.target.closest('.lx .lw');
+  if (lw) { showWord(lexLook(lw.dataset.lw) || {surface: lw.dataset.lw, lemma: '', gloss: ''}, null);
+    return; }
   const w = e.target.closest('.rd .w');
   // Mid-phrase, a tap means "this is the other end of the chunk" rather than "open this word".
   if (w) { const si = +w.dataset.s, wi = +w.dataset.w;
