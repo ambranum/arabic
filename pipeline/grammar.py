@@ -414,7 +414,7 @@ LESSONS = [
 ]
 
 # ---- pick the best example sentences for each lesson ----
-def pick_examples(match, n=20):
+def pick_examples(match, n=30):
     """Corpus sentences showing this structure — varied by source, simplest first.
 
     Two problems with taking the globally top-scored N. First, N was 4, so of the 9,661
@@ -426,8 +426,9 @@ def pick_examples(match, n=20):
 
     So: bucket candidates by source text, order the buckets by their best sentence (which
     keeps the simplest material first), then round-robin — everyone's best, then everyone's
-    second-best. Variety is structural rather than hoped for; at n=20 every example in every
-    lesson now comes from a different text.
+    second-best. Variety is structural rather than hoped for: at n=30 every example in every
+    lesson still comes from a different text — the corpus has enough distinct sources that the
+    round-robin never has to go back for a second sentence from the same one.
     """
     by_text, seen = {}, set()
     for s in SENTS:

@@ -5340,9 +5340,10 @@ function grammarLesson(id){
     h += `</div>`;
   });
 
-  // Each lesson now carries 20 examples, each from a DIFFERENT text (pipeline/grammar.py).
-  // Twenty at once is a wall, so the page opens with six and the rest are one tap away —
-  // enough to see the pattern immediately, and enough to keep reading if it hasn't landed.
+  // Each lesson carries 30 examples, each from a DIFFERENT text (pipeline/grammar.py). Thirty
+  // at once is a wall, so the page opens with six and the rest are one tap away — enough to see
+  // the pattern immediately, and enough to keep reading if it hasn't landed. The count is read
+  // from the data, not hard-coded, so changing n in the pipeline needs no change here.
   if (l.examples && l.examples.length){
     const GEX_SHOWN = 6;
     const one = e => {
