@@ -2363,6 +2363,23 @@ const TUTOR_MODELS = [
   {id: 'claude-opus-5', label: 'Opus — most capable, priciest'},
   {id: 'claude-haiku-4-5', label: 'Haiku — fastest & cheapest'},
 ];
+const TUTOR_SPEED_KEY = 'tutor.speed';
+const tutorSpeed = () => { try { return localStorage.getItem(TUTOR_SPEED_KEY) || 'fast'; } catch (e) { return 'fast'; } };
+
+// Per-model request tuning. Sonnet 5 and Opus 5 run ADAPTIVE THINKING when the `thinking`
+// field is omitted — which this request did, so every question a learner asked was silently
+// paying for extended reasoning at the default `high` effort before a single word came back.
+// For "why is it بدي and not أريد" that is a recall question, not a reasoning one. Effort
+// `low` is the lever; thinking stays on (adaptive) rather than disabled, because disabling it
+// on Opus 5 can leak <thinking> tags into the visible answer.
+//
+// Haiku 4.5 predates both parameters — `effort` is rejected outright there and its default is
+// already no-thinking, so it gets neither field and is fast as-is.
+function tutorTuning(model) {
+  if (model === 'claude-haiku-4-5') return {};
+  return {thinking: {type: 'adaptive'},
+          output_config: {effort: tutorSpeed() === 'fast' ? 'low' : 'high'}};
+}
 const tutorKey = () => { try { return localStorage.getItem(TUTOR_KEY) || ''; } catch (e) { return ''; } };
 const tutorModel = () => { try { return localStorage.getItem(TUTOR_MODEL_KEY) || 'claude-sonnet-5'; } catch (e) { return 'claude-sonnet-5'; } };
 let _tutorMsgs = [];        // in-memory conversation for this session (role, content, error?)
@@ -2426,6 +2443,14 @@ function tutorSettings() {
       <input id="tutk" value="${esc(has)}" placeholder="sk-ant-…" autocomplete="off"></label>
     <label class="phlab">Model
       <select id="tutm">${TUTOR_MODELS.map(m => `<option value="${m.id}"${m.id === model ? ' selected' : ''}>${esc(m.label)}</option>`).join('')}</select></label>
+    <label class="phlab">Answer speed
+      <select id="tuts">
+        <option value="fast"${tutorSpeed() === 'fast' ? ' selected' : ''}>Fast — short thinking, best for everyday questions</option>
+        <option value="thorough"${tutorSpeed() === 'thorough' ? ' selected' : ''}>Thorough — more thinking, slower and pricier</option>
+      </select></label>
+    <p class="hint" style="margin-top:-4px">Fast keeps thinking short. Raise it if you're asking
+      something genuinely knotty; for “how do I say…” it makes no difference but the wait.
+      Haiku ignores this — it has no thinking mode.</p>
     <div class="ctl" style="margin-top:14px">
       <button class="tog go" onclick="tutorSaveKey()">Save</button>
       ${has ? '<button class="tog" onclick="tutorClearKey()">Remove key</button>' : ''}
@@ -2437,7 +2462,9 @@ function tutorSettings() {
 function tutorSaveKey() {
   const v = ($('tutk') || {}).value || '';
   const m = ($('tutm') || {}).value || 'claude-sonnet-5';
-  try { localStorage.setItem(TUTOR_KEY, v.trim()); localStorage.setItem(TUTOR_MODEL_KEY, m); } catch (e) {}
+  const sp = ($('tuts') || {}).value || 'fast';
+  try { localStorage.setItem(TUTOR_KEY, v.trim()); localStorage.setItem(TUTOR_MODEL_KEY, m);
+        localStorage.setItem(TUTOR_SPEED_KEY, sp); } catch (e) {}
   location.hash = '/tutor';
 }
 function tutorClearKey() {
@@ -2565,6 +2592,53 @@ function tutorRenderLog() {
 }
 
 // Send a turn to Claude with the learner's own key, straight from the browser.
+// Build the request body. Two things here are about speed rather than content:
+//
+// STREAMING. The old request awaited the whole reply, then res.json(), then rendered — so the
+// learner watched a "· · ·" for the entire generation, however long the answer ran. Streaming
+// does not make Claude faster; it makes the wait start at the FIRST word instead of the last,
+// which for a paragraph-length answer is most of the perceived delay.
+//
+// PROMPT CACHING. The system prompt is ~2,830 characters — roughly 700-950 tokens, which is
+// BELOW the 1,024-token minimum cacheable prefix on Sonnet 5 and Haiku 4.5 (Opus 5's minimum is
+// 512). So a breakpoint on the system block alone would silently cache nothing on the default
+// model. The breakpoint that pays is the one on the last message of the turn being sent: from
+// the next turn on, the whole system-plus-history prefix is one cached read, and by then it is
+// comfortably over the minimum. Both are marked — the system one starts earning on Opus
+// immediately, and costs nothing where it doesn't.
+function tutorBody(msgs) {
+  const model = tutorModel();
+  const wire = msgs.filter(m => !m.error && m.content)
+                   .map(m => ({role: m.role, content: m.content}));
+  if (wire.length) {              // cache_control needs block form, so convert just the last turn
+    const last = wire[wire.length - 1];
+    last.content = [{type: 'text', text: last.content, cache_control: {type: 'ephemeral'}}];
+  }
+  return Object.assign({
+    model, max_tokens: 2048, stream: true,
+    system: [{type: 'text', text: tutorSystemPrompt(), cache_control: {type: 'ephemeral'}}],
+    messages: wire,
+  }, tutorTuning(model));
+}
+
+// Repaint only the streaming bubble, and at most ~15x a second. tutFmt() runs the Arabic
+// through arLive(), so re-rendering the whole answer on every delta is O(n²) in the length of
+// the reply — fine for a sentence, visibly janky by the time it is a few paragraphs.
+let _tutStreamAt = 0;
+function tutorPaintStream(force) {
+  const now = Date.now();
+  if (!force && now - _tutStreamAt < 66) return;
+  _tutStreamAt = now;
+  const log = $('tut-log'); if (!log) return;
+  const bubbles = log.querySelectorAll('.tut-b.ai');
+  const el = bubbles[bubbles.length - 1];
+  const m = _tutorMsgs[_tutorMsgs.length - 1];
+  if (!el || !m) return;
+  el.innerHTML = tutFmt(m.content || '');
+  log.scrollIntoView(false);
+}
+
+// Send a turn to Claude with the learner's own key, straight from the browser.
 async function tutorAsk(text) {
   text = (text || '').trim();
   if (!tutorKey()) { location.hash = '/tutor/settings'; return; }
@@ -2574,34 +2648,67 @@ async function tutorAsk(text) {
   _tutorBusy = true;
   const inp = $('tut-in'); if (inp) inp.value = '';
   if (hadStarters) tutorHome(); else tutorRenderLog();
+
+  const fail = msg => { _tutorMsgs.push({role: 'assistant', error: msg}); };
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {'content-type': 'application/json', 'x-api-key': tutorKey(),
         'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true'},
-      body: JSON.stringify({
-        model: tutorModel(), max_tokens: 2048, system: tutorSystemPrompt(),
-        messages: _tutorMsgs.filter(m => !m.error && m.content).map(m => ({role: m.role, content: m.content})),
-      }),
+      body: JSON.stringify(tutorBody(_tutorMsgs)),
     });
-    const data = await res.json().catch(() => ({}));
     if (!res.ok) {
+      // An error response is JSON, not an event stream — read it as text and parse.
+      let data = {}; try { data = JSON.parse(await res.text()); } catch (e) {}
       const msg = (data && data.error && data.error.message) || ('HTTP ' + res.status);
-      _tutorMsgs.push({role: 'assistant', error: res.status === 401
+      fail(res.status === 401
         ? "Your Claude API key was rejected (401). Check or re-paste it in Settings."
         : (res.status === 400 && /credit balance/i.test(msg))
           ? "Your Anthropic account is out of credit. Add a little at console.anthropic.com, then try again."
-          : ('Couldn’t reach Claude: ' + msg)});
-    } else if (data.stop_reason === 'refusal') {
-      _tutorMsgs.push({role: 'assistant', error: "The model declined to answer that one — try rephrasing."});
+          : ('Couldn’t reach Claude: ' + msg));
     } else {
-      let txt = (data.content || []).filter(b => b.type === 'text').map(b => b.text).join('').trim();
-      const saves = tutorParseSaves(txt);            // pull out the machine-readable phrase block
-      txt = txt.replace(/<save>[\s\S]*?<\/save>\s*$/i, '').trim();
-      _tutorMsgs.push({role: 'assistant', content: txt || '(no answer came back)', saves});
+      // Placeholder bubble the deltas stream into.
+      const slot = {role: 'assistant', content: '', streaming: true};
+      _tutorMsgs.push(slot);
+      tutorRenderLog();
+
+      const reader = res.body.getReader(), dec = new TextDecoder();
+      let buf = '', stop = null, streamErr = null;
+      for (;;) {
+        const {done, value} = await reader.read();
+        if (done) break;
+        buf += dec.decode(value, {stream: true});
+        // SSE frames are separated by a blank line; keep any partial frame in the buffer.
+        const frames = buf.split('\n\n'); buf = frames.pop();
+        for (const f of frames) {
+          const line = f.split('\n').find(x => x.startsWith('data:'));
+          if (!line) continue;
+          let ev; try { ev = JSON.parse(line.slice(5).trim()); } catch (e) { continue; }
+          if (ev.type === 'content_block_delta' && ev.delta && ev.delta.type === 'text_delta') {
+            slot.content += ev.delta.text;
+            tutorPaintStream(false);
+          } else if (ev.type === 'message_delta' && ev.delta) {
+            stop = ev.delta.stop_reason || stop;
+          } else if (ev.type === 'error') {
+            streamErr = (ev.error && ev.error.message) || 'the stream ended early';
+          }
+        }
+      }
+      tutorPaintStream(true);
+      slot.streaming = false;
+
+      if (streamErr) { _tutorMsgs.pop(); fail('Couldn’t reach Claude: ' + streamErr); }
+      else if (stop === 'refusal') { _tutorMsgs.pop();
+        fail("The model declined to answer that one — try rephrasing."); }
+      else {
+        let txt = slot.content.trim();
+        slot.saves = tutorParseSaves(txt);          // pull out the machine-readable phrase block
+        slot.content = txt.replace(/<save>[\s\S]*?<\/save>\s*$/i, '').trim() || '(no answer came back)';
+      }
     }
   } catch (e) {
-    _tutorMsgs.push({role: 'assistant', error: "Network error — couldn't reach Claude. Check your connection and try again."});
+    if (_tutorMsgs.length && _tutorMsgs[_tutorMsgs.length - 1].streaming) _tutorMsgs.pop();
+    fail("Network error — couldn't reach Claude. Check your connection and try again.");
   }
   _tutorBusy = false;
   tutorRenderLog();
