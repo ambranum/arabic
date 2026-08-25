@@ -1,15 +1,29 @@
 name: Daily news
 
-# Runs at 01:30 UTC — ready by ~5am ISRAEL time.
+# Runs at 23:45 UTC — the news is IN GIT before 5am ISRAEL time.
 #
 # GitHub cron is UTC with no DST support, and Israel changes offset (IDT = UTC+3 in
-# summer, IST = UTC+2 in winter). 01:30 UTC = 4:30am IDT (summer) / 3:30am IST (winter),
-# so it lands BEFORE 5am year-round — deliberately a touch early rather than late, with
-# buffer for GitHub delaying scheduled jobs (often 10+ minutes). To shift it, change the
-# UTC time below: 02:00 UTC = 5am IDT exactly (summer), but risks running a few min late.
+# summer, IST = UTC+2 in winter), so the summer deadline is the binding one: 5am IDT is
+# 02:00 UTC.
+#
+# The previous setting, 01:30 UTC, reasoned about the START time and forgot the job takes
+# most of an hour — Claude writes the sentences, ElevenLabs voices nine of them, the whole
+# app rebuilds. Measured from the commit timestamps of the three runs before this change:
+#
+#     fired 01:30 UTC  ->  committed 02:42 / 02:49 / 02:48 UTC   (73, 79, 78 min)
+#     i.e. the news landed at 05:42 / 05:49 / 05:48 Israel — late, every day.
+#
+# 23:45 UTC + ~75 min lands ~01:00 UTC = 04:00 IDT in summer, 03:00 IST in winter. An hour
+# of slack in the tighter season, and :45 avoids the top-of-hour queue where GitHub's
+# scheduler is most congested.
+#
+# Firing before midnight UTC means the runner's UTC date is a day BEHIND Israel, so the
+# date has to come from Asia/Jerusalem — israel_today() in pipeline/daily_news.py, and the
+# TZ on the commit message below. Change one without the other and the text id and the
+# commit disagree about what day it is.
 on:
   schedule:
-    - cron: '30 1 * * *'    # ~5am Israel — writes fresh news, then deploys
+    - cron: '45 23 * * *'   # in git before 5am Israel — writes fresh news, then deploys
   workflow_dispatch:        # run by hand from the Actions tab
   push:
     branches: [main]
@@ -63,7 +77,9 @@ jobs:
           git config user.name  "daily-news"
           git config user.email "actions@github.com"
           git add texts/ build/ app/ pipeline/resolutions.json
-          git diff --staged --quiet || git commit -m "news: $(date -u +%F)"
+          # Israel's date, matching the text id daily_news.py just wrote — NOT the runner's
+          # UTC date, which is a day behind at this hour.
+          git diff --staged --quiet || git commit -m "news: $(TZ='Asia/Jerusalem' date +%F)"
 
           # The remote can move between checkout and push — a human commit, or an
           # earlier run. A bare `git push` then dies with "fetch first" and the whole

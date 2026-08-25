@@ -229,14 +229,26 @@ def ambiguities(text_id):
                 out.append({"surface": w["surface"], "en": s["en"], "options": w["options"]})
     return out
 
+# "Today" means today WHERE THE LEARNER IS, not on the build runner. The runner is UTC, and the
+# schedule now fires before midnight UTC so the job can finish before 5am Israel — so a UTC date
+# would label the morning's news with yesterday. Asia/Jerusalem also carries DST, which is the
+# whole reason the cron can't just be pinned to a wall-clock hour.
+def israel_today():
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.datetime.now(ZoneInfo("Asia/Jerusalem")).date()
+    except Exception as e:                      # no tzdata on this box — say so, don't guess wrong
+        print(f"!! Asia/Jerusalem unavailable ({e}); falling back to UTC date")
+        return datetime.datetime.now(datetime.timezone.utc).date()
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sentences", type=int, default=9)
     ap.add_argument("--dry-run", action="store_true", help="fetch headlines only")
     a = ap.parse_args()
 
-    today = datetime.date.today().isoformat()
-    print(f"=== daily news · {today} ===")
+    today = israel_today().isoformat()
+    print(f"=== daily news · {today} (Asia/Jerusalem) ===")
 
     print("fetching headlines…")
     heads = headlines()
