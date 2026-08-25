@@ -432,7 +432,6 @@ window.LESSONS = {
      "en": "niece",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "note": "book: sic: niece",
      "audio": "audio/lessons/unit-02-c17.mp3"
     },
     {
@@ -482,7 +481,6 @@ window.LESSONS = {
      "en": "married",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "note": "book: printed Arabic struck out by hand; handwritten مَتْزَوِّج(?) above, plus pencil note 'form 5'",
      "audio": "audio/lessons/unit-02-c24.mp3"
     },
     {
@@ -490,7 +488,6 @@ window.LESSONS = {
      "en": "engaged",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "note": "book: pencil note 'form 1'",
      "audio": "audio/lessons/unit-02-c25.mp3"
     },
     {
@@ -505,7 +502,6 @@ window.LESSONS = {
      "en": "divorced",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "note": "book: pencil note 'form 2'",
      "audio": "audio/lessons/unit-02-c27.mp3"
     },
     {
@@ -513,7 +509,6 @@ window.LESSONS = {
      "en": "separated",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "note": "book: pencil note 'form 7'",
      "audio": "audio/lessons/unit-02-c28.mp3"
     },
     {
@@ -808,7 +803,7 @@ window.LESSONS = {
     },
     {
      "ar": "مَالِزْيا (f)",
-     "en": "Malaysia (handwritten 'Malasia')",
+     "en": "Malaysia",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
      "audio": "audio/lessons/unit-03-c25.mp3"
@@ -1188,9 +1183,8 @@ window.LESSONS = {
     },
     {
      "ar": "عامِل ج عُمّال",
-     "en": "musician",
+     "en": "worker",
      "src": "p.12",
-     "note": "book: sic — struck out on duplicate p014, handwritten 'worker'",
      "audio": "audio/lessons/unit-04-c14.mp3"
     },
     {
@@ -1225,9 +1219,8 @@ window.LESSONS = {
     },
     {
      "ar": "جُنْدي ج جْنود",
-     "en": "musician",
+     "en": "soldier",
      "src": "p.12",
-     "note": "book: sic — struck out on duplicate p014, handwritten 'soldier'",
      "audio": "audio/lessons/unit-04-c20.mp3"
     },
     {
@@ -1250,9 +1243,8 @@ window.LESSONS = {
     },
     {
      "ar": "سَيْكُولوج ، طبيب نَفْساني",
-     "en": "psychology",
+     "en": "psychologist",
      "src": "p.12",
-     "note": "book: sic: psychologist",
      "audio": "audio/lessons/unit-04-c24.mp3"
     },
     {
@@ -1987,42 +1979,42 @@ window.LESSONS = {
      "ar": "جامعة",
      "en": "university",
      "src": "speaking p.11",
-     "group": "Handwritten additions at the bottom of p011 (student pencil)",
+     "group": "More directions (not in the printed book)",
      "audio": "audio/lessons/unit-06-c21.mp3"
     },
     {
      "ar": "رمزور",
-     "en": "stoplight (handwritten; Hebrew loanword)",
+     "en": "stoplight (Hebrew loanword)",
      "src": "speaking p.11",
-     "group": "Handwritten additions at the bottom of p011 (student pencil)",
+     "group": "More directions (not in the printed book)",
      "audio": "audio/lessons/unit-06-c22.mp3"
     },
     {
      "ar": "مفترق",
      "en": "intersection",
      "src": "speaking p.11",
-     "group": "Handwritten additions at the bottom of p011 (student pencil)",
+     "group": "More directions (not in the printed book)",
      "audio": "audio/lessons/unit-06-c23.mp3"
     },
     {
      "ar": "مدخل",
      "en": "entrance",
      "src": "speaking p.11",
-     "group": "Handwritten additions at the bottom of p011 (student pencil)",
+     "group": "More directions (not in the printed book)",
      "audio": "audio/lessons/unit-06-c24.mp3"
     },
     {
      "ar": "ملعب",
      "en": "playground",
      "src": "speaking p.11",
-     "group": "Handwritten additions at the bottom of p011 (student pencil)",
+     "group": "More directions (not in the printed book)",
      "audio": "audio/lessons/unit-06-c25.mp3"
     },
     {
      "ar": "كمّل دغري (؟)",
-     "en": "stay on / keep straight (handwritten, partly illegible; transliterated 'dugary')",
+     "en": "stay on / keep straight",
      "src": "speaking p.11",
-     "group": "Handwritten additions at the bottom of p011 (student pencil)",
+     "group": "More directions (not in the printed book)",
      "audio": "audio/lessons/unit-06-c26.mp3"
     }
    ],
@@ -2083,16 +2075,14 @@ window.LESSONS = {
     },
     {
      "ar": "طاوْلِة السُّفْرَة ج طاوْلات",
-     "en": "door",
+     "en": "dining table",
      "src": "speaking p.37",
-     "note": "book: sic — printed gloss is \"door\"; presumably dining table",
      "audio": "audio/lessons/unit-07-c02.mp3"
     },
     {
      "ar": "قَعْدِة ج ات",
-     "en": "sitting era, salon",
+     "en": "sitting area, salon",
      "src": "speaking p.37",
-     "note": "book: sic: area",
      "audio": "audio/lessons/unit-07-c03.mp3"
     },
     {
@@ -2997,9 +2987,8 @@ window.LESSONS = {
     },
     {
      "ar": "شُومَر",
-     "en": "dill",
+     "en": "fennel",
      "src": "speaking p.17",
-     "note": "book: sic: fennel",
      "audio": "audio/lessons/unit-11-c06.mp3"
     },
     {
@@ -3028,9 +3017,8 @@ window.LESSONS = {
     },
     {
      "ar": "نَعْنَع",
-     "en": "nana",
+     "en": "mint",
      "src": "speaking p.17",
-     "note": "book: handwritten 'mint'",
      "audio": "audio/lessons/unit-11-c11.mp3"
     },
     {
@@ -3041,9 +3029,8 @@ window.LESSONS = {
     },
     {
      "ar": "شَمَنْدَر",
-     "en": "fennel",
+     "en": "beet",
      "src": "speaking p.17",
-     "note": "book: sic: beet",
      "audio": "audio/lessons/unit-11-c13.mp3"
     },
     {
@@ -3062,7 +3049,6 @@ window.LESSONS = {
      "ar": "إنْجاص",
      "en": "pears",
      "src": "speaking p.17",
-     "note": "book: sic: pears; handwritten correction above; printed in the book as \"pairs\"",
      "audio": "audio/lessons/unit-11-c16.mp3"
     },
     {
@@ -3112,7 +3098,6 @@ window.LESSONS = {
      "en": "strawberries",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "note": "book: handwritten 'tut'",
      "audio": "audio/lessons/unit-11-c24.mp3"
     },
     {
@@ -3155,7 +3140,6 @@ window.LESSONS = {
      "en": "melon",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "note": "book: handwritten 'cantelope'",
      "audio": "audio/lessons/unit-11-c30.mp3"
     },
     {
@@ -3451,16 +3435,14 @@ window.LESSONS = {
     },
     {
      "ar": "بِتِنْجاني \\ بِتِنْجانِيِّة",
-     "en": "dark perple",
+     "en": "dark purple",
      "src": "speaking p.31",
-     "note": "book: sic: purple",
      "audio": "audio/lessons/unit-12-c25.mp3"
     },
     {
      "ar": "كْبير – زْغير",
-     "en": "bid, old- small, young",
+     "en": "big, old – small, young",
      "src": "speaking p.32",
-     "note": "book: sic: big",
      "audio": "audio/lessons/unit-12-c26.mp3"
     },
     {
@@ -3545,7 +3527,6 @@ window.LESSONS = {
      "ar": "بْعيد – قَريب",
      "en": "far - close",
      "src": "speaking p.32",
-     "note": "book: printed gloss \"hard – easy\" struck out; \"far - close\" handwritten",
      "audio": "audio/lessons/unit-12-c40.mp3"
     },
     {
@@ -4053,10 +4034,9 @@ window.LESSONS = {
     },
     {
      "ar": "حُصان، فَرَس ج خِيل",
-     "en": "hors, mare",
+     "en": "horse, mare",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "note": "book: sic",
      "audio": "audio/lessons/unit-14-c35.mp3"
     },
     {
@@ -4096,10 +4076,9 @@ window.LESSONS = {
     },
     {
      "ar": "بَقَرَة ج بَقَر",
-     "en": "caw",
+     "en": "cow",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "note": "book: sic: cow",
      "audio": "audio/lessons/unit-14-c41.mp3"
     },
     {
@@ -4118,10 +4097,9 @@ window.LESSONS = {
     },
     {
      "ar": "وَزِّة ج وَزّ",
-     "en": "gees",
+     "en": "goose",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "note": "book: sic: geese",
      "audio": "audio/lessons/unit-14-c44.mp3"
     },
     {
@@ -5378,9 +5356,8 @@ window.LESSONS = {
     },
     {
      "ar": "طَيّارَة ج ات",
-     "en": "plain",
+     "en": "plane",
      "src": "speaking p.20",
-     "note": "book: sic: plane",
      "audio": "audio/lessons/unit-19-c04.mp3"
     },
     {
@@ -5624,7 +5601,7 @@ window.LESSONS = {
    ],
    "dialogues": [
     {
-     "title": "إلسَّفَر بِالباص (heavily annotated in pencil with English glosses: rest, usually, check, the driver, must be, station, travel, according to, cheaper than, is that your opinion?, hardwork, existing)",
+     "title": "إلسَّفَر بِالباص",
      "lines": [
       {
        "sp": "أمير",
@@ -6959,7 +6936,6 @@ window.LESSONS = {
      "ar": "ما بُوكِل جِبْنِة وبِيض، أنا خُضَري؟",
      "en": "I don't eat meat, I am vegetarian",
      "src": "speaking p.16",
-     "note": "book: sic — printed gloss duplicated; handwritten 'egg, cheese' above",
      "audio": "audio/lessons/unit-25-c06.mp3"
     },
     {
@@ -7237,7 +7213,7 @@ window.LESSONS = {
     },
     {
      "ar": "ألرِّياض",
-     "en": "Riyadh (handwritten 'Riyhad')",
+     "en": "Riyadh",
      "src": "speaking p.5",
      "audio": "audio/lessons/unit-26-c09.mp3"
     },
@@ -7543,142 +7519,142 @@ window.LESSONS = {
    "chunks": [
     {
      "ar": "قصير ج قْصار",
-     "en": "short (handwritten gloss)",
+     "en": "short",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c00.mp3"
     },
     {
      "ar": "طويل ج طْوال",
-     "en": "long (handwritten gloss)",
+     "en": "long",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c01.mp3"
     },
     {
      "ar": "كبير ج كْبار",
-     "en": "big (handwritten gloss)",
+     "en": "big",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c02.mp3"
     },
     {
      "ar": "زْغير ج زغار",
-     "en": "little (handwritten gloss)",
+     "en": "little",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c03.mp3"
     },
     {
      "ar": "رخيص ج رْخاص",
-     "en": "cheap (handwritten gloss)",
+     "en": "cheap",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c04.mp3"
     },
     {
      "ar": "قْديم ج قْدام (قُدَمَاء)",
-     "en": "old (handwritten gloss)",
+     "en": "old",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c05.mp3"
     },
     {
      "ar": "جديد ج جْداد (جُدُد)",
-     "en": "new (handwritten gloss)",
+     "en": "new",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c06.mp3"
     },
     {
      "ar": "نْظيف ج نْظاف",
-     "en": "clean (handwritten gloss)",
+     "en": "clean",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c07.mp3"
     },
     {
      "ar": "فَقير ج فَقيرين (فُقَراء)",
-     "en": "poor (handwritten gloss)",
+     "en": "poor",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c08.mp3"
     },
     {
      "ar": "غَنِيّ ج غَنِيِّين (أغْنِيَاء)",
-     "en": "rich (handwritten gloss)",
+     "en": "rich",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c09.mp3"
     },
     {
      "ar": "حَزين ج حَزينين (حُزَنَاء)",
-     "en": "sad (handwritten gloss)",
+     "en": "sad",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c10.mp3"
     },
     {
      "ar": "بعيد ج بْعاد (بَعيدين)",
-     "en": "far (handwritten gloss)",
+     "en": "far",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c11.mp3"
     },
     {
      "ar": "ضعيف ج ضْعاف",
-     "en": "weak (handwritten gloss)",
+     "en": "weak",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c12.mp3"
     },
     {
      "ar": "بَطيء ج بَطيئين",
-     "en": "slow (handwritten gloss 'slowly')",
+     "en": "slow",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c13.mp3"
     },
     {
      "ar": "قَوِيّ ج قَوِيّين\\ أقْوِيا (أقْوِيَاء)",
      "en": "strong",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c14.mp3"
     },
     {
      "ar": "سَريع ج سَريعين",
      "en": "fast",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c15.mp3"
     },
     {
      "ar": "سَعيد ج سَعيدين (سُعَداء)",
      "en": "happy",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c16.mp3"
     },
     {
      "ar": "مْنيح\\ مْليح ج مْناح\\ مْلاح",
      "en": "good",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c17.mp3"
     },
     {
      "ar": "خميل ج خْمال\\ خميلين",
      "en": "thick",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c18.mp3"
     },
     {
      "ar": "بَخيل ج بخيلين (بُخَلاء)",
      "en": "stingy",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "group": "مجموعة 1 — adjectives with broken plurals",
      "audio": "audio/lessons/unit-28-c19.mp3"
     },
     {
@@ -7707,281 +7683,275 @@ window.LESSONS = {
     },
     {
      "ar": "فَرْحان ج فَرْحانين",
-     "en": "(handwritten: happy)",
+     "en": "happy",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c23.mp3"
     },
     {
      "ar": "حَزْنان ج ين",
-     "en": "(handwritten: sad)",
+     "en": "sad",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c24.mp3"
     },
     {
      "ar": "بَرْدان ج ين",
-     "en": "(handwritten: cold)",
+     "en": "cold",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c25.mp3"
     },
     {
      "ar": "حَمْيان ج ين",
-     "en": "(handwritten: hot)",
+     "en": "hot",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c26.mp3"
     },
     {
      "ar": "عطشان ج ين",
-     "en": "(handwritten: thirsty)",
+     "en": "thirsty",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c27.mp3"
     },
     {
      "ar": "جوعان ج ين",
-     "en": "(handwritten: hungry)",
+     "en": "hungry",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c28.mp3"
     },
     {
      "ar": "رَوْيان ج ين",
-     "en": "(handwritten: not thirsty, hydrated)",
+     "en": "not thirsty, hydrated",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c29.mp3"
     },
     {
      "ar": "عَيّان ج ين",
-     "en": "(handwritten: sick)",
+     "en": "sick",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c30.mp3"
     },
     {
      "ar": "تَعْبان ج ين",
-     "en": "(handwritten: tired (sleepy))",
+     "en": "tired (sleepy)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c31.mp3"
     },
     {
      "ar": "هلكان ج ين",
-     "en": "(handwritten: tired (very))",
+     "en": "tired (very)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c32.mp3"
     },
     {
      "ar": "زعلان ج ين",
-     "en": "(handwritten: angry, upset)",
+     "en": "angry, upset",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c33.mp3"
     },
     {
      "ar": "يَأْسَان ج ين",
-     "en": "(handwritten: desperate)",
+     "en": "desperate",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c34.mp3"
     },
     {
      "ar": "شَبْعان ج ين",
-     "en": "(handwritten: full)",
+     "en": "full",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c35.mp3"
     },
     {
      "ar": "زهقان ج ين",
-     "en": "(handwritten: boring)",
+     "en": "bored",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
-     "note": "book: i.e. bored",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c36.mp3"
     },
     {
      "ar": "كَسْلان ج ين",
-     "en": "(handwritten: lazy)",
+     "en": "lazy",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c37.mp3"
     },
     {
      "ar": "جَبّان ج ين",
-     "en": "(handwritten: coward)",
+     "en": "coward",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c38.mp3"
     },
     {
      "ar": "سَكْران ج ين",
-     "en": "(handwritten: drunk)",
+     "en": "drunk",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c39.mp3"
     },
     {
      "ar": "حَيْران ج ين",
-     "en": "hesitant ; (handwritten: confused)",
+     "en": "hesitant",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
      "audio": "audio/lessons/unit-28-c40.mp3"
     },
     {
      "ar": "مِرْتاح ج ين",
-     "en": "(handwritten: rest)",
+     "en": "relaxed, comfortable",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: i.e. relaxed",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c41.mp3"
     },
     {
      "ar": "مَبسوط ج ين",
-     "en": "(handwritten: happy)",
+     "en": "happy",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c42.mp3"
     },
     {
      "ar": "مْكَيَّف ج ين",
      "en": "enjoying",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c43.mp3"
     },
     {
      "ar": "مُنْفَعِل ج ين",
      "en": "exited, moved",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c44.mp3"
     },
     {
      "ar": "مِتْحَمِّس ج ين",
-     "en": "(handwritten: excited)",
+     "en": "excited",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c45.mp3"
     },
     {
      "ar": "مُكْتَئِب ج ين = حَزْنان",
-     "en": "(handwritten: depression)",
+     "en": "depressed",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: i.e. depressed",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c46.mp3"
     },
     {
      "ar": "مُحْبَط ج ين",
      "en": "frustrated",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c47.mp3"
     },
     {
      "ar": "مَضغوط ج ين",
-     "en": "(handwritten: compressed)",
+     "en": "stressed, under pressure",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: i.e. stressed",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c48.mp3"
     },
     {
      "ar": "مِتْعَصْبِن \\ مْعَصِّب ج ين",
      "en": "get mad, blow up, get angry fast",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c49.mp3"
     },
     {
      "ar": "مْلَخْبَط ج ين",
      "en": "confused",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c50.mp3"
     },
     {
      "ar": "مُقْرِف ج ين",
      "en": "disgusting",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c51.mp3"
     },
     {
      "ar": "مُحافِظ ج ين",
      "en": "conservative",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c52.mp3"
     },
     {
      "ar": "مُتَشَدِّد \\ مُتَطَرِّف ج ين",
-     "en": "conservative",
+     "en": "hardline, extremist",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: sic; i.e. hardline/extremist",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c53.mp3"
     },
     {
      "ar": "مَضروب\\ مْخَلِّص كازُه",
      "en": "fucked up\\ran out of gas",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c54.mp3"
     },
     {
      "ar": "مُبَذِّر ج ين",
      "en": "spender, waster",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c55.mp3"
     },
     {
      "ar": "مْعَفِّن ج ين",
      "en": "stinking",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c56.mp3"
     },
     {
      "ar": "مِتْعَلِّق ج ين",
      "en": "depending",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c57.mp3"
     },
     {
      "ar": "مَحْبوب ج ين",
-     "en": "(handwritten: loving)",
+     "en": "beloved, well-liked",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: i.e. beloved",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c58.mp3"
     },
     {
      "ar": "مْوَفِّر ج ين",
      "en": "saver",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c59.mp3"
     },
     {
      "ar": "مَشْغول ج ين",
-     "en": "(handwritten: busy)",
+     "en": "busy",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c60.mp3"
     },
     {
      "ar": "مُتسامِح ج ين",
      "en": "forgiving",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "group": "مجموعة 4 — participial adjectives (plural ين)",
      "audio": "audio/lessons/unit-28-c61.mp3"
     },
     {
@@ -7993,7 +7963,7 @@ window.LESSONS = {
     },
     {
      "ar": "تَقْليديّ ج تَقْليديين",
-     "en": "(handwritten: traditional)",
+     "en": "traditional",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives (printed page 157)",
      "audio": "audio/lessons/unit-28-c63.mp3"
@@ -8007,22 +7977,21 @@ window.LESSONS = {
     },
     {
      "ar": "عُنْصُريّ ج عُنْصريِّين",
-     "en": "(handwritten:; pencil word partly illegible, looks like 'consecutive')",
+     "en": "racist",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives (printed page 157)",
-     "note": "book: racist",
      "audio": "audio/lessons/unit-28-c65.mp3"
     },
     {
      "ar": "خِتْيار ج خِتْيارِيِّة \\ خِتْيارِيّات",
-     "en": "(handwritten: old man)",
+     "en": "old man",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives (printed page 157)",
      "audio": "audio/lessons/unit-28-c66.mp3"
     },
     {
      "ar": "حِلِو ج حِلْوين",
-     "en": "(handwritten: handsome)",
+     "en": "handsome",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5 (printed page 157)",
      "audio": "audio/lessons/unit-28-c67.mp3"
@@ -8036,35 +8005,35 @@ window.LESSONS = {
     },
     {
      "ar": "وَسِخ ج وَسْخين",
-     "en": "(handwritten: dirty)",
+     "en": "dirty",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5 (printed page 157)",
      "audio": "audio/lessons/unit-28-c69.mp3"
     },
     {
      "ar": "أهبَل ج هُبْلان",
-     "en": "(handwritten: stupid)",
+     "en": "stupid",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5 (printed page 157)",
      "audio": "audio/lessons/unit-28-c70.mp3"
     },
     {
      "ar": "تيس ج تْيوس",
-     "en": "(handwritten: stupid)",
+     "en": "stupid",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5 (printed page 157)",
      "audio": "audio/lessons/unit-28-c71.mp3"
     },
     {
      "ar": "غَبِيّ ج غَبِيِّين (أغْبِياء)",
-     "en": "(handwritten: stupid/idiot)",
+     "en": "stupid/idiot",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5 (printed page 157)",
      "audio": "audio/lessons/unit-28-c72.mp3"
     },
     {
      "ar": "كُوَيِّس ج كُوَيِّسين",
-     "en": "(handwritten: good)",
+     "en": "good",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5 (printed page 157)",
      "audio": "audio/lessons/unit-28-c73.mp3"
@@ -8096,126 +8065,126 @@ window.LESSONS = {
      "ar": "لكِن، بَسّ",
      "en": "but",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c00.mp3"
     },
     {
      "ar": "بَسّ",
      "en": "only, enough, just",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c01.mp3"
     },
     {
      "ar": "ساعَتْها، يُومْها",
      "en": "and then, at that time",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c02.mp3"
     },
     {
      "ar": "فَ",
      "en": "then",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c03.mp3"
     },
     {
      "ar": "بَعدين",
      "en": "after that, also",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c04.mp3"
     },
     {
      "ar": "أنا بَفَكِّر إنُّه",
      "en": "I think that",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c05.mp3"
     },
     {
      "ar": "بَعْتَقِد إنُّه",
      "en": "I believe that",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c06.mp3"
     },
     {
      "ar": "حَتَّى",
      "en": "even",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c07.mp3"
     },
     {
      "ar": "حَتَّى وَلَوْ",
      "en": "even though",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c08.mp3"
     },
     {
      "ar": "عشان، من شان، على-شان",
      "en": "for, because",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c09.mp3"
     },
     {
      "ar": "لِأَنُّه (لأنّي، لأنَّك...)",
      "en": "because",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c10.mp3"
     },
     {
      "ar": "بَدَل",
      "en": "instead (noun)",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c11.mp3"
     },
     {
      "ar": "بَدَل-ما",
      "en": "instead (verb)",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c12.mp3"
     },
     {
      "ar": "بِشَكِل عامّ",
      "en": "generally speaking",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c13.mp3"
     },
     {
      "ar": "بِشَكِل خاصّ",
      "en": "specifically speaking",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c14.mp3"
     },
     {
      "ar": "حَسَب",
      "en": "according to",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c15.mp3"
     },
     {
      "ar": "على كُلّ حال",
      "en": "any way",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c16.mp3"
     },
     {
      "ar": "بِالعَكْس",
      "en": "the opposite",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "group": "حروف الاتصال — conjunctions in spoken Arabic only",
      "audio": "audio/lessons/unit-29-c17.mp3"
     },
     {
@@ -8936,26 +8905,23 @@ window.LESSONS = {
     },
     {
      "ar": "مَقْهَى ج مَقاهي",
-     "en": "coffee",
+     "en": "café, coffeehouse",
      "src": "vocab-gram p.9",
      "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
-     "note": "book: sic; printed in the book as \"caffee\"",
      "audio": "audio/lessons/unit-30-c65.mp3"
     },
     {
      "ar": "مُشْكِلِة ج مَشاكِل",
-     "en": "mountain",
+     "en": "problem",
      "src": "vocab-gram p.9",
      "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
-     "note": "book: sic — printed error; = problem",
      "audio": "audio/lessons/unit-30-c66.mp3"
     },
     {
      "ar": "مَطْعَم ج مَطاعِم",
-     "en": "mountain",
+     "en": "restaurant",
      "src": "vocab-gram p.9",
      "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
-     "note": "book: sic — printed error; = restaurant",
      "audio": "audio/lessons/unit-30-c67.mp3"
     },
     {
@@ -10275,7 +10241,6 @@ window.LESSONS = {
      "ar": "أَكْثَر مِن",
      "en": "more than",
      "src": "stories p.5",
-     "note": "book: printed in the book as \"more then\"",
      "audio": "audio/lessons/unit-33-c06.mp3"
     },
     {
@@ -10312,7 +10277,6 @@ window.LESSONS = {
      "ar": "يا... يا...",
      "en": "either … or",
      "src": "stories p.5",
-     "note": "book: printed in the book as \"ether ...or\"",
      "audio": "audio/lessons/unit-33-c12.mp3"
     },
     {
