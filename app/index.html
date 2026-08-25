@@ -1146,6 +1146,11 @@
   .lsn-ar .say{margin-right:6px}
   .lsn-en{font-size:13.5px; color:var(--ink-soft); line-height:1.5; padding-top:4px}
   .lsn-note{font-size:11px; color:var(--muted); font-style:italic}
+  /* the word key under a reading passage — glosses lifted out of the Arabic itself */
+  .lsn-key{display:flex; flex-wrap:wrap; gap:5px 14px; margin-top:9px; padding-top:9px;
+    border-top:1px dashed var(--rule); font-family:var(--sans); font-size:12px; color:var(--muted)}
+  .lsn-kw b{font-family:var(--arabic); font-size:14px; color:var(--ink-soft); margin-inline-end:6px;
+    font-weight:400}
   .lsn-reply{font-family:var(--arabic); direction:rtl; font-size:17px; color:var(--ink); margin-top:3px}
   .lsn-replyen{font-size:12px; color:var(--muted)}
   .lsn-add{font:inherit; font-size:16px; width:30px; height:30px; margin-top:3px; border-radius:8px;
@@ -2751,12 +2756,19 @@ function lessonView(u) {
       `</div><div class="note">From ${esc(d.src)}.${
         (d.cast || []).length > 1 ? ' Each speaker has their own voice.' : ''}</div>`;
   });
+  // Reading passages were the one place still rendering Arabic as flat escaped text, so they
+  // were also the one place a word couldn't be tapped. arLive() fixes that — and it is why the
+  // English had to come out of the `ar` string first (pipeline/lesson_cleanup.py): inline Latin
+  // would have been tokenized into dead spans. The lifted glosses come back as a key underneath.
   (u.texts || []).forEach(t => {
     h += `<div class="sec">${esc(t.title || 'Reading')}</div><div class="lsn-text" dir="rtl">` +
       t.sentences.map(s => {
         const ar = typeof s === 'string' ? s : (s.ar || '');
         const en = typeof s === 'string' ? null : s.en;
-        return `<p>${esc(ar)}${en ? `<em class="lsn-ten">${esc(en)}</em>` : ''}</p>`;
+        const gl = (typeof s === 'string' ? null : s.gloss) || [];
+        return `<p>${arLive(ar)}${en ? `<em class="lsn-ten">${esc(en)}</em>` : ''}${
+          gl.length ? `<span class="lsn-key" dir="ltr">${gl.map(g =>
+            `<span class="lsn-kw"><b dir="rtl">${esc(g.w)}</b>${esc(g.en)}</span>`).join('')}</span>` : ''}</p>`;
       }).join('') + `</div><div class="note">From ${esc(t.src)}.</div>`;
   });
   (u.drills || []).forEach(d => { h += lsnDrillHTML(u, d); });
@@ -5843,6 +5855,19 @@ const LEX_FIX = {
   'الاله': {lemma: 'الآلة',   gloss: 'the machine, the instrument', analysis: 'NOUN:FS', caphi: '2il2aale'},
   'الامن': {lemma: 'الأَمن',  gloss: 'security, safety',    analysis: 'NOUN:MS',   caphi: '2il2amn'},
   'كلهم':  {lemma: 'كُلُّهُم', gloss: 'all of them',         analysis: 'NOUN_QUANT',caphi: 'kullhum'},
+  // بدّ + ending is how Palestinians say "want", and it is everywhere. The corpus resolves بدّي
+  // to a Maknuune entry meaning "be altruistic towards sb and prioritize him/her" — so the
+  // commonest word in the dialect had a gloss no learner could make sense of. Making the lesson
+  // reading passages tappable is what put it in front of a reader often enough to notice.
+  // The readings below are the app's OWN curated paradigm, pipeline/grammar.py:273 — the same
+  // table the "Wanting — بدّي" grammar lesson teaches from. Nothing new is asserted here.
+  'بدي':   {lemma: 'بِدّي',   gloss: 'I want',              analysis: 'PART', caphi: 'baddi'},
+  'بدك':   {lemma: 'بِدّك',   gloss: 'you want (m/f)',      analysis: 'PART', caphi: 'baddak'},
+  'بده':   {lemma: 'بِدّه',   gloss: 'he wants',            analysis: 'PART', caphi: 'baddo'},
+  'بدها':  {lemma: 'بِدّها',  gloss: 'she wants',           analysis: 'PART', caphi: 'baddha'},
+  'بدنا':  {lemma: 'بِدّنا',  gloss: 'we want',             analysis: 'PART', caphi: 'baddna'},
+  'بدكم':  {lemma: 'بِدّكم',  gloss: 'you want (plural)',   analysis: 'PART', caphi: 'baddkom'},
+  'بدهم':  {lemma: 'بِدّهم',  gloss: 'they want',           analysis: 'PART', caphi: 'baddhom'},
 };
 function lexFix(w) {
   if (!w) return w || null;
@@ -5951,15 +5976,21 @@ function lexAs(r, tok) {
 // The one lookup every module uses. Returns a word record (card-shaped) or null.
 function lexLook(tok) {
   const k = arNorm(tok); if (!k) return null;
+  // A correction is a SOURCE, not only a patch on something the index already had. بدكم "you
+  // want (pl)" is in no index at all, so correcting-after-lookup never reached it and the word
+  // came back unknown — while its six siblings resolved.
+  if (LEX_FIX[k]) return lexFix({surface: tok, lemma: tok, gloss: '', provenance: ''});
   const ix = lexIndex();
   const r = ix.byKey.get(k) || ix.bySurf.get(k);
   if (r) return lexFix(lexAs(r, tok));
+  // lexFix on EVERY branch, not just the first. بدنا "we want" fell through to the conjugation
+  // index, matched a cell of بدن "stoop, lower", and returned before the correction could apply.
   const cj = lexConjIndex().get(k);
-  if (cj) return lexFromVerb(cj.v, tok, cj.cell);
+  if (cj) return lexFix(lexFromVerb(cj.v, tok, cj.cell));
   const st = lexStrip(k, ix);
   if (!st) return null;
-  return Object.assign({}, st.r, {surface: tok, vocalized: tok,
-    provenance: 'lexclitic', _cut: st.cut});
+  return lexFix(Object.assign({}, st.r, {surface: tok, vocalized: tok,
+    provenance: 'lexclitic', _cut: st.cut}));
 }
 
 // ---------- tappable Arabic, anywhere ------------------------------------------------------

@@ -114,6 +114,28 @@ CUE_FIX = {"7:45 It's ten to eight. [sic — printed 7:45; presumably 7:50]":
 # tappable Latin inside a right-to-left line. The book's plural stands as the book has it.
 AR_MARK = re.compile(r'\s*\[sic[^\]]*\]')
 
+# The reading passages carry their English INSIDE the Arabic — "المْنَظَّمين (organized)". That is
+# the book's convention, and it is the only English there is: not one of the 363 lesson-text
+# sentences has an `en` translation, which is exactly why the glosses were inline. So they are
+# moved, not deleted: out of `ar`, into a `gloss` list the reader shows as a key beneath the
+# Arabic. The anchor is the last word before the bracket — for a gloss covering a phrase
+# ("شو إلُه وشو عَليه — what are his duties and rights") that is the end of the span, which is
+# the most useful single word to hang it on.
+TEXT_GLOSS = re.compile(r'\s*\((?=[^)]*[A-Za-z])([^)]*)\)')
+TIDY_PUNCT = re.compile(r'\s+([،.؟!:؛])')
+
+def lift_glosses(ar):
+    found = []
+    def take(m):
+        head = ar[:m.start()]
+        toks = [t for t in re.split(r'[\s،.؟!:؛…"«»“”\'()\-—\\/]+', head) if t]
+        found.append({'w': toks[-1] if toks else '', 'en': m.group(1).strip()})
+        return ''
+    clean = TEXT_GLOSS.sub(take, ar)
+    clean = TIDY_PUNCT.sub(r'\1', clean)
+    clean = re.sub(r'\s{2,}', ' ', clean).strip()
+    return clean, found
+
 def main():
     changed = files = 0
     log = []
@@ -157,6 +179,18 @@ def main():
                     if it.get(k) in CUE_FIX:
                         log.append('%s      cue %r -> %r' % (uid, it[k][:44], CUE_FIX[it[k]]))
                         it[k] = CUE_FIX[it[k]]
+        for t in u.get('texts', []):
+            for sn in t.get('sentences', []):
+                if not isinstance(sn, dict):
+                    continue
+                ar = sn.get('ar') or ''
+                if not TEXT_GLOSS.search(ar):
+                    continue
+                clean, found = lift_glosses(ar)
+                sn['ar'] = clean
+                sn['gloss'] = (sn.get('gloss') or []) + found
+                log.append('%s      text  lifted %d gloss%s out of the Arabic'
+                           % (uid, len(found), '' if len(found) == 1 else 'es'))
         for d in u.get('dialogues', []):
             t = d.get('title')
             if t and TITLE_STRIP.search(t):
