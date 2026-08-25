@@ -7184,92 +7184,110 @@ window.LESSONS = {
     {
      "ar": "عَاصِمِة ج عَواصِم",
      "en": "capitals",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c00.mp3"
     },
     {
      "ar": "مَدينة ج مُدُن",
      "en": "towns",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c01.mp3"
     },
     {
      "ar": "عَمّان",
      "en": "Amman",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c02.mp3"
     },
     {
      "ar": "إلْقُدْس (أورشَليم القُدْس)",
      "en": "Jerusalem",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c03.mp3"
     },
     {
      "ar": "إلْقاهِرة",
      "en": "Cairo",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c04.mp3"
     },
     {
      "ar": "بَيْروت",
      "en": "Beirut",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c05.mp3"
     },
     {
      "ar": "بَغْداد",
      "en": "Baghdad",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c06.mp3"
     },
     {
      "ar": "إلْخَرْطوم",
      "en": "Khartoum",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c07.mp3"
     },
     {
      "ar": "إسْطَنْبول",
      "en": "Istanbul",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c08.mp3"
     },
     {
      "ar": "ألرِّياض",
      "en": "Riyadh (handwritten 'Riyhad')",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c09.mp3"
     },
     {
      "ar": "طَهْران",
      "en": "Tehran",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c10.mp3"
     },
     {
      "ar": "باريس",
      "en": "Paris",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c11.mp3"
     },
     {
      "ar": "مَدْريد",
      "en": "Madrid",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c12.mp3"
     },
     {
      "ar": "لَنْدُن",
      "en": "London",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c13.mp3"
     },
     {
      "ar": "طُوكُيو",
      "en": "Tokyo",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c14.mp3"
     },
     {
      "ar": "بَرْلين",
      "en": "Berlin",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c15.mp3"
     },
     {
      "ar": "واشِنْطُن",
      "en": "Washington",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c16.mp3"
     },
     {
      "ar": "دِمَشْق",
      "en": "Damascus",
-     "src": "speaking p.5"
+     "src": "speaking p.5",
+     "audio": "audio/lessons/unit-26-c17.mp3"
     }
    ],
    "dialogues": [],
@@ -7319,133 +7337,155 @@ window.LESSONS = {
      "ar": "عَ (مكان)، لَ (مكان, شَخْص) — راح عَ-البيت \\ سافر لَإيطاليا \\ قال-لُه",
      "en": "to",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c00.mp3"
     },
     {
      "ar": "في, بِ — في الصبح, بالليل",
      "en": "in",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c01.mp3"
     },
     {
      "ar": "في، بِ ,عِنْد — هو في الدار, هو بِالمدرسة , هو عند أُخْته",
      "en": "at",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c02.mp3"
     },
     {
      "ar": "خِلال, في — موسى نام خِلال الدرس",
      "en": "during",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c03.mp3"
     },
     {
      "ar": "عَلى — سمير قَعَد على الكُرسي",
      "en": "on",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c04.mp3"
     },
     {
      "ar": "عَن — أحْمَد قَرا عن الشرق الأوسط",
      "en": "about",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c05.mp3"
     },
     {
      "ar": "مِن — رنا وِصْلَت من أمريكا، مَصنوع من خَشَب",
      "en": "of, from",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c06.mp3"
     },
     {
      "ar": "مَع — مَعَك مصاري؟ ، رُحِت مَعُه؟",
      "en": "have, with",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c07.mp3"
     },
     {
      "ar": "بِ — سافر بالباص",
      "en": "by",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c08.mp3"
     },
     {
      "ar": "قُدّام — المعلم قُدّام الطُّلّاب",
      "en": "in front of",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c09.mp3"
     },
     {
      "ar": "فُوق — الطيارة فُوق الِغْيوم",
      "en": "above",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c10.mp3"
     },
     {
      "ar": "مِثِل ، زَيّ — هو مِثْلي، هو زَيّي (زَيّ-ما شُفْتِ)",
      "en": "as, like",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c11.mp3"
     },
     {
      "ar": "وَرا — وَرا البيت",
      "en": "behind",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c12.mp3"
     },
     {
      "ar": "قَبِل — قبل ساعة، (قبل-ما أشوفُه)",
      "en": "before",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c13.mp3"
     },
     {
      "ar": "بَعِد — بعد الصّيف، (بعد-ما أشوفُه)",
      "en": "after",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c14.mp3"
     },
     {
      "ar": "بِين (بينا، بيناتْنا) — هو بيني وبين النهر، عاش بيناتْنا",
      "en": "between",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c15.mp3"
     },
     {
      "ar": "بَرّة (بَرِّيّة الْبْلاد) — إطْلَع بَرّة",
      "en": "out",
      "group": "حروف جَرّ — أمْثِلة Examples (printed page 147)",
-     "src": "vocab-gram p.22"
+     "src": "vocab-gram p.22",
+     "audio": "audio/lessons/unit-27-c16.mp3"
     },
     {
      "ar": "جُوَّة — تَعال جُوَّة",
      "en": "inside",
      "group": "Prepositions, continued (printed page 148)",
-     "src": "vocab-gram p.21"
+     "src": "vocab-gram p.21",
+     "audio": "audio/lessons/unit-27-c17.mp3"
     },
     {
      "ar": "تَحت — تَحْت المَطَر",
      "en": "under",
      "group": "Prepositions, continued (printed page 148)",
-     "src": "vocab-gram p.21"
+     "src": "vocab-gram p.21",
+     "audio": "audio/lessons/unit-27-c18.mp3"
     },
     {
      "ar": "عَلى — أنا وأخوي على ابن عَمّي وأنا وابِن عَمّي عَلَى الْغَريب",
      "en": "against",
      "group": "Prepositions, continued (printed page 148)",
-     "src": "vocab-gram p.21"
+     "src": "vocab-gram p.21",
+     "audio": "audio/lessons/unit-27-c19.mp3"
     },
     {
      "ar": "دون، بِدون ، مِن غِير — بِدّي قَهْوِة بِدون \\ مِن غِير سُكَّر",
      "en": "with out",
      "group": "Prepositions, continued (printed page 148)",
-     "src": "vocab-gram p.21"
+     "src": "vocab-gram p.21",
+     "audio": "audio/lessons/unit-27-c20.mp3"
     },
     {
      "ar": "عَشان — هٰذا الكْتاب عَشانَك",
      "en": "for",
      "group": "Prepositions, continued (printed page 148)",
-     "src": "vocab-gram p.21"
+     "src": "vocab-gram p.21",
+     "audio": "audio/lessons/unit-27-c21.mp3"
     }
    ],
    "dialogues": [],
@@ -7505,455 +7545,529 @@ window.LESSONS = {
      "ar": "قصير ج قْصار",
      "en": "short (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c00.mp3"
     },
     {
      "ar": "طويل ج طْوال",
      "en": "long (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c01.mp3"
     },
     {
      "ar": "كبير ج كْبار",
      "en": "big (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c02.mp3"
     },
     {
      "ar": "زْغير ج زغار",
      "en": "little (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c03.mp3"
     },
     {
      "ar": "رخيص ج رْخاص",
      "en": "cheap (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c04.mp3"
     },
     {
      "ar": "قْديم ج قْدام (قُدَمَاء)",
      "en": "old (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c05.mp3"
     },
     {
      "ar": "جديد ج جْداد (جُدُد)",
      "en": "new (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c06.mp3"
     },
     {
      "ar": "نْظيف ج نْظاف",
      "en": "clean (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c07.mp3"
     },
     {
      "ar": "فَقير ج فَقيرين (فُقَراء)",
      "en": "poor (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c08.mp3"
     },
     {
      "ar": "غَنِيّ ج غَنِيِّين (أغْنِيَاء)",
      "en": "rich (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c09.mp3"
     },
     {
      "ar": "حَزين ج حَزينين (حُزَنَاء)",
      "en": "sad (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c10.mp3"
     },
     {
      "ar": "بعيد ج بْعاد (بَعيدين)",
      "en": "far (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c11.mp3"
     },
     {
      "ar": "ضعيف ج ضْعاف",
      "en": "weak (handwritten gloss)",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c12.mp3"
     },
     {
      "ar": "بَطيء ج بَطيئين",
      "en": "slow (handwritten gloss 'slowly')",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c13.mp3"
     },
     {
      "ar": "قَوِيّ ج قَوِيّين\\ أقْوِيا (أقْوِيَاء)",
      "en": "strong",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c14.mp3"
     },
     {
      "ar": "سَريع ج سَريعين",
      "en": "fast",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c15.mp3"
     },
     {
      "ar": "سَعيد ج سَعيدين (سُعَداء)",
      "en": "happy",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c16.mp3"
     },
     {
      "ar": "مْنيح\\ مْليح ج مْناح\\ مْلاح",
      "en": "good",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c17.mp3"
     },
     {
      "ar": "خميل ج خْمال\\ خميلين",
      "en": "thick",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c18.mp3"
     },
     {
      "ar": "بَخيل ج بخيلين (بُخَلاء)",
      "en": "stingy",
      "src": "vocab-gram p.13",
-     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly."
+     "group": "مجموعة 1: adjectives with broken plurals (printed page 156). Handwritten glosses in pencil: short, long, big, little, cheep, old, new, clean, poor, rich, sad, far, weak, slowly.",
+     "audio": "audio/lessons/unit-28-c19.mp3"
     },
     {
      "ar": "ناصح ج ناصْحَنين",
      "en": "mature, sensible",
      "src": "vocab-gram p.13",
      "group": "مجموعة 2 (printed page 156)",
-     "note": "English added by this app — the book prints this list untranslated"
+     "note": "English added by this app — the book prints this list untranslated",
+     "audio": "audio/lessons/unit-28-c20.mp3"
     },
     {
      "ar": "هادي ج هادْيين",
      "en": "calm, quiet",
      "src": "vocab-gram p.13",
      "group": "مجموعة 2 (printed page 156)",
-     "note": "English added by this app — the book prints this list untranslated"
+     "note": "English added by this app — the book prints this list untranslated",
+     "audio": "audio/lessons/unit-28-c21.mp3"
     },
     {
      "ar": "واسِع ج واسْعين \\ وسيع ج وسيعين (شوارع واسْعة\\وسيعة)",
      "en": "wide, spacious",
      "src": "vocab-gram p.13",
      "group": "مجموعة 2 (printed page 156)",
-     "note": "English added by this app — the book prints this list untranslated"
+     "note": "English added by this app — the book prints this list untranslated",
+     "audio": "audio/lessons/unit-28-c22.mp3"
     },
     {
      "ar": "فَرْحان ج فَرْحانين",
      "en": "(handwritten: happy)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c23.mp3"
     },
     {
      "ar": "حَزْنان ج ين",
      "en": "(handwritten: sad)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c24.mp3"
     },
     {
      "ar": "بَرْدان ج ين",
      "en": "(handwritten: cold)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c25.mp3"
     },
     {
      "ar": "حَمْيان ج ين",
      "en": "(handwritten: hot)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c26.mp3"
     },
     {
      "ar": "عطشان ج ين",
      "en": "(handwritten: thirsty)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c27.mp3"
     },
     {
      "ar": "جوعان ج ين",
      "en": "(handwritten: hungry)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c28.mp3"
     },
     {
      "ar": "رَوْيان ج ين",
      "en": "(handwritten: not thirsty, hydrated)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c29.mp3"
     },
     {
      "ar": "عَيّان ج ين",
      "en": "(handwritten: sick)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c30.mp3"
     },
     {
      "ar": "تَعْبان ج ين",
      "en": "(handwritten: tired (sleepy))",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c31.mp3"
     },
     {
      "ar": "هلكان ج ين",
      "en": "(handwritten: tired (very))",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c32.mp3"
     },
     {
      "ar": "زعلان ج ين",
      "en": "(handwritten: angry, upset)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c33.mp3"
     },
     {
      "ar": "يَأْسَان ج ين",
      "en": "(handwritten: desperate)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c34.mp3"
     },
     {
      "ar": "شَبْعان ج ين",
      "en": "(handwritten: full)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c35.mp3"
     },
     {
      "ar": "زهقان ج ين",
      "en": "(handwritten: boring)",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
-     "note": "book: i.e. bored"
+     "note": "book: i.e. bored",
+     "audio": "audio/lessons/unit-28-c36.mp3"
     },
     {
      "ar": "كَسْلان ج ين",
      "en": "(handwritten: lazy)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c37.mp3"
     },
     {
      "ar": "جَبّان ج ين",
      "en": "(handwritten: coward)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c38.mp3"
     },
     {
      "ar": "سَكْران ج ين",
      "en": "(handwritten: drunk)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c39.mp3"
     },
     {
      "ar": "حَيْران ج ين",
      "en": "hesitant ; (handwritten: confused)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below."
+     "group": "مجموعة 3: فَعْلان-pattern adjectives, all pluralized with ين (printed page 157). Handwritten arrow note at top: 'ات for girls'. English equivalents are handwritten pencil glosses, given in parentheses below.",
+     "audio": "audio/lessons/unit-28-c40.mp3"
     },
     {
      "ar": "مِرْتاح ج ين",
      "en": "(handwritten: rest)",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: i.e. relaxed"
+     "note": "book: i.e. relaxed",
+     "audio": "audio/lessons/unit-28-c41.mp3"
     },
     {
      "ar": "مَبسوط ج ين",
      "en": "(handwritten: happy)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c42.mp3"
     },
     {
      "ar": "مْكَيَّف ج ين",
      "en": "enjoying",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c43.mp3"
     },
     {
      "ar": "مُنْفَعِل ج ين",
      "en": "exited, moved",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c44.mp3"
     },
     {
      "ar": "مِتْحَمِّس ج ين",
      "en": "(handwritten: excited)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c45.mp3"
     },
     {
      "ar": "مُكْتَئِب ج ين = حَزْنان",
      "en": "(handwritten: depression)",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: i.e. depressed"
+     "note": "book: i.e. depressed",
+     "audio": "audio/lessons/unit-28-c46.mp3"
     },
     {
      "ar": "مُحْبَط ج ين",
      "en": "frustrated",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c47.mp3"
     },
     {
      "ar": "مَضغوط ج ين",
      "en": "(handwritten: compressed)",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: i.e. stressed"
+     "note": "book: i.e. stressed",
+     "audio": "audio/lessons/unit-28-c48.mp3"
     },
     {
      "ar": "مِتْعَصْبِن \\ مْعَصِّب ج ين",
      "en": "get mad, blow up, get angry fast",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c49.mp3"
     },
     {
      "ar": "مْلَخْبَط ج ين",
      "en": "confused",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c50.mp3"
     },
     {
      "ar": "مُقْرِف ج ين",
      "en": "disgusting",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c51.mp3"
     },
     {
      "ar": "مُحافِظ ج ين",
      "en": "conservative",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c52.mp3"
     },
     {
      "ar": "مُتَشَدِّد \\ مُتَطَرِّف ج ين",
      "en": "conservative",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: sic; i.e. hardline/extremist"
+     "note": "book: sic; i.e. hardline/extremist",
+     "audio": "audio/lessons/unit-28-c53.mp3"
     },
     {
      "ar": "مَضروب\\ مْخَلِّص كازُه",
      "en": "fucked up\\ran out of gas",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c54.mp3"
     },
     {
      "ar": "مُبَذِّر ج ين",
      "en": "spender, waster",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c55.mp3"
     },
     {
      "ar": "مْعَفِّن ج ين",
      "en": "stinking",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c56.mp3"
     },
     {
      "ar": "مِتْعَلِّق ج ين",
      "en": "depending",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c57.mp3"
     },
     {
      "ar": "مَحْبوب ج ين",
      "en": "(handwritten: loving)",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
-     "note": "book: i.e. beloved"
+     "note": "book: i.e. beloved",
+     "audio": "audio/lessons/unit-28-c58.mp3"
     },
     {
      "ar": "مْوَفِّر ج ين",
      "en": "saver",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c59.mp3"
     },
     {
      "ar": "مَشْغول ج ين",
      "en": "(handwritten: busy)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c60.mp3"
     },
     {
      "ar": "مُتسامِح ج ين",
      "en": "forgiving",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)"
+     "group": "مجموعة 4: participial adjectives, plural ين; printed English glosses in parentheses, some handwritten (printed page 157)",
+     "audio": "audio/lessons/unit-28-c61.mp3"
     },
     {
      "ar": "عَصَبيّ ج عَصَبيِّين",
      "en": "nervous",
      "src": "vocab-gram p.12",
-     "group": "Boxed list of nisba/other adjectives (printed page 157)"
+     "group": "Boxed list of nisba/other adjectives (printed page 157)",
+     "audio": "audio/lessons/unit-28-c62.mp3"
     },
     {
      "ar": "تَقْليديّ ج تَقْليديين",
      "en": "(handwritten: traditional)",
      "src": "vocab-gram p.12",
-     "group": "Boxed list of nisba/other adjectives (printed page 157)"
+     "group": "Boxed list of nisba/other adjectives (printed page 157)",
+     "audio": "audio/lessons/unit-28-c63.mp3"
     },
     {
      "ar": "غَيور ج ين",
      "en": "Jealous",
      "src": "vocab-gram p.12",
-     "group": "Boxed list of nisba/other adjectives (printed page 157)"
+     "group": "Boxed list of nisba/other adjectives (printed page 157)",
+     "audio": "audio/lessons/unit-28-c64.mp3"
     },
     {
      "ar": "عُنْصُريّ ج عُنْصريِّين",
      "en": "(handwritten:; pencil word partly illegible, looks like 'consecutive')",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives (printed page 157)",
-     "note": "book: racist"
+     "note": "book: racist",
+     "audio": "audio/lessons/unit-28-c65.mp3"
     },
     {
      "ar": "خِتْيار ج خِتْيارِيِّة \\ خِتْيارِيّات",
      "en": "(handwritten: old man)",
      "src": "vocab-gram p.12",
-     "group": "Boxed list of nisba/other adjectives (printed page 157)"
+     "group": "Boxed list of nisba/other adjectives (printed page 157)",
+     "audio": "audio/lessons/unit-28-c66.mp3"
     },
     {
      "ar": "حِلِو ج حِلْوين",
      "en": "(handwritten: handsome)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 5 (printed page 157)"
+     "group": "مجموعة 5 (printed page 157)",
+     "audio": "audio/lessons/unit-28-c67.mp3"
     },
     {
      "ar": "بَشِع ج ؟؟",
      "en": "ugly (printed; the plural is printed as '؟؟')",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 5 (printed page 157)"
+     "group": "مجموعة 5 (printed page 157)",
+     "audio": "audio/lessons/unit-28-c68.mp3"
     },
     {
      "ar": "وَسِخ ج وَسْخين",
      "en": "(handwritten: dirty)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 5 (printed page 157)"
+     "group": "مجموعة 5 (printed page 157)",
+     "audio": "audio/lessons/unit-28-c69.mp3"
     },
     {
      "ar": "أهبَل ج هُبْلان",
      "en": "(handwritten: stupid)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 5 (printed page 157)"
+     "group": "مجموعة 5 (printed page 157)",
+     "audio": "audio/lessons/unit-28-c70.mp3"
     },
     {
      "ar": "تيس ج تْيوس",
      "en": "(handwritten: stupid)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 5 (printed page 157)"
+     "group": "مجموعة 5 (printed page 157)",
+     "audio": "audio/lessons/unit-28-c71.mp3"
     },
     {
      "ar": "غَبِيّ ج غَبِيِّين (أغْبِياء)",
      "en": "(handwritten: stupid/idiot)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 5 (printed page 157)"
+     "group": "مجموعة 5 (printed page 157)",
+     "audio": "audio/lessons/unit-28-c72.mp3"
     },
     {
      "ar": "كُوَيِّس ج كُوَيِّسين",
      "en": "(handwritten: good)",
      "src": "vocab-gram p.12",
-     "group": "مجموعة 5 (printed page 157)"
+     "group": "مجموعة 5 (printed page 157)",
+     "audio": "audio/lessons/unit-28-c73.mp3"
     }
    ],
    "dialogues": [],
@@ -7982,313 +8096,365 @@ window.LESSONS = {
      "ar": "لكِن، بَسّ",
      "en": "but",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c00.mp3"
     },
     {
      "ar": "بَسّ",
      "en": "only, enough, just",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c01.mp3"
     },
     {
      "ar": "ساعَتْها، يُومْها",
      "en": "and then, at that time",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c02.mp3"
     },
     {
      "ar": "فَ",
      "en": "then",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c03.mp3"
     },
     {
      "ar": "بَعدين",
      "en": "after that, also",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c04.mp3"
     },
     {
      "ar": "أنا بَفَكِّر إنُّه",
      "en": "I think that",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c05.mp3"
     },
     {
      "ar": "بَعْتَقِد إنُّه",
      "en": "I believe that",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c06.mp3"
     },
     {
      "ar": "حَتَّى",
      "en": "even",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c07.mp3"
     },
     {
      "ar": "حَتَّى وَلَوْ",
      "en": "even though",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c08.mp3"
     },
     {
      "ar": "عشان، من شان، على-شان",
      "en": "for, because",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c09.mp3"
     },
     {
      "ar": "لِأَنُّه (لأنّي، لأنَّك...)",
      "en": "because",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c10.mp3"
     },
     {
      "ar": "بَدَل",
      "en": "instead (noun)",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c11.mp3"
     },
     {
      "ar": "بَدَل-ما",
      "en": "instead (verb)",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c12.mp3"
     },
     {
      "ar": "بِشَكِل عامّ",
      "en": "generally speaking",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c13.mp3"
     },
     {
      "ar": "بِشَكِل خاصّ",
      "en": "specifically speaking",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c14.mp3"
     },
     {
      "ar": "حَسَب",
      "en": "according to",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c15.mp3"
     },
     {
      "ar": "على كُلّ حال",
      "en": "any way",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c16.mp3"
     },
     {
      "ar": "بِالعَكْس",
      "en": "the opposite",
      "src": "vocab-gram p.20",
-     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)"
+     "group": "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)",
+     "audio": "audio/lessons/unit-29-c17.mp3"
     },
     {
      "ar": "بالنِسبة إلي",
      "en": "as for me",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c18.mp3"
     },
     {
      "ar": "تقريبًا\\ شي",
      "en": "approximately, almost",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c19.mp3"
     },
     {
      "ar": "بِصَراحة",
      "en": "frankly speaking",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c20.mp3"
     },
     {
      "ar": "مْبَيِّن عَليه\\عَلِيها إنُّه...",
      "en": "one can see that he is",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c21.mp3"
     },
     {
      "ar": "بَدَبِّر حالي (مع)",
      "en": "I get along (with), I manage",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c22.mp3"
     },
     {
      "ar": "بِظْهَر إنّه",
      "en": "it appears that",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c23.mp3"
     },
     {
      "ar": "إلّي",
      "en": "which, who",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c24.mp3"
     },
     {
      "ar": "إنُّه (إنّي، إنَّك...)",
      "en": "that",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c25.mp3"
     },
     {
      "ar": "بِفَضْل",
      "en": "thanks to",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c26.mp3"
     },
     {
      "ar": "مَعْلُوم إنُّه",
      "en": "its obvious that",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c27.mp3"
     },
     {
      "ar": "إلّي خَلّاني",
      "en": "what made me",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c28.mp3"
     },
     {
      "ar": "مُمْكِن، بيجوز",
      "en": "maybe, its possible",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c29.mp3"
     },
     {
      "ar": "كَإنُّه",
      "en": "as if",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c30.mp3"
     },
     {
      "ar": "أبْصَر شو، أبْصَر مين",
      "en": "who knows",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c31.mp3"
     },
     {
      "ar": "بِالْمُقارَنِة، بِالْمِقْياس",
      "en": "in comparison",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c32.mp3"
     },
     {
      "ar": "ما-عَدا",
      "en": "except",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c33.mp3"
     },
     {
      "ar": "قَبِل-ما",
      "en": "before (verb)",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c34.mp3"
     },
     {
      "ar": "بَعِد-ما",
      "en": "after (verb)",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c35.mp3"
     },
     {
      "ar": "زَيّ-ما، مِثِل ما",
      "en": "as (verb)",
      "src": "vocab-gram p.19",
-     "group": "Conjunctions, continued (printed page 150)"
+     "group": "Conjunctions, continued (printed page 150)",
+     "audio": "audio/lessons/unit-29-c36.mp3"
     },
     {
      "ar": "بِدون ، مِن غِير",
      "en": "with out",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c37.mp3"
     },
     {
      "ar": "لِسّا ، لِسانّي، بَعِدْني",
      "en": "still, still not",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c38.mp3"
     },
     {
      "ar": "عَشان هِيك",
      "en": "because of that",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c39.mp3"
     },
     {
      "ar": "عَبين",
      "en": "while",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c40.mp3"
     },
     {
      "ar": "أبَدًا، عُمْري-ما",
      "en": "never",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c41.mp3"
     },
     {
      "ar": "عادَةً",
      "en": "usually",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c42.mp3"
     },
     {
      "ar": "دايْمًا",
      "en": "always",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c43.mp3"
     },
     {
      "ar": "مَرّات (أمْرار)",
      "en": "some times",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c44.mp3"
     },
     {
      "ar": "وهِيك",
      "en": "and so",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c45.mp3"
     },
     {
      "ar": "مَع إنُّه",
      "en": "even though",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c46.mp3"
     },
     {
      "ar": "أو ، وِلّا",
      "en": "or",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c47.mp3"
     },
     {
      "ar": "هِيك (رِحْلِة)",
      "en": "such (a trip)",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c48.mp3"
     },
     {
      "ar": "خاصّ",
      "en": "special",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c49.mp3"
     },
     {
      "ar": "خاصّةً",
      "en": "specially",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c50.mp3"
     },
     {
      "ar": "خُصوصي",
      "en": "privet (taxi private, private subject)",
      "src": "vocab-gram p.18",
-     "group": "Conjunctions, continued (printed page 151)"
+     "group": "Conjunctions, continued (printed page 151)",
+     "audio": "audio/lessons/unit-29-c51.mp3"
     }
    ],
    "dialogues": [],
@@ -8317,1156 +8483,1348 @@ window.LESSONS = {
      "ar": "إسِم ج أَسْماء",
      "en": "name",
      "src": "vocab-gram p.11",
-     "group": "وحدة 1 (printed page 158)"
+     "group": "وحدة 1 (printed page 158)",
+     "audio": "audio/lessons/unit-30-c00.mp3"
     },
     {
      "ar": "مُسْلِم ج مُسْلِمين",
      "en": "Muslim (n, adj)",
      "src": "vocab-gram p.11",
-     "group": "وحدة 1 (printed page 158)"
+     "group": "وحدة 1 (printed page 158)",
+     "audio": "audio/lessons/unit-30-c01.mp3"
     },
     {
      "ar": "مَسيحيّ ج مَسيحيّين",
      "en": "Christian (n, adj)",
      "src": "vocab-gram p.11",
-     "group": "وحدة 1 (printed page 158)"
+     "group": "وحدة 1 (printed page 158)",
+     "audio": "audio/lessons/unit-30-c02.mp3"
     },
     {
      "ar": "عَرَبي ج عَرَب",
      "en": "Arab (n, adj)",
      "src": "vocab-gram p.11",
-     "group": "وحدة 1 (printed page 158)"
+     "group": "وحدة 1 (printed page 158)",
+     "audio": "audio/lessons/unit-30-c03.mp3"
     },
     {
      "ar": "أخ ج إخْوان",
      "en": "brother (for ideology)",
      "src": "vocab-gram p.11",
-     "group": "وحدة 1 (printed page 158)"
+     "group": "وحدة 1 (printed page 158)",
+     "audio": "audio/lessons/unit-30-c04.mp3"
     },
     {
      "ar": "بِيت ج بْيوت",
      "en": "house, home",
      "src": "vocab-gram p.11",
-     "group": "وحدة 1 (printed page 158)"
+     "group": "وحدة 1 (printed page 158)",
+     "audio": "audio/lessons/unit-30-c05.mp3"
     },
     {
      "ar": "دُرْزي ج دْروز",
      "en": "Druze",
      "src": "vocab-gram p.11",
-     "group": "وحدة 1 (printed page 158)"
+     "group": "وحدة 1 (printed page 158)",
+     "audio": "audio/lessons/unit-30-c06.mp3"
     },
     {
      "ar": "ساكِن ج ساكْنين",
      "en": "live, living",
      "src": "vocab-gram p.11",
-     "group": "وحدة 1 (printed page 158)"
+     "group": "وحدة 1 (printed page 158)",
+     "audio": "audio/lessons/unit-30-c07.mp3"
     },
     {
      "ar": "بِنْت ج بَنات",
      "en": "girl, daughter",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c08.mp3"
     },
     {
      "ar": "إبْن ج أبْناء",
      "en": "son",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c09.mp3"
     },
     {
      "ar": "سَنة ج سْنين",
      "en": "year",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c10.mp3"
     },
     {
      "ar": "جار ج جيران",
      "en": "neighbor",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c11.mp3"
     },
     {
      "ar": "أخ ج إخْوِة",
      "en": "brother",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c12.mp3"
     },
     {
      "ar": "يوم ج أيّام",
      "en": "day",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c13.mp3"
     },
     {
      "ar": "عَيّان ج عَيّانين",
      "en": "sick",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c14.mp3"
     },
     {
      "ar": "وَلَد ج وْلاد",
      "en": "boy",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c15.mp3"
     },
     {
      "ar": "مَبْسوط ج مَبْسوطين",
      "en": "feeling great",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c16.mp3"
     },
     {
      "ar": "تَعْبان ج تَعْبانين",
      "en": "tired, unwell",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c17.mp3"
     },
     {
      "ar": "كْبير ج كْبار",
      "en": "big, older",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c18.mp3"
     },
     {
      "ar": "زْغير ج زْغار",
      "en": "little, small",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c19.mp3"
     },
     {
      "ar": "قُدْسي ج قُدْسيّين",
      "en": "Jerusalemite",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c20.mp3"
     },
     {
      "ar": "حِلو ج حِلْوين",
      "en": "sweet, handsome",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c21.mp3"
     },
     {
      "ar": "حِلْوة ج حِلْوات",
      "en": "sweet, pretty",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c22.mp3"
     },
     {
      "ar": "دَكْتُور ج دَكاتْرة",
      "en": "doctor",
      "src": "vocab-gram p.11",
-     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)"
+     "group": "وحدة 2 (printed pages 158-159; continues onto p.10)",
+     "audio": "audio/lessons/unit-30-c23.mp3"
     },
     {
      "ar": "صاحِب ج صْحاب",
      "en": "friend (m.s.)",
      "src": "vocab-gram p.10",
-     "group": "وحدة 3 (printed page 159)"
+     "group": "وحدة 3 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c24.mp3"
     },
     {
      "ar": "صاحْبِة ج صاحْبات",
      "en": "friend (f.s.)",
      "src": "vocab-gram p.10",
-     "group": "وحدة 3 (printed page 159)"
+     "group": "وحدة 3 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c25.mp3"
     },
     {
      "ar": "عَمّ ج اعْمام",
      "en": "uncle (paternal)",
      "src": "vocab-gram p.10",
-     "group": "وحدة 3 (printed page 159)"
+     "group": "وحدة 3 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c26.mp3"
     },
     {
      "ar": "خال ج اخْوال",
      "en": "uncle (maternal)",
      "src": "vocab-gram p.10",
-     "group": "وحدة 3 (printed page 159)"
+     "group": "وحدة 3 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c27.mp3"
     },
     {
      "ar": "عَزّابي ج عَزّابِيّين",
      "en": "single (m.s.)",
      "src": "vocab-gram p.10",
-     "group": "وحدة 3 (printed page 159)"
+     "group": "وحدة 3 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c28.mp3"
     },
     {
      "ar": "مِتْجَوِّز ج مِتْجَوّزين",
      "en": "married (m.s.)",
      "src": "vocab-gram p.10",
-     "group": "وحدة 3 (printed page 159)"
+     "group": "وحدة 3 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c29.mp3"
     },
     {
      "ar": "إبِن عَمّ ج وْلاد عَمّ",
      "en": "cousin (paternal)",
      "src": "vocab-gram p.10",
-     "group": "وحدة 3 (printed page 159)"
+     "group": "وحدة 3 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c30.mp3"
     },
     {
      "ar": "مْنيح ج مْناح",
      "en": "good (m.s.)",
      "src": "vocab-gram p.10",
-     "group": "وحدة 3 (printed page 159)"
+     "group": "وحدة 3 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c31.mp3"
     },
     {
      "ar": "مْعَلِّم ج مْعَلّمين",
      "en": "teacher",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c32.mp3"
     },
     {
      "ar": "مَدْرَسِة ج مَدارِس",
      "en": "school",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c33.mp3"
     },
     {
      "ar": "أُخْت ج خَوات",
      "en": "sister",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c34.mp3"
     },
     {
      "ar": "صورة ج صُوَر",
      "en": "picture, photo",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c35.mp3"
     },
     {
      "ar": "شاطِر ج شاطْرين",
      "en": "clever",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c36.mp3"
     },
     {
      "ar": "دار ج دور",
      "en": "house",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c37.mp3"
     },
     {
      "ar": "عِيلِه ج عِيلات",
      "en": "family",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c38.mp3"
     },
     {
      "ar": "حَيّ ج أحْياء",
      "en": "neighborhood",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c39.mp3"
     },
     {
      "ar": "جْديد ج جْداد",
      "en": "new",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c40.mp3"
     },
     {
      "ar": "شايِف (m) ج شايْفين",
      "en": "see, seeing",
      "src": "vocab-gram p.10",
-     "group": "وحدة 4 (printed page 159)"
+     "group": "وحدة 4 (printed page 159)",
+     "audio": "audio/lessons/unit-30-c41.mp3"
     },
     {
      "ar": "جامْعة ج جامِعات",
      "en": "university",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c42.mp3"
     },
     {
      "ar": "مُشْكِلِة ج مَشَاكِل",
      "en": "problem",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c43.mp3"
     },
     {
      "ar": "لُغة ج لُغات",
      "en": "language",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c44.mp3"
     },
     {
      "ar": "حَديقة ج حَدايِق",
      "en": "garden",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c45.mp3"
     },
     {
      "ar": "مُسْتَشْفى ج مُسْتَشْفَيات",
      "en": "hospital",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c46.mp3"
     },
     {
      "ar": "مَنْظَر ج مَناظِر",
      "en": "view",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c47.mp3"
     },
     {
      "ar": "مَدينِة ج مُدُن",
      "en": "town",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c48.mp3"
     },
     {
      "ar": "شارِع ج شَوارِع",
      "en": "street",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c49.mp3"
     },
     {
      "ar": "بَنْك ج بُنوك",
      "en": "bank",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c50.mp3"
     },
     {
      "ar": "سوق ج أسْواق",
      "en": "market",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c51.mp3"
     },
     {
      "ar": "ساعة ج ساعات",
      "en": "hour, watch",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c52.mp3"
     },
     {
      "ar": "سَيّارة ج سيّارات",
      "en": "car",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c53.mp3"
     },
     {
      "ar": "جَبَل ج جْبال",
      "en": "mountain",
      "src": "vocab-gram p.9",
-     "group": "وحدة 5 (printed page 160)"
+     "group": "وحدة 5 (printed page 160)",
+     "audio": "audio/lessons/unit-30-c54.mp3"
     },
     {
      "ar": "كبير ج كْبار",
      "en": "big",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c55.mp3"
     },
     {
      "ar": "منيح ج مْناح",
      "en": "good",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c56.mp3"
     },
     {
      "ar": "زْغير ج زغار",
      "en": "small",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c57.mp3"
     },
     {
      "ar": "بْعيد ج بْعاد",
      "en": "far away",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c58.mp3"
     },
     {
      "ar": "عَمّ ج (أ)عْمام",
      "en": "uncle",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c59.mp3"
     },
     {
      "ar": "خال ج (أ)خْوال",
      "en": "uncle",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c60.mp3"
     },
     {
      "ar": "خَبَر ج أخْبار",
      "en": "news",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c61.mp3"
     },
     {
      "ar": "وَلَد ج (أ)وْلاد",
      "en": "children",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c62.mp3"
     },
     {
      "ar": "إشي ج أشْياء",
      "en": "things",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c63.mp3"
     },
     {
      "ar": "صاحِب ج (أ)صْحاب",
      "en": "friends",
      "src": "vocab-gram p.9",
-     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book."
+     "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
+     "audio": "audio/lessons/unit-30-c64.mp3"
     },
     {
      "ar": "مَقْهَى ج مَقاهي",
      "en": "coffee",
      "src": "vocab-gram p.9",
      "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
-     "note": "book: sic; printed in the book as \"caffee\""
+     "note": "book: sic; printed in the book as \"caffee\"",
+     "audio": "audio/lessons/unit-30-c65.mp3"
     },
     {
      "ar": "مُشْكِلِة ج مَشاكِل",
      "en": "mountain",
      "src": "vocab-gram p.9",
      "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
-     "note": "book: sic — printed error; = problem"
+     "note": "book: sic — printed error; = problem",
+     "audio": "audio/lessons/unit-30-c66.mp3"
     },
     {
      "ar": "مَطْعَم ج مَطاعِم",
      "en": "mountain",
      "src": "vocab-gram p.9",
      "group": "وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are misprinted in the book.",
-     "note": "book: sic — printed error; = restaurant"
+     "note": "book: sic — printed error; = restaurant",
+     "audio": "audio/lessons/unit-30-c67.mp3"
     },
     {
      "ar": "غَرَض ج اغراض",
      "en": "item",
      "src": "vocab-gram p.8",
-     "group": "وحدة 7 (printed page 161)"
+     "group": "وحدة 7 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c68.mp3"
     },
     {
      "ar": "كيس ج اكْياس",
      "en": "bag",
      "src": "vocab-gram p.8",
-     "group": "وحدة 7 (printed page 161)"
+     "group": "وحدة 7 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c69.mp3"
     },
     {
      "ar": "شايْفِة ج شايْفات",
      "en": "see",
      "src": "vocab-gram p.8",
-     "group": "وحدة 7 (printed page 161)"
+     "group": "وحدة 7 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c70.mp3"
     },
     {
      "ar": "دَقيقة ج دَقايِق",
      "en": "minute",
      "src": "vocab-gram p.8",
-     "group": "وحدة 7 (printed page 161)"
+     "group": "وحدة 7 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c71.mp3"
     },
     {
      "ar": "حَبِّة ج حَبّات",
      "en": "one unit",
      "src": "vocab-gram p.8",
-     "group": "وحدة 7 (printed page 161)"
+     "group": "وحدة 7 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c72.mp3"
     },
     {
      "ar": "راس ج روس",
      "en": "head, unit",
      "src": "vocab-gram p.8",
-     "group": "وحدة 7 (printed page 161)"
+     "group": "وحدة 7 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c73.mp3"
     },
     {
      "ar": "رْخيص ج رْخاص",
      "en": "inexpensive, cheap",
      "src": "vocab-gram p.8",
-     "group": "وحدة 7 (printed page 161)"
+     "group": "وحدة 7 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c74.mp3"
     },
     {
      "ar": "مِسْتَعْجِل ج مِسْتَعْجْلين",
      "en": "in a hurry",
      "src": "vocab-gram p.8",
-     "group": "وحدة 7 (printed page 161)"
+     "group": "وحدة 7 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c75.mp3"
     },
     {
      "ar": "عيد ج أعْياد",
      "en": "holiday",
      "src": "vocab-gram p.8",
-     "group": "وحدة 8 (printed page 161)"
+     "group": "وحدة 8 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c76.mp3"
     },
     {
      "ar": "لِيلِة ج لَيالي",
      "en": "night",
      "src": "vocab-gram p.8",
-     "group": "وحدة 8 (printed page 161)"
+     "group": "وحدة 8 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c77.mp3"
     },
     {
      "ar": "مَرّة ج مَرّات",
      "en": "one time",
      "src": "vocab-gram p.8",
-     "group": "وحدة 8 (printed page 161)"
+     "group": "وحدة 8 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c78.mp3"
     },
     {
      "ar": "فُنْدُق ج فَنادِق",
      "en": "hotel",
      "src": "vocab-gram p.8",
-     "group": "وحدة 8 (printed page 161)"
+     "group": "وحدة 8 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c79.mp3"
     },
     {
      "ar": "نِجْمِة ج نْجوم",
      "en": "star",
      "src": "vocab-gram p.8",
-     "group": "وحدة 8 (printed page 161)"
+     "group": "وحدة 8 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c80.mp3"
     },
     {
      "ar": "رِحْلِة ج رِحْلات",
      "en": "trip",
      "src": "vocab-gram p.8",
-     "group": "وحدة 8 (printed page 161)"
+     "group": "وحدة 8 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c81.mp3"
     },
     {
      "ar": "أَلْف ج آلاف",
      "en": "thousand",
      "src": "vocab-gram p.8",
-     "group": "وحدة 8 (printed page 161)"
+     "group": "وحدة 8 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c82.mp3"
     },
     {
      "ar": "مَحَلّ ج مَحلّات",
      "en": "place, store",
      "src": "vocab-gram p.8",
-     "group": "وحدة 8 (printed page 161)"
+     "group": "وحدة 8 (printed page 161)",
+     "audio": "audio/lessons/unit-30-c83.mp3"
     },
     {
      "ar": "بَيّاع ج بَيّاعين",
      "en": "salesperson",
      "src": "vocab-gram p.8",
-     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)",
+     "audio": "audio/lessons/unit-30-c84.mp3"
     },
     {
      "ar": "مُساعَدِة ج مُساعَدات",
      "en": "help",
      "src": "vocab-gram p.8",
-     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)",
+     "audio": "audio/lessons/unit-30-c85.mp3"
     },
     {
      "ar": "ديسْك ج ديسْكات",
      "en": "disc",
      "src": "vocab-gram p.8",
-     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)",
+     "audio": "audio/lessons/unit-30-c86.mp3"
     },
     {
      "ar": "هَدِيِّة ج هَدايا",
      "en": "gift",
      "src": "vocab-gram p.8",
-     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)",
+     "audio": "audio/lessons/unit-30-c87.mp3"
     },
     {
      "ar": "صُوت ج أَصْوات",
      "en": "voice",
      "src": "vocab-gram p.8",
-     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)",
+     "audio": "audio/lessons/unit-30-c88.mp3"
     },
     {
      "ar": "مُطْرِب ج مُطْرِبين",
      "en": "singer",
      "src": "vocab-gram p.8",
-     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)",
+     "audio": "audio/lessons/unit-30-c89.mp3"
     },
     {
      "ar": "حْساب ج حْسابات",
      "en": "bill",
      "src": "vocab-gram p.8",
-     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)",
+     "audio": "audio/lessons/unit-30-c90.mp3"
     },
     {
      "ar": "مَعْروف ج مَعْروفين",
      "en": "well-known",
      "src": "vocab-gram p.8",
-     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)"
+     "group": "وحدة 9 (printed pages 161-162; continues onto p.7)",
+     "audio": "audio/lessons/unit-30-c91.mp3"
     },
     {
      "ar": "قِصَّة ج قِصَص",
      "en": "story",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c92.mp3"
     },
     {
      "ar": "مَلِك ج مُلوك",
      "en": "king",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c93.mp3"
     },
     {
      "ar": "نَحْلِة ج نَحِل",
      "en": "bee",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c94.mp3"
     },
     {
      "ar": "مَلِكِة ج مَلِكات",
      "en": "queen",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c95.mp3"
     },
     {
      "ar": "جْنينِة ج جَنايِن",
      "en": "garden",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c96.mp3"
     },
     {
      "ar": "فايْدِة ج فَوائِد",
      "en": "use, benefit, value",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c97.mp3"
     },
     {
      "ar": "طِير ج طْيور",
      "en": "bird",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c98.mp3"
     },
     {
      "ar": "حَيَوان ج حَيْوانات",
      "en": "animal",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c99.mp3"
     },
     {
      "ar": "زَهْرَة ج زُهور",
      "en": "flower",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c100.mp3"
     },
     {
      "ar": "وَرْد ج وُرود",
      "en": "rose, flower",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c101.mp3"
     },
     {
      "ar": "رَاي ج أراء",
      "en": "opinion",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c102.mp3"
     },
     {
      "ar": "باقة ج باقات",
      "en": "bouquet",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c103.mp3"
     },
     {
      "ar": "حَكيم ج حُكَما",
      "en": "wise",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c104.mp3"
     },
     {
      "ar": "ذَكِيّ ج أذْكِياء",
      "en": "clever",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c105.mp3"
     },
     {
      "ar": "زَعْلان ج زَعْلانين",
      "en": "sad",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c106.mp3"
     },
     {
      "ar": "طَبيعي ج طَبيعيّين",
      "en": "natural, real",
      "src": "vocab-gram p.7",
-     "group": "وحدة 10 (printed page 162)"
+     "group": "وحدة 10 (printed page 162)",
+     "audio": "audio/lessons/unit-30-c107.mp3"
     },
     {
      "ar": "كُلِّيِّة ج كُلِّيّات",
      "en": "college",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c108.mp3"
     },
     {
      "ar": "شَرِكِة ج شَرِكات",
      "en": "company",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c109.mp3"
     },
     {
      "ar": "حاجة ج حاجات",
      "en": "need",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c110.mp3"
     },
     {
      "ar": "مُدير ج مُدَرا",
      "en": "manager, director",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c111.mp3"
     },
     {
      "ar": "مَكْتَب ج مَكاتِب",
      "en": "office",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c112.mp3"
     },
     {
      "ar": "وَظيفِة ج وَظايِف",
      "en": "position, job",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c113.mp3"
     },
     {
      "ar": "حاسوب ج حَواسيب",
      "en": "computer",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c114.mp3"
     },
     {
      "ar": "مَعاش ج مَعاشات",
      "en": "salary",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c115.mp3"
     },
     {
      "ar": "شَكّ ج شُكوك",
      "en": "doubt",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c116.mp3"
     },
     {
      "ar": "مُناسَبِة ج مُناسَبات",
      "en": "occasion",
      "src": "vocab-gram p.6",
-     "group": "وحدة 11 (printed page 163)"
+     "group": "وحدة 11 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c117.mp3"
     },
     {
      "ar": "فِنْجان ج فناجين",
      "en": "coffee cup",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c118.mp3"
     },
     {
      "ar": "شَغْلِة ج شَغْلات",
      "en": "chore, work",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c119.mp3"
     },
     {
      "ar": "غَسّالة ج غَسّالات",
      "en": "washing machine",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c120.mp3"
     },
     {
      "ar": "صَلاة ج صَلَوات",
      "en": "prayer",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c121.mp3"
     },
     {
      "ar": "دَوْرَة ج دَوْرات",
      "en": "extracurricular activity",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c122.mp3"
     },
     {
      "ar": "سَنْدْويش ج سَنْدْويشات",
      "en": "sandwich",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c123.mp3"
     },
     {
      "ar": "لِيل ج لَيالي",
      "en": "night",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c124.mp3"
     },
     {
      "ar": "راي ج آراء",
      "en": "opinion",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c125.mp3"
     },
     {
      "ar": "مَشْغول ج مَشْغولين",
      "en": "busy",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c126.mp3"
     },
     {
      "ar": "فاضي ج فاضْيين",
      "en": "free",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c127.mp3"
     },
     {
      "ar": "قصير ج قْصار",
      "en": "short",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c128.mp3"
     },
     {
      "ar": "ناقِص ج ناقْصين",
      "en": "lacking",
      "src": "vocab-gram p.6",
-     "group": "وحدة 12 (printed page 163)"
+     "group": "وحدة 12 (printed page 163)",
+     "audio": "audio/lessons/unit-30-c129.mp3"
     },
     {
      "ar": "مِفْتاح ج مَفاتيح",
      "en": "key",
      "src": "vocab-gram p.5",
-     "group": "وحدة 13 (printed page 164)"
+     "group": "وحدة 13 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c130.mp3"
     },
     {
      "ar": "مَرَة ج نِسْوان",
      "en": "woman",
      "src": "vocab-gram p.5",
-     "group": "وحدة 13 (printed page 164)"
+     "group": "وحدة 13 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c131.mp3"
     },
     {
      "ar": "قُوَّة ج قُوى، قُوّات",
      "en": "power, force",
      "src": "vocab-gram p.5",
-     "group": "وحدة 13 (printed page 164)"
+     "group": "وحدة 13 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c132.mp3"
     },
     {
      "ar": "قَرار ج قَرارات",
      "en": "decision",
      "src": "vocab-gram p.5",
-     "group": "وحدة 13 (printed page 164)"
+     "group": "وحدة 13 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c133.mp3"
     },
     {
      "ar": "زَلَمِة ج زْلام",
      "en": "man",
      "src": "vocab-gram p.5",
-     "group": "وحدة 13 (printed page 164)"
+     "group": "وحدة 13 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c134.mp3"
     },
     {
      "ar": "مْليح ج مْلاح",
      "en": "good",
      "src": "vocab-gram p.5",
-     "group": "وحدة 13 (printed page 164)"
+     "group": "وحدة 13 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c135.mp3"
     },
     {
      "ar": "مُوَظَّف ج مُوَظَّفين",
      "en": "employee",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c136.mp3"
     },
     {
      "ar": "كْتاب ج كُتُب",
      "en": "book",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c137.mp3"
     },
     {
      "ar": "دَوّار ج دَوّارات",
      "en": "roundabout",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c138.mp3"
     },
     {
      "ar": "لافْتِة ج لافْتات",
      "en": "sign",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c139.mp3"
     },
     {
      "ar": "شَعَب ج شْعوب",
      "en": "nation",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c140.mp3"
     },
     {
      "ar": "سَمَكِة ج سَمَك، سَمَكات",
      "en": "fish",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c141.mp3"
     },
     {
      "ar": "طابِق ج طَوابِق",
      "en": "floor",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c142.mp3"
     },
     {
      "ar": "حَرَكِة ج حَرَكات",
      "en": "movement",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c143.mp3"
     },
     {
      "ar": "حَفْلِة ج حَفلات",
      "en": "party, concert",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c144.mp3"
     },
     {
      "ar": "مُغَنّيّ ج مُغَنّيين",
      "en": "singer",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c145.mp3"
     },
     {
      "ar": "لَحِم , لَحْمِة ج لْحوم",
      "en": "meat",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c146.mp3"
     },
     {
      "ar": "كَنيسِة ج كَنايِس",
      "en": "church",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c147.mp3"
     },
     {
      "ar": "بِنايِة ج بِنايات",
      "en": "building",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c148.mp3"
     },
     {
      "ar": "مَشْهور ج مَشْهورين",
      "en": "famous",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c149.mp3"
     },
     {
      "ar": "قَديم ج قُدَما",
      "en": "old, ancient",
      "src": "vocab-gram p.5",
-     "group": "وحدة 14 (printed page 164)"
+     "group": "وحدة 14 (printed page 164)",
+     "audio": "audio/lessons/unit-30-c150.mp3"
     },
     {
      "ar": "باب ج بْواب",
      "en": "door",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c151.mp3"
     },
     {
      "ar": "شُبّاك ج شَبابيك",
      "en": "window",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c152.mp3"
     },
     {
      "ar": "طاوْلِة ج طاوْلات",
      "en": "table",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c153.mp3"
     },
     {
      "ar": "مَطْبَخ ج مَطابِخ",
      "en": "kitchen",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c154.mp3"
     },
     {
      "ar": "غُرْفِة ج غُرَف",
      "en": "room",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c155.mp3"
     },
     {
      "ar": "ضِيف ج ضْيوف",
      "en": "guest",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c156.mp3"
     },
     {
      "ar": "حَمّام ج حَمّامات",
      "en": "toilets\\shower",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c157.mp3"
     },
     {
      "ar": "كَنَباي ج كَنَبايات",
      "en": "sofa",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c158.mp3"
     },
     {
      "ar": "تِلفِزْيُون ج تِلفِزْيُونات",
      "en": "TV",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c159.mp3"
     },
     {
      "ar": "تَخِت ج تخوت",
      "en": "bed",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c160.mp3"
     },
     {
      "ar": "بَرَنْد ة ج بَرَنْدات",
      "en": "balcony",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c161.mp3"
     },
     {
      "ar": "مَحَلّ ج مَحَلّات",
      "en": "place, store",
      "src": "vocab-gram p.4",
-     "group": "وحدة 15 (printed page 165)"
+     "group": "وحدة 15 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c162.mp3"
     },
     {
      "ar": "شُوكِة ج شُوَك",
      "en": "fork",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c163.mp3"
     },
     {
      "ar": "سِكّينِة ج سَكاكين",
      "en": "knife",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c164.mp3"
     },
     {
      "ar": "مِعْلَقَة ج مَعالِق",
      "en": "spoon",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c165.mp3"
     },
     {
      "ar": "واجْبِة ج واجْبات",
      "en": "meal",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c166.mp3"
     },
     {
      "ar": "جاج، جاجة ج جاجات",
      "en": "chicken",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c167.mp3"
     },
     {
      "ar": "كُبايِة ج كُبايّات",
      "en": "cup (tea)",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c168.mp3"
     },
     {
      "ar": "صَحِن ج صْحون",
      "en": "plate",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c169.mp3"
     },
     {
      "ar": "مَرَّة ج مَرّات",
      "en": "time, once",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c170.mp3"
     },
     {
      "ar": "عادَة ج عادات",
      "en": "habit",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c171.mp3"
     },
     {
      "ar": "لَبَن ج أَلْبان",
      "en": "yogurt",
      "src": "vocab-gram p.4",
-     "group": "وحدة 16 (printed page 165)"
+     "group": "وحدة 16 (printed page 165)",
+     "audio": "audio/lessons/unit-30-c172.mp3"
     },
     {
      "ar": "شَنْطَة ج ات",
      "en": "suitcase",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c173.mp3"
     },
     {
      "ar": "جَكيت ج ات",
      "en": "jacket",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c174.mp3"
     },
     {
      "ar": "بْلوزِة ج بَلايِز",
      "en": "shirt",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c175.mp3"
     },
     {
      "ar": "قَميص ج قُمْصان",
      "en": "shirt",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c176.mp3"
     },
     {
      "ar": "بَنْطَلُون ج ات",
      "en": "trousers",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c177.mp3"
     },
     {
      "ar": "فُسْتان ج فَساتين",
      "en": "dress",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c178.mp3"
     },
     {
      "ar": "تَنّورة ج تنانير",
      "en": "skirt",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c179.mp3"
     },
     {
      "ar": "شَمْسِيُّة ج ات",
      "en": "umbrella",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c180.mp3"
     },
     {
      "ar": "كَلْسات ج جرابات",
      "en": "socks",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c181.mp3"
     },
     {
      "ar": "جُرزاي ج جَرازي",
      "en": "sweatshirt",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c182.mp3"
     },
     {
      "ar": "ثَلْج ج ثُلوج",
      "en": "snow",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c183.mp3"
     },
     {
      "ar": "مَطَر ج أمْطار",
      "en": "rain",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c184.mp3"
     },
     {
      "ar": "غِيم ج غُيُوم",
      "en": "clouds",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c185.mp3"
     },
     {
      "ar": "ريح ج رْياح",
      "en": "wind",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c186.mp3"
     },
     {
      "ar": "عَاصِفِة ج عَواصِف",
      "en": "storm",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c187.mp3"
     },
     {
      "ar": "قَصير ج قْصار",
      "en": "short",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c188.mp3"
     },
     {
      "ar": "طَويل ج طْوال",
      "en": "tall, high",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c189.mp3"
     },
     {
      "ar": "خْميل ج خْمال",
      "en": "thick",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c190.mp3"
     },
     {
      "ar": "خَفيف ج خْفاف",
      "en": "light",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix."
+     "group": "وحدة 17 (printed page 166). Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "audio": "audio/lessons/unit-30-c191.mp3"
     }
    ],
    "dialogues": [],
@@ -9495,37 +9853,43 @@ window.LESSONS = {
      "ar": "مَفاعِل: مَدْرَسِة – مَدارِس; مَقْهى – مَقاهي; مَطْعَم – مَطاعِم; مَرْكَز – مَراكِز; مُشْكِلِة – مَشاكِل; مَسْجِد – مَسَاجِد; مَنْظَر – مَناظِر",
      "en": "pattern maFaa3iL",
      "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال (printed page 167)",
-     "src": "vocab-gram p.2"
+     "src": "vocab-gram p.2",
+     "audio": "audio/lessons/unit-31-c00.mp3"
     },
     {
      "ar": "فْعال: كْبير – كْبار; زْغير – زْغار; جْديد – جْداد; مْنيح – مْناح; مْليح – مْلاح; بْعيد – بْعاد; قْريب – قْراب; طَويل – طْوال; جَبَل – جْبال",
      "en": "pattern F3aaL",
      "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال (printed page 167)",
-     "src": "vocab-gram p.2"
+     "src": "vocab-gram p.2",
+     "audio": "audio/lessons/unit-31-c01.mp3"
     },
     {
      "ar": "أفْعال: حال – أحْوال; وَلَد – (أ)وْلاد; خال – (أ)خْوال; عمّ – (أ)عْمام; كيس – (أ)كْياس; صاحِب – (أ)صْحاب; يُوم – أيّام; إسِم – أسْماء; خَبَر – أخْبار; إشي – أشْياء; غَرَض – أغْراض; سوق – أسْواق; حَيّ – أحْياء; إبِن – أبْناء; عيد – أعْياد; صُوت – أصْوات; فيلم – أفْلام",
      "en": "pattern aF3aaL (the last three pairs are printed in smaller type)",
      "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال (printed page 167)",
-     "src": "vocab-gram p.2"
+     "src": "vocab-gram p.2",
+     "audio": "audio/lessons/unit-31-c02.mp3"
     },
     {
      "ar": "فْعول\\ فُعول: بَنْك – بُنوك; راس – روس; بيت – بْيُوت; دار – دور; مِلِك – مْلُوك; نِجْمِة – نْجُوم; بَحَر – بْحُور; دُرْزِيّ – دْرُوز; يَهودِيّ – يَهود; قَصْر – قْصور; جُنْدِيّ – جْنود",
      "en": "pattern F3uuL/Fu3uuL",
      "group": "Plural pattern فْعول\\ فُعول and the sound plurals (printed page 168)",
-     "src": "vocab-gram p.1"
+     "src": "vocab-gram p.1",
+     "audio": "audio/lessons/unit-31-c03.mp3"
     },
     {
      "ar": "الجَمْع السّالِم الْمُذَكَّر: ين — أ) AP and PP: مَبْسوط – مَبْسوطين; عارِف – عارْفين; مُساعِد – مُساعِدين. د) foreign words: ديسك – ديسكات; تِلْفيزيون – تلفيزيونات; فاكس – فاكسات; كَميرا – كَميرات. هـ) فَعّال the pattern: فَلّاح – فلّاحات [sic]. و) some other words: مَحَلّ – مَحَلّات; مَطار – مَطارات",
      "en": "masculine sound plural in -iin",
      "group": "Plural pattern فْعول\\ فُعول and the sound plurals (printed page 168)",
-     "src": "vocab-gram p.1"
+     "src": "vocab-gram p.1",
+     "audio": "audio/lessons/unit-31-c04.mp3"
     },
     {
      "ar": "الجَمْع السّالِم المُؤَنَّث: ات — أ) real feminine: بِنْت – بَنات; أُخْت – خَوات; إمّ – إمّيات (إمّهات). ب) nouns ending with ة: عَمَّة – عَمّات; سيارة – سيارات. ج) AP and PP: مَبْسوطة – مَبْسوطات; عارْفِة – عارْفات; مُساعِدة – مُساعِدات. د) foreign words: ديسك – ديسكات; تِلْفيزيون – تلفيزيونات; فاكس – فاكسات; كَميرا – كَميرات. هـ) فَعّال the pattern: فَلّاح – فلّاحات. و) some other words: مَحَلّ – مَحَلّات; مَطار – مَطارات",
      "en": "feminine sound plural in -aat",
      "group": "Plural pattern فْعول\\ فُعول and the sound plurals (printed page 168)",
-     "src": "vocab-gram p.1"
+     "src": "vocab-gram p.1",
+     "audio": "audio/lessons/unit-31-c05.mp3"
     }
    ],
    "dialogues": [],
@@ -9557,52 +9921,62 @@ window.LESSONS = {
       {
        "sp": "مي",
        "ar": "هلو، أيوا؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l00.mp3"
       },
       {
        "sp": "هُدى",
        "ar": "مرحبا",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l01.mp3"
       },
       {
        "sp": "مي",
        "ar": "أهلين",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l02.mp3"
       },
       {
        "sp": "هُدى",
        "ar": "مع مين بَحْكي؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l03.mp3"
       },
       {
        "sp": "مي",
        "ar": "أنا مي",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l04.mp3"
       },
       {
        "sp": "هدى",
        "ar": "إمِّك في البيت؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l05.mp3"
       },
       {
        "sp": "مي",
        "ar": "أيوا، إمّي في البيت، مين إنتِ؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l06.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أنا هُدى، بَشْتْغِل مَع إمِّك.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l07.mp3"
       },
       {
        "sp": "مي",
        "ar": "طَيِّب، بس لَحْظَة، يَمّا !هُدى بِدْها تِحْكي مَعِك.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l08.mp3"
       },
       {
        "sp": "أم مي",
        "ar": "قولي-لْها بَحْكي مَعْها أُخْرَى شْوَيّ، أنا مَشْغولِة إسّا.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d0-l09.mp3"
       }
      ],
      "src": "speaking p.33",
@@ -9630,77 +10004,92 @@ window.LESSONS = {
       {
        "sp": "مي",
        "ar": "هلو، أيْوة؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l00.mp3"
       },
       {
        "sp": "هُدى",
        "ar": "مَرحبا",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l01.mp3"
       },
       {
        "sp": "مي",
        "ar": "أهْلِين",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l02.mp3"
       },
       {
        "sp": "هدى",
        "ar": "مَع مين بَحكي؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l03.mp3"
       },
       {
        "sp": "مي",
        "ar": "أنا مي",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l04.mp3"
       },
       {
        "sp": "هدى",
        "ar": "إمَّك في أْلبيت؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l05.mp3"
       },
       {
        "sp": "مي",
        "ar": "إمّي مِش في الدار.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l06.mp3"
       },
       {
        "sp": "هدى",
        "ar": "وِينتا بِتْرَوّح؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l07.mp3"
       },
       {
        "sp": "مي",
        "ar": "طِلْعَت قَبِل ساعة وما بَعْرَف إيمتى بِتِرجَع.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l08.mp3"
       },
       {
        "sp": "هدى",
        "ar": "مُمْكِن أتْرُك-لها خَبَر؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l09.mp3"
       },
       {
        "sp": "مي",
        "ar": "شو إسْمُك؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l10.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أنا هُدى بَشْتْغِل مَع إمِّك.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l11.mp3"
       },
       {
        "sp": "مي",
        "ar": "شو رَقَم تَلَفونِك؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l12.mp3"
       },
       {
        "sp": "هدى",
        "ar": "هي بْتِعْرِف الرَقَّم، بس بْحياتِك ما تِنْسيش، قولي-لْها إنّو هاذا ضَروريّ.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l13.mp3"
       },
       {
        "sp": "مي",
        "ar": "طَيَّب، بس تِرْجَع بَقول-لْها.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d1-l14.mp3"
       }
      ],
      "src": "speaking p.33",
@@ -9723,72 +10112,86 @@ window.LESSONS = {
       {
        "sp": "مي",
        "ar": "هلو، أيوة",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l00.mp3"
       },
       {
        "sp": "هُدى",
        "ar": "مَرْحَبْتِين",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l01.mp3"
       },
       {
        "sp": "مي",
        "ar": "أهلين، أنو بِحكي مَعِي؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l02.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أنا هُدى",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l03.mp3"
       },
       {
        "sp": "مي",
        "ar": "كيف حالِك يا هُدى؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l04.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أهْلِين فيكي حبيبتي, إمّك في البيت؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l05.mp3"
       },
       {
        "sp": "مي",
        "ar": "أيوة، أناديها؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l06.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أيوة",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l07.mp3"
       },
       {
        "sp": "مي",
        "ar": "ماما، هُدى بِدْها (ا)يّاكِ.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l08.mp3"
       },
       {
        "sp": "إم أحمد",
        "ar": "هلو",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l09.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أهلين إمّ أحمَد كيف حالِك؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l10.mp3"
       },
       {
        "sp": "إمّ أحمَد",
        "ar": "نُشْكُر الله",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l11.mp3"
       },
       {
        "sp": "هدى",
        "ar": "إتَّصلْت-لِك إليوم وإمبارِح وأوَّل إمْبارِح، وينِك؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l12.mp3"
       },
       {
        "sp": "إمّ أحْمَد",
        "ar": "مِتْأسّفِة ... يَلّا نِحْكي هسّا...",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-32-d2-l13.mp3"
       }
      ],
      "src": "speaking p.34",
@@ -9835,104 +10238,124 @@ window.LESSONS = {
     {
      "ar": "مَلِك",
      "en": "king",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c00.mp3"
     },
     {
      "ar": "خادِم",
      "en": "servant",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c01.mp3"
     },
     {
      "ar": "جَمَل",
      "en": "camel",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c02.mp3"
     },
     {
      "ar": "قَصْر",
      "en": "palace",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c03.mp3"
     },
     {
      "ar": "بِسُرْعَة",
      "en": "quickly",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c04.mp3"
     },
     {
      "ar": "تَحْت أَمْرَك",
      "en": "under your command",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c05.mp3"
     },
     {
      "ar": "أَكْثَر مِن",
      "en": "more than",
      "src": "stories p.5",
-     "note": "book: printed in the book as \"more then\""
+     "note": "book: printed in the book as \"more then\"",
+     "audio": "audio/lessons/unit-33-c06.mp3"
     },
     {
      "ar": "مُثَقَّف",
      "en": "educated",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c07.mp3"
     },
     {
      "ar": "خِير انْشاالله",
      "en": "everything is fine?",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c08.mp3"
     },
     {
      "ar": "مِش مُمْكِن",
      "en": "impossible",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c09.mp3"
     },
     {
      "ar": "أَبَدًا (ما)",
      "en": "never",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c10.mp3"
     },
     {
      "ar": "ولا يهِمَّك",
      "en": "don't worry",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c11.mp3"
     },
     {
      "ar": "يا... يا...",
      "en": "either … or",
      "src": "stories p.5",
-     "note": "book: printed in the book as \"ether ...or\""
+     "note": "book: printed in the book as \"ether ...or\"",
+     "audio": "audio/lessons/unit-33-c12.mp3"
     },
     {
      "ar": "راس",
      "en": "head",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c13.mp3"
     },
     {
      "ar": "مَجْنون",
      "en": "crazy",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c14.mp3"
     },
     {
      "ar": "شو صار",
      "en": "what happened",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c15.mp3"
     },
     {
      "ar": "قَطَع",
      "en": "to cut",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c16.mp3"
     },
     {
      "ar": "بَقْدَر أَعَلِّم",
      "en": "I can teach",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c17.mp3"
     },
     {
      "ar": "مَعْروف",
      "en": "known",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c18.mp3"
     },
     {
      "ar": "دَوَّر عَلى",
      "en": "to look for",
-     "src": "stories p.5"
+     "src": "stories p.5",
+     "audio": "audio/lessons/unit-33-c19.mp3"
     }
    ],
    "dialogues": [],
@@ -10126,203 +10549,243 @@ window.LESSONS = {
     {
      "ar": "فار ج فيران",
      "en": "mouse",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c00.mp3"
     },
     {
      "ar": "زَمان",
      "en": "time",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c01.mp3"
     },
     {
      "ar": "رَبّ",
      "en": "God",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c02.mp3"
     },
     {
      "ar": "صَبِيِّة ج صَبايا",
      "en": "young woman",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c03.mp3"
     },
     {
      "ar": "شَرْط ج شُروط",
      "en": "condition",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c04.mp3"
     },
     {
      "ar": "كَوكَب ج كَواكِب",
      "en": "star",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c05.mp3"
     },
     {
      "ar": "غِيم ج غْيوم",
      "en": "cloud",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c06.mp3"
     },
     {
      "ar": "ريح ج رِياح",
      "en": "wind",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c07.mp3"
     },
     {
      "ar": "جَبَل ج جْبال",
      "en": "mountain",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c08.mp3"
     },
     {
      "ar": "شَمْس",
      "en": "sun",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c09.mp3"
     },
     {
      "ar": "كَلام",
      "en": "words",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c10.mp3"
     },
     {
      "ar": "زَلَمِة ج زْلام",
      "en": "man",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c11.mp3"
     },
     {
      "ar": "عايْشين",
      "en": "living",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c12.mp3"
     },
     {
      "ar": "لاقى",
      "en": "to meet",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c13.mp3"
     },
     {
      "ar": "أَخَذ",
      "en": "to take",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c14.mp3"
     },
     {
      "ar": "حَوَّل",
      "en": "to change transform",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c15.mp3"
     },
     {
      "ar": "رَبَّى (يِرَبِّي)",
      "en": "to raise",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c16.mp3"
     },
     {
      "ar": "صار",
      "en": "to become",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c17.mp3"
     },
     {
      "ar": "نادى على",
      "en": "to call to",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c18.mp3"
     },
     {
      "ar": "أجا",
      "en": "to come",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c19.mp3"
     },
     {
      "ar": "مْوافْقَة",
      "en": "I agree, I'm ready",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c20.mp3"
     },
     {
      "ar": "وافَق",
      "en": "to agree",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c21.mp3"
     },
     {
      "ar": "قِبِل (يِقْبَل)",
      "en": "to agree, except",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c22.mp3"
     },
     {
      "ar": "غَطَّى (يِغَطّي)",
      "en": "to cover",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c23.mp3"
     },
     {
      "ar": "نَقَل (ـُ)",
      "en": "to move s. thing",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c24.mp3"
     },
     {
      "ar": "حَفَر (ـُ)",
      "en": "to dig",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c25.mp3"
     },
     {
      "ar": "حَرَّك",
      "en": "to move by pushing",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c26.mp3"
     },
     {
      "ar": "خَلَّف",
      "en": "to give birth",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c27.mp3"
     },
     {
      "ar": "عاشوا بِثَبات ونَبات",
      "en": "lived steadily and bloomed (they lived happily ever after)",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c28.mp3"
     },
     {
      "ar": "مَع بَعِض",
      "en": "together",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c29.mp3"
     },
     {
      "ar": "قَديم",
      "en": "old, enchant",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c30.mp3"
     },
     {
      "ar": "يا لِلْعَجَب",
      "en": "wonder of wonders",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c31.mp3"
     },
     {
      "ar": "أَجا الْوَقْت",
      "en": "the time came",
      "src": "stories p.10",
-     "note": "English added by this app — the book prints this list untranslated"
+     "note": "English added by this app — the book prints this list untranslated",
+     "audio": "audio/lessons/unit-34-c32.mp3"
     },
     {
      "ar": "قَوِي",
      "en": "strong",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c33.mp3"
     },
     {
      "ar": "أَقْوى",
      "en": "stronger",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c34.mp3"
     },
     {
      "ar": "أَقْوى إشي",
      "en": "strongest thing",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c35.mp3"
     },
     {
      "ar": "مين الّي؟",
      "en": "who is the one which?",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c36.mp3"
     },
     {
      "ar": "هيك صار",
      "en": "and so it was",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c37.mp3"
     },
     {
      "ar": "زَيّ-ما كان",
      "en": "as it was",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c38.mp3"
     },
     {
      "ar": "بَعِد أكَم يُوم",
      "en": "after a few days",
-     "src": "stories p.10"
+     "src": "stories p.10",
+     "audio": "audio/lessons/unit-34-c39.mp3"
     }
    ],
    "dialogues": [],
@@ -10630,132 +11093,158 @@ window.LESSONS = {
     {
      "ar": "صَيّادِ ج ين",
      "en": "fisherman",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c00.mp3"
     },
     {
      "ar": "سَمَك سَمَكِة ج ات",
      "en": "fish",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c01.mp3"
     },
     {
      "ar": "سائح ج سُيّاح",
      "en": "turist",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c02.mp3"
     },
     {
      "ar": "شَطّ الْبَحَر",
      "en": "beach",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c03.mp3"
     },
     {
      "ar": "صُنارَة",
      "en": "fishing rod",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c04.mp3"
     },
     {
      "ar": "غَني ج أغْنِياء",
      "en": "rich",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c05.mp3"
     },
     {
      "ar": "فَقير ج فَقيرين",
      "en": "poor",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c06.mp3"
     },
     {
      "ar": "صِيد",
      "en": "fishing",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c07.mp3"
     },
     {
      "ar": "دِنْيا (دُنْيا)",
      "en": "world",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c08.mp3"
     },
     {
      "ar": "شَبَكِة ج ات",
      "en": "net",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c09.mp3"
     },
     {
      "ar": "سَفينِة ج سُفُن",
      "en": "ship",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c10.mp3"
     },
     {
      "ar": "قارِب ج قوارِب",
      "en": "yacht",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c11.mp3"
     },
     {
      "ar": "دُولِة ج دُوَل",
      "en": "country",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c12.mp3"
     },
     {
      "ar": "وَجَع راس",
      "en": "headache",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c13.mp3"
     },
     {
      "ar": "وَقْت ج أوْقات",
      "en": "time",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c14.mp3"
     },
     {
      "ar": "صاد ـِ",
      "en": "hunt, fish",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c15.mp3"
     },
     {
      "ar": "باع ـِ",
      "en": "to sell",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c16.mp3"
     },
     {
      "ar": "نِزِل ـِ",
      "en": "to stay (in a hotel)",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c17.mp3"
     },
     {
      "ar": "جاوَب",
      "en": "to answer",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c18.mp3"
     },
     {
      "ar": "رَمى ـِ",
      "en": "to throw",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c19.mp3"
     },
     {
      "ar": "تْسَلَّى",
      "en": "to have a good time",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c20.mp3"
     },
     {
      "ar": "إرْتاح",
      "en": "to rest",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c21.mp3"
     },
     {
      "ar": "طول الْيُوم",
      "en": "all day long",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c22.mp3"
     },
     {
      "ar": "ساعَتْها",
      "en": "then",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c23.mp3"
     },
     {
      "ar": "مِثِل",
      "en": "like as",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c24.mp3"
     },
     {
      "ar": "مِثْلي",
      "en": "like me",
-     "src": "stories p.12"
+     "src": "stories p.12",
+     "audio": "audio/lessons/unit-35-c25.mp3"
     }
    ],
    "dialogues": [],
@@ -10863,107 +11352,128 @@ window.LESSONS = {
     {
      "ar": "قَميص ج قُمْصان",
      "en": "shirt",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c00.mp3"
     },
     {
      "ar": "إنْسان ج ناس",
      "en": "person",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c01.mp3"
     },
     {
      "ar": "مَرَض ج أمْراض",
      "en": "disease",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c02.mp3"
     },
     {
      "ar": "سَليم ج ين",
      "en": "healthy",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c03.mp3"
     },
     {
      "ar": "إشي ج أشْياء",
      "en": "thing",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c04.mp3"
     },
     {
      "ar": "نِهايِة ج ات",
      "en": "end",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c05.mp3"
     },
     {
      "ar": "بِدايِة ج ات",
      "en": "beginning",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c06.mp3"
     },
     {
      "ar": "مِفْتاح ج مَفاتيح",
      "en": "key",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c07.mp3"
     },
     {
      "ar": "مِرِض",
      "en": "became sick",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c08.mp3"
     },
     {
      "ar": "شِفي (بِشْفي)",
      "en": "to recover",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c09.mp3"
     },
     {
      "ar": "إجْتَمَع",
      "en": "to have a meeting",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c10.mp3"
     },
     {
      "ar": "لِبِس",
      "en": "to wear",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c11.mp3"
     },
     {
      "ar": "دَوَّر عَلى",
      "en": "to look for",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c12.mp3"
     },
     {
      "ar": "خَلَّص",
      "en": "to finish",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c13.mp3"
     },
     {
      "ar": "لاقى",
      "en": "to meet",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c14.mp3"
     },
     {
      "ar": "أعْطى",
      "en": "to give",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c15.mp3"
     },
     {
      "ar": "بِين ، بِينات",
      "en": "between",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c16.mp3"
     },
     {
      "ar": "سَعيد ج سعيدين",
      "en": "happy",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c17.mp3"
     },
     {
      "ar": "وَلا واحَد",
      "en": "no one",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c18.mp3"
     },
     {
      "ar": "دير بالَك",
      "en": "watch out",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c19.mp3"
     },
     {
      "ar": "دير بالَك عَلى",
      "en": "take care of",
-     "src": "stories p.14"
+     "src": "stories p.14",
+     "audio": "audio/lessons/unit-36-c20.mp3"
     }
    ],
    "dialogues": [],
@@ -11103,72 +11613,86 @@ window.LESSONS = {
     {
      "ar": "صَبِيِّة",
      "en": "young lady",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c00.mp3"
     },
     {
      "ar": "تْبارِك-لْهُم",
      "en": "congratulate them",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c01.mp3"
     },
     {
      "ar": "مَرْقَت",
      "en": "passed",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c02.mp3"
     },
     {
      "ar": "خِتْيار",
      "en": "old man",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c03.mp3"
     },
     {
      "ar": "رَبّوا",
      "en": "raised",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c04.mp3"
     },
     {
      "ar": "بِدّي (ا)يّاك",
      "en": "I want you to",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c05.mp3"
     },
     {
      "ar": "زَيّ غِيرَك",
      "en": "like others",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c06.mp3"
     },
     {
      "ar": "ما حَدا",
      "en": "no one",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c07.mp3"
     },
     {
      "ar": "غَريب",
      "en": "strange , stranger",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c08.mp3"
     },
     {
      "ar": "وَلا يِهِمَّك",
      "en": "don't worry",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c09.mp3"
     },
     {
      "ar": "وإعْمَلي مَعْروف",
      "en": "do a favor",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c10.mp3"
     },
     {
      "ar": "تَطَلَّع عَليها",
      "en": "looked upon her",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c11.mp3"
     },
     {
      "ar": "حَلّ ج حُلول",
      "en": "solution",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c12.mp3"
     },
     {
      "ar": "مَجْبور",
      "en": "must, compelled",
-     "src": "stories p.20"
+     "src": "stories p.20",
+     "audio": "audio/lessons/unit-37-c13.mp3"
     }
    ],
    "dialogues": [],
@@ -12189,127 +12713,152 @@ window.LESSONS = {
     {
      "ar": "نِظام حُكُم",
      "en": "regime, rule (n)",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c00.mp3"
     },
     {
      "ar": "نِظام",
      "en": "regime, order, system",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c01.mp3"
     },
     {
      "ar": "حَكَم ـُ",
      "en": "to rule",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c02.mp3"
     },
     {
      "ar": "حُكومِة",
      "en": "government",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c03.mp3"
     },
     {
      "ar": "مُنَظَّمِة",
      "en": "organization",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c04.mp3"
     },
     {
      "ar": "إقْتِصاد",
      "en": "economy",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c05.mp3"
     },
     {
      "ar": "نِظام ديمقراطي",
      "en": "democracy",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c06.mp3"
     },
     {
      "ar": "نِظام مَلَكي",
      "en": "monarchy",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c07.mp3"
     },
     {
      "ar": "نِظام ديكتاتوري",
      "en": "dictatorship",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c08.mp3"
     },
     {
      "ar": "نِظام فِدْرالي",
      "en": "federal government",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c09.mp3"
     },
     {
      "ar": "رأسمالية",
      "en": "capitalism",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c10.mp3"
     },
     {
      "ar": "شُيوعِية",
      "en": "communism",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c11.mp3"
     },
     {
      "ar": "إشْتِراكية",
      "en": "socialism",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c12.mp3"
     },
     {
      "ar": "ظُلْم",
      "en": "injustice",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c13.mp3"
     },
     {
      "ar": "عَدْل",
      "en": "justice",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c14.mp3"
     },
     {
      "ar": "مُواطِنين",
      "en": "citizens",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c15.mp3"
     },
     {
      "ar": "عُنْف",
      "en": "violence",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c16.mp3"
     },
     {
      "ar": "مُوافَقة",
      "en": "agreement",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c17.mp3"
     },
     {
      "ar": "سَيْطَرَة",
      "en": "control (n)",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c18.mp3"
     },
     {
      "ar": "سَيْطَر",
      "en": "to control",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c19.mp3"
     },
     {
      "ar": "خَوَّف (تَخْويف)",
      "en": "to frighten",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c20.mp3"
     },
     {
      "ar": "إسْتَعْمَل",
      "en": "to use",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c21.mp3"
     },
     {
      "ar": "أمان شَخْصي",
      "en": "personal safety",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c22.mp3"
     },
     {
      "ar": "إنْفِلات أمْني",
      "en": "chaos",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c23.mp3"
     },
     {
      "ar": "فَوْضى",
      "en": "lack of order, mess",
-     "src": "speaking p.53"
+     "src": "speaking p.53",
+     "audio": "audio/lessons/unit-41-c24.mp3"
     }
    ],
    "dialogues": [],
@@ -12416,52 +12965,62 @@ window.LESSONS = {
     {
      "ar": "أقلية ج ات",
      "en": "minority",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c00.mp3"
     },
     {
      "ar": "أغْلَبِيِّة",
      "en": "majority",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c01.mp3"
     },
     {
      "ar": "طائفة ج طَوَائِف",
      "en": "religious- ethnic group",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c02.mp3"
     },
     {
      "ar": "دين، دِيَانة",
      "en": "religion",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c03.mp3"
     },
     {
      "ar": "مِتْدَيِّن",
      "en": "religious",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c04.mp3"
     },
     {
      "ar": "عَرَب ثَماني وأرْبَعين",
      "en": "the Palestinian minority in Israel",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c05.mp3"
     },
     {
      "ar": "عَرَب الدَّاخِل",
      "en": "the Palestinian minority in Israel",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c06.mp3"
     },
     {
      "ar": "عيد الإسْتِقْلال",
      "en": "independence day",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c07.mp3"
     },
     {
      "ar": "إنْتِماء",
      "en": "belong to",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c08.mp3"
     },
     {
      "ar": "قِسم، جُزْء",
      "en": "part",
-     "src": "speaking p.50"
+     "src": "speaking p.50",
+     "audio": "audio/lessons/unit-43-c09.mp3"
     }
    ],
    "dialogues": [],
@@ -12522,17 +13081,20 @@ window.LESSONS = {
     {
      "ar": "قَهْوِة",
      "en": "coffee",
-     "src": "spoken-extra p.9"
+     "src": "spoken-extra p.9",
+     "audio": "audio/lessons/unit-44-c00.mp3"
     },
     {
      "ar": "مُمْتازِة",
      "en": "excellent",
-     "src": "spoken-extra p.9"
+     "src": "spoken-extra p.9",
+     "audio": "audio/lessons/unit-44-c01.mp3"
     },
     {
      "ar": "أَطْيَب",
      "en": "better",
-     "src": "spoken-extra p.9"
+     "src": "spoken-extra p.9",
+     "audio": "audio/lessons/unit-44-c02.mp3"
     }
    ],
    "dialogues": [
@@ -12542,72 +13104,86 @@ window.LESSONS = {
       {
        "sp": "زِياد",
        "ar": "مَرْحَبا _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l00.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "مَرْحَبْتين زِياد، _____، تَعالِ اشْرَبْ قَهْوِة. تْفَضَّلِ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l01.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "يِسَلْمو _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l02.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "كيف حالَك؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l03.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "وَالله _____ شْوَيّ.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l04.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "لِيش؟ وِينْتى _____ مِنْ إيطالْيا؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l05.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "رْجِعِتِ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l06.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "وَالله! _____ إيطالْيا؟ حِلْوِة؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l07.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "إيطالْيا _____ كْثير.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l08.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "وكيف _____ هُناك؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l09.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "إلْقَهْوِة الإيطالِيِّة _____، بَس قَهْوَتَك أَطْيَب.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l10.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "يِسَلْم ثِمَّك.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l11.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "يالله _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l12.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "مَعِ _____، سَلِّم عَ-أبوك.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-44-d0-l13.mp3"
       }
      ],
      "src": "spoken-extra p.9",
@@ -12763,22 +13339,26 @@ window.LESSONS = {
     {
      "ar": "وِلّا",
      "en": "or",
-     "src": "spoken-extra p.12"
+     "src": "spoken-extra p.12",
+     "audio": "audio/lessons/unit-46-c00.mp3"
     },
     {
      "ar": "مُحامِية",
      "en": "lawyer",
-     "src": "spoken-extra p.12"
+     "src": "spoken-extra p.12",
+     "audio": "audio/lessons/unit-46-c01.mp3"
     },
     {
      "ar": "ما شاء الله",
      "en": "wow (what God wants)",
-     "src": "spoken-extra p.12"
+     "src": "spoken-extra p.12",
+     "audio": "audio/lessons/unit-46-c02.mp3"
     },
     {
      "ar": "مَيَّة بارْدِة",
      "en": "cold water",
-     "src": "spoken-extra p.12"
+     "src": "spoken-extra p.12",
+     "audio": "audio/lessons/unit-46-c03.mp3"
     }
    ],
    "dialogues": [
@@ -12788,92 +13368,110 @@ window.LESSONS = {
       {
        "sp": "سَمير",
        "ar": "تْفَضَّل.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l00.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "_____ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l01.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "_____ _____ تْفَضَّل فوت. نُقْعُد في الصّالُون وِلا لا في الْبَلْكون؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l02.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "_____ _____. كيف حالَك؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l03.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "الْحَمْدِلله. شو بِتْحِبّ تِشْرَب، شاي _____ قَهْوة؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l04.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "لا لا لا _____ _____ ، _____؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l05.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "أيْوة، عِنْدي _____ (cold) كَمان! تْفَضَّل!",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l06.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "تِسْلَم، شُكْرًا.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l07.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "وَلَك يا ماجِد، سمِعِت خَطَبِت، إحْكي-لي شْوَيّ عَن خَطيبْتَك رنا، هِي مِنِ الطَّيْبِة، صَحّ؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l08.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "أيْوة، هِي مِنِ الطَّيْبِة مِش بْعيد مِن هُون، رُبِع ساعَة بِالسَّيّارة.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l09.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "هٰذا مُمْتاز. قول-لي مين أبوها ومين إمْها؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l10.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "_______________________.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l11.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "عَن جَدّ؟ وَالله، بْرافو عَليهُم . وشو بِشْتْغِل أخوها؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l12.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "_______________________.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l13.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "وأُخْتْها؟ وين بْتِشْتْغِل؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l14.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "أُخْتْها بْتِشْتْغِل سِكْرِتيرة عِنْد دَكْتور الِعْيُون (eyes).",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l15.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "مَا شاء الله _____ _____؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l16.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "مَبْسوطين مَبْسوطين طَبْعا مَبْسوطين.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-46-d0-l17.mp3"
       }
      ],
      "src": "spoken-extra p.12",
@@ -12915,22 +13513,26 @@ window.LESSONS = {
     {
      "ar": "ناقِص",
      "en": "missing",
-     "src": "spoken-extra p.13"
+     "src": "spoken-extra p.13",
+     "audio": "audio/lessons/unit-47-c00.mp3"
     },
     {
      "ar": "خُضْرَة",
      "en": "vegetables",
-     "src": "spoken-extra p.13"
+     "src": "spoken-extra p.13",
+     "audio": "audio/lessons/unit-47-c01.mp3"
     },
     {
      "ar": "مِش أكْثَر",
      "en": "not more",
-     "src": "spoken-extra p.13"
+     "src": "spoken-extra p.13",
+     "audio": "audio/lessons/unit-47-c02.mp3"
     },
     {
      "ar": "فواكِه",
      "en": "fruits",
-     "src": "spoken-extra p.13"
+     "src": "spoken-extra p.13",
+     "audio": "audio/lessons/unit-47-c03.mp3"
     }
    ],
    "dialogues": [
@@ -12940,107 +13542,128 @@ window.LESSONS = {
       {
        "sp": "إلْهام",
        "ar": "جَميل حَبيبي ,تَعال نْشوف شو ناقِص. ناقِصْنا خْيار وبَنْدُورة.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l00.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "كيلو مِن كُلّ نُوع؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l01.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____ _____ _____ . آه _____ الْبَصَل، وأنا بَطْبُخ كُل شي مَع بَصَل.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l02.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "_____ _____؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l03.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "ما قُلْت-لَك، جيب أرْبَعة كيلو . آه _______________________",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l04.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "يَعْني أكَم بَطّيخة بِدّك؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l05.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____ _____ _____ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l06.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "وشو كَمان؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l07.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "جيب مُوز وعِنَب.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l08.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "_____ _____ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l09.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____، _____ _____ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l10.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "وشو ناقِصْنا خُضْرة؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l11.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "جيب كيلو _____ ونُصّ كيلو بامْية _____ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l12.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "بِدْنا قَرْنَبيط وثُومِة كَمان؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l13.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "أيْوة، روح عِنْد أبو مَحْمود، عِنْدُه كُلّ شي.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l14.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "فِشّ مُشْكِلِة، وإذا بَشوف بيتِنْجان كمان أجيب؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l15.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____، _____ _____ _____ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l16.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "مُش أكْثَر؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l17.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "لا!، بَسّ 3 حَبّات.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l18.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "_____ _____ _____؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l19.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____ _____ _____.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-47-d0-l20.mp3"
       }
      ],
      "src": "spoken-extra p.13",
@@ -13082,17 +13705,20 @@ window.LESSONS = {
     {
      "ar": "بِدّي أَبَدِّل",
      "en": "I want to replace, change",
-     "src": "spoken-extra p.15"
+     "src": "spoken-extra p.15",
+     "audio": "audio/lessons/unit-48-c00.mp3"
     },
     {
      "ar": "ما بَحِبِّش",
      "en": "don't like",
-     "src": "spoken-extra p.15"
+     "src": "spoken-extra p.15",
+     "audio": "audio/lessons/unit-48-c01.mp3"
     },
     {
      "ar": "مَحَلِّيِّة",
      "en": "local",
-     "src": "spoken-extra p.15"
+     "src": "spoken-extra p.15",
+     "audio": "audio/lessons/unit-48-c02.mp3"
     }
    ],
    "dialogues": [
@@ -13102,92 +13728,110 @@ window.LESSONS = {
       {
        "sp": "رَنا",
        "ar": "صَباح الْخير.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l00.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "أهْلين صَباحِ النّور، تْفَضَّلي..",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l01.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l02.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "فِشّ مُشْكِلِة. أيّ ديسْكات؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l03.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "إمْبارِح كان عيد ميلادي وخَطيبي جاب-لي مِن عِنْدَك هَدِيِّة ديسْكات كْلاسيكِيِّة لأُم كُلْثُوم وعَبْدِ الْحَليم حافِظ ( بِتْحُطهُم عَلى الطّاوْلِة.)",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l04.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "_______________________؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l05.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "أنا بَحِبْها كْثير بَسّ عِنْدي هايِ الدّيسْكات، بِدّي ديسْك لَمُحَمَّد عَبْدِ الْوَهاب، وديسْك لَصَباح لَوْ سَمَحِت.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l06.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "تْفَضَّلي.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l07.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "بِدّي أبَدِّل كَمان ديسكات الْمُنَوَّعات هاي، أنا ما بَحِبِّش الْمُنَوَّعات بِالْمَرّة، مِش عارفِة لِيش ماجد جاب-لي مُنَوَّعات. بِدّي أشوف ديسْكات لَفَيْروز (بِتْحُطّ عَلى الطّاوْلِة 4 ديسْكات.)",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l08.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "_______________________",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l09.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l10.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "_______________________",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l11.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l12.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "_______________________",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l13.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l14.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "بِتْحِبّي تْبَدْلي كَمان إشي؟",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l15.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l16.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "الله يْعافيكِ.",
-       "en": null
+       "en": null,
+       "audio": "audio/lessons/unit-48-d0-l17.mp3"
       }
      ],
      "src": "spoken-extra p.15",
@@ -13229,42 +13873,50 @@ window.LESSONS = {
     {
      "ar": "بَعُوضة",
      "en": "mosquito",
-     "src": "spoken-extra p.16"
+     "src": "spoken-extra p.16",
+     "audio": "audio/lessons/unit-49-c00.mp3"
     },
     {
      "ar": "ريح",
      "en": "wind",
-     "src": "spoken-extra p.16"
+     "src": "spoken-extra p.16",
+     "audio": "audio/lessons/unit-49-c01.mp3"
     },
     {
      "ar": "طَيَّر",
      "en": "blow away",
-     "src": "spoken-extra p.16"
+     "src": "spoken-extra p.16",
+     "audio": "audio/lessons/unit-49-c02.mp3"
     },
     {
      "ar": "حَدَّد",
      "en": "set up (meeting)",
-     "src": "spoken-extra p.16"
+     "src": "spoken-extra p.16",
+     "audio": "audio/lessons/unit-49-c03.mp3"
     },
     {
      "ar": "مِن وَقْتها",
      "en": "from that time on",
-     "src": "spoken-extra p.16"
+     "src": "spoken-extra p.16",
+     "audio": "audio/lessons/unit-49-c04.mp3"
     },
     {
      "ar": "قاعة",
      "en": "hall",
-     "src": "spoken-extra p.16"
+     "src": "spoken-extra p.16",
+     "audio": "audio/lessons/unit-49-c05.mp3"
     },
     {
      "ar": "مَحْكَمِة",
      "en": "court",
-     "src": "spoken-extra p.16"
+     "src": "spoken-extra p.16",
+     "audio": "audio/lessons/unit-49-c06.mp3"
     },
     {
      "ar": "قَعْدَت تِسْتَنّى",
      "en": "set and waited",
-     "src": "spoken-extra p.16"
+     "src": "spoken-extra p.16",
+     "audio": "audio/lessons/unit-49-c07.mp3"
     }
    ],
    "dialogues": [],
@@ -13332,145 +13984,169 @@ window.LESSONS = {
      "ar": "خيار كبير",
      "en": "big cucumbers",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
-     "src": "vocab-gram p.17"
+     "src": "vocab-gram p.17",
+     "audio": "audio/lessons/unit-50-c00.mp3"
     },
     {
      "ar": "جَزَر حِلو",
      "en": "sweet carrots",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
-     "src": "vocab-gram p.17"
+     "src": "vocab-gram p.17",
+     "audio": "audio/lessons/unit-50-c01.mp3"
     },
     {
      "ar": "حَبَّة بَنْدورة",
      "en": "one tomato",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
-     "src": "vocab-gram p.17"
+     "src": "vocab-gram p.17",
+     "audio": "audio/lessons/unit-50-c02.mp3"
     },
     {
      "ar": "حَبَّتِين بَنْدُورة",
      "en": "two tomatoes",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
-     "src": "vocab-gram p.17"
+     "src": "vocab-gram p.17",
+     "audio": "audio/lessons/unit-50-c03.mp3"
     },
     {
      "ar": "عَشَر حَبّات بَزيلة",
      "en": "ten peas",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة (printed page 152)",
-     "src": "vocab-gram p.17"
+     "src": "vocab-gram p.17",
+     "audio": "audio/lessons/unit-50-c04.mp3"
     },
     {
      "ar": "راس ثُومِة",
      "en": "one head of garlic",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c05.mp3"
     },
     {
      "ar": "راسِين بَصَل",
      "en": "two onions",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c06.mp3"
     },
     {
      "ar": "سِتّ روس بَصَل",
      "en": "six onions",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c07.mp3"
     },
     {
      "ar": "قَرِن فليفلة",
      "en": "one chili pepper",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c08.mp3"
     },
     {
      "ar": "قَرْنِين فليفلة",
      "en": "two chili peppers",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c09.mp3"
     },
     {
      "ar": "خَمِس قُرون مُوز",
      "en": "five bananas",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c10.mp3"
     },
     {
      "ar": "ظُمَّة بَقْدُونِس",
      "en": "one bunch of parsley",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c11.mp3"
     },
     {
      "ar": "ظُمَّتِين نَعْنع",
      "en": "two bunchs of mint",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c12.mp3"
     },
     {
      "ar": "ثَلَث ظِمَم سَبانِخ",
      "en": "three bunch of spinach",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c13.mp3"
     },
     {
      "ar": "خْيارة",
      "en": "one cucumber",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c14.mp3"
     },
     {
      "ar": "خيارْتِين",
      "en": "two cucumbers",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2 (printed page 153)",
-     "src": "vocab-gram p.16"
+     "src": "vocab-gram p.16",
+     "audio": "audio/lessons/unit-50-c15.mp3"
     },
     {
      "ar": "خَمِس خْيارات",
      "en": "five cucumbers",
      "group": "Method B step 3; note on both methods (printed page 154)",
-     "src": "vocab-gram p.15"
+     "src": "vocab-gram p.15",
+     "audio": "audio/lessons/unit-50-c16.mp3"
     },
     {
      "ar": "راس بَصَل، بَصَلِة",
      "en": "an onion",
      "group": "Method B step 3; note on both methods (printed page 154)",
-     "src": "vocab-gram p.15"
+     "src": "vocab-gram p.15",
+     "audio": "audio/lessons/unit-50-c17.mp3"
     },
     {
      "ar": "حَبَّة \\ حَبّات: بندورة، أبوكادو، بَطاطا، بَزِيلّة \\ بزيلّا، زَتون، فَصولْيِة، بِتِنْجان، مَنْجا، فْليفلة (Pepper)، مَنْدَلينا، بُرْتُقان، تُفَّاح، إنْجاص، خُوخ، رُمّان، تين، تَمِر، كَرَز، لوز، جوز، توت، لَمون",
      "en": "unit word 7abbeh: tomato, avocado, potato, peas, olives, beans, eggplant, mango, pepper, mandarin, orange, apple, plum, peach, pomegranate, fig, date, cherry, almond, walnut, berry, lemon",
      "group": "reference table of unit words with their produce (printed page 155)",
-     "src": "vocab-gram p.14"
+     "src": "vocab-gram p.14",
+     "audio": "audio/lessons/unit-50-c18.mp3"
     },
     {
      "ar": "ة\\ات: موزَة، بَطيخَة، شُمامة، خْيارة، جَزَرَة، خَسَّة، قَرْعَة، كوسايِة",
      "en": "feminine-suffix method: banana, watermelon, melon, cucumber, carrot, lettuce, pumpkin, zucchini",
      "group": "reference table of unit words with their produce (printed page 155)",
-     "src": "vocab-gram p.14"
+     "src": "vocab-gram p.14",
+     "audio": "audio/lessons/unit-50-c19.mp3"
     },
     {
      "ar": "قَرِن \\ قْرون: قرن موز، قرن فْليفلة — hot pepper",
      "en": "unit word qarn (horn): a banana, a hot pepper",
      "group": "reference table of unit words with their produce (printed page 155)",
-     "src": "vocab-gram p.14"
+     "src": "vocab-gram p.14",
+     "audio": "audio/lessons/unit-50-c20.mp3"
     },
     {
      "ar": "قْطْف: عِنَب. One grape: حَبَّة عِنَب",
      "en": "unit word quTf (cluster): grapes; one grape is 7abbet 3inab",
      "group": "reference table of unit words with their produce (printed page 155)",
-     "src": "vocab-gram p.14"
+     "src": "vocab-gram p.14",
+     "audio": "audio/lessons/unit-50-c21.mp3"
     },
     {
      "ar": "راس \\ روس: فِجِل، شُومر، بَصَل، ثُومِة، قَرْنَبيط، مَلْفوف",
      "en": "unit word raas (head): radish, fennel, onion, garlic, cauliflower, cabbage",
      "group": "reference table of unit words with their produce (printed page 155)",
-     "src": "vocab-gram p.14"
+     "src": "vocab-gram p.14",
+     "audio": "audio/lessons/unit-50-c22.mp3"
     },
     {
      "ar": "ظُمَّة \\ ظِمَم: سَبانِخ، بَقْدونس، نَعْنَع، رِيحان، كُسْبَرة",
      "en": "unit word Dhummeh (bunch): spinach, parsley, mint, basil, coriander",
      "group": "reference table of unit words with their produce (printed page 155)",
-     "src": "vocab-gram p.14"
+     "src": "vocab-gram p.14",
+     "audio": "audio/lessons/unit-50-c23.mp3"
     }
    ],
    "dialogues": [],
