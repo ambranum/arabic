@@ -85,9 +85,34 @@ GROUP_FIX = {
         'مجموعة 4 — participial adjectives (plural ين)',
     "حروف الاتصال في العامية — conjunctions (printed page 149; handwritten note 'Only amia' at top)":
         'حروف الاتصال — conjunctions in spoken Arabic only',
+    # This header warned that "the last four glosses on this run are misprinted". It was true,
+    # and it is the reason those four were checked: سوق was already corrected to "market" by the
+    # lesson author, and مَقْهَى / مُشْكِلِة / مَطْعَم are fixed above. A standing warning that
+    # something is wrong, after it has been made right, only teaches distrust.
+    'وحدة 6 (printed pages 160-161; continues onto p.8). The last four glosses on this run are '
+    'misprinted in the book.': 'وحدة 6',
 }
 
 TITLE_STRIP = re.compile(r'\s*\((?:heavily )?annotated[^)]*\)\s*$')
+
+# Page references inside group headers: "وحدة 17 (printed page 166)". 294 chunks across 31
+# headers. The unit already carries its page provenance in `src`, which the app shows — a page
+# number repeated inside a section title is the archivist talking again. Only the parenthetical
+# goes; anything after it stays, because some of those trailing sentences are real teaching
+# notes ("The last four glosses on this run are misprinted in the book.").
+GROUP_PAGE = re.compile(r'\s*\(printed pages?[^)]*\)')
+DANGLING   = re.compile(r'\s+([.;,])')
+
+# One drill cue carried an editorial bracket AND contradicted itself: the book prints 7:45 while
+# the English answer is "ten to eight" (7:50). Stripping the bracket alone would leave a drill
+# that teaches the wrong time, so the cue takes the reading its own English demands.
+CUE_FIX = {"7:45 It's ten to eight. [sic — printed 7:45; presumably 7:50]":
+           "7:50 It's ten to eight."}
+
+# A single [sic] left inside an ARABIC field (unit-31, فَلّاح – فلّاحات [sic]). Latin brackets in
+# an `ar` string are worse than untidy: arLive() tokenizes that field, so the marker rendered as
+# tappable Latin inside a right-to-left line. The book's plural stands as the book has it.
+AR_MARK = re.compile(r'\s*\[sic[^\]]*\]')
 
 def main():
     changed = files = 0
@@ -104,6 +129,11 @@ def main():
                     log.append('%s c%-3d en  %-36r -> %r' % (uid, i, (c.get('en') or '')[:34], fix))
                     c['en'] = fix
                 c.pop('note', None)
+            a = c.get('ar')
+            if a and AR_MARK.search(a):
+                na = AR_MARK.sub('', a)
+                log.append('%s c%-3d ar  stripped editorial [sic]' % (uid, i))
+                c['ar'] = na
             en = c.get('en')
             if en:
                 new = en
@@ -116,6 +146,17 @@ def main():
             g = c.get('group')
             if g in GROUP_FIX:
                 c['group'] = GROUP_FIX[g]
+            elif g and GROUP_PAGE.search(g):
+                ng = DANGLING.sub(r'\1', GROUP_PAGE.sub('', g)).strip()
+                if ng != g:
+                    log.append('%s c%-3d grp %-36r -> %r' % (uid, i, g[:34], ng[:40]))
+                    c['group'] = ng
+        for d in u.get('drills', []):
+            for it in d.get('items', []):
+                for k in ('cue', 'answer'):
+                    if it.get(k) in CUE_FIX:
+                        log.append('%s      cue %r -> %r' % (uid, it[k][:44], CUE_FIX[it[k]]))
+                        it[k] = CUE_FIX[it[k]]
         for d in u.get('dialogues', []):
             t = d.get('title')
             if t and TITLE_STRIP.search(t):
