@@ -3561,15 +3561,18 @@ let _revq = null;
 //                      English once it has survived a few reps. This is the ordinary
 //                      recommendation: learn it receptively, then make it produce.
 //
-// `ar` stays the default because it is what this app has always done; nobody's deck changes
-// behaviour without them choosing it.
+// `mix` is the default. It is the direction that matches what this app is for — you cannot
+// produce a word you don't yet recognise, and recognition alone never becomes speech — so the
+// order is the teaching, not a preference. A deck that has never set this will start flipping
+// its established cards to production; the toggle at the bottom of every review card changes
+// it back in one tap, and the choice persists.
 const RDIR_KEY = 'alp.rev.dir.v1';
 const REV_DIRS = [
   ['ar',  'Arabic first', 'See the Arabic, recall the English. Easier — good for new words and for reading.'],
   ['en',  'English first', 'See the English, say the Arabic. Harder, and the direction that trains speaking.'],
-  ['mix', 'Arabic first, then English', 'New cards show Arabic; once a card is established it flips to English. Recommended.'],
+  ['mix', 'Arabic first, then English', 'New cards show Arabic; once a card is established it flips to English — recognise it first, then learn to say it. This is the default.'],
 ];
-const revDir = () => { try { return localStorage.getItem(RDIR_KEY) || 'ar'; } catch (e) { return 'ar'; } };
+const revDir = () => { try { return localStorage.getItem(RDIR_KEY) || 'mix'; } catch (e) { return 'mix'; } };
 function setRevDir(v) {
   try { localStorage.setItem(RDIR_KEY, v); } catch (e) {}
   vocabReview();                                    // redraw the current card the new way round
