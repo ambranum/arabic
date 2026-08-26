@@ -1035,6 +1035,34 @@
   .lx .lw.gap{border-bottom:1px dotted var(--paper-3)}
   .wcut{font-size:12px; color:var(--muted); margin:-4px 0 8px; font-family:var(--sans)}
   .wc-banks{margin-top:9px; font-size:11.5px; line-height:1.5; color:var(--muted); font-family:var(--sans)}
+
+  /* ---- section hero: one skeleton, a different drawing per section ---- */
+  .sh{position:relative; margin:-4px 0 20px; padding:20px 0 0; overflow:hidden; isolation:isolate;
+    min-height:126px; display:flex; flex-direction:column; justify-content:flex-end}
+  /* The drawing occupies the right of the band and fades out before it reaches the wordmark —
+     the first attempt stretched it across the full width with `slice`, which scaled a 32-unit
+     motif up past 100px and turned dense embroidery into four sparse sparkles. Fitting by
+     HEIGHT keeps every motif at its drawn density whatever the screen is doing. */
+  .sh-art{position:absolute; top:0; right:-2%; bottom:0; width:min(64%, 620px); height:100%;
+    color:var(--gc); opacity:.3; z-index:0; pointer-events:none;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 42%, #000 88%, transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0%, #000 42%, #000 88%, transparent 100%)}
+  .sh-in{position:relative; z-index:1; display:flex; flex-direction:column; gap:2px;
+    padding-bottom:16px}
+  /* The section's own name, drawn large — the "calligraphy" is a word you're learning. */
+  .sh-ar{font-family:var(--arabic); direction:rtl; text-align:left;
+    font-size:clamp(34px, 5.4vw, 52px); line-height:1.16; color:var(--ink)}
+  .sh-en{font-family:var(--sans); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--gc); font-weight:600}
+  .sh-rule{position:relative; z-index:1; height:2px; background:var(--gc); opacity:.5;
+    border-radius:2px}
+  /* Narrow: the drawing would crowd the word, so it retreats to a faint texture behind it. */
+  @media (max-width:640px){ .sh{margin-bottom:16px; padding-top:14px; min-height:104px}
+    .sh-art{width:78%; opacity:.16;
+      -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 55%);
+      mask-image:linear-gradient(90deg, transparent 0%, #000 55%)}
+    .sh-in{padding-bottom:12px} }
+  @media print{ .sh-art{display:none} }
   /* duplicate-merge review */
   .mg-nudge{margin:14px 0 4px; padding:12px 14px; border-radius:10px; font-size:13px; line-height:1.6;
     background:var(--ochre-wash); border:1px solid var(--ochre); color:var(--ink)}
@@ -1962,6 +1990,171 @@ function secStatus(sec) {
 // identical outlined rectangles. The icon plus a per-group tint turns the wall into a set.
 const GROUP_COLOR = {practice: 'var(--verdigris)', input: 'var(--ochre)',
                      ask: 'var(--rubric)', you: 'var(--muted)'};
+// ---------- section heroes ------------------------------------------------------------------
+// The home page has a visual identity — a broadsheet masthead, a tatreez band, the Old City on
+// the horizon — and every other page opened as a bare list. Each section now gets its own
+// header: its name set large in Arabic, over a line drawing particular to that section.
+//
+// The drawings are deliberately NOT religious. Palestinian visual culture is much wider than
+// the mosque, and the register here is domestic and secular: tatreez (village cross-stitch),
+// a loom draft, Jerusalem stone coursing, a set table with a coffee pot, an olive branch, a
+// printer's column rule. The "calligraphy" is the section's own name as lettering — a word you
+// are learning, drawn large — rather than devotional script.
+//
+// One skeleton, so the app still feels like one app: art band, Arabic wordmark, English label.
+// Only the motif and the colour change. Strokes inherit --gc via currentColor, so a section's
+// group colour carries through its drawing without a second palette to maintain.
+const SH = (d, w) => `<path d="${d}"${w ? ` stroke-width="${w}"` : ''}/>`;
+
+const SEC_ART = {
+  // village cross-stitch: the qabbeh chest panel, built from the same eight-point star the
+  // tatreez band uses, so Stories and the masthead are visibly the same hand
+  stories: {ar: 'قِصَص', motif: () => {
+    let g = '';
+    for (let i = 0; i < 9; i++) { const x = 40 + i * 90;
+      // the eight-point star the tatreez band uses, not a four-point sparkle
+      g += `<g transform="translate(${x} 60)"><path d="M0-18 5-5 18 0 5 5 0 18-5 5-18 0-5-5Z"/>
+        <rect x="-8" y="-8" width="16" height="16"/>
+        <rect x="-3.5" y="-3.5" width="7" height="7" transform="rotate(45)"/></g>`;
+      g += `<path d="M${x - 45} 22h90M${x - 45} 98h90"/>`; }
+    return g; }},
+  // a printer's front page: column rules, a folded corner
+  news: {ar: 'أخْبار', motif: () => {
+    let g = `<path d="M60 18h700v104H60Z"/><path d="M700 18l60 34v70"/>`;
+    for (let i = 1; i < 5; i++) g += `<path d="M${60 + i * 128} 30v80"/>`;
+    for (let c = 0; c < 5; c++) for (let r = 0; r < 5; r++)
+      g += `<path d="M${76 + c * 128} ${40 + r * 14}h96" opacity=".5"/>`;
+    return g; }},
+  // a shelf of spines, one pulled forward
+  books: {ar: 'كُتُب', motif: () => {
+    let g = `<path d="M40 116h740"/>`; let x = 60;
+    [24, 18, 30, 20, 26, 16, 34, 22, 28, 19, 32, 24, 20, 30].forEach((w, i) => {
+      const hgt = 58 + (i % 4) * 13;
+      g += `<rect x="${x}" y="${116 - hgt}" width="${w}" height="${hgt}" rx="2"/>`;
+      g += `<path d="M${x + 4} ${116 - hgt + 9}h${w - 8}"/>`;
+      x += w + 7; });
+    return g; }},
+  // a loom draft — the grid a weaver fills in before threading; a paradigm on paper
+  verbs: {ar: 'أفْعال', motif: () => {
+    let g = ''; const on = [[0,1],[1,3],[2,0],[3,2],[4,1],[5,3],[6,0],[7,2],[8,1],[9,3],[10,0],[11,2],[12,1],[13,3]];
+    for (let c = 0; c <= 14; c++) g += `<path d="M${60 + c * 46} 26v88"/>`;
+    for (let r = 0; r <= 4; r++) g += `<path d="M60 ${26 + r * 22}h644"/>`;
+    // The filled cells ARE the draft — at .16 inside a band already at .3 opacity they
+    // disappeared and it read as an empty grid.
+    on.forEach(([c, r]) => g += `<rect x="${62 + c * 46}" y="${28 + r * 22}" width="42" height="18" fill="currentColor" opacity=".62" stroke="none"/>`);
+    return g; }},
+  // index cards, fanned
+  vocab: {ar: 'كَلِمات', motif: () => {
+    let g = '';
+    [0, 1, 2, 3, 4].forEach(i => { const x = 70 + i * 130, y = 30 + (i % 2) * 8;
+      g += `<rect x="${x}" y="${y}" width="112" height="74" rx="5"/>
+        <path d="M${x} ${y + 20}h112"/><path d="M${x + 14} ${y + 40}h68" opacity=".55"/>
+        <path d="M${x + 14} ${y + 54}h50" opacity=".4"/>`; });
+    return g; }},
+  // Jerusalem stone coursing — grammar as the thing a wall is built with
+  grammar: {ar: 'قَواعِد', motif: () => {
+    let g = ''; const w = 104;
+    for (let r = 0; r < 4; r++) { const off = (r % 2) * (w / 2);
+      for (let c = -1; c < 8; c++) { const x = 50 + off + c * w, y = 26 + r * 24;
+        g += `<rect x="${x}" y="${y}" width="${w - 6}" height="18" rx="2"/>`; } }
+    return g; }},
+  // the reference notebook: ruled paper and a margin
+  lessons: {ar: 'دُروس', motif: () => {
+    let g = `<rect x="60" y="20" width="680" height="102" rx="4"/><path d="M148 20v102"/>`;
+    for (let i = 1; i < 7; i++) g += `<path d="M170 ${20 + i * 14}h548" opacity=".5"/>`;
+    for (let i = 0; i < 6; i++) g += `<circle cx="104" cy="${34 + i * 16}" r="3"/>`;
+    return g; }},
+  // interjections — short bursts of speech
+  reactions: {ar: 'رُدود', motif: () => {
+    let g = '';
+    [[90,34,120,46],[250,60,96,38],[400,26,140,50],[590,54,110,42]].forEach(([x,y,w,hh],i) => {
+      g += `<path d="M${x} ${y}h${w}a8 8 0 0 1 8 8v${hh - 16}a8 8 0 0 1-8 8h-${w * .6}l-16 14v-14h-${w * .4 - 0}a8 8 0 0 1-8-8v-${hh - 16}a8 8 0 0 1 8-8Z"/>`;
+      for (let l = 0; l < 2; l++) g += `<path d="M${x + 14} ${y + 16 + l * 12}h${w - 40}" opacity=".45"/>`; });
+    return g; }},
+  // a spoken waveform
+  sounds: {ar: 'أصْوات', motif: () => {
+    let g = ''; const A = [14,30,52,26,64,38,20,46,70,32,18,56,40,24,60,28,44,16,50,34,22,58,30,42,18,52,26,36,14,48];
+    A.forEach((a, i) => { const x = 60 + i * 22;
+      g += `<path d="M${x} ${72 - a} v${a * 2}" stroke-linecap="round"/>`; });
+    g += `<path d="M50 72h660" opacity=".35"/>`;
+    return g; }},
+  // the table itself: plates laid, and the dallah that goes round it
+  table: {ar: 'سُفْرة', motif: () => {
+    let g = `<path d="M40 112h740"/>`;
+    [140, 300, 520, 680].forEach(x => { g += `<ellipse cx="${x}" cy="86" rx="52" ry="17"/>
+      <ellipse cx="${x}" cy="84" rx="34" ry="11" opacity=".55"/>`; });
+    g += `<g transform="translate(390 22)"><path d="M0 62V34a22 22 0 0 1 22-22h10a22 22 0 0 1 22 22v28Z"/>
+      <path d="M22 12V4h10v8"/><path d="M54 30c14 2 20 10 20 18s-8 14-18 14"/>
+      <path d="M0 44c-10 0-16-6-16-14s6-12 14-12"/><path d="M-4 62h62"/></g>`;
+    return g; }},
+  // two columns facing each other, the same line in both
+  translate: {ar: 'تَرْجَمة', motif: () => {
+    let g = `<path d="M400 22v100" opacity=".5"/>`;
+    for (let i = 0; i < 6; i++) { const y = 32 + i * 15, w = 120 + (i * 37) % 90;
+      g += `<path d="M${380 - w} ${y}h${w}"/><path d="M420 ${y}h${w * .82}" opacity=".55"/>`; }
+    return g; }},
+  // a conversation, one side asking
+  tutor: {ar: 'مُعَلِّم', motif: () => {
+    let g = '';
+    [[110,26,240,44,0],[330,78,190,38,1],[120,84,170,34,0],[560,30,180,46,1]].forEach(([x,y,w,hh,r]) => {
+      g += `<rect x="${x}" y="${y}" width="${w}" height="${hh}" rx="${hh / 2}"${r ? ' opacity=".62"' : ''}/>`;
+      for (let l = 0; l < 2; l++) g += `<path d="M${x + 18} ${y + 14 + l * 12}h${w - 46}" opacity=".4"/>`; });
+    return g; }},
+  // an olive branch across an open codex — Palestinian and Christian, not devotional script
+  bible: {ar: 'الكِتاب', motif: () => {
+    let g = `<path d="M400 34v84"/><path d="M400 34c-70-16-150-16-220-6v84c70-10 150-10 220 6"/>
+      <path d="M400 34c70-16 150-16 220-6v84c-70-10-150-10-220 6"/>`;
+    for (let i = 0; i < 4; i++) { g += `<path d="M210 ${52 + i * 15}h150" opacity=".38"/>
+      <path d="M440 ${52 + i * 15}h150" opacity=".38"/>`; }
+    g += `<g transform="translate(300 8)"><path d="M0 14c60-10 130-2 200 16"/>`;
+    for (let i = 0; i < 7; i++) { const x = 18 + i * 28, y = 15 + i * 2.2;
+      g += `<ellipse cx="${x}" cy="${y - 9}" rx="12" ry="6" transform="rotate(-26 ${x} ${y - 9})"/>
+        <ellipse cx="${x + 12}" cy="${y + 9}" rx="12" ry="6" transform="rotate(26 ${x + 12} ${y + 9})"/>`; }
+    g += `</g>`;
+    return g; }},
+  // a month, with a route drawn through it
+  plan: {ar: 'خُطّة', motif: () => {
+    let g = ''; for (let r = 0; r < 4; r++) for (let c = 0; c < 14; c++)
+      g += `<rect x="${60 + c * 48}" y="${26 + r * 24}" width="40" height="18" rx="3" opacity=".5"/>`;
+    g += `<path d="M80 44q100 34 190 6t190 6 190-14" stroke-width="2.2" opacity=".9"/>`;
+    [80, 270, 460, 650].forEach((x, i) => g += `<circle cx="${x}" cy="${i % 2 ? 56 : 44}" r="5" fill="currentColor" stroke="none"/>`);
+    return g; }},
+  videos: {ar: 'فيديو', motif: () => {
+    let g = `<rect x="60" y="26" width="680" height="92" rx="4"/>`;
+    for (let i = 0; i < 12; i++) { g += `<rect x="${70 + i * 56}" y="34" width="16" height="12" rx="2" opacity=".5"/>
+      <rect x="${70 + i * 56}" y="98" width="16" height="12" rx="2" opacity=".5"/>`; }
+    g += `<path d="M370 56v32l30-16Z"/>`;
+    return g; }},
+  listening: {ar: 'سَماع', motif: () => {
+    let g = '';
+    for (let i = 1; i <= 5; i++) g += `<path d="M300 72a${i * 40} ${i * 26} 0 0 1 ${i * 40} -${i * 26}" opacity="${.7 - i * .1}"/>
+      <path d="M300 72a${i * 40} ${i * 26} 0 0 0 ${i * 40} ${i * 26}" opacity="${.7 - i * .1}"/>`;
+    g += `<circle cx="300" cy="72" r="8" fill="currentColor" stroke="none"/>`;
+    return g; }},
+  account: {ar: 'حِساب', motif: () => {
+    let g = `<path d="M40 118h740" opacity=".4"/>`;
+    [180, 400, 620].forEach((x, i) => g += `<g transform="translate(${x} 30)" opacity="${1 - i * .22}">
+      <circle cx="0" cy="22" r="18"/><path d="M-30 74a30 34 0 0 1 60 0"/></g>`);
+    return g; }},
+};
+
+function secHero(route) {
+  const sec = SECTIONS.find(x => x.route === route);
+  const art = SEC_ART[route];
+  if (!sec || !art) return '';
+  const gc = GROUP_COLOR[sec.group] || 'var(--verdigris)';
+  return `<div class="sh" style="--gc:${gc}">
+      <svg class="sh-art" viewBox="0 0 800 140" preserveAspectRatio="xMaxYMid meet" aria-hidden="true"
+        fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+        stroke-linejoin="round">${art.motif()}</svg>
+      <div class="sh-in">
+        <div class="sh-ar" dir="rtl">${esc(art.ar)}</div>
+        <div class="sh-en">${esc(sec.label)}</div>
+      </div>
+      <div class="sh-rule"></div>
+    </div>`;
+}
+
 function homeTile(sec) {
   return `<button class="tile${sec.ready ? '' : ' soon'}" style="--gc:${GROUP_COLOR[sec.group] || 'var(--verdigris)'}"
       onclick="location.hash='/${sec.route}'">
@@ -2021,6 +2214,11 @@ function route() {
   if (kind === 'verb') { renderNav('verbs'); return verbDetail(id); }
   const sec = SECTIONS.find(x => x.route === kind);
   if (sec) { renderNav(sec.route);
+    // The hero belongs to a section's LANDING page, not to a story, a verb or a chapter — those
+    // have their own headers and their own job. Prepending after the section renders keeps this
+    // to one place instead of an edit inside fourteen render functions.
+    if (!id) setTimeout(() => { const v = $('view');
+      if (v && !v.querySelector('.sh')) v.insertAdjacentHTML('afterbegin', secHero(sec.route)); }, 0);
     if (sec.route === 'plan')    return planSection(id, arg);
     if (sec.route === 'translate') return translateSection();
     if (sec.route === 'news')    return newsSection();
