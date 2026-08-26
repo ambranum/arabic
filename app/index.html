@@ -646,6 +646,15 @@
   .rv-dir-h{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:9px}
   .rv-dir-btns{display:flex; flex-wrap:wrap; gap:7px; justify-content:center}
   .rv-dir-w{font-size:12px; color:var(--muted); margin:9px auto 0; max-width:52ch; line-height:1.55}
+  /* the shared add-to-deck control */
+  .deck-add{white-space:nowrap}
+  .vd-deck{margin-top:9px}
+  .tr-acts{display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:9px}
+  .rx-deck{margin-top:7px}
+  /* "See the full conjugation" — the class shipped with the Translate work but never had a
+     rule, so it rendered as a bare default link. Now it sits in a flex row beside the button. */
+  .tr-vb{font-family:var(--sans); font-size:12px; color:var(--verdigris); text-decoration:none}
+  .tr-vb:hover{text-decoration:underline}
   .rv-hepast{font-size:14px; color:var(--ink-soft); margin:2px 0 4px; display:flex;
     align-items:baseline; gap:8px; justify-content:center; flex-wrap:wrap}
   .rv-hepast b{color:var(--verdigris); font-weight:700; font-size:10px; letter-spacing:.08em;
@@ -1287,7 +1296,31 @@ if (!marked.size) {   // one-time migration from the old marked-words list
     for (const [l, m] of old) marked.set(l, srsInit({lemma: l, ...m, deck: 'default'}));
   } catch (e) {}
 }
-const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...marked])); } catch (e) {} };
+// The deck is keyed by the lemma STRING, and the same word reaches it under different
+// vocalizations depending on where you added it from: the reader uses the corpus's resolved
+// lemma, the verb page uses verbs.js's citation form, and for 215 of 461 verb tokens those two
+// disagree (إجا vs أَجَا, رَوح vs رَوَّح). Adding the same verb from two places therefore made two
+// cards, each with its own schedule. Now that a word can be banked from the verb page, the
+// translator and the reader, that had to be settled.
+//
+// Rather than re-key the deck — it is live study data, and a migration that mis-merges two
+// genuinely different words is worse than the duplicate — membership is matched on the
+// NORMALIZED lemma. An existing card wins its key, so a verb you banked months ago from a story
+// still reads "in your deck" on its conjugation page, and removing it there removes that card.
+// Namespaced keys (¶ phrases, ® reactions) keep their prefix through arNorm and never collide.
+let _deckNormIx = null;
+function deckNormIndex() {
+  if (_deckNormIx) return _deckNormIx;
+  const m = new Map();
+  for (const k of marked.keys()) { const n = arNorm(k); if (!m.has(n)) m.set(n, k); }
+  return (_deckNormIx = m);
+}
+const deckKeyFor = lemma => marked.has(lemma) ? lemma
+  : (deckNormIndex().get(arNorm(lemma)) || lemma);
+const inDeck = lemma => marked.has(deckKeyFor(lemma));
+
+const save = () => { _deckNormIx = null;
+  try { localStorage.setItem(KEY, JSON.stringify([...marked])); } catch (e) {} };
 
 let decks = [];
 try { decks = JSON.parse(localStorage.getItem(DKEY) || 'null') || []; } catch (e) {}
@@ -3310,6 +3343,7 @@ function rxBrowseHTML(items) {
   return items.map(it => `<div class="rx-card${rxGot(it.ar) ? ' got' : ''}">
       <div class="rx-top">
         <div class="rx-ar" dir="rtl">${arLive(it.ar)}</div>
+        <div class="rx-deck">${deckBtnHTML(rxKey(it.ar), `deckToggleRx('${cssq(it.ar)}')`)}</div>
         ${it.audio ? `<button class="say" onclick="playWord({kind:'reaction',audio:'${cssq(it.audio)}',lemma:'${cssq(rxKey(it.ar))}',vocalized:'${cssq(it.ar)}'})" aria-label="Play">${svg('spk')}</button>`
           : `<span class="rx-noaud">audio pending</span>`}
       </div>
@@ -5429,8 +5463,10 @@ function trEntryHTML(e) {
       <span class="tr-gloss">${esc(pretty(e.gloss) || '—')}</span>
     </div>
     ${e.root ? `<div class="tr-root">root ${esc((e.root || '').replace(/\./g, ' · '))}${e.caphi ? ' &nbsp;·&nbsp; ' + esc(e.caphi) : ''}</div>` : ''}
-    ${e.vb != null && VB[e.vb] && VB[e.vb].conj
-      ? `<div class="tr-vb"><a href="#/verb/${e.vb}">See the full conjugation →</a></div>` : ''}
+    <div class="tr-acts">
+      ${deckBtnHTML(e.raw, `deckToggleLex('${cssq(e.raw)}','tr')`)}
+      ${e.vb != null && VB[e.vb] && VB[e.vb].conj
+        ? `<a class="tr-vb" href="#/verb/${e.vb}">See the full conjugation →</a>` : ''}</div>
     ${ex ? `<div class="tr-exs"><div class="tr-exs-h">In context</div>${ex}</div>` : ''}
   </div>`;
 }
@@ -5618,7 +5654,9 @@ function verbDetail(i){
     <div class="vd-ar">${esc(v.past ? v.past.ar : '')}</div>
     <div class="vd-meta"><div class="vd-gl">${esc(v.gloss || '—')}</div>
       <div class="vd-sub">${root} &nbsp;·&nbsp; ${badges}</div>
-      <div class="vd-lvl">${lvlTagFor('verb', {tier: VERB_TIER[v.weak] || 2})}</div></div></div>`;
+      <div class="vd-lvl">${lvlTagFor('verb', {tier: VERB_TIER[v.weak] || 2})}</div>
+      <div class="vd-deck">${deckBtnHTML(v.lemma, `deckToggleVerb(${+i})`, '+ Add this verb to my deck')}</div>
+      </div></div>`;
   // Where the reference grammar and the lexicon disagree on how a verb is vowelled, the
   // grammar wins and we say so — the variant is real speech, not an error to hide.
   if (v.note) h += `<div class="vd-note">${esc(v.note)}</div>`;
@@ -5774,7 +5812,7 @@ function emptySection(sec){
 function card(t, kind){
   const isDrill = kind === 'drill';
   const n = isDrill ? 0 : t.sentences.reduce((a,s) =>
-    a + s.words.filter(w => w.lemma && marked.has(w.lemma)).length, 0);
+    a + s.words.filter(w => w.lemma && inDeck(w.lemma)).length, 0);
   return `<button class="card" onclick="location.hash='/${kind}/${esc(t.id)}'">
     ${!isDrill && t.title.ar ? `<div class="ar">${esc(t.title.ar)}</div>` : ''}
     <div class="en">${esc(t.title.en)}</div>
@@ -5912,7 +5950,7 @@ function paint() {
   const showMk = $('rd') && $('rd').dataset.mk !== 'off';
   document.querySelectorAll('#rd .w').forEach(el => {
     const w = cur.sentences[+el.dataset.s].words[+el.dataset.w];
-    el.classList.toggle('mk', showMk && !!w.lemma && marked.has(w.lemma));
+    el.classList.toggle('mk', showMk && !!w.lemma && inDeck(w.lemma));
   });
   count();
 }
@@ -5994,6 +6032,58 @@ document.addEventListener('contextmenu', e => {
   askShowFor(window.getSelection());
 });
 window.addEventListener('scroll', askHide, true);
+
+// ---------- one "add to deck" control, for every view that shows a word ------------------
+// Banking a word only existed in one place: the card you get by tapping a word in running
+// text. Anywhere the word IS the subject of the page — a verb's conjugation table, a
+// translator result, a reaction in the browse list — there was no way to keep it, which is
+// exactly where you are most likely to want to.
+//
+// Each of those views can name its word from something it already has (a verb index, a token,
+// a reaction's Arabic), so the control takes an id and rebuilds the card on click rather than
+// stashing payloads. That keeps it stateless: correct after a re-render, and safe to drop into
+// any markup with no bookkeeping around it.
+function deckBtnHTML(key, call, label) {
+  const on = inDeck(key);
+  return `<button class="tog deck-add" aria-pressed="${on}" onclick="${call}">${
+    on ? '✓ In your deck' : esc(label || '+ Add to deck')}</button>`;
+}
+
+// Removing is as important as adding — the same button undoes a mistap, which is why every
+// caller toggles rather than adds. `after` lets a view repaint itself in place.
+function deckToggleKey(key, build, after) {
+  key = deckKeyFor(key);                     // reuse the card this word already has, if any
+  if (marked.has(key)) marked.delete(key);
+  else { marked.set(key, srsInit(build())); playWord(marked.get(key)); }
+  save(); count();
+  if (typeof after === 'function') after();
+}
+
+// A verb's card is anchored on its citation form — the "he" past — because that is the entry
+// the rest of the paradigm is built from, and it is what the review card already expects.
+function cardFromVerb(v) {
+  return {lemma: v.lemma, vocalized: v.lemma, surface: v.lemma, root: v.root || '',
+          caphi: (v.past && v.past.caphi) || '', gloss: v.gloss || '',
+          analysis: 'VERB:' + (v.form || 'I'),
+          he_past: v.past ? {ar: v.past.ar, caphi: v.past.caphi} : null,
+          deck: activeDeck()};
+}
+function deckToggleVerb(i) {
+  const v = VB[+i]; if (!v) return;
+  deckToggleKey(v.lemma, () => cardFromVerb(v), () => verbDetail(i));
+}
+
+// A translator result. lexLook() gives back a card-shaped record, so this reuses exactly the
+// same builder the reader's word card uses — one definition of what a word card is.
+function deckToggleLex(tok, redraw) {
+  const r = lexLook(tok); if (!r || !r.lemma) return;
+  deckToggleKey(r.lemma, () => cardFromWord(r), redraw === 'tr' ? () => trRender(_trQ) : null);
+}
+
+function deckToggleRx(ar) {
+  const it = (RX.items || []).find(r => r.ar === ar); if (!it) return;
+  deckToggleKey(rxKey(ar), () => rxCard(it), () => route());
+}
 
 // ---------- LEX: one lexicon, shared by every module --------------------------------------
 // Word data used to live *inside* LIB.texts, reachable only by the reader. So only the reader
@@ -6259,7 +6349,7 @@ function showWord(w0, ctx, opts) {
   const msa = !!(opts && opts.msa);
   const w = lexFix(w0);
   const wa = wadiAra(w);
-  const on = w.lemma && marked.has(w.lemma);
+  const on = w.lemma && inDeck(w.lemma);
   const wt = wordType(w.analysis);
   const vb = findVerb(w);
   const CUR = {'curated:function-word':'hand-curated · common function word',
@@ -6299,7 +6389,7 @@ function showWord(w0, ctx, opts) {
         translation (1865). The meaning above comes from the Palestinian lexicon and is here to
         help you read — but the word isn't added to your vocabulary, which stays spoken
         Palestinian.</div>` : ''}
-     <div class="src">${src}${on && !msa ? ' · in your deck (' + esc(deckName(marked.get(w.lemma).deck)) + ')' : ''}</div>
+     <div class="src">${src}${on && !msa ? ' · in your deck (' + esc(deckName((marked.get(deckKeyFor(w.lemma)) || {}).deck)) + ')' : ''}</div>
      <div class="acts">
        <button data-a="close">Close</button>
        ${ctx && !msa ? '<button data-a="phrase">+ Phrase…</button>' : ''}
@@ -6317,8 +6407,9 @@ function showWord(w0, ctx, opts) {
   if (ask) ask.onclick = () => { hideCard(); tutorAskAbout(w.surface || w.lemma, 'a word'); };
   const mk = $('wc').querySelector('[data-a="mark"]');
   if (w.lemma && mk) mk.onclick = () => {
-    if (marked.has(w.lemma)) marked.delete(w.lemma);
-    else { marked.set(w.lemma, cardFromWord(w)); playWord(marked.get(w.lemma)); }
+    const k = deckKeyFor(w.lemma);      // the card this word already has, whatever its spelling
+    if (marked.has(k)) marked.delete(k);
+    else { marked.set(k, cardFromWord(w)); playWord(marked.get(k)); }
     save(); if (ctx) paint(); else lexPaint(); showWord(w, ctx);
   };
 }
@@ -6328,7 +6419,7 @@ function showWord(w0, ctx, opts) {
 function lexPaint() {
   document.querySelectorAll('.lx .lw').forEach(el => {
     const r = lexLook(el.dataset.lw);
-    el.classList.toggle('mk', !!(r && r.lemma && marked.has(r.lemma)));
+    el.classList.toggle('mk', !!(r && r.lemma && inDeck(r.lemma)));
   });
 }
 // ---------- phrase cards ------------------------------------------------------------
