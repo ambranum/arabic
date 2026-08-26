@@ -1036,33 +1036,23 @@
   .wcut{font-size:12px; color:var(--muted); margin:-4px 0 8px; font-family:var(--sans)}
   .wc-banks{margin-top:9px; font-size:11.5px; line-height:1.5; color:var(--muted); font-family:var(--sans)}
 
-  /* ---- section hero: one skeleton, a different drawing per section ---- */
-  .sh{position:relative; margin:-4px 0 20px; padding:20px 0 0; overflow:hidden; isolation:isolate;
-    min-height:126px; display:flex; flex-direction:column; justify-content:flex-end}
-  /* The drawing occupies the right of the band and fades out before it reaches the wordmark —
-     the first attempt stretched it across the full width with `slice`, which scaled a 32-unit
-     motif up past 100px and turned dense embroidery into four sparse sparkles. Fitting by
-     HEIGHT keeps every motif at its drawn density whatever the screen is doing. */
-  .sh-art{position:absolute; top:0; right:-2%; bottom:0; width:min(64%, 620px); height:100%;
-    color:var(--gc); opacity:.3; z-index:0; pointer-events:none;
-    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 42%, #000 88%, transparent 100%);
-    mask-image:linear-gradient(90deg, transparent 0%, #000 42%, #000 88%, transparent 100%)}
-  .sh-in{position:relative; z-index:1; display:flex; flex-direction:column; gap:2px;
-    padding-bottom:16px}
-  /* The section's own name, drawn large — the "calligraphy" is a word you're learning. */
+  /* ---- section hero: wordmark, then an engraved scene, like the home masthead ---- */
+  .sh{position:relative; margin:-4px 0 18px}
+  .sh-in{display:flex; flex-direction:column; gap:2px; padding:14px 0 10px}
+  /* The section's own name drawn large — a word you're learning, not devotional script. */
   .sh-ar{font-family:var(--arabic); direction:rtl; text-align:left;
     font-size:clamp(34px, 5.4vw, 52px); line-height:1.16; color:var(--ink)}
   .sh-en{font-family:var(--sans); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
     color:var(--gc); font-weight:600}
-  .sh-rule{position:relative; z-index:1; height:2px; background:var(--gc); opacity:.5;
-    border-radius:2px}
-  /* Narrow: the drawing would crowd the word, so it retreats to a faint texture behind it. */
-  @media (max-width:640px){ .sh{margin-bottom:16px; padding-top:14px; min-height:104px}
-    .sh-art{width:78%; opacity:.16;
-      -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 55%);
-      mask-image:linear-gradient(90deg, transparent 0%, #000 55%)}
-    .sh-in{padding-bottom:12px} }
-  @media print{ .sh-art{display:none} }
+  /* Full-bleed out of the page gutter so the horizon runs edge to edge, as on the home page. */
+  .sh-band{position:relative; margin:0 calc(50% - 50vw) 0; pointer-events:none;
+    border-bottom:1px solid var(--rule)}
+  /* Same sizing as the home page's skyband — meet (never slice) so nothing is cropped, and
+     tall enough that a 1200x210 drawing fills the width instead of floating in side gaps. */
+  .sh-sky{display:block; width:100%; height:17.5vw; max-height:200px; min-height:112px}
+  @media (max-width:640px){ .sh{margin-bottom:14px} .sh-in{padding:10px 0 8px}
+    .sh-sky{height:30vw; min-height:96px} }
+  @media print{ .sh-band{display:none} }
   /* duplicate-merge review */
   .mg-nudge{margin:14px 0 4px; padding:12px 14px; border-radius:10px; font-size:13px; line-height:1.6;
     background:var(--ochre-wash); border:1px solid var(--ochre); color:var(--ink)}
@@ -2004,138 +1994,359 @@ const GROUP_COLOR = {practice: 'var(--verdigris)', input: 'var(--ochre)',
 // One skeleton, so the app still feels like one app: art band, Arabic wordmark, English label.
 // Only the motif and the colour change. Strokes inherit --gc via currentColor, so a section's
 // group colour carries through its drawing without a second palette to maintain.
-const SH = (d, w) => `<path d="${d}"${w ? ` stroke-width="${w}"` : ''}/>`;
+// ---------- section banners ----------------------------------------------------------------
+// Drawn the same way as the Old City on the home page, because that is the one everybody liked:
+// one viewBox (1200x210), hills behind, a ground line at y=196, buildings as plain strokes,
+// trees as verdigris silhouettes, and exactly ONE ochre accent per scene — the thing your eye
+// should land on. An engraving, not a postcard.
+//
+// Every scene is Palestinian material culture rather than symbol: a hill village, a souq stall,
+// an ancient olive on a terrace, a stone arcade, a café with an argileh, a laid table, a
+// rooftop of satellite dishes. Bethlehem's basilica carries the Bible section the way the Dome
+// carries the home page — a real building on a real skyline.
+const _hills = (o = '') =>
+  `<path d="M0 190 Q180 148 380 166 T760 158 T1200 172" opacity=".45"${o}/>
+   <path d="M0 208 Q240 180 520 194 T1200 196"/>`;
+const _ground = () => `<path d="M0 196h1200" stroke="var(--ink-soft)" stroke-width="1.8" opacity=".7"/>`;
+// A flat-roofed stone house with a row of windows — the unit most of these scenes are built from.
+const _house = (x, w, h, win = 3) => { let g = `<path d="M${x} 196v-${h}h${w}v${h}"/>`;
+  const gap = w / (win + 1);
+  for (let i = 1; i <= win; i++) g += `<path d="M${x + gap * i - 4} ${196 - h + 14}v10h8v-10z"/>`;
+  return g; };
+const _arch = (x, w, h) =>
+  `<path d="M${x} 196v-${h}a${w / 2} ${w / 2} 0 0 1 ${w} 0v${h}"/>`;
+const _cypress = (x, h) => `<path d="M${x} 196c0-${h * .8} ${h * .17}-${h} ${h * .23}-${h * 1.07}c${h * .07} ${h * .07} ${h * .23} ${h * .3} ${h * .23} ${h * 1.07}z"/>`;
+const _olive = (x, sc = 1) => `<g transform="translate(${x} 196) scale(${sc})">
+    <path d="M-4 0v-30" stroke="var(--ink-soft)" stroke-width="2.4" fill="none"/>
+    <path d="M-26 -30c0-20 12-30 22-30s22 10 22 30c-8 6-36 6-44 0z"/></g>`;
+const _fig = (x, y, sc = 1) => `<g transform="translate(${x} ${y}) scale(${sc})">
+    <circle cx="0" cy="-30" r="8"/><path d="M-11 0v-14a11 11 0 0 1 22 0V0"/></g>`;
 
 const SEC_ART = {
-  // village cross-stitch: the qabbeh chest panel, built from the same eight-point star the
-  // tatreez band uses, so Stories and the masthead are visibly the same hand
-  stories: {ar: 'قِصَص', motif: () => {
-    let g = '';
-    for (let i = 0; i < 9; i++) { const x = 40 + i * 90;
-      // the eight-point star the tatreez band uses, not a four-point sparkle
-      g += `<g transform="translate(${x} 60)"><path d="M0-18 5-5 18 0 5 5 0 18-5 5-18 0-5-5Z"/>
-        <rect x="-8" y="-8" width="16" height="16"/>
-        <rect x="-3.5" y="-3.5" width="7" height="7" transform="rotate(45)"/></g>`;
-      g += `<path d="M${x - 45} 22h90M${x - 45} 98h90"/>`; }
-    return g; }},
-  // a printer's front page: column rules, a folded corner
-  news: {ar: 'أخْبار', motif: () => {
-    let g = `<path d="M60 18h700v104H60Z"/><path d="M700 18l60 34v70"/>`;
-    for (let i = 1; i < 5; i++) g += `<path d="M${60 + i * 128} 30v80"/>`;
-    for (let c = 0; c < 5; c++) for (let r = 0; r < 5; r++)
-      g += `<path d="M${76 + c * 128} ${40 + r * 14}h96" opacity=".5"/>`;
-    return g; }},
-  // a shelf of spines, one pulled forward
-  books: {ar: 'كُتُب', motif: () => {
-    let g = `<path d="M40 116h740"/>`; let x = 60;
-    [24, 18, 30, 20, 26, 16, 34, 22, 28, 19, 32, 24, 20, 30].forEach((w, i) => {
-      const hgt = 58 + (i % 4) * 13;
-      g += `<rect x="${x}" y="${116 - hgt}" width="${w}" height="${hgt}" rx="2"/>`;
-      g += `<path d="M${x + 4} ${116 - hgt + 9}h${w - 8}"/>`;
-      x += w + 7; });
-    return g; }},
-  // a loom draft — the grid a weaver fills in before threading; a paradigm on paper
-  verbs: {ar: 'أفْعال', motif: () => {
-    let g = ''; const on = [[0,1],[1,3],[2,0],[3,2],[4,1],[5,3],[6,0],[7,2],[8,1],[9,3],[10,0],[11,2],[12,1],[13,3]];
-    for (let c = 0; c <= 14; c++) g += `<path d="M${60 + c * 46} 26v88"/>`;
-    for (let r = 0; r <= 4; r++) g += `<path d="M60 ${26 + r * 22}h644"/>`;
-    // The filled cells ARE the draft — at .16 inside a band already at .3 opacity they
-    // disappeared and it read as an empty grid.
-    on.forEach(([c, r]) => g += `<rect x="${62 + c * 46}" y="${28 + r * 22}" width="42" height="18" fill="currentColor" opacity=".62" stroke="none"/>`);
-    return g; }},
-  // index cards, fanned
-  vocab: {ar: 'كَلِمات', motif: () => {
-    let g = '';
-    [0, 1, 2, 3, 4].forEach(i => { const x = 70 + i * 130, y = 30 + (i % 2) * 8;
-      g += `<rect x="${x}" y="${y}" width="112" height="74" rx="5"/>
-        <path d="M${x} ${y + 20}h112"/><path d="M${x + 14} ${y + 40}h68" opacity=".55"/>
-        <path d="M${x + 14} ${y + 54}h50" opacity=".4"/>`; });
-    return g; }},
-  // Jerusalem stone coursing — grammar as the thing a wall is built with
-  grammar: {ar: 'قَواعِد', motif: () => {
-    let g = ''; const w = 104;
-    for (let r = 0; r < 4; r++) { const off = (r % 2) * (w / 2);
-      for (let c = -1; c < 8; c++) { const x = 50 + off + c * w, y = 26 + r * 24;
-        g += `<rect x="${x}" y="${y}" width="${w - 6}" height="18" rx="2"/>`; } }
-    return g; }},
-  // the reference notebook: ruled paper and a margin
-  lessons: {ar: 'دُروس', motif: () => {
-    let g = `<rect x="60" y="20" width="680" height="102" rx="4"/><path d="M148 20v102"/>`;
-    for (let i = 1; i < 7; i++) g += `<path d="M170 ${20 + i * 14}h548" opacity=".5"/>`;
-    for (let i = 0; i < 6; i++) g += `<circle cx="104" cy="${34 + i * 16}" r="3"/>`;
-    return g; }},
-  // interjections — short bursts of speech
-  reactions: {ar: 'رُدود', motif: () => {
-    let g = '';
-    [[90,34,120,46],[250,60,96,38],[400,26,140,50],[590,54,110,42]].forEach(([x,y,w,hh],i) => {
-      g += `<path d="M${x} ${y}h${w}a8 8 0 0 1 8 8v${hh - 16}a8 8 0 0 1-8 8h-${w * .6}l-16 14v-14h-${w * .4 - 0}a8 8 0 0 1-8-8v-${hh - 16}a8 8 0 0 1 8-8Z"/>`;
-      for (let l = 0; l < 2; l++) g += `<path d="M${x + 14} ${y + 16 + l * 12}h${w - 40}" opacity=".45"/>`; });
-    return g; }},
-  // a spoken waveform
-  sounds: {ar: 'أصْوات', motif: () => {
-    let g = ''; const A = [14,30,52,26,64,38,20,46,70,32,18,56,40,24,60,28,44,16,50,34,22,58,30,42,18,52,26,36,14,48];
-    A.forEach((a, i) => { const x = 60 + i * 22;
-      g += `<path d="M${x} ${72 - a} v${a * 2}" stroke-linecap="round"/>`; });
-    g += `<path d="M50 72h660" opacity=".35"/>`;
-    return g; }},
-  // the table itself: plates laid, and the dallah that goes round it
-  table: {ar: 'سُفْرة', motif: () => {
-    let g = `<path d="M40 112h740"/>`;
-    [140, 300, 520, 680].forEach(x => { g += `<ellipse cx="${x}" cy="86" rx="52" ry="17"/>
-      <ellipse cx="${x}" cy="84" rx="34" ry="11" opacity=".55"/>`; });
-    g += `<g transform="translate(390 22)"><path d="M0 62V34a22 22 0 0 1 22-22h10a22 22 0 0 1 22 22v28Z"/>
-      <path d="M22 12V4h10v8"/><path d="M54 30c14 2 20 10 20 18s-8 14-18 14"/>
-      <path d="M0 44c-10 0-16-6-16-14s6-12 14-12"/><path d="M-4 62h62"/></g>`;
-    return g; }},
-  // two columns facing each other, the same line in both
-  translate: {ar: 'تَرْجَمة', motif: () => {
-    let g = `<path d="M400 22v100" opacity=".5"/>`;
-    for (let i = 0; i < 6; i++) { const y = 32 + i * 15, w = 120 + (i * 37) % 90;
-      g += `<path d="M${380 - w} ${y}h${w}"/><path d="M420 ${y}h${w * .82}" opacity=".55"/>`; }
-    return g; }},
-  // a conversation, one side asking
-  tutor: {ar: 'مُعَلِّم', motif: () => {
-    let g = '';
-    [[110,26,240,44,0],[330,78,190,38,1],[120,84,170,34,0],[560,30,180,46,1]].forEach(([x,y,w,hh,r]) => {
-      g += `<rect x="${x}" y="${y}" width="${w}" height="${hh}" rx="${hh / 2}"${r ? ' opacity=".62"' : ''}/>`;
-      for (let l = 0; l < 2; l++) g += `<path d="M${x + 18} ${y + 14 + l * 12}h${w - 46}" opacity=".4"/>`; });
-    return g; }},
-  // an olive branch across an open codex — Palestinian and Christian, not devotional script
-  bible: {ar: 'الكِتاب', motif: () => {
-    let g = `<path d="M400 34v84"/><path d="M400 34c-70-16-150-16-220-6v84c70-10 150-10 220 6"/>
-      <path d="M400 34c70-16 150-16 220-6v84c-70-10-150-10-220 6"/>`;
-    for (let i = 0; i < 4; i++) { g += `<path d="M210 ${52 + i * 15}h150" opacity=".38"/>
-      <path d="M440 ${52 + i * 15}h150" opacity=".38"/>`; }
-    g += `<g transform="translate(300 8)"><path d="M0 14c60-10 130-2 200 16"/>`;
-    for (let i = 0; i < 7; i++) { const x = 18 + i * 28, y = 15 + i * 2.2;
-      g += `<ellipse cx="${x}" cy="${y - 9}" rx="12" ry="6" transform="rotate(-26 ${x} ${y - 9})"/>
-        <ellipse cx="${x + 12}" cy="${y + 9}" rx="12" ry="6" transform="rotate(26 ${x + 12} ${y + 9})"/>`; }
-    g += `</g>`;
-    return g; }},
-  // a month, with a route drawn through it
-  plan: {ar: 'خُطّة', motif: () => {
-    let g = ''; for (let r = 0; r < 4; r++) for (let c = 0; c < 14; c++)
-      g += `<rect x="${60 + c * 48}" y="${26 + r * 24}" width="40" height="18" rx="3" opacity=".5"/>`;
-    g += `<path d="M80 44q100 34 190 6t190 6 190-14" stroke-width="2.2" opacity=".9"/>`;
-    [80, 270, 460, 650].forEach((x, i) => g += `<circle cx="${x}" cy="${i % 2 ? 56 : 44}" r="5" fill="currentColor" stroke="none"/>`);
-    return g; }},
-  videos: {ar: 'فيديو', motif: () => {
-    let g = `<rect x="60" y="26" width="680" height="92" rx="4"/>`;
-    for (let i = 0; i < 12; i++) { g += `<rect x="${70 + i * 56}" y="34" width="16" height="12" rx="2" opacity=".5"/>
-      <rect x="${70 + i * 56}" y="98" width="16" height="12" rx="2" opacity=".5"/>`; }
-    g += `<path d="M370 56v32l30-16Z"/>`;
-    return g; }},
-  listening: {ar: 'سَماع', motif: () => {
-    let g = '';
-    for (let i = 1; i <= 5; i++) g += `<path d="M300 72a${i * 40} ${i * 26} 0 0 1 ${i * 40} -${i * 26}" opacity="${.7 - i * .1}"/>
-      <path d="M300 72a${i * 40} ${i * 26} 0 0 0 ${i * 40} ${i * 26}" opacity="${.7 - i * .1}"/>`;
-    g += `<circle cx="300" cy="72" r="8" fill="currentColor" stroke="none"/>`;
-    return g; }},
-  account: {ar: 'حِساب', motif: () => {
-    let g = `<path d="M40 118h740" opacity=".4"/>`;
-    [180, 400, 620].forEach((x, i) => g += `<g transform="translate(${x} 30)" opacity="${1 - i * .22}">
-      <circle cx="0" cy="22" r="18"/><path d="M-30 74a30 34 0 0 1 60 0"/></g>`);
-    return g; }},
+  // A hill village at dusk — stone houses stepped up the slope, cypresses, a moon.
+  stories: {ar: 'قِصَص', art: () => `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      <circle cx="1046" cy="46" r="22" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M120 196v-46l40-22 40 22v46" /><path d="M140 196v-24h20v24"/>
+      ${_house(230, 88, 62)}${_house(340, 66, 44, 2)}
+      <path d="M430 196v-70h96v70M446 140h20v14h-20zM490 140h20v14h-20z"/>
+      <path d="M430 126l48-22 48 22"/>
+      ${_house(560, 74, 52)}${_house(660, 100, 76, 4)}
+      <path d="M790 196v-54h70v54M806 156h16v12h-16zM834 156h16v12h-16z"/>
+      ${_house(890, 62, 40, 2)}
+      <path d="M236 134h76M566 144h62"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">
+      ${_cypress(96, 62)}${_cypress(316, 50)}${_cypress(536, 58)}${_cypress(872, 46)}${_cypress(1120, 66)}
+      ${_olive(1010, .9)}
+    </g>${_ground()}`},
+
+  // A street with a newspaper kiosk, a lamp, and wires overhead.
+  news: {ar: 'أخْبار', art: () => `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_house(60, 130, 118, 4)}${_house(210, 106, 92, 3)}${_house(340, 90, 130, 3)}
+      ${_house(900, 120, 104, 4)}${_house(1046, 96, 86, 3)}
+      <path d="M0 62q300 26 600 8t600 14" opacity=".4"/>
+      <path d="M0 78q300 26 600 8t600 14" opacity=".28"/>
+      <path d="M520 196v-72h150v72"/><path d="M508 124h174l-14-16H522z"/>
+      <path d="M536 150h50v46h-50z"/><path d="M604 148h52v20h-52zM604 174h52v18h-52z"/>
+      <path d="M544 158h34M544 168h34M544 178h26" opacity=".55"/>
+      <path d="M760 196v-96"/><path d="M760 100h34"/>
+      <circle cx="800" cy="102" r="11" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      ${_fig(700, 196, .9)}
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(470, 44)}${_cypress(866, 52)}</g>
+    ${_ground()}`},
+
+  // A bookshop under arches, spines in the window.
+  books: {ar: 'كُتُب', art: () => {
+    let sp = ''; let x = 470;
+    [22,16,26,18,24,14,28,20,24,16,22].forEach((w, i) => {
+      sp += `<path d="M${x} 172v-${34 + (i % 3) * 8}h${w}v${34 + (i % 3) * 8}z"/>`; x += w + 4; });
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_arch(90, 84, 78)}${_arch(200, 84, 78)}${_arch(310, 84, 78)}
+      <path d="M76 196v-124h348v124" opacity=".8"/><path d="M76 72h348"/>
+      <path d="M450 196v-104h300v104"/><path d="M450 92h300"/><path d="M462 172h276"/>
+      ${sp}
+      <path d="M560 196v-24h80v24"/>
+      ${_arch(800, 78, 72)}${_arch(900, 78, 72)}
+      <path d="M786 196v-118h206v118" opacity=".8"/><path d="M786 78h206"/>
+      <circle cx="600" cy="60" r="18" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M600 42V28" stroke="var(--ochre)"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(1050, 60)}${_olive(1140, .8)}</g>
+    ${_ground()}`; }},
+
+  // An ancient olive on a terrace — the root is where a verb comes from.
+  verbs: {ar: 'أفْعال', art: () => `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      <path d="M0 196v-16h300v16M300 180v-18h340v18M640 162v-16h360v16" opacity=".5"/>
+      <path d="M560 196v-58c-14-10-18-26-10-34" stroke-width="3"/>
+      <path d="M600 196v-64c14-10 20-24 14-34" stroke-width="3"/>
+      <path d="M566 138c-8 14-26 20-40 16M598 132c10 12 28 16 42 10" stroke-width="2.2"/>
+      <path d="M556 196c-16-6-30-4-40 4M606 196c16-8 32-6 42 2" stroke-width="1.8" opacity=".7"/>
+      ${_house(140, 84, 54)}${_house(880, 96, 62, 3)}
+      <circle cx="250" cy="52" r="20" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">
+      <path d="M498 128c0-40 34-62 84-62s84 22 84 62c-24 14-144 14-168 0z"/>
+      ${_olive(340, 1.1)}${_olive(760, .95)}${_olive(1080, 1.05)}
+    </g>${_ground()}`},
+
+  // A souq stall: crates, an awning, hanging scales.
+  vocab: {ar: 'كَلِمات', art: () => {
+    let cr = ''; let x = 300;
+    for (let i = 0; i < 6; i++) { const w = 92, h = 34 + (i % 2) * 10;
+      cr += `<path d="M${x} 196v-${h}h${w}v${h}z"/><path d="M${x} ${196 - h + 12}h${w}"/>`;
+      for (let j = 0; j < 4; j++) cr += `<circle cx="${x + 14 + j * 22}" cy="${196 - h - 7}" r="8"/>`;
+      x += w + 12; }
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_house(60, 110, 128, 4)}${_house(1000, 130, 118, 4)}
+      <path d="M250 90h660"/><path d="M250 90l-14 22M910 90l14 22"/>
+      <path d="M250 112q28 20 56 0t56 0 56 0 56 0 56 0 56 0 56 0 56 0 56 0 56 0 56 0 56 0"/>
+      <path d="M300 90v-14h560v14" opacity=".5"/>
+      ${cr}
+      <path d="M600 76v-30"/><path d="M560 46h80"/>
+      <path d="M560 46l-14 22h28zM640 46l-14 22h28z" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(200, 48)}${_cypress(960, 44)}</g>
+    ${_ground()}`; }},
+
+  // A stone arcade around a courtyard — the structure a sentence is built on.
+  grammar: {ar: 'قَواعِد', art: () => {
+    let ar = ''; for (let i = 0; i < 7; i++) ar += _arch(120 + i * 130, 96, 84);
+    let co = ''; for (let i = 0; i < 8; i++) co += `<path d="M${112 + i * 130} 196v-92h16v92"/>`;
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      <path d="M96 196V72h1016v124" opacity=".55"/>
+      <path d="M96 72h1016M96 60h1016" opacity=".7"/>
+      ${ar}${co}
+      <path d="M120 152h912" opacity=".3"/>
+      <circle cx="612" cy="30" r="16" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(46, 66)}${_olive(1160, .85)}</g>
+    ${_ground()}`; }},
+
+  // A village school: one long building, a big window, children outside.
+  lessons: {ar: 'دُروس', art: () => `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      <path d="M240 196v-112h520v112"/><path d="M228 84l272-34 272 34"/>
+      <path d="M300 196v-58h72v58M300 138h72"/>
+      <path d="M420 196v-46h56v46"/>
+      <path d="M520 196v-58h72v58M520 138h72M556 138v58"/>
+      <path d="M640 196v-58h72v58M640 138h72"/>
+      <path d="M310 148h52v40h-52M530 148h16v40h-16M566 148h16v40h-16M650 148h52v40h-52" opacity=".45"/>
+      <path d="M860 196v-84"/><path d="M860 112h40v26h-40z" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      ${_fig(160, 196, 1)}${_fig(196, 196, .8)}${_fig(824, 196, .9)}
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(100, 58)}${_cypress(960, 52)}${_olive(1090, .9)}</g>
+    ${_ground()}`},
+
+  // A café: little tables, an argileh, two people mid-conversation.
+  reactions: {ar: 'رُدود', art: () => `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_house(40, 120, 116, 4)}${_house(1040, 120, 108, 4)}
+      <path d="M200 96h800"/><path d="M200 96l-16 24M1000 96l16 24"/>
+      <path d="M200 120q30 22 60 0t60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0 60 0"/>
+      <path d="M300 196v-40M270 156h60M290 196h20" />
+      <path d="M620 196v-40M590 156h60M610 196h20"/>
+      <path d="M296 150h12v-10h-12zM616 150h12v-10h-12z" opacity=".7"/>
+      ${_fig(380, 196, 1)}${_fig(452, 196, 1)}
+      <path d="M392 176q30-16 48 0" opacity=".6"/>
+      <path d="M700 196v-30a14 14 0 0 1 28 0v30M714 166v-34M700 132h28"/>
+      <path d="M714 132v-14" stroke="var(--ochre)"/>
+      <circle cx="714" cy="112" r="9" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M728 150q26-6 30-26" opacity=".6"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(180, 46)}${_cypress(1006, 44)}</g>
+    ${_ground()}`},
+
+  // An oud player — the sound of the room.
+  sounds: {ar: 'أصْوات', art: () => {
+    let w = ''; for (let i = 1; i <= 4; i++)
+      w += `<path d="M726 ${150 - i * 8}q${i * 34} -${i * 22} ${i * 62} 0" opacity="${.5 - i * .08}"/>`;
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_arch(120, 90, 80)}${_arch(240, 90, 80)}
+      <path d="M106 196V78h250v118" opacity=".6"/><path d="M106 78h250"/>
+      ${_house(940, 120, 100, 4)}
+      <path d="M520 196v-52a26 26 0 0 1 52 0v52z" stroke-width="1.8"/>
+      <path d="M546 196V96" stroke-width="1.8"/>
+      <path d="M546 96l-16-14 16-10 16 10z"/>
+      <path d="M534 150h24M534 160h24M534 170h24" opacity=".5"/>
+      <circle cx="546" cy="140" r="13" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      ${_fig(620, 196, 1.1)}
+      <path d="M600 176q34-22 66-8" opacity=".6"/>
+      ${w}
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(430, 54)}${_cypress(900, 50)}</g>
+    ${_ground()}`; }},
+
+  // The table itself, laid: a big platter in the middle, cups, the dallah, hands around it.
+  table: {ar: 'سُفْرة', art: () => {
+    let cu = ''; [300, 380, 820, 900].forEach(x =>
+      cu += `<path d="M${x} 150v14a10 10 0 0 0 20 0v-14z"/><path d="M${x - 6} 150h32"/>`);
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_arch(90, 86, 76)}${_house(1020, 120, 96, 4)}
+      <path d="M180 172h840" stroke-width="2.2"/><path d="M240 196v-24M960 196v-24"/>
+      <path d="M470 172c0-26 30-40 130-40s130 14 130 40z"/>
+      <path d="M510 132c0-30 40-44 90-44s90 14 90 44" opacity=".55"/>
+      <path d="M540 88c0-16 26-24 60-24s60 8 60 24" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      ${cu}
+      <g transform="translate(760 74)">
+        <path d="M0 74V44a24 24 0 0 1 24-24h12a24 24 0 0 1 24 24v30Z"/>
+        <path d="M24 20v-8h12v8"/><path d="M60 40c16 2 22 12 22 20s-8 16-20 16"/>
+        <path d="M0 52c-12 0-18-8-18-16s8-14 16-14"/></g>
+      ${_fig(250, 172, .95)}${_fig(950, 172, .95)}
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(1140, 56)}</g>
+    ${_ground()}`; }},
+
+  // A scribe's desk: the same page open twice, in two hands.
+  translate: {ar: 'تَرْجَمة', art: () => {
+    let l = ''; for (let i = 0; i < 5; i++) {
+      l += `<path d="M420 ${112 + i * 12}h140" opacity=".45"/><path d="M640 ${112 + i * 12}h140" opacity=".45"/>`; }
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_arch(110, 88, 80)}${_house(1010, 120, 104, 4)}
+      <path d="M300 176h600" stroke-width="2.2"/><path d="M360 196v-20M840 196v-20"/>
+      <path d="M600 96v80"/>
+      <path d="M600 96c-56-16-116-16-190-4v80c74-12 134-12 190 4"/>
+      <path d="M600 96c56-16 116-16 190-4v80c-74-12-134-12-190 4"/>
+      ${l}
+      <path d="M330 176v-40l24-10v50" opacity=".6"/>
+      <circle cx="870" cy="60" r="17" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M870 77v20" stroke="var(--ochre)"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(240, 52)}${_olive(960, .85)}</g>
+    ${_ground()}`; }},
+
+  // Two people, one small table, two cups — the lesson that actually happens.
+  tutor: {ar: 'مُعَلِّم', art: () => `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_arch(96, 92, 84)}${_arch(212, 92, 84)}
+      <path d="M82 196V72h256v124" opacity=".55"/><path d="M82 72h256"/>
+      ${_house(980, 130, 110, 4)}
+      <path d="M520 196v-48M470 148h160M540 196h80" stroke-width="1.8"/>
+      <path d="M512 142v10a10 10 0 0 0 20 0v-10zM568 142v10a10 10 0 0 0 20 0v-10z"/>
+      <path d="M506 142h32M562 142h32"/>
+      ${_fig(430, 196, 1.15)}${_fig(670, 196, 1.15)}
+      <path d="M452 168q32-24 62-10" opacity=".6"/>
+      <path d="M648 168q-30-24-58-10" opacity=".45"/>
+      <path d="M700 96h120a10 10 0 0 1 10 10v34a10 10 0 0 1-10 10h-72l-18 16v-16h-30a10 10 0 0 1-10-10v-34a10 10 0 0 1 10-10z"
+        fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M718 116h84M718 130h58" stroke="var(--ochre)" opacity=".7"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(388, 54)}${_cypress(940, 50)}</g>
+    ${_ground()}`},
+
+  // Bethlehem: the basilica's bell tower and low nave, and the star over it.
+  bible: {ar: 'الكِتاب', art: () => `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_house(90, 96, 62, 3)}${_house(1010, 110, 74, 3)}
+      <path d="M420 196v-96h360v96"/><path d="M408 100l180-40 180 40"/>
+      <path d="M470 196v-52a26 26 0 0 1 52 0v52M660 196v-52a26 26 0 0 1 52 0v52"/>
+      <path d="M566 196v-42h68v42" opacity=".8"/>
+      <path d="M300 196v-136h76v136"/><path d="M292 60h92l-46-30z"/>
+      <path d="M316 96h44v34h-44z" opacity=".55"/>
+      <path d="M316 148h44M316 166h44" opacity=".4"/>
+      <path d="M588 46l6 16 16 6-16 6-6 16-6-16-16-6 16-6z"
+        fill="var(--ochre-wash)" stroke="var(--ochre)" stroke-width="1.8"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">
+      ${_cypress(250, 66)}${_cypress(818, 60)}${_olive(920, .9)}${_olive(180, .8)}
+    </g>${_ground()}`},
+
+  // Terraced hillside with a path climbing it — a route you walk in stages.
+  plan: {ar: 'خُطّة', art: () => {
+    let t = ''; for (let i = 0; i < 5; i++)
+      t += `<path d="M${i * 40} ${196 - i * 26}h${1200 - i * 80}" opacity="${.55 - i * .06}"/>`;
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}${t}
+      <path d="M120 196q120-30 180-32t160-24 190-26 200-22" stroke-width="2.6" opacity=".85"/>
+      <circle cx="120" cy="196" r="6" fill="var(--ink-soft)" stroke="none"/>
+      <circle cx="470" cy="140" r="6" fill="var(--ink-soft)" stroke="none"/>
+      <circle cx="850" cy="92" r="6" fill="var(--ink-soft)" stroke="none"/>
+      ${_house(960, 90, 54, 3)}
+      <circle cx="1080" cy="48" r="22" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">
+      ${_olive(240, .8)}${_olive(560, .85)}${_olive(720, .75)}${_cypress(400, 44)}${_cypress(880, 40)}
+    </g>${_ground()}`; }},
+
+  // A rooftop of dishes and tanks — what a Palestinian skyline actually looks like up close.
+  videos: {ar: 'فيديو', art: () => {
+    let d = ''; [220, 400, 620, 840].forEach((x, i) => {
+      d += `<g transform="translate(${x} ${150 - i % 2 * 10})">
+        <path d="M0 46V16"/><path d="M-22 16a22 14 0 0 1 44 0z"/><path d="M0 16v-10"/></g>`; });
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      <path d="M60 196v-50h1080v50" opacity=".7"/><path d="M60 146h1080"/>
+      ${_house(120, 120, 96, 4)}${_house(500, 140, 110, 4)}${_house(900, 130, 88, 4)}
+      ${d}
+      <path d="M700 146v-30h44v30zM700 116a22 8 0 0 1 44 0" />
+      <circle cx="1050" cy="56" r="20" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(1170, 48)}</g>
+    ${_ground()}`; }},
+
+  // A radio on a windowsill, the curtain moving.
+  listening: {ar: 'سَماع', art: () => {
+    let w = ''; for (let i = 1; i <= 4; i++)
+      w += `<path d="M700 ${140 - i * 6}q${i * 30} -${i * 18} ${i * 56} 0" opacity="${.5 - i * .08}"/>`;
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      <path d="M280 196V50h420v146" opacity=".6"/>
+      <path d="M300 70h180v110h-180zM500 70h180v110h-180z"/>
+      <path d="M300 124h180M500 124h180" opacity=".45"/>
+      <path d="M270 50h440" stroke-width="2"/>
+      <path d="M262 180h456" stroke-width="2.2"/>
+      <path d="M540 180v-46h130v46z"/><path d="M556 146h44v22h-44z" opacity=".5"/>
+      <circle cx="638" cy="157" r="11" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M660 134v-24" stroke="var(--ochre)"/>
+      ${w}
+      <path d="M300 70q22 40 0 78M480 70q-22 40 0 78" opacity=".35"/>
+      ${_house(880, 130, 104, 4)}
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(800, 56)}${_olive(1080, .9)}</g>
+    ${_ground()}`; }},
+
+  // A doorway, a key, a house you belong to.
+  account: {ar: 'حِساب', art: () => `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_house(120, 120, 92, 4)}${_house(940, 120, 84, 3)}
+      <path d="M480 196v-110a120 120 0 0 1 240 0v110" opacity=".7"/>
+      <path d="M520 196v-98a80 80 0 0 1 160 0v98z"/>
+      <path d="M600 196V98" opacity=".5"/>
+      <path d="M540 118h48v40h-48zM612 118h48v40h-48z" opacity=".35"/>
+      <circle cx="576" cy="176" r="5"/><circle cx="624" cy="176" r="5"/>
+      <g transform="translate(800 96)">
+        <circle cx="0" cy="0" r="14" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+        <path d="M14 0h46M52 0v12M40 0v10" stroke="var(--ochre)"/></g>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">
+      ${_cypress(420, 62)}${_cypress(760, 54)}${_olive(1100, .9)}
+    </g>${_ground()}`},
 };
 
 function secHero(route) {
@@ -2143,15 +2354,15 @@ function secHero(route) {
   const art = SEC_ART[route];
   if (!sec || !art) return '';
   const gc = GROUP_COLOR[sec.group] || 'var(--verdigris)';
+  // Wordmark first, scene beneath — the same order as the home page's masthead and skyband.
   return `<div class="sh" style="--gc:${gc}">
-      <svg class="sh-art" viewBox="0 0 800 140" preserveAspectRatio="xMaxYMid meet" aria-hidden="true"
-        fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-        stroke-linejoin="round">${art.motif()}</svg>
       <div class="sh-in">
         <div class="sh-ar" dir="rtl">${esc(art.ar)}</div>
         <div class="sh-en">${esc(sec.label)}</div>
       </div>
-      <div class="sh-rule"></div>
+      <div class="sh-band"><svg class="sh-sky" viewBox="0 0 1200 210"
+        preserveAspectRatio="xMidYMax meet" fill="none" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">${art.art()}</svg></div>
     </div>`;
 }
 
