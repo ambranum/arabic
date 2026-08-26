@@ -1034,6 +1034,8 @@
   .lx .lw{display:inline-block; padding:1px 2px; line-height:inherit; font-size:inherit}
   .lx .lw.gap{border-bottom:1px dotted var(--paper-3)}
   .wcut{font-size:12px; color:var(--muted); margin:-4px 0 8px; font-family:var(--sans)}
+  .wc-banks{margin-top:9px; font-size:11.5px; line-height:1.5; color:var(--muted); font-family:var(--sans)}
+  .wc-banks b{font-family:var(--arabic); font-size:14px; color:var(--ink-soft); font-weight:400}
   /* shown on a word tapped in the Van Dyck Bible — readable, not bankable */
   .msa-note{margin:12px 0 4px; padding:10px 12px; border-radius:9px; font-size:12.5px;
     line-height:1.5; background:var(--paper-2); border:1px solid var(--paper-3); color:var(--ink-soft)}
@@ -1313,11 +1315,19 @@ function deckNormIndex() {
   if (_deckNormIx) return _deckNormIx;
   const m = new Map();
   for (const k of marked.keys()) { const n = arNorm(k); if (!m.has(n)) m.set(n, k); }
+  // Cards banked before verbs were canonicalised sit under a tense-specific lemma. Each one
+  // knows its own citation form, so index that too and they keep resolving.
+  for (const [k, c] of marked) { const hp = cardHePast(c);
+    if (hp && hp.ar) { const n = arNorm(hp.ar); if (!m.has(n)) m.set(n, k); } }
   return (_deckNormIx = m);
 }
 const deckKeyFor = lemma => marked.has(lemma) ? lemma
   : (deckNormIndex().get(arNorm(lemma)) || lemma);
 const inDeck = lemma => marked.has(deckKeyFor(lemma));
+// For a word RECORD we can do better than the string: run it through the paradigm first, so a
+// present-tense token finds the card filed under the past.
+const deckKeyForWord = w => deckKeyFor((w && (verbPast(w) || {}).ar) || (w && w.lemma) || '');
+const inDeckWord = w => marked.has(deckKeyForWord(w));
 
 const save = () => { _deckNormIx = null;
   try { localStorage.setItem(KEY, JSON.stringify([...marked])); } catch (e) {} };
@@ -5812,7 +5822,7 @@ function emptySection(sec){
 function card(t, kind){
   const isDrill = kind === 'drill';
   const n = isDrill ? 0 : t.sentences.reduce((a,s) =>
-    a + s.words.filter(w => w.lemma && inDeck(w.lemma)).length, 0);
+    a + s.words.filter(w => w.lemma && inDeckWord(w)).length, 0);
   return `<button class="card" onclick="location.hash='/${kind}/${esc(t.id)}'">
     ${!isDrill && t.title.ar ? `<div class="ar">${esc(t.title.ar)}</div>` : ''}
     <div class="en">${esc(t.title.en)}</div>
@@ -5950,7 +5960,7 @@ function paint() {
   const showMk = $('rd') && $('rd').dataset.mk !== 'off';
   document.querySelectorAll('#rd .w').forEach(el => {
     const w = cur.sentences[+el.dataset.s].words[+el.dataset.w];
-    el.classList.toggle('mk', showMk && !!w.lemma && inDeck(w.lemma));
+    el.classList.toggle('mk', showMk && !!w.lemma && inDeckWord(w));
   });
   count();
 }
@@ -6062,7 +6072,10 @@ function deckToggleKey(key, build, after) {
 // A verb's card is anchored on its citation form — the "he" past — because that is the entry
 // the rest of the paradigm is built from, and it is what the review card already expects.
 function cardFromVerb(v) {
-  return {lemma: v.lemma, vocalized: v.lemma, surface: v.lemma, root: v.root || '',
+  // past.ar, not v.lemma — they differ for a couple of verbs (اِتْشَاوَف vs تْشَاوَف), and the
+  // citation form is the one every other entry point now agrees on.
+  const head = (v.past && v.past.ar) || v.lemma;
+  return {lemma: head, vocalized: head, surface: head, root: v.root || '',
           caphi: (v.past && v.past.caphi) || '', gloss: v.gloss || '',
           analysis: 'VERB:' + (v.form || 'I'),
           he_past: v.past ? {ar: v.past.ar, caphi: v.past.caphi} : null,
@@ -6070,7 +6083,7 @@ function cardFromVerb(v) {
 }
 function deckToggleVerb(i) {
   const v = VB[+i]; if (!v) return;
-  deckToggleKey(v.lemma, () => cardFromVerb(v), () => verbDetail(i));
+  deckToggleKey((v.past && v.past.ar) || v.lemma, () => cardFromVerb(v), () => verbDetail(i));
 }
 
 // A translator result. lexLook() gives back a card-shaped record, so this reuses exactly the
@@ -6296,12 +6309,31 @@ function wordType(analysis) { if (!analysis) return null; const a = String(analy
 const _vbByRoot = (() => { const m = new Map();
   VB.forEach(v => { if (v.root && v.conj) { if (!m.has(v.root)) m.set(v.root, []); m.get(v.root).push(v); } });
   return m; })();
+// Find the paradigm for a verb token. This used to pick `cands[0]` — the first verb sharing the
+// root — whenever it couldn't match a form code, which was 3,537 of the corpus's 5,388 verb
+// tokens, and handed back a verb contradicting the token's own lemma 1,947 times: كان came back
+// as تْكَوَّن "be formed", قال as تْقَوَّل "attribute a made-up statement".
+//
+// Two causes. The corpus's `analysis` carries ASPECT (VERB:P perfective, VERB:I imperfective,
+// VERB:C imperative), never the measure — so the form lookup almost never had anything to match.
+// And `[IVXQ]+` read the aspect letter "I" as Measure I, which is right by luck for the many
+// Form I verbs and silently wrong for the rest.
+//
+// The token's own lemma is the strongest signal available and was going unused. Match on it
+// first; fall back to a measure code only when the analysis genuinely carries one (VERB:II,
+// VERB:X — never a bare I, which is ambiguous with the aspect). Then give up: a wrong paradigm
+// is worse than no paradigm, and this now decides which card a word banks under.
+const _VERB_MEASURE = /VERB:(II|III|IV|V|VI|VII|VIII|IX|X|Q)(?![A-Z])/;
 function findVerb(w) {
   if (w && w._vb) return w._vb.conj ? w._vb : null;   // came straight from verbs.js via LEX
   if (!w || !w.root || !String(w.analysis || '').startsWith('VERB')) return null;
   const cands = _vbByRoot.get(w.root); if (!cands) return null;
-  const form = (String(w.analysis).match(/VERB:([IVXQ]+)/) || [])[1];
-  return cands.find(v => v.form === form) || cands[0] || null;
+  const n = arNorm(w.lemma || '');
+  if (n) { const byLemma = cands.find(v => arNorm(v.lemma) === n
+             || (v.past && arNorm(v.past.ar) === n));
+    if (byLemma) return byLemma; }
+  const m = String(w.analysis).match(_VERB_MEASURE);
+  return (m && cands.find(v => v.form === m[1])) || null;
 }
 function conjPopupHTML(v) {
   const c = v.conj; if (!c) return '';
@@ -6349,7 +6381,7 @@ function showWord(w0, ctx, opts) {
   const msa = !!(opts && opts.msa);
   const w = lexFix(w0);
   const wa = wadiAra(w);
-  const on = w.lemma && inDeck(w.lemma);
+  const on = w.lemma && inDeckWord(w);
   const wt = wordType(w.analysis);
   const vb = findVerb(w);
   const CUR = {'curated:function-word':'hand-curated · common function word',
@@ -6389,14 +6421,19 @@ function showWord(w0, ctx, opts) {
         translation (1865). The meaning above comes from the Palestinian lexicon and is here to
         help you read — but the word isn't added to your vocabulary, which stays spoken
         Palestinian.</div>` : ''}
-     <div class="src">${src}${on && !msa ? ' · in your deck (' + esc(deckName((marked.get(deckKeyFor(w.lemma)) || {}).deck)) + ')' : ''}</div>
+     <div class="src">${src}${on && !msa ? ' · in your deck (' + esc(deckName((marked.get(deckKeyForWord(w)) || {}).deck)) + ')' : ''}</div>
      <div class="acts">
        <button data-a="close">Close</button>
        ${ctx && !msa ? '<button data-a="phrase">+ Phrase…</button>' : ''}
        <button data-a="ask">Ask the tutor</button>
        ${msa ? '' : `<button class="mk" data-a="mark" data-on="${on ? 1 : 0}" ${w.lemma ? '' : 'disabled'}>
          ${on ? '✓ In your deck' : "+ Don't know it"}</button>`}
-     </div>`;
+     </div>
+     ${(() => { const p = msa ? null : verbPast(w);
+       return p && arNorm(p.ar) !== arNorm(w.surface || '')
+         ? `<div class="wc-banks">Banks as <b dir="rtl">${esc(p.ar)}</b> — the “he” past, the form
+            the whole paradigm is built from. One card per verb, whatever tense you meet it in.</div>`
+         : ''; })()}`;
   $('cw').classList.add('on');
   $('wc').querySelector('[data-a="close"]').onclick = hideCard;
   const phb = $('wc').querySelector('[data-a="phrase"]');
@@ -6407,7 +6444,7 @@ function showWord(w0, ctx, opts) {
   if (ask) ask.onclick = () => { hideCard(); tutorAskAbout(w.surface || w.lemma, 'a word'); };
   const mk = $('wc').querySelector('[data-a="mark"]');
   if (w.lemma && mk) mk.onclick = () => {
-    const k = deckKeyFor(w.lemma);      // the card this word already has, whatever its spelling
+    const k = deckKeyForWord(w);        // the card this word already has, in whatever tense
     if (marked.has(k)) marked.delete(k);
     else { marked.set(k, cardFromWord(w)); playWord(marked.get(k)); }
     save(); if (ctx) paint(); else lexPaint(); showWord(w, ctx);
@@ -6419,7 +6456,7 @@ function showWord(w0, ctx, opts) {
 function lexPaint() {
   document.querySelectorAll('.lx .lw').forEach(el => {
     const r = lexLook(el.dataset.lw);
-    el.classList.toggle('mk', !!(r && r.lemma && inDeck(r.lemma)));
+    el.classList.toggle('mk', !!(r && r.lemma && inDeckWord(r)));
   });
 }
 // ---------- phrase cards ------------------------------------------------------------
@@ -6569,13 +6606,34 @@ function addPhraseManual() {
 }
 
 // Build a fresh SRS card from a tapped word + the sentence it was found in.
+// A VERB always enters the deck as its citation form — the 3rd-person-masculine-singular past,
+// the "he" form — no matter which tense you happened to meet it in. Meeting بيجي in a story,
+// جيت in a drill and أَجَا on its conjugation page used to make three separate cards on three
+// separate schedules; the corpus's own lemma disagrees with the paradigm's past for 215 of 461
+// verb tokens, so this was not a rare edge. One verb, one card, and the paradigm page is where
+// you go to see the other forms.
+//
+// This applies to a verb banked as a WORD. A verb inside a phrase card keeps whatever form the
+// phrase uses — بدي أروح is the thing you are learning to say, and reducing it to راح would
+// destroy it. Phrase and reaction cards never come through here (they build their own, keyed
+// ¶/®), so that separation is structural rather than a rule to remember.
+const verbPast = w => { const v = findVerb(w); return (v && v.past && v.past.ar) ? v.past : null; };
+
 function cardFromWord(w) {
   const s = cur && cur.sentences ? cur.sentences.find(x => x.words.includes(w)) : null;
-  const vb = findVerb(w);       // for verbs, anchor the card to the "he" past (the citation form)
+  const vb = findVerb(w);
+  const past = verbPast(w);
+  // Headword, pronunciation and vowels all have to move together — keeping the tapped word's
+  // CAPHI beside the past-tense headword would print أَجَا and say "biiji".
+  const head = past ? past.ar : (w.vocalized || w.form || w.lemma);
   return srsInit({
-    lemma: w.lemma, vocalized: w.vocalized || w.form || w.lemma, surface: w.surface,
-    root: w.root, caphi: w.caphi_urban || w.caphi, gloss: w.gloss, analysis: w.analysis,
-    he_past: vb && vb.past ? {ar: vb.past.ar, caphi: vb.past.caphi} : null,
+    lemma: past ? past.ar : w.lemma, vocalized: head, surface: w.surface,
+    root: w.root, caphi: past ? past.caphi : (w.caphi_urban || w.caphi),
+    gloss: w.gloss || (vb && vb.gloss) || '', analysis: w.analysis,
+    he_past: past ? {ar: past.ar, caphi: past.caphi} : null,
+    // What you actually tapped, when it wasn't the citation form — so the card can say why its
+    // headword isn't the word you clicked.
+    met_as: past && arNorm(w.surface || '') !== arNorm(past.ar) ? w.surface : null,
     example_ar: s ? s.ar : null, example_en: s ? s.en : null,
     text: cur ? cur.id : null, deck: activeDeck(),
   });
