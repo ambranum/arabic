@@ -1034,6 +1034,41 @@
     box-shadow:0 6px 18px rgba(0,0,0,.22); white-space:nowrap}
   .askbtn:hover{background:var(--verdigris); border-color:var(--verdigris)}
   @media print{.askbtn{display:none}}
+  /* The tutor answering in place, over whatever you were reading. */
+  .askpop{position:fixed; z-index:61; width:min(380px, calc(100vw - 20px)); max-height:min(62vh,540px);
+    display:flex; flex-direction:column; border:1px solid var(--rule); border-radius:12px;
+    background:var(--paper-2); box-shadow:0 14px 40px rgba(0,0,0,.34); overflow:hidden}
+  .askpop-h{display:flex; align-items:flex-start; gap:8px; padding:10px 10px 8px;
+    border-bottom:1px solid var(--rule)}
+  .askpop-sel{flex:1; font-size:12.5px; line-height:1.5; color:var(--muted);
+    max-height:52px; overflow:hidden}
+  .askpop-x{flex:none; border:none; background:none; color:var(--muted); cursor:pointer;
+    font-size:20px; line-height:1; padding:0 2px}
+  .askpop-x:hover{color:var(--ink)}
+  .askpop-log{flex:1 1 auto; min-height:0; overflow-y:auto; padding:10px 12px;
+    font-size:13.5px; line-height:1.62}
+  .askpop-q{font-family:var(--sans); font-size:12px; font-weight:600; color:var(--verdigris);
+    margin:8px 0 4px}
+  .askpop-q:first-child{margin-top:0}
+  .askpop-a{color:var(--ink)}
+  .askpop-a.err{color:var(--rubric)}
+  .askpop-chips{display:flex; flex-wrap:wrap; gap:6px; padding:9px 10px 4px}
+  .askpop-chips button{font-family:var(--sans); font-size:11.5px; padding:5px 10px;
+    border:1px solid var(--rule); border-radius:999px; background:none; color:var(--ink);
+    cursor:pointer}
+  .askpop-chips button:hover{border-color:var(--verdigris); color:var(--verdigris)}
+  .askpop-ask{display:flex; align-items:center; gap:6px; padding:6px 10px 10px}
+  .askpop-ask input{flex:1; min-width:0; font:inherit; font-size:13px; padding:7px 9px;
+    border:1px solid var(--rule); border-radius:8px; background:var(--paper); color:var(--ink)}
+  .askpop-ask button[type=submit]{font-family:var(--sans); font-size:12px; font-weight:600;
+    padding:7px 12px; border-radius:8px; border:1px solid var(--verdigris);
+    background:var(--verdigris); color:var(--paper); cursor:pointer}
+  .askpop-ask button[disabled]{opacity:.5; cursor:default}
+  .askpop-nokey{margin:0; padding:10px 12px; font-size:12.5px; color:var(--muted)}
+  .askpop-nokey a{color:var(--verdigris); font-weight:600}
+  .askpop-full{display:block; padding:8px 12px 10px; border-top:1px solid var(--rule);
+    font-family:var(--sans); font-size:11.5px; font-weight:600; color:var(--verdigris)}
+  @media print{.askpop{display:none}}
 
   /* Doubled class = specificity (0,2,0), deliberately. arLive() drops spans into containers
      that were written before it existed, and some of them style their descendants by ELEMENT:
@@ -1700,10 +1735,10 @@ const pretty = g => String(g || '').replace(/_/g, ' ').replace(/;/g, ' · ');
 // Arabic layout on their machine — they were stuck copy-pasting or just not using those fields.
 // One shared panel serves every field: mark an input with kbdWrap() and it gets a ع toggle.
 // The layout is the standard Arabic 101 one, so anyone who later installs a real keyboard has
-// already learnt where the letters live. Once opened it stays on for the next field you focus
-// (remembered across sessions) — someone without an Arabic layout wants it every time, and
-// someone who has one never opens it in the first place.
-const KBD_KEY = 'alp.kbd.on';
+// already learnt where the letters live. It is opt-in per use: pressing ع opens it, and while
+// it is open it follows you between fields, but nothing else ever summons it. It used to
+// remember being on and reappear at every focused field forever after, which is only what you
+// want if the panel is the ONLY way you type Arabic.
 // The iPhone Arabic layout, key for key: 11 / 11 / 9-plus-backspace, ١٢٣ and the harakat key on
 // the bottom row. Anyone who already types Arabic on a phone knows exactly where everything is,
 // and anyone who doesn't is learning the layout they'll meet everywhere else.
@@ -1726,7 +1761,6 @@ const KBD_HOLD = {
 };
 let _kbdEl = null;                                   // the field the panel is typing into
 let _kbdPage = 'ar', _kbdHoldT = null, _kbdHeld = false;
-const kbdOn = () => { try { return localStorage.getItem(KBD_KEY) === '1'; } catch (e) { return false; } };
 
 // Wrap a field's HTML so it carries the toggle. `inline` puts the button beside the field
 // instead of inside it (for the tutor's textarea row, where the field grows as you type).
@@ -1741,7 +1775,6 @@ function kbdToggle(id) {
   const el = $(id); if (!el) return;
   if (_kbdEl === el && !$('akbd').hidden) return kbdClose();
   kbdOpen(el);
-  try { localStorage.setItem(KBD_KEY, '1'); } catch (e) {}
 }
 function kbdOpen(el) {
   _kbdEl = el;
@@ -1798,7 +1831,7 @@ function kbdUp(e) {
   kbdCancelHold();
   if (!b || _kbdHeld) { _kbdHeld = false; return; }
   e.preventDefault();
-  if (b.dataset.a === 'hide') return kbdClose(1);
+  if (b.dataset.a === 'hide') return kbdClose();
   if (b.dataset.a === 'back') return kbdBack();
   if (b.dataset.a === 'page') { _kbdPage = _kbdPage === 'ar' ? 'num' : 'ar'; return kbdDraw(); }
   kbdIns(b.dataset.k);
@@ -1822,13 +1855,12 @@ function kbdPop(btn, variants) {
 }
 function kbdPopClose() { const q = document.querySelector('.akbd-pop'); if (q) q.remove(); }
 // `sticky` = the user asked for it to go away, so don't reopen on the next field.
-function kbdClose(sticky) {
+function kbdClose() {
   kbdCancelHold(); kbdPopClose();
   const p = $('akbd'); if (p) p.hidden = true;
   document.documentElement.style.removeProperty('--kbdh');
   document.querySelectorAll('.kbd-tog').forEach(b => b.classList.remove('on'));
   _kbdEl = null;
-  if (sticky) { try { localStorage.setItem(KBD_KEY, '0'); } catch (e) {} }
 }
 // Insert at the caret and tell the app: the search fields filter on `input`, so a key press
 // has to look exactly like a typed character or nothing would update.
@@ -1849,13 +1881,14 @@ function kbdBack() {
   el.dispatchEvent(new Event('input', {bubbles: true}));
   el.focus({preventScroll: true});
 }
-// Focusing any Arabic-capable field brings the panel back for people who use it, and re-points
-// it at the new field for everyone (the exercise list has several inputs on one screen).
+// Follow the caret between fields — the exercise list has several inputs on one screen — but
+// only when the panel is ALREADY open. Focus never summons it; pressing ع is the only thing
+// that does.
 document.addEventListener('focusin', e => {
   const el = e.target;
   if (!el || !el.id || !document.getElementById('kbdt-' + el.id)) return;
   if (_kbdEl === el) return;
-  if (kbdOn() || (_kbdEl && !$('akbd').hidden)) kbdOpen(el);
+  if (_kbdEl && !$('akbd').hidden) kbdOpen(el);
 });
 
 // ---------- sections (the menu) ----------
@@ -2545,6 +2578,7 @@ function renderNav(active){
 function route() {
   if (typeof closeSide === 'function') closeSide();
   if (typeof askHide === 'function') askHide();
+  if (typeof askPopClose === 'function') askPopClose();   // the page under it is being replaced
   // The section renders synchronously below; repaint arLive()'s words once it has.
   setTimeout(() => { if (typeof lexPaint === 'function') lexPaint(); }, 0);
   if (typeof kbdClose === 'function') kbdClose();          // its target is about to be re-rendered
@@ -3250,6 +3284,58 @@ function tutorPaintStream(force) {
   log.scrollIntoView(false);
 }
 
+async function tutorStream(msgs, onDelta) {
+  let res;
+  try {
+    res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'content-type': 'application/json', 'x-api-key': tutorKey(),
+        'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true'},
+      body: JSON.stringify(tutorBody(msgs)),
+    });
+  } catch (e) {
+    return {error: "Network error — couldn't reach Claude. Check your connection and try again."};
+  }
+  if (!res.ok) {
+    // An error response is JSON, not an event stream — read it as text and parse.
+    let data = {}; try { data = JSON.parse(await res.text()); } catch (e) {}
+    const msg = (data && data.error && data.error.message) || ('HTTP ' + res.status);
+    return {error: res.status === 401
+      ? "Your Claude API key was rejected (401). Check or re-paste it in Settings."
+      : (res.status === 400 && /credit balance/i.test(msg))
+        ? "Your Anthropic account is out of credit. Add a little at console.anthropic.com, then try again."
+        : ('Couldn’t reach Claude: ' + msg)};
+  }
+  const reader = res.body.getReader(), dec = new TextDecoder();
+  let buf = '', out = '', stop = null;
+  try {
+    for (;;) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, {stream: true});
+      // SSE frames are separated by a blank line; keep any partial frame in the buffer.
+      const frames = buf.split('\n\n'); buf = frames.pop();
+      for (const f of frames) {
+        const line = f.split('\n').find(x => x.startsWith('data:'));
+        if (!line) continue;
+        let ev; try { ev = JSON.parse(line.slice(5).trim()); } catch (e) { continue; }
+        if (ev.type === 'content_block_delta' && ev.delta && ev.delta.type === 'text_delta') {
+          out += ev.delta.text; onDelta(out, false);
+        } else if (ev.type === 'message_delta' && ev.delta) {
+          stop = ev.delta.stop_reason || stop;
+        } else if (ev.type === 'error') {
+          return {error: 'Couldn’t reach Claude: ' + ((ev.error && ev.error.message) || 'the stream ended early')};
+        }
+      }
+    }
+  } catch (e) {
+    return {error: "Network error — the answer stopped part-way. Try again."};
+  }
+  onDelta(out, true);
+  if (stop === 'refusal') return {error: "The model declined to answer that one — try rephrasing."};
+  return {text: out, stop};
+}
+
 // Send a turn to Claude with the learner's own key, straight from the browser.
 async function tutorAsk(text) {
   text = (text || '').trim();
@@ -3261,66 +3347,20 @@ async function tutorAsk(text) {
   const inp = $('tut-in'); if (inp) inp.value = '';
   if (hadStarters) tutorHome(); else tutorRenderLog();
 
-  const fail = msg => { _tutorMsgs.push({role: 'assistant', error: msg}); };
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {'content-type': 'application/json', 'x-api-key': tutorKey(),
-        'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true'},
-      body: JSON.stringify(tutorBody(_tutorMsgs)),
-    });
-    if (!res.ok) {
-      // An error response is JSON, not an event stream — read it as text and parse.
-      let data = {}; try { data = JSON.parse(await res.text()); } catch (e) {}
-      const msg = (data && data.error && data.error.message) || ('HTTP ' + res.status);
-      fail(res.status === 401
-        ? "Your Claude API key was rejected (401). Check or re-paste it in Settings."
-        : (res.status === 400 && /credit balance/i.test(msg))
-          ? "Your Anthropic account is out of credit. Add a little at console.anthropic.com, then try again."
-          : ('Couldn’t reach Claude: ' + msg));
-    } else {
-      // Placeholder bubble the deltas stream into.
-      const slot = {role: 'assistant', content: '', streaming: true};
-      _tutorMsgs.push(slot);
-      tutorRenderLog();
+  // Placeholder bubble the deltas stream into.
+  const slot = {role: 'assistant', content: '', streaming: true};
+  _tutorMsgs.push(slot);
+  tutorRenderLog();
 
-      const reader = res.body.getReader(), dec = new TextDecoder();
-      let buf = '', stop = null, streamErr = null;
-      for (;;) {
-        const {done, value} = await reader.read();
-        if (done) break;
-        buf += dec.decode(value, {stream: true});
-        // SSE frames are separated by a blank line; keep any partial frame in the buffer.
-        const frames = buf.split('\n\n'); buf = frames.pop();
-        for (const f of frames) {
-          const line = f.split('\n').find(x => x.startsWith('data:'));
-          if (!line) continue;
-          let ev; try { ev = JSON.parse(line.slice(5).trim()); } catch (e) { continue; }
-          if (ev.type === 'content_block_delta' && ev.delta && ev.delta.type === 'text_delta') {
-            slot.content += ev.delta.text;
-            tutorPaintStream(false);
-          } else if (ev.type === 'message_delta' && ev.delta) {
-            stop = ev.delta.stop_reason || stop;
-          } else if (ev.type === 'error') {
-            streamErr = (ev.error && ev.error.message) || 'the stream ended early';
-          }
-        }
-      }
-      tutorPaintStream(true);
-      slot.streaming = false;
-
-      if (streamErr) { _tutorMsgs.pop(); fail('Couldn’t reach Claude: ' + streamErr); }
-      else if (stop === 'refusal') { _tutorMsgs.pop();
-        fail("The model declined to answer that one — try rephrasing."); }
-      else {
-        let txt = slot.content.trim();
-        slot.saves = tutorParseSaves(txt);          // pull out the machine-readable phrase block
-        slot.content = txt.replace(/<save>[\s\S]*?<\/save>\s*$/i, '').trim() || '(no answer came back)';
-      }
-    }
-  } catch (e) {
-    if (_tutorMsgs.length && _tutorMsgs[_tutorMsgs.length - 1].streaming) _tutorMsgs.pop();
-    fail("Network error — couldn't reach Claude. Check your connection and try again.");
+  const r = await tutorStream(_tutorMsgs.slice(0, -1), (out, done) => {
+    slot.content = out; tutorPaintStream(done);
+  });
+  slot.streaming = false;
+  if (r.error) { _tutorMsgs.pop(); _tutorMsgs.push({role: 'assistant', error: r.error}); }
+  else {
+    const txt = (r.text || '').trim();
+    slot.saves = tutorParseSaves(txt);          // pull out the machine-readable phrase block
+    slot.content = txt.replace(/<save>[\s\S]*?<\/save>\s*$/i, '').trim() || '(no answer came back)';
   }
   _tutorBusy = false;
   tutorRenderLog();
@@ -3354,7 +3394,7 @@ function lessonsHome() {
   h += (LSN.units || []).map(u => `<button class="vtile wide" onclick="location.hash='/lessons/${u.id}'">
       <div class="vtile-h"><span class="vtile-t">Unit ${u.n} — ${esc(u.title.en)}</span>
         <span class="vtile-n">${lsnDone(u.id) ? '✓ done' : ''}</span></div>
-      <div class="vtile-s">${lvlTagFor('unit', u)} <span dir="rtl">${esc(u.title.ar)}</span> · ${u.chunks.length} chunks · ${esc(u.src)}</div>
+      <div class="vtile-s">${lvlTagFor('unit', u)} <span dir="rtl">${esc(u.title.ar)}</span> · ${u.chunks.length} chunks</div>
     </button>`).join('');
   h += `</div>`;
   $('view').innerHTML = h;
@@ -3412,9 +3452,19 @@ function lsnChunkRow(uid, c, ci) {
   </div>`;
 }
 
+const AR_RUN = /([\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF][\s\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF\u064B-\u0652]*)/;
+function bidiMix(str) {
+  return String(str == null ? '' : str).split(AR_RUN).map(p => {
+    if (!p) return '';
+    if (AR_RUN.test(p) || !/[A-Za-z]/.test(p)) return esc(p);
+    const m = p.match(/^([^A-Za-z(\[{"'\u00AB]*)([\s\S]*)$/);
+    return esc(m[1]) + `<bdi dir="ltr">${esc(m[2])}</bdi>`;
+  }).join('');
+}
+
 function lsnDrillHTML(u, d) {
   let h = `<div class="sec">${esc(d.title || 'Drill')}</div>`;
-  if (d.instructions) h += `<p class="hint">${esc(d.instructions)}</p>`;
+  if (d.instructions) h += `<p class="hint" dir="rtl">${bidiMix(d.instructions)}</p>`;
   if (d.type === 'pairs') {
     // The book's own format: greeting → SAY the reply → check. Reuses the drill reveal style.
     u.chunks.filter(c => c.reply).forEach(c => {
@@ -3424,11 +3474,10 @@ function lsnDrillHTML(u, d) {
         <div class="u">${esc((c.en || '') + (c.reply.en ? ' → ' + c.reply.en : ''))}</div></div>`;
     });
   } else if (d.type === 'roleplay') {
-    (d.items || []).forEach(it => { h += `<div class="lsn-ad" dir="rtl">${esc(it.cue)}</div>`; });
+    (d.items || []).forEach(it => { h += `<div class="lsn-ad" dir="rtl">${bidiMix(it.cue)}</div>`; });
   } else {  // qa and anything else: numbered say-out-loud prompts
-    h += (d.items || []).map(it => `<div class="lsn-qa" dir="rtl">${esc(it.cue)}</div>`).join('');
+    h += (d.items || []).map(it => `<div class="lsn-qa" dir="rtl">${bidiMix(it.cue)}</div>`).join('');
   }
-  if (d.src) h += `<div class="note">Drill from ${esc(d.src)}.</div>`;
   return h;
 }
 
@@ -3438,7 +3487,7 @@ function lessonView(u) {
       <div class="lsn-title" dir="rtl">${esc(u.title.ar)}</div>
       <div class="lsn-title-en">${esc(u.title.en)}</div>
       <p class="hint">${esc(u.objective)}</p>
-      <div class="refsrc">From native teaching materials — ${esc(u.src)}. Tap <b>+</b> on any chunk
+      <div class="refsrc">From native teaching materials. Tap <b>+</b> on any chunk
         to send it to your flashcards.</div></div>`;
   if (u.grammar) {
     h += `<div class="sec">The grammar point</div>
@@ -3454,7 +3503,7 @@ function lessonView(u) {
     let lastGroup = null;
     u.chunks.forEach((c, ci) => {
       if ((c.group || null) !== lastGroup) { lastGroup = c.group || null;
-        if (lastGroup) h += `<div class="lsn-group">${esc(lastGroup)}</div>`; }
+        if (lastGroup) h += `<div class="lsn-group">${bidiMix(lastGroup)}</div>`; }
       h += lsnChunkRow(u.id, c, ci);
     });
   }
@@ -3472,8 +3521,8 @@ function lessonView(u) {
           l.audio ? `<button class="say" onclick="sndPlay('${cssq(l.audio)}')" aria-label="Play line">${svg('spk')}</button>` : ''}</span>` : ''}
         <span class="lsn-lar" dir="rtl">${arLive(l.ar)}</span>
         ${l.en ? `<span class="lsn-len">${esc(l.en)}</span>` : ''}</div>`).join('') +
-      `</div><div class="note">From ${esc(d.src)}.${
-        (d.cast || []).length > 1 ? ' Each speaker has their own voice.' : ''}</div>`;
+      `</div>${(d.cast || []).length > 1
+        ? '<div class="note">Each speaker has their own voice.</div>' : ''}`;
   });
   // Reading passages were the one place still rendering Arabic as flat escaped text, so they
   // were also the one place a word couldn't be tapped. arLive() fixes that — and it is why the
@@ -3488,7 +3537,7 @@ function lessonView(u) {
         return `<p>${arLive(ar)}${en ? `<em class="lsn-ten">${esc(en)}</em>` : ''}${
           gl.length ? `<span class="lsn-key" dir="ltr">${gl.map(g =>
             `<span class="lsn-kw"><b dir="rtl">${esc(g.w)}</b>${esc(g.en)}</span>`).join('')}</span>` : ''}</p>`;
-      }).join('') + `</div><div class="note">From ${esc(t.src)}.</div>`;
+      }).join('') + `</div>`;
   });
   (u.drills || []).forEach(d => { h += lsnDrillHTML(u, d); });
   if (u.produce) h += `<div class="sec">Now produce</div><div class="lsn-produce">${esc(u.produce)}</div>`;
@@ -6683,7 +6732,7 @@ function askShowFor(sel) {
   if (!b) { b = document.createElement('button'); b.id = 'askbtn'; b.className = 'askbtn';
     b.textContent = '💬 Ask the tutor';
     b.addEventListener('mousedown', e => e.preventDefault());   // don't clear the selection
-    b.addEventListener('click', () => tutorAskAbout(askSelText(), 'a selection'));
+    b.addEventListener('click', () => askPopOpen(askSelText()));
     document.body.appendChild(b); }
   const r = sel.getRangeAt(0).getBoundingClientRect();
   if (!r.width && !r.height) { askHide(); return; }
@@ -6694,6 +6743,9 @@ function askShowFor(sel) {
 }
 document.addEventListener('selectionchange', () => {
   const sel = window.getSelection();
+  // Typing in the popover's own box moves the selection into it; that must not be read as
+  // "the learner deselected the sentence they asked about".
+  if (_askPop && _askPop.contains(document.activeElement)) return;
   if (!sel || sel.isCollapsed || !sel.rangeCount) { askHide(); return; }
   clearTimeout(window._askT);
   window._askT = setTimeout(() => askShowFor(window.getSelection()), 180);
@@ -6706,6 +6758,121 @@ document.addEventListener('contextmenu', e => {
   askShowFor(window.getSelection());
 });
 window.addEventListener('scroll', askHide, true);
+
+// ---- the tutor, answering in place ----------------------------------------------------
+// Highlighting a sentence and pressing Ask used to navigate to /tutor: the passage you were
+// reading went off screen at exactly the moment you had a question about it, and coming back
+// meant finding your place again. The same question now answers in a panel over the text, and
+// takes a follow-up of your own — the trip to the full tutor is a link, not a toll gate.
+let _askPop = null, _askMsgs = [], _askBusy = false, _askSubject = '';
+
+const askIsAr = t => /[؀-ۿ]/.test(t);
+// Prompts are phrased as the learner would ask them, with the passage and the place it came
+// from attached once, at the top of the conversation.
+const ASK_CHIPS = {
+  ar: [['Break it down', 'Break this down for me word by word.'],
+       ['Why this form?', 'Why is it in this form here, rather than another one?'],
+       ['What does it mean?', 'What does this mean, and when would I use it?']],
+  en: [['Say it in Palestinian', 'How would I say that in spoken Palestinian?'],
+       ['Is it natural?', 'Is that how a Palestinian would actually say it, or does it sound translated?']],
+};
+
+function askPopClose() {
+  if (_askPop) _askPop.remove();
+  _askPop = null; _askMsgs = []; _askBusy = false; _askSubject = '';
+}
+
+function askPopOpen(text) {
+  text = String(text || '').trim();
+  if (text.length < 2) return;
+  if (text.length > 600) text = text.slice(0, 600) + '…';
+  const sel = window.getSelection();
+  const r = sel && sel.rangeCount ? sel.getRangeAt(0).getBoundingClientRect() : null;
+  askHide(); askPopClose();
+  _askSubject = text;
+  _askMsgs = [];
+  const p = document.createElement('div');
+  p.className = 'askpop'; p.id = 'askpop';
+  p.addEventListener('mousedown', e => { if (e.target.tagName !== 'INPUT') e.preventDefault(); });
+  document.body.appendChild(p);
+  _askPop = p;
+  askPopRender();
+  askPopPlace(r);
+}
+
+// Anchored to the selection, but a panel is much taller than the little button was: prefer
+// below, flip above when there is no room, and never let it hang off either edge.
+function askPopPlace(r) {
+  const p = _askPop; if (!p) return;
+  const w = p.offsetWidth, h = p.offsetHeight;
+  if (!r) { p.style.left = Math.max(8, (innerWidth - w) / 2) + 'px'; p.style.top = '64px'; return; }
+  const left = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2));
+  const below = r.bottom + 10, above = r.top - h - 10;
+  p.style.left = left + 'px';
+  p.style.top = (below + h < innerHeight - 8 ? below : Math.max(8, above)) + 'px';
+}
+
+function askPopRender() {
+  const p = _askPop; if (!p) return;
+  const chips = ASK_CHIPS[askIsAr(_askSubject) ? 'ar' : 'en'];
+  const keyed = !!tutorKey();
+  p.innerHTML = `<div class="askpop-h">
+      <span class="askpop-sel" dir="auto">${esc(_askSubject)}</span>
+      <button class="askpop-x" onclick="askPopClose()" aria-label="Close">×</button></div>
+    ${_askMsgs.length ? `<div class="askpop-log">${_askMsgs.map(m => m.role === 'user'
+        ? `<div class="askpop-q">${esc(m.content)}</div>`
+        : `<div class="askpop-a${m.error ? ' err' : ''}">${m.error ? esc(m.error) : tutFmt(m.content || '')}</div>`
+      ).join('')}${_askBusy ? '<div class="tut-dots">· · ·</div>' : ''}</div>` : ''}
+    ${keyed ? `<div class="askpop-chips">${chips.map(([label, q]) =>
+        `<button onclick="askPopSend(${JSON.stringify(q).replace(/"/g, '&quot;')})">${esc(label)}</button>`).join('')}</div>
+      <form class="askpop-ask" onsubmit="askPopCustom(event)">
+        ${kbdWrap(`<input id="askpop-in" autocomplete="off" placeholder="…or ask your own question">`, 'askpop-in', true)}
+        <button type="submit" ${_askBusy ? 'disabled' : ''}>Ask</button></form>`
+      : `<p class="askpop-nokey">Add your own Claude API key to ask here.
+         <a href="#/tutor/settings" onclick="askPopClose()">Add a key →</a></p>`}
+    <a class="askpop-full" href="#/tutor" onclick="askPopHandOff()">Continue in the tutor →</a>`;
+}
+
+// Leaving for the full page should take the conversation with it, not restart it.
+function askPopHandOff() {
+  if (_askMsgs.length) _tutorMsgs = _tutorMsgs.concat(_askMsgs.filter(m => m.content || m.error));
+  else _askPend = askLead() + 'Break this down for me word by word.';
+  askPopClose();
+}
+
+const askLead = () => askIsAr(_askSubject)
+  ? 'I came across this in ' + askWhere() + ':\n\n' + _askSubject + '\n\n'
+  : 'From ' + askWhere() + ': "' + _askSubject + '"\n\n';
+
+function askPopCustom(e) {
+  e.preventDefault();
+  const i = $('askpop-in'); if (!i) return;
+  const q = i.value.trim(); if (!q) return;
+  i.value = '';
+  askPopSend(q);
+}
+
+async function askPopSend(q) {
+  if (_askBusy || !_askPop) return;
+  if (!tutorKey()) { location.hash = '/tutor/settings'; askPopClose(); return; }
+  // The passage rides on the first question only; after that it is already in the history.
+  _askMsgs.push({role: 'user', content: q, wire: _askMsgs.length ? q : askLead() + q});
+  const slot = {role: 'assistant', content: ''};
+  _askMsgs.push(slot);
+  _askBusy = true; askPopRender();
+  const wire = _askMsgs.slice(0, -1).map(m =>
+    ({role: m.role, content: m.role === 'user' ? (m.wire || m.content) : (m.content || '')}));
+  const r = await tutorStream(wire, out => {
+    slot.content = out;
+    const el = _askPop && _askPop.querySelector('.askpop-a:last-of-type');
+    if (el) el.innerHTML = tutFmt(out);
+  });
+  if (!_askPop) return;                       // closed mid-answer
+  if (r.error) { slot.error = r.error; slot.content = ''; }
+  else slot.content = (r.text || '').replace(/<save>[\s\S]*?<\/save>\s*$/i, '').trim()
+       || '(no answer came back)';
+  _askBusy = false; askPopRender();
+}
 
 // ---------- one "add to deck" control, for every view that shows a word ------------------
 // Banking a word only existed in one place: the card you get by tapping a word in running
@@ -7353,7 +7520,11 @@ const hePastHTML = (hp, cls) => `<div class="${cls}"><b>he · past</b>
   <span class="rt">${esc(hp.ar)}</span>${hp.caphi ? `<span class="hp">${esc(hp.caphi)}</span>` : ''}</div>`;
 const hideCard = () => $('cw').classList.remove('on');
 $('scrim').onclick = hideCard;
-addEventListener('keydown', e => { if (e.key === 'Escape') hideCard(); });
+addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (_askPop) return askPopClose();
+  hideCard();
+});
 
 // ---------- drill ----------
 function drill(d) {

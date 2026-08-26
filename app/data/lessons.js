@@ -567,7 +567,7 @@ window.LESSONS = {
        "cue": "2. كيف تَعَرَّف أبوك على إمَّك؟ (How did your father meet your mother?)"
       },
       {
-       "cue": "3. مين أقْرَب واحَد عَليك في الْعيلة. (Who is the closest one to you in your family? [printed 'on to you in your family'])"
+       "cue": "3. مين أقْرَب واحَد عَليك في الْعيلة؟ (Who is the closest one to you in your family?)"
       },
       {
        "cue": "4. شو الإشي إلّي بِتْحِبّ في عِيلْتَك؟ (What is the thing you like about your family?)"
@@ -576,10 +576,10 @@ window.LESSONS = {
        "cue": "5. شو الإشي إلّي ما بِتْحِبّ في عِيلْتَك؟ (What is the thing you don't like about your family?)"
       },
       {
-       "cue": "5. إحكي-لْنا عَن سيدَك وسِتَّك. [numbered 5 twice in print]"
+       "cue": "6. إحكي-لْنا عَن سيدَك وسِتَّك."
       },
       {
-       "cue": "6. إحكي عن عِيلة مَعْروفِة من التاريخ. (Talk about a well known family from the history?)"
+       "cue": "7. إحكي عن عِيلة مَعْروفِة من التاريخ. (Talk about a well-known family from history.)"
       }
      ],
      "src": "speaking p.9"
@@ -1353,7 +1353,7 @@ window.LESSONS = {
     {
      "type": "roleplay",
      "title": "لُعْبِة أدْوار — the job interview",
-     "instructions": "لُعْبِة أدْوار: تِلميذ واحد بِدَوِّر على شُغُل والثاني بِعمَل مَعُه مُقابَلِة شُغُل. (Six job ads printed in boxes; phone numbers printed in Arabic-Indic digits.) One of you is job-hunting, the other interviews. Pick an ad, read it out, run the interview.",
+     "instructions": "لُعْبِة أدْوار: تِلميذ واحد بِدَوِّر على شُغُل والثاني بِعمَل مَعُه مُقابَلِة شُغُل. One of you is job-hunting, the other interviews. Pick an ad, read it out, run the interview.",
      "items": [
       {
        "cue": "مُوَظَّفِة اشْتَغَلَت مُدَّة أرْبَع سْنين في مَكْتَب مُحامين في مَنْطِقَة الشّمال، بِتْدَوِّر عَلى شُغُل في مَنْطِقَة الْجَنوب. تَلِفون: ٠٣-٩٢٨٩٠٥٤"
@@ -8184,7 +8184,7 @@ window.LESSONS = {
     },
     {
      "ar": "بَشِع ج ؟؟",
-     "en": "ugly (printed; the plural is printed as '؟؟')",
+     "en": "ugly",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5",
      "audio": "audio/lessons/unit-28-c68.mp3"
@@ -8626,7 +8626,7 @@ window.LESSONS = {
     "ar": "مُفْرَد وجَمْع",
     "en": "Singular & plural — the big glossary"
    },
-   "objective": "Two hundred everyday nouns, each printed with its plural. Arabic plurals mostly cannot be predicted, so they have to be learned in pairs — and this is the list to learn them from.",
+   "objective": "Two hundred everyday nouns, each with its plural. Arabic plurals mostly cannot be predicted, so they have to be learned in pairs — and this is the list to learn them from.",
    "src": "vocab-gram 3-11",
    "gram_id": "gender",
    "grammar": {
@@ -9849,133 +9849,133 @@ window.LESSONS = {
      "ar": "شَنْطَة ج ات",
      "en": "suitcase",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c173.mp3"
     },
     {
      "ar": "جَكيت ج ات",
      "en": "jacket",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c174.mp3"
     },
     {
      "ar": "بْلوزِة ج بَلايِز",
      "en": "shirt",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c175.mp3"
     },
     {
      "ar": "قَميص ج قُمْصان",
      "en": "shirt",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c176.mp3"
     },
     {
      "ar": "بَنْطَلُون ج ات",
      "en": "trousers",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c177.mp3"
     },
     {
      "ar": "فُسْتان ج فَساتين",
      "en": "dress",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c178.mp3"
     },
     {
      "ar": "تَنّورة ج تنانير",
      "en": "skirt",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c179.mp3"
     },
     {
      "ar": "شَمْسِيُّة ج ات",
      "en": "umbrella",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c180.mp3"
     },
     {
      "ar": "كَلْسات ج جرابات",
      "en": "socks",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c181.mp3"
     },
     {
      "ar": "جُرزاي ج جَرازي",
      "en": "sweatshirt",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c182.mp3"
     },
     {
      "ar": "ثَلْج ج ثُلوج",
      "en": "snow",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c183.mp3"
     },
     {
      "ar": "مَطَر ج أمْطار",
      "en": "rain",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c184.mp3"
     },
     {
      "ar": "غِيم ج غُيُوم",
      "en": "clouds",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c185.mp3"
     },
     {
      "ar": "ريح ج رْياح",
      "en": "wind",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c186.mp3"
     },
     {
      "ar": "عَاصِفِة ج عَواصِف",
      "en": "storm",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c187.mp3"
     },
     {
      "ar": "قَصير ج قْصار",
      "en": "short",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c188.mp3"
     },
     {
      "ar": "طَويل ج طْوال",
      "en": "tall, high",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c189.mp3"
     },
     {
      "ar": "خْميل ج خْمال",
      "en": "thick",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c190.mp3"
     },
     {
      "ar": "خَفيف ج خْفاف",
      "en": "light",
      "src": "vocab-gram p.3",
-     "group": "وحدة 17. Plural printed as 'ات' alone means the noun simply takes the ات suffix.",
+     "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
      "audio": "audio/lessons/unit-30-c191.mp3"
     }
    ],
@@ -10017,7 +10017,7 @@ window.LESSONS = {
     },
     {
      "ar": "أفْعال: حال – أحْوال; وَلَد – (أ)وْلاد; خال – (أ)خْوال; عمّ – (أ)عْمام; كيس – (أ)كْياس; صاحِب – (أ)صْحاب; يُوم – أيّام; إسِم – أسْماء; خَبَر – أخْبار; إشي – أشْياء; غَرَض – أغْراض; سوق – أسْواق; حَيّ – أحْياء; إبِن – أبْناء; عيد – أعْياد; صُوت – أصْوات; فيلم – أفْلام",
-     "en": "pattern aF3aaL (the last three pairs are printed in smaller type)",
+     "en": "pattern aF3aaL",
      "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال",
      "src": "vocab-gram p.2",
      "audio": "audio/lessons/unit-31-c02.mp3"
@@ -11932,7 +11932,7 @@ window.LESSONS = {
     "ar": "الليرة الذهبية (بلهجة الجليل)",
     "en": "The golden lira — a story in Galilee dialect"
    },
-   "objective": "A six-part story printed deliberately in the GALILEE dialect rather than the urban speech the rest of the app teaches. Hearing the difference is the skill here.",
+   "objective": "A six-part story told deliberately in the Galilee dialect rather than the urban speech the rest of the app teaches. Hearing the difference is the skill here.",
    "src": "stories 15-20",
    "gram_id": "wadi-ara",
    "grammar": {
@@ -12670,7 +12670,7 @@ window.LESSONS = {
      "src": "stories p.20"
     }
    ],
-   "produce": "Read a passage aloud twice: once as printed, once \"translated\" into the urban forms.",
+   "produce": "Read a passage aloud twice: once as written, once \"translated\" into the urban forms.",
    "provenance": "ref:stories"
   },
   {
