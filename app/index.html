@@ -638,6 +638,14 @@
   .rv-ph{font-family:var(--mono); font-size:14px; color:var(--verdigris)}
   .rv-gl{font-family:var(--serif); font-size:22px; line-height:1.3}
   .rv-root{font-family:var(--arabic); direction:rtl; font-size:15px; color:var(--muted)}
+  /* producing: English is the prompt, so it gets the headline size the Arabic usually has */
+  .rv-ask{font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted)}
+  .rv-gl-front{font-size:30px; line-height:1.3; color:var(--ink)}
+  .rv-face{color:var(--verdigris)}
+  .rv-dir{margin-top:20px; padding-top:14px; border-top:1px solid var(--rule); text-align:center}
+  .rv-dir-h{font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin-bottom:9px}
+  .rv-dir-btns{display:flex; flex-wrap:wrap; gap:7px; justify-content:center}
+  .rv-dir-w{font-size:12px; color:var(--muted); margin:9px auto 0; max-width:52ch; line-height:1.55}
   .rv-hepast{font-size:14px; color:var(--ink-soft); margin:2px 0 4px; display:flex;
     align-items:baseline; gap:8px; justify-content:center; flex-wrap:wrap}
   .rv-hepast b{color:var(--verdigris); font-weight:700; font-size:10px; letter-spacing:.08em;
@@ -3540,6 +3548,42 @@ function vocabHome(){
 
 // ---- SM-2 review flow ----
 let _revq = null;
+// Which way a review card faces. The two directions are not the same exercise:
+//
+//   ar  RECOGNITION  — see قهوة, recall "coffee". The easy direction. It builds the
+//                      form-meaning link cheaply and is what reading and listening need.
+//   en  PRODUCTION   — see "coffee", recall قهوة. The hard direction, and the only one that
+//                      rehearses what your mouth has to do at a dinner table. Harder retrieval
+//                      is also stronger retrieval, so the same card studied this way sticks
+//                      better — it just costs more effort per rep and is discouraging on a
+//                      word you only met yesterday.
+//   mix RECOGNITION FIRST, THEN PRODUCTION — a card faces Arabic while it's new and flips to
+//                      English once it has survived a few reps. This is the ordinary
+//                      recommendation: learn it receptively, then make it produce.
+//
+// `ar` stays the default because it is what this app has always done; nobody's deck changes
+// behaviour without them choosing it.
+const RDIR_KEY = 'alp.rev.dir.v1';
+const REV_DIRS = [
+  ['ar',  'Arabic first', 'See the Arabic, recall the English. Easier — good for new words and for reading.'],
+  ['en',  'English first', 'See the English, say the Arabic. Harder, and the direction that trains speaking.'],
+  ['mix', 'Arabic first, then English', 'New cards show Arabic; once a card is established it flips to English. Recommended.'],
+];
+const revDir = () => { try { return localStorage.getItem(RDIR_KEY) || 'ar'; } catch (e) { return 'ar'; } };
+function setRevDir(v) {
+  try { localStorage.setItem(RDIR_KEY, v); } catch (e) {}
+  vocabReview();                                    // redraw the current card the new way round
+}
+// In `mix`, a card graduates to production once the SRS says it has stuck. `reps` is the
+// card's own counter, so the flip is per-card rather than per-session — no card changes
+// direction while you are looking at it.
+const MIX_AFTER = 3;
+function cardFaces(c) {
+  const d = revDir();
+  if (d !== 'mix') return d;
+  return (c && (c.reps || 0) >= MIX_AFTER) ? 'en' : 'ar';
+}
+
 function vocabReview(){
   $('title').textContent = 'Review';
   if (!_revq) _revq = dueCards().sort((a,b)=>(a.due||0)-(b.due||0)).map(c => c.lemma);
@@ -3568,17 +3612,26 @@ function vocabCardView(c, showing, remaining){
   const ex = c.example_ar ? `<div class="rv-ex" dir="rtl">${esc(c.example_ar)}</div>
       <div class="rv-exen">${esc(c.example_en || '')}</div>` : '';
   const isPh = c.kind === 'phrase';
-  let h = `<div class="rv-top">${remaining} to go</div>
-    <div class="rv-card">
-      <div class="rv-front${isPh ? ' rv-phrase' : ''}" ${isPh ? 'dir="rtl"' : ''}>${esc(c.vocalized || c.lemma)}
+  const face = cardFaces(c);
+  const gloss = esc(pretty(c.gloss) || '—');
+  const arabic = `<div class="rv-front${isPh ? ' rv-phrase' : ''}" ${isPh ? 'dir="rtl"' : ''}>${esc(c.vocalized || c.lemma)}
         <button class="say" onclick="playWord(marked.get('${cssq(c.lemma)}'))"
           aria-label="Pronounce">${svg('spk')}</button></div>`;
+  let h = `<div class="rv-top">${remaining} to go${
+    revDir() === 'mix' ? ` · <span class="rv-face">${face === 'en' ? 'producing' : 'recognising'}</span>` : ''}</div>
+    <div class="rv-card">`;
+  // Producing: the prompt is the English, and the pronounce button is deliberately absent —
+  // hearing the word aloud IS the answer, so offering it here would hand the card away.
+  h += face === 'en' && !showing
+    ? `<div class="rv-ask">Say it in Palestinian</div><div class="rv-gl rv-gl-front">${gloss}</div>`
+    : arabic;
   if (!showing){
     h += `<button class="rv-showbtn" onclick="vocabShow()">Show answer</button></div>`;
   } else {
     const hp = cardHePast(c);
-    h += `<div class="rv-ph">${esc(c.caphi || '')}</div>
-      <div class="rv-gl">${esc(pretty(c.gloss) || '—')}</div>
+    h += (face === 'en' ? arabic : '') +
+      `<div class="rv-ph">${esc(c.caphi || '')}</div>
+      ${face === 'en' ? '' : `<div class="rv-gl">${gloss}</div>`}
       ${hp ? hePastHTML(hp, 'rv-hepast') : ''}
       ${isPh
         ? (c.parts && c.parts.length
@@ -3592,7 +3645,20 @@ function vocabCardView(c, showing, remaining){
           `<button class="rv-g rv-g${g}" onclick="vocabAnswer(${g})">
              <span>${lbl}</span><em>${prev[g]}</em></button>`).join('')}</div>`;
   }
+  h += revDirHTML();
   $('view').innerHTML = h;
+}
+
+// Switchable mid-session, because which direction you want depends on the day as much as on
+// the deck — and the blurb has to be there, since "Arabic first" and "English first" don't
+// say which one is the hard one or what each is for.
+function revDirHTML() {
+  const d = revDir();
+  return `<div class="rv-dir">
+    <div class="rv-dir-h">Which side first</div>
+    <div class="rv-dir-btns">${REV_DIRS.map(([id, label]) =>
+      `<button class="tog" aria-pressed="${id === d}" onclick="setRevDir('${id}')">${esc(label)}</button>`).join('')}</div>
+    <p class="rv-dir-w">${esc((REV_DIRS.find(x => x[0] === d) || [])[2] || '')}</p></div>`;
 }
 
 function vocabDecks(){
