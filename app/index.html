@@ -1035,6 +1035,19 @@
   .lx .lw.gap{border-bottom:1px dotted var(--paper-3)}
   .wcut{font-size:12px; color:var(--muted); margin:-4px 0 8px; font-family:var(--sans)}
   .wc-banks{margin-top:9px; font-size:11.5px; line-height:1.5; color:var(--muted); font-family:var(--sans)}
+  /* duplicate-merge review */
+  .mg-nudge{margin:14px 0 4px; padding:12px 14px; border-radius:10px; font-size:13px; line-height:1.6;
+    background:var(--ochre-wash); border:1px solid var(--ochre); color:var(--ink)}
+  .mg-nudge .tog{margin-left:6px}
+  .mg{border:1px solid var(--rule); border-radius:9px; padding:12px 13px; margin-top:11px}
+  .mg-rows{display:flex; flex-direction:column; gap:7px; margin-bottom:10px}
+  .mg-row{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; font-size:13px}
+  .mg-row.keep{font-weight:600}
+  .mg-ar{font-family:var(--arabic); font-size:19px; min-width:5em}
+  .mg-gl{color:var(--ink-soft); flex:1}
+  .mg-st{font-size:11.5px; color:var(--muted); font-family:var(--mono)}
+  .mg-tag{font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+  .mg-row.keep .mg-tag{color:var(--verdigris)}
   .wc-banks b{font-family:var(--arabic); font-size:14px; color:var(--ink-soft); font-weight:400}
   /* shown on a word tapped in the Van Dyck Bible — readable, not bankable */
   .msa-note{margin:12px 0 4px; padding:10px 12px; border-radius:9px; font-size:12.5px;
@@ -3541,12 +3554,110 @@ function tableView(dg) {
 }
 
 // ---------- vocabulary / memorization (Anki SM-2) ----------
+// ---------- merging duplicate cards -------------------------------------------------------
+// Verbs now bank under one citation form, but cards added BEFORE that are still filed under
+// whatever tense they were met in — قال and قالت as two cards, two schedules, one verb. New
+// adds find them (deckKeyFor matches on the normalized lemma and on each card's own he_past),
+// so nothing new duplicates; the existing pairs still sit there.
+//
+// This merges them, and it asks first. Two cards that a script thinks are one word occasionally
+// are not — a wrong paradigm resolution from before findVerb was fixed could have filed an
+// unrelated verb under a shared root — and a bad merge silently destroys review history that
+// cannot be reconstructed. So it shows every group with what survives and what is lost, and
+// merges only what you press.
+//
+// Phrase (¶) and reaction (®) cards are never grouped: two phrases sharing a verb are two
+// different things to be able to say.
+function dupGroups() {
+  const by = new Map();
+  for (const [k, c] of marked) {
+    if (c.kind === 'phrase' || c.kind === 'reaction' || k[0] === '¶' || k[0] === '®') continue;
+    const hp = cardHePast(c);
+    const canon = arNorm((hp && hp.ar) || c.lemma || k);
+    if (!canon) continue;
+    if (!by.has(canon)) by.set(canon, []);
+    by.get(canon).push([k, c]);
+  }
+  return [...by.entries()].filter(([, g]) => g.length > 1)
+    .map(([canon, g]) => ({canon, cards: g.sort((a, b) => (b[1].reps || 0) - (a[1].reps || 0)
+                                                       || (a[1].created || 0) - (b[1].created || 0))}));
+}
+
+// The survivor is the card with the most reps — that is where the real review history lives.
+// Its schedule is kept, EXCEPT the due date, which becomes the earliest in the group: if one
+// copy was still being learned you evidently didn't know the word in that form, so the merged
+// card should come round again soon and prove itself rather than inheriting a 40-day interval.
+// Lapses are summed, the earliest `created` wins, and the headword moves to the citation form.
+function mergeGroup(canon) {
+  const g = dupGroups().find(x => x.canon === canon); if (!g) return;
+  const [[keepKey, keep]] = g.cards;
+  const hp = cardHePast(keep);
+  const merged = {...keep,
+    lemma: (hp && hp.ar) || keep.lemma,
+    vocalized: (hp && hp.ar) || keep.vocalized,
+    caphi: (hp && hp.caphi) || keep.caphi,
+    due: Math.min(...g.cards.map(([, c]) => c.due || 0)),
+    lapses: g.cards.reduce((a, [, c]) => a + (c.lapses || 0), 0),
+    created: Math.min(...g.cards.map(([, c]) => c.created || now())),
+    merged_from: g.cards.map(([k]) => k).filter(k => k !== keepKey),
+  };
+  g.cards.forEach(([k]) => marked.delete(k));
+  marked.set(merged.lemma, srsKeep(merged));
+  save(); count();
+}
+// Keep an existing SM-2 state as-is (srsInit would reset it to a new card).
+const srsKeep = c => ({ease: 2.5, interval: 0, reps: 0, lapses: 0, ...c});
+
+function mergeAllDups() {
+  const n = dupGroups().length;
+  if (!n) return;
+  if (!confirm('Merge all ' + n + ' group' + (n === 1 ? '' : 's') +
+      '? Each keeps the card with the most reviews behind it and folds the rest into it.')) return;
+  dupGroups().forEach(g => mergeGroup(g.canon));
+  vocabMerge();
+}
+
+function vocabMerge() {
+  $('title').textContent = 'Merge duplicates';
+  const groups = dupGroups();
+  if (!groups.length) {
+    $('view').innerHTML = `<div class="empty"><div class="empty-t">Nothing to merge 🎉</div>
+      <p>No two cards in your deck are the same word. Verbs added from here on bank under their
+      “he” past, so a verb you meet in a new tense finds the card it already has.</p>
+      <div class="ctl" style="justify-content:center"><button class="tog"
+        onclick="location.hash='/vocab'">Back to Vocabulary</button></div></div>`;
+    return;
+  }
+  const when = d => !d ? '—' : (d <= now() ? 'due now'
+    : 'in ' + Math.max(1, Math.round((d - now()) / 864e5)) + 'd');
+  let h = `<p class="hint">${groups.length} group${groups.length === 1 ? '' : 's'} look like the
+    same word filed twice — usually a verb banked in two different tenses before verbs were
+    canonicalised. The card with the most reviews survives and keeps its schedule; the merged
+    card is re-dated to the earliest due in its group, so it comes round again soon rather than
+    inheriting a long interval you may not have earned in that form.</p>
+    <p class="hint"><b>Check each one before merging.</b> Merging deletes the other cards'
+    review history, and that can't be undone.</p>
+    <div class="ctl"><button class="tog go" onclick="mergeAllDups()">Merge all ${groups.length}</button></div>`;
+  h += groups.map(g => `<div class="mg">
+      <div class="mg-rows">${g.cards.map(([k, c], i) => `<div class="mg-row${i ? '' : ' keep'}">
+        <span class="mg-ar" dir="rtl">${esc(c.vocalized || c.lemma)}</span>
+        <span class="mg-gl">${esc(pretty(c.gloss) || '—')}</span>
+        <span class="mg-st">${c.reps || 0} rep${(c.reps || 0) === 1 ? '' : 's'} · ${when(c.due)}</span>
+        <span class="mg-tag">${i ? 'folded in' : 'kept'}</span></div>`).join('')}</div>
+      <div class="ctl"><button class="tog" onclick="mergeGroup('${cssq(g.canon)}');vocabMerge()">Merge these</button></div>
+    </div>`).join('');
+  h += `<div class="ctl" style="margin-top:14px"><button class="tog"
+    onclick="location.hash='/vocab'">Back to Vocabulary</button></div>`;
+  $('view').innerHTML = h;
+}
+
 function vocabSection(sub, arg){
   $('back').hidden = false;
   if (sub === 'review') return vocabReview();
   if (sub === 'decks')  return vocabDecks();
   if (sub === 'deck')   return vocabDeck(arg);
   if (sub === 'browse') return vocabBrowse();
+  if (sub === 'merge')  return vocabMerge();
   return vocabHome();
 }
 
@@ -3582,6 +3693,10 @@ function vocabHome(){
     </button>`; }).join('');
   h += `<p class="hint" style="margin-top:14px">Whole <b>phrases</b> stick better than single
      words. While reading, tap a word → <b>+ Phrase…</b> → tap the last word of the chunk.</p>`;
+  const dups = dupGroups().length;
+  if (dups) h += `<div class="mg-nudge">${dups} word${dups === 1 ? '' : 's'} in your deck
+     ${dups === 1 ? 'is' : 'are'} filed twice — usually a verb banked in two tenses before verbs
+     were canonicalised. <button class="tog" onclick="location.hash='/vocab/merge'">Review and merge</button></div>`;
   h += `<div class="ctl" style="margin-top:6px">
      <button class="tog" onclick="addPhraseManual()">+ Add a phrase</button>
      <button class="tog" onclick="location.hash='/vocab/decks'">Manage decks</button>
