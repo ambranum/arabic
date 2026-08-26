@@ -322,6 +322,17 @@
   .wcj-hdr span{padding:0}
   .wcj-pr{font-family:var(--arabic); direction:rtl; font-size:15px}
   .wcj-pr em{display:block; font-family:var(--sans); font-style:normal; font-size:9.5px; color:var(--muted)}
+  /* The same table on a deck card, folded away until you want it. */
+  .rv-conj{margin:12px 0 2px; text-align:left; border-top:1px solid var(--rule); padding-top:8px;
+    align-self:stretch; width:100%; max-width:560px; margin-inline:auto}
+  .rv-conj>summary{cursor:pointer; list-style:none; font-family:var(--sans); font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; font-weight:600; color:var(--verdigris)}
+  .rv-conj>summary::-webkit-details-marker{display:none}
+  .rv-conj>summary::before{content:'\25B8\00a0'}
+  .rv-conj[open]>summary::before{content:'\25BE\00a0'}
+  .rv-conj .wcj-tbl{padding:6px 0 2px}
+  .rv-conj-full{display:inline-block; font-family:var(--sans); font-size:11.5px;
+    color:var(--verdigris); font-weight:600}
   .wcj-c{display:flex; flex-direction:column; line-height:1.15}
   .wcj-ar{font-family:var(--arabic); direction:rtl; font-size:16px}
   .wcj-ph{font-family:var(--mono); font-size:9.5px; color:var(--verdigris)}
@@ -4338,7 +4349,7 @@ function vocabCardView(c, showing, remaining){
                  ${esc(p.gloss)}</span>`).join('')}</div>`
             : `<div class="rv-root">your own phrase — not from a text</div>`)
         : `<div class="rv-root">root ${esc((c.root||'—').replace(/\./g,' · '))}</div>`}
-      ${ex}</div>
+      ${ex}${cardConjHTML(c)}</div>
       <div class="rv-grades">
         ${[['Again',0],['Hard',1],['Good',2],['Easy',3]].map(([lbl,g]) =>
           `<button class="rv-g rv-g${g}" onclick="vocabAnswer(${g})">
@@ -4405,6 +4416,7 @@ function vocabCardList(title, list, deckId){
         <span class="vcc-due">${due ? 'due' : 'in ' + Math.max(0,Math.round(((c.due||0)-now())/864e5)) + 'd'}</span></div>
       ${hp ? hePastHTML(hp, 'vcc-hepast') : ''}
       ${c.example_ar ? `<div class="vcc-ex" dir="rtl">${esc(c.example_ar)}</div>` : ''}
+      ${cardConjHTML(c)}
       <div class="ctl" style="margin-top:6px">
         <button class="tog" onclick="moveCard('${cssq(c.lemma)}')">Move</button>
         <button class="tog" onclick="delCard('${cssq(c.lemma)}')">Remove</button></div>
@@ -6987,17 +6999,21 @@ function findVerb(w) {
   const m = String(w.analysis).match(_VERB_MEASURE);
   return (m && cands.find(v => v.form === m[1])) || null;
 }
-function conjPopupHTML(v) {
+// The table on its own, with no surrounding chrome — the word sheet wraps it in a popup, the
+// review card puts it behind a disclosure. Same paradigm either way, rendered once.
+function conjTableHTML(v) {
   const c = v.conj; if (!c) return '';
   const cell = k => c[k] ? `<span class="wcj-ar">${esc(c[k].arv || c[k].ar)}</span><span class="wcj-ph">${esc(c[k].ph)}</span>` : '—';
-  let h = `<div class="wcj"><div class="wcj-h"><span>Conjugation${WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''} Form ${esc(v.form)}</span>
-      <a href="#/verb/${v._i}" onclick="hideCard()">full page →</a></div>
-    <div class="wcj-tbl"><div class="wcj-row wcj-hdr"><span></span><span>Past</span><span>Pres.</span><span>+بـ</span></div>`;
+  let h = `<div class="wcj-tbl"><div class="wcj-row wcj-hdr"><span></span><span>Past</span><span>Pres.</span><span>+بـ</span></div>`;
   PERSONS.forEach(([key, en, ar]) => { h += `<div class="wcj-row">
       <span class="wcj-pr">${esc(ar)}<em>${esc(en)}</em></span>
       <span class="wcj-c">${cell('perf|' + key)}</span><span class="wcj-c">${cell('impf|' + key)}</span><span class="wcj-c">${cell('bimpf|' + key)}</span></div>`; });
-  h += `</div></div>`;
-  return h;
+  return h + `</div>`;
+}
+function conjPopupHTML(v) {
+  if (!v.conj) return '';
+  return `<div class="wcj"><div class="wcj-h"><span>Conjugation${WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''} Form ${esc(v.form)}</span>
+      <a href="#/verb/${v._i}" onclick="hideCard()">full page →</a></div>${conjTableHTML(v)}</div>`;
 }
 
 // Wadi Ara (central rural) realization of the word's Maknuune CAPHI++ template. Mirrors
@@ -7306,6 +7322,32 @@ function cardHePast(c) {
   if (!hp || !hp.ar) return null;
   if (arNorm(hp.ar) === arNorm(c.vocalized || c.lemma || '')) return null;   // headword already IS it
   return hp;
+}
+// A saved card back to its paradigm. Cards banked since verbs started banking as the "he" past
+// carry that citation form as their headword, so they match a VB entry directly; older cards
+// (and ones banked from a conjugated token) fall back to he_past, then to a measure code. Same
+// lemma-first order as findVerb, and for the same reason: a wrong paradigm is worse than none.
+function cardVerb(c) {
+  if (!c || c.kind === 'phrase' || !c.root) return null;
+  if (!String(c.analysis || '').startsWith('VERB')) return null;
+  const cands = _vbByRoot.get(c.root); if (!cands) return null;
+  const heads = [c.he_past && c.he_past.ar, c.lemma, c.vocalized].filter(Boolean).map(arNorm);
+  for (const h of heads) {
+    const hit = cands.find(v => arNorm(v.lemma) === h || (v.past && arNorm(v.past.ar) === h));
+    if (hit) return hit;
+  }
+  const m = String(c.analysis).match(_VERB_MEASURE);
+  return (m && cands.find(v => v.form === m[1])) || null;
+}
+// The paradigm on a deck card, collapsed. Open during review it is a reference, not the answer;
+// the "he · past" line above it is what the card is actually testing.
+function cardConjHTML(c) {
+  const v = cardVerb(c);
+  if (!v || !v.conj) return '';
+  return `<details class="rv-conj"><summary>Conjugation · Form ${esc(v.form)}${
+      WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''}</summary>
+    ${conjTableHTML(v)}
+    <a class="rv-conj-full" href="#/verb/${v._i}">Open the full paradigm →</a></details>`;
 }
 const hePastHTML = (hp, cls) => `<div class="${cls}"><b>he · past</b>
   <span class="rt">${esc(hp.ar)}</span>${hp.caphi ? `<span class="hp">${esc(hp.caphi)}</span>` : ''}</div>`;
