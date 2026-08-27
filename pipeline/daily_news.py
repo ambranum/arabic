@@ -245,10 +245,20 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sentences", type=int, default=9)
     ap.add_argument("--dry-run", action="store_true", help="fetch headlines only")
+    ap.add_argument("--skip-if-done", action="store_true",
+                    help="exit 0 without spending anything if today's news is already written")
     a = ap.parse_args()
 
     today = israel_today().isoformat()
     print(f"=== daily news · {today} (Asia/Jerusalem) ===")
+
+    # For the catch-up run. GitHub states plainly that scheduled workflows can be delayed or
+    # dropped under load, and a single daily fire means a dropped fire is a day with no news
+    # (2026-08-27 was one). A second, later schedule covers that — but only if it costs nothing
+    # on the ordinary day when the first one worked, hence this guard, ahead of both API calls.
+    if a.skip_if_done and os.path.exists(os.path.join(ROOT, "texts", f"news-{today}.json")):
+        print("today's news is already written — nothing to do")
+        return 0
 
     print("fetching headlines…")
     heads = headlines()

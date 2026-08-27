@@ -1,29 +1,37 @@
 name: Daily news
 
-# Runs at 23:45 UTC — the news is IN GIT before 5am ISRAEL time.
+# Runs at 22:30 UTC, with a catch-up at 01:00 UTC. Target: the news is IN GIT well before
+# 5:30am ISRAEL time.
 #
-# GitHub cron is UTC with no DST support, and Israel changes offset (IDT = UTC+3 in
-# summer, IST = UTC+2 in winter), so the summer deadline is the binding one: 5am IDT is
-# 02:00 UTC.
+# GitHub cron is UTC with no DST support, and Israel changes offset (IDT = UTC+3 in summer,
+# IST = UTC+2 in winter), which pins the window at BOTH ends:
 #
-# The previous setting, 01:30 UTC, reasoned about the START time and forgot the job takes
-# most of an hour — Claude writes the sentences, ElevenLabs voices nine of them, the whole
-# app rebuilds. Measured from the commit timestamps of the three runs before this change:
+#   EARLIEST — the Israeli date has to have rolled over, or israel_today() writes yesterday's
+#     id. Israeli midnight is 21:00 UTC in summer but 22:00 UTC in winter, so winter binds:
+#     nothing may fire before 22:00 UTC. 22:30 leaves half an hour of margin on that edge.
+#   LATEST — 5:30 IDT is 02:30 UTC, and the job is not instant.
 #
-#     fired 01:30 UTC  ->  committed 02:42 / 02:49 / 02:48 UTC   (73, 79, 78 min)
-#     i.e. the news landed at 05:42 / 05:49 / 05:48 Israel — late, every day.
+# Measured runtimes, from the commit timestamps:
+#     fired 01:30 UTC  ->  landed 05:42 / 05:49 / 05:48 Israel   (73-79 min, and late daily)
+#     fired 23:45 UTC  ->  landed 02:59 Israel                   (14 min)
+# The long ones were mostly queue time at the top of the hour; the work itself is quick. Budget
+# the bad case anyway: 22:30 + 75 min lands 02:45 IDT / 01:45 IST. Nearly three hours of slack.
 #
-# 23:45 UTC + ~75 min lands ~01:00 UTC = 04:00 IDT in summer, 03:00 IST in winter. An hour
-# of slack in the tighter season, and :45 avoids the top-of-hour queue where GitHub's
-# scheduler is most congested.
+# THE SECOND SCHEDULE is not belt-and-braces, it is for a failure that has happened: GitHub
+# says outright that scheduled workflows may be delayed or dropped under load, and on
+# 2026-08-27 this one never fired at all — no run, no news, nothing to notice until you opened
+# the app. 01:00 UTC is 04:00 IDT / 03:00 IST, so even a full second run still beats 5:30. It
+# passes --skip-if-done, which returns before either API call when the day's file already
+# exists, so on a normal day it costs one idle runner minute and no API spend.
 #
-# Firing before midnight UTC means the runner's UTC date is a day BEHIND Israel, so the
-# date has to come from Asia/Jerusalem — israel_today() in pipeline/daily_news.py, and the
-# TZ on the commit message below. Change one without the other and the text id and the
-# commit disagree about what day it is.
+# Firing before midnight UTC means the runner's UTC date is a day BEHIND Israel, so the date
+# has to come from Asia/Jerusalem — israel_today() in pipeline/daily_news.py, and the TZ on the
+# commit message below. Change one without the other and the text id and the commit disagree
+# about what day it is.
 on:
   schedule:
-    - cron: '45 23 * * *'   # in git before 5am Israel — writes fresh news, then deploys
+    - cron: '30 22 * * *'   # in git well before 5:30 Israel — writes fresh news, then deploys
+    - cron: '0 1 * * *'     # catch-up if the first was dropped; no-op (and no spend) if it wasn't
   workflow_dispatch:        # run by hand from the Actions tab
   push:
     branches: [main]
@@ -63,7 +71,9 @@ jobs:
           # NB: no ELEVENLABS_VOICE_ID here, deliberately. The voice is pinned in
           # pipeline/voice.py so every clip in the app is the same voice. Passing the old
           # repo secret here is what kept generating each new day's news in the OLD voice.
-        run: python3 pipeline/daily_news.py --sentences 9
+        run: |
+          python3 pipeline/daily_news.py --sentences 9 \
+            ${{ github.event.schedule == '0 1 * * *' && '--skip-if-done' || '' }}
 
       # The deploy publishes the runner's working tree, so the day's news reaches the site
       # whether or not this lands. But if it DOESN'T land, the news exists nowhere but that one
