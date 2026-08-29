@@ -27,7 +27,8 @@ const LANG_FULL = LANG_CHROME.concat([
   'art', 'script.norm', 'script.run', 'script.punct', 'script.pre', 'script.suf',
   'script.minStem', 'script.fixes', 'phon.fields', 'verb.classOrder', 'verb.persons',
   'verb.tier', 'kbd.letters', 'kbd.toggle', 'tts.lang', 'tutorPrompt',
-  'homeMasthead', 'chapterPrefix']);
+  'homeMasthead', 'chapterPrefix', 'sections', 'verb.classNoun', 'bibleBlurb',
+  'tutorStarters']);
 
 function defineLang(spec) {
   const required = spec && spec.ready === false ? LANG_CHROME : LANG_FULL;

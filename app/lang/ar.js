@@ -500,6 +500,7 @@ function wadiAra(w) {
 
     // ---- the verb model -----------------------------------------------------------------
     verb: {
+    classNoun: 'form',
     classOrder: ['I','II','III','IV','V','VI','VII','VIII','X','Q'],
     classInfo: {
         I:   ['Form I',        'The base verb — the plain action. كتب “he wrote”.'],
@@ -585,6 +586,21 @@ function wadiAra(w) {
         "• Conversational reaction categories: " + (rxc || "(everyday reactions)"),
       ].join("\n");
     },
+
+    // Which sections this language has, and in what order -- order is pedagogy.
+    sections: ['plan', 'lessons', 'sounds', 'reactions', 'grammar', 'verbs', 'vocab',
+               'news', 'stories', 'table', 'books', 'videos', 'listening', 'bible',
+               'tutor', 'translate', 'account'],
+    // What a verb's derivational class is CALLED, for the Verbs status line. Arabic has forms
+    // (measures); Hebrew has binyanim.
+    bibleBlurb: 'ESV \u2016 Arabic, side by side',
+    tutorStarters: [
+      "Why do Palestinians say بدي instead of أريد for “I want”?",
+      "How do I say “I've been waiting for an hour” in spoken Palestinian?",
+      "What's the difference between شو and إيش?",
+      "Give me 3 natural things to say when someone cooks me a great meal.",
+      "Is مبسوط spoken Palestinian or MSA? How do I say “I'm happy”?",
+    ],
 
     art: SEC_ART,
   });

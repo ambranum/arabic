@@ -632,56 +632,94 @@ const GROUPS = [
   {id: 'input',    label: 'Read & Listen', blurb: 'Graded Palestinian to read and hear.'},
   {id: 'ask',      label: 'Ask & look up', blurb: 'Answers and lookups, on demand.'},
 ];
-const SECTIONS = [
-  {route: 'plan',    icon: 'plan',    label: 'My Plan',          ready: true, group: 'plan'},
-  {route: 'lessons', icon: 'lesson',  label: 'Lessons',          ready: true, group: 'practice'},
-  {route: 'sounds',  icon: 'sound',   label: 'Sounds',           ready: true, group: 'practice'},
-  {route: 'reactions', icon: 'react', label: 'Reactions',        ready: true, group: 'practice'},
-  {route: 'grammar', icon: 'grammar', label: 'Grammar Lessons',  ready: true, group: 'practice'},
-  {route: 'verbs',   icon: 'verbs',   label: 'Verbs',            ready: true, group: 'practice'},
-  {route: 'vocab',   icon: 'vocab',   label: 'Vocabulary',       ready: true, group: 'practice'},
-  {route: 'news',    icon: 'news',    label: "Today's News",     ready: true, group: 'input'},
-  {route: 'stories', icon: 'stories', label: 'Short Stories',    ready: true, group: 'input'},
-  {route: 'table',   icon: 'table',   label: 'The Dinner Table', ready: true, group: 'input'},
-  {route: 'books',   icon: 'books',   label: 'Books',            ready: true, group: 'input'},
-  {route: 'videos',  icon: 'video',   label: 'Videos',           ready: true, group: 'input'},
-  {route: 'listening', icon: 'ears',  label: 'Listening',        ready: true, group: 'input'},
-  {route: 'bible',   icon: 'bible',   label: 'Bible',            ready: true, group: 'input'},
-  {route: 'tutor',   icon: 'tutor',   label: 'Ask a Tutor',      ready: true, group: 'ask'},
-  {route: 'translate', icon: 'translate', label: 'Translate',    ready: true, group: 'ask'},
-  {route: 'account', icon: 'user',    label: 'Account',          ready: true, group: 'you'},
-];
-// One home tile + its live status line. Kept as a named helper so the home view can lay the
-// sections out group by group instead of one flat wall.
-function secStatus(sec) {
-  return sec.route === 'news'
-      ? LIB.texts.filter(t => t.kind === 'news').length + ' articles'
-      : sec.route === 'verbs' ? VB.length + ' verbs, by form'
-      : sec.route === 'stories' ? LIB.texts.filter(t => t.kind === 'story').length + ' stories, 3 levels'
-      : sec.route === 'vocab' ? (marked.size ? dueCards().length + ' due · ' + marked.size + ' cards' : 'Your flashcards')
-      : sec.route === 'plan' ? (planCfg() ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name) : 'Build your study plan')
-      : sec.route === 'grammar' ? GRAM.length + ' spoken structures'
-      : sec.route === 'lessons' ? ((LSN.units || []).length ? (LSN.units || []).length + ' units, from native materials' : 'Teaching units')
-      : sec.route === 'tutor' ? (tutorKey() ? 'Ask anything, in dialect' : 'Add your key to ask questions')
-      : sec.route === 'books' ? (booksList().length ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read' : 'Full graded readers')
-      : sec.route === 'account' ? (_user ? esc(_user.email) : 'Sign in to sync your progress')
-      : sec.route === 'translate' ? 'Words & phrases in context'
-      : sec.route === 'bible' ? 'ESV ‖ Arabic, side by side'
-      : sec.route === 'videos' ? VIDEOS.length + ' playlists · Shami Speaker'
-      : sec.route === 'listening' ? LISTEN.length + ' episodes · native speed, with transcripts'
-      : sec.route === 'reactions' ? (RX.items ? RX.items.length + ' quick replies, by feel' : 'Conversation reflexes')
-      : sec.route === 'sounds' ? (SND.lessons ? SND.lessons.length + ' sound contrasts to master' : 'Get the ear & mouth right')
-      : sec.route === 'table' ? (TBL.dialogues ? TBL.dialogues.length + ' conversations · follow the room' : 'The north-star skill')
-      : 'Coming soon';
-}
+// ---------- the section registry -----------------------------------------------------------
+// One definition per section, and it is the ONLY one. Before this, four places had to agree
+// about the same seventeen things -- a SECTIONS array, a 22-branch ternary for the status line,
+// a SEC_ART map, and a 17-arm `if` ladder inside route(). Adding a section meant editing all
+// four and the compiler could not tell you when you missed one.
+//
+// These definitions are language-NEUTRAL. `view` and `status` are functions so they read live
+// data at call time rather than at load time; the art and the labels come from the pack.
+const SECTION_DEFS = {
+  plan: {icon: 'plan', label: 'My Plan', group: 'plan',
+    view: (id, arg) => planSection(id, arg),
+    status: () => planCfg()
+      ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name)
+      : 'Build your study plan'},
+  lessons: {icon: 'lesson', label: 'Lessons', group: 'practice',
+    view: id => lessonsSection(id),
+    status: () => (LSN.units || []).length
+      ? (LSN.units || []).length + ' units, from native materials' : 'Teaching units'},
+  sounds: {icon: 'sound', label: 'Sounds', group: 'practice',
+    view: id => soundsSection(id),
+    status: () => SND.lessons ? SND.lessons.length + ' sound contrasts to master'
+                              : 'Get the ear & mouth right'},
+  reactions: {icon: 'react', label: 'Reactions', group: 'practice',
+    view: id => reactionsSection(id),
+    status: () => RX.items ? RX.items.length + ' quick replies, by feel' : 'Conversation reflexes'},
+  grammar: {icon: 'grammar', label: 'Grammar Lessons', group: 'practice',
+    view: id => grammarSection(id),
+    status: () => GRAM.length + ' spoken structures'},
+  verbs: {icon: 'verbs', label: 'Verbs', group: 'practice',
+    view: id => verbsSection(id),
+    status: () => VB.length + ' verbs, by ' + LANG.verb.classNoun},
+  vocab: {icon: 'vocab', label: 'Vocabulary', group: 'practice',
+    view: (id, arg) => vocabSection(id, arg),
+    status: () => marked.size ? dueCards().length + ' due · ' + marked.size + ' cards'
+                              : 'Your flashcards'},
+  news: {icon: 'news', label: "Today's News", group: 'input',
+    view: () => newsSection(),
+    status: () => LIB.texts.filter(t => t.kind === 'news').length + ' articles'},
+  stories: {icon: 'stories', label: 'Short Stories', group: 'input',
+    view: id => storiesSection(id),
+    status: () => LIB.texts.filter(t => t.kind === 'story').length + ' stories, 3 levels'},
+  table: {icon: 'table', label: 'The Dinner Table', group: 'input',
+    view: id => tableSection(id),
+    status: () => TBL.dialogues ? TBL.dialogues.length + ' conversations · follow the room'
+                                : 'The north-star skill'},
+  books: {icon: 'books', label: 'Books', group: 'input',
+    view: (id, arg) => booksSection(id, arg),
+    status: () => booksList().length
+      ? booksList().length + ' book' + (booksList().length === 1 ? '' : 's') + ' to read'
+      : 'Full graded readers'},
+  videos: {icon: 'video', label: 'Videos', group: 'input',
+    view: id => videosSection(id),
+    status: () => VIDEOS.length + ' playlists · Shami Speaker'},
+  listening: {icon: 'ears', label: 'Listening', group: 'input',
+    view: id => listeningSection(id),
+    status: () => LISTEN.length + ' episodes · native speed, with transcripts'},
+  bible: {icon: 'bible', label: 'Bible', group: 'input',
+    view: (id, arg) => bibleSection(id, arg),
+    status: () => LANG.bibleBlurb},
+  tutor: {icon: 'tutor', label: 'Ask a Tutor', group: 'ask',
+    view: id => tutorSection(id),
+    status: () => tutorKey() ? 'Ask anything, in dialect' : 'Add your key to ask questions'},
+  translate: {icon: 'translate', label: 'Translate', group: 'ask',
+    view: () => translateSection(),
+    status: () => 'Words & phrases in context'},
+  account: {icon: 'user', label: 'Account', group: 'you',
+    view: () => accountSection(),
+    status: () => _user ? esc(_user.email) : 'Sign in to sync your progress'},
+};
+
+// The pack declares WHICH sections it has and IN WHAT ORDER, because order is pedagogy and it
+// differs between languages. A pack naming a section that does not exist is a typo, and it
+// should say so at boot rather than quietly render one tab fewer.
+const SECTIONS = LANG.sections.map(id => {
+  const d = SECTION_DEFS[id];
+  if (!d) throw new Error('language pack "' + LANG.code + '" lists unknown section "' + id + '"');
+  return Object.assign({route: id, ready: true}, d, (LANG.sectionLabels || {})[id] || {},
+                       {art: LANG.art[id] || null});
+});
+const SEC_BY_ROUTE = new Map(SECTIONS.map(s => [s.route, s]));
+
 // Each section already declares an `icon` and never used it on the home tiles — sixteen
 // identical outlined rectangles. The icon plus a per-group tint turns the wall into a set.
 const GROUP_COLOR = {practice: 'var(--verdigris)', input: 'var(--ochre)',
                      ask: 'var(--rubric)', you: 'var(--muted)'};
 
-function secHero(route) {
-  const sec = SECTIONS.find(x => x.route === route);
-  const art = SEC_ART[route];
+function secHero(sec) {
+  const art = sec && sec.art;
   if (!sec || !art) return '';
   const gc = GROUP_COLOR[sec.group] || 'var(--verdigris)';
   // Every scene is somewhere real, so it says where in the corner — the Arabic name too, since
@@ -706,7 +744,7 @@ function homeTile(sec) {
       onclick="location.hash='/${sec.route}'">
       <div class="tile-h"><span class="tile-i">${svg(sec.icon)}</span>
         <span class="tile-t">${esc(sec.label)}</span></div>
-      <div class="tile-s">${secStatus(sec)}</div></button>`;
+      <div class="tile-s">${sec.status()}</div></button>`;
 }
 
 // Short-story reading levels, in order. label shown on tiles; blurb sets expectations.
@@ -759,31 +797,18 @@ function route() {
   if (kind === 'drill') { const d = LIB.drills.find(x => x.id === id);
     if (d) { renderNav(null); return drill(d); } }
   if (kind === 'verb') { renderNav('verbs'); return verbDetail(id); }
-  const sec = SECTIONS.find(x => x.route === kind);
-  if (sec) { renderNav(sec.route);
-    // The hero belongs to a section's LANDING page, not to a story, a verb or a chapter — those
-    // have their own headers and their own job. Prepending after the section renders keeps this
-    // to one place instead of an edit inside fourteen render functions.
+  const sec = SEC_BY_ROUTE.get(kind);
+  if (sec) {
+    renderNav(sec.route);
+    // The hero belongs to a section's LANDING page, not to a story, a verb or a chapter --
+    // those have their own headers and their own job.
     if (!id) setTimeout(() => { const v = $('view');
-      if (v && !v.querySelector('.sh')) v.insertAdjacentHTML('afterbegin', secHero(sec.route)); }, 0);
-    if (sec.route === 'plan')    return planSection(id, arg);
-    if (sec.route === 'translate') return translateSection();
-    if (sec.route === 'news')    return newsSection();
-    if (sec.route === 'vocab')   return vocabSection(id, arg);
-    if (sec.route === 'verbs')   return verbsSection(id);
-    if (sec.route === 'lessons') return lessonsSection(id);
-    if (sec.route === 'grammar') return grammarSection(id);
-    if (sec.route === 'tutor')   return tutorSection(id);
-    if (sec.route === 'sounds') return soundsSection(id);
-    if (sec.route === 'reactions') return reactionsSection(id);
-    if (sec.route === 'stories') return storiesSection(id);
-    if (sec.route === 'table') return tableSection(id);
-    if (sec.route === 'books')   return booksSection(id, arg);
-    if (sec.route === 'videos')  return videosSection(id);
-    if (sec.route === 'listening') return listeningSection(id);
-    if (sec.route === 'bible')   return bibleSection(id, arg);
-    if (sec.route === 'account') return accountSection();
-    return emptySection(sec); }
+      if (v && !v.querySelector('.sh')) v.insertAdjacentHTML('afterbegin', secHero(sec)); }, 0);
+    return sec.view(id, arg);
+  }
+  // The section exists, but not in the language you are reading. Saying so beats bouncing the
+  // learner silently to the home page and letting them wonder where the link went.
+  if (SECTION_DEFS[kind]) return sectionElsewhere(kind);
   renderNav('home');
   home();
 }
@@ -1196,13 +1221,7 @@ const tutorModel = () => { try { return localStorage.getItem(TUTOR_MODEL_KEY) ||
 let _tutorMsgs = [];        // in-memory conversation for this session (role, content, error?)
 let _tutorBusy = false;
 
-const TUTOR_STARTERS = [
-  "Why do Palestinians say بدي instead of أريد for “I want”?",
-  "How do I say “I've been waiting for an hour” in spoken Palestinian?",
-  "What's the difference between شو and إيش?",
-  "Give me 3 natural things to say when someone cooks me a great meal.",
-  "Is مبسوط spoken Palestinian or MSA? How do I say “I'm happy”?",
-];
+const TUTOR_STARTERS = LANG.tutorStarters;
 
 // Ground the model in this app's actual scope + the dialect model, so answers don't drift to MSA.
 // The pack writes the tutor's brief; the app supplies what the pack cannot know at load
@@ -4663,6 +4682,24 @@ function verbsIrregular(){
 }
 
 // An honest placeholder for a section with no content yet.
+// A deep link to a section this language does not have. It exists in the app, just not here.
+function sectionElsewhere(kind) {
+  const d = SECTION_DEFS[kind];
+  const other = Object.values(window.LANG_PACKS || {})
+    .find(p => p.code !== LANG.code && (p.sections || []).includes(kind));
+  $('title').textContent = d.label;
+  $('back').hidden = false;
+  $('view').innerHTML = `<div class="empty">
+    <div class="empty-t">${esc(d.label)} isn't part of ${esc(LANG.name)}</div>
+    <p>This section belongs to ${other ? esc(other.name) : 'another language'}.</p>
+    <div class="ctl" style="justify-content:center">
+      ${other && other.ready !== false
+        ? `<button class="tog go" onclick="switchLang('${other.code}')">
+             <span style="font-size:15px">${other.flag}</span> Switch to ${esc(other.short)}</button>`
+        : ''}
+      <button class="tog" onclick="location.hash='/'">Back to home</button></div></div>`;
+}
+
 function emptySection(sec){
   $('back').hidden = false;
   $('title').textContent = sec.label;

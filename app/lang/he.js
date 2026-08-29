@@ -31,5 +31,11 @@ defineLang({
   // Hebrew needs its own stack: the Arabic faces have no Hebrew coverage, and the system
   // Hebrew faces render niqqud far better than a generic serif fallback.
   font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
+  // Declared now, though nothing is built yet: switchLang() and sectionElsewhere() read this
+  // to answer "does the other language have this section". The Dinner Table and Videos are
+  // absent on purpose -- the Shabbat-table dialogues and a Hebrew playlist are Stage C work,
+  // and listing a section before it exists is the kind of lie this pack is meant to avoid.
+  sections: ['plan', 'lessons', 'sounds', 'reactions', 'grammar', 'verbs', 'vocab',
+             'news', 'stories', 'books', 'bible', 'tutor', 'translate', 'account'],
   art: {},
 });
