@@ -3,4 +3,4 @@
 // URLs so a re-voice is never masked by a cached copy of the old voice.
 // Sentences are NOT here -- see text/<id>.js (one text) and corpus.js (all of them).
 window.AUDIO_VERSION = "dadeeb60e9";
-window.LIBRARY = {"texts":[{"id":"news-2026-08-29","title":{"ar":"חדשות היום","en":"Today's News — 2026-08-29"},"dialect":"he","kind":"news","date":"2026-08-29","level":null,"book":null,"chapter":null,"book_title":null,"shelf":0,"book_meta":null,"subdialect":null,"source":"Israeli and world headlines, written in spoken Hebrew by Claude. NOT native-validated.","_dir":"news-2026-08-29","_words":150,"_audio":true}],"drills":[]};
+window.LIBRARY = {"texts":[{"id":"news-2026-08-29","title":{"ar":"חדשות היום","en":"Today's News — 2026-08-29"},"dialect":"he","kind":"news","date":"2026-08-29","level":null,"book":null,"chapter":null,"book_title":null,"shelf":0,"book_meta":null,"subdialect":null,"source":"Israeli and world headlines, written in spoken Hebrew by Claude. NOT native-validated.","_dir":"news-2026-08-29","_words":148,"_audio":true}],"drills":[]};

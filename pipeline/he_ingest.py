@@ -46,13 +46,17 @@ try:
 except Exception:
     _SSL = ssl.create_default_context()
 
-# Hebrew punctuation is the Latin set plus the geresh pair, which mark sounds and abbreviations
-# and must NOT be split on inside a word (צה״ל, ג׳ורג׳) -- only when they stand alone.
-SPLIT = re.compile(r'[\s.,;:!?…"«»“”()\[\]—–\-]+')
+# MATCH the words rather than splitting on the gaps, because in Hebrew the same character is
+# both punctuation and part of a word. A gershayim before the last letter makes an acronym --
+# צה"ל, ח"כ, ארה"ב, השב"כ, all everyday news vocabulary -- and a geresh makes a foreign sound
+# (ג'ורג'). Splitting on the quote shredded them: השב"כ became שב + כ, which the annotator then
+# pointed as שָׁב "returned" and shipped that way. Israelis write these with an ASCII " as often
+# as with ״, so both are accepted, and a quote that is NOT between letters still separates.
+WORD = re.compile(r'[\u0590-\u05FF]+(?:["\'\u05F3\u05F4][\u0590-\u05FF]+)*')
 
 
 def tokenize(sent):
-    return [w for w in SPLIT.split(sent.strip()) if w and re.search(r'[֐-׿]', w)]
+    return WORD.findall(sent.strip())
 
 
 def load_resolutions():

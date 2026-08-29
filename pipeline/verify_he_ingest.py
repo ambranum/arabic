@@ -88,6 +88,19 @@ def main():
     moved = [w['surface'] for w, t in zip(second, toks) if w['surface'] != t]
     check(not moved, 'the word on the page is the word that was written', ', '.join(moved[:5]))
 
+    # ---- tokenizing ------------------------------------------------------------------------
+    # In Hebrew the same character is punctuation and part of a word. A gershayim before the
+    # last letter makes an acronym, and everyday news is full of them; splitting on the quote
+    # turned השב"כ into שב + כ, which was then pointed as שָׁב "returned" and shipped.
+    print()
+    for text, want in [('השב"כ אישר', ['השב"כ', 'אישר']),
+                       ('ארה"ב תשלוט', ['ארה"ב', 'תשלוט']),
+                       ('ג\u05f3ורג\u05f3 הלך', ['ג\u05f3ורג\u05f3', 'הלך']),
+                       ('הוא אמר "שלום" ואז', ['הוא', 'אמר', 'שלום', 'ואז']),
+                       ('בן 93 נהרג', ['בן', 'נהרג'])]:
+        got = he_ingest.tokenize(text)
+        check(got == want, 'tokenizes %s' % text, 'got %s' % got)
+
     print('\n%d passed, %d failed' % (ok, fail))
     return 1 if fail else 0
 
