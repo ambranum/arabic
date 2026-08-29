@@ -30,6 +30,10 @@ import urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'spike', 'he'))
 import paths          # noqa: E402
+
+# Before the heavy imports: the lexicon this needs is Hebrew's, and loading it to then discover
+# we are running as Arabic wastes the time and buries the message.
+paths.require('he')
 from voice import language_code, model_id, voice_id   # noqa: E402
 from build_lex import he_norm                          # noqa: E402
 from lex import Lexicon                                # noqa: E402

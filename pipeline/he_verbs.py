@@ -22,6 +22,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'spike', 'he'))
 import paths          # noqa: E402
+paths.require('he')
 import split          # noqa: E402
 import verbs_he       # noqa: E402
 

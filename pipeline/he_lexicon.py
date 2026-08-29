@@ -33,6 +33,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'spike', 'he'))
 import paths           # noqa: E402
+paths.require('he')
 from build_lex import he_norm   # noqa: E402  -- must match LANG.script.norm in app/lang/he.js
 
 PARQUET = os.path.join(paths.ROOT, 'spike', 'he', 'hebrew_lex.parquet')

@@ -23,9 +23,18 @@ def main():
     audio_root = paths.audio()
     copied = 0
     texts, drills = [], []
+    wrong_script = []
     for p in sorted(glob.glob(paths.build('*', 'text.json'))):
         d = json.load(open(p, encoding='utf-8'))
         d['_dir'] = os.path.basename(os.path.dirname(p))
+        # Is this text actually in this language? Its metadata is written by whoever built it,
+        # so the metadata cannot be the check -- the letters can. A Hebrew news article once
+        # landed in build/ar/ (an annotator launched without --lang) and nothing downstream
+        # noticed; it would have shipped as that day's Arabic paper.
+        first = next((s_.get('ar', '') for s_ in d.get('sentences') or [] if s_.get('ar')), '')
+        if first and not paths.in_script(first):
+            wrong_script.append((d['_dir'], first[:40]))
+            continue
         d['_words'] = sum(len(s['words']) for s in d['sentences'])
         # `options` is the ambiguity audit trail: every lexicon candidate the annotator weighed
         # before picking one. The app never reads it (grep says so) but it is ~27% of a book
@@ -140,6 +149,13 @@ def main():
     print(f"drills: {len(drills)}")
     for d in drills:
         print(f"    {d['id']:22} {len(d['items']):3} chunks audio={'yes' if d['_audio'] else 'no'}")
+    if wrong_script:
+        print("\n!! %d text(s) under build/%s are NOT in %s's script — skipped, not shipped:"
+              % (len(wrong_script), paths.LANG, paths.LANG))
+        for d_, sample in wrong_script:
+            print("     %-28s %s" % (d_, sample))
+        print("   Rebuild them with the right --lang, or delete the stray directory.")
+
     print(f"audio files copied into app/: {copied}")
     print(f"\n-> {os.path.relpath(OUT, ROOT)}  ({lib_sizes['library.js']//1024} KB index)")
     print(f"   corpus.js {lib_sizes['corpus.js']//1024} KB  ·  "

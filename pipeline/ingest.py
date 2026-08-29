@@ -31,6 +31,8 @@ from voice import voice_id
 import curated
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+paths.require('ar')
+
 RESOLUTIONS = paths.resolutions()
 
 def load_resolutions():

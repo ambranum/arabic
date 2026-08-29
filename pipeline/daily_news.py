@@ -267,7 +267,13 @@ def resolve(c, ambiguous):
     return out
 
 def ingest(src, audio=False):
-    cmd = [sys.executable, os.path.join(HERE, INGEST_SCRIPT), src] + (["--audio"] if audio else [])
+    # --lang is not optional here. paths.py reads it from argv, so a child launched without it
+    # runs as the DEFAULT language whatever the parent is doing: the Hebrew annotator wrote its
+    # output over build/ar/news-<today>/text.json and the parent then failed looking for an
+    # artifact under build/he. Passing it explicitly, and asserting it in the child, are two
+    # halves of the same fix -- this one stops it happening, the assert stops it being silent.
+    cmd = ([sys.executable, os.path.join(HERE, INGEST_SCRIPT), src, "--lang", paths.LANG]
+           + (["--audio"] if audio else []))
     r = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
     print(r.stdout.rstrip())
     if r.returncode: print(r.stderr[:600])

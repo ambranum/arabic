@@ -20,6 +20,7 @@ Splitting them is pure file movement with nothing to gain until Hebrew content e
 of those trees is written every night by the news cron. See the note at the end of this file.
 """
 import os
+import re
 import sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -51,6 +52,34 @@ def data(*parts, code=None):
     p = os.path.join(ROOT, 'app', 'data', code or LANG, *parts)
     os.makedirs(os.path.dirname(p) if os.path.splitext(p)[1] else p, exist_ok=True)
     return p
+
+
+# Which script a language's content is written in. Used to check that an ingested artifact
+# actually belongs to the tree it is sitting in -- see build_app.py. A Hebrew article reached
+# build/ar/ once, and the thing that would have caught it before it deployed is not its metadata
+# (which is written by whoever made the mistake) but its letters.
+SCRIPTS = {'ar': re.compile('[\u0600-\u06FF\u0750-\u077F]'),
+           'he': re.compile('[\u0590-\u05FF\uFB1D-\uFB4F]')}
+
+
+def in_script(text, code=None):
+    return bool(SCRIPTS[code or LANG].search(text or ''))
+
+
+def require(code):
+    """Refuse to run as a language this script was not written for.
+
+    Most of the pipeline is language-generic and takes whatever --lang says. A few scripts are
+    not: ingest.py knows Maknuune, he_ingest.py knows Wiktionary, and neither can do the other's
+    job. Without this, running one under the wrong language does not fail -- it writes correct
+    output into the WRONG TREE, which is how a Hebrew news article came to overwrite the Arabic
+    one for the same day and reach git.
+    """
+    if LANG != code:
+        raise SystemExit(
+            '%s is %s-only, but the active language is %r.\n'
+            'Pass --lang %s (or set ALP_LANG=%s) if that is what you meant.'
+            % (os.path.basename(sys.argv[0]), code, LANG, code, code))
 
 
 def shared(*parts):
