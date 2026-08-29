@@ -93,8 +93,17 @@ def main():
     if os.path.exists(sw_path):
         import re as _re
         ash = hashlib.md5()
+        # Everything the browser executes, so a code change always moves the cache version.
+        # index.html alone stopped being enough the moment the app moved into app.js: a JS-only
+        # change would have left the version untouched and shipped new code behind a stale
+        # cache. The nested data glob is for the per-language directories B5 introduces.
+        # service-worker.js is deliberately absent: this hash is written INTO it, so including
+        # it makes each run's version depend on the previous run's and the value never settles.
         shell = [os.path.join(ROOT, 'app', 'index.html')] + \
-            sorted(glob.glob(os.path.join(ROOT, 'app', 'data', '*.js')))
+            sorted(p for p in glob.glob(os.path.join(ROOT, 'app', '*.js'))
+                   if os.path.basename(p) != 'service-worker.js') + \
+            sorted(glob.glob(os.path.join(ROOT, 'app', 'lang', '*.js'))) + \
+            sorted(glob.glob(os.path.join(ROOT, 'app', 'data', '**', '*.js'), recursive=True))
         for p in shell:
             try:
                 ash.update(open(p, 'rb').read())

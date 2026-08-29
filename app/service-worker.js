@@ -5,8 +5,10 @@
  * a deploy invalidates old caches. IMPORTANT: the HTML document is fetched NETWORK-FIRST so a new
  * deploy shows up immediately (never a stale shell); data/audio/icons are cache-first for speed
  * and offline. */
-const CACHE_VERSION = 'alp-a7a3cd1537';
-const SHELL = ['./index.html', './manifest.webmanifest', './icon-192.png'];
+const CACHE_VERSION = 'alp-7f1e3622de';
+// app.js belongs here now that the script is no longer inline: without it an offline
+// load serves the shell HTML and nothing runs.
+const SHELL = ['./index.html', './app.js', './manifest.webmanifest', './icon-192.png'];
 
 self.addEventListener('install', e => {
   self.skipWaiting();
