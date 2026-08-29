@@ -94,10 +94,16 @@ Don't wait until tomorrow to find out if it works.
 It takes 2–3 minutes. Green tick = working. Your site is at:
 
 ```
-https://YOUR-USERNAME.github.io/arabic/
+https://ambranum.github.io/arabrit/
 ```
 
-Open that on your phone and **Add to Home Screen** — it behaves like an app.
+Open that on your phone and **Add to Home Screen** — it installs as **Arabrit**.
+
+> The URL follows the REPO NAME, and GitHub does not redirect Pages when a repo is renamed.
+> Rename `arabrit` again and this address 404s, every bookmark dies, and — the one that
+> actually hurts — every installed home-screen icon points at a scope that no longer exists
+> and has to be deleted and re-installed. A custom domain (Settings → Pages → Custom domain)
+> decouples the address from the repo name so that can never happen again.
 
 If it fails, click the run and read the red step. Send me what it says.
 
