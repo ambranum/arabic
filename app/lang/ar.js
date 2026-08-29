@@ -641,6 +641,24 @@ function wadiAra(w) {
     // What a verb's derivational class is CALLED, for the Verbs status line. Arabic has forms
     // (measures); Hebrew has binyanim.
     bibleBlurb: 'ESV \u2016 Arabic, side by side',
+    bible: {
+      intro: 'Read Scripture side by side — <b>ESV</b> in English on the left, the classical '
+           + 'Arabic <b>Van Dyck</b> on the right, the version read aloud in Arabic churches. '
+           + 'Tap a book, then a chapter.',
+      credit: 'Arabic: Van Dyck (1865), public domain.',
+      note: 'The spoken Palestinian/Galilean New Testament isn’t freely available as text; '
+          + 'where it exists, each New-Testament chapter links out to it.',
+      wordNote: "<b>Classical Arabic, not dialect.</b> This is the Van Dyck translation (1865). "
+              + "The meaning above comes from the Palestinian lexicon and is here to help you "
+              + "read — but the word isn't added to your vocabulary, which stays spoken "
+              + "Palestinian.",
+      // A spoken-dialect New Testament exists (Galilean) but only inside YouVersion — display
+      // only, nothing embeddable. So for NT books we link out to it, chapter by chapter.
+      chapterLink: (id, ch) => ({
+        MAT:1,MRK:1,LUK:1,JHN:1,ACT:1,ROM:1,'1CO':1,'2CO':1,GAL:1,EPH:1,PHP:1,COL:1,'1TH':1,
+        '2TH':1,'1TI':1,'2TI':1,TIT:1,PHM:1,HEB:1,JAS:1,'1PE':1,'2PE':1,'1JN':1,'2JN':1,
+        '3JN':1,JUD:1,REV:1}[id] ? `https://www.bible.com/bible/2437/${id}.${ch}` : null),
+    },
     tutorStarters: [
       "Why do Palestinians say بدي instead of أريد for “I want”?",
       "How do I say “I've been waiting for an hour” in spoken Palestinian?",

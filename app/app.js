@@ -1250,15 +1250,6 @@ const esvKey = () => { try { return localStorage.getItem(ESV_KEY) || ''; } catch
 const _bibCache = {};                 // in-memory Van Dyck book jsons this session
 const _esvCache = {};                 // fetched ESV chapters, also mirrored to localStorage
 
-// A spoken-dialect New Testament exists (Galilean) but only inside YouVersion — display
-// only, nothing embeddable. So for NT books we link out to it, chapter by chapter.
-const GALILEAN = {  // usfm id -> YouVersion book slug in the Galilean NT (version 2437)
-  MAT:'MAT',MRK:'MRK',LUK:'LUK',JHN:'JHN',ACT:'ACT',ROM:'ROM','1CO':'1CO','2CO':'2CO',
-  GAL:'GAL',EPH:'EPH',PHP:'PHP',COL:'COL','1TH':'1TH','2TH':'2TH','1TI':'1TI','2TI':'2TI',
-  TIT:'TIT',PHM:'PHM',HEB:'HEB',JAS:'JAS','1PE':'1PE','2PE':'2PE','1JN':'1JN','2JN':'2JN',
-  '3JN':'3JN',JUD:'JUD',REV:'REV'};
-const galileanUrl = (id, ch) => GALILEAN[id]
-  ? `https://www.bible.com/bible/2437/${GALILEAN[id]}.${ch}` : null;
 
 // One book at a time -- the whole Van Dyck text is 7.3 MB, which is not something to load on
 // the chance that someone opens the Bible.
@@ -1333,16 +1324,15 @@ function bibleHome() {
     `<button class="bib-b" onclick="location.hash='/bible/${b.id}'">
        <span class="bib-b-en">${esc(b.en)}</span>
        <span class="bib-b-ar" dir="rtl">${esc(b.ar)}</span></button>`).join('');
-  let h = `<p class="hint">Read Scripture side by side — <b>ESV</b> in English on the left,
-     the classical Arabic <b>Van Dyck</b> on the right, the version read aloud in Arabic
-     churches. Tap a book, then a chapter.
+  // Which edition sits in the right-hand column, and what it is, is the pack's to say. The
+  // Arabic side is a 19th-century translation; the Hebrew Old Testament is the original.
+  let h = `<p class="hint">${LANG.bible.intro}
      ${esvKey() ? '' : '<button class="lnk" onclick="location.hash=\'/bible/settings\'">Add your ESV key</button> to show the English.'}</p>
     <div class="sec">Old Testament</div><div class="bib-grid">${grid('OT')}</div>
     <div class="sec">New Testament</div><div class="bib-grid">${grid('NT')}</div>
-    <div class="note">Arabic: Van Dyck (1865), public domain. English: ESV, fetched live with
-      your own Crossway key — <button class="lnk" onclick="location.hash='/bible/settings'">key
-      settings</button>. The spoken Palestinian/Galilean New Testament isn’t freely available as
-      text; where it exists, each New-Testament chapter links out to it.</div>`;
+    <div class="note">${LANG.bible.credit} English: ESV, fetched live with your own Crossway
+      key — <button class="lnk" onclick="location.hash='/bible/settings'">key settings</button>.
+      ${LANG.bible.note || ''}</div>`;
   $('view').innerHTML = h;
 }
 
@@ -1362,7 +1352,7 @@ function bibleBook(id) {
 async function bibleChapter(id, ch) {
   const b = bibById(id); if (!b || ch < 1 || ch > b.chapters.length) return bibleBook(id);
   $('title').textContent = b.en + ' ' + ch;
-  const gal = galileanUrl(id, ch);
+  const gal = LANG.bible.chapterLink ? LANG.bible.chapterLink(id, ch) : null;
   const nav = pos => {
     const prev = pos === 'top';
     let t = ch > 1 ? `<button class="tog" onclick="location.hash='/bible/${id}/${ch - 1}'">← ${ch - 1}</button>` : '<span></span>';
@@ -5797,10 +5787,7 @@ function showWord(w0, ctx, opts) {
        <dt>Root</dt><dd class="rtl">${esc(w.root || '—')}</dd>
        <dt>Type</dt><dd>${esc(wt ? wt + (w.analysis && w.analysis.includes(':') ? ' (' + w.analysis + ')' : '') : (w.analysis || '—'))}</dd>
      </dl>
-     ${msa ? `<div class="msa-note"><b>Classical Arabic, not dialect.</b> This is the Van Dyck
-        translation (1865). The meaning above comes from the Palestinian lexicon and is here to
-        help you read — but the word isn't added to your vocabulary, which stays spoken
-        Palestinian.</div>` : ''}
+     ${msa ? `<div class="msa-note">${LANG.bible.wordNote}</div>` : ''}
      <div class="src">${src}${on && !msa ? ' · in your deck (' + esc(deckName((marked.get(deckKeyForWord(w)) || {}).deck)) + ')' : ''}</div>
      <div class="acts">
        <button data-a="close">Close</button>
