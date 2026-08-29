@@ -39,13 +39,117 @@ function switchLang(code) {
   location.replace(location.pathname + '?lang=' + code + (has ? '#/' + sec : '#/'));
 }
 
+// ---------- storage policy: one device, two languages ----------
+// Everything this app remembers is a `alp.*` key in localStorage. Two languages now share one
+// device and one Supabase row, so almost every key is namespaced BY LANGUAGE:
+// `alp.ar.cards.v1` and `alp.he.cards.v1` are different decks, different plans, different
+// progress, and neither can see the other. That separation is the point of B4 -- a Hebrew
+// learner's streak has nothing to do with their Arabic one.
+//
+// Three kinds of key deliberately stay outside the namespace:
+//   GLOBAL_KEYS  -- a property of the person or the device rather than of a language: which
+//                   language you last used, how fast you like audio, when this device last
+//                   changed. Duplicating those per language would just make them disagree.
+//   alp.esv.*    -- your ESV API key and the English chapters it fetches. English is neither of
+//                   the two languages, and the text is licensed, so it is global AND never
+//                   synced: until now every chapter you read was being copied to your Supabase
+//                   row and growing it forever.
+//   alp.backup.* -- the pre-migration snapshot written below. A local safety net; pushing it
+//                   would double the size of every sync.
+const LANGS_ALL = ['ar', 'he'];
+const GLOBAL_KEYS = new Set(['alp.lang', 'alp.speed.v1', 'alp.sync.at', 'alp.marked.v1']);
+const isGlobalKey = k => GLOBAL_KEYS.has(k) || k.startsWith('alp.esv.') || k.startsWith('alp.backup.');
+const noSync = k => k === 'alp.sync.at' || k.startsWith('alp.esv.') || k.startsWith('alp.backup.');
+// The single place a per-language key is built. Every `const *KEY` below goes through it, so
+// "which language owns this data" is answered once instead of at thirteen call sites.
+const LKEY = k => 'alp.' + LANG.code + '.' + k;
+const _pj = s => { try { return JSON.parse(s); } catch (e) { return null; } };
+// base key name -> how two copies of it combine. Used twice: when the cloud first meets a device
+// (mergeProgress), and when a legacy key meets its namespaced replacement (migrateStorage). A
+// key with no entry here is a scalar or a config blob: the newer side wins outright.
+const MERGERS = {'cards.v1': mergeCards, 'decks.v1': unionById, 'plan.seen.v1': unionArr,
+                 'plan.log.v1': mergeLog, 'plan.extra.v1': mergeExtra};
+
+// `plan.seen.v1` used to key a finished verb as `v:<index into VB>`. That index is assigned at
+// build time and shifts every time build_verbs.py reorders the list, so the record of what you
+// had studied silently pointed at a different verb after each rebuild. Key on the verb itself
+// instead.
+//
+// Which parts of "the verb itself": the VOCALIZED citation form, the measure, and the vocalized
+// present. Measured over the 2,459 conjugating verbs, the bare consonantal skeleton collides for
+// 786 of them -- فتح is both "open" and "be opened", لِزِم and لَزَم are different verbs -- so a
+// normalized key would silently tick two verbs off the walk at once. These three fields together
+// collide for none, and none of them depends on build order.
+const verbKey = v => 'v:' + v.lemma + '|' + (v.form || '') + '|' + ((v.pres && v.pres.ar) || '');
+// An index that no longer resolves is dropped rather than guessed: a wrong verb marked done is
+// worse than one left unmarked.
+function reseedSeen(ids) {
+  const VBs = (window.VERBS && window.VERBS.verbs) || [];
+  const out = [];
+  for (const id of ids || []) {
+    if (typeof id !== 'string' || !/^v:\d+$/.test(id)) { out.push(id); continue; }
+    const v = VBs[+id.slice(2)];
+    if (v) out.push(verbKey(v));
+  }
+  return [...new Set(out)];
+}
+
+// ---- migration: legacy `alp.<key>` -> `alp.ar.<key>` ----
+// Everything written before the split is Palestinian Arabic, so legacy keys belong to `ar` no
+// matter which language is booting now.
+//
+// It is a MERGE, not a move, and it runs on every boot AND after every remote apply. That
+// second part is what makes it safe: a phone that hasn't reloaded the new build keeps pushing
+// flat `alp.cards.v1` into the same Supabase row, so legacy keys can reappear at any time. A
+// move would let that older flat deck overwrite the newer namespaced one; a merge folds them
+// together and the union survives. Idempotent by construction -- once a legacy key is folded it
+// is deleted, so a second run has nothing to do.
+const LEGACY_OWNER = 'ar';
+function legacyKeys(store) {
+  const out = [];
+  for (let i = 0; i < store.length; i++) {
+    const k = store.key(i);
+    if (k && k.startsWith('alp.') && !isGlobalKey(k)
+        && !LANGS_ALL.some(c => k.startsWith('alp.' + c + '.'))) out.push(k);
+  }
+  return out;
+}
+function migrateStorage(store) {
+  store = store || localStorage;
+  const flat = legacyKeys(store);
+  if (!flat.length) return 0;
+  // A snapshot of everything, taken before the first key moves, so a bad migration is
+  // recoverable from this device alone -- Account -> "Backup & restore" reads it back out.
+  if (!store.getItem('alp.backup.premigrate.v1')) {
+    const snap = {};
+    for (let i = 0; i < store.length; i++) { const k = store.key(i);
+      if (k && k.startsWith('alp.') && !k.startsWith('alp.backup.')) snap[k] = store.getItem(k); }
+    try { store.setItem('alp.backup.premigrate.v1', JSON.stringify({at: Date.now(), data: snap})); }
+    catch (e) { return 0; }        // no room for the backup means no migration: leave data alone
+  }
+  for (const k of flat) {
+    const base = k.slice(4), dst = 'alp.' + LEGACY_OWNER + '.' + base;
+    let val = store.getItem(k);
+    if (base === 'plan.seen.v1') val = JSON.stringify(reseedSeen(_pj(val) || []));
+    const cur = store.getItem(dst), fn = MERGERS[base];
+    // Argument order matters: the already-namespaced copy is the newer one and wins every tie.
+    if (cur != null) val = fn ? JSON.stringify(fn(_pj(cur), _pj(val))) : cur;
+    try { store.setItem(dst, val); store.removeItem(k); } catch (e) {}
+  }
+  // Local storage really did change, so say so: without this the cloud copy (still all legacy
+  // keys) can look newer than the device that just cleaned itself up.
+  try { store.setItem('alp.sync.at', String(Date.now())); } catch (e) {}
+  return flat.length;
+}
+migrateStorage();
+
 // ---------- persistence: the memorization deck ----------
 // localStorage, on this device, no server. Each word you "don't know" becomes a CARD keyed
 // by LEMMA (so it's the same card in every text), carrying its lexicon data, the sentence you
 // met it in, and its spaced-repetition state (Anki's SM-2). `marked` = the card map; the
 // reader highlights any word that has a card.
-const KEY = 'alp.cards.v1';
-const DKEY = 'alp.decks.v1';
+const KEY = LKEY('cards.v1');
+const DKEY = LKEY('decks.v1');
 const now = () => Date.now();
 const DAY = 864e5;
 
@@ -97,7 +201,7 @@ if (!decks.length) decks = [{id: 'default', name: 'My words', created: now()}];
 const saveDecks = () => { try { localStorage.setItem(DKEY, JSON.stringify(decks)); } catch (e) {} };
 const deckName = id => (decks.find(d => d.id === id) || {}).name || 'My words';
 // The deck new cards drop into (remembered; the deck view can change it).
-const AKEY = 'alp.activedeck.v1';
+const AKEY = LKEY('activedeck.v1');
 const activeDeck = () => { const id = localStorage.getItem(AKEY);
   return decks.some(d => d.id === id) ? id : 'default'; };
 const setActiveDeck = id => { try { localStorage.setItem(AKEY, id); } catch (e) {} };
@@ -163,7 +267,7 @@ function speakWord(card) {                    // browser SpeechSynthesis fallbac
 // Playback speed. Slow is the single most useful setting for dialect — a Palestinian
 // sentence at full pace is a wall; at 0.5x you can actually pick the words apart. Kept
 // in its own localStorage key so it persists across sessions like the marked list.
-const SKEY = 'alp.speed.v1';
+const SKEY = 'alp.speed.v1';        // global on purpose: a playback speed, not a language
 let SPEED = parseFloat(localStorage.getItem(SKEY)) || 1;
 const setSpeed = v => { SPEED = v; try { localStorage.setItem(SKEY, String(v)); } catch (e) {} };
 // One list, used by every speed control — the inline players and the guided-shadow view had
@@ -2484,7 +2588,7 @@ let _revq = null;
 // order is the teaching, not a preference. A deck that has never set this will start flipping
 // its established cards to production; the toggle at the bottom of every review card changes
 // it back in one tap, and the choice persists.
-const RDIR_KEY = 'alp.rev.dir.v1';
+const RDIR_KEY = LKEY('rev.dir.v1');
 const REV_DIRS = [
   ['ar',  'Arabic first', 'See the Arabic, recall the English. Easier — good for new words and for reading.'],
   ['en',  'English first', 'See the English, say the Arabic. Harder, and the direction that trains speaking.'],
@@ -2661,7 +2765,7 @@ function ankiExport(){
 // makes reflow automatic — miss a day and you simply haven't advanced; the finish line moves,
 // nothing is lost, and no guilt-tripping "you're 40 tasks behind."
 const CUR = window.CURRICULUM || {phases: [], activities: {}, external: {}, totalHours: 2000};
-const PKEY = 'alp.plan.cfg.v1', PLKEY = 'alp.plan.log.v1';
+const PKEY = LKEY('plan.cfg.v1'), PLKEY = LKEY('plan.log.v1');
 // `external` (the outside-resources toggles) postdates the first configs and arrives absent on
 // old or partially-synced ones; buildDay reads it unguarded, so normalize it here rather than
 // scattering `cfg.external &&` through every call site.
@@ -2761,7 +2865,7 @@ function projDateISO(cfg, targetMin) {
 }
 
 // ---- content progression: which texts you've worked through (so the plan walks a real path) ----
-const CSEEN_KEY = 'alp.plan.seen.v1';
+const CSEEN_KEY = LKEY('plan.seen.v1');
 function contentSeen() { try { return new Set(JSON.parse(localStorage.getItem(CSEEN_KEY) || '[]')); } catch (e) { return new Set(); } }
 function markSeen(id, on) { if (!id) return; const s = contentSeen();
   if (on) s.add(id); else s.delete(id); try { localStorage.setItem(CSEEN_KEY, JSON.stringify([...s])); } catch (e) {} }
@@ -2811,7 +2915,7 @@ function verbPlan() {
     || LANG.verb.tier(a) - LANG.verb.tier(b)               // then easiest weak class
     || (a.form === 'I' ? 0 : 1) - (b.form === 'I' ? 0 : 1)               // then Form I before derived
     || (a.gloss || '').localeCompare(b.gloss || ''));
-  _verbPlan = list.map(v => ({key: 'v:' + v._i, i: v._i, title: v.gloss || v.lemma,
+  _verbPlan = list.map(v => ({key: verbKey(v), i: v._i, title: v.gloss || v.lemma,
     ar: (v.past && v.past.ar) || v.lemma, weak: v.weak, tier: LANG.verb.tier(v), link: '/verb/' + v._i}));
   return _verbPlan;
 }
@@ -2849,7 +2953,7 @@ function pickVideo(phaseIndex, ord) {
 // ---- spaced re-exposure for grammar & verbs (SRS already handles vocab) ----
 // When you first complete a lesson/verb we remember the date; the generator then resurfaces it
 // as a short "review" task after 2, then 7, then 21 days — the expanding intervals memory wants.
-const PRKEY = 'alp.plan.review.v1';
+const PRKEY = LKEY('plan.review.v1');
 function planReview() { try { return JSON.parse(localStorage.getItem(PRKEY) || '{}') || {}; } catch (e) { return {}; } }
 function savePlanReview(r) { try { localStorage.setItem(PRKEY, JSON.stringify(r)); } catch (e) {} }
 function noteReview(key) { if (!key) return; const r = planReview();
@@ -3188,7 +3292,7 @@ function planWelcome() {
 // The ladder: rounds of one item per skill; a strong round moves the tier up, a weak one down;
 // the tier you converge on decides the phase your plan starts in, and the per-skill accuracy
 // tilts each day's minutes toward your weakest skill.
-const ASSESS_KEY = 'alp.plan.assess.v1';
+const ASSESS_KEY = LKEY('plan.assess.v1');
 const AS = window.ASSESS || {};
 function assessResult() { try { return JSON.parse(localStorage.getItem(ASSESS_KEY) || 'null'); } catch (e) { return null; } }
 function assessClear() {
@@ -3705,7 +3809,7 @@ function planExShow(i) { const it = _planEx[i], res = $('pex-res-' + i);
   if (it && res) res.innerHTML = `<div class="pex-ans" dir="rtl">${esc(it.ar)}</div>`; }
 
 // ---- "study more": extra content on demand (extra time, or an off day) ----
-const PXKEY = 'alp.plan.extra.v1';
+const PXKEY = LKEY('plan.extra.v1');
 function planExtra() { try { return JSON.parse(localStorage.getItem(PXKEY) || '{}') || {}; } catch (e) { return {}; } }
 function addPlanExtra(date) { const x = planExtra(); x[date] = (x[date] || 0) + 1;
   try { localStorage.setItem(PXKEY, JSON.stringify(x)); } catch (e) {} planToday(); }
@@ -3789,7 +3893,7 @@ function planToggle(date, tid, minutes, cid, isPim, rkey, isReview) {
 // a vague "do Pimsleur" every day: it remembers which level and lesson you're on, schedules
 // the NEXT one by name, advances when you tick it off, and counts the minutes like any other
 // task. The listening still happens in their app.
-const PIMKEY = 'alp.pimsleur.v1';
+const PIMKEY = LKEY('pimsleur.v1');
 const PIM_LESSONS = 30;                        // every Pimsleur level is 30 half-hour lessons
 function pim() {
   try { return JSON.parse(localStorage.getItem(PIMKEY) || 'null') || {}; } catch (e) { return {}; }
@@ -6000,19 +6104,34 @@ let _user = null, _syncing = false, _applyingRemote = false, _syncTimer = null;
 let _loginEmail = '', _navdAfterLogin = false;
 const SYNC_AT = 'alp.sync.at';
 
+// What goes to the server. `noSync` holds back the ESV cache (licensed English text that was
+// growing this row with every chapter read) and the pre-migration backup (a local safety net --
+// uploading it would double every push).
 function collectProgress() {
   const o = {};
   for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i);
-    if (k && k.startsWith('alp.') && k !== SYNC_AT) o[k] = localStorage.getItem(k); }
+    if (k && k.startsWith('alp.') && !noSync(k)) o[k] = localStorage.getItem(k); }
   return o;
 }
+// Write the remote blob over local storage.
+//
+// This used to delete every `alp.*` key first. That is the single most dangerous line the app
+// ever had: a key the blob does not mention was treated as a key the server had deleted. With
+// storage namespaced by language it becomes catastrophic -- a phone still running the old build
+// pushes a flat `alp.cards.v1`, this device applies that blob, deletes `alp.ar.cards.v1` because
+// the blob never named it, and the deck is empty. Then it syncs the emptiness everywhere.
+//
+// So: absence is not a delete instruction. The blob overwrites what it names and nothing else.
+// Nothing is lost by that, because the app has no operation that removes a synced key -- deleting
+// a deck or a card rewrites the key's VALUE, which still travels.
 function applyProgress(o) {
   _applyingRemote = true;
   try {
-    const kill = []; for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i);
-      if (k && k.startsWith('alp.') && k !== SYNC_AT) kill.push(k); }
-    kill.forEach(k => localStorage.removeItem(k));
-    for (const k in o) localStorage.setItem(k, o[k]);
+    for (const k in o) if (!noSync(k)) localStorage.setItem(k, o[k]);
+    // The blob may carry legacy flat keys from a device that hasn't updated. Fold them in here,
+    // inside the remote-apply guard, so the merge is one atomic change rather than a burst of
+    // writes each scheduling its own push.
+    migrateStorage();
   } finally { _applyingRemote = false; }
   reloadState();
 }
@@ -6031,7 +6150,7 @@ function markChanged() { try { localStorage.setItem(SYNC_AT, String(now())); } c
 const _origSet = localStorage.setItem.bind(localStorage);
 localStorage.setItem = function (k, v) {
   _origSet(k, v);
-  if (!_applyingRemote && typeof k === 'string' && k.startsWith('alp.') && k !== SYNC_AT) {
+  if (!_applyingRemote && typeof k === 'string' && k.startsWith('alp.') && !noSync(k)) {
     _origSet(SYNC_AT, String(now()));
     if (_user) scheduleSync();
   }
@@ -6039,7 +6158,8 @@ localStorage.setItem = function (k, v) {
 function scheduleSync() { if (_syncTimer) clearTimeout(_syncTimer); _syncTimer = setTimeout(pushProgress, 1500); }
 
 // ---- merge: never lose collection progress when two devices first meet ----
-const _pj = s => { try { return JSON.parse(s); } catch (e) { return null; } };
+// (`_pj` and the MERGERS table that indexes these live at the top of the file, next to the
+// migration that uses the same rules.)
 function mergeCards(a, b) {                         // arrays of [lemma, card]; keep the more-reviewed
   const m = new Map(); (a || []).forEach(([k, c]) => m.set(k, c));
   (b || []).forEach(([k, c]) => { const e = m.get(k); if (!e || (c.reps || 0) > (e.reps || 0)) m.set(k, c); });
@@ -6056,12 +6176,15 @@ function mergeProgress(loc, rem, cloudNewer) {
   const scalarSrc = cloudNewer ? rem : loc;        // config/scalars follow the more recently used device
   const out = {}; const keys = new Set([...Object.keys(loc || {}), ...Object.keys(rem || {})]);
   keys.forEach(k => { out[k] = (scalarSrc && scalarSrc[k] != null) ? scalarSrc[k] : (loc[k] != null ? loc[k] : rem[k]); });
-  const both = (k, fn) => { if (loc[k] || rem[k]) out[k] = JSON.stringify(fn(_pj(loc[k]), _pj(rem[k]))); };
-  both('alp.cards.v1', mergeCards);
-  both('alp.decks.v1', unionById);
-  both('alp.plan.seen.v1', unionArr);
-  both('alp.plan.log.v1', mergeLog);
-  both('alp.plan.extra.v1', mergeExtra);
+  // Union-of-keys already carries both languages, since the row holds `alp.ar.*` and
+  // `alp.he.*` side by side. The collection merge just has to find its own key whatever the
+  // prefix: `alp.ar.cards.v1`, `alp.he.cards.v1` and a legacy flat `alp.cards.v1` each merge
+  // with their own counterpart and never with each other.
+  keys.forEach(k => {
+    const base = Object.keys(MERGERS).find(b => k === 'alp.' + b
+      || LANGS_ALL.some(c => k === 'alp.' + c + '.' + b));
+    if (base && (loc[k] || rem[k])) out[k] = JSON.stringify(MERGERS[base](_pj(loc[k]), _pj(rem[k])));
+  });
   return out;
 }
 
@@ -6280,8 +6403,84 @@ function accountSection() {
         backup + sync — you can sign out any time.</div>
       <div id="push-card" style="margin-top:14px"></div>`;
   }
-  $('view').innerHTML = h;
+  $('view').innerHTML = h + backupCardHTML();
   renderPushCard();
+}
+
+// ---- backup & restore ------------------------------------------------------------------------
+// Namespacing storage by language is the one change in this app that could lose study history,
+// so the escape hatch ships in the same release rather than after the first complaint. A
+// snapshot is written automatically before the first key is touched; this panel lets you take
+// one on demand, keep it somewhere safe, and paste one back.
+//
+// Deliberately plain JSON in a text box, not a file-only flow: on an installed iOS PWA a
+// downloaded file is easy to lose track of, and a paste always works.
+function backupBlob() {
+  const data = {};
+  for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i);
+    if (k && k.startsWith('alp.') && !k.startsWith('alp.backup.')) data[k] = localStorage.getItem(k); }
+  return JSON.stringify({v: 1, app: 'alp', at: Date.now(), data});
+}
+const _bkPre = () => { try { return localStorage.getItem('alp.backup.premigrate.v1'); } catch (e) { return null; } };
+function backupCardHTML() {
+  const pre = _pj(_bkPre() || 'null');
+  const n = Object.keys((_pj(backupBlob()) || {}).data || {}).length;
+  return `<div class="note" style="margin-top:14px"><b>Backup &amp; restore</b><br>
+      Your flashcards, plan and progress live on this device (and in your account, if you are signed
+      in). A backup is a single block of text you can keep anywhere &mdash; ${n} saved
+      ${n === 1 ? 'key' : 'keys'} right now.</div>
+    <div class="ctl"><button class="tog" onclick="bkCopy()">Copy backup</button>
+      <button class="tog" onclick="bkDownload()">Download file</button>
+      ${pre ? `<button class="tog" onclick="bkLoadPre()">Load the pre-upgrade snapshot</button>` : ''}</div>
+    ${pre ? `<div class="hint">Taken automatically on ${esc(new Date(pre.at || 0).toLocaleString())},
+      just before this device split its storage into Arabic and Hebrew.</div>` : ''}
+    <textarea id="bk-in" class="vsearch" rows="3" spellcheck="false" dir="ltr"
+      style="margin-top:10px;width:100%;font-family:ui-monospace,monospace;font-size:12px"
+      placeholder="Paste a backup here to restore it"></textarea>
+    <div class="ctl"><button class="tog" onclick="bkRestore()">Restore from this text</button></div>
+    <div id="bk-msg" class="hint"></div>`;
+}
+function bkCopy() {
+  navigator.clipboard.writeText(backupBlob())
+    .then(() => alert('Backup copied. Paste it somewhere you will still have in a year — a note to yourself, an email, a file.'))
+    .catch(() => { const t = $('bk-in'); if (t) { t.value = backupBlob(); t.select(); } });
+}
+function bkDownload() {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([backupBlob()], {type: 'application/json'}));
+  a.download = 'palestinian-arabic-backup-' + todayISO() + '.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+function bkLoadPre() { const t = $('bk-in'); if (t) { t.value = _bkPre() || ''; t.focus(); }
+  const m = $('bk-msg'); if (m) m.textContent = 'Loaded. Read it if you like, then tap Restore.'; }
+
+// Restore REPLACES, because the point of a restore is to get out of a bad state and a merge
+// would keep whatever went wrong. It is still undoable: the current state is snapshotted to
+// alp.backup.prerestore.v1 first.
+function bkRestore() {
+  const msg = $('bk-msg'), say = t => { if (msg) msg.textContent = t; };
+  let o = null;
+  try { o = JSON.parse((($('bk-in') || {}).value || '').trim()); } catch (e) {}
+  const data = o && typeof o === 'object' && (o.data && typeof o.data === 'object' ? o.data : o);
+  const keys = data ? Object.keys(data).filter(k => k.startsWith('alp.') && !k.startsWith('alp.backup.')) : [];
+  if (!keys.length) return say('That does not look like a backup. Paste the whole block of text, including the outer { }.');
+  if (!confirm('Restore ' + keys.length + ' saved ' + (keys.length === 1 ? 'key' : 'keys') + '?\n\n'
+    + 'This replaces the study data on THIS device' + (_user ? ', and pushes the restored copy to your other devices' : '')
+    + '. The current state is saved first, so you can undo it.')) return;
+  _applyingRemote = true;                       // one atomic change, not a burst of pushes
+  try {
+    localStorage.setItem('alp.backup.prerestore.v1', backupBlob());
+    const kill = []; for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i);
+      if (k && k.startsWith('alp.') && !k.startsWith('alp.backup.')) kill.push(k); }
+    kill.forEach(k => localStorage.removeItem(k));
+    keys.forEach(k => localStorage.setItem(k, String(data[k])));
+    migrateStorage();                           // an old backup is all flat keys; fold them in
+  } finally { _applyingRemote = false; }
+  markChanged();
+  reloadState();
+  if (_user) pushProgress();
+  alert('Restored. The previous state was saved as a "prerestore" backup on this device.');
 }
 // Email + password. This is the one method that works inside an installed iOS PWA: no email round
 // trip and no magic LINK (which would open Safari, a separate storage jar, so the PWA never gets the
