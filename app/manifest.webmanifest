@@ -1,7 +1,7 @@
 {
-  "name": "Palestinian Arabic",
-  "short_name": "Palestinian",
-  "description": "Learn spoken Palestinian Arabic — stories, verbs, grammar, videos and a daily plan.",
+  "name": "Arabrit",
+  "short_name": "Arabrit",
+  "description": "Learn to speak Palestinian Arabic or modern Hebrew — verbs, a daily paper, scripture, a dictionary and a study plan that adjusts to your week.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -9,7 +9,17 @@
   "theme_color": "#16171B",
   "orientation": "portrait",
   "icons": [
-    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
-    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }

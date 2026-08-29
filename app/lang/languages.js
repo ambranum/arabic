@@ -30,7 +30,6 @@ window.LANGUAGES = [
     name: 'Palestinian Arabic',
     nativeName: 'عربي فلسطيني',
     short: 'Arabic',
-    brand: 'القهوة',                   // al-qahwa, "the coffee"
     blurb: 'The spoken dialect of Palestine — what people actually say, not Modern Standard.',
     font: '"Geeza Pro","SF Arabic","Damascus","Al Bayan",serif',
     data: ['library', 'verbs', 'vocab_audio', 'curriculum', 'assess', 'grammar',
@@ -47,7 +46,6 @@ window.LANGUAGES = [
     name: 'Modern Hebrew',
     nativeName: 'עברית',
     short: 'Hebrew',
-    brand: 'הקפה',                               // ha-kafe, "the coffee"
     blurb: 'Spoken Israeli Hebrew. Verbs, the dictionary, the daily paper and the Bible — the rest is being built.',
     font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
     data: ['library', 'verbs', 'bible-index'],

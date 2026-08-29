@@ -60,7 +60,7 @@ def practiced_today(progress_by_user, user_id, today):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--title', default='Palestinian Arabic')
+    ap.add_argument('--title', default='Arabrit')
     ap.add_argument('--body', default='A few minutes keeps your streak alive — open today’s plan.')
     ap.add_argument('--url', default='./index.html#/plan')
     ap.add_argument('--force', action='store_true', help='notify everyone, even if they practised today')

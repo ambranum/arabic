@@ -48,7 +48,7 @@ function defineLang(spec) {
   if (!meta) {
     throw new Error('language pack "' + ((spec || {}).code) + '" is not in lang/languages.js');
   }
-  ['dir', 'flag', 'name', 'nativeName', 'short', 'brand', 'font', 'ready', 'sections']
+  ['dir', 'flag', 'name', 'nativeName', 'short', 'font', 'ready', 'sections']
     .forEach(k => { spec[k] = meta[k]; });
   let required = LANG_CHROME;
   if (spec.ready !== false) {

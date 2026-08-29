@@ -1051,7 +1051,9 @@ function todayISO(){
 
 function home(){
   $('back').hidden = true;
-  $('title').textContent = LANG.name;
+  // The app bar carries the PRODUCT on the home screen; which language you are in is said by
+  // the flags beside it, the sidebar under it and the masthead below that.
+  $('title').textContent = ALP.name;
   const today = todayISO();
   const news = LIB.texts.filter(t => t.kind === 'news')
                         .sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0];
@@ -6888,10 +6890,11 @@ async function acctSyncNow() { await pushProgress(); await pullMerge();
 // The switcher mounts once, here rather than at the seam, because it needs esc() and the
 // header element -- both of which exist by the time the boot runs.
 const _lsw = $('langsw'); if (_lsw) _lsw.innerHTML = langSwitchHTML();
-// The sidebar wordmark was hardcoded Arabic in index.html, which would have greeted a Hebrew
-// learner with القهوة. It is the pack's now, like the home masthead.
+// The sidebar wordmark: the product over the language. It was hardcoded القهوة in index.html
+// until Hebrew arrived, then briefly a per-language coffee-house name I had invented because
+// the app had no name of its own. It has one now.
 const _sb2 = $('sideBrand');
-if (_sb2) _sb2.innerHTML = esc(LANG.brand) + '<span>' + esc(LANG.name) + '</span>';
+if (_sb2) _sb2.innerHTML = esc(ALP.name) + '<span>' + esc(LANG.name) + '</span>';
 
 count();
 route();

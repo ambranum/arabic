@@ -1,11 +1,11 @@
-/* Palestinian Arabic — service worker.
+/* Arabrit — service worker.
  *
  * Two jobs: make the app installable + usable offline, and hold the push handler that the
  * scheduled-notification follow-up will use. CACHE_VERSION is bumped by pipeline/build_app.py so
  * a deploy invalidates old caches. IMPORTANT: the HTML document is fetched NETWORK-FIRST so a new
  * deploy shows up immediately (never a stale shell); data/audio/icons are cache-first for speed
  * and offline. */
-const CACHE_VERSION = 'alp-5e0a1829b4';
+const CACHE_VERSION = 'alp-6c99989ea0';
 // The shell is what has to be there for the app to start at all, in every language: the
 // document, the boot roster it reads to decide which language to load, the shared seam, and
 // app.js itself. Without app.js an offline load serves the HTML and nothing runs.
@@ -53,7 +53,7 @@ self.addEventListener('fetch', e => {
 self.addEventListener('push', e => {
   let data = {};
   try { data = e.data ? e.data.json() : {}; } catch (err) {}
-  e.waitUntil(self.registration.showNotification(data.title || 'Palestinian Arabic', {
+  e.waitUntil(self.registration.showNotification(data.title || 'Arabrit', {
     body: data.body || 'Time for today’s practice — a few minutes keeps the streak alive.',
     icon: './icon-192.png', badge: './icon-192.png',
     data: {url: data.url || './index.html'}
