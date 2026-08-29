@@ -48,15 +48,15 @@ window.LANGUAGES = [
     nativeName: 'עברית',
     short: 'Hebrew',
     brand: 'הקפה',                               // ha-kafe, "the coffee"
-    blurb: 'Spoken Israeli Hebrew. Verbs, the dictionary and the tutor — the rest is being built.',
+    blurb: 'Spoken Israeli Hebrew. Verbs, the dictionary, the daily paper and the Bible — the rest is being built.',
     font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
-    data: ['library', 'verbs'],
+    data: ['library', 'verbs', 'bible-index'],
     // What actually exists, and nothing else. Hebrew arrives with the two things Stage A proved
     // could be LOOKED UP rather than written -- 2,084 pointed paradigms and a 12,662-lemma
     // dictionary -- the sections built on them, and the daily paper, which is written fresh each
     // morning by the same job that writes the Arabic one. Lessons, stories, grammar, sounds,
     // reactions and the Bible are authored content that does not exist yet, and listing a
     // section before it exists is a lie the switcher would tell on every page.
-    sections: ['verbs', 'news', 'vocab', 'translate', 'tutor', 'account'],
+    sections: ['verbs', 'news', 'bible', 'vocab', 'translate', 'tutor', 'account'],
   },
 ];

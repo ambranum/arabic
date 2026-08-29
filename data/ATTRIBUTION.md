@@ -33,6 +33,17 @@ ebible.org (id `arb-vd`), which states its status as **Public Domain**. It is co
 (source) and processed by `pipeline/bible.py` into `app/data/<lang>/bible/*.js` +
 `app/data/<lang>/bible-index.js`. Public domain imposes no obligation; the note here is courtesy.
 
+`data/bible-wlc/*.usfm` is the **Westminster Leningrad Codex**, the Hebrew Old Testament, from
+ebible.org (`hboWLC`). The TEXT is public domain. The edition also carries a Strong's number and
+a morphology code on every word (`\w בְּרֵאשִׁ֖ית|strong="H7225" x-morph="HR/Ncfsa"\w*`), and
+**that lemma/morphology data is CC BY-SA** — so it is stripped by `pipeline/bible.py` and none of
+it ships. If it is ever used, this repo owes the attribution and the share-alike.
+
+`data/bible-delitzsch/*.usfm` is **Franz Delitzsch's Hebrew New Testament** (1877), also from
+ebible.org (`heb`), public domain. Only the 27 New-Testament books are kept: that package ships a
+whole Bible, but its Old Testament is unpointed where the WLC's is the original, so the WLC
+supplies the 39 Old-Testament books and Delitzsch the 27 New.
+
 ## English column — ESV. NOT stored; fetched with the user's own key.
 
 The English Standard Version is © Crossway and **may not be redistributed**, so **no ESV

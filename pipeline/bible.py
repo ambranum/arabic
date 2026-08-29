@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse the public-domain Arabic Van Dyck USFM into the app's Bible data.
+"""Parse a public-domain scripture edition into the app's Bible data.
 
 SOURCE: Arabic Van Dyck translation (Smith & Van Dyke, 1865) — PUBLIC DOMAIN, downloaded
 from ebible.org (arb-vd). The USFM sits in data/bible-vandyck/ and is committed because it's
@@ -17,7 +17,7 @@ every page load:
 The USFM book codes (GEN…REV) are exactly the OSIS-style ids the ESV API also uses, so the
 two columns line up on reference with no mapping table beyond the display names below.
 
-Run:  python3 pipeline/bible.py
+Run:  python3 pipeline/bible.py [--lang he]
 """
 import json, os, re, glob
 
@@ -27,9 +27,26 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- where this language's generated data lives
 
-SRC = os.path.join(ROOT, 'data', 'bible-vandyck')
+# Which public-domain edition supplies each language's right-hand column. A list, because a
+# language may need more than one: Hebrew's Old Testament is the ORIGINAL and arrives fully
+# pointed, but there is no pointed public-domain Hebrew New Testament, so the two testaments
+# come from different editions and say so.
+SOURCES = {
+    'ar': [{'dir': 'bible-vandyck', 'glob': '*arb-vd.usfm',
+            'name': 'Van Dyck (1865)', 'covers': None}],
+    'he': [{'dir': 'bible-wlc', 'glob': '*hboWLC.usfm',
+            'name': 'Westminster Leningrad Codex', 'covers': 'OT'},
+           {'dir': 'bible-delitzsch', 'glob': '*heb.usfm',
+            'name': 'Delitzsch (1877)', 'covers': 'NT'}],
+}
 OUT_DIR = paths.data('bible')
 INDEX = paths.data('bible-index.js')
+
+# The WLC wraps every word in \w ... |strong="H7225" x-morph="HR/Ncfsa"\w*. The lemma and
+# morphology are the CC BY-SA part of that edition and the app does its own lookups, so the
+# markup is stripped and only the pointed word kept. It is worth knowing it is in the source:
+# a future pass could take Strong's numbers straight from it rather than resolving them.
+WORD_MARKUP = re.compile(r'\\w \*?([^|\\]*?)(?:\|[^\\]*?)?\\w\*')
 
 # USFM id -> (English display name, testament). Canonical order is the file order (01..66).
 BOOKS = {
@@ -76,7 +93,7 @@ def clean(t):
 
 def parse_book(path):
     """-> (usfm_id, arabic_name, [[verse, ...], ...])  chapters are 1-indexed in the file."""
-    text = open(path, encoding='utf-8').read()
+    text = WORD_MARKUP.sub(lambda m: m.group(1), open(path, encoding='utf-8').read())
     bid = re.search(r'\\id\s+(\S+)', text).group(1)
     hm = re.search(r'\\(?:toc2|h)\s+(.+)', text)
     arname = clean(hm.group(1)) if hm else BOOKS.get(bid, ('', ''))[0]
@@ -109,17 +126,27 @@ def parse_book(path):
     return bid, arname, [c for c in chapters if c is not None]
 
 def main():
-    if not glob.glob(os.path.join(SRC, '*arb-vd.usfm')):
-        print('Van Dyck USFM not found in data/bible-vandyck/.')
-        print('Download: curl -o vd.zip https://ebible.org/Scriptures/arb-vd_usfm.zip')
-        return 1
+    srcs = SOURCES[paths.LANG]
+    parsed, edition = {}, {}
+    for src in srcs:
+        d = os.path.join(ROOT, 'data', src['dir'])
+        paths_found = glob.glob(os.path.join(d, src['glob']))
+        if not paths_found:
+            print('%s USFM not found in data/%s/.' % (src['name'], src['dir']))
+            print('Download it from ebible.org — see the header of this file.')
+            return 1
+        for path in paths_found:
+            bid, arname, chapters = parse_book(path)
+            if bid not in BOOKS:                          # front/back matter (FRT, GLO…)
+                continue
+            # A source may be limited to one testament. The Delitzsch package ships a whole
+            # Bible, but its Old Testament is unpointed where the WLC's is the original text --
+            # so it is used for the New only, and `covers` is what says so.
+            if src['covers'] and BOOKS[bid][1] != src['covers']:
+                continue
+            parsed[bid] = (arname, chapters)
+            edition[bid] = src['name']
     os.makedirs(OUT_DIR, exist_ok=True)
-    parsed = {}
-    for path in glob.glob(os.path.join(SRC, '*arb-vd.usfm')):
-        bid, arname, chapters = parse_book(path)
-        if bid not in BOOKS:                              # front/back matter (FRT, GLO…)
-            continue
-        parsed[bid] = (arname, chapters)
 
     index, tot_v = [], 0
     for bid, (en, test) in BOOKS.items():
@@ -137,6 +164,7 @@ def main():
             bf.write(';\n')
         nv = sum(len(c) for c in chapters); tot_v += nv
         index.append({'id': bid, 'en': en, 'ar': arname, 'test': test,
+                      'ed': edition[bid],
                       'chapters': [len(c) for c in chapters]})
 
     with open(INDEX, 'w', encoding='utf-8') as f:
@@ -147,7 +175,10 @@ def main():
         json.dump(index, f, ensure_ascii=False)
         f.write(';\n')
 
+    import collections
     print('books: %d   verses: %d' % (len(index), tot_v))
+    for name, n in collections.Counter(edition[b['id']] for b in index).most_common():
+        print('  %-32s %2d books' % (name, n))
     print('sample GEN 1:1 ->', parsed['GEN'][1][0][0][:60])
     print('sample JHN 3:16 ->', parsed['JHN'][1][2][15][:60])
     print('-> %s + %s/*.js' % (os.path.relpath(INDEX, ROOT), os.path.relpath(OUT_DIR, ROOT)))

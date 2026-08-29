@@ -169,6 +169,28 @@ defineLang({
   chapterPrefix: /^פרק[^—]*—\s*/,
 
   bibleBlurb: 'ESV ‖ Hebrew, side by side',
+  bible: {
+    // The Hebrew Bible is a different proposition from the Arabic one, and the page should say
+    // so. The Arabic side offers a 19th-century TRANSLATION; the Hebrew Old Testament is the
+    // text itself, in the language, already pointed — the strongest reading material in the
+    // whole app. What it is not is the language this app teaches, and that has to be as loud.
+    intro: 'Read Scripture side by side — <b>ESV</b> in English on the left, Hebrew on the '
+         + 'right. The Old Testament is the <b>Westminster Leningrad Codex</b>: not a '
+         + 'translation but the original, fully pointed. The New Testament is Franz '
+         + 'Delitzsch\u2019s Hebrew, and is written unpointed, the way Hebrew usually is. '
+         + 'Tap a book, then a chapter.',
+    credit: 'Hebrew: Westminster Leningrad Codex (Old Testament) and Delitzsch, 1877 (New '
+          + 'Testament) — both public domain.',
+    note: 'Biblical Hebrew is not the Hebrew this app teaches. It is the same language three '
+        + 'thousand years apart, and an Israeli reads it the way an English speaker reads '
+        + 'Chaucer — recognisably their own, and not how they talk. Read it for the letters, '
+        + 'the roots and the pleasure of it.',
+    wordNote: '<b>Biblical Hebrew, not modern speech.</b> The meaning above comes from the '
+            + 'lexicon and is here to help you read — but the word isn\u2019t added to your '
+            + 'vocabulary, which stays modern spoken Hebrew.',
+    // No spoken-Hebrew edition to link out to; the Arabic side has one and this does not.
+    chapterLink: null,
+  },
   tutorStarters: [
     'What’s the difference between לא and אין?',
     'How do I say “I’ve been waiting for an hour” in everyday Hebrew?',
