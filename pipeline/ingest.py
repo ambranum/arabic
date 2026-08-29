@@ -113,6 +113,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('source')
     ap.add_argument('--audio', action='store_true', help='generate MP3s (needs env keys)')
+    # paths.py reads this from argv before argparse ever runs. It is declared so the flag can be
+    # PASSED -- which is the whole point, a child that is not told its language runs as the
+    # default and writes into the wrong tree. Not declaring it here is what turned "the Hebrew
+    # annotator ran as Arabic" into "neither language annotated at all".
+    ap.add_argument('--lang', default=paths.LANG, choices=paths.LANGS, help=argparse.SUPPRESS)
     a = ap.parse_args()
 
     SUB = os.environ.get('PAL_SUBDIALECT', 'urban')

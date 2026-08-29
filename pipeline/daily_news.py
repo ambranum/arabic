@@ -57,6 +57,8 @@ FEEDS_BY_LANG = {
     "he": [
         ("Ynet",         "https://www.ynet.co.il/Integration/StoryRss2.xml"),
         ("Walla",        "https://rss.walla.co.il/feed/1?type=main"),
+        # 403s from GitHub's runners (fine from a laptop) — left in because it costs one
+        # logged line and works for anyone running this locally; the other three carry the day.
         ("Israel Hayom", "https://www.israelhayom.co.il/rss.xml"),
         ("Maariv",       "https://www.maariv.co.il/Rss/RssFeedsMivzakiChadashot"),
     ],
