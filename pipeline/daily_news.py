@@ -45,11 +45,23 @@ sys.path.insert(0, HERE)
 
 MODEL = "claude-opus-4-8"
 
-FEEDS = [
-    ("BBC World",   "https://feeds.bbci.co.uk/news/world/rss.xml"),
-    ("Al Jazeera",  "https://www.aljazeera.com/xml/rss/all.xml"),
-    ("NPR World",   "https://feeds.npr.org/1004/rss.xml"),
-]
+# Where the day's headlines come from, per language. Arabic reads the world wires in English;
+# Hebrew reads Israel's own papers, because a Hebrew learner's news should be the news Israelis
+# are actually reading, and because those feeds are what A1 measured lexicon coverage against.
+FEEDS_BY_LANG = {
+    "ar": [
+        ("BBC World",   "https://feeds.bbci.co.uk/news/world/rss.xml"),
+        ("Al Jazeera",  "https://www.aljazeera.com/xml/rss/all.xml"),
+        ("NPR World",   "https://feeds.npr.org/1004/rss.xml"),
+    ],
+    "he": [
+        ("Ynet",         "https://www.ynet.co.il/Integration/StoryRss2.xml"),
+        ("Walla",        "https://rss.walla.co.il/feed/1?type=main"),
+        ("Israel Hayom", "https://www.israelhayom.co.il/rss.xml"),
+        ("Maariv",       "https://www.maariv.co.il/Rss/RssFeedsMivzakiChadashot"),
+    ],
+}
+FEEDS = FEEDS_BY_LANG[paths.LANG]
 
 def headlines(limit=30):
     """Pull recent headlines. Uses only the stdlib so the CI image stays thin."""
@@ -73,7 +85,7 @@ def headlines(limit=30):
 
 # The register matters more than the content: newsreader Arabic is fuṣḥā, which is
 # explicitly not the goal (LEARNING-SYSTEM §1). Ask for the telling-a-friend register.
-WRITE_PROMPT = """You are helping someone learn SPOKEN PALESTINIAN ARABIC (urban \
+AR_PROMPT = """You are helping someone learn SPOKEN PALESTINIAN ARABIC (urban \
 Levantine — Jerusalem/Ramallah/Nablus).
 
 Write {n} sentences summarising today's most significant world news.
@@ -93,6 +105,43 @@ Each sentence needs a natural English translation — meaning, not word-for-word
 Today's headlines:
 {headlines}"""
 
+# Hebrew's register problem is the mirror image. Written Hebrew is not a different language the
+# way fuṣḥā is, but news Hebrew is markedly bookish -- אין ביכולתו, לאחר ש-, בטרם -- and a
+# learner needs what people say. And it must be written UNPOINTED, the way Israelis write:
+# pipeline/he_ingest.py adds the pointing by choosing a lexicon entry, and pointing supplied by
+# the writer would bypass the lookup that is the whole guarantee.
+HE_PROMPT = """You are helping someone learn MODERN SPOKEN ISRAELI HEBREW.
+
+Write {n} sentences summarising today's most significant news from Israel and the world.
+
+CRITICAL — the register:
+- Write as you would TELL a friend the news over coffee, NOT as a newsreader reads it and NOT
+  as a newspaper writes it. Israeli news Hebrew is markedly bookish; that is what we do NOT want.
+- Prefer the everyday word over the literary one: אחרי ש- not לאחר ש-, לפני ש- not בטרם,
+  אבל not אולם, גם not אף, כי not מכיוון ש-.
+- Use ordinary spoken syntax: ש- for "that", של for possession rather than the construct chain
+  where a speaker would, את before definite objects.
+- Write UNPOINTED, in ordinary ktiv male, exactly as it would appear in a message: יכתוב,
+  תוכנית, שמונים. Do NOT add niqqud — the pipeline supplies it from the lexicon.
+- Short sentences. One story each. A2/B1 learner level.
+- Plain factual reporting. No editorialising, no emotive framing.
+
+Each sentence needs a natural English translation — meaning, not word-for-word.
+
+Today's headlines:
+{headlines}"""
+
+WRITE_PROMPT = {"ar": AR_PROMPT, "he": HE_PROMPT}[paths.LANG]
+
+# What the annotator is called and which script runs it, per language.
+LEXICON_NAME = {"ar": "Maknuune", "he": "Wiktionary"}[paths.LANG]
+INGEST_SCRIPT = {"ar": "ingest.py", "he": "he_ingest.py"}[paths.LANG]
+NEWS_TITLE = {"ar": "أخبار اليوم", "he": "חדשות היום"}[paths.LANG]
+NEWS_SOURCE = {
+    "ar": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
+    "he": "Israeli and world headlines, written in spoken Hebrew by Claude. NOT native-validated.",
+}[paths.LANG]
+
 SENTENCE_SCHEMA = {
     "type": "object",
     "properties": {
@@ -101,7 +150,8 @@ SENTENCE_SCHEMA = {
             "items": {
                 "type": "object",
                 "properties": {
-                    "ar": {"type": "string", "description": "Spoken Palestinian Arabic"},
+                    "ar": {"type": "string",
+                           "description": "The target language, in its own script"},
                     "en": {"type": "string", "description": "Natural English translation"},
                 },
                 "required": ["ar", "en"],
@@ -122,7 +172,7 @@ RESOLVE_SCHEMA = {
                 "type": "object",
                 "properties": {
                     "word": {"type": "string"},
-                    "id":   {"type": "string", "description": "Maknuune ID from the options"},
+                    "id":   {"type": "string", "description": "a lexicon id from the options"},
                     "why":  {"type": "string"},
                 },
                 "required": ["word", "id", "why"],
@@ -196,8 +246,8 @@ def resolve(c, ambiguous):
         thinking={"type": "adaptive"},
         output_config={"effort": "high", "format": {"type": "json_schema", "schema": RESOLVE_SCHEMA}},
         messages=[{"role": "user", "content":
-            "Each word below appeared in a Palestinian Arabic sentence and matches several "
-            "entries in the Maknuune lexicon. Pick the ONE id whose sense fits the sentence.\n\n"
+            "Each word below appeared in a sentence and matches several entries in the "
+            + LEXICON_NAME + " lexicon. Pick the ONE id whose sense fits the sentence.\n\n"
             "You MUST return an id that appears in that word's options. Do not invent ids.\n"
             "Watch for causatives: 'sit down' vs 'make sb sit' are different entries.\n"
             + "\n".join(lines)}],
@@ -216,15 +266,15 @@ def resolve(c, ambiguous):
             print(f"  !! rejected id {i} for {w} — not in its candidate list")
     return out
 
-def ingest(src):
-    r = subprocess.run([sys.executable, os.path.join(HERE, "ingest.py"), src],
-                       capture_output=True, text=True, cwd=ROOT)
+def ingest(src, audio=False):
+    cmd = [sys.executable, os.path.join(HERE, INGEST_SCRIPT), src] + (["--audio"] if audio else [])
+    r = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
     print(r.stdout.rstrip())
     if r.returncode: print(r.stderr[:600])
     return r.returncode == 0
 
 def ambiguities(text_id):
-    p = os.path.join(ROOT, "build", text_id, "text.json")
+    p = paths.build(text_id, "text.json")
     a = json.load(open(p, encoding="utf-8"))
     out = []
     for s in a["sentences"]:
@@ -251,6 +301,10 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="fetch headlines only")
     ap.add_argument("--skip-if-done", action="store_true",
                     help="exit 0 without spending anything if today's news is already written")
+    # Read by pipeline/paths.py at import time, before argparse ever runs. Declared here only so
+    # --help lists it and an unknown-argument error never fires on it.
+    ap.add_argument("--lang", default=paths.LANG, choices=paths.LANGS,
+                    help="which language's news to write (default: %s)" % paths.LANG)
     a = ap.parse_args()
 
     today = israel_today().isoformat()
@@ -260,7 +314,7 @@ def main():
     # dropped under load, and a single daily fire means a dropped fire is a day with no news
     # (2026-08-27 was one). A second, later schedule covers that — but only if it costs nothing
     # on the ordinary day when the first one worked, hence this guard, ahead of both API calls.
-    if a.skip_if_done and os.path.exists(os.path.join(ROOT, "texts", f"news-{today}.json")):
+    if a.skip_if_done and os.path.exists(paths.texts(f"news-{today}.json")):
         print("today's news is already written — nothing to do")
         return 0
 
@@ -277,7 +331,7 @@ def main():
         print("!! ANTHROPIC_API_KEY not set"); return 1
 
     c = client()
-    print(f"writing {a.sentences} sentences in Palestinian…")
+    print(f"writing {a.sentences} sentences…")
     try:
         sents = write_sentences(c, heads, a.sentences)
     except Exception as e:
@@ -293,16 +347,16 @@ def main():
     for s in sents: print("   ", s["ar"])
 
     tid = f"news-{today}"
-    src = os.path.join(ROOT, "texts", f"{tid}.json")
+    src = paths.texts(f"{tid}.json")
     json.dump({
         "id": tid, "kind": "news", "date": today,
-        "title": {"ar": "أخبار اليوم", "en": f"Today's News — {today}"},
-        "dialect": "pal", "subdialect": "urban",
-        "source": "World headlines, written in spoken Palestinian by Claude. NOT native-validated.",
+        "title": {"ar": NEWS_TITLE, "en": f"Today's News — {today}"},
+        "dialect": paths.LANG, "subdialect": "urban" if paths.LANG == "ar" else None,
+        "source": NEWS_SOURCE,
         "sentences": sents,
     }, open(src, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
-    print("annotating against Maknuune…")
+    print(f"annotating against {LEXICON_NAME}…")
     if not ingest(src): return 1
 
     amb = ambiguities(tid)
@@ -322,8 +376,7 @@ def main():
     have_key = bool(os.environ.get("ELEVENLABS_API_KEY"))
     if have_key:
         print(f"generating audio… (voice {voice_id()})")
-        subprocess.run([sys.executable, os.path.join(HERE, "ingest.py"), src, "--audio"],
-                       cwd=ROOT)
+        ingest(src, audio=True)
     else:
         print("audio: skipped (no ELEVENLABS_API_KEY)")
 
@@ -333,15 +386,21 @@ def main():
     # word card, the Verbs section and Translate all pick them up with no further work. It
     # reads data/maknuune.parquet (tracked) and is deterministic, so a day with no new verbs
     # leaves the file byte-identical and the commit step simply sees nothing to stage.
-    print("rebuilding the verb list (any new verb in today's news gets its paradigm)…")
-    subprocess.run([sys.executable, os.path.join(HERE, "build_verbs.py")], cwd=ROOT)
+    # Arabic only. build_verbs.py derives paradigms from data/maknuune.parquet, which is
+    # tracked; the Hebrew equivalent reads the 57 MB Wiktionary dump, which is not, so a Hebrew
+    # verb met in the news gets its lexicon entry today and its paradigm at the next local
+    # he_verbs.py run. Downloading 57 MB nightly to catch a verb or two is the wrong trade.
+    if paths.LANG == "ar":
+        print("rebuilding the verb list (any new verb in today's news gets its paradigm)…")
+        subprocess.run([sys.executable, os.path.join(HERE, "build_verbs.py")], cwd=ROOT)
 
-    subprocess.run([sys.executable, os.path.join(HERE, "build_app.py")], cwd=ROOT)
+    subprocess.run([sys.executable, os.path.join(HERE, "build_app.py"),
+                    "--lang", paths.LANG], cwd=ROOT)
 
     # FAIL LOUDLY on silent news. This step used to exit 0 whether or not any audio came
     # back, so a revoked/expired key produced a green run and a day of silent news that
     # nobody noticed until a learner opened it. A red run is the whole point of having CI.
-    art = os.path.join(ROOT, "build", tid, "text.json")
+    art = paths.build(tid, "text.json")
     voiced = total = 0
     if os.path.exists(art):
         d = json.load(open(art, encoding="utf-8"))

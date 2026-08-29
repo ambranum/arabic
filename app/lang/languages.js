@@ -53,10 +53,10 @@ window.LANGUAGES = [
     data: ['library', 'verbs'],
     // What actually exists, and nothing else. Hebrew arrives with the two things Stage A proved
     // could be LOOKED UP rather than written -- 2,084 pointed paradigms and a 12,662-lemma
-    // dictionary -- plus the three sections built on them: the deck you fill from the verb list,
-    // the translator, and the tutor. Lessons, stories, news, grammar, sounds, reactions and the
-    // Bible are authored content that does not exist yet, and listing a section before it exists
-    // is a lie the switcher would tell on every page.
-    sections: ['verbs', 'vocab', 'translate', 'tutor', 'account'],
+    // dictionary -- the sections built on them, and the daily paper, which is written fresh each
+    // morning by the same job that writes the Arabic one. Lessons, stories, grammar, sounds,
+    // reactions and the Bible are authored content that does not exist yet, and listing a
+    // section before it exists is a lie the switcher would tell on every page.
+    sections: ['verbs', 'news', 'vocab', 'translate', 'tutor', 'account'],
   },
 ];

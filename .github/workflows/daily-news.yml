@@ -1,7 +1,8 @@
 name: Daily news
 
 # Runs at 22:30 UTC, with a catch-up at 01:00 UTC. Target: the news is IN GIT well before
-# 5:30am ISRAEL time.
+# 5:30am ISRAEL time. Both languages are written in the same run — the Arabic paper and the
+# Hebrew one — because they share a deploy, a commit and a date.
 #
 # GitHub cron is UTC with no DST support, and Israel changes offset (IDT = UTC+3 in summer,
 # IST = UTC+2 in winter), which pins the window at BOTH ends:
@@ -63,7 +64,13 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # Both languages, in one run: one deploy, one commit, one concurrency group. It does not
+      # fail the step, because a Hebrew failure must not cost Arabic its deploy -- the whole
+      # "deploy first, then complain" shape of this job exists for exactly that. The outcome is
+      # checked at the end alongside the commit.
       - name: Write today's news, annotate, voice
+        id: news
+        continue-on-error: true
         if: github.event_name != 'push'   # a push just redeploys; no news, no API spend
         env:
           ANTHROPIC_API_KEY:   ${{ secrets.ANTHROPIC_API_KEY }}
@@ -72,8 +79,14 @@ jobs:
           # pipeline/voice.py so every clip in the app is the same voice. Passing the old
           # repo secret here is what kept generating each new day's news in the OLD voice.
         run: |
-          python3 pipeline/daily_news.py --sentences 9 \
-            ${{ github.event.schedule == '0 1 * * *' && '--skip-if-done' || '' }}
+          SKIP="${{ github.event.schedule == '0 1 * * *' && '--skip-if-done' || '' }}"
+          rc=0
+          for lang in ar he; do
+            echo "::group::$lang"
+            python3 pipeline/daily_news.py --lang "$lang" --sentences 9 $SKIP || rc=1
+            echo "::endgroup::"
+          done
+          exit $rc
 
       # The deploy publishes the runner's working tree, so the day's news reaches the site
       # whether or not this lands. But if it DOESN'T land, the news exists nowhere but that one
@@ -113,9 +126,15 @@ jobs:
 
       # Deploy first, then complain. A green run must mean "the news is live AND it will
       # survive the next push" — anything less is the silent failure this job already had once.
-      - name: Fail if the day's text never reached git
-        if: github.event_name != 'push' && steps.commit.outcome == 'failure'
+      - name: Fail if a language went unwritten, or the day's text never reached git
+        if: github.event_name != 'push' && (steps.commit.outcome == 'failure' || steps.news.outcome == 'failure')
         run: |
-          echo "::error::Today's news deployed to the site but was never committed. It will be"
-          echo "::error::overwritten by the next push to main. Re-run this workflow to restore it."
+          if [ "${{ steps.news.outcome }}" = "failure" ]; then
+            echo "::error::At least one language's news was not written — see the ar/he groups"
+            echo "::error::above for which, and why. The other language is unaffected and live."
+          fi
+          if [ "${{ steps.commit.outcome }}" = "failure" ]; then
+            echo "::error::Today's news deployed to the site but was never committed. It will be"
+            echo "::error::overwritten by the next push to main. Re-run this workflow to restore it."
+          fi
           exit 1

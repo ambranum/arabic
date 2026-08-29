@@ -26,15 +26,37 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- per-language file layout
 import os
 
-# The voice every clip in this app should be spoken in.
-VOICE_ID = "oJQlz7pz2yWd7MRmDUXm"
-MODEL_ID = "eleven_multilingual_v2"
+# The voice every clip in this app should be spoken in, PER LANGUAGE.
+#
+# The model is part of the pin, not a detail. Hebrew is absent from eleven_multilingual_v2's 29
+# languages and present in eleven_v3's 70+, so the two languages cannot share a model — and v3
+# behaves differently enough that saying so here, once, is safer than discovering it per script:
+# it is non-deterministic (A4 measured the decoded PCM differing across identical requests with
+# the same seed), and previous_text/next_text are rejected on it. Hebrew clips are therefore
+# effectively IMMUTABLE: a re-voice is a content change, not a refresh.
+#
+# `language_code` goes with v3 and is rejected on multilingual_v2, which is why Arabic never had
+# one. Both are looked up together so a caller cannot pair the wrong two.
+PINS = {
+    "ar": {"voice": "oJQlz7pz2yWd7MRmDUXm", "model": "eleven_multilingual_v2", "lang": None},
+    # Adam. The second voice (Jessica, r1KmysJdVYZjJCm4mL3b) is in texts/he/voices.json for
+    # dialogue casting; ids are public identifiers, useless without the key.
+    "he": {"voice": "s3TPKV1kjDlVtZbl4Ksh", "model": "eleven_v3", "lang": "he"},
+}
+VOICE_ID = PINS[paths.LANG]["voice"]
+MODEL_ID = PINS[paths.LANG]["model"]
+LANGUAGE_CODE = PINS[paths.LANG]["lang"]
 
 # Voices this project has used before, kept so old clips can be identified later.
 PREVIOUS = {
     "8sSDN08XkFeN2zqNwCZk": "original Voice-Designed 'Ramallah' voice — used for the first "
                             "word clips (63e1db7) and all sentence clips (61c1fda)",
 }
+
+
+def language_code():
+    """The language to pin text normalization to, or None where the model rejects the field."""
+    return LANGUAGE_CODE
 
 def voice_id():
     """The voice to synthesize with. The pin wins unless overriding is opted into explicitly."""

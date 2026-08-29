@@ -88,13 +88,11 @@ def main():
     # The word-lookup index, precomputed from the same texts in the same order -- the order is
     # load-bearing, since equal-ranked records are broken by first-seen.
     #
-    # Only when there ARE texts. A language whose lookup comes from a lexicon rather than from a
-    # corpus builds it elsewhere (Hebrew: pipeline/he_lexicon.py), and running this over an empty
-    # corpus would quietly replace 12 MB of dictionary with an empty file.
-    lex_sizes = None
-    if texts:
-        import lexindex
-        lex_sizes = lexindex.write(texts)
+    # lexindex.write() declines if the file on disk was written by someone else -- a language
+    # whose lookup comes from a dictionary rather than from its own texts (Hebrew:
+    # pipeline/he_lexicon.py) owns its own, and this must not stand on it.
+    import lexindex
+    lex_sizes = lexindex.write(texts) if texts else None
 
     # A text that has been removed from build/ must not leave its body file behind: it would
     # still be served, still be hashed into the cache version, and still be reachable by URL.

@@ -107,14 +107,35 @@ class Lexicon:
                     return hit, 'wiktionary:ktiv', cut
         return [], 'unresolved', ''
 
+    @staticmethod
+    def _by_lemma(recs):
+        """One candidate per distinct LEMMA, richest first.
+
+        Wiktionary lists a word once per inflection row, so ספר comes back as 24 rows -- but
+        those are 6 words. Handing the raw rows to an adjudicator gave it סֵפֶר four times and
+        never showed it סַפָּר "barber" or סָפַר "he counted" at all: the six slots were spent
+        on one lemma. Collapsing to lemmas first is what makes the choice a real choice.
+
+        Within a lemma, prefer the row that carries the most: a gloss, then a pronunciation,
+        then the plainest analysis (the citation row, which has no extra feature tags).
+        """
+        best = {}
+        for r in recs:
+            key = r['LEMMA']
+            score = ((1 if r['GLOSS'] else 0) * 4 + (1 if r['PHON'] else 0) * 2
+                     - str(r['ANALYSIS'] or '').count('.') * 0.1)
+            if key not in best or score > best[key][0]:
+                best[key] = (score, r)
+        return [r for _, r in sorted(best.values(), key=lambda x: -x[0])]
+
     def resolve(self, surface):
         """look(), then decide whether the answer is unique enough to use unattended."""
         recs, prov, cut = self.look(surface)
         if not recs:
             return None, 'unresolved', []
-        lemmas = {r['LEMMA'] for r in recs}
-        if len(lemmas) == 1:
-            return recs[0], prov, recs
+        cands = self._by_lemma(recs)
+        if len(cands) == 1:
+            return cands[0], prov, cands
         # Several distinct lemmas share this spelling. Same rule as the Arabic side: do not
         # pick for the learner, hand the candidates on for adjudication.
-        return recs[0], 'AMBIGUOUS-needs-resolution', recs[:6]
+        return cands[0], 'AMBIGUOUS-needs-resolution', cands[:6]

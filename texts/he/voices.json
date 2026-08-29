@@ -1,0 +1,9 @@
+{
+  "_note": "Speaking roles for Hebrew. Voice ids are public identifiers — useless without the API key — so this file is committed like the pin in pipeline/voice.py. 'main' must match that pin.",
+  "roster": {
+    "main": {"id": "s3TPKV1kjDlVtZbl4Ksh", "name": "Adam", "gender": "m",
+             "note": "the pinned Hebrew voice — every Hebrew clip in the app is spoken in it"},
+    "b":    {"id": "r1KmysJdVYZjJCm4mL3b", "name": "Jessica", "gender": "f",
+             "note": "the second voice, so cast_dialogue() can gender-match speakers"}
+  }
+}
