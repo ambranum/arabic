@@ -109,14 +109,36 @@ jobs:
           # day's work (audio included) is thrown away. Rebase onto whatever landed,
           # then push. Six attempts with backoff, not three: on a day when someone is
           # pushing to main every few minutes, three tries five seconds apart lose.
+          # A conflicted rebase leaves CONFLICT MARKERS IN THE WORKING TREE, and the deploy
+          # below publishes that tree. On 2026-08-29 a re-run of an older commit rebased onto a
+          # fix that had touched the same files, hit a conflict, could not push — and shipped
+          # `<<<<<<< HEAD` into library.js, corpus.js and lexicon.js. The Arabic app went down
+          # for everyone while the run reported only "could not push". So: abort on conflict.
+          # A failed push costs a day's news; a conflicted tree costs the whole site.
           for attempt in 1 2 3 4 5 6; do
-            git pull --rebase --autostash origin main && git push && exit 0
+            if git pull --rebase --autostash origin main; then
+              git push && exit 0
+            else
+              git rebase --abort || true
+              git stash pop 2>/dev/null || true
+              echo "rebase conflicted on attempt $attempt — tree restored, retrying in $((attempt * 10))s"
+            fi
             echo "push attempt $attempt failed; retrying in $((attempt * 10))s"
             sleep $((attempt * 10))
           done
           echo "::error::could not push the day's news after 6 attempts — it is live on the"
           echo "::error::site but NOT in git, so the next push to main will erase it."
           exit 1
+
+      # Never publish a tree that still has conflict markers in it. The step above tries not to
+      # leave one; this is the check that the site cannot go out broken even if it does.
+      - name: Refuse to deploy a conflicted tree
+        run: |
+          if grep -rlE '^(<<<<<<< |>>>>>>> )' app/ --include='*.js' --include='*.html' --include='*.json' | head -20 | grep .; then
+            echo "::error::The files above contain git conflict markers. Refusing to deploy."
+            exit 1
+          fi
+          echo "no conflict markers under app/ — safe to publish"
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
