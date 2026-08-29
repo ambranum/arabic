@@ -10,11 +10,15 @@ unit at the start of the next (their sections concatenate, page ranges extend).
 Run:  python3 pipeline/ref_merge.py            # merge all books with fragments
       python3 pipeline/ref_merge.py --book najah
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import argparse, glob, json, os, re, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-FRAG = os.path.join(ROOT, 'texts', 'ref', 'fragments')
-OUT = os.path.join(ROOT, 'texts', 'ref')
+FRAG = paths.texts('ref', 'fragments')
+OUT = paths.texts('ref')
 
 
 def merge_book(slug):

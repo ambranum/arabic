@@ -30,7 +30,7 @@ import paths  # noqa: E402  -- where this language's generated data lives
 import argparse, difflib, glob, json, os, re, sys, unicodedata
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-REF = os.path.join(ROOT, 'texts', 'ref')
+REF = paths.texts('ref')
 OUT_MD = os.path.join(REF, 'AUDIT.md')
 
 # ---- normalization -------------------------------------------------------------------------
@@ -139,17 +139,17 @@ def judge(ar, phrases, index):
 def collect():
     """[(area, id, arabic, english, provenance)] over everything curated by this project."""
     out = []
-    p = os.path.join(ROOT, 'texts', 'reactions.json')
+    p = paths.texts('reactions.json')
     if os.path.exists(p):
         for it in json.load(open(p, encoding='utf-8')).get('items', []):
             out.append(('reaction', it.get('cat', ''), it.get('ar'), it.get('en'),
                         it.get('provenance')))
-    p = os.path.join(ROOT, 'texts', 'sounds.json')
+    p = paths.texts('sounds.json')
     if os.path.exists(p):
         for L in json.load(open(p, encoding='utf-8')).get('lessons', []):
             for e in L.get('examples', []):
                 out.append(('sound', L.get('id', ''), e.get('ar'), e.get('en'), None))
-    p = os.path.join(ROOT, 'texts', 'table.json')
+    p = paths.texts('table.json')
     if os.path.exists(p):
         for dg in json.load(open(p, encoding='utf-8')).get('dialogues', []):
             for ln in dg.get('lines', []):
@@ -234,7 +234,7 @@ def main():
         # Write the finding back where the app can see it. Corroborated items stop claiming to be
         # unchecked; everything else keeps its existing flag, because "the books are silent" is
         # not evidence of correctness.
-        p = os.path.join(ROOT, 'texts', 'reactions.json')
+        p = paths.texts('reactions.json')
         d = json.load(open(p, encoding='utf-8'))
         n_up = 0
         for it in d.get('items', []):

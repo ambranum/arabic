@@ -27,13 +27,13 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- where this language's generated data lives
 
-OUTDIR = os.path.join(ROOT, 'app', 'audio', 'vocab')
+OUTDIR = paths.audio('vocab')
 MANIFEST = paths.data('vocab_audio.js')
 
 def collect():
     """Unique real-word vocabulary from every ingested text: lemma -> vocalized form to speak."""
     vocab = {}
-    for p in glob.glob(os.path.join(ROOT, 'build', '*', 'text.json')):
+    for p in glob.glob(paths.build('*', 'text.json')):
         d = json.load(open(p, encoding='utf-8'))
         for s in d['sentences']:
             for w in s['words']:
@@ -66,20 +66,29 @@ def main():
     vocab = collect()
     key, voice = os.environ.get('ELEVENLABS_API_KEY'), voice_id()
     print('%d unique vocabulary words in content.' % len(vocab))
+    # Without a key this still rewrites the manifest from the clips already on disk. Re-stamping
+    # a path is not synthesis, and the alternative -- bailing -- left the manifest pointing at
+    # where the clips used to be, which is silent and total: every word plays nothing.
     if not key:
-        print('No ELEVENLABS_API_KEY set — nothing generated.')
-        print('Set it and re-run to synthesize your Palestinian voice for each word.')
-        return
-    print('voice: %s   model: %s' % (voice, MODEL))
+        print('No ELEVENLABS_API_KEY set — no new clips; rebuilding the manifest from the '
+              'clips already voiced.')
+    else:
+        print('voice: %s   model: %s' % (voice, MODEL))
     os.makedirs(OUTDIR, exist_ok=True)
-    manifest, gen, cached, failed = {}, 0, 0, 0
+    manifest, gen, cached, failed, absent = {}, 0, 0, 0, 0
     items = sorted(vocab.items())
     for n, (lemma, text) in enumerate(items):
         name = hashlib.md5(lemma.encode('utf-8')).hexdigest()[:16] + '.mp3'
         out = os.path.join(OUTDIR, name)
+        if not key:
+            if os.path.exists(out):
+                manifest[lemma] = paths.audio_url('vocab', name); cached += 1
+            else:
+                absent += 1
+            continue
         try:
             status = tts(text, out, key, voice)
-            manifest[lemma] = 'audio/vocab/' + name
+            manifest[lemma] = paths.audio_url('vocab', name)
             gen += status == 'generated'; cached += status == 'cached'
         except Exception as e:
             failed += 1
@@ -97,8 +106,9 @@ def main():
         f.write('window.VOCAB_AUDIO = ')
         json.dump(manifest, f, ensure_ascii=False)
         f.write(';\n')
-    print('generated %d, cached %d, failed %d -> %s (%d clips)' % (
-        gen, cached, failed, os.path.relpath(MANIFEST, ROOT), len(manifest)))
+    print('generated %d, cached %d, %s%d -> %s (%d clips)' % (
+        gen, cached, 'not yet voiced ' if not key else 'failed ',
+        absent if not key else failed, os.path.relpath(MANIFEST, ROOT), len(manifest)))
 
 if __name__ == '__main__':
     main()

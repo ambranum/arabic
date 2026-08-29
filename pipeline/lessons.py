@@ -35,9 +35,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- where this language's generated data lives
 
-SRC_GLOB = os.path.join(ROOT, 'texts', 'lessons', 'unit-*.json')
+SRC_GLOB = paths.texts('lessons', 'unit-*.json')
 OUT_JS = paths.data('lessons.js')
-AUDIO_DIR = os.path.join(ROOT, 'app', 'audio', 'lessons')
+AUDIO_DIR = paths.audio('lessons')
 
 
 def tts(text, path, key, voice, model='eleven_multilingual_v2'):
@@ -93,7 +93,7 @@ def main():
                     continue
                 est[0] += len(ar); est[1] += 1
                 clip = os.path.join(AUDIO_DIR, base + suffix + '.mp3')
-                rel = 'audio/lessons/%s%s.mp3' % (base, suffix)
+                rel = paths.audio_url('lessons', '%s%s.mp3' % (base, suffix))
                 tgt = c if not suffix else c['reply']
                 if os.path.exists(clip):
                     tgt['audio'] = rel
@@ -117,7 +117,7 @@ def main():
                 est[0] += len(ar); est[1] += 1
                 lid = '%s-d%d-l%02d' % (u['id'], di, li)
                 clip = os.path.join(AUDIO_DIR, lid + '.mp3')
-                rel = 'audio/lessons/%s.mp3' % lid
+                rel = paths.audio_url('lessons', '%s.mp3' % lid)
                 if os.path.exists(clip):
                     l['audio'] = rel
                 elif do_audio:
@@ -148,7 +148,7 @@ def main():
               % (a.min_words, est[1], format(est[0], ','), format(est[0], ','), format(est[0] // 2, ',')))
         if skipped[0]:
             print('  (%d shorter item(s) skipped — the word-audio bank and browser voice cover those)' % skipped[0])
-    print('-> app/data/lessons.js')
+    print('-> %s' % os.path.relpath(OUT_JS, ROOT))
     return 0
 
 

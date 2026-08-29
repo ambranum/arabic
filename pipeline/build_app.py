@@ -20,10 +20,10 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 OUT  = paths.data('library.js')
 
 def main():
-    audio_root = os.path.join(ROOT, 'app', 'audio')
+    audio_root = paths.audio()
     copied = 0
     texts, drills = [], []
-    for p in sorted(glob.glob(os.path.join(ROOT, 'build', '*', 'text.json'))):
+    for p in sorted(glob.glob(paths.build('*', 'text.json'))):
         d = json.load(open(p, encoding='utf-8'))
         d['_dir'] = os.path.basename(os.path.dirname(p))
         d['_words'] = sum(len(s['words']) for s in d['sentences'])
@@ -35,32 +35,35 @@ def main():
             for w in s_['words']:
                 w.pop('options', None)
         # Rewrite audio paths to live inside app/ — a hosted folder can't reach ../build.
+        # Under the language, because clip names are positional: a Hebrew retelling of Aesop
+        # would otherwise write over the Arabic chapter's s0.mp3 and the app would go on playing
+        # the wrong language with nothing to show for it.
         for i, s_ in enumerate(d['sentences']):
             if s_.get('audio'):
-                src = os.path.join(ROOT, 'build', d['_dir'], s_['audio'])
-                dst_rel = os.path.join('audio', d['_dir'], os.path.basename(s_['audio']))
-                dst = os.path.join(ROOT, 'app', dst_rel)
+                src = paths.build(d['_dir'], s_['audio'])
+                base = os.path.basename(s_['audio'])
+                dst = paths.audio(d['_dir'], base)
                 if os.path.exists(src):
                     os.makedirs(os.path.dirname(dst), exist_ok=True)
                     shutil.copy2(src, dst); copied += 1
-                    s_['audio'] = dst_rel.replace(os.sep, '/')
+                    s_['audio'] = paths.audio_url(d['_dir'], base)
                 else:
                     s_['audio'] = None
         d['_audio'] = any(s_.get('audio') for s_ in d['sentences'])
         texts.append(d)
-    for p in sorted(glob.glob(os.path.join(ROOT, 'build', '*', 'session.json'))):
+    for p in sorted(glob.glob(paths.build('*', 'session.json'))):
         d = json.load(open(p, encoding='utf-8'))
         d['_dir'] = os.path.basename(os.path.dirname(p))
         for it in d['items']:
             for k in ('cue_audio', 'answer_audio'):
                 if it.get(k):
-                    src = os.path.join(ROOT, 'build', d['_dir'], it[k])
-                    dst_rel = os.path.join('audio', d['_dir'], os.path.basename(it[k]))
-                    dst = os.path.join(ROOT, 'app', dst_rel)
+                    src = paths.build(d['_dir'], it[k])
+                    base = os.path.basename(it[k])
+                    dst = paths.audio(d['_dir'], base)
                     if os.path.exists(src):
                         os.makedirs(os.path.dirname(dst), exist_ok=True)
                         shutil.copy2(src, dst); copied += 1
-                        it[k] = dst_rel.replace(os.sep, '/')
+                        it[k] = paths.audio_url(d['_dir'], base)
                     else:
                         it[k] = None
         d['_audio'] = any(i.get('answer_audio') for i in d['items'])
@@ -72,7 +75,7 @@ def main():
     # re-voice look like "the voice didn't change". So stamp a version derived from the actual
     # audio bytes; the app appends it to every audio URL, and any change forces a refetch.
     sig = hashlib.md5()
-    for p in sorted(glob.glob(os.path.join(ROOT, 'app', 'audio', '**', '*.mp3'), recursive=True)):
+    for p in sorted(glob.glob(os.path.join(paths.audio(), '**', '*.mp3'), recursive=True)):
         st = os.stat(p)
         sig.update(os.path.relpath(p, ROOT).encode('utf-8'))
         sig.update(str(st.st_size).encode('ascii'))

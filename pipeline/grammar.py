@@ -31,7 +31,7 @@ OUT = paths.data('grammar.js')
 # ---- load the corpus ----
 def load():
     out = []
-    for p in glob.glob(os.path.join(ROOT, 'build', '*', 'text.json')):
+    for p in glob.glob(paths.build('*', 'text.json')):
         t = json.load(open(p, encoding='utf-8'))
         out.append(t)
     return out

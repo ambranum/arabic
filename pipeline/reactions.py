@@ -30,9 +30,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- where this language's generated data lives
 
-SRC = os.path.join(ROOT, 'texts', 'reactions.json')
+SRC = paths.texts('reactions.json')
 OUT_JS = paths.data('reactions.js')
-AUDIO_DIR = os.path.join(ROOT, 'app', 'audio', 'reactions')
+AUDIO_DIR = paths.audio('reactions')
 
 
 def tts(text, path, key, voice, model='eleven_v3'):
@@ -79,12 +79,12 @@ def main():
         # rebuild never drops audio that was generated earlier.
         clip = os.path.join(AUDIO_DIR, rid + '.mp3')
         if os.path.exists(clip):
-            rec['audio'] = 'audio/reactions/%s.mp3' % rid
+            rec['audio'] = paths.audio_url('reactions', '%s.mp3' % rid)
         elif do_audio:
             ok, how = tts(it['ar'], clip, key, voice)
             print(f'  {rid} {it["ar"]:16} {how}')
             if ok:
-                rec['audio'] = 'audio/reactions/%s.mp3' % rid
+                rec['audio'] = paths.audio_url('reactions', '%s.mp3' % rid)
         items.append(rec)
 
     os.makedirs(os.path.dirname(OUT_JS), exist_ok=True)
@@ -98,7 +98,7 @@ def main():
 
     voiced = sum(1 for it in items if it.get('audio'))
     print(f'reactions: {len(items)} in {len(cats)} categories · audio {voiced}/{len(items)}')
-    print('-> app/data/reactions.js')
+    print('-> %s' % os.path.relpath(OUT_JS, ROOT))
     return 0
 
 

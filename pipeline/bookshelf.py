@@ -29,6 +29,10 @@ than a list of sentences.
     emit_book('juha', {'en': 'Juha', 'ar': 'جحا'}, 'beginner', CHAPTERS,
               unit='Tale', unit_ar='حكاية', shelf=10)
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, os, glob
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -65,7 +69,7 @@ def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='ال�
     # Beginner/A1 rather than failing. Catch the typo here, where it is one word to fix.
     if level not in LEVELS:
         raise SystemExit('!! %s: level %r must be one of %s' % (book_id, level, ', '.join(LEVELS)))
-    outdir = outdir or os.path.join(ROOT, 'texts')
+    outdir = outdir or paths.texts()
     # Drop this book's old chapter files first, so a shortened CHAPTERS leaves no orphans behind.
     # Scoped to this book_id — two book scripts never clobber each other.
     for old in glob.glob(os.path.join(outdir, 'book-%s-ch*.json' % book_id)):

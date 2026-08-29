@@ -15,13 +15,17 @@ Run:
     python3 pipeline/ref_extract.py            # render everything not yet rendered
     python3 pipeline/ref_extract.py --stats    # coverage: pages rendered / transcribed
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import argparse, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 REF = os.path.join(ROOT, 'reference')
-OUT = os.path.join(ROOT, 'build', 'ref')
-TXT = os.path.join(ROOT, 'texts', 'ref')
+OUT = paths.build('ref')
+TXT = paths.texts('ref')
 
 # slug -> filename. "Speaking Arabic.pdf" is byte-identical to "Spoken Arabic Lessons.pdf"
 # (same md5), so only one of the pair is rendered.

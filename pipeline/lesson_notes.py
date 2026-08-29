@@ -21,6 +21,10 @@ Idempotent: run it twice and the second run reports 0 changes.
 
     python3 pipeline/lesson_notes.py && python3 pipeline/lessons.py && python3 pipeline/build_app.py
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import glob
 import io
 import json
@@ -28,7 +32,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, 'texts', 'lessons')
+SRC = paths.texts('lessons')
 
 FIX = {
     # unit-02 — a note on how the book misprinted the English, and one on its numbering

@@ -3,7 +3,7 @@
 
 Architecture (SPEC 7.4.2) — metadata is LOOKED UP, never generated:
   1 candidate  -> auto-fill              provenance "maknuune:unique"
-  n candidates -> resolutions.json       provenance "maknuune:resolved"
+  n candidates -> resolutions.<lang>.json provenance "maknuune:resolved"
   0 candidates -> flagged, left empty    provenance "unresolved"   (NEVER guessed)
 
 Every word carries its provenance, so a reader can always answer "who said so?".
@@ -13,6 +13,10 @@ Audio runs once at ingest and is cached (SPEC 4.2). Needs:
     export ELEVENLABS_VOICE_ID=...     # the Palestinian Voice Design voice
 Without them the pipeline still emits the artifact with audio: null.
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, os, sys, re, argparse, hashlib, urllib.request, ssl, urllib.error
 try:  # macOS python.org builds lack wired-up CA certs; use certifi's bundle for HTTPS.
     import certifi
@@ -27,7 +31,7 @@ from voice import voice_id
 import curated
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-RESOLUTIONS = os.path.join(ROOT, 'pipeline', 'resolutions.json')
+RESOLUTIONS = paths.resolutions()
 
 def load_resolutions():
     if os.path.exists(RESOLUTIONS):
@@ -118,7 +122,7 @@ def main():
         print(f"skip {os.path.basename(a.source)}: not a sentence-text (no 'sentences' key)")
         return
     lex, res = Lexicon(), load_resolutions()
-    outdir = os.path.join(ROOT, 'build', src['id'])
+    outdir = paths.build(src['id'])
     os.makedirs(os.path.join(outdir, 'audio'), exist_ok=True)
 
     # Voice comes from pipeline/voice.py (env var overrides) so it can never silently
@@ -193,7 +197,7 @@ def main():
     amb = stats.get('AMBIGUOUS-needs-resolution', 0)
     unres = stats.get('unresolved', 0)
     print(f"artifact -> {os.path.relpath(out, ROOT)}")
-    if amb: print(f"!! {amb} ambiguous — add ids to pipeline/resolutions.json")
+    if amb: print(f"!! {amb} ambiguous — add ids to {os.path.relpath(RESOLUTIONS, ROOT)}")
     if unres: print(f"!! {unres} unresolved — not in Maknuune; needs a human")
     if not amb and not unres: print("clean: every word traced to a real lexicon entry")
 

@@ -23,6 +23,10 @@ only pick among entries Maknuune actually contains.
     export ELEVENLABS_VOICE_ID=...     # optional
     python3 pipeline/daily_news.py [--sentences 9] [--dry-run]
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, os, sys, re, argparse, subprocess, datetime, ssl, urllib.request
 import xml.etree.ElementTree as ET
 
@@ -305,7 +309,7 @@ def main():
     if amb:
         print(f"resolving {len(amb)} ambiguous words (selecting from real entries)…")
         picks = resolve(c, amb)
-        rp = os.path.join(HERE, "resolutions.json")
+        rp = paths.resolutions()
         res = json.load(open(rp, encoding="utf-8"))
         res.update(picks)
         json.dump(res, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

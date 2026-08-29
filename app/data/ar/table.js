@@ -23,7 +23,7 @@ window.TABLE = {
      "name": "أبو سامي",
      "en": "Abu Sami (the host)",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -107,7 +107,7 @@ window.TABLE = {
      "name": "أم سامي",
      "en": "Umm Sami (the cook)",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "A",
@@ -121,7 +121,7 @@ window.TABLE = {
      "name": "خالد",
      "en": "Khaled",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -212,7 +212,7 @@ window.TABLE = {
      "name": "خالد",
      "en": "Khaled",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "S",
@@ -226,7 +226,7 @@ window.TABLE = {
      "name": "أم سامي",
      "en": "Umm Sami",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -310,7 +310,7 @@ window.TABLE = {
      "name": "أم سامي",
      "en": "Umm Sami (the host’s wife)",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "A",
@@ -324,7 +324,7 @@ window.TABLE = {
      "name": "خالد",
      "en": "Khaled (the guest)",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -425,7 +425,7 @@ window.TABLE = {
      "name": "سامي",
      "en": "Sami (the son)",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "K",
@@ -511,7 +511,7 @@ window.TABLE = {
      "name": "أم سامي",
      "en": "Umm Sami",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "A",
@@ -525,14 +525,14 @@ window.TABLE = {
      "name": "خالد",
      "en": "Khaled",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "S",
      "name": "سامي",
      "en": "Sami",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -623,14 +623,14 @@ window.TABLE = {
      "name": "خالد",
      "en": "Khaled",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "M",
      "name": "أم سامي",
      "en": "Umm Sami",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -699,7 +699,7 @@ window.TABLE = {
      "name": "ليلى",
      "en": "Layla (the daughter)",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "S",
@@ -713,14 +713,14 @@ window.TABLE = {
      "name": "أم سامي",
      "en": "Umm Sami",
      "gender": "f",
-     "voice": "a1KZUXKFVFDOb33I1uqr"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "K",
      "name": "خالد",
      "en": "Khaled",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -806,28 +806,28 @@ window.TABLE = {
      "name": "خالد",
      "en": "Khaled",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "M",
      "name": "أم سامي",
      "en": "Umm Sami",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "S",
      "name": "سامي",
      "en": "Sami",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "L",
      "name": "ليلى",
      "en": "Layla",
      "gender": "f",
-     "voice": "a1KZUXKFVFDOb33I1uqr"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -926,7 +926,7 @@ window.TABLE = {
      "name": "أم سامي",
      "en": "Umm Sami",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "K",
@@ -940,14 +940,14 @@ window.TABLE = {
      "name": "أبو سامي",
      "en": "Abu Sami",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "S",
      "name": "سامي",
      "en": "Sami",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -1038,14 +1038,14 @@ window.TABLE = {
      "name": "خالد",
      "en": "Khaled",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "M",
      "name": "أم سامي",
      "en": "Umm Sami",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [
@@ -1121,14 +1121,14 @@ window.TABLE = {
      "name": "أم سامي",
      "en": "Umm Sami",
      "gender": "f",
-     "voice": "albaa6OioIhKtKdCEkQw"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     },
     {
      "id": "A",
      "name": "أبو سامي",
      "en": "Abu Sami",
      "gender": "m",
-     "voice": "IYnFszSKzmym2OstwHS0"
+     "voice": "oJQlz7pz2yWd7MRmDUXm"
     }
    ],
    "lines": [

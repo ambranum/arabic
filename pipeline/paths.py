@@ -58,9 +58,32 @@ def shared(*parts):
     return os.path.join(ROOT, 'app', 'data', *parts)
 
 
-# ---- still to split (B5b) ---------------------------------------------------------------------
-# texts/<code>/, build/<code>/, app/audio/<code>/ and resolutions.<code>.json. `app/audio/` is the
-# one that will bite: clip paths are positional (`audio/book-aesop-ch01/s0.mp3`), so a Hebrew
-# Aesop would silently overwrite the Arabic one rather than fail. Nothing is at risk while Arabic
-# is the only content, and the move is better done in the quiet before Stage C authors anything
-# than in the middle of it.
+def texts(*parts):
+    """Source content: what a human or a generator wrote, before ingestion."""
+    return os.path.join(ROOT, 'texts', LANG, *parts)
+
+
+def build(*parts):
+    """Ingested content: the annotated intermediate the app is built from."""
+    return os.path.join(ROOT, 'build', LANG, *parts)
+
+
+def audio(*parts):
+    """Voiced clips ON DISK, under app/ so the whole folder stays servable."""
+    return os.path.join(ROOT, 'app', 'audio', LANG, *parts)
+
+
+def audio_url(*parts):
+    """The same clip as the BROWSER addresses it -- a path relative to app/.
+
+    This is the reason app/audio/ had to be split at all. Clip names are positional
+    (`s0.mp3` inside a directory named for the text), so a Hebrew retelling of Aesop would have
+    written over the Arabic one and the app would have gone on playing the wrong language with
+    no error anywhere. Every generator that stamps a path into shipped data goes through here.
+    """
+    return '/'.join(('audio', LANG) + parts)
+
+
+def resolutions():
+    """The ambiguity audit trail: which lexicon entry was chosen for which word."""
+    return os.path.join(ROOT, 'pipeline', 'resolutions.%s.json' % LANG)

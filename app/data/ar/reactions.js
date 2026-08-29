@@ -60,7 +60,7 @@ window.REACTIONS = {
    "use": "Surprise — the single most common reaction. Rising tone.",
    "cat": "surprise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r0.mp3"
+   "audio": "audio/ar/reactions/r0.mp3"
   },
   {
    "id": "r1",
@@ -69,7 +69,7 @@ window.REACTIONS = {
    "use": "Stronger disbelief.",
    "cat": "surprise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r1.mp3"
+   "audio": "audio/ar/reactions/r1.mp3"
   },
   {
    "id": "r2",
@@ -79,7 +79,7 @@ window.REACTIONS = {
    "cat": "surprise",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.15",
-   "audio": "audio/reactions/r2.mp3"
+   "audio": "audio/ar/reactions/r2.mp3"
   },
   {
    "id": "r3",
@@ -88,7 +88,7 @@ window.REACTIONS = {
    "use": "Genuine 'what?' or shocked 'what?!'.",
    "cat": "surprise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r3.mp3"
+   "audio": "audio/ar/reactions/r3.mp3"
   },
   {
    "id": "r4",
@@ -97,7 +97,7 @@ window.REACTIONS = {
    "use": "Half-disbelief — 'you can't be serious'.",
    "cat": "surprise",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r4.mp3"
+   "audio": "audio/ar/reactions/r4.mp3"
   },
   {
    "id": "r5",
@@ -106,7 +106,7 @@ window.REACTIONS = {
    "use": "Playful surprise at news someone just shared.",
    "cat": "surprise",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r5.mp3"
+   "audio": "audio/ar/reactions/r5.mp3"
   },
   {
    "id": "r6",
@@ -115,7 +115,7 @@ window.REACTIONS = {
    "use": "Stronger — near disbelief at what you just heard.",
    "cat": "surprise",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r6.mp3"
+   "audio": "audio/ar/reactions/r6.mp3"
   },
   {
    "id": "r7",
@@ -124,7 +124,7 @@ window.REACTIONS = {
    "use": "General astonishment or awe.",
    "cat": "surprise",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r7.mp3"
+   "audio": "audio/ar/reactions/r7.mp3"
   },
   {
    "id": "r8",
@@ -134,7 +134,7 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.34",
-   "audio": "audio/reactions/r8.mp3"
+   "audio": "audio/ar/reactions/r8.mp3"
   },
   {
    "id": "r9",
@@ -144,7 +144,7 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.29",
-   "audio": "audio/reactions/r9.mp3"
+   "audio": "audio/ar/reactions/r9.mp3"
   },
   {
    "id": "r10",
@@ -154,7 +154,7 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.85",
-   "audio": "audio/reactions/r10.mp3"
+   "audio": "audio/ar/reactions/r10.mp3"
   },
   {
    "id": "r11",
@@ -163,7 +163,7 @@ window.REACTIONS = {
    "use": "Stronger agreement — 'precisely'.",
    "cat": "agree",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r11.mp3"
+   "audio": "audio/ar/reactions/r11.mp3"
   },
   {
    "id": "r12",
@@ -172,7 +172,7 @@ window.REACTIONS = {
    "use": "Everything's fine; also 'got it'.",
    "cat": "agree",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r12.mp3"
+   "audio": "audio/ar/reactions/r12.mp3"
   },
   {
    "id": "r13",
@@ -181,7 +181,7 @@ window.REACTIONS = {
    "use": "Slightly emphatic 'of course'.",
    "cat": "agree",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r13.mp3"
+   "audio": "audio/ar/reactions/r13.mp3"
   },
   {
    "id": "r14",
@@ -190,7 +190,7 @@ window.REACTIONS = {
    "use": "Pinning down that they've got it right.",
    "cat": "agree",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r14.mp3"
+   "audio": "audio/ar/reactions/r14.mp3"
   },
   {
    "id": "r15",
@@ -199,7 +199,7 @@ window.REACTIONS = {
    "use": "Agreeing to a plan — 'fine, works for me'.",
    "cat": "agree",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r15.mp3"
+   "audio": "audio/ar/reactions/r15.mp3"
   },
   {
    "id": "r16",
@@ -208,7 +208,7 @@ window.REACTIONS = {
    "use": "Conceding the other person's point.",
    "cat": "agree",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r16.mp3"
+   "audio": "audio/ar/reactions/r16.mp3"
   },
   {
    "id": "r17",
@@ -218,7 +218,7 @@ window.REACTIONS = {
    "cat": "sympathy",
    "provenance": "ref-corroborated",
    "ref_src": "stories p.13",
-   "audio": "audio/reactions/r17.mp3"
+   "audio": "audio/ar/reactions/r17.mp3"
   },
   {
    "id": "r18",
@@ -228,7 +228,7 @@ window.REACTIONS = {
    "cat": "sympathy",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.63",
-   "audio": "audio/reactions/r18.mp3"
+   "audio": "audio/ar/reactions/r18.mp3"
   },
   {
    "id": "r19",
@@ -239,7 +239,7 @@ window.REACTIONS = {
    "provenance": "ref-corroborated",
    "ref_src": "najah p.43",
    "reply": "الله يسلمك",
-   "audio": "audio/reactions/r19.mp3"
+   "audio": "audio/ar/reactions/r19.mp3"
   },
   {
    "id": "r20",
@@ -248,7 +248,7 @@ window.REACTIONS = {
    "use": "To someone facing something hard or tiring.",
    "cat": "sympathy",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r20.mp3"
+   "audio": "audio/ar/reactions/r20.mp3"
   },
   {
    "id": "r21",
@@ -257,7 +257,7 @@ window.REACTIONS = {
    "use": "Encouragement to someone carrying a load.",
    "cat": "sympathy",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r21.mp3"
+   "audio": "audio/ar/reactions/r21.mp3"
   },
   {
    "id": "r22",
@@ -266,7 +266,7 @@ window.REACTIONS = {
    "use": "Reassuring — 'it's nothing, forget it'.",
    "cat": "sympathy",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r22.mp3"
+   "audio": "audio/ar/reactions/r22.mp3"
   },
   {
    "id": "r23",
@@ -275,7 +275,7 @@ window.REACTIONS = {
    "use": "About someone who's sick.",
    "cat": "sympathy",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r23.mp3"
+   "audio": "audio/ar/reactions/r23.mp3"
   },
   {
    "id": "r24",
@@ -285,7 +285,7 @@ window.REACTIONS = {
    "cat": "praise",
    "provenance": "ref-corroborated",
    "ref_src": "verb-drills p.9",
-   "audio": "audio/reactions/r24.mp3"
+   "audio": "audio/ar/reactions/r24.mp3"
   },
   {
    "id": "r25",
@@ -294,7 +294,7 @@ window.REACTIONS = {
    "use": "Positive evaluation of almost anything.",
    "cat": "praise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r25.mp3"
+   "audio": "audio/ar/reactions/r25.mp3"
   },
   {
    "id": "r26",
@@ -304,7 +304,7 @@ window.REACTIONS = {
    "cat": "praise",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.27",
-   "audio": "audio/reactions/r26.mp3"
+   "audio": "audio/ar/reactions/r26.mp3"
   },
   {
    "id": "r27",
@@ -313,7 +313,7 @@ window.REACTIONS = {
    "use": "Intensified.",
    "cat": "praise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r27.mp3"
+   "audio": "audio/ar/reactions/r27.mp3"
   },
   {
    "id": "r28",
@@ -322,7 +322,7 @@ window.REACTIONS = {
    "use": "Understated approval.",
    "cat": "praise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r28.mp3"
+   "audio": "audio/ar/reactions/r28.mp3"
   },
   {
    "id": "r29",
@@ -332,7 +332,7 @@ window.REACTIONS = {
    "cat": "praise",
    "provenance": "ref-corroborated",
    "ref_src": "spoken-extra p.12",
-   "audio": "audio/reactions/r29.mp3"
+   "audio": "audio/ar/reactions/r29.mp3"
   },
   {
    "id": "r30",
@@ -341,7 +341,7 @@ window.REACTIONS = {
    "use": "Lit. 'it drives you crazy' — food, music, a place.",
    "cat": "praise",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r30.mp3"
+   "audio": "audio/ar/reactions/r30.mp3"
   },
   {
    "id": "r31",
@@ -350,7 +350,7 @@ window.REACTIONS = {
    "use": "A thing or place that's beautiful.",
    "cat": "praise",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r31.mp3"
+   "audio": "audio/ar/reactions/r31.mp3"
   },
   {
    "id": "r32",
@@ -360,7 +360,7 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.49",
-   "audio": "audio/reactions/r32.mp3"
+   "audio": "audio/ar/reactions/r32.mp3"
   },
   {
    "id": "r33",
@@ -370,7 +370,7 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.43",
-   "audio": "audio/reactions/r33.mp3"
+   "audio": "audio/ar/reactions/r33.mp3"
   },
   {
    "id": "r34",
@@ -380,7 +380,7 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "spoken-extra p.21",
-   "audio": "audio/reactions/r34.mp3"
+   "audio": "audio/ar/reactions/r34.mp3"
   },
   {
    "id": "r35",
@@ -390,7 +390,7 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.54",
-   "audio": "audio/reactions/r35.mp3"
+   "audio": "audio/ar/reactions/r35.mp3"
   },
   {
    "id": "r36",
@@ -400,7 +400,7 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "vocab-gram p.19",
-   "audio": "audio/reactions/r36.mp3"
+   "audio": "audio/ar/reactions/r36.mp3"
   },
   {
    "id": "r37",
@@ -409,7 +409,7 @@ window.REACTIONS = {
    "use": "Lit. 'half half' — mediocre, meh.",
    "cat": "hedge",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r37.mp3"
+   "audio": "audio/ar/reactions/r37.mp3"
   },
   {
    "id": "r38",
@@ -419,7 +419,7 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "vocab-gram p.20",
-   "audio": "audio/reactions/r38.mp3"
+   "audio": "audio/ar/reactions/r38.mp3"
   },
   {
    "id": "r39",
@@ -428,7 +428,7 @@ window.REACTIONS = {
    "use": "Softening a claim.",
    "cat": "hedge",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r39.mp3"
+   "audio": "audio/ar/reactions/r39.mp3"
   },
   {
    "id": "r40",
@@ -437,7 +437,7 @@ window.REACTIONS = {
    "use": "Discourse glue — starts half of all turns.",
    "cat": "glue",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r40.mp3"
+   "audio": "audio/ar/reactions/r40.mp3"
   },
   {
    "id": "r41",
@@ -447,7 +447,7 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.43",
-   "audio": "audio/reactions/r41.mp3"
+   "audio": "audio/ar/reactions/r41.mp3"
   },
   {
    "id": "r42",
@@ -456,7 +456,7 @@ window.REACTIONS = {
    "use": "Keeps a story going — makes you a good listener.",
    "cat": "glue",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r42.mp3"
+   "audio": "audio/ar/reactions/r42.mp3"
   },
   {
    "id": "r43",
@@ -466,7 +466,7 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "ref-corroborated",
    "ref_src": "stories p.5",
-   "audio": "audio/reactions/r43.mp3"
+   "audio": "audio/ar/reactions/r43.mp3"
   },
   {
    "id": "r44",
@@ -475,7 +475,7 @@ window.REACTIONS = {
    "use": "Cutting to the point after a digression.",
    "cat": "glue",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r44.mp3"
+   "audio": "audio/ar/reactions/r44.mp3"
   },
   {
    "id": "r45",
@@ -484,7 +484,7 @@ window.REACTIONS = {
    "use": "Dropping in a side remark.",
    "cat": "glue",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r45.mp3"
+   "audio": "audio/ar/reactions/r45.mp3"
   },
   {
    "id": "r46",
@@ -494,7 +494,7 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "ref-corroborated",
    "ref_src": "stories p.14",
-   "audio": "audio/reactions/r46.mp3"
+   "audio": "audio/ar/reactions/r46.mp3"
   },
   {
    "id": "r47",
@@ -503,7 +503,7 @@ window.REACTIONS = {
    "use": "Playing something down — 'normal, whatever'.",
    "cat": "glue",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r47.mp3"
+   "audio": "audio/ar/reactions/r47.mp3"
   },
   {
    "id": "r48",
@@ -513,7 +513,7 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.51",
-   "audio": "audio/reactions/r48.mp3"
+   "audio": "audio/ar/reactions/r48.mp3"
   },
   {
    "id": "r49",
@@ -523,7 +523,7 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "ref-corroborated",
    "ref_src": "spoken-extra p.12",
-   "audio": "audio/reactions/r49.mp3"
+   "audio": "audio/ar/reactions/r49.mp3"
   },
   {
    "id": "r50",
@@ -533,7 +533,7 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "maknuune-corroborated",
    "reply": "على قلبك",
-   "audio": "audio/reactions/r50.mp3"
+   "audio": "audio/ar/reactions/r50.mp3"
   },
   {
    "id": "r51",
@@ -542,7 +542,7 @@ window.REACTIONS = {
    "use": "TO THE COOK, after a meal — the single highest-value phrase at the table. إيديك to a man.",
    "cat": "table",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r51.mp3"
+   "audio": "audio/ar/reactions/r51.mp3"
   },
   {
    "id": "r52",
@@ -552,7 +552,7 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.29",
-   "audio": "audio/reactions/r52.mp3"
+   "audio": "audio/ar/reactions/r52.mp3"
   },
   {
    "id": "r53",
@@ -562,7 +562,7 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "needs-native-validation",
    "reply": "منوّر فيك",
-   "audio": "audio/reactions/r53.mp3"
+   "audio": "audio/ar/reactions/r53.mp3"
   },
   {
    "id": "r54",
@@ -571,7 +571,7 @@ window.REACTIONS = {
    "use": "Gracious 'of course' to a request. تكرمي to a woman.",
    "cat": "table",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r54.mp3"
+   "audio": "audio/ar/reactions/r54.mp3"
   },
   {
    "id": "r55",
@@ -580,7 +580,7 @@ window.REACTIONS = {
    "use": "Said over food; also a reply to صحتين.",
    "cat": "table",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r55.mp3"
+   "audio": "audio/ar/reactions/r55.mp3"
   },
   {
    "id": "r56",
@@ -589,7 +589,7 @@ window.REACTIONS = {
    "use": "Leaving the table or the room politely. عن إذنكم to a group.",
    "cat": "table",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r56.mp3"
+   "audio": "audio/ar/reactions/r56.mp3"
   },
   {
    "id": "r57",
@@ -599,7 +599,7 @@ window.REACTIONS = {
    "cat": "blessing",
    "provenance": "needs-native-validation",
    "reply": "الله يعافيك",
-   "audio": "audio/reactions/r57.mp3"
+   "audio": "audio/ar/reactions/r57.mp3"
   },
   {
    "id": "r58",
@@ -608,7 +608,7 @@ window.REACTIONS = {
    "use": "Parting, or sympathy for a hard road ahead.",
    "cat": "blessing",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/reactions/r58.mp3"
+   "audio": "audio/ar/reactions/r58.mp3"
   },
   {
    "id": "r59",
@@ -619,7 +619,7 @@ window.REACTIONS = {
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.8",
    "reply": "الله يسلمك",
-   "audio": "audio/reactions/r59.mp3"
+   "audio": "audio/ar/reactions/r59.mp3"
   },
   {
    "id": "r60",
@@ -628,7 +628,7 @@ window.REACTIONS = {
    "use": "Before an exam, a trip, anything new.",
    "cat": "blessing",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r60.mp3"
+   "audio": "audio/ar/reactions/r60.mp3"
   },
   {
    "id": "r61",
@@ -638,7 +638,7 @@ window.REACTIONS = {
    "cat": "blessing",
    "provenance": "needs-native-validation",
    "reply": "وانت من أهل الخير",
-   "audio": "audio/reactions/r61.mp3"
+   "audio": "audio/ar/reactions/r61.mp3"
   },
   {
    "id": "r62",
@@ -648,7 +648,7 @@ window.REACTIONS = {
    "cat": "blessing",
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.7",
-   "audio": "audio/reactions/r62.mp3"
+   "audio": "audio/ar/reactions/r62.mp3"
   },
   {
    "id": "r63",
@@ -657,7 +657,7 @@ window.REACTIONS = {
    "use": "Closing a chat — send regards to their family.",
    "cat": "blessing",
    "provenance": "needs-native-validation",
-   "audio": "audio/reactions/r63.mp3"
+   "audio": "audio/ar/reactions/r63.mp3"
   }
  ]
 };

@@ -21,6 +21,10 @@ away. So a stale env var can no longer quietly override the pin: to use a differ
 must ALSO set ELEVENLABS_VOICE_OVERRIDE=1, which is deliberate rather than forgotten.
 """
 import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
+import os
 
 # The voice every clip in this app should be spoken in.
 VOICE_ID = "oJQlz7pz2yWd7MRmDUXm"
@@ -55,7 +59,7 @@ def model_id():
 # Unfilled roles fall back to earlier ones, so a half-filled roster degrades to fewer voices
 # rather than failing.
 # ---------------------------------------------------------------------------------------------
-ROSTER_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "texts", "voices.json")
+ROSTER_FILE = paths.texts("voices.json")
 
 def roster():
     """{role: {id, name, gender, note}} for the speaking roles. 'main' is always the pin."""

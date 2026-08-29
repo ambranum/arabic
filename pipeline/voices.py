@@ -12,6 +12,10 @@ Run:
     python3 pipeline/voices.py                 # show the cast as configured
     export ELEVENLABS_API_KEY=...; python3 pipeline/voices.py --list
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import argparse, json, os, ssl, sys, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -59,7 +63,7 @@ def show_cast():
     try:
         import glob
         print('\ndialogue casting (as it will be generated):')
-        for f in sorted(glob.glob(os.path.join(HERE, '..', 'texts', 'lessons', 'unit-*.json'))):
+        for f in sorted(glob.glob(paths.texts('lessons', 'unit-*.json'))):
             u = json.load(open(f, encoding='utf-8'))
             for d in u.get('dialogues', []):
                 d['cast'] = cast_dialogue(d.get('lines', []))

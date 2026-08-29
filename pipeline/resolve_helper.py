@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 """Add resolutions for ambiguous words, choosing a real Maknuune entry by a gloss/analysis
 hint. Never invents — it picks among the candidates the morphology already allows, and
-writes the chosen Maknuune ID to pipeline/resolutions.json (the audit trail).
+writes the chosen Maknuune ID to pipeline/resolutions.<lang>.json (the audit trail).
 
 Usage: python3 pipeline/resolve_helper.py  "بشرب=drink:VERB"  "بروح=go:VERB"  ...
 Each arg is  <surface>=<needle>  where <needle> is a substring to match in
 "GLOSS:ANALYSIS" (case-insensitive). Prints what it picked; only writes on a clean match.
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from maknuune import Lexicon, norm
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-RES = os.path.join(ROOT, 'pipeline', 'resolutions.json')
+RES = paths.resolutions()
 
 def main(args):
     lex = Lexicon()

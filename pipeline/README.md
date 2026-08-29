@@ -5,8 +5,8 @@ Raw Palestinian text → fully annotated, cached artifact.
 ## Run
 
 ```bash
-python3 pipeline/ingest.py texts/morning-coffee.json            # annotate only
-python3 pipeline/ingest.py texts/morning-coffee.json --audio    # + MP3s
+python3 pipeline/ingest.py texts/ar/morning-coffee.json         # annotate only
+python3 pipeline/ingest.py texts/ar/morning-coffee.json --audio # + MP3s
 ```
 
 Audio needs (never committed, read from env):
@@ -28,10 +28,10 @@ generating them, and every error was MSA leakage (SPEC 7.4.1).
 text → peel clitics (morphology gives the exact form: b- ⇒ VERB:I)
      → retrieve REAL Maknuune candidates, untagged-first
      → 1 survivor?  auto-fill            provenance maknuune:unique
-       n survivors? resolutions.json     provenance maknuune:resolved
+       n survivors? resolutions.ar.json  provenance maknuune:resolved
        0 survivors? flag, leave empty    provenance unresolved   ← never guess
      → realize CAPHI variables for the sub-dialect
-     → emit build/<id>/text.json
+     → emit build/<lang>/<id>/text.json
 ```
 
 Claude's job is **selection**, not generation. It cannot invent ر-و-ح when the only
@@ -53,9 +53,9 @@ take `cands[0]`. Auto-fill requires exactly one survivor.
 | `maknuune.py` | lexicon + clitic morphology |
 | `subdialect.py` | CAPHI++ variables → sub-dialect (SPEC 7.4.4) |
 | `ingest.py` | orchestrator |
-| `resolutions.json` | audit trail: word → Maknuune ID, with reasons |
+| `resolutions.<lang>.json` | audit trail: word → Maknuune ID, with reasons |
 
-`resolutions.json` is the point: every choice is data, checkable against
+`resolutions.<lang>.json` is the point: every choice is data, checkable against
 `data/maknuune.parquet`. Decisions are reviewable, not buried in code.
 
 ## Known gap
@@ -67,8 +67,8 @@ See SPEC 7.4.6.
 ## Car sessions
 
 ```bash
-python3 pipeline/car_session.py texts/car-01-reactions.json --gap 3          # script only
-python3 pipeline/car_session.py texts/car-01-reactions.json --audio          # + MP3s
+python3 pipeline/car_session.py texts/ar/car-01-reactions.json --gap 3       # script only
+python3 pipeline/car_session.py texts/ar/car-01-reactions.json --audio       # + MP3s
 ```
 
 **A drill, not a track.** `cue (English) → GAP: you speak → answer (Palestinian) → gap: repeat`.
@@ -104,7 +104,7 @@ exactly where the human is the only check that exists.
 
 ## News imports
 
-`texts/news-YYYY-MM-DD.json` with `"kind": "news"` and a `"date"`. The app finds today's
+`texts/<lang>/news-YYYY-MM-DD.json` with `"kind": "news"` and a `"date"`. The app finds today's
 by date and puts it on the home screen.
 
 Written as you'd **tell** someone the news, not as a newsreader reads it — newsreader

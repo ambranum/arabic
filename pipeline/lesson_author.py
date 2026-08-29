@@ -13,11 +13,15 @@ are left alone; this generates unit 5 onward. Re-running is safe and idempotent.
 Run:  python3 pipeline/lesson_author.py           # write the units
       python3 pipeline/lesson_author.py --check   # report what would be written, write nothing
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import argparse, json, os, re, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-REF = os.path.join(ROOT, 'texts', 'ref')
-OUT = os.path.join(ROOT, 'texts', 'lessons')
+REF = paths.texts('ref')
+OUT = paths.texts('lessons')
 
 _books = {}
 def book(slug):

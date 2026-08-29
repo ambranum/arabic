@@ -13,8 +13,8 @@
 
 1. **Attribution** — this notice.
 2. **ShareAlike** — anything derived from the lexicon must carry the same licence.
-   The annotated artifacts under `build/` embed Maknuune roots, lemmas, glosses and
-   CAPHI transcriptions, so **`build/` and `app/data/<lang>/library.js` are CC BY-SA 4.0 too.**
+   The annotated artifacts under `build/<lang>/` embed Maknuune roots, lemmas, glosses and
+   CAPHI transcriptions, so **`build/<lang>/` and `app/data/<lang>/library.js` are CC BY-SA 4.0 too.**
 
 Publishing this repo publicly (which GitHub Pages on a free account requires) is
 redistribution. That's permitted — with the notice above kept intact.

@@ -36,11 +36,11 @@ window.LESSONS = {
      "reply": {
       "ar": "مَرْحَبْتِين \\ أهْلاً وسَهْلاً",
       "en": "Two hellos! / welcome",
-      "audio": "audio/lessons/unit-01-c00r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c00r.mp3"
      },
      "group": "1. When meeting, entering a home",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c00.mp3"
+     "audio": "audio/ar/lessons/unit-01-c00.mp3"
     },
     {
      "ar": "أهْلاً وسَهْلاً",
@@ -48,11 +48,11 @@ window.LESSONS = {
      "reply": {
       "ar": "أهْلِين \\ أهْلِين فيك.. فيكِ.. فيكُم.. فيكِن",
       "en": "Most welcome — to you (m/f/pl)",
-      "audio": "audio/lessons/unit-01-c01r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c01r.mp3"
      },
      "group": "1. When meeting, entering a home",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c01.mp3"
+     "audio": "audio/ar/lessons/unit-01-c01.mp3"
     },
     {
      "ar": "إلسَّلامُ عَلِيكُم",
@@ -60,11 +60,11 @@ window.LESSONS = {
      "reply": {
       "ar": "وعَلِيكُمِ السَّلام",
       "en": "And upon you peace",
-      "audio": "audio/lessons/unit-01-c02r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c02r.mp3"
      },
      "group": "1. When meeting, entering a home",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c02.mp3"
+     "audio": "audio/ar/lessons/unit-01-c02.mp3"
     },
     {
      "ar": "تْشَرَّفْنا",
@@ -72,11 +72,11 @@ window.LESSONS = {
      "reply": {
       "ar": "إلشَّرَف إلي",
       "en": "The honor is mine",
-      "audio": "audio/lessons/unit-01-c03r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c03r.mp3"
      },
      "group": "1. When meeting, entering a home",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c03.mp3"
+     "audio": "audio/ar/lessons/unit-01-c03.mp3"
     },
     {
      "ar": "كيف حالَك... حالِك",
@@ -84,11 +84,11 @@ window.LESSONS = {
      "reply": {
       "ar": "إلْحَمْدُ لله مَبْسوط... مَبْسوطَة",
       "en": "Praise God — happy (m/f)",
-      "audio": "audio/lessons/unit-01-c04r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c04r.mp3"
      },
      "group": "2. How are you?",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c04.mp3"
+     "audio": "audio/ar/lessons/unit-01-c04.mp3"
     },
     {
      "ar": "شو أخْبارَك؟",
@@ -96,11 +96,11 @@ window.LESSONS = {
      "reply": {
       "ar": "مْنيح \\ مْنيحَة",
       "en": "Good (m/f)",
-      "audio": "audio/lessons/unit-01-c05r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c05r.mp3"
      },
      "group": "2. How are you?",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c05.mp3"
+     "audio": "audio/ar/lessons/unit-01-c05.mp3"
     },
     {
      "ar": "صَباح الْخِير",
@@ -108,11 +108,11 @@ window.LESSONS = {
      "reply": {
       "ar": "صباح النُّور",
       "en": "\"Morning of light\"",
-      "audio": "audio/lessons/unit-01-c06r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c06r.mp3"
      },
      "group": "3. Good morning, good day, Good evening, good night",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c06.mp3"
+     "audio": "audio/ar/lessons/unit-01-c06.mp3"
     },
     {
      "ar": "نْهارَك سَعيد",
@@ -120,11 +120,11 @@ window.LESSONS = {
      "reply": {
       "ar": "نْهارَك أَسْعَد",
       "en": "May yours be happier",
-      "audio": "audio/lessons/unit-01-c07r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c07r.mp3"
      },
      "group": "3. Good morning, good day, Good evening, good night",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c07.mp3"
+     "audio": "audio/ar/lessons/unit-01-c07.mp3"
     },
     {
      "ar": "مَساء الْخير",
@@ -132,11 +132,11 @@ window.LESSONS = {
      "reply": {
       "ar": "مَساء النُّور",
       "en": "\"Evening of light\"",
-      "audio": "audio/lessons/unit-01-c08r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c08r.mp3"
      },
      "group": "3. Good morning, good day, Good evening, good night",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c08.mp3"
+     "audio": "audio/ar/lessons/unit-01-c08.mp3"
     },
     {
      "ar": "تِصْبَح عَ-الْخِير... تِصْبَحي",
@@ -144,11 +144,11 @@ window.LESSONS = {
      "reply": {
       "ar": "وإنْتِ مِن أهْلُه",
       "en": "And you among its people",
-      "audio": "audio/lessons/unit-01-c09r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c09r.mp3"
      },
      "group": "3. Good morning, good day, Good evening, good night",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c09.mp3"
+     "audio": "audio/ar/lessons/unit-01-c09.mp3"
     },
     {
      "ar": "مَبْروك",
@@ -156,11 +156,11 @@ window.LESSONS = {
      "reply": {
       "ar": "الله يْبارِك فيك... فيكِ... فيكُم... فيكِن",
       "en": "God bless you (m/f/pl)",
-      "audio": "audio/lessons/unit-01-c10r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c10r.mp3"
      },
      "group": "4. Congratulate at any event",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c10.mp3"
+     "audio": "audio/ar/lessons/unit-01-c10.mp3"
     },
     {
      "ar": "شُكْرًا, شُكْرًا جَزيلًا",
@@ -168,11 +168,11 @@ window.LESSONS = {
      "reply": {
       "ar": "عَفْوًا \\ تِسْلَم \\ لا شُكْر عَلى واجِب",
       "en": "You're welcome / bless you / no thanks owed for a duty",
-      "audio": "audio/lessons/unit-01-c11r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c11r.mp3"
      },
      "group": "5. Thank you",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c11.mp3"
+     "audio": "audio/ar/lessons/unit-01-c11.mp3"
     },
     {
      "ar": "تِسْلَم... تِسْلَمي",
@@ -180,11 +180,11 @@ window.LESSONS = {
      "reply": {
       "ar": "شُكْرًا",
       "en": "Thank you",
-      "audio": "audio/lessons/unit-01-c12r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c12r.mp3"
      },
      "group": "5. Thank you",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c12.mp3"
+     "audio": "audio/ar/lessons/unit-01-c12.mp3"
     },
     {
      "ar": "الله يِعْطيك\\ي العافْيِة",
@@ -192,11 +192,11 @@ window.LESSONS = {
      "reply": {
       "ar": "الله يِعافيك\\ يِعافيكِ \\ يِعافيكُم \\ يِعافيكِن",
       "en": "God keep you well (m/f/pl)",
-      "audio": "audio/lessons/unit-01-c13r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c13r.mp3"
      },
      "group": "6. Saying to someone who is working hard",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c13.mp3"
+     "audio": "audio/ar/lessons/unit-01-c13.mp3"
     },
     {
      "ar": "يِسْلَموا إيدِيك\\ي",
@@ -204,11 +204,11 @@ window.LESSONS = {
      "reply": {
       "ar": "وإيدِيك\\ وإيدِيكِ",
       "en": "And your hands",
-      "audio": "audio/lessons/unit-01-c14r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c14r.mp3"
      },
      "group": "7. Saying to someone who gave you tea, water or juice",
      "src": "p.7",
-     "audio": "audio/lessons/unit-01-c14.mp3"
+     "audio": "audio/ar/lessons/unit-01-c14.mp3"
     },
     {
      "ar": "صَحّتِين",
@@ -216,11 +216,11 @@ window.LESSONS = {
      "reply": {
       "ar": "صَحّتِين وهَنا",
       "en": "Health and contentment",
-      "audio": "audio/lessons/unit-01-c15r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c15r.mp3"
      },
      "group": "8. Before eating",
      "src": "p.8",
-     "audio": "audio/lessons/unit-01-c15.mp3"
+     "audio": "audio/ar/lessons/unit-01-c15.mp3"
     },
     {
      "ar": "نَعيمًا",
@@ -228,11 +228,11 @@ window.LESSONS = {
      "reply": {
       "ar": "الله يِنْعَم عَلِيك\\كِ",
       "en": "God grant you grace",
-      "audio": "audio/lessons/unit-01-c16r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c16r.mp3"
      },
      "group": "9. Saying to someone who took a shower or a hair cut",
      "src": "p.8",
-     "audio": "audio/lessons/unit-01-c16.mp3"
+     "audio": "audio/ar/lessons/unit-01-c16.mp3"
     },
     {
      "ar": "سَلامات",
@@ -240,11 +240,11 @@ window.LESSONS = {
      "reply": {
       "ar": "مَع السَّلامِة",
       "en": "Go in peace",
-      "audio": "audio/lessons/unit-01-c17r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c17r.mp3"
      },
      "group": "10. Saying when leaving",
      "src": "p.8",
-     "audio": "audio/lessons/unit-01-c17.mp3"
+     "audio": "audio/ar/lessons/unit-01-c17.mp3"
     },
     {
      "ar": "سَلامْتَك ... سَلامْتِك ... سلامْتُه...",
@@ -252,11 +252,11 @@ window.LESSONS = {
      "reply": {
       "ar": "تِسْلَم \\ تِسْلَمي",
       "en": "Bless you (m/f)",
-      "audio": "audio/lessons/unit-01-c18r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c18r.mp3"
      },
      "group": "13. Saying to a sick person or when talking about one",
      "src": "p.8",
-     "audio": "audio/lessons/unit-01-c18.mp3"
+     "audio": "audio/ar/lessons/unit-01-c18.mp3"
     },
     {
      "ar": "كُلّ سَنِة وإنْتِ سالِم",
@@ -264,11 +264,11 @@ window.LESSONS = {
      "reply": {
       "ar": "كُلّ عام وإنْتِ بْخِير",
       "en": "Every year and you in goodness",
-      "audio": "audio/lessons/unit-01-c19r.mp3"
+      "audio": "audio/ar/lessons/unit-01-c19r.mp3"
      },
      "group": "14. Saying on a new year or a holiday",
      "src": "p.8",
-     "audio": "audio/lessons/unit-01-c19.mp3"
+     "audio": "audio/ar/lessons/unit-01-c19.mp3"
     }
    ],
    "drills": [
@@ -313,245 +313,245 @@ window.LESSONS = {
      "en": "members of the family",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c00.mp3"
+     "audio": "audio/ar/lessons/unit-02-c00.mp3"
     },
     {
      "ar": "جُوز ج أجْواز (أزْواج)",
      "en": "husband",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c01.mp3"
+     "audio": "audio/ar/lessons/unit-02-c01.mp3"
     },
     {
      "ar": "مَرَّة ج نِسْوان",
      "en": "wife, woman",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c02.mp3"
+     "audio": "audio/ar/lessons/unit-02-c02.mp3"
     },
     {
      "ar": "زُوجة ج زَوْجات",
      "en": "wife",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c03.mp3"
+     "audio": "audio/ar/lessons/unit-02-c03.mp3"
     },
     {
      "ar": "أب ، أبو ج أَبَوِة",
      "en": "father",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c04.mp3"
+     "audio": "audio/ar/lessons/unit-02-c04.mp3"
     },
     {
      "ar": "أم ، إمّ ج إمَّيَات",
      "en": "mother",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c05.mp3"
+     "audio": "audio/ar/lessons/unit-02-c05.mp3"
     },
     {
      "ar": "طِفْل ج أطْفال",
      "en": "child, baby",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c06.mp3"
+     "audio": "audio/ar/lessons/unit-02-c06.mp3"
     },
     {
      "ar": "أهِل",
      "en": "parents",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c07.mp3"
+     "audio": "audio/ar/lessons/unit-02-c07.mp3"
     },
     {
      "ar": "أخ ج إخْوِة",
      "en": "brother",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c08.mp3"
+     "audio": "audio/ar/lessons/unit-02-c08.mp3"
     },
     {
      "ar": "أُخْت ج خَوات",
      "en": "sister",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c09.mp3"
+     "audio": "audio/ar/lessons/unit-02-c09.mp3"
     },
     {
      "ar": "سيد، جِدّ ج أجداد",
      "en": "grandfather",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c10.mp3"
+     "audio": "audio/ar/lessons/unit-02-c10.mp3"
     },
     {
      "ar": "سِتّ ج سِتّات",
      "en": "grandmother",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c11.mp3"
+     "audio": "audio/ar/lessons/unit-02-c11.mp3"
     },
     {
      "ar": "حَفيد ج أحْفاد",
      "en": "grandchild",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c12.mp3"
+     "audio": "audio/ar/lessons/unit-02-c12.mp3"
     },
     {
      "ar": "عَمّ ج (أ)عْمام",
      "en": "paternal uncle",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c13.mp3"
+     "audio": "audio/ar/lessons/unit-02-c13.mp3"
     },
     {
      "ar": "عَمّة ج عَمّات",
      "en": "paternal aunt",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c14.mp3"
+     "audio": "audio/ar/lessons/unit-02-c14.mp3"
     },
     {
      "ar": "خال ج (أ)خْوال",
      "en": "maternal uncle",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c15.mp3"
+     "audio": "audio/ar/lessons/unit-02-c15.mp3"
     },
     {
      "ar": "خالِة ج خالات",
      "en": "maternal aunt",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c16.mp3"
+     "audio": "audio/ar/lessons/unit-02-c16.mp3"
     },
     {
      "ar": "بِنْت الأخ أو الأُخْت",
      "en": "niece",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c17.mp3"
+     "audio": "audio/ar/lessons/unit-02-c17.mp3"
     },
     {
      "ar": "إبِن الأخ أو الأُخْت",
      "en": "nephew",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c18.mp3"
+     "audio": "audio/ar/lessons/unit-02-c18.mp3"
     },
     {
      "ar": "مَرْة الإبِن، كِنِّة",
      "en": "daughter in law",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c19.mp3"
+     "audio": "audio/ar/lessons/unit-02-c19.mp3"
     },
     {
      "ar": "إبِن العَمّ ج وْلاد عَمّ",
      "en": "cousin",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c20.mp3"
+     "audio": "audio/ar/lessons/unit-02-c20.mp3"
     },
     {
      "ar": "صِهِر، نَسيب، جوز البِنْت",
      "en": "brother in law",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c21.mp3"
+     "audio": "audio/ar/lessons/unit-02-c21.mp3"
     },
     {
      "ar": "حَمولِة",
      "en": "clan, the great family",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c22.mp3"
+     "audio": "audio/ar/lessons/unit-02-c22.mp3"
     },
     {
      "ar": "عيلة",
      "en": "family",
      "src": "speaking p.9",
      "group": "Members of the family",
-     "audio": "audio/lessons/unit-02-c23.mp3"
+     "audio": "audio/ar/lessons/unit-02-c23.mp3"
     },
     {
      "ar": "مِتْجَوِّز\\اة",
      "en": "married",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c24.mp3"
+     "audio": "audio/ar/lessons/unit-02-c24.mp3"
     },
     {
      "ar": "مَخْطوب\\اة",
      "en": "engaged",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c25.mp3"
+     "audio": "audio/ar/lessons/unit-02-c25.mp3"
     },
     {
      "ar": "أرْمَل\\اة",
      "en": "widow",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c26.mp3"
+     "audio": "audio/ar/lessons/unit-02-c26.mp3"
     },
     {
      "ar": "مْطَلَّق\\اة",
      "en": "divorced",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c27.mp3"
+     "audio": "audio/ar/lessons/unit-02-c27.mp3"
     },
     {
      "ar": "مُنْفَصِل\\اة",
      "en": "separated",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c28.mp3"
+     "audio": "audio/ar/lessons/unit-02-c28.mp3"
     },
     {
      "ar": "مَرْة الأبو",
      "en": "stepmother",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c29.mp3"
+     "audio": "audio/ar/lessons/unit-02-c29.mp3"
     },
     {
      "ar": "جُوز الإمّ",
      "en": "stepfather",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c30.mp3"
+     "audio": "audio/ar/lessons/unit-02-c30.mp3"
     },
     {
      "ar": "ثُوم",
      "en": "twin (m+f)",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c31.mp3"
+     "audio": "audio/ar/lessons/unit-02-c31.mp3"
     },
     {
      "ar": "يَتيم\\اة",
      "en": "orphan",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c32.mp3"
+     "audio": "audio/ar/lessons/unit-02-c32.mp3"
     },
     {
      "ar": "إبِن بِالتَّبَنّي",
      "en": "adopted son",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c33.mp3"
+     "audio": "audio/ar/lessons/unit-02-c33.mp3"
     },
     {
      "ar": "عَزّابي\\اة",
      "en": "single",
      "src": "speaking p.6",
      "group": "Family statuses",
-     "audio": "audio/lessons/unit-02-c34.mp3"
+     "audio": "audio/ar/lessons/unit-02-c34.mp3"
     }
    ],
    "drills": [
@@ -631,413 +631,413 @@ window.LESSONS = {
      "en": "continent",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c00.mp3"
+     "audio": "audio/ar/lessons/unit-03-c00.mp3"
     },
     {
      "ar": "دُولِة، بَلَد ج دُوَل، بْلاد",
      "en": "country",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c01.mp3"
+     "audio": "audio/ar/lessons/unit-03-c01.mp3"
     },
     {
      "ar": "شِمال",
      "en": "north",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c02.mp3"
+     "audio": "audio/ar/lessons/unit-03-c02.mp3"
     },
     {
      "ar": "جَنوب",
      "en": "south",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c03.mp3"
+     "audio": "audio/ar/lessons/unit-03-c03.mp3"
     },
     {
      "ar": "غَرْب",
      "en": "west",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c04.mp3"
+     "audio": "audio/ar/lessons/unit-03-c04.mp3"
     },
     {
      "ar": "شَرْق",
      "en": "east",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c05.mp3"
+     "audio": "audio/ar/lessons/unit-03-c05.mp3"
     },
     {
      "ar": "إفريقْيا (f)",
      "en": "Africa",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c06.mp3"
+     "audio": "audio/ar/lessons/unit-03-c06.mp3"
     },
     {
      "ar": "أورُوبا (f)",
      "en": "Europe",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c07.mp3"
+     "audio": "audio/ar/lessons/unit-03-c07.mp3"
     },
     {
      "ar": "آسيا (f)",
      "en": "Asia",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c08.mp3"
+     "audio": "audio/ar/lessons/unit-03-c08.mp3"
     },
     {
      "ar": "أمْريكا (f)",
      "en": "America",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c09.mp3"
+     "audio": "audio/ar/lessons/unit-03-c09.mp3"
     },
     {
      "ar": "ألولايات الْمُتَّحِدَة (f)",
      "en": "USA",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c10.mp3"
+     "audio": "audio/ar/lessons/unit-03-c10.mp3"
     },
     {
      "ar": "إلنِّمْسا (f)",
      "en": "Austria",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c11.mp3"
+     "audio": "audio/ar/lessons/unit-03-c11.mp3"
     },
     {
      "ar": "أُسْتْرالْيا (f)",
      "en": "Australia",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c12.mp3"
+     "audio": "audio/ar/lessons/unit-03-c12.mp3"
     },
     {
      "ar": "إلْجَزائِر (f)",
      "en": "Algiers",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c13.mp3"
+     "audio": "audio/ar/lessons/unit-03-c13.mp3"
     },
     {
      "ar": "إنْجِلْتْرا (بَريطانْيا) (f)",
      "en": "England",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c14.mp3"
+     "audio": "audio/ar/lessons/unit-03-c14.mp3"
     },
     {
      "ar": "بَلْجيكا (f)",
      "en": "Belgium",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c15.mp3"
+     "audio": "audio/ar/lessons/unit-03-c15.mp3"
     },
     {
      "ar": "ألْبَرازيل (f)",
      "en": "Brazil",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c16.mp3"
+     "audio": "audio/ar/lessons/unit-03-c16.mp3"
     },
     {
      "ar": "هُنْغارْيا \\ ألْمَجَر (f)",
      "en": "Hungary",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c17.mp3"
+     "audio": "audio/ar/lessons/unit-03-c17.mp3"
     },
     {
      "ar": "إلدّانِمَرْك (f)",
      "en": "Denmark",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c18.mp3"
+     "audio": "audio/ar/lessons/unit-03-c18.mp3"
     },
     {
      "ar": "إلْهِند (f)",
      "en": "India",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c19.mp3"
+     "audio": "audio/ar/lessons/unit-03-c19.mp3"
     },
     {
      "ar": "هُولَنْدا (f)",
      "en": "Holland",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c20.mp3"
+     "audio": "audio/ar/lessons/unit-03-c20.mp3"
     },
     {
      "ar": "روسْيا (f)",
      "en": "Russia",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c21.mp3"
+     "audio": "audio/ar/lessons/unit-03-c21.mp3"
     },
     {
      "ar": "أثْيُوبْيا (f)",
      "en": "Ethiopia",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c22.mp3"
+     "audio": "audio/ar/lessons/unit-03-c22.mp3"
     },
     {
      "ar": "ساحِل العاج (f)",
      "en": "Ivory coast",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c23.mp3"
+     "audio": "audio/ar/lessons/unit-03-c23.mp3"
     },
     {
      "ar": "مَصر (f)",
      "en": "Egypt",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c24.mp3"
+     "audio": "audio/ar/lessons/unit-03-c24.mp3"
     },
     {
      "ar": "مَالِزْيا (f)",
      "en": "Malaysia",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c25.mp3"
+     "audio": "audio/ar/lessons/unit-03-c25.mp3"
     },
     {
      "ar": "فَرَنْسا (f)",
      "en": "France",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c26.mp3"
+     "audio": "audio/ar/lessons/unit-03-c26.mp3"
     },
     {
      "ar": "إلْمَكْسيك (f)",
      "en": "Mexico",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c27.mp3"
+     "audio": "audio/ar/lessons/unit-03-c27.mp3"
     },
     {
      "ar": "إلْمَغْرِب (f)",
      "en": "Morocco",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c28.mp3"
+     "audio": "audio/ar/lessons/unit-03-c28.mp3"
     },
     {
      "ar": "إلنَّرْويج (f)",
      "en": "Norway",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c29.mp3"
+     "audio": "audio/ar/lessons/unit-03-c29.mp3"
     },
     {
      "ar": "إلسّودان (f)",
      "en": "Sudan",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c30.mp3"
+     "audio": "audio/ar/lessons/unit-03-c30.mp3"
     },
     {
      "ar": "إلصُّومَال (f)",
      "en": "Somalia",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c31.mp3"
+     "audio": "audio/ar/lessons/unit-03-c31.mp3"
     },
     {
      "ar": "سُورِيا (f)",
      "en": "Syria",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c32.mp3"
+     "audio": "audio/ar/lessons/unit-03-c32.mp3"
     },
     {
      "ar": "إلصّين (f)",
      "en": "China",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c33.mp3"
+     "audio": "audio/ar/lessons/unit-03-c33.mp3"
     },
     {
      "ar": "سِنْغافورة (f)",
      "en": "Singapore",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c34.mp3"
+     "audio": "audio/ar/lessons/unit-03-c34.mp3"
     },
     {
      "ar": "إسْبانْيا (f)",
      "en": "Spain",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c35.mp3"
+     "audio": "audio/ar/lessons/unit-03-c35.mp3"
     },
     {
      "ar": "إلْعِراق (f)",
      "en": "Iraq",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c36.mp3"
+     "audio": "audio/ar/lessons/unit-03-c36.mp3"
     },
     {
      "ar": "بُولَنْدا (f)",
      "en": "Poland",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c37.mp3"
+     "audio": "audio/ar/lessons/unit-03-c37.mp3"
     },
     {
      "ar": "أفْغانِسْتان (f)",
      "en": "Afghanistan",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c38.mp3"
+     "audio": "audio/ar/lessons/unit-03-c38.mp3"
     },
     {
      "ar": "فِنْلَنْدا (f)",
      "en": "Finland",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c39.mp3"
+     "audio": "audio/ar/lessons/unit-03-c39.mp3"
     },
     {
      "ar": "لُبْنان (f)",
      "en": "Lebanon",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c40.mp3"
+     "audio": "audio/ar/lessons/unit-03-c40.mp3"
     },
     {
      "ar": "ألْيَمَن (f)",
      "en": "Yemen",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c41.mp3"
+     "audio": "audio/ar/lessons/unit-03-c41.mp3"
     },
     {
      "ar": "إلْيابان (f)",
      "en": "Japan",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c42.mp3"
+     "audio": "audio/ar/lessons/unit-03-c42.mp3"
     },
     {
      "ar": "إلأُرْدُنّ (f)",
      "en": "Jordan",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c43.mp3"
+     "audio": "audio/ar/lessons/unit-03-c43.mp3"
     },
     {
      "ar": "إسْرائيل (f)",
      "en": "Israel",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c44.mp3"
+     "audio": "audio/ar/lessons/unit-03-c44.mp3"
     },
     {
      "ar": "ألْكُويت (f)",
      "en": "Kuwait",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c45.mp3"
+     "audio": "audio/ar/lessons/unit-03-c45.mp3"
     },
     {
      "ar": "لِيبْيا (f)",
      "en": "Libya",
      "src": "speaking p.3",
      "group": "Compass, continents & the Arab world",
-     "audio": "audio/lessons/unit-03-c46.mp3"
+     "audio": "audio/ar/lessons/unit-03-c46.mp3"
     },
     {
      "ar": "آيسْلَنْد (f)",
      "en": "Iceland",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c47.mp3"
+     "audio": "audio/ar/lessons/unit-03-c47.mp3"
     },
     {
      "ar": "كُوبا (f)",
      "en": "Cuba",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c48.mp3"
+     "audio": "audio/ar/lessons/unit-03-c48.mp3"
     },
     {
      "ar": "إلْيَونان (f)",
      "en": "Greece",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c49.mp3"
+     "audio": "audio/ar/lessons/unit-03-c49.mp3"
     },
     {
      "ar": "قُبْرُص (f)",
      "en": "Cyprus",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c50.mp3"
+     "audio": "audio/ar/lessons/unit-03-c50.mp3"
     },
     {
      "ar": "إلسّويد (f)",
      "en": "Sweden",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c51.mp3"
+     "audio": "audio/ar/lessons/unit-03-c51.mp3"
     },
     {
      "ar": "تُونِس (f)",
      "en": "Tunisia",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c52.mp3"
+     "audio": "audio/ar/lessons/unit-03-c52.mp3"
     },
     {
      "ar": "تِرْكِيا (f)",
      "en": "Turkey",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c53.mp3"
+     "audio": "audio/ar/lessons/unit-03-c53.mp3"
     },
     {
      "ar": "إلسُّعودِيِّة (f)",
      "en": "Saudi Arabia",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c54.mp3"
+     "audio": "audio/ar/lessons/unit-03-c54.mp3"
     },
     {
      "ar": "كَنَدا (f)",
      "en": "Canada",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c55.mp3"
+     "audio": "audio/ar/lessons/unit-03-c55.mp3"
     },
     {
      "ar": "بَاكِسْتان (f)",
      "en": "Pakistan",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c56.mp3"
+     "audio": "audio/ar/lessons/unit-03-c56.mp3"
     },
     {
      "ar": "إيران (f)",
      "en": "Iran",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c57.mp3"
+     "audio": "audio/ar/lessons/unit-03-c57.mp3"
     },
     {
      "ar": "إلشَّرْق الأَوْسَط",
      "en": "the Middle East",
      "src": "speaking p.4",
      "group": "More countries",
-     "audio": "audio/lessons/unit-03-c58.mp3"
+     "audio": "audio/ar/lessons/unit-03-c58.mp3"
     }
    ],
    "drills": [
@@ -1101,229 +1101,229 @@ window.LESSONS = {
      "ar": "مُهَنْدِس ج ين",
      "en": "engineer",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c00.mp3"
+     "audio": "audio/ar/lessons/unit-04-c00.mp3"
     },
     {
      "ar": "مُحامي ج ين",
      "en": "lawyer",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c01.mp3"
+     "audio": "audio/ar/lessons/unit-04-c01.mp3"
     },
     {
      "ar": "مُدير ج مُدَراء",
      "en": "director, principle",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c02.mp3"
+     "audio": "audio/ar/lessons/unit-04-c02.mp3"
     },
     {
      "ar": "مُدير عامّ",
      "en": "general manager",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c03.mp3"
+     "audio": "audio/ar/lessons/unit-04-c03.mp3"
     },
     {
      "ar": "مُدير حِسابات",
      "en": "accountant",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c04.mp3"
+     "audio": "audio/ar/lessons/unit-04-c04.mp3"
     },
     {
      "ar": "مُمَثِّل ج ين",
      "en": "actor",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c05.mp3"
+     "audio": "audio/ar/lessons/unit-04-c05.mp3"
     },
     {
      "ar": "مُوَظَّف ج ين",
      "en": "employee",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c06.mp3"
+     "audio": "audio/ar/lessons/unit-04-c06.mp3"
     },
     {
      "ar": "مُتَرْجِم ج ين",
      "en": "translator",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c07.mp3"
+     "audio": "audio/ar/lessons/unit-04-c07.mp3"
     },
     {
      "ar": "مُرْشِد رِحْلات",
      "en": "tour guide",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c08.mp3"
+     "audio": "audio/ar/lessons/unit-04-c08.mp3"
     },
     {
      "ar": "مُصَمِّم أزْياء",
      "en": "fashion designer",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c09.mp3"
+     "audio": "audio/ar/lessons/unit-04-c09.mp3"
     },
     {
      "ar": "مُقاوِل ج ين",
      "en": "contractor",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c10.mp3"
+     "audio": "audio/ar/lessons/unit-04-c10.mp3"
     },
     {
      "ar": "مِعْماري ج ين",
      "en": "architect",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c11.mp3"
+     "audio": "audio/ar/lessons/unit-04-c11.mp3"
     },
     {
      "ar": "صَحَفي ج ين",
      "en": "reporter",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c12.mp3"
+     "audio": "audio/ar/lessons/unit-04-c12.mp3"
     },
     {
      "ar": "موسيقار",
      "en": "musician",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c13.mp3"
+     "audio": "audio/ar/lessons/unit-04-c13.mp3"
     },
     {
      "ar": "عامِل ج عُمّال",
      "en": "worker",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c14.mp3"
+     "audio": "audio/ar/lessons/unit-04-c14.mp3"
     },
     {
      "ar": "عامِل إجْتِماعي",
      "en": "social worker",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c15.mp3"
+     "audio": "audio/ar/lessons/unit-04-c15.mp3"
     },
     {
      "ar": "كاتِب ج كُتّاب",
      "en": "writer",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c16.mp3"
+     "audio": "audio/ar/lessons/unit-04-c16.mp3"
     },
     {
      "ar": "باحِث ج ين",
      "en": "researcher",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c17.mp3"
+     "audio": "audio/ar/lessons/unit-04-c17.mp3"
     },
     {
      "ar": "تاجِر ج تُجّار",
      "en": "merchant",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c18.mp3"
+     "audio": "audio/ar/lessons/unit-04-c18.mp3"
     },
     {
      "ar": "شُرْطي ج ين",
      "en": "policeman",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c19.mp3"
+     "audio": "audio/ar/lessons/unit-04-c19.mp3"
     },
     {
      "ar": "جُنْدي ج جْنود",
      "en": "soldier",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c20.mp3"
+     "audio": "audio/ar/lessons/unit-04-c20.mp3"
     },
     {
      "ar": "سِياسيّ ج ين",
      "en": "Politician",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c21.mp3"
+     "audio": "audio/ar/lessons/unit-04-c21.mp3"
     },
     {
      "ar": "دَكْتور، طَبيب ج دَكاتْرَة ، أطِبّاء",
      "en": "doctor",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c22.mp3"
+     "audio": "audio/ar/lessons/unit-04-c22.mp3"
     },
     {
      "ar": "دَكْتور جَرّاح",
      "en": "surgeon",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c23.mp3"
+     "audio": "audio/ar/lessons/unit-04-c23.mp3"
     },
     {
      "ar": "سَيْكُولوج ، طبيب نَفْساني",
      "en": "psychologist",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c24.mp3"
+     "audio": "audio/ar/lessons/unit-04-c24.mp3"
     },
     {
      "ar": "رَجُل\\سَيِّدَة أعْمال",
      "en": "businessman\\woman",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c25.mp3"
+     "audio": "audio/ar/lessons/unit-04-c25.mp3"
     },
     {
      "ar": "فَلّاح ، مُزارِع ج ين",
      "en": "farmer",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c26.mp3"
+     "audio": "audio/ar/lessons/unit-04-c26.mp3"
     },
     {
      "ar": "طَبّاخ ج ين",
      "en": "cook",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c27.mp3"
+     "audio": "audio/ar/lessons/unit-04-c27.mp3"
     },
     {
      "ar": "فَنّان ج ين",
      "en": "artist",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c28.mp3"
+     "audio": "audio/ar/lessons/unit-04-c28.mp3"
     },
     {
      "ar": "رَسّام ج ين",
      "en": "painter",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c29.mp3"
+     "audio": "audio/ar/lessons/unit-04-c29.mp3"
     },
     {
      "ar": "حَدّاد ج ين",
      "en": "locksmith",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c30.mp3"
+     "audio": "audio/ar/lessons/unit-04-c30.mp3"
     },
     {
      "ar": "خَبّاز ج ين",
      "en": "baker",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c31.mp3"
+     "audio": "audio/ar/lessons/unit-04-c31.mp3"
     },
     {
      "ar": "طَيّار ج ين",
      "en": "pilot",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c32.mp3"
+     "audio": "audio/ar/lessons/unit-04-c32.mp3"
     },
     {
      "ar": "رَبِّة بيت",
      "en": "housewife",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c33.mp3"
+     "audio": "audio/ar/lessons/unit-04-c33.mp3"
     },
     {
      "ar": "بُسْتَنْجي",
      "en": "gardener",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c34.mp3"
+     "audio": "audio/ar/lessons/unit-04-c34.mp3"
     },
     {
      "ar": "مَصْلَحَة ج مَصالِح",
      "en": "business",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c35.mp3"
+     "audio": "audio/ar/lessons/unit-04-c35.mp3"
     },
     {
      "ar": "مَصْنَع ج مَصانِع",
      "en": "factory",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c36.mp3"
+     "audio": "audio/ar/lessons/unit-04-c36.mp3"
     },
     {
      "ar": "مِهْنِة ج مِهَن",
      "en": "profession",
      "src": "p.12",
-     "audio": "audio/lessons/unit-04-c37.mp3"
+     "audio": "audio/ar/lessons/unit-04-c37.mp3"
     }
    ],
    "drills": [
@@ -1439,259 +1439,259 @@ window.LESSONS = {
      "ar": "يُوم الأَحَد",
      "en": "Sunday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c00.mp3"
+     "audio": "audio/ar/lessons/unit-05-c00.mp3"
     },
     {
      "ar": "يُوم الثِّنِين",
      "en": "Monday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c01.mp3"
+     "audio": "audio/ar/lessons/unit-05-c01.mp3"
     },
     {
      "ar": "يُوم الثَّلاثا",
      "en": "Tuesday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c02.mp3"
+     "audio": "audio/ar/lessons/unit-05-c02.mp3"
     },
     {
      "ar": "يُوم الأَرْبَعا \\ الأَرْبِعا",
      "en": "Wednesday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c03.mp3"
+     "audio": "audio/ar/lessons/unit-05-c03.mp3"
     },
     {
      "ar": "يُوم الْخَميس",
      "en": "Thursday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c04.mp3"
+     "audio": "audio/ar/lessons/unit-05-c04.mp3"
     },
     {
      "ar": "يُوم الْجُمْعَة",
      "en": "Friday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c05.mp3"
+     "audio": "audio/ar/lessons/unit-05-c05.mp3"
     },
     {
      "ar": "يُوم السَّبْت",
      "en": "Saturday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c06.mp3"
+     "audio": "audio/ar/lessons/unit-05-c06.mp3"
     },
     {
      "ar": "أُسْبُوع ج أَسابِيع",
      "en": "week",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c07.mp3"
+     "audio": "audio/ar/lessons/unit-05-c07.mp3"
     },
     {
      "ar": "يُوم ج أَيَّام ، إيَّام",
      "en": "day",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c08.mp3"
+     "audio": "audio/ar/lessons/unit-05-c08.mp3"
     },
     {
      "ar": "مُقَدَّس",
      "en": "holy",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c09.mp3"
+     "audio": "audio/ar/lessons/unit-05-c09.mp3"
     },
     {
      "ar": "إمْبارِح",
      "en": "yesterday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c10.mp3"
+     "audio": "audio/ar/lessons/unit-05-c10.mp3"
     },
     {
      "ar": "أوَّل إمْبارِح",
      "en": "before yesterday",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c11.mp3"
+     "audio": "audio/ar/lessons/unit-05-c11.mp3"
     },
     {
      "ar": "بُكْرَة",
      "en": "tomorrow",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c12.mp3"
+     "audio": "audio/ar/lessons/unit-05-c12.mp3"
     },
     {
      "ar": "بَعِد بُكْرَة",
      "en": "after tomorrow",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c13.mp3"
+     "audio": "audio/ar/lessons/unit-05-c13.mp3"
     },
     {
      "ar": "إلأسْبوع الْجاي",
      "en": "next week",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c14.mp3"
+     "audio": "audio/ar/lessons/unit-05-c14.mp3"
     },
     {
      "ar": "إلأسْبوع إلّي فات",
      "en": "last week",
      "src": "speaking p.10",
-     "audio": "audio/lessons/unit-05-c15.mp3"
+     "audio": "audio/ar/lessons/unit-05-c15.mp3"
     },
     {
      "ar": "يُوم ج أيَّام",
      "en": "day",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c16.mp3"
+     "audio": "audio/ar/lessons/unit-05-c16.mp3"
     },
     {
      "ar": "أسْبوع ج أسابيع",
      "en": "week",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c17.mp3"
+     "audio": "audio/ar/lessons/unit-05-c17.mp3"
     },
     {
      "ar": "جُمْعة ج جُمَع",
      "en": "week",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c18.mp3"
+     "audio": "audio/ar/lessons/unit-05-c18.mp3"
     },
     {
      "ar": "شَهِر ج شُهور",
      "en": "month",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c19.mp3"
+     "audio": "audio/ar/lessons/unit-05-c19.mp3"
     },
     {
      "ar": "ساعة ج ات",
      "en": "hour",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c20.mp3"
+     "audio": "audio/ar/lessons/unit-05-c20.mp3"
     },
     {
      "ar": "دَقيقة ج دَقايِق",
      "en": "minute",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c21.mp3"
+     "audio": "audio/ar/lessons/unit-05-c21.mp3"
     },
     {
      "ar": "لَحْظَة ج ات",
      "en": "second",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c22.mp3"
+     "audio": "audio/ar/lessons/unit-05-c22.mp3"
     },
     {
      "ar": "صُبِح",
      "en": "morning",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c23.mp3"
+     "audio": "audio/ar/lessons/unit-05-c23.mp3"
     },
     {
      "ar": "ظُهِر",
      "en": "noon",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c24.mp3"
+     "audio": "audio/ar/lessons/unit-05-c24.mp3"
     },
     {
      "ar": "بَعْدِ الظُّهُر",
      "en": "after noon",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c25.mp3"
+     "audio": "audio/ar/lessons/unit-05-c25.mp3"
     },
     {
      "ar": "مسا، مَغْرِب",
      "en": "evening",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c26.mp3"
+     "audio": "audio/ar/lessons/unit-05-c26.mp3"
     },
     {
      "ar": "نْهار",
      "en": "day time",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c27.mp3"
+     "audio": "audio/ar/lessons/unit-05-c27.mp3"
     },
     {
      "ar": "لِيل ج لَيالي",
      "en": "night",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c28.mp3"
+     "audio": "audio/ar/lessons/unit-05-c28.mp3"
     },
     {
      "ar": "بُكْرة",
      "en": "tomorrow",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c29.mp3"
+     "audio": "audio/ar/lessons/unit-05-c29.mp3"
     },
     {
      "ar": "بَعِد بُكْرة",
      "en": "a day after tomorrow",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c30.mp3"
+     "audio": "audio/ar/lessons/unit-05-c30.mp3"
     },
     {
      "ar": "وَقْت ، زَمَن، زمان",
      "en": "time",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c31.mp3"
+     "audio": "audio/ar/lessons/unit-05-c31.mp3"
     },
     {
      "ar": "إلأسْبوع الْماضي",
      "en": "last week",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c32.mp3"
+     "audio": "audio/ar/lessons/unit-05-c32.mp3"
     },
     {
      "ar": "إلسَّنِة الْجاي",
      "en": "next year",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c33.mp3"
+     "audio": "audio/ar/lessons/unit-05-c33.mp3"
     },
     {
      "ar": "إلسِّنِة إلّي فاتَت \\ إلسَّنِة الْماضْيِة",
      "en": "last year",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c34.mp3"
+     "audio": "audio/ar/lessons/unit-05-c34.mp3"
     },
     {
      "ar": "ساعِتْها",
      "en": "then",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c35.mp3"
+     "audio": "audio/ar/lessons/unit-05-c35.mp3"
     },
     {
      "ar": "بُكْرة في المِشْمِش",
      "en": "it will never happened",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c36.mp3"
+     "audio": "audio/ar/lessons/unit-05-c36.mp3"
     },
     {
      "ar": "أجا الوَقْت",
      "en": "time has come",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c37.mp3"
+     "audio": "audio/ar/lessons/unit-05-c37.mp3"
     },
     {
      "ar": "مِن زَمان، زمان",
      "en": "long time ago\\ it's been a long time since",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c38.mp3"
+     "audio": "audio/ar/lessons/unit-05-c38.mp3"
     },
     {
      "ar": "حالًا \\ عَلى طول",
      "en": "right away",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c39.mp3"
+     "audio": "audio/ar/lessons/unit-05-c39.mp3"
     },
     {
      "ar": "أبَدًا",
      "en": "never",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c40.mp3"
+     "audio": "audio/ar/lessons/unit-05-c40.mp3"
     },
     {
      "ar": "مَرات \\ أحْيانًا",
      "en": "sometimes",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c41.mp3"
+     "audio": "audio/ar/lessons/unit-05-c41.mp3"
     },
     {
      "ar": "دايْمًا",
      "en": "always",
      "src": "speaking p.29",
-     "audio": "audio/lessons/unit-05-c42.mp3"
+     "audio": "audio/ar/lessons/unit-05-c42.mp3"
     }
    ],
    "dialogues": [],
@@ -1853,169 +1853,169 @@ window.LESSONS = {
      "ar": "مَدينة ج مُدُن",
      "en": "town",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c00.mp3"
+     "audio": "audio/ar/lessons/unit-06-c00.mp3"
     },
     {
      "ar": "قِرْيِة، بَلَد ج قُرَى",
      "en": "village",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c01.mp3"
+     "audio": "audio/ar/lessons/unit-06-c01.mp3"
     },
     {
      "ar": "دَوّار ج دَوّارات",
      "en": "square",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c02.mp3"
+     "audio": "audio/ar/lessons/unit-06-c02.mp3"
     },
     {
      "ar": "مَرْكَز تِجاري ج مَراكِز تِجارِيِّة",
      "en": "shopping center",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c03.mp3"
+     "audio": "audio/ar/lessons/unit-06-c03.mp3"
     },
     {
      "ar": "مُجَمَّع ج مُجَمَّعات",
      "en": "mall, complex",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c04.mp3"
+     "audio": "audio/ar/lessons/unit-06-c04.mp3"
     },
     {
      "ar": "حَديقَة حَيْوانات",
      "en": "zoo",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c05.mp3"
+     "audio": "audio/ar/lessons/unit-06-c05.mp3"
     },
     {
      "ar": "حَديقَة عامَّة ج حَدايِق عامَّة",
      "en": "public garden",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c06.mp3"
+     "audio": "audio/ar/lessons/unit-06-c06.mp3"
     },
     {
      "ar": "بِرْكِة سِباحَة ج بِرَك سِباحَة",
      "en": "swimming pool",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c07.mp3"
+     "audio": "audio/ar/lessons/unit-06-c07.mp3"
     },
     {
      "ar": "كُلِّيِّة ج كُلِّيّات",
      "en": "college",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c08.mp3"
+     "audio": "audio/ar/lessons/unit-06-c08.mp3"
     },
     {
      "ar": "مَحَلّ ج مَحَلّات",
      "en": "place, shop",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c09.mp3"
+     "audio": "audio/ar/lessons/unit-06-c09.mp3"
     },
     {
      "ar": "دُكّان، دُكّانِة ج دَكاكين",
      "en": "grocery store",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c10.mp3"
+     "audio": "audio/ar/lessons/unit-06-c10.mp3"
     },
     {
      "ar": "وَسْطِ الْبَلَد",
      "en": "down town",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c11.mp3"
+     "audio": "audio/ar/lessons/unit-06-c11.mp3"
     },
     {
      "ar": "مَسْرَح ج مَسارِح",
      "en": "theater",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c12.mp3"
+     "audio": "audio/ar/lessons/unit-06-c12.mp3"
     },
     {
      "ar": "مَتْحَف ج مَتاحِف",
      "en": "museum",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c13.mp3"
+     "audio": "audio/ar/lessons/unit-06-c13.mp3"
     },
     {
      "ar": "بارك ج باركات",
      "en": "park",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c14.mp3"
+     "audio": "audio/ar/lessons/unit-06-c14.mp3"
     },
     {
      "ar": "جِسِر ج جُسور",
      "en": "bridge",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c15.mp3"
+     "audio": "audio/ar/lessons/unit-06-c15.mp3"
     },
     {
      "ar": "مَسْجِد ج مَساجِد",
      "en": "mosque",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c16.mp3"
+     "audio": "audio/ar/lessons/unit-06-c16.mp3"
     },
     {
      "ar": "كَنيسِة ج كَنايِس",
      "en": "church",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c17.mp3"
+     "audio": "audio/ar/lessons/unit-06-c17.mp3"
     },
     {
      "ar": "كَنيس ج كُنُس",
      "en": "synagogue",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c18.mp3"
+     "audio": "audio/ar/lessons/unit-06-c18.mp3"
     },
     {
      "ar": "شارِع ج شَوارِع",
      "en": "street",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c19.mp3"
+     "audio": "audio/ar/lessons/unit-06-c19.mp3"
     },
     {
      "ar": "رَقْم الْبِيت",
      "en": "home number",
      "src": "speaking p.11",
-     "audio": "audio/lessons/unit-06-c20.mp3"
+     "audio": "audio/ar/lessons/unit-06-c20.mp3"
     },
     {
      "ar": "جامعة",
      "en": "university",
      "src": "speaking p.11",
      "group": "More directions (not in the printed book)",
-     "audio": "audio/lessons/unit-06-c21.mp3"
+     "audio": "audio/ar/lessons/unit-06-c21.mp3"
     },
     {
      "ar": "رمزور",
      "en": "stoplight (Hebrew loanword)",
      "src": "speaking p.11",
      "group": "More directions (not in the printed book)",
-     "audio": "audio/lessons/unit-06-c22.mp3"
+     "audio": "audio/ar/lessons/unit-06-c22.mp3"
     },
     {
      "ar": "مفترق",
      "en": "intersection",
      "src": "speaking p.11",
      "group": "More directions (not in the printed book)",
-     "audio": "audio/lessons/unit-06-c23.mp3"
+     "audio": "audio/ar/lessons/unit-06-c23.mp3"
     },
     {
      "ar": "مدخل",
      "en": "entrance",
      "src": "speaking p.11",
      "group": "More directions (not in the printed book)",
-     "audio": "audio/lessons/unit-06-c24.mp3"
+     "audio": "audio/ar/lessons/unit-06-c24.mp3"
     },
     {
      "ar": "ملعب",
      "en": "playground",
      "src": "speaking p.11",
      "group": "More directions (not in the printed book)",
-     "audio": "audio/lessons/unit-06-c25.mp3"
+     "audio": "audio/ar/lessons/unit-06-c25.mp3"
     },
     {
      "ar": "كمّل دغري (؟)",
      "en": "stay on / keep straight",
      "src": "speaking p.11",
      "group": "More directions (not in the printed book)",
-     "audio": "audio/lessons/unit-06-c26.mp3"
+     "audio": "audio/ar/lessons/unit-06-c26.mp3"
     }
    ],
    "dialogues": [],
@@ -2065,193 +2065,193 @@ window.LESSONS = {
      "ar": "باب ج (أ)بْواب",
      "en": "door",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c00.mp3"
+     "audio": "audio/ar/lessons/unit-07-c00.mp3"
     },
     {
      "ar": "شُبّاك ج شَبابيك",
      "en": "window",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c01.mp3"
+     "audio": "audio/ar/lessons/unit-07-c01.mp3"
     },
     {
      "ar": "طاوْلِة السُّفْرَة ج طاوْلات",
      "en": "dining table",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c02.mp3"
+     "audio": "audio/ar/lessons/unit-07-c02.mp3"
     },
     {
      "ar": "قَعْدِة ج ات",
      "en": "sitting area, salon",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c03.mp3"
+     "audio": "audio/ar/lessons/unit-07-c03.mp3"
     },
     {
      "ar": "حَمّام ج ات",
      "en": "toilet, shower",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c04.mp3"
+     "audio": "audio/ar/lessons/unit-07-c04.mp3"
     },
     {
      "ar": "بِيت خارِج",
      "en": "toilet",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c05.mp3"
+     "audio": "audio/ar/lessons/unit-07-c05.mp3"
     },
     {
      "ar": "غُرْفِة ج غُرَف",
      "en": "room",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c06.mp3"
+     "audio": "audio/ar/lessons/unit-07-c06.mp3"
     },
     {
      "ar": "كَنَباي ج ات",
      "en": "sofa",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c07.mp3"
+     "audio": "audio/ar/lessons/unit-07-c07.mp3"
     },
     {
      "ar": "غُرْفِة نُوم",
      "en": "sleeping room",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c08.mp3"
+     "audio": "audio/ar/lessons/unit-07-c08.mp3"
     },
     {
      "ar": "غُرْفِة أوْلاد",
      "en": "children room",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c09.mp3"
+     "audio": "audio/ar/lessons/unit-07-c09.mp3"
     },
     {
      "ar": "غُرْفِة الضِّيوف",
      "en": "salon",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c10.mp3"
+     "audio": "audio/ar/lessons/unit-07-c10.mp3"
     },
     {
      "ar": "تَخِت ج تْخُوت",
      "en": "bed",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c11.mp3"
+     "audio": "audio/ar/lessons/unit-07-c11.mp3"
     },
     {
      "ar": "غَطا",
      "en": "cover",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c12.mp3"
+     "audio": "audio/ar/lessons/unit-07-c12.mp3"
     },
     {
      "ar": "دَرَجِة ج دَرَج، أدْراج",
      "en": "stairs",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c13.mp3"
+     "audio": "audio/ar/lessons/unit-07-c13.mp3"
     },
     {
      "ar": "شَقَّة ج شُقَق",
      "en": "flat",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c14.mp3"
+     "audio": "audio/ar/lessons/unit-07-c14.mp3"
     },
     {
      "ar": "بُسْتان، حَديقَة، جْنِينِة",
      "en": "garden",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c15.mp3"
+     "audio": "audio/ar/lessons/unit-07-c15.mp3"
     },
     {
      "ar": "سَطِح ج سُطوح",
      "en": "roof",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c16.mp3"
+     "audio": "audio/ar/lessons/unit-07-c16.mp3"
     },
     {
      "ar": "ثَلّاجِة ج ات",
      "en": "refrigerator",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c17.mp3"
+     "audio": "audio/ar/lessons/unit-07-c17.mp3"
     },
     {
      "ar": "خْزانِة ج ات",
      "en": "cupboard",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c18.mp3"
+     "audio": "audio/ar/lessons/unit-07-c18.mp3"
     },
     {
      "ar": "طابِق ج طوابِق",
      "en": "floor",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c19.mp3"
+     "audio": "audio/ar/lessons/unit-07-c19.mp3"
     },
     {
      "ar": "أرْض، أرْضِيَّة",
      "en": "floor",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c20.mp3"
+     "audio": "audio/ar/lessons/unit-07-c20.mp3"
     },
     {
      "ar": "سَقْف ج أسْقُف، سقوف",
      "en": "ceiling",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c21.mp3"
+     "audio": "audio/ar/lessons/unit-07-c21.mp3"
     },
     {
      "ar": "مَخْزَن ج مَخازِن",
      "en": "storage",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c22.mp3"
+     "audio": "audio/ar/lessons/unit-07-c22.mp3"
     },
     {
      "ar": "مَوْقِف سَيّارات ج مَواقِف",
      "en": "parking",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c23.mp3"
+     "audio": "audio/ar/lessons/unit-07-c23.mp3"
     },
     {
      "ar": "ساحة ج ات",
      "en": "yard",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c24.mp3"
+     "audio": "audio/ar/lessons/unit-07-c24.mp3"
     },
     {
      "ar": "سور ج أسْوار",
      "en": "wall (around house)",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c25.mp3"
+     "audio": "audio/ar/lessons/unit-07-c25.mp3"
     },
     {
      "ar": "جِدار، سِياج",
      "en": "fence",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c26.mp3"
+     "audio": "audio/ar/lessons/unit-07-c26.mp3"
     },
     {
      "ar": "حِيط ج حيطان",
      "en": "wall (of house)",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c27.mp3"
+     "audio": "audio/ar/lessons/unit-07-c27.mp3"
     },
     {
      "ar": "كُرْسي ج كَراسي",
      "en": "chair",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c28.mp3"
+     "audio": "audio/ar/lessons/unit-07-c28.mp3"
     },
     {
      "ar": "مِصْعَد ج مَصاعِد",
      "en": "elevator",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c29.mp3"
+     "audio": "audio/ar/lessons/unit-07-c29.mp3"
     },
     {
      "ar": "مَطْبَخ",
      "en": "kitchen",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c30.mp3"
+     "audio": "audio/ar/lessons/unit-07-c30.mp3"
     },
     {
      "ar": "بَالْكُون ، بَرَنْدَة",
      "en": "balcony",
      "src": "speaking p.37",
-     "audio": "audio/lessons/unit-07-c31.mp3"
+     "audio": "audio/ar/lessons/unit-07-c31.mp3"
     }
    ],
    "dialogues": [],
@@ -2298,197 +2298,197 @@ window.LESSONS = {
      "en": "to wake up",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c00.mp3"
+     "audio": "audio/ar/lessons/unit-08-c00.mp3"
     },
     {
      "ar": "صَلَّى (أنا بَصَلّي ....)",
      "en": "to pray",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c01.mp3"
+     "audio": "audio/ar/lessons/unit-08-c01.mp3"
     },
     {
      "ar": "مَشَّط (أنا بَمَشِّط شَعْري....)",
      "en": "to comb (the hair)",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c02.mp3"
+     "audio": "audio/ar/lessons/unit-08-c02.mp3"
     },
     {
      "ar": "غَسَل -ه (أنا بَغْسِل وَجْهي....)",
      "en": "to wash",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c03.mp3"
+     "audio": "audio/ar/lessons/unit-08-c03.mp3"
     },
     {
      "ar": "تْحَمَّم (أنا بَتْحَمَّم....)",
      "en": "to take a shower",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c04.mp3"
+     "audio": "audio/ar/lessons/unit-08-c04.mp3"
     },
     {
      "ar": "فَرْشَى الأسْنان (أنا بَفَرْشي أسناني ....)",
      "en": "to clean teeth",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c05.mp3"
+     "audio": "audio/ar/lessons/unit-08-c05.mp3"
     },
     {
      "ar": "أفْطَر (بَفْطُر ....)",
      "en": "to eat breakfast",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c06.mp3"
+     "audio": "audio/ar/lessons/unit-08-c06.mp3"
     },
     {
      "ar": "تْغَدَّى (بَتْغَدَّى ....)",
      "en": "to eat lunch",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c07.mp3"
+     "audio": "audio/ar/lessons/unit-08-c07.mp3"
     },
     {
      "ar": "تْعَشّى (بَتْعَشّى ....)",
      "en": "to eat dinner",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c08.mp3"
+     "audio": "audio/ar/lessons/unit-08-c08.mp3"
     },
     {
      "ar": "شِرِب (بشْرَب ....)",
      "en": "to drink",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c09.mp3"
+     "audio": "audio/ar/lessons/unit-08-c09.mp3"
     },
     {
      "ar": "عِمِل وَظيفة البِيت (بَعْمَل ....)",
      "en": "to make home work",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c10.mp3"
+     "audio": "audio/ar/lessons/unit-08-c10.mp3"
     },
     {
      "ar": "نام (بَنام ....)",
      "en": "to sleep",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c11.mp3"
+     "audio": "audio/ar/lessons/unit-08-c11.mp3"
     },
     {
      "ar": "إرْتاح (بَرْتاح ....)",
      "en": "to rest",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c12.mp3"
+     "audio": "audio/ar/lessons/unit-08-c12.mp3"
     },
     {
      "ar": "سَهَر -ه (بَسْهَر ....)",
      "en": "to spend time at night",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c13.mp3"
+     "audio": "audio/ar/lessons/unit-08-c13.mp3"
     },
     {
      "ar": "شَمّ هوا (بَشِمّ هوا)",
      "en": "to go out and have a good time (lit: to breath air)",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c14.mp3"
+     "audio": "audio/ar/lessons/unit-08-c14.mp3"
     },
     {
      "ar": "دَرَس\\تْعَلَّم (بَدْرُس\\بَتْعَلَّم....)",
      "en": "to study",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c15.mp3"
+     "audio": "audio/ar/lessons/unit-08-c15.mp3"
     },
     {
      "ar": "سافَر (بَسافِر ....)",
      "en": "to travel",
      "src": "speaking p.35",
      "group": "قاموس عادي / قاموس أنا (citation form + \"I\" present form in parentheses)",
-     "audio": "audio/lessons/unit-08-c16.mp3"
+     "audio": "audio/ar/lessons/unit-08-c16.mp3"
     },
     {
      "ar": "عِمِل رِياضَة (بَعْمَل رياضة ....)",
      "en": "to do sport",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c17.mp3"
+     "audio": "audio/ar/lessons/unit-08-c17.mp3"
     },
     {
      "ar": "حَضَر تِلْفِزيون (بَحْضَر ....)",
      "en": "to watch",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c18.mp3"
+     "audio": "audio/ar/lessons/unit-08-c18.mp3"
     },
     {
      "ar": "اشْتَغَل (بَشْتْغِل ....)",
      "en": "to work",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c19.mp3"
+     "audio": "audio/ar/lessons/unit-08-c19.mp3"
     },
     {
      "ar": "حَضَّر أكِل (بَحَضِّر أكِل ....)",
      "en": "to prepare food",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c20.mp3"
+     "audio": "audio/ar/lessons/unit-08-c20.mp3"
     },
     {
      "ar": "فَحَص البَريد الإلكتروني (بَفْحَص البريد....)",
      "en": "to check mail",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c21.mp3"
+     "audio": "audio/ar/lessons/unit-08-c21.mp3"
     },
     {
      "ar": "قرا كُتاب (بَقْرأ كُتاب )",
      "en": "to read a book",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c22.mp3"
+     "audio": "audio/ar/lessons/unit-08-c22.mp3"
     },
     {
      "ar": "حَكى بالتلَفون\\اسكايب (بَحْكي مع أهْلي)",
      "en": "to speak by skype",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c23.mp3"
+     "audio": "audio/ar/lessons/unit-08-c23.mp3"
     },
     {
      "ar": "تْمَشّى \\ لَفْلَف (بَتْمَشَّى \\ بَلَفْلِف أنا وصْحابي )",
      "en": "to go out, walk around",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c24.mp3"
+     "audio": "audio/ar/lessons/unit-08-c24.mp3"
     },
     {
      "ar": "سِمِع موسيقى (بَسْمَع موسيقى )",
      "en": "listen to music",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c25.mp3"
+     "audio": "audio/ar/lessons/unit-08-c25.mp3"
     },
     {
      "ar": "رَتَّب ونَظَّف الغُرْفة (بَرَتِّب وبَنَظِّف غُرُفْتي )",
      "en": "to tidy and clean the room",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c26.mp3"
+     "audio": "audio/ar/lessons/unit-08-c26.mp3"
     },
     {
      "ar": "غسَل الملابِس \\ أواعي (بَغْسِل مَلابسي / أواعيي)",
      "en": "to wash clothes",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c27.mp3"
+     "audio": "audio/ar/lessons/unit-08-c27.mp3"
     },
     {
      "ar": "رَوَّح (أنا بَرَوّح....)",
      "en": "to return home",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c28.mp3"
+     "audio": "audio/ar/lessons/unit-08-c28.mp3"
     },
     {
      "ar": "وَدَّى (أنا بَوَدّي....)",
      "en": "to take someone by car to",
      "src": "speaking p.36",
-     "audio": "audio/lessons/unit-08-c29.mp3"
+     "audio": "audio/ar/lessons/unit-08-c29.mp3"
     }
    ],
    "dialogues": [],
@@ -2542,151 +2542,151 @@ window.LESSONS = {
      "ar": "هُوِيِّة",
      "en": "identity",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c00.mp3"
+     "audio": "audio/ar/lessons/unit-09-c00.mp3"
     },
     {
      "ar": "بِطاقَة هُوِيِّة",
      "en": "identity card",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c01.mp3"
+     "audio": "audio/ar/lessons/unit-09-c01.mp3"
     },
     {
      "ar": "مُتَدَيِّن",
      "en": "religious",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c02.mp3"
+     "audio": "audio/ar/lessons/unit-09-c02.mp3"
     },
     {
      "ar": "عِلْماني",
      "en": "secular",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c03.mp3"
+     "audio": "audio/ar/lessons/unit-09-c03.mp3"
     },
     {
      "ar": "عَرَبيّ ج عَرَب",
      "en": "Arab",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c04.mp3"
+     "audio": "audio/ar/lessons/unit-09-c04.mp3"
     },
     {
      "ar": "يَهوديّ ج يَهود",
      "en": "Jew, Jewish",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c05.mp3"
+     "audio": "audio/ar/lessons/unit-09-c05.mp3"
     },
     {
      "ar": "دُرْزيّ ج دُروز",
      "en": "Druze",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c06.mp3"
+     "audio": "audio/ar/lessons/unit-09-c06.mp3"
     },
     {
      "ar": "إنْسان",
      "en": "human being",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c07.mp3"
+     "audio": "audio/ar/lessons/unit-09-c07.mp3"
     },
     {
      "ar": "مُتَشَدِّد",
      "en": "extreme, fundamentalist",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c08.mp3"
+     "audio": "audio/ar/lessons/unit-09-c08.mp3"
     },
     {
      "ar": "وَسَطيّ",
      "en": "moderate",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c09.mp3"
+     "audio": "audio/ar/lessons/unit-09-c09.mp3"
     },
     {
      "ar": "مُتَساهِل",
      "en": "tolerant",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c10.mp3"
+     "audio": "audio/ar/lessons/unit-09-c10.mp3"
     },
     {
      "ar": "بَحِسّ",
      "en": "I feel",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c11.mp3"
+     "audio": "audio/ar/lessons/unit-09-c11.mp3"
     },
     {
      "ar": "بَفَكِّر",
      "en": "I think",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c12.mp3"
+     "audio": "audio/ar/lessons/unit-09-c12.mp3"
     },
     {
      "ar": "بَنْتَمي",
      "en": "I belong",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c13.mp3"
+     "audio": "audio/ar/lessons/unit-09-c13.mp3"
     },
     {
      "ar": "تَمْييز",
      "en": "Discrimination",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c14.mp3"
+     "audio": "audio/ar/lessons/unit-09-c14.mp3"
     },
     {
      "ar": "عُنْصُرِيَّة",
      "en": "Racism",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c15.mp3"
+     "audio": "audio/ar/lessons/unit-09-c15.mp3"
     },
     {
      "ar": "عُنْصُرِيِّ",
      "en": "Racist",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c16.mp3"
+     "audio": "audio/ar/lessons/unit-09-c16.mp3"
     },
     {
      "ar": "أقَلِّيِّة",
      "en": "minority",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c17.mp3"
+     "audio": "audio/ar/lessons/unit-09-c17.mp3"
     },
     {
      "ar": "أغْلَبِيِّة",
      "en": "majority",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c18.mp3"
+     "audio": "audio/ar/lessons/unit-09-c18.mp3"
     },
     {
      "ar": "يَسَّاريّ",
      "en": "leftist",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c19.mp3"
+     "audio": "audio/ar/lessons/unit-09-c19.mp3"
     },
     {
      "ar": "يَمينيّ",
      "en": "rightist",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c20.mp3"
+     "audio": "audio/ar/lessons/unit-09-c20.mp3"
     },
     {
      "ar": "روحاني",
      "en": "spiritual",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c21.mp3"
+     "audio": "audio/ar/lessons/unit-09-c21.mp3"
     },
     {
      "ar": "مادّي",
      "en": "materialistic",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c22.mp3"
+     "audio": "audio/ar/lessons/unit-09-c22.mp3"
     },
     {
      "ar": "طائِفة ج طَوائف",
      "en": "religious-ethnic group",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c23.mp3"
+     "audio": "audio/ar/lessons/unit-09-c23.mp3"
     },
     {
      "ar": "طَبَقة اجْتِماعِيِّة",
      "en": "social class",
      "src": "speaking p.38",
-     "audio": "audio/lessons/unit-09-c24.mp3"
+     "audio": "audio/ar/lessons/unit-09-c24.mp3"
     }
    ],
    "dialogues": [],
@@ -2757,157 +2757,157 @@ window.LESSONS = {
      "en": "I like going on trips",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c00.mp3"
+     "audio": "audio/ar/lessons/unit-10-c00.mp3"
     },
     {
      "ar": "بَحِبّ أروح مَشي في الطَبيعَة",
      "en": "I like going for walks in nature",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c01.mp3"
+     "audio": "audio/ar/lessons/unit-10-c01.mp3"
     },
     {
      "ar": "بَحِبّ أعْمَل رياضة \\ يوجا",
      "en": "I like to do sport \\ yoga",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c02.mp3"
+     "audio": "audio/ar/lessons/unit-10-c02.mp3"
     },
     {
      "ar": "بَحِبّ أقْرا كُتُب",
      "en": "read books",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c03.mp3"
+     "audio": "audio/ar/lessons/unit-10-c03.mp3"
     },
     {
      "ar": "بَسْمَع موسيقى",
      "en": "I listen to music",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c04.mp3"
+     "audio": "audio/ar/lessons/unit-10-c04.mp3"
     },
     {
      "ar": "بَعْزِف عَلى...",
      "en": "play (an instrument)",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c05.mp3"
+     "audio": "audio/ar/lessons/unit-10-c05.mp3"
     },
     {
      "ar": "بَطْبُخ",
      "en": "I cook",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c06.mp3"
+     "audio": "audio/ar/lessons/unit-10-c06.mp3"
     },
     {
      "ar": "بَحِبّ أتْعَلَّم",
      "en": "I like learning",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c07.mp3"
+     "audio": "audio/ar/lessons/unit-10-c07.mp3"
     },
     {
      "ar": "بَحِب أغَنّي",
      "en": "I like to sing",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c08.mp3"
+     "audio": "audio/ar/lessons/unit-10-c08.mp3"
     },
     {
      "ar": "بَحِبّ أسافِر",
      "en": "I like travelling",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c09.mp3"
+     "audio": "audio/ar/lessons/unit-10-c09.mp3"
     },
     {
      "ar": "بَحِبّ أنام",
      "en": "I like to sleep",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c10.mp3"
+     "audio": "audio/ar/lessons/unit-10-c10.mp3"
     },
     {
      "ar": "بَحِبّ أوكِل في مَطاعِم",
      "en": "I like eating in restaurants",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c11.mp3"
+     "audio": "audio/ar/lessons/unit-10-c11.mp3"
     },
     {
      "ar": "بَحبّ أقْعُد في قَهَاوي",
      "en": "I like sitting in cafés",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c12.mp3"
+     "audio": "audio/ar/lessons/unit-10-c12.mp3"
     },
     {
      "ar": "بَرْسُم",
      "en": "I draw",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c13.mp3"
+     "audio": "audio/ar/lessons/unit-10-c13.mp3"
     },
     {
      "ar": "بَصَوِّر",
      "en": "I film",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c14.mp3"
+     "audio": "audio/ar/lessons/unit-10-c14.mp3"
     },
     {
      "ar": "بَرْكَب بُسيكْلِيت \\ خِيل",
      "en": "I ride bicycles \\ horse",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c15.mp3"
+     "audio": "audio/ar/lessons/unit-10-c15.mp3"
     },
     {
      "ar": "بَسْبَح",
      "en": "I swim",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c16.mp3"
+     "audio": "audio/ar/lessons/unit-10-c16.mp3"
     },
     {
      "ar": "بَحْكي مَع أصحابي",
      "en": "I talk with my friends",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c17.mp3"
+     "audio": "audio/ar/lessons/unit-10-c17.mp3"
     },
     {
      "ar": "بَقْعُد في قَهاوي",
      "en": "I sit in cafés",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c18.mp3"
+     "audio": "audio/ar/lessons/unit-10-c18.mp3"
     },
     {
      "ar": "بَعْمَل مُشْتَرَيات",
      "en": "I go shopping",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c19.mp3"
+     "audio": "audio/ar/lessons/unit-10-c19.mp3"
     },
     {
      "ar": "بَتْطَوَّع",
      "en": "I volunteer",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c20.mp3"
+     "audio": "audio/ar/lessons/unit-10-c20.mp3"
     },
     {
      "ar": "بَلْعَب فوتبول \\ تينيس \\ كَرَّة سَلَّة",
      "en": "I play football / tennis / basketball",
      "src": "speaking p.23",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-10-c21.mp3"
+     "audio": "audio/ar/lessons/unit-10-c21.mp3"
     },
     {
      "ar": "بَحِبّ أمَثِّل...",
      "en": "I like to act",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c22.mp3"
+     "audio": "audio/ar/lessons/unit-10-c22.mp3"
     },
     {
      "ar": "بَحب أتْفَرَّج على أفلام \\ مَسْرَحيات ...",
      "en": "I like to watch movies and shows",
      "src": "speaking p.23",
-     "audio": "audio/lessons/unit-10-c23.mp3"
+     "audio": "audio/ar/lessons/unit-10-c23.mp3"
     }
    ],
    "dialogues": [],
@@ -2953,271 +2953,271 @@ window.LESSONS = {
      "ar": "أبُوكادو",
      "en": "avocado",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c00.mp3"
+     "audio": "audio/ar/lessons/unit-11-c00.mp3"
     },
     {
      "ar": "بَزيلِة",
      "en": "peas",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c01.mp3"
+     "audio": "audio/ar/lessons/unit-11-c01.mp3"
     },
     {
      "ar": "قَرِع",
      "en": "pumpkin",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c02.mp3"
+     "audio": "audio/ar/lessons/unit-11-c02.mp3"
     },
     {
      "ar": "قَمْبوط، زَهْرَة، قَرْنَبيط",
      "en": "cauliflower",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c03.mp3"
+     "audio": "audio/ar/lessons/unit-11-c03.mp3"
     },
     {
      "ar": "فِجِل",
      "en": "radish",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c04.mp3"
+     "audio": "audio/ar/lessons/unit-11-c04.mp3"
     },
     {
      "ar": "ثُومِة",
      "en": "garlic",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c05.mp3"
+     "audio": "audio/ar/lessons/unit-11-c05.mp3"
     },
     {
      "ar": "شُومَر",
      "en": "fennel",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c06.mp3"
+     "audio": "audio/ar/lessons/unit-11-c06.mp3"
     },
     {
      "ar": "بَطاطا",
      "en": "potato",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c07.mp3"
+     "audio": "audio/ar/lessons/unit-11-c07.mp3"
     },
     {
      "ar": "سَبانِخ",
      "en": "spinach",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c08.mp3"
+     "audio": "audio/ar/lessons/unit-11-c08.mp3"
     },
     {
      "ar": "كوسى",
      "en": "squash",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c09.mp3"
+     "audio": "audio/ar/lessons/unit-11-c09.mp3"
     },
     {
      "ar": "رِيحان",
      "en": "basilica",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c10.mp3"
+     "audio": "audio/ar/lessons/unit-11-c10.mp3"
     },
     {
      "ar": "نَعْنَع",
      "en": "mint",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c11.mp3"
+     "audio": "audio/ar/lessons/unit-11-c11.mp3"
     },
     {
      "ar": "زَيْتون",
      "en": "olives",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c12.mp3"
+     "audio": "audio/ar/lessons/unit-11-c12.mp3"
     },
     {
      "ar": "شَمَنْدَر",
      "en": "beet",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c13.mp3"
+     "audio": "audio/ar/lessons/unit-11-c13.mp3"
     },
     {
      "ar": "مَنْدَلينا",
      "en": "mandarin",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c14.mp3"
+     "audio": "audio/ar/lessons/unit-11-c14.mp3"
     },
     {
      "ar": "تُفّاح",
      "en": "apples",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c15.mp3"
+     "audio": "audio/ar/lessons/unit-11-c15.mp3"
     },
     {
      "ar": "إنْجاص",
      "en": "pears",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c16.mp3"
+     "audio": "audio/ar/lessons/unit-11-c16.mp3"
     },
     {
      "ar": "مُوز",
      "en": "banana",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c17.mp3"
+     "audio": "audio/ar/lessons/unit-11-c17.mp3"
     },
     {
      "ar": "رُمّان",
      "en": "pomegranate",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c18.mp3"
+     "audio": "audio/ar/lessons/unit-11-c18.mp3"
     },
     {
      "ar": "تين",
      "en": "figs",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c19.mp3"
+     "audio": "audio/ar/lessons/unit-11-c19.mp3"
     },
     {
      "ar": "تَمُر",
      "en": "dates",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c20.mp3"
+     "audio": "audio/ar/lessons/unit-11-c20.mp3"
     },
     {
      "ar": "زْبيب",
      "en": "raisins",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c21.mp3"
+     "audio": "audio/ar/lessons/unit-11-c21.mp3"
     },
     {
      "ar": "جُوز",
      "en": "nuts",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c22.mp3"
+     "audio": "audio/ar/lessons/unit-11-c22.mp3"
     },
     {
      "ar": "لُوز",
      "en": "almonds",
      "src": "speaking p.17",
-     "audio": "audio/lessons/unit-11-c23.mp3"
+     "audio": "audio/ar/lessons/unit-11-c23.mp3"
     },
     {
      "ar": "فَرَوْلَة",
      "en": "strawberries",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "audio": "audio/lessons/unit-11-c24.mp3"
+     "audio": "audio/ar/lessons/unit-11-c24.mp3"
     },
     {
      "ar": "لَمون",
      "en": "lemon",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "audio": "audio/lessons/unit-11-c25.mp3"
+     "audio": "audio/ar/lessons/unit-11-c25.mp3"
     },
     {
      "ar": "خُوخ",
      "en": "peach",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "audio": "audio/lessons/unit-11-c26.mp3"
+     "audio": "audio/ar/lessons/unit-11-c26.mp3"
     },
     {
      "ar": "عِنَب",
      "en": "grapes",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "audio": "audio/lessons/unit-11-c27.mp3"
+     "audio": "audio/ar/lessons/unit-11-c27.mp3"
     },
     {
      "ar": "بُرْتُقال",
      "en": "oranges",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "audio": "audio/lessons/unit-11-c28.mp3"
+     "audio": "audio/ar/lessons/unit-11-c28.mp3"
     },
     {
      "ar": "بَرْقوق",
      "en": "prunes",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "audio": "audio/lessons/unit-11-c29.mp3"
+     "audio": "audio/ar/lessons/unit-11-c29.mp3"
     },
     {
      "ar": "شُمام",
      "en": "melon",
      "src": "speaking p.17",
      "group": "فواكه – Fruits",
-     "audio": "audio/lessons/unit-11-c30.mp3"
+     "audio": "audio/ar/lessons/unit-11-c30.mp3"
     },
     {
      "ar": "خُبْز",
      "en": "bread",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c31.mp3"
+     "audio": "audio/ar/lessons/unit-11-c31.mp3"
     },
     {
      "ar": "لَحْم",
      "en": "meat",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c32.mp3"
+     "audio": "audio/ar/lessons/unit-11-c32.mp3"
     },
     {
      "ar": "بِيضة (بِيض)",
      "en": "egg",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c33.mp3"
+     "audio": "audio/ar/lessons/unit-11-c33.mp3"
     },
     {
      "ar": "جِبْنِة",
      "en": "cheese",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c34.mp3"
+     "audio": "audio/ar/lessons/unit-11-c34.mp3"
     },
     {
      "ar": "لَبَنِة",
      "en": "sour cheese",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c35.mp3"
+     "audio": "audio/ar/lessons/unit-11-c35.mp3"
     },
     {
      "ar": "حُمُّص",
      "en": "humus",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c36.mp3"
+     "audio": "audio/ar/lessons/unit-11-c36.mp3"
     },
     {
      "ar": "عَسَل",
      "en": "honey",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c37.mp3"
+     "audio": "audio/ar/lessons/unit-11-c37.mp3"
     },
     {
      "ar": "زِبْدة",
      "en": "butter",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c38.mp3"
+     "audio": "audio/ar/lessons/unit-11-c38.mp3"
     },
     {
      "ar": "تَتْلي",
      "en": "jam",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c39.mp3"
+     "audio": "audio/ar/lessons/unit-11-c39.mp3"
     },
     {
      "ar": "فول",
      "en": "fava beans",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c40.mp3"
+     "audio": "audio/ar/lessons/unit-11-c40.mp3"
     },
     {
      "ar": "رُزّ",
      "en": "rice",
      "src": "speaking p.17",
      "group": "other foods",
-     "audio": "audio/lessons/unit-11-c41.mp3"
+     "audio": "audio/ar/lessons/unit-11-c41.mp3"
     }
    ],
    "dialogues": [],
@@ -3287,259 +3287,259 @@ window.LESSONS = {
      "ar": "لون ج ألْوان",
      "en": "color",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c00.mp3"
+     "audio": "audio/ar/lessons/unit-12-c00.mp3"
     },
     {
      "ar": "فاتِح \\ فاتْحة",
      "en": "light",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c01.mp3"
+     "audio": "audio/ar/lessons/unit-12-c01.mp3"
     },
     {
      "ar": "غامِق \\ غامْقَة",
      "en": "dark",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c02.mp3"
+     "audio": "audio/ar/lessons/unit-12-c02.mp3"
     },
     {
      "ar": "أحْمَر حَمْرا حُمُر",
      "en": "red",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c03.mp3"
+     "audio": "audio/ar/lessons/unit-12-c03.mp3"
     },
     {
      "ar": "أصْفَر صَفْرا صُفُر",
      "en": "yellow",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c04.mp3"
+     "audio": "audio/ar/lessons/unit-12-c04.mp3"
     },
     {
      "ar": "أخْضَر خَضْرا خُضُر",
      "en": "green",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c05.mp3"
+     "audio": "audio/ar/lessons/unit-12-c05.mp3"
     },
     {
      "ar": "أبْيَض بِيضا بيض",
      "en": "white",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c06.mp3"
+     "audio": "audio/ar/lessons/unit-12-c06.mp3"
     },
     {
      "ar": "أزْرَق زَرْقا زُرُق",
      "en": "blue",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c07.mp3"
+     "audio": "audio/ar/lessons/unit-12-c07.mp3"
     },
     {
      "ar": "أسْوَد سُودا سود",
      "en": "black",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c08.mp3"
+     "audio": "audio/ar/lessons/unit-12-c08.mp3"
     },
     {
      "ar": "أشْقَر شَقْرا شُقُر",
      "en": "blond",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c09.mp3"
+     "audio": "audio/ar/lessons/unit-12-c09.mp3"
     },
     {
      "ar": "أسْمَر سَمْرا سُمُر",
      "en": "brown-black (tan)",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c10.mp3"
+     "audio": "audio/ar/lessons/unit-12-c10.mp3"
     },
     {
      "ar": "زَهْري \\ زَهْرِيِّة",
      "en": "pink",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c11.mp3"
+     "audio": "audio/ar/lessons/unit-12-c11.mp3"
     },
     {
      "ar": "سَماوِي \\ سَماوِيِّة",
      "en": "sky blue",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c12.mp3"
+     "audio": "audio/ar/lessons/unit-12-c12.mp3"
     },
     {
      "ar": "بُنّي \\ بُنِّيِّة",
      "en": "brown",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c13.mp3"
+     "audio": "audio/ar/lessons/unit-12-c13.mp3"
     },
     {
      "ar": "بُرْتُقالي \\ بُرْتُقالِيِّة",
      "en": "orange",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c14.mp3"
+     "audio": "audio/ar/lessons/unit-12-c14.mp3"
     },
     {
      "ar": "بَنَفْسَجي \\ بَنَفْسَجِيّة",
      "en": "light purple",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c15.mp3"
+     "audio": "audio/ar/lessons/unit-12-c15.mp3"
     },
     {
      "ar": "ذَهَبي \\ ذَهَبِيِّة",
      "en": "gold",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c16.mp3"
+     "audio": "audio/ar/lessons/unit-12-c16.mp3"
     },
     {
      "ar": "فِضّي \\ فِضِّيِّة",
      "en": "silver",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c17.mp3"
+     "audio": "audio/ar/lessons/unit-12-c17.mp3"
     },
     {
      "ar": "بْرُونْزي \\ بْرُونْزِيِّة",
      "en": "bronze",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c18.mp3"
+     "audio": "audio/ar/lessons/unit-12-c18.mp3"
     },
     {
      "ar": "سَكَني، رَمادي \\ سَكَنِيِّة، رَمادِيِّة",
      "en": "gray",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c19.mp3"
+     "audio": "audio/ar/lessons/unit-12-c19.mp3"
     },
     {
      "ar": "أُرْجواني \\ أُرْجوانِيِّة",
      "en": "crimson",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c20.mp3"
+     "audio": "audio/ar/lessons/unit-12-c20.mp3"
     },
     {
      "ar": "بيج \\ بيج",
      "en": "beige",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c21.mp3"
+     "audio": "audio/ar/lessons/unit-12-c21.mp3"
     },
     {
      "ar": "عَسَلي \\ عَسَلِيِّة",
      "en": "honey",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c22.mp3"
+     "audio": "audio/ar/lessons/unit-12-c22.mp3"
     },
     {
      "ar": "زَيْتي \\ زَيْتِيِّة",
      "en": "olive",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c23.mp3"
+     "audio": "audio/ar/lessons/unit-12-c23.mp3"
     },
     {
      "ar": "لِيلَكي \\ لِيلَكِيِّة",
      "en": "lilac",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c24.mp3"
+     "audio": "audio/ar/lessons/unit-12-c24.mp3"
     },
     {
      "ar": "بِتِنْجاني \\ بِتِنْجانِيِّة",
      "en": "dark purple",
      "src": "speaking p.31",
-     "audio": "audio/lessons/unit-12-c25.mp3"
+     "audio": "audio/ar/lessons/unit-12-c25.mp3"
     },
     {
      "ar": "كْبير – زْغير",
      "en": "big, old – small, young",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c26.mp3"
+     "audio": "audio/ar/lessons/unit-12-c26.mp3"
     },
     {
      "ar": "قْصير – طَويل",
      "en": "short – tall, long",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c27.mp3"
+     "audio": "audio/ar/lessons/unit-12-c27.mp3"
     },
     {
      "ar": "ضعيف – قَوِيّ",
      "en": "weak - strong",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c28.mp3"
+     "audio": "audio/ar/lessons/unit-12-c28.mp3"
     },
     {
      "ar": "حِلُو \\ جَميل – شِنِع \\ بِشِع",
      "en": "beautiful – ugly",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c29.mp3"
+     "audio": "audio/ar/lessons/unit-12-c29.mp3"
     },
     {
      "ar": "فَقير – غَنيّ",
      "en": "poor - rich",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c30.mp3"
+     "audio": "audio/ar/lessons/unit-12-c30.mp3"
     },
     {
      "ar": "عالي – واطي",
      "en": "high - low",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c31.mp3"
+     "audio": "audio/ar/lessons/unit-12-c31.mp3"
     },
     {
      "ar": "سُخُن – بارِد",
      "en": "hot (water, food) - cold",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c32.mp3"
+     "audio": "audio/ar/lessons/unit-12-c32.mp3"
     },
     {
      "ar": "مَسْموح – مَمْنوع",
      "en": "allowed – forbidden",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c33.mp3"
+     "audio": "audio/ar/lessons/unit-12-c33.mp3"
     },
     {
      "ar": "حَلال – حَرام",
      "en": "allowed – forbidden (according Islam)",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c34.mp3"
+     "audio": "audio/ar/lessons/unit-12-c34.mp3"
     },
     {
      "ar": "صعيب – سهِل",
      "en": "hard – easy",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c35.mp3"
+     "audio": "audio/ar/lessons/unit-12-c35.mp3"
     },
     {
      "ar": "ثْقيل – خْفيف",
      "en": "heavy – light",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c36.mp3"
+     "audio": "audio/ar/lessons/unit-12-c36.mp3"
     },
     {
      "ar": "نور \\ ظَيّ – عَتْمِة",
      "en": "light – darkness",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c37.mp3"
+     "audio": "audio/ar/lessons/unit-12-c37.mp3"
     },
     {
      "ar": "نْظيف – وَسِخ",
      "en": "clean – dirty",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c38.mp3"
+     "audio": "audio/ar/lessons/unit-12-c38.mp3"
     },
     {
      "ar": "سَريع – بَطيء",
      "en": "fast – slow",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c39.mp3"
+     "audio": "audio/ar/lessons/unit-12-c39.mp3"
     },
     {
      "ar": "بْعيد – قَريب",
      "en": "far - close",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c40.mp3"
+     "audio": "audio/ar/lessons/unit-12-c40.mp3"
     },
     {
      "ar": "ناصِح – ضعيف",
      "en": "fat – thin",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c41.mp3"
+     "audio": "audio/ar/lessons/unit-12-c41.mp3"
     },
     {
      "ar": "مِيِّت – حَيّ",
      "en": "dead – alive",
      "src": "speaking p.32",
-     "audio": "audio/lessons/unit-12-c42.mp3"
+     "audio": "audio/ar/lessons/unit-12-c42.mp3"
     }
    ],
    "dialogues": [],
@@ -3617,103 +3617,103 @@ window.LESSONS = {
      "ar": "فَصِل ج فُصول",
      "en": "season",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c00.mp3"
+     "audio": "audio/ar/lessons/unit-13-c00.mp3"
     },
     {
      "ar": "سَنِة ج سْنين",
      "en": "year",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c01.mp3"
+     "audio": "audio/ar/lessons/unit-13-c01.mp3"
     },
     {
      "ar": "شَهِر ج شْهور",
      "en": "month",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c02.mp3"
+     "audio": "audio/ar/lessons/unit-13-c02.mp3"
     },
     {
      "ar": "رَبيع",
      "en": "spring",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c03.mp3"
+     "audio": "audio/ar/lessons/unit-13-c03.mp3"
     },
     {
      "ar": "صِيف",
      "en": "summer",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c04.mp3"
+     "audio": "audio/ar/lessons/unit-13-c04.mp3"
     },
     {
      "ar": "خَريف",
      "en": "autumn",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c05.mp3"
+     "audio": "audio/ar/lessons/unit-13-c05.mp3"
     },
     {
      "ar": "شِتاء",
      "en": "winter",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c06.mp3"
+     "audio": "audio/ar/lessons/unit-13-c06.mp3"
     },
     {
      "ar": "شَهِر واحَد (يناير)",
      "en": "month one (January)",
      "src": "speaking p.26",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-13-c07.mp3"
+     "audio": "audio/ar/lessons/unit-13-c07.mp3"
     },
     {
      "ar": "شَهِر إثْنِين (فبراير)",
      "en": "month two (February)",
      "src": "speaking p.26",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-13-c08.mp3"
+     "audio": "audio/ar/lessons/unit-13-c08.mp3"
     },
     {
      "ar": "شَهِر ثلاثة (مارس)",
      "en": "month three (March)",
      "src": "speaking p.26",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-13-c09.mp3"
+     "audio": "audio/ar/lessons/unit-13-c09.mp3"
     },
     {
      "ar": "شَهِر أرْبَعة (أبريل)",
      "en": "month four (April)",
      "src": "speaking p.26",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-13-c10.mp3"
+     "audio": "audio/ar/lessons/unit-13-c10.mp3"
     },
     {
      "ar": "شَهِر خَمْسِة (مايو)...",
      "en": "month five (May)…",
      "src": "speaking p.26",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-13-c11.mp3"
+     "audio": "audio/ar/lessons/unit-13-c11.mp3"
     },
     {
      "ar": "(يوليو)...(أغُسْطُس)... (سَبْتَمْبَر)... (أُكْتوبِر)... (نُوفِمْبِر)... (ديسِمْبِر)",
      "en": "(July)… (August)… (September)… (October)… (November)… (December)",
      "src": "speaking p.26",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-13-c12.mp3"
+     "audio": "audio/ar/lessons/unit-13-c12.mp3"
     },
     {
      "ar": "بَرْد",
      "en": "cold",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c13.mp3"
+     "audio": "audio/ar/lessons/unit-13-c13.mp3"
     },
     {
      "ar": "شُوب، حَم، حَرّ",
      "en": "hot",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c14.mp3"
+     "audio": "audio/ar/lessons/unit-13-c14.mp3"
     },
     {
      "ar": "مَطَر",
      "en": "rain",
      "src": "speaking p.26",
-     "audio": "audio/lessons/unit-13-c15.mp3"
+     "audio": "audio/ar/lessons/unit-13-c15.mp3"
     }
    ],
    "dialogues": [],
@@ -3792,357 +3792,357 @@ window.LESSONS = {
      "en": "animals",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c00.mp3"
+     "audio": "audio/ar/lessons/unit-14-c00.mp3"
     },
     {
      "ar": "حَيَّة، إفْعي",
      "en": "snake",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c01.mp3"
+     "audio": "audio/ar/lessons/unit-14-c01.mp3"
     },
     {
      "ar": "نَمْلِة ج نَمِل",
      "en": "ant",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c02.mp3"
+     "audio": "audio/ar/lessons/unit-14-c02.mp3"
     },
     {
      "ar": "أرْنَب ج أرانِب",
      "en": "rabbit",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c03.mp3"
+     "audio": "audio/ar/lessons/unit-14-c03.mp3"
     },
     {
      "ar": "حَلَزون ج ات",
      "en": "snail",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c04.mp3"
+     "audio": "audio/ar/lessons/unit-14-c04.mp3"
     },
     {
      "ar": "زَرافَة",
      "en": "giraffe",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c05.mp3"
+     "audio": "audio/ar/lessons/unit-14-c05.mp3"
     },
     {
      "ar": "فيل ج أفْيال",
      "en": "elephant",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c06.mp3"
+     "audio": "audio/ar/lessons/unit-14-c06.mp3"
     },
     {
      "ar": "سَرَطان",
      "en": "crab",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c07.mp3"
+     "audio": "audio/ar/lessons/unit-14-c07.mp3"
     },
     {
      "ar": "عَقْرَب ج عَقارِب",
      "en": "scorpion",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c08.mp3"
+     "audio": "audio/ar/lessons/unit-14-c08.mp3"
     },
     {
      "ar": "ضُفْدَعة ج ضفادِع",
      "en": "frog",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c09.mp3"
+     "audio": "audio/ar/lessons/unit-14-c09.mp3"
     },
     {
      "ar": "قُنْفُذ ج قنافِذ",
      "en": "hedgehog",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c10.mp3"
+     "audio": "audio/ar/lessons/unit-14-c10.mp3"
     },
     {
      "ar": "ذِبّان ج ذِبانِة",
      "en": "flies",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c11.mp3"
+     "audio": "audio/ar/lessons/unit-14-c11.mp3"
     },
     {
      "ar": "هِسْهِس",
      "en": "mosquitoes",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c12.mp3"
+     "audio": "audio/ar/lessons/unit-14-c12.mp3"
     },
     {
      "ar": "خُنْفوس",
      "en": "beetle",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c13.mp3"
+     "audio": "audio/ar/lessons/unit-14-c13.mp3"
     },
     {
      "ar": "غَزال \\ غُزْلان",
      "en": "deer",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c14.mp3"
+     "audio": "audio/ar/lessons/unit-14-c14.mp3"
     },
     {
      "ar": "سُلْحَفاة ج سَلاحِف",
      "en": "turtle",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c15.mp3"
+     "audio": "audio/ar/lessons/unit-14-c15.mp3"
     },
     {
      "ar": "سَمَكِة ج سَمَك",
      "en": "fish",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c16.mp3"
+     "audio": "audio/ar/lessons/unit-14-c16.mp3"
     },
     {
      "ar": "فار ج فيران",
      "en": "mouse",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c17.mp3"
+     "audio": "audio/ar/lessons/unit-14-c17.mp3"
     },
     {
      "ar": "قِرْد",
      "en": "monkey",
      "src": "speaking p.27",
      "group": "حَيَوانات بَرِيّة",
-     "audio": "audio/lessons/unit-14-c18.mp3"
+     "audio": "audio/ar/lessons/unit-14-c18.mp3"
     },
     {
      "ar": "ذيب ج ذْياب",
      "en": "wolf",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c19.mp3"
+     "audio": "audio/ar/lessons/unit-14-c19.mp3"
     },
     {
      "ar": "أسَد ج أُسودة",
      "en": "lion",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c20.mp3"
+     "audio": "audio/ar/lessons/unit-14-c20.mp3"
     },
     {
      "ar": "سَبِع \\ أُسامَة",
      "en": "lion",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c21.mp3"
+     "audio": "audio/ar/lessons/unit-14-c21.mp3"
     },
     {
      "ar": "نِمِر ج نُمور",
      "en": "tiger",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c22.mp3"
+     "audio": "audio/ar/lessons/unit-14-c22.mp3"
     },
     {
      "ar": "فَهِد",
      "en": "leopard",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c23.mp3"
+     "audio": "audio/ar/lessons/unit-14-c23.mp3"
     },
     {
      "ar": "ضَبِع",
      "en": "hyena",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c24.mp3"
+     "audio": "audio/ar/lessons/unit-14-c24.mp3"
     },
     {
      "ar": "ثَعْلَب ج ثَعالِب",
      "en": "fox",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c25.mp3"
+     "audio": "audio/ar/lessons/unit-14-c25.mp3"
     },
     {
      "ar": "واوي ج واوِيات",
      "en": "jackal",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c26.mp3"
+     "audio": "audio/ar/lessons/unit-14-c26.mp3"
     },
     {
      "ar": "دُبّ ج دُبَبَة",
      "en": "bear",
      "src": "speaking p.27",
      "group": "حَيَوانات مُفْتَرِسة",
-     "audio": "audio/lessons/unit-14-c27.mp3"
+     "audio": "audio/ar/lessons/unit-14-c27.mp3"
     },
     {
      "ar": "عُصْفور ج عَصافير",
      "en": "bird",
      "src": "speaking p.27",
      "group": "طُيور",
-     "audio": "audio/lessons/unit-14-c28.mp3"
+     "audio": "audio/ar/lessons/unit-14-c28.mp3"
     },
     {
      "ar": "طير ج طُيور",
      "en": "bird",
      "src": "speaking p.27",
      "group": "طُيور",
-     "audio": "audio/lessons/unit-14-c29.mp3"
+     "audio": "audio/ar/lessons/unit-14-c29.mp3"
     },
     {
      "ar": "نِسْر ج نُسور",
      "en": "vulture",
      "src": "speaking p.27",
      "group": "طُيور",
-     "audio": "audio/lessons/unit-14-c30.mp3"
+     "audio": "audio/ar/lessons/unit-14-c30.mp3"
     },
     {
      "ar": "عَقاب",
      "en": "eagle",
      "src": "speaking p.27",
      "group": "طُيور",
-     "audio": "audio/lessons/unit-14-c31.mp3"
+     "audio": "audio/ar/lessons/unit-14-c31.mp3"
     },
     {
      "ar": "صَقْر ج صُقور",
      "en": "falcon",
      "src": "speaking p.27",
      "group": "طُيور",
-     "audio": "audio/lessons/unit-14-c32.mp3"
+     "audio": "audio/ar/lessons/unit-14-c32.mp3"
     },
     {
      "ar": "غُراب",
      "en": "crow",
      "src": "speaking p.27",
      "group": "طُيور",
-     "audio": "audio/lessons/unit-14-c33.mp3"
+     "audio": "audio/ar/lessons/unit-14-c33.mp3"
     },
     {
      "ar": "عَنْدَليب",
      "en": "nightingale",
      "src": "speaking p.27",
      "group": "طُيور",
-     "audio": "audio/lessons/unit-14-c34.mp3"
+     "audio": "audio/ar/lessons/unit-14-c34.mp3"
     },
     {
      "ar": "حُصان، فَرَس ج خِيل",
      "en": "horse, mare",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c35.mp3"
+     "audio": "audio/ar/lessons/unit-14-c35.mp3"
     },
     {
      "ar": "جَمَل ج جْمال",
      "en": "camel",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c36.mp3"
+     "audio": "audio/ar/lessons/unit-14-c36.mp3"
     },
     {
      "ar": "ناقَة",
      "en": "she camel",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c37.mp3"
+     "audio": "audio/ar/lessons/unit-14-c37.mp3"
     },
     {
      "ar": "حْمار ج حَمير",
      "en": "donkey",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c38.mp3"
+     "audio": "audio/ar/lessons/unit-14-c38.mp3"
     },
     {
      "ar": "كَلْب ج كْلاب",
      "en": "dog",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c39.mp3"
+     "audio": "audio/ar/lessons/unit-14-c39.mp3"
     },
     {
      "ar": "ثُور ج ثيران",
      "en": "bull",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c40.mp3"
+     "audio": "audio/ar/lessons/unit-14-c40.mp3"
     },
     {
      "ar": "بَقَرَة ج بَقَر",
      "en": "cow",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c41.mp3"
+     "audio": "audio/ar/lessons/unit-14-c41.mp3"
     },
     {
      "ar": "خَنْزير ج خَنازير",
      "en": "pig",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c42.mp3"
+     "audio": "audio/ar/lessons/unit-14-c42.mp3"
     },
     {
      "ar": "عِنْزِة ج مِعْزِة",
      "en": "goat",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c43.mp3"
+     "audio": "audio/ar/lessons/unit-14-c43.mp3"
     },
     {
      "ar": "وَزِّة ج وَزّ",
      "en": "goose",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c44.mp3"
+     "audio": "audio/ar/lessons/unit-14-c44.mp3"
     },
     {
      "ar": "طاوُوس",
      "en": "peacock",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c45.mp3"
+     "audio": "audio/ar/lessons/unit-14-c45.mp3"
     },
     {
      "ar": "بَطَّة ج بَطّ",
      "en": "duck",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c46.mp3"
+     "audio": "audio/ar/lessons/unit-14-c46.mp3"
     },
     {
      "ar": "بِسّ ج بْساس (قِطّ ج قِطَط)",
      "en": "cat",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c47.mp3"
+     "audio": "audio/ar/lessons/unit-14-c47.mp3"
     },
     {
      "ar": "جاجة ج جاج",
      "en": "hen",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c48.mp3"
+     "audio": "audio/ar/lessons/unit-14-c48.mp3"
     },
     {
      "ar": "ديك ج دْيُوك",
      "en": "rooster",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c49.mp3"
+     "audio": "audio/ar/lessons/unit-14-c49.mp3"
     },
     {
      "ar": "خَروف ج خِرْفان",
      "en": "sheep",
      "src": "speaking p.28",
      "group": "حَيوانات أليفة",
-     "audio": "audio/lessons/unit-14-c50.mp3"
+     "audio": "audio/ar/lessons/unit-14-c50.mp3"
     }
    ],
    "dialogues": [],
@@ -4279,217 +4279,217 @@ window.LESSONS = {
      "ar": "أنا بحِسّ",
      "en": "I feel",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c00.mp3"
+     "audio": "audio/ar/lessons/unit-15-c00.mp3"
     },
     {
      "ar": "أنا حاسِس، أنا حاسّة",
      "en": "I feel",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c01.mp3"
+     "audio": "audio/ar/lessons/unit-15-c01.mp3"
     },
     {
      "ar": "أنا بحِسّ حالي...",
      "en": "I feel my self",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c02.mp3"
+     "audio": "audio/ar/lessons/unit-15-c02.mp3"
     },
     {
      "ar": "فَرْحان",
      "en": "happy",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c03.mp3"
+     "audio": "audio/ar/lessons/unit-15-c03.mp3"
     },
     {
      "ar": "سَعيد",
      "en": "happy, in bliss",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c04.mp3"
+     "audio": "audio/ar/lessons/unit-15-c04.mp3"
     },
     {
      "ar": "حَزين\\ حَزْنَان",
      "en": "sad",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c05.mp3"
+     "audio": "audio/ar/lessons/unit-15-c05.mp3"
     },
     {
      "ar": "قَوِي",
      "en": "strong",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c06.mp3"
+     "audio": "audio/ar/lessons/unit-15-c06.mp3"
     },
     {
      "ar": "ضعيف",
      "en": "weak",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c07.mp3"
+     "audio": "audio/ar/lessons/unit-15-c07.mp3"
     },
     {
      "ar": "مُكْتَئِب",
      "en": "depressed",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c08.mp3"
+     "audio": "audio/ar/lessons/unit-15-c08.mp3"
     },
     {
      "ar": "بَرْدان",
      "en": "cold",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c09.mp3"
+     "audio": "audio/ar/lessons/unit-15-c09.mp3"
     },
     {
      "ar": "عَيّان، مَريض",
      "en": "sick",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c10.mp3"
+     "audio": "audio/ar/lessons/unit-15-c10.mp3"
     },
     {
      "ar": "تَعْبان",
      "en": "tired",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c11.mp3"
+     "audio": "audio/ar/lessons/unit-15-c11.mp3"
     },
     {
      "ar": "جُوعان",
      "en": "hungry",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c12.mp3"
+     "audio": "audio/ar/lessons/unit-15-c12.mp3"
     },
     {
      "ar": "بَغار",
      "en": "I am jealous",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c13.mp3"
+     "audio": "audio/ar/lessons/unit-15-c13.mp3"
     },
     {
      "ar": "مَبْسوط",
      "en": "glad, happy",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c14.mp3"
+     "audio": "audio/ar/lessons/unit-15-c14.mp3"
     },
     {
      "ar": "هَلْكان",
      "en": "exhausted",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c15.mp3"
+     "audio": "audio/ar/lessons/unit-15-c15.mp3"
     },
     {
      "ar": "زَعْلان",
      "en": "angry, hurt",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c16.mp3"
+     "audio": "audio/ar/lessons/unit-15-c16.mp3"
     },
     {
      "ar": "زَهْقان (زهِقْت\\ابَزْهَق مِن)",
      "en": "bored, tired of",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c17.mp3"
+     "audio": "audio/ar/lessons/unit-15-c17.mp3"
     },
     {
      "ar": "عَصَبِي",
      "en": "nervous",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c18.mp3"
+     "audio": "audio/ar/lessons/unit-15-c18.mp3"
     },
     {
      "ar": "مِتْوَتِّر",
      "en": "tense",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c19.mp3"
+     "audio": "audio/ar/lessons/unit-15-c19.mp3"
     },
     {
      "ar": "حَمْيان",
      "en": "hot",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c20.mp3"
+     "audio": "audio/ar/lessons/unit-15-c20.mp3"
     },
     {
      "ar": "بَحِبّ (حُبّ)",
      "en": "I love",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c21.mp3"
+     "audio": "audio/ar/lessons/unit-15-c21.mp3"
     },
     {
      "ar": "مَضْغوط",
      "en": "stressed",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c22.mp3"
+     "audio": "audio/ar/lessons/unit-15-c22.mp3"
     },
     {
      "ar": "مِتْحَمِّس",
      "en": "enthusiastic, exited",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c23.mp3"
+     "audio": "audio/ar/lessons/unit-15-c23.mp3"
     },
     {
      "ar": "مِرْتاح",
      "en": "relaxed",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c24.mp3"
+     "audio": "audio/ar/lessons/unit-15-c24.mp3"
     },
     {
      "ar": "هادي",
      "en": "relaxed, quiet",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c25.mp3"
+     "audio": "audio/ar/lessons/unit-15-c25.mp3"
     },
     {
      "ar": "كَسْلان",
      "en": "lazy",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c26.mp3"
+     "audio": "audio/ar/lessons/unit-15-c26.mp3"
     },
     {
      "ar": "ميكِل هَوا",
      "en": "feel really bad (\"eating air\")",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c27.mp3"
+     "audio": "audio/ar/lessons/unit-15-c27.mp3"
     },
     {
      "ar": "دَمُه خْفيف",
      "en": "nice person, simpatico",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c28.mp3"
+     "audio": "audio/ar/lessons/unit-15-c28.mp3"
     },
     {
      "ar": "دَمُه ثْقيل",
      "en": "rude, not nice",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c29.mp3"
+     "audio": "audio/ar/lessons/unit-15-c29.mp3"
     },
     {
      "ar": "بِفْرِقِش مَعاي",
      "en": "I don't mind",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c30.mp3"
+     "audio": "audio/ar/lessons/unit-15-c30.mp3"
     },
     {
      "ar": "بِهِمّني... ما بِهِمّنيش...",
      "en": "I care, it's important to me",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c31.mp3"
+     "audio": "audio/ar/lessons/unit-15-c31.mp3"
     },
     {
      "ar": "مُنْفَعِل",
      "en": "moved, exited",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c32.mp3"
+     "audio": "audio/ar/lessons/unit-15-c32.mp3"
     },
     {
      "ar": "مْكَيِّف",
      "en": "having fun",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c33.mp3"
+     "audio": "audio/ar/lessons/unit-15-c33.mp3"
     },
     {
      "ar": "يَأْسان",
      "en": "hopeless",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c34.mp3"
+     "audio": "audio/ar/lessons/unit-15-c34.mp3"
     },
     {
      "ar": "شَبْعان",
      "en": "full",
      "src": "speaking p.44",
-     "audio": "audio/lessons/unit-15-c35.mp3"
+     "audio": "audio/ar/lessons/unit-15-c35.mp3"
     }
    ],
    "dialogues": [],
@@ -4565,235 +4565,235 @@ window.LESSONS = {
      "ar": "قيمِة ج قِيَم",
      "en": "value",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c00.mp3"
+     "audio": "audio/ar/lessons/unit-16-c00.mp3"
     },
     {
      "ar": "حُبّ ، مَحَبِّة",
      "en": "love",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c01.mp3"
+     "audio": "audio/ar/lessons/unit-16-c01.mp3"
     },
     {
      "ar": "إحْتِرام",
      "en": "respect",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c02.mp3"
+     "audio": "audio/ar/lessons/unit-16-c02.mp3"
     },
     {
      "ar": "شَرَف",
      "en": "honor",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c03.mp3"
+     "audio": "audio/ar/lessons/unit-16-c03.mp3"
     },
     {
      "ar": "عَطاء",
      "en": "giving",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c04.mp3"
+     "audio": "audio/ar/lessons/unit-16-c04.mp3"
     },
     {
      "ar": "شَراكة",
      "en": "sharing",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c05.mp3"
+     "audio": "audio/ar/lessons/unit-16-c05.mp3"
     },
     {
      "ar": "صَبِر",
      "en": "patience",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c06.mp3"
+     "audio": "audio/ar/lessons/unit-16-c06.mp3"
     },
     {
      "ar": "مُسامَحَة",
      "en": "tolerance",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c07.mp3"
+     "audio": "audio/ar/lessons/unit-16-c07.mp3"
     },
     {
      "ar": "مُساواة",
      "en": "equality",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c08.mp3"
+     "audio": "audio/ar/lessons/unit-16-c08.mp3"
     },
     {
      "ar": "إخْلاص",
      "en": "loyalty",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c09.mp3"
+     "audio": "audio/ar/lessons/unit-16-c09.mp3"
     },
     {
      "ar": "مُساعَدِة",
      "en": "help",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c10.mp3"
+     "audio": "audio/ar/lessons/unit-16-c10.mp3"
     },
     {
      "ar": "شَفافِية",
      "en": "transparency",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c11.mp3"
+     "audio": "audio/ar/lessons/unit-16-c11.mp3"
     },
     {
      "ar": "مِصْداقِيِّة",
      "en": "credibility",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c12.mp3"
+     "audio": "audio/ar/lessons/unit-16-c12.mp3"
     },
     {
      "ar": "صَراحَة",
      "en": "honesty",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c13.mp3"
+     "audio": "audio/ar/lessons/unit-16-c13.mp3"
     },
     {
      "ar": "سماح",
      "en": "forgiveness",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c14.mp3"
+     "audio": "audio/ar/lessons/unit-16-c14.mp3"
     },
     {
      "ar": "صداقة",
      "en": "friendship",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c15.mp3"
+     "audio": "audio/ar/lessons/unit-16-c15.mp3"
     },
     {
      "ar": "مُساهَمِة إجْتِماعِية",
      "en": "social activism",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c16.mp3"
+     "audio": "audio/ar/lessons/unit-16-c16.mp3"
     },
     {
      "ar": "سَعادِة",
      "en": "happiness",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c17.mp3"
+     "audio": "audio/ar/lessons/unit-16-c17.mp3"
     },
     {
      "ar": "شَجاعة",
      "en": "be brave",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c18.mp3"
+     "audio": "audio/ar/lessons/unit-16-c18.mp3"
     },
     {
      "ar": "سَيْطَرة",
      "en": "control",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c19.mp3"
+     "audio": "audio/ar/lessons/unit-16-c19.mp3"
     },
     {
      "ar": "أمَل",
      "en": "hope",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c20.mp3"
+     "audio": "audio/ar/lessons/unit-16-c20.mp3"
     },
     {
      "ar": "تَعاوُن",
      "en": "ccoperate",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c21.mp3"
+     "audio": "audio/ar/lessons/unit-16-c21.mp3"
     },
     {
      "ar": "إتِّصال",
      "en": "communication",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c22.mp3"
+     "audio": "audio/ar/lessons/unit-16-c22.mp3"
     },
     {
      "ar": "سَلام",
      "en": "peace",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c23.mp3"
+     "audio": "audio/ar/lessons/unit-16-c23.mp3"
     },
     {
      "ar": "حُرِّيِّة",
      "en": "freedom",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c24.mp3"
+     "audio": "audio/ar/lessons/unit-16-c24.mp3"
     },
     {
      "ar": "رُوحانِيِّة",
      "en": "spirituality",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c25.mp3"
+     "audio": "audio/ar/lessons/unit-16-c25.mp3"
     },
     {
      "ar": "تَعايُش",
      "en": "coexistence",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c26.mp3"
+     "audio": "audio/ar/lessons/unit-16-c26.mp3"
     },
     {
      "ar": "إسْتِقْلالِيِّة",
      "en": "independence",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c27.mp3"
+     "audio": "audio/ar/lessons/unit-16-c27.mp3"
     },
     {
      "ar": "هُدوء",
      "en": "quiet",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c28.mp3"
+     "audio": "audio/ar/lessons/unit-16-c28.mp3"
     },
     {
      "ar": "عَدْل",
      "en": "justice",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c29.mp3"
+     "audio": "audio/ar/lessons/unit-16-c29.mp3"
     },
     {
      "ar": "بَساطة",
      "en": "simplicity",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c30.mp3"
+     "audio": "audio/ar/lessons/unit-16-c30.mp3"
     },
     {
      "ar": "مُحافَظِة على البيئَة",
      "en": "preserve the environment",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c31.mp3"
+     "audio": "audio/ar/lessons/unit-16-c31.mp3"
     },
     {
      "ar": "التَّحَكُّم في النَّفْسي",
      "en": "self discipline",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c32.mp3"
+     "audio": "audio/ar/lessons/unit-16-c32.mp3"
     },
     {
      "ar": "إلْتِزام",
      "en": "commitment",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c33.mp3"
+     "audio": "audio/ar/lessons/unit-16-c33.mp3"
     },
     {
      "ar": "قَوِّة",
      "en": "power",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c34.mp3"
+     "audio": "audio/ar/lessons/unit-16-c34.mp3"
     },
     {
      "ar": "عَمَلي",
      "en": "practicality",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c35.mp3"
+     "audio": "audio/ar/lessons/unit-16-c35.mp3"
     },
     {
      "ar": "شَفَقَة",
      "en": "compassion",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c36.mp3"
+     "audio": "audio/ar/lessons/unit-16-c36.mp3"
     },
     {
      "ar": "إيمان",
      "en": "believe",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c37.mp3"
+     "audio": "audio/ar/lessons/unit-16-c37.mp3"
     },
     {
      "ar": "أَمان",
      "en": "safety",
      "src": "speaking p.46",
-     "audio": "audio/lessons/unit-16-c38.mp3"
+     "audio": "audio/ar/lessons/unit-16-c38.mp3"
     }
    ],
    "dialogues": [],
@@ -4867,188 +4867,188 @@ window.LESSONS = {
      "ar": "حُرِّيَّة التَعْبير",
      "en": "freedom of speech",
      "src": "speaking p.58",
-     "audio": "audio/lessons/unit-17-c00.mp3"
+     "audio": "audio/ar/lessons/unit-17-c00.mp3"
     },
     {
      "ar": "أعْمى",
      "en": "blind",
      "src": "speaking p.58",
-     "audio": "audio/lessons/unit-17-c01.mp3"
+     "audio": "audio/ar/lessons/unit-17-c01.mp3"
     },
     {
      "ar": "حِجاب",
      "en": "veil",
      "src": "speaking p.58",
-     "audio": "audio/lessons/unit-17-c02.mp3"
+     "audio": "audio/ar/lessons/unit-17-c02.mp3"
     },
     {
      "ar": "مَرَة مْحَجَّبِة",
      "en": "veiled woman",
      "src": "speaking p.58",
-     "audio": "audio/lessons/unit-17-c03.mp3"
+     "audio": "audio/ar/lessons/unit-17-c03.mp3"
     },
     {
      "ar": "غِطَاء عُيون",
      "en": "eye cover",
      "src": "speaking p.58",
-     "audio": "audio/lessons/unit-17-c04.mp3"
+     "audio": "audio/ar/lessons/unit-17-c04.mp3"
     },
     {
      "ar": "حُرِّيِّة",
      "en": "freedom",
      "src": "speaking p.59",
-     "audio": "audio/lessons/unit-17-c05.mp3"
+     "audio": "audio/ar/lessons/unit-17-c05.mp3"
     },
     {
      "ar": "حُرّ ج أحْرار",
      "en": "free",
      "src": "speaking p.59",
-     "audio": "audio/lessons/unit-17-c06.mp3"
+     "audio": "audio/ar/lessons/unit-17-c06.mp3"
     },
     {
      "ar": "عُطْلِة",
      "en": "vacation",
      "src": "speaking p.59",
-     "audio": "audio/lessons/unit-17-c07.mp3"
+     "audio": "audio/ar/lessons/unit-17-c07.mp3"
     },
     {
      "ar": "أسير ج أسْرى",
      "en": "prisoner",
      "src": "speaking p.59",
-     "audio": "audio/lessons/unit-17-c08.mp3"
+     "audio": "audio/ar/lessons/unit-17-c08.mp3"
     },
     {
      "ar": "قَفَص ج أقفاص",
      "en": "cage",
      "src": "speaking p.59",
-     "audio": "audio/lessons/unit-17-c09.mp3"
+     "audio": "audio/ar/lessons/unit-17-c09.mp3"
     },
     {
      "ar": "تَغيير",
      "en": "change",
      "src": "speaking p.60",
-     "audio": "audio/lessons/unit-17-c10.mp3"
+     "audio": "audio/ar/lessons/unit-17-c10.mp3"
     },
     {
      "ar": "مُجْتَمَع",
      "en": "society",
      "src": "speaking p.60",
-     "audio": "audio/lessons/unit-17-c11.mp3"
+     "audio": "audio/ar/lessons/unit-17-c11.mp3"
     },
     {
      "ar": "تاريخ",
      "en": "history",
      "src": "speaking p.60",
-     "audio": "audio/lessons/unit-17-c12.mp3"
+     "audio": "audio/ar/lessons/unit-17-c12.mp3"
     },
     {
      "ar": "أشار",
      "en": "point",
      "src": "speaking p.60",
-     "audio": "audio/lessons/unit-17-c13.mp3"
+     "audio": "audio/ar/lessons/unit-17-c13.mp3"
     },
     {
      "ar": "عامود",
      "en": "pillar",
      "src": "speaking p.60",
-     "audio": "audio/lessons/unit-17-c14.mp3"
+     "audio": "audio/ar/lessons/unit-17-c14.mp3"
     },
     {
      "ar": "مَرْبوط",
      "en": "tied",
      "src": "speaking p.60",
-     "audio": "audio/lessons/unit-17-c15.mp3"
+     "audio": "audio/ar/lessons/unit-17-c15.mp3"
     },
     {
      "ar": "حَبِل",
      "en": "rope",
      "src": "speaking p.60",
-     "audio": "audio/lessons/unit-17-c16.mp3"
+     "audio": "audio/ar/lessons/unit-17-c16.mp3"
     },
     {
      "ar": "حَتْلَن",
      "en": "to update",
      "src": "speaking p.61",
-     "audio": "audio/lessons/unit-17-c17.mp3"
+     "audio": "audio/ar/lessons/unit-17-c17.mp3"
     },
     {
      "ar": "الوَصايا العَشَرَة",
      "en": "the ten commandments",
      "src": "speaking p.61",
-     "audio": "audio/lessons/unit-17-c18.mp3"
+     "audio": "audio/ar/lessons/unit-17-c18.mp3"
     },
     {
      "ar": "أخْلاق",
      "en": "morals",
      "src": "speaking p.61",
-     "audio": "audio/lessons/unit-17-c19.mp3"
+     "audio": "audio/ar/lessons/unit-17-c19.mp3"
     },
     {
      "ar": "تِكْنولوجيا",
      "en": "technology",
      "src": "speaking p.61",
-     "audio": "audio/lessons/unit-17-c20.mp3"
+     "audio": "audio/ar/lessons/unit-17-c20.mp3"
     },
     {
      "ar": "حَديث \\ مودِرن",
      "en": "modern",
      "src": "speaking p.61",
-     "audio": "audio/lessons/unit-17-c21.mp3"
+     "audio": "audio/ar/lessons/unit-17-c21.mp3"
     },
     {
      "ar": "إسْتِهْلاك",
      "en": "consumption",
      "src": "speaking p.62",
-     "audio": "audio/lessons/unit-17-c22.mp3"
+     "audio": "audio/ar/lessons/unit-17-c22.mp3"
     },
     {
      "ar": "مُسْتَهْلِك",
      "en": "consumer",
      "src": "speaking p.62",
-     "audio": "audio/lessons/unit-17-c23.mp3"
+     "audio": "audio/ar/lessons/unit-17-c23.mp3"
     },
     {
      "ar": "مَصْنَع ج مَصانِع",
      "en": "factory",
      "src": "speaking p.62",
-     "audio": "audio/lessons/unit-17-c24.mp3"
+     "audio": "audio/ar/lessons/unit-17-c24.mp3"
     },
     {
      "ar": "دُخان",
      "en": "smoke",
      "src": "speaking p.62",
-     "audio": "audio/lessons/unit-17-c25.mp3"
+     "audio": "audio/ar/lessons/unit-17-c25.mp3"
     },
     {
      "ar": "أوكْسِجين",
      "en": "oxygen",
      "src": "speaking p.62",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-17-c26.mp3"
+     "audio": "audio/ar/lessons/unit-17-c26.mp3"
     },
     {
      "ar": "لَوَّث (تَلْويث)",
      "en": "to pollute",
      "src": "speaking p.62",
-     "audio": "audio/lessons/unit-17-c27.mp3"
+     "audio": "audio/ar/lessons/unit-17-c27.mp3"
     },
     {
      "ar": "بيئَة",
      "en": "environment",
      "src": "speaking p.62",
-     "audio": "audio/lessons/unit-17-c28.mp3"
+     "audio": "audio/ar/lessons/unit-17-c28.mp3"
     },
     {
      "ar": "مُحافَظَة على البيئة",
      "en": "environmental preservation",
      "src": "speaking p.62",
-     "audio": "audio/lessons/unit-17-c29.mp3"
+     "audio": "audio/ar/lessons/unit-17-c29.mp3"
     },
     {
      "ar": "إعادَة تَدْوير",
      "en": "recycling",
      "src": "speaking p.62",
-     "audio": "audio/lessons/unit-17-c30.mp3"
+     "audio": "audio/ar/lessons/unit-17-c30.mp3"
     }
    ],
    "dialogues": [],
@@ -5182,38 +5182,38 @@ window.LESSONS = {
        "sp": "إمّ عُمَر",
        "ar": "مَرْحَبا عُمَر. شو ما لَك بْتِبْكي؟ صُوت عْياطَك واصِل لَبَرّة. شو فيه؟",
        "en": null,
-       "audio": "audio/lessons/unit-18-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-18-d0-l00.mp3"
       },
       {
        "sp": "عُمَر",
        "ar": "حَمادَة ضَرَبْني، مِش قادِر-لُه. بِدّي أنادي ابوي.",
        "en": null,
-       "audio": "audio/lessons/unit-18-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-18-d0-l01.mp3"
       },
       {
        "sp": "إمّ عُمَر",
        "ar": "عيب هَ-الْحَكي يا عُمَر! مَمْنوع تِبْكي، إنْتِ زَلَمِة! ومَمْنوع تْنادي أبوك!",
        "en": null,
-       "audio": "audio/lessons/unit-18-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-18-d0-l02.mp3"
       },
       {
        "sp": "عُمَر",
        "ar": "بَسّ أنا مش قادِر أغالِب حمادة، شو أسَوّي؟",
        "en": null,
-       "audio": "audio/lessons/unit-18-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-18-d0-l03.mp3"
       },
       {
        "sp": "إمّ عُمَر",
        "ar": "قوم، كِتّ (shake) أواعيك وروح دَبِّر حالَك لَحالَك, عيب هِيك، مَمْنوع!",
        "en": null,
-       "audio": "audio/lessons/unit-18-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-18-d0-l04.mp3"
       }
      ],
      "src": "speaking p.52",
      "cast": [
       {
        "sp": "إم عمر",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
@@ -5230,43 +5230,43 @@ window.LESSONS = {
        "sp": "إمّ عُمَر",
        "ar": "شو مالْكِن يا بَنات، صُوتْكِن طالع، عيب هِيك، وَطِّين صُوتْكِن، مَمْنوع!",
        "en": null,
-       "audio": "audio/lessons/unit-18-d1-l00.mp3"
+       "audio": "audio/ar/lessons/unit-18-d1-l00.mp3"
       },
       {
        "sp": "بَنات",
        "ar": "بْنِضْحَك، إحنا مَبْسوطات. بِدْنا نِطْلَع نْزور مَيْسا.",
        "en": null,
-       "audio": "audio/lessons/unit-18-d1-l01.mp3"
+       "audio": "audio/ar/lessons/unit-18-d1-l01.mp3"
       },
       {
        "sp": "إمّ عُمَر",
        "ar": "وين بِدْكِن تِطْلَعِن بِ-هَ-اللّيل؟ مِتْأخِّر الْوَقْت. فِشّ طْلُوع هسّا!",
        "en": null,
-       "audio": "audio/lessons/unit-18-d1-l02.mp3"
+       "audio": "audio/ar/lessons/unit-18-d1-l02.mp3"
       },
       {
        "sp": "بَنات",
        "ar": "بَسّ يَمّا، إلسّاعَة بَعِدْها سَبْعَة.",
        "en": null,
-       "audio": "audio/lessons/unit-18-d1-l03.mp3"
+       "audio": "audio/ar/lessons/unit-18-d1-l03.mp3"
       },
       {
        "sp": "إمّ عُمَر",
        "ar": "إلدِنيا شِتا وعَتْمِة بَرّة، مَمْنوع الْبَنات يِطْلَعِن باللَّيل! خَلّيْنها لَبُكْرَة.\\ مَسْموح-لَكِن بَسّ تِطْلَعِن لَدار سيدْكِن.",
        "en": null,
-       "audio": "audio/lessons/unit-18-d1-l04.mp3"
+       "audio": "audio/ar/lessons/unit-18-d1-l04.mp3"
       }
      ],
      "src": "speaking p.52",
      "cast": [
       {
        "sp": "إم عمر",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
        "sp": "بنات",
-       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       }
      ]
@@ -5334,269 +5334,269 @@ window.LESSONS = {
      "ar": "رِحْلِة",
      "en": "trip",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c00.mp3"
+     "audio": "audio/ar/lessons/unit-19-c00.mp3"
     },
     {
      "ar": "طِلِع رِحْلِة",
      "en": "took a trip",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c01.mp3"
+     "audio": "audio/ar/lessons/unit-19-c01.mp3"
     },
     {
      "ar": "ترين",
      "en": "train",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c02.mp3"
+     "audio": "audio/ar/lessons/unit-19-c02.mp3"
     },
     {
      "ar": "سَفينِة ج سُفُن",
      "en": "ship",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c03.mp3"
+     "audio": "audio/ar/lessons/unit-19-c03.mp3"
     },
     {
      "ar": "طَيّارَة ج ات",
      "en": "plane",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c04.mp3"
+     "audio": "audio/ar/lessons/unit-19-c04.mp3"
     },
     {
      "ar": "بُسيكليِت",
      "en": "bicycles",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c05.mp3"
+     "audio": "audio/ar/lessons/unit-19-c05.mp3"
     },
     {
      "ar": "راح مَشي",
      "en": "to walk",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c06.mp3"
+     "audio": "audio/ar/lessons/unit-19-c06.mp3"
     },
     {
      "ar": "كَمَرا ج ات",
      "en": "camera",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c07.mp3"
+     "audio": "audio/ar/lessons/unit-19-c07.mp3"
     },
     {
      "ar": "شَنْطَة ج ات",
      "en": "suitcase",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c08.mp3"
+     "audio": "audio/ar/lessons/unit-19-c08.mp3"
     },
     {
      "ar": "شَنْطَة ظَهْر",
      "en": "back pack",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c09.mp3"
+     "audio": "audio/ar/lessons/unit-19-c09.mp3"
     },
     {
      "ar": "جُزْدان",
      "en": "purse",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c10.mp3"
+     "audio": "audio/ar/lessons/unit-19-c10.mp3"
     },
     {
      "ar": "جَواز سَفَر",
      "en": "passport",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c11.mp3"
+     "audio": "audio/ar/lessons/unit-19-c11.mp3"
     },
     {
      "ar": "تأشيرَة",
      "en": "visa",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c12.mp3"
+     "audio": "audio/ar/lessons/unit-19-c12.mp3"
     },
     {
      "ar": "مَطار ج ات",
      "en": "airport",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c13.mp3"
+     "audio": "audio/ar/lessons/unit-19-c13.mp3"
     },
     {
      "ar": "تَذْكِرة ج تَذاكِر",
      "en": "ticket",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c14.mp3"
+     "audio": "audio/ar/lessons/unit-19-c14.mp3"
     },
     {
      "ar": "حَمام ج ات",
      "en": "toilets",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c15.mp3"
+     "audio": "audio/ar/lessons/unit-19-c15.mp3"
     },
     {
      "ar": "غُرْفِة ج غُرَف",
      "en": "room",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c16.mp3"
+     "audio": "audio/ar/lessons/unit-19-c16.mp3"
     },
     {
      "ar": "خِيمِة ج خِيَم",
      "en": "tent",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c17.mp3"
+     "audio": "audio/ar/lessons/unit-19-c17.mp3"
     },
     {
      "ar": "نام",
      "en": "to sleep",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c18.mp3"
+     "audio": "audio/ar/lessons/unit-19-c18.mp3"
     },
     {
      "ar": "أنا نِمِت",
      "en": "I slept",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c19.mp3"
+     "audio": "audio/ar/lessons/unit-19-c19.mp3"
     },
     {
      "ar": "أنا بَنام",
      "en": "I am sleeping",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c20.mp3"
+     "audio": "audio/ar/lessons/unit-19-c20.mp3"
     },
     {
      "ar": "صَوَّر",
      "en": "to take pictures",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c21.mp3"
+     "audio": "audio/ar/lessons/unit-19-c21.mp3"
     },
     {
      "ar": "خَارِج الْبْلاد",
      "en": "abroad",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c22.mp3"
+     "audio": "audio/ar/lessons/unit-19-c22.mp3"
     },
     {
      "ar": "مُرْشِد\\اة ج ين",
      "en": "guide",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c23.mp3"
+     "audio": "audio/ar/lessons/unit-19-c23.mp3"
     },
     {
      "ar": "سَفْرَة",
      "en": "a period of a trip spend in the vehicle",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c24.mp3"
+     "audio": "audio/ar/lessons/unit-19-c24.mp3"
     },
     {
      "ar": "خَطَّط",
      "en": "to plan",
      "src": "speaking p.20",
-     "audio": "audio/lessons/unit-19-c25.mp3"
+     "audio": "audio/ar/lessons/unit-19-c25.mp3"
     },
     {
      "ar": "شو أعْمَل؟",
      "en": "What can I do?",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c26.mp3"
+     "audio": "audio/ar/lessons/unit-19-c26.mp3"
     },
     {
      "ar": "غْلِطِت",
      "en": "I made a mistake",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c27.mp3"
+     "audio": "audio/ar/lessons/unit-19-c27.mp3"
     },
     {
      "ar": "بِدي أقْعُد قُدّام \\ وَرا \\ في النُصّ",
      "en": "I want to sit in front \\ in the back \\ in the middle",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c28.mp3"
+     "audio": "audio/ar/lessons/unit-19-c28.mp3"
     },
     {
      "ar": "مُمْكِن تِفْتَح الراديو؟",
      "en": "Can you turn on the radio?",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c29.mp3"
+     "audio": "audio/ar/lessons/unit-19-c29.mp3"
     },
     {
      "ar": "شوفير، مِن فَضْلَك، عَلّي صوت الراديو شْوَيّ",
      "en": "Driver, please increase the volume a bit",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c30.mp3"
+     "audio": "audio/ar/lessons/unit-19-c30.mp3"
     },
     {
      "ar": "شوفير، مِن فَضْلَك، وَطّي صوت الراديو شْوَيّ بِدْنا نْنام",
      "en": "Driver, please lower",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c31.mp3"
+     "audio": "audio/ar/lessons/unit-19-c31.mp3"
     },
     {
      "ar": "بِدْناش نِسْمَع الأخْبار",
      "en": "We don't want to hear news",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c32.mp3"
+     "audio": "audio/ar/lessons/unit-19-c32.mp3"
     },
     {
      "ar": "بِدي اسْمَع موسيقى",
      "en": "I want to hear music",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c33.mp3"
+     "audio": "audio/ar/lessons/unit-19-c33.mp3"
     },
     {
      "ar": "لَو سَمَحِت، وينتى رح نُوصَل لَشارِع....",
      "en": "Excuse me, when do we get to street",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c34.mp3"
+     "audio": "audio/ar/lessons/unit-19-c34.mp3"
     },
     {
      "ar": "إلْباص بْيُوقَف في كْثير مَحَطّات؟",
      "en": "Does the bus stops in many stops?",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c35.mp3"
+     "audio": "audio/ar/lessons/unit-19-c35.mp3"
     },
     {
      "ar": "إلْباص مَلان ناس، فِش مَحَلّ أقْعُد فيه.",
      "en": "The bus is full of people. There is no place to sit",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c36.mp3"
+     "audio": "audio/ar/lessons/unit-19-c36.mp3"
     },
     {
      "ar": "إلشوفير مِسْتَعْجِل",
      "en": "The driver is in a hurry",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c37.mp3"
+     "audio": "audio/ar/lessons/unit-19-c37.mp3"
     },
     {
      "ar": "بِسوق بِسُرْعَة",
      "en": "He drives fast",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c38.mp3"
+     "audio": "audio/ar/lessons/unit-19-c38.mp3"
     },
     {
      "ar": "هاذا الْمَوْجود",
      "en": "That's what you get",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c39.mp3"
+     "audio": "audio/ar/lessons/unit-19-c39.mp3"
     },
     {
      "ar": "شو رَقَم هاذا الْباص؟",
      "en": "What is the number of this bus?",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c40.mp3"
+     "audio": "audio/ar/lessons/unit-19-c40.mp3"
     },
     {
      "ar": "وين الْجَرَس, بِدي أنْزِل، لازم أرِنّ لَلشُفير.",
      "en": "Where is the bell, I want to ring the driver",
      "src": "speaking p.22",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-19-c41.mp3"
+     "audio": "audio/ar/lessons/unit-19-c41.mp3"
     }
    ],
    "dialogues": [
@@ -5607,73 +5607,73 @@ window.LESSONS = {
        "sp": "أمير",
        "ar": "قول-لي، بِتْحِبّ تْسافِر بِالْباص؟",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l00.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "لا؟ ليش بْتِسْأل؟",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l01.mp3"
       },
       {
        "sp": "أمير",
        "ar": "لِأَنَّك رايِح جاي طولِ النّهار في الْباصات.",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l02.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "أنا بَحِبِّش الْباصات، بَسّ فِشّ عِنْدي سيّارة، شو أعْمَل؟",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l03.mp3"
       },
       {
        "sp": "أمير",
        "ar": "طَيِّب، قول-لي، السَّفَر بالْباص مُريح؟ بِيوصَل لَكُلّ الْمَحَلّات؟",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l04.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "عادةً مُريح، بَسّ لَمّا فِشّ مَحَلّ فاضي، بِبَطِل يْكون مُريح، بَعْدِين لازم تِفْحَص لَوين بْيُوصَل كُلّ باص قَبِل-ما تِرْكَبُه.",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l05.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l05.mp3"
       },
       {
        "sp": "أمير",
        "ar": "أسْأل مين؟ إلسَّوّاق (الشوفير)؟",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l06.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l06.mp3"
       },
       {
        "sp": "جميل",
        "ar": "مُمْكِن. ومُمْكِن تِفْحَص شو مَكْتوب عَ-الْمَحَطَّة، لازِم يكون مَكْتوب هُناك وكمان مُمْكِن تِفْحَص بالإنترنِت.",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l07.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l07.mp3"
       },
       {
        "sp": "أمير",
        "ar": "طَيِّب، وقَدّيش بِكَلِّف المِشوار؟",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l08.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l08.mp3"
       },
       {
        "sp": "جميل",
        "ar": "حَسَب لَوين رايِح. بَسّ أكيد أرْخَص مِنِ السَّيّارة.",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l09.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l09.mp3"
       },
       {
        "sp": "أمير",
        "ar": "هيك رايَك؟ مِش غَلْبِة؟",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l10.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l10.mp3"
       },
       {
        "sp": "جميل",
        "ar": "مَبَلى، يَعْني شو نِعْمَل، هاذا الْمَوْجود.",
        "en": null,
-       "audio": "audio/lessons/unit-19-d0-l11.mp3"
+       "audio": "audio/ar/lessons/unit-19-d0-l11.mp3"
       }
      ],
      "src": "speaking p.21",
@@ -5685,7 +5685,7 @@ window.LESSONS = {
       },
       {
        "sp": "جميل",
-       "voice": "IYnFszSKzmym2OstwHS0",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "m"
       }
      ]
@@ -5761,85 +5761,85 @@ window.LESSONS = {
        "sp": "وَليد",
        "ar": "يا سيدي، قَدّيش عُمْرَك الْيُوم؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l00.mp3"
       },
       {
        "sp": "إلسّيد",
        "ar": "أنا خْلِقِت قَبْل الْحَرْب الْعالَمِيِّة بشويّ، قَبِل مَوْسِم الزَّيْتون.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l01.mp3"
       },
       {
        "sp": "وَليد",
        "ar": "يَعْني في أيّ سنة تَقْريبًا؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l02.mp3"
       },
       {
        "sp": "إلسّيد",
        "ar": "ما بَعْرِفِش بِالزَّبْط.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l03.mp3"
       },
       {
        "sp": "وَليد",
        "ar": "ولَمّا كُنِت زْغير، كيف كانَت بَرامِج التِلْفِزْيُون في أيّامْكُم؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l04.mp3"
       },
       {
        "sp": "إلسّيد",
        "ar": "تِلْفِزْيُون؟ ما كانِش عِنْدْنا كَهْرَباء لَحَتّى نْشوف تِلْفِزْيُون.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l05.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l05.mp3"
       },
       {
        "sp": "وَليد",
        "ar": "يَعْني كمان ما كانِش عِنْدْكُم حاسوب؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l06.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l06.mp3"
       },
       {
        "sp": "إلسّيد",
        "ar": "قُلْت-لَك إنُّه ما كانِش عِندنا كَهْرَباء بِالْمَرَّة.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l07.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l07.mp3"
       },
       {
        "sp": "وليد",
        "ar": "كيف كُنْتوا عايْشين هيك؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l08.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l08.mp3"
       },
       {
        "sp": "إلسيد",
        "ar": "كان عِنْدْنا كْثير وَقْت وكُنّا نُقْعُد مَع بَعَض ونِحْكي ونِشْرَب قَهْوِة ونْدَخِّن أرْجيلِة.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l09.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l09.mp3"
       },
       {
        "sp": "وليد",
        "ar": "وكان عِندكم سَيارات؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l10.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l10.mp3"
       },
       {
        "sp": "إلسيد",
        "ar": "لا، كان عِنّا حْمار وعَرَباي (carriage).",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l11.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l11.mp3"
       },
       {
        "sp": "وليد",
        "ar": "وينتى أوّل مَرَّة سافَرِت في سَيّارة؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l12.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l12.mp3"
       },
       {
        "sp": "إلسيد",
        "ar": "هاذا كان في سَنَواتِ الْخَمْسين، لَمّا الْمُخْتار (head of village) جاب جيب عَ-الْبَلَد ويُومها كُلّ أهْلِ البَلَد راحوا فيو مِشْوار (trip).",
        "en": null,
-       "audio": "audio/lessons/unit-20-d0-l13.mp3"
+       "audio": "audio/ar/lessons/unit-20-d0-l13.mp3"
       }
      ],
      "src": "speaking p.41",
@@ -5851,7 +5851,7 @@ window.LESSONS = {
       },
       {
        "sp": "إلسيد",
-       "voice": "IYnFszSKzmym2OstwHS0",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "m"
       }
      ]
@@ -5863,97 +5863,97 @@ window.LESSONS = {
        "sp": "سَمَر",
        "ar": "إنتِ خْلِقْتِ هُون يا سِتّي؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l00.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l00.mp3"
       },
       {
        "sp": "الست",
        "ar": "لا، أنا خْلِقِت في سوريا وجيت لَهون لَمّا كان عُمْري أرْبَعتَعْشَر سَنِة.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l01.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l01.mp3"
       },
       {
        "sp": "سمر",
        "ar": "جيت لَحالِك؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l02.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l02.mp3"
       },
       {
        "sp": "الست",
        "ar": "لا ، جيت مع جوزي وأهْلُه.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l03.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l03.mp3"
       },
       {
        "sp": "سمر",
        "ar": "شو؟! إمْتى تْجَوَّزْتِ يا سِتِّي؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l04.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l04.mp3"
       },
       {
        "sp": "الست",
        "ar": "تْجَوَّزْت لَمّا كان عُمري ثَنَعشَر سَنِة.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l05.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l05.mp3"
       },
       {
        "sp": "سمر",
        "ar": "بَسّ إنتِ كُنْتِ زْغيرة كْثير.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l06.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l06.mp3"
       },
       {
        "sp": "الست",
        "ar": "أيْوة، وسيدِك كان كْبير كْثير وخُفِت مِنُّه. يُوم الْعُرْس بكيت وما كان بِدّي أتْرُك بِيتي وأفارِق إمّي وأبوي وإخْوَتي وخَواتي.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l07.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l07.mp3"
       },
       {
        "sp": "سمر",
        "ar": "رُحْتِ عَ-الْمَدْرَسِة يا سِتّي؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l08.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l08.mp3"
       },
       {
        "sp": "الست",
        "ar": "مَدْرَسِة؟ أيّ مَدْرَسِة؟ أيّامها ما كُنّاش بِنْروح عَ-الْمَدْرَسِة. بَسّ لِوْلاد هُمّ إلّي كانوا بِيتْعَلَّمُوا.",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l09.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l09.mp3"
       },
       {
        "sp": "سمر",
        "ar": "وإنْتِ ما بْتِعِرْفي تِكِتْبي وتِقْري؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l10.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l10.mp3"
       },
       {
        "sp": "الست",
        "ar": "لا، أبدًا! ما بَعْرَفِش...",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l11.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l11.mp3"
       },
       {
        "sp": "سمر",
        "ar": "بِدَّك أعَلّمِك الْحُروف الْعَرَبِيَّة يا سِتِّي؟",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l12.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l12.mp3"
       },
       {
        "sp": "الست",
        "ar": "لا، أنا صِرت خِتْيارَة وما بَشوفش مْنيح وكمان تْعَوَّدِت، وِالْيُوم فيه تلفيزيون، بَسّ شكرًا يا حَبيبتي. تَعالي إسّا عَ-الْمَطْبَخ وساعْديني. أنا سامْعة سيدِك جاي مِن السُّوق ولازِم نْحَضِّر الْغَداء",
        "en": null,
-       "audio": "audio/lessons/unit-20-d1-l13.mp3"
+       "audio": "audio/ar/lessons/unit-20-d1-l13.mp3"
       }
      ],
      "src": "speaking p.42",
      "cast": [
       {
        "sp": "سمر",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
        "sp": "الست",
-       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       }
      ]
@@ -6015,7 +6015,7 @@ window.LESSONS = {
      "group": "meaning 1: To happened",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c00.mp3"
+     "audio": "audio/ar/lessons/unit-21-c00.mp3"
     },
     {
      "ar": "شو صار لَك\\ لِك؟",
@@ -6023,7 +6023,7 @@ window.LESSONS = {
      "group": "meaning 1: To happened",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c01.mp3"
+     "audio": "audio/ar/lessons/unit-21-c01.mp3"
     },
     {
      "ar": "شو بِصير بُكْرَة؟",
@@ -6031,7 +6031,7 @@ window.LESSONS = {
      "group": "meaning 1: To happened",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c02.mp3"
+     "audio": "audio/ar/lessons/unit-21-c02.mp3"
     },
     {
      "ar": "صار وَلَد كْبير.",
@@ -6039,7 +6039,7 @@ window.LESSONS = {
      "group": "meaning 2: To become",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c03.mp3"
+     "audio": "audio/ar/lessons/unit-21-c03.mp3"
     },
     {
      "ar": "هي صارَت إسرائيليّة. مِش مْبَيِّن عَليها أنّه اتْوَلَدَت في أمريكا.",
@@ -6047,7 +6047,7 @@ window.LESSONS = {
      "group": "meaning 2: To become",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c04.mp3"
+     "audio": "audio/ar/lessons/unit-21-c04.mp3"
     },
     {
      "ar": "حَبيبي صايِر رومانسي. بِجيب لي شوكولاطة وزْهور.",
@@ -6055,7 +6055,7 @@ window.LESSONS = {
      "group": "meaning 2: To become",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c05.mp3"
+     "audio": "audio/ar/lessons/unit-21-c05.mp3"
     },
     {
      "ar": "صار لي خَمْسِ سْنين ساكِن في الْقُدْس.",
@@ -6063,7 +6063,7 @@ window.LESSONS = {
      "group": "meaning 3: A period of time you do something: I have been studying for...",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c06.mp3"
+     "audio": "audio/ar/lessons/unit-21-c06.mp3"
     },
     {
      "ar": "صارِ – لْنا ثْلَثِ سنين مِتْجَوّزين.",
@@ -6071,7 +6071,7 @@ window.LESSONS = {
      "group": "meaning 3: A period of time you do something: I have been studying for...",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c07.mp3"
+     "audio": "audio/ar/lessons/unit-21-c07.mp3"
     },
     {
      "ar": "مْحَمَّد صار لُه سَنْتِين بِتْعَلَّم في الْجَامْعَة.",
@@ -6079,7 +6079,7 @@ window.LESSONS = {
      "group": "meaning 3: A period of time you do something: I have been studying for...",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c08.mp3"
+     "audio": "audio/ar/lessons/unit-21-c08.mp3"
     },
     {
      "ar": "قَدّيش صارِ–لْكُم هُون؟",
@@ -6087,7 +6087,7 @@ window.LESSONS = {
      "group": "meaning 3: A period of time you do something: I have been studying for...",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c09.mp3"
+     "audio": "audio/ar/lessons/unit-21-c09.mp3"
     },
     {
      "ar": "صارِ–لها أُسْبُوعِين ما شافت إمّها.",
@@ -6095,7 +6095,7 @@ window.LESSONS = {
      "group": "meaning 3: A period of time you do something: I have been studying for...",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c10.mp3"
+     "audio": "audio/ar/lessons/unit-21-c10.mp3"
     },
     {
      "ar": "صار بِفْهَم عَرَبي.",
@@ -6103,7 +6103,7 @@ window.LESSONS = {
      "group": "meaning 4: To begin: صار + verb in the future/infinitive",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c11.mp3"
+     "audio": "audio/ar/lessons/unit-21-c11.mp3"
     },
     {
      "ar": "هي صارت تِبْكي.",
@@ -6111,7 +6111,7 @@ window.LESSONS = {
      "group": "meaning 4: To begin: صار + verb in the future/infinitive",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c12.mp3"
+     "audio": "audio/ar/lessons/unit-21-c12.mp3"
     },
     {
      "ar": "صِرْت أحْكي مَعُه.",
@@ -6119,7 +6119,7 @@ window.LESSONS = {
      "group": "meaning 4: To begin: صار + verb in the future/infinitive",
      "src": "verb-drills p.32",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c13.mp3"
+     "audio": "audio/ar/lessons/unit-21-c13.mp3"
     },
     {
      "ar": "– شُفِت مْحَمَّد؟ – صار مْسافِر مِن أُسْبُوع.",
@@ -6127,7 +6127,7 @@ window.LESSONS = {
      "group": "meaning 5: Already (صار + verb in the present or AP)",
      "src": "verb-drills p.33",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c14.mp3"
+     "audio": "audio/ar/lessons/unit-21-c14.mp3"
     },
     {
      "ar": "بِنْتي بَدَت تِتْعَلَّم قَبِل شَهْرِين وصارَت تُكْتُب وتِقْرا.",
@@ -6135,7 +6135,7 @@ window.LESSONS = {
      "group": "meaning 5: Already (صار + verb in the present or AP)",
      "src": "verb-drills p.33",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c15.mp3"
+     "audio": "audio/ar/lessons/unit-21-c15.mp3"
     },
     {
      "ar": "أمير جاب–لَك الْمَصاري؟ أيْوة، صار حاطِط نُصّ الْمَبْلَغ.",
@@ -6143,7 +6143,7 @@ window.LESSONS = {
      "group": "meaning 5: Already (صار + verb in the present or AP)",
      "src": "verb-drills p.33",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c16.mp3"
+     "audio": "audio/ar/lessons/unit-21-c16.mp3"
     },
     {
      "ar": "إمبارِح ما كان بَنْدُورة في السُّوق والْيُوم صار فيه.",
@@ -6151,7 +6151,7 @@ window.LESSONS = {
      "group": "meaning 6: To have something after aperod of time it was absent",
      "src": "verb-drills p.33",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c17.mp3"
+     "audio": "audio/ar/lessons/unit-21-c17.mp3"
     },
     {
      "ar": "مَحْمود كان فَقير وهَسّا صار عِنْدُه بيت وكُلّ إشي.",
@@ -6159,7 +6159,7 @@ window.LESSONS = {
      "group": "meaning 6: To have something after aperod of time it was absent",
      "src": "verb-drills p.33",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c18.mp3"
+     "audio": "audio/ar/lessons/unit-21-c18.mp3"
     },
     {
      "ar": "كُلّ الصُّبِح ما كان كَهْرِباء (electricity). وفَجْأة صار فيه. مين صَلَّح الْكَهْرَباء؟",
@@ -6167,7 +6167,7 @@ window.LESSONS = {
      "group": "meaning 6: To have something after aperod of time it was absent",
      "src": "verb-drills p.33",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c19.mp3"
+     "audio": "audio/ar/lessons/unit-21-c19.mp3"
     },
     {
      "ar": "ما صَلَّحوا الْكَهْرَبا! بِصيرِش هيك!",
@@ -6175,7 +6175,7 @@ window.LESSONS = {
      "group": "meaning 7: The expression \"it can't be\" \"it's not right\": بصيرش",
      "src": "verb-drills p.33",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-21-c20.mp3"
+     "audio": "audio/ar/lessons/unit-21-c20.mp3"
     }
    ],
    "dialogues": [],
@@ -6350,7 +6350,7 @@ window.LESSONS = {
      "group": "1) To leave s.th., to put s.th.",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c00.mp3"
+     "audio": "audio/ar/lessons/unit-23-c00.mp3"
     },
     {
      "ar": "بنتي بِتْخَلّي الكتاب على الطّاوْلِة.",
@@ -6358,7 +6358,7 @@ window.LESSONS = {
      "group": "1) To leave s.th., to put s.th.",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c01.mp3"
+     "audio": "audio/ar/lessons/unit-23-c01.mp3"
     },
     {
      "ar": "مِن فضْلَك، خَلّي شَنْطَتَك هُناك (خَلّيها هُناك).",
@@ -6366,7 +6366,7 @@ window.LESSONS = {
      "group": "1) To leave s.th., to put s.th.",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c02.mp3"
+     "audio": "audio/ar/lessons/unit-23-c02.mp3"
     },
     {
      "ar": "خَلّيها لَحَراميها. (let it go, forget about it)",
@@ -6374,7 +6374,7 @@ window.LESSONS = {
      "group": "1) To leave s.th., to put s.th.",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c03.mp3"
+     "audio": "audio/ar/lessons/unit-23-c03.mp3"
     },
     {
      "ar": "أبوها خَلّاها تُدْرُس كُلّ الليل.",
@@ -6382,7 +6382,7 @@ window.LESSONS = {
      "group": "2) To make\\cause s.o do s.th",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c04.mp3"
+     "audio": "audio/ar/lessons/unit-23-c04.mp3"
     },
     {
      "ar": "كَلامُه خَلّاني أفهَم إنّه بيحِبّني كْثير.",
@@ -6390,7 +6390,7 @@ window.LESSONS = {
      "group": "2) To make\\cause s.o do s.th",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c05.mp3"
+     "audio": "audio/ar/lessons/unit-23-c05.mp3"
     },
     {
      "ar": "قِصِّتْها بِتْخَلّيني أبْكِي.",
@@ -6398,7 +6398,7 @@ window.LESSONS = {
      "group": "2) To make\\cause s.o do s.th",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c06.mp3"
+     "audio": "audio/ar/lessons/unit-23-c06.mp3"
     },
     {
      "ar": "هاذي الموسيقى خَلَّتْنا نُشْعُر كَأنّا (as if we were) في الْجَنّة.",
@@ -6406,7 +6406,7 @@ window.LESSONS = {
      "group": "2) To make\\cause s.o do s.th",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c07.mp3"
+     "audio": "audio/ar/lessons/unit-23-c07.mp3"
     },
     {
      "ar": "خَلّيني أجي مَعَك!",
@@ -6414,7 +6414,7 @@ window.LESSONS = {
      "group": "3) Let (me) do s.th.",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c08.mp3"
+     "audio": "audio/ar/lessons/unit-23-c08.mp3"
     },
     {
      "ar": "المعلمة ما بِتْخَلّيناش نِلْعَب بَرّة.",
@@ -6422,7 +6422,7 @@ window.LESSONS = {
      "group": "3) Let (me) do s.th.",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c09.mp3"
+     "audio": "audio/ar/lessons/unit-23-c09.mp3"
     },
     {
      "ar": "خَلُّونا نْشوف الفيلم سَوَا!",
@@ -6430,7 +6430,7 @@ window.LESSONS = {
      "group": "3) Let (me) do s.th.",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c10.mp3"
+     "audio": "audio/ar/lessons/unit-23-c10.mp3"
     },
     {
      "ar": "خَلّيك قاعِد!",
@@ -6438,7 +6438,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c11.mp3"
+     "audio": "audio/ar/lessons/unit-23-c11.mp3"
     },
     {
      "ar": "خَلّيكِ قاعْدِة!",
@@ -6446,7 +6446,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c12.mp3"
+     "audio": "audio/ar/lessons/unit-23-c12.mp3"
     },
     {
      "ar": "خَلّيكم قاعْدين!",
@@ -6454,7 +6454,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c13.mp3"
+     "audio": "audio/ar/lessons/unit-23-c13.mp3"
     },
     {
      "ar": "خَلّيكُم ساكْتين يا طُلّاب!",
@@ -6462,7 +6462,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c14.mp3"
+     "audio": "audio/ar/lessons/unit-23-c14.mp3"
     },
     {
      "ar": "خَلّيكِن نايْمات كَمان شْوَيّ!",
@@ -6470,7 +6470,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c15.mp3"
+     "audio": "audio/ar/lessons/unit-23-c15.mp3"
     },
     {
      "ar": "خَلّيك هون!",
@@ -6478,7 +6478,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c16.mp3"
+     "audio": "audio/ar/lessons/unit-23-c16.mp3"
     },
     {
      "ar": "خَلّيكِ بِالبيت!",
@@ -6486,7 +6486,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c17.mp3"
+     "audio": "audio/ar/lessons/unit-23-c17.mp3"
     },
     {
      "ar": "خَلّيك ماشي على طول",
@@ -6494,7 +6494,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c18.mp3"
+     "audio": "audio/ar/lessons/unit-23-c18.mp3"
     },
     {
      "ar": "خَلّيك لَلْآخِر (until the end)",
@@ -6502,7 +6502,7 @@ window.LESSONS = {
      "group": "4) Stay, continue to sit\\ stand (leave yourself in a position of...",
      "src": "verb-drills p.40",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c19.mp3"
+     "audio": "audio/ar/lessons/unit-23-c19.mp3"
     },
     {
      "ar": "الله يْخَلّيك! جِيب–لي الكُتُب مِن غُرْفَتي.",
@@ -6510,7 +6510,7 @@ window.LESSONS = {
      "group": "5) To ask a favor from s.o.",
      "src": "verb-drills p.41",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c20.mp3"
+     "audio": "audio/ar/lessons/unit-23-c20.mp3"
     },
     {
      "ar": "الله يْخَلّيكِ، تعالي بَعِد ساعة.",
@@ -6518,7 +6518,7 @@ window.LESSONS = {
      "group": "5) To ask a favor from s.o.",
      "src": "verb-drills p.41",
      "note": "English added by this app — the book prints these untranslated",
-     "audio": "audio/lessons/unit-23-c21.mp3"
+     "audio": "audio/ar/lessons/unit-23-c21.mp3"
     }
    ],
    "dialogues": [],
@@ -6548,69 +6548,69 @@ window.LESSONS = {
      "en": "cartoons / animated films",
      "src": "speaking p.55",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c00.mp3"
+     "audio": "audio/ar/lessons/unit-24-c00.mp3"
     },
     {
      "ar": "أفلام وَثائِقِيّة",
      "en": "documentaries",
      "src": "speaking p.55",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c01.mp3"
+     "audio": "audio/ar/lessons/unit-24-c01.mp3"
     },
     {
      "ar": "أفلام تاريخية",
      "en": "historical films",
      "src": "speaking p.55",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c02.mp3"
+     "audio": "audio/ar/lessons/unit-24-c02.mp3"
     },
     {
      "ar": "أفلام رومانْسيّة",
      "en": "romantic films",
      "src": "speaking p.55",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c03.mp3"
+     "audio": "audio/ar/lessons/unit-24-c03.mp3"
     },
     {
      "ar": "أفلام طبيعة",
      "en": "nature films",
      "src": "speaking p.55",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c04.mp3"
+     "audio": "audio/ar/lessons/unit-24-c04.mp3"
     },
     {
      "ar": "برامِج عِلْمِيّة",
      "en": "science programmes",
      "src": "speaking p.55",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c05.mp3"
+     "audio": "audio/ar/lessons/unit-24-c05.mp3"
     },
     {
      "ar": "أفلام بولوسية",
      "en": "detective films",
      "src": "speaking p.55",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c06.mp3"
+     "audio": "audio/ar/lessons/unit-24-c06.mp3"
     },
     {
      "ar": "أفلام رُعْب",
      "en": "horror movie",
      "src": "speaking p.55",
-     "audio": "audio/lessons/unit-24-c07.mp3"
+     "audio": "audio/ar/lessons/unit-24-c07.mp3"
     },
     {
      "ar": "برامِج أطْفال",
      "en": "children's programmes",
      "src": "speaking p.55",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c08.mp3"
+     "audio": "audio/ar/lessons/unit-24-c08.mp3"
     },
     {
      "ar": "بَرْنامَج \\ بَرامِج",
      "en": "program",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c09.mp3"
+     "audio": "audio/ar/lessons/unit-24-c09.mp3"
     },
     {
      "ar": "راديو",
@@ -6618,7 +6618,7 @@ window.LESSONS = {
      "src": "speaking p.39",
      "group": "قاموس",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c10.mp3"
+     "audio": "audio/ar/lessons/unit-24-c10.mp3"
     },
     {
      "ar": "تِلْفِزيون",
@@ -6626,7 +6626,7 @@ window.LESSONS = {
      "src": "speaking p.39",
      "group": "قاموس",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c11.mp3"
+     "audio": "audio/ar/lessons/unit-24-c11.mp3"
     },
     {
      "ar": "إنْتِرْنِت",
@@ -6634,7 +6634,7 @@ window.LESSONS = {
      "src": "speaking p.39",
      "group": "قاموس",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c12.mp3"
+     "audio": "audio/ar/lessons/unit-24-c12.mp3"
     },
     {
      "ar": "فيسبوك",
@@ -6642,91 +6642,91 @@ window.LESSONS = {
      "src": "speaking p.39",
      "group": "قاموس",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-24-c13.mp3"
+     "audio": "audio/ar/lessons/unit-24-c13.mp3"
     },
     {
      "ar": "شبكات الاتّصال الاجْتِماعي",
      "en": "social networks",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c14.mp3"
+     "audio": "audio/ar/lessons/unit-24-c14.mp3"
     },
     {
      "ar": "بَريد إليكتروني",
      "en": "E-mail",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c15.mp3"
+     "audio": "audio/ar/lessons/unit-24-c15.mp3"
     },
     {
      "ar": "مَحَطَّة ج ات",
      "en": "radio station",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c16.mp3"
+     "audio": "audio/ar/lessons/unit-24-c16.mp3"
     },
     {
      "ar": "قَناة ج قَنَوات",
      "en": "T.V. channel",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c17.mp3"
+     "audio": "audio/ar/lessons/unit-24-c17.mp3"
     },
     {
      "ar": "مَوْقِع \\ مَواقِع",
      "en": "web site",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c18.mp3"
+     "audio": "audio/ar/lessons/unit-24-c18.mp3"
     },
     {
      "ar": "نَقّال \\ جَوّال \\ خَلَوي",
      "en": "cellular phone",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c19.mp3"
+     "audio": "audio/ar/lessons/unit-24-c19.mp3"
     },
     {
      "ar": "جَريدِة ج جَرايِد",
      "en": "news paper",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c20.mp3"
+     "audio": "audio/ar/lessons/unit-24-c20.mp3"
     },
     {
      "ar": "رابِط ج رَوابِط",
      "en": "link",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c21.mp3"
+     "audio": "audio/ar/lessons/unit-24-c21.mp3"
     },
     {
      "ar": "حاسوب ج حَواسيب\\ كمبيوتر",
      "en": "computer",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c22.mp3"
+     "audio": "audio/ar/lessons/unit-24-c22.mp3"
     },
     {
      "ar": "حَمَّل (تَحْميل)",
      "en": "upload",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c23.mp3"
+     "audio": "audio/ar/lessons/unit-24-c23.mp3"
     },
     {
      "ar": "نَزَّل (تَنْزيل)",
      "en": "download",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c24.mp3"
+     "audio": "audio/ar/lessons/unit-24-c24.mp3"
     },
     {
      "ar": "مَعْلومات",
      "en": "information",
      "src": "speaking p.39",
      "group": "قاموس",
-     "audio": "audio/lessons/unit-24-c25.mp3"
+     "audio": "audio/ar/lessons/unit-24-c25.mp3"
     }
    ],
    "dialogues": [
@@ -6737,43 +6737,43 @@ window.LESSONS = {
        "sp": "فَتْحي",
        "ar": "مَرْحَبا يا أحْمَد, شو فيه مَعَك؟",
        "en": null,
-       "audio": "audio/lessons/unit-24-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-24-d0-l00.mp3"
       },
       {
        "sp": "أحْمَد",
        "ar": "مَعي؟ فِشّ مَعي إشي!",
        "en": null,
-       "audio": "audio/lessons/unit-24-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-24-d0-l01.mp3"
       },
       {
        "sp": "فَتْحي",
        "ar": "يلّا عاد، شايْفَك ماسِك (holding) إشي بْإيدَك، شو مْخَبّي (hide) وَرَا ظَهْرَك؟",
        "en": null,
-       "audio": "audio/lessons/unit-24-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-24-d0-l02.mp3"
       },
       {
        "sp": "أحْمَد",
        "ar": "وَلا إشي، حِلّ عَنّي (leave me alone)، روح من هون.",
        "en": null,
-       "audio": "audio/lessons/unit-24-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-24-d0-l03.mp3"
       },
       {
        "sp": "فَتْحي",
        "ar": "مْبَيِّن (looks like) إشي مُهِمّ ما-دامَك مْخَبّيه!",
        "en": null,
-       "audio": "audio/lessons/unit-24-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-24-d0-l04.mp3"
       },
       {
        "sp": "أحْمَد",
        "ar": "لا حَبيبي. تَفَضّل شوف، كْتاب. حامِل مَعي كْتاب، خُذ، جاي عَ-بالَك تِقْرا؟",
        "en": null,
-       "audio": "audio/lessons/unit-24-d0-l05.mp3"
+       "audio": "audio/ar/lessons/unit-24-d0-l05.mp3"
       },
       {
        "sp": "فَتْحي",
        "ar": "كتاب! لا شُكْرًا. خَلّي-لَك (ا)يّاه! حَدا (Is there anyone) بِقْرا كُتُب الْيُوم؟!",
        "en": null,
-       "audio": "audio/lessons/unit-24-d0-l06.mp3"
+       "audio": "audio/ar/lessons/unit-24-d0-l06.mp3"
       }
      ],
      "src": "speaking p.54",
@@ -6785,7 +6785,7 @@ window.LESSONS = {
       },
       {
        "sp": "أحمد",
-       "voice": "IYnFszSKzmym2OstwHS0",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "m"
       }
      ]
@@ -6797,55 +6797,55 @@ window.LESSONS = {
        "sp": "رَمْزي",
        "ar": "شو الْوَضِع يا شباب، إللَّيلة صباحي (night without sleeping)؟",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l00.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l00.mp3"
       },
       {
        "sp": "سمير",
        "ar": "صَباحي، مَعاي فِلِم بِجَنِّن، جديد جديد, إلْيُوم نَزَّلْتُه (down loaded it).",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l01.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l01.mp3"
       },
       {
        "sp": "رَمْزي",
        "ar": "عَن شو الْفِلِم؟ أنو (مين) بِمَثِّل فيه؟",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l02.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l02.mp3"
       },
       {
        "sp": "سمير",
        "ar": "مِش عارِف شو إسْمُه، نْسيت، بَسّ نْشوفوه بْتِعِرْفوا.",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l03.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l03.mp3"
       },
       {
        "sp": "رَمْزي",
        "ar": "أكَم ساعة الْفِلِم؟",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l04.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l04.mp3"
       },
       {
        "sp": "سمير",
        "ar": "ساعة ونُصّ.",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l05.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l05.mp3"
       },
       {
        "sp": "رَمْزي",
        "ar": "بَسّ!؟ وبَعْدين شو بِدّنا نِعْمَل؟ مَعاك أُخرى واحَد؟",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l06.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l06.mp3"
       },
       {
        "sp": "سمير",
        "ar": "طَبَعًا مَعايْ, كَمان ثْنِين مِش واحَد.",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l07.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l07.mp3"
       },
       {
        "sp": "رَمْزي",
        "ar": "هيك الحَكي وِلّا بلاش (there you speak)! وِلّا هَ-الأرْجيلِة؟",
        "en": null,
-       "audio": "audio/lessons/unit-24-d1-l08.mp3"
+       "audio": "audio/ar/lessons/unit-24-d1-l08.mp3"
       }
      ],
      "src": "speaking p.54",
@@ -6857,7 +6857,7 @@ window.LESSONS = {
       },
       {
        "sp": "سمير",
-       "voice": "IYnFszSKzmym2OstwHS0",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "m"
       }
      ]
@@ -6965,104 +6965,104 @@ window.LESSONS = {
      "ar": "مِتْأسِّف... مِتْأسِّفِة",
      "en": "excuse me",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c00.mp3"
+     "audio": "audio/ar/lessons/unit-25-c00.mp3"
     },
     {
      "ar": "مِتْأسِّف، ما فْهِمِت",
      "en": "excuse me, I didn't understand",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c01.mp3"
+     "audio": "audio/ar/lessons/unit-25-c01.mp3"
     },
     {
      "ar": "قول \\ قولي كَمان مَرَّة",
      "en": "say again",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c02.mp3"
+     "audio": "audio/ar/lessons/unit-25-c02.mp3"
     },
     {
      "ar": "وِين الْحَمّام؟",
      "en": "Where is the bathroom?",
      "src": "speaking p.16",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-25-c03.mp3"
+     "audio": "audio/ar/lessons/unit-25-c03.mp3"
     },
     {
      "ar": "شْبِعِت \\ أنا شَبْعان... شَبْعانِة",
      "en": "I am full (not hungry)",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c04.mp3"
+     "audio": "audio/ar/lessons/unit-25-c04.mp3"
     },
     {
      "ar": "ما بُوكِل لَحْمِة، أنا نباتي",
      "en": "I don't eat meat, I am vegetarian",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c05.mp3"
+     "audio": "audio/ar/lessons/unit-25-c05.mp3"
     },
     {
      "ar": "ما بُوكِل جِبْنِة وبِيض، أنا خُضَري؟",
      "en": "I don't eat meat, I am vegetarian",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c06.mp3"
+     "audio": "audio/ar/lessons/unit-25-c06.mp3"
     },
     {
      "ar": "وِين مُمْكِن...",
      "en": "where can I",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c07.mp3"
+     "audio": "audio/ar/lessons/unit-25-c07.mp3"
     },
     {
      "ar": "أنا بَحْكي عَرَبي شْوَيّ",
      "en": "I speak a little Arabic",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c08.mp3"
+     "audio": "audio/ar/lessons/unit-25-c08.mp3"
     },
     {
      "ar": "إحْكي مَعي شْوَيّ شْوَيّ",
      "en": "talk to me slowly",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c09.mp3"
+     "audio": "audio/ar/lessons/unit-25-c09.mp3"
     },
     {
      "ar": "كِيفَك \\ كيف حالَك... حالِك؟",
      "en": "How are you?",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c10.mp3"
+     "audio": "audio/ar/lessons/unit-25-c10.mp3"
     },
     {
      "ar": "كيف الشُّغُل؟",
      "en": "how is work?",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c11.mp3"
+     "audio": "audio/ar/lessons/unit-25-c11.mp3"
     },
     {
      "ar": "مُمْكِن أَساعْدَك ... أَساعْدِك؟",
      "en": "can I help you?",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c12.mp3"
+     "audio": "audio/ar/lessons/unit-25-c12.mp3"
     },
     {
      "ar": "أنا بَشْرَب بَسّ شاي \\ شاي أعْشاب.",
      "en": "I drink only tea \\ herb tea",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c13.mp3"
+     "audio": "audio/ar/lessons/unit-25-c13.mp3"
     },
     {
      "ar": "أنا بَشْرَب قَهْوِة بِدون سُكَّر.",
      "en": "I drink coffee without sugar",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c14.mp3"
+     "audio": "audio/ar/lessons/unit-25-c14.mp3"
     },
     {
      "ar": "عِنْدَك \\ عِنْدِك وَظيفِة بالإنْجليزي",
      "en": "Do you have homework in English?",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c15.mp3"
+     "audio": "audio/ar/lessons/unit-25-c15.mp3"
     },
     {
      "ar": "أيّ موسيقى بِتْحِبّ \\ بِتْحِبّي تِسْمَع \\ تِسْمَعي",
      "en": "what music do you like to hear?",
      "src": "speaking p.16",
-     "audio": "audio/lessons/unit-25-c16.mp3"
+     "audio": "audio/ar/lessons/unit-25-c16.mp3"
     }
    ],
    "dialogues": [],
@@ -7347,109 +7347,109 @@ window.LESSONS = {
      "ar": "عَاصِمِة ج عَواصِم",
      "en": "capitals",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c00.mp3"
+     "audio": "audio/ar/lessons/unit-26-c00.mp3"
     },
     {
      "ar": "مَدينة ج مُدُن",
      "en": "towns",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c01.mp3"
+     "audio": "audio/ar/lessons/unit-26-c01.mp3"
     },
     {
      "ar": "عَمّان",
      "en": "Amman",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c02.mp3"
+     "audio": "audio/ar/lessons/unit-26-c02.mp3"
     },
     {
      "ar": "إلْقُدْس (أورشَليم القُدْس)",
      "en": "Jerusalem",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c03.mp3"
+     "audio": "audio/ar/lessons/unit-26-c03.mp3"
     },
     {
      "ar": "إلْقاهِرة",
      "en": "Cairo",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c04.mp3"
+     "audio": "audio/ar/lessons/unit-26-c04.mp3"
     },
     {
      "ar": "بَيْروت",
      "en": "Beirut",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c05.mp3"
+     "audio": "audio/ar/lessons/unit-26-c05.mp3"
     },
     {
      "ar": "بَغْداد",
      "en": "Baghdad",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c06.mp3"
+     "audio": "audio/ar/lessons/unit-26-c06.mp3"
     },
     {
      "ar": "إلْخَرْطوم",
      "en": "Khartoum",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c07.mp3"
+     "audio": "audio/ar/lessons/unit-26-c07.mp3"
     },
     {
      "ar": "إسْطَنْبول",
      "en": "Istanbul",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c08.mp3"
+     "audio": "audio/ar/lessons/unit-26-c08.mp3"
     },
     {
      "ar": "ألرِّياض",
      "en": "Riyadh",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c09.mp3"
+     "audio": "audio/ar/lessons/unit-26-c09.mp3"
     },
     {
      "ar": "طَهْران",
      "en": "Tehran",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c10.mp3"
+     "audio": "audio/ar/lessons/unit-26-c10.mp3"
     },
     {
      "ar": "باريس",
      "en": "Paris",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c11.mp3"
+     "audio": "audio/ar/lessons/unit-26-c11.mp3"
     },
     {
      "ar": "مَدْريد",
      "en": "Madrid",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c12.mp3"
+     "audio": "audio/ar/lessons/unit-26-c12.mp3"
     },
     {
      "ar": "لَنْدُن",
      "en": "London",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c13.mp3"
+     "audio": "audio/ar/lessons/unit-26-c13.mp3"
     },
     {
      "ar": "طُوكُيو",
      "en": "Tokyo",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c14.mp3"
+     "audio": "audio/ar/lessons/unit-26-c14.mp3"
     },
     {
      "ar": "بَرْلين",
      "en": "Berlin",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c15.mp3"
+     "audio": "audio/ar/lessons/unit-26-c15.mp3"
     },
     {
      "ar": "واشِنْطُن",
      "en": "Washington",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c16.mp3"
+     "audio": "audio/ar/lessons/unit-26-c16.mp3"
     },
     {
      "ar": "دِمَشْق",
      "en": "Damascus",
      "src": "speaking p.5",
-     "audio": "audio/lessons/unit-26-c17.mp3"
+     "audio": "audio/ar/lessons/unit-26-c17.mp3"
     }
    ],
    "dialogues": [],
@@ -7500,154 +7500,154 @@ window.LESSONS = {
      "en": "to",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c00.mp3"
+     "audio": "audio/ar/lessons/unit-27-c00.mp3"
     },
     {
      "ar": "في, بِ — في الصبح, بالليل",
      "en": "in",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c01.mp3"
+     "audio": "audio/ar/lessons/unit-27-c01.mp3"
     },
     {
      "ar": "في، بِ ,عِنْد — هو في الدار, هو بِالمدرسة , هو عند أُخْته",
      "en": "at",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c02.mp3"
+     "audio": "audio/ar/lessons/unit-27-c02.mp3"
     },
     {
      "ar": "خِلال, في — موسى نام خِلال الدرس",
      "en": "during",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c03.mp3"
+     "audio": "audio/ar/lessons/unit-27-c03.mp3"
     },
     {
      "ar": "عَلى — سمير قَعَد على الكُرسي",
      "en": "on",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c04.mp3"
+     "audio": "audio/ar/lessons/unit-27-c04.mp3"
     },
     {
      "ar": "عَن — أحْمَد قَرا عن الشرق الأوسط",
      "en": "about",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c05.mp3"
+     "audio": "audio/ar/lessons/unit-27-c05.mp3"
     },
     {
      "ar": "مِن — رنا وِصْلَت من أمريكا، مَصنوع من خَشَب",
      "en": "of, from",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c06.mp3"
+     "audio": "audio/ar/lessons/unit-27-c06.mp3"
     },
     {
      "ar": "مَع — مَعَك مصاري؟ ، رُحِت مَعُه؟",
      "en": "have, with",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c07.mp3"
+     "audio": "audio/ar/lessons/unit-27-c07.mp3"
     },
     {
      "ar": "بِ — سافر بالباص",
      "en": "by",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c08.mp3"
+     "audio": "audio/ar/lessons/unit-27-c08.mp3"
     },
     {
      "ar": "قُدّام — المعلم قُدّام الطُّلّاب",
      "en": "in front of",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c09.mp3"
+     "audio": "audio/ar/lessons/unit-27-c09.mp3"
     },
     {
      "ar": "فُوق — الطيارة فُوق الِغْيوم",
      "en": "above",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c10.mp3"
+     "audio": "audio/ar/lessons/unit-27-c10.mp3"
     },
     {
      "ar": "مِثِل ، زَيّ — هو مِثْلي، هو زَيّي (زَيّ-ما شُفْتِ)",
      "en": "as, like",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c11.mp3"
+     "audio": "audio/ar/lessons/unit-27-c11.mp3"
     },
     {
      "ar": "وَرا — وَرا البيت",
      "en": "behind",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c12.mp3"
+     "audio": "audio/ar/lessons/unit-27-c12.mp3"
     },
     {
      "ar": "قَبِل — قبل ساعة، (قبل-ما أشوفُه)",
      "en": "before",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c13.mp3"
+     "audio": "audio/ar/lessons/unit-27-c13.mp3"
     },
     {
      "ar": "بَعِد — بعد الصّيف، (بعد-ما أشوفُه)",
      "en": "after",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c14.mp3"
+     "audio": "audio/ar/lessons/unit-27-c14.mp3"
     },
     {
      "ar": "بِين (بينا، بيناتْنا) — هو بيني وبين النهر، عاش بيناتْنا",
      "en": "between",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c15.mp3"
+     "audio": "audio/ar/lessons/unit-27-c15.mp3"
     },
     {
      "ar": "بَرّة (بَرِّيّة الْبْلاد) — إطْلَع بَرّة",
      "en": "out",
      "group": "حروف جَرّ — أمْثِلة Examples",
      "src": "vocab-gram p.22",
-     "audio": "audio/lessons/unit-27-c16.mp3"
+     "audio": "audio/ar/lessons/unit-27-c16.mp3"
     },
     {
      "ar": "جُوَّة — تَعال جُوَّة",
      "en": "inside",
      "group": "Prepositions, continued",
      "src": "vocab-gram p.21",
-     "audio": "audio/lessons/unit-27-c17.mp3"
+     "audio": "audio/ar/lessons/unit-27-c17.mp3"
     },
     {
      "ar": "تَحت — تَحْت المَطَر",
      "en": "under",
      "group": "Prepositions, continued",
      "src": "vocab-gram p.21",
-     "audio": "audio/lessons/unit-27-c18.mp3"
+     "audio": "audio/ar/lessons/unit-27-c18.mp3"
     },
     {
      "ar": "عَلى — أنا وأخوي على ابن عَمّي وأنا وابِن عَمّي عَلَى الْغَريب",
      "en": "against",
      "group": "Prepositions, continued",
      "src": "vocab-gram p.21",
-     "audio": "audio/lessons/unit-27-c19.mp3"
+     "audio": "audio/ar/lessons/unit-27-c19.mp3"
     },
     {
      "ar": "دون، بِدون ، مِن غِير — بِدّي قَهْوِة بِدون \\ مِن غِير سُكَّر",
      "en": "with out",
      "group": "Prepositions, continued",
      "src": "vocab-gram p.21",
-     "audio": "audio/lessons/unit-27-c20.mp3"
+     "audio": "audio/ar/lessons/unit-27-c20.mp3"
     },
     {
      "ar": "عَشان — هٰذا الكْتاب عَشانَك",
      "en": "for",
      "group": "Prepositions, continued",
      "src": "vocab-gram p.21",
-     "audio": "audio/lessons/unit-27-c21.mp3"
+     "audio": "audio/ar/lessons/unit-27-c21.mp3"
     }
    ],
    "dialogues": [],
@@ -7708,140 +7708,140 @@ window.LESSONS = {
      "en": "short",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c00.mp3"
+     "audio": "audio/ar/lessons/unit-28-c00.mp3"
     },
     {
      "ar": "طويل ج طْوال",
      "en": "long",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c01.mp3"
+     "audio": "audio/ar/lessons/unit-28-c01.mp3"
     },
     {
      "ar": "كبير ج كْبار",
      "en": "big",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c02.mp3"
+     "audio": "audio/ar/lessons/unit-28-c02.mp3"
     },
     {
      "ar": "زْغير ج زغار",
      "en": "little",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c03.mp3"
+     "audio": "audio/ar/lessons/unit-28-c03.mp3"
     },
     {
      "ar": "رخيص ج رْخاص",
      "en": "cheap",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c04.mp3"
+     "audio": "audio/ar/lessons/unit-28-c04.mp3"
     },
     {
      "ar": "قْديم ج قْدام (قُدَمَاء)",
      "en": "old",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c05.mp3"
+     "audio": "audio/ar/lessons/unit-28-c05.mp3"
     },
     {
      "ar": "جديد ج جْداد (جُدُد)",
      "en": "new",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c06.mp3"
+     "audio": "audio/ar/lessons/unit-28-c06.mp3"
     },
     {
      "ar": "نْظيف ج نْظاف",
      "en": "clean",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c07.mp3"
+     "audio": "audio/ar/lessons/unit-28-c07.mp3"
     },
     {
      "ar": "فَقير ج فَقيرين (فُقَراء)",
      "en": "poor",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c08.mp3"
+     "audio": "audio/ar/lessons/unit-28-c08.mp3"
     },
     {
      "ar": "غَنِيّ ج غَنِيِّين (أغْنِيَاء)",
      "en": "rich",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c09.mp3"
+     "audio": "audio/ar/lessons/unit-28-c09.mp3"
     },
     {
      "ar": "حَزين ج حَزينين (حُزَنَاء)",
      "en": "sad",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c10.mp3"
+     "audio": "audio/ar/lessons/unit-28-c10.mp3"
     },
     {
      "ar": "بعيد ج بْعاد (بَعيدين)",
      "en": "far",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c11.mp3"
+     "audio": "audio/ar/lessons/unit-28-c11.mp3"
     },
     {
      "ar": "ضعيف ج ضْعاف",
      "en": "weak",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c12.mp3"
+     "audio": "audio/ar/lessons/unit-28-c12.mp3"
     },
     {
      "ar": "بَطيء ج بَطيئين",
      "en": "slow",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c13.mp3"
+     "audio": "audio/ar/lessons/unit-28-c13.mp3"
     },
     {
      "ar": "قَوِيّ ج قَوِيّين\\ أقْوِيا (أقْوِيَاء)",
      "en": "strong",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c14.mp3"
+     "audio": "audio/ar/lessons/unit-28-c14.mp3"
     },
     {
      "ar": "سَريع ج سَريعين",
      "en": "fast",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c15.mp3"
+     "audio": "audio/ar/lessons/unit-28-c15.mp3"
     },
     {
      "ar": "سَعيد ج سَعيدين (سُعَداء)",
      "en": "happy",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c16.mp3"
+     "audio": "audio/ar/lessons/unit-28-c16.mp3"
     },
     {
      "ar": "مْنيح\\ مْليح ج مْناح\\ مْلاح",
      "en": "good",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c17.mp3"
+     "audio": "audio/ar/lessons/unit-28-c17.mp3"
     },
     {
      "ar": "خميل ج خْمال\\ خميلين",
      "en": "thick",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c18.mp3"
+     "audio": "audio/ar/lessons/unit-28-c18.mp3"
     },
     {
      "ar": "بَخيل ج بخيلين (بُخَلاء)",
      "en": "stingy",
      "src": "vocab-gram p.13",
      "group": "مجموعة 1 — adjectives with broken plurals",
-     "audio": "audio/lessons/unit-28-c19.mp3"
+     "audio": "audio/ar/lessons/unit-28-c19.mp3"
     },
     {
      "ar": "ناصح ج ناصْحَنين",
@@ -7849,7 +7849,7 @@ window.LESSONS = {
      "src": "vocab-gram p.13",
      "group": "مجموعة 2",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-28-c20.mp3"
+     "audio": "audio/ar/lessons/unit-28-c20.mp3"
     },
     {
      "ar": "هادي ج هادْيين",
@@ -7857,7 +7857,7 @@ window.LESSONS = {
      "src": "vocab-gram p.13",
      "group": "مجموعة 2",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-28-c21.mp3"
+     "audio": "audio/ar/lessons/unit-28-c21.mp3"
     },
     {
      "ar": "واسِع ج واسْعين \\ وسيع ج وسيعين (شوارع واسْعة\\وسيعة)",
@@ -7865,364 +7865,364 @@ window.LESSONS = {
      "src": "vocab-gram p.13",
      "group": "مجموعة 2",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-28-c22.mp3"
+     "audio": "audio/ar/lessons/unit-28-c22.mp3"
     },
     {
      "ar": "فَرْحان ج فَرْحانين",
      "en": "happy",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c23.mp3"
+     "audio": "audio/ar/lessons/unit-28-c23.mp3"
     },
     {
      "ar": "حَزْنان ج ين",
      "en": "sad",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c24.mp3"
+     "audio": "audio/ar/lessons/unit-28-c24.mp3"
     },
     {
      "ar": "بَرْدان ج ين",
      "en": "cold",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c25.mp3"
+     "audio": "audio/ar/lessons/unit-28-c25.mp3"
     },
     {
      "ar": "حَمْيان ج ين",
      "en": "hot",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c26.mp3"
+     "audio": "audio/ar/lessons/unit-28-c26.mp3"
     },
     {
      "ar": "عطشان ج ين",
      "en": "thirsty",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c27.mp3"
+     "audio": "audio/ar/lessons/unit-28-c27.mp3"
     },
     {
      "ar": "جوعان ج ين",
      "en": "hungry",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c28.mp3"
+     "audio": "audio/ar/lessons/unit-28-c28.mp3"
     },
     {
      "ar": "رَوْيان ج ين",
      "en": "not thirsty, hydrated",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c29.mp3"
+     "audio": "audio/ar/lessons/unit-28-c29.mp3"
     },
     {
      "ar": "عَيّان ج ين",
      "en": "sick",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c30.mp3"
+     "audio": "audio/ar/lessons/unit-28-c30.mp3"
     },
     {
      "ar": "تَعْبان ج ين",
      "en": "tired (sleepy)",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c31.mp3"
+     "audio": "audio/ar/lessons/unit-28-c31.mp3"
     },
     {
      "ar": "هلكان ج ين",
      "en": "tired (very)",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c32.mp3"
+     "audio": "audio/ar/lessons/unit-28-c32.mp3"
     },
     {
      "ar": "زعلان ج ين",
      "en": "angry, upset",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c33.mp3"
+     "audio": "audio/ar/lessons/unit-28-c33.mp3"
     },
     {
      "ar": "يَأْسَان ج ين",
      "en": "desperate",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c34.mp3"
+     "audio": "audio/ar/lessons/unit-28-c34.mp3"
     },
     {
      "ar": "شَبْعان ج ين",
      "en": "full",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c35.mp3"
+     "audio": "audio/ar/lessons/unit-28-c35.mp3"
     },
     {
      "ar": "زهقان ج ين",
      "en": "bored",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c36.mp3"
+     "audio": "audio/ar/lessons/unit-28-c36.mp3"
     },
     {
      "ar": "كَسْلان ج ين",
      "en": "lazy",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c37.mp3"
+     "audio": "audio/ar/lessons/unit-28-c37.mp3"
     },
     {
      "ar": "جَبّان ج ين",
      "en": "coward",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c38.mp3"
+     "audio": "audio/ar/lessons/unit-28-c38.mp3"
     },
     {
      "ar": "سَكْران ج ين",
      "en": "drunk",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c39.mp3"
+     "audio": "audio/ar/lessons/unit-28-c39.mp3"
     },
     {
      "ar": "حَيْران ج ين",
      "en": "hesitant",
      "src": "vocab-gram p.12",
      "group": "مجموعة 3 — فَعْلان adjectives (plural ين; ات for a group of women)",
-     "audio": "audio/lessons/unit-28-c40.mp3"
+     "audio": "audio/ar/lessons/unit-28-c40.mp3"
     },
     {
      "ar": "مِرْتاح ج ين",
      "en": "relaxed, comfortable",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c41.mp3"
+     "audio": "audio/ar/lessons/unit-28-c41.mp3"
     },
     {
      "ar": "مَبسوط ج ين",
      "en": "happy",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c42.mp3"
+     "audio": "audio/ar/lessons/unit-28-c42.mp3"
     },
     {
      "ar": "مْكَيَّف ج ين",
      "en": "enjoying",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c43.mp3"
+     "audio": "audio/ar/lessons/unit-28-c43.mp3"
     },
     {
      "ar": "مُنْفَعِل ج ين",
      "en": "exited, moved",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c44.mp3"
+     "audio": "audio/ar/lessons/unit-28-c44.mp3"
     },
     {
      "ar": "مِتْحَمِّس ج ين",
      "en": "excited",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c45.mp3"
+     "audio": "audio/ar/lessons/unit-28-c45.mp3"
     },
     {
      "ar": "مُكْتَئِب ج ين = حَزْنان",
      "en": "depressed",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c46.mp3"
+     "audio": "audio/ar/lessons/unit-28-c46.mp3"
     },
     {
      "ar": "مُحْبَط ج ين",
      "en": "frustrated",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c47.mp3"
+     "audio": "audio/ar/lessons/unit-28-c47.mp3"
     },
     {
      "ar": "مَضغوط ج ين",
      "en": "stressed, under pressure",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c48.mp3"
+     "audio": "audio/ar/lessons/unit-28-c48.mp3"
     },
     {
      "ar": "مِتْعَصْبِن \\ مْعَصِّب ج ين",
      "en": "get mad, blow up, get angry fast",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c49.mp3"
+     "audio": "audio/ar/lessons/unit-28-c49.mp3"
     },
     {
      "ar": "مْلَخْبَط ج ين",
      "en": "confused",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c50.mp3"
+     "audio": "audio/ar/lessons/unit-28-c50.mp3"
     },
     {
      "ar": "مُقْرِف ج ين",
      "en": "disgusting",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c51.mp3"
+     "audio": "audio/ar/lessons/unit-28-c51.mp3"
     },
     {
      "ar": "مُحافِظ ج ين",
      "en": "conservative",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c52.mp3"
+     "audio": "audio/ar/lessons/unit-28-c52.mp3"
     },
     {
      "ar": "مُتَشَدِّد \\ مُتَطَرِّف ج ين",
      "en": "hardline, extremist",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c53.mp3"
+     "audio": "audio/ar/lessons/unit-28-c53.mp3"
     },
     {
      "ar": "مَضروب\\ مْخَلِّص كازُه",
      "en": "fucked up\\ran out of gas",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c54.mp3"
+     "audio": "audio/ar/lessons/unit-28-c54.mp3"
     },
     {
      "ar": "مُبَذِّر ج ين",
      "en": "spender, waster",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c55.mp3"
+     "audio": "audio/ar/lessons/unit-28-c55.mp3"
     },
     {
      "ar": "مْعَفِّن ج ين",
      "en": "stinking",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c56.mp3"
+     "audio": "audio/ar/lessons/unit-28-c56.mp3"
     },
     {
      "ar": "مِتْعَلِّق ج ين",
      "en": "depending",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c57.mp3"
+     "audio": "audio/ar/lessons/unit-28-c57.mp3"
     },
     {
      "ar": "مَحْبوب ج ين",
      "en": "beloved, well-liked",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c58.mp3"
+     "audio": "audio/ar/lessons/unit-28-c58.mp3"
     },
     {
      "ar": "مْوَفِّر ج ين",
      "en": "saver",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c59.mp3"
+     "audio": "audio/ar/lessons/unit-28-c59.mp3"
     },
     {
      "ar": "مَشْغول ج ين",
      "en": "busy",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c60.mp3"
+     "audio": "audio/ar/lessons/unit-28-c60.mp3"
     },
     {
      "ar": "مُتسامِح ج ين",
      "en": "forgiving",
      "src": "vocab-gram p.12",
      "group": "مجموعة 4 — participial adjectives (plural ين)",
-     "audio": "audio/lessons/unit-28-c61.mp3"
+     "audio": "audio/ar/lessons/unit-28-c61.mp3"
     },
     {
      "ar": "عَصَبيّ ج عَصَبيِّين",
      "en": "nervous",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives",
-     "audio": "audio/lessons/unit-28-c62.mp3"
+     "audio": "audio/ar/lessons/unit-28-c62.mp3"
     },
     {
      "ar": "تَقْليديّ ج تَقْليديين",
      "en": "traditional",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives",
-     "audio": "audio/lessons/unit-28-c63.mp3"
+     "audio": "audio/ar/lessons/unit-28-c63.mp3"
     },
     {
      "ar": "غَيور ج ين",
      "en": "Jealous",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives",
-     "audio": "audio/lessons/unit-28-c64.mp3"
+     "audio": "audio/ar/lessons/unit-28-c64.mp3"
     },
     {
      "ar": "عُنْصُريّ ج عُنْصريِّين",
      "en": "racist",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives",
-     "audio": "audio/lessons/unit-28-c65.mp3"
+     "audio": "audio/ar/lessons/unit-28-c65.mp3"
     },
     {
      "ar": "خِتْيار ج خِتْيارِيِّة \\ خِتْيارِيّات",
      "en": "old man",
      "src": "vocab-gram p.12",
      "group": "Boxed list of nisba/other adjectives",
-     "audio": "audio/lessons/unit-28-c66.mp3"
+     "audio": "audio/ar/lessons/unit-28-c66.mp3"
     },
     {
      "ar": "حِلِو ج حِلْوين",
      "en": "handsome",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5",
-     "audio": "audio/lessons/unit-28-c67.mp3"
+     "audio": "audio/ar/lessons/unit-28-c67.mp3"
     },
     {
      "ar": "بَشِع ج ؟؟",
      "en": "ugly",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5",
-     "audio": "audio/lessons/unit-28-c68.mp3"
+     "audio": "audio/ar/lessons/unit-28-c68.mp3"
     },
     {
      "ar": "وَسِخ ج وَسْخين",
      "en": "dirty",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5",
-     "audio": "audio/lessons/unit-28-c69.mp3"
+     "audio": "audio/ar/lessons/unit-28-c69.mp3"
     },
     {
      "ar": "أهبَل ج هُبْلان",
      "en": "stupid",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5",
-     "audio": "audio/lessons/unit-28-c70.mp3"
+     "audio": "audio/ar/lessons/unit-28-c70.mp3"
     },
     {
      "ar": "تيس ج تْيوس",
      "en": "stupid",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5",
-     "audio": "audio/lessons/unit-28-c71.mp3"
+     "audio": "audio/ar/lessons/unit-28-c71.mp3"
     },
     {
      "ar": "غَبِيّ ج غَبِيِّين (أغْبِياء)",
      "en": "stupid/idiot",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5",
-     "audio": "audio/lessons/unit-28-c72.mp3"
+     "audio": "audio/ar/lessons/unit-28-c72.mp3"
     },
     {
      "ar": "كُوَيِّس ج كُوَيِّسين",
      "en": "good",
      "src": "vocab-gram p.12",
      "group": "مجموعة 5",
-     "audio": "audio/lessons/unit-28-c73.mp3"
+     "audio": "audio/ar/lessons/unit-28-c73.mp3"
     }
    ],
    "dialogues": [],
@@ -8252,364 +8252,364 @@ window.LESSONS = {
      "en": "but",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c00.mp3"
+     "audio": "audio/ar/lessons/unit-29-c00.mp3"
     },
     {
      "ar": "بَسّ",
      "en": "only, enough, just",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c01.mp3"
+     "audio": "audio/ar/lessons/unit-29-c01.mp3"
     },
     {
      "ar": "ساعَتْها، يُومْها",
      "en": "and then, at that time",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c02.mp3"
+     "audio": "audio/ar/lessons/unit-29-c02.mp3"
     },
     {
      "ar": "فَ",
      "en": "then",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c03.mp3"
+     "audio": "audio/ar/lessons/unit-29-c03.mp3"
     },
     {
      "ar": "بَعدين",
      "en": "after that, also",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c04.mp3"
+     "audio": "audio/ar/lessons/unit-29-c04.mp3"
     },
     {
      "ar": "أنا بَفَكِّر إنُّه",
      "en": "I think that",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c05.mp3"
+     "audio": "audio/ar/lessons/unit-29-c05.mp3"
     },
     {
      "ar": "بَعْتَقِد إنُّه",
      "en": "I believe that",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c06.mp3"
+     "audio": "audio/ar/lessons/unit-29-c06.mp3"
     },
     {
      "ar": "حَتَّى",
      "en": "even",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c07.mp3"
+     "audio": "audio/ar/lessons/unit-29-c07.mp3"
     },
     {
      "ar": "حَتَّى وَلَوْ",
      "en": "even though",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c08.mp3"
+     "audio": "audio/ar/lessons/unit-29-c08.mp3"
     },
     {
      "ar": "عشان، من شان، على-شان",
      "en": "for, because",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c09.mp3"
+     "audio": "audio/ar/lessons/unit-29-c09.mp3"
     },
     {
      "ar": "لِأَنُّه (لأنّي، لأنَّك...)",
      "en": "because",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c10.mp3"
+     "audio": "audio/ar/lessons/unit-29-c10.mp3"
     },
     {
      "ar": "بَدَل",
      "en": "instead (noun)",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c11.mp3"
+     "audio": "audio/ar/lessons/unit-29-c11.mp3"
     },
     {
      "ar": "بَدَل-ما",
      "en": "instead (verb)",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c12.mp3"
+     "audio": "audio/ar/lessons/unit-29-c12.mp3"
     },
     {
      "ar": "بِشَكِل عامّ",
      "en": "generally speaking",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c13.mp3"
+     "audio": "audio/ar/lessons/unit-29-c13.mp3"
     },
     {
      "ar": "بِشَكِل خاصّ",
      "en": "specifically speaking",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c14.mp3"
+     "audio": "audio/ar/lessons/unit-29-c14.mp3"
     },
     {
      "ar": "حَسَب",
      "en": "according to",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c15.mp3"
+     "audio": "audio/ar/lessons/unit-29-c15.mp3"
     },
     {
      "ar": "على كُلّ حال",
      "en": "any way",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c16.mp3"
+     "audio": "audio/ar/lessons/unit-29-c16.mp3"
     },
     {
      "ar": "بِالعَكْس",
      "en": "the opposite",
      "src": "vocab-gram p.20",
      "group": "حروف الاتصال — conjunctions in spoken Arabic only",
-     "audio": "audio/lessons/unit-29-c17.mp3"
+     "audio": "audio/ar/lessons/unit-29-c17.mp3"
     },
     {
      "ar": "بالنِسبة إلي",
      "en": "as for me",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c18.mp3"
+     "audio": "audio/ar/lessons/unit-29-c18.mp3"
     },
     {
      "ar": "تقريبًا\\ شي",
      "en": "approximately, almost",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c19.mp3"
+     "audio": "audio/ar/lessons/unit-29-c19.mp3"
     },
     {
      "ar": "بِصَراحة",
      "en": "frankly speaking",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c20.mp3"
+     "audio": "audio/ar/lessons/unit-29-c20.mp3"
     },
     {
      "ar": "مْبَيِّن عَليه\\عَلِيها إنُّه...",
      "en": "one can see that he is",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c21.mp3"
+     "audio": "audio/ar/lessons/unit-29-c21.mp3"
     },
     {
      "ar": "بَدَبِّر حالي (مع)",
      "en": "I get along (with), I manage",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c22.mp3"
+     "audio": "audio/ar/lessons/unit-29-c22.mp3"
     },
     {
      "ar": "بِظْهَر إنّه",
      "en": "it appears that",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c23.mp3"
+     "audio": "audio/ar/lessons/unit-29-c23.mp3"
     },
     {
      "ar": "إلّي",
      "en": "which, who",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c24.mp3"
+     "audio": "audio/ar/lessons/unit-29-c24.mp3"
     },
     {
      "ar": "إنُّه (إنّي، إنَّك...)",
      "en": "that",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c25.mp3"
+     "audio": "audio/ar/lessons/unit-29-c25.mp3"
     },
     {
      "ar": "بِفَضْل",
      "en": "thanks to",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c26.mp3"
+     "audio": "audio/ar/lessons/unit-29-c26.mp3"
     },
     {
      "ar": "مَعْلُوم إنُّه",
      "en": "its obvious that",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c27.mp3"
+     "audio": "audio/ar/lessons/unit-29-c27.mp3"
     },
     {
      "ar": "إلّي خَلّاني",
      "en": "what made me",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c28.mp3"
+     "audio": "audio/ar/lessons/unit-29-c28.mp3"
     },
     {
      "ar": "مُمْكِن، بيجوز",
      "en": "maybe, its possible",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c29.mp3"
+     "audio": "audio/ar/lessons/unit-29-c29.mp3"
     },
     {
      "ar": "كَإنُّه",
      "en": "as if",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c30.mp3"
+     "audio": "audio/ar/lessons/unit-29-c30.mp3"
     },
     {
      "ar": "أبْصَر شو، أبْصَر مين",
      "en": "who knows",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c31.mp3"
+     "audio": "audio/ar/lessons/unit-29-c31.mp3"
     },
     {
      "ar": "بِالْمُقارَنِة، بِالْمِقْياس",
      "en": "in comparison",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c32.mp3"
+     "audio": "audio/ar/lessons/unit-29-c32.mp3"
     },
     {
      "ar": "ما-عَدا",
      "en": "except",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c33.mp3"
+     "audio": "audio/ar/lessons/unit-29-c33.mp3"
     },
     {
      "ar": "قَبِل-ما",
      "en": "before (verb)",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c34.mp3"
+     "audio": "audio/ar/lessons/unit-29-c34.mp3"
     },
     {
      "ar": "بَعِد-ما",
      "en": "after (verb)",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c35.mp3"
+     "audio": "audio/ar/lessons/unit-29-c35.mp3"
     },
     {
      "ar": "زَيّ-ما، مِثِل ما",
      "en": "as (verb)",
      "src": "vocab-gram p.19",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c36.mp3"
+     "audio": "audio/ar/lessons/unit-29-c36.mp3"
     },
     {
      "ar": "بِدون ، مِن غِير",
      "en": "with out",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c37.mp3"
+     "audio": "audio/ar/lessons/unit-29-c37.mp3"
     },
     {
      "ar": "لِسّا ، لِسانّي، بَعِدْني",
      "en": "still, still not",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c38.mp3"
+     "audio": "audio/ar/lessons/unit-29-c38.mp3"
     },
     {
      "ar": "عَشان هِيك",
      "en": "because of that",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c39.mp3"
+     "audio": "audio/ar/lessons/unit-29-c39.mp3"
     },
     {
      "ar": "عَبين",
      "en": "while",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c40.mp3"
+     "audio": "audio/ar/lessons/unit-29-c40.mp3"
     },
     {
      "ar": "أبَدًا، عُمْري-ما",
      "en": "never",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c41.mp3"
+     "audio": "audio/ar/lessons/unit-29-c41.mp3"
     },
     {
      "ar": "عادَةً",
      "en": "usually",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c42.mp3"
+     "audio": "audio/ar/lessons/unit-29-c42.mp3"
     },
     {
      "ar": "دايْمًا",
      "en": "always",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c43.mp3"
+     "audio": "audio/ar/lessons/unit-29-c43.mp3"
     },
     {
      "ar": "مَرّات (أمْرار)",
      "en": "some times",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c44.mp3"
+     "audio": "audio/ar/lessons/unit-29-c44.mp3"
     },
     {
      "ar": "وهِيك",
      "en": "and so",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c45.mp3"
+     "audio": "audio/ar/lessons/unit-29-c45.mp3"
     },
     {
      "ar": "مَع إنُّه",
      "en": "even though",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c46.mp3"
+     "audio": "audio/ar/lessons/unit-29-c46.mp3"
     },
     {
      "ar": "أو ، وِلّا",
      "en": "or",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c47.mp3"
+     "audio": "audio/ar/lessons/unit-29-c47.mp3"
     },
     {
      "ar": "هِيك (رِحْلِة)",
      "en": "such (a trip)",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c48.mp3"
+     "audio": "audio/ar/lessons/unit-29-c48.mp3"
     },
     {
      "ar": "خاصّ",
      "en": "special",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c49.mp3"
+     "audio": "audio/ar/lessons/unit-29-c49.mp3"
     },
     {
      "ar": "خاصّةً",
      "en": "specially",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c50.mp3"
+     "audio": "audio/ar/lessons/unit-29-c50.mp3"
     },
     {
      "ar": "خُصوصي",
      "en": "privet (taxi private, private subject)",
      "src": "vocab-gram p.18",
      "group": "Conjunctions, continued",
-     "audio": "audio/lessons/unit-29-c51.mp3"
+     "audio": "audio/ar/lessons/unit-29-c51.mp3"
     }
    ],
    "dialogues": [],
@@ -8639,1344 +8639,1344 @@ window.LESSONS = {
      "en": "name",
      "src": "vocab-gram p.11",
      "group": "وحدة 1",
-     "audio": "audio/lessons/unit-30-c00.mp3"
+     "audio": "audio/ar/lessons/unit-30-c00.mp3"
     },
     {
      "ar": "مُسْلِم ج مُسْلِمين",
      "en": "Muslim (n, adj)",
      "src": "vocab-gram p.11",
      "group": "وحدة 1",
-     "audio": "audio/lessons/unit-30-c01.mp3"
+     "audio": "audio/ar/lessons/unit-30-c01.mp3"
     },
     {
      "ar": "مَسيحيّ ج مَسيحيّين",
      "en": "Christian (n, adj)",
      "src": "vocab-gram p.11",
      "group": "وحدة 1",
-     "audio": "audio/lessons/unit-30-c02.mp3"
+     "audio": "audio/ar/lessons/unit-30-c02.mp3"
     },
     {
      "ar": "عَرَبي ج عَرَب",
      "en": "Arab (n, adj)",
      "src": "vocab-gram p.11",
      "group": "وحدة 1",
-     "audio": "audio/lessons/unit-30-c03.mp3"
+     "audio": "audio/ar/lessons/unit-30-c03.mp3"
     },
     {
      "ar": "أخ ج إخْوان",
      "en": "brother (for ideology)",
      "src": "vocab-gram p.11",
      "group": "وحدة 1",
-     "audio": "audio/lessons/unit-30-c04.mp3"
+     "audio": "audio/ar/lessons/unit-30-c04.mp3"
     },
     {
      "ar": "بِيت ج بْيوت",
      "en": "house, home",
      "src": "vocab-gram p.11",
      "group": "وحدة 1",
-     "audio": "audio/lessons/unit-30-c05.mp3"
+     "audio": "audio/ar/lessons/unit-30-c05.mp3"
     },
     {
      "ar": "دُرْزي ج دْروز",
      "en": "Druze",
      "src": "vocab-gram p.11",
      "group": "وحدة 1",
-     "audio": "audio/lessons/unit-30-c06.mp3"
+     "audio": "audio/ar/lessons/unit-30-c06.mp3"
     },
     {
      "ar": "ساكِن ج ساكْنين",
      "en": "live, living",
      "src": "vocab-gram p.11",
      "group": "وحدة 1",
-     "audio": "audio/lessons/unit-30-c07.mp3"
+     "audio": "audio/ar/lessons/unit-30-c07.mp3"
     },
     {
      "ar": "بِنْت ج بَنات",
      "en": "girl, daughter",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c08.mp3"
+     "audio": "audio/ar/lessons/unit-30-c08.mp3"
     },
     {
      "ar": "إبْن ج أبْناء",
      "en": "son",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c09.mp3"
+     "audio": "audio/ar/lessons/unit-30-c09.mp3"
     },
     {
      "ar": "سَنة ج سْنين",
      "en": "year",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c10.mp3"
+     "audio": "audio/ar/lessons/unit-30-c10.mp3"
     },
     {
      "ar": "جار ج جيران",
      "en": "neighbor",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c11.mp3"
+     "audio": "audio/ar/lessons/unit-30-c11.mp3"
     },
     {
      "ar": "أخ ج إخْوِة",
      "en": "brother",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c12.mp3"
+     "audio": "audio/ar/lessons/unit-30-c12.mp3"
     },
     {
      "ar": "يوم ج أيّام",
      "en": "day",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c13.mp3"
+     "audio": "audio/ar/lessons/unit-30-c13.mp3"
     },
     {
      "ar": "عَيّان ج عَيّانين",
      "en": "sick",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c14.mp3"
+     "audio": "audio/ar/lessons/unit-30-c14.mp3"
     },
     {
      "ar": "وَلَد ج وْلاد",
      "en": "boy",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c15.mp3"
+     "audio": "audio/ar/lessons/unit-30-c15.mp3"
     },
     {
      "ar": "مَبْسوط ج مَبْسوطين",
      "en": "feeling great",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c16.mp3"
+     "audio": "audio/ar/lessons/unit-30-c16.mp3"
     },
     {
      "ar": "تَعْبان ج تَعْبانين",
      "en": "tired, unwell",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c17.mp3"
+     "audio": "audio/ar/lessons/unit-30-c17.mp3"
     },
     {
      "ar": "كْبير ج كْبار",
      "en": "big, older",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c18.mp3"
+     "audio": "audio/ar/lessons/unit-30-c18.mp3"
     },
     {
      "ar": "زْغير ج زْغار",
      "en": "little, small",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c19.mp3"
+     "audio": "audio/ar/lessons/unit-30-c19.mp3"
     },
     {
      "ar": "قُدْسي ج قُدْسيّين",
      "en": "Jerusalemite",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c20.mp3"
+     "audio": "audio/ar/lessons/unit-30-c20.mp3"
     },
     {
      "ar": "حِلو ج حِلْوين",
      "en": "sweet, handsome",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c21.mp3"
+     "audio": "audio/ar/lessons/unit-30-c21.mp3"
     },
     {
      "ar": "حِلْوة ج حِلْوات",
      "en": "sweet, pretty",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c22.mp3"
+     "audio": "audio/ar/lessons/unit-30-c22.mp3"
     },
     {
      "ar": "دَكْتُور ج دَكاتْرة",
      "en": "doctor",
      "src": "vocab-gram p.11",
      "group": "وحدة 2",
-     "audio": "audio/lessons/unit-30-c23.mp3"
+     "audio": "audio/ar/lessons/unit-30-c23.mp3"
     },
     {
      "ar": "صاحِب ج صْحاب",
      "en": "friend (m.s.)",
      "src": "vocab-gram p.10",
      "group": "وحدة 3",
-     "audio": "audio/lessons/unit-30-c24.mp3"
+     "audio": "audio/ar/lessons/unit-30-c24.mp3"
     },
     {
      "ar": "صاحْبِة ج صاحْبات",
      "en": "friend (f.s.)",
      "src": "vocab-gram p.10",
      "group": "وحدة 3",
-     "audio": "audio/lessons/unit-30-c25.mp3"
+     "audio": "audio/ar/lessons/unit-30-c25.mp3"
     },
     {
      "ar": "عَمّ ج اعْمام",
      "en": "uncle (paternal)",
      "src": "vocab-gram p.10",
      "group": "وحدة 3",
-     "audio": "audio/lessons/unit-30-c26.mp3"
+     "audio": "audio/ar/lessons/unit-30-c26.mp3"
     },
     {
      "ar": "خال ج اخْوال",
      "en": "uncle (maternal)",
      "src": "vocab-gram p.10",
      "group": "وحدة 3",
-     "audio": "audio/lessons/unit-30-c27.mp3"
+     "audio": "audio/ar/lessons/unit-30-c27.mp3"
     },
     {
      "ar": "عَزّابي ج عَزّابِيّين",
      "en": "single (m.s.)",
      "src": "vocab-gram p.10",
      "group": "وحدة 3",
-     "audio": "audio/lessons/unit-30-c28.mp3"
+     "audio": "audio/ar/lessons/unit-30-c28.mp3"
     },
     {
      "ar": "مِتْجَوِّز ج مِتْجَوّزين",
      "en": "married (m.s.)",
      "src": "vocab-gram p.10",
      "group": "وحدة 3",
-     "audio": "audio/lessons/unit-30-c29.mp3"
+     "audio": "audio/ar/lessons/unit-30-c29.mp3"
     },
     {
      "ar": "إبِن عَمّ ج وْلاد عَمّ",
      "en": "cousin (paternal)",
      "src": "vocab-gram p.10",
      "group": "وحدة 3",
-     "audio": "audio/lessons/unit-30-c30.mp3"
+     "audio": "audio/ar/lessons/unit-30-c30.mp3"
     },
     {
      "ar": "مْنيح ج مْناح",
      "en": "good (m.s.)",
      "src": "vocab-gram p.10",
      "group": "وحدة 3",
-     "audio": "audio/lessons/unit-30-c31.mp3"
+     "audio": "audio/ar/lessons/unit-30-c31.mp3"
     },
     {
      "ar": "مْعَلِّم ج مْعَلّمين",
      "en": "teacher",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c32.mp3"
+     "audio": "audio/ar/lessons/unit-30-c32.mp3"
     },
     {
      "ar": "مَدْرَسِة ج مَدارِس",
      "en": "school",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c33.mp3"
+     "audio": "audio/ar/lessons/unit-30-c33.mp3"
     },
     {
      "ar": "أُخْت ج خَوات",
      "en": "sister",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c34.mp3"
+     "audio": "audio/ar/lessons/unit-30-c34.mp3"
     },
     {
      "ar": "صورة ج صُوَر",
      "en": "picture, photo",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c35.mp3"
+     "audio": "audio/ar/lessons/unit-30-c35.mp3"
     },
     {
      "ar": "شاطِر ج شاطْرين",
      "en": "clever",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c36.mp3"
+     "audio": "audio/ar/lessons/unit-30-c36.mp3"
     },
     {
      "ar": "دار ج دور",
      "en": "house",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c37.mp3"
+     "audio": "audio/ar/lessons/unit-30-c37.mp3"
     },
     {
      "ar": "عِيلِه ج عِيلات",
      "en": "family",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c38.mp3"
+     "audio": "audio/ar/lessons/unit-30-c38.mp3"
     },
     {
      "ar": "حَيّ ج أحْياء",
      "en": "neighborhood",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c39.mp3"
+     "audio": "audio/ar/lessons/unit-30-c39.mp3"
     },
     {
      "ar": "جْديد ج جْداد",
      "en": "new",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c40.mp3"
+     "audio": "audio/ar/lessons/unit-30-c40.mp3"
     },
     {
      "ar": "شايِف (m) ج شايْفين",
      "en": "see, seeing",
      "src": "vocab-gram p.10",
      "group": "وحدة 4",
-     "audio": "audio/lessons/unit-30-c41.mp3"
+     "audio": "audio/ar/lessons/unit-30-c41.mp3"
     },
     {
      "ar": "جامْعة ج جامِعات",
      "en": "university",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c42.mp3"
+     "audio": "audio/ar/lessons/unit-30-c42.mp3"
     },
     {
      "ar": "مُشْكِلِة ج مَشَاكِل",
      "en": "problem",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c43.mp3"
+     "audio": "audio/ar/lessons/unit-30-c43.mp3"
     },
     {
      "ar": "لُغة ج لُغات",
      "en": "language",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c44.mp3"
+     "audio": "audio/ar/lessons/unit-30-c44.mp3"
     },
     {
      "ar": "حَديقة ج حَدايِق",
      "en": "garden",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c45.mp3"
+     "audio": "audio/ar/lessons/unit-30-c45.mp3"
     },
     {
      "ar": "مُسْتَشْفى ج مُسْتَشْفَيات",
      "en": "hospital",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c46.mp3"
+     "audio": "audio/ar/lessons/unit-30-c46.mp3"
     },
     {
      "ar": "مَنْظَر ج مَناظِر",
      "en": "view",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c47.mp3"
+     "audio": "audio/ar/lessons/unit-30-c47.mp3"
     },
     {
      "ar": "مَدينِة ج مُدُن",
      "en": "town",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c48.mp3"
+     "audio": "audio/ar/lessons/unit-30-c48.mp3"
     },
     {
      "ar": "شارِع ج شَوارِع",
      "en": "street",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c49.mp3"
+     "audio": "audio/ar/lessons/unit-30-c49.mp3"
     },
     {
      "ar": "بَنْك ج بُنوك",
      "en": "bank",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c50.mp3"
+     "audio": "audio/ar/lessons/unit-30-c50.mp3"
     },
     {
      "ar": "سوق ج أسْواق",
      "en": "market",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c51.mp3"
+     "audio": "audio/ar/lessons/unit-30-c51.mp3"
     },
     {
      "ar": "ساعة ج ساعات",
      "en": "hour, watch",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c52.mp3"
+     "audio": "audio/ar/lessons/unit-30-c52.mp3"
     },
     {
      "ar": "سَيّارة ج سيّارات",
      "en": "car",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c53.mp3"
+     "audio": "audio/ar/lessons/unit-30-c53.mp3"
     },
     {
      "ar": "جَبَل ج جْبال",
      "en": "mountain",
      "src": "vocab-gram p.9",
      "group": "وحدة 5",
-     "audio": "audio/lessons/unit-30-c54.mp3"
+     "audio": "audio/ar/lessons/unit-30-c54.mp3"
     },
     {
      "ar": "كبير ج كْبار",
      "en": "big",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c55.mp3"
+     "audio": "audio/ar/lessons/unit-30-c55.mp3"
     },
     {
      "ar": "منيح ج مْناح",
      "en": "good",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c56.mp3"
+     "audio": "audio/ar/lessons/unit-30-c56.mp3"
     },
     {
      "ar": "زْغير ج زغار",
      "en": "small",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c57.mp3"
+     "audio": "audio/ar/lessons/unit-30-c57.mp3"
     },
     {
      "ar": "بْعيد ج بْعاد",
      "en": "far away",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c58.mp3"
+     "audio": "audio/ar/lessons/unit-30-c58.mp3"
     },
     {
      "ar": "عَمّ ج (أ)عْمام",
      "en": "uncle",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c59.mp3"
+     "audio": "audio/ar/lessons/unit-30-c59.mp3"
     },
     {
      "ar": "خال ج (أ)خْوال",
      "en": "uncle",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c60.mp3"
+     "audio": "audio/ar/lessons/unit-30-c60.mp3"
     },
     {
      "ar": "خَبَر ج أخْبار",
      "en": "news",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c61.mp3"
+     "audio": "audio/ar/lessons/unit-30-c61.mp3"
     },
     {
      "ar": "وَلَد ج (أ)وْلاد",
      "en": "children",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c62.mp3"
+     "audio": "audio/ar/lessons/unit-30-c62.mp3"
     },
     {
      "ar": "إشي ج أشْياء",
      "en": "things",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c63.mp3"
+     "audio": "audio/ar/lessons/unit-30-c63.mp3"
     },
     {
      "ar": "صاحِب ج (أ)صْحاب",
      "en": "friends",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c64.mp3"
+     "audio": "audio/ar/lessons/unit-30-c64.mp3"
     },
     {
      "ar": "مَقْهَى ج مَقاهي",
      "en": "café, coffeehouse",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c65.mp3"
+     "audio": "audio/ar/lessons/unit-30-c65.mp3"
     },
     {
      "ar": "مُشْكِلِة ج مَشاكِل",
      "en": "problem",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c66.mp3"
+     "audio": "audio/ar/lessons/unit-30-c66.mp3"
     },
     {
      "ar": "مَطْعَم ج مَطاعِم",
      "en": "restaurant",
      "src": "vocab-gram p.9",
      "group": "وحدة 6",
-     "audio": "audio/lessons/unit-30-c67.mp3"
+     "audio": "audio/ar/lessons/unit-30-c67.mp3"
     },
     {
      "ar": "غَرَض ج اغراض",
      "en": "item",
      "src": "vocab-gram p.8",
      "group": "وحدة 7",
-     "audio": "audio/lessons/unit-30-c68.mp3"
+     "audio": "audio/ar/lessons/unit-30-c68.mp3"
     },
     {
      "ar": "كيس ج اكْياس",
      "en": "bag",
      "src": "vocab-gram p.8",
      "group": "وحدة 7",
-     "audio": "audio/lessons/unit-30-c69.mp3"
+     "audio": "audio/ar/lessons/unit-30-c69.mp3"
     },
     {
      "ar": "شايْفِة ج شايْفات",
      "en": "see",
      "src": "vocab-gram p.8",
      "group": "وحدة 7",
-     "audio": "audio/lessons/unit-30-c70.mp3"
+     "audio": "audio/ar/lessons/unit-30-c70.mp3"
     },
     {
      "ar": "دَقيقة ج دَقايِق",
      "en": "minute",
      "src": "vocab-gram p.8",
      "group": "وحدة 7",
-     "audio": "audio/lessons/unit-30-c71.mp3"
+     "audio": "audio/ar/lessons/unit-30-c71.mp3"
     },
     {
      "ar": "حَبِّة ج حَبّات",
      "en": "one unit",
      "src": "vocab-gram p.8",
      "group": "وحدة 7",
-     "audio": "audio/lessons/unit-30-c72.mp3"
+     "audio": "audio/ar/lessons/unit-30-c72.mp3"
     },
     {
      "ar": "راس ج روس",
      "en": "head, unit",
      "src": "vocab-gram p.8",
      "group": "وحدة 7",
-     "audio": "audio/lessons/unit-30-c73.mp3"
+     "audio": "audio/ar/lessons/unit-30-c73.mp3"
     },
     {
      "ar": "رْخيص ج رْخاص",
      "en": "inexpensive, cheap",
      "src": "vocab-gram p.8",
      "group": "وحدة 7",
-     "audio": "audio/lessons/unit-30-c74.mp3"
+     "audio": "audio/ar/lessons/unit-30-c74.mp3"
     },
     {
      "ar": "مِسْتَعْجِل ج مِسْتَعْجْلين",
      "en": "in a hurry",
      "src": "vocab-gram p.8",
      "group": "وحدة 7",
-     "audio": "audio/lessons/unit-30-c75.mp3"
+     "audio": "audio/ar/lessons/unit-30-c75.mp3"
     },
     {
      "ar": "عيد ج أعْياد",
      "en": "holiday",
      "src": "vocab-gram p.8",
      "group": "وحدة 8",
-     "audio": "audio/lessons/unit-30-c76.mp3"
+     "audio": "audio/ar/lessons/unit-30-c76.mp3"
     },
     {
      "ar": "لِيلِة ج لَيالي",
      "en": "night",
      "src": "vocab-gram p.8",
      "group": "وحدة 8",
-     "audio": "audio/lessons/unit-30-c77.mp3"
+     "audio": "audio/ar/lessons/unit-30-c77.mp3"
     },
     {
      "ar": "مَرّة ج مَرّات",
      "en": "one time",
      "src": "vocab-gram p.8",
      "group": "وحدة 8",
-     "audio": "audio/lessons/unit-30-c78.mp3"
+     "audio": "audio/ar/lessons/unit-30-c78.mp3"
     },
     {
      "ar": "فُنْدُق ج فَنادِق",
      "en": "hotel",
      "src": "vocab-gram p.8",
      "group": "وحدة 8",
-     "audio": "audio/lessons/unit-30-c79.mp3"
+     "audio": "audio/ar/lessons/unit-30-c79.mp3"
     },
     {
      "ar": "نِجْمِة ج نْجوم",
      "en": "star",
      "src": "vocab-gram p.8",
      "group": "وحدة 8",
-     "audio": "audio/lessons/unit-30-c80.mp3"
+     "audio": "audio/ar/lessons/unit-30-c80.mp3"
     },
     {
      "ar": "رِحْلِة ج رِحْلات",
      "en": "trip",
      "src": "vocab-gram p.8",
      "group": "وحدة 8",
-     "audio": "audio/lessons/unit-30-c81.mp3"
+     "audio": "audio/ar/lessons/unit-30-c81.mp3"
     },
     {
      "ar": "أَلْف ج آلاف",
      "en": "thousand",
      "src": "vocab-gram p.8",
      "group": "وحدة 8",
-     "audio": "audio/lessons/unit-30-c82.mp3"
+     "audio": "audio/ar/lessons/unit-30-c82.mp3"
     },
     {
      "ar": "مَحَلّ ج مَحلّات",
      "en": "place, store",
      "src": "vocab-gram p.8",
      "group": "وحدة 8",
-     "audio": "audio/lessons/unit-30-c83.mp3"
+     "audio": "audio/ar/lessons/unit-30-c83.mp3"
     },
     {
      "ar": "بَيّاع ج بَيّاعين",
      "en": "salesperson",
      "src": "vocab-gram p.8",
      "group": "وحدة 9",
-     "audio": "audio/lessons/unit-30-c84.mp3"
+     "audio": "audio/ar/lessons/unit-30-c84.mp3"
     },
     {
      "ar": "مُساعَدِة ج مُساعَدات",
      "en": "help",
      "src": "vocab-gram p.8",
      "group": "وحدة 9",
-     "audio": "audio/lessons/unit-30-c85.mp3"
+     "audio": "audio/ar/lessons/unit-30-c85.mp3"
     },
     {
      "ar": "ديسْك ج ديسْكات",
      "en": "disc",
      "src": "vocab-gram p.8",
      "group": "وحدة 9",
-     "audio": "audio/lessons/unit-30-c86.mp3"
+     "audio": "audio/ar/lessons/unit-30-c86.mp3"
     },
     {
      "ar": "هَدِيِّة ج هَدايا",
      "en": "gift",
      "src": "vocab-gram p.8",
      "group": "وحدة 9",
-     "audio": "audio/lessons/unit-30-c87.mp3"
+     "audio": "audio/ar/lessons/unit-30-c87.mp3"
     },
     {
      "ar": "صُوت ج أَصْوات",
      "en": "voice",
      "src": "vocab-gram p.8",
      "group": "وحدة 9",
-     "audio": "audio/lessons/unit-30-c88.mp3"
+     "audio": "audio/ar/lessons/unit-30-c88.mp3"
     },
     {
      "ar": "مُطْرِب ج مُطْرِبين",
      "en": "singer",
      "src": "vocab-gram p.8",
      "group": "وحدة 9",
-     "audio": "audio/lessons/unit-30-c89.mp3"
+     "audio": "audio/ar/lessons/unit-30-c89.mp3"
     },
     {
      "ar": "حْساب ج حْسابات",
      "en": "bill",
      "src": "vocab-gram p.8",
      "group": "وحدة 9",
-     "audio": "audio/lessons/unit-30-c90.mp3"
+     "audio": "audio/ar/lessons/unit-30-c90.mp3"
     },
     {
      "ar": "مَعْروف ج مَعْروفين",
      "en": "well-known",
      "src": "vocab-gram p.8",
      "group": "وحدة 9",
-     "audio": "audio/lessons/unit-30-c91.mp3"
+     "audio": "audio/ar/lessons/unit-30-c91.mp3"
     },
     {
      "ar": "قِصَّة ج قِصَص",
      "en": "story",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c92.mp3"
+     "audio": "audio/ar/lessons/unit-30-c92.mp3"
     },
     {
      "ar": "مَلِك ج مُلوك",
      "en": "king",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c93.mp3"
+     "audio": "audio/ar/lessons/unit-30-c93.mp3"
     },
     {
      "ar": "نَحْلِة ج نَحِل",
      "en": "bee",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c94.mp3"
+     "audio": "audio/ar/lessons/unit-30-c94.mp3"
     },
     {
      "ar": "مَلِكِة ج مَلِكات",
      "en": "queen",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c95.mp3"
+     "audio": "audio/ar/lessons/unit-30-c95.mp3"
     },
     {
      "ar": "جْنينِة ج جَنايِن",
      "en": "garden",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c96.mp3"
+     "audio": "audio/ar/lessons/unit-30-c96.mp3"
     },
     {
      "ar": "فايْدِة ج فَوائِد",
      "en": "use, benefit, value",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c97.mp3"
+     "audio": "audio/ar/lessons/unit-30-c97.mp3"
     },
     {
      "ar": "طِير ج طْيور",
      "en": "bird",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c98.mp3"
+     "audio": "audio/ar/lessons/unit-30-c98.mp3"
     },
     {
      "ar": "حَيَوان ج حَيْوانات",
      "en": "animal",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c99.mp3"
+     "audio": "audio/ar/lessons/unit-30-c99.mp3"
     },
     {
      "ar": "زَهْرَة ج زُهور",
      "en": "flower",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c100.mp3"
+     "audio": "audio/ar/lessons/unit-30-c100.mp3"
     },
     {
      "ar": "وَرْد ج وُرود",
      "en": "rose, flower",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c101.mp3"
+     "audio": "audio/ar/lessons/unit-30-c101.mp3"
     },
     {
      "ar": "رَاي ج أراء",
      "en": "opinion",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c102.mp3"
+     "audio": "audio/ar/lessons/unit-30-c102.mp3"
     },
     {
      "ar": "باقة ج باقات",
      "en": "bouquet",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c103.mp3"
+     "audio": "audio/ar/lessons/unit-30-c103.mp3"
     },
     {
      "ar": "حَكيم ج حُكَما",
      "en": "wise",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c104.mp3"
+     "audio": "audio/ar/lessons/unit-30-c104.mp3"
     },
     {
      "ar": "ذَكِيّ ج أذْكِياء",
      "en": "clever",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c105.mp3"
+     "audio": "audio/ar/lessons/unit-30-c105.mp3"
     },
     {
      "ar": "زَعْلان ج زَعْلانين",
      "en": "sad",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c106.mp3"
+     "audio": "audio/ar/lessons/unit-30-c106.mp3"
     },
     {
      "ar": "طَبيعي ج طَبيعيّين",
      "en": "natural, real",
      "src": "vocab-gram p.7",
      "group": "وحدة 10",
-     "audio": "audio/lessons/unit-30-c107.mp3"
+     "audio": "audio/ar/lessons/unit-30-c107.mp3"
     },
     {
      "ar": "كُلِّيِّة ج كُلِّيّات",
      "en": "college",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c108.mp3"
+     "audio": "audio/ar/lessons/unit-30-c108.mp3"
     },
     {
      "ar": "شَرِكِة ج شَرِكات",
      "en": "company",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c109.mp3"
+     "audio": "audio/ar/lessons/unit-30-c109.mp3"
     },
     {
      "ar": "حاجة ج حاجات",
      "en": "need",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c110.mp3"
+     "audio": "audio/ar/lessons/unit-30-c110.mp3"
     },
     {
      "ar": "مُدير ج مُدَرا",
      "en": "manager, director",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c111.mp3"
+     "audio": "audio/ar/lessons/unit-30-c111.mp3"
     },
     {
      "ar": "مَكْتَب ج مَكاتِب",
      "en": "office",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c112.mp3"
+     "audio": "audio/ar/lessons/unit-30-c112.mp3"
     },
     {
      "ar": "وَظيفِة ج وَظايِف",
      "en": "position, job",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c113.mp3"
+     "audio": "audio/ar/lessons/unit-30-c113.mp3"
     },
     {
      "ar": "حاسوب ج حَواسيب",
      "en": "computer",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c114.mp3"
+     "audio": "audio/ar/lessons/unit-30-c114.mp3"
     },
     {
      "ar": "مَعاش ج مَعاشات",
      "en": "salary",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c115.mp3"
+     "audio": "audio/ar/lessons/unit-30-c115.mp3"
     },
     {
      "ar": "شَكّ ج شُكوك",
      "en": "doubt",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c116.mp3"
+     "audio": "audio/ar/lessons/unit-30-c116.mp3"
     },
     {
      "ar": "مُناسَبِة ج مُناسَبات",
      "en": "occasion",
      "src": "vocab-gram p.6",
      "group": "وحدة 11",
-     "audio": "audio/lessons/unit-30-c117.mp3"
+     "audio": "audio/ar/lessons/unit-30-c117.mp3"
     },
     {
      "ar": "فِنْجان ج فناجين",
      "en": "coffee cup",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c118.mp3"
+     "audio": "audio/ar/lessons/unit-30-c118.mp3"
     },
     {
      "ar": "شَغْلِة ج شَغْلات",
      "en": "chore, work",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c119.mp3"
+     "audio": "audio/ar/lessons/unit-30-c119.mp3"
     },
     {
      "ar": "غَسّالة ج غَسّالات",
      "en": "washing machine",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c120.mp3"
+     "audio": "audio/ar/lessons/unit-30-c120.mp3"
     },
     {
      "ar": "صَلاة ج صَلَوات",
      "en": "prayer",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c121.mp3"
+     "audio": "audio/ar/lessons/unit-30-c121.mp3"
     },
     {
      "ar": "دَوْرَة ج دَوْرات",
      "en": "extracurricular activity",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c122.mp3"
+     "audio": "audio/ar/lessons/unit-30-c122.mp3"
     },
     {
      "ar": "سَنْدْويش ج سَنْدْويشات",
      "en": "sandwich",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c123.mp3"
+     "audio": "audio/ar/lessons/unit-30-c123.mp3"
     },
     {
      "ar": "لِيل ج لَيالي",
      "en": "night",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c124.mp3"
+     "audio": "audio/ar/lessons/unit-30-c124.mp3"
     },
     {
      "ar": "راي ج آراء",
      "en": "opinion",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c125.mp3"
+     "audio": "audio/ar/lessons/unit-30-c125.mp3"
     },
     {
      "ar": "مَشْغول ج مَشْغولين",
      "en": "busy",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c126.mp3"
+     "audio": "audio/ar/lessons/unit-30-c126.mp3"
     },
     {
      "ar": "فاضي ج فاضْيين",
      "en": "free",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c127.mp3"
+     "audio": "audio/ar/lessons/unit-30-c127.mp3"
     },
     {
      "ar": "قصير ج قْصار",
      "en": "short",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c128.mp3"
+     "audio": "audio/ar/lessons/unit-30-c128.mp3"
     },
     {
      "ar": "ناقِص ج ناقْصين",
      "en": "lacking",
      "src": "vocab-gram p.6",
      "group": "وحدة 12",
-     "audio": "audio/lessons/unit-30-c129.mp3"
+     "audio": "audio/ar/lessons/unit-30-c129.mp3"
     },
     {
      "ar": "مِفْتاح ج مَفاتيح",
      "en": "key",
      "src": "vocab-gram p.5",
      "group": "وحدة 13",
-     "audio": "audio/lessons/unit-30-c130.mp3"
+     "audio": "audio/ar/lessons/unit-30-c130.mp3"
     },
     {
      "ar": "مَرَة ج نِسْوان",
      "en": "woman",
      "src": "vocab-gram p.5",
      "group": "وحدة 13",
-     "audio": "audio/lessons/unit-30-c131.mp3"
+     "audio": "audio/ar/lessons/unit-30-c131.mp3"
     },
     {
      "ar": "قُوَّة ج قُوى، قُوّات",
      "en": "power, force",
      "src": "vocab-gram p.5",
      "group": "وحدة 13",
-     "audio": "audio/lessons/unit-30-c132.mp3"
+     "audio": "audio/ar/lessons/unit-30-c132.mp3"
     },
     {
      "ar": "قَرار ج قَرارات",
      "en": "decision",
      "src": "vocab-gram p.5",
      "group": "وحدة 13",
-     "audio": "audio/lessons/unit-30-c133.mp3"
+     "audio": "audio/ar/lessons/unit-30-c133.mp3"
     },
     {
      "ar": "زَلَمِة ج زْلام",
      "en": "man",
      "src": "vocab-gram p.5",
      "group": "وحدة 13",
-     "audio": "audio/lessons/unit-30-c134.mp3"
+     "audio": "audio/ar/lessons/unit-30-c134.mp3"
     },
     {
      "ar": "مْليح ج مْلاح",
      "en": "good",
      "src": "vocab-gram p.5",
      "group": "وحدة 13",
-     "audio": "audio/lessons/unit-30-c135.mp3"
+     "audio": "audio/ar/lessons/unit-30-c135.mp3"
     },
     {
      "ar": "مُوَظَّف ج مُوَظَّفين",
      "en": "employee",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c136.mp3"
+     "audio": "audio/ar/lessons/unit-30-c136.mp3"
     },
     {
      "ar": "كْتاب ج كُتُب",
      "en": "book",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c137.mp3"
+     "audio": "audio/ar/lessons/unit-30-c137.mp3"
     },
     {
      "ar": "دَوّار ج دَوّارات",
      "en": "roundabout",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c138.mp3"
+     "audio": "audio/ar/lessons/unit-30-c138.mp3"
     },
     {
      "ar": "لافْتِة ج لافْتات",
      "en": "sign",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c139.mp3"
+     "audio": "audio/ar/lessons/unit-30-c139.mp3"
     },
     {
      "ar": "شَعَب ج شْعوب",
      "en": "nation",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c140.mp3"
+     "audio": "audio/ar/lessons/unit-30-c140.mp3"
     },
     {
      "ar": "سَمَكِة ج سَمَك، سَمَكات",
      "en": "fish",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c141.mp3"
+     "audio": "audio/ar/lessons/unit-30-c141.mp3"
     },
     {
      "ar": "طابِق ج طَوابِق",
      "en": "floor",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c142.mp3"
+     "audio": "audio/ar/lessons/unit-30-c142.mp3"
     },
     {
      "ar": "حَرَكِة ج حَرَكات",
      "en": "movement",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c143.mp3"
+     "audio": "audio/ar/lessons/unit-30-c143.mp3"
     },
     {
      "ar": "حَفْلِة ج حَفلات",
      "en": "party, concert",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c144.mp3"
+     "audio": "audio/ar/lessons/unit-30-c144.mp3"
     },
     {
      "ar": "مُغَنّيّ ج مُغَنّيين",
      "en": "singer",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c145.mp3"
+     "audio": "audio/ar/lessons/unit-30-c145.mp3"
     },
     {
      "ar": "لَحِم , لَحْمِة ج لْحوم",
      "en": "meat",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c146.mp3"
+     "audio": "audio/ar/lessons/unit-30-c146.mp3"
     },
     {
      "ar": "كَنيسِة ج كَنايِس",
      "en": "church",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c147.mp3"
+     "audio": "audio/ar/lessons/unit-30-c147.mp3"
     },
     {
      "ar": "بِنايِة ج بِنايات",
      "en": "building",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c148.mp3"
+     "audio": "audio/ar/lessons/unit-30-c148.mp3"
     },
     {
      "ar": "مَشْهور ج مَشْهورين",
      "en": "famous",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c149.mp3"
+     "audio": "audio/ar/lessons/unit-30-c149.mp3"
     },
     {
      "ar": "قَديم ج قُدَما",
      "en": "old, ancient",
      "src": "vocab-gram p.5",
      "group": "وحدة 14",
-     "audio": "audio/lessons/unit-30-c150.mp3"
+     "audio": "audio/ar/lessons/unit-30-c150.mp3"
     },
     {
      "ar": "باب ج بْواب",
      "en": "door",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c151.mp3"
+     "audio": "audio/ar/lessons/unit-30-c151.mp3"
     },
     {
      "ar": "شُبّاك ج شَبابيك",
      "en": "window",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c152.mp3"
+     "audio": "audio/ar/lessons/unit-30-c152.mp3"
     },
     {
      "ar": "طاوْلِة ج طاوْلات",
      "en": "table",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c153.mp3"
+     "audio": "audio/ar/lessons/unit-30-c153.mp3"
     },
     {
      "ar": "مَطْبَخ ج مَطابِخ",
      "en": "kitchen",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c154.mp3"
+     "audio": "audio/ar/lessons/unit-30-c154.mp3"
     },
     {
      "ar": "غُرْفِة ج غُرَف",
      "en": "room",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c155.mp3"
+     "audio": "audio/ar/lessons/unit-30-c155.mp3"
     },
     {
      "ar": "ضِيف ج ضْيوف",
      "en": "guest",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c156.mp3"
+     "audio": "audio/ar/lessons/unit-30-c156.mp3"
     },
     {
      "ar": "حَمّام ج حَمّامات",
      "en": "toilets\\shower",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c157.mp3"
+     "audio": "audio/ar/lessons/unit-30-c157.mp3"
     },
     {
      "ar": "كَنَباي ج كَنَبايات",
      "en": "sofa",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c158.mp3"
+     "audio": "audio/ar/lessons/unit-30-c158.mp3"
     },
     {
      "ar": "تِلفِزْيُون ج تِلفِزْيُونات",
      "en": "TV",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c159.mp3"
+     "audio": "audio/ar/lessons/unit-30-c159.mp3"
     },
     {
      "ar": "تَخِت ج تخوت",
      "en": "bed",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c160.mp3"
+     "audio": "audio/ar/lessons/unit-30-c160.mp3"
     },
     {
      "ar": "بَرَنْد ة ج بَرَنْدات",
      "en": "balcony",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c161.mp3"
+     "audio": "audio/ar/lessons/unit-30-c161.mp3"
     },
     {
      "ar": "مَحَلّ ج مَحَلّات",
      "en": "place, store",
      "src": "vocab-gram p.4",
      "group": "وحدة 15",
-     "audio": "audio/lessons/unit-30-c162.mp3"
+     "audio": "audio/ar/lessons/unit-30-c162.mp3"
     },
     {
      "ar": "شُوكِة ج شُوَك",
      "en": "fork",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c163.mp3"
+     "audio": "audio/ar/lessons/unit-30-c163.mp3"
     },
     {
      "ar": "سِكّينِة ج سَكاكين",
      "en": "knife",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c164.mp3"
+     "audio": "audio/ar/lessons/unit-30-c164.mp3"
     },
     {
      "ar": "مِعْلَقَة ج مَعالِق",
      "en": "spoon",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c165.mp3"
+     "audio": "audio/ar/lessons/unit-30-c165.mp3"
     },
     {
      "ar": "واجْبِة ج واجْبات",
      "en": "meal",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c166.mp3"
+     "audio": "audio/ar/lessons/unit-30-c166.mp3"
     },
     {
      "ar": "جاج، جاجة ج جاجات",
      "en": "chicken",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c167.mp3"
+     "audio": "audio/ar/lessons/unit-30-c167.mp3"
     },
     {
      "ar": "كُبايِة ج كُبايّات",
      "en": "cup (tea)",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c168.mp3"
+     "audio": "audio/ar/lessons/unit-30-c168.mp3"
     },
     {
      "ar": "صَحِن ج صْحون",
      "en": "plate",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c169.mp3"
+     "audio": "audio/ar/lessons/unit-30-c169.mp3"
     },
     {
      "ar": "مَرَّة ج مَرّات",
      "en": "time, once",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c170.mp3"
+     "audio": "audio/ar/lessons/unit-30-c170.mp3"
     },
     {
      "ar": "عادَة ج عادات",
      "en": "habit",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c171.mp3"
+     "audio": "audio/ar/lessons/unit-30-c171.mp3"
     },
     {
      "ar": "لَبَن ج أَلْبان",
      "en": "yogurt",
      "src": "vocab-gram p.4",
      "group": "وحدة 16",
-     "audio": "audio/lessons/unit-30-c172.mp3"
+     "audio": "audio/ar/lessons/unit-30-c172.mp3"
     },
     {
      "ar": "شَنْطَة ج ات",
      "en": "suitcase",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c173.mp3"
+     "audio": "audio/ar/lessons/unit-30-c173.mp3"
     },
     {
      "ar": "جَكيت ج ات",
      "en": "jacket",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c174.mp3"
+     "audio": "audio/ar/lessons/unit-30-c174.mp3"
     },
     {
      "ar": "بْلوزِة ج بَلايِز",
      "en": "shirt",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c175.mp3"
+     "audio": "audio/ar/lessons/unit-30-c175.mp3"
     },
     {
      "ar": "قَميص ج قُمْصان",
      "en": "shirt",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c176.mp3"
+     "audio": "audio/ar/lessons/unit-30-c176.mp3"
     },
     {
      "ar": "بَنْطَلُون ج ات",
      "en": "trousers",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c177.mp3"
+     "audio": "audio/ar/lessons/unit-30-c177.mp3"
     },
     {
      "ar": "فُسْتان ج فَساتين",
      "en": "dress",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c178.mp3"
+     "audio": "audio/ar/lessons/unit-30-c178.mp3"
     },
     {
      "ar": "تَنّورة ج تنانير",
      "en": "skirt",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c179.mp3"
+     "audio": "audio/ar/lessons/unit-30-c179.mp3"
     },
     {
      "ar": "شَمْسِيُّة ج ات",
      "en": "umbrella",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c180.mp3"
+     "audio": "audio/ar/lessons/unit-30-c180.mp3"
     },
     {
      "ar": "كَلْسات ج جرابات",
      "en": "socks",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c181.mp3"
+     "audio": "audio/ar/lessons/unit-30-c181.mp3"
     },
     {
      "ar": "جُرزاي ج جَرازي",
      "en": "sweatshirt",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c182.mp3"
+     "audio": "audio/ar/lessons/unit-30-c182.mp3"
     },
     {
      "ar": "ثَلْج ج ثُلوج",
      "en": "snow",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c183.mp3"
+     "audio": "audio/ar/lessons/unit-30-c183.mp3"
     },
     {
      "ar": "مَطَر ج أمْطار",
      "en": "rain",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c184.mp3"
+     "audio": "audio/ar/lessons/unit-30-c184.mp3"
     },
     {
      "ar": "غِيم ج غُيُوم",
      "en": "clouds",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c185.mp3"
+     "audio": "audio/ar/lessons/unit-30-c185.mp3"
     },
     {
      "ar": "ريح ج رْياح",
      "en": "wind",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c186.mp3"
+     "audio": "audio/ar/lessons/unit-30-c186.mp3"
     },
     {
      "ar": "عَاصِفِة ج عَواصِف",
      "en": "storm",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c187.mp3"
+     "audio": "audio/ar/lessons/unit-30-c187.mp3"
     },
     {
      "ar": "قَصير ج قْصار",
      "en": "short",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c188.mp3"
+     "audio": "audio/ar/lessons/unit-30-c188.mp3"
     },
     {
      "ar": "طَويل ج طْوال",
      "en": "tall, high",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c189.mp3"
+     "audio": "audio/ar/lessons/unit-30-c189.mp3"
     },
     {
      "ar": "خْميل ج خْمال",
      "en": "thick",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c190.mp3"
+     "audio": "audio/ar/lessons/unit-30-c190.mp3"
     },
     {
      "ar": "خَفيف ج خْفاف",
      "en": "light",
      "src": "vocab-gram p.3",
      "group": "وحدة 17. A plural shown as 'ات' means the noun just takes the ات ending.",
-     "audio": "audio/lessons/unit-30-c191.mp3"
+     "audio": "audio/ar/lessons/unit-30-c191.mp3"
     }
    ],
    "dialogues": [],
@@ -10006,42 +10006,42 @@ window.LESSONS = {
      "en": "pattern maFaa3iL",
      "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال",
      "src": "vocab-gram p.2",
-     "audio": "audio/lessons/unit-31-c00.mp3"
+     "audio": "audio/ar/lessons/unit-31-c00.mp3"
     },
     {
      "ar": "فْعال: كْبير – كْبار; زْغير – زْغار; جْديد – جْداد; مْنيح – مْناح; مْليح – مْلاح; بْعيد – بْعاد; قْريب – قْراب; طَويل – طْوال; جَبَل – جْبال",
      "en": "pattern F3aaL",
      "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال",
      "src": "vocab-gram p.2",
-     "audio": "audio/lessons/unit-31-c01.mp3"
+     "audio": "audio/ar/lessons/unit-31-c01.mp3"
     },
     {
      "ar": "أفْعال: حال – أحْوال; وَلَد – (أ)وْلاد; خال – (أ)خْوال; عمّ – (أ)عْمام; كيس – (أ)كْياس; صاحِب – (أ)صْحاب; يُوم – أيّام; إسِم – أسْماء; خَبَر – أخْبار; إشي – أشْياء; غَرَض – أغْراض; سوق – أسْواق; حَيّ – أحْياء; إبِن – أبْناء; عيد – أعْياد; صُوت – أصْوات; فيلم – أفْلام",
      "en": "pattern aF3aaL",
      "group": "Broken plural patterns مَفاعِل, فْعال, أفْعال",
      "src": "vocab-gram p.2",
-     "audio": "audio/lessons/unit-31-c02.mp3"
+     "audio": "audio/ar/lessons/unit-31-c02.mp3"
     },
     {
      "ar": "فْعول\\ فُعول: بَنْك – بُنوك; راس – روس; بيت – بْيُوت; دار – دور; مِلِك – مْلُوك; نِجْمِة – نْجُوم; بَحَر – بْحُور; دُرْزِيّ – دْرُوز; يَهودِيّ – يَهود; قَصْر – قْصور; جُنْدِيّ – جْنود",
      "en": "pattern F3uuL/Fu3uuL",
      "group": "Plural pattern فْعول\\ فُعول and the sound plurals",
      "src": "vocab-gram p.1",
-     "audio": "audio/lessons/unit-31-c03.mp3"
+     "audio": "audio/ar/lessons/unit-31-c03.mp3"
     },
     {
      "ar": "الجَمْع السّالِم الْمُذَكَّر: ين — أ) AP and PP: مَبْسوط – مَبْسوطين; عارِف – عارْفين; مُساعِد – مُساعِدين. د) foreign words: ديسك – ديسكات; تِلْفيزيون – تلفيزيونات; فاكس – فاكسات; كَميرا – كَميرات. هـ) فَعّال the pattern: فَلّاح – فلّاحات. و) some other words: مَحَلّ – مَحَلّات; مَطار – مَطارات",
      "en": "masculine sound plural in -iin",
      "group": "Plural pattern فْعول\\ فُعول and the sound plurals",
      "src": "vocab-gram p.1",
-     "audio": "audio/lessons/unit-31-c04.mp3"
+     "audio": "audio/ar/lessons/unit-31-c04.mp3"
     },
     {
      "ar": "الجَمْع السّالِم المُؤَنَّث: ات — أ) real feminine: بِنْت – بَنات; أُخْت – خَوات; إمّ – إمّيات (إمّهات). ب) nouns ending with ة: عَمَّة – عَمّات; سيارة – سيارات. ج) AP and PP: مَبْسوطة – مَبْسوطات; عارْفِة – عارْفات; مُساعِدة – مُساعِدات. د) foreign words: ديسك – ديسكات; تِلْفيزيون – تلفيزيونات; فاكس – فاكسات; كَميرا – كَميرات. هـ) فَعّال the pattern: فَلّاح – فلّاحات. و) some other words: مَحَلّ – مَحَلّات; مَطار – مَطارات",
      "en": "feminine sound plural in -aat",
      "group": "Plural pattern فْعول\\ فُعول and the sound plurals",
      "src": "vocab-gram p.1",
-     "audio": "audio/lessons/unit-31-c05.mp3"
+     "audio": "audio/ar/lessons/unit-31-c05.mp3"
     }
    ],
    "dialogues": [],
@@ -10074,78 +10074,78 @@ window.LESSONS = {
        "sp": "مي",
        "ar": "هلو، أيوا؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l00.mp3"
       },
       {
        "sp": "هُدى",
        "ar": "مرحبا",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l01.mp3"
       },
       {
        "sp": "مي",
        "ar": "أهلين",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l02.mp3"
       },
       {
        "sp": "هُدى",
        "ar": "مع مين بَحْكي؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l03.mp3"
       },
       {
        "sp": "مي",
        "ar": "أنا مي",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l04.mp3"
       },
       {
        "sp": "هدى",
        "ar": "إمِّك في البيت؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l05.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l05.mp3"
       },
       {
        "sp": "مي",
        "ar": "أيوا، إمّي في البيت، مين إنتِ؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l06.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l06.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أنا هُدى، بَشْتْغِل مَع إمِّك.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l07.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l07.mp3"
       },
       {
        "sp": "مي",
        "ar": "طَيِّب، بس لَحْظَة، يَمّا !هُدى بِدْها تِحْكي مَعِك.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l08.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l08.mp3"
       },
       {
        "sp": "أم مي",
        "ar": "قولي-لْها بَحْكي مَعْها أُخْرَى شْوَيّ، أنا مَشْغولِة إسّا.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d0-l09.mp3"
+       "audio": "audio/ar/lessons/unit-32-d0-l09.mp3"
       }
      ],
      "src": "speaking p.33",
      "cast": [
       {
        "sp": "مي",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
        "sp": "هدى",
-       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
        "sp": "أم مي",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       }
      ]
@@ -10157,103 +10157,103 @@ window.LESSONS = {
        "sp": "مي",
        "ar": "هلو، أيْوة؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l00.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l00.mp3"
       },
       {
        "sp": "هُدى",
        "ar": "مَرحبا",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l01.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l01.mp3"
       },
       {
        "sp": "مي",
        "ar": "أهْلِين",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l02.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l02.mp3"
       },
       {
        "sp": "هدى",
        "ar": "مَع مين بَحكي؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l03.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l03.mp3"
       },
       {
        "sp": "مي",
        "ar": "أنا مي",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l04.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l04.mp3"
       },
       {
        "sp": "هدى",
        "ar": "إمَّك في أْلبيت؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l05.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l05.mp3"
       },
       {
        "sp": "مي",
        "ar": "إمّي مِش في الدار.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l06.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l06.mp3"
       },
       {
        "sp": "هدى",
        "ar": "وِينتا بِتْرَوّح؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l07.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l07.mp3"
       },
       {
        "sp": "مي",
        "ar": "طِلْعَت قَبِل ساعة وما بَعْرَف إيمتى بِتِرجَع.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l08.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l08.mp3"
       },
       {
        "sp": "هدى",
        "ar": "مُمْكِن أتْرُك-لها خَبَر؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l09.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l09.mp3"
       },
       {
        "sp": "مي",
        "ar": "شو إسْمُك؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l10.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l10.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أنا هُدى بَشْتْغِل مَع إمِّك.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l11.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l11.mp3"
       },
       {
        "sp": "مي",
        "ar": "شو رَقَم تَلَفونِك؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l12.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l12.mp3"
       },
       {
        "sp": "هدى",
        "ar": "هي بْتِعْرِف الرَقَّم، بس بْحياتِك ما تِنْسيش، قولي-لْها إنّو هاذا ضَروريّ.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l13.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l13.mp3"
       },
       {
        "sp": "مي",
        "ar": "طَيَّب، بس تِرْجَع بَقول-لْها.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d1-l14.mp3"
+       "audio": "audio/ar/lessons/unit-32-d1-l14.mp3"
       }
      ],
      "src": "speaking p.33",
      "cast": [
       {
        "sp": "مي",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
        "sp": "هدى",
-       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       }
      ]
@@ -10265,102 +10265,102 @@ window.LESSONS = {
        "sp": "مي",
        "ar": "هلو، أيوة",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l00.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l00.mp3"
       },
       {
        "sp": "هُدى",
        "ar": "مَرْحَبْتِين",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l01.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l01.mp3"
       },
       {
        "sp": "مي",
        "ar": "أهلين، أنو بِحكي مَعِي؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l02.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l02.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أنا هُدى",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l03.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l03.mp3"
       },
       {
        "sp": "مي",
        "ar": "كيف حالِك يا هُدى؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l04.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l04.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أهْلِين فيكي حبيبتي, إمّك في البيت؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l05.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l05.mp3"
       },
       {
        "sp": "مي",
        "ar": "أيوة، أناديها؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l06.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l06.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أيوة",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l07.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l07.mp3"
       },
       {
        "sp": "مي",
        "ar": "ماما، هُدى بِدْها (ا)يّاكِ.",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l08.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l08.mp3"
       },
       {
        "sp": "إم أحمد",
        "ar": "هلو",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l09.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l09.mp3"
       },
       {
        "sp": "هدى",
        "ar": "أهلين إمّ أحمَد كيف حالِك؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l10.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l10.mp3"
       },
       {
        "sp": "إمّ أحمَد",
        "ar": "نُشْكُر الله",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l11.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l11.mp3"
       },
       {
        "sp": "هدى",
        "ar": "إتَّصلْت-لِك إليوم وإمبارِح وأوَّل إمْبارِح، وينِك؟",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l12.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l12.mp3"
       },
       {
        "sp": "إمّ أحْمَد",
        "ar": "مِتْأسّفِة ... يَلّا نِحْكي هسّا...",
        "en": null,
-       "audio": "audio/lessons/unit-32-d2-l13.mp3"
+       "audio": "audio/ar/lessons/unit-32-d2-l13.mp3"
       }
      ],
      "src": "speaking p.34",
      "cast": [
       {
        "sp": "مي",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
        "sp": "هدى",
-       "voice": "a1KZUXKFVFDOb33I1uqr",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
        "sp": "إم أحمد",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       }
      ]
@@ -10391,121 +10391,121 @@ window.LESSONS = {
      "ar": "مَلِك",
      "en": "king",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c00.mp3"
+     "audio": "audio/ar/lessons/unit-33-c00.mp3"
     },
     {
      "ar": "خادِم",
      "en": "servant",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c01.mp3"
+     "audio": "audio/ar/lessons/unit-33-c01.mp3"
     },
     {
      "ar": "جَمَل",
      "en": "camel",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c02.mp3"
+     "audio": "audio/ar/lessons/unit-33-c02.mp3"
     },
     {
      "ar": "قَصْر",
      "en": "palace",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c03.mp3"
+     "audio": "audio/ar/lessons/unit-33-c03.mp3"
     },
     {
      "ar": "بِسُرْعَة",
      "en": "quickly",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c04.mp3"
+     "audio": "audio/ar/lessons/unit-33-c04.mp3"
     },
     {
      "ar": "تَحْت أَمْرَك",
      "en": "under your command",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c05.mp3"
+     "audio": "audio/ar/lessons/unit-33-c05.mp3"
     },
     {
      "ar": "أَكْثَر مِن",
      "en": "more than",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c06.mp3"
+     "audio": "audio/ar/lessons/unit-33-c06.mp3"
     },
     {
      "ar": "مُثَقَّف",
      "en": "educated",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c07.mp3"
+     "audio": "audio/ar/lessons/unit-33-c07.mp3"
     },
     {
      "ar": "خِير انْشاالله",
      "en": "everything is fine?",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c08.mp3"
+     "audio": "audio/ar/lessons/unit-33-c08.mp3"
     },
     {
      "ar": "مِش مُمْكِن",
      "en": "impossible",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c09.mp3"
+     "audio": "audio/ar/lessons/unit-33-c09.mp3"
     },
     {
      "ar": "أَبَدًا (ما)",
      "en": "never",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c10.mp3"
+     "audio": "audio/ar/lessons/unit-33-c10.mp3"
     },
     {
      "ar": "ولا يهِمَّك",
      "en": "don't worry",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c11.mp3"
+     "audio": "audio/ar/lessons/unit-33-c11.mp3"
     },
     {
      "ar": "يا... يا...",
      "en": "either … or",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c12.mp3"
+     "audio": "audio/ar/lessons/unit-33-c12.mp3"
     },
     {
      "ar": "راس",
      "en": "head",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c13.mp3"
+     "audio": "audio/ar/lessons/unit-33-c13.mp3"
     },
     {
      "ar": "مَجْنون",
      "en": "crazy",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c14.mp3"
+     "audio": "audio/ar/lessons/unit-33-c14.mp3"
     },
     {
      "ar": "شو صار",
      "en": "what happened",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c15.mp3"
+     "audio": "audio/ar/lessons/unit-33-c15.mp3"
     },
     {
      "ar": "قَطَع",
      "en": "to cut",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c16.mp3"
+     "audio": "audio/ar/lessons/unit-33-c16.mp3"
     },
     {
      "ar": "بَقْدَر أَعَلِّم",
      "en": "I can teach",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c17.mp3"
+     "audio": "audio/ar/lessons/unit-33-c17.mp3"
     },
     {
      "ar": "مَعْروف",
      "en": "known",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c18.mp3"
+     "audio": "audio/ar/lessons/unit-33-c18.mp3"
     },
     {
      "ar": "دَوَّر عَلى",
      "en": "to look for",
      "src": "stories p.5",
-     "audio": "audio/lessons/unit-33-c19.mp3"
+     "audio": "audio/ar/lessons/unit-33-c19.mp3"
     }
    ],
    "dialogues": [],
@@ -10700,242 +10700,242 @@ window.LESSONS = {
      "ar": "فار ج فيران",
      "en": "mouse",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c00.mp3"
+     "audio": "audio/ar/lessons/unit-34-c00.mp3"
     },
     {
      "ar": "زَمان",
      "en": "time",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c01.mp3"
+     "audio": "audio/ar/lessons/unit-34-c01.mp3"
     },
     {
      "ar": "رَبّ",
      "en": "God",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c02.mp3"
+     "audio": "audio/ar/lessons/unit-34-c02.mp3"
     },
     {
      "ar": "صَبِيِّة ج صَبايا",
      "en": "young woman",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c03.mp3"
+     "audio": "audio/ar/lessons/unit-34-c03.mp3"
     },
     {
      "ar": "شَرْط ج شُروط",
      "en": "condition",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c04.mp3"
+     "audio": "audio/ar/lessons/unit-34-c04.mp3"
     },
     {
      "ar": "كَوكَب ج كَواكِب",
      "en": "star",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c05.mp3"
+     "audio": "audio/ar/lessons/unit-34-c05.mp3"
     },
     {
      "ar": "غِيم ج غْيوم",
      "en": "cloud",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c06.mp3"
+     "audio": "audio/ar/lessons/unit-34-c06.mp3"
     },
     {
      "ar": "ريح ج رِياح",
      "en": "wind",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c07.mp3"
+     "audio": "audio/ar/lessons/unit-34-c07.mp3"
     },
     {
      "ar": "جَبَل ج جْبال",
      "en": "mountain",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c08.mp3"
+     "audio": "audio/ar/lessons/unit-34-c08.mp3"
     },
     {
      "ar": "شَمْس",
      "en": "sun",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c09.mp3"
+     "audio": "audio/ar/lessons/unit-34-c09.mp3"
     },
     {
      "ar": "كَلام",
      "en": "words",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c10.mp3"
+     "audio": "audio/ar/lessons/unit-34-c10.mp3"
     },
     {
      "ar": "زَلَمِة ج زْلام",
      "en": "man",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c11.mp3"
+     "audio": "audio/ar/lessons/unit-34-c11.mp3"
     },
     {
      "ar": "عايْشين",
      "en": "living",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c12.mp3"
+     "audio": "audio/ar/lessons/unit-34-c12.mp3"
     },
     {
      "ar": "لاقى",
      "en": "to meet",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c13.mp3"
+     "audio": "audio/ar/lessons/unit-34-c13.mp3"
     },
     {
      "ar": "أَخَذ",
      "en": "to take",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c14.mp3"
+     "audio": "audio/ar/lessons/unit-34-c14.mp3"
     },
     {
      "ar": "حَوَّل",
      "en": "to change transform",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c15.mp3"
+     "audio": "audio/ar/lessons/unit-34-c15.mp3"
     },
     {
      "ar": "رَبَّى (يِرَبِّي)",
      "en": "to raise",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c16.mp3"
+     "audio": "audio/ar/lessons/unit-34-c16.mp3"
     },
     {
      "ar": "صار",
      "en": "to become",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c17.mp3"
+     "audio": "audio/ar/lessons/unit-34-c17.mp3"
     },
     {
      "ar": "نادى على",
      "en": "to call to",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c18.mp3"
+     "audio": "audio/ar/lessons/unit-34-c18.mp3"
     },
     {
      "ar": "أجا",
      "en": "to come",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c19.mp3"
+     "audio": "audio/ar/lessons/unit-34-c19.mp3"
     },
     {
      "ar": "مْوافْقَة",
      "en": "I agree, I'm ready",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c20.mp3"
+     "audio": "audio/ar/lessons/unit-34-c20.mp3"
     },
     {
      "ar": "وافَق",
      "en": "to agree",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c21.mp3"
+     "audio": "audio/ar/lessons/unit-34-c21.mp3"
     },
     {
      "ar": "قِبِل (يِقْبَل)",
      "en": "to agree, except",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c22.mp3"
+     "audio": "audio/ar/lessons/unit-34-c22.mp3"
     },
     {
      "ar": "غَطَّى (يِغَطّي)",
      "en": "to cover",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c23.mp3"
+     "audio": "audio/ar/lessons/unit-34-c23.mp3"
     },
     {
      "ar": "نَقَل (ـُ)",
      "en": "to move s. thing",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c24.mp3"
+     "audio": "audio/ar/lessons/unit-34-c24.mp3"
     },
     {
      "ar": "حَفَر (ـُ)",
      "en": "to dig",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c25.mp3"
+     "audio": "audio/ar/lessons/unit-34-c25.mp3"
     },
     {
      "ar": "حَرَّك",
      "en": "to move by pushing",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c26.mp3"
+     "audio": "audio/ar/lessons/unit-34-c26.mp3"
     },
     {
      "ar": "خَلَّف",
      "en": "to give birth",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c27.mp3"
+     "audio": "audio/ar/lessons/unit-34-c27.mp3"
     },
     {
      "ar": "عاشوا بِثَبات ونَبات",
      "en": "lived steadily and bloomed (they lived happily ever after)",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c28.mp3"
+     "audio": "audio/ar/lessons/unit-34-c28.mp3"
     },
     {
      "ar": "مَع بَعِض",
      "en": "together",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c29.mp3"
+     "audio": "audio/ar/lessons/unit-34-c29.mp3"
     },
     {
      "ar": "قَديم",
      "en": "old, enchant",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c30.mp3"
+     "audio": "audio/ar/lessons/unit-34-c30.mp3"
     },
     {
      "ar": "يا لِلْعَجَب",
      "en": "wonder of wonders",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c31.mp3"
+     "audio": "audio/ar/lessons/unit-34-c31.mp3"
     },
     {
      "ar": "أَجا الْوَقْت",
      "en": "the time came",
      "src": "stories p.10",
      "note": "English added by this app — the book prints this list untranslated",
-     "audio": "audio/lessons/unit-34-c32.mp3"
+     "audio": "audio/ar/lessons/unit-34-c32.mp3"
     },
     {
      "ar": "قَوِي",
      "en": "strong",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c33.mp3"
+     "audio": "audio/ar/lessons/unit-34-c33.mp3"
     },
     {
      "ar": "أَقْوى",
      "en": "stronger",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c34.mp3"
+     "audio": "audio/ar/lessons/unit-34-c34.mp3"
     },
     {
      "ar": "أَقْوى إشي",
      "en": "strongest thing",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c35.mp3"
+     "audio": "audio/ar/lessons/unit-34-c35.mp3"
     },
     {
      "ar": "مين الّي؟",
      "en": "who is the one which?",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c36.mp3"
+     "audio": "audio/ar/lessons/unit-34-c36.mp3"
     },
     {
      "ar": "هيك صار",
      "en": "and so it was",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c37.mp3"
+     "audio": "audio/ar/lessons/unit-34-c37.mp3"
     },
     {
      "ar": "زَيّ-ما كان",
      "en": "as it was",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c38.mp3"
+     "audio": "audio/ar/lessons/unit-34-c38.mp3"
     },
     {
      "ar": "بَعِد أكَم يُوم",
      "en": "after a few days",
      "src": "stories p.10",
-     "audio": "audio/lessons/unit-34-c39.mp3"
+     "audio": "audio/ar/lessons/unit-34-c39.mp3"
     }
    ],
    "dialogues": [],
@@ -11424,157 +11424,157 @@ window.LESSONS = {
      "ar": "صَيّادِ ج ين",
      "en": "fisherman",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c00.mp3"
+     "audio": "audio/ar/lessons/unit-35-c00.mp3"
     },
     {
      "ar": "سَمَك سَمَكِة ج ات",
      "en": "fish",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c01.mp3"
+     "audio": "audio/ar/lessons/unit-35-c01.mp3"
     },
     {
      "ar": "سائح ج سُيّاح",
      "en": "turist",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c02.mp3"
+     "audio": "audio/ar/lessons/unit-35-c02.mp3"
     },
     {
      "ar": "شَطّ الْبَحَر",
      "en": "beach",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c03.mp3"
+     "audio": "audio/ar/lessons/unit-35-c03.mp3"
     },
     {
      "ar": "صُنارَة",
      "en": "fishing rod",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c04.mp3"
+     "audio": "audio/ar/lessons/unit-35-c04.mp3"
     },
     {
      "ar": "غَني ج أغْنِياء",
      "en": "rich",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c05.mp3"
+     "audio": "audio/ar/lessons/unit-35-c05.mp3"
     },
     {
      "ar": "فَقير ج فَقيرين",
      "en": "poor",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c06.mp3"
+     "audio": "audio/ar/lessons/unit-35-c06.mp3"
     },
     {
      "ar": "صِيد",
      "en": "fishing",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c07.mp3"
+     "audio": "audio/ar/lessons/unit-35-c07.mp3"
     },
     {
      "ar": "دِنْيا (دُنْيا)",
      "en": "world",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c08.mp3"
+     "audio": "audio/ar/lessons/unit-35-c08.mp3"
     },
     {
      "ar": "شَبَكِة ج ات",
      "en": "net",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c09.mp3"
+     "audio": "audio/ar/lessons/unit-35-c09.mp3"
     },
     {
      "ar": "سَفينِة ج سُفُن",
      "en": "ship",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c10.mp3"
+     "audio": "audio/ar/lessons/unit-35-c10.mp3"
     },
     {
      "ar": "قارِب ج قوارِب",
      "en": "yacht",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c11.mp3"
+     "audio": "audio/ar/lessons/unit-35-c11.mp3"
     },
     {
      "ar": "دُولِة ج دُوَل",
      "en": "country",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c12.mp3"
+     "audio": "audio/ar/lessons/unit-35-c12.mp3"
     },
     {
      "ar": "وَجَع راس",
      "en": "headache",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c13.mp3"
+     "audio": "audio/ar/lessons/unit-35-c13.mp3"
     },
     {
      "ar": "وَقْت ج أوْقات",
      "en": "time",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c14.mp3"
+     "audio": "audio/ar/lessons/unit-35-c14.mp3"
     },
     {
      "ar": "صاد ـِ",
      "en": "hunt, fish",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c15.mp3"
+     "audio": "audio/ar/lessons/unit-35-c15.mp3"
     },
     {
      "ar": "باع ـِ",
      "en": "to sell",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c16.mp3"
+     "audio": "audio/ar/lessons/unit-35-c16.mp3"
     },
     {
      "ar": "نِزِل ـِ",
      "en": "to stay (in a hotel)",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c17.mp3"
+     "audio": "audio/ar/lessons/unit-35-c17.mp3"
     },
     {
      "ar": "جاوَب",
      "en": "to answer",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c18.mp3"
+     "audio": "audio/ar/lessons/unit-35-c18.mp3"
     },
     {
      "ar": "رَمى ـِ",
      "en": "to throw",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c19.mp3"
+     "audio": "audio/ar/lessons/unit-35-c19.mp3"
     },
     {
      "ar": "تْسَلَّى",
      "en": "to have a good time",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c20.mp3"
+     "audio": "audio/ar/lessons/unit-35-c20.mp3"
     },
     {
      "ar": "إرْتاح",
      "en": "to rest",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c21.mp3"
+     "audio": "audio/ar/lessons/unit-35-c21.mp3"
     },
     {
      "ar": "طول الْيُوم",
      "en": "all day long",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c22.mp3"
+     "audio": "audio/ar/lessons/unit-35-c22.mp3"
     },
     {
      "ar": "ساعَتْها",
      "en": "then",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c23.mp3"
+     "audio": "audio/ar/lessons/unit-35-c23.mp3"
     },
     {
      "ar": "مِثِل",
      "en": "like as",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c24.mp3"
+     "audio": "audio/ar/lessons/unit-35-c24.mp3"
     },
     {
      "ar": "مِثْلي",
      "en": "like me",
      "src": "stories p.12",
-     "audio": "audio/lessons/unit-35-c25.mp3"
+     "audio": "audio/ar/lessons/unit-35-c25.mp3"
     }
    ],
    "dialogues": [],
@@ -11683,127 +11683,127 @@ window.LESSONS = {
      "ar": "قَميص ج قُمْصان",
      "en": "shirt",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c00.mp3"
+     "audio": "audio/ar/lessons/unit-36-c00.mp3"
     },
     {
      "ar": "إنْسان ج ناس",
      "en": "person",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c01.mp3"
+     "audio": "audio/ar/lessons/unit-36-c01.mp3"
     },
     {
      "ar": "مَرَض ج أمْراض",
      "en": "disease",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c02.mp3"
+     "audio": "audio/ar/lessons/unit-36-c02.mp3"
     },
     {
      "ar": "سَليم ج ين",
      "en": "healthy",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c03.mp3"
+     "audio": "audio/ar/lessons/unit-36-c03.mp3"
     },
     {
      "ar": "إشي ج أشْياء",
      "en": "thing",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c04.mp3"
+     "audio": "audio/ar/lessons/unit-36-c04.mp3"
     },
     {
      "ar": "نِهايِة ج ات",
      "en": "end",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c05.mp3"
+     "audio": "audio/ar/lessons/unit-36-c05.mp3"
     },
     {
      "ar": "بِدايِة ج ات",
      "en": "beginning",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c06.mp3"
+     "audio": "audio/ar/lessons/unit-36-c06.mp3"
     },
     {
      "ar": "مِفْتاح ج مَفاتيح",
      "en": "key",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c07.mp3"
+     "audio": "audio/ar/lessons/unit-36-c07.mp3"
     },
     {
      "ar": "مِرِض",
      "en": "became sick",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c08.mp3"
+     "audio": "audio/ar/lessons/unit-36-c08.mp3"
     },
     {
      "ar": "شِفي (بِشْفي)",
      "en": "to recover",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c09.mp3"
+     "audio": "audio/ar/lessons/unit-36-c09.mp3"
     },
     {
      "ar": "إجْتَمَع",
      "en": "to have a meeting",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c10.mp3"
+     "audio": "audio/ar/lessons/unit-36-c10.mp3"
     },
     {
      "ar": "لِبِس",
      "en": "to wear",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c11.mp3"
+     "audio": "audio/ar/lessons/unit-36-c11.mp3"
     },
     {
      "ar": "دَوَّر عَلى",
      "en": "to look for",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c12.mp3"
+     "audio": "audio/ar/lessons/unit-36-c12.mp3"
     },
     {
      "ar": "خَلَّص",
      "en": "to finish",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c13.mp3"
+     "audio": "audio/ar/lessons/unit-36-c13.mp3"
     },
     {
      "ar": "لاقى",
      "en": "to meet",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c14.mp3"
+     "audio": "audio/ar/lessons/unit-36-c14.mp3"
     },
     {
      "ar": "أعْطى",
      "en": "to give",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c15.mp3"
+     "audio": "audio/ar/lessons/unit-36-c15.mp3"
     },
     {
      "ar": "بِين ، بِينات",
      "en": "between",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c16.mp3"
+     "audio": "audio/ar/lessons/unit-36-c16.mp3"
     },
     {
      "ar": "سَعيد ج سعيدين",
      "en": "happy",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c17.mp3"
+     "audio": "audio/ar/lessons/unit-36-c17.mp3"
     },
     {
      "ar": "وَلا واحَد",
      "en": "no one",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c18.mp3"
+     "audio": "audio/ar/lessons/unit-36-c18.mp3"
     },
     {
      "ar": "دير بالَك",
      "en": "watch out",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c19.mp3"
+     "audio": "audio/ar/lessons/unit-36-c19.mp3"
     },
     {
      "ar": "دير بالَك عَلى",
      "en": "take care of",
      "src": "stories p.14",
-     "audio": "audio/lessons/unit-36-c20.mp3"
+     "audio": "audio/ar/lessons/unit-36-c20.mp3"
     }
    ],
    "dialogues": [],
@@ -11944,85 +11944,85 @@ window.LESSONS = {
      "ar": "صَبِيِّة",
      "en": "young lady",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c00.mp3"
+     "audio": "audio/ar/lessons/unit-37-c00.mp3"
     },
     {
      "ar": "تْبارِك-لْهُم",
      "en": "congratulate them",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c01.mp3"
+     "audio": "audio/ar/lessons/unit-37-c01.mp3"
     },
     {
      "ar": "مَرْقَت",
      "en": "passed",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c02.mp3"
+     "audio": "audio/ar/lessons/unit-37-c02.mp3"
     },
     {
      "ar": "خِتْيار",
      "en": "old man",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c03.mp3"
+     "audio": "audio/ar/lessons/unit-37-c03.mp3"
     },
     {
      "ar": "رَبّوا",
      "en": "raised",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c04.mp3"
+     "audio": "audio/ar/lessons/unit-37-c04.mp3"
     },
     {
      "ar": "بِدّي (ا)يّاك",
      "en": "I want you to",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c05.mp3"
+     "audio": "audio/ar/lessons/unit-37-c05.mp3"
     },
     {
      "ar": "زَيّ غِيرَك",
      "en": "like others",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c06.mp3"
+     "audio": "audio/ar/lessons/unit-37-c06.mp3"
     },
     {
      "ar": "ما حَدا",
      "en": "no one",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c07.mp3"
+     "audio": "audio/ar/lessons/unit-37-c07.mp3"
     },
     {
      "ar": "غَريب",
      "en": "strange , stranger",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c08.mp3"
+     "audio": "audio/ar/lessons/unit-37-c08.mp3"
     },
     {
      "ar": "وَلا يِهِمَّك",
      "en": "don't worry",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c09.mp3"
+     "audio": "audio/ar/lessons/unit-37-c09.mp3"
     },
     {
      "ar": "وإعْمَلي مَعْروف",
      "en": "do a favor",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c10.mp3"
+     "audio": "audio/ar/lessons/unit-37-c10.mp3"
     },
     {
      "ar": "تَطَلَّع عَليها",
      "en": "looked upon her",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c11.mp3"
+     "audio": "audio/ar/lessons/unit-37-c11.mp3"
     },
     {
      "ar": "حَلّ ج حُلول",
      "en": "solution",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c12.mp3"
+     "audio": "audio/ar/lessons/unit-37-c12.mp3"
     },
     {
      "ar": "مَجْبور",
      "en": "must, compelled",
      "src": "stories p.20",
-     "audio": "audio/lessons/unit-37-c13.mp3"
+     "audio": "audio/ar/lessons/unit-37-c13.mp3"
     }
    ],
    "dialogues": [],
@@ -13506,151 +13506,151 @@ window.LESSONS = {
      "ar": "نِظام حُكُم",
      "en": "regime, rule (n)",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c00.mp3"
+     "audio": "audio/ar/lessons/unit-41-c00.mp3"
     },
     {
      "ar": "نِظام",
      "en": "regime, order, system",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c01.mp3"
+     "audio": "audio/ar/lessons/unit-41-c01.mp3"
     },
     {
      "ar": "حَكَم ـُ",
      "en": "to rule",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c02.mp3"
+     "audio": "audio/ar/lessons/unit-41-c02.mp3"
     },
     {
      "ar": "حُكومِة",
      "en": "government",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c03.mp3"
+     "audio": "audio/ar/lessons/unit-41-c03.mp3"
     },
     {
      "ar": "مُنَظَّمِة",
      "en": "organization",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c04.mp3"
+     "audio": "audio/ar/lessons/unit-41-c04.mp3"
     },
     {
      "ar": "إقْتِصاد",
      "en": "economy",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c05.mp3"
+     "audio": "audio/ar/lessons/unit-41-c05.mp3"
     },
     {
      "ar": "نِظام ديمقراطي",
      "en": "democracy",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c06.mp3"
+     "audio": "audio/ar/lessons/unit-41-c06.mp3"
     },
     {
      "ar": "نِظام مَلَكي",
      "en": "monarchy",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c07.mp3"
+     "audio": "audio/ar/lessons/unit-41-c07.mp3"
     },
     {
      "ar": "نِظام ديكتاتوري",
      "en": "dictatorship",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c08.mp3"
+     "audio": "audio/ar/lessons/unit-41-c08.mp3"
     },
     {
      "ar": "نِظام فِدْرالي",
      "en": "federal government",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c09.mp3"
+     "audio": "audio/ar/lessons/unit-41-c09.mp3"
     },
     {
      "ar": "رأسمالية",
      "en": "capitalism",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c10.mp3"
+     "audio": "audio/ar/lessons/unit-41-c10.mp3"
     },
     {
      "ar": "شُيوعِية",
      "en": "communism",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c11.mp3"
+     "audio": "audio/ar/lessons/unit-41-c11.mp3"
     },
     {
      "ar": "إشْتِراكية",
      "en": "socialism",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c12.mp3"
+     "audio": "audio/ar/lessons/unit-41-c12.mp3"
     },
     {
      "ar": "ظُلْم",
      "en": "injustice",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c13.mp3"
+     "audio": "audio/ar/lessons/unit-41-c13.mp3"
     },
     {
      "ar": "عَدْل",
      "en": "justice",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c14.mp3"
+     "audio": "audio/ar/lessons/unit-41-c14.mp3"
     },
     {
      "ar": "مُواطِنين",
      "en": "citizens",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c15.mp3"
+     "audio": "audio/ar/lessons/unit-41-c15.mp3"
     },
     {
      "ar": "عُنْف",
      "en": "violence",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c16.mp3"
+     "audio": "audio/ar/lessons/unit-41-c16.mp3"
     },
     {
      "ar": "مُوافَقة",
      "en": "agreement",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c17.mp3"
+     "audio": "audio/ar/lessons/unit-41-c17.mp3"
     },
     {
      "ar": "سَيْطَرَة",
      "en": "control (n)",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c18.mp3"
+     "audio": "audio/ar/lessons/unit-41-c18.mp3"
     },
     {
      "ar": "سَيْطَر",
      "en": "to control",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c19.mp3"
+     "audio": "audio/ar/lessons/unit-41-c19.mp3"
     },
     {
      "ar": "خَوَّف (تَخْويف)",
      "en": "to frighten",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c20.mp3"
+     "audio": "audio/ar/lessons/unit-41-c20.mp3"
     },
     {
      "ar": "إسْتَعْمَل",
      "en": "to use",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c21.mp3"
+     "audio": "audio/ar/lessons/unit-41-c21.mp3"
     },
     {
      "ar": "أمان شَخْصي",
      "en": "personal safety",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c22.mp3"
+     "audio": "audio/ar/lessons/unit-41-c22.mp3"
     },
     {
      "ar": "إنْفِلات أمْني",
      "en": "chaos",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c23.mp3"
+     "audio": "audio/ar/lessons/unit-41-c23.mp3"
     },
     {
      "ar": "فَوْضى",
      "en": "lack of order, mess",
      "src": "speaking p.53",
-     "audio": "audio/lessons/unit-41-c24.mp3"
+     "audio": "audio/ar/lessons/unit-41-c24.mp3"
     }
    ],
    "dialogues": [],
@@ -13816,61 +13816,61 @@ window.LESSONS = {
      "ar": "أقلية ج ات",
      "en": "minority",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c00.mp3"
+     "audio": "audio/ar/lessons/unit-43-c00.mp3"
     },
     {
      "ar": "أغْلَبِيِّة",
      "en": "majority",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c01.mp3"
+     "audio": "audio/ar/lessons/unit-43-c01.mp3"
     },
     {
      "ar": "طائفة ج طَوَائِف",
      "en": "religious- ethnic group",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c02.mp3"
+     "audio": "audio/ar/lessons/unit-43-c02.mp3"
     },
     {
      "ar": "دين، دِيَانة",
      "en": "religion",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c03.mp3"
+     "audio": "audio/ar/lessons/unit-43-c03.mp3"
     },
     {
      "ar": "مِتْدَيِّن",
      "en": "religious",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c04.mp3"
+     "audio": "audio/ar/lessons/unit-43-c04.mp3"
     },
     {
      "ar": "عَرَب ثَماني وأرْبَعين",
      "en": "the Palestinian minority in Israel",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c05.mp3"
+     "audio": "audio/ar/lessons/unit-43-c05.mp3"
     },
     {
      "ar": "عَرَب الدَّاخِل",
      "en": "the Palestinian minority in Israel",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c06.mp3"
+     "audio": "audio/ar/lessons/unit-43-c06.mp3"
     },
     {
      "ar": "عيد الإسْتِقْلال",
      "en": "independence day",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c07.mp3"
+     "audio": "audio/ar/lessons/unit-43-c07.mp3"
     },
     {
      "ar": "إنْتِماء",
      "en": "belong to",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c08.mp3"
+     "audio": "audio/ar/lessons/unit-43-c08.mp3"
     },
     {
      "ar": "قِسم، جُزْء",
      "en": "part",
      "src": "speaking p.50",
-     "audio": "audio/lessons/unit-43-c09.mp3"
+     "audio": "audio/ar/lessons/unit-43-c09.mp3"
     }
    ],
    "dialogues": [],
@@ -13932,19 +13932,19 @@ window.LESSONS = {
      "ar": "قَهْوِة",
      "en": "coffee",
      "src": "spoken-extra p.9",
-     "audio": "audio/lessons/unit-44-c00.mp3"
+     "audio": "audio/ar/lessons/unit-44-c00.mp3"
     },
     {
      "ar": "مُمْتازِة",
      "en": "excellent",
      "src": "spoken-extra p.9",
-     "audio": "audio/lessons/unit-44-c01.mp3"
+     "audio": "audio/ar/lessons/unit-44-c01.mp3"
     },
     {
      "ar": "أَطْيَب",
      "en": "better",
      "src": "spoken-extra p.9",
-     "audio": "audio/lessons/unit-44-c02.mp3"
+     "audio": "audio/ar/lessons/unit-44-c02.mp3"
     }
    ],
    "dialogues": [
@@ -13955,85 +13955,85 @@ window.LESSONS = {
        "sp": "زِياد",
        "ar": "مَرْحَبا _____.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l00.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "مَرْحَبْتين زِياد، _____، تَعالِ اشْرَبْ قَهْوِة. تْفَضَّلِ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l01.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "يِسَلْمو _____.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l02.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "كيف حالَك؟",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l03.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "وَالله _____ شْوَيّ.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l04.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "لِيش؟ وِينْتى _____ مِنْ إيطالْيا؟",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l05.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l05.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "رْجِعِتِ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l06.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l06.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "وَالله! _____ إيطالْيا؟ حِلْوِة؟",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l07.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l07.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "إيطالْيا _____ كْثير.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l08.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l08.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "وكيف _____ هُناك؟",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l09.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l09.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "إلْقَهْوِة الإيطالِيِّة _____، بَس قَهْوَتَك أَطْيَب.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l10.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l10.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "يِسَلْم ثِمَّك.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l11.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l11.mp3"
       },
       {
        "sp": "زِياد",
        "ar": "يالله _____.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l12.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l12.mp3"
       },
       {
        "sp": "أبو سيوار",
        "ar": "مَعِ _____، سَلِّم عَ-أبوك.",
        "en": null,
-       "audio": "audio/lessons/unit-44-d0-l13.mp3"
+       "audio": "audio/ar/lessons/unit-44-d0-l13.mp3"
       }
      ],
      "src": "spoken-extra p.9",
@@ -14045,7 +14045,7 @@ window.LESSONS = {
       },
       {
        "sp": "أبو سيوار",
-       "voice": "IYnFszSKzmym2OstwHS0",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "m"
       }
      ]
@@ -14250,25 +14250,25 @@ window.LESSONS = {
      "ar": "وِلّا",
      "en": "or",
      "src": "spoken-extra p.12",
-     "audio": "audio/lessons/unit-46-c00.mp3"
+     "audio": "audio/ar/lessons/unit-46-c00.mp3"
     },
     {
      "ar": "مُحامِية",
      "en": "lawyer",
      "src": "spoken-extra p.12",
-     "audio": "audio/lessons/unit-46-c01.mp3"
+     "audio": "audio/ar/lessons/unit-46-c01.mp3"
     },
     {
      "ar": "ما شاء الله",
      "en": "wow (what God wants)",
      "src": "spoken-extra p.12",
-     "audio": "audio/lessons/unit-46-c02.mp3"
+     "audio": "audio/ar/lessons/unit-46-c02.mp3"
     },
     {
      "ar": "مَيَّة بارْدِة",
      "en": "cold water",
      "src": "spoken-extra p.12",
-     "audio": "audio/lessons/unit-46-c03.mp3"
+     "audio": "audio/ar/lessons/unit-46-c03.mp3"
     }
    ],
    "dialogues": [
@@ -14279,109 +14279,109 @@ window.LESSONS = {
        "sp": "سَمير",
        "ar": "تْفَضَّل.",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l00.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "_____ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l01.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "_____ _____ تْفَضَّل فوت. نُقْعُد في الصّالُون وِلا لا في الْبَلْكون؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l02.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "_____ _____. كيف حالَك؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l03.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "الْحَمْدِلله. شو بِتْحِبّ تِشْرَب، شاي _____ قَهْوة؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l04.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "لا لا لا _____ _____ ، _____؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l05.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l05.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "أيْوة، عِنْدي _____ (cold) كَمان! تْفَضَّل!",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l06.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l06.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "تِسْلَم، شُكْرًا.",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l07.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l07.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "وَلَك يا ماجِد، سمِعِت خَطَبِت، إحْكي-لي شْوَيّ عَن خَطيبْتَك رنا، هِي مِنِ الطَّيْبِة، صَحّ؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l08.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l08.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "أيْوة، هِي مِنِ الطَّيْبِة مِش بْعيد مِن هُون، رُبِع ساعَة بِالسَّيّارة.",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l09.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l09.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "هٰذا مُمْتاز. قول-لي مين أبوها ومين إمْها؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l10.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l10.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "_______________________.",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l11.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l11.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "عَن جَدّ؟ وَالله، بْرافو عَليهُم . وشو بِشْتْغِل أخوها؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l12.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l12.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "_______________________.",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l13.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l13.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "وأُخْتْها؟ وين بْتِشْتْغِل؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l14.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l14.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "أُخْتْها بْتِشْتْغِل سِكْرِتيرة عِنْد دَكْتور الِعْيُون (eyes).",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l15.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l15.mp3"
       },
       {
        "sp": "سَمير",
        "ar": "مَا شاء الله _____ _____؟",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l16.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l16.mp3"
       },
       {
        "sp": "ماجِد",
        "ar": "مَبْسوطين مَبْسوطين طَبْعا مَبْسوطين.",
        "en": null,
-       "audio": "audio/lessons/unit-46-d0-l17.mp3"
+       "audio": "audio/ar/lessons/unit-46-d0-l17.mp3"
       }
      ],
      "src": "spoken-extra p.12",
@@ -14393,7 +14393,7 @@ window.LESSONS = {
       },
       {
        "sp": "ماجد",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": null
       }
      ]
@@ -14424,25 +14424,25 @@ window.LESSONS = {
      "ar": "ناقِص",
      "en": "missing",
      "src": "spoken-extra p.13",
-     "audio": "audio/lessons/unit-47-c00.mp3"
+     "audio": "audio/ar/lessons/unit-47-c00.mp3"
     },
     {
      "ar": "خُضْرَة",
      "en": "vegetables",
      "src": "spoken-extra p.13",
-     "audio": "audio/lessons/unit-47-c01.mp3"
+     "audio": "audio/ar/lessons/unit-47-c01.mp3"
     },
     {
      "ar": "مِش أكْثَر",
      "en": "not more",
      "src": "spoken-extra p.13",
-     "audio": "audio/lessons/unit-47-c02.mp3"
+     "audio": "audio/ar/lessons/unit-47-c02.mp3"
     },
     {
      "ar": "فواكِه",
      "en": "fruits",
      "src": "spoken-extra p.13",
-     "audio": "audio/lessons/unit-47-c03.mp3"
+     "audio": "audio/ar/lessons/unit-47-c03.mp3"
     }
    ],
    "dialogues": [
@@ -14453,127 +14453,127 @@ window.LESSONS = {
        "sp": "إلْهام",
        "ar": "جَميل حَبيبي ,تَعال نْشوف شو ناقِص. ناقِصْنا خْيار وبَنْدُورة.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l00.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "كيلو مِن كُلّ نُوع؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l01.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____ _____ _____ . آه _____ الْبَصَل، وأنا بَطْبُخ كُل شي مَع بَصَل.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l02.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "_____ _____؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l03.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "ما قُلْت-لَك، جيب أرْبَعة كيلو . آه _______________________",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l04.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "يَعْني أكَم بَطّيخة بِدّك؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l05.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l05.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____ _____ _____ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l06.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l06.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "وشو كَمان؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l07.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l07.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "جيب مُوز وعِنَب.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l08.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l08.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "_____ _____ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l09.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l09.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____، _____ _____ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l10.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l10.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "وشو ناقِصْنا خُضْرة؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l11.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l11.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "جيب كيلو _____ ونُصّ كيلو بامْية _____ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l12.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l12.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "بِدْنا قَرْنَبيط وثُومِة كَمان؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l13.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l13.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "أيْوة، روح عِنْد أبو مَحْمود، عِنْدُه كُلّ شي.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l14.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l14.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "فِشّ مُشْكِلِة، وإذا بَشوف بيتِنْجان كمان أجيب؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l15.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l15.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____، _____ _____ _____ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l16.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l16.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "مُش أكْثَر؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l17.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l17.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "لا!، بَسّ 3 حَبّات.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l18.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l18.mp3"
       },
       {
        "sp": "جَميل",
        "ar": "_____ _____ _____؟",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l19.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l19.mp3"
       },
       {
        "sp": "إلْهام",
        "ar": "_____ _____ _____.",
        "en": null,
-       "audio": "audio/lessons/unit-47-d0-l20.mp3"
+       "audio": "audio/ar/lessons/unit-47-d0-l20.mp3"
       }
      ],
      "src": "spoken-extra p.13",
@@ -14585,7 +14585,7 @@ window.LESSONS = {
       },
       {
        "sp": "جميل",
-       "voice": "IYnFszSKzmym2OstwHS0",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "m"
       }
      ]
@@ -14616,19 +14616,19 @@ window.LESSONS = {
      "ar": "بِدّي أَبَدِّل",
      "en": "I want to replace, change",
      "src": "spoken-extra p.15",
-     "audio": "audio/lessons/unit-48-c00.mp3"
+     "audio": "audio/ar/lessons/unit-48-c00.mp3"
     },
     {
      "ar": "ما بَحِبِّش",
      "en": "don't like",
      "src": "spoken-extra p.15",
-     "audio": "audio/lessons/unit-48-c01.mp3"
+     "audio": "audio/ar/lessons/unit-48-c01.mp3"
     },
     {
      "ar": "مَحَلِّيِّة",
      "en": "local",
      "src": "spoken-extra p.15",
-     "audio": "audio/lessons/unit-48-c02.mp3"
+     "audio": "audio/ar/lessons/unit-48-c02.mp3"
     }
    ],
    "dialogues": [
@@ -14639,116 +14639,116 @@ window.LESSONS = {
        "sp": "رَنا",
        "ar": "صَباح الْخير.",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l00.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l00.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "أهْلين صَباحِ النّور، تْفَضَّلي..",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l01.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l01.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________.",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l02.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l02.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "فِشّ مُشْكِلِة. أيّ ديسْكات؟",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l03.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l03.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "إمْبارِح كان عيد ميلادي وخَطيبي جاب-لي مِن عِنْدَك هَدِيِّة ديسْكات كْلاسيكِيِّة لأُم كُلْثُوم وعَبْدِ الْحَليم حافِظ ( بِتْحُطهُم عَلى الطّاوْلِة.)",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l04.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l04.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "_______________________؟",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l05.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l05.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "أنا بَحِبْها كْثير بَسّ عِنْدي هايِ الدّيسْكات، بِدّي ديسْك لَمُحَمَّد عَبْدِ الْوَهاب، وديسْك لَصَباح لَوْ سَمَحِت.",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l06.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l06.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "تْفَضَّلي.",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l07.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l07.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "بِدّي أبَدِّل كَمان ديسكات الْمُنَوَّعات هاي، أنا ما بَحِبِّش الْمُنَوَّعات بِالْمَرّة، مِش عارفِة لِيش ماجد جاب-لي مُنَوَّعات. بِدّي أشوف ديسْكات لَفَيْروز (بِتْحُطّ عَلى الطّاوْلِة 4 ديسْكات.)",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l08.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l08.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "_______________________",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l09.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l09.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l10.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l10.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "_______________________",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l11.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l11.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l12.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l12.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "_______________________",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l13.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l13.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________.",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l14.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l14.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "بِتْحِبّي تْبَدْلي كَمان إشي؟",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l15.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l15.mp3"
       },
       {
        "sp": "رَنا",
        "ar": "_______________________.",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l16.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l16.mp3"
       },
       {
        "sp": "بَيّاع",
        "ar": "الله يْعافيكِ.",
        "en": null,
-       "audio": "audio/lessons/unit-48-d0-l17.mp3"
+       "audio": "audio/ar/lessons/unit-48-d0-l17.mp3"
       }
      ],
      "src": "spoken-extra p.15",
      "cast": [
       {
        "sp": "رنا",
-       "voice": "albaa6OioIhKtKdCEkQw",
+       "voice": "oJQlz7pz2yWd7MRmDUXm",
        "gender": "f"
       },
       {
@@ -14784,49 +14784,49 @@ window.LESSONS = {
      "ar": "بَعُوضة",
      "en": "mosquito",
      "src": "spoken-extra p.16",
-     "audio": "audio/lessons/unit-49-c00.mp3"
+     "audio": "audio/ar/lessons/unit-49-c00.mp3"
     },
     {
      "ar": "ريح",
      "en": "wind",
      "src": "spoken-extra p.16",
-     "audio": "audio/lessons/unit-49-c01.mp3"
+     "audio": "audio/ar/lessons/unit-49-c01.mp3"
     },
     {
      "ar": "طَيَّر",
      "en": "blow away",
      "src": "spoken-extra p.16",
-     "audio": "audio/lessons/unit-49-c02.mp3"
+     "audio": "audio/ar/lessons/unit-49-c02.mp3"
     },
     {
      "ar": "حَدَّد",
      "en": "set up (meeting)",
      "src": "spoken-extra p.16",
-     "audio": "audio/lessons/unit-49-c03.mp3"
+     "audio": "audio/ar/lessons/unit-49-c03.mp3"
     },
     {
      "ar": "مِن وَقْتها",
      "en": "from that time on",
      "src": "spoken-extra p.16",
-     "audio": "audio/lessons/unit-49-c04.mp3"
+     "audio": "audio/ar/lessons/unit-49-c04.mp3"
     },
     {
      "ar": "قاعة",
      "en": "hall",
      "src": "spoken-extra p.16",
-     "audio": "audio/lessons/unit-49-c05.mp3"
+     "audio": "audio/ar/lessons/unit-49-c05.mp3"
     },
     {
      "ar": "مَحْكَمِة",
      "en": "court",
      "src": "spoken-extra p.16",
-     "audio": "audio/lessons/unit-49-c06.mp3"
+     "audio": "audio/ar/lessons/unit-49-c06.mp3"
     },
     {
      "ar": "قَعْدَت تِسْتَنّى",
      "en": "set and waited",
      "src": "spoken-extra p.16",
-     "audio": "audio/lessons/unit-49-c07.mp3"
+     "audio": "audio/ar/lessons/unit-49-c07.mp3"
     }
    ],
    "dialogues": [],
@@ -14901,168 +14901,168 @@ window.LESSONS = {
      "en": "big cucumbers",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة",
      "src": "vocab-gram p.17",
-     "audio": "audio/lessons/unit-50-c00.mp3"
+     "audio": "audio/ar/lessons/unit-50-c00.mp3"
     },
     {
      "ar": "جَزَر حِلو",
      "en": "sweet carrots",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة",
      "src": "vocab-gram p.17",
-     "audio": "audio/lessons/unit-50-c01.mp3"
+     "audio": "audio/ar/lessons/unit-50-c01.mp3"
     },
     {
      "ar": "حَبَّة بَنْدورة",
      "en": "one tomato",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة",
      "src": "vocab-gram p.17",
-     "audio": "audio/lessons/unit-50-c02.mp3"
+     "audio": "audio/ar/lessons/unit-50-c02.mp3"
     },
     {
      "ar": "حَبَّتِين بَنْدُورة",
      "en": "two tomatoes",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة",
      "src": "vocab-gram p.17",
-     "audio": "audio/lessons/unit-50-c03.mp3"
+     "audio": "audio/ar/lessons/unit-50-c03.mp3"
     },
     {
      "ar": "عَشَر حَبّات بَزيلة",
      "en": "ten peas",
      "group": "Explanation; Numbers with Fruits and Vegetables; Method A, unit word 1: حَبَّة",
      "src": "vocab-gram p.17",
-     "audio": "audio/lessons/unit-50-c04.mp3"
+     "audio": "audio/ar/lessons/unit-50-c04.mp3"
     },
     {
      "ar": "راس ثُومِة",
      "en": "one head of garlic",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c05.mp3"
+     "audio": "audio/ar/lessons/unit-50-c05.mp3"
     },
     {
      "ar": "راسِين بَصَل",
      "en": "two onions",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c06.mp3"
+     "audio": "audio/ar/lessons/unit-50-c06.mp3"
     },
     {
      "ar": "سِتّ روس بَصَل",
      "en": "six onions",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c07.mp3"
+     "audio": "audio/ar/lessons/unit-50-c07.mp3"
     },
     {
      "ar": "قَرِن فليفلة",
      "en": "one chili pepper",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c08.mp3"
+     "audio": "audio/ar/lessons/unit-50-c08.mp3"
     },
     {
      "ar": "قَرْنِين فليفلة",
      "en": "two chili peppers",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c09.mp3"
+     "audio": "audio/ar/lessons/unit-50-c09.mp3"
     },
     {
      "ar": "خَمِس قُرون مُوز",
      "en": "five bananas",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c10.mp3"
+     "audio": "audio/ar/lessons/unit-50-c10.mp3"
     },
     {
      "ar": "ظُمَّة بَقْدُونِس",
      "en": "one bunch of parsley",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c11.mp3"
+     "audio": "audio/ar/lessons/unit-50-c11.mp3"
     },
     {
      "ar": "ظُمَّتِين نَعْنع",
      "en": "two bunchs of mint",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c12.mp3"
+     "audio": "audio/ar/lessons/unit-50-c12.mp3"
     },
     {
      "ar": "ثَلَث ظِمَم سَبانِخ",
      "en": "three bunch of spinach",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c13.mp3"
+     "audio": "audio/ar/lessons/unit-50-c13.mp3"
     },
     {
      "ar": "خْيارة",
      "en": "one cucumber",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c14.mp3"
+     "audio": "audio/ar/lessons/unit-50-c14.mp3"
     },
     {
      "ar": "خيارْتِين",
      "en": "two cucumbers",
      "group": "Method A unit words 2-4 (راس, قَرْن, ظُمَّة); Method B steps 1-2",
      "src": "vocab-gram p.16",
-     "audio": "audio/lessons/unit-50-c15.mp3"
+     "audio": "audio/ar/lessons/unit-50-c15.mp3"
     },
     {
      "ar": "خَمِس خْيارات",
      "en": "five cucumbers",
      "group": "Method B step 3; note on both methods",
      "src": "vocab-gram p.15",
-     "audio": "audio/lessons/unit-50-c16.mp3"
+     "audio": "audio/ar/lessons/unit-50-c16.mp3"
     },
     {
      "ar": "راس بَصَل، بَصَلِة",
      "en": "an onion",
      "group": "Method B step 3; note on both methods",
      "src": "vocab-gram p.15",
-     "audio": "audio/lessons/unit-50-c17.mp3"
+     "audio": "audio/ar/lessons/unit-50-c17.mp3"
     },
     {
      "ar": "حَبَّة \\ حَبّات: بندورة، أبوكادو، بَطاطا، بَزِيلّة \\ بزيلّا، زَتون، فَصولْيِة، بِتِنْجان، مَنْجا، فْليفلة (Pepper)، مَنْدَلينا، بُرْتُقان، تُفَّاح، إنْجاص، خُوخ، رُمّان، تين، تَمِر، كَرَز، لوز، جوز، توت، لَمون",
      "en": "unit word 7abbeh: tomato, avocado, potato, peas, olives, beans, eggplant, mango, pepper, mandarin, orange, apple, plum, peach, pomegranate, fig, date, cherry, almond, walnut, berry, lemon",
      "group": "reference table of unit words with their produce",
      "src": "vocab-gram p.14",
-     "audio": "audio/lessons/unit-50-c18.mp3"
+     "audio": "audio/ar/lessons/unit-50-c18.mp3"
     },
     {
      "ar": "ة\\ات: موزَة، بَطيخَة، شُمامة، خْيارة، جَزَرَة، خَسَّة، قَرْعَة، كوسايِة",
      "en": "feminine-suffix method: banana, watermelon, melon, cucumber, carrot, lettuce, pumpkin, zucchini",
      "group": "reference table of unit words with their produce",
      "src": "vocab-gram p.14",
-     "audio": "audio/lessons/unit-50-c19.mp3"
+     "audio": "audio/ar/lessons/unit-50-c19.mp3"
     },
     {
      "ar": "قَرِن \\ قْرون: قرن موز، قرن فْليفلة — hot pepper",
      "en": "unit word qarn (horn): a banana, a hot pepper",
      "group": "reference table of unit words with their produce",
      "src": "vocab-gram p.14",
-     "audio": "audio/lessons/unit-50-c20.mp3"
+     "audio": "audio/ar/lessons/unit-50-c20.mp3"
     },
     {
      "ar": "قْطْف: عِنَب. One grape: حَبَّة عِنَب",
      "en": "unit word quTf (cluster): grapes; one grape is 7abbet 3inab",
      "group": "reference table of unit words with their produce",
      "src": "vocab-gram p.14",
-     "audio": "audio/lessons/unit-50-c21.mp3"
+     "audio": "audio/ar/lessons/unit-50-c21.mp3"
     },
     {
      "ar": "راس \\ روس: فِجِل، شُومر، بَصَل، ثُومِة، قَرْنَبيط، مَلْفوف",
      "en": "unit word raas (head): radish, fennel, onion, garlic, cauliflower, cabbage",
      "group": "reference table of unit words with their produce",
      "src": "vocab-gram p.14",
-     "audio": "audio/lessons/unit-50-c22.mp3"
+     "audio": "audio/ar/lessons/unit-50-c22.mp3"
     },
     {
      "ar": "ظُمَّة \\ ظِمَم: سَبانِخ، بَقْدونس، نَعْنَع، رِيحان، كُسْبَرة",
      "en": "unit word Dhummeh (bunch): spinach, parsley, mint, basil, coriander",
      "group": "reference table of unit words with their produce",
      "src": "vocab-gram p.14",
-     "audio": "audio/lessons/unit-50-c23.mp3"
+     "audio": "audio/ar/lessons/unit-50-c23.mp3"
     }
    ],
    "dialogues": [],

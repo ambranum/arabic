@@ -10,10 +10,14 @@ AUTO-GENERATED marker is kept).
 
 Run:  python3 pipeline/ref_syllabus.py
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import glob, json, os, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-REF = os.path.join(ROOT, 'texts', 'ref')
+REF = paths.texts('ref')
 OUT = os.path.join(REF, 'SYLLABUS.md')
 MARK = '<!-- AUTO-GENERATED below — edit above this line only -->'
 

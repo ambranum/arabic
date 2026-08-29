@@ -71,12 +71,12 @@ lexicon all happen on your Mac.
 So the flow is:
 
 1. **Ask Claude:** "import today's news"
-2. Claude writes `texts/news-YYYY-MM-DD.json`
+2. Claude writes `texts/ar/news-YYYY-MM-DD.json`
 3. **You paste:**
 
 ```bash
 cd "/Users/alexbranum/Desktop/Projects/Arabic Language Project"
-python3 pipeline/ingest.py texts/news-$(date +%F).json
+python3 pipeline/ingest.py texts/ar/news-$(date +%F).json
 python3 pipeline/build_app.py
 ```
 
@@ -99,7 +99,7 @@ Three commands, always in this order. Paste all three at once:
 
 ```bash
 cd "/Users/alexbranum/Desktop/Projects/Arabic Language Project"
-python3 pipeline/ingest.py texts/YOUR-TEXT.json
+python3 pipeline/ingest.py texts/ar/YOUR-TEXT.json
 python3 pipeline/build_app.py
 ```
 
@@ -117,8 +117,8 @@ Only after your voice is set up:
 cd "/Users/alexbranum/Desktop/Projects/Arabic Language Project"
 export ELEVENLABS_API_KEY="paste-your-key-here"
 export ELEVENLABS_VOICE_ID="paste-your-voice-id-here"
-python3 pipeline/ingest.py texts/morning-coffee.json --audio
-python3 pipeline/car_session.py texts/car-01-reactions.json --audio
+python3 pipeline/ingest.py texts/ar/morning-coffee.json --audio
+python3 pipeline/car_session.py texts/ar/car-01-reactions.json --audio
 python3 pipeline/build_app.py
 ```
 

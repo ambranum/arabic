@@ -23,6 +23,10 @@ Run (after a re-voice, before committing):
     python3 pipeline/verify_voice.py 61c1fda         # or any baseline revision
 Needs only afconvert (ships with macOS) + numpy.
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import os, sys, glob, wave, subprocess, tempfile
 import numpy as np
 
@@ -66,7 +70,7 @@ def main():
     except Exception:
         print('cannot read revision %s' % base); return 1
     here = {os.path.relpath(c, ROOT) for c in
-            glob.glob(os.path.join(ROOT, 'app', 'audio', '**', '*.mp3'), recursive=True)}
+            glob.glob(os.path.join(paths.audio(), '**', '*.mp3'), recursive=True)}
     clips = [os.path.join(ROOT, r) for r in sorted(in_base & here)][:24]
     if not clips:
         print('no sentence clips exist in both %s and now — nothing to compare' % base); return 1

@@ -3,13 +3,13 @@
 The user's own Palestinian-Arabic lessons, course notes and drill books. These are the
 app's **pedagogical backbone and correctness oracle**:
 
-- their teaching sequence drives `texts/ref/SYLLABUS.md` and the curriculum,
-- their content is transcribed into `texts/ref/<book>.json` (each item stamped
+- their teaching sequence drives `texts/ar/ref/SYLLABUS.md` and the curriculum,
+- their content is transcribed into `texts/ar/ref/<book>.json` (each item stamped
   `src: "<book> p.N"`) and adapted into in-app lesson units,
 - `pipeline/verify_content.py` audits the app's curated Arabic against them.
 
 Most files are image scans with no text layer — `pipeline/ref_extract.py` renders them
-to `build/ref/<slug>/pNNN.png` (local only) so they can be transcribed by reading.
+to `build/ar/ref/<slug>/pNNN.png` (local only) so they can be transcribed by reading.
 
 **Two files are NOT committed** (`.gitignore`): the Lingualism *Palestinian Arabic Verbs*
 PDF and its Anki deck. They are commercial third-party products, used strictly for

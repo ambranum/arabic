@@ -5,6 +5,10 @@ Written in simple spoken Palestinian (present/habitual, everyday topics). Not
 native-validated; every word's metadata is still looked up from Maknuune at ingest.
 Run: python3 pipeline/stories_beginner.py   (then ingest each, then build_app)
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, os
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -228,7 +232,7 @@ STORIES = [
 ]
 
 def main():
-    tdir = os.path.join(ROOT, 'texts')
+    tdir = paths.texts()
     for i, (t_ar, t_en, sents) in enumerate(STORIES, 1):
         sid = 'story-beg-%02d' % i
         obj = {'id': sid, 'kind': 'story', 'level': 'beginner',

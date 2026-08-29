@@ -19,6 +19,10 @@ the artifacts themselves, so the shipped app can be corrected either way.
 
 Run: python3 pipeline/repair_vocalization.py   (then rebuild: python3 pipeline/build_app.py)
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, glob, os, re, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -103,7 +107,7 @@ def repair(words):
 def main():
     total = {'nonverb': 0, 'person': 0, 'dropped': 0, 'cluster': 0, 'initial': 0}
     files = 0
-    for p in sorted(glob.glob(os.path.join(ROOT, 'build', '*', 'text.json'))):
+    for p in sorted(glob.glob(paths.build('*', 'text.json'))):
         d = json.load(open(p, encoding='utf-8'))
         touched = False
         for s in d.get('sentences') or []:

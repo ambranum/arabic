@@ -32,9 +32,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- where this language's generated data lives
 
-SRC = os.path.join(ROOT, 'texts', 'table.json')
+SRC = paths.texts('table.json')
 OUT_JS = paths.data('table.js')
-AUDIO_DIR = os.path.join(ROOT, 'app', 'audio', 'table')
+AUDIO_DIR = paths.audio('table')
 
 
 def tts(text, path, key, voice, model='eleven_multilingual_v2'):
@@ -89,12 +89,12 @@ def main():
             rec = {'sp': li['sp'], 'ar': li['ar'], 'en': li['en']}
             clip = os.path.join(AUDIO_DIR, rid + '.mp3')
             if os.path.exists(clip):
-                rec['audio'] = 'audio/table/%s.mp3' % rid
+                rec['audio'] = paths.audio_url('table', '%s.mp3' % rid)
             elif do_audio:
                 ok, how = tts(li['ar'], clip, key, voice_of.get(li['sp'], pinned))
                 print(f'  {rid} [{li["sp"]}] {li["ar"][:20]:20} {how}')
                 if ok:
-                    rec['audio'] = 'audio/table/%s.mp3' % rid
+                    rec['audio'] = paths.audio_url('table', '%s.mp3' % rid)
             lines.append(rec)
         dialogues.append({'id': dg['id'], 'title': dg['title'], 'level': dg['level'],
                           'scene': dg['scene'],
@@ -112,7 +112,7 @@ def main():
 
     voiced = sum(1 for dg in dialogues for li in dg['lines'] if li.get('audio'))
     print(f'dialogues: {len(dialogues)} · {n[0]} lines · audio {voiced}/{n[0]}')
-    print('-> app/data/table.js')
+    print('-> %s' % os.path.relpath(OUT_JS, ROOT))
     return 0
 
 

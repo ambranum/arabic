@@ -26,11 +26,15 @@ Run:
     python3 pipeline/bookshelf_check.py juha aesop      # named books
     python3 pipeline/bookshelf_check.py --estimate      # + the ElevenLabs bill per book
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, os, glob, argparse
 from collections import Counter, defaultdict
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-BUILD = os.path.join(ROOT, 'build')
+BUILD = paths.build()
 TOP_N = 500                      # the frequency band "known words" is measured against
 CREDITS_PER_CHAR = 1.0           # eleven_multilingual_v2; flash is half
 

@@ -4,6 +4,10 @@
 Past-tense narratives (8-12 sentences) with small plots and connectors. Not
 native-validated; word metadata looked up from Maknuune at ingest.
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, os
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 SRC = ("Intermediate short story written in spoken Palestinian by Claude. "
@@ -354,7 +358,7 @@ STORIES = [
 ]
 
 def main():
-    tdir = os.path.join(ROOT, 'texts')
+    tdir = paths.texts()
     for i, (t_ar, t_en, sents) in enumerate(STORIES, 1):
         sid = 'story-int-%02d' % i
         obj = {'id': sid, 'kind': 'story', 'level': 'intermediate',

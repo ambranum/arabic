@@ -20,6 +20,10 @@ rather than picking a winner. Nothing here is invented.
 
 Run once, then `python3 pipeline/lessons.py` to regenerate app/data/lessons.js.
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, glob, os, re, sys
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -139,7 +143,7 @@ def lift_glosses(ar):
 def main():
     changed = files = 0
     log = []
-    for path in sorted(glob.glob(os.path.join(ROOT, 'texts', 'lessons', 'unit-*.json'))):
+    for path in sorted(glob.glob(paths.texts('lessons', 'unit-*.json'))):
         uid = os.path.basename(path).replace('.json', '')
         u = json.load(open(path, encoding='utf-8'))
         before = json.dumps(u, ensure_ascii=False, sort_keys=True)

@@ -17,6 +17,10 @@ Run:
 
 Without keys it emits the script and manifest so you can read/verify it first.
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- per-language file layout
 import json, os, sys, argparse, urllib.request, subprocess, shutil
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -42,7 +46,7 @@ def main():
     a = ap.parse_args()
 
     d = json.load(open(a.source, encoding='utf-8'))
-    out = os.path.join(ROOT, 'build', d['id']); os.makedirs(os.path.join(out,'audio'), exist_ok=True)
+    out = paths.build(d['id']); os.makedirs(os.path.join(out,'audio'), exist_ok=True)
 
     key   = os.environ.get('ELEVENLABS_API_KEY')
     ar_v  = os.environ.get('ELEVENLABS_VOICE_ID')

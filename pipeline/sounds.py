@@ -29,9 +29,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- where this language's generated data lives
 
-SRC = os.path.join(ROOT, 'texts', 'sounds.json')
+SRC = paths.texts('sounds.json')
 OUT_JS = paths.data('sounds.js')
-AUDIO_DIR = os.path.join(ROOT, 'app', 'audio', 'sounds')
+AUDIO_DIR = paths.audio('sounds')
 
 
 def tts(text, path, key, voice, model='eleven_multilingual_v2'):
@@ -70,12 +70,12 @@ def main():
         k[0] += 1
         path = os.path.join(AUDIO_DIR, rid + '.mp3')
         if os.path.exists(path):
-            return 'audio/sounds/%s.mp3' % rid
+            return paths.audio_url('sounds', '%s.mp3' % rid)
         if do_audio:
             ok, how = tts(ar, path, key, voice)
             print(f'  {rid} {ar:12} {how}')
             if ok:
-                return 'audio/sounds/%s.mp3' % rid
+                return paths.audio_url('sounds', '%s.mp3' % rid)
         return None
 
     lessons = []
@@ -110,7 +110,7 @@ def main():
                  if e.get('audio')) + sum(1 for L in lessons for e in L['examples']
                                           if e.get('contrast', {}).get('audio'))
     print(f'sounds: {len(lessons)} lessons · {k[0]} words · audio {voiced}/{k[0]}')
-    print('-> app/data/sounds.js')
+    print('-> %s' % os.path.relpath(OUT_JS, ROOT))
     return 0
 
 

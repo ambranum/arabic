@@ -138,7 +138,7 @@ for w, n in Counter(x['weak'] for x in out).most_common():
 def attested_lemmas():
     import glob
     seen = set()
-    for f in glob.glob(os.path.join(ROOT, 'build', '*', 'text.json')):
+    for f in glob.glob(paths.build('*', 'text.json')):
         try: d = json.load(open(f, encoding='utf-8'))
         except Exception: continue
         for sn in d.get('sentences', []):

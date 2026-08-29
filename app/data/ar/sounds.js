@@ -14,49 +14,49 @@ window.SOUNDS = {
      "ar": "قلب",
      "tr": "'alb",
      "en": "heart",
-     "audio": "audio/sounds/s0.mp3",
+     "audio": "audio/ar/sounds/s0.mp3",
      "contrast": {
       "ar": "كلب",
       "tr": "kalb",
       "en": "dog",
-      "audio": "audio/sounds/s1.mp3"
+      "audio": "audio/ar/sounds/s1.mp3"
      }
     },
     {
      "ar": "قال",
      "tr": "'aal",
      "en": "he said",
-     "audio": "audio/sounds/s2.mp3",
+     "audio": "audio/ar/sounds/s2.mp3",
      "contrast": {
       "ar": "كال",
       "tr": "kaal",
       "en": "he measured",
-      "audio": "audio/sounds/s3.mp3"
+      "audio": "audio/ar/sounds/s3.mp3"
      }
     },
     {
      "ar": "قهوة",
      "tr": "'ahwe",
      "en": "coffee",
-     "audio": "audio/sounds/s4.mp3"
+     "audio": "audio/ar/sounds/s4.mp3"
     },
     {
      "ar": "قدّيش",
      "tr": "'addēsh",
      "en": "how much",
-     "audio": "audio/sounds/s5.mp3"
+     "audio": "audio/ar/sounds/s5.mp3"
     },
     {
      "ar": "وقت",
      "tr": "wa't",
      "en": "time",
-     "audio": "audio/sounds/s6.mp3"
+     "audio": "audio/ar/sounds/s6.mp3"
     },
     {
      "ar": "حقّ",
      "tr": "7a''",
      "en": "right / truth",
-     "audio": "audio/sounds/s7.mp3"
+     "audio": "audio/ar/sounds/s7.mp3"
     }
    ]
   },
@@ -71,37 +71,37 @@ window.SOUNDS = {
      "ar": "عين",
      "tr": "ʿēn",
      "en": "eye",
-     "audio": "audio/sounds/s8.mp3"
+     "audio": "audio/ar/sounds/s8.mp3"
     },
     {
      "ar": "عربي",
      "tr": "ʿarabi",
      "en": "Arabic",
-     "audio": "audio/sounds/s9.mp3"
+     "audio": "audio/ar/sounds/s9.mp3"
     },
     {
      "ar": "معليش",
      "tr": "maʿlēsh",
      "en": "never mind",
-     "audio": "audio/sounds/s10.mp3"
+     "audio": "audio/ar/sounds/s10.mp3"
     },
     {
      "ar": "بعرف",
      "tr": "baʿref",
      "en": "I know",
-     "audio": "audio/sounds/s11.mp3"
+     "audio": "audio/ar/sounds/s11.mp3"
     },
     {
      "ar": "ساعة",
      "tr": "saaʿa",
      "en": "hour / clock",
-     "audio": "audio/sounds/s12.mp3"
+     "audio": "audio/ar/sounds/s12.mp3"
     },
     {
      "ar": "أربعة",
      "tr": "arbaʿa",
      "en": "four",
-     "audio": "audio/sounds/s13.mp3"
+     "audio": "audio/ar/sounds/s13.mp3"
     }
    ]
   },
@@ -116,43 +116,43 @@ window.SOUNDS = {
      "ar": "حال",
      "tr": "7aal",
      "en": "state / condition",
-     "audio": "audio/sounds/s14.mp3",
+     "audio": "audio/ar/sounds/s14.mp3",
      "contrast": {
       "ar": "خال",
       "tr": "khaal",
       "en": "maternal uncle",
-      "audio": "audio/sounds/s15.mp3"
+      "audio": "audio/ar/sounds/s15.mp3"
      }
     },
     {
      "ar": "حمار",
      "tr": "7maar",
      "en": "donkey",
-     "audio": "audio/sounds/s16.mp3"
+     "audio": "audio/ar/sounds/s16.mp3"
     },
     {
      "ar": "صحّة",
      "tr": "Sa77a",
      "en": "health",
-     "audio": "audio/sounds/s17.mp3"
+     "audio": "audio/ar/sounds/s17.mp3"
     },
     {
      "ar": "خبز",
      "tr": "khubez",
      "en": "bread",
-     "audio": "audio/sounds/s18.mp3"
+     "audio": "audio/ar/sounds/s18.mp3"
     },
     {
      "ar": "أخ",
      "tr": "akh",
      "en": "brother",
-     "audio": "audio/sounds/s19.mp3"
+     "audio": "audio/ar/sounds/s19.mp3"
     },
     {
      "ar": "هدول",
      "tr": "hadōl",
      "en": "these",
-     "audio": "audio/sounds/s20.mp3"
+     "audio": "audio/ar/sounds/s20.mp3"
     }
    ]
   },
@@ -167,49 +167,49 @@ window.SOUNDS = {
      "ar": "طين",
      "tr": "Tiin",
      "en": "mud",
-     "audio": "audio/sounds/s21.mp3",
+     "audio": "audio/ar/sounds/s21.mp3",
      "contrast": {
       "ar": "تين",
       "tr": "tiin",
       "en": "figs",
-      "audio": "audio/sounds/s22.mp3"
+      "audio": "audio/ar/sounds/s22.mp3"
      }
     },
     {
      "ar": "صار",
      "tr": "Saar",
      "en": "it happened / became",
-     "audio": "audio/sounds/s23.mp3",
+     "audio": "audio/ar/sounds/s23.mp3",
      "contrast": {
       "ar": "سار",
       "tr": "saar",
       "en": "he walked",
-      "audio": "audio/sounds/s24.mp3"
+      "audio": "audio/ar/sounds/s24.mp3"
      }
     },
     {
      "ar": "صيف",
      "tr": "Sēf",
      "en": "summer",
-     "audio": "audio/sounds/s25.mp3"
+     "audio": "audio/ar/sounds/s25.mp3"
     },
     {
      "ar": "طاولة",
      "tr": "Taawle",
      "en": "table",
-     "audio": "audio/sounds/s26.mp3"
+     "audio": "audio/ar/sounds/s26.mp3"
     },
     {
      "ar": "ضهر",
      "tr": "Dahr",
      "en": "back / noon",
-     "audio": "audio/sounds/s27.mp3"
+     "audio": "audio/ar/sounds/s27.mp3"
     },
     {
      "ar": "بطّيخ",
      "tr": "baTTiikh",
      "en": "watermelon",
-     "audio": "audio/sounds/s28.mp3"
+     "audio": "audio/ar/sounds/s28.mp3"
     }
    ]
   },
@@ -224,37 +224,37 @@ window.SOUNDS = {
      "ar": "تلاتة",
      "tr": "tlaate",
      "en": "three (ثلاثة)",
-     "audio": "audio/sounds/s29.mp3"
+     "audio": "audio/ar/sounds/s29.mp3"
     },
     {
      "ar": "دهب",
      "tr": "dahab",
      "en": "gold (ذهب)",
-     "audio": "audio/sounds/s30.mp3"
+     "audio": "audio/ar/sounds/s30.mp3"
     },
     {
      "ar": "هاد",
      "tr": "haad",
      "en": "this (هذا)",
-     "audio": "audio/sounds/s31.mp3"
+     "audio": "audio/ar/sounds/s31.mp3"
     },
     {
      "ar": "كتير",
      "tr": "ktiir",
      "en": "a lot (كثير)",
-     "audio": "audio/sounds/s32.mp3"
+     "audio": "audio/ar/sounds/s32.mp3"
     },
     {
      "ar": "تنين",
      "tr": "tnēn",
      "en": "two (اثنين)",
-     "audio": "audio/sounds/s33.mp3"
+     "audio": "audio/ar/sounds/s33.mp3"
     },
     {
      "ar": "دراع",
      "tr": "draaʿ",
      "en": "arm (ذراع)",
-     "audio": "audio/sounds/s34.mp3"
+     "audio": "audio/ar/sounds/s34.mp3"
     }
    ]
   },
@@ -269,43 +269,43 @@ window.SOUNDS = {
      "ar": "بيت",
      "tr": "bēt",
      "en": "house",
-     "audio": "audio/sounds/s35.mp3"
+     "audio": "audio/ar/sounds/s35.mp3"
     },
     {
      "ar": "يوم",
      "tr": "yōm",
      "en": "day",
-     "audio": "audio/sounds/s36.mp3"
+     "audio": "audio/ar/sounds/s36.mp3"
     },
     {
      "ar": "زيت",
      "tr": "zēt",
      "en": "oil",
-     "audio": "audio/sounds/s37.mp3"
+     "audio": "audio/ar/sounds/s37.mp3"
     },
     {
      "ar": "لون",
      "tr": "lōn",
      "en": "color",
-     "audio": "audio/sounds/s38.mp3"
+     "audio": "audio/ar/sounds/s38.mp3"
     },
     {
      "ar": "عام",
      "tr": "ʿaam",
      "en": "year",
-     "audio": "audio/sounds/s39.mp3",
+     "audio": "audio/ar/sounds/s39.mp3",
      "contrast": {
       "ar": "عم",
       "tr": "ʿam",
       "en": "(‑ing marker)",
-      "audio": "audio/sounds/s40.mp3"
+      "audio": "audio/ar/sounds/s40.mp3"
      }
     },
     {
      "ar": "عيد",
      "tr": "ʿiid",
      "en": "holiday / feast",
-     "audio": "audio/sounds/s41.mp3"
+     "audio": "audio/ar/sounds/s41.mp3"
     }
    ]
   }
