@@ -475,12 +475,65 @@ const VOCSRC = {
 };
 const LIB = window.LIBRARY || {texts: [], drills: []};
 
+// ---------- loading data on demand ----------
+// The app used to fetch 15.4 MB before it drew anything, and the home screen -- a list of
+// section names and counts -- paid all of it. Measured, 97% of the library and 85% of the verbs
+// is content you can only see by opening something: sentences and paradigms. So both datasets
+// ship as an INDEX plus BODIES (pipeline/split.py), and the bodies arrive when asked for.
+//
+// <script> tags, not fetch(), for the reason everything else here is a <script> tag: on file://
+// a fetch() of a sibling file is a CORS error, and this app is meant to work by double-click.
+const _needing = {};
+function needFile(name) {
+  if (_needing[name]) return _needing[name];
+  return (_needing[name] = new Promise((ok, no) => {
+    const el = document.createElement('script');
+    el.src = 'data/' + LANG.code + '/' + name + '.js';
+    el.onload = ok;
+    el.onerror = () => { delete _needing[name]; no(new Error(name + ' could not be loaded')); };
+    document.head.appendChild(el);
+  }));
+}
+
+// Sentences. One text is ~18 KB; all of them together are 6.9 MB. Both files write into the
+// same window.CORPUS, so whichever path fed a text, the rest of the app cannot tell.
+const textReady = id => !!(window.CORPUS && window.CORPUS[id]);
+const needText = id => textReady(id) ? Promise.resolve() : needFile('text/' + id);
+let _corpusAll = false;
+const corpusReady = () => _corpusAll;
+function needCorpus() {                    // the whole thing -- lexicon, translator, placement
+  return needFile('corpus').then(() => { _corpusAll = true; });
+}
+// `t.sentences` becomes a getter over that store. Same reasoning as `v.conj`: ten call sites
+// walk `t.sentences`, and none of them has to learn that the sentences now arrive separately.
+// It reads as an empty text until the body lands, which is what the existing `(t.sentences ||
+// [])` guards already expect -- so a page that renders early renders thin rather than throwing.
+LIB.texts.forEach(t => Object.defineProperty(t, 'sentences', {
+  configurable: true, get: () => (window.CORPUS || {})[t.id] || []}));
+LIB.drills.forEach(d => Object.defineProperty(d, 'items', {
+  configurable: true, get: () => (window.CORPUS || {})[d.id] || []}));
+
 // ---------- verbs ----------
 // Sourced from Maknuune: root, gloss, the three principal parts (past / present / command)
 // and their pronunciation are looked up, never generated. The Form (measure I–X) and the
 // weak class are computed by pipeline/verbforms.py from the perfect form + root.
 const VB = (window.VERBS && window.VERBS.verbs) || [];
-VB.forEach((v, i) => v._i = i);          // stable index for detail-view routing
+// `conj` is a getter, not a field. That is what lets 2,459 paradigms -- 4.4 MB, and 85% of this
+// dataset -- stay on disk until a table is actually opened, without touching any of the dozen
+// places that read `v.conj`. `v.hasConj` ships in the index and answers "is there a paradigm"
+// for the code that only needs to know that: the study plan's verb walk, the section count, the
+// "conjugates" badge.
+const CONJ_CHUNK = 256;                  // must match pipeline/split.py
+const conjChunk = i => 'verbs-conj-' + String(Math.floor(i / CONJ_CHUNK)).padStart(2, '0');
+const conjReady = i => !!(window.VCONJ && window.VCONJ[i]);
+const needConj = i => conjReady(i) ? Promise.resolve() : needFile(conjChunk(i));
+VB.forEach((v, i) => {
+  v._i = i;                              // stable index for detail-view routing
+  Object.defineProperty(v, 'conj', {configurable: true, get: () => (window.VCONJ || {})[i]});
+});
+// Every paradigm at once, for the two readers that genuinely need all of them.
+const needAllConj = () => Promise.all(
+  [...new Set(VB.filter(v => v.hasConj).map(v => conjChunk(v._i)))].map(needFile));
 const FORM_ORDER = LANG.verb.classOrder;
 // One honest line on what each measure tends to do. Patterns, not promises — a given verb
 // can drift from its measure's core sense, so these orient rather than define.
@@ -748,30 +801,37 @@ const GROUPS = [
 //
 // These definitions are language-NEUTRAL. `view` and `status` are functions so they read live
 // data at call time rather than at load time; the art and the labels come from the pack.
+//
+// `lex: 1` means "this section's pages are made of lexicon lookups" -- every Arabic word in a
+// grammar lesson, a Bible verse or a dinner-table line is tappable, and that needs the 7.3 MB
+// corpus. Those sections prefetch it in the background while the page they asked for renders
+// from the index. It is declared here, per section, rather than guessed from how much Arabic
+// happens to be on the page: the home screen shows a phrase of the day, which is four tappable
+// words, and a guess would have made the lightest page in the app pull the heaviest file.
 const SECTION_DEFS = {
   plan: {icon: 'plan', label: 'My Plan', group: 'plan',
     view: (id, arg) => planSection(id, arg),
     status: () => planCfg()
       ? 'Phase ' + (curPhaseIndex(planCfg()) + 1) + ' · ' + esc(CUR.phases[curPhaseIndex(planCfg())].name)
       : 'Build your study plan'},
-  lessons: {icon: 'lesson', label: 'Lessons', group: 'practice',
+  lessons: {icon: 'lesson', lex: 1, label: 'Lessons', group: 'practice',
     view: id => lessonsSection(id),
     status: () => (LSN.units || []).length
       ? (LSN.units || []).length + ' units, from native materials' : 'Teaching units'},
-  sounds: {icon: 'sound', label: 'Sounds', group: 'practice',
+  sounds: {icon: 'sound', lex: 1, label: 'Sounds', group: 'practice',
     view: id => soundsSection(id),
     status: () => SND.lessons ? SND.lessons.length + ' sound contrasts to master'
                               : 'Get the ear & mouth right'},
-  reactions: {icon: 'react', label: 'Reactions', group: 'practice',
+  reactions: {icon: 'react', lex: 1, label: 'Reactions', group: 'practice',
     view: id => reactionsSection(id),
     status: () => RX.items ? RX.items.length + ' quick replies, by feel' : 'Conversation reflexes'},
-  grammar: {icon: 'grammar', label: 'Grammar Lessons', group: 'practice',
+  grammar: {icon: 'grammar', lex: 1, label: 'Grammar Lessons', group: 'practice',
     view: id => grammarSection(id),
     status: () => GRAM.length + ' spoken structures'},
   verbs: {icon: 'verbs', label: 'Verbs', group: 'practice',
     view: id => verbsSection(id),
     status: () => VB.length + ' verbs, by ' + LANG.verb.classNoun},
-  vocab: {icon: 'vocab', label: 'Vocabulary', group: 'practice',
+  vocab: {icon: 'vocab', lex: 1, label: 'Vocabulary', group: 'practice',
     view: (id, arg) => vocabSection(id, arg),
     status: () => marked.size ? dueCards().length + ' due · ' + marked.size + ' cards'
                               : 'Your flashcards'},
@@ -781,7 +841,7 @@ const SECTION_DEFS = {
   stories: {icon: 'stories', label: 'Short Stories', group: 'input',
     view: id => storiesSection(id),
     status: () => LIB.texts.filter(t => t.kind === 'story').length + ' stories, 3 levels'},
-  table: {icon: 'table', label: 'The Dinner Table', group: 'input',
+  table: {icon: 'table', lex: 1, label: 'The Dinner Table', group: 'input',
     view: id => tableSection(id),
     status: () => TBL.dialogues ? TBL.dialogues.length + ' conversations · follow the room'
                                 : 'The north-star skill'},
@@ -796,7 +856,7 @@ const SECTION_DEFS = {
   listening: {icon: 'ears', label: 'Listening', group: 'input',
     view: id => listeningSection(id),
     status: () => LISTEN.length + ' episodes · native speed, with transcripts'},
-  bible: {icon: 'bible', label: 'Bible', group: 'input',
+  bible: {icon: 'bible', lex: 1, label: 'Bible', group: 'input',
     view: (id, arg) => bibleSection(id, arg),
     status: () => LANG.bibleBlurb},
   tutor: {icon: 'tutor', label: 'Ask a Tutor', group: 'ask',
@@ -897,6 +957,32 @@ function route() {
   const cw = $('cw'); if (cw) cw.classList.remove('on');   // close the word sheet on nav
   const h = location.hash.slice(1) || '/';
   const [, kind, id, arg] = h.split('/');
+
+  // Everything below this line renders synchronously, the way it always has. What changed is
+  // that the data it renders may not be here yet -- so the route says what it needs, and if any
+  // of it is missing the render is deferred and re-entered once. One gate, rather than an await
+  // threaded through twenty view functions.
+  const want = [];
+  if ((kind === 'text' || kind === 'speak') && id && !textReady(id)) want.push(needText(id));
+  if (kind === 'drill' && id && !textReady(id)) want.push(needText(id));
+  if (kind === 'verb' && VB[+id] && VB[+id].hasConj && !conjReady(+id)) want.push(needConj(+id));
+  // Translate would be WRONG rather than merely thin without the whole corpus -- searching a
+  // partial index quietly returns "no results" for words that are there. It is the one page
+  // whose entire job is to read across every text, so it waits for them. Everywhere else
+  // degrades gracefully and repaints when the lexicon arrives -- see lexIndex(). (The placement
+  // test needs it too, and asks for it in assessStart, where there is an intro screen to cover
+  // the wait.)
+  if (kind === 'translate' && !corpusReady()) want.push(needCorpus());
+  // Sections declared `lex` are made of lookups, so they fetch the corpus -- but in the
+  // BACKGROUND, not in `want`. The page draws immediately from the index and lexPaint() makes
+  // its words live a moment later, which beats a spinner over content that is already here.
+  if (!corpusReady() && (SECTION_DEFS[kind] || {}).lex) needCorpus().then(lexRefresh, () => {});
+  if (want.length) {
+    routeLoading();
+    Promise.all(want).then(route, e => routeFailed(e));
+    return;
+  }
+
   // A text/drill belongs to whichever section it came from; light that tab when we can.
   if (kind === 'text')  { const t = LIB.texts.find(x => x.id === id);
     if (t) { renderNav(SEC_FOR_KIND[t.kind] || null); return reader(t); } }
@@ -921,6 +1007,20 @@ function route() {
   home();
 }
 addEventListener('hashchange', route);
+
+// Only shown while a body is in flight, and only when there is one to wait for -- a page whose
+// data is already in memory never sees it.
+function routeLoading() {
+  $('back').hidden = false;
+  $('view').innerHTML = '<div class="empty"><div class="empty-t">Loading…</div></div>';
+}
+function routeFailed(e) {
+  $('view').innerHTML = `<div class="empty"><div class="empty-t">That didn’t load</div>
+    <p>${esc((e && e.message) || 'Something is missing.')} You may be offline, or this may be an
+    old link to something that has since been removed.</p>
+    <div class="ctl" style="justify-content:center">
+      <button class="tog" onclick="location.hash='/'">Back to home</button></div></div>`;
+}
 
 // ---------- home ----------
 // "Today" is Israel civil time everywhere — the plan resets and the news freshens at midnight
@@ -2931,7 +3031,7 @@ const GRAM_LIST = () => GRAM.map((l, i) => ({key: 'g:' + l.id, id: l.id, title: 
 let _verbPlan = null;
 function verbPlan() {
   if (_verbPlan) return _verbPlan;
-  const list = VB.filter(v => v.conj && (v.gloss || '').trim());
+  const list = VB.filter(v => v.hasConj && (v.gloss || '').trim());
   list.sort((a, b) => (b.core ? 1 : 0) - (a.core ? 1 : 0)                 // core verbs first
     || LANG.verb.tier(a) - LANG.verb.tier(b)               // then easiest weak class
     || (a.form === 'I' ? 0 : 1) - (b.form === 'I' ? 0 : 1)               // then Form I before derived
@@ -3412,7 +3512,7 @@ function asGrammarItem(tier) {
 }
 function asVerbItem(tier) {
   const spec = (AS.verbSpec || [])[tier - 1]; if (!spec) return null;
-  const verbs = VB.filter(v => v.conj && v.gloss && spec.weak.includes(v.weak));
+  const verbs = VB.filter(v => v.hasConj && v.gloss && spec.weak.includes(v.weak));
   if (!verbs.length) return null;
   for (let tries = 0; tries < 12; tries++) {
     const v = _asPick(verbs), person = _asPick(spec.persons), aspect = _asPick(spec.aspects);
@@ -3453,6 +3553,9 @@ let _as = null;   // {tier, round, qi, order, skills:{s:{ok,n}}, cur, total, ans
 function assessView() {
   $('back').hidden = false;
   $('title').textContent = 'Placement';
+  // The test samples real vocabulary by corpus frequency, so it needs every text. Start that
+  // now: there are four paragraphs and a radio group to read before anyone presses Start.
+  if (!corpusReady()) needCorpus().catch(() => {});
   if (_as && !_as.done) return assessRender();
   const radio = (val, label, sub) => `<label class="pf-radio">
      <input type="radio" name="aslvl" value="${val}" ${val === 'none' ? 'checked' : ''}>
@@ -3472,8 +3575,15 @@ function assessView() {
       <button class="tog" onclick="location.hash='/plan/new'">Back</button>
     </div>`;
 }
-function assessStart() {
-  const guess = (document.querySelector('input[name=aslvl]:checked') || {}).value || 'none';
+// `guess` is passed on the retry: the waiting screen replaces the radio group, so re-reading
+// it after the load would silently reset a self-assessment to "brand new".
+function assessStart(guess) {
+  guess = guess || (document.querySelector('input[name=aslvl]:checked') || {}).value || 'none';
+  if (!corpusReady()) {                     // usually already done -- see assessView
+    $('view').innerHTML = '<div class="empty"><div class="empty-t">Getting the questions ready…</div></div>';
+    return needCorpus().then(() => { _asIdx = null; assessStart(guess); },
+                             () => routeFailed(new Error('The question bank could not be loaded.')));
+  }
   const tier = (AS.selfStart || {})[guess] || 1;
   _as = {tier, round: 0, qi: 0, roundOk: 0, total: (AS.rounds || 4) * 5, answered: 0,
          skills: {}, order: _asShuf(AS.skills.slice()), done: false};
@@ -4477,7 +4587,7 @@ function trEntryHTML(e) {
     ${e.root ? `<div class="tr-root">root ${esc((e.root || '').replace(/\./g, ' · '))}${e.caphi ? ' &nbsp;·&nbsp; ' + esc(e.caphi) : ''}</div>` : ''}
     <div class="tr-acts">
       ${deckBtnHTML(e.raw, `deckToggleLex('${cssq(e.raw)}','tr')`)}
-      ${e.vb != null && VB[e.vb] && VB[e.vb].conj
+      ${e.vb != null && VB[e.vb] && VB[e.vb].hasConj
         ? `<a class="tr-vb" href="#/verb/${e.vb}">See the full conjugation →</a>` : ''}</div>
     ${ex ? `<div class="tr-exs"><div class="tr-exs-h">In context</div>${ex}</div>` : ''}
   </div>`;
@@ -4630,7 +4740,7 @@ function verbsSection(sub){
 function verbCard(v){
   const badges = `<span class="b-form">${esc(v.form === 'Q' ? 'Quad' : v.form)}</span>` +
     (WEAK_INFO[v.weak] ? `<span class="b-wk">${esc(WEAK_INFO[v.weak][0].toLowerCase())}</span>` : '') +
-    (v.conj ? `<span class="b-cj">conjugates</span>` : '');
+    (v.hasConj ? `<span class="b-cj">conjugates</span>` : '');
   const root = esc((v.root || '').replace(/\./g, ' · '));
   const part = (k, pp) => pp ? `<div class="pp">
       <span class="pp-k">${k}</span>
@@ -5202,7 +5312,7 @@ function deckToggleVerb(i) {
 // A translator result. lexLook() gives back a card-shaped record, so this reuses exactly the
 // same builder the reader's word card uses — one definition of what a word card is.
 function deckToggleLex(tok, redraw) {
-  const r = lexLook(tok); if (!r || !r.lemma) return;
+  const r = lexLook(tok, true); if (!r || !r.lemma) return;
   deckToggleKey(r.lemma, () => cardFromWord(r), redraw === 'tr' ? () => trRender(_trQ) : null);
 }
 
@@ -5263,6 +5373,14 @@ function lexFromVerb(v, surface, cell) {
           provenance: 'verbs.js', _vb: v};
 }
 
+// Built from whatever is in memory. The verb half is always there; the corpus half is 7.3 MB
+// and arrives only when something asks for it -- a section that is built on lookups (route()
+// prefetches for those), or a tap on a word that missed.
+//
+// It deliberately does NOT fetch the corpus itself. It is called once per rendered token, and
+// the home screen's phrase of the day is four tokens: making the lookup itself greedy meant
+// the lightest page in the app pulled the heaviest file, which is the whole thing this change
+// exists to stop.
 function lexIndex() {
   if (_lexI) return _lexI;
   const byKey = new Map(), bySurf = new Map();
@@ -5282,10 +5400,22 @@ function lexIndex() {
   return _lexI;
 }
 
+// Everything the corpus feeds is stale once the corpus grows. Drop it and repaint.
+function lexRefresh() {
+  _lexI = _tridx = _asIdx = null;
+  if (typeof lexPaint === 'function') lexPaint();
+}
 // Every conjugated cell -> its verb. ~2,300 paradigms x ~50 cells, so it is built only on the
 // first lookup that misses everything else — which is the only time it can possibly help.
+// That is also the only lookup that needs every paradigm file, so this is where they are asked
+// for; until they arrive the fallback simply finds nothing, which is what it did before them.
+const conjIdxReady = () => VB.every(v => !v.hasConj || conjReady(v._i));
 function lexConjIndex() {
   if (_lexConj) return _lexConj;
+  if (!conjIdxReady()) {
+    needAllConj().then(() => { _lexConj = null; lexRefresh(); }, () => {});
+    return new Map();
+  }
   const m = new Map();
   VB.forEach(v => { const c = v.conj; if (!c) return;
     for (const k in c) { const cell = c[k]; const ar = cell && (cell.arv || cell.ar);
@@ -5346,7 +5476,13 @@ function lexAs(r, tok) {
 }
 
 // The one lookup every module uses. Returns a word record (card-shaped) or null.
-function lexLook(tok) {
+//
+// `deep` decides whether a miss is allowed to reach for the 5.4 MB of paradigm files. It is
+// false while PAINTING -- deciding whether to grey out a word is not worth downloading every
+// conjugation in the language, and on a page of Classical Arabic like the Bible almost every
+// token misses -- and true when a person has actually asked about a word. What is already in
+// memory is always used either way.
+function lexLook(tok, deep) {
   const k = arNorm(tok); if (!k) return null;
   // A correction is a SOURCE, not only a patch on something the index already had. بدكم "you
   // want (pl)" is in no index at all, so correcting-after-lookup never reached it and the word
@@ -5357,7 +5493,7 @@ function lexLook(tok) {
   if (r) return lexFix(lexAs(r, tok));
   // lexFix on EVERY branch, not just the first. بدنا "we want" fell through to the conjugation
   // index, matched a cell of بدن "stoop, lower", and returned before the correction could apply.
-  const cj = lexConjIndex().get(k);
+  const cj = (deep || conjIdxReady()) ? lexConjIndex().get(k) : null;
   if (cj) return lexFix(lexFromVerb(cj.v, tok, cj.cell));
   const st = lexStrip(k, ix);
   if (!st) return null;
@@ -5375,9 +5511,13 @@ function arLive(str, cls) {
   const s = String(str == null ? '' : str); if (!s) return '';
   let out = '', buf = '';
   const flush = () => { if (!buf) return;
+    // `gap` means "not in the lexicon", and that is only a claim we can make once the lexicon
+    // is complete. Before then the word renders as an ordinary tappable one and lexPaint()
+    // settles it later -- greying out every word on the page while the corpus is still on disk
+    // would be a lie about the content, not a loading state.
     const hit = lexLook(buf);
-    out += '<span class="w lw' + (hit ? '' : ' gap') + '" data-lw="' + esc(buf) + '" tabindex="0">'
-         + esc(buf) + '</span>';
+    out += '<span class="w lw' + (hit || !corpusReady() ? '' : ' gap') + '" data-lw="'
+         + esc(buf) + '" tabindex="0">' + esc(buf) + '</span>';
     buf = ''; };
   for (const ch of s) {
     if (/\s/.test(ch)) { flush(); out += ch; }
@@ -5398,10 +5538,16 @@ const WTYPE = {VERB: 'verb', NOUN: 'noun', ADJ: 'adjective', ADV: 'adverb', PREP
 function wordType(analysis) { if (!analysis) return null; const a = String(analysis);
   return WTYPE[a] || WTYPE[a.split(':')[0]] || a.split(':')[0].toLowerCase().replace(/_/g, ' '); }
 
-// index the conjugating verbs by root, so a tapped verb can show its full table
-const _vbByRoot = (() => { const m = new Map();
-  VB.forEach(v => { if (v.root && v.conj) { if (!m.has(v.root)) m.set(v.root, []); m.get(v.root).push(v); } });
-  return m; })();
+// Index the conjugating verbs by root, so a tapped verb can show its full table. Grouped on
+// `hasConj` rather than on the table itself: this runs on any page that renders a word card,
+// and touching `v.conj` here would drag in 4.4 MB of paradigms to answer a yes/no question.
+let _vbByRootI = null;
+function vbByRoot() {
+  if (_vbByRootI) return _vbByRootI;
+  const m = new Map();
+  VB.forEach(v => { if (v.root && v.hasConj) { if (!m.has(v.root)) m.set(v.root, []); m.get(v.root).push(v); } });
+  return (_vbByRootI = m);
+}
 // Find the paradigm for a verb token. This used to pick `cands[0]` — the first verb sharing the
 // root — whenever it couldn't match a form code, which was 3,537 of the corpus's 5,388 verb
 // tokens, and handed back a verb contradicting the token's own lemma 1,947 times: كان came back
@@ -5418,9 +5564,9 @@ const _vbByRoot = (() => { const m = new Map();
 // is worse than no paradigm, and this now decides which card a word banks under.
 const _VERB_MEASURE = /VERB:(II|III|IV|V|VI|VII|VIII|IX|X|Q)(?![A-Z])/;
 function findVerb(w) {
-  if (w && w._vb) return w._vb.conj ? w._vb : null;   // came straight from verbs.js via LEX
+  if (w && w._vb) return w._vb.hasConj ? w._vb : null; // came straight from verbs.js via LEX
   if (!w || !w.root || !String(w.analysis || '').startsWith('VERB')) return null;
-  const cands = _vbByRoot.get(w.root); if (!cands) return null;
+  const cands = vbByRoot().get(w.root); if (!cands) return null;
   const n = arNorm(w.lemma || '');
   if (n) { const byLemma = cands.find(v => arNorm(v.lemma) === n
              || (v.past && arNorm(v.past.ar) === n));
@@ -5446,7 +5592,15 @@ function findVerb(w) {
 // that single line, with no `if (LANG.code === ...)` anywhere in the UI.
 function paradigmHTML(v, scale) {
   const c = v.conj;
-  if (!c) return '';
+  if (!c) {
+    if (!v.hasConj) return '';
+    // The paradigm exists but its block is still on disk. Leave a marker, fetch it, and swap
+    // the table in where the marker is -- the same repaint-in-place trick lexPaint() uses, and
+    // it works no matter which view asked (word card, review card, popup) without any of them
+    // having to become async.
+    needConj(v._i).then(paintConj, () => {});
+    return `<div class="cj-wait" data-cji="${v._i}" data-cjs="${esc(scale)}"></div>`;
+  }
   const P = scale, full = scale === 'cj', out = [];
   const filled = k => !!c[k];
   const txt = k => c[k] ? {ar: c[k].arv || c[k].ar, ph: c[k].ph} : null;
@@ -5498,8 +5652,15 @@ function paradigmHTML(v, scale) {
 }
 
 function conjTableHTML(v) { return paradigmHTML(v, 'wcj'); }
+// Fill every waiting marker whose block has since landed.
+function paintConj() {
+  document.querySelectorAll('.cj-wait').forEach(el => {
+    const v = VB[+el.dataset.cji];
+    if (v && v.conj) el.outerHTML = paradigmHTML(v, el.dataset.cjs);
+  });
+}
 function conjPopupHTML(v) {
-  if (!v.conj) return '';
+  if (!v.hasConj) return '';
   return `<div class="wcj"><div class="wcj-h"><span>Conjugation${WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''} Form ${esc(v.form)}</span>
       <a href="#/verb/${v._i}" onclick="hideCard()">full page →</a></div>${conjTableHTML(v)}</div>`;
 }
@@ -5554,7 +5715,9 @@ function showWord(w0, ctx, opts) {
      <div class="ph">${esc(w.caphi_urban || w.caphi || '')}</div>
      ${variants.map(v => `<div class="phwa"><b>${esc(v.label)}</b>${esc(v.val)}</div>`).join('')}
      ${wt ? `<div class="wtype">${esc(wt)}</div>` : ''}
-     <div class="gl">${esc(pretty(w.gloss)) || '<span style="color:var(--muted)">no entry</span>'}</div>
+     <div class="gl">${esc(pretty(w.gloss)) || (w._looking
+        ? '<span style="color:var(--muted)">looking it up…</span>'
+        : '<span style="color:var(--muted)">no entry</span>')}</div>
      ${vb ? conjPopupHTML(vb) : ''}
      <dl>
        <dt>As written</dt><dd class="rtl">${esc(w.surface)}</dd>
@@ -5603,6 +5766,7 @@ function lexPaint() {
   document.querySelectorAll('.lx .lw').forEach(el => {
     const r = lexLook(el.dataset.lw);
     el.classList.toggle('mk', !!(r && r.lemma && inDeckWord(r)));
+    el.classList.toggle('gap', corpusReady() && !r);
   });
 }
 // ---------- phrase cards ------------------------------------------------------------
@@ -5792,7 +5956,7 @@ function cardHePast(c) {
   let hp = c.he_past;
   if (!hp) {
     if (!String(c.analysis || '').startsWith('VERB') || !c.root) return null;
-    const cands = _vbByRoot.get(c.root); if (!cands) return null;
+    const cands = vbByRoot().get(c.root); if (!cands) return null;
     const form = (String(c.analysis).match(/VERB:([IVXQ]+)/) || [])[1];
     const v = cands.find(x => x.form === form) || cands[0];
     hp = v && v.past ? {ar: v.past.ar, caphi: v.past.caphi} : null;
@@ -5808,7 +5972,7 @@ function cardHePast(c) {
 function cardVerb(c) {
   if (!c || c.kind === 'phrase' || !c.root) return null;
   if (!String(c.analysis || '').startsWith('VERB')) return null;
-  const cands = _vbByRoot.get(c.root); if (!cands) return null;
+  const cands = vbByRoot().get(c.root); if (!cands) return null;
   const heads = [c.he_past && c.he_past.ar, c.lemma, c.vocalized].filter(Boolean).map(arNorm);
   for (const h of heads) {
     const hit = cands.find(v => arNorm(v.lemma) === h || (v.past && arNorm(v.past.ar) === h));
@@ -5821,7 +5985,7 @@ function cardVerb(c) {
 // the "he · past" line above it is what the card is actually testing.
 function cardConjHTML(c) {
   const v = cardVerb(c);
-  if (!v || !v.conj) return '';
+  if (!v || !v.hasConj) return '';
   return `<details class="rv-conj"><summary>Conjugation · Form ${esc(v.form)}${
       WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''}</summary>
     ${conjTableHTML(v)}
@@ -6093,8 +6257,19 @@ $('view').addEventListener('click', e => {
   const pk = e.target.closest('[data-peek]');
   if (pk) { pk.closest('.sent').classList.add('peek'); return; }
   const lw = e.target.closest('.lx .lw');
-  if (lw) { showWord(lexLook(lw.dataset.lw) || {surface: lw.dataset.lw, lemma: '', gloss: ''},
-      null, {msa: !!lw.closest('.lx-msa')});
+  if (lw) {
+    const tok = lw.dataset.lw, ctx = {msa: !!lw.closest('.lx-msa')};
+    const r = lexLook(tok, true);
+    // A miss with the corpus still on disk is not "unknown word" -- it is "we haven't looked
+    // yet". Tapping is the clearest possible statement that this lookup is wanted, so it is
+    // where the corpus is paid for on a page that didn't prefetch it.
+    if (!r && !corpusReady()) {
+      showWord({surface: tok, lemma: '', gloss: '', _looking: 1}, null, ctx);
+      needCorpus().then(() => { lexRefresh();
+        showWord(lexLook(tok, true) || {surface: tok, lemma: '', gloss: ''}, null, ctx); }, () => {});
+      return;
+    }
+    showWord(r || {surface: tok, lemma: '', gloss: ''}, null, ctx);
     return; }
   const w = e.target.closest('.rd .w');
   // Mid-phrase, a tap means "this is the other end of the chunk" rather than "open this word".

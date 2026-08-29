@@ -83,8 +83,8 @@ def book_tables():
 def main():
     if not os.path.exists(PDF):
         print('reference PDF not on disk — nothing to compare.'); return 1
-    src = open(paths.data('verbs.js'), encoding='utf-8').read()
-    verbs = json.loads(src[src.index('{'): src.rindex(';')])['verbs']
+    import split
+    verbs = split.read_verbs()['verbs']
 
     # Comparing raw strings reports "disagreements" that are purely the onset-notation
     # difference (see onset_key) — normalize so only real vowel differences surface.

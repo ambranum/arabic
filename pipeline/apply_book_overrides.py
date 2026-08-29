@@ -43,10 +43,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- where this language's generated data lives
 
 def main():
-    p = paths.data('verbs.js')
-    src = open(p, encoding='utf-8').read()
-    head = src[:src.index('window.VERBS = ') + len('window.VERBS = ')]
-    data = json.loads(src[src.index('{'): src.rindex(';')])
+    import split
+    data = split.read_verbs()          # index + paradigm files, reassembled
 
     applied, failed = [], []
     for v in data['verbs']:
@@ -68,8 +66,7 @@ def main():
         v['src'] = 'book'
         applied.append((v['lemma'], before, (ov['past'], ov['pres'])))
 
-    with open(p, 'w', encoding='utf-8') as f:
-        f.write(head); json.dump(data, f, ensure_ascii=False); f.write(';\n')
+    split.write_verbs(data, note='pipeline/build_verbs.py + apply_book_overrides.py')
 
     for lem, b, a in applied:
         print(f'  {lem}: {b[0]}/{b[1]}  ->  {a[0]}/{a[1]}  (book)')
