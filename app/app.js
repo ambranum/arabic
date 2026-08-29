@@ -154,8 +154,8 @@ function playWord(card) {
 function speakWord(card) {                    // browser SpeechSynthesis fallback (generic Arabic)
   if (!window.speechSynthesis) return;
   const u = new SpeechSynthesisUtterance(card.vocalized || card.lemma || '');
-  u.lang = 'ar-SA'; u.rate = Math.min(1, SPEED);
-  const v = speechSynthesis.getVoices().find(v => /^ar/i.test(v.lang));
+  u.lang = LANG.tts.lang; u.rate = Math.min(1, SPEED);
+  const v = speechSynthesis.getVoices().find(v => LANG.tts.voiceRe.test(v.lang));
   if (v) u.voice = v;
   speechSynthesis.cancel(); speechSynthesis.speak(u);
 }
@@ -373,29 +373,12 @@ const LIB = window.LIBRARY || {texts: [], drills: []};
 // weak class are computed by pipeline/verbforms.py from the perfect form + root.
 const VB = (window.VERBS && window.VERBS.verbs) || [];
 VB.forEach((v, i) => v._i = i);          // stable index for detail-view routing
-const FORM_ORDER = ['I','II','III','IV','V','VI','VII','VIII','X','Q'];
+const FORM_ORDER = LANG.verb.classOrder;
 // One honest line on what each measure tends to do. Patterns, not promises — a given verb
 // can drift from its measure's core sense, so these orient rather than define.
-const FORM_INFO = {
-  I:   ['Form I',        'The base verb — the plain action. كتب “he wrote”.'],
-  II:  ['Form II',       'Doubled middle root letter. Often intensive or causative — درّس “he taught”.'],
-  III: ['Form III',      'Long vowel after the first letter. Doing something to or with someone — كاتب “he corresponded”.'],
-  IV:  ['Form IV',       'Causative. Rare in dialect; usually surfaces as Form I or II instead.'],
-  V:   ['Form V',        'Form II with a t- prefix. Reflexive of II — تعلّم “he learned”.'],
-  VI:  ['Form VI',       'Form III with a t- prefix. Reciprocal — تكاتبوا “they wrote to each other”.'],
-  VII: ['Form VII',      'n- prefix. Passive or medio-passive — انكسر “it broke”.'],
-  VIII:['Form VIII',     'Infixed -t-. Often middle voice or reflexive — اشتغل “he worked”.'],
-  X:   ['Form X',        'ista- prefix. Seeking or considering — استعمل “he used”.'],
-  Q:   ['Quadriliteral', 'Four-consonant roots, including loanwords — تلفن “he phoned”.'],
-};
-const WEAK_INFO = {
-  hollow:      ['Hollow',      'Middle root letter is و or ي and drops or shifts — راح / يروح.'],
-  defective:   ['Defective',   'Final root letter is و or ي — مشي / يمشي.'],
-  doubled:     ['Doubled',     'Last two root letters are the same, written with shadda — حبّ / يحبّ.'],
-  assimilated: ['Assimilated', 'First root letter is و and often drops in the present — وصل / يوصل.'],
-  hamzated:    ['Hamzated',    'A root letter is hamza (ء) — أكل / ياكل.'],
-};
-const WEAK_ORDER = ['hollow','defective','doubled','assimilated','hamzated'];
+const FORM_INFO  = LANG.verb.classInfo;
+const WEAK_INFO  = LANG.verb.weakInfo;
+const WEAK_ORDER = LANG.verb.weakOrder;
 const byForm = f => VB.filter(v => v.form === f);
 const irregular = VB.filter(v => WEAK_INFO[v.weak]);
 const $ = id => document.getElementById(id);
@@ -415,23 +398,11 @@ const pretty = g => String(g || '').replace(/_/g, ' ').replace(/;/g, ' · ');
 // The iPhone Arabic layout, key for key: 11 / 11 / 9-plus-backspace, ١٢٣ and the harakat key on
 // the bottom row. Anyone who already types Arabic on a phone knows exactly where everything is,
 // and anyone who doesn't is learning the layout they'll meet everywhere else.
-const KBD_LETTERS = [
-  ['ض','ص','ث','ق','ف','غ','ع','ه','خ','ح','ج'],
-  ['ش','س','ي','ب','ل','ا','ت','ن','م','ك','ة'],
-  ['ء','ظ','ط','ذ','د','ز','ر','و','ى'],
-];
-const KBD_NUMS = [
-  ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'],
-  ['-','/',':','؛','(',')','%','&','@','"'],
-  ['،','.','؟','!','’','«','»'],
-];
+const KBD_LETTERS = LANG.kbd.letters;
+const KBD_NUMS    = LANG.kbd.nums;
 // iOS hides the alef and hamza variants behind press-and-hold rather than giving each a key.
 // Same here — hold ا for أ إ آ, ل for the lam-alef ligatures, ّ for the full set of harakat.
-const KBD_HOLD = {
-  'ا': ['أ','إ','آ','ٱ'], 'و': ['ؤ'], 'ي': ['ى','ئ'], 'ه': ['ة'],
-  'ء': ['أ','إ','ؤ','ئ','آ'], 'ل': ['لا','لأ','لإ','لآ'],
-  'ّ': ['َ','ُ','ِ','ً','ٌ','ٍ','ْ','ّ'],
-};
+const KBD_HOLD    = LANG.kbd.hold;
 let _kbdEl = null;                                   // the field the panel is typing into
 let _kbdPage = 'ar', _kbdHoldT = null, _kbdHeld = false;
 
@@ -440,7 +411,7 @@ let _kbdPage = 'ar', _kbdHoldT = null, _kbdHeld = false;
 function kbdWrap(inputHTML, id, inline) {
   const btn = `<button type="button" class="kbd-tog${inline ? ' inline' : ''}" id="kbdt-${id}"
      title="Arabic keyboard" aria-label="Arabic keyboard"
-     onmousedown="event.preventDefault()" onclick="kbdToggle('${id}')">ع</button>`;
+     onmousedown="event.preventDefault()" onclick="kbdToggle('${id}')">${LANG.kbd.toggle}</button>`;
   const rtl = /dir=["']rtl["']/.test(inputHTML) ? ' rtl' : '';
   return inline ? inputHTML + btn : `<div class="kbd-wrap${rtl}">${inputHTML}${btn}</div>`;
 }
@@ -483,9 +454,10 @@ function kbdDraw() {
       ${rows.map((r, i) => `<div class="akbd-r">${r.map(k).join('')}${
         i === rows.length - 1 ? `<button class="akbd-k fn" data-a="back">⌫</button>` : ''}</div>`).join('')}
       <div class="akbd-r">
-        <button class="akbd-k fn" data-a="page">${_kbdPage === 'ar' ? '١٢٣' : 'ا ب ج'}</button>
+        <button class="akbd-k fn" data-a="page">${_kbdPage === 'ar' ? LANG.kbd.numsLabel : LANG.kbd.lettersLabel}</button>
         <button class="akbd-k wide" data-k=" ">space</button>
-        ${_kbdPage === 'ar' ? `<button class="akbd-k fn more" data-k="ّ">ـّ</button>` : ''}
+        ${_kbdPage === 'ar' && LANG.kbd.diacritic
+          ? `<button class="akbd-k fn more" data-k="${LANG.kbd.diacritic}">${LANG.kbd.diacriticLabel}</button>` : ''}
       </div></div>`;
 }
 // Press-and-hold opens the variants; a normal tap types the key itself. Everything runs off
@@ -843,7 +815,7 @@ function home(){
       ${tatreez()}
       <div class="hm-mast-in">
         <div class="hm-ed">Read it · Hear it · Say it</div>
-        <div class="hm-mark">عَرَبي <em>فَلَسطيني</em></div>
+        ${LANG.homeMasthead()}
       </div>
       <div class="hm-dl">
         <span>ISSUE ${esc(today)}</span>
@@ -1005,7 +977,9 @@ function booksList() {
   }).sort((a, b) => (a.shelf - b.shelf) || a.id.localeCompare(b.id)));
 }
 const bookById = id => booksList().find(b => b.id === id);
-const chTitleAr = c => (c.title.ar || '').replace(/^الفصل[^—]*—\s*/, '');
+// Books print their chapter number in the target language ("الفصل ٣ — ..."); the reader
+// shows its own numbering, so the prefix is stripped by a pattern the pack owns.
+const chTitleAr = c => (c.title.ar || '').replace(LANG.chapterPrefix, '');
 const chTitleEn = c => (c.title.en || '').replace(/^Chapter \d+ — /, '');
 
 // ============ Bible: ESV (your key) ‖ Van Dyck (public domain), side by side ============
@@ -1231,32 +1205,10 @@ const TUTOR_STARTERS = [
 ];
 
 // Ground the model in this app's actual scope + the dialect model, so answers don't drift to MSA.
+// The pack writes the tutor's brief; the app supplies what the pack cannot know at load
+// time -- grammar, sounds and reactions only exist once the data scripts have run.
 function tutorSystemPrompt() {
-  const gram = GRAM.map(l => l.title).filter(Boolean).slice(0, 24).join('; ');
-  const snds = (SND.lessons || []).map(L => L.target || L.en).filter(Boolean).join('; ');
-  const rxc = (RX.cats || []).map(c => c.en).filter(Boolean).join('; ');
-  return [
-    "You are a warm, precise tutor for SPOKEN PALESTINIAN ARABIC — the urban Levantine city speech of Jerusalem, Ramallah, and Nablus. The learner is an English speaker in a self-study app, working toward holding their own at a Palestinian family dinner table.",
-    "",
-    "How to answer:",
-    "- Answer in SPOKEN Palestinian, NOT Modern Standard Arabic (فصحى). When the spoken form differs from MSA, give the spoken one and briefly note the difference. If the learner's own phrase is MSA or another dialect, gently flag it and give the Palestinian equivalent.",
-    "- For any Arabic you give: Arabic script, then a simple transliteration in parentheses, then the English gloss. Keep it tight — one clear answer with an example or two beats a wall of grammar.",
-    "- Urban pronunciation model to reflect in transliterations: ق is a glottal stop (ء, an apostrophe '); ث→t, ذ→d; ج is a soft “zh/j”. e.g. قهوة = ʼahwe, هيك = heek.",
-    "- Honesty first: if you're not sure a form is specifically Palestinian (vs. general Levantine), say so plainly. Never invent a proverb, a “they always say…”, or confident detail you're unsure of. It's fine to say you're not certain.",
-    "- You can explain grammar, translate, compare near-synonyms, give example sentences, and role-play short dinner-table exchanges. Match the learner's level; be encouraging and concrete.",
-    "",
-    "SAVING PHRASES (important): when your answer teaches a specific Palestinian word or phrase the learner can reuse — above all for “how do I say…” questions — finish your ENTIRE reply with a machine-readable block listing the 1–4 most useful save-worthy items, each on its own line as “Arabic = English” (Arabic script only in this block, NO transliteration):",
-    "<save>",
-    "بدي = I want",
-    "بدي أروح عالبيت = I want to go home",
-    "</save>",
-    "Only list phrases genuinely worth memorizing as-is. For a pure grammar explanation with no single save-worthy phrase, omit the block entirely. Write nothing after </save>.",
-    "",
-    "This app already teaches the learner these things — reference them naturally, don't just list them:",
-    "• Grammar structures: " + (gram || "(various spoken structures)"),
-    "• Pronunciation contrasts: " + (snds || "(urban sound contrasts)"),
-    "• Conversational reaction categories: " + (rxc || "(everyday reactions)"),
-  ].join("\n");
+  return LANG.tutorPrompt({grammar: GRAM, sounds: SND.lessons || [], reactions: RX.cats || []});
 }
 
 function tutorSection(sub) {
@@ -1643,7 +1595,7 @@ function lsnChunkRow(uid, c, ci) {
   </div>`;
 }
 
-const AR_RUN = /([\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF][\s\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF\u064B-\u0652]*)/;
+const AR_RUN = LANG.script.run;
 function bidiMix(str) {
   return String(str == null ? '' : str).split(AR_RUN).map(p => {
     if (!p) return '';
@@ -2830,17 +2782,18 @@ function weeklyReviewDay(cfg) { let best = -1, bestH = Infinity; for (let i = 0;
 // Each walks its ORDERED list and serves the next item you haven't done, capped by phase so
 // difficulty ramps. `seen` keys are namespaced (g:/v:/w:) so they never collide with story ids.
 const GRAM_LIST = () => GRAM.map((l, i) => ({key: 'g:' + l.id, id: l.id, title: l.title, link: '/grammar/' + l.id}));
-const VERB_TIER = {sound: 1, doubled: 2, hollow: 2, defective: 3, assimilated: 3, hamzated: 3, irregular: 3, quad: 3};
+// Difficulty is the pack's judgement, not a shared table: Arabic sequences verbs by weak
+// class, Hebrew by binyan at least as much as by gzara. See LANG.verb.tier.
 let _verbPlan = null;
 function verbPlan() {
   if (_verbPlan) return _verbPlan;
   const list = VB.filter(v => v.conj && (v.gloss || '').trim());
   list.sort((a, b) => (b.core ? 1 : 0) - (a.core ? 1 : 0)                 // core verbs first
-    || (VERB_TIER[a.weak] || 2) - (VERB_TIER[b.weak] || 2)               // then easiest weak class
+    || LANG.verb.tier(a) - LANG.verb.tier(b)               // then easiest weak class
     || (a.form === 'I' ? 0 : 1) - (b.form === 'I' ? 0 : 1)               // then Form I before derived
     || (a.gloss || '').localeCompare(b.gloss || ''));
   _verbPlan = list.map(v => ({key: 'v:' + v._i, i: v._i, title: v.gloss || v.lemma,
-    ar: (v.past && v.past.ar) || v.lemma, weak: v.weak, tier: VERB_TIER[v.weak] || 2, link: '/verb/' + v._i}));
+    ar: (v.past && v.past.ar) || v.lemma, weak: v.weak, tier: LANG.verb.tier(v), link: '/verb/' + v._i}));
   return _verbPlan;
 }
 // Serve the ord-th not-yet-done item from a namespaced list; cycle back once all are seen (mirrors poolPick).
@@ -4252,8 +4205,9 @@ function planCalendar() {
 // Fully offline, from the app's own looked-up data: an index of every word that appears in the
 // corpus (stories / news / book) and the bilingual sentences it lives in. No machine translation,
 // no external calls — so every line shown is real Palestinian dialect with a source you can open.
-function arNorm(s) { return (s || '').replace(/[ً-ْٰـ]/g, '')
-  .replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').trim(); }
+// The identity every deck key, SRS key and lexicon lookup is built on. It stays a named
+// function with one definition and ~34 untouched call sites; only the body moved.
+function arNorm(s) { return LANG.script.norm(s); }
 const glossWords = g => String(g || '').toLowerCase().replace(/_/g, ' ').split(/[;·,()\/\s]+/).filter(Boolean);
 
 let _tridx = null, _trQ = '', _trT = null;
@@ -4548,11 +4502,7 @@ function verbCard(v){
 }
 
 // Person rows, in the reference's order. label = English, ar = the pronoun.
-const PERSONS = [
-  ['ana','I','أنا'], ['inta','you (m)','إنت'], ['inti','you (f)','إنتي'],
-  ['huwwe','he','هو'], ['hiyye','she','هي'], ['i7na','we','إحنا'],
-  ['intu','you (pl)','إنتو'], ['humme','they','هم'],
-];
+const PERSONS = LANG.verb.persons;
 
 function verbDetail(i){
   const v = VB[+i];
@@ -4568,7 +4518,7 @@ function verbDetail(i){
     <div class="vd-ar">${esc(v.past ? v.past.ar : '')}</div>
     <div class="vd-meta"><div class="vd-gl">${esc(v.gloss || '—')}</div>
       <div class="vd-sub">${root} &nbsp;·&nbsp; ${badges}</div>
-      <div class="vd-lvl">${lvlTagFor('verb', {tier: VERB_TIER[v.weak] || 2})}</div>
+      <div class="vd-lvl">${lvlTagFor('verb', {tier: LANG.verb.tier(v)})}</div>
       <div class="vd-deck">${deckBtnHTML(v.lemma, `deckToggleVerb(${+i})`, '+ Add this verb to my deck')}</div>
       </div></div>`;
   // Where the reference grammar and the lexicon disagree on how a verb is vowelled, the
@@ -5149,27 +5099,7 @@ const lexRank = r => (r.gloss ? 4 : 0) + (r.maknuune_id ? 2 : 0) + ((r.caphi_urb
 // map pulled الآلة and كلهم onto "God" too. So the correction lives here instead — explicit,
 // auditable, and applied at the one place a word becomes visible, without re-annotating 380
 // texts on a heuristic. Each entry is a word whose reading is not in doubt.
-const LEX_FIX = {
-  'الله':  {lemma: 'الله',    gloss: 'God',                 analysis: 'NOUN_PROP', caphi: '2al.l.a'},
-  'لله':   {lemma: 'لله',     gloss: 'to God, for God',     analysis: 'NOUN_PROP', caphi: '2il.l.a'},
-  'الهوا': {lemma: 'الهَوا',  gloss: 'the air, the wind',   analysis: 'NOUN:MS',   caphi: '2ilhawa'},
-  'الاله': {lemma: 'الآلة',   gloss: 'the machine, the instrument', analysis: 'NOUN:FS', caphi: '2il2aale'},
-  'الامن': {lemma: 'الأَمن',  gloss: 'security, safety',    analysis: 'NOUN:MS',   caphi: '2il2amn'},
-  'كلهم':  {lemma: 'كُلُّهُم', gloss: 'all of them',         analysis: 'NOUN_QUANT',caphi: 'kullhum'},
-  // بدّ + ending is how Palestinians say "want", and it is everywhere. The corpus resolves بدّي
-  // to a Maknuune entry meaning "be altruistic towards sb and prioritize him/her" — so the
-  // commonest word in the dialect had a gloss no learner could make sense of. Making the lesson
-  // reading passages tappable is what put it in front of a reader often enough to notice.
-  // The readings below are the app's OWN curated paradigm, pipeline/grammar.py:273 — the same
-  // table the "Wanting — بدّي" grammar lesson teaches from. Nothing new is asserted here.
-  'بدي':   {lemma: 'بِدّي',   gloss: 'I want',              analysis: 'PART', caphi: 'baddi'},
-  'بدك':   {lemma: 'بِدّك',   gloss: 'you want (m/f)',      analysis: 'PART', caphi: 'baddak'},
-  'بده':   {lemma: 'بِدّه',   gloss: 'he wants',            analysis: 'PART', caphi: 'baddo'},
-  'بدها':  {lemma: 'بِدّها',  gloss: 'she wants',           analysis: 'PART', caphi: 'baddha'},
-  'بدنا':  {lemma: 'بِدّنا',  gloss: 'we want',             analysis: 'PART', caphi: 'baddna'},
-  'بدكم':  {lemma: 'بِدّكم',  gloss: 'you want (plural)',   analysis: 'PART', caphi: 'baddkom'},
-  'بدهم':  {lemma: 'بِدّهم',  gloss: 'they want',           analysis: 'PART', caphi: 'baddhom'},
-};
+const LEX_FIX = LANG.script.fixes;
 function lexFix(w) {
   if (!w) return w || null;
   const f = LEX_FIX[arNorm(w.surface || '')];
@@ -5226,9 +5156,9 @@ function lexConjIndex() {
 // front, object and possessive pronouns behind. SHORTEST first, so the least is cut away: with
 // longest-first, والله ("by God" — the commonest word in the app, and absent from the corpus)
 // lost وال- and came back as ه "to him". Cutting only و- finds الله. Cut as little as possible.
-const LEX_PRE = ['و', 'ب', 'ك', 'ف', 'ل', 'ال', 'لل', 'وال', 'بال', 'كال', 'فال'];
-const LEX_SUF = ['ك', 'ه', 'ي', 'ها', 'هم', 'هن', 'كم', 'كن', 'نا', 'ني'];
-const LEX_MIN = 3;                      // never leave a one- or two-letter stem behind
+const LEX_PRE = LANG.script.pre;
+const LEX_SUF = LANG.script.suf;
+const LEX_MIN = LANG.script.minStem;
 
 // Last resort, and only ever a GUESS: strip a clitic and look the remainder up. It recovers 205
 // forms the exact index can't reach (بالتوفيق, خليكن, أبوك) — and it is also wrong sometimes:
@@ -5299,7 +5229,7 @@ function lexLook(tok) {
 // has a plain Arabic string — so arLive() tokenizes it and looks each token up in LEX. Same
 // span, same card, same "+ Don't know it". The token itself is the handle (no registry to keep
 // in sync with the DOM), and a word LEX can't place is dotted rather than silently plain.
-const LEX_PUNCT = '،.؟!:؛…"«»“”\'()-—[]{}–,;?';
+const LEX_PUNCT = LANG.script.punct;
 function arLive(str, cls) {
   const s = String(str == null ? '' : str); if (!s) return '';
   let out = '', buf = '';
@@ -5379,19 +5309,8 @@ function conjPopupHTML(v) {
 // the Wadi Ara / Triangle villages say q as k, k as ch, and keep the interdentals.
 // Emphatics (tokens containing a period) never vary. Returns null when the village form
 // is identical to the urban one — no variant line for words that don't differ.
-const WADI = {Q:'k', J:'j', K:'ch', T:'th', D:'dh', Z:'dh'};
-function wadiAra(w) {
-  const raw = w.caphi_raw, urb = w.caphi_urban || w.caphi;
-  if (!raw) return null;
-  const out = String(raw).split(' ').map(tok => {
-    if (!tok) return '';
-    if (tok.includes('||')) { const [a, b] = tok.split('||'); return WADI[b.trim()] || a.trim(); }
-    if (WADI[tok]) return WADI[tok];
-    if (!tok.includes('.')) for (const v in WADI) tok = tok.split(v).join(WADI[v]);
-    return tok;
-  }).join('');
-  return out && out !== urb ? out : null;
-}
+
+// Sub-dialect variants are a per-language LIST (empty for Hebrew), not a hard-coded pair.
 // The card takes a word RECORD, not coordinates into the open text — that coupling was the
 // only reason a definition could be shown in the reader and nowhere else. `ctx` is the
 // reader's {si, wi} when there is one; without it the card simply drops the two affordances
@@ -5406,7 +5325,8 @@ function showWord(w0, ctx, opts) {
   if (!w0) return;
   const msa = !!(opts && opts.msa);
   const w = lexFix(w0);
-  const wa = wadiAra(w);
+  const variants = (LANG.phon.variants || [])
+    .map(v => ({label: v.label, val: v.apply(w)})).filter(v => v.val);
   const on = w.lemma && inDeckWord(w);
   const wt = wordType(w.analysis);
   const vb = findVerb(w);
@@ -5432,7 +5352,7 @@ function showWord(w0, ctx, opts) {
        ${w.lemma ? `<button class="say" data-a="say" aria-label="Pronounce">${svg('spk')}</button>` : ''}</div>
      ${w._cut ? `<div class="wcut">reading it as <b dir="rtl">${esc(w._cut)}</b> + <b dir="rtl">${esc(w.lemma)}</b></div>` : ''}
      <div class="ph">${esc(w.caphi_urban || w.caphi || '')}</div>
-     ${wa ? `<div class="phwa"><b>Wadi Ara</b>${esc(wa)}</div>` : ''}
+     ${variants.map(v => `<div class="phwa"><b>${esc(v.label)}</b>${esc(v.val)}</div>`).join('')}
      ${wt ? `<div class="wtype">${esc(wt)}</div>` : ''}
      <div class="gl">${esc(pretty(w.gloss)) || '<span style="color:var(--muted)">no entry</span>'}</div>
      ${vb ? conjPopupHTML(vb) : ''}

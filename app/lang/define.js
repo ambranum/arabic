@@ -13,10 +13,25 @@
 // boot, loudly, because the alternative is silently falling through to another language's rule
 // and banking a learner's flashcards under the wrong key. There are no `||` fallbacks in the
 // seam; the two genuinely optional fields say so at their read sites instead.
-const LANG_REQUIRED = ['code', 'dir', 'flag', 'name', 'nativeName', 'short', 'font', 'art'];
+// Two tiers, because "not finished" and "broken" are different claims.
+//
+// CHROME is what any pack must have to be listed in the switcher at all -- enough to draw a
+// flag and a name. A pack that cannot manage this is malformed.
+//
+// FULL is what a pack must have to be ACTIVATED, and it is checked only for `ready: true`.
+// A pack declaring ready:false is saying "do not use me yet"; demanding the whole contract
+// from it would mean a half-built language could not even appear as "coming soon". The
+// guarantee that matters is unchanged: nothing incomplete is ever switched ON.
+const LANG_CHROME = ['code', 'dir', 'flag', 'name', 'nativeName', 'short', 'font'];
+const LANG_FULL = LANG_CHROME.concat([
+  'art', 'script.norm', 'script.run', 'script.punct', 'script.pre', 'script.suf',
+  'script.minStem', 'script.fixes', 'phon.fields', 'verb.classOrder', 'verb.persons',
+  'verb.tier', 'kbd.letters', 'kbd.toggle', 'tts.lang', 'tutorPrompt',
+  'homeMasthead', 'chapterPrefix']);
 
 function defineLang(spec) {
-  const missing = LANG_REQUIRED.filter(
+  const required = spec && spec.ready === false ? LANG_CHROME : LANG_FULL;
+  const missing = required.filter(
     k => k.split('.').reduce((o, part) => (o == null ? o : o[part]), spec) == null);
   if (missing.length) {
     throw new Error('language pack "' + (spec && spec.code) + '" is missing: ' + missing.join(', '));

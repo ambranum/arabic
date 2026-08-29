@@ -432,6 +432,21 @@
       </g>${_ground()}`},
   };
 
+
+const WADI = {Q:'k', J:'j', K:'ch', T:'th', D:'dh', Z:'dh'};
+function wadiAra(w) {
+  const raw = w.caphi_raw, urb = w.caphi_urban || w.caphi;
+  if (!raw) return null;
+  const out = String(raw).split(' ').map(tok => {
+    if (!tok) return '';
+    if (tok.includes('||')) { const [a, b] = tok.split('||'); return WADI[b.trim()] || a.trim(); }
+    if (WADI[tok]) return WADI[tok];
+    if (!tok.includes('.')) for (const v in WADI) tok = tok.split(v).join(WADI[v]);
+    return tok;
+  }).join('');
+  return out && out !== urb ? out : null;
+}
+
   defineLang({
     code: 'ar',
     dir: 'rtl',
@@ -440,6 +455,137 @@
     nativeName: '\u0639\u0631\u0628\u064A \u0641\u0644\u0633\u0637\u064A\u0646\u064A',
     short: 'Arabic',
     font: '"Geeza Pro","SF Arabic","Damascus","Al Bayan",serif',
+
+    // ---- the writing system -------------------------------------------------------------
+    script: {
+    // Strips harakat and tatweel, folds the hamza-carrying alefs, ta-marbuta and alef-maqsura.
+    norm: s => (s || '').replace(/[ً-ْٰـ]/g, '')
+  .replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').trim(),
+    run: /([\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF][\s\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF\u064B-\u0652]*)/,
+    punct: '،.؟!:؛…"«»“”\'()-—[]{}–,;?',
+    // Clitics, longest first. The peeling ALGORITHM is generic; only these tables are Arabic.
+    pre: ['و', 'ب', 'ك', 'ف', 'ل', 'ال', 'لل', 'وال', 'بال', 'كال', 'فال'],
+    suf: ['ك', 'ه', 'ي', 'ها', 'هم', 'هن', 'كم', 'كن', 'نا', 'ني'],
+    minStem: 3,                    // never leave a one- or two-letter stem behind
+    fixes: {
+        'الله':  {lemma: 'الله',    gloss: 'God',                 analysis: 'NOUN_PROP', caphi: '2al.l.a'},
+        'لله':   {lemma: 'لله',     gloss: 'to God, for God',     analysis: 'NOUN_PROP', caphi: '2il.l.a'},
+        'الهوا': {lemma: 'الهَوا',  gloss: 'the air, the wind',   analysis: 'NOUN:MS',   caphi: '2ilhawa'},
+        'الاله': {lemma: 'الآلة',   gloss: 'the machine, the instrument', analysis: 'NOUN:FS', caphi: '2il2aale'},
+        'الامن': {lemma: 'الأَمن',  gloss: 'security, safety',    analysis: 'NOUN:MS',   caphi: '2il2amn'},
+        'كلهم':  {lemma: 'كُلُّهُم', gloss: 'all of them',         analysis: 'NOUN_QUANT',caphi: 'kullhum'},
+        // بدّ + ending is how Palestinians say "want", and it is everywhere. The corpus resolves بدّي
+        // to a Maknuune entry meaning "be altruistic towards sb and prioritize him/her" — so the
+        // commonest word in the dialect had a gloss no learner could make sense of. Making the lesson
+        // reading passages tappable is what put it in front of a reader often enough to notice.
+        // The readings below are the app's OWN curated paradigm, pipeline/grammar.py:273 — the same
+        // table the "Wanting — بدّي" grammar lesson teaches from. Nothing new is asserted here.
+        'بدي':   {lemma: 'بِدّي',   gloss: 'I want',              analysis: 'PART', caphi: 'baddi'},
+        'بدك':   {lemma: 'بِدّك',   gloss: 'you want (m/f)',      analysis: 'PART', caphi: 'baddak'},
+        'بده':   {lemma: 'بِدّه',   gloss: 'he wants',            analysis: 'PART', caphi: 'baddo'},
+        'بدها':  {lemma: 'بِدّها',  gloss: 'she wants',           analysis: 'PART', caphi: 'baddha'},
+        'بدنا':  {lemma: 'بِدّنا',  gloss: 'we want',             analysis: 'PART', caphi: 'baddna'},
+        'بدكم':  {lemma: 'بِدّكم',  gloss: 'you want (plural)',   analysis: 'PART', caphi: 'baddkom'},
+        'بدهم':  {lemma: 'بِدّهم',  gloss: 'they want',           analysis: 'PART', caphi: 'baddhom'},
+      },
+  },
+
+    // ---- pronunciation ------------------------------------------------------------------
+    phon: {
+    fields: {main: 'caphi', urban: 'caphi_urban', raw: 'caphi_raw'},
+    // Sub-dialects are a list so a language can have none (Hebrew) or several later
+    // (Gazan, Galilean) without touching the app.
+    variants: [{id: 'wadi', label: 'Wadi Ara', apply: wadiAra}],
+  },
+
+    // ---- the verb model -----------------------------------------------------------------
+    verb: {
+    classOrder: ['I','II','III','IV','V','VI','VII','VIII','X','Q'],
+    classInfo: {
+        I:   ['Form I',        'The base verb — the plain action. كتب “he wrote”.'],
+        II:  ['Form II',       'Doubled middle root letter. Often intensive or causative — درّس “he taught”.'],
+        III: ['Form III',      'Long vowel after the first letter. Doing something to or with someone — كاتب “he corresponded”.'],
+        IV:  ['Form IV',       'Causative. Rare in dialect; usually surfaces as Form I or II instead.'],
+        V:   ['Form V',        'Form II with a t- prefix. Reflexive of II — تعلّم “he learned”.'],
+        VI:  ['Form VI',       'Form III with a t- prefix. Reciprocal — تكاتبوا “they wrote to each other”.'],
+        VII: ['Form VII',      'n- prefix. Passive or medio-passive — انكسر “it broke”.'],
+        VIII:['Form VIII',     'Infixed -t-. Often middle voice or reflexive — اشتغل “he worked”.'],
+        X:   ['Form X',        'ista- prefix. Seeking or considering — استعمل “he used”.'],
+        Q:   ['Quadriliteral', 'Four-consonant roots, including loanwords — تلفن “he phoned”.'],
+      },
+    weakInfo: {
+        hollow:      ['Hollow',      'Middle root letter is و or ي and drops or shifts — راح / يروح.'],
+        defective:   ['Defective',   'Final root letter is و or ي — مشي / يمشي.'],
+        doubled:     ['Doubled',     'Last two root letters are the same, written with shadda — حبّ / يحبّ.'],
+        assimilated: ['Assimilated', 'First root letter is و and often drops in the present — وصل / يوصل.'],
+        hamzated:    ['Hamzated',    'A root letter is hamza (ء) — أكل / ياكل.'],
+      },
+    weakOrder: ['hollow','defective','doubled','assimilated','hamzated'],
+    persons: [
+        ['ana','I','أنا'], ['inta','you (m)','إنت'], ['inti','you (f)','إنتي'],
+        ['huwwe','he','هو'], ['hiyye','she','هي'], ['i7na','we','إحنا'],
+        ['intu','you (pl)','إنتو'], ['humme','they','هم'],
+      ],
+    // A FUNCTION, not a map: Arabic difficulty tracks the weak class, Hebrew's tracks the
+    // binyan at least as much as the gzara, so the judgement belongs to the pack.
+    tier: v => ({sound: 1, doubled: 2, hollow: 2, defective: 3, assimilated: 3, hamzated: 3, irregular: 3, quad: 3})[v.weak] || 2,
+  },
+
+    // ---- keyboard, voice ----------------------------------------------------------------
+    kbd: {
+    toggle: '\u0639', title: 'Arabic keyboard',
+    numsLabel: '١٢٣', lettersLabel: 'ا ب ج',
+    diacritic: 'ّ', diacriticLabel: 'ـّ',
+    letters: [
+        ['ض','ص','ث','ق','ف','غ','ع','ه','خ','ح','ج'],
+        ['ش','س','ي','ب','ل','ا','ت','ن','م','ك','ة'],
+        ['ء','ظ','ط','ذ','د','ز','ر','و','ى'],
+      ],
+    nums: [
+        ['١','٢','٣','٤','٥','٦','٧','٨','٩','٠'],
+        ['-','/',':','؛','(',')','%','&','@','"'],
+        ['،','.','؟','!','’','«','»'],
+      ],
+    hold: {
+        'ا': ['أ','إ','آ','ٱ'], 'و': ['ؤ'], 'ي': ['ى','ئ'], 'ه': ['ة'],
+        'ء': ['أ','إ','ؤ','ئ','آ'], 'ل': ['لا','لأ','لإ','لآ'],
+        'ّ': ['َ','ُ','ِ','ً','ٌ','ٍ','ْ','ّ'],
+      },
+  },
+    tts: {lang: 'ar-SA', voiceRe: /^ar/i},
+
+    // The masthead wordmark, and the chapter-number prefix a book title carries.
+    homeMasthead: () => `<div class="hm-mark">عَرَبي <em>فَلَسطيني</em></div>`,
+    chapterPrefix: /^الفصل[^—]*—\s*/,
+
+    tutorPrompt: ({grammar, sounds, reactions}) => {
+      const gram = grammar.map(l => l.title).filter(Boolean).slice(0, 24).join('; ');
+      const snds = sounds.map(L => L.target || L.en).filter(Boolean).join('; ');
+      const rxc = reactions.map(c => c.en).filter(Boolean).join('; ');
+      return [
+        "You are a warm, precise tutor for SPOKEN PALESTINIAN ARABIC — the urban Levantine city speech of Jerusalem, Ramallah, and Nablus. The learner is an English speaker in a self-study app, working toward holding their own at a Palestinian family dinner table.",
+        "",
+        "How to answer:",
+        "- Answer in SPOKEN Palestinian, NOT Modern Standard Arabic (فصحى). When the spoken form differs from MSA, give the spoken one and briefly note the difference. If the learner's own phrase is MSA or another dialect, gently flag it and give the Palestinian equivalent.",
+        "- For any Arabic you give: Arabic script, then a simple transliteration in parentheses, then the English gloss. Keep it tight — one clear answer with an example or two beats a wall of grammar.",
+        "- Urban pronunciation model to reflect in transliterations: ق is a glottal stop (ء, an apostrophe '); ث→t, ذ→d; ج is a soft “zh/j”. e.g. قهوة = ʼahwe, هيك = heek.",
+        "- Honesty first: if you're not sure a form is specifically Palestinian (vs. general Levantine), say so plainly. Never invent a proverb, a “they always say…”, or confident detail you're unsure of. It's fine to say you're not certain.",
+        "- You can explain grammar, translate, compare near-synonyms, give example sentences, and role-play short dinner-table exchanges. Match the learner's level; be encouraging and concrete.",
+        "",
+        "SAVING PHRASES (important): when your answer teaches a specific Palestinian word or phrase the learner can reuse — above all for “how do I say…” questions — finish your ENTIRE reply with a machine-readable block listing the 1–4 most useful save-worthy items, each on its own line as “Arabic = English” (Arabic script only in this block, NO transliteration):",
+        "<save>",
+        "بدي = I want",
+        "بدي أروح عالبيت = I want to go home",
+        "</save>",
+        "Only list phrases genuinely worth memorizing as-is. For a pure grammar explanation with no single save-worthy phrase, omit the block entirely. Write nothing after </save>.",
+        "",
+        "This app already teaches the learner these things — reference them naturally, don't just list them:",
+        "• Grammar structures: " + (gram || "(various spoken structures)"),
+        "• Pronunciation contrasts: " + (snds || "(urban sound contrasts)"),
+        "• Conversational reaction categories: " + (rxc || "(everyday reactions)"),
+      ].join("\n");
+    },
+
     art: SEC_ART,
   });
 })();
