@@ -18,8 +18,9 @@ build/*/ref/
 # got committed for duplicate "<name> 2.json" files that never existed as real content.
 *.icloud
 
-# Hebrew spike (Stage A): the raw Wiktionary dump is 55MB and regenerable in one curl --
-# see spike/he/README.md. The derived lexicon and the code ARE committed.
+# The raw Wiktionary dump is 57MB and regenerable in one curl (see spike/he/README.md).
+# Both Hebrew builders read it -- pipeline/he_verbs.py and spike/he/build_lex.py -- and
+# everything derived from it IS committed: the lexicon parquet and app/data/he/.
 spike/he/kaikki-hebrew.jsonl
 spike/he/audio/
 

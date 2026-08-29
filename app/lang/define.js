@@ -28,7 +28,14 @@ const LANG_FULL = LANG_CHROME.concat([
   'script.minStem', 'script.fixes', 'phon.fields', 'verb.classOrder', 'verb.persons',
   'verb.tier', 'kbd.letters', 'kbd.toggle', 'tts.lang', 'tutorPrompt',
   'homeMasthead', 'chapterPrefix', 'sections', 'verb.classNoun', 'bibleBlurb',
-  'tutorStarters']);
+  'tutorStarters', 'lex.name', 'lex.blurb', 'lex.credit',
+  'verb.blurb', 'verb.classPlural', 'verb.weakOrder', 'lex.source',
+  'script.chars', 'searchHint', 'dateLine', 'ornament']);
+
+// Read only on a path a pack can switch off. `planGoal` is shown by the home screen's
+// "build your plan" card, which only renders for a language that lists a `plan` section --
+// so requiring it of every pack would force a language with no curriculum to invent a goal.
+const LANG_IF_PLAN = ['planGoal'];
 
 // Identity comes from the roster, not from the pack. `code`, `flag`, `name`, `short` and
 // `ready` have to be readable BEFORE a pack is fetched -- the boot script picks a language and
@@ -42,7 +49,8 @@ function defineLang(spec) {
   }
   ['dir', 'flag', 'name', 'nativeName', 'short', 'brand', 'font', 'ready', 'sections']
     .forEach(k => { spec[k] = meta[k]; });
-  const required = spec.ready === false ? LANG_CHROME : LANG_FULL;
+  const required = spec.ready === false ? LANG_CHROME
+    : LANG_FULL.concat((spec.sections || []).includes('plan') ? LANG_IF_PLAN : []);
   const missing = required.filter(
     k => k.split('.').reduce((o, part) => (o == null ? o : o[part]), spec) == null);
   if (missing.length) {

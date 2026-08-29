@@ -80,6 +80,22 @@ def _slot(tags):
     return '%s|%s' % (sec, 'hem' if plural else ('hi' if gen == 'f' else 'hu'))
 
 
+def _root(d):
+    """The three (or four) root letters, dotted the way the app displays a root.
+
+    NOT the head template's פ/ע/ל arguments, which look like a root and are not one: they name
+    which position of the root holds a weak letter -- the gzara -- so reading them gave 644
+    verbs a "root" of ה or ע, a single letter that belongs to no word. The real root is the
+    second positional argument of the he-conj inflection template.
+    """
+    for t in d.get('inflection_templates') or []:
+        r = (t.get('args') or {}).get('2') or ''
+        r = NIQQUD_RE.sub('', r).replace('־', '').strip()
+        if 2 <= len(r) <= 5:
+            return '.'.join(r)
+    return ''
+
+
 def paradigms():
     """-> list of verb records in the app's shape."""
     out = []
@@ -113,7 +129,7 @@ def paradigms():
         out.append({
             'lemma': lemma, 'lemma_search': he_norm(lemma), 'gloss': gloss,
             'form': binyan_of(d),
-            'root': '.'.join(x for x in (ht.get('פ'), ht.get('ע'), ht.get('ל')) if x),
+            'root': _root(d),
             'past': conj.get('past|hu'), 'pres': conj.get('pres|ms'),
             'fut': conj.get('fut|hu'), 'inf': conj.get('inf|-'),
             'conj': conj,

@@ -41,20 +41,22 @@ window.LANGUAGES = [
   },
   {
     code: 'he',
-    ready: false,
+    ready: true,
     dir: 'rtl',
     flag: '🇮🇱',           // Israeli flag
     name: 'Modern Hebrew',
     nativeName: 'עברית',
     short: 'Hebrew',
     brand: 'הקפה',                               // ha-kafe, "the coffee"
-    blurb: 'Spoken Israeli Hebrew. Being built — the lexicon and the verb tables are done.',
+    blurb: 'Spoken Israeli Hebrew. Verbs, the dictionary and the tutor — the rest is being built.',
     font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
-    data: [],
-    // The Dinner Table and the Videos are absent on purpose: the Shabbat-table dialogues and a
-    // Hebrew playlist are Stage C work, and listing a section before it exists is a lie the
-    // switcher would then tell on every page.
-    sections: ['plan', 'lessons', 'sounds', 'reactions', 'grammar', 'verbs', 'vocab',
-               'news', 'stories', 'books', 'bible', 'tutor', 'translate', 'account'],
+    data: ['library', 'verbs'],
+    // What actually exists, and nothing else. Hebrew arrives with the two things Stage A proved
+    // could be LOOKED UP rather than written -- 2,084 pointed paradigms and a 12,662-lemma
+    // dictionary -- plus the three sections built on them: the deck you fill from the verb list,
+    // the translator, and the tutor. Lessons, stories, news, grammar, sounds, reactions and the
+    // Bible are authored content that does not exist yet, and listing a section before it exists
+    // is a lie the switcher would tell on every page.
+    sections: ['verbs', 'vocab', 'translate', 'tutor', 'account'],
   },
 ];

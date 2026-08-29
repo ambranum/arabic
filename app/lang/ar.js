@@ -452,12 +452,27 @@ function wadiAra(w) {
   defineLang({
     code: 'ar',
 
+    // Which licensed lexicon stands behind every word, said once and shown wherever the app
+    // makes that claim -- the home page's promise and each word card's provenance line.
+    lex: {
+      // Arabic's word index is derived from the corpus, so either file can answer a lookup.
+      source: 'corpus',
+      name: 'Maknuune',
+      blurb: 'a 36,000-entry Palestinian lexicon compiled by linguists',
+      credit: 'the <b>Maknuune Palestinian Arabic Lexicon</b> (Dibas, Khairallah, Habash et al., '
+            + 'WANLP 2022) — <a href="https://palestine-lexicon.org/" target="_blank" '
+            + 'rel="noopener" style="color:var(--verdigris)">palestine-lexicon.org</a>, CC BY-SA 4.0.',
+    },
+
     // ---- the writing system -------------------------------------------------------------
     script: {
     // Strips harakat and tatweel, folds the hamza-carrying alefs, ta-marbuta and alef-maqsura.
     norm: s => (s || '').replace(/[ً-ْٰـ]/g, '')
   .replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').trim(),
     run: /([\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF][\s\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF\u064B-\u0652]*)/,
+    // Does a string contain any of this language's script? Asked wherever the app has to tell
+    // "the learner typed the target language" from "the learner typed English".
+    chars: /[\u0600-\u06FF\u0750-\u077F]/,
     punct: '،.؟!:؛…"«»“”\'()-—[]{}–,;?',
     // Clitics, longest first. The peeling ALGORITHM is generic; only these tables are Arabic.
     pre: ['و', 'ب', 'ك', 'ف', 'ل', 'ال', 'لل', 'وال', 'بال', 'كال', 'فال'],
@@ -497,6 +512,14 @@ function wadiAra(w) {
     // ---- the verb model -----------------------------------------------------------------
     verb: {
     classNoun: 'form',
+    classPlural: 'Forms',
+    blurb: n => `Arabic verbs are built on three- or four-letter roots, run through a set of
+      patterns called <b>forms</b> (measures I–X). The form shapes the meaning; the root
+      supplies it. Browse by form below, or search across all ${n} verbs. Every root, gloss and
+      pronunciation is from the Maknuune lexicon — the form is computed, the conjugations are
+      not invented.`,
+    weakBlurb: 'Verbs whose root has a و, ي or ء that shifts or drops — grouped by how they '
+             + 'bend. These exist inside every form.',
     // The shape of the conjugation display. `rows` names a rowSet; `cols` are the tenses shown
     // side by side; `full: true` means the full verb page only, not the word-sheet popup.
     // Hebrew's descriptor is a different list against the same renderer -- a 2-column past/
@@ -567,6 +590,21 @@ function wadiAra(w) {
       },
   },
     tts: {lang: 'ar-SA', voiceRe: /^ar/i},
+    searchHint: 'بيت · راح · house · tired…',
+    // The masthead's dateline in the target language. Levantine month names (كانون التاني,
+    // شباط…), not the Gulf/Egyptian numbered ones.
+    dateLine: d => {
+      const DAYS = ['الأحد', 'الاتنين', 'التلات', 'الأربعا', 'الخميس', 'الجمعة', 'السبت'];
+      const MONTHS = ['كانون التاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران',
+                      'تموز', 'آب', 'أيلول', 'تشرين الأول', 'تشرين التاني', 'كانون الأول'];
+      return DAYS[d.getDay()] + '، ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
+    },
+    planGoal: 'all the way to holding your own at a Palestinian family dinner',
+    // The home page's own decoration: a tatreez band (Palestinian cross-stitch, the diamond
+    // motif) and the Old City skyline. Both are inline SVG in the theme's variables -- no
+    // external assets, no licence -- and both are this language's, not the app's.
+    ornament: () => tatreez(),
+    skyline: () => HOME_SKYLINE,
 
     // The masthead wordmark, and the chapter-number prefix a book title carries.
     homeMasthead: () => `<div class="hm-mark">عَرَبي <em>فَلَسطيني</em></div>`,

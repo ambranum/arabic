@@ -513,7 +513,11 @@ function needCorpus() {                    // the whole thing -- translator, pla
 // Either file can answer, so whichever is already here wins: a page that has the corpus for
 // other reasons never fetches the index, and a page that only wants to look words up never
 // fetches the corpus.
-const lexReady = () => !!window.LEXICON || corpusReady();
+// Arabic's index is DERIVED from its corpus, so either file answers and whichever is already
+// in memory wins. Hebrew's is a dictionary in its own right and the corpus is a separate thing
+// entirely -- letting an empty corpus stand in for it meant the Hebrew lookup silently resolved
+// nothing, which is how the translator came to read ספר as English.
+const lexReady = () => !!window.LEXICON || (LANG.lex.source === 'corpus' && corpusReady());
 const needLexicon = () => lexReady() ? Promise.resolve() : needFile('lexicon');
 // `t.sentences` becomes a getter over that store. Same reasoning as `v.conj`: ten call sites
 // walk `t.sentences`, and none of them has to learn that the sentences now arrive separately.
@@ -582,7 +586,7 @@ let _kbdPage = 'ar', _kbdHoldT = null, _kbdHeld = false;
 // instead of inside it (for the tutor's textarea row, where the field grows as you type).
 function kbdWrap(inputHTML, id, inline) {
   const btn = `<button type="button" class="kbd-tog${inline ? ' inline' : ''}" id="kbdt-${id}"
-     title="Arabic keyboard" aria-label="Arabic keyboard"
+     title="${esc(LANG.short)} keyboard" aria-label="${esc(LANG.short)} keyboard"
      onmousedown="event.preventDefault()" onclick="kbdToggle('${id}')">${LANG.kbd.toggle}</button>`;
   const rtl = /dir=["']rtl["']/.test(inputHTML) ? ' rtl' : '';
   return inline ? inputHTML + btn : `<div class="kbd-wrap${rtl}">${inputHTML}${btn}</div>`;
@@ -621,7 +625,7 @@ function kbdDraw() {
   const rows = _kbdPage === 'ar' ? KBD_LETTERS : KBD_NUMS;
   const k = ch => `<button class="akbd-k${KBD_HOLD[ch] ? ' more' : ''}" data-k="${ch}">${ch}</button>`;
   p.innerHTML = `<div class="akbd-in">
-      <div class="akbd-hd"><span>Arabic keyboard</span>
+      <div class="akbd-hd"><span>${esc(LANG.short)} keyboard</span>
         <button class="akbd-x" data-a="hide">Hide</button></div>
       ${rows.map((r, i) => `<div class="akbd-r">${r.map(k).join('')}${
         i === rows.length - 1 ? `<button class="akbd-k fn" data-a="back">⌫</button>` : ''}</div>`).join('')}
@@ -1047,7 +1051,7 @@ function todayISO(){
 
 function home(){
   $('back').hidden = true;
-  $('title').textContent = 'Palestinian Arabic';
+  $('title').textContent = LANG.name;
   const today = todayISO();
   const news = LIB.texts.filter(t => t.kind === 'news')
                         .sort((a, b) => (b.date || '').localeCompare(a.date || ''))[0];
@@ -1056,20 +1060,22 @@ function home(){
 
   // ---- masthead: a broadsheet front page, in the language it teaches ----
   let h = `<div class="hm-mast">
-      ${tatreez()}
+      ${LANG.ornament()}
       <div class="hm-mast-in">
         <div class="hm-ed">Read it · Hear it · Say it</div>
         ${LANG.homeMasthead()}
       </div>
       <div class="hm-dl">
         <span>ISSUE ${esc(today)}</span>
-        <span class="ar">${esc(AR_DAYS[d.getDay()])}، ${d.getDate()} ${esc(AR_MONTHS[d.getMonth()])}</span>
+        <span class="ar">${LANG.dateLine(d)}</span>
         <span>${esc(WD[d.getDay()]).toUpperCase()} · ${esc(MON[d.getMonth()]).toUpperCase()} ${d.getDate()}</span>
       </div>
     </div>`;
 
   // the Old City on the horizon; today's cards stand in front of it
-  h += `<div class="hm-skyband">${HOME_SKYLINE}</div>`;
+  // The skyline is a place, and a place is a language's own. Arabic's is Jerusalem's Old City;
+  // a pack with nothing to draw yet draws nothing, rather than borrowing the other's.
+  if (LANG.skyline) h += `<div class="hm-skyband">${LANG.skyline()}</div>`;
 
   h += '<div class="hm-top">';
 
@@ -1095,12 +1101,15 @@ function home(){
         <span>${esc(L.band)} · ${esc(L.cefr)}</span>
         ${planStreak() ? `<span>🔥 ${planStreak()}-day streak</span>` : ''}</div>
     </button>`;
-  } else {
+  } else if (LANG.sections.includes('plan')) {
+    // Only where there is a plan to build. A language whose content is still being written has
+    // nothing to schedule, and inviting someone to build a study plan out of it would be an
+    // invitation to an empty page.
     h += `<button class="hm-plan" onclick="location.hash='/plan/new'">
       <div class="hm-k">Start here</div>
       <div class="hm-t">Build your study plan</div>
       <div class="hm-s">Tell it when you can study and roughly where you are. It builds a daily,
-        self-adjusting path — all the way to holding your own at a Palestinian family dinner.</div>
+        self-adjusting path — ${esc(LANG.planGoal)}.</div>
       <div class="hm-meta"><span>~8-minute placement</span><span>7 phases</span>
         <span>adjusts to your week</span></div>
     </button>`;
@@ -1127,7 +1136,10 @@ function home(){
   h += '</div>';
 
   // ---- news: one scannable line, not a second hero competing with the plan ----
-  if (fresh) {
+  // Only for a language that HAS a daily paper. "No news yet · Written fresh each morning" was
+  // a promise Hebrew is not yet in a position to make.
+  if (!LANG.sections.includes('news')) { /* no daily paper in this language yet */ }
+  else if (fresh) {
     const lead = (news.sentences[0] || {}).en || news.title.en;
     h += `<button class="hm-news" onclick="location.hash='/text/${esc(news.id)}'">
       <span class="k">Today's news</span>
@@ -1172,16 +1184,15 @@ function home(){
     if (coffee) h += card(coffee, 'text');
   }
 
-  h += `<div style="margin:26px 0 14px">${tatreez()}</div>`;
+  h += `<div style="margin:26px 0 14px">${LANG.ornament()}</div>`;
+  // Which lexicon stands behind the words is the pack's to say -- Maknuune for Palestinian
+  // Arabic, Wiktionary for Hebrew. The claim ("not generated") is the same either way, and it
+  // is the claim the whole pipeline exists to be able to make.
   h += `<div class="note"><b>What this shows is real.</b> Every root, meaning and
-    pronunciation comes from Maknuune, a 36,000-entry Palestinian lexicon compiled by
-    linguists — not generated. Tap any word and the card tells you exactly where its
-    root, gloss and vowels came from.
+    pronunciation comes from ${esc(LANG.lex.name)}, ${esc(LANG.lex.blurb)} — not generated.
+    Tap any word and the card tells you exactly where its root, gloss and vowels came from.
     <div style="margin-top:10px;padding-top:9px;border-top:1px solid var(--rule);
-      font-size:11px;color:var(--muted)">Word data from the <b>Maknuune Palestinian Arabic
-      Lexicon</b> (Dibas, Khairallah, Habash et al., WANLP 2022) —
-      <a href="https://palestine-lexicon.org/" target="_blank" rel="noopener"
-      style="color:var(--verdigris)">palestine-lexicon.org</a>, CC BY-SA 4.0.</div></div>`;
+      font-size:11px;color:var(--muted)">Word data from ${LANG.lex.credit}</div></div>`;
   $('view').innerHTML = h;
 }
 
@@ -1588,7 +1599,7 @@ function tutorParseSaves(txt) {
     const eq = l.indexOf('=');
     if (eq < 1) return;
     const ar = l.slice(0, eq).trim(), en = l.slice(eq + 1).trim();
-    if (!ar || !en || !/[؀-ۿ]/.test(ar) || seen.has(ar)) return;
+    if (!ar || !en || !isTargetScript(ar) || seen.has(ar)) return;
     seen.add(ar);
     out.push({ar, en});
   });
@@ -2721,10 +2732,13 @@ let _revq = null;
 // its established cards to production; the toggle at the bottom of every review card changes
 // it back in one tap, and the choice persists.
 const RDIR_KEY = LKEY('rev.dir.v1');
+// `ar` is the KEY, not the language: it means "the target language first", and it is a stored
+// value in every existing deck, so it stays what it is. The labels are the pack's.
+const _L = LANG.short;
 const REV_DIRS = [
-  ['ar',  'Arabic first', 'See the Arabic, recall the English. Easier — good for new words and for reading.'],
-  ['en',  'English first', 'See the English, say the Arabic. Harder, and the direction that trains speaking.'],
-  ['mix', 'Arabic first, then English', 'New cards show Arabic; once a card is established it flips to English — recognise it first, then learn to say it. This is the default.'],
+  ['ar',  _L + ' first', 'See the ' + _L + ', recall the English. Easier — good for new words and for reading.'],
+  ['en',  'English first', 'See the English, say the ' + _L + '. Harder, and the direction that trains speaking.'],
+  ['mix', _L + ' first, then English', 'New cards show ' + _L + '; once a card is established it flips to English — recognise it first, then learn to say it. This is the default.'],
 ];
 const revDir = () => { try { return localStorage.getItem(RDIR_KEY) || 'mix'; } catch (e) { return 'mix'; } };
 function setRevDir(v) {
@@ -2918,11 +2932,6 @@ const isofmt = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2,
 const addDaysISO = (s, n) => { const d = isoToDate(s); d.setDate(d.getDate() + n); return isofmt(d); };
 const daysBetween = (a, b) => Math.round((isoToDate(b) - isoToDate(a)) / DAY);
 const WD = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-// Day names as they are actually said in Palestine — الأحد is "the first", التلات "the third".
-const AR_DAYS = ['الأحد', 'الاتنين', 'التلات', 'الأربعا', 'الخميس', 'الجمعة', 'السبت'];
-// The Levantine month names (كانون التاني, شباط…), not the Gulf/Egyptian numbered ones.
-const AR_MONTHS = ['كانون التاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران',
-                   'تموز', 'آب', 'أيلول', 'تشرين الأول', 'تشرين التاني', 'كانون الأول'];
 const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const fmtMD = iso => { const d = isoToDate(iso); return MON[d.getMonth()] + ' ' + d.getDate(); };
 const fmtMY = iso => { const d = isoToDate(iso); return MON[d.getMonth()] + ' ' + d.getFullYear(); };
@@ -2972,6 +2981,10 @@ function contentPhase(what, it) {
 }
 // The chip. `small` drops the band for tight rows; `dot` shows the phase colour.
 function lvlTag(phaseIdx, small) {
+  // A level is a claim about a curriculum, and a language without one cannot make it. Hebrew
+  // ships its verbs before its study plan, and the tag rendered as "— — Phase 1": three pieces
+  // of furniture around no content.
+  if (!(CUR.phases || []).length) return '';
   const L = levelAt(phaseIdx);
   return `<span class="lvl" title="${esc(L.band)} · CEFR ${esc(L.cefr)} · phase ${L.phase + 1} of 7 in your plan"
      style="--lc:${PHASE_COLOR[L.phase]}">${small ? '' : `<b>${esc(L.band)}</b>`}
@@ -3617,7 +3630,7 @@ function assessRender() {
       ${it.prompt}
       <div class="as-sub">${esc(it.sub || '')}</div>
       <div class="as-choices">${it.choices.map((c, i) =>
-        `<button class="as-choice" ${it.rtl && /[؀-ۿ]/.test(c.t) ? 'dir="rtl"' : ''}
+        `<button class="as-choice" ${it.rtl && isTargetScript(c.t) ? 'dir="rtl"' : ''}
            onclick="assessAnswer(${i})">${esc(c.t)}</button>`).join('')}
         <button class="as-choice idk" onclick="assessIdk()">I don't know</button></div>
     </div>`;
@@ -4473,6 +4486,10 @@ function planCalendar() {
 // The identity every deck key, SRS key and lexicon lookup is built on. It stays a named
 // function with one definition and ~34 untouched call sites; only the body moved.
 function arNorm(s) { return LANG.script.norm(s); }
+// Is there any target-script text in here? Every place that asked this used a hardcoded Arabic
+// Unicode block, which for a Hebrew learner answered "no" to every Hebrew word they typed --
+// the translator read ספר as English and returned nothing.
+const isTargetScript = t => LANG.script.chars.test(String(t == null ? '' : t));
 const glossWords = g => String(g || '').toLowerCase().replace(/_/g, ' ').split(/[;·,()\/\s]+/).filter(Boolean);
 
 let _tridx = null, _trQ = '', _trT = null;
@@ -4555,7 +4572,7 @@ function trMatchAr(idx, q) { const k = arNorm(q);
 function trSearch(q) {
   q = (q || '').trim(); if (!q) return {type: 'empty'};
   const idx = trIndex();
-  if (/[؀-ۿ]/.test(q)) {
+  if (isTargetScript(q)) {
     const toks = q.split(/\s+/).filter(Boolean);
     if (toks.length > 1) return {type: 'ar-sentence', q, toks: toks.map(tk => ({tk, e: trLookupAr(idx, tk)}))};
     return {type: 'ar-word', q, entries: trMatchAr(idx, q)};
@@ -4571,11 +4588,11 @@ function trSearch(q) {
 function translateSection() {
   $('back').hidden = false; $('title').textContent = 'Translate';
   $('view').innerHTML = `
-    <p class="hint">Type a word or phrase — Arabic <b>or</b> English — to see what it means and, Reverso-style,
-      real sentences from the app’s stories, news and book where it’s actually used. Everything is from the
-      lexicon and the app’s own texts, so it’s true Palestinian dialect with a source for every line.</p>
+    <p class="hint">Type a word or phrase — ${esc(LANG.short)} <b>or</b> English — to see what it means and,
+      Reverso-style, real sentences from the app’s own texts where it’s actually used. Everything is from the
+      ${esc(LANG.lex.name)} lexicon and those texts, with a source for every line.</p>
     ${kbdWrap(`<input id="tr-q" class="vsearch" type="search" inputmode="search" autocomplete="off"
-      placeholder="بيت · راح · house · tired…" value="${esc(_trQ)}" oninput="trOnInput(this.value)">`, 'tr-q')}
+      placeholder="${esc(LANG.searchHint)}" value="${esc(_trQ)}" oninput="trOnInput(this.value)">`, 'tr-q')}
     <div id="tr-out"></div>`;
   const inp = $('tr-q'); if (inp) { inp.focus(); if (_trQ) trRender(_trQ); }
 }
@@ -4816,18 +4833,17 @@ function verbDetail(i){
 
 function verbsHome(){
   $('title').textContent = 'Verbs';
-  let h = `<p class="hint">Arabic verbs are built on three- or four-letter roots, run
-    through a set of patterns called <b>forms</b> (measures I–X). The form shapes the
-    meaning; the root supplies it. Browse by form below, or search across all
-    ${VB.length} verbs. Every root, gloss and pronunciation is from the Maknuune
-    lexicon — the form is computed, the conjugations are not invented.</p>`;
+  // How a language builds verbs is the pack's to explain: Arabic has measures on a root,
+  // Hebrew has binyanim. Saying "measures I-X" over a Hebrew verb list was the loudest thing
+  // left in here that assumed the language.
+  let h = `<p class="hint">${LANG.verb.blurb(VB.length)}</p>`;
 
   h += kbdWrap(`<input id="vsearch" class="vsearch" type="search" inputmode="search"
-    placeholder="Search ${VB.length} verbs — English, root or Arabic…"
+    placeholder="Search ${VB.length} verbs — English, root or ${esc(LANG.short)}…"
     oninput="verbSearch(this.value)" aria-label="Search verbs">`, 'vsearch')
     + `<div id="vsearchout"></div>`;
 
-  h += '<div class="sec">Forms</div><div class="vtiles">';
+  h += `<div class="sec">${esc(LANG.verb.classPlural)}</div><div class="vtiles">`;
   h += FORM_ORDER.map(f => {
     const n = byForm(f).length; if (!n) return '';
     const [label, desc] = FORM_INFO[f];
@@ -4838,12 +4854,16 @@ function verbsHome(){
   }).join('');
   h += '</div>';
 
-  h += `<div class="sec">Cross-cutting</div>
-    <button class="vtile wide" onclick="location.hash='/verbs/irregular'">
-      <div class="vtile-h"><span class="vtile-t">Irregular / weak verbs</span>
-        <span class="vtile-n">${irregular.length}</span></div>
-      <div class="vtile-s">Verbs whose root has a و, ي or ء that shifts or drops —
-        grouped by how they bend. These exist inside every form.</div></button>`;
+  // Only when the pack has a weak-class model at all. Hebrew's gzarot are real but not yet
+  // labelled in the data, and an empty shelf reading "Irregular verbs 0" is a worse answer
+  // than no shelf.
+  if (LANG.verb.weakOrder.length) {
+    h += `<div class="sec">Cross-cutting</div>
+      <button class="vtile wide" onclick="location.hash='/verbs/irregular'">
+        <div class="vtile-h"><span class="vtile-t">Irregular / weak verbs</span>
+          <span class="vtile-n">${irregular.length}</span></div>
+        <div class="vtile-s">${esc(LANG.verb.weakBlurb)}</div></button>`;
+  }
   $('view').innerHTML = h;
 }
 
@@ -5104,7 +5124,7 @@ function askWhere() {
 function tutorAskAbout(text, what) {
   text = String(text || '').trim(); if (!text) return;
   if (text.length > 600) text = text.slice(0, 600) + '…';
-  const ar = /[؀-ۿ]/.test(text);
+  const ar = isTargetScript(text);
   const q = ar
     ? 'I came across this in ' + (what === 'a word' ? askWhere() : askWhere()) + ':\n\n'
       + text + '\n\nWhy is it written like this? Break it down for me.'
@@ -5169,7 +5189,7 @@ window.addEventListener('scroll', askHide, true);
 // takes a follow-up of your own — the trip to the full tutor is a link, not a toll gate.
 let _askPop = null, _askMsgs = [], _askBusy = false, _askSubject = '';
 
-const askIsAr = t => /[؀-ۿ]/.test(t);
+const askIsAr = t => isTargetScript(t);
 // Prompts are phrased as the learner would ask them, with the passage and the place it came
 // from attached once, at the top of the conversation.
 const ASK_CHIPS = {
@@ -5399,10 +5419,40 @@ function lexIndex() {
     const p = m.get(k); if (!p || lexRank(rec) > lexRank(p)) m.set(k, rec); };
   const L = window.LEXICON;
   if (L) {
-    // Rows are positional -- `f` names the columns -- because repeating fourteen key names
-    // 5,748 times was 45% of the file. Materialized once, here.
-    const recs = L.r.map(row => { const o = {};
-      L.f.forEach((name, i) => { o[name] = row[i]; }); return o; });
+    // Rows are positional -- `f` names the columns -- because repeating the key names once per
+    // record was 45% of the file. Three further encodings are OPTIONAL and only Hebrew uses
+    // them, because Hebrew ships its whole inflection table (111,327 surface keys) where Arabic
+    // ships only what its corpus contains (5,748):
+    //   `intern` pools the columns with few distinct values (`analysis` has 171 across 128,000
+    //            rows) and the row holds an index into the pool;
+    //   `base`   lets a surface row carry only what varies -- the pointed form, its
+    //            pronunciation, its analysis -- and inherit the gloss, root and lemma from its
+    //            lemma's row, which is written once for 8.6 surfaces;
+    //   trailing nulls are dropped, so a row may be shorter than `f`.
+    const pools = L.intern || {};
+    const raw = L.r.map(row => { const o = {};
+      L.f.forEach((name, i) => {
+        let v = i < row.length ? row[i] : null;
+        if (v != null && pools[name]) v = pools[name][v];
+        o[name] = v;
+      });
+      return o; });
+    // A payload that omits `vocalized` is saying the surface IS the pointed form -- true for
+    // Hebrew, where every row comes from Wiktionary already pointed. Arabic keeps the column,
+    // because plenty of its words have no vowels the lexicon can stand behind, and defaulting
+    // there would claim a vocalization the pipeline deliberately refused to guess.
+    const pointed = L.f.indexOf('vocalized') < 0;
+    // Resolve `base` after every row exists, so a lemma row later in the file still works.
+    const recs = raw.map(o => {
+      let out = o;
+      if (o.base != null) {
+        const b = raw[o.base];
+        out = {};
+        L.f.forEach(name => { out[name] = (o[name] != null && o[name] !== '') ? o[name] : b[name]; });
+        delete out.base;
+      }
+      if (pointed) out.vocalized = out.surface;
+      return out; });
     for (const k in L.k) byKey.set(k, recs[L.k[k]]);
     for (const k in L.s) bySurf.set(k, recs[L.s[k]]);
   } else {
@@ -5726,7 +5776,7 @@ function showWord(w0, ctx, opts) {
               ? `matched after removing ${esc(w._cut)} — the split is a guess, not a lexicon entry`
             : w.provenance === 'verbs.js' ? 'from the verb list — paradigm below'
             : amb ? 'lexicon match not yet confirmed — one of several possible entries'
-            : w.maknuune_id ? `Maknuune #${esc(w.maknuune_id)}`
+            : w.maknuune_id ? `${esc(LANG.lex.name)} #${esc(w.maknuune_id)}`
             : CUR[w.provenance] || ((w.provenance||'').startsWith('curated')
               ? 'hand-curated' : 'not in the lexicon — unverified');
   $('wc').innerHTML =
