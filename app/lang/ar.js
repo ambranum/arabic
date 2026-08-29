@@ -501,6 +501,23 @@ function wadiAra(w) {
     // ---- the verb model -----------------------------------------------------------------
     verb: {
     classNoun: 'form',
+    // The shape of the conjugation display. `rows` names a rowSet; `cols` are the tenses shown
+    // side by side; `full: true` means the full verb page only, not the word-sheet popup.
+    // Hebrew's descriptor is a different list against the same renderer -- a 2-column past/
+    // future grid, a separate 4-cell present, an imperative strip and an infinitive.
+    rowSets: {
+      imp: [['inta', 'you (m)', 'إنت'], ['inti', 'you (f)', 'إنتي'], ['intu', 'you (pl)', 'إنتو']],
+      gn:  [['m', 'm', ''], ['f', 'f', ''], ['p', 'pl', '']],
+    },
+    tables: [
+      {kind: 'grid', rows: 'persons', cols: [
+        {slot: 'perf',  label: 'Past',           short: 'Past'},
+        {slot: 'impf',  label: 'Present',        short: 'Pres.'},
+        {slot: 'bimpf', label: 'Present + بـ',   short: '+بـ'}]},
+      {kind: 'strip', full: true, label: 'Command (imperative)', rows: 'imp', slot: 'imp'},
+      {kind: 'strip', full: true, label: 'Active participle (doing / having done)',
+       rows: 'gn', slot: 'ap'},
+    ],
     classOrder: ['I','II','III','IV','V','VI','VII','VIII','X','Q'],
     classInfo: {
         I:   ['Form I',        'The base verb — the plain action. كتب “he wrote”.'],

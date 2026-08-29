@@ -4558,28 +4558,7 @@ function verbDetail(i){
     return;
   }
 
-  // three tenses side by side, one row per person
-  const cell = k => c[k] ? `<div class="cj-cell"><span class="cj-ar">${esc(c[k].arv || c[k].ar)}</span>
-      <span class="cj-ph">${esc(c[k].ph)}</span></div>` : `<div class="cj-cell">—</div>`;
-  h += `<div class="cj-tbl">
-    <div class="cj-row cj-hdr"><div class="cj-pr"></div>
-      <div>Past</div><div>Present</div><div>Present + بـ</div></div>`;
-  PERSONS.forEach(([key,en,ar]) => {
-    h += `<div class="cj-row"><div class="cj-pr"><span class="cj-pr-ar">${esc(ar)}</span>
-        <span class="cj-pr-en">${esc(en)}</span></div>
-      ${cell('perf|'+key)}${cell('impf|'+key)}${cell('bimpf|'+key)}</div>`;
-  });
-  h += `</div>`;
-
-  // imperative + participle
-  const mini = (title, rows) => `<div class="cj-mini"><div class="sec">${title}</div>
-    <div class="cj-mini-row">${rows.map(([lbl,k]) => c[k] ?
-      `<div class="cj-cell"><span class="cj-k">${esc(lbl)}</span>
-        <span class="cj-ar">${esc(c[k].arv || c[k].ar)}</span><span class="cj-ph">${esc(c[k].ph)}</span></div>` : ''
-    ).join('')}</div></div>`;
-  h += mini('Command (imperative)', [['you (m)','imp|inta'],['you (f)','imp|inti'],['you (pl)','imp|intu']]);
-  h += mini('Active participle (doing / having done)',
-        [['m','ap|m'],['f','ap|f'],['pl','ap|p']]);
+  h += paradigmHTML(v, 'cj');
 
   const cls = (WEAK_INFO[v.weak] ? WEAK_INFO[v.weak][0].toLowerCase() + ' ' : '') + 'Form ' + v.form;
   h += `<div class="note">Conjugations are <b>derived by rule</b> from this verb’s principal
@@ -5326,15 +5305,74 @@ function findVerb(w) {
 }
 // The table on its own, with no surrounding chrome — the word sheet wraps it in a popup, the
 // review card puts it behind a disclosure. Same paradigm either way, rendered once.
-function conjTableHTML(v) {
-  const c = v.conj; if (!c) return '';
-  const cell = k => c[k] ? `<span class="wcj-ar">${esc(c[k].arv || c[k].ar)}</span><span class="wcj-ph">${esc(c[k].ph)}</span>` : '—';
-  let h = `<div class="wcj-tbl"><div class="wcj-row wcj-hdr"><span></span><span>Past</span><span>Pres.</span><span>+بـ</span></div>`;
-  PERSONS.forEach(([key, en, ar]) => { h += `<div class="wcj-row">
-      <span class="wcj-pr">${esc(ar)}<em>${esc(en)}</em></span>
-      <span class="wcj-c">${cell('perf|' + key)}</span><span class="wcj-c">${cell('impf|' + key)}</span><span class="wcj-c">${cell('bimpf|' + key)}</span></div>`; });
-  return h + `</div>`;
+// ---------- one paradigm renderer ------------------------------------------------------
+// There used to be two: a compact one for the word-sheet popup and a near-identical copy
+// inside verbDetail for the full page. Both hard-coded the same thing -- eight person rows
+// against Past / Present / Present+bi -- so every change to the verb model had to be made
+// twice, and Hebrew would have needed a third.
+//
+// The shape now comes from LANG.verb.tables, a list of descriptors. `scale` picks the CSS
+// prefix and how much to show: 'wcj' is the popup (the grid only), 'cj' is the full page
+// (grid plus the imperative and participle strips).
+//
+// One rule does the work that would otherwise be per-language special-casing: SKIP ANY ROW OR
+// TABLE WITH NO FILLED CELLS. Hebrew's present has four cells where Arabic's has eight;
+// Arabic's participle has three; a defective verb has no imperative. All of that falls out of
+// that single line, with no `if (LANG.code === ...)` anywhere in the UI.
+function paradigmHTML(v, scale) {
+  const c = v.conj;
+  if (!c) return '';
+  const P = scale, full = scale === 'cj', out = [];
+  const filled = k => !!c[k];
+  const txt = k => c[k] ? {ar: c[k].arv || c[k].ar, ph: c[k].ph} : null;
+
+  for (const t of LANG.verb.tables) {
+    if (t.full && !full) continue;
+    // `persons` is the pack's own top-level list (it is PERSONS elsewhere); the smaller
+    // sets live in rowSets. Resolving from either place avoids duplicating an 8-row array.
+    const rows = (LANG.verb.rowSets || {})[t.rows] || LANG.verb[t.rows] || [];
+    const cols = t.cols || [{slot: t.slot}];
+    const live = rows.filter(r => cols.some(col => filled(col.slot + '|' + r[0])));
+    if (!live.length) continue;
+
+    if (t.kind === 'grid') {
+      const head = cols.map(col => `<${full ? 'div' : 'span'}>${
+        esc(full ? col.label : (col.short || col.label))}</${full ? 'div' : 'span'}>`).join('');
+      let h = full
+        ? `<div class="cj-tbl" style="--cols:${cols.length}">
+    <div class="cj-row cj-hdr"><div class="cj-pr"></div>
+      ${head}</div>`
+        : `<div class="wcj-tbl" style="--cols:${cols.length}"><div class="wcj-row wcj-hdr"><span></span>${head}</div>`;
+      for (const r of live) {
+        const cells = cols.map(col => {
+          const d = txt(col.slot + '|' + r[0]);
+          return full
+            ? (d ? `<div class="cj-cell"><span class="cj-ar">${esc(d.ar)}</span>
+      <span class="cj-ph">${esc(d.ph)}</span></div>` : `<div class="cj-cell">—</div>`)
+            : `<span class="wcj-c">${d ? `<span class="wcj-ar">${esc(d.ar)}</span><span class="wcj-ph">${esc(d.ph)}</span>` : '—'}</span>`;
+        }).join('');
+        h += full
+          ? `\n    <div class="cj-row"><div class="cj-pr"><span class="cj-pr-ar">${esc(r[2])}</span>
+        <span class="cj-pr-en">${esc(r[1])}</span></div>
+      ${cells}</div>`
+          : `<div class="wcj-row">
+      <span class="wcj-pr">${esc(r[2])}<em>${esc(r[1])}</em></span>
+      ${cells}</div>`;
+      }
+      out.push(h + (full ? `\n  </div>` : `</div>`));
+    } else {                                   // a strip: one labelled cell per row
+      out.push(`<div class="cj-mini"><div class="sec">${esc(t.label)}</div>
+    <div class="cj-mini-row" style="--mini:${live.length}">${live.map(r => {
+      const d = txt(t.slot + '|' + r[0]);
+      return `<div class="cj-cell"><span class="cj-k">${esc(r[1])}</span>
+        <span class="cj-ar">${esc(d.ar)}</span><span class="cj-ph">${esc(d.ph)}</span></div>`;
+    }).join('')}</div></div>`);
+    }
+  }
+  return out.join('');
 }
+
+function conjTableHTML(v) { return paradigmHTML(v, 'wcj'); }
 function conjPopupHTML(v) {
   if (!v.conj) return '';
   return `<div class="wcj"><div class="wcj-h"><span>Conjugation${WEAK_INFO[v.weak] ? ' · ' + esc(WEAK_INFO[v.weak][0].toLowerCase()) : ''} Form ${esc(v.form)}</span>
