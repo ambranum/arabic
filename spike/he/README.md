@@ -25,6 +25,58 @@ noun *pattern*, and gender — most of what a lexicon row needs.
 |---|---|
 | `phon.py` | Pointed Hebrew → Modern Israeli pronunciation. Deterministic, no lexicon. `--selftest` |
 | `verify_phon.py` | Scores `phon.py` against every Wiktionary romanization. The oracle. |
+| `build_lex.py` | The dump → `hebrew_lex.parquet`. Maknuune's column contract. |
+| `lex.py` | Lookup + clitic peeling. The Hebrew `pipeline/maknuune.py`. |
+| `coverage.py` | **The gate.** Scores the lexicon against live Hebrew news. |
+
+## A1 — the gate: 94.7%
+
+```
+$ python3 spike/he/coverage.py --n 300
+lexicon: 176,610 rows, 109,168 distinct keys      corpus: 300 sentences, 7,137 tokens
+
+  wiktionary:exact               1842   25.8%
+  wiktionary:clitic              1072   15.0%
+  wiktionary:ktiv                 173    2.4%
+  AMBIGUOUS-needs-resolution     3560   49.9%
+  acronym (not lexical)           119    1.7%
+  unresolved                      371    5.2%
+
+  GOT lemma+gloss+POS            6647   94.7%   <- bar was 90%
+```
+
+**Passes.** Corpus is live RSS from Ynet, Walla, Israel Hayom and Maariv — the text the Hebrew
+news module would actually ingest on day one, unfiltered and not chosen to flatter the number.
+
+The lexicon is **176,610 rows over 12,662 lemmas**, and the reason it works at that lemma count
+is that Wiktionary ships whole paradigms: every person of every tense for verbs, the possessed
+forms for nouns, plurals and constructs. 109,168 distinct surface keys. It also carries the
+binyan for 56,807 verb rows and a root for 22,429 — so `BINYAN` and `ROOT` are looked up, not
+inferred, which is more than the Arabic side manages.
+
+### The 5.2% that misses is almost entirely names
+
+Smotrich, Trump, Jenin, Feiglin, Gantz, Erdan, Khamenei, Ratcliffe, Hezbollah. Proper nouns are
+not a lexicon's job and never were — `pipeline/curated.py` has a `PROPER` dict for exactly this
+on the Arabic side, and Hebrew needs the same table. The genuine word misses in the top 25 are
+four: נעדרים, באמצעות, אינטימיות, הפיננסית.
+
+### The real finding: Hebrew is half ambiguous
+
+**49.9% of tokens match more than one lemma, against 32.5% for Arabic.** That is not a defect in
+the lexicon and it did not move when root and acronym pseudo-entries were filtered out — it is
+what unpointed Hebrew *is*. חיות is *xayot* (animals) or *xayut* (vitality); בשום is "in no" or
+"with garlic"; לנו is "to us" or "he stayed the night".
+
+Ambiguity is a normal state in this pipeline, not a failure — the Arabic side resolves it with
+one Claude call per text that picks from the real candidate list and is rejected if it invents
+an id. Hebrew needs the same call, roughly 1.5× as often.
+
+There is an obvious lever not yet pulled: **run the text through DICTA's Nakdan first.** Adding
+niqqud is precisely what disambiguates Hebrew, and the lexicon is already keyed on pointed
+forms. That should collapse most of the 49.9% before any API call is made. Untested here; it is
+the first thing to try in Stage C, and the reason the Hebrew news job may end up cheaper than
+the Arabic one rather than dearer.
 
 ## Why there is an oracle
 
