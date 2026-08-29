@@ -109,21 +109,46 @@ def _blank(surface):
 
 def annotate(lex, surface, res):
     key = he_norm(surface)
+    # `cut` is what the peeler had to remove to find this word, and it belongs to the word
+    # whichever branch answers. Reading it only on the unresolved path meant a resolution
+    # silently re-enabled the thing the clitic guard exists to stop: בכמה "in a few" was
+    # displayed as כַּמָּה, שהרכב as רֶכֶב. An adjudicated word is not a differently-shaped word.
+    _, _, cut = lex.look(surface)
     want = res.get(surface) or res.get(key)
     if want:
         pick = lex.by_id.get(str(want))
         if pick:
-            return _word(pick, surface, 'wiktionary:resolved')
+            return _word(pick, surface, 'wiktionary:resolved', cut)
     rec, prov, cands = lex.resolve(surface)
     if rec is None:
         return _blank(surface)
-    _, _, cut = lex.look(surface)
     w = _word(rec, surface, prov, cut)
     if prov == 'AMBIGUOUS-needs-resolution':
+        # A Hebrew word can be BOTH a word and a prefix plus a different word, and the exact
+        # match wins before the peeler ever runs. שבו is the verb שָׁבוּ "they returned" and it
+        # is ש- + בו "in which"; השבת is הֵשַׁבְתָּ "you returned" and ה- + שבת "the Sabbath". The
+        # adjudicator was only ever shown the first reading, so it could not choose the second
+        # however much context it had. Offer both.
+        extra = []
+        if not cut:
+            for stem, c2 in lex.stems(key)[1:]:
+                hit = lex.by_form.get(stem) or lex.by_lemma.get(stem)
+                if hit:
+                    extra = [(r, c2) for r in lex._by_lemma(hit)[:3]]
+                    break
         w['options'] = [{'id': str(c['ID']), 'root': str(c['ROOT'] or ''),
                          'gloss': str(c['GLOSS'] or '')[:60],
                          'analysis': str(c['ANALYSIS'] or ''),
                          'pointed': c['FORM']} for c in cands]
+        w['options'] += [{'id': str(r['ID']), 'root': str(r['ROOT'] or ''),
+                          'gloss': ('as %s- + %s: ' % (c2, r['LEMMA'])) + str(r['GLOSS'] or '')[:44],
+                          'analysis': str(r['ANALYSIS'] or ''),
+                          'pointed': r['FORM']} for r, c2 in extra]
+        # What the adjudicator is really choosing for. Without this it saw WORD: שבו and a list
+        # of entries for the STEM, with nothing to say that ש- had been removed -- so it picked
+        # a good entry for בו and returned שָׁבוּ "they returned" for a word meaning "in which".
+        if cut:
+            w['_cut_for_prompt'] = cut
     return w
 
 

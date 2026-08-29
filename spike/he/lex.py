@@ -50,9 +50,15 @@ class Lexicon:
         recs = df.to_dict('records')
         self.by_form = {}
         self.by_lemma = {}
+        # By id, so a decision made once can be applied for good. The resolution trail records
+        # the ENTRY that was chosen for a word, and replaying it has to find that entry again --
+        # the Arabic lexicon has had this since the beginning and this one did not, so the first
+        # Hebrew article that reached adjudication then died trying to use the answer.
+        self.by_id = {}
         for r in recs:
             self.by_form.setdefault(r['FORM_SEARCH'], []).append(r)
             self.by_lemma.setdefault(r['LEMMA_SEARCH'], []).append(r)
+            self.by_id[str(r['ID'])] = r
         # For ktiv male/haser: index every entry under a skeleton with the vowel letters
         # removed. Lossy on purpose, and only ever consulted after everything else has failed.
         self.by_skeleton = {}

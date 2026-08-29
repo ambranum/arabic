@@ -258,7 +258,14 @@ def resolve(c, ambiguous):
 def _resolve_batch(c, ambiguous):
     lines = []
     for a in ambiguous:
-        lines.append(f'\nWORD: {a["surface"]}   (sentence: "{a["en"]}")')
+        # The whole sentence, not just its translation: which sense a word has is decided by
+        # the words around it, and the English is a paraphrase of all of them at once.
+        lines.append(f'\nWORD: {a["surface"]}   in: "{a.get("sent", "")}"'
+                     f'\n   means: "{a["en"]}"')
+        if a.get("cut"):
+            lines.append(f'   NOTE: matched after removing the prefix {a["cut"]}-, so the '
+                         f'options below are entries for the STEM. Pick the one that fits '
+                         f'{a["surface"]} in the sentence, not the bare stem.')
         for o in a["options"]:
             lines.append(f'   id={o["id"]}  root={o["root"]}  {o["analysis"]}  {o["gloss"]}')
     r = c.messages.create(
@@ -306,7 +313,8 @@ def ambiguities(text_id):
     for s in a["sentences"]:
         for w in s["words"]:
             if w["provenance"] == "AMBIGUOUS-needs-resolution":
-                out.append({"surface": w["surface"], "en": s["en"], "options": w["options"]})
+                out.append({"surface": w["surface"], "en": s["en"], "options": w["options"],
+                            "cut": w.get("_cut_for_prompt", ""), "sent": s["ar"]})
     return out
 
 # "Today" means today WHERE THE LEARNER IS, not on the build runner. The runner is UTC, and the
