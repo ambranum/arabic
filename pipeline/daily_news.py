@@ -232,10 +232,30 @@ def write_sentences(c, heads, n):
     txt = next(b.text for b in r.content if b.type == "text")
     return json.loads(txt)["sentences"]
 
+BATCH = 40
+
+
 def resolve(c, ambiguous):
-    """Pick the right sense — from REAL candidates only. This is the guarantee."""
+    """Pick the right sense — from REAL candidates only. This is the guarantee.
+
+    In batches, because the size of this call is set by the language, not by us: Hebrew's news
+    runs about 50% ambiguous against Arabic's 32% (A1 measured 49.9%), so a day's article asks
+    for ninety-odd decisions where Arabic asks for forty. One reply carrying all of them is a
+    long JSON object with a token limit at the end of it, and a truncated reply is not a partial
+    answer — it is a parse error that loses every decision in it.
+    """
     if not ambiguous:
         return {}
+    out = {}
+    for i in range(0, len(ambiguous), BATCH):
+        chunk = ambiguous[i:i + BATCH]
+        if len(ambiguous) > BATCH:
+            print(f"  batch {i // BATCH + 1}: {len(chunk)} words")
+        out.update(_resolve_batch(c, chunk))
+    return out
+
+
+def _resolve_batch(c, ambiguous):
     lines = []
     for a in ambiguous:
         lines.append(f'\nWORD: {a["surface"]}   (sentence: "{a["en"]}")')
@@ -368,13 +388,29 @@ def main():
     amb = ambiguities(tid)
     if amb:
         print(f"resolving {len(amb)} ambiguous words (selecting from real entries)…")
-        picks = resolve(c, amb)
         rp = paths.resolutions()
-        res = json.load(open(rp, encoding="utf-8"))
-        res.update(picks)
-        json.dump(res, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-        print(f"  resolved {len(picks)}/{len(amb)}")
-        if not ingest(src): return 1
+        # A language on its FIRST run has no audit trail yet. This read assumed one existed,
+        # because Arabic's has been in the repo since the beginning — so Hebrew's first news
+        # article died here, after being written, annotated and paid for.
+        res = json.load(open(rp, encoding="utf-8")) if os.path.exists(rp) else {}
+        try:
+            picks = resolve(c, amb)
+        except Exception as e:
+            # Adjudication failing must not cost the day's paper. Every word it would have
+            # settled is already in the artifact, flagged AMBIGUOUS, and the app says so on the
+            # card: "lexicon match not yet confirmed". A paper with honest uncertainty in it
+            # beats no paper, and tomorrow's run re-resolves the same words.
+            what, fix = explain_api_failure(e)
+            print(f"  !! could not resolve: {what}")
+            if fix:
+                print(f"  !! FIX: {fix}")
+            print("  !! shipping the article with those words flagged as unconfirmed.")
+            picks = {}
+        if picks:
+            res.update(picks)
+            json.dump(res, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+            print(f"  resolved {len(picks)}/{len(amb)}")
+            if not ingest(src): return 1
 
     # Voice comes from pipeline/voice.py — the Action deliberately does NOT pass a voice
     # secret, so the daily news can't drift onto a different voice than the rest of the app.
