@@ -39,8 +39,32 @@ NIQQUD_RE = re.compile('[֑-ׇ]')
 FINALS = str.maketrans('ךםןףץ', 'כמנפצ')
 
 # Wiktionary's binyan codes, as they appear in the he-verb head template's first positional arg.
-BINYAN = {'pa': 'paal', 'ni': 'nifal', 'pi': 'piel', 'pu': 'pual',
-          'hi': 'hifil', 'hu': 'hufal', 'hit': 'hitpael', 'hitp': 'hitpael'}
+BINYAN = {'pa': 'paal', 'paal': 'paal',
+          'ni': 'nifal', 'nif': 'nifal',
+          'pi': 'piel', 'piel': 'piel',
+          'pu': 'pual', 'pual': 'pual',
+          'hi': 'hifil', 'hif': 'hifil',
+          'hu': 'hufal', 'huf': 'hufal',
+          'hit': 'hitpael', 'hitp': 'hitpael', "hitpu'al": 'hitpual'}
+
+
+def binyan_of(d):
+    """The binyan, from wherever this entry happens to keep it.
+
+    Most verbs put it in the he-verb head template's first positional arg. Several hundred use
+    a generic `head` template instead, which puts the LANGUAGE code there ("he") -- for those
+    the code is in the he-conj inflection template's args. Reading only the first place loses
+    544 of 2,084 paradigms to a blank binyan, which then propagates into the difficulty model.
+    """
+    ht = (d.get('head_templates') or [{}])[0].get('args', {})
+    hit = BINYAN.get(str(ht.get('1', '')).lower())
+    if hit:
+        return hit
+    for it in d.get('inflection_templates') or []:
+        hit = BINYAN.get(str((it.get('args') or {}).get('1', '')).lower())
+        if hit:
+            return hit
+    return ''
 
 # Tag sets Wiktionary emits that are not a form of the word.
 SKIP_TAGS = {'romanization', 'table-tags', 'inflection-template', 'class',
@@ -87,7 +111,7 @@ def rows():
         # The romanization Wiktionary gives is for the LEMMA only.
         rom = next((f['form'] for f in d.get('forms', [])
                     if 'romanization' in (f.get('tags') or [])), None)
-        binyan = BINYAN.get(str(ht.get('1', '')).lower(), '') if pos == 'verb' else ''
+        binyan = binyan_of(d) if pos == 'verb' else ''
         # he-verb templates carry the root radicals as פ/ע/ל args.
         root = '.'.join(x for x in (ht.get('פ'), ht.get('ע'), ht.get('ל')) if x) or ''
         pattern = ht.get('pat', '') or ''
@@ -97,9 +121,19 @@ def rows():
         cand = [(lemma, [], rom, 'wiktionary:lemma')]
         for f in d.get('forms', []):
             tags = f.get('tags') or []
-            if set(tags) & SKIP_TAGS or not f.get('form'):
+            form = (f.get('form') or '').strip()
+            if not form:
                 continue
-            cand.append((f['form'], tags, None, 'wiktionary:form'))
+            # The Hebrew infinitive is filed by wiktextract as `error-unrecognized-form`.
+            # Skipping the whole tag would drop לכתוב, לדבר, לעשות, להיות -- four of the most
+            # common shapes in running text -- so it is relabelled here instead. Identifiable
+            # without guessing: a verb entry, tagged as the error, beginning with ל-.
+            if set(tags) & SKIP_TAGS:
+                if not (pos == 'verb' and 'error-unrecognized-form' in tags
+                        and form.startswith('ל')):
+                    continue
+                tags = ['infinitive']
+            cand.append((form, tags, None, 'wiktionary:form'))
         for form, tags, r, src in cand:
             form = form.strip()
             key = he_norm(form)

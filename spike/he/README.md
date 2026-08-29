@@ -121,6 +121,69 @@ So the bar that matters is not "does the rule reproduce the dictionary" but "wha
 running text gets a pronunciation from *somewhere* trustworthy". That is an A1 question, and it
 is what the coverage measurement is for.
 
+## A3 — the verbs: 98.99%, and no engine needed
+
+The plan asked for a conjugation engine per binyan, verified against Pealim at ≥98%. A1 changed
+the question, because Wiktionary does not just give Hebrew lemmas — it gives **whole pointed
+conjugation tables**.
+
+```
+$ python3 spike/he/verbs_he.py
+verb entries with any pointed cell: 2084
+with ALL 24 slots filled          : 1906  (91%)
+
+  paal 650 · piel 532 · hifil 365 · hitpael 256 · nifal 121 · pual 104 · hufal 53 · hitpual 2
+```
+
+For Arabic there was no choice: Maknuune has principal parts and nothing else, so
+`pipeline/conjugate.py` derives 30 cells from three, and the whole apparatus of per-measure
+engines and parse gates exists to make that derivation trustworthy. Hebrew arrives with the
+tables filled in, from a source we can ship.
+
+**So the paradigms are looked up, not generated** — which is the project's own rule, applied
+more strictly than the Arabic side manages. An engine is still worth building later for verbs
+outside Wiktionary's table set, but it is not on the critical path, and Pealim is not needed as
+an oracle. It stays available and stays unshipped.
+
+### Are the tables right? 98.99%
+
+Wiktionary romanizes the lemma, and for a Hebrew verb the lemma **is** the 3ms past — the same
+cell the app banks a flashcard under. So every verb hands us a free cross-check of extraction
+plus phonology against a transcription we did not write:
+
+| binyan | | | binyan | | |
+|---|---|---|---|---|---|
+| paal | 619/623 | 99.4% | pual | 69/69 | 100% |
+| piel | 364/366 | 99.5% | hufal | 27/27 | 100% |
+| hifil | 346/353 | 98.0% | nifal | 113/113 | 100% |
+| hitpael | 228/233 | 97.9% | hitpual | 2/2 | 100% |
+
+**1768/1786 = 98.99%**, uniform across all seven binyanim. Clears the bar.
+
+It did not start there. The first run said 87% overall with piel at 71% and pual at 13% — which
+was a bug in the *harness*, not the data: I keyed the romanization map on the normalized lemma,
+and unpointed מהר is both מָהַר (paal, hurry) and מִהֵר (piel, hasten), so it was comparing one
+binyan's cell against the other's transcription. Keying on the pointed form fixed it. That is
+the A1 ambiguity finding showing up as a measurement error, which is worth remembering: **in
+Hebrew, an unpointed key is not an identifier.**
+
+### Do the verbs a learner meets have one? 91%
+
+Over the same live news corpus: **91.0% of verb tokens** and 92.2% of distinct verb lemmas
+resolve to a verb that has a paradigm.
+
+### Two real fixes this turned up
+
+- **Infinitives were missing entirely.** wiktextract cannot label the Hebrew infinitive and
+  files it as `error-unrecognized-form` — 2,671 rows. They were being dropped, taking לכתוב,
+  לדבר, לעשות and להיות with them. Now relabelled on the way in, which pushed exact matches
+  from 25.8% to 27.0% of tokens and cut the number resolved by clitic guessing.
+- **The shva rule differs inside a verb.** יִכְתְּבוּ is *yixtevu*, not the *yixtvu* the general
+  rule gives, because the prefix has already closed a syllable. This is switched on only when
+  the caller knows it is looking at a verb cell (`phon(form, verb=True)`), because as a general
+  rule it costs 1.1pp — in nouns the same shape resolves the other way (אַנְגְּלִית is *anglit*).
+  The A2 known gap is now closed where it mattered and left alone where it did not.
+
 ## Known gaps
 
 `phon.py --selftest` prints these rather than hiding them. Currently one: a shva between two

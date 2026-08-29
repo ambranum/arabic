@@ -207,7 +207,7 @@ def _segment(word):
     return out
 
 
-def _shva_map(segs):
+def _shva_map(segs, verb=False):
     """Which shvas are pronounced (-> "e") and which are silent?
 
     In Modern Israeli Hebrew: a plain shva is SILENT, everywhere. A hataf is a coloured shva
@@ -234,7 +234,28 @@ def _shva_map(segs):
     yixtevu, not "yixtvu"). Those do not come through here: a verb's pronunciation comes from
     the conjugation engine, which knows the paradigm and can place the vowel correctly.
     """
-    return [bool(s.is_shva and (s.marks & HATAFS)) for s in segs]
+    out = []
+    for k, s in enumerate(segs):
+        if not s.is_shva:
+            out.append(False)
+        elif s.marks & HATAFS:
+            out.append(True)
+        elif verb and k > 0 and segs[k - 1].is_shva and not out[k - 1]:
+            # VERB PARADIGMS ONLY. Inside a conjugated form, a shva following a silent one is
+            # pronounced -- יִכְתְּבוּ is yixtevu, תִּכְתְּבִי is tixtevi. The prefix has already
+            # closed a syllable, so leaving both silent would ask for a three-obstruent onset
+            # that Hebrew does not have.
+            #
+            # It is deliberately NOT the general rule: measured over 14,710 Wiktionary
+            # romanizations it costs 1.1pp, because in nouns the same shape resolves the other
+            # way (אַנְגְּלִית is anglit, not "angelit" -- the cluster ends in a sonorant, which
+            # Hebrew is happy to say). Rather than guess a phonotactic rule that would have to
+            # be right about every cluster, this is switched on only where the caller knows it
+            # is looking at a verb form -- which is exactly where verbs_he.py calls it.
+            out.append(True)
+        else:
+            out.append(False)
+    return out
 
 
 def _qamatz_qatan(segs, k):
@@ -296,10 +317,10 @@ def _genuva(segs, k):
     return any(p.vowel and not p.is_shva for p in segs[:k])
 
 
-def _realize(word):
+def _realize(word, verb=False):
     """-> (pieces, nuclei). One pass, shared by every public entry point."""
     segs = _segment(word)
-    shvas = _shva_map(segs)
+    shvas = _shva_map(segs, verb)
     out, nuclei = [], []          # nuclei: index into `out` of each syllable's vowel
     for k, s in enumerate(segs):
         if s.cons not in CONS:                          # passthrough
@@ -327,10 +348,13 @@ def _realize(word):
     return out, nuclei
 
 
-def phon(word):
-    """Vocalized Hebrew -> romanized Modern Israeli pronunciation."""
+def phon(word, verb=False):
+    """Vocalized Hebrew -> romanized Modern Israeli pronunciation.
+
+    Pass verb=True for a cell of a conjugation table; see _shva_map for why that differs.
+    """
     hit = QATAN.get(unicodedata.normalize('NFC', word).strip())
-    return hit if hit else ''.join(_realize(word)[0])
+    return hit if hit else ''.join(_realize(word, verb)[0])
 
 
 # Stress is a separate entry point rather than baked in, because the pipeline wants both: the

@@ -30,7 +30,7 @@ DUMP = os.path.join(HERE, 'kaikki-hebrew.jsonl')
 
 # A romanization carrying any of these is Tiberian, not Modern Israeli -- Wiktionary prints
 # both and we only want the one people actually say.
-TIBERIAN = set('ḇḵḏḡṯṗāēīōūǝăĕŏʾʿšśṣṭḥăq̄')
+TIBERIAN = set('ḇḵḏḡṯṗāēīōūǝăĕŏʾʿʕʔšśṣṭḥăq̄')
 
 
 def is_modern(r):
