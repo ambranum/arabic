@@ -1,3 +1,44 @@
+// The active pack. One language per page load -- switching is a reload, because every data
+// global below is const-bound and eagerly indexed, so swapping them in place would leave a
+// dozen derived caches stale and make every future cache someone adds a silent switch bug.
+// A pack must be READY to be activated. A hand-typed ?lang=he would otherwise boot the
+// Hebrew chrome on top of Arabic data, which looks like a working switch and is not one.
+const _wanted = document.documentElement.getAttribute('data-lang');
+const LANG = ((window.LANG_PACKS[_wanted] || {}).ready !== false && window.LANG_PACKS[_wanted])
+          || window.LANG_PACKS.ar;
+const SEC_ART = LANG.art;
+// data-lang only. NOT dir: LANG.dir describes the SCRIPT, and the elements that render target-
+// language text set dir="rtl" themselves. Putting it on <html> flips the whole chrome -- the
+// header, the English prose, the button order -- which is a different thing entirely and was
+// visibly wrong the moment it was tried.
+document.documentElement.setAttribute('data-lang', LANG.code);
+
+// The switcher: a flag per registered language, top right. It only earns its place once there
+// is more than one pack, so it stays hidden until the Hebrew pack lands.
+function langSwitchHTML() {
+  const packs = Object.values(window.LANG_PACKS || {});
+  if (packs.length < 2) return '';
+  return '<div class="langsw" role="group" aria-label="Language">' + packs.map(p => {
+    const on = p.code === LANG.code, soon = p.ready === false;
+    return `<button class="langsw-b${on ? ' on' : ''}${soon ? ' soon' : ''}"
+       aria-pressed="${on}" ${soon ? 'disabled' : ''}
+       title="${esc(soon ? p.name + ' — being built' : p.name)}"
+       onclick="switchLang('${p.code}')"><span class="langsw-f">${p.flag}</span>
+       <span class="langsw-n">${esc(p.short)}</span></button>`;
+  }).join('') + '</div>';
+}
+
+// A full reload, deliberately -- see the comment on LANG. Keeps your place when the section
+// exists on the other side, and lands on home when it does not.
+function switchLang(code) {
+  const p = window.LANG_PACKS[code];
+  if (!p || p.ready === false || code === LANG.code) return;
+  try { localStorage.setItem('alp.lang', code); } catch (e) {}
+  const sec = (location.hash.slice(1).split('/')[1]) || '';
+  const has = (window.LANG_PACKS[code].sections || []).includes(sec);
+  location.replace(location.pathname + '?lang=' + code + (has ? '#/' + sec : '#/'));
+}
+
 // ---------- persistence: the memorization deck ----------
 // localStorage, on this device, no server. Each word you "don't know" becomes a CARD keyed
 // by LEMMA (so it's the same card in every text), carrying its lexicon data, the sentence you
@@ -665,488 +706,6 @@ function secStatus(sec) {
 // identical outlined rectangles. The icon plus a per-group tint turns the wall into a set.
 const GROUP_COLOR = {practice: 'var(--verdigris)', input: 'var(--ochre)',
                      ask: 'var(--rubric)', you: 'var(--muted)'};
-// ---------- section heroes ------------------------------------------------------------------
-// The home page has a visual identity — a broadsheet masthead, a tatreez band, the Old City on
-// the horizon — and every other page opened as a bare list. Each section now gets its own
-// header: its name set large in Arabic, over a drawing of a real Palestinian place.
-//
-// One skeleton, so the app still feels like one app: wordmark, English label, then a full-bleed
-// band of art, and a small note in the corner saying where the drawing is. Only the scene and
-// the group colour change.
-// ---------- section banners ----------------------------------------------------------------
-// Drawn the same way as the Old City on the home page, because that is the one everybody liked:
-// one viewBox (1200x210), hills behind, a ground line at y=196, buildings as plain strokes,
-// trees as verdigris silhouettes, and exactly ONE ochre accent per scene — the thing your eye
-// should land on. An engraving, not a postcard.
-//
-// Every scene is a REAL PLACE, and says which one in the corner: Jaffa's harbour, the sea wall
-// at Akka, Nazareth stepped up its hill, the Bahá'í terraces over Haifa bay, the Roman street
-// at Sebastia, the oldest olive tree at al-Walaja, Battir's terraces, the covered souq in
-// al-Khalil, Damascus Gate, Ramallah's Manara, the Gaza shore, Bethlehem's rooftops, the lake
-// at Tabariyya, the Jordan, Jericho's palms, Nablus and its soap works, and Wadi Ara — the
-// valley whose accent this app keeps telling you about. Coast, Galilee, the hills and the
-// valley, so the set is the whole country and not one postcard of it.
-//
-// Where a section has an obvious home it gets it: verbs grow from a root, so verbs get the
-// ancient olive; grammar is structure, so grammar gets a colonnade; translation is a crossing,
-// so it gets the river with both banks.
-const _hills = (o = '') =>
-  `<path d="M0 190 Q180 148 380 166 T760 158 T1200 172" opacity=".45"${o}/>
-   <path d="M0 208 Q240 180 520 194 T1200 196"/>`;
-// A taller ridge, for the places that sit under a mountain — Nablus, Wadi Ara, Jericho.
-const _ridge = (o = '.34') =>
-  `<path d="M0 196 Q170 92 360 116 T700 82 T1010 122 T1200 104" opacity="${o}"/>`;
-const _ground = (y = 196) =>
-  `<path d="M0 ${y}h1200" stroke="var(--ink-soft)" stroke-width="1.8" opacity=".7"/>`;
-// A flat-roofed stone house with a row of windows — the unit most of these scenes are built
-// from. `y` is the line it stands on, so a hill town can step its houses up the slope.
-const _house = (x, w, h, win = 3, y = 196) => {
-  let g = `<path d="M${x} ${y}v-${h}h${w}v${h}" fill="var(--paper)"/>`;
-  const gap = w / (win + 1);
-  for (let i = 1; i <= win; i++) g += `<path d="M${x + gap * i - 4} ${y - h + 14}v10h8v-10z"/>`;
-  return g; };
-const _arch = (x, w, h, y = 196) =>
-  `<path d="M${x} ${y}v-${h}a${w / 2} ${w / 2} 0 0 1 ${w} 0v${h}" fill="var(--paper)"/>`;
-const _cypress = (x, h, y = 196) =>
-  `<path d="M${x} ${y}c0-${h * .8} ${h * .17}-${h} ${h * .23}-${h * 1.07}c${h * .07} ${h * .07} ${h * .23} ${h * .3} ${h * .23} ${h * 1.07}z"/>`;
-const _olive = (x, sc = 1, y = 196) => `<g transform="translate(${x} ${y}) scale(${sc})">
-    <path d="M-4 0v-30" stroke="var(--ink-soft)" stroke-width="2.4" fill="none"/>
-    <path d="M-26 -30c0-20 12-30 22-30s22 10 22 30c-8 6-36 6-44 0z"/></g>`;
-const _fig = (x, y, sc = 1) => `<g transform="translate(${x} ${y}) scale(${sc})">
-    <circle cx="0" cy="-30" r="8"/><path d="M-11 0v-14a11 11 0 0 1 22 0V0"/></g>`;
-// A date palm — Jericho and the Gaza shore. The trunk is drawn, the fronds take the group fill.
-const _palm = (x, h = 66, y = 196) => `<g transform="translate(${x} ${y})">
-    <path d="M0 0c-3-${Math.round(h * .5)} -3-${Math.round(h * .8)} 0-${h}"
-      stroke="var(--ink-soft)" stroke-width="2.4" fill="none"/>
-    <g transform="translate(0 -${h})">
-      <path d="M0 0c-8-13-26-19-42-16 13 11 27 16 42 16z"/>
-      <path d="M0 0c8-13 26-19 42-16-13 11-27 16-42 16z"/>
-      <path d="M0 0c-5-15-19-27-35-31 9 15 21 26 35 31z"/>
-      <path d="M0 0c5-15 19-27 35-31-9 15-21 26-35 31z"/>
-      <path d="M0 0c-2-15-9-29-20-39 2 17 8 30 20 39z"/>
-      <path d="M0 0c2-15 9-29 20-39-2 17-8 30-20 39z"/></g></g>`;
-// Water: long swells between two heights, over an exact x range so a harbour can end at the
-// quay instead of running off under the town.
-const _water = (top, bot, x0 = 0, x1 = 1200) => { let s = '';
-  for (let i = 0, y = top; y <= bot; y += 9, i++) {
-    let x = x0 + (i % 2) * 26, d = `M${x} ${y}`;
-    while (x1 - x >= 80) { d += 'q40 -6 80 0'; x += 80; }
-    const r = x1 - x; if (r > 8) d += `q${(r / 2).toFixed(1)} -5 ${r} 0`;
-    s += `<path d="${d}" opacity="${Math.max(.12, .34 - i * .045).toFixed(2)}"/>`; }
-  return s; };
-// A fishing boat — hull, and a lateen sail when it wants one.
-const _boat = (x, y, sc = 1, sail = 1) => `<g transform="translate(${x} ${y}) scale(${sc})">
-    <path d="M-34 0q34 17 68 0z"/><path d="M-37 0h74"/>
-    ${sail ? `<path d="M0 0v-48"/><path d="M3 -46q27 13 27 31l-27 4z"/>` : ''}</g>`;
-const _minaret = (x, h, y = 196) => `<path d="M${x} ${y}v-${h}h18v${h}" fill="var(--paper)"/>
-    <path d="M${x - 5} ${y - h + 26}h28M${x - 5} ${y - h + 34}h28"/>
-    <path d="M${x} ${y - h}h18l-9-15z" fill="var(--paper)"/><path d="M${x + 9} ${y - h - 15}v-9"/>`;
-const _dome = (cx, y, r, o = ' fill="var(--paper)"') =>
-  `<path d="M${cx - r} ${y}a${r} ${r} 0 0 1 ${r * 2} 0z"${o}/>`;
-// A column, for the Roman street at Sebastia: shaft, a two-part capital, a base block.
-const _col = (x, h, y = 196) => `<path d="M${x + 1} ${y - 7}v-${h - 14}M${x + 14} ${y - 7}v-${h - 14}"/>
-    <path d="M${x - 1} ${y - h + 7}h17v-6h-17z" fill="var(--paper)"/>
-    <path d="M${x - 5} ${y - h + 1}h25v-7h-25z" fill="var(--paper)"/>
-    <path d="M${x - 3} ${y}h21v-7h-21z" fill="var(--paper)"/>`;
-
-const SEC_ART = {
-  // NAZARETH — the old town stepped up its hill, the basilica's lantern, a minaret.
-  stories: {ar: 'قِصَص', place: 'Nazareth', placeAr: 'النَّاصِرة',
-    what: 'the old town on its hill', art: () => `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      <path d="M0 196Q250 124 500 116T1200 188" opacity=".38"/>
-      ${_house(30, 88, 44, 3, 182)}${_house(140, 82, 42, 3, 160)}${_house(248, 76, 40, 2, 142)}
-      ${_house(770, 84, 44, 3, 134)}${_house(884, 90, 48, 3, 146)}${_house(1002, 86, 44, 3, 164)}
-      <path d="M380 124v-56h200v56" fill="var(--paper)"/><path d="M368 68h224"/>
-      <path d="M406 124v-32a24 24 0 0 1 48 0v32M506 124v-32a24 24 0 0 1 48 0v32"/>
-      <path d="M440 68v-18h80v18z" fill="var(--paper)"/>
-      <path d="M452 50l28-42 28 42z" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      ${_minaret(690, 102, 130)}
-      ${_house(120, 104, 56, 3)}${_house(300, 116, 62, 4)}${_house(646, 108, 58, 4)}
-      ${_house(830, 104, 54, 3)}${_house(980, 96, 50, 3)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      ${_cypress(232, 44, 142)}${_cypress(618, 46, 132)}${_cypress(96, 58)}${_cypress(778, 52)}
-      ${_olive(440, .8)}${_olive(1130, .9)}
-    </g>${_ground()}`},
-
-  // DAMASCUS GATE — the wall, the crenellations, the steps down into the Old City.
-  news: {ar: 'أخْبار', place: 'Damascus Gate', placeAr: 'باب العامود',
-    what: 'the way into the Old City', art: () => {
-    let m = ''; for (let x = 4; x < 1200; x += 40) m += `<path d="M${x} 100v-15h22v15"/>`;
-    let st = ''; for (let i = 0; i < 3; i++)
-      st += `<path d="M${492 + i * 22} ${196 - i * 6}h${216 - i * 44}" opacity="${(.45 - i * .1).toFixed(2)}"/>`;
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      <path d="M0 196v-96h1200v96" fill="var(--paper)" opacity=".9"/><path d="M0 100h1200"/>${m}
-      <path d="M430 196v-128h84v128" fill="var(--paper)"/>
-      <path d="M686 196v-128h84v128" fill="var(--paper)"/>
-      <path d="M422 68h100M678 68h100"/>
-      <path d="M436 54v-12h20v12M478 54v-12h20v12M692 54v-12h20v12M734 54v-12h20v12"/>
-      <path d="M430 68v-14h84M686 68v-14h84" opacity=".5"/>
-      <path d="M540 196v-58l60-52 60 52v58" fill="var(--paper)"/>
-      <path d="M558 196v-44a42 42 0 0 1 84 0v44"/>
-      <path d="M600 108v18"/>
-      <circle cx="600" cy="138" r="11" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      ${st}
-      <path d="M170 196v-58h116v58" fill="var(--paper)"/>
-      <path d="M156 138h144l-14-15H170z" fill="var(--paper)"/>
-      <path d="M186 154h42v42h-42zM244 152h34v18h-34zM244 176h34v18h-34z"/>
-      <path d="M194 162h26M194 172h26M194 182h18" opacity=".5"/>
-      ${_fig(346, 196, .95)}${_fig(860, 196, 1)}${_fig(906, 196, .85)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(104, 56)}${_cypress(1050, 52)}</g>
-    ${_ground()}`; }},
-
-  // AKKA — Khan al-Umdan's arcaded court, its clock tower, and the harbour beyond the wall.
-  books: {ar: 'كُتُب', place: 'Akka', placeAr: 'عكّا',
-    what: 'Khan al-Umdan and the harbour', art: () => {
-    let a = '', c = '';
-    for (let i = 0; i < 6; i++) a += _arch(120 + i * 112, 86, 74);
-    for (let i = 0; i < 7; i++) c += `<path d="M${112 + i * 112} 196v-82h16v82"/>`;
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}
-      <path d="M96 196V66h740v130" fill="var(--paper)" opacity=".9"/>
-      <path d="M96 66h740M96 54h740" opacity=".75"/>
-      ${a}${c}
-      <path d="M120 148h692" opacity=".28"/>
-      <path d="M846 196v-146h74v146" fill="var(--paper)"/><path d="M838 50h90"/>
-      <path d="M854 50v-16h58v16"/>${_dome(883, 34, 29)}<path d="M883 5v-9"/>
-      <circle cx="883" cy="104" r="21" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      <path d="M883 104v-13M883 104l11 7" stroke="var(--ochre)"/>
-      <path d="M940 172h260" opacity=".5"/>
-      ${_water(180, 194, 940, 1200)}
-      ${_boat(1064, 190, .78, 0)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(60, 60)}${_olive(1160, .8, 166)}</g>
-    ${_ground()}`; }},
-
-  // AL-WALAJA — al-Badawi, reckoned the oldest olive tree in Palestine. A verb has a root too.
-  verbs: {ar: 'أفْعال', place: 'Al-Walaja', placeAr: 'الوَلَجة',
-    what: 'al-Badawi, the oldest olive tree', art: () => `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}
-      <path d="M700 196v-16h160v16M860 180v-16h170v16M1030 164v-16h170v16" opacity=".42"/>
-      <path d="M40 196v-14h150v14M190 182v-14h160v14" opacity=".42"/>
-      <path d="M552 196v-66c-17-13-21-31-11-42" stroke-width="3.2"/>
-      <path d="M604 196v-72c17-13 23-29 17-40" stroke-width="3.2"/>
-      <path d="M558 130c-11 17-31 25-48 21M600 124c13 15 33 19 48 13" stroke-width="2.4"/>
-      <path d="M546 196c-21-4-39 0-51 11M556 196c-15 2-27 9-35 17M612 196c19-7 39-3 51 9M602 196c15 4 25 11 31 19"
-        stroke-width="1.8" opacity=".68"/>
-      ${_house(232, 74, 44, 3, 168)}${_house(1058, 84, 50, 3, 148)}
-      <circle cx="240" cy="50" r="21" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      <path d="M484 126c0-45 39-69 94-69s94 24 94 69c-26 16-162 16-188 0z"/>
-      ${_olive(360, 1.05)}${_olive(790, .95)}${_olive(920, .8, 180)}${_cypress(1140, 56, 148)}
-    </g>${_ground()}`},
-
-  // AL-KHALIL — the covered souq: the mesh overhead, a lamp, and a shelf of Hebron glass.
-  vocab: {ar: 'كَلِمات', place: 'Al-Khalil (Hebron)', placeAr: 'الخَليل',
-    what: 'the covered souq', art: () => {
-    let mesh = ''; for (let x = 236; x <= 966; x += 26) mesh += `<path d="M${x} 58l20-20" opacity=".2"/>`;
-    let jars = ''; [478, 528, 582, 640, 692].forEach((x, i) => { const r = 14 + (i % 3) * 3;
-      jars += `<circle cx="${x}" cy="${150 - r}" r="${r}"/><path d="M${x - 5} ${150 - 2 * r}v-8h10v8"/>`; });
-    let cr = ''; let cx = 300;
-    for (let i = 0; i < 3; i++) { const w = 96, h = 34 + (i % 2) * 9;
-      cr += `<path d="M${cx} 196v-${h}h${w}v${h}z"/><path d="M${cx} ${196 - h + 12}h${w}"/>`;
-      for (let j = 0; j < 4; j++) cr += `<circle cx="${cx + 15 + j * 22}" cy="${196 - h - 7}" r="8"/>`;
-      cx += w + 12; }
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}
-      <path d="M50 196V56h190v140M960 196V56h190v140" fill="var(--paper)" opacity=".9"/>
-      ${_arch(248, 88, 92)}${_arch(360, 88, 92)}${_arch(752, 88, 92)}${_arch(864, 88, 92)}
-      <path d="M236 58h730M236 38h730" opacity=".35"/>${mesh}
-      <path d="M462 150h268"/><path d="M470 150v46M722 150v46" opacity=".45"/>
-      ${jars}${cr}
-      <path d="M600 58v22"/>
-      <path d="M584 80h32l-7 24h-18z" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      ${_fig(790, 196, 1)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(1178, 46)}</g>
-    ${_ground()}`; }},
-
-  // SEBASTIA — the Roman colonnaded street. Grammar is the part that stays standing.
-  grammar: {ar: 'قَواعِد', place: 'Sebastia', placeAr: 'سَبَسْطية',
-    what: 'the Roman colonnaded street', art: () => {
-    let co = ''; [92, 206, 318, 430, 542, 654].forEach((x, i) =>
-      co += _col(x, 86 + (i % 3) * 9, 192 - i * 3));
-    let dr = ''; for (let i = 0; i < 5; i++)
-      dr += `<circle cx="${800 + i * 34}" cy="184" r="13" fill="var(--paper)"/>`;
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}
-      <path d="M0 196q200-22 420-26t780 8" opacity=".32"/>
-      <path d="M74 196h620v-8h-620z" fill="var(--paper)" opacity=".8"/>
-      ${co}
-      <path d="M80 100h242v-11h-242z" fill="var(--paper)"/>
-      ${dr}
-      <path d="M1000 196v-34h44v34" fill="var(--paper)"/><path d="M994 162h56"/>
-      <circle cx="1104" cy="52" r="21" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      ${_olive(752, .9)}${_olive(1160, .85)}${_cypress(40, 62)}${_olive(490, .75, 176)}
-    </g>${_ground()}`; }},
-
-  // NABLUS — the old city under the mountain, and a soap works with its towers of soap.
-  lessons: {ar: 'دُروس', place: 'Nablus', placeAr: 'نابُلس',
-    what: 'the old city and its soap works', art: () => {
-    let tw = ''; for (let i = 0; i < 7; i++)
-      tw += `<path d="M${623 + i * 1.6} ${186 - i * 15}h${42 - i * 3}" stroke="var(--ochre)" opacity=".65"/>`;
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_ridge()}
-      ${_house(40, 128, 92, 4)}${_house(190, 108, 76, 3)}
-      ${_dome(96, 104, 30)}${_dome(236, 120, 24)}
-      ${_minaret(322, 128)}
-      <path d="M420 196v-116h330v116" fill="var(--paper)"/><path d="M406 80h358"/>
-      <path d="M420 80v-14h330v14" opacity=".5"/>
-      ${_arch(452, 84, 66)}${_arch(602, 84, 66)}
-      <path d="M619 196h50l-14-116h-22z" fill="var(--ochre-wash)" stroke="var(--ochre)"/>${tw}
-      <path d="M800 196v-134h34v134" fill="var(--paper)"/><path d="M793 62h48"/><path d="M806 62v-10h22v10"/>
-      ${_house(880, 118, 94, 4)}${_house(1024, 130, 82, 4)}${_dome(1089, 114, 28)}
-      ${_fig(390, 196, .95)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(772, 54)}${_olive(1180, .8)}</g>
-    ${_ground()}`; }},
-
-  // RAMALLAH — al-Manara, the square everyone means when they say "downtown".
-  reactions: {ar: 'رُدود', place: 'Ramallah', placeAr: 'رام الله',
-    what: 'al-Manara, the middle of town', art: () => {
-    const lion = (x, s) => `<g transform="translate(${x} 196) scale(${s} 1)" fill="var(--paper)">
-      <path d="M-2 0v-13q0-11 13-11h28q6 0 8 6l4 11V0z"/><circle cx="53" cy="-31" r="10"/>
-      <g fill="none" opacity=".55"><path d="M53 -41v-6M62 -38l5-4"/>
-        <path d="M-2 -13q-10-2-12-11"/><path d="M18 0v-9M38 0v-9"/></g></g>`;
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}
-      ${_house(30, 128, 118, 4)}${_house(186, 108, 94, 3)}
-      ${_house(936, 128, 110, 4)}${_house(1086, 100, 86, 3)}
-      <path d="M0 196l320-42M1200 196l-320-42" opacity=".22"/>
-      <path d="M536 196h128M548 189h104v7h-104zM562 177h76v12h-76z"/>
-      <path d="M582 177v-82h36v82"/><path d="M574 95h52M580 89h40"/>
-      <circle cx="600" cy="70" r="14" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      <path d="M600 56v-11" stroke="var(--ochre)"/>
-      ${lion(524, -1)}${lion(676, 1)}
-      ${_fig(370, 196, 1)}${_fig(418, 196, .9)}${_fig(772, 196, 1)}${_fig(818, 196, .85)}
-      <path d="M382 176q30-16 46 0" opacity=".55"/>
-      <path d="M784 176q28-16 44 0" opacity=".45"/>
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(300, 50)}${_cypress(896, 46)}</g>
-    ${_ground()}`; }},
-
-  // JAFFA — the old port: the town on its rock, the clock tower, and boats on the water.
-  sounds: {ar: 'أصْوات', place: 'Jaffa', placeAr: 'يافا',
-    what: 'the old port', art: () => {
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}
-      <path d="M0 152q180-16 420-14t780 12" opacity=".35"/>
-      ${_house(80, 104, 70, 4, 150)}${_house(210, 92, 60, 3, 146)}
-      <path d="M330 144v-88h44v88" fill="var(--paper)"/><path d="M322 56h60"/>
-      <path d="M336 56v-14h32v14" fill="var(--paper)"/>
-      <path d="M338 40l14-18 14 18z"/>
-      <circle cx="352" cy="96" r="17" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      <path d="M352 96v-11M352 96l9 6" stroke="var(--ochre)"/>
-      ${_house(400, 96, 62, 3, 144)}${_minaret(520, 96, 142)}${_house(566, 104, 66, 3, 142)}
-      ${_house(700, 88, 56, 3, 144)}${_house(806, 96, 60, 3, 146)}
-      <path d="M0 166h1200" opacity=".45"/>
-      ${_water(172, 194, 0, 1200)}
-      ${_boat(250, 188, .95)}${_boat(700, 182, .8)}${_boat(1030, 192, 1.05)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(920, 48, 148)}${_cypress(972, 40, 150)}</g>
-    ${_ground()}`; }},
-
-  // GAZA — the shore, the boats, and a table laid on the sand. The section is hospitality.
-  table: {ar: 'سُفْرة', place: 'Gaza', placeAr: 'غزّة',
-    what: 'the shore, and a table laid on it', art: () => {
-    let cu = ''; [320, 392, 812, 884].forEach(x =>
-      cu += `<path d="M${x} 152v14a10 10 0 0 0 20 0v-14z"/><path d="M${x - 6} 152h32"/>`);
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      <path d="M0 118h1200" opacity=".3"/>
-      ${_house(20, 96, 62, 3, 118)}${_minaret(140, 92, 118)}${_house(190, 84, 52, 3, 118)}
-      ${_dome(60, 56, 26)}
-      ${_water(124, 142, 300, 1200)}
-      ${_boat(560, 138, .7, 1)}${_boat(880, 132, .6, 1)}${_boat(1100, 142, .8, 0)}
-      <path d="M0 150q260 10 600 4t600 6" opacity=".38"/>
-      <path d="M180 176h840" stroke-width="2.2"/><path d="M244 196v-20M956 196v-20"/>
-      <path d="M474 176c0-25 30-38 126-38s126 13 126 38z" fill="var(--paper)"/>
-      <path d="M512 138c0-28 39-42 88-42s88 14 88 42" opacity=".5"/>
-      <path d="M542 96c0-15 26-23 58-23s58 8 58 23" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      ${cu}
-      <g transform="translate(760 100)">
-        <path d="M0 72V44a23 23 0 0 1 23-23h11a23 23 0 0 1 23 23v28Z" fill="var(--paper)"/>
-        <path d="M23 21v-8h11v8"/><path d="M57 40c15 2 21 11 21 19s-8 15-19 15"/>
-        <path d="M0 50c-11 0-17-7-17-15s7-13 15-13"/></g>
-      ${_fig(254, 172, .95)}${_fig(946, 172, .95)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_palm(1120, 62)}${_palm(90, 52)}</g>
-    ${_ground()}`; }},
-
-  // THE JORDAN — two banks and a crossing between them. That is what translating is.
-  // First draft laid a plank the whole width of the frame and it read as a dam; the river has
-  // to narrow into the distance, and the crossing has to be small enough to be a crossing.
-  translate: {ar: 'تَرْجَمة', place: 'The Jordan', placeAr: 'نَهر الأُردُن',
-    what: 'both banks, and the crossing', art: () => {
-    let riv = ''; for (let i = 0; i < 8; i++) { const y = 190 - i * 9, w = 300 - i * 32;
-      riv += `<path d="M${600 - w / 2} ${y}q${w / 4} -5 ${w / 2} 0t${w / 2} 0"
-        opacity="${(.34 - i * .03).toFixed(2)}"/>`; }
-    let rd = ''; [70, 96, 124, 154, 1046, 1076, 1104, 1130].forEach(x => {
-      const d = x < 600 ? 1 : -1;
-      rd += `<path d="M${x} 196c${-3 * d}-26 ${1 * d}-38 ${7 * d}-50"/>`; });
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}
-      <path d="M0 190q240-18 450-66" opacity=".45"/>
-      <path d="M1200 190q-240-18-450-66" opacity=".45"/>
-      ${riv}
-      <path d="M505 150h190v-8h-190z" fill="var(--paper)"/>
-      <path d="M516 158v12M684 158v12" opacity=".7"/>
-      <path d="M505 142q95-13 190 0" opacity=".55"/>
-      <path d="M512 142v-13M600 136v-12M688 142v-13" opacity=".45"/>
-      <path d="M505 129q95-12 190 0" opacity=".4"/>
-      ${rd}
-      ${_house(160, 78, 44, 3, 168)}${_house(1010, 70, 40, 2, 170)}
-      <circle cx="948" cy="56" r="21" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      ${_olive(250, .9)}${_cypress(360, 52, 178)}${_olive(60, .8)}
-      ${_olive(940, .9)}${_cypress(852, 50, 178)}${_olive(1160, .85)}
-    </g>${_ground()}`; }},
-
-  // HAIFA — the terraces climbing Carmel over the bay. Tending something, step by step.
-  tutor: {ar: 'مُعَلِّم', place: 'Haifa', placeAr: 'حَيفا',
-    what: 'the terraces on Carmel', art: () => {
-    let st = ''; for (let i = 0; i < 6; i++) { const y = 196 - i * 15, w = 340 - i * 30;
-      st += `<path d="M${568 - w / 2} ${y}v-15h${w}v15" opacity="${(.55 - i * .04).toFixed(2)}"/>`; }
-    const up = '';
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      <path d="M0 196q210-98 540-128t660-24" opacity=".36"/>
-      ${st}${up}
-      <path d="M552 196v-90M584 196v-90" opacity=".35"/>
-      <path d="M528 106v-32h80v32"/><path d="M520 74h96"/>
-      ${_dome(568, 74, 32, ' fill="var(--ochre-wash)" stroke="var(--ochre)"')}
-      <path d="M568 42v-10" stroke="var(--ochre)"/>
-      <path d="M534 106v-24M602 106v-24" opacity=".5"/>
-      ${_house(60, 96, 58, 3)}${_house(180, 84, 48, 3, 184)}${_house(900, 90, 52, 3, 178)}
-      <path d="M760 196h440" opacity=".3"/>
-      ${_water(178, 194, 780, 1200)}
-      ${_boat(1080, 190, .85, 0)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      ${_cypress(500, 46, 166)}${_cypress(640, 46, 166)}${_cypress(478, 40, 136)}${_cypress(662, 40, 136)}
-      ${_cypress(300, 58)}${_olive(720, .85)}
-    </g>${_ground()}`; }},
-
-  // THE SEA OF GALILEE — the lake, the far hills, and a boat. The Gospels' own geography.
-  bible: {ar: 'الكِتاب', place: 'Sea of Galilee', placeAr: 'بُحَيْرة طَبَريّا',
-    what: 'the lake and the far shore', art: () => {
-    let rd = ''; [40, 62, 82, 104, 1108, 1130, 1152, 1174].forEach((x, i) =>
-      rd += `<path d="M${x} 196c${x < 600 ? '-3' : '3'}-28 ${x < 600 ? '1' : '-1'}-40 ${x < 600 ? '7' : '-7'}-52"/>`);
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      <path d="M0 116Q220 82 470 96T900 78T1200 108" opacity=".38"/>
-      <path d="M0 132q260 12 520 6t680 8" opacity=".26"/>
-      ${_house(300, 62, 30, 2, 132)}${_house(386, 54, 26, 2, 132)}
-      ${_water(140, 192, 0, 1200)}
-      ${_boat(400, 176, 1.15)}${_boat(830, 160, .75)}
-      ${rd}
-      <circle cx="920" cy="94" r="21" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      <path d="M906 148h28M910 162h20M914 176h12M916 188h8" stroke="var(--ochre)" opacity=".45"/>
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(180, 50, 134)}${_olive(1050, .8, 130)}</g>
-    ${_ground()}`; }},
-
-  // BATTIR — the terraces and the Roman water channel that still feeds them. A path in stages.
-  plan: {ar: 'خُطّة', place: 'Battir', placeAr: 'بتّير',
-    what: 'the terraces and the water channel', art: () => {
-    let t = ''; for (let i = 0; i < 5; i++)
-      t += `<path d="M${i * 30} ${196 - i * 26}h${1200 - i * 72}" opacity="${(.55 - i * .06).toFixed(2)}"/>`;
-    let ch = ''; for (let x = 20; x < 1010; x += 46) ch += `<path d="M${x} 144v8"/>`;
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}${t}
-      <path d="M0 144h1010" opacity=".55"/><path d="M0 152h1010" opacity=".35"/>${ch}
-      <path d="M120 196q120-30 180-32t160-24 190-26 200-22" stroke-width="2.6" opacity=".8"/>
-      <circle cx="120" cy="196" r="6" fill="var(--ink-soft)" stroke="none"/>
-      <circle cx="470" cy="140" r="6" fill="var(--ink-soft)" stroke="none"/>
-      <circle cx="850" cy="92" r="6" fill="var(--ink-soft)" stroke="none"/>
-      ${_house(930, 88, 52, 3, 92)}${_house(1046, 78, 46, 3, 78)}
-      <circle cx="180" cy="52" r="21" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      ${_olive(250, .8)}${_olive(560, .8, 170)}${_olive(760, .75, 144)}
-      ${_cypress(400, 44, 170)}${_cypress(890, 40, 118)}${_olive(1150, .8, 78)}
-    </g>${_ground()}`; }},
-
-  // BETHLEHEM — the rooftops: dishes, tanks, and the basilica's bell tower behind them.
-  videos: {ar: 'فيديو', place: 'Bethlehem', placeAr: 'بيت لَحم',
-    what: 'rooftops, dishes and tanks', art: () => {
-    let d = ''; [220, 400, 620, 840].forEach((x, i) => {
-      d += `<g transform="translate(${x} ${150 - (i % 2) * 10})">
-        <path d="M0 46V16"/><path d="M-22 16a22 14 0 0 1 44 0z"/><path d="M0 16v-10"/></g>`; });
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_hills()}
-      <path d="M296 146v-104h68v104" fill="var(--paper)"/>
-      <path d="M288 42h84l-42-25z" fill="var(--paper)"/>
-      <path d="M312 74h36v30h-36z" opacity=".5"/><path d="M312 118h36" opacity=".4"/>
-      <path d="M60 196v-50h1080v50" fill="var(--paper)" opacity=".9"/><path d="M60 146h1080"/>
-      ${_house(120, 118, 92, 4)}${_house(500, 138, 104, 4)}${_house(884, 128, 86, 4)}
-      ${d}
-      <path d="M700 146v-30h44v30zM700 116a22 8 0 0 1 44 0"/>
-      <path d="M956 146v-26h34v26zM956 120a17 6 0 0 1 34 0"/>
-      <circle cx="1058" cy="54" r="21" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">${_cypress(1176, 48)}${_cypress(30, 54)}</g>
-    ${_ground()}`; }},
-
-  // WADI ARA — the valley the road runs through, villages on the ridge. The accent is here.
-  listening: {ar: 'سَماع', place: 'Wadi Ara', placeAr: 'وادي عارة',
-    what: 'the valley and its villages', art: () => {
-    let w = ''; for (let i = 1; i <= 4; i++)
-      w += `<path d="M470 ${150 - i * 8}q${i * 28} -${i * 20} ${i * 54} 0" opacity="${(.42 - i * .07).toFixed(2)}"/>`;
-    return `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      <path d="M0 128q190 40 380 28t360-44 460-18" opacity=".3"/>
-      <path d="M0 196q230-74 520-78t680 46" opacity=".45"/>
-      ${_house(226, 80, 44, 3, 140)}${_house(336, 72, 40, 3, 128)}${_house(438, 84, 46, 3, 122)}
-      ${_minaret(552, 88, 122)}${_house(602, 74, 40, 2, 124)}
-      ${_house(80, 88, 50, 3, 176)}${_house(196, 76, 42, 3, 156)}
-      <path d="M640 196q56-40 176-58t384-30" stroke-width="2.4" opacity=".75"/>
-      <path d="M660 196q52-34 168-50t372-26" opacity=".3"/>
-      <path d="M760 168h30M840 154h30M930 142h28M1030 132h26" opacity=".4"/>
-      ${w}
-      <circle cx="120" cy="52" r="21" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      ${_cypress(318, 42, 128)}${_olive(700, .85, 160)}${_olive(500, .75, 178)}${_cypress(880, 40, 176)}
-    </g>${_ground()}`; }},
-
-  // JERICHO — palms, the tell, and the star window of Hisham's Palace. The oldest address.
-  account: {ar: 'حِساب', place: 'Jericho', placeAr: 'أريحا',
-    what: "palms and Hisham's Palace", art: () => `
-    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
-      ${_ridge('.3')}
-      <path d="M0 196q150-42 320-40t280 40" opacity=".35"/>
-      <path d="M620 196v-102h250v102" fill="var(--paper)"/><path d="M606 94h278"/>
-      <path d="M620 94v-14h250v14" opacity=".5"/>
-      <path d="M660 196v-54a29 29 0 0 1 58 0v54"/>
-      <path d="M676 196v-38h26v38" opacity=".45"/>
-      <circle cx="812" cy="132" r="27" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
-      <path d="M812 105l7 20 20 7-20 7-7 20-7-20-20-7 20-7z" stroke="var(--ochre)"/>
-      <path d="M793 113l38 38M831 113l-38 38" stroke="var(--ochre)" opacity=".5"/>
-      ${_house(120, 96, 56, 3, 168)}${_house(950, 104, 60, 3)}
-      ${_fig(560, 196, .95)}
-    </g>
-    <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      ${_palm(230, 78)}${_palm(330, 62)}${_palm(430, 70)}${_palm(1090, 74)}${_palm(1176, 58)}
-    </g>${_ground()}`},
-};
 
 function secHero(route) {
   const sec = SECTIONS.find(x => x.route === route);
@@ -6871,6 +6430,10 @@ async function renderPushCard() {
 }
 async function acctSyncNow() { await pushProgress(); await pullMerge();
   const s = $('acct-sync'); if (s) s.textContent = '✓ Synced just now.'; }
+
+// The switcher mounts once, here rather than at the seam, because it needs esc() and the
+// header element -- both of which exist by the time the boot runs.
+const _lsw = $('langsw'); if (_lsw) _lsw.innerHTML = langSwitchHTML();
 
 count();
 route();

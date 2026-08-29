@@ -1070,6 +1070,22 @@
     font-family:var(--sans); font-size:11.5px; font-weight:600; color:var(--verdigris)}
   @media print{.askpop{display:none}}
 
+  /* ---- language switcher: one flag per registered pack, in the top bar ---- */
+  .langsw{display:inline-flex; gap:4px; align-items:center; margin-inline-end:10px}
+  .langsw-b{display:inline-flex; align-items:center; gap:5px; cursor:pointer;
+    padding:4px 9px; border-radius:999px; border:1px solid var(--rule);
+    background:none; color:var(--muted); font-family:var(--sans); font-size:11.5px;
+    font-weight:600; line-height:1; letter-spacing:.02em}
+  .langsw-b:hover{border-color:var(--verdigris); color:var(--ink)}
+  .langsw-b.on{border-color:var(--verdigris); color:var(--ink); background:var(--paper-2)}
+  .langsw-b.soon{opacity:.45; cursor:default}
+  .langsw-b.soon:hover{border-color:var(--rule); color:var(--muted)}
+  /* The flag is an emblem, not the label -- the word beside it is what names the language,
+     because a flag names a country and a country is not a language. */
+  .langsw-f{font-size:14px; line-height:1}
+  @media (max-width:560px){ .langsw-n{display:none} .langsw-b{padding:4px 7px} }
+  @media print{ .langsw{display:none} }
+
   /* Doubled class = specificity (0,2,0), deliberately. arLive() drops spans into containers
      that were written before it existed, and some of them style their descendants by ELEMENT:
      `.lsn-gx span{display:block}` caught every injected word and stacked a grammar example one
@@ -1332,6 +1348,7 @@
     </button>
     <h1 id="title" onclick="location.hash='/'" style="cursor:pointer">Palestinian Arabic</h1>
     <span class="sp"></span>
+    <span id="langsw"></span>
     <button class="back" id="back" hidden>&larr; Back</button>
   </div>
   <aside class="sidebar" id="sidebar" aria-hidden="true" aria-label="Sections">
@@ -1365,6 +1382,10 @@
 <script src="vendor/supabase.js"></script>
 <script src="data/supaconfig.js"></script>
 <script src="data/pushconfig.js"></script>
+<script src="lang/define.js"></script>
+<script src="lang/scenery.js"></script>
+<script src="lang/ar.js"></script>
+<script src="lang/he.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
