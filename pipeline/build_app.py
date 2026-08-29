@@ -82,6 +82,10 @@ def main():
     # dataset and the home screen needs none of them.
     import split
     lib_sizes = split.write_library(texts, drills, audio_version)
+    # The word-lookup index, precomputed from the same texts in the same order -- the order is
+    # load-bearing, since equal-ranked records are broken by first-seen.
+    import lexindex
+    lex_sizes = lexindex.write(texts)
 
     # A text that has been removed from build/ must not leave its body file behind: it would
     # still be served, still be hashed into the cache version, and still be reachable by URL.
@@ -133,6 +137,8 @@ def main():
     print(f"\n-> {os.path.relpath(OUT, ROOT)}  ({lib_sizes['library.js']//1024} KB index)")
     print(f"   corpus.js {lib_sizes['corpus.js']//1024} KB  ·  "
           f"text/ {lib_sizes['text/']//1024} KB over {lib_sizes['_texts']} files")
+    print(f"   lexicon.js {lex_sizes['lexicon.js']//1024} KB  ·  {lex_sizes['rows']} records, "
+          f"{lex_sizes['keys']} lemma keys, {lex_sizes['surfaces']} surface keys")
     print("\napp/ is self-contained — that whole folder is the website.")
 
 if __name__ == '__main__':

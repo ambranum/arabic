@@ -501,9 +501,20 @@ const textReady = id => !!(window.CORPUS && window.CORPUS[id]);
 const needText = id => textReady(id) ? Promise.resolve() : needFile('text/' + id);
 let _corpusAll = false;
 const corpusReady = () => _corpusAll;
-function needCorpus() {                    // the whole thing -- lexicon, translator, placement
+function needCorpus() {                    // the whole thing -- translator, placement, phrases
   return needFile('corpus').then(() => { _corpusAll = true; });
 }
+
+// The word lookup used to be a reason to download all of it. It no longer is: the index it built
+// by walking 21,817 tokens is a DEDUPLICATION down to 5,748 records, and that is computed at
+// build time now (pipeline/lexindex.py, checked key-for-key against the corpus walk by
+// pipeline/verify_lexindex.py). 7.3 MB becomes 1.2 MB -- 1.1 MB becomes 312 KB over the wire.
+//
+// Either file can answer, so whichever is already here wins: a page that has the corpus for
+// other reasons never fetches the index, and a page that only wants to look words up never
+// fetches the corpus.
+const lexReady = () => !!window.LEXICON || corpusReady();
+const needLexicon = () => lexReady() ? Promise.resolve() : needFile('lexicon');
 // `t.sentences` becomes a getter over that store. Same reasoning as `v.conj`: ten call sites
 // walk `t.sentences`, and none of them has to learn that the sentences now arrive separately.
 // It reads as an empty text until the body lands, which is what the existing `(t.sentences ||
@@ -973,10 +984,10 @@ function route() {
   // test needs it too, and asks for it in assessStart, where there is an intro screen to cover
   // the wait.)
   if (kind === 'translate' && !corpusReady()) want.push(needCorpus());
-  // Sections declared `lex` are made of lookups, so they fetch the corpus -- but in the
-  // BACKGROUND, not in `want`. The page draws immediately from the index and lexPaint() makes
-  // its words live a moment later, which beats a spinner over content that is already here.
-  if (!corpusReady() && (SECTION_DEFS[kind] || {}).lex) needCorpus().then(lexRefresh, () => {});
+  // Sections declared `lex` are made of lookups, so they fetch the word index -- but in the
+  // BACKGROUND, not in `want`. The page draws immediately and lexPaint() makes its words live a
+  // moment later, which beats a spinner over content that is already here.
+  if (!lexReady() && (SECTION_DEFS[kind] || {}).lex) needLexicon().then(lexRefresh, () => {});
   if (want.length) {
     routeLoading();
     Promise.all(want).then(route, e => routeFailed(e));
@@ -5373,24 +5384,34 @@ function lexFromVerb(v, surface, cell) {
           provenance: 'verbs.js', _vb: v};
 }
 
-// Built from whatever is in memory. The verb half is always there; the corpus half is 7.3 MB
-// and arrives only when something asks for it -- a section that is built on lookups (route()
-// prefetches for those), or a tap on a word that missed.
+// Built from whatever is in memory. The verb half is always there; the word half comes from the
+// prebuilt index, or from the corpus when that happens to be loaded already -- the two are
+// verified equal, so which one answered is not observable.
 //
-// It deliberately does NOT fetch the corpus itself. It is called once per rendered token, and
-// the home screen's phrase of the day is four tokens: making the lookup itself greedy meant
-// the lightest page in the app pulled the heaviest file, which is the whole thing this change
-// exists to stop.
+// It deliberately does NOT fetch anything itself. It is called once per rendered token, and the
+// home screen's phrase of the day is four tokens: making the lookup greedy meant the lightest
+// page in the app pulled the heaviest file. Sections that are made of lookups say so (`lex: 1`)
+// and a tap says so; this function just uses what is here.
 function lexIndex() {
   if (_lexI) return _lexI;
   const byKey = new Map(), bySurf = new Map();
   const put = (m, k, rec) => { if (!k) return;
     const p = m.get(k); if (!p || lexRank(rec) > lexRank(p)) m.set(k, rec); };
-  LIB.texts.forEach(t => (t.sentences || []).forEach(s => (s.words || []).forEach(w => {
-    if (!w.lemma) return;
-    put(byKey, arNorm(w.lemma), w);
-    put(bySurf, arNorm(w.surface), w);
-  })));
+  const L = window.LEXICON;
+  if (L) {
+    // Rows are positional -- `f` names the columns -- because repeating fourteen key names
+    // 5,748 times was 45% of the file. Materialized once, here.
+    const recs = L.r.map(row => { const o = {};
+      L.f.forEach((name, i) => { o[name] = row[i]; }); return o; });
+    for (const k in L.k) byKey.set(k, recs[L.k[k]]);
+    for (const k in L.s) bySurf.set(k, recs[L.s[k]]);
+  } else {
+    LIB.texts.forEach(t => (t.sentences || []).forEach(s => (s.words || []).forEach(w => {
+      if (!w.lemma) return;
+      put(byKey, arNorm(w.lemma), w);
+      put(bySurf, arNorm(w.surface), w);
+    })));
+  }
   VB.forEach(v => {
     put(byKey, arNorm(v.lemma), lexFromVerb(v));
     ['past', 'pres', 'imp'].forEach(k => { const c = v[k];
@@ -5516,7 +5537,7 @@ function arLive(str, cls) {
     // settles it later -- greying out every word on the page while the corpus is still on disk
     // would be a lie about the content, not a loading state.
     const hit = lexLook(buf);
-    out += '<span class="w lw' + (hit || !corpusReady() ? '' : ' gap') + '" data-lw="'
+    out += '<span class="w lw' + (hit || !lexReady() ? '' : ' gap') + '" data-lw="'
          + esc(buf) + '" tabindex="0">' + esc(buf) + '</span>';
     buf = ''; };
   for (const ch of s) {
@@ -5766,7 +5787,7 @@ function lexPaint() {
   document.querySelectorAll('.lx .lw').forEach(el => {
     const r = lexLook(el.dataset.lw);
     el.classList.toggle('mk', !!(r && r.lemma && inDeckWord(r)));
-    el.classList.toggle('gap', corpusReady() && !r);
+    el.classList.toggle('gap', lexReady() && !r);
   });
 }
 // ---------- phrase cards ------------------------------------------------------------
@@ -5814,6 +5835,12 @@ function phraseMeanings(words, si, whole) {
 
 function startPhrase(si, wi) {
   _ph = {si, wi};
+  // Starting a phrase is a commitment to needing the rest of the corpus: the best meaning a
+  // phrase card can have is the SAME phrase translated in another text, and that is a search
+  // across every sentence. Fetch it while the second word is still being chosen -- by the time
+  // phraseMeanings() runs it is normally here, and if it is not the card still has the two
+  // sources that come from the sentence in front of you.
+  if (!corpusReady()) needCorpus().catch(() => {});
   hideCard();
   document.querySelectorAll('.rd .w.phsel').forEach(x => x.classList.remove('phsel'));
   const el = document.querySelector(`.rd .w[data-s="${si}"][data-w="${wi}"]`);
@@ -6263,9 +6290,9 @@ $('view').addEventListener('click', e => {
     // A miss with the corpus still on disk is not "unknown word" -- it is "we haven't looked
     // yet". Tapping is the clearest possible statement that this lookup is wanted, so it is
     // where the corpus is paid for on a page that didn't prefetch it.
-    if (!r && !corpusReady()) {
+    if (!r && !lexReady()) {
       showWord({surface: tok, lemma: '', gloss: '', _looking: 1}, null, ctx);
-      needCorpus().then(() => { lexRefresh();
+      needLexicon().then(() => { lexRefresh();
         showWord(lexLook(tok, true) || {surface: tok, lemma: '', gloss: ''}, null, ctx); }, () => {});
       return;
     }
