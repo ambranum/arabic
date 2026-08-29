@@ -20,8 +20,13 @@ Run:  python3 pipeline/grammar.py    →  app/data/grammar.js  (window.GRAMMAR)
 import json, os, glob, re
 from subdialect import realize
 
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- where this language's generated data lives
+
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-OUT = os.path.join(ROOT, 'app', 'data', 'grammar.js')
+OUT = paths.data('grammar.js')
 
 # ---- load the corpus ----
 def load():

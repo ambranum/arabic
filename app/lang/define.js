@@ -30,8 +30,19 @@ const LANG_FULL = LANG_CHROME.concat([
   'homeMasthead', 'chapterPrefix', 'sections', 'verb.classNoun', 'bibleBlurb',
   'tutorStarters']);
 
+// Identity comes from the roster, not from the pack. `code`, `flag`, `name`, `short` and
+// `ready` have to be readable BEFORE a pack is fetched -- the boot script picks a language and
+// the switcher lists both of them without either pack in memory -- so lang/languages.js owns
+// them and defineLang folds them in. Writing them twice would mean a pack could disagree with
+// the roster about its own name, and the one the user saw would depend on load order.
 function defineLang(spec) {
-  const required = spec && spec.ready === false ? LANG_CHROME : LANG_FULL;
+  const meta = (window.LANGUAGES || []).find(l => l.code === (spec || {}).code);
+  if (!meta) {
+    throw new Error('language pack "' + ((spec || {}).code) + '" is not in lang/languages.js');
+  }
+  ['dir', 'flag', 'name', 'nativeName', 'short', 'brand', 'font', 'ready', 'sections']
+    .forEach(k => { spec[k] = meta[k]; });
+  const required = spec.ready === false ? LANG_CHROME : LANG_FULL;
   const missing = required.filter(
     k => k.split('.').reduce((o, part) => (o == null ? o : o[part]), spec) == null);
   if (missing.length) {

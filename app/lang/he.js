@@ -20,22 +20,9 @@
    Stage A measured what will fill it: 176,610 lexicon rows over 12,662 lemmas at 94.6% coverage
    of live Hebrew news, 2,084 pointed verb paradigms verified at 98.99%, and eleven_v3 confirmed
    to read niqqud.  See spike/he/FINDINGS.md. */
+// Flag, name, font and `ready: false` live in lang/languages.js, not here -- the boot script
+// reads them to decide whether to fetch this file, so they cannot be inside it.
 defineLang({
   code: 'he',
-  ready: false,
-  dir: 'rtl',
-  flag: '🇮🇱',        // Israeli flag
-  name: 'Modern Hebrew',
-  nativeName: 'עברית',
-  short: 'Hebrew',
-  // Hebrew needs its own stack: the Arabic faces have no Hebrew coverage, and the system
-  // Hebrew faces render niqqud far better than a generic serif fallback.
-  font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
-  // Declared now, though nothing is built yet: switchLang() and sectionElsewhere() read this
-  // to answer "does the other language have this section". The Dinner Table and Videos are
-  // absent on purpose -- the Shabbat-table dialogues and a Hebrew playlist are Stage C work,
-  // and listing a section before it exists is the kind of lie this pack is meant to avoid.
-  sections: ['plan', 'lessons', 'sounds', 'reactions', 'grammar', 'verbs', 'vocab',
-             'news', 'stories', 'books', 'bible', 'tutor', 'translate', 'account'],
   art: {},
 });

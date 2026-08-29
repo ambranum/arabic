@@ -22,8 +22,13 @@ except Exception:
     _SSL = None
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- where this language's generated data lives
+
 OUTDIR = os.path.join(ROOT, 'app', 'audio', 'vocab')
-MANIFEST = os.path.join(ROOT, 'app', 'data', 'vocab_audio.js')
+MANIFEST = paths.data('vocab_audio.js')
 
 def collect():
     """Unique real-word vocabulary from every ingested text: lemma -> vocalized form to speak."""

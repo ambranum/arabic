@@ -12,6 +12,10 @@ ones go into pipeline/book_overrides.py by hand.
 
 Run: python3 pipeline/book_sweep.py
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- where this language's generated data lives
 import json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -79,7 +83,7 @@ def book_tables():
 def main():
     if not os.path.exists(PDF):
         print('reference PDF not on disk — nothing to compare.'); return 1
-    src = open(os.path.join(ROOT, 'app', 'data', 'verbs.js'), encoding='utf-8').read()
+    src = open(paths.data('verbs.js'), encoding='utf-8').read()
     verbs = json.loads(src[src.index('{'): src.rindex(';')])['verbs']
 
     # Comparing raw strings reports "disagreements" that are purely the onset-notation

@@ -14,7 +14,7 @@
 1. **Attribution** — this notice.
 2. **ShareAlike** — anything derived from the lexicon must carry the same licence.
    The annotated artifacts under `build/` embed Maknuune roots, lemmas, glosses and
-   CAPHI transcriptions, so **`build/` and `app/data/library.js` are CC BY-SA 4.0 too.**
+   CAPHI transcriptions, so **`build/` and `app/data/<lang>/library.js` are CC BY-SA 4.0 too.**
 
 Publishing this repo publicly (which GitHub Pages on a free account requires) is
 redistribution. That's permitted — with the notice above kept intact.
@@ -30,8 +30,8 @@ and the Palestinian sentences written by Claude.
 
 `data/bible-vandyck/*.usfm` is the Smith & Van Dyke Arabic translation, downloaded from
 ebible.org (id `arb-vd`), which states its status as **Public Domain**. It is committed here
-(source) and processed by `pipeline/bible.py` into `app/data/bible/*.json` +
-`app/data/bible-index.js`. Public domain imposes no obligation; the note here is courtesy.
+(source) and processed by `pipeline/bible.py` into `app/data/<lang>/bible/*.js` +
+`app/data/<lang>/bible-index.js`. Public domain imposes no obligation; the note here is courtesy.
 
 ## English column — ESV. NOT stored; fetched with the user's own key.
 

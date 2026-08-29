@@ -13,6 +13,68 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="icon-192.png">
 <title>Palestinian Arabic</title>
+<script src="lang/languages.js"></script>
+<script>
+/* Which language is this page? Answer it before a single byte of content is requested.
+ *
+ * The app carries ~15 MB of data per language, all of it loaded synchronously. Two languages
+ * must never both load, so the choice cannot be made by app.js -- by the time app.js runs, the
+ * data has already been fetched. It is made here, from the roster, in the head, before the body
+ * exists. The precedence is: an explicit ?lang= (what the switcher navigates to), then the
+ * remembered choice, then -- only if exactly one language is ready -- that one.
+ *
+ * Inline rather than boot.js on purpose: index.html is fetched network-first by the service
+ * worker, so this is always current, whereas a cached boot.js deciding which files to load is a
+ * failure that outlives the deploy that caused it.
+ *
+ * Until this existed, ?lang= and alp.lang were written by switchLang() and read by nobody:
+ * app.js looked for a data-lang attribute that nothing ever set, so the seam always fell back
+ * to Arabic. This is the half that makes the switcher real. */
+window.ALP = (function () {
+  const all = window.LANGUAGES || [];
+  const ready = all.filter(l => l.ready);
+  const usable = c => ready.find(l => l.code === c);
+  const asked = (location.search.match(/[?&]lang=([a-z]{2})\b/) || [])[1];
+  let saved = null;
+  try { saved = localStorage.getItem('alp.lang'); } catch (e) {}
+  // With one language ready there is nothing to choose, and a chooser that has one button is
+  // a click charged for nothing. It appears on its own the day a second pack turns ready.
+  const lang = usable(asked) || usable(saved) || (ready.length === 1 ? ready[0] : null);
+  if (lang) {
+    document.documentElement.setAttribute('data-lang', lang.code);
+    document.title = lang.name;
+    try { localStorage.setItem('alp.lang', lang.code); } catch (e) {}
+  }
+  /* Nobody has chosen. Offer the choice and load nothing -- the point of asking first is that
+     a Hebrew learner never downloads 15 MB of Arabic to be told there is a Hebrew option.
+     Written as a full-screen overlay because the app shell above it is markup that never gets
+     filled: app.js is not among the files this path loads. Inline styles, because it must
+     render with only the stylesheet that is already in this document. */
+  function chooser() {
+    const card = l => '<button onclick="ALP.choose(\'' + l.code + '\')"' +
+      (l.ready ? '' : ' disabled') + ' style="all:unset;cursor:' + (l.ready ? 'pointer' : 'default') +
+      ';display:block;width:100%;box-sizing:border-box;text-align:left;padding:18px 20px;' +
+      'border:1px solid var(--rule);border-radius:14px;margin-bottom:12px;background:var(--paper-2);' +
+      'opacity:' + (l.ready ? '1' : '.5') + '">' +
+      '<div style="font-size:30px;line-height:1">' + l.flag + '</div>' +
+      '<div style="font-family:var(--serif);font-size:20px;margin-top:6px">' + l.name +
+      (l.ready ? '' : ' <span style="font-size:12px;font-family:var(--sans);color:var(--muted)">— coming soon</span>') +
+      '</div>' +
+      '<div style="font-size:13px;color:var(--ink-soft);margin-top:4px">' + l.blurb + '</div></button>';
+    document.write('<div style="position:fixed;inset:0;z-index:99;overflow:auto;' +
+      'background:var(--paper);padding:40px 20px"><div style="max-width:420px;margin:0 auto">' +
+      '<div style="font-family:var(--serif);font-size:26px;margin-bottom:6px">Which language?</div>' +
+      '<div style="font-size:14px;color:var(--ink-soft);margin-bottom:22px">' +
+      'Pick one to start. You can switch any time, and each keeps its own progress.</div>' +
+      all.map(card).join('') + '</div></div>');
+  }
+  function choose(code) {
+    try { localStorage.setItem('alp.lang', code); } catch (e) {}
+    location.replace(location.pathname + '?lang=' + code);
+  }
+  return {lang: lang, all: all, ready: ready, chooser: chooser, choose: choose};
+})();
+</script>
 <style>
   :root{
     --paper:#EDEDE6; --paper-2:#E4E4DB; --paper-3:#DADAD0;
@@ -1352,7 +1414,7 @@
     <button class="back" id="back" hidden>&larr; Back</button>
   </div>
   <aside class="sidebar" id="sidebar" aria-hidden="true" aria-label="Sections">
-    <div class="side-brand">القهوة<span>Palestinian Arabic</span></div>
+    <div class="side-brand" id="sideBrand"></div>
     <nav id="nav"></nav>
   </aside>
   <div class="side-scrim" id="sideScrim" hidden></div>
@@ -1368,24 +1430,28 @@
   <button class="go" id="exp">Export</button>
 </div></div>
 
-<script src="data/library.js"></script>
-<script src="data/verbs.js"></script>
-<script src="data/vocab_audio.js"></script>
-<script src="data/curriculum.js"></script>
-<script src="data/assess.js"></script>
-<script src="data/grammar.js"></script>
-<script src="data/lessons.js"></script>
-<script src="data/reactions.js"></script>
-<script src="data/sounds.js"></script>
-<script src="data/table.js"></script>
-<script src="data/bible-index.js"></script>
-<script src="vendor/supabase.js"></script>
-<script src="data/supaconfig.js"></script>
-<script src="data/pushconfig.js"></script>
-<script src="lang/define.js"></script>
-<script src="lang/scenery.js"></script>
-<script src="lang/ar.js"></script>
-<script src="lang/he.js"></script>
-<script src="app.js"></script>
+<script>
+/* The load list, written where the tags used to be.
+ *
+ * document.write, and deliberately: these scripts assign to globals that app.js reads at its own
+ * top level, and app.js touches the DOM as soon as it runs, so the order is "all the data, then
+ * the pack, then app.js, and all of it after the body". A parser-inserted write at this exact
+ * point is the only injection that guarantees both halves of that; scripts appended to <head>
+ * with async=false keep their order relative to each other but not relative to a parser-inserted
+ * tag further down the document. The Chrome intervention that blocks document.write'n scripts
+ * applies to cross-origin ones on slow connections; every path here is relative.
+ *
+ * <script src>, not fetch: opened by double-click the page runs on file://, where fetch() of a
+ * sibling file is a CORS error. A script tag has no such restriction, which is the whole reason
+ * the pipeline emits .js instead of .json. */
+(function () {
+  const L = window.ALP.lang;
+  if (!L) return window.ALP.chooser();          // nobody has chosen yet -- load nothing
+  const files = ['vendor/supabase.js', 'data/supaconfig.js', 'data/pushconfig.js']
+    .concat(L.data.map(n => 'data/' + L.code + '/' + n + '.js'))
+    .concat(['lang/define.js', 'lang/scenery.js', 'lang/' + L.code + '.js', 'app.js']);
+  document.write(files.map(f => '<scr' + 'ipt src="' + f + '"></scr' + 'ipt>').join(''));
+})();
+</script>
 </body>
 </html>

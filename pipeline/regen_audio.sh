@@ -79,7 +79,7 @@ if [ "$MODE" = "words" ]; then
   python3 pipeline/vocab_audio.py
   echo
   echo "Done. Audition it (open the app, play a card), then commit:"
-  echo "  git add app/audio/vocab app/data/vocab_audio.js && git commit -m 'Audio: re-voice flashcard words' && git push"
+  echo "  git add app/audio/vocab app/data/*/vocab_audio.js && git commit -m 'Audio: re-voice flashcard words' && git push"
   exit 0
 fi
 
@@ -92,7 +92,7 @@ if [ "$MODE" = "sentences" ]; then
   find app/audio -mindepth 1 -maxdepth 1 -type d ! -name vocab -exec rm -rf {} + 2>/dev/null || true
   echo "2/3  per-sentence audio (book chapters cached; stories/news regenerate; drill skipped)…"
   for f in texts/*.json; do python3 pipeline/ingest.py "$f" --audio; done
-  echo "3/3  rebuilding app/data/library.js and copying clips into app/…"
+  echo "3/3  rebuilding app/data/<lang>/library.js and copying clips into app/…"
   python3 pipeline/build_app.py
   echo
   echo "Done. Give it a listen, then commit:"
@@ -109,7 +109,7 @@ echo "2/4  per-word vocabulary audio…"
 python3 pipeline/vocab_audio.py
 echo "3/4  per-sentence audio for every text (stories, news, book chapters; the drill is skipped)…"
 for f in texts/*.json; do python3 pipeline/ingest.py "$f" --audio; done
-echo "4/4  rebuilding app/data/library.js and copying clips into app/…"
+echo "4/4  rebuilding app/data/<lang>/library.js and copying clips into app/…"
 python3 pipeline/build_app.py
 echo
 echo "Done. Give it a listen, then commit:"

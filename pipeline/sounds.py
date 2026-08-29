@@ -24,8 +24,13 @@ try:
 except Exception:
     _SSL = ssl.create_default_context()
 
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- where this language's generated data lives
+
 SRC = os.path.join(ROOT, 'texts', 'sounds.json')
-OUT_JS = os.path.join(ROOT, 'app', 'data', 'sounds.js')
+OUT_JS = paths.data('sounds.js')
 AUDIO_DIR = os.path.join(ROOT, 'app', 'audio', 'sounds')
 
 

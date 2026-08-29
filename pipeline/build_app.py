@@ -11,8 +11,13 @@ which is the whole point of a static site.
 """
 import json, os, glob, shutil, hashlib
 
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- where this language's generated data lives
+
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-OUT  = os.path.join(ROOT, 'app', 'data', 'library.js')
+OUT  = paths.data('library.js')
 
 def main():
     audio_root = os.path.join(ROOT, 'app', 'audio')

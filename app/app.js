@@ -13,10 +13,11 @@ const SEC_ART = LANG.art;
 // visibly wrong the moment it was tried.
 document.documentElement.setAttribute('data-lang', LANG.code);
 
-// The switcher: a flag per registered language, top right. It only earns its place once there
-// is more than one pack, so it stays hidden until the Hebrew pack lands.
+// The switcher: a flag per language, top right. It reads the ROSTER, not the loaded packs --
+// only one pack is ever in memory now, so asking LANG_PACKS what languages exist would draw a
+// switcher with one flag and nothing to switch to.
 function langSwitchHTML() {
-  const packs = Object.values(window.LANG_PACKS || {});
+  const packs = window.LANGUAGES || [];
   if (packs.length < 2) return '';
   return '<div class="langsw" role="group" aria-label="Language">' + packs.map(p => {
     const on = p.code === LANG.code, soon = p.ready === false;
@@ -30,12 +31,15 @@ function langSwitchHTML() {
 
 // A full reload, deliberately -- see the comment on LANG. Keeps your place when the section
 // exists on the other side, and lands on home when it does not.
+const langMeta = code => (window.LANGUAGES || []).find(l => l.code === code);
 function switchLang(code) {
-  const p = window.LANG_PACKS[code];
+  const p = langMeta(code);
   if (!p || p.ready === false || code === LANG.code) return;
   try { localStorage.setItem('alp.lang', code); } catch (e) {}
   const sec = (location.hash.slice(1).split('/')[1]) || '';
-  const has = (window.LANG_PACKS[code].sections || []).includes(sec);
+  const has = (p.sections || []).includes(sec);
+  // ?lang= is what the boot script in index.html reads, and the reload is what makes the switch
+  // real: the other language's 15 MB has to be fetched, and this page has this language's.
   location.replace(location.pathname + '?lang=' + code + (has ? '#/' + sec : '#/'));
 }
 
@@ -1112,8 +1116,8 @@ const chTitleAr = c => (c.title.ar || '').replace(LANG.chapterPrefix, '');
 const chTitleEn = c => (c.title.en || '').replace(/^Chapter \d+ — /, '');
 
 // ============ Bible: ESV (your key) ‖ Van Dyck (public domain), side by side ============
-// The Arabic is the public-domain Van Dyck, split into one JSON per book and fetched only
-// when a book is opened (data/bible/<ID>.json), so the whole app doesn't carry ~5 MB up
+// The Arabic is the public-domain Van Dyck, split into one file per book and loaded only
+// when a book is opened (data/<lang>/bible/<ID>.js), so the whole app doesn't carry ~7 MB up
 // front. The ESV is fetched at runtime from Crossway with the reader's OWN api key — their
 // licence forbids redistributing the text, so nothing ESV is ever stored in this repo. The
 // key lives in localStorage only (alp.esv.key), never committed, never synced.
@@ -1134,12 +1138,29 @@ const GALILEAN = {  // usfm id -> YouVersion book slug in the Galilean NT (versi
 const galileanUrl = (id, ch) => GALILEAN[id]
   ? `https://www.bible.com/bible/2437/${GALILEAN[id]}.${ch}` : null;
 
-async function loadBibBook(id) {
-  if (_bibCache[id]) return _bibCache[id];
-  const r = await fetch('data/bible/' + id + '.json');
-  const d = await r.json();
-  _bibCache[id] = d.chapters;
-  return d.chapters;
+// One book at a time -- the whole Van Dyck text is 7.3 MB, which is not something to load on
+// the chance that someone opens the Bible.
+//
+// A <script> tag rather than fetch(), and this is not a style preference: opened by double-click
+// the app runs on file://, where fetch() of a sibling file is a CORS error and nothing else in
+// the app does it. The Bible was the one section that worked when hosted and silently failed
+// when the app was used the way the whole static-site design exists to allow.
+const _bibPending = {};
+function loadBibBook(id) {
+  if (_bibCache[id]) return Promise.resolve(_bibCache[id]);
+  if (_bibPending[id]) return _bibPending[id];
+  return (_bibPending[id] = new Promise((ok, no) => {
+    const done = () => {
+      const d = (window.BIB_BOOKS || {})[id];
+      if (!d) return no(new Error('bible book ' + id + ' did not load'));
+      ok((_bibCache[id] = d.chapters));
+    };
+    const s = document.createElement('script');
+    s.src = 'data/' + LANG.code + '/bible/' + id + '.js';
+    s.onload = done;
+    s.onerror = () => no(new Error('bible book ' + id + ' is missing'));
+    document.head.appendChild(s);
+  }).finally(() => { delete _bibPending[id]; }));
 }
 // Crossway passage-text API. We ask for clean verse-numbered prose, no footnotes/headings,
 // and cache each chapter (localStorage) so a re-open doesn't spend another API call.
@@ -4768,7 +4789,7 @@ function verbsIrregular(){
 // A deep link to a section this language does not have. It exists in the app, just not here.
 function sectionElsewhere(kind) {
   const d = SECTION_DEFS[kind];
-  const other = Object.values(window.LANG_PACKS || {})
+  const other = (window.LANGUAGES || [])
     .find(p => p.code !== LANG.code && (p.sections || []).includes(kind));
   $('title').textContent = d.label;
   $('back').hidden = false;
@@ -6628,6 +6649,10 @@ async function acctSyncNow() { await pushProgress(); await pullMerge();
 // The switcher mounts once, here rather than at the seam, because it needs esc() and the
 // header element -- both of which exist by the time the boot runs.
 const _lsw = $('langsw'); if (_lsw) _lsw.innerHTML = langSwitchHTML();
+// The sidebar wordmark was hardcoded Arabic in index.html, which would have greeted a Hebrew
+// learner with القهوة. It is the pack's now, like the home masthead.
+const _sb2 = $('sideBrand');
+if (_sb2) _sb2.innerHTML = esc(LANG.brand) + '<span>' + esc(LANG.name) + '</span>';
 
 count();
 route();

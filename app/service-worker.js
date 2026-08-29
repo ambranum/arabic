@@ -5,10 +5,17 @@
  * a deploy invalidates old caches. IMPORTANT: the HTML document is fetched NETWORK-FIRST so a new
  * deploy shows up immediately (never a stale shell); data/audio/icons are cache-first for speed
  * and offline. */
-const CACHE_VERSION = 'alp-b9b446d767';
-// app.js belongs here now that the script is no longer inline: without it an offline
-// load serves the shell HTML and nothing runs.
-const SHELL = ['./index.html', './app.js', './manifest.webmanifest', './icon-192.png'];
+const CACHE_VERSION = 'alp-645620d14b';
+// The shell is what has to be there for the app to start at all, in every language: the
+// document, the boot roster it reads to decide which language to load, the shared seam, and
+// app.js itself. Without app.js an offline load serves the HTML and nothing runs.
+//
+// The language packs and the ~15 MB of data under data/<lang>/ are deliberately NOT here.
+// Precaching them would mean every install downloads both languages, which is the exact cost
+// the per-language split exists to avoid. They are still cached on first use by the fetch
+// handler below, so a language you have actually opened works offline afterwards.
+const SHELL = ['./index.html', './app.js', './lang/languages.js', './lang/define.js',
+               './lang/scenery.js', './manifest.webmanifest', './icon-192.png'];
 
 self.addEventListener('install', e => {
   self.skipWaiting();

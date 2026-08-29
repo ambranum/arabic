@@ -37,8 +37,13 @@ def paradigm(v, past_ph, pres_ph):
     eng = MEASURE.get(v['form'])
     return eng(v['root'], past_ph, pres_ph) if eng else None
 
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- where this language's generated data lives
+
 def main():
-    p = os.path.join(ROOT, 'app', 'data', 'verbs.js')
+    p = paths.data('verbs.js')
     src = open(p, encoding='utf-8').read()
     head = src[:src.index('window.VERBS = ') + len('window.VERBS = ')]
     data = json.loads(src[src.index('{'): src.rindex(';')])

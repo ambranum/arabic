@@ -1,0 +1,60 @@
+/* The roster: which languages exist, what each one is called, and what each one loads.
+   window.LANGUAGES
+
+   This is the ONE file that is always fetched, in every language, before anything else. It is
+   deliberately tiny, because everything downstream is a decision made from it: which pack to
+   load, which 15 MB of data to load, what to put in the switcher, and -- when a new visitor has
+   not chosen yet -- what to offer them.
+
+   It exists because a language pack cannot answer "which language should we load?" without
+   already being loaded. Reading the roster first is what lets a Hebrew learner never download a
+   byte of Arabic. It also means the switcher can list a language whose pack is not in memory,
+   which is what makes the second flag honest rather than decorative.
+
+   `ready` lives here rather than in the pack for the same reason: the boot script has to know
+   whether a language can be activated BEFORE it decides to fetch it.
+
+   `data` is the load order for `app/data/<code>/<name>.js`, and it is an order, not a set --
+   these files assign to globals that app.js reads at its own top level.
+
+   `sections` is here rather than in the pack for the same reason `ready` is: the app has to
+   answer "does the OTHER language have this section?" -- for the switcher, and for the page
+   that explains why a deep link went nowhere -- without that language's pack in memory. The
+   order is the teaching order, and it differs between the two. */
+window.LANGUAGES = [
+  {
+    code: 'ar',
+    ready: true,
+    dir: 'rtl',
+    flag: '🇵🇸',           // Palestinian flag
+    name: 'Palestinian Arabic',
+    nativeName: 'عربي فلسطيني',
+    short: 'Arabic',
+    brand: 'القهوة',                   // al-qahwa, "the coffee"
+    blurb: 'The spoken dialect of Palestine — what people actually say, not Modern Standard.',
+    font: '"Geeza Pro","SF Arabic","Damascus","Al Bayan",serif',
+    data: ['library', 'verbs', 'vocab_audio', 'curriculum', 'assess', 'grammar',
+           'lessons', 'reactions', 'sounds', 'table', 'bible-index'],
+    sections: ['plan', 'lessons', 'sounds', 'reactions', 'grammar', 'verbs', 'vocab',
+               'news', 'stories', 'table', 'books', 'videos', 'listening', 'bible',
+               'tutor', 'translate', 'account'],
+  },
+  {
+    code: 'he',
+    ready: false,
+    dir: 'rtl',
+    flag: '🇮🇱',           // Israeli flag
+    name: 'Modern Hebrew',
+    nativeName: 'עברית',
+    short: 'Hebrew',
+    brand: 'הקפה',                               // ha-kafe, "the coffee"
+    blurb: 'Spoken Israeli Hebrew. Being built — the lexicon and the verb tables are done.',
+    font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
+    data: [],
+    // The Dinner Table and the Videos are absent on purpose: the Shabbat-table dialogues and a
+    // Hebrew playlist are Stage C work, and listing a section before it exists is a lie the
+    // switcher would then tell on every page.
+    sections: ['plan', 'lessons', 'sounds', 'reactions', 'grammar', 'verbs', 'vocab',
+               'news', 'stories', 'books', 'bible', 'tutor', 'translate', 'account'],
+  },
+];

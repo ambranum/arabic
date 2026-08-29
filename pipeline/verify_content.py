@@ -23,6 +23,10 @@ stays honest about that distinction.
 Run:  python3 pipeline/verify_content.py            # report to stdout
       python3 pipeline/verify_content.py --write    # also write texts/ref/AUDIT.md
 """
+import os
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import paths  # noqa: E402  -- where this language's generated data lives
 import argparse, difflib, glob, json, os, re, sys, unicodedata
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -150,7 +154,7 @@ def collect():
         for dg in json.load(open(p, encoding='utf-8')).get('dialogues', []):
             for ln in dg.get('lines', []):
                 out.append(('table', dg.get('id', ''), ln.get('ar'), ln.get('en'), None))
-    p = os.path.join(ROOT, 'app', 'data', 'grammar.js')
+    p = paths.data('grammar.js')
     if os.path.exists(p):
         try:
             g = json.loads(open(p, encoding='utf-8').read().split('window.GRAMMAR = ', 1)[1]

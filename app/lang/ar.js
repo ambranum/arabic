@@ -447,14 +447,10 @@ function wadiAra(w) {
   return out && out !== urb ? out : null;
 }
 
+  // Flag, name and font are NOT here: lang/languages.js owns them, because the boot script has
+  // to read them before deciding whether to fetch this file at all. defineLang folds them in.
   defineLang({
     code: 'ar',
-    dir: 'rtl',
-    flag: '\uD83C\uDDF5\uD83C\uDDF8',           // Palestinian flag
-    name: 'Palestinian Arabic',
-    nativeName: '\u0639\u0631\u0628\u064A \u0641\u0644\u0633\u0637\u064A\u0646\u064A',
-    short: 'Arabic',
-    font: '"Geeza Pro","SF Arabic","Damascus","Al Bayan",serif',
 
     // ---- the writing system -------------------------------------------------------------
     script: {
@@ -604,10 +600,6 @@ function wadiAra(w) {
       ].join("\n");
     },
 
-    // Which sections this language has, and in what order -- order is pedagogy.
-    sections: ['plan', 'lessons', 'sounds', 'reactions', 'grammar', 'verbs', 'vocab',
-               'news', 'stories', 'table', 'books', 'videos', 'listening', 'bible',
-               'tutor', 'translate', 'account'],
     // What a verb's derivational class is CALLED, for the Verbs status line. Arabic has forms
     // (measures); Hebrew has binyanim.
     bibleBlurb: 'ESV \u2016 Arabic, side by side',
