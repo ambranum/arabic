@@ -440,6 +440,28 @@ def phon(word, verb=False):
 ACUTE = {'a': 'á', 'e': 'é', 'i': 'í', 'o': 'ó', 'u': 'ú'}
 
 
+VOWEL = re.compile(r'[aeiou]')
+
+
+def beat(romanization):
+    """Which syllable from the end carries the stress, per an acute in `romanization`.
+
+    Stress is the one thing about a Hebrew word's sound that its POINTING does not determine --
+    בֶּרֶךְ and בֵּרֵךְ are both berex until you know where the beat falls -- so it is the one
+    thing that has to be looked up rather than computed. 1 (milra, final) is the default, and
+    also what a romanization with no accent gets: it is the language's own default, not a guess
+    dressed up as one.
+    """
+    n = unicodedata.normalize('NFD', romanization or '')
+    after, seen = 0, False
+    for ch in n:
+        if unicodedata.combining(ch):
+            seen, after = True, 0
+        elif seen and VOWEL.match(ch):
+            after += 1
+    return after + 1 if seen else 1
+
+
 def phon_stressed(word, syllable_from_end=1, mark_final=False):
     """Romanization with non-final stress marked. syllable_from_end=1 means milra (default).
 

@@ -172,6 +172,7 @@ class Lexicon:
         for r in keep or recs:
             key = (r['LEMMA'], str(r['FORM']).replace(MAQAF, ''))
             score = ((1 if r['GLOSS'] else 0) * 4 + (1 if r['PHON'] else 0) * 2
+                     + (1 if str(r['PHON_SRC']).endswith('+stress') else 0)
                      + (1 if unpoint(r['FORM']) != str(r['FORM']) else 0)
                      - str(r['ANALYSIS'] or '').count('.') * 0.1)
             if key not in best or score > best[key][0]:

@@ -29,7 +29,7 @@ import unicodedata
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from phon import phon, strip_cantillation                       # noqa: E402
+from phon import beat, phon_stressed, strip_cantillation        # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DUMP = os.path.join(HERE, 'kaikki-hebrew.jsonl')
@@ -142,11 +142,22 @@ def rows():
             if re.search(r'[A-Za-z0-9]', form) or not re.search(r'[א-ת]', form):
                 continue
             seen.add((key, tuple(tags)))
+            # ONE NOTATION FOR THE WHOLE LEXICON. Wiktionary's romanizations were taken
+            # verbatim wherever it had one, which left 12% of the shipped rows in a different
+            # system from the other 88%: kélev and khatúl beside kelev and xatul, bóqer with a
+            # q where every other kuf is a k. A learner tapping two words in one sentence saw
+            # two transliteration schemes, and the Sounds lesson that says ח and כ are one sound
+            # written x was contradicted by every word card that spelled it kh.
+            #
+            # So the SEGMENTS are always phon.py's, derived from the pointing by one set of
+            # rules, and Wiktionary supplies only the STRESS -- which is the one thing the
+            # pointing does not determine and therefore the one thing worth looking up.
             pointed = bool(NIQQUD_RE.search(form))
-            if r:
-                ph, ph_src = r, 'wiktionary'
-            elif pointed:
-                ph, ph_src = phon(form), 'derived:niqqud'
+            if pointed:
+                ph = phon_stressed(form, beat(r))
+                ph_src = 'derived:niqqud+stress' if r else 'derived:niqqud'
+            elif r:
+                ph, ph_src = r, 'wiktionary'      # nothing to derive from; the entry's own
             else:
                 ph, ph_src = '', 'none:unpointed'
             yield {
@@ -159,8 +170,38 @@ def rows():
             }
 
 
+def _share_stress(df):
+    """Where any row knows where the beat falls, every row of that FORM gets it.
+
+    Wiktionary romanizes some inflection rows and not others, so the same pointed word came out
+    as kélev on one row and kelev on another -- and which one the app showed depended on which
+    row happened to win a tiebreak. Stress is a property of the FORM, not of the tag set that
+    happened to carry a transliteration, so one row saying mil'el settles it for all of them.
+    """
+    beats = {}
+    for form, src, ph in zip(df['FORM'], df['PHON_SRC'], df['PHON']):
+        if src == 'derived:niqqud+stress' and form not in beats:
+            beats[form] = _stress_of(ph)
+    ph, src = [], []
+    for form, s0, p0 in zip(df['FORM'], df['PHON_SRC'], df['PHON']):
+        n = beats.get(form)
+        if n and s0.startswith('derived:niqqud'):
+            ph.append(phon_stressed(form, n))
+            src.append('derived:niqqud+stress')
+        else:
+            ph.append(p0)
+            src.append(s0)
+    df['PHON'], df['PHON_SRC'] = ph, src
+    return df
+
+
+def _stress_of(romanized):
+    """Read the beat back off a romanization phon.py produced (an acute, or final)."""
+    return beat(romanized)
+
+
 def main():
-    df = pd.DataFrame(rows())
+    df = _share_stress(pd.DataFrame(rows()))
     df.to_parquet(OUT, index=False)
     print('-> %s  (%.1f MB)' % (OUT, os.path.getsize(OUT) / 1e6))
     print('rows            %7d' % len(df))

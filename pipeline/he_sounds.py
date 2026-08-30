@@ -25,7 +25,6 @@ import json
 import os
 import re
 import sys
-import unicodedata
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'spike', 'he'))
@@ -33,7 +32,7 @@ import paths          # noqa: E402
 paths.require('he')
 
 import pandas as pd   # noqa: E402
-from phon import phon_stressed   # noqa: E402
+from phon import beat, phon_stressed   # noqa: E402
 
 LEX = os.path.join(paths.ROOT, 'spike', 'he', 'hebrew_lex.parquet')
 OUT = paths.texts('sounds.json')
@@ -122,34 +121,13 @@ LESSONS = [
 ]
 
 PAREN = re.compile(r'\s*\([^)]*\)')
-VOWEL = re.compile(r'[aeiou]')
 POINTER = re.compile(r'^(defective|excessive|alternative|misspelling|form of|singular|plural)', re.I)
-
-
-def beat(wiktionary_phon):
-    """Which syllable from the end carries the stress, per Wiktionary's acute.
-
-    Stress is the one thing about a Hebrew word's sound that its pointing does NOT determine --
-    בֶּרֶךְ and בֵּרֵךְ are both berex until you know where the beat falls -- so it is the one
-    thing here that has to be looked up rather than computed. 1 (milra, final) is the default,
-    and also what an entry with no accent gets: it is the language's own default, not a guess
-    dressed up as one.
-    """
-    n = unicodedata.normalize('NFD', wiktionary_phon or '')
-    after, seen = 0, False
-    for i, ch in enumerate(n):
-        if unicodedata.combining(ch):
-            seen = True
-            after = 0
-        elif seen and VOWEL.match(ch):
-            after += 1
-    return after + 1 if seen else 1
 
 
 def short(gloss):
     """The lexicon's gloss, cut to its first sense. Trimmed, never rewritten."""
     g = PAREN.sub('', str(gloss)).strip()
-    for sep in (';', ':', ' — '):
+    for sep in (';', ':', ' \u2014 '):
         g = g.split(sep)[0].strip()
     if len(g) > 42:
         g = g.split(',')[0].strip()
@@ -167,7 +145,8 @@ def resolve(df, form, hint, mark_final=False):
     # A row whose gloss only points at another spelling ("defective spelling of בוקר") is a
     # cross-reference, not a definition, and it is not what a learner should be shown.
     rows = sorted(hit.to_dict('records'),
-                  key=lambda r: (bool(POINTER.match(str(r['GLOSS']))), r['PHON_SRC'] != 'wiktionary'))
+                  key=lambda r: (bool(POINTER.match(str(r['GLOSS']))),
+                                 not str(r['PHON_SRC']).endswith('+stress')))
     r = rows[0]
     if not str(r['PHON']):
         raise SystemExit('!! %s has no pronunciation in the lexicon' % form)
@@ -177,8 +156,10 @@ def resolve(df, form, hint, mark_final=False):
     # sound cannot spell them two ways. phon.py derives every reading from the pointing by the
     # same rules, so the lesson and the romanization agree by construction. The STRESS is still
     # Wiktionary's, because nothing derives it.
-    wik = next((x['PHON'] for x in rows if x['PHON_SRC'] == 'wiktionary'), '')
-    tr = phon_stressed(r['FORM'], beat(wik), mark_final=mark_final)
+    # The lexicon's own reading already carries the beat where anything knows it (build_lex
+    # shares it across every row of a form), so this reads it back rather than re-deriving.
+    known = next((x['PHON'] for x in rows if str(x['PHON_SRC']).endswith('+stress')), '')
+    tr = phon_stressed(r['FORM'], beat(known), mark_final=mark_final)
     return {'ar': r['FORM'], 'tr': tr, 'en': short(r['GLOSS']), 'id': str(r['ID'])}
 
 
