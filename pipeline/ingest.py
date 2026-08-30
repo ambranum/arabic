@@ -18,11 +18,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths  # noqa: E402  -- per-language file layout
 import json, os, sys, re, argparse, hashlib, urllib.request, ssl, urllib.error
-try:  # macOS python.org builds lack wired-up CA certs; use certifi's bundle for HTTPS.
-    import certifi
-    _SSL = ssl.create_default_context(cafile=certifi.where())
-except Exception:
-    _SSL = None
+import net           # noqa: E402  -- one HTTPS context, one diagnosis
+_SSL = net.SSL_CTX
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from maknuune import Lexicon, entry_to_word, norm
 from subdialect import realize

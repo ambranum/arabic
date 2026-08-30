@@ -18,11 +18,8 @@ ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, HERE)
 from voice import language_code, model_id, voice_id
 
-try:
-    import certifi
-    _SSL = ssl.create_default_context(cafile=certifi.where())
-except Exception:
-    _SSL = ssl.create_default_context()
+import net           # noqa: E402  -- one HTTPS context, one diagnosis
+_SSL = net.SSL_CTX
 
 import os
 import sys
@@ -51,9 +48,9 @@ def tts(text, path, key, voice):
     try:
         with urllib.request.urlopen(req, timeout=90, context=_SSL) as r:
             open(path, 'wb').write(r.read())
-        return True, 'generated'
+        return True, 'generated', None
     except Exception as e:
-        return False, str(e)[:100]
+        return False, str(e)[:100], e
 
 
 def main():
@@ -83,8 +80,13 @@ def main():
         if os.path.exists(path):
             return paths.audio_url('sounds', '%s.mp3' % rid)
         if do_audio:
-            ok, how = tts(ar, path, key, voice)
+            ok, how, err = tts(ar, path, key, voice)
             print(f'  {rid} {ar:12} {how}')
+            # A transport failure is not about this word, so trying the next fifty-seven only
+            # buries the reason. Say it once, and stop before writing a data file that reports
+            # the outcome as "audio 0/58" and looks like a finished run.
+            if err is not None and net.fatal(err, 'audio: '):
+                raise SystemExit(1)
             if ok:
                 return paths.audio_url('sounds', '%s.mp3' % rid)
         return None

@@ -22,11 +22,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from voice import roster, cast_voices, cast_by_gender, cast_dialogue, VOICE_ID, PREVIOUS
 
-try:
-    import certifi
-    _SSL = ssl.create_default_context(cafile=certifi.where())
-except Exception:
-    _SSL = ssl.create_default_context()
+import net           # noqa: E402  -- one HTTPS context, one diagnosis
+_SSL = net.SSL_CTX
 
 
 def list_voices(key):

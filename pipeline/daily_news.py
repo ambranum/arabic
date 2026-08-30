@@ -33,11 +33,8 @@ import xml.etree.ElementTree as ET
 # macOS python.org builds ship without a CA bundle unless Install Certificates.command
 # was run, so HTTPS fails locally with CERTIFICATE_VERIFY_FAILED even though the network
 # is fine. Linux CI has system certs. Use certifi when present, else the system default.
-try:
-    import certifi
-    SSLCTX = ssl.create_default_context(cafile=certifi.where())
-except Exception:
-    SSLCTX = ssl.create_default_context()
+import net           # noqa: E402  -- one HTTPS context, one diagnosis
+SSLCTX = net.SSL_CTX
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')

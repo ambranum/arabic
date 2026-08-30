@@ -21,11 +21,8 @@ ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, HERE)
 from voice import voice_id, cast_voices, cast_by_gender
 
-try:
-    import certifi
-    _SSL = ssl.create_default_context(cafile=certifi.where())
-except Exception:
-    _SSL = ssl.create_default_context()
+import net           # noqa: E402  -- one HTTPS context, one diagnosis
+_SSL = net.SSL_CTX
 
 import os
 import sys

@@ -15,11 +15,8 @@ from voice import voice_id
 
 # macOS python.org builds ship without wired-up CA certs, so HTTPS verification fails with
 # CERTIFICATE_VERIFY_FAILED. Use certifi's bundle when it's installed (it is, via pip).
-try:
-    import certifi
-    _SSL = ssl.create_default_context(cafile=certifi.where())
-except Exception:
-    _SSL = None
+import net           # noqa: E402  -- one HTTPS context, one diagnosis
+_SSL = net.SSL_CTX
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 import os

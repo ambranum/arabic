@@ -41,11 +41,8 @@ from phon import respell, unpoint                      # noqa: E402
 
 RESOLUTIONS = paths.resolutions()
 
-try:
-    import certifi
-    _SSL = ssl.create_default_context(cafile=certifi.where())
-except Exception:
-    _SSL = ssl.create_default_context()
+import net           # noqa: E402  -- one HTTPS context, one diagnosis
+_SSL = net.SSL_CTX
 
 # MATCH the words rather than splitting on the gaps, because in Hebrew the same character is
 # both punctuation and part of a word. A gershayim before the last letter makes an acronym --
