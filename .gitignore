@@ -28,3 +28,9 @@ spike/he/audio/
 # and they carry that person's ESV API key; nothing in here belongs in the repo.
 backup/
 *-backup-*.json
+
+# Project Ben-Yehuda's dump: 262 MB of public-domain Hebrew, the source pipeline/he_books.py
+# selects from. Public domain, so it COULD be committed -- it is not, for the same reason the
+# kaikki dump is not: it is upstream data this repo derives from, not content this repo ships.
+# Download: github.com/projectbenyehuda/public_domain_dump/releases (txt.zip + pseudocatalogue.csv)
+spike/he/benyehuda/
