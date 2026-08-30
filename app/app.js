@@ -61,7 +61,8 @@ function switchLang(code) {
 //   alp.backup.* -- the pre-migration snapshot written below. A local safety net; pushing it
 //                   would double the size of every sync.
 const LANGS_ALL = ['ar', 'he'];
-const GLOBAL_KEYS = new Set(['alp.lang', 'alp.speed.v1', 'alp.sync.at', 'alp.marked.v1']);
+const GLOBAL_KEYS = new Set(['alp.lang', 'alp.speed.v1', 'alp.sync.at', 'alp.marked.v1',
+                             'alp.read.v1']);
 const isGlobalKey = k => GLOBAL_KEYS.has(k) || k.startsWith('alp.esv.') || k.startsWith('alp.backup.');
 const noSync = k => k === 'alp.sync.at' || k.startsWith('alp.esv.') || k.startsWith('alp.backup.');
 // The single place a per-language key is built. Every `const *KEY` below goes through it, so
@@ -271,6 +272,16 @@ function speakWord(card) {                    // browser SpeechSynthesis fallbac
 // Playback speed. Slow is the single most useful setting for dialect — a Palestinian
 // sentence at full pace is a wall; at 0.5x you can actually pick the words apart. Kept
 // in its own localStorage key so it persists across sessions like the marked list.
+// How you like to READ: vowels on, English on, marked words highlighted. Global for the same
+// reason the playback speed is -- it is a property of the reader, not of a language -- and
+// PERSISTED because it was not, and reset to "off" on every text. Toggling the English back on
+// for each of a book's ten chapters is not a setting, it is a chore.
+const RKEY = 'alp.read.v1';
+const readPrefs = () => Object.assign({voc: true, en: false, mk: true},
+                                      _pj(localStorage.getItem(RKEY)) || {});
+const setReadPref = (k, v) => { const p = readPrefs(); p[k] = v;
+  try { localStorage.setItem(RKEY, JSON.stringify(p)); } catch (e) {} };
+
 const SKEY = 'alp.speed.v1';        // global on purpose: a playback speed, not a language
 let SPEED = parseFloat(localStorage.getItem(SKEY)) || 1;
 const setSpeed = v => { SPEED = v; try { localStorage.setItem(SKEY, String(v)); } catch (e) {} };
@@ -5020,6 +5031,7 @@ function card(t, kind){
 let cur = null;
 function reader(t) {
   cur = t;
+  const _rp = readPrefs();                // vowels / English / marked, as you last left them
   PARA = null; paraStop();                // a fresh reader starts with no paragraph audio
   let paraClips = [];
   $('back').hidden = false;
@@ -5027,9 +5039,9 @@ function reader(t) {
   let h = `<div class="lvl-row">${lvlTagFor(textType(t), t)}
       <a class="lvl-what" href="#/plan/journey">what do these mean?</a></div>
     <div class="ctl">
-      <button class="tog" id="tVoc" aria-pressed="true">Vowels</button>
-      <button class="tog" id="tEn" aria-pressed="false">English</button>
-      <button class="tog" id="tMk" aria-pressed="true">Show marked</button>
+      <button class="tog" id="tVoc" aria-pressed="${_rp.voc}">Vowels</button>
+      <button class="tog" id="tEn" aria-pressed="${_rp.en}">English</button>
+      <button class="tog" id="tMk" aria-pressed="${_rp.mk}">Show marked</button>
       <button class="tog sk-go" onclick="location.hash='/speak/${esc(t.id)}'">🗣 Speak it</button>
     </div>` +
     (/not native-validated/i.test(t.source || '')
@@ -5037,7 +5049,8 @@ function reader(t) {
          meaning and vowels come from the lexicon — but the <i>sentences</i> were written
          by Claude. Fine for reading practice; don't memorise the phrasing yet.</div>`
       : '') +
-    `<div class="rd" id="rd" data-en="off" data-voc="on">`;
+    `<div class="rd" id="rd" data-en="${_rp.en ? 'on' : 'off'}" data-voc="${_rp.voc ? 'on' : 'off'}"
+        data-mk="${_rp.mk ? 'on' : 'off'}">`;
   // Both spellings ship; the vowels toggle swaps which is shown. A word we couldn't vocalize
   // honestly falls back to its plain spelling and says so in the card.
   const wspan = (w, si, wi, trail) => { const voc = w.vocalized || w.surface;
@@ -5133,16 +5146,19 @@ function reader(t) {
     const on = e.target.getAttribute('aria-pressed') !== 'true';
     e.target.setAttribute('aria-pressed', String(on));
     $('rd').dataset.voc = on ? 'on' : 'off';
+    setReadPref('voc', on);
   };
   $('tEn').onclick = e => {
     const on = e.target.getAttribute('aria-pressed') !== 'true';
     e.target.setAttribute('aria-pressed', String(on));
     $('rd').dataset.en = on ? 'on' : 'off';
+    setReadPref('en', on);
   };
   $('tMk').onclick = e => {
     const on = e.target.getAttribute('aria-pressed') !== 'true';
     e.target.setAttribute('aria-pressed', String(on));
     $('rd').dataset.mk = on ? 'on' : 'off';
+    setReadPref('mk', on);
     paint();
   };
 }
