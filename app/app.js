@@ -3416,16 +3416,23 @@ async function recToggle() {
 
 function planWelcome() {
   $('title').textContent = 'My Plan';
+  // The destination and the phase list are the CURRICULUM's, not this file's. Arabic runs seven
+  // phases to a family dinner; Hebrew runs three, to reading the paper, because that is how much
+  // content exists — and a page that named Arabic's path to a Hebrew learner would be promising
+  // four phases the app cannot serve.
+  const ph = CUR.phases || [];
+  const path = ph.map(p => esc(p.name)).join(' → ');
+  const nWord = ['no', 'a one', 'a two', 'a three', 'a four', 'a five', 'a six', 'a seven'][ph.length] || ('a ' + ph.length);
   $('view').innerHTML = `<div class="hero"><div class="big">
       <div class="k">Your path to the table</div>
       <div class="t">A study plan built around your week</div>
       <div class="s">Tell us how much time you have and where (a commute? somewhere you can talk out
       loud?) and we’ll turn it into a daily checklist — reading, speaking drills, flashcards and a
-      few great outside resources — that walks you from the sounds of Palestinian Arabic all the way
-      to holding your own at a family dinner. Miss a day and it quietly reflows; nothing is lost.</div>
+      few great outside resources — that walks you from the sounds of ${esc(LANG.name)}
+      ${esc(LANG.planGoal)}. Miss a day and it quietly reflows; nothing is lost.</div>
     </div></div>
-    <div class="note"><b>How it works.</b> The plan follows a six-phase path — Sound → Reaction →
-    The self → Feeling → Narrative → Nuance → The table — grounded in how memory actually works:
+    <div class="note"><b>How it works.</b> The plan follows ${nWord}-phase path — ${path} —
+    grounded in how memory actually works:
     spaced repetition, retrieval out loud, and whole chunks over lone words. Your progress is measured
     in the minutes you actually finish, so the schedule bends to your real life instead of shaming you.</div>
     <div class="ctl" style="justify-content:center;margin-top:18px">
@@ -3548,11 +3555,16 @@ function asVerbItem(tier) {
     const cell = v.conj[aspect + '|' + person]; if (!cell) continue;
     const others = spec.persons.filter(p => p !== person)
       .map(p => (v.conj[aspect + '|' + p] || {}).ar).filter(Boolean);
-    const extra = ['inti', 'humme', 'intu', 'i7na'].map(p => (v.conj[aspect + '|' + p] || {}).ar).filter(Boolean);
+    // Extra distractors from persons the tier does not itself test. The list is the LANGUAGE's,
+    // not this file's -- Arabic's four were sitting here hardcoded, so a Hebrew item silently
+    // had none and fell back to whatever the tier happened to include.
+    const extra = (AS.extraPersons || []).map(p => (v.conj[aspect + '|' + p] || {}).ar).filter(Boolean);
     const choices = _asChoices(cell.ar, _asShuf([...others, ...extra]));
     if (!choices) continue;
     const pEn = (PERSONS.find(p => p[0] === person) || [])[1] || person;
-    const aEn = aspect === 'perf' ? 'past' : aspect === 'bimpf' ? 'present (b-)' : 'present';
+    // Likewise the tense name: 'past' meant Arabic's `perf`, and Hebrew's own `past` fell
+    // through the ternary to be labelled "present".
+    const aEn = (AS.aspectLabels || {})[aspect] || aspect;
     return {skill: 'verbs',
             prompt: `<div class="as-en" style="font-size:17px"><b>${esc(_asGloss(v.gloss))}</b> — ${esc(pEn)}, ${aEn}</div>`,
             sub: 'Pick the right form', choices, rtl: true};
@@ -3589,14 +3601,22 @@ function assessView() {
   const radio = (val, label, sub) => `<label class="pf-radio">
      <input type="radio" name="aslvl" value="${val}" ${val === 'none' ? 'checked' : ''}>
      <span><b>${label}</b>${sub ? '<em>' + sub + '</em>' : ''}</span></label>`;
+  // Length and skill list come from the spec, not from Arabic's five. Hebrew tests four skills,
+  // so it is 16 questions and about six minutes, and the page has to say the number it will
+  // actually ask.
+  const nSk = (AS.skills || []).length || 5;
+  const nQ = (AS.rounds || 4) * nSk;
+  const skNames = (AS.skills || []).map(k => ((AS.skillLabels || {})[k] || k).toLowerCase());
+  const skList = skNames.length > 1
+    ? skNames.slice(0, -1).join(', ') + ' and ' + skNames[skNames.length - 1] : skNames.join('');
   $('view').innerHTML = `
-    <p class="hint">About <b>8 minutes</b>, ${(AS.rounds || 4) * 5} quick questions across listening,
-      vocabulary, grammar, verbs and conversation chunks. It adapts as you go — getting things wrong
+    <p class="hint">About <b>${Math.max(3, Math.round(nQ * 0.4))} minutes</b>, ${nQ} quick questions
+      across ${esc(skList)}. It adapts as you go — getting things wrong
       is fine, that's how it finds your level. Your plan starts where this says you are, so
       <b>press "I don't know" rather than guessing</b>; a lucky guess only places you too high.</p>
     <div class="sec">First, your own guess</div>
-    ${radio('none', 'Brand new', 'Never really studied Arabic')}
-    ${radio('greetings', 'A few greetings', 'Salaam, shukran, the basics')}
+    ${radio('none', 'Brand new', 'Never really studied ' + esc(LANG.name))}
+    ${radio('greetings', 'A few greetings', esc(LANG.assessGreetings || 'the basics'))}
     ${radio('conversation', 'Simple conversations', 'I can introduce myself and get by')}
     ${radio('comfortable', 'Fairly comfortable', 'I can tell a story, with effort')}
     <div class="ctl" style="margin-top:18px">
@@ -3608,13 +3628,19 @@ function assessView() {
 // it after the load would silently reset a self-assessment to "brand new".
 function assessStart(guess) {
   guess = guess || (document.querySelector('input[name=aslvl]:checked') || {}).value || 'none';
-  if (!corpusReady()) {                     // usually already done -- see assessView
+  // The paradigms as well as the corpus. `hasConj` says a verb HAS a table; `v.conj` is a getter
+  // over the lazily-loaded chunks, so before they are in it is undefined -- and the verb sampler
+  // read straight through it and threw "Cannot read properties of undefined (reading 'past|ata')",
+  // leaving the test stuck on "Getting the questions ready…". Arabic never showed it because
+  // something else on the way to the plan had already pulled the chunks in.
+  if (!corpusReady() || !conjIdxReady()) {
     $('view').innerHTML = '<div class="empty"><div class="empty-t">Getting the questions ready…</div></div>';
-    return needCorpus().then(() => { _asIdx = null; assessStart(guess); },
-                             () => routeFailed(new Error('The question bank could not be loaded.')));
+    return Promise.all([needCorpus(), needAllConj()]).then(
+      () => { _asIdx = null; assessStart(guess); },
+      () => routeFailed(new Error('The question bank could not be loaded.')));
   }
   const tier = (AS.selfStart || {})[guess] || 1;
-  _as = {tier, round: 0, qi: 0, roundOk: 0, total: (AS.rounds || 4) * 5, answered: 0,
+  _as = {tier, round: 0, qi: 0, roundOk: 0, total: (AS.rounds || 4) * ((AS.skills || []).length || 5), answered: 0,
          skills: {}, order: _asShuf(AS.skills.slice()), done: false};
   assessNextItem();
 }
@@ -4343,7 +4369,10 @@ function planJourney() {
   }
 
   // Phase bands with real start/end dates.
-  h += `<div class="sec">The seven phases</div><div class="jr-phases">`;
+  // "The seven phases" was true of Arabic and of nothing else. Hebrew's plan is three, because
+  // that is how far its content reaches, and the heading has to say what the data says.
+  const NUM = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'];
+  h += `<div class="sec">The ${NUM[(CUR.phases || []).length] || (CUR.phases || []).length} phases</div><div class="jr-phases">`;
   h += CUR.phases.map((p, i) => {
     const startMin = phaseStartMin(i), endMin = phaseBounds()[i];
     const state = i < pcur ? 'done' : i === pcur ? 'now' : 'ahead';

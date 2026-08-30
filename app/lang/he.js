@@ -124,6 +124,12 @@ defineLang({
     tier: v => ({paal: 1, nifal: 2, piel: 2, hifil: 2, hitpael: 3, pual: 3, hufal: 3})[v.form] || 2,
   },
 
+  // Where the plan is trying to get you. Deliberately smaller than Arabic's "a Palestinian
+  // family dinner": this curriculum is three phases long because that is how much content
+  // exists, and the goal has to be the one it can actually reach.
+  planGoal: 'to reading the day\u2019s news and saying back what it said',
+  assessGreetings: '\u05e9\u05dc\u05d5\u05dd, \u05ea\u05d5\u05d3\u05d4, the basics',
+
   // ---- keyboard, voice ------------------------------------------------------------------
   kbd: {
     toggle: 'א', title: 'Hebrew keyboard',

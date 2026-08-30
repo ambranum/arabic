@@ -16,6 +16,7 @@ the 3ms past -- the cell a card is banked under.
         -o spike/he/kaikki-hebrew.jsonl        # 57 MB, gitignored, regenerable
     python3 pipeline/he_verbs.py --lang he
 """
+import collections
 import os
 import sys
 
@@ -49,7 +50,7 @@ def build():
             'gloss': (v['gloss'] or '').strip(),
             'form': v['form'] or '',                 # the binyan; `form` is the app's class field
             'weak': v['form'] or '',                 # Hebrew has no separate weak axis yet
-            'core': False,
+            'core': False,          # set below, once every root's spread is known
             'src': 'wiktionary',
             'past': _pp(v.get('past')),
             'pres': _pp(v.get('pres')),
@@ -59,6 +60,19 @@ def build():
         if conj:
             rec['conj'] = conj
         out.append(rec)
+    # CORE, and it is a proxy rather than a frequency list, because there is no open frequency
+    # list for Hebrew in this repo. A root the dictionary has in three or more binyanim is a root
+    # the language leans on -- ש.מ.ר, ח.ז.ק, פ.ט.ר -- and its verbs are the ones a learner meets
+    # first. Without this every verb was core:false, so the plan's verb walker fell through to
+    # its last tiebreak and served שָׁרָה "(intransitive) to soak, permeate" as lesson one.
+    spread = collections.Counter()
+    for r in out:
+        if len([c for c in r['root'] if c not in '.\u05be ']) >= 3:
+            spread[(r['root'], r['form'])] = 1
+    per_root = collections.Counter(root for root, _ in spread)
+    for r in out:
+        r['core'] = bool(r.get('conj')) and per_root.get(r['root'], 0) >= 3
+
     # Deterministic order, so a rebuild does not reshuffle the verb list under anyone's plan.
     out.sort(key=lambda r: (TIER.get(r['form'], 4), r['gloss'].lower(), r['lemma']))
     return {'verbs': out}

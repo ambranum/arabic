@@ -600,6 +600,7 @@ function wadiAra(w) {
       return DAYS[d.getDay()] + '، ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
     },
     planGoal: 'all the way to holding your own at a Palestinian family dinner',
+    assessGreetings: 'Salaam, shukran, the basics',
     // The home page's own decoration: a tatreez band (Palestinian cross-stitch, the diamond
     // motif) and the Old City skyline. Both are inline SVG in the theme's variables -- no
     // external assets, no licence -- and both are this language's, not the app's.

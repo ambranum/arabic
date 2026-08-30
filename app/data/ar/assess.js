@@ -34,6 +34,11 @@ window.ASSESS = {
     {weak: ['hollow', 'doubled', 'defective', 'assimilated', 'irregular'], aspects: ['perf', 'bimpf', 'impf'], persons: ['inti', 'i7na', 'intu', 'humme']},
   ],
 
+  // What each aspect key is called in English, and which persons may supply extra wrong answers
+  // beyond the ones a tier tests. Both used to be hardcoded in app.js, which made them Arabic's.
+  aspectLabels: {perf: 'past', bimpf: 'present (b-)', impf: 'present'},
+  extraPersons: ['inti', 'humme', 'intu', 'i7na'],
+
   // ---- how the result feeds the plan ----
   seedGrammarMin: 0.5,  // grammar accuracy needed before lower-band lessons are marked known
   nudgeMin: 5,          // daily minutes moved toward the weakest skill (and off the strongest)
