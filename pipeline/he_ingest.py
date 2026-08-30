@@ -37,6 +37,7 @@ paths.require('he')
 from voice import language_code, model_id, voice_id   # noqa: E402
 from build_lex import he_norm                          # noqa: E402
 from lex import Lexicon                                # noqa: E402
+from phon import respell, unpoint                      # noqa: E402
 
 RESOLUTIONS = paths.resolutions()
 
@@ -73,6 +74,16 @@ def _word(rec, surface, prov, cut=''):
     pronunciation" and "the lexicon's id for this" rather than anything Arabic. Renaming them
     would migrate live study data for no visible gain.
     """
+    # WHAT IS SHOWN MUST BE WHAT WAS WRITTEN. The lexicon points ktiv haser and Israelis write
+    # ktiv male, so the entry's spelling and the word on the page are different strings --
+    # עֲדַיִן against עדיין, בִּמְיֻחָד against במיוחד -- and the reading view displays the
+    # vocalized field in place of the surface. Printing the entry's letters there does not just
+    # drop the reader's: a skeleton match ignores every vav and yod, so ביניהם "among them" was
+    # displayed as בְּנֵיהֶם "their sons" and פוטין as פוֹטוֹן "photon". respell() puts the
+    # lexicon's vowels on the letters that were actually written, and returns nothing at all
+    # when the entry cannot spell them -- in which case no vocalization is claimed, exactly as
+    # for a clitic match.
+    voc = None if cut else respell(surface, rec['FORM'])
     w = {
         'surface': surface,
         # Pointed, and the same value the verb module banks a card under, so a word met in the
@@ -87,9 +98,11 @@ def _word(rec, surface, prov, cut=''):
         # שִׂיחוֹת. So the gloss, root and lemma are kept -- they are what the card is for -- and
         # the vocalization is refused, exactly as the Arabic side refuses what it cannot derive
         # honestly. The reader falls back to the surface, unpointed, which is at least true.
-        'vocalized': None if cut else rec['FORM'],
+        'vocalized': voc,
         'vocalized_from': ('unvocalized:clitic' if cut
-                           else 'lexicon' if rec['FORM'] else 'unvocalized:no-entry'),
+                           else 'unvocalized:no-alignment' if not voc
+                           else 'lexicon' if unpoint(rec['FORM']) == unpoint(surface)
+                           else 'derived:ktiv'),
         'root': rec['ROOT'] or None,
         'gloss': rec['GLOSS'] or None,
         'analysis': rec['ANALYSIS'] or None,
@@ -148,7 +161,7 @@ def annotate(lex, surface, res):
         extra = []
         if not cut:
             for pre, stem, alt in lex.alt_readings(key, recs, strict=False):
-                extra += [(r, pre + '-') for r in lex._by_lemma(alt)[:2]]
+                extra += [(r, pre + '-') for r in lex.readings(alt)[:2]]
         w['options'] = [{'id': str(c['ID']), 'root': str(c['ROOT'] or ''),
                          'gloss': str(c['GLOSS'] or '')[:60],
                          'analysis': str(c['ANALYSIS'] or ''),
@@ -232,6 +245,18 @@ def main():
             sent['audio'] = 'audio/s%d.mp3' % si if ok else None
             print('  audio s%d: %s' % (si, how))
         art['sentences'].append(sent)
+
+    # The reading view displays `vocalized` in place of the surface, so a pointed form whose
+    # letters are not the letters that were typed does not annotate the text, it rewrites it.
+    # respell() makes that impossible one word at a time; this says so of the whole artifact,
+    # because the failure is invisible on the page -- it just reads as a different word.
+    rewrote = ['%s -> %s' % (w['surface'], w['vocalized'])
+               for s in art['sentences'] for w in s['words']
+               if w['vocalized'] and unpoint(w['vocalized']) != unpoint(w['surface'])]
+    if rewrote:
+        print('!! %d words would be displayed as a different word: %s'
+              % (len(rewrote), ', '.join(rewrote[:5])), file=sys.stderr)
+        return 1
 
     out = os.path.join(outdir, 'text.json')
     json.dump(art, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

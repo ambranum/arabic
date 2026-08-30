@@ -25,6 +25,8 @@ import re
 
 import pandas as pd
 
+from phon import MAQAF, respell, unpoint
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 PARQUET = os.path.join(HERE, 'hebrew_lex.parquet')
 
@@ -103,6 +105,10 @@ class Lexicon:
                 uniq.append((st, cut))
         return uniq
 
+    @staticmethod
+    def _spellable(word, recs):
+        return [r for r in (recs or []) if respell(word, r['FORM'])]
+
     def _hit(self, key):
         return self.by_form.get(key) or self.by_lemma.get(key)
 
@@ -119,38 +125,61 @@ class Lexicon:
             hit = self._hit(stem)
             if hit:
                 return hit, 'wiktionary:clitic', cut
-        # last resort: the same word spelled with or without its optional vowel letters
+        # Last resort: the same word spelled with or without its optional vowel letters. The
+        # skeleton ignores every vav and yod, which is what lets it find יכתוב under יִכְתֹּב --
+        # and also what let it find ביניהם "among them" under בְּנֵיהֶם "their sons", פוטין
+        # under פוֹטוֹן "photon", מיאמי under מָאמִי. So the skeleton PROPOSES and respell()
+        # disposes: an entry stays only if its pointing can actually spell the letters that
+        # were written. Of 267 ktiv matches in 300 sentences of live news, 178 could not, and
+        # every one of those was a different word about to be printed over the reader's.
         skel = MATRES.sub('', w)
         if len(skel) >= MIN_STEM:
-            hit = self.by_skeleton.get(skel)
+            hit = self._spellable(w, self.by_skeleton.get(skel))
             if hit:
                 return hit, 'wiktionary:ktiv', ''
             for stem, cut in self.stems(w)[1:]:
-                hit = self.by_skeleton.get(MATRES.sub('', stem))
+                hit = self._spellable(stem, self.by_skeleton.get(MATRES.sub('', stem)))
                 if hit:
                     return hit, 'wiktionary:ktiv', cut
         return [], 'unresolved', ''
 
     @staticmethod
-    def _by_lemma(recs):
-        """One candidate per distinct LEMMA, richest first.
+    def readings(recs):
+        """One candidate per distinct READING of this surface, richest first.
 
         Wiktionary lists a word once per inflection row, so ספר comes back as 24 rows -- but
         those are 6 words. Handing the raw rows to an adjudicator gave it סֵפֶר four times and
         never showed it סַפָּר "barber" or סָפַר "he counted" at all: the six slots were spent
-        on one lemma. Collapsing to lemmas first is what makes the choice a real choice.
+        on one lemma. Collapsing first is what makes the choice a real choice.
 
-        Within a lemma, prefer the row that carries the most: a gloss, then a pronunciation,
-        then the plainest analysis (the citation row, which has no extra feature tags).
+        But collapsing by LEMMA alone throws away the other half of the ambiguity, because one
+        lemma spells one surface more than one way: מצאו is both מָצְאוּ "they found" and
+        מִצְאוּ "find!", both of מָצָא, and חסמו, פרצו, חגג, קשה and היה are the same shape. Those
+        went out as one candidate -- and the tie-break, fewest feature tags, systematically
+        picked the IMPERATIVE, which is close to the rarest thing a news sentence contains. So
+        the key is the lemma AND the pointing, and the page stops saying "find!" for "they
+        found". Measured on 300 sentences of live news: +2.7 points of adjudication, 51.2% to
+        54.0%.
+
+        Two collapses stay, because neither is a choice a reader could see: a construct form
+        when the lemma also has a free one (יוֹם / יוֹם־), and an unpointed row when a pointed
+        row spells the same letters.
         """
+        free = {r['LEMMA'] for r in recs if 'construct' not in str(r['ANALYSIS'] or '')}
+        keep = [r for r in recs
+                if 'construct' not in str(r['ANALYSIS'] or '') or r['LEMMA'] not in free]
         best = {}
-        for r in recs:
-            key = r['LEMMA']
+        for r in keep or recs:
+            key = (r['LEMMA'], str(r['FORM']).replace(MAQAF, ''))
             score = ((1 if r['GLOSS'] else 0) * 4 + (1 if r['PHON'] else 0) * 2
+                     + (1 if unpoint(r['FORM']) != str(r['FORM']) else 0)
                      - str(r['ANALYSIS'] or '').count('.') * 0.1)
             if key not in best or score > best[key][0]:
                 best[key] = (score, r)
-        return [r for _, r in sorted(best.values(), key=lambda x: -x[0])]
+        out = [r for _, r in sorted(best.values(), key=lambda x: -x[0])]
+        pointed = {unpoint(r['FORM']) for r in out if unpoint(r['FORM']) != str(r['FORM'])}
+        return [r for r in out
+                if unpoint(r['FORM']) != str(r['FORM']) or str(r['FORM']) not in pointed]
 
     def cut_for(self, key, rec):
         """What had to be stripped from `key` for `rec` to be the reading -- '' if nothing.
@@ -169,9 +198,12 @@ class Lexicon:
         for stem, cut in self.stems(key):          # stems()[0] is the whole word, so exact wins
             if rec['FORM_SEARCH'] == stem or rec['LEMMA_SEARCH'] == stem:
                 return cut
+        # The ktiv route, and it has to clear the same bar look() sets: a skeleton match ignores
+        # every vav and yod, so without respell() a trail line would quietly bring back the
+        # match that gate exists to reject.
         skel = MATRES.sub('', str(rec['FORM_SEARCH']))
         for stem, cut in self.stems(key):
-            if skel == MATRES.sub('', stem):
+            if skel == MATRES.sub('', stem) and respell(stem, rec['FORM']):
                 return cut
         return None
 
@@ -247,7 +279,7 @@ class Lexicon:
         recs, prov, cut = self.look(surface)
         if not recs:
             return None, 'unresolved', []
-        cands = self._by_lemma(recs)
+        cands = self.readings(recs)
         # An exact match is not the same as an unambiguous one. When the word is also a particle
         # plus a different word, both readings are real and only the sentence can choose.
         alts = (self.alt_readings(he_norm(surface), recs)

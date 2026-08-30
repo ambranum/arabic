@@ -133,6 +133,84 @@ def strip_cantillation(s):
     return CANTILLATION.sub('', s)
 
 
+def clusters(word):
+    """[(letter, its marks)] -- niqqud belongs to the consonant in front of it."""
+    w = strip_cantillation(unicodedata.normalize('NFC', word))
+    out = []
+    for ch in w:
+        if ch in NIQQUD and out:
+            out[-1][1] += ch
+        elif ch == MAQAF:
+            continue
+        else:
+            out.append([ch, ''])
+    return [(c, m) for c, m in out]
+
+
+def unpoint(word):
+    return ''.join(c for c, _ in clusters(word))
+
+
+# A vowel letter the text writes and the lexicon spells with a sign instead. Left of the arrow:
+# what the previous consonant carries. Right: what the vav or yod becomes once it is written.
+# HOLAM and QUBUTZ move ONTO the vav -- כֹּל written כול is כּוֹל, and מיֻחד written מיוחד is
+# מיוּחד -- because that is where the sign goes once the letter is there. HIRIQ and TSERE stay
+# put and the yod is written bare, which is what מִלָּה -> מִילָּה does.
+MALE = {'י': {HIRIQ: None, TSERE: None, SEGOL: None},
+        'ו': {HOLAM: HOLAM, HOLAM_HASER: HOLAM, QUBUTZ: DAGESH}}
+
+
+def respell(surface, pointed):
+    """The lexicon's niqqud, moved onto the spelling the text actually uses. None if it can't.
+
+    Israelis write ktiv male and the lexicon points ktiv haser -- עדיין against עֲדַיִן, קייב
+    against קִיֶב -- so the pointed form and the written word are different STRINGS for the same
+    word, and the reader is shown the vowels of one over the letters of the other. Two things
+    go wrong with that. The mild one is cosmetic: the page silently drops the reader's letters.
+    The bad one is that a skeleton match ignores every vav and yod, so it also matches words
+    that merely look alike once you do -- ביניהם "among them" came back as בְּנֵיהֶם "their
+    sons", ווינטר (a surname) as נִטּוּר "monitoring" -- and the page was rewritten into a
+    different word with a different meaning.
+
+    Aligning the two answers both. Every letter of `surface` must be either a letter of
+    `pointed` or a vowel letter the pointing accounts for at exactly that spot, so an entry that
+    cannot spell the written word is rejected instead of displayed. What comes back is the
+    surface, letter for letter, wearing the lexicon's vowels: strip the niqqud and you get the
+    word that was written, always.
+    """
+    src, dst, i, j = list(unpoint(surface)), clusters(pointed), 0, 0
+    out = []
+    while i < len(src) and j < len(dst):
+        ch, marks = dst[j]
+        if src[i] == ch or FINAL.get(src[i], src[i]) == FINAL.get(ch, ch):
+            out.append([src[i], marks])
+            i += 1
+            j += 1
+            continue
+        # An extra vav or yod in the text: allowed only where the pointing puts that vowel, or
+        # doubling a consonantal one (בְּעָיָתִי written בעייתי), never as a free letter.
+        prev = out[-1] if out else None
+        rule = MALE.get(src[i], {})
+        sign = next((k for k in rule if k in (prev[1] if prev else '')), None)
+        if sign is not None:
+            moved = rule[sign]
+            if moved:                                  # holam and qubutz belong on the vav
+                prev[1] = prev[1].replace(sign, '')
+            out.append([src[i], moved or ''])
+            i += 1
+            continue
+        if prev and prev[0] == src[i] and src[i] in MALE:   # יי / וו for one consonantal letter
+            out.append([src[i], ''])
+            i += 1
+            continue
+        return None
+    if i != len(src) or j != len(dst):
+        return None                                    # the lexicon spells it fuller, or longer
+    got = ''.join(c + m for c, m in out)
+    assert unpoint(got) == ''.join(src), (surface, pointed, got)
+    return got
+
+
 def _segment(word):
     """Split into consonant-anchored segments, resolving the vowel letters as we go.
 

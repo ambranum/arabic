@@ -30,6 +30,7 @@ paths.require('he')
 
 import he_ingest  # noqa: E402
 from lex import Lexicon  # noqa: E402
+from phon import respell, unpoint  # noqa: E402
 
 ARTICLE = paths.texts('news-2026-08-29.json')
 
@@ -88,6 +89,15 @@ def main():
     moved = [w['surface'] for w, t in zip(second, toks) if w['surface'] != t]
     check(not moved, 'the word on the page is the word that was written', ', '.join(moved[:5]))
 
+    # And the reading view shows `vocalized`, not `surface`, so that invariant has to hold of
+    # the pointed form too. It did not: the lexicon points ktiv haser and Israelis write ktiv
+    # male, so ביניהם "among them" was displayed as בְּנֵיהֶם "their sons" and קייב as קִיֶב.
+    # Strip the niqqud off what is displayed and the letters must be the ones that were typed.
+    rewrote = ['%s -> %s' % (w['surface'], w['vocalized'])
+               for w in first + second
+               if w.get('vocalized') and unpoint(w['vocalized']) != unpoint(w['surface'])]
+    check(not rewrote, 'no word is displayed as a different word', ', '.join(rewrote[:5]))
+
     # ---- the word that is also a particle plus a word -------------------------------------
     # An exact match is not an unambiguous one. שקרה IS שִׁקְּרָה "she lied" and it is also
     # ש- + קָרָה "that happened", and the second is what a news sentence means -- but the exact
@@ -133,6 +143,48 @@ def main():
     stray = he_ingest.annotate(lex, 'בבית', {'בבית': lex.df.iloc[0]['ID']})
     check(stray['provenance'] != 'wiktionary:resolved',
           'a resolution that is not a reading of the word is refused', stray['provenance'])
+
+    # ---- one lemma, two readings ----------------------------------------------------------
+    # Collapsing candidates by LEMMA hid the second half of the ambiguity: מצאו is both
+    # מָצְאוּ "they found" and מִצְאוּ "find!", both of מָצָא, and the tie-break -- fewest
+    # feature tags -- picked the imperative, which is close to the rarest thing a news sentence
+    # contains. Both readings have to reach the adjudicator for the sentence to choose.
+    print()
+    for surface, want in [('מצאו', ['מָצְאוּ', 'מִצְאוּ']),
+                          ('חסמו', ['חָסְמוּ', 'חִסְמוּ']),
+                          ('קשה',  ['קָשֶׁה', 'קָשָׁה'])]:
+        recs, _, _ = lex.look(surface)
+        got = [r['FORM'] for r in lex.readings(recs)]
+        check(all(f in got for f in want), '%s offers %s' % (surface, ' and '.join(want)), str(got))
+    # ...but the collapses that a reader could not see stay collapsed, or every noun with a
+    # construct form becomes a decision.
+    for surface in ['יום', 'ראש', 'מערכת']:
+        recs, _, _ = lex.look(surface)
+        check(len(lex.readings(recs)) == 1,
+              '%s is still one reading, construct and free together' % surface,
+              str([r['FORM'] for r in lex.readings(recs)]))
+
+    # ---- a skeleton match has to be able to spell the word ---------------------------------
+    # The ktiv tier ignores every vav and yod, which is what finds יכתוב under יִכְתֹּב -- and
+    # what found ביניהם under בְּנֵיהֶם, פוטין under פוֹטוֹן "photon", מיאמי under מָאמִי. An
+    # entry stays only if its pointing can spell the letters that were written.
+    print()
+    for surface, pointed, want in [('עדיין', 'עֲדַיִן', 'עֲדַיִין'),
+                                   ('קייב', 'קִיֶב', 'קִיֶיב'),
+                                   ('במיוחד', 'בִּמְיֻחָד', 'בִּמְיוּחָד'),
+                                   ('כול', 'כֹּל', 'כּוֹל'),
+                                   ('ביניהם', 'בְּנֵיהֶם', None),
+                                   ('ווינטר', 'נִטּוּר', None),
+                                   ('סוכמה', 'סִכְּמָה', None),
+                                   ('בכם', 'בּוֹכִים', None)]:
+        got = respell(surface, pointed)
+        check(got == want, '%s %s %s' % (surface, 'reads as' if want else 'is not', want or pointed),
+              'got %s' % got)
+    for surface in ['ביניהם', 'ווינטר', 'סוכמה']:
+        w = he_ingest.annotate(lex, surface, {})
+        check(w['provenance'] == 'unresolved' and not w['gloss'],
+              '%s is left unresolved rather than glossed as another word' % surface,
+              '%s %s' % (w['provenance'], w['gloss']))
 
     # ---- tokenizing ------------------------------------------------------------------------
     # In Hebrew the same character is punctuation and part of a word. A gershayim before the
