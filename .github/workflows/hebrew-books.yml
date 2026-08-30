@@ -19,11 +19,15 @@ on:
   workflow_dispatch:
     inputs:
       translate:
-        description: 'Write the English (skip if it is already done)'
+        description: 'Write the English — done 2026-08-30, leave off unless texts were added'
         type: boolean
-        default: true
+        default: false
       annotate:
-        description: 'Annotate and adjudicate (the expensive half)'
+        description: 'Annotate and adjudicate — done, except the 102 words one batch lost'
+        type: boolean
+        default: false
+      audio:
+        description: 'Voice every sentence (~687 clips, ElevenLabs)'
         type: boolean
         default: true
 
@@ -71,6 +75,25 @@ jobs:
           done
           exit $rc
 
+      # Last, so the artifact it writes is the annotated one. Clips already on disk are
+      # ADOPTED rather than remade -- under a non-deterministic model that is not an
+      # optimisation, it is the only way a re-run does not change how a sentence is read -- so
+      # this is safe to run again after a failure and only pays for what is missing.
+      - name: Voice the sentences
+        if: inputs.audio
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          # No ELEVENLABS_VOICE_ID, deliberately: the voice is pinned in pipeline/voice.py so
+          # the books are read in the same voice as the news and the reactions.
+        run: |
+          rc=0
+          for f in texts/he/book-by-*.json; do
+            echo "::group::$f"
+            python3 pipeline/he_ingest.py "$f" --lang he --audio || rc=1
+            echo "::endgroup::"
+          done
+          exit $rc
+
       - name: Rebuild the Hebrew app data
         run: python3 pipeline/build_app.py --lang he
 
@@ -80,7 +103,7 @@ jobs:
           git config user.email "actions@github.com"
           git add texts/ build/ app/ pipeline/resolutions.he.json
           git diff --staged --quiet && { echo "nothing changed"; exit 0; }
-          git commit -m "Hebrew books: English and annotation"
+          git commit -m "Hebrew books: ${{ inputs.audio && 'audio' || 'English and annotation' }}"
           for attempt in 1 2 3 4 5 6; do
             if git pull --rebase --autostash origin main; then
               git push && exit 0

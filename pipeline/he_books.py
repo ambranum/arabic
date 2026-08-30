@@ -222,6 +222,17 @@ def main():
                  s['archaic'], s['vav'], s['sentence']))
         if not a.write or (a.max and written >= a.max):
             continue
+        # A selected text is regenerated from the dump, English and all -- and the English cost
+        # an API call, and the audio is keyed by sentence INDEX, so a reorder would silently
+        # re-point every clip at a different sentence. Once a text has been translated it is
+        # finished; --write leaves it alone.
+        out_path = paths.texts('%s.json' % slug(mid))
+        if os.path.exists(out_path):
+            done = json.load(open(out_path, encoding='utf-8'))
+            if any(x.get('en') for x in done.get('sentences', [])):
+                print('   (already written and translated — left alone)')
+                written += 1
+                continue
         doc = {
             'id': slug(mid), 'kind': 'book-chapter', 'dialect': 'he', 'level': name,
             'shelf': shelf, 'book': 'benyehuda', 'chapter': written + 1,
@@ -246,8 +257,7 @@ def main():
             'sentences': [{'ar': t.strip(), 'en': '', 'p': i // 3}
                           for i, t in enumerate(s['sentences'])],
         }
-        json.dump(doc, open(paths.texts('%s.json' % slug(mid)), 'w', encoding='utf-8'),
-                  ensure_ascii=False, indent=1)
+        json.dump(doc, open(out_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         written += 1
     if a.write:
         print('\nwrote %d -> %s' % (written, os.path.relpath(paths.texts(''), paths.ROOT)))

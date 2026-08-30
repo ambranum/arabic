@@ -199,7 +199,7 @@ def annotate(lex, surface, res):
 
 def tts(text, out_path, api_key):
     if os.path.exists(out_path):
-        return True, 'cached'
+        return True, 'cached', None
     body = {'text': text, 'model_id': model_id()}
     lc = language_code()
     if lc:
@@ -211,11 +211,11 @@ def tts(text, out_path, api_key):
     try:
         with urllib.request.urlopen(req, timeout=120, context=_SSL) as r:
             open(out_path, 'wb').write(r.read())
-        return True, 'generated'
+        return True, 'generated', None
     except urllib.error.HTTPError as e:
-        return False, 'HTTP %s — %s' % (e.code, e.read().decode('utf-8', 'replace')[:150])
+        return False, 'HTTP %s — %s' % (e.code, e.read().decode('utf-8', 'replace')[:150]), e
     except Exception as e:
-        return False, str(e)[:120]
+        return False, str(e)[:120], e
 
 
 def main():
@@ -264,9 +264,14 @@ def main():
         if os.path.exists(ap_):
             sent['audio'] = 'audio/s%d.mp3' % si
         elif do_audio:
-            ok, how = tts(s['ar'], ap_, key)
+            ok, how, err = tts(s['ar'], ap_, key)
             sent['audio'] = 'audio/s%d.mp3' % si if ok else None
             print('  audio s%d: %s' % (si, how))
+            # A book is 60-odd sentences, not the news's nine. A dead key or a spent balance
+            # would otherwise print the same failure sixty times and then hand back an artifact
+            # with no audio in it, which reads as a finished run.
+            if err is not None and net.fatal(err, 'audio: '):
+                raise SystemExit(1)
         art['sentences'].append(sent)
 
     # The reading view displays `vocalized` in place of the surface, so a pointed form whose
