@@ -117,12 +117,24 @@ def annotate(lex, surface, res):
     # whichever branch answers. Reading it only on the unresolved path meant a resolution
     # silently re-enabled the thing the clitic guard exists to stop: בכמה "in a few" was
     # displayed as כַּמָּה, שהרכב as רֶכֶב. An adjudicated word is not a differently-shaped word.
-    _, _, cut = lex.look(surface)
+    recs, _, cut = lex.look(surface)
     want = res.get(surface) or res.get(key)
     if want:
         pick = lex.by_id.get(str(want))
-        if pick:
-            return _word(pick, surface, 'wiktionary:resolved', cut)
+        # The cut is derived from the entry that was CHOSEN, not from the one the lookup
+        # happened to find first. A word can match the lexicon exactly and still be adjudicated
+        # to a prefix reading -- שקרה is an exact match for שִׁקְּרָה "she lied" where the
+        # sentence means ש- + קָרָה "that happened" -- and when it is, the pointing has to go
+        # for the usual reason: the lexicon pointed the stem, nothing has pointed the particle.
+        cut_p = lex.cut_for(key, pick) if pick is not None else None
+        if cut_p is not None:
+            return _word(pick, surface, 'wiktionary:resolved', cut_p)
+        if pick is not None:
+            # A real entry that is no reading of this word. Ids outlive the text they were
+            # picked for, so this is what a stale or mistyped trail line looks like, and
+            # applying it would put a stranger's pointing and gloss on the page.
+            print('  !! %s: resolution %s is not a reading of this word — ignored'
+                  % (surface, want))
     rec, prov, cands = lex.resolve(surface)
     if rec is None:
         return _blank(surface)
@@ -135,19 +147,16 @@ def annotate(lex, surface, res):
         # however much context it had. Offer both.
         extra = []
         if not cut:
-            for stem, c2 in lex.stems(key)[1:]:
-                hit = lex.by_form.get(stem) or lex.by_lemma.get(stem)
-                if hit:
-                    extra = [(r, c2) for r in lex._by_lemma(hit)[:3]]
-                    break
+            for pre, stem, alt in lex.alt_readings(key, recs, strict=False):
+                extra += [(r, pre + '-') for r in lex._by_lemma(alt)[:2]]
         w['options'] = [{'id': str(c['ID']), 'root': str(c['ROOT'] or ''),
                          'gloss': str(c['GLOSS'] or '')[:60],
                          'analysis': str(c['ANALYSIS'] or ''),
                          'pointed': c['FORM']} for c in cands]
         w['options'] += [{'id': str(r['ID']), 'root': str(r['ROOT'] or ''),
-                          'gloss': ('as %s- + %s: ' % (c2, r['LEMMA'])) + str(r['GLOSS'] or '')[:44],
+                          'gloss': ('as %s + %s: ' % (c2, r['LEMMA'])) + str(r['GLOSS'] or '')[:44],
                           'analysis': str(r['ANALYSIS'] or ''),
-                          'pointed': r['FORM']} for r, c2 in extra]
+                          'pointed': r['FORM']} for r, c2 in extra[:4]]
         # What the adjudicator is really choosing for. Without this it saw WORD: שבו and a list
         # of entries for the STEM, with nothing to say that ש- had been removed -- so it picked
         # a good entry for בו and returned שָׁבוּ "they returned" for a word meaning "in which".

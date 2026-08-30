@@ -42,6 +42,24 @@ MIN_STEM = 2
 
 MATRES = re.compile('[וי]')
 
+# A proclitic from these slots attaches to a NOUN or an adjective, never to a tensed verb:
+# מ + "he judged" is not Hebrew, so משפט is מִשְׁפָּט and nothing else. ו/ש/כש take a clause and
+# are exempt.
+NOMINAL_SLOT = set('בכלמה')
+TENSED = {'past', 'future', 'imperative'}
+
+# Where the prefix is the ENTRY'S OWN and the alternative is therefore a coincidence of
+# spelling: the ה of a definite noun, the ל of an infinitive, the מ of a present participle.
+# Each of these entries already spells the whole surface and points every letter of it, so a
+# clitic re-reading can only take pointing away -- לְהַגִּיעַ "to arrive" against לה- + פּוּךְ
+# "kohl", מְחַפֵּשׂ "searching" against מ- + חֳפָשִׁים.
+OWN_PREFIX = [('ה', 'definite'), ('ל', 'infinitive'), ('מ', 'present'), ('מ', 'participle')]
+
+
+def _tensed(r):
+    a = str(r['ANALYSIS'] or '')
+    return a.startswith('VERB') and bool(TENSED & set(a.split(':')[-1].split('.')))
+
 
 class Lexicon:
     def __init__(self, path=PARQUET):
@@ -134,13 +152,107 @@ class Lexicon:
                 best[key] = (score, r)
         return [r for _, r in sorted(best.values(), key=lambda x: -x[0])]
 
+    def cut_for(self, key, rec):
+        """What had to be stripped from `key` for `rec` to be the reading -- '' if nothing.
+
+        Asked of the record that was CHOSEN, not of the first one the lookup happened to find.
+        A word can match exactly and still be resolved to a clitic reading -- that is the whole
+        point of alt_readings() below -- and when it is, the pointing has to be refused just as
+        it is on any other clitic match. Deriving the cut from the answer rather than from the
+        lookup is what makes the two agree.
+
+        None when `rec` explains no part of `key` at all. That is not a shrug: a resolution
+        trail names entries by id, ids outlive the text they were chosen for, and an entry that
+        cannot be reached from this word by any route is not an answer to it. Saying so lets the
+        caller drop it instead of stamping a stranger's pointing onto the page.
+        """
+        for stem, cut in self.stems(key):          # stems()[0] is the whole word, so exact wins
+            if rec['FORM_SEARCH'] == stem or rec['LEMMA_SEARCH'] == stem:
+                return cut
+        skel = MATRES.sub('', str(rec['FORM_SEARCH']))
+        for stem, cut in self.stems(key):
+            if skel == MATRES.sub('', stem):
+                return cut
+        return None
+
+    def alt_readings(self, key, exact, strict=True):
+        """Prefix readings of an exactly-matched word that mean something ELSE.
+
+        The peeler never ran for these words: an exact match wins in look() before a single
+        prefix is tried, so a word that IS a word and is ALSO a particle plus a different word
+        was taken silently, with one candidate, and never reached adjudication. It is not a rare
+        shape -- Hebrew's proclitics are single letters and its verbs are unpointed skeletons --
+        and the readings it loses are the everyday ones: שקרה is ש- + קָרָה "that happened" and
+        was shipped as שִׁקְּרָה "she lied"; שהיה is ש- + הָיָה and was שְׁהִיָּה "a stay"; ביום
+        is ב- + יוֹם and was בִּיּוּם "staging".
+
+        Nothing here decides anything. It finds the other real entries so that the sentence, in
+        front of an adjudicator, can decide -- the same rule the rest of this file follows.
+
+        `strict` is the difference between the two questions this answers. Strict asks IS THIS
+        WORTH INTERRUPTING FOR, and applies the two exemptions below; unstrict asks WHAT ELSE
+        COULD THIS BE, and is for a word already on its way to adjudication, where another real
+        candidate costs a line of prompt and can only help.
+        """
+        lemmas = {str(r['LEMMA_SEARCH']) for r in exact}
+        # 300 sentences of live news, 7,185 tokens: without either exemption this flags 8.2% of
+        # them and takes the article's adjudication rate from 50.0% to 58.2%; the headword rule
+        # alone leaves 4.2%; both leave 1.3%, for 51.3% overall. The words the two rules drop
+        # were, on inspection, ones the exact match already had right.
+        #
+        # A HEADWORD is taken at its word. If the lexicon lists this exact string as a lemma --
+        # היא, למרות, בתוך, מחר, מִשְׁפָּט -- then the word is real as written, and every one of
+        # them starts with a letter that is also a particle, so without this the queue fills
+        # with the commonest words in the language. What is left is the case that actually goes
+        # wrong: an INFLECTED form, which Hebrew generates far more of than it has headwords,
+        # colliding with a particle plus a word. שִׁקְּרָה is one of 30-odd forms of שִׁקֵּר;
+        # קָרָה, the word that was meant, is the headword.
+        if strict and key in lemmas:
+            return []
+        out = []
+        for stem, cut in self.stems(key)[1:]:
+            if not cut.endswith('-'):              # a suffix strip is a different question
+                continue
+            pre = cut[:-1]
+            hit = self._hit(stem)
+            if not hit or (strict and self._accounts_for(exact, pre)):
+                continue
+            # A different LEMMA is the test, not a different row: Wiktionary lists בְּחִירוֹת
+            # both as the plural of בְּחִירָה and as its own entry, and "the choices" read two
+            # ways is not an ambiguity, it is the same word card either way.
+            alt = [r for r in hit if str(r['LEMMA_SEARCH']) not in lemmas]
+            if pre[-1] in NOMINAL_SLOT:
+                alt = [r for r in alt if not _tensed(r)]
+            if alt:
+                out.append((pre, stem, alt))
+        return out
+
+    @staticmethod
+    def _accounts_for(exact, pre):
+        """The exact entry already spells this prefix, so the alternative is a coincidence.
+
+        Deliberately NOT tested by decomposing the exact entry's own lemma: `lemma == pre +
+        stem` is true of every citation form that happens to start with a particle letter, so
+        it silently exempted מְכָל, מִשְׁפָּט and every other word this is meant to catch.
+        """
+        for r in exact:
+            a = str(r['ANALYSIS'] or '')
+            if any(p in pre and f in a for p, f in OWN_PREFIX):
+                return True
+        return False
+
     def resolve(self, surface):
         """look(), then decide whether the answer is unique enough to use unattended."""
+        from build_lex import he_norm
         recs, prov, cut = self.look(surface)
         if not recs:
             return None, 'unresolved', []
         cands = self._by_lemma(recs)
-        if len(cands) == 1:
+        # An exact match is not the same as an unambiguous one. When the word is also a particle
+        # plus a different word, both readings are real and only the sentence can choose.
+        alts = (self.alt_readings(he_norm(surface), recs)
+                if prov == 'wiktionary:exact' else [])
+        if len(cands) == 1 and not alts:
             return cands[0], prov, cands
         # Several distinct lemmas share this spelling. Same rule as the Arabic side: do not
         # pick for the learner, hand the candidates on for adjudication.

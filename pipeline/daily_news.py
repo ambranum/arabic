@@ -279,6 +279,11 @@ def _resolve_batch(c, ambiguous):
             + LEXICON_NAME + " lexicon. Pick the ONE id whose sense fits the sentence.\n\n"
             "You MUST return an id that appears in that word's options. Do not invent ids.\n"
             "Watch for causatives: 'sit down' vs 'make sb sit' are different entries.\n"
+            # A word can be a word AND a particle plus a different word -- Hebrew's are single
+            # letters -- and which one it is comes from the sentence, not from the spelling.
+            "An option beginning \"as X- + ...\" reads the word as the particle X plus the "
+            "word after it. Pick it when that is what the sentence says, even though the "
+            "word also matches an entry on its own.\n"
             + "\n".join(lines)}],
     )
     txt = next(b.text for b in r.content if b.type == "text")
