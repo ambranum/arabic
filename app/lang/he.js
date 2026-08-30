@@ -128,6 +128,10 @@ defineLang({
   // family dinner": this curriculum is three phases long because that is how much content
   // exists, and the goal has to be the one it can actually reach.
   planGoal: 'to reading the day\u2019s news and saying back what it said',
+  booksBlurb: 'Published Hebrew, not written for you \u2014 short stories from the public '
+    + 'domain, transcribed with their vowels by Project Ben-Yehuda\u2019s volunteers and let onto '
+    + 'this shelf only if they read like present-day Hebrew rather than like scripture. Every '
+    + 'sentence is theirs, verbatim; the English is ours. Tap any word.',
   assessGreetings: '\u05e9\u05dc\u05d5\u05dd, \u05ea\u05d5\u05d3\u05d4, the basics',
 
   // ---- keyboard, voice ------------------------------------------------------------------

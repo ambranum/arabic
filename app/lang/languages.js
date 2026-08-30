@@ -57,7 +57,7 @@ window.LANGUAGES = [
     // but whose every WORD, vowel, reading and meaning is the lexicon's. Lessons, stories,
     // grammar, reactions and the dinner table are authored content that does not exist yet, and
     // listing a section before it exists is a lie the switcher would tell on every page.
-    sections: ['plan', 'sounds', 'reactions', 'grammar', 'verbs', 'news', 'bible',
-               'vocab', 'translate', 'tutor', 'account'],
+    sections: ['plan', 'sounds', 'reactions', 'grammar', 'verbs', 'news', 'books',
+               'bible', 'vocab', 'translate', 'tutor', 'account'],
   },
 ];

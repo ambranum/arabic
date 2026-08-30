@@ -2038,10 +2038,9 @@ function booksSection(sub, arg) {
 function booksHome() {
   $('title').textContent = 'Books';
   const books = booksList();
-  let h = `<p class="hint">Whole stories to read start to finish — graded for learners, in spoken
-    Palestinian, with tap-any-word for every word. A connected book, with vocabulary that comes back
-    again and again, sticks far better than scattered paragraphs. Read online or download a PDF.
-    The retellings are adapted by Claude (not native-checked); every word’s meaning and root is from the lexicon.</p>`;
+  // Arabic's books are retold by Claude; Hebrew's are public-domain literature, verbatim, with
+  // only the English ours. Opposite claims, so the blurb is the language's own.
+  let h = `<p class="hint">${LANG.booksBlurb}</p>`;
   // Grouped by level, using the SAME three names and order the stories use — books and stories
   // can then never disagree about what "intermediate" means. The chip moves to the section
   // header, which frees the tile's last line for chapter count and how far you have read.
@@ -2075,11 +2074,20 @@ function bookView(id) {
   const readN = b.chapters.filter(c => seen.has(c.id)).length;
   let h = `<div class="bk-hero"><div class="bk-hero-ar" dir="rtl">${esc(b.title.ar)}</div>
      <div class="bk-hero-en">${esc(b.title.en)}</div>
-     <div class="bk-hero-s">Adapted for learners · ${b.chapters.length} chapters · ${readN} read</div></div>`;
-  if (b.meta) h += `<div class="bk-src">Retold from ${esc(b.meta.work || b.title.en)}${
+     <div class="bk-hero-s">${(b.chapters[0] || {}).register ? 'Public domain, verbatim' : 'Adapted for learners'} · ${b.chapters.length} chapters · ${readN} read</div></div>`;
+  if (b.meta) h += `<div class="bk-src">${(b.chapters[0] || {}).register ? 'From' : 'Retold from'} ${esc(b.meta.work || b.title.en)}${
      b.meta.author ? ' — ' + esc(b.meta.author) : ''}${b.meta.year ? ', ' + esc(b.meta.year) : ''}${
      b.meta.status ? ' · ' + esc(b.meta.status) : ''}.</div>`;
-  h += `<div class="unval"><b>Not checked by a native speaker.</b> This retelling is written by Claude —
+  // A book whose chapters carry register numbers was SELECTED, not written, and the honest
+  // banner is the one that shows what it was selected against.
+  const reg = (b.chapters[0] || {}).register;
+  h += reg
+    ? `<div class="unval"><b>Published Hebrew, chosen by measurement.</b> Every sentence is as
+       Project Ben-Yehuda transcribed it, vowels included — the English is ours. It was let onto
+       this shelf for reading like present-day Hebrew: ${reg.archaic_per_1k} archaic words and
+       ${reg.vav_consecutive_per_1k} biblical verb forms per thousand, ${reg.avg_sentence_words}-word
+       sentences, against the daily paper's 6.7, 0.0 and 12.4.</div>`
+    : `<div class="unval"><b>Not checked by a native speaker.</b> This retelling is written by Claude —
      every word’s root and meaning is from the lexicon, but read it for practice; don’t memorise the phrasing.</div>`;
   h += `<div class="ctl">
      <button class="tog go" onclick="location.hash='/text/${esc(b.chapters[0].id)}'">${readN ? 'Keep reading' : 'Start reading'}</button>
@@ -5075,7 +5083,8 @@ function reader(t) {
     const flush = () => { if (!group.length) return;
       h += '<div class="sent rd-para"><div class="ar">';
       group.forEach((si, gi) => { if (gi > 0) h += ' '; h += arHTML(t.sentences[si], si); });
-      h += '</div><p class="en">' + group.map(si => esc(t.sentences[si].en)).join(' ') + '</p>';
+      const en = group.map(si => t.sentences[si].en).filter(Boolean).join(' ');
+      h += '</div>' + (en ? '<p class="en">' + esc(en) + '</p>' : '');
       h += `<button class="peek" data-peek="${group[0]}">Peek at English</button></div>`; group = []; };
     t.sentences.forEach((s, si) => { if (cur_p !== null && s.p !== cur_p) flush(); cur_p = s.p; group.push(si); });
     flush();
@@ -5093,7 +5102,9 @@ function reader(t) {
     t.sentences.forEach((s, si) => {
       h += '<div class="sent"><div class="ar">';
       h += arHTML(s, si);
-      h += `</div><p class="en">${esc(s.en)}</p>`;
+      // A text can be real Hebrew with the English not written yet -- the Ben-Yehuda shelf
+      // arrives that way. An empty paragraph reads as a bug; no paragraph reads as Hebrew.
+      h += `</div>${s.en ? `<p class="en">${esc(s.en)}</p>` : ''}`;
       h += player(s.audio);
       h += `<button class="peek" data-peek="${si}">Peek at English</button></div>`;
     });

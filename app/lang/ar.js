@@ -600,6 +600,11 @@ function wadiAra(w) {
       return DAYS[d.getDay()] + '، ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
     },
     planGoal: 'all the way to holding your own at a Palestinian family dinner',
+    booksBlurb: 'Whole stories to read start to finish — graded for learners, in spoken '
+      + 'Palestinian, with tap-any-word for every word. A connected book, with vocabulary that '
+      + 'comes back again and again, sticks far better than scattered paragraphs. Read online or '
+      + 'download a PDF. The retellings are adapted by Claude (not native-checked); every '
+      + 'word\u2019s meaning and root is from the lexicon.',
     assessGreetings: 'Salaam, shukran, the basics',
     // The home page's own decoration: a tatreez band (Palestinian cross-stitch, the diamond
     // motif) and the Old City skyline. Both are inline SVG in the theme's variables -- no

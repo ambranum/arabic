@@ -25,7 +25,7 @@ import re
 
 import pandas as pd
 
-from phon import MAQAF, respell, unpoint
+from phon import DAGESH, MAQAF, clusters, respell, unpoint
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PARQUET = os.path.join(HERE, 'hebrew_lex.parquet')
@@ -181,6 +181,39 @@ class Lexicon:
         pointed = {unpoint(r['FORM']) for r in out if unpoint(r['FORM']) != str(r['FORM'])}
         return [r for r in out
                 if unpoint(r['FORM']) != str(r['FORM']) or str(r['FORM']) not in pointed]
+
+    def spells(self, tok, rec):
+        """Can this entry's pointing be the pointing of THIS token? -> the cut, or None.
+
+        For a source that is already pointed -- a Ben-Yehuda text, where the vowels are the
+        publisher's -- the pointing on the page is evidence the annotator does not otherwise
+        have, and it is the strongest kind: pointing IS the disambiguation. Comparing strings
+        does not work, because the token carries its particles (וְהַסְּנֶה) and the candidates are
+        stems (סְנֶה), so the particles are peeled first and only the stem is compared. Measured
+        on 4,400 tokens of pointed literature, this settles 51% of what would otherwise go to an
+        adjudicator: 50% of tokens needing a decision down to 29%.
+        """
+        from build_lex import he_norm
+        f, plain, cl_all = str(rec['FORM']), he_norm(unpoint(tok)), clusters(tok)
+        for stem, cut in self.stems(plain):
+            pre, _, suf = cut.partition('-')
+            cl = cl_all[len(pre):len(cl_all) - len(suf)] if suf else cl_all[len(pre):]
+            if not cl:
+                continue
+            mine = ''.join(c + m for c, m in cl)
+            if he_norm(unpoint(mine)) != stem:
+                continue
+            if f == mine or respell(unpoint(mine), f) == mine:
+                return cut
+            # A proclitic geminates the first consonant of what follows -- הַסְּנֶה, הַמִּצְרִים --
+            # and the citation form does not carry that dagesh. Without this the definite
+            # article alone defeated the comparison on a quarter of the tokens in a text.
+            if pre:
+                bare = ''.join(c + (m.replace(DAGESH, '') if i == 0 else m)
+                               for i, (c, m) in enumerate(cl))
+                if f == bare or respell(unpoint(bare), f) == bare:
+                    return cut
+        return None
 
     def cut_for(self, key, rec):
         """What had to be stripped from `key` for `rec` to be the reading -- '' if nothing.

@@ -27,8 +27,10 @@ module, better than the news, where we derive them. Measured on 4,400 tokens of 
 own pointing settles 51% of the ambiguity the annotator would otherwise have to send for
 adjudication, taking a text from ~50% of tokens needing a decision to 29%.
 
-    python3 pipeline/he_books.py --lang he            # what would be selected, and why
-    python3 pipeline/he_books.py --lang he --write    # write texts/he/book-*.json
+    python3 pipeline/he_books.py --lang he              # what would be selected, and why
+    python3 pipeline/he_books.py --lang he --write      # write texts/he/book-*.json
+    export ANTHROPIC_API_KEY=...
+    python3 pipeline/he_books.py --lang he --translate  # fill in the English
 """
 import argparse
 import csv
@@ -116,12 +118,74 @@ def slug(mid):
     return 'book-by-%s' % mid
 
 
+# The one thing here that is not measurement. A translation of a public-domain text is a much
+# weaker claim than writing the Hebrew would be -- the Hebrew is Project Ben-Yehuda's, verbatim,
+# and only the English is ours -- but it IS ours, and the artifact says so per text.
+MODEL = "claude-opus-4-8"
+BATCH = 25
+TRANSLATE_SCHEMA = {
+    "type": "object",
+    "properties": {"lines": {"type": "array", "items": {"type": "object", "properties": {
+        "i": {"type": "integer"}, "en": {"type": "string"}},
+        "required": ["i", "en"], "additionalProperties": False}}},
+    "required": ["lines"], "additionalProperties": False,
+}
+PROMPT = (
+    "Below are numbered sentences from a Hebrew short story, published before 1950 and now in "
+    "the public domain. Translate each into natural, plain English.\n\n"
+    "Rules that matter more than elegance:\n"
+    "- One English sentence per numbered Hebrew one, same number. Do not merge or split.\n"
+    "- Say what the Hebrew says. Do not add detail it does not contain, and do not drop detail "
+    "it does — a reader is going to check the English against the Hebrew word by word.\n"
+    "- Keep it readable for a learner: everyday words, present-day English, no archaism to "
+    "match the Hebrew's age.\n"
+    "- Dialogue stays dialogue, with its quotation marks.\n\n")
+
+
+def translate(paths_glob):
+    import net
+    c = net.need('anthropic').Anthropic()
+    for f in sorted(paths_glob):
+        d = json.load(open(f, encoding='utf-8'))
+        todo = [i for i, s in enumerate(d['sentences']) if not s.get('en')]
+        if not todo:
+            print('  %-28s already done' % os.path.basename(f))
+            continue
+        print('  %-28s %d sentences' % (os.path.basename(f), len(todo)))
+        for k in range(0, len(todo), BATCH):
+            chunk = todo[k:k + BATCH]
+            body = PROMPT + '\n'.join('%d. %s' % (i, d['sentences'][i]['ar']) for i in chunk)
+            r = c.messages.create(
+                model=MODEL, max_tokens=8000, thinking={"type": "adaptive"},
+                output_config={"effort": "high",
+                               "format": {"type": "json_schema", "schema": TRANSLATE_SCHEMA}},
+                messages=[{"role": "user", "content": body}])
+            got = json.loads(next(b.text for b in r.content if b.type == 'text'))['lines']
+            want = set(chunk)
+            for line in got:
+                if line['i'] in want and line['en'].strip():
+                    d['sentences'][line['i']]['en'] = line['en'].strip()
+            missing = [i for i in chunk if not d['sentences'][i]['en']]
+            if missing:
+                print('     !! %d of %d came back empty' % (len(missing), len(chunk)))
+        d['translation'] = 'English by Claude — the Hebrew is Project Ben-Yehuda\'s, verbatim'
+        json.dump(d, open(f, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        left = sum(1 for s in d['sentences'] if not s.get('en'))
+        print('     %d/%d translated%s' % (len(d['sentences']) - left, len(d['sentences']),
+                                           '' if not left else '  (%d still empty)' % left))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--write', action='store_true', help='write texts/he/book-*.json')
     ap.add_argument('--max', type=int, default=0, help='cap how many are written')
+    ap.add_argument('--translate', action='store_true',
+                    help='fill in the English (needs ANTHROPIC_API_KEY)')
     ap.add_argument('--lang', default=paths.LANG, choices=paths.LANGS, help=argparse.SUPPRESS)
     a = ap.parse_args()
+    if a.translate:
+        import glob
+        return translate(glob.glob(paths.texts('book-by-*.json'))) or 0
     if not os.path.exists(ZIP):
         raise SystemExit('!! no %s\n   Download txt.zip and pseudocatalogue.csv from\n'
                          '   github.com/projectbenyehuda/public_domain_dump/releases into %s'
@@ -161,8 +225,10 @@ def main():
         doc = {
             'id': slug(mid), 'kind': 'book-chapter', 'dialect': 'he', 'level': name,
             'shelf': shelf, 'book': 'benyehuda', 'chapter': written + 1,
-            'title': {'he': c['title'], 'en': c['title']},
-            'book_title': {'he': 'ספרייה עברית', 'en': 'The Hebrew shelf'},
+            # `ar` is the target script whatever the language, the same as every other text
+            # in the repo -- renaming it per language would fork every reader in the app.
+            'title': {'ar': c['title'], 'en': c['title']},
+            'book_title': {'ar': 'סִפְרִיָּה עִבְרִית', 'en': 'The Hebrew shelf'},
             'book_meta': {'work': c['title'], 'author': c['authors'],
                           'year': '', 'status': 'public domain — Project Ben-Yehuda volunteers',
                           'url': 'https://benyehuda.org' + (c.get('path') or '')},

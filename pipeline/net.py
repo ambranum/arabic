@@ -28,6 +28,22 @@ except Exception:
     HAVE_CERTIFI = False
 
 
+def need(module):
+    """Import a third-party dependency, or say which interpreter is missing it.
+
+    Same failure as the certifi one and the same cause: `python3` on the PATH is not the one
+    this project's dependencies are installed for. A bare ModuleNotFoundError does not say that.
+    """
+    try:
+        return __import__(module)
+    except ImportError:
+        raise SystemExit(
+            "\n!! %s is not installed for %s\n"
+            "   It is in requirements.txt, so this is probably the wrong interpreter.\n"
+            "   Install it here:  %s -m pip install -r requirements.txt"
+            % (module, sys.executable, sys.executable))
+
+
 def explain(e):
     """-> (what went wrong, what to do about it). ('', '') if this is not a transport failure."""
     msg = str(e)
