@@ -15,32 +15,38 @@ window.SOUNDS = {
     {
      "ar": "רַק",
      "tr": "rak",
-     "en": "only"
+     "en": "only",
+     "audio": "audio/he/sounds/w87be4b3052.mp3"
     },
     {
      "ar": "רוּחַ",
      "tr": "rúax",
-     "en": "Wind, a wind"
+     "en": "Wind, a wind",
+     "audio": "audio/he/sounds/w1498032988.mp3"
     },
     {
      "ar": "בֹּקֶר",
      "tr": "bóker",
-     "en": "A morning, dawn"
+     "en": "A morning, dawn",
+     "audio": "audio/he/sounds/wd00c07c149.mp3"
     },
     {
      "ar": "חָבֵר",
      "tr": "xaver",
-     "en": "A friend"
+     "en": "A friend",
+     "audio": "audio/he/sounds/we3bc7b650d.mp3"
     },
     {
      "ar": "עִיר",
      "tr": "ir",
-     "en": "city"
+     "en": "city",
+     "audio": "audio/he/sounds/we946f7835c.mp3"
     },
     {
      "ar": "אֶרֶץ",
      "tr": "érets",
-     "en": "country, land"
+     "en": "country, land",
+     "audio": "audio/he/sounds/wbb9aea7a47.mp3"
     }
    ]
   },
@@ -55,50 +61,60 @@ window.SOUNDS = {
      "ar": "חָלַם",
      "tr": "xalam",
      "en": "to dream",
+     "audio": "audio/he/sounds/w118e4a092d.mp3",
      "contrast": {
       "ar": "הָלַם",
       "tr": "halam",
-      "en": "to hit, strike"
+      "en": "to hit, strike",
+      "audio": "audio/he/sounds/w96f93a2c3d.mp3"
      }
     },
     {
      "ar": "חוֹל",
      "tr": "xol",
      "en": "sand",
+     "audio": "audio/he/sounds/w44ddf4675b.mp3",
      "contrast": {
       "ar": "קוֹל",
       "tr": "kol",
-      "en": "voice"
+      "en": "voice",
+      "audio": "audio/he/sounds/wddefcd7c1e.mp3"
      }
     },
     {
      "ar": "חַד",
      "tr": "xad",
      "en": "sharp",
+     "audio": "audio/he/sounds/w58ce3f4bd8.mp3",
      "contrast": {
       "ar": "כַּד",
       "tr": "kad",
-      "en": "jar, pitcher, pot"
+      "en": "jar, pitcher, pot",
+      "audio": "audio/he/sounds/w9f1b264b99.mp3"
      }
     },
     {
      "ar": "חֵץ",
      "tr": "xets",
      "en": "arrow",
+     "audio": "audio/he/sounds/wf9e51644d9.mp3",
      "contrast": {
       "ar": "קֵץ",
       "tr": "kets",
-      "en": "An end, a finish"
+      "en": "An end, a finish",
+      "audio": "audio/he/sounds/w7e464015c1.mp3"
      }
     },
     {
      "ar": "רַךְ",
      "tr": "rax",
      "en": "soft",
+     "audio": "audio/he/sounds/wee76c0b754.mp3",
      "contrast": {
       "ar": "רַק",
       "tr": "rak",
-      "en": "only"
+      "en": "only",
+      "audio": "audio/he/sounds/w87be4b3052.mp3"
      }
     }
    ]
@@ -114,70 +130,84 @@ window.SOUNDS = {
      "ar": "אַל",
      "tr": "al",
      "en": "not, do not",
+     "audio": "audio/he/sounds/wbdf8643487.mp3",
      "contrast": {
       "ar": "עַל",
       "tr": "al",
-      "en": "on, on top of"
+      "en": "on, on top of",
+      "audio": "audio/he/sounds/w0a2ad548c7.mp3"
      }
     },
     {
      "ar": "אַף",
      "tr": "af",
      "en": "nose",
+     "audio": "audio/he/sounds/we398636297.mp3",
      "contrast": {
       "ar": "עָף",
       "tr": "af",
-      "en": "to fly"
+      "en": "to fly",
+      "audio": "audio/he/sounds/wc9f1c1f30b.mp3"
      }
     },
     {
      "ar": "עֵט",
      "tr": "et",
      "en": "a pen",
+     "audio": "audio/he/sounds/w83afd6ca33.mp3",
      "contrast": {
       "ar": "עֵת",
       "tr": "et",
-      "en": "A time"
+      "en": "A time",
+      "audio": "audio/he/sounds/wab02868f53.mp3"
      }
     },
     {
      "ar": "כֵּן",
      "tr": "ken",
      "en": "yes",
+     "audio": "audio/he/sounds/wbec6cfeb0d.mp3",
      "contrast": {
       "ar": "קֵן",
       "tr": "ken",
-      "en": "nest"
+      "en": "nest",
+      "audio": "audio/he/sounds/wc2216d739b.mp3"
      }
     },
     {
      "ar": "סַם",
      "tr": "sam",
      "en": "drug, narcotic",
+     "audio": "audio/he/sounds/wb1d7d172bd.mp3",
      "contrast": {
       "ar": "שָׂם",
       "tr": "sam",
-      "en": "to put, place"
+      "en": "to put, place",
+      "audio": "audio/he/sounds/wa9ddd0fb16.mp3"
      }
     },
     {
      "ar": "צָב",
      "tr": "tsav",
      "en": "turtle, tortoise",
+     "audio": "audio/he/sounds/wbf6855ccc2.mp3",
      "contrast": {
       "ar": "צַו",
       "tr": "tsav",
-      "en": "decree, court order, injunction"
+      "en": "decree, court order, injunction",
+      "audio": "audio/he/sounds/wec41b3c17a.mp3"
      }
     },
     {
      "ar": "מָחָר",
      "tr": "maxar",
      "en": "tomorrow",
+     "audio": "audio/he/sounds/w0eea42b5dd.mp3",
      "contrast": {
       "ar": "מָכַר",
       "tr": "maxar",
-      "en": "to sell"
+      "en": "to sell",
+      "audio": "audio/he/sounds/wac566908b4.mp3"
      }
     }
    ],
@@ -194,40 +224,48 @@ window.SOUNDS = {
      "ar": "צָם",
      "tr": "tsam",
      "en": "to fast",
+     "audio": "audio/he/sounds/w5e61642a7a.mp3",
      "contrast": {
       "ar": "סַם",
       "tr": "sam",
-      "en": "drug, narcotic"
+      "en": "drug, narcotic",
+      "audio": "audio/he/sounds/wb1d7d172bd.mp3"
      }
     },
     {
      "ar": "צַר",
      "tr": "tsar",
      "en": "narrow",
+     "audio": "audio/he/sounds/w7b3bd05e80.mp3",
      "contrast": {
       "ar": "סָר",
       "tr": "sar",
-      "en": "to turn, to turn aside"
+      "en": "to turn, to turn aside",
+      "audio": "audio/he/sounds/w929578558a.mp3"
      }
     },
     {
      "ar": "נֵץ",
      "tr": "nets",
      "en": "hawk",
+     "audio": "audio/he/sounds/wb00cda08c1.mp3",
      "contrast": {
       "ar": "נֵס",
       "tr": "nes",
-      "en": "a miracle"
+      "en": "a miracle",
+      "audio": "audio/he/sounds/wbefef8dd7c.mp3"
      }
     },
     {
      "ar": "צָף",
      "tr": "tsaf",
      "en": "to float",
+     "audio": "audio/he/sounds/wd72a666307.mp3",
      "contrast": {
       "ar": "סַף",
       "tr": "saf",
-      "en": "threshold, verge"
+      "en": "threshold, verge",
+      "audio": "audio/he/sounds/w8da01c0b29.mp3"
      }
     }
    ]
@@ -243,50 +281,60 @@ window.SOUNDS = {
      "ar": "שַׁבָּת",
      "tr": "shabat",
      "en": "Shabbat, Sabbath",
+     "audio": "audio/he/sounds/wa27f5f8a9d.mp3",
      "contrast": {
       "ar": "שָׁבַת",
       "tr": "shavat",
-      "en": "to stop working, to rest"
+      "en": "to stop working, to rest",
+      "audio": "audio/he/sounds/w8dbff5e468.mp3"
      }
     },
     {
      "ar": "סַפָּר",
      "tr": "sapar",
      "en": "barber",
+     "audio": "audio/he/sounds/w65f8ff7f19.mp3",
      "contrast": {
       "ar": "סָפַר",
       "tr": "safar",
-      "en": "to count"
+      "en": "to count",
+      "audio": "audio/he/sounds/w64734e1bdc.mp3"
      }
     },
     {
      "ar": "צַבָּר",
      "tr": "tsabar",
      "en": "prickly pear cactus",
+     "audio": "audio/he/sounds/wba9096be73.mp3",
      "contrast": {
       "ar": "צָבַר",
       "tr": "tsavar",
-      "en": "to store"
+      "en": "to store",
+      "audio": "audio/he/sounds/w66c55c0909.mp3"
      }
     },
     {
      "ar": "נַפָּח",
      "tr": "napax",
      "en": "smith, blacksmith",
+     "audio": "audio/he/sounds/w777df9c7bd.mp3",
      "contrast": {
       "ar": "נָפַח",
       "tr": "nafax",
-      "en": "to blow, exhale"
+      "en": "to blow, exhale",
+      "audio": "audio/he/sounds/w4ed0c11c8f.mp3"
      }
     },
     {
      "ar": "טַבָּח",
      "tr": "tabax",
      "en": "butcher",
+     "audio": "audio/he/sounds/w3f1328a46f.mp3",
      "contrast": {
       "ar": "טָבַח",
       "tr": "tavax",
-      "en": "to slaughter"
+      "en": "to slaughter",
+      "audio": "audio/he/sounds/we240e01e89.mp3"
      }
     }
    ]
@@ -302,50 +350,60 @@ window.SOUNDS = {
      "ar": "פַּחַד",
      "tr": "páxad",
      "en": "fear",
+     "audio": "audio/he/sounds/w972ecd2b04.mp3",
      "contrast": {
       "ar": "פָּחַד",
       "tr": "paxád",
-      "en": "to fear"
+      "en": "to fear",
+      "audio": "audio/he/sounds/w10da2c62b5.mp3"
      }
     },
     {
      "ar": "כַּעַס",
      "tr": "káas",
      "en": "anger",
+     "audio": "audio/he/sounds/we0b2c5f8e4.mp3",
      "contrast": {
       "ar": "כָּעַס",
       "tr": "kaás",
-      "en": "To be angry"
+      "en": "To be angry",
+      "audio": "audio/he/sounds/wa8cf4189b7.mp3"
      }
     },
     {
      "ar": "זַחַל",
      "tr": "záxal",
      "en": "caterpillar",
+     "audio": "audio/he/sounds/wee2a041433.mp3",
      "contrast": {
       "ar": "זָחַל",
       "tr": "zaxál",
-      "en": "to crawl"
+      "en": "to crawl",
+      "audio": "audio/he/sounds/w801426ff11.mp3"
      }
     },
     {
      "ar": "בֶּרֶךְ",
      "tr": "bérex",
      "en": "knee",
+     "audio": "audio/he/sounds/wf0991758ae.mp3",
      "contrast": {
       "ar": "בֵּרֵךְ",
       "tr": "beréx",
-      "en": "to bless"
+      "en": "to bless",
+      "audio": "audio/he/sounds/wc872709cd5.mp3"
      }
     },
     {
      "ar": "עֹדֶף",
      "tr": "ódef",
      "en": "change",
+     "audio": "audio/he/sounds/w5dd5c1b32f.mp3",
      "contrast": {
       "ar": "עוֹדֵף",
       "tr": "odéf",
-      "en": "surplus, redundant"
+      "en": "surplus, redundant",
+      "audio": "audio/he/sounds/wdfc82f2c9d.mp3"
      }
     }
    ]
