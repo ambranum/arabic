@@ -170,11 +170,18 @@ RESOLVE_SCHEMA = {
             "items": {
                 "type": "object",
                 "properties": {
-                    "word": {"type": "string"},
-                    "id":   {"type": "string", "description": "a lexicon id from the options"},
+                    # The NUMBER, not the word. Echoing the word back was fine while the texts
+                    # were unpointed consonants; on pointed Hebrew it stopped matching, because
+                    # a word like הַרְבֵּה is a string of combining marks whose order is not
+                    # guaranteed by any encoder. 758 of 1,413 picks were thrown away on the
+                    # first Ben-Yehuda run for that reason alone -- every id was RIGHT and in
+                    # the word's own option list, and the key it came back under was not equal
+                    # to the key it went out under. A number cannot drift.
+                    "n":    {"type": "integer", "description": "the number of the word above"},
+                    "id":   {"type": "string", "description": "a lexicon id from its options"},
                     "why":  {"type": "string"},
                 },
-                "required": ["word", "id", "why"],
+                "required": ["n", "id", "why"],
                 "additionalProperties": False,
             },
         }
@@ -257,10 +264,10 @@ def resolve(c, ambiguous):
 
 def _resolve_batch(c, ambiguous):
     lines = []
-    for a in ambiguous:
+    for n, a in enumerate(ambiguous, 1):
         # The whole sentence, not just its translation: which sense a word has is decided by
         # the words around it, and the English is a paraphrase of all of them at once.
-        lines.append(f'\nWORD: {a["surface"]}   in: "{a.get("sent", "")}"'
+        lines.append(f'\n{n}. WORD: {a["surface"]}   in: "{a.get("sent", "")}"'
                      f'\n   means: "{a["en"]}"')
         if a.get("cut"):
             lines.append(f'   NOTE: matched after removing the prefix {a["cut"]}-, so the '
@@ -275,7 +282,8 @@ def _resolve_batch(c, ambiguous):
         messages=[{"role": "user", "content":
             "Each word below appeared in a sentence and matches several entries in the "
             + LEXICON_NAME + " lexicon. Pick the ONE id whose sense fits the sentence.\n\n"
-            "You MUST return an id that appears in that word's options. Do not invent ids.\n"
+            "Answer with the WORD'S NUMBER and one id from that word's own options. Do not "
+            "invent ids, and do not answer for a number that is not listed.\n"
             "Watch for causatives: 'sit down' vs 'make sb sit' are different entries.\n"
             # A word can be a word AND a particle plus a different word -- Hebrew's are single
             # letters -- and which one it is comes from the sentence, not from the spelling.
@@ -286,16 +294,19 @@ def _resolve_batch(c, ambiguous):
     )
     txt = next(b.text for b in r.content if b.type == "text")
     picks = json.loads(txt)["resolutions"]
-    valid = {a["surface"]: {o["id"] for o in a["options"]} for a in ambiguous}
     out = {}
     for p in picks:
-        w, i = p["word"], str(p["id"])
-        if w in valid and i in valid[w]:
-            out[w] = i
+        n, i = int(p.get("n", 0)), str(p["id"])
+        if not 1 <= n <= len(ambiguous):
+            print(f"  !! rejected id {i} — no word numbered {n} in this batch")
+            continue
+        a = ambiguous[n - 1]
+        if i in {o["id"] for o in a["options"]}:
+            out[a["surface"]] = i
         else:
             # A hallucinated id would silently poison the lexicon layer. Drop it and
             # leave the word flagged rather than accept an unverifiable answer.
-            print(f"  !! rejected id {i} for {w} — not in its candidate list")
+            print(f"  !! rejected id {i} for {a['surface']} — not in its candidate list")
     return out
 
 def ingest(src, audio=False):
