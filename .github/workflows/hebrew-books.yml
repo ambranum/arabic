@@ -1,4 +1,4 @@
-name: Hebrew books
+name: Hebrew content
 
 # The Ben-Yehuda shelf, finished off where the key already lives.
 #
@@ -27,7 +27,11 @@ on:
         type: boolean
         default: false
       audio:
-        description: 'Voice every sentence (~687 clips, ElevenLabs)'
+        description: 'Voice every book sentence — done 2026-08-30 (687 clips)'
+        type: boolean
+        default: false
+      vocab:
+        description: 'Voice every word for the flashcards (~1,550 clips, ElevenLabs)'
         type: boolean
         default: true
 
@@ -94,6 +98,15 @@ jobs:
           done
           exit $rc
 
+      # Every word the app's own content contains, one clip each, so a flashcard plays the
+      # pinned voice instead of the browser's. Drawn from the ingested texts, so it must run
+      # after them; cached by a hash of the lemma, so a re-run only pays for what is new.
+      - name: Voice the vocabulary
+        if: inputs.vocab
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: python3 pipeline/vocab_audio.py --lang he
+
       - name: Rebuild the Hebrew app data
         run: python3 pipeline/build_app.py --lang he
 
@@ -103,7 +116,7 @@ jobs:
           git config user.email "actions@github.com"
           git add texts/ build/ app/ pipeline/resolutions.he.json
           git diff --staged --quiet && { echo "nothing changed"; exit 0; }
-          git commit -m "Hebrew books: ${{ inputs.audio && 'audio' || 'English and annotation' }}"
+          git commit -m "Hebrew: ${{ inputs.vocab && 'vocabulary audio' || (inputs.audio && 'book audio' || 'English and annotation') }}"
           for attempt in 1 2 3 4 5 6; do
             if git pull --rebase --autostash origin main; then
               git push && exit 0

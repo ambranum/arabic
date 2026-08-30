@@ -49,7 +49,7 @@ window.LANGUAGES = [
     blurb: 'Spoken Israeli Hebrew. Sounds, verbs, the dictionary, the daily paper and the Bible — the rest is being built.',
     font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
     data: ['library', 'verbs', 'sounds', 'reactions', 'grammar', 'curriculum',
-           'assess', 'bible-index'],
+           'assess', 'vocab_audio', 'bible-index'],
     // What actually exists, and nothing else. Hebrew arrives with the things Stage A proved
     // could be LOOKED UP rather than written -- 2,084 pointed paradigms and a 12,662-lemma
     // dictionary -- the sections built on them, the daily paper written fresh each morning by
