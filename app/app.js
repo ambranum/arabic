@@ -2427,14 +2427,13 @@ function soundsSection(sub) {
 
 function soundsHome() {
   $('title').textContent = 'Sounds';
+  // The blurb and the caveat are the LANGUAGE'S, from its sounds.json: they name its letters and
+  // its dialect, and a page that told a Hebrew learner about ع and Ramallah would be worse than
+  // one that said nothing.
   let h = `<div class="lvl-row">${lvlTagFor('sound', {})}
       <a class="lvl-what" href="#/plan/journey">what do these mean?</a></div>
-    <p class="hint">Six contrasts that trip up every learner of city Palestinian. Get these into
-    your ear and your mouth <b>first</b> — a sound is much harder to fix once it sets. Everything here is
-    the <b>urban</b> pronunciation (Jerusalem / Ramallah / Nablus), matching the app's voice.</p>
-    <div class="unval"><b>Read the tip, then listen.</b> The clips are synthesized for reference —
-    for the throat sounds (ع، ح) and the heavy letters, a real speaker beats any voice model, so treat
-    those clips as a hint, not gospel.</div>
+    ${SND.intro ? `<p class="hint">${SND.intro}</p>` : ''}
+    ${SND.caveat ? `<div class="unval">${SND.caveat}</div>` : ''}
     <div class="vtiles">`;
   h += (SND.lessons || []).map(L => `<button class="vtile wide" onclick="location.hash='/sounds/${L.id}'">
       <div class="vtile-h"><span class="vtile-t">${esc(L.en)}</span><span class="vtile-n" dir="rtl">${esc(L.ar)}</span></div>
@@ -2452,14 +2451,16 @@ function soundsLesson(L) {
   let h = `<div class="snd-target"><span dir="rtl">${esc(L.ar)}</span> · ${esc(L.target)}</div>
     <div class="note snd-tip">${esc(L.tip)}</div>
     <div class="sec">Minimal pairs & examples</div>`;
+  // Some lessons pair words that sound ALIKE — Hebrew's א/ע, ת/ט, כּ/ק are one sound each, and
+  // that is the lesson. Printing ≠ between them would teach the opposite of what the page says.
   h += L.examples.map(e => `<div class="snd-row">
       <div class="snd-cell">${_sndCell(e)}</div>
-      ${e.contrast ? `<div class="snd-vs">≠</div><div class="snd-cell dim">${_sndCell(e.contrast)}</div>` : ''}
+      ${e.contrast ? `<div class="snd-vs">${L.same ? '=' : '≠'}</div><div class="snd-cell dim">${_sndCell(e.contrast)}</div>` : ''}
     </div>`).join('');
   const anyAudio = L.examples.some(e => e.audio || (e.contrast && e.contrast.audio));
   if (!anyAudio) h += `<p class="hint" style="margin-top:12px">🔊 Audio is pending — for now, use the
      romanization and the tip. (Run <code>pipeline/sounds.py --audio</code> to add reference clips.)</p>`;
-  else h += earTestHTML(L);
+  else if (!L.same) h += earTestHTML(L);   // no ear test on homophones: that IS the lesson
   h += `<div class="sec" style="margin-top:22px">Other sounds</div><div class="ctl">` +
     (SND.lessons || []).map(x => `<button class="tog"${x.id === L.id ? ' aria-pressed="true"' : ''}
         onclick="location.hash='/sounds/${x.id}'">${esc(x.target)}</button>`).join('') + `</div>`;

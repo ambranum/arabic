@@ -440,10 +440,15 @@ def phon(word, verb=False):
 ACUTE = {'a': 'á', 'e': 'é', 'i': 'í', 'o': 'ó', 'u': 'ú'}
 
 
-def phon_stressed(word, syllable_from_end=1):
-    """Romanization with non-final stress marked. syllable_from_end=1 means milra (default)."""
+def phon_stressed(word, syllable_from_end=1, mark_final=False):
+    """Romanization with non-final stress marked. syllable_from_end=1 means milra (default).
+
+    `mark_final` marks it even when it IS final, which is normally left unmarked because final
+    is the default and marking the default everywhere would be noise. The exception is a lesson
+    ABOUT stress, where the pair only teaches anything if both members show where the beat is.
+    """
     out, nuclei = _realize(word)
-    if syllable_from_end > 1 and len(nuclei) >= syllable_from_end:
+    if (syllable_from_end > 1 or mark_final) and len(nuclei) >= syllable_from_end:
         at = nuclei[-syllable_from_end]
         out[at] = ACUTE.get(out[at], out[at])
     return ''.join(out)

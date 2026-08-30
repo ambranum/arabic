@@ -1,0 +1,418 @@
+{
+ "id": "sounds-he",
+ "title": {
+  "ar": "צלילים",
+  "en": "Sounds"
+ },
+ "kind": "sounds",
+ "dialect": "he",
+ "intro": "Six things about Hebrew sound that trip up English speakers. Get these into your ear and your mouth <b>first</b> — a sound is much harder to fix once it sets. Everything here is general Israeli pronunciation, the same as the app's voice.",
+ "caveat": "<b>Read the tip, then listen.</b> Every word, its vowels, its romanization and its meaning are the lexicon's. The clips are synthesized for reference — for ר and the throat sounds a real speaker beats any voice model, so treat those as a hint, not gospel.",
+ "rationale": "Phase 0. Six things about Hebrew sound that an English speaker gets wrong, chosen for what changes a word rather than for what sounds foreign.",
+ "provenance_note": "The lesson set and the tips are curated teaching. Every WORD is looked up in the lexicon by pipeline/he_sounds.py -- pointing, gloss and id from the entry, romanization derived from the pointing by spike/he/phon.py, stress from the entry when Wiktionary marks it. The pairs were found by sweeping the lexicon for entries whose pronunciations differ in exactly one segment, or in nothing but the stress.",
+ "lessons": [
+  {
+   "id": "resh",
+   "en": "ר — the r is in the throat, not on the tongue",
+   "ar": "ריש",
+   "target": "ר = uvular r",
+   "tip": "Israeli ר is made at the very back of the mouth, where you gargle — much closer to French or German r than to English. An English \"r\" (tongue curled up in the middle of the mouth) is the single loudest giveaway of a foreign accent in Hebrew, and it is the easiest one to fix: leave the tip of your tongue behind your bottom teeth and let the back of the tongue do the work. It is the same sound at the start, middle and end of a word — there is no silent ר.",
+   "examples": [
+    {
+     "ar": "רַק",
+     "tr": "rak",
+     "en": "only",
+     "id": "3055-1"
+    },
+    {
+     "ar": "רוּחַ",
+     "tr": "rúax",
+     "en": "Wind, a wind",
+     "id": "324-1"
+    },
+    {
+     "ar": "בֹּקֶר",
+     "tr": "bóker",
+     "en": "A morning, dawn",
+     "id": "1639-1"
+    },
+    {
+     "ar": "חָבֵר",
+     "tr": "xaver",
+     "en": "A friend",
+     "id": "846-1"
+    },
+    {
+     "ar": "עִיר",
+     "tr": "ir",
+     "en": "city",
+     "id": "1902-1"
+    },
+    {
+     "ar": "אֶרֶץ",
+     "tr": "érets",
+     "en": "country, land",
+     "id": "6-1"
+    }
+   ]
+  },
+  {
+   "id": "het-khaf",
+   "en": "ח and כ — one sound, and it is not h and not k",
+   "ar": "חית וכף",
+   "target": "ח, כ = kh",
+   "tip": "Both letters are the rasp at the back of the throat, the sound at the end of Bach or loch — written x in the romanization here, the way the rest of the app writes it. ח used to be a deeper, pharyngeal sound and still is for some speakers, but in general Israeli speech ח and כ (without its dot) are the same. The two mistakes to avoid are saying an English h, which turns חוֹל \"sand\" into a different word, and saying k, which turns it into another one. Each pair below is a real pair: the only difference is this sound.",
+   "examples": [
+    {
+     "ar": "חָלַם",
+     "tr": "xalam",
+     "en": "to dream",
+     "id": "3174-1",
+     "contrast": {
+      "ar": "הָלַם",
+      "tr": "halam",
+      "en": "to hit, strike",
+      "id": "3438-1"
+     }
+    },
+    {
+     "ar": "חוֹל",
+     "tr": "xol",
+     "en": "sand",
+     "id": "3943-1",
+     "contrast": {
+      "ar": "קוֹל",
+      "tr": "kol",
+      "en": "voice",
+      "id": "3563-1"
+     }
+    },
+    {
+     "ar": "חַד",
+     "tr": "xad",
+     "en": "sharp",
+     "id": "1572-1",
+     "contrast": {
+      "ar": "כַּד",
+      "tr": "kad",
+      "en": "jar, pitcher, pot",
+      "id": "1581-1"
+     }
+    },
+    {
+     "ar": "חֵץ",
+     "tr": "xets",
+     "en": "arrow",
+     "id": "8882-1",
+     "contrast": {
+      "ar": "קֵץ",
+      "tr": "kets",
+      "en": "An end, a finish",
+      "id": "9762-1"
+     }
+    },
+    {
+     "ar": "רַךְ",
+     "tr": "rax",
+     "en": "soft",
+     "id": "4154-1",
+     "contrast": {
+      "ar": "רַק",
+      "tr": "rak",
+      "en": "only",
+      "id": "3055-1"
+     }
+    }
+   ]
+  },
+  {
+   "id": "same-sound",
+   "en": "The letters that sound identical",
+   "ar": "אותיות זהות",
+   "target": "א=ע  ת=ט  כּ=ק  שׂ=ס  ב=ו  ח=כ",
+   "tip": "Hebrew keeps letters for distinctions the modern language stopped making, so several pairs are now pronounced exactly alike. Nothing in the sound tells you which one to write — you learn the spelling with the word, the way English speakers learn there / their. This is the good news for listening and the bad news for spelling: every pair below is two DIFFERENT words that sound the same.",
+   "same": true,
+   "examples": [
+    {
+     "ar": "אַל",
+     "tr": "al",
+     "en": "not, do not",
+     "id": "362-1",
+     "contrast": {
+      "ar": "עַל",
+      "tr": "al",
+      "en": "on, on top of",
+      "id": "547-1"
+     }
+    },
+    {
+     "ar": "אַף",
+     "tr": "af",
+     "en": "nose",
+     "id": "918-1",
+     "contrast": {
+      "ar": "עָף",
+      "tr": "af",
+      "en": "to fly",
+      "id": "4071-1"
+     }
+    },
+    {
+     "ar": "עֵט",
+     "tr": "et",
+     "en": "a pen",
+     "id": "1436-1",
+     "contrast": {
+      "ar": "עֵת",
+      "tr": "et",
+      "en": "A time",
+      "id": "6993-1"
+     }
+    },
+    {
+     "ar": "כֵּן",
+     "tr": "ken",
+     "en": "yes",
+     "id": "1460-1",
+     "contrast": {
+      "ar": "קֵן",
+      "tr": "ken",
+      "en": "nest",
+      "id": "4088-1"
+     }
+    },
+    {
+     "ar": "סַם",
+     "tr": "sam",
+     "en": "drug, narcotic",
+     "id": "183-1",
+     "contrast": {
+      "ar": "שָׂם",
+      "tr": "sam",
+      "en": "to put, place",
+      "id": "2002-1"
+     }
+    },
+    {
+     "ar": "צָב",
+     "tr": "tsav",
+     "en": "turtle, tortoise",
+     "id": "3282-1",
+     "contrast": {
+      "ar": "צַו",
+      "tr": "tsav",
+      "en": "decree, court order, injunction",
+      "id": "6207-1"
+     }
+    },
+    {
+     "ar": "מָחָר",
+     "tr": "maxar",
+     "en": "tomorrow",
+     "id": "2374-1",
+     "contrast": {
+      "ar": "מָכַר",
+      "tr": "maxar",
+      "en": "to sell",
+      "id": "10157-1"
+     }
+    }
+   ]
+  },
+  {
+   "id": "tsadi",
+   "en": "צ — one letter, two English sounds",
+   "ar": "צדי",
+   "target": "צ = ts",
+   "tip": "צ is ts, the sound at the end of cats — both consonants, together, including at the start of a word where English never puts them. That is the hard part: English has no word beginning ts-, so the instinct is to drop the t and say s. Do that and צָם \"he fasted\" becomes סַם \"a drug\". Practise from the end: say \"cats\", then \"cats am\", then drop the ca-.",
+   "examples": [
+    {
+     "ar": "צָם",
+     "tr": "tsam",
+     "en": "to fast",
+     "id": "9927-1",
+     "contrast": {
+      "ar": "סַם",
+      "tr": "sam",
+      "en": "drug, narcotic",
+      "id": "183-1"
+     }
+    },
+    {
+     "ar": "צַר",
+     "tr": "tsar",
+     "en": "narrow",
+     "id": "5674-1",
+     "contrast": {
+      "ar": "סָר",
+      "tr": "sar",
+      "en": "to turn, to turn aside",
+      "id": "9953-1"
+     }
+    },
+    {
+     "ar": "נֵץ",
+     "tr": "nets",
+     "en": "hawk",
+     "id": "11262-1",
+     "contrast": {
+      "ar": "נֵס",
+      "tr": "nes",
+      "en": "a miracle",
+      "id": "3799-1"
+     }
+    },
+    {
+     "ar": "צָף",
+     "tr": "tsaf",
+     "en": "to float",
+     "id": "11353-1",
+     "contrast": {
+      "ar": "סַף",
+      "tr": "saf",
+      "en": "threshold, verge",
+      "id": "9007-1"
+     }
+    }
+   ]
+  },
+  {
+   "id": "dagesh",
+   "en": "The dot inside the letter changes it",
+   "ar": "דגש",
+   "target": "בּ/ב · כּ/כ · פּ/פ",
+   "tip": "Three letters are two sounds each, and a dot in the middle is what tells them apart: בּ is b and ב is v, כּ is k and כ is kh, פּ is p and פ is f. Unpointed writing leaves the dot out, so the reader has to know the word — one more reason to learn words with their vowels. Each pair below is the SAME three root letters: only the dot moves.",
+   "examples": [
+    {
+     "ar": "שַׁבָּת",
+     "tr": "shabat",
+     "en": "Shabbat, Sabbath",
+     "id": "1082-1",
+     "contrast": {
+      "ar": "שָׁבַת",
+      "tr": "shavat",
+      "en": "to stop working, to rest",
+      "id": "1083-1"
+     }
+    },
+    {
+     "ar": "סַפָּר",
+     "tr": "sapar",
+     "en": "barber",
+     "id": "1116-1",
+     "contrast": {
+      "ar": "סָפַר",
+      "tr": "safar",
+      "en": "to count",
+      "id": "1117-1"
+     }
+    },
+    {
+     "ar": "צַבָּר",
+     "tr": "tsabar",
+     "en": "prickly pear cactus",
+     "id": "3380-1",
+     "contrast": {
+      "ar": "צָבַר",
+      "tr": "tsavar",
+      "en": "to store",
+      "id": "3381-1"
+     }
+    },
+    {
+     "ar": "נַפָּח",
+     "tr": "napax",
+     "en": "smith, blacksmith",
+     "id": "916-1",
+     "contrast": {
+      "ar": "נָפַח",
+      "tr": "nafax",
+      "en": "to blow, exhale",
+      "id": "914-1"
+     }
+    },
+    {
+     "ar": "טַבָּח",
+     "tr": "tabax",
+     "en": "butcher",
+     "id": "2597-1",
+     "contrast": {
+      "ar": "טָבַח",
+      "tr": "tavax",
+      "en": "to slaughter",
+      "id": "2596-1"
+     }
+    }
+   ]
+  },
+  {
+   "id": "stress",
+   "en": "Where the beat falls — milra and mil'el",
+   "ar": "מלרע ומלעיל",
+   "target": "final vs next-to-last",
+   "tip": "Hebrew stresses the LAST syllable by default — that is milra, and it is why the romanization here only marks the stress when it is somewhere else. The exception is common enough to matter: mil'el, stress on the next-to-last syllable, which is where a great many everyday nouns sit. Same root, same letters, and the beat is the only thing telling the noun from the verb: PÁ-xad is fear, pa-XÁD is he was afraid. Say them wrong and you are understood, but you sound like you are reading.",
+   "examples": [
+    {
+     "ar": "פַּחַד",
+     "tr": "páxad",
+     "en": "fear",
+     "id": "1763-1",
+     "contrast": {
+      "ar": "פָּחַד",
+      "tr": "paxád",
+      "en": "to fear",
+      "id": "1764-1"
+     }
+    },
+    {
+     "ar": "כַּעַס",
+     "tr": "káas",
+     "en": "anger",
+     "id": "1836-1",
+     "contrast": {
+      "ar": "כָּעַס",
+      "tr": "kaás",
+      "en": "To be angry",
+      "id": "1837-1"
+     }
+    },
+    {
+     "ar": "זַחַל",
+     "tr": "záxal",
+     "en": "caterpillar",
+     "id": "1816-1",
+     "contrast": {
+      "ar": "זָחַל",
+      "tr": "zaxál",
+      "en": "to crawl",
+      "id": "1817-1"
+     }
+    },
+    {
+     "ar": "בֶּרֶךְ",
+     "tr": "bérex",
+     "en": "knee",
+     "id": "600-1",
+     "contrast": {
+      "ar": "בֵּרֵךְ",
+      "tr": "beréx",
+      "en": "to bless",
+      "id": "9561-1"
+     }
+    },
+    {
+     "ar": "עֹדֶף",
+     "tr": "ódef",
+     "en": "change",
+     "id": "1896-1",
+     "contrast": {
+      "ar": "עוֹדֵף",
+      "tr": "odéf",
+      "en": "surplus, redundant",
+      "id": "1897-1"
+     }
+    }
+   ]
+  }
+ ]
+}

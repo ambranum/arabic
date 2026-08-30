@@ -11,12 +11,12 @@ Run:
     python3 pipeline/sounds.py                 # data only
     export ELEVENLABS_API_KEY=...; python3 pipeline/sounds.py --audio
 """
-import json, os, sys, argparse, ssl, urllib.request
+import json, os, sys, argparse, hashlib, ssl, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, HERE)
-from voice import voice_id
+from voice import language_code, model_id, voice_id
 
 try:
     import certifi
@@ -34,12 +34,19 @@ OUT_JS = paths.data('sounds.js')
 AUDIO_DIR = paths.audio('sounds')
 
 
-def tts(text, path, key, voice, model='eleven_multilingual_v2'):
+def tts(text, path, key, voice):
     if os.path.exists(path):
         return True, 'cached'
+    # The model and the language tag are the LANGUAGE's, from voice.py, not this file's: Hebrew
+    # is absent from eleven_multilingual_v2 entirely, and language_code is rejected by it. A
+    # hardcoded model here is how a second language gets read aloud in the wrong one.
+    body = {'text': text, 'model_id': model_id()}
+    lc = language_code()
+    if lc:
+        body['language_code'] = lc
     req = urllib.request.Request(
         f'https://api.elevenlabs.io/v1/text-to-speech/{voice}',
-        data=json.dumps({'text': text, 'model_id': model}).encode(),
+        data=json.dumps(body).encode(),
         headers={'xi-api-key': key, 'Content-Type': 'application/json'})
     try:
         with urllib.request.urlopen(req, timeout=90, context=_SSL) as r:
@@ -52,6 +59,7 @@ def tts(text, path, key, voice, model='eleven_multilingual_v2'):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--audio', action='store_true', help='synthesize reference clips (needs ELEVENLABS_API_KEY)')
+    ap.add_argument('--lang', default=paths.LANG, choices=paths.LANGS, help=argparse.SUPPRESS)
     a = ap.parse_args()
 
     d = json.load(open(SRC, encoding='utf-8'))
@@ -66,7 +74,10 @@ def main():
     k = [0]
 
     def clip_for(ar):
-        rid = 's%d' % k[0]
+        # Named for the WORD, not for its position in the list. Index names meant that inserting
+        # a lesson silently re-pointed every clip after it at a different word -- the file is
+        # still there, still plays, and now says something else.
+        rid = 'w%s' % hashlib.sha1(ar.encode()).hexdigest()[:10]
         k[0] += 1
         path = os.path.join(AUDIO_DIR, rid + '.mp3')
         if os.path.exists(path):
@@ -94,8 +105,11 @@ def main():
                     ce['audio'] = cau
                 e['contrast'] = ce
             exs.append(e)
-        lessons.append({'id': L['id'], 'en': L['en'], 'ar': L['ar'], 'target': L['target'],
-                        'tip': L['tip'], 'examples': exs})
+        les = {'id': L['id'], 'en': L['en'], 'ar': L['ar'], 'target': L['target'],
+               'tip': L['tip'], 'examples': exs}
+        if L.get('same'):
+            les['same'] = True          # the pair sounds ALIKE; the app must not print "≠"
+        lessons.append(les)
 
     os.makedirs(os.path.dirname(OUT_JS), exist_ok=True)
     with open(OUT_JS, 'w', encoding='utf-8') as f:
@@ -103,7 +117,8 @@ def main():
         f.write('// Phase-0 pronunciation contrasts, urban Palestinian (matches pipeline/subdialect.py).\n')
         f.write('// Audio, when present, is SYNTHESIZED reference — trust the tip for ع/ح/emphatics.\n')
         f.write('window.SOUNDS = ')
-        json.dump({'lessons': lessons}, f, ensure_ascii=False, indent=1)
+        json.dump({'intro': d.get('intro', ''), 'caveat': d.get('caveat', ''),
+                   'lessons': lessons}, f, ensure_ascii=False, indent=1)
         f.write(';\n')
 
     voiced = sum(1 for L in lessons for e in L['examples']

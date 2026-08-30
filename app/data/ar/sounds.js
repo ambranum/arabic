@@ -2,6 +2,8 @@
 // Phase-0 pronunciation contrasts, urban Palestinian (matches pipeline/subdialect.py).
 // Audio, when present, is SYNTHESIZED reference — trust the tip for ع/ح/emphatics.
 window.SOUNDS = {
+ "intro": "Six contrasts that trip up every learner of city Palestinian. Get these into your ear and your mouth <b>first</b> — a sound is much harder to fix once it sets. Everything here is the <b>urban</b> pronunciation (Jerusalem / Ramallah / Nablus), matching the app's voice.",
+ "caveat": "<b>Read the tip, then listen.</b> The clips are synthesized for reference — for the throat sounds (ع، ح) and the heavy letters, a real speaker beats any voice model, so treat those clips as a hint, not gospel.",
  "lessons": [
   {
    "id": "qaf",
@@ -14,49 +16,49 @@ window.SOUNDS = {
      "ar": "قلب",
      "tr": "'alb",
      "en": "heart",
-     "audio": "audio/ar/sounds/s0.mp3",
+     "audio": "audio/ar/sounds/w82f1b4b7d9.mp3",
      "contrast": {
       "ar": "كلب",
       "tr": "kalb",
       "en": "dog",
-      "audio": "audio/ar/sounds/s1.mp3"
+      "audio": "audio/ar/sounds/wec0c56b3b9.mp3"
      }
     },
     {
      "ar": "قال",
      "tr": "'aal",
      "en": "he said",
-     "audio": "audio/ar/sounds/s2.mp3",
+     "audio": "audio/ar/sounds/wdca6d999de.mp3",
      "contrast": {
       "ar": "كال",
       "tr": "kaal",
       "en": "he measured",
-      "audio": "audio/ar/sounds/s3.mp3"
+      "audio": "audio/ar/sounds/wa7f3dba208.mp3"
      }
     },
     {
      "ar": "قهوة",
      "tr": "'ahwe",
      "en": "coffee",
-     "audio": "audio/ar/sounds/s4.mp3"
+     "audio": "audio/ar/sounds/w974c2ea911.mp3"
     },
     {
      "ar": "قدّيش",
      "tr": "'addēsh",
      "en": "how much",
-     "audio": "audio/ar/sounds/s5.mp3"
+     "audio": "audio/ar/sounds/w694e8a2ea9.mp3"
     },
     {
      "ar": "وقت",
      "tr": "wa't",
      "en": "time",
-     "audio": "audio/ar/sounds/s6.mp3"
+     "audio": "audio/ar/sounds/w5d5eedfa60.mp3"
     },
     {
      "ar": "حقّ",
      "tr": "7a''",
      "en": "right / truth",
-     "audio": "audio/ar/sounds/s7.mp3"
+     "audio": "audio/ar/sounds/wfdf198ca28.mp3"
     }
    ]
   },
@@ -71,37 +73,37 @@ window.SOUNDS = {
      "ar": "عين",
      "tr": "ʿēn",
      "en": "eye",
-     "audio": "audio/ar/sounds/s8.mp3"
+     "audio": "audio/ar/sounds/w675b46a5bc.mp3"
     },
     {
      "ar": "عربي",
      "tr": "ʿarabi",
      "en": "Arabic",
-     "audio": "audio/ar/sounds/s9.mp3"
+     "audio": "audio/ar/sounds/w404841693f.mp3"
     },
     {
      "ar": "معليش",
      "tr": "maʿlēsh",
      "en": "never mind",
-     "audio": "audio/ar/sounds/s10.mp3"
+     "audio": "audio/ar/sounds/w0381bade7c.mp3"
     },
     {
      "ar": "بعرف",
      "tr": "baʿref",
      "en": "I know",
-     "audio": "audio/ar/sounds/s11.mp3"
+     "audio": "audio/ar/sounds/wf805c789b2.mp3"
     },
     {
      "ar": "ساعة",
      "tr": "saaʿa",
      "en": "hour / clock",
-     "audio": "audio/ar/sounds/s12.mp3"
+     "audio": "audio/ar/sounds/w40add5d3e4.mp3"
     },
     {
      "ar": "أربعة",
      "tr": "arbaʿa",
      "en": "four",
-     "audio": "audio/ar/sounds/s13.mp3"
+     "audio": "audio/ar/sounds/wa28f76c6d2.mp3"
     }
    ]
   },
@@ -116,43 +118,43 @@ window.SOUNDS = {
      "ar": "حال",
      "tr": "7aal",
      "en": "state / condition",
-     "audio": "audio/ar/sounds/s14.mp3",
+     "audio": "audio/ar/sounds/wc99849f27f.mp3",
      "contrast": {
       "ar": "خال",
       "tr": "khaal",
       "en": "maternal uncle",
-      "audio": "audio/ar/sounds/s15.mp3"
+      "audio": "audio/ar/sounds/wd186bd9833.mp3"
      }
     },
     {
      "ar": "حمار",
      "tr": "7maar",
      "en": "donkey",
-     "audio": "audio/ar/sounds/s16.mp3"
+     "audio": "audio/ar/sounds/w856addfc45.mp3"
     },
     {
      "ar": "صحّة",
      "tr": "Sa77a",
      "en": "health",
-     "audio": "audio/ar/sounds/s17.mp3"
+     "audio": "audio/ar/sounds/wc633cd550e.mp3"
     },
     {
      "ar": "خبز",
      "tr": "khubez",
      "en": "bread",
-     "audio": "audio/ar/sounds/s18.mp3"
+     "audio": "audio/ar/sounds/w0ff3c361e2.mp3"
     },
     {
      "ar": "أخ",
      "tr": "akh",
      "en": "brother",
-     "audio": "audio/ar/sounds/s19.mp3"
+     "audio": "audio/ar/sounds/w453a321e03.mp3"
     },
     {
      "ar": "هدول",
      "tr": "hadōl",
      "en": "these",
-     "audio": "audio/ar/sounds/s20.mp3"
+     "audio": "audio/ar/sounds/w5230b589d9.mp3"
     }
    ]
   },
@@ -167,49 +169,49 @@ window.SOUNDS = {
      "ar": "طين",
      "tr": "Tiin",
      "en": "mud",
-     "audio": "audio/ar/sounds/s21.mp3",
+     "audio": "audio/ar/sounds/w97e7ab15ca.mp3",
      "contrast": {
       "ar": "تين",
       "tr": "tiin",
       "en": "figs",
-      "audio": "audio/ar/sounds/s22.mp3"
+      "audio": "audio/ar/sounds/w98ec5b658b.mp3"
      }
     },
     {
      "ar": "صار",
      "tr": "Saar",
      "en": "it happened / became",
-     "audio": "audio/ar/sounds/s23.mp3",
+     "audio": "audio/ar/sounds/w5ff1dd747b.mp3",
      "contrast": {
       "ar": "سار",
       "tr": "saar",
       "en": "he walked",
-      "audio": "audio/ar/sounds/s24.mp3"
+      "audio": "audio/ar/sounds/wf957d191ae.mp3"
      }
     },
     {
      "ar": "صيف",
      "tr": "Sēf",
      "en": "summer",
-     "audio": "audio/ar/sounds/s25.mp3"
+     "audio": "audio/ar/sounds/wd81e09eee8.mp3"
     },
     {
      "ar": "طاولة",
      "tr": "Taawle",
      "en": "table",
-     "audio": "audio/ar/sounds/s26.mp3"
+     "audio": "audio/ar/sounds/w04df45911d.mp3"
     },
     {
      "ar": "ضهر",
      "tr": "Dahr",
      "en": "back / noon",
-     "audio": "audio/ar/sounds/s27.mp3"
+     "audio": "audio/ar/sounds/wa76ed4a973.mp3"
     },
     {
      "ar": "بطّيخ",
      "tr": "baTTiikh",
      "en": "watermelon",
-     "audio": "audio/ar/sounds/s28.mp3"
+     "audio": "audio/ar/sounds/w4a2f18adaf.mp3"
     }
    ]
   },
@@ -224,37 +226,37 @@ window.SOUNDS = {
      "ar": "تلاتة",
      "tr": "tlaate",
      "en": "three (ثلاثة)",
-     "audio": "audio/ar/sounds/s29.mp3"
+     "audio": "audio/ar/sounds/w2d1560d33c.mp3"
     },
     {
      "ar": "دهب",
      "tr": "dahab",
      "en": "gold (ذهب)",
-     "audio": "audio/ar/sounds/s30.mp3"
+     "audio": "audio/ar/sounds/w76aa4d293a.mp3"
     },
     {
      "ar": "هاد",
      "tr": "haad",
      "en": "this (هذا)",
-     "audio": "audio/ar/sounds/s31.mp3"
+     "audio": "audio/ar/sounds/w059d5f6b57.mp3"
     },
     {
      "ar": "كتير",
      "tr": "ktiir",
      "en": "a lot (كثير)",
-     "audio": "audio/ar/sounds/s32.mp3"
+     "audio": "audio/ar/sounds/w0135c2974c.mp3"
     },
     {
      "ar": "تنين",
      "tr": "tnēn",
      "en": "two (اثنين)",
-     "audio": "audio/ar/sounds/s33.mp3"
+     "audio": "audio/ar/sounds/w9312f69117.mp3"
     },
     {
      "ar": "دراع",
      "tr": "draaʿ",
      "en": "arm (ذراع)",
-     "audio": "audio/ar/sounds/s34.mp3"
+     "audio": "audio/ar/sounds/wcdb21342a7.mp3"
     }
    ]
   },
@@ -269,43 +271,43 @@ window.SOUNDS = {
      "ar": "بيت",
      "tr": "bēt",
      "en": "house",
-     "audio": "audio/ar/sounds/s35.mp3"
+     "audio": "audio/ar/sounds/w2619065a2e.mp3"
     },
     {
      "ar": "يوم",
      "tr": "yōm",
      "en": "day",
-     "audio": "audio/ar/sounds/s36.mp3"
+     "audio": "audio/ar/sounds/wefc446efeb.mp3"
     },
     {
      "ar": "زيت",
      "tr": "zēt",
      "en": "oil",
-     "audio": "audio/ar/sounds/s37.mp3"
+     "audio": "audio/ar/sounds/w231fcd69c4.mp3"
     },
     {
      "ar": "لون",
      "tr": "lōn",
      "en": "color",
-     "audio": "audio/ar/sounds/s38.mp3"
+     "audio": "audio/ar/sounds/wbdcd892ed9.mp3"
     },
     {
      "ar": "عام",
      "tr": "ʿaam",
      "en": "year",
-     "audio": "audio/ar/sounds/s39.mp3",
+     "audio": "audio/ar/sounds/w1785948751.mp3",
      "contrast": {
       "ar": "عم",
       "tr": "ʿam",
       "en": "(‑ing marker)",
-      "audio": "audio/ar/sounds/s40.mp3"
+      "audio": "audio/ar/sounds/w60af83dfa7.mp3"
      }
     },
     {
      "ar": "عيد",
      "tr": "ʿiid",
      "en": "holiday / feast",
-     "audio": "audio/ar/sounds/s41.mp3"
+     "audio": "audio/ar/sounds/wb8f14e5033.mp3"
     }
    ]
   }
