@@ -179,7 +179,11 @@ RESOLVE_SCHEMA = {
                     # to the key it went out under. A number cannot drift.
                     "n":    {"type": "integer", "description": "the number of the word above"},
                     "id":   {"type": "string", "description": "a lexicon id from its options"},
-                    "why":  {"type": "string"},
+                    # Kept because a reason improves the choice, capped because nothing reads
+                    # it and it is most of the reply. A batch of forty long ones overran
+                    # max_tokens on 2026-08-30 and the truncated JSON cost all 102 decisions in
+                    # it -- the parse error is the whole batch, not the last item.
+                    "why":  {"type": "string", "maxLength": 60},
                 },
                 "required": ["n", "id", "why"],
                 "additionalProperties": False,
@@ -258,8 +262,27 @@ def resolve(c, ambiguous):
         chunk = ambiguous[i:i + BATCH]
         if len(ambiguous) > BATCH:
             print(f"  batch {i // BATCH + 1}: {len(chunk)} words")
-        out.update(_resolve_batch(c, chunk))
+        out.update(_batch_or_split(c, chunk))
     return out
+
+
+def _batch_or_split(c, chunk):
+    """One batch, halved and retried if the reply will not parse.
+
+    A truncated reply is not a partial answer -- json.loads fails on the whole thing, and every
+    decision in the batch is lost. That happened to one text of the Ben-Yehuda shelf: 102 words
+    went out, the reply ran past max_tokens, and all 102 came back unsettled. Halving costs one
+    extra call and recovers the rest, and below four words the problem is not length.
+    """
+    try:
+        return _resolve_batch(c, chunk)
+    except json.JSONDecodeError as e:
+        if len(chunk) < 4:
+            print(f"  !! unparseable reply for {len(chunk)} words, giving up on them: {e}")
+            return {}
+        print(f"  !! unparseable reply for {len(chunk)} words ({e}); retrying in halves")
+        half = len(chunk) // 2
+        return {**_batch_or_split(c, chunk[:half]), **_batch_or_split(c, chunk[half:])}
 
 
 def _resolve_batch(c, ambiguous):
