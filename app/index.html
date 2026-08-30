@@ -955,8 +955,11 @@ window.ALP = (function () {
   .jr-m.off{background:none}
   .jr-m.now{box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--ink)}
   /* ---- Grammar ---- */
-  .gsub{font-family:var(--arabic); font-size:19px; color:var(--ink-soft); direction:rtl;
-    text-align:right; margin:2px 0 14px; line-height:1.6}
+  /* No `direction` here: the subtitle is a mixed line and the element carries its own dir
+     from the renderer. Forcing rtl in CSS overrode it and read a Hebrew-then-English
+     line backwards — "guard → be guarded — נִשְׁמַר → שָׁמַר". */
+  .gsub{font-family:var(--arabic); font-size:19px; color:var(--ink-soft);
+    text-align:start; margin:2px 0 14px; line-height:1.6}
   .gbody p{font-size:14.5px; line-height:1.65; color:var(--ink-soft); margin:0 0 12px}
   .gbody b{color:var(--ink); font-weight:600}
   .gtable{border:1px solid var(--rule); border-radius:8px; overflow:hidden; margin-bottom:4px}

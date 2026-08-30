@@ -4659,6 +4659,7 @@ function trNotFound(v) { return `<div class="empty"><div class="empty-t">No matc
 // hand-written (curated function words); every EXAMPLE SENTENCE is a real one pulled from
 // the app's corpus, where each word was looked up in Maknuune. See pipeline/grammar.py.
 const GRAM = (window.GRAMMAR && window.GRAMMAR.lessons) || [];
+const GRAM_INTRO = (window.GRAMMAR && window.GRAMMAR.intro) || '';
 const gramById = id => GRAM.find(l => l.id === id);
 
 function grammarSection(sub){
@@ -4669,10 +4670,9 @@ function grammarSection(sub){
 
 function grammarHome(){
   $('title').textContent = 'Grammar Lessons';
-  let h = `<p class="hint">The handful of structures that do most of the work in spoken
-    Palestinian — the present, negation, wanting and having, questions, the past. Each one is
-    explained plainly and shown with <b>real sentences from the stories and news in this app</b>,
-    so you meet it the way you'll actually hear it. Tap a lesson.</p><div class="vtiles">`;
+  // The blurb is the language's own: Arabic's grammar section is about the present tense and
+  // negation, Hebrew's is about the binyanim, and one hardcoded paragraph cannot be both.
+  let h = `${GRAM_INTRO ? `<p class="hint">${GRAM_INTRO}</p>` : ''}<div class="vtiles">`;
   h += GRAM.map((l, i) => `<button class="vtile wide" onclick="location.hash='/grammar/${l.id}'">
       <div class="vtile-h"><span class="vtile-t">${esc(l.title)}</span>
         <span class="vtile-n">${i + 1}</span></div>
@@ -4707,8 +4707,12 @@ function grammarLesson(id){
   const l = gramById(id);
   $('title').textContent = l.title;
   const idx = GRAM.findIndex(x => x.id === id);
-  let h = `<div class="gsub" dir="auto">${esc(l.sub)}</div>`;
-  h += `<div class="gbody">${(l.body || []).map(p => `<p dir="auto">${p}</p>`).join('')}</div>`;
+  // dir="ltr", not "auto". These paragraphs are English prose about a right-to-left language,
+  // and dir="auto" takes its direction from the first strong character — so a sentence that
+  // opens with its subject, "נִפְעַל puts a נ on the front…", flipped the whole paragraph and
+  // read backwards. The embedded Hebrew and Arabic still lay out right-to-left inside it.
+  let h = `<div class="gsub" dir="ltr">${esc(l.sub)}</div>`;
+  h += `<div class="gbody">${(l.body || []).map(p => `<p dir="ltr">${p}</p>`).join('')}</div>`;
 
   (l.tables || []).forEach(t => {
     h += `<div class="sec">${esc(t.title)}</div><div class="gtable">`;

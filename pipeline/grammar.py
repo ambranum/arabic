@@ -465,6 +465,15 @@ def pick_examples(match, n=30):
     return [{'ar': s['ar'], 'en': s['en'], 'src': s['tid'], 'title': s['title'], 'hi': hi}
             for _, _, s, hi in out]
 
+# What the section is FOR, in the learner's words. It lives here rather than in app.js because
+# the other language's grammar is a different subject entirely -- Hebrew's is the binyanim, not
+# the present tense and negation -- and a shared page cannot hardcode either one's.
+INTRO = ('The handful of structures that do most of the work in spoken Palestinian — the '
+         'present, negation, wanting and having, questions, the past. Each one is explained '
+         'plainly and shown with <b>real sentences from the stories and news in this app</b>, '
+         'so you meet it the way you\'ll actually hear it. Tap a lesson.')
+
+
 def main():
     lessons = []
     for L in LESSONS:
@@ -480,7 +489,7 @@ def main():
         f.write('// words, urban notation). Example SENTENCES are selected from the ingested corpus,\n')
         f.write('// where every word was looked up in Maknuune — no Arabic is invented here.\n')
         f.write('window.GRAMMAR = ')
-        json.dump({'lessons': lessons}, f, ensure_ascii=False)
+        json.dump({'intro': INTRO, 'lessons': lessons}, f, ensure_ascii=False)
         f.write(';\n')
     print('\n%d lessons -> %s' % (len(lessons), os.path.relpath(OUT, ROOT)))
 
