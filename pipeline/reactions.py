@@ -12,12 +12,12 @@ Run:
     python3 pipeline/reactions.py                 # data only
     export ELEVENLABS_API_KEY=...; python3 pipeline/reactions.py --audio
 """
-import json, os, sys, argparse, ssl, urllib.request
+import json, os, sys, argparse, hashlib, ssl, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, '..')
 sys.path.insert(0, HERE)
-from voice import voice_id
+from voice import language_code, model_id, voice_id
 
 import net           # noqa: E402  -- one HTTPS context, one diagnosis
 _SSL = net.SSL_CTX
@@ -32,24 +32,32 @@ OUT_JS = paths.data('reactions.js')
 AUDIO_DIR = paths.audio('reactions')
 
 
-def tts(text, path, key, voice, model='eleven_v3'):
+def tts(text, path, key, voice):
     if os.path.exists(path):
-        return True, 'cached'
+        return True, 'cached', None
+    # The model and the language tag come from voice.py, per language: Arabic's reactions were
+    # pinned to eleven_v3 for expressiveness and Hebrew is only ON v3, so the two agree here --
+    # but a hardcoded model is still how a second language gets read in the wrong one.
+    body = {'text': text, 'model_id': model_id()}
+    lc = language_code()
+    if lc:
+        body['language_code'] = lc
     req = urllib.request.Request(
         f'https://api.elevenlabs.io/v1/text-to-speech/{voice}',
-        data=json.dumps({'text': text, 'model_id': model}).encode(),
+        data=json.dumps(body).encode(),
         headers={'xi-api-key': key, 'Content-Type': 'application/json'})
     try:
         with urllib.request.urlopen(req, timeout=90, context=_SSL) as r:
             open(path, 'wb').write(r.read())
-        return True, 'generated'
+        return True, 'generated', None
     except Exception as e:
-        return False, str(e)[:100]
+        return False, str(e)[:100], e
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--audio', action='store_true', help='generate MP3s (needs ELEVENLABS_API_KEY)')
+    ap.add_argument('--lang', default=paths.LANG, choices=paths.LANGS, help=argparse.SUPPRESS)
     a = ap.parse_args()
 
     d = json.load(open(SRC, encoding='utf-8'))
@@ -60,12 +68,20 @@ def main():
         print('!! --audio requested but ELEVENLABS_API_KEY not set; emitting data with no audio\n')
     if do_audio:
         os.makedirs(AUDIO_DIR, exist_ok=True)
-        print(f'generating audio… (voice {voice}, model eleven_v3)')
+        print(f'generating audio… (voice {voice}, model {model_id()})')
 
-    for i, it in enumerate(d['items']):
-        rid = 'r%d' % i
+    for it in d['items']:
+        # Named for the PHRASE. An index meant that inserting one reaction re-pointed every clip
+        # after it at a different phrase -- still there, still plays, now saying something else.
+        rid = 'r%s' % hashlib.sha1(it['ar'].encode()).hexdigest()[:10]
         rec = {'id': rid, 'ar': it['ar'], 'en': it['en'], 'use': it.get('use', ''),
                'cat': it['cat'], 'provenance': it.get('provenance', 'needs-native-validation')}
+        # Hebrew ships pointed and unpointed: the vowels are what a learner reads, the bare
+        # spelling is what everyone actually writes. And `tr` because a pointed Hebrew phrase
+        # still does not tell an English speaker where the stress or the shvas go.
+        for k in ('plain', 'tr', 'note'):
+            if it.get(k):
+                rec[k] = it[k]
         # Which book page corroborates it (pipeline/verify_content.py --apply), so the card can
         # name its evidence instead of just asserting it was checked.
         if it.get('ref_src'):
@@ -78,8 +94,10 @@ def main():
         if os.path.exists(clip):
             rec['audio'] = paths.audio_url('reactions', '%s.mp3' % rid)
         elif do_audio:
-            ok, how = tts(it['ar'], clip, key, voice)
+            ok, how, err = tts(it['ar'], clip, key, voice)
             print(f'  {rid} {it["ar"]:16} {how}')
+            if err is not None and net.fatal(err, 'audio: '):
+                raise SystemExit(1)
             if ok:
                 rec['audio'] = paths.audio_url('reactions', '%s.mp3' % rid)
         items.append(rec)
@@ -90,7 +108,8 @@ def main():
         f.write('// Curated Palestinian conversational reactions, grouped by function. Items flagged\n')
         f.write('// provenance:needs-native-validation are common but not native-checked.\n')
         f.write('window.REACTIONS = ')
-        json.dump({'cats': cats, 'items': items}, f, ensure_ascii=False, indent=1)
+        json.dump({'intro': d.get('intro', ''), 'cats': cats, 'items': items},
+                  f, ensure_ascii=False, indent=1)
         f.write(';\n')
 
     voiced = sum(1 for it in items if it.get('audio'))

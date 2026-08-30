@@ -2306,9 +2306,12 @@ const _rxProv = it => {
   if (p.includes('ref-corroborated'))
     return ['✓', 'rx-ok', 'Also printed in the native teaching materials' +
             (it.ref_src ? ' (' + it.ref_src + ')' : '') + ' — corroborated, though not a native review of this wording'];
-  if (p.includes('maknuune-corroborated'))
-    return ['·', 'rx-lex', 'Every word is in the Maknuune lexicon; the phrasing is not native-checked'];
-  return ['•', 'rx-flag', 'Not native-checked, and the reference books don’t cover it'];
+  if (p.includes('lex-corroborated') || p.includes('maknuune-corroborated'))
+    return ['·', 'rx-lex', 'Every word is confirmed in the ' + LANG.lex.name
+            + ' lexicon; the phrasing is not native-checked'];
+  return ['•', 'rx-flag', it.note
+          ? 'Not native-checked, and the lexicon cannot confirm it: ' + it.note
+          : 'Not native-checked, and the reference books don’t cover it'];
 };
 
 function reactionsSection(sub) {
@@ -2321,18 +2324,22 @@ function reactionsHome() {
   $('title').textContent = 'Reactions';
   let h = `<div class="lvl-row">${lvlTagFor('reaction', {})}
       <a class="lvl-what" href="#/plan/journey">what do these mean?</a></div>
-    <p class="hint">The <b>reflexes</b> of conversation — the short chunks you fire back without
-    thinking: <span dir="rtl">والله؟</span> (Really?), <span dir="rtl">يا حرام</span> (Poor thing),
-    <span dir="rtl">صحتين</span> (Bon appétit). They let you be a real presence at a table long before
-    you can build sentences. Pick a feeling, drill it until it comes automatically, and it slides into
-    your flashcards to come back on schedule.</p>
+    ${RX.intro ? `<p class="hint">${RX.intro}</p>` : ''}
     ${(() => { const its = RX.items || [];
-      const ok = its.filter(i => (i.provenance || '').includes('ref-corroborated')).length;
-      return `<div class="unval"><b>How checked is this?</b> ${ok} of ${its.length} of these are
-        also printed in the native teaching materials in your reference library (marked
-        <span class="rx-ok">✓</span>) — that is corroboration, not a native speaker reviewing this
-        app's exact wording. The rest (<span class="rx-flag">•</span>) are idiomatic but unconfirmed;
-        check the feel with a native speaker before leaning on the rarer ones.</div>`; })()}
+      // Both kinds of corroboration, counted for whichever language is loaded. Arabic can point
+      // at printed teaching materials; Hebrew has none in the repo, and its claim is the smaller
+      // one it can actually make — every word of the phrase is a form the lexicon confirms.
+      const p = i => i.provenance || '';
+      const ref = its.filter(i => p(i).includes('ref-corroborated')).length;
+      const lex = its.filter(i => p(i).includes('lex-corroborated')
+                               || p(i).includes('maknuune-corroborated')).length;
+      return `<div class="unval"><b>How checked is this?</b> ${ref ? `${ref} of ${its.length} are
+        also printed in the native teaching materials in your reference library
+        (<span class="rx-ok">✓</span>). ` : ''}${lex} have every word confirmed in the
+        ${esc(LANG.lex.name)} lexicon (<span class="rx-lex">·</span>) — that is the spelling, not a
+        native speaker reviewing this app's wording. The rest
+        (<span class="rx-flag">•</span>) are idiomatic but unconfirmed; check the feel with a
+        native speaker before leaning on the rarer ones.</div>`; })()}
     <div class="vtiles">`;
   h += (RX.cats || []).map(c => {
     const items = rxItemsIn(c.id), got = items.filter(r => rxGot(r.ar)).length;
@@ -2367,6 +2374,7 @@ function rxBrowseHTML(items) {
   return items.map(it => `<div class="rx-card${rxGot(it.ar) ? ' got' : ''}">
       <div class="rx-top">
         <div class="rx-ar" dir="rtl">${arLive(it.ar)}</div>
+        ${it.tr ? `<div class="rx-tr">${esc(it.tr)}</div>` : ''}
         <div class="rx-deck">${deckBtnHTML(rxKey(it.ar), `deckToggleRx('${cssq(it.ar)}')`)}</div>
         ${it.audio ? `<button class="say" onclick="playWord({kind:'reaction',audio:'${cssq(it.audio)}',lemma:'${cssq(rxKey(it.ar))}',vocalized:'${cssq(it.ar)}'})" aria-label="Play">${svg('spk')}</button>`
           : `<span class="rx-noaud">audio pending</span>`}
@@ -2392,6 +2400,7 @@ function rxCurrent() {
       <div class="rx-cue">${esc(it.en)}</div>
       ${d.shown
         ? `<div class="rx-ar big" dir="rtl">${arLive(it.ar)}</div>
+           ${it.tr ? `<div class="rx-tr">${esc(it.tr)}</div>` : ''}
            ${it.audio ? `<button class="tog" onclick="playWord({kind:'reaction',audio:'${cssq(it.audio)}',lemma:'${cssq(rxKey(it.ar))}',vocalized:'${cssq(it.ar)}'})">🔊 Hear it</button>` : ''}
            <div class="rx-use">${esc(it.use || '')}</div>
            ${it.reply ? `<div class="rx-reply">reply: <span dir="rtl">${esc(it.reply)}</span></div>` : ''}

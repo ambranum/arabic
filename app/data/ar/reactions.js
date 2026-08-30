@@ -2,6 +2,7 @@
 // Curated Palestinian conversational reactions, grouped by function. Items flagged
 // provenance:needs-native-validation are common but not native-checked.
 window.REACTIONS = {
+ "intro": "The <b>reflexes</b> of conversation — the short chunks you fire back without thinking: <span dir=\"rtl\">والله؟</span> (Really?), <span dir=\"rtl\">يا حرام</span> (Poor thing), <span dir=\"rtl\">صحتين</span> (Bon appétit). They let you be a real presence at a table long before you can build sentences. Pick a feeling, drill it until it comes automatically, and it slides into your flashcards to come back on schedule.",
  "cats": [
   {
    "id": "surprise",
@@ -54,184 +55,184 @@ window.REACTIONS = {
  ],
  "items": [
   {
-   "id": "r0",
+   "id": "r75c6c05509",
    "ar": "والله؟",
    "en": "Really?",
    "use": "Surprise — the single most common reaction. Rising tone.",
    "cat": "surprise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r0.mp3"
+   "audio": "audio/ar/reactions/r75c6c05509.mp3"
   },
   {
-   "id": "r1",
+   "id": "rb6fc529294",
    "ar": "بجد؟",
    "en": "For real?",
    "use": "Stronger disbelief.",
    "cat": "surprise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r1.mp3"
+   "audio": "audio/ar/reactions/rb6fc529294.mp3"
   },
   {
-   "id": "r2",
+   "id": "rfe2707ecdb",
    "ar": "لا!",
    "en": "No way!",
    "use": "Said with a rising tone — shock, not refusal.",
    "cat": "surprise",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.15",
-   "audio": "audio/ar/reactions/r2.mp3"
+   "audio": "audio/ar/reactions/rfe2707ecdb.mp3"
   },
   {
-   "id": "r3",
+   "id": "rbd7a41971c",
    "ar": "شو؟",
    "en": "What?",
    "use": "Genuine 'what?' or shocked 'what?!'.",
    "cat": "surprise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r3.mp3"
+   "audio": "audio/ar/reactions/rbd7a41971c.mp3"
   },
   {
-   "id": "r4",
+   "id": "r061f06812a",
    "ar": "معقول؟",
    "en": "Seriously? / Is that possible?",
    "use": "Half-disbelief — 'you can't be serious'.",
    "cat": "surprise",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r4.mp3"
+   "audio": "audio/ar/reactions/r061f06812a.mp3"
   },
   {
-   "id": "r5",
+   "id": "r4527467087",
    "ar": "ما بتقول!",
    "en": "You don't say!",
    "use": "Playful surprise at news someone just shared.",
    "cat": "surprise",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r5.mp3"
+   "audio": "audio/ar/reactions/r4527467087.mp3"
   },
   {
-   "id": "r6",
+   "id": "re35f2544c4",
    "ar": "شو بتحكي!",
    "en": "What are you saying!",
    "use": "Stronger — near disbelief at what you just heard.",
    "cat": "surprise",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r6.mp3"
+   "audio": "audio/ar/reactions/re35f2544c4.mp3"
   },
   {
-   "id": "r7",
+   "id": "rceb614a175",
    "ar": "يا الله",
    "en": "Oh my.",
    "use": "General astonishment or awe.",
    "cat": "surprise",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r7.mp3"
+   "audio": "audio/ar/reactions/rceb614a175.mp3"
   },
   {
-   "id": "r8",
+   "id": "r34bff9de69",
    "ar": "أيوه",
    "en": "Yeah.",
    "use": "Plain yes.",
    "cat": "agree",
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.34",
-   "audio": "audio/ar/reactions/r8.mp3"
+   "audio": "audio/ar/reactions/r34bff9de69.mp3"
   },
   {
-   "id": "r9",
+   "id": "r5914532b36",
    "ar": "أكيد",
    "en": "Of course.",
    "use": "Certainty.",
    "cat": "agree",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.29",
-   "audio": "audio/ar/reactions/r9.mp3"
+   "audio": "audio/ar/reactions/r5914532b36.mp3"
   },
   {
-   "id": "r10",
+   "id": "r2308366900",
    "ar": "صح",
    "en": "Right. / True.",
    "use": "Agreeing with a claim.",
    "cat": "agree",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.85",
-   "audio": "audio/ar/reactions/r10.mp3"
+   "audio": "audio/ar/reactions/r2308366900.mp3"
   },
   {
-   "id": "r11",
+   "id": "r6d4f420ce7",
    "ar": "مظبوط",
    "en": "Exactly.",
    "use": "Stronger agreement — 'precisely'.",
    "cat": "agree",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r11.mp3"
+   "audio": "audio/ar/reactions/r6d4f420ce7.mp3"
   },
   {
-   "id": "r12",
+   "id": "r11a3826e65",
    "ar": "تمام",
    "en": "Okay. / Perfect.",
    "use": "Everything's fine; also 'got it'.",
    "cat": "agree",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r12.mp3"
+   "audio": "audio/ar/reactions/r11a3826e65.mp3"
   },
   {
-   "id": "r13",
+   "id": "r9502de91d0",
    "ar": "طبعاً",
    "en": "Naturally. / Obviously.",
    "use": "Slightly emphatic 'of course'.",
    "cat": "agree",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r13.mp3"
+   "audio": "audio/ar/reactions/r9502de91d0.mp3"
   },
   {
-   "id": "r14",
+   "id": "rb7cfeb700d",
    "ar": "بالضبط",
    "en": "Exactly. / Precisely.",
    "use": "Pinning down that they've got it right.",
    "cat": "agree",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r14.mp3"
+   "audio": "audio/ar/reactions/rb7cfeb700d.mp3"
   },
   {
-   "id": "r15",
+   "id": "rdb2c6466ac",
    "ar": "ماشي",
    "en": "Okay. / Deal.",
    "use": "Agreeing to a plan — 'fine, works for me'.",
    "cat": "agree",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r15.mp3"
+   "audio": "audio/ar/reactions/rdb2c6466ac.mp3"
   },
   {
-   "id": "r16",
+   "id": "r816e8f0865",
    "ar": "معك حق",
    "en": "You're right.",
    "use": "Conceding the other person's point.",
    "cat": "agree",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r16.mp3"
+   "audio": "audio/ar/reactions/r816e8f0865.mp3"
   },
   {
-   "id": "r17",
+   "id": "r1fb247c943",
    "ar": "يا حرام",
    "en": "Oh no. / Poor thing.",
    "use": "THE sympathy phrase — use it constantly.",
    "cat": "sympathy",
    "provenance": "ref-corroborated",
    "ref_src": "stories p.13",
-   "audio": "audio/ar/reactions/r17.mp3"
+   "audio": "audio/ar/reactions/r1fb247c943.mp3"
   },
   {
-   "id": "r18",
+   "id": "r0381bade7c",
    "ar": "معليش",
    "en": "Never mind. / It's OK.",
    "use": "Brushing off a problem or an apology.",
    "cat": "sympathy",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.63",
-   "audio": "audio/ar/reactions/r18.mp3"
+   "audio": "audio/ar/reactions/r0381bade7c.mp3"
   },
   {
-   "id": "r19",
+   "id": "r30ed40da88",
    "ar": "سلامتك",
    "en": "Get well. / Take care.",
    "use": "To someone ill or hurt. Reply: الله يسلمك.",
@@ -239,379 +240,379 @@ window.REACTIONS = {
    "provenance": "ref-corroborated",
    "ref_src": "najah p.43",
    "reply": "الله يسلمك",
-   "audio": "audio/ar/reactions/r19.mp3"
+   "audio": "audio/ar/reactions/r30ed40da88.mp3"
   },
   {
-   "id": "r20",
+   "id": "r4e465b4857",
    "ar": "الله يعينك",
    "en": "God help you.",
    "use": "To someone facing something hard or tiring.",
    "cat": "sympathy",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r20.mp3"
+   "audio": "audio/ar/reactions/r4e465b4857.mp3"
   },
   {
-   "id": "r21",
+   "id": "r6e3dc5c164",
    "ar": "الله يقويك",
    "en": "God give you strength.",
    "use": "Encouragement to someone carrying a load.",
    "cat": "sympathy",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r21.mp3"
+   "audio": "audio/ar/reactions/r6e3dc5c164.mp3"
   },
   {
-   "id": "r22",
+   "id": "r248c7da07f",
    "ar": "ما عليك",
    "en": "Don't worry about it.",
    "use": "Reassuring — 'it's nothing, forget it'.",
    "cat": "sympathy",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r22.mp3"
+   "audio": "audio/ar/reactions/r248c7da07f.mp3"
   },
   {
-   "id": "r23",
+   "id": "r22e074b4fa",
    "ar": "الله يشفيه",
    "en": "May God heal them.",
    "use": "About someone who's sick.",
    "cat": "sympathy",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r23.mp3"
+   "audio": "audio/ar/reactions/r22e074b4fa.mp3"
   },
   {
-   "id": "r24",
+   "id": "r154b2383ff",
    "ar": "يا سلام",
    "en": "Wow.",
    "use": "Admiration — food, a view, a story.",
    "cat": "praise",
    "provenance": "ref-corroborated",
    "ref_src": "verb-drills p.9",
-   "audio": "audio/ar/reactions/r24.mp3"
+   "audio": "audio/ar/reactions/r154b2383ff.mp3"
   },
   {
-   "id": "r25",
+   "id": "r1f4de3270e",
    "ar": "حلو",
    "en": "Nice. / Sweet.",
    "use": "Positive evaluation of almost anything.",
    "cat": "praise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r25.mp3"
+   "audio": "audio/ar/reactions/r1f4de3270e.mp3"
   },
   {
-   "id": "r26",
+   "id": "rac2127cce2",
    "ar": "منيح",
    "en": "Good.",
    "use": "Plainer than حلو.",
    "cat": "praise",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.27",
-   "audio": "audio/ar/reactions/r26.mp3"
+   "audio": "audio/ar/reactions/rac2127cce2.mp3"
   },
   {
-   "id": "r27",
+   "id": "r159f083ef5",
    "ar": "كتير حلو",
    "en": "Very nice.",
    "use": "Intensified.",
    "cat": "praise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r27.mp3"
+   "audio": "audio/ar/reactions/r159f083ef5.mp3"
   },
   {
-   "id": "r28",
+   "id": "r83b2d75d27",
    "ar": "مش بطال",
    "en": "Not bad.",
    "use": "Understated approval.",
    "cat": "praise",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r28.mp3"
+   "audio": "audio/ar/reactions/r83b2d75d27.mp3"
   },
   {
-   "id": "r29",
+   "id": "rcad225b2ee",
    "ar": "ما شاء الله",
    "en": "Wonderful (God bless).",
    "use": "Admiring a person, a child, a success — and warding off the evil eye. Culturally important.",
    "cat": "praise",
    "provenance": "ref-corroborated",
    "ref_src": "spoken-extra p.12",
-   "audio": "audio/ar/reactions/r29.mp3"
+   "audio": "audio/ar/reactions/rcad225b2ee.mp3"
   },
   {
-   "id": "r30",
+   "id": "r0e0c224764",
    "ar": "بيجنّن",
    "en": "It's amazing.",
    "use": "Lit. 'it drives you crazy' — food, music, a place.",
    "cat": "praise",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r30.mp3"
+   "audio": "audio/ar/reactions/r0e0c224764.mp3"
   },
   {
-   "id": "r31",
+   "id": "r12a3259b09",
    "ar": "تحفة",
    "en": "Gorgeous. / A gem.",
    "use": "A thing or place that's beautiful.",
    "cat": "praise",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r31.mp3"
+   "audio": "audio/ar/reactions/r12a3259b09.mp3"
   },
   {
-   "id": "r32",
+   "id": "r94a9b04ae2",
    "ar": "ما بعرف",
    "en": "I don't know.",
    "use": "The most useful sentence for a beginner.",
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.49",
-   "audio": "audio/ar/reactions/r32.mp3"
+   "audio": "audio/ar/reactions/r94a9b04ae2.mp3"
   },
   {
-   "id": "r33",
+   "id": "r931cec8965",
    "ar": "يمكن",
    "en": "Maybe.",
    "use": "Hedging.",
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.43",
-   "audio": "audio/ar/reactions/r33.mp3"
+   "audio": "audio/ar/reactions/r931cec8965.mp3"
   },
   {
-   "id": "r34",
+   "id": "r00dbab8ae9",
    "ar": "مش هيك",
    "en": "Not like that.",
    "use": "Gentle correction.",
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "spoken-extra p.21",
-   "audio": "audio/ar/reactions/r34.mp3"
+   "audio": "audio/ar/reactions/r00dbab8ae9.mp3"
   },
   {
-   "id": "r35",
+   "id": "r47543c1eee",
    "ar": "ولا إشي",
    "en": "Nothing. / Not at all.",
    "use": "Denial; also 'no problem at all'.",
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.54",
-   "audio": "audio/ar/reactions/r35.mp3"
+   "audio": "audio/ar/reactions/r47543c1eee.mp3"
   },
   {
-   "id": "r36",
+   "id": "r55f43ad112",
    "ar": "بصراحة",
    "en": "Honestly…",
    "use": "Prefacing a frank opinion.",
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "vocab-gram p.19",
-   "audio": "audio/ar/reactions/r36.mp3"
+   "audio": "audio/ar/reactions/r55f43ad112.mp3"
   },
   {
-   "id": "r37",
+   "id": "r91f2341e05",
    "ar": "نص نص",
    "en": "So-so.",
    "use": "Lit. 'half half' — mediocre, meh.",
    "cat": "hedge",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r37.mp3"
+   "audio": "audio/ar/reactions/r91f2341e05.mp3"
   },
   {
-   "id": "r38",
+   "id": "rfacb5914f1",
    "ar": "حسب",
    "en": "It depends.",
    "use": "Non-committal — 'depends on…'.",
    "cat": "hedge",
    "provenance": "ref-corroborated",
    "ref_src": "vocab-gram p.20",
-   "audio": "audio/ar/reactions/r38.mp3"
+   "audio": "audio/ar/reactions/rfacb5914f1.mp3"
   },
   {
-   "id": "r39",
+   "id": "r94600bab60",
    "ar": "مش متأكد",
    "en": "I'm not sure.",
    "use": "Softening a claim.",
    "cat": "hedge",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r39.mp3"
+   "audio": "audio/ar/reactions/r94600bab60.mp3"
   },
   {
-   "id": "r40",
+   "id": "r42c260f0b0",
    "ar": "طيب",
    "en": "Okay, so… / Well…",
    "use": "Discourse glue — starts half of all turns.",
    "cat": "glue",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r40.mp3"
+   "audio": "audio/ar/reactions/r42c260f0b0.mp3"
   },
   {
-   "id": "r41",
+   "id": "rbefa0913ac",
    "ar": "يعني",
    "en": "I mean… / Like…",
    "use": "The most-used filler in Arabic; buys thinking time.",
    "cat": "glue",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.43",
-   "audio": "audio/ar/reactions/r41.mp3"
+   "audio": "audio/ar/reactions/rbefa0913ac.mp3"
   },
   {
-   "id": "r42",
+   "id": "r6454837ea1",
    "ar": "وبعدين؟",
    "en": "And then?",
    "use": "Keeps a story going — makes you a good listener.",
    "cat": "glue",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r42.mp3"
+   "audio": "audio/ar/reactions/r6454837ea1.mp3"
   },
   {
-   "id": "r43",
+   "id": "r1a55b27b25",
    "ar": "شو صار؟",
    "en": "What happened?",
    "use": "Invites the story.",
    "cat": "glue",
    "provenance": "ref-corroborated",
    "ref_src": "stories p.5",
-   "audio": "audio/ar/reactions/r43.mp3"
+   "audio": "audio/ar/reactions/r1a55b27b25.mp3"
   },
   {
-   "id": "r44",
+   "id": "r15752f0ccb",
    "ar": "المهم",
    "en": "Anyway… / The point is…",
    "use": "Cutting to the point after a digression.",
    "cat": "glue",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r44.mp3"
+   "audio": "audio/ar/reactions/r15752f0ccb.mp3"
   },
   {
-   "id": "r45",
+   "id": "r6bd25d9ae7",
    "ar": "على فكرة",
    "en": "By the way…",
    "use": "Dropping in a side remark.",
    "cat": "glue",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r45.mp3"
+   "audio": "audio/ar/reactions/r6bd25d9ae7.mp3"
   },
   {
-   "id": "r46",
+   "id": "rd48f4e3da1",
    "ar": "خلص",
    "en": "Okay then. / Done.",
    "use": "Closing a topic — 'enough, settled'.",
    "cat": "glue",
    "provenance": "ref-corroborated",
    "ref_src": "stories p.14",
-   "audio": "audio/ar/reactions/r46.mp3"
+   "audio": "audio/ar/reactions/rd48f4e3da1.mp3"
   },
   {
-   "id": "r47",
+   "id": "ra78a0bf7fa",
    "ar": "عادي",
    "en": "It's fine. / No big deal.",
    "use": "Playing something down — 'normal, whatever'.",
    "cat": "glue",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r47.mp3"
+   "audio": "audio/ar/reactions/ra78a0bf7fa.mp3"
   },
   {
-   "id": "r48",
+   "id": "refa53ef673",
    "ar": "شو رأيك؟",
    "en": "What do you think?",
    "use": "Handing the turn to the other person.",
    "cat": "glue",
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.51",
-   "audio": "audio/ar/reactions/r48.mp3"
+   "audio": "audio/ar/reactions/refa53ef673.mp3"
   },
   {
-   "id": "r49",
+   "id": "rb3e377d140",
    "ar": "تفضل",
    "en": "Please — help yourself.",
    "use": "Hospitality; you'll hear it every 90 seconds. تفضلي to a woman.",
    "cat": "table",
    "provenance": "ref-corroborated",
    "ref_src": "spoken-extra p.12",
-   "audio": "audio/ar/reactions/r49.mp3"
+   "audio": "audio/ar/reactions/rb3e377d140.mp3"
   },
   {
-   "id": "r50",
+   "id": "r93fce02b77",
    "ar": "صحتين",
    "en": "Bon appétit. / Enjoy.",
    "use": "Said to someone eating. Reply: على قلبك.",
    "cat": "table",
    "provenance": "maknuune-corroborated",
    "reply": "على قلبك",
-   "audio": "audio/ar/reactions/r50.mp3"
+   "audio": "audio/ar/reactions/r93fce02b77.mp3"
   },
   {
-   "id": "r51",
+   "id": "r2f22f11b99",
    "ar": "يسلمو إيديكي",
    "en": "Bless your hands.",
    "use": "TO THE COOK, after a meal — the single highest-value phrase at the table. إيديك to a man.",
    "cat": "table",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r51.mp3"
+   "audio": "audio/ar/reactions/r2f22f11b99.mp3"
   },
   {
-   "id": "r52",
+   "id": "re6f349931f",
    "ar": "أهلين",
    "en": "Welcome. / Hi there.",
    "use": "Warm greeting to a guest or a friend.",
    "cat": "table",
    "provenance": "ref-corroborated",
    "ref_src": "najah p.29",
-   "audio": "audio/ar/reactions/r52.mp3"
+   "audio": "audio/ar/reactions/re6f349931f.mp3"
   },
   {
-   "id": "r53",
+   "id": "r69e0e75d65",
    "ar": "نوّرت",
    "en": "You lit up the place.",
    "use": "To a guest arriving. Reply: منوّر فيك / الله ينوّر عليك. نوّرتي to a woman.",
    "cat": "table",
    "provenance": "needs-native-validation",
    "reply": "منوّر فيك",
-   "audio": "audio/ar/reactions/r53.mp3"
+   "audio": "audio/ar/reactions/r69e0e75d65.mp3"
   },
   {
-   "id": "r54",
+   "id": "r5559dfc98f",
    "ar": "تكرم",
    "en": "My pleasure. / At your service.",
    "use": "Gracious 'of course' to a request. تكرمي to a woman.",
    "cat": "table",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r54.mp3"
+   "audio": "audio/ar/reactions/r5559dfc98f.mp3"
   },
   {
-   "id": "r55",
+   "id": "r42545930dc",
    "ar": "بالهنا والشفا",
    "en": "Enjoy your meal (to your health).",
    "use": "Said over food; also a reply to صحتين.",
    "cat": "table",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r55.mp3"
+   "audio": "audio/ar/reactions/r42545930dc.mp3"
   },
   {
-   "id": "r56",
+   "id": "r6c4a3b8247",
    "ar": "عن إذنك",
    "en": "Excuse me. / If I may.",
    "use": "Leaving the table or the room politely. عن إذنكم to a group.",
    "cat": "table",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r56.mp3"
+   "audio": "audio/ar/reactions/r6c4a3b8247.mp3"
   },
   {
-   "id": "r57",
+   "id": "r4437b56361",
    "ar": "يعطيك العافية",
    "en": "More power to you.",
    "use": "To someone working or after any effort. Reply: الله يعافيك.",
    "cat": "blessing",
    "provenance": "needs-native-validation",
    "reply": "الله يعافيك",
-   "audio": "audio/ar/reactions/r57.mp3"
+   "audio": "audio/ar/reactions/r4437b56361.mp3"
   },
   {
-   "id": "r58",
+   "id": "r18db4f6884",
    "ar": "الله معك",
    "en": "God be with you.",
    "use": "Parting, or sympathy for a hard road ahead.",
    "cat": "blessing",
    "provenance": "maknuune-corroborated",
-   "audio": "audio/ar/reactions/r58.mp3"
+   "audio": "audio/ar/reactions/r18db4f6884.mp3"
   },
   {
-   "id": "r59",
+   "id": "r8097bbe1d0",
    "ar": "مع السلامة",
    "en": "Goodbye. / Go in peace.",
    "use": "To the one leaving. Reply: الله يسلمك.",
@@ -619,45 +620,45 @@ window.REACTIONS = {
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.8",
    "reply": "الله يسلمك",
-   "audio": "audio/ar/reactions/r59.mp3"
+   "audio": "audio/ar/reactions/r8097bbe1d0.mp3"
   },
   {
-   "id": "r60",
+   "id": "r418fa6971b",
    "ar": "بالتوفيق",
    "en": "Good luck.",
    "use": "Before an exam, a trip, anything new.",
    "cat": "blessing",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r60.mp3"
+   "audio": "audio/ar/reactions/r418fa6971b.mp3"
   },
   {
-   "id": "r61",
+   "id": "rbb2f76e752",
    "ar": "تصبح على خير",
    "en": "Goodnight.",
    "use": "At night. Reply: وانت من أهل الخير. تصبحي to a woman.",
    "cat": "blessing",
    "provenance": "needs-native-validation",
    "reply": "وانت من أهل الخير",
-   "audio": "audio/ar/reactions/r61.mp3"
+   "audio": "audio/ar/reactions/rbb2f76e752.mp3"
   },
   {
-   "id": "r62",
+   "id": "rd400e3bd2b",
    "ar": "الله يبارك فيك",
    "en": "God bless you.",
    "use": "Thanks / good wishes; also the reply to مبروك.",
    "cat": "blessing",
    "provenance": "ref-corroborated",
    "ref_src": "speaking p.7",
-   "audio": "audio/ar/reactions/r62.mp3"
+   "audio": "audio/ar/reactions/rd400e3bd2b.mp3"
   },
   {
-   "id": "r63",
+   "id": "r95e6cf656e",
    "ar": "سلّملي عليهم",
    "en": "Say hi to them for me.",
    "use": "Closing a chat — send regards to their family.",
    "cat": "blessing",
    "provenance": "needs-native-validation",
-   "audio": "audio/ar/reactions/r63.mp3"
+   "audio": "audio/ar/reactions/r95e6cf656e.mp3"
   }
  ]
 };

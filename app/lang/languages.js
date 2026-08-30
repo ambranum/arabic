@@ -48,7 +48,7 @@ window.LANGUAGES = [
     short: 'Hebrew',
     blurb: 'Spoken Israeli Hebrew. Sounds, verbs, the dictionary, the daily paper and the Bible — the rest is being built.',
     font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
-    data: ['library', 'verbs', 'sounds', 'bible-index'],
+    data: ['library', 'verbs', 'sounds', 'reactions', 'bible-index'],
     // What actually exists, and nothing else. Hebrew arrives with the things Stage A proved
     // could be LOOKED UP rather than written -- 2,084 pointed paradigms and a 12,662-lemma
     // dictionary -- the sections built on them, the daily paper written fresh each morning by
@@ -56,6 +56,7 @@ window.LANGUAGES = [
     // but whose every WORD, vowel, reading and meaning is the lexicon's. Lessons, stories,
     // grammar, reactions and the dinner table are authored content that does not exist yet, and
     // listing a section before it exists is a lie the switcher would tell on every page.
-    sections: ['sounds', 'verbs', 'news', 'bible', 'vocab', 'translate', 'tutor', 'account'],
+    sections: ['sounds', 'reactions', 'verbs', 'news', 'bible', 'vocab', 'translate',
+               'tutor', 'account'],
   },
 ];
