@@ -1094,6 +1094,27 @@ window.ALP = (function () {
   @media (max-width:640px){ .bk-print-p{grid-template-columns:1fr; gap:5px} }
   /* reader in paragraph mode (books) */
   .rd-para .ar{line-height:2}
+
+  /* ...and side by side once there is room for it. A book is read paragraph against
+     paragraph, not paragraph then translation, and the stacked layout makes you scroll past
+     the Hebrew to find the English and then back again. Two columns only when the English is
+     actually showing — with it off, the Hebrew should have the whole width — and only above
+     760px, below which this collapses to exactly the stacked layout it replaces.
+     The target language sits on the RIGHT, where its own direction begins, and the rule that
+     was the English's left quote-bar becomes the divider between the two. The whole-passage
+     block is left alone: it is a player, not a reading column. */
+  @media (min-width:1040px){
+    /* Two columns need more room than one, and .reading is capped at 880px for the good
+       reason that a single column of prose should not run the width of a monitor. That cap is
+       lifted only here, only for a book showing both sides. */
+    .reading:has(.rd[data-en="on"] .rd-para){max-width:1160px}
+    .rd[data-en="on"] .sent.rd-para:not(.para-head){
+      display:grid; grid-template-columns:1fr 1fr; gap:0 30px; align-items:start}
+    .rd[data-en="on"] .sent.rd-para:not(.para-head) > .ar{grid-column:2; grid-row:1}
+    .rd[data-en="on"] .sent.rd-para:not(.para-head) > .en{
+      grid-column:1; grid-row:1; margin-top:6px; font-size:17px; line-height:1.65;
+      padding-left:0; border-left:0; padding-right:18px; border-right:2px solid var(--rule)}
+  }
   .rd-para{margin-bottom:20px}
   /* the "whole passage" header that sits above the split sentences */
   .para-head{padding-bottom:22px; border-bottom:1px solid var(--paper-3); margin-bottom:26px}

@@ -239,7 +239,11 @@ def main():
                          'vav_consecutive_per_1k': round(s['vav'], 1),
                          'avg_sentence_words': round(s['sentence'], 1),
                          'pointed': round(s['pointed'], 3)},
-            'sentences': [{'ar': t.strip(), 'en': '', 'p': i // 6}
+            # Three sentences to a paragraph, not six. Pointed Hebrew is set large -- it has
+            # to be, the vowels are small -- so six sentences is a wall, and a wall does not
+            # sit beside its translation: the English is a short block against a column six
+            # times its height.
+            'sentences': [{'ar': t.strip(), 'en': '', 'p': i // 3}
                           for i, t in enumerate(s['sentences'])],
         }
         json.dump(doc, open(paths.texts('%s.json' % slug(mid)), 'w', encoding='utf-8'),
