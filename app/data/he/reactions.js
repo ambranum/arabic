@@ -62,7 +62,8 @@ window.REACTIONS = {
    "cat": "surprise",
    "provenance": "lex-corroborated",
    "plain": "באמת",
-   "tr": "beemet"
+   "tr": "beemet",
+   "audio": "audio/he/reactions/r0d92719926.mp3"
   },
   {
    "id": "red13aa0385",
@@ -72,7 +73,8 @@ window.REACTIONS = {
    "cat": "surprise",
    "provenance": "lex-corroborated",
    "plain": "ברצינות",
-   "tr": "birtsinut"
+   "tr": "birtsinut",
+   "audio": "audio/he/reactions/red13aa0385.mp3"
   },
   {
    "id": "r24436c9bfe",
@@ -82,7 +84,8 @@ window.REACTIONS = {
    "cat": "surprise",
    "provenance": "lex-corroborated",
    "plain": "אין מצב!",
-   "tr": "eyn matsav"
+   "tr": "eyn matsav",
+   "audio": "audio/he/reactions/r24436c9bfe.mp3"
   },
   {
    "id": "ra3dba0733c",
@@ -92,7 +95,8 @@ window.REACTIONS = {
    "cat": "surprise",
    "provenance": "lex-corroborated",
    "plain": "מה פתאום!",
-   "tr": "ma pitom"
+   "tr": "ma pitom",
+   "audio": "audio/he/reactions/ra3dba0733c.mp3"
   },
   {
    "id": "r5e634c6bc0",
@@ -102,7 +106,8 @@ window.REACTIONS = {
    "cat": "surprise",
    "provenance": "lex-corroborated",
    "plain": "לא יאמן!",
-   "tr": "lo yeamen"
+   "tr": "lo yeamen",
+   "audio": "audio/he/reactions/r5e634c6bc0.mp3"
   },
   {
    "id": "r7b2ef5da55",
@@ -112,7 +117,8 @@ window.REACTIONS = {
    "cat": "surprise",
    "provenance": "lex-corroborated",
    "plain": "מה אתה אומר!",
-   "tr": "ma ata omer"
+   "tr": "ma ata omer",
+   "audio": "audio/he/reactions/r7b2ef5da55.mp3"
   },
   {
    "id": "r68d0c4c806",
@@ -123,7 +129,8 @@ window.REACTIONS = {
    "provenance": "needs-native-validation",
    "plain": "וואו!",
    "tr": "vavv",
-   "note": "וַואו — the lexicon points it differently"
+   "note": "וַואו — the lexicon points it differently",
+   "audio": "audio/he/reactions/r68d0c4c806.mp3"
   },
   {
    "id": "r5b4f3e6188",
@@ -133,7 +140,8 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "lex-corroborated",
    "plain": "בדיוק",
-   "tr": "bdiyuk"
+   "tr": "bdiyuk",
+   "audio": "audio/he/reactions/r5b4f3e6188.mp3"
   },
   {
    "id": "r9c6d562841",
@@ -143,7 +151,8 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "lex-corroborated",
    "plain": "נכון",
-   "tr": "naxon"
+   "tr": "naxon",
+   "audio": "audio/he/reactions/r9c6d562841.mp3"
   },
   {
    "id": "r3e6f34f43e",
@@ -153,7 +162,8 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "lex-corroborated",
    "plain": "בטח",
-   "tr": "betax"
+   "tr": "betax",
+   "audio": "audio/he/reactions/r3e6f34f43e.mp3"
   },
   {
    "id": "r3934e2a79f",
@@ -163,7 +173,8 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "lex-corroborated",
    "plain": "ברור",
-   "tr": "barur"
+   "tr": "barur",
+   "audio": "audio/he/reactions/r3934e2a79f.mp3"
   },
   {
    "id": "rd345e946d1",
@@ -173,7 +184,8 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "lex-corroborated",
    "plain": "אין בעיה",
-   "tr": "eyn baya"
+   "tr": "eyn baya",
+   "audio": "audio/he/reactions/rd345e946d1.mp3"
   },
   {
    "id": "rda7af70b00",
@@ -183,7 +195,8 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "lex-corroborated",
    "plain": "כמובן",
-   "tr": "kamuvan"
+   "tr": "kamuvan",
+   "audio": "audio/he/reactions/rda7af70b00.mp3"
   },
   {
    "id": "r00a8a580e7",
@@ -193,7 +206,8 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "lex-corroborated",
    "plain": "בהחלט",
-   "tr": "bhexlet"
+   "tr": "bhexlet",
+   "audio": "audio/he/reactions/r00a8a580e7.mp3"
   },
   {
    "id": "r0e921e433b",
@@ -203,7 +217,8 @@ window.REACTIONS = {
    "cat": "agree",
    "provenance": "lex-corroborated",
    "plain": "סבבה",
-   "tr": "sababa"
+   "tr": "sababa",
+   "audio": "audio/he/reactions/r0e921e433b.mp3"
   },
   {
    "id": "r823774bcb5",
@@ -213,7 +228,8 @@ window.REACTIONS = {
    "cat": "sympathy",
    "provenance": "lex-corroborated",
    "plain": "חבל",
-   "tr": "xaval"
+   "tr": "xaval",
+   "audio": "audio/he/reactions/r823774bcb5.mp3"
   },
   {
    "id": "r56264b1cc7",
@@ -223,7 +239,8 @@ window.REACTIONS = {
    "cat": "sympathy",
    "provenance": "lex-corroborated",
    "plain": "אוי",
-   "tr": "oy"
+   "tr": "oy",
+   "audio": "audio/he/reactions/r56264b1cc7.mp3"
   },
   {
    "id": "rf2c4af2992",
@@ -233,7 +250,8 @@ window.REACTIONS = {
    "cat": "sympathy",
    "provenance": "lex-corroborated",
    "plain": "מסכן",
-   "tr": "misken"
+   "tr": "misken",
+   "audio": "audio/he/reactions/rf2c4af2992.mp3"
   },
   {
    "id": "r285264256e",
@@ -243,7 +261,8 @@ window.REACTIONS = {
    "cat": "sympathy",
    "provenance": "lex-corroborated",
    "plain": "לא נורא",
-   "tr": "lo nora"
+   "tr": "lo nora",
+   "audio": "audio/he/reactions/r285264256e.mp3"
   },
   {
    "id": "r69f2583106",
@@ -254,7 +273,8 @@ window.REACTIONS = {
    "provenance": "lex-corroborated",
    "plain": "תרגיש טוב",
    "tr": "targish tov",
-   "reply": "תּוֹדָה"
+   "reply": "תּוֹדָה",
+   "audio": "audio/he/reactions/r69f2583106.mp3"
   },
   {
    "id": "r7dbfcc6776",
@@ -264,7 +284,8 @@ window.REACTIONS = {
    "cat": "sympathy",
    "provenance": "lex-corroborated",
    "plain": "אני מצטער",
-   "tr": "ani mitstaer"
+   "tr": "ani mitstaer",
+   "audio": "audio/he/reactions/r7dbfcc6776.mp3"
   },
   {
    "id": "r02417b1d4f",
@@ -274,7 +295,8 @@ window.REACTIONS = {
    "cat": "praise",
    "provenance": "lex-corroborated",
    "plain": "יפה מאוד",
-   "tr": "yafe mod"
+   "tr": "yafe mod",
+   "audio": "audio/he/reactions/r02417b1d4f.mp3"
   },
   {
    "id": "r2bb15b6e6a",
@@ -285,7 +307,8 @@ window.REACTIONS = {
    "provenance": "needs-native-validation",
    "plain": "מעולה",
    "tr": "mule",
-   "note": "מְעוּלֶה — in the lexicon, but unpointed there"
+   "note": "מְעוּלֶה — in the lexicon, but unpointed there",
+   "audio": "audio/he/reactions/r2bb15b6e6a.mp3"
   },
   {
    "id": "r18c60a654e",
@@ -295,7 +318,8 @@ window.REACTIONS = {
    "cat": "praise",
    "provenance": "lex-corroborated",
    "plain": "אחלה",
-   "tr": "axla"
+   "tr": "axla",
+   "audio": "audio/he/reactions/r18c60a654e.mp3"
   },
   {
    "id": "r3ef589cd17",
@@ -305,7 +329,8 @@ window.REACTIONS = {
    "cat": "praise",
    "provenance": "lex-corroborated",
    "plain": "כל הכבוד",
-   "tr": "kol hakavod"
+   "tr": "kol hakavod",
+   "audio": "audio/he/reactions/r3ef589cd17.mp3"
   },
   {
    "id": "r88c81ab6c3",
@@ -315,7 +340,8 @@ window.REACTIONS = {
    "cat": "praise",
    "provenance": "lex-corroborated",
    "plain": "מדהים",
-   "tr": "madhim"
+   "tr": "madhim",
+   "audio": "audio/he/reactions/r88c81ab6c3.mp3"
   },
   {
    "id": "rd9c829a3bd",
@@ -325,7 +351,8 @@ window.REACTIONS = {
    "cat": "praise",
    "provenance": "lex-corroborated",
    "plain": "תענוג",
-   "tr": "taanug"
+   "tr": "taanug",
+   "audio": "audio/he/reactions/rd9c829a3bd.mp3"
   },
   {
    "id": "ra870755a12",
@@ -335,7 +362,8 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "lex-corroborated",
    "plain": "אולי",
-   "tr": "ulay"
+   "tr": "ulay",
+   "audio": "audio/he/reactions/ra870755a12.mp3"
   },
   {
    "id": "r243b68cdb9",
@@ -345,7 +373,8 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "lex-corroborated",
    "plain": "נראה לי",
-   "tr": "nire li"
+   "tr": "nire li",
+   "audio": "audio/he/reactions/r243b68cdb9.mp3"
   },
   {
    "id": "r79bacd35b4",
@@ -355,7 +384,8 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "lex-corroborated",
    "plain": "לא בטוח",
-   "tr": "lo batuax"
+   "tr": "lo batuax",
+   "audio": "audio/he/reactions/r79bacd35b4.mp3"
   },
   {
    "id": "raf5544aa2a",
@@ -365,7 +395,8 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "lex-corroborated",
    "plain": "תלוי",
-   "tr": "taluy"
+   "tr": "taluy",
+   "audio": "audio/he/reactions/raf5544aa2a.mp3"
   },
   {
    "id": "rb65ffc03cc",
@@ -375,7 +406,8 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "lex-corroborated",
    "plain": "בערך",
-   "tr": "berex"
+   "tr": "berex",
+   "audio": "audio/he/reactions/rb65ffc03cc.mp3"
   },
   {
    "id": "rf6dd75febe",
@@ -385,7 +417,8 @@ window.REACTIONS = {
    "cat": "hedge",
    "provenance": "lex-corroborated",
    "plain": "משהו כזה",
-   "tr": "mashe kaze"
+   "tr": "mashe kaze",
+   "audio": "audio/he/reactions/rf6dd75febe.mp3"
   },
   {
    "id": "r7bd5849fe2",
@@ -395,7 +428,8 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "lex-corroborated",
    "plain": "אז",
-   "tr": "az"
+   "tr": "az",
+   "audio": "audio/he/reactions/r7bd5849fe2.mp3"
   },
   {
    "id": "r1153c95506",
@@ -405,7 +439,8 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "lex-corroborated",
    "plain": "בקצור",
-   "tr": "bkitsur"
+   "tr": "bkitsur",
+   "audio": "audio/he/reactions/r1153c95506.mp3"
   },
   {
    "id": "r8dc2b88f73",
@@ -415,7 +450,8 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "lex-corroborated",
    "plain": "כאילו",
-   "tr": "kilu"
+   "tr": "kilu",
+   "audio": "audio/he/reactions/r8dc2b88f73.mp3"
   },
   {
    "id": "ra1823e8599",
@@ -426,7 +462,8 @@ window.REACTIONS = {
    "provenance": "needs-native-validation",
    "plain": "בכל אופן",
    "tr": "bxal ofen",
-   "note": "בְּכָל — not in the lexicon"
+   "note": "בְּכָל — not in the lexicon",
+   "audio": "audio/he/reactions/ra1823e8599.mp3"
   },
   {
    "id": "rb7d3cf0b7b",
@@ -436,7 +473,8 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "lex-corroborated",
    "plain": "רגע",
-   "tr": "rega"
+   "tr": "rega",
+   "audio": "audio/he/reactions/rb7d3cf0b7b.mp3"
   },
   {
    "id": "r8dcb55bc82",
@@ -446,7 +484,8 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "lex-corroborated",
    "plain": "תשמע",
-   "tr": "tishma"
+   "tr": "tishma",
+   "audio": "audio/he/reactions/r8dcb55bc82.mp3"
   },
   {
    "id": "raf77b7696c",
@@ -456,7 +495,8 @@ window.REACTIONS = {
    "cat": "glue",
    "provenance": "lex-corroborated",
    "plain": "יאללה",
-   "tr": "yalla"
+   "tr": "yalla",
+   "audio": "audio/he/reactions/raf77b7696c.mp3"
   },
   {
    "id": "red40ba5935",
@@ -467,7 +507,8 @@ window.REACTIONS = {
    "provenance": "lex-corroborated",
    "plain": "מה נשמע",
    "tr": "ma nishma",
-   "reply": "הַכֹּל טוֹב"
+   "reply": "הַכֹּל טוֹב",
+   "audio": "audio/he/reactions/red40ba5935.mp3"
   },
   {
    "id": "r91f5840ced",
@@ -477,7 +518,8 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "lex-corroborated",
    "plain": "בתאבון",
-   "tr": "bteavon"
+   "tr": "bteavon",
+   "audio": "audio/he/reactions/r91f5840ced.mp3"
   },
   {
    "id": "r6a3887655d",
@@ -487,7 +529,8 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "lex-corroborated",
    "plain": "לחיים",
-   "tr": "lxayim"
+   "tr": "lxayim",
+   "audio": "audio/he/reactions/r6a3887655d.mp3"
   },
   {
    "id": "r892d0a56c6",
@@ -498,7 +541,8 @@ window.REACTIONS = {
    "provenance": "lex-corroborated",
    "plain": "תודה רבה",
    "tr": "toda raba",
-   "reply": "בְּבַקָּשָׁה"
+   "reply": "בְּבַקָּשָׁה",
+   "audio": "audio/he/reactions/r892d0a56c6.mp3"
   },
   {
    "id": "rb2c40392eb",
@@ -508,7 +552,8 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "lex-corroborated",
    "plain": "בבקשה",
-   "tr": "bvakasha"
+   "tr": "bvakasha",
+   "audio": "audio/he/reactions/rb2c40392eb.mp3"
   },
   {
    "id": "r89347d0512",
@@ -518,7 +563,8 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "lex-corroborated",
    "plain": "עוד קצת",
-   "tr": "od ktsat"
+   "tr": "od ktsat",
+   "audio": "audio/he/reactions/r89347d0512.mp3"
   },
   {
    "id": "r00f78021a1",
@@ -528,7 +574,8 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "lex-corroborated",
    "plain": "אני שבע",
-   "tr": "ani savea"
+   "tr": "ani savea",
+   "audio": "audio/he/reactions/r00f78021a1.mp3"
   },
   {
    "id": "rae1d0da219",
@@ -538,7 +585,8 @@ window.REACTIONS = {
    "cat": "table",
    "provenance": "lex-corroborated",
    "plain": "היה טעים",
-   "tr": "haya taim"
+   "tr": "haya taim",
+   "audio": "audio/he/reactions/rae1d0da219.mp3"
   },
   {
    "id": "r91a5b6cf6f",
@@ -548,7 +596,8 @@ window.REACTIONS = {
    "cat": "blessing",
    "provenance": "lex-corroborated",
    "plain": "בהצלחה",
-   "tr": "bhatslaxa"
+   "tr": "bhatslaxa",
+   "audio": "audio/he/reactions/r91a5b6cf6f.mp3"
   },
   {
    "id": "r340ffca7f6",
@@ -558,7 +607,8 @@ window.REACTIONS = {
    "cat": "blessing",
    "provenance": "lex-corroborated",
    "plain": "מזל טוב",
-   "tr": "mazal tov"
+   "tr": "mazal tov",
+   "audio": "audio/he/reactions/r340ffca7f6.mp3"
   },
   {
    "id": "r208ad991d3",
@@ -569,7 +619,8 @@ window.REACTIONS = {
    "provenance": "lex-corroborated",
    "plain": "שבת שלום",
    "tr": "shabat shalom",
-   "reply": "שַׁבָּת שָׁלוֹם"
+   "reply": "שַׁבָּת שָׁלוֹם",
+   "audio": "audio/he/reactions/r208ad991d3.mp3"
   },
   {
    "id": "r815006d25c",
@@ -580,7 +631,8 @@ window.REACTIONS = {
    "provenance": "lex-corroborated",
    "plain": "חג שמח",
    "tr": "xag sameax",
-   "reply": "חַג שָׂמֵחַ"
+   "reply": "חַג שָׂמֵחַ",
+   "audio": "audio/he/reactions/r815006d25c.mp3"
   },
   {
    "id": "r456bfdc02f",
@@ -590,7 +642,8 @@ window.REACTIONS = {
    "cat": "blessing",
    "provenance": "lex-corroborated",
    "plain": "לבריאות",
-   "tr": "labriut"
+   "tr": "labriut",
+   "audio": "audio/he/reactions/r456bfdc02f.mp3"
   },
   {
    "id": "rb6a67fe6b9",
@@ -600,7 +653,8 @@ window.REACTIONS = {
    "cat": "blessing",
    "provenance": "lex-corroborated",
    "plain": "תתחדש",
-   "tr": "titxadesh"
+   "tr": "titxadesh",
+   "audio": "audio/he/reactions/rb6a67fe6b9.mp3"
   }
  ]
 };
