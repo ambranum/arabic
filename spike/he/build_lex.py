@@ -29,7 +29,7 @@ import unicodedata
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from phon import beat, phon_stressed, strip_cantillation        # noqa: E402
+from phon import beat, phon, phon_stressed, respell, strip_cantillation   # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DUMP = os.path.join(HERE, 'kaikki-hebrew.jsonl')
@@ -152,6 +152,23 @@ def rows():
             # So the SEGMENTS are always phon.py's, derived from the pointing by one set of
             # rules, and Wiktionary supplies only the STRESS -- which is the one thing the
             # pointing does not determine and therefore the one thing worth looking up.
+            # An UNPOINTED form whose lemma is pointed can borrow it. Wiktionary lists the
+            # ktiv-male spelling as a form of the ktiv-haser headword and points only the
+            # headword -- so בוקר "morning" and מילה "word" arrived with no vowels and no
+            # reading, and lost every tiebreak to בּוֹקֵר "a cowboy" and מִילָה "circumcision",
+            # which happen to be spelled full and pointed. respell() moves the lemma's vowels
+            # onto the letters the form actually uses, and refuses when the lemma cannot spell
+            # them, so nothing is invented: 1,531 of 26,072 unpointed rows, and the rest stay
+            # unpointed because their lemma genuinely does not spell them.
+            if not NIQQUD_RE.search(form):
+                borrowed = respell(form, lemma) if NIQQUD_RE.search(lemma) else None
+                # ...and only if it still SOUNDS like the word. Moving מָוֶת's vowels onto מוות
+                # gives מָוֶות, which is the right spelling but which phon.py reads as "mavevt":
+                # it takes the doubled vav for two consonants. The lemma's own reading is the
+                # check -- if the respelled form does not say the same thing, the borrowing is
+                # refused and the form stays unpointed, which is what it was.
+                if borrowed and phon(borrowed) == phon(lemma):
+                    form = borrowed
             pointed = bool(NIQQUD_RE.search(form))
             if pointed:
                 ph = phon_stressed(form, beat(r))
@@ -200,8 +217,43 @@ def _stress_of(romanized):
     return beat(romanized)
 
 
+XREF = re.compile(r'^\s*(defective|excessive|alternative|nonstandard|obsolete)\s+(spelling|form)\b'
+                  r'|^\s*misspelling\b', re.I)
+XREF_TARGET = re.compile(r'of\s+([\u0590-\u05ff][\u0590-\u05ff\u05f3\u05f4"\']*)')
+
+
+def _follow_xrefs(df):
+    """A cross-reference is not a definition. Where the lexicon only points, follow the pointer.
+
+    2.4% of rows gloss a word by naming another spelling of it -- "excessive spelling of
+    מִשְׁמֵשׁ", "misspelling of ויקי" -- and a learner who taps מישמשים wants "apricot", not a
+    redirect. 527 keys answered that way. For 290 the lexicon has a real definition under the
+    same key and _rank now prefers it; for the rest this reads the target out of the pointer,
+    looks it up, and puts its definition in front. The pointer is kept, in parentheses, because
+    it is true and it is the lexicon's own words: nothing is removed, the useful half is first.
+    """
+    real = {}
+    for form, key, gloss in zip(df['FORM'], df['FORM_SEARCH'], df['GLOSS']):
+        g = str(gloss or '')
+        if g and not XREF.match(g):
+            real.setdefault(key, g)
+    out, n = [], 0
+    for key, gloss in zip(df['FORM_SEARCH'], df['GLOSS']):
+        g = str(gloss or '')
+        m = XREF.match(g) and XREF_TARGET.search(g)
+        if m and key not in real:
+            hit = real.get(he_norm(m.group(1)))
+            if hit:
+                g = '%s (%s)' % (hit.rstrip('.'), g.rstrip('.'))
+                n += 1
+        out.append(g)
+    df['GLOSS'] = out
+    print('cross-references followed to a definition: %d' % n)
+    return df
+
+
 def main():
-    df = _share_stress(pd.DataFrame(rows()))
+    df = _follow_xrefs(_share_stress(pd.DataFrame(rows())))
     df.to_parquet(OUT, index=False)
     print('-> %s  (%.1f MB)' % (OUT, os.path.getsize(OUT) / 1e6))
     print('rows            %7d' % len(df))

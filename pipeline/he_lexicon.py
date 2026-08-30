@@ -28,6 +28,7 @@ hardest lookup.
 """
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -45,9 +46,19 @@ FIELDS = ['surface', 'lemma', 'vocalized_from', 'form', 'root', 'gloss', 'analys
 INTERN = ('vocalized_from', 'analysis', 'provenance')
 
 
-# app/app.js: lexRank. Same rule, so the same record wins here as would have won at runtime.
+# A gloss that only names another spelling -- "excessive spelling of מִשְׁמֵשׁ" -- is a redirect,
+# not a definition, and it was outranking real ones for 290 keys. spike/he/build_lex.py follows
+# the pointer where nothing better exists; this prefers the real entry where one does.
+XREF = re.compile(r'^\s*(defective|excessive|alternative|nonstandard|obsolete)\s+(spelling|form)\b'
+                  r'|^\s*misspelling\b', re.I)
+
+
+# app/app.js: lexRank, plus the cross-reference rule above. Hebrew ships ONE row per key (see
+# build()), so the app's re-rank of a single candidate is a no-op and the choice is made here.
 def _rank(r):
-    return ((4 if r['GLOSS'] else 0) + (2 if r['ID'] else 0) + (1 if r['PHON'] else 0))
+    g = str(r['GLOSS'] or '')
+    return (((0 if XREF.match(g) else 8) if g else 0)
+            + (2 if r['ID'] else 0) + (1 if r['PHON'] else 0))
 
 
 def build(rows_in):

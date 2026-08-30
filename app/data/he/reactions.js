@@ -307,7 +307,7 @@ window.REACTIONS = {
    "provenance": "needs-native-validation",
    "plain": "מעולה",
    "tr": "mule",
-   "note": "מְעוּלֶה — in the lexicon, but unpointed there",
+   "note": "מְעוּלֶה — the lexicon points it differently",
    "audio": "audio/he/reactions/r2bb15b6e6a.mp3"
   },
   {
