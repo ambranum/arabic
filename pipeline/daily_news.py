@@ -184,8 +184,7 @@ RESOLVE_SCHEMA = {
 }
 
 def client():
-    import anthropic
-    return anthropic.Anthropic()
+    return net.need("anthropic").Anthropic()
 
 
 def explain_api_failure(e):
@@ -196,7 +195,9 @@ def explain_api_failure(e):
     the app quietly served a fortnight-old article. The exception type is enough to tell them
     apart, so say so loudly instead of dumping a traceback nobody reads.
     """
-    import anthropic
+    anthropic = sys.modules.get("anthropic")
+    if anthropic is None:                                     # never got as far as importing it
+        return str(e)[:200], ""
     if isinstance(e, anthropic.AuthenticationError):          # 401
         return ("the ANTHROPIC_API_KEY is invalid, revoked or expired",
                 "Make a new key at console.anthropic.com/settings/keys, then update the "
@@ -333,17 +334,61 @@ def israel_today():
         print(f"!! Asia/Jerusalem unavailable ({e}); falling back to UTC date")
         return datetime.datetime.now(datetime.timezone.utc).date()
 
+def adjudicate(src):
+    """Annotate one existing text and settle its ambiguities. Same cycle the news runs.
+
+    The Ben-Yehuda shelf is written by pipeline/he_books.py, not by this file, but the half that
+    costs money -- deciding which entry a word is -- is the same job with the same rules, so it
+    is the same code rather than a second copy of it that drifts. What differs is only that
+    there is no article to write first.
+    """
+    tid = json.load(open(src, encoding="utf-8"))["id"]
+    print(f"=== {tid} ===")
+    if not ingest(src):
+        return 1
+    amb = ambiguities(tid)
+    if not amb:
+        print("  nothing ambiguous — the text's own pointing settled it")
+        return 0
+    print(f"resolving {len(amb)} ambiguous words (selecting from real entries)…")
+    rp = paths.resolutions()
+    res = json.load(open(rp, encoding="utf-8")) if os.path.exists(rp) else {}
+    try:
+        picks = resolve(client(), amb)
+    except Exception as e:
+        # Same tolerance the news has, for the same reason: every word this would have settled
+        # is already in the artifact, flagged, and the card says so. A readable text with
+        # honest uncertainty in it beats no text.
+        what, fix = explain_api_failure(e)
+        print(f"  !! could not resolve: {what}")
+        if fix:
+            print(f"  !! FIX: {fix}")
+        return 0
+    if picks:
+        res.update(picks)
+        json.dump(res, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+        print(f"  resolved {len(picks)}/{len(amb)}")
+        if not ingest(src):
+            return 1
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sentences", type=int, default=9)
     ap.add_argument("--dry-run", action="store_true", help="fetch headlines only")
     ap.add_argument("--skip-if-done", action="store_true",
                     help="exit 0 without spending anything if today's news is already written")
+    ap.add_argument("--adjudicate", metavar="TEXT.json",
+                    help="annotate and adjudicate an existing text instead of writing news")
     # Read by pipeline/paths.py at import time, before argparse ever runs. Declared here only so
     # --help lists it and an unknown-argument error never fires on it.
     ap.add_argument("--lang", default=paths.LANG, choices=paths.LANGS,
                     help="which language's news to write (default: %s)" % paths.LANG)
     a = ap.parse_args()
+
+    if a.adjudicate:
+        return adjudicate(a.adjudicate)
 
     today = israel_today().isoformat()
     print(f"=== daily news · {today} (Asia/Jerusalem) ===")
