@@ -470,6 +470,9 @@ const VOCSRC = {
   'unvocalized:weak-final-verb': "not shown — we couldn't derive it honestly",
   'unvocalized:no-alignment'   : "not shown — couldn't match the dictionary form",
   'unvocalized:no-entry'       : 'not in the lexicon',
+  // Hebrew: the lexicon points ktiv haser and the text is written ktiv male, so the vowels are
+  // the lexicon's but the letters are the reader's -- עֲדַיִן's pointing on עדיין's spelling.
+  'derived:ktiv'               : "lexicon vowels, on the text's own spelling",
   'curated'                    : 'hand-written by us, not from the lexicon',
   'unvocalized:curated-with-clitic': 'not shown — name carries a prefix'
 };
@@ -4989,23 +4992,29 @@ function reader(t) {
   const wspan = (w, si, wi, trail) => { const voc = w.vocalized || w.surface;
     return `<span class="w${!w.lemma ? ' gap' : ''}${w.vocalized ? '' : ' novoc'}"
       data-s="${si}" data-w="${wi}" tabindex="0"><span class="v">${esc(voc)}</span><span class="p">${esc(w.surface)}</span></span>${trail === false ? '' : ' '}`; };
-  // The tokenizer (pipeline/ingest.py) splits on punctuation, so s.words has none — but s.ar
-  // keeps it. Walk s.ar alongside s.words to drop each word's trailing punctuation (. ، ؟ ! …)
-  // back in, hugging the word, so the reader shows real sentences instead of a bare word list.
-  const PUNCT = '،.؟!:؛…"«»“”\'()-—';
-  const isPunct = ch => PUNCT.indexOf(ch) >= 0;
+  // s.words is the list of ANNOTATABLE words, not the sentence: the tokenizer drops whatever it
+  // cannot look up. Rendering the array alone therefore deleted content, not just punctuation —
+  // Hebrew matches runs of Hebrew letters, so every numeral vanished from the page. "ארבעה
+  // אנשים נהרגו ... ביניהם בן 93" was displayed as "...בן בצומת", and the English underneath
+  // still said "a 93-year-old", which reads as a translation that made something up.
+  //
+  // So walk s.ar and put back EVERYTHING between one word and the next, verbatim: the spaces,
+  // the punctuation, and the numerals and Latin the tokenizer never claimed. Whatever the
+  // pipeline chose not to annotate, the reader still sees.
   const arHTML = (s, si) => {
     const ar = s.ar || ''; let pos = 0, out = '';
     s.words.forEach((w, wi) => {
-      if (wi > 0) out += ' ';
       const idx = ar.indexOf(w.surface, pos);
+      if (idx < 0) { out += (wi ? ' ' : '') + wspan(w, si, wi, false); return; }
+      const gap = ar.slice(pos, idx);
+      out += !gap ? (wi ? ' ' : '')
+           : !gap.trim() ? gap
+           : `<span class="pu">${esc(gap)}</span>`;
       out += wspan(w, si, wi, false);
-      if (idx < 0) return;                      // alignment lost — skip punctuation for this word
       pos = idx + w.surface.length;
-      let p = '';                               // punctuation immediately after the word, no space
-      while (pos < ar.length && !/\s/.test(ar[pos]) && isPunct(ar[pos])) { p += ar[pos]; pos++; }
-      if (p) out += `<span class="pu">${esc(p)}</span>`;
     });
+    const tail = ar.slice(pos);
+    if (tail) out += `<span class="pu">${esc(tail)}</span>`;
     return out;
   };
   // Books carry paragraph markers (`p`): render as flowing bilingual paragraphs (nicer for reading a
@@ -5766,6 +5775,8 @@ function showWord(w0, ctx, opts) {
               ? 'corrected in the app — the lexicon pipeline mis-splits this one'
             : w.provenance === 'lexclitic'
               ? `matched after removing ${esc(w._cut)} — the split is a guess, not a lexicon entry`
+            : w.provenance === 'wiktionary:ktiv'
+              ? 'matched by ignoring the vowel letters — the entry can spell this word, but it is not an exact entry for it'
             : w.provenance === 'verbs.js' ? 'from the verb list — paradigm below'
             : amb ? 'lexicon match not yet confirmed — one of several possible entries'
             : w.maknuune_id ? `${esc(LANG.lex.name)} #${esc(w.maknuune_id)}`
