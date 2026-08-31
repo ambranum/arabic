@@ -60,14 +60,45 @@ VAV_CONSEC = re.compile(r'\bו[֑-ׇ]*[ית][֐-׿֑-ׇ]{2,}')
 
 # The gate. Roughly twice the paper's archaism and no vav-consecutive to speak of; a text that
 # clears this reads like something a modern Israeli wrote, which is the point.
-MAX_ARCHAIC, MAX_VAV, MAX_SENTENCE = 12.0, 2.0, 15.0
+# Where to draw the line, measured rather than picked. Sweeping the three thresholds over the
+# 546 pointed, in-range, de-duplicated texts:
+#
+#     gate (archaic/vav/sentence)   texts    words   median archaic / vav / sentence
+#     12 /  2 / 15                     10    6,837        6.8 /  1.0 / 10.4
+#     16 /  3 / 17                     21   14,959        9.3 /  1.5 / 11.3
+#     20 /  4 / 19                     37   31,354       10.7 /  2.3 / 11.3
+#     25 /  5 / 21                     67   70,544       11.7 /  3.4 / 11.6
+#     30 /  6 / 24                     94  119,993       11.4 /  4.0 / 11.7
+#     no gate                         546  718,175       18.5 / 17.1 / 15.2
+#     the daily paper                            —        6.7 /  0.0 / 12.4
+#
+# The interesting column is the middle one. SENTENCE LENGTH barely moves across the whole range
+# and stays under the paper's own 12.4 the entire way, so it is not what separates these texts.
+# The vav-consecutive is: 1.0 at the tightest gate, 17.1 with no gate at all. So the gate is set
+# where that count is still close to the paper's zero -- a thousand words of this shelf carries
+# about two biblical narrative verbs -- and the shelf quadruples, from 6,837 words to 31,354.
+MAX_ARCHAIC, MAX_VAV, MAX_SENTENCE = 20.0, 4.0, 19.0
 MIN_POINTED = 0.90                       # the source's own vowels, or it is not this shelf
 MIN_TOKENS, MAX_TOKENS = 300, 6000
 GENRES = {'prose', 'drama', 'memoir'}
 
 # Difficulty, and it is measured rather than judged: how long the sentences are and how much of
 # the text is words the reader has already met by that phase. Bands are the app's own.
-BANDS = [(11.0, 'beginner', 1), (14.0, 'intermediate', 2), (99.0, 'advanced', 3)]
+# Which shelf a text lands on, by how far its register is from the daily paper's. This was the
+# average sentence length alone, and at ten texts that was fine because the shelf was short
+# enough to read in order. At thirty-seven it is not: sentence length turns out to be the axis
+# these texts vary LEAST on, so it filed חֲבֵרִים -- the second most archaic thing here -- as
+# beginner reading on the strength of its short sentences.
+#
+# The vav-consecutive is weighted triple because the paper has exactly none of it, so every one
+# is a reading the app teaches nowhere else; sentence length counts only what it has over the
+# paper's own 12.4.
+BANDS = [(11.0, 'beginner', 1), (20.0, 'intermediate', 2), (999.0, 'advanced', 3)]
+
+
+def distance(s):
+    """How far this text's register is from the daily paper's. 0 is the paper."""
+    return s['archaic'] + 3 * s['vav'] + max(0.0, s['sentence'] - 12.4)
 
 
 def clean(text, title=''):
@@ -108,8 +139,9 @@ def passes(s):
 
 
 def band(s):
+    d = distance(s)
     for cutoff, name, shelf in BANDS:
-        if s['sentence'] <= cutoff:
+        if d <= cutoff:
             return name, shelf
     return BANDS[-1][1], BANDS[-1][2]
 
@@ -222,17 +254,33 @@ def main():
                  s['archaic'], s['vav'], s['sentence']))
         if not a.write or (a.max and written >= a.max):
             continue
-        # A selected text is regenerated from the dump, English and all -- and the English cost
-        # an API call, and the audio is keyed by sentence INDEX, so a reorder would silently
-        # re-point every clip at a different sentence. Once a text has been translated it is
-        # finished; --write leaves it alone.
+        # A translated text keeps its SENTENCES. The English cost an API call and the audio is
+        # keyed by sentence index, so a reorder would silently re-point every clip at a
+        # different sentence.
+        #
+        # Its metadata is another matter, and used to be frozen with it. That was fine while the
+        # shelf was ten texts written in one go; it is not now, because widening the gate
+        # rebands and renumbers the whole shelf, and a text that skipped the rewrite would keep
+        # a chapter number another text had just been given. So the doc is rebuilt either way
+        # and the old sentences are dropped back into it -- but only if they are the same
+        # sentences. If the dump or clean() ever produces a different list, the file is left
+        # exactly as it is and says so, because at that point the clips no longer line up and
+        # that is not something to paper over.
         out_path = paths.texts('%s.json' % slug(mid))
+        keep_sentences = keep_translation = None
         if os.path.exists(out_path):
             done = json.load(open(out_path, encoding='utf-8'))
             if any(x.get('en') for x in done.get('sentences', [])):
-                print('   (already written and translated — left alone)')
-                written += 1
-                continue
+                fresh = [t.strip() for t in s['sentences']]
+                if [x['ar'] for x in done['sentences']] != fresh:
+                    print('   !! sentences differ from the stored ones — left alone, clips '
+                          'are keyed by index and would no longer match')
+                    written += 1
+                    continue
+                keep_sentences = done['sentences']
+                # translate() stamps this on the way past. It is a claim about who wrote the
+                # English, so it belongs to the text and not to whichever step last touched it.
+                keep_translation = done.get('translation')
         doc = {
             'id': slug(mid), 'kind': 'book-chapter', 'dialect': 'he', 'level': name,
             'shelf': shelf, 'book': 'benyehuda', 'chapter': written + 1,
@@ -254,9 +302,13 @@ def main():
             # to be, the vowels are small -- so six sentences is a wall, and a wall does not
             # sit beside its translation: the English is a short block against a column six
             # times its height.
-            'sentences': [{'ar': t.strip(), 'en': '', 'p': i // 3}
-                          for i, t in enumerate(s['sentences'])],
+            'sentences': keep_sentences or [{'ar': t.strip(), 'en': '', 'p': i // 3}
+                                            for i, t in enumerate(s['sentences'])],
         }
+        if keep_translation:
+            doc['translation'] = keep_translation
+        if keep_sentences:
+            print('   (translated already — sentences kept, %s ch.%d)' % (name, written + 1))
         json.dump(doc, open(out_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         written += 1
     if a.write:

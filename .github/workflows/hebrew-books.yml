@@ -11,23 +11,25 @@ name: Hebrew content
 # requirements.txt is already installed by every run, and the artifacts land in git rather than
 # in someone's working copy. Manual only — this spends money, so nothing fires it but a person.
 #
-# Cost, measured on the shelf as selected: 10 texts, 6,803 tokens, 30% of them needing a
-# decision after the source's own pointing has settled what it can. That is ~2,000 decisions in
-# batches of 40, plus ~600 sentences of translation in batches of 25.
+# Cost, measured on the shelf as selected: 37 texts, 31,354 tokens, 2,675 sentences. Ten of
+# them are finished; the other 27 need 1,988 sentences of English, ~24,500 words of annotation
+# at roughly 30% needing a decision after the source's own pointing has settled what it can,
+# and 1,988 sentence clips. The audio is by far the largest line and can be run on its own
+# later -- a book with no clips reads fine and says so.
 
 on:
   workflow_dispatch:
     inputs:
       translate:
-        description: 'Write the English — done 2026-08-30, leave off unless texts were added'
+        description: 'Write the English — 1,988 sentences on the 27 new books. ~80 batches'
         type: boolean
         default: false
       annotate:
-        description: 'Annotate and adjudicate the books, stories and news (321 outstanding, 142 distinct)'
+        description: 'Annotate and adjudicate the books, stories and news — 27 new books, ~24,500 words'
         type: boolean
         default: true
       audio:
-        description: 'Voice every book and story sentence (1,287 done, none missing)'
+        description: 'Voice every book and story sentence — 1,287 done, 1,988 new. The big one'
         type: boolean
         default: true
       vocab:
