@@ -40,18 +40,41 @@
     },
     {
      "surface": "אישר",
-     "lemma": "אֻשַּׁר",
-     "form": "אֻשַּׁר",
-     "vocalized": "אישר",
-     "vocalized_from": "source:pointed",
+     "lemma": "יִשֵּׁר",
+     "form": "יִשֵּׁר",
+     "vocalized": "אֲיַשֵּׁר",
+     "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "passive of אישר (ishér): to be authorized, to be confirmed.",
-     "analysis": "VERB:active",
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "to straighten",
+     "analysis": "VERB:feminine.first-person.future.masculine.singular",
+     "caphi": "ayasher",
+     "caphi_urban": "ayasher",
      "caphi_raw": null,
-     "maknuune_id": "4042-3",
-     "provenance": "wiktionary:resolved"
+     "maknuune_id": "14344-18",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14344-18",
+       "root": "",
+       "gloss": "to straighten",
+       "analysis": "VERB:feminine.first-person.future.masculine.singular",
+       "pointed": "אֲיַשֵּׁר"
+      },
+      {
+       "id": "4043-1",
+       "root": "א",
+       "gloss": "as אִשֵּׁר spelled full: to approve, allow",
+       "analysis": "VERB",
+       "pointed": "אִישֵּׁר"
+      },
+      {
+       "id": "863-44",
+       "root": "",
+       "gloss": "as נָשַׁר spelled full: to fall, to drop, to shed",
+       "analysis": "VERB:feminine.first-person.future.masculine.singular",
+       "pointed": "אֵישֹּׁר"
+      }
+     ]
     },
     {
      "surface": "שהיה",
@@ -901,7 +924,23 @@
      "caphi_urban": "nadir",
      "caphi_raw": null,
      "maknuune_id": "6196-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6196-1",
+       "root": "",
+       "gloss": "Rare, uncommon, unusual.",
+       "analysis": "ADJ",
+       "pointed": "נָדִיר"
+      },
+      {
+       "id": "4108-1",
+       "root": "",
+       "gloss": "as נֶדֶר spelled full: vow, promise, pledge, oath",
+       "analysis": "NOUN",
+       "pointed": "נֶדֶיר"
+      }
+     ]
     },
     {
      "surface": "לאוגוסט",
@@ -962,45 +1001,39 @@
      "caphi_urban": "kodem",
      "caphi_raw": null,
      "maknuune_id": "928-16",
-     "provenance": "wiktionary:exact"
-    },
-    {
-     "surface": "לצפון",
-     "lemma": "צָפַן",
-     "form": "צָפַן",
-     "vocalized": "לצפון",
-     "vocalized_from": "source:pointed",
-     "root": null,
-     "gloss": "to hide",
-     "analysis": "VERB:infinitive",
-     "caphi": null,
-     "caphi_urban": null,
-     "caphi_raw": null,
-     "maknuune_id": "15119-3",
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "15119-3",
+       "id": "928-16",
        "root": "",
-       "gloss": "to hide",
-       "analysis": "VERB:infinitive",
-       "pointed": "לצפון"
+       "gloss": "to precede, to come before",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "קוֹדֵם"
       },
       {
-       "id": "3829-1",
+       "id": "10149-1",
        "root": "",
-       "gloss": "as ל- + צָפוֹן: north",
-       "analysis": "NOUN",
-       "pointed": "צָפוֹן"
-      },
-      {
-       "id": "3830-1",
-       "root": "",
-       "gloss": "as ל- + צָפוּן: hidden",
-       "analysis": "ADJ",
-       "pointed": "צָפוּן"
+       "gloss": "as קֹדֶם spelled full: before, prior to",
+       "analysis": "PREP",
+       "pointed": "קוֹדֶם"
       }
      ]
+    },
+    {
+     "surface": "לצפון",
+     "lemma": "צָפוֹן",
+     "form": "צָפוֹן",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "north",
+     "analysis": "NOUN",
+     "caphi": "tsafon",
+     "caphi_urban": "tsafon",
+     "caphi_raw": null,
+     "maknuune_id": "3829-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ל-"
     },
     {
      "surface": "ובלילה",
@@ -1747,7 +1780,37 @@
      "caphi_urban": "lyad-",
      "caphi_raw": null,
      "maknuune_id": "5841-1",
-     "provenance": "wiktionary:resolved"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "5841-1",
+       "root": "",
+       "gloss": "Beside, near, by, near to, next to, adjacent to, alongside.",
+       "analysis": "PREP",
+       "pointed": "לְיַד־"
+      },
+      {
+       "id": "5842-1",
+       "root": "",
+       "gloss": "Near, nearby, next, adjacent, alongside.",
+       "analysis": "PREP_PHRASE",
+       "pointed": "לְיָד"
+      },
+      {
+       "id": "4-1",
+       "root": "",
+       "gloss": "as ל- + יָד: arm",
+       "analysis": "NOUN",
+       "pointed": "יָד"
+      },
+      {
+       "id": "1043-30",
+       "root": "י",
+       "gloss": "as יָלַד spelled full: to give birth (\"to child\"; beget a desce",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "לֵיד"
+      }
+     ]
     },
     {
      "surface": "קייב",
@@ -2283,7 +2346,30 @@
      "caphi_urban": "pakid",
      "caphi_raw": null,
      "maknuune_id": "9530-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "9530-1",
+       "root": "",
+       "gloss": "clerk",
+       "analysis": "NOUN",
+       "pointed": "פָּקִיד"
+      },
+      {
+       "id": "10146-1",
+       "root": "",
+       "gloss": "as פִּקֵּד spelled full: to command, to oversee",
+       "analysis": "VERB",
+       "pointed": "פִּקֵּיד"
+      },
+      {
+       "id": "10146-38",
+       "root": "",
+       "gloss": "as פִּקֵּד spelled full: to command, to oversee",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "פַּקֵּיד"
+      }
+     ]
     },
     {
      "surface": "ממשלתי",

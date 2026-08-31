@@ -181,6 +181,13 @@ def annotate(lex, surface, res):
         if not cut:
             for pre, stem, alt in lex.alt_readings(key, recs, strict=False):
                 extra += [(r, pre + '-') for r in lex.readings(alt)[:2]]
+        # And the same for the other spelling. An entry whose headword is written defectively is
+        # filed under the defective key, so the full spelling in front of us never reached it:
+        # גינה saw only the verb "to denounce", never the noun "a garden" that is what the
+        # sentence meant. The reading is offered under the pointing the entry can actually give
+        # this surface -- גִּינָּה, not the entry's own גִּנָּה -- because that is what the app
+        # will print if it is chosen.
+        ktiv = [] if cut else lex.ktiv_readings(key, recs)
         w['options'] = [{'id': str(c['ID']), 'root': str(c['ROOT'] or ''),
                          'gloss': str(c['GLOSS'] or '')[:60],
                          'analysis': str(c['ANALYSIS'] or ''),
@@ -189,6 +196,11 @@ def annotate(lex, surface, res):
                           'gloss': ('as %s + %s: ' % (c2, r['LEMMA'])) + str(r['GLOSS'] or '')[:44],
                           'analysis': str(r['ANALYSIS'] or ''),
                           'pointed': r['FORM']} for r, c2 in extra[:4]]
+        w['options'] += [{'id': str(r['ID']), 'root': str(r['ROOT'] or ''),
+                          'gloss': ('as %s spelled full: ' % r['LEMMA']) + str(r['GLOSS'] or '')[:40],
+                          'analysis': str(r['ANALYSIS'] or ''),
+                          'pointed': respell(surface, r['FORM']) or r['FORM']}
+                         for r in lex.readings(ktiv)[:3]]
         # What the adjudicator is really choosing for. Without this it saw WORD: שבו and a list
         # of entries for the STEM, with nothing to say that ש- had been removed -- so it picked
         # a good entry for בו and returned שָׁבוּ "they returned" for a word meaning "in which".

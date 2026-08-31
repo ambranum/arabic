@@ -64,6 +64,11 @@ TENSED = {'past', 'future', 'imperative'}
 OWN_PREFIX = [('ה', 'definite'), ('מ', 'present'), ('מ', 'participle')]
 
 
+def _same_word(r):
+    """What makes two lexicon rows the same word for ktiv_readings. See its docstring."""
+    return (MATRES.sub('', unpoint(str(r['LEMMA']))), str(r['POS']), str(r['BINYAN'] or ''))
+
+
 def _tensed(r):
     a = str(r['ANALYSIS'] or '')
     return a.startswith('VERB') and bool(TENSED & set(a.split(':')[-1].split('.')))
@@ -307,6 +312,49 @@ class Lexicon:
                 out.append((pre, stem, alt))
         return out
 
+    def ktiv_readings(self, key, exact):
+        """Entries the SKELETON can reach that the exact match hid.
+
+        alt_readings asks what a word could be if a letter at the front is a particle. This asks
+        the other question Hebrew makes possible: what it could be if the optional vowel letters
+        were left out. An entry whose headword is spelled DEFECTIVELY is filed under the
+        defective key, so the ktiv-male surface never reaches it -- look() returns on the exact
+        tier and the skeleton tier, which exists for exactly this, never runs.
+
+        That cost two words their meaning everywhere this app says them. גינה matched the verb
+        גִּנָּה "to denounce", which lists its full spelling, while the noun גִּנָּה "a garden"
+        lists only גנה. אישר matched the pual אֻשַּׁר "to be authorized" -- whose own gloss reads
+        "passive of אישר" -- while the piel אִשֵּׁר "to approve" sits under אשר. Both are in the
+        lexicon. Neither was reachable.
+
+        Two rules keep it from drowning the queue, and the second is the interesting one:
+
+        The alternative has to be a different WORD, and the identity is three things. The
+        lemma's SKELETON, not its pointing, because אֹתוֹ and אוֹתוֹ are one word spelled two
+        ways and were the single biggest source of noise -- 55 occurrences of אותו alone, plus
+        every מאוד and every גדול. The PART OF SPEECH, because גִּנָּה the noun and גִּנָּה the
+        verb are two words that share everything else. And the BINYAN, because the piel אִשֵּׁר
+        "to approve" and the pual אֻשַּׁר "to be approved" are two verbs of one root, identical
+        under the first two tests, and the whole reason אישר is here.
+
+        And a "defective spelling of X" gloss is dropped outright: that entry IS the exact
+        match, written the other way. Deliberately not "form of", which is how Wiktionary
+        glosses a real inflection -- אִתָּנוּ "form of אֶת including us" is the correct reading
+        of איתנו, which had been matching אִיתֵּן "to spell".
+
+        Measured on 12,658 tokens of the app's Hebrew: 423 flagged, 167 of them distinct, and
+        the resolution trail answers each distinct word once. Among them שישי, read as the
+        imperative "rejoice!" rather than "sixth"; איתנו and איתה as "to spell"; בעיר as
+        "flammable" rather than ב- + עיר.
+        """
+        skel = MATRES.sub('', key)
+        if len(skel) < MIN_STEM:
+            return []
+        hit = self._spellable(key, self.by_skeleton.get(skel)) or []
+        ident = {_same_word(r) for r in exact}
+        alt = [r for r in hit if _same_word(r) not in ident]
+        return [r for r in alt if 'spelling of' not in str(r['GLOSS'])[:34]]
+
     @staticmethod
     def _accounts_for(exact, pre):
         """The exact entry already spells this prefix, so the alternative is a coincidence.
@@ -328,11 +376,14 @@ class Lexicon:
         if not recs:
             return None, 'unresolved', []
         cands = self.readings(recs)
-        # An exact match is not the same as an unambiguous one. When the word is also a particle
-        # plus a different word, both readings are real and only the sentence can choose.
-        alts = (self.alt_readings(he_norm(surface), recs)
-                if prov == 'wiktionary:exact' else [])
-        if len(cands) == 1 and not alts:
+        # An exact match is not the same as an unambiguous one. Two ways it can hide a real
+        # second reading, and both are asked: the word may be a particle plus a different word,
+        # and it may be the full spelling of an entry that only lists the defective one.
+        alts = ktiv = []
+        if prov == 'wiktionary:exact':
+            alts = self.alt_readings(he_norm(surface), recs)
+            ktiv = self.ktiv_readings(he_norm(surface), recs)
+        if len(cands) == 1 and not alts and not ktiv:
             return cands[0], prov, cands
         # Several distinct lemmas share this spelling. Same rule as the Arabic side: do not
         # pick for the learner, hand the candidates on for adjudication.
