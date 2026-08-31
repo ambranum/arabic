@@ -19,6 +19,7 @@ defineLang({
     // Hebrew's index is a dictionary in its own right, built from Wiktionary rather than from
     // any text the app ships -- so the corpus, empty or not, cannot stand in for it.
     source: 'lexicon',
+    usage: 'ordinary modern spoken Hebrew, which varies by speaker and register',
     name: 'Wiktionary',
     blurb: 'a 12,662-lemma Hebrew lexicon with the pointing, the binyan and the root',
     credit: '<b>English Wiktionary</b> via <a href="https://kaikki.org/dictionary/Hebrew/" '

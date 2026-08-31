@@ -174,6 +174,116 @@ window.GRAMMAR = {
       ]
      ]
     }
+   ],
+   "examples": [
+    {
+     "ar": "הילדים רצים בסלון.",
+     "en": "The children run around the living room.",
+     "src": "story-beg-07",
+     "title": "Friday Dinner",
+     "hi": [
+      "רצים"
+     ]
+    },
+    {
+     "ar": "כולם רצים לחצר.",
+     "en": "Everyone runs to the yard.",
+     "src": "story-beg-24",
+     "title": "In the Classroom",
+     "hi": [
+      "רצים"
+     ]
+    },
+    {
+     "ar": "בחוץ אנשים עוברים ברחוב.",
+     "en": "Outside people pass by in the street.",
+     "src": "story-beg-10",
+     "title": "At the Café",
+     "hi": [
+      "עוברים"
+     ]
+    },
+    {
+     "ar": "לשכן שלי קוראים יוסי.",
+     "en": "My neighbour's name is Yossi.",
+     "src": "story-beg-12",
+     "title": "My Neighbour",
+     "hi": [
+      "קוראים"
+     ]
+    },
+    {
+     "ar": "אמא קוראת להם לאכול.",
+     "en": "Mum calls them to eat.",
+     "src": "story-beg-18",
+     "title": "The Afternoon",
+     "hi": [
+      "קוראת"
+     ]
+    },
+    {
+     "ar": "לפעמים אנחנו הולכים לסרט.",
+     "en": "Sometimes we go to a film.",
+     "src": "story-beg-20",
+     "title": "Friends",
+     "hi": [
+      "הולכים"
+     ]
+    },
+    {
+     "ar": "הילדים פותחים ספרים ומחברות.",
+     "en": "The children open books and notebooks.",
+     "src": "story-beg-24",
+     "title": "In the Classroom",
+     "hi": [
+      "פותחים"
+     ]
+    },
+    {
+     "ar": "אנשים לובשים מעילים וכובעים.",
+     "en": "People wear coats and hats.",
+     "src": "story-beg-29",
+     "title": "Winter",
+     "hi": [
+      "לובשים"
+     ]
+    },
+    {
+     "ar": "הילדים אוהבים לשחק בגשם.",
+     "en": "The children like to play in the rain.",
+     "src": "story-beg-29",
+     "title": "Winter",
+     "hi": [
+      "אוהבים"
+     ]
+    },
+    {
+     "ar": "בשישי בערב כולם אוכלים ביחד.",
+     "en": "On Friday evening everyone eats together.",
+     "src": "story-beg-02",
+     "title": "My Family",
+     "hi": [
+      "אוכלים"
+     ]
+    },
+    {
+     "ar": "המוכר צועק על העגבניות שלו.",
+     "en": "The seller shouts about his tomatoes.",
+     "src": "story-beg-04",
+     "title": "At the Market",
+     "hi": [
+      "צועק"
+     ]
+    },
+    {
+     "ar": "אנחנו אוכלים ושותים מים קרים.",
+     "en": "We eat and drink cold water.",
+     "src": "story-beg-06",
+     "title": "A Day at the Sea",
+     "hi": [
+      "אוכלים"
+     ]
+    }
    ]
   },
   {
@@ -293,6 +403,116 @@ window.GRAMMAR = {
        "nosaf",
        "to be added"
       ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "אנחנו נפגשים כל שבוע.",
+     "en": "We meet every week.",
+     "src": "story-beg-20",
+     "title": "Friends",
+     "hi": [
+      "נפגשים"
+     ]
+    },
+    {
+     "ar": "נכנסתי בשנייה האחרונה וישבתי בלי אוויר.",
+     "en": "I got in at the last second and sat down out of breath.",
+     "src": "story-int-11",
+     "title": "The Last Train",
+     "hi": [
+      "נכנסתי"
+     ]
+    },
+    {
+     "ar": "רק כשהגעתי לרחוב הבנתי שהמפתחות נשארו בפנים.",
+     "en": "Only when I got to the street did I realise the keys had stayed inside.",
+     "src": "story-int-02",
+     "title": "The Keys",
+     "hi": [
+      "נשארו"
+     ]
+    },
+    {
+     "ar": "מאז אנחנו מדברים כל פעם שאנחנו נפגשים.",
+     "en": "Since then we talk every time we meet.",
+     "src": "story-int-04",
+     "title": "The New Neighbour",
+     "hi": [
+      "נפגשים"
+     ]
+    },
+    {
+     "ar": "בשבוע הבא אנחנו נפגשים בבית קפה בעיר.",
+     "en": "Next week we're meeting at a café in the city.",
+     "src": "story-int-10",
+     "title": "The Letter",
+     "hi": [
+      "נפגשים"
+     ]
+    },
+    {
+     "ar": "בתי הספר נסגרו וכל הילדים ירדו לרחוב.",
+     "en": "The schools closed and all the children went down to the street.",
+     "src": "story-int-25",
+     "title": "The Day of Snow",
+     "hi": [
+      "נסגרו"
+     ]
+    },
+    {
+     "ar": "בערב אחד נשארתי בעיר יותר מדי זמן עם חברים.",
+     "en": "One evening I stayed in the city too long with friends.",
+     "src": "story-int-11",
+     "title": "The Last Train",
+     "hi": [
+      "נשארתי"
+     ]
+    },
+    {
+     "ar": "נכנסתי לשם כמעט כל שבוע, גם כשלא קניתי כלום.",
+     "en": "I went in almost every week, even when I didn't buy anything.",
+     "src": "story-int-22",
+     "title": "The Shop That Closed",
+     "hi": [
+      "נכנסתי"
+     ]
+    },
+    {
+     "ar": "במתקפה רוסית ליד קייב נהרגו 37 אנשים אחרי שמחסן חומרי נפץ נפגע והתפוצץ, וזלנסקי פתח בחקירה.",
+     "en": "In a Russian attack near Kyiv 37 people were killed after an explosives warehouse was hit and blew up, and Zelensky opened an investigation.",
+     "src": "news-2026-08-29",
+     "title": "Today's News — 2026-08-29",
+     "hi": [
+      "נהרגו"
+     ]
+    },
+    {
+     "ar": "ארבעה אנשים נהרגו בתאונות דרכים תוך כמה שעות, ביניהם בן 93 בצומת ליד רעננה ופגע וברח באזור אשכול.",
+     "en": "Four people were killed in car accidents within a few hours, among them a 93-year-old at a junction near Ra'anana and a hit-and-run in the Eshkol area.",
+     "src": "news-2026-08-30",
+     "title": "Today's News — 2026-08-30",
+     "hi": [
+      "נהרגו"
+     ]
+    },
+    {
+     "ar": "בגרנד קניון בארה\"ב היו שיטפונות פתאומיים, ולפחות 20 מטיילים נעדרים. יותר מ-62 אנשים פונו מהאזור וכמה גשרים נהרסו.",
+     "en": "There were flash floods at the Grand Canyon in the U.S., and at least 20 hikers are missing. More than 62 people were evacuated from the area and several bridges were destroyed.",
+     "src": "news-2026-08-31",
+     "title": "Today's News — 2026-08-31",
+     "hi": [
+      "נהרסו"
+     ]
+    },
+    {
+     "ar": "16 לוחמים שסירבו לצאת לסיור עם פרמדיקית בעזה נשלחו לכלא. חמישה מהם קיבלו עשרה ימי מחבוש, ו-11 קיבלו חמישה ימים.",
+     "en": "Sixteen soldiers who refused to go on patrol with a female paramedic in Gaza were sent to jail. Five of them got ten days' detention, and eleven got five days.",
+     "src": "news-2026-08-31",
+     "title": "Today's News — 2026-08-31",
+     "hi": [
+      "נשלחו"
      ]
     }
    ]
@@ -416,6 +636,63 @@ window.GRAMMAR = {
       ]
      ]
     }
+   ],
+   "examples": [
+    {
+     "ar": "אני קם מאוחר ולא ממהר.",
+     "en": "I get up late and don't rush.",
+     "src": "story-beg-30",
+     "title": "The Weekend",
+     "hi": [
+      "ממהר"
+     ]
+    },
+    {
+     "ar": "היה קריר ושקט, ואף אחד לא מיהר לשום מקום.",
+     "en": "It was cool and quiet, and nobody was rushing anywhere.",
+     "src": "story-int-03",
+     "title": "The Trip North",
+     "hi": [
+      "מיהר"
+     ]
+    },
+    {
+     "ar": "הריח מילא את כל הבית ואי אפשר היה לחכות.",
+     "en": "The smell filled the whole house and it was impossible to wait.",
+     "src": "story-int-06",
+     "title": "Grandma's Cake",
+     "hi": [
+      "לחכות"
+     ]
+    },
+    {
+     "ar": "השב\"כ אישר שהיה איום ממשי לפגוע ביאיר נתניהו, ולכן חילצו אותו במהירות חזרה לארץ.",
+     "en": "The Shin Bet confirmed there was a real threat to harm Yair Netanyahu, so they quickly brought him back to Israel.",
+     "src": "news-2026-08-29",
+     "title": "Today's News — 2026-08-29",
+     "hi": [
+      "חילצו"
+     ]
+    },
+    {
+     "ar": "בן גביר ווינטר מסרבים להתאחד, וזה בעייתי לנתניהו כי בן גביר עלול לגדול על חשבון הליכוד.",
+     "en": "Ben Gvir and Winter refuse to unite, and that's a problem for Netanyahu because Ben Gvir might grow at the Likud's expense.",
+     "src": "news-2026-08-30",
+     "title": "Today's News — 2026-08-30",
+     "hi": [
+      "מסרבים"
+     ]
+    },
+    {
+     "ar": "בכיר אמריקני אמר שצבא ארה\"ב תקף שני משגרים באיראן, אחרי שבועות של שקט. לפי הדיווח, המשגרים נערכו לשגר מוקשים ימיים לכיוון מיצר הורמוז.",
+     "en": "A senior American official said the U.S. military struck two launchers in Iran after weeks of quiet. According to the report, the launchers were being prepared to fire naval mines toward the Strait of Hormuz.",
+     "src": "news-2026-08-31",
+     "title": "Today's News — 2026-08-31",
+     "hi": [
+      "לשגר",
+      "משגרים"
+     ]
+    }
    ]
   },
   {
@@ -423,7 +700,8 @@ window.GRAMMAR = {
    "title": "פֻּעַל — The piel, done to you",
    "sub": "שִׁמֵּר → שֻׁמַּר — preserve → be preserved",
    "body": [
-    "<b>פֻּעַל</b> is פיעל made passive, and it is nearly always exactly that: if you know the piel, you know the pual. It is uncommon in speech outside the present tense, where it supplies a great many everyday adjectives — מְבֻשָּׁל \"cooked\", מְסֻדָּר \"tidy\"."
+    "<b>פֻּעַל</b> is פיעל made passive, and it is nearly always exactly that: if you know the piel, you know the pual. It is uncommon in speech outside the present tense, where it supplies a great many everyday adjectives — מְבֻשָּׁל \"cooked\", מְסֻדָּר \"tidy\".",
+    "Everything this app has in Hebrew — 73 texts, 1104 sentences — turns up <b>8</b> with a פֻּעַל verb in it, and not one of them is spelled a way that can only be read as that verb. So this lesson has its tables and no sentences. That is not a gap in the reading. It is how rare this binyan is once people are actually speaking."
    ],
    "tables": [
     {
@@ -657,6 +935,116 @@ window.GRAMMAR = {
       ]
      ]
     }
+   ],
+   "examples": [
+    {
+     "ar": "סוף סוף האוטובוס מגיע.",
+     "en": "Finally the bus arrives.",
+     "src": "story-beg-03",
+     "title": "The Bus",
+     "hi": [
+      "מגיע"
+     ]
+    },
+    {
+     "ar": "אחרי שעתיים אני מגיע.",
+     "en": "After two hours I arrive.",
+     "src": "story-beg-25",
+     "title": "The Train",
+     "hi": [
+      "מגיע"
+     ]
+    },
+    {
+     "ar": "המלצר מביא לי קפה ועוגה.",
+     "en": "The waiter brings me coffee and cake.",
+     "src": "story-beg-10",
+     "title": "At the Café",
+     "hi": [
+      "מביא"
+     ]
+    },
+    {
+     "ar": "לפעמים אני מביא לו עוגה.",
+     "en": "Sometimes I bring him cake.",
+     "src": "story-beg-12",
+     "title": "My Neighbour",
+     "hi": [
+      "מביא"
+     ]
+    },
+    {
+     "ar": "כשהאוטובוס הגיע הגשם כבר נפסק.",
+     "en": "When the bus arrived the rain had already stopped.",
+     "src": "story-int-05",
+     "title": "Rain on the Way",
+     "hi": [
+      "הגיע"
+     ]
+    },
+    {
+     "ar": "אני מזמין דג ואשתי מזמינה סלט.",
+     "en": "I order fish and my wife orders salad.",
+     "src": "story-beg-16",
+     "title": "At the Restaurant",
+     "hi": [
+      "מזמינה"
+     ]
+    },
+    {
+     "ar": "בבוקר הגעתי מוקדם וישבתי בשורה האחרונה.",
+     "en": "In the morning I arrived early and sat in the back row.",
+     "src": "story-int-14",
+     "title": "The Exam",
+     "hi": [
+      "הגעתי"
+     ]
+    },
+    {
+     "ar": "בסוף אוגוסט הרגשנו שהקיץ מתחיל להיגמר.",
+     "en": "At the end of August we felt the summer starting to end.",
+     "src": "story-int-20",
+     "title": "The End of Summer",
+     "hi": [
+      "מתחיל"
+     ]
+    },
+    {
+     "ar": "הגעתי לעבודה באיחור, אבל עם סיפור טוב.",
+     "en": "I got to work late, but with a good story.",
+     "src": "story-int-05",
+     "title": "Rain on the Way",
+     "hi": [
+      "הגעתי"
+     ]
+    },
+    {
+     "ar": "יצאנו מוקדם בבוקר כי רצינו להגיע לפני החום.",
+     "en": "We left early in the morning because we wanted to arrive before the heat.",
+     "src": "story-int-03",
+     "title": "The Trip North",
+     "hi": [
+      "להגיע"
+     ]
+    },
+    {
+     "ar": "בערב הגענו למקום ופתחנו את החלונות אל ההרים.",
+     "en": "In the evening we arrived and opened the windows onto the hills.",
+     "src": "story-int-03",
+     "title": "The Trip North",
+     "hi": [
+      "הגענו"
+     ]
+    },
+    {
+     "ar": "בשבת אחת סבתא הוציאה קופסה ישנה עם תמונות.",
+     "en": "One Saturday my grandmother took out an old box of photographs.",
+     "src": "story-int-19",
+     "title": "Grandma and the Photographs",
+     "hi": [
+      "הוציאה"
+     ]
+    }
    ]
   },
   {
@@ -664,7 +1052,8 @@ window.GRAMMAR = {
    "title": "הֻפְעַל — Made to happen to you",
    "sub": "הִכְנִיס → הֻכְנַס — bring in → be brought in",
    "body": [
-    "<b>הֻפְעַל</b> is הפעיל made passive, and like פועל it is a mechanical partner: the causative done to you. Rare in speech, common in the news, which is where you will meet it first — הֻחְלַט \"it was decided\", הֻפְסַק \"it was stopped\"."
+    "<b>הֻפְעַל</b> is הפעיל made passive, and like פועל it is a mechanical partner: the causative done to you. Rare in speech, common in the news, which is where you will meet it first — הֻחְלַט \"it was decided\", הֻפְסַק \"it was stopped\".",
+    "Everything this app has in Hebrew — 73 texts, 1104 sentences — turns up <b>6</b> with a הֻפְעַל verb in it, and not one of them is spelled a way that can only be read as that verb. So this lesson has its tables and no sentences. That is not a gap in the reading. It is how rare this binyan is once people are actually speaking."
    ],
    "tables": [
     {
@@ -896,6 +1285,89 @@ window.GRAMMAR = {
        "hitnaged",
        "to oppose, to be opposed"
       ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "בדרך אני מסתכל על העיר.",
+     "en": "On the way I look at the city.",
+     "src": "story-beg-03",
+     "title": "The Bus",
+     "hi": [
+      "מסתכל"
+     ]
+    },
+    {
+     "ar": "אחר כך אני מסתכל בחלון.",
+     "en": "Afterwards I look out of the window.",
+     "src": "story-beg-08",
+     "title": "A Rainy Day",
+     "hi": [
+      "מסתכל"
+     ]
+    },
+    {
+     "ar": "כשחזרנו הביתה כבר התגעגענו לשם.",
+     "en": "When we got home we already missed the place.",
+     "src": "story-int-03",
+     "title": "The Trip North",
+     "hi": [
+      "התגעגענו"
+     ]
+    },
+    {
+     "ar": "אחר כך אני מתלבש והולך לעבודה.",
+     "en": "Afterwards I get dressed and go to work.",
+     "src": "story-beg-01",
+     "title": "Morning Coffee",
+     "hi": [
+      "מתלבש"
+     ]
+    },
+    {
+     "ar": "בבוקר אני מסתכל בו בזמן הקפה.",
+     "en": "In the morning I look at it over coffee.",
+     "src": "story-beg-21",
+     "title": "My Phone",
+     "hi": [
+      "מסתכל"
+     ]
+    },
+    {
+     "ar": "בסוף היא אמרה שהם יתקשרו בשבוע הבא.",
+     "en": "In the end she said they would call the following week.",
+     "src": "story-int-07",
+     "title": "The Interview",
+     "hi": [
+      "יתקשרו"
+     ]
+    },
+    {
+     "ar": "בבוקר הסתכלנו מהחלון ולא האמנו למה שראינו.",
+     "en": "In the morning we looked out of the window and didn't believe what we saw.",
+     "src": "story-int-25",
+     "title": "The Day of Snow",
+     "hi": [
+      "הסתכלנו"
+     ]
+    },
+    {
+     "ar": "בסוף הכול הסתדר, אבל למדתי לקחת מפתח נוסף.",
+     "en": "In the end everything worked out, but I learned to take a spare key.",
+     "src": "story-int-02",
+     "title": "The Keys",
+     "hi": [
+      "הסתדר"
+     ]
+    },
+    {
+     "ar": "נהג אוטובוס בבית שמש סירב להוריד נוסע במקום לא חוקי, והנוסע היכה אותו קשה. \"התעוררתי באמבולנס\", סיפר הנהג.",
+     "en": "A bus driver in Beit Shemesh refused to let a passenger off at an illegal spot, and the passenger beat him badly. \"I woke up in an ambulance,\" the driver said.",
+     "src": "news-2026-08-31",
+     "title": "Today's News — 2026-08-31",
+     "hi": [
+      "התעוררתי"
      ]
     }
    ]

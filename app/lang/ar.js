@@ -457,6 +457,10 @@ function wadiAra(w) {
     lex: {
       // Arabic's word index is derived from the corpus, so either file can answer a lookup.
       source: 'corpus',
+      // How to describe the variety the curated prose describes, where a lesson has to
+      // qualify itself. Neither language is 'the language': one is urban Palestinian, the
+      // other is what people actually say in Israel rather than what a textbook prints.
+      usage: 'common urban Palestinian usage, which varies by speaker and region',
       name: 'Maknuune',
       blurb: 'a 36,000-entry Palestinian lexicon compiled by linguists',
       credit: 'the <b>Maknuune Palestinian Arabic Lexicon</b> (Dibas, Khairallah, Habash et al., '

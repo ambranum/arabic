@@ -19,6 +19,7 @@ table comes up short of its minimum stops the build rather than shipping a thin 
 """
 import argparse
 import collections
+import glob
 import json
 import os
 import sys
@@ -26,12 +27,139 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths          # noqa: E402
 paths.require('he')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'spike', 'he'))
+import lex as helex          # noqa: E402
 
 VERBS = paths.data('verbs.js')
 OUT = paths.data('grammar.js')
 
+# How many real sentences a lesson may carry, and how many may come from one text. The cap per
+# text is the point: six sentences from one story is one story, not six examples.
+EXAMPLES, PER_TEXT, PER_WORD, MIN_EXAMPLES = 12, 2, 3, 6
+# Spoken register first. The Ben-Yehuda shelf is real Hebrew and it is published prose; a
+# grammar lesson about how people speak should reach for the stories and the paper first and
+# let the books fill what is left.
+KIND_ORDER = {'story': 0, 'news': 0, 'book-chapter': 1}
+
 NAMES = {'paal': 'פָּעַל', 'nifal': 'נִפְעַל', 'piel': 'פִּעֵל', 'pual': 'פֻּעַל',
          'hifil': 'הִפְעִיל', 'hufal': 'הֻפְעַל', 'hitpael': 'הִתְפַּעֵל'}
+
+
+def one_reading(lex, cache={}):
+    """-> a test: does the lexicon read this word's letters exactly one way?
+
+    Nothing else is evidence of a binyan. Hebrew is full of the other kind, and the corpus
+    inherits every one of them: שם is the paal verb שָׂם "put" and it is also the ordinary word
+    for "there"; לשוק is לְשַׁוֵּק "to market" and it is ל־ + שׁוּק "to the market", which is what
+    the story said and not how it was annotated; גינה is "he denounced" and it is "a garden".
+
+    Three ways a second reading hides, and all three are checked. A PROCLITIC: לשוק is
+    לְשַׁוֵּק "to market" and it is ל־ + שׁוּק "to the market", which is what the story said and
+    not how it was annotated. A DEFECTIVE SPELLING: גינה matched the verb גִּנָּה "to denounce"
+    exactly, because that entry lists its full spelling, while the noun גִּנָּה "a garden" lists
+    only גנה and never got the chance -- an exact match wins before the skeleton tier runs. And
+    plain HOMOGRAPHY: שם is the paal verb שָׂם "put" and the ordinary word for "there".
+
+    lex.alt_readings answers only the first, and answers it for a different purpose: it compares
+    LEMMA_SEARCH, the consonantal skeleton, so that בְּחִירוֹת listed twice counts once -- and by
+    that rule the piel שִׁוֵּק and the noun שׁוּק, sharing the skeleton שוק, counted as one word.
+    Here the pair is (pointed lemma, part of speech), which is too strict to interrupt a human
+    over and right for deciding what a lesson may point at.
+    """
+    from build_lex import he_norm
+
+    def ident(recs):
+        return {(r['LEMMA'], str(r['POS'])) for r in (recs or [])}
+
+    def test(surface):
+        if surface in cache:
+            return cache[surface]
+        recs, _prov, cut = lex.look(surface)
+        ok = bool(recs) and not cut and len(lex.readings(recs)) == 1
+        if ok:
+            key, mine = he_norm(surface), ident(recs)
+            others = list(lex._spellable(key, lex.by_skeleton.get(helex.MATRES.sub('', key))))
+            present = any('present' in str(r['ANALYSIS']) for r in recs)
+            for stem, strip in lex.stems(key)[1:]:
+                if not strip.endswith('-'):        # a suffix strip is a different question
+                    continue
+                # The one prefix a binyan supplies itself. Piel, hitpael and hifil build their
+                # present tense with מ־ and nothing else -- מדבר, מסתכל, מגיע -- so a מ־ in
+                # front of a present-tense reading is that binyan's own letter, not a
+                # preposition that happens to be there. Without this the filter deletes the
+                # participle, which is most of how these three binyanim are actually spoken,
+                # and piel loses its lesson to מ־ + a noun that nobody said.
+                #
+                # Only מ־ and only on a present tense. ל־ gets no such pass, which is what
+                # keeps לשוק ("to the market", annotated as לְשַׁוֵּק "to market") out.
+                if present and strip == 'מ-':
+                    continue
+                peeled, _p, c = lex.look(stem)
+                if not c:
+                    others += peeled
+            ok = not (ident(others) - mine)
+        cache[surface] = ok
+        return ok
+    return test
+
+
+def corpus_examples(binyan_of):
+    """Real sentences for each binyan, from the app's own annotated Hebrew.
+
+    The Arabic grammar module does this from 384 texts and takes thirty a lesson. Hebrew has 73
+    and takes twelve, which is what there is -- and for the two passives there is much less than
+    that, because פועל and הופעל are genuinely rare in speech. That is not a gap in the corpus,
+    it is the fact the lesson is teaching, so the count is shown rather than padded.
+    """
+    sole = one_reading(helex.Lexicon())
+    by_binyan, raw = collections.defaultdict(list), collections.Counter()
+    for f in sorted(glob.glob(paths.build('*', 'text.json'))):
+        d = json.load(open(f, encoding='utf-8'))
+        rank = KIND_ORDER.get(d.get('kind'), 2)
+        for sn in d['sentences']:
+            if not sn.get('en'):
+                continue
+            hits = collections.defaultdict(list)
+            for w in sn['words']:
+                b0 = binyan_of.get(w.get('lemma'))
+                if b0:
+                    raw[b0] += 1        # before any filtering: how often the binyan turns up
+                # The pointing has to come from the very lexicon row that names the binyan.
+                # Any other source means the row was chosen on consonants alone, and a
+                # consonantal match is not evidence of a binyan:
+                # במוצאי (ב + the construct of מוֹצָא) came back as the hufal הוּצָא, and
+                # מִשֹּׁרֶשׁ ('from the root') as a pual present מְשֹׁרָשׁ. Both spell the same
+                # letters as a real passive verb and neither is one.
+                if w.get('vocalized_from') != 'lexicon' or not sole(w['surface']):
+                    continue
+                b = binyan_of.get(w.get('lemma'))
+                if b:
+                    hits[b].append(w['surface'])
+            for b, surfaces in hits.items():
+                by_binyan[b].append((rank, len(sn['words']), d['id'],
+                                     d['title'].get('en') or d['id'], sn['ar'], sn['en'],
+                                     sorted(set(surfaces))))
+    out = {}
+    for b, rows in by_binyan.items():
+        rows.sort(key=lambda r: r[:2])          # spoken first, then shortest
+        picked, per, said, word = [], collections.Counter(), set(), collections.Counter()
+        for _rank, _n, tid, title, ar, en, hi in rows:
+            # The paper reruns a story the next morning with the tail reworded, so the same
+            # sentence arrives twice under two ids and is not string-equal. Six opening words
+            # is what a rerun keeps. And one lesson showing הגעתי six times teaches less than
+            # three different verbs do.
+            head = ' '.join(ar.split()[:6])
+            if per[tid] >= PER_TEXT or head in said or any(word[x] >= PER_WORD for x in hi):
+                continue
+            said.add(head)
+            for x in hi:
+                word[x] += 1
+            per[tid] += 1
+            picked.append({'ar': ar, 'en': en, 'src': tid, 'title': title, 'hi': hi})
+            if len(picked) >= EXAMPLES:
+                break
+        out[b] = picked
+    return out, raw
 
 
 def load():
@@ -137,6 +265,9 @@ def main():
     ap.parse_args()
 
     vb = load()
+    n_texts = len(glob.glob(paths.build('*', 'text.json')))
+    n_sents = sum(len(json.load(open(f, encoding='utf-8'))['sentences'])
+                  for f in glob.glob(paths.build('*', 'text.json')))
     by_form = collections.defaultdict(list)
     by_root = collections.defaultdict(dict)
     for v in vb:
@@ -147,6 +278,9 @@ def main():
     # How many binyanim this verb's root is attested in -- the centrality proxy rank() uses.
     for v in vb:
         v['_spread'] = len(by_root.get(v.get('root') or '', ()))
+
+    binyan_of = {v['lemma']: v['form'] for v in vb if v.get('form')}
+    ex, raw = corpus_examples(binyan_of)
 
     rich = sorted((r for r, f in by_root.items() if len(f) >= 4),
                   key=lambda r: -len(by_root[r]))[:3]
@@ -234,8 +368,29 @@ def main():
         tabs.append(plain_table('%s verbs' % NAMES[form], by_form[form], 10))
         if len(tabs[-1]['rows']) < 6:
             raise SystemExit('!! %s: only %d verbs' % (form, len(tabs[-1]['rows'])))
-        L.append({'id': form, 'title': '%s — %s' % (NAMES[form], title), 'sub': sub,
-                  'body': body, 'tables': tabs})
+        les = {'id': form, 'title': '%s — %s' % (NAMES[form], title), 'sub': sub,
+               'body': list(body), 'tables': tabs}
+        found = ex.get(form, [])
+        # Below the floor the examples are not shown at all. With four or five matches in a
+        # 1,100-sentence corpus, an individual one is about as likely to be a mis-annotation as
+        # a real instance -- and a lesson that illustrates itself with a mistake is worse than
+        # one that says plainly how little there was.
+        if len(found) >= MIN_EXAMPLES:
+            les['examples'] = found
+        if len(found) < MIN_EXAMPLES:
+            # Say the real number, not the number that survived. Everything this app has in
+            # Hebrew turns up eight פועל verbs and six הופעל ones, and every one of them rests
+            # on a spelling that reads more than one way -- which is itself the point, since a
+            # binyan nobody speaks is a binyan you only ever meet in a word you can misread.
+            les['body'].append(
+                'Everything this app has in Hebrew — %d texts, %d sentences — turns up '
+                '<b>%d</b> with a %s verb in it, and %s. So this lesson has its tables and no '
+                'sentences. That is not a gap in the reading. It is how rare this binyan is '
+                'once people are actually speaking.'
+                % (n_texts, n_sents, raw[form], NAMES[form],
+                   'not one of them is spelled a way that can only be read as that verb'
+                   if raw[form] else 'that is all of them'))
+        L.append(les)
 
     # 9 -----------------------------------------------------------------------------------
     JOB = {'paal': 'plain, basic', 'nifal': 'passive of פעל', 'piel': 'transitive / intensive',
@@ -275,9 +430,11 @@ def main():
         f.write('window.GRAMMAR = ')
         json.dump(doc, f, ensure_ascii=False, indent=1)
         f.write(';\n')
-    print('%d lessons · %d tables · %d rows'
+    print('%d lessons · %d tables · %d rows · %d real sentences from %d texts'
           % (len(L), sum(len(x['tables']) for x in L),
-             sum(len(t['rows']) for x in L for t in x['tables'])))
+             sum(len(t['rows']) for x in L for t in x['tables']),
+             sum(len(x.get('examples', [])) for x in L),
+             len({e['src'] for x in L for e in x.get('examples', [])})))
     print('-> %s' % os.path.relpath(OUT, paths.ROOT))
     return 0
 

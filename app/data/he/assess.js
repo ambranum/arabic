@@ -5,15 +5,15 @@
 // nothing unverified. Per the project's rule, this file holds NO Hebrew word data.
 window.ASSESS = {
   // ---- the adaptive ladder ----
-  // Four skills rather than Arabic's five, so four rounds is 16 items rather than 20 — about
-  // six minutes. `grammar` is missing on purpose: the Hebrew grammar module teaches the
-  // binyanim from paradigm tables, and there is no bank of mined example sentences to sample a
-  // question from. Testing a skill this app cannot yet sample honestly would just be noise.
+  // Five skills, four rounds, 20 items — about eight minutes, the same shape as Arabic.
+  // `grammar` was missing here until the binyan lessons had sentences to sample: it is a cloze
+  // over a mined example, so it needs real ones, and five of the nine lessons now carry them
+  // (פועל and הופעל do not, and are simply never drawn).
   rounds: 4,
-  upAt: 3,              // >=3 of 4 right in a round -> move up a tier
-  downAt: 1,            // <=1 of 4 -> move down. Same calibration as Arabic, scaled to 4 items.
-  skills: ['listening', 'vocab', 'verbs', 'chunks'],
-  skillLabels: {listening: 'Listening', vocab: 'Vocabulary',
+  upAt: 4,              // >=4 of 5 right in a round -> move up a tier
+  downAt: 1,            // <=1 of 5 -> move down. Same calibration as Arabic.
+  skills: ['listening', 'vocab', 'grammar', 'verbs', 'chunks'],
+  skillLabels: {listening: 'Listening', vocab: 'Vocabulary', grammar: 'Grammar',
                 verbs: 'Verbs', chunks: 'Conversation chunks'},
 
   // tier (1..4) -> the phase a finisher starts in. Three phases exist, so the top two tiers
@@ -25,7 +25,10 @@ window.ASSESS = {
 
   // ---- what each tier draws on ----
   vocabBands: [[0, 120], [120, 350], [350, 800], [800, 99999]],   // corpus frequency-rank bands
-  grammarBands: [[0, 2], [2, 5], [5, 9], [5, 9]],                 // unused; kept for the seeder
+  // Lesson index ranges to draw a cloze from, by tier. The lessons that carry sentences
+  // are paal (1), nifal (2), piel (3), hifil (5) and hitpael (7), so the bands walk from
+  // the plainest binyan to the ones a learner meets last.
+  grammarBands: [[0, 2], [2, 5], [5, 9], [5, 9]],
   // `weak` is the binyan for Hebrew (see he_verbs.py) and the ladder follows LANG.verb.tier:
   // paal first, then the other three actives, the passives and hitpael last.
   verbSpec: [
@@ -47,6 +50,6 @@ window.ASSESS = {
   // ---- how the result feeds the plan ----
   seedGrammarMin: 0.5,
   nudgeMin: 5,
-  skillActs: {listening: ['listen', 'shadow'], vocab: ['read'],
+  skillActs: {listening: ['listen', 'shadow'], vocab: ['read'], grammar: ['grammar'],
               verbs: ['verbs'], chunks: ['drill432', 'produce']},
 };

@@ -1126,7 +1126,8 @@ function home(){
       <div class="hm-t">Build your study plan</div>
       <div class="hm-s">Tell it when you can study and roughly where you are. It builds a daily,
         self-adjusting path — ${esc(LANG.planGoal)}.</div>
-      <div class="hm-meta"><span>~8-minute placement</span><span>7 phases</span>
+      <div class="hm-meta"><span>~${asMins()}-minute placement</span><span>${
+        (CUR.phases || []).length} phases</span>
         <span>adjusts to your week</span></div>
     </button>`;
   }
@@ -1568,7 +1569,7 @@ function tutorHome() {
       `</div>`;
   }
   h += `<div class="tut-row">
-      ${kbdWrap(`<textarea id="tut-in" rows="1" placeholder="Ask in English or Arabic…"
+      ${kbdWrap(`<textarea id="tut-in" rows="1" placeholder="Ask in English or ${esc(LANG.name)}…"
         onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();tutorAsk(this.value)}"></textarea>`,
         'tut-in', true)}
       <button class="tut-send" id="tut-send" onclick="tutorAsk(($('tut-in')||{}).value)">Ask</button>
@@ -3401,7 +3402,7 @@ function planWarmupHTML(date, doneMap) {
   let h = `<div class="warmup${done ? ' done' : ''}">
     <div class="warmup-h"><button class="pcheck" onclick="planToggle('${date}','warmup',3,'',0,'',0)" aria-label="Mark done">${done ? '✓' : ''}</button>
       <span class="warmup-t">Warm-up — recall yesterday</span><span class="pmin">3m</span></div>
-    <p class="hint" style="margin:2px 0 8px 34px">Say each in Arabic from memory first — a 30-second retrieval primes today.</p>`;
+    <p class="hint" style="margin:2px 0 8px 34px">Say each in ${esc(LANG.name)} from memory first — a 30-second retrieval primes today.</p>`;
   h += _warmEx.map((it, i) => `<div class="wex" style="margin-left:34px">
       <span class="wex-q">${esc(it.en)}</span>
       <button class="tog" onclick="planWarmShow(${i})">Show</button>
@@ -3556,6 +3557,13 @@ function asListenItem(tier) {
     _asShuf(band).map(x => _asGloss(x.gloss)).filter(g => g !== _asGloss(w.gloss)));
   if (!choices) return null;
   return {skill: 'listening', prompt: '', sub: 'Listen — what does the word mean?', audio: w.audio, choices};
+}
+// How long the placement takes, in whole minutes. Arabic asks 4 rounds of 5 skills = 20 items
+// and has always been advertised as eight, so roughly 24 seconds an item. Hebrew asked four
+// skills until the binyan lessons had sentences to sample; saying "8 minutes" for a test that
+// is a fifth shorter is the kind of small untruth that makes a learner distrust the rest.
+function asMins() {
+  return Math.max(1, Math.round((AS.rounds || 4) * (AS.skills || []).length * 0.4));
 }
 function asGrammarItem(tier) {
   const [a, b] = (AS.grammarBands || [])[tier - 1] || [0, 4];
@@ -3836,9 +3844,9 @@ function planIntake() {
             <button class="tog" onclick="_as=null;location.hash='/plan/new/assess'">Re-take the test</button>
             <button class="tog" onclick="assessClear()">Use self-rating instead</button></div></div>`; }
       return `<div class="as-cta"><button class="tog go" style="font-size:13.5px;padding:10px 16px"
-          onclick="location.hash='/plan/new/assess'">Take the 8-minute placement →</button>
+          onclick="location.hash='/plan/new/assess'">Take the ${asMins()}-minute placement →</button>
           <span class="hint" style="margin:0">finds your real level — or just rate yourself:</span></div>
-        ${radio('lvl', 'none', lvl, 'Brand new', 'Never really studied Arabic')}
+        ${radio('lvl', 'none', lvl, 'Brand new', 'Never really studied ' + LANG.name)}
         ${radio('lvl', 'greetings', lvl, 'A few greetings', 'Salaam, shukran, the basics')}
         ${radio('lvl', 'conversation', lvl, 'Simple conversations', 'I can introduce myself and get by')}
         ${radio('lvl', 'comfortable', lvl, 'Fairly comfortable', 'I can tell a story, with effort')}`; })()}
@@ -3995,7 +4003,7 @@ function planExerciseItems(day, date) {
 function planExerciseHTML(day, date) {
   _planEx = planExerciseItems(day, date);
   if (!_planEx.length) return '';
-  let h = `<div class="sec" style="margin-top:22px">Exercise — say it in Arabic</div>
+  let h = `<div class="sec" style="margin-top:22px">Exercise — say it in ${esc(LANG.name)}</div>
     <p class="hint" style="margin-bottom:10px">From today’s material. Producing it from memory (not just
       rereading) is what makes it stick — try each one before you check.</p>`;
   h += _planEx.map((it, i) => `<div class="pex">
@@ -4481,7 +4489,7 @@ function planJourney() {
 // Re-taking the placement is allowed at ANY time — from Today, the journey or the dashboard. It
 // re-bases which phase you're in without touching a single completed task in the log.
 function planReassess() {
-  if (!confirm('Re-take the ~8-minute placement?\n\nIt re-bases which phase you start from. '
+  if (!confirm('Re-take the ~' + asMins() + '-minute placement?\n\nIt re-bases which phase you start from. '
              + 'Everything you have already completed stays exactly as it is.')) return;
   _as = null;
   location.hash = '/plan/new/assess';
@@ -4809,10 +4817,16 @@ function grammarLesson(id){
     }
   }
 
-  h += `<div class="note">Every example above is a real sentence from this app's texts — the words
-    were looked up in the Maknuune lexicon, not invented. The explanation and the paradigm tables are
-    written by us to orient you; they describe common urban Palestinian usage, which varies by speaker
-    and region.</div>`;
+  // "Every example above" is a lie on a lesson with no examples, and Hebrew has two: פועל and
+  // הופעל are too rare in real speech for the corpus to illustrate honestly, and they say so in
+  // their own text. The provenance claim still needs making, just about the tables instead.
+  h += `<div class="note">${l.examples && l.examples.length
+    ? `Every example above is a real sentence from this app's texts — the words were looked up in
+       ${esc(LANG.lex.name)}, not invented. The explanation and the tables are written by us to
+       orient you; they describe`
+    : `Every word in the tables above was looked up in ${esc(LANG.lex.name)}, not invented. The
+       explanation is written by us to orient you; it describes`}
+    ${esc(LANG.lex.usage)}.</div>`;
 
   // prev / next lesson
   h += `<div class="ctl" style="margin-top:16px">`;
