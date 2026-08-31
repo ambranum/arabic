@@ -14,6 +14,8 @@
  "shelf": 0,
  "book_meta": null,
  "subdialect": null,
+ "register": null,
+ "translation": null,
  "source": "Israeli and world headlines, written in spoken Hebrew by Claude. NOT native-validated.",
  "sentences": [
   {
@@ -34,37 +36,7 @@
      "caphi_urban": "haya",
      "caphi_raw": null,
      "maknuune_id": "500-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "500-1",
-       "root": "",
-       "gloss": "to be:",
-       "analysis": "VERB",
-       "pointed": "הָיָה"
-      },
-      {
-       "id": "500-29",
-       "root": "",
-       "gloss": "to be:",
-       "analysis": "VERB:imperative.masculine.singular",
-       "pointed": "הֱיֵה"
-      },
-      {
-       "id": "727-1",
-       "root": "",
-       "gloss": "as ה- + יָהּ: Jah, one of the names of God and a common th",
-       "analysis": "NAME",
-       "pointed": "יָהּ"
-      },
-      {
-       "id": "12264-3",
-       "root": "",
-       "gloss": "as ה- + ־יָהוּ: A theophoric suffix, meaning \"the Lord\", use",
-       "analysis": "SUFFIX:alternative",
-       "pointed": "־יָה"
-      }
-     ]
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "חשד",
@@ -94,7 +66,30 @@
      "caphi_urban": "lirtsoax",
      "caphi_raw": null,
      "maknuune_id": "2744-5",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2744-5",
+       "root": "ח",
+       "gloss": "to murder (to kill deliberately)",
+       "analysis": "VERB:infinitive",
+       "pointed": "לִרְצֹחַ"
+      },
+      {
+       "id": "2745-1",
+       "root": "",
+       "gloss": "as ל- + רֶצַח: murder: the crime of deliberately killing",
+       "analysis": "NOUN",
+       "pointed": "רֶצַח"
+      },
+      {
+       "id": "8348-3",
+       "root": "ח",
+       "gloss": "as ל- + נִרְצַח: To be murdered.",
+       "analysis": "VERB:active",
+       "pointed": "רָצַח"
+      }
+     ]
     },
     {
      "surface": "ביפו",
@@ -262,23 +257,7 @@
      "caphi_urban": "kashe",
      "caphi_raw": null,
      "maknuune_id": "4156-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "4156-1",
-       "root": "",
-       "gloss": "hard (resistant to pressure)",
-       "analysis": "ADJ",
-       "pointed": "קָשֶׁה"
-      },
-      {
-       "id": "4156-3",
-       "root": "",
-       "gloss": "hard (resistant to pressure)",
-       "analysis": "ADJ:feminine",
-       "pointed": "קָשָׁה"
-      }
-     ]
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "מירי",
@@ -574,7 +553,7 @@
      "lemma": "זוֹ",
      "form": "זוֹ",
      "vocalized": "זה",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "This, this one.",
      "analysis": "PRON:masculine",
@@ -856,7 +835,7 @@
      "lemma": "גָּדַל",
      "form": "גָּדַל",
      "vocalized": "לגדול",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "to be big, large, great",
      "analysis": "VERB:infinitive",
@@ -864,7 +843,30 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "675-4",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "675-4",
+       "root": "",
+       "gloss": "to be big, large, great",
+       "analysis": "VERB:infinitive",
+       "pointed": "לגדול"
+      },
+      {
+       "id": "1481-1",
+       "root": "",
+       "gloss": "as ל- + גָּדוֹל: big, large",
+       "analysis": "ADJ",
+       "pointed": "גָּדוֹל"
+      },
+      {
+       "id": "1482-1",
+       "root": "",
+       "gloss": "as ל- + גִּדּוּל: defective spelling of גידול",
+       "analysis": "NOUN",
+       "pointed": "גִּדּוּל"
+      }
+     ]
     },
     {
      "surface": "על",
@@ -955,7 +957,7 @@
      "lemma": "שִׁטָּפוֹן",
      "form": "שִׁטָּפוֹן",
      "vocalized": "שיטפונות",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "flood (an overflow of a large amount of water (usually disastrous) from a lake or other body of water due to excessive rainfall or other input of water)",
      "analysis": "NOUN:indefinite.plural",
@@ -1177,7 +1179,7 @@
      "lemma": "אֻשַּׁר",
      "form": "אֻשַּׁר",
      "vocalized": "אישר",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "passive of אישר (ishér): to be authorized, to be confirmed.",
      "analysis": "VERB:active",
@@ -1254,7 +1256,7 @@
      "lemma": "פָּגַע",
      "form": "פָּגַע",
      "vocalized": "לפגוע",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": "ע",
      "gloss": "to hurt or injure (someone or something): to cause a wound or injury, or other damage",
      "analysis": "VERB:infinitive",
@@ -1262,7 +1264,23 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "7460-4",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "7460-4",
+       "root": "ע",
+       "gloss": "to hurt or injure (someone or something): to cause a wound o",
+       "analysis": "VERB:infinitive",
+       "pointed": "לפגוע"
+      },
+      {
+       "id": "9477-1",
+       "root": "",
+       "gloss": "as ל- + פִּגּוּעַ: terrorist attack",
+       "analysis": "NOUN",
+       "pointed": "פִּגּוּעַ"
+      }
+     ]
     },
     {
      "surface": "ביאיר",
@@ -1316,7 +1334,7 @@
      "lemma": "חִלֵּץ",
      "form": "חִלֵּץ",
      "vocalized": "חילצו",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "to rescue",
      "analysis": "VERB:feminine.masculine.past.plural.third-person",
@@ -1429,32 +1447,16 @@
      "surface": "הגיעו",
      "lemma": "הִגִּיעַ",
      "form": "הִגִּיעַ",
-     "vocalized": "הַגִּיעוּ",
+     "vocalized": "הִגִּיעוּ",
      "vocalized_from": "lexicon",
      "root": "נ.ע",
      "gloss": "to arrive, to get, to reach",
-     "analysis": "VERB:imperative.masculine.plural",
-     "caphi": "hagiu",
-     "caphi_urban": "hagiu",
+     "analysis": "VERB:feminine.masculine.past.plural.third-person",
+     "caphi": "higiu",
+     "caphi_urban": "higiu",
      "caphi_raw": null,
-     "maknuune_id": "2331-30",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "2331-30",
-       "root": "נ.ע",
-       "gloss": "to arrive, to get, to reach",
-       "analysis": "VERB:imperative.masculine.plural",
-       "pointed": "הַגִּיעוּ"
-      },
-      {
-       "id": "2331-13",
-       "root": "נ.ע",
-       "gloss": "to arrive, to get, to reach",
-       "analysis": "VERB:feminine.masculine.past.plural.third-person",
-       "pointed": "הִגִּיעוּ"
-      }
-     ]
+     "maknuune_id": "2331-13",
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "רעולי",
@@ -1570,7 +1572,7 @@
      "lemma": "עִתּוֹנַאי",
      "form": "עִתּוֹנַאי",
      "vocalized": "עיתונאים",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "a journalist, reporter, newspaperman",
      "analysis": "NOUN:indefinite.plural",
@@ -1588,30 +1590,13 @@
      "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "To throw, to toss: to cause an object to move rapidly through the air.",
-     "analysis": "VERB:imperative.masculine.plural",
-     "caphi": "zirku",
-     "caphi_urban": "zirku",
+     "analysis": "VERB:feminine.masculine.past.plural.third-person",
+     "caphi": "zarku",
+     "caphi_urban": "zarku",
      "caphi_raw": null,
-     "maknuune_id": "2943-41",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
-     "options": [
-      {
-       "id": "2943-41",
-       "root": "",
-       "gloss": "To throw, to toss: to cause an object to move rapidly throug",
-       "analysis": "VERB:imperative.masculine.plural",
-       "pointed": "זִרְקוּ"
-      },
-      {
-       "id": "2943-16",
-       "root": "",
-       "gloss": "To throw, to toss: to cause an object to move rapidly throug",
-       "analysis": "VERB:feminine.masculine.past.plural.third-person",
-       "pointed": "זָרְקוּ"
-      }
-     ],
-     "_cut_for_prompt": "ו-"
+     "maknuune_id": "2943-16",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ו-"
     },
     {
      "surface": "אבנים",
@@ -1678,7 +1663,7 @@
      "lemma": "זוֹ",
      "form": "זוֹ",
      "vocalized": "זה",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "This, this one.",
      "analysis": "PRON:masculine",
@@ -2167,7 +2152,7 @@
      "lemma": "אֲוִיר",
      "form": "אֲוִיר",
      "vocalized": "האוויר",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "air",
      "analysis": "NOUN:definite.singular",
@@ -2359,7 +2344,7 @@
      "lemma": "חֹמֶר",
      "form": "חֹמֶר",
      "vocalized": "חומרי",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "clay, (especially architecture) mortar.",
      "analysis": "NOUN:feminine.first-person.masculine.possessed-form.singular",
@@ -2444,37 +2429,7 @@
      "caphi_urban": "haya",
      "caphi_raw": null,
      "maknuune_id": "500-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "500-1",
-       "root": "",
-       "gloss": "to be:",
-       "analysis": "VERB",
-       "pointed": "הָיָה"
-      },
-      {
-       "id": "500-29",
-       "root": "",
-       "gloss": "to be:",
-       "analysis": "VERB:imperative.masculine.singular",
-       "pointed": "הֱיֵה"
-      },
-      {
-       "id": "727-1",
-       "root": "",
-       "gloss": "as ה- + יָהּ: Jah, one of the names of God and a common th",
-       "analysis": "NAME",
-       "pointed": "יָהּ"
-      },
-      {
-       "id": "12264-3",
-       "root": "",
-       "gloss": "as ה- + ־יָהוּ: A theophoric suffix, meaning \"the Lord\", use",
-       "analysis": "SUFFIX:alternative",
-       "pointed": "־יָה"
-      }
-     ]
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "פיצוץ",

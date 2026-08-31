@@ -433,8 +433,8 @@
    "audio": "audio/s1.mp3"
   },
   {
-   "ar": "החלון היחיד הביט אל חצר קטנה שבה שכן זקן גידל עגבניות בתוך פחים ישנים.",
-   "en": "The only window looked onto a small yard where an old neighbour grew tomatoes in old tins.",
+   "ar": "החלון היחיד הביט אל מגרש קטן שבו שכן זקן גידל עגבניות בתוך פחים ישנים.",
+   "en": "The only window looked onto a small plot where an old neighbour grew tomatoes in old tins.",
    "p": null,
    "words": [
     {
@@ -498,49 +498,80 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "חצר",
-     "lemma": "חָצֵר",
-     "form": "חָצֵר",
-     "vocalized": "חָצֵר",
+     "surface": "מגרש",
+     "lemma": "מִגְרָשׁ",
+     "form": "מִגְרָשׁ",
+     "vocalized": "מִגְרָשׁ",
      "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "yard, courtyard",
+     "gloss": "plot (of land), lot",
      "analysis": "NOUN",
-     "caphi": "xatser",
-     "caphi_urban": "xatser",
+     "caphi": "migrash",
+     "caphi_urban": "migrash",
      "caphi_raw": null,
-     "maknuune_id": "11777-1",
-     "provenance": "wiktionary:exact"
+     "maknuune_id": "11298-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "11298-1",
+       "root": "",
+       "gloss": "plot (of land), lot",
+       "analysis": "NOUN",
+       "pointed": "מִגְרָשׁ"
+      },
+      {
+       "id": "17660-1",
+       "root": "",
+       "gloss": "deported, exiled",
+       "analysis": "ADJ",
+       "pointed": "מְגֹרָשׁ"
+      },
+      {
+       "id": "9585-24",
+       "root": "",
+       "gloss": "to be expelled, driven out, exiled",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "מְגֹרָשׁ"
+      },
+      {
+       "id": "9586-26",
+       "root": "",
+       "gloss": "to expel, to drive out, to exile",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "מְגָרֵשׁ"
+      }
+     ]
     },
     {
-     "surface": "קטנה",
+     "surface": "קטן",
      "lemma": "קָטָן",
      "form": "קָטָן",
-     "vocalized": "קְטַנָּה",
+     "vocalized": "קָטָן",
      "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Little, small, diminutive.",
-     "analysis": "ADJ:feminine",
-     "caphi": "ktana",
-     "caphi_urban": "ktana",
+     "analysis": "ADJ",
+     "caphi": "katan",
+     "caphi_urban": "katan",
      "caphi_raw": null,
-     "maknuune_id": "572-3",
+     "maknuune_id": "572-1",
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "שבה",
-     "lemma": "שָׁב",
-     "form": "שָׁב",
-     "vocalized": "שָׁבָה",
-     "vocalized_from": "lexicon",
-     "root": "ו",
-     "gloss": "to return (to go back to a place or person)",
-     "analysis": "VERB:feminine.present.singular",
-     "caphi": "shava",
-     "caphi_urban": "shava",
+     "surface": "שבו",
+     "lemma": "בּוֹ",
+     "form": "בּוֹ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Form of בְּ־ (b-) including third-person masculine singular personal pronoun as object.",
+     "analysis": "PREP",
+     "caphi": "bo",
+     "caphi_urban": "bo",
      "caphi_raw": null,
-     "maknuune_id": "6378-15",
-     "provenance": "wiktionary:resolved"
+     "maknuune_id": "3462-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ש-"
     },
     {
      "surface": "שכן",
@@ -648,7 +679,7 @@
      "provenance": "wiktionary:resolved"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
    "ar": "בלילות הראשונים לא הצלחתי להירדם, כי כל רעש שעלה מהרחוב נשמע לי חזק מדי.",
@@ -1058,7 +1089,23 @@
      "caphi_urban": "laxador",
      "caphi_raw": null,
      "maknuune_id": "799-7",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "799-7",
+       "root": "ח",
+       "gloss": "to penetrate, imbue, infuse",
+       "analysis": "VERB:infinitive",
+       "pointed": "לַחֲדֹר"
+      },
+      {
+       "id": "798-1",
+       "root": "",
+       "gloss": "as ל- + חֶדֶר: room",
+       "analysis": "NOUN",
+       "pointed": "חֶדֶר"
+      }
+     ]
     },
     {
      "surface": "שכור",

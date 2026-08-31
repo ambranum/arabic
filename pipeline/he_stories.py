@@ -230,11 +230,11 @@ STORIES['beginner'] = [
    ("בסוף אנחנו משלמים והולכים.", "In the end we pay and go."),
  ]),
  ("הגינה", "The Garden", [
-   ("מאחורי הבית שלנו יש גינה קטנה.", "Behind our house there's a small garden."),
+   ("מאחורי הבית שלנו יש גן קטן.", "Behind our house there's a small garden."),
    ("יש שם עץ אחד ופרחים אדומים.", "There's one tree there and red flowers."),
    ("בבוקר אני נותן מים לפרחים.", "In the morning I water the flowers."),
    ("ציפורים יושבות על העץ ושרות.", "Birds sit on the tree and sing."),
-   ("בערב אנחנו יושבים בגינה.", "In the evening we sit in the garden."),
+   ("בערב אנחנו יושבים בגן.", "In the evening we sit in the garden."),
    ("שם קריר ונעים.", "It's cool and pleasant there."),
  ]),
  ("אחרי הצהריים", "The Afternoon", [
@@ -520,7 +520,7 @@ STORIES['intermediate'] = [
   ("הימים היו עוד חמים, אבל הערבים כבר היו קרירים.", "The days were still hot, but the evenings were already cool."),
   ("הילדים חזרו מהחופש ודיברו רק על בית הספר.", "The children came back from the holiday and talked only about school."),
   ("קנינו מחברות, עפרונות ותיק חדש לקטן.", "We bought notebooks, pencils and a new bag for the little one."),
-  ("בערב האחרון של החופש ישבנו כולנו בגינה.", "On the last evening of the holiday we all sat in the garden."),
+  ("בערב האחרון של החופש ישבנו כולנו בגן.", "On the last evening of the holiday we all sat in the garden."),
   ("אף אחד לא רצה ללכת לישון מוקדם.", "Nobody wanted to go to bed early."),
   ("למחרת התחילה שנה חדשה, וזה תמיד מרגיש כמו התחלה.", "The next day a new year began, and that always feels like a beginning."),
  ]),
@@ -639,8 +639,8 @@ STORIES['advanced'] = [
    "The first flat I rented was very narrow and cold in winter, but I felt completely free in it."),
   ("שילמתי עליה כמעט את כל המשכורת, ולכן במשך חודשיים בישלתי רק אורז וביצים.",
    "I paid almost my whole salary for it, so for two months I cooked nothing but rice and eggs."),
-  ("החלון היחיד הביט אל חצר קטנה שבה שכן זקן גידל עגבניות בתוך פחים ישנים.",
-   "The only window looked onto a small yard where an old neighbour grew tomatoes in old tins."),
+  ("החלון היחיד הביט אל מגרש קטן שבו שכן זקן גידל עגבניות בתוך פחים ישנים.",
+   "The only window looked onto a small plot where an old neighbour grew tomatoes in old tins."),
   ("בלילות הראשונים לא הצלחתי להירדם, כי כל רעש שעלה מהרחוב נשמע לי חזק מדי.",
    "In the first nights I couldn't fall asleep, because every noise that rose from the street sounded too loud to me."),
   ("אחרי חודש התרגלתי, וכשחזרתי מהעבודה הרגשתי שאני נכנס הביתה ולא סתם לחדר שכור.",
@@ -667,8 +667,8 @@ STORIES['advanced'] = [
    "I've been working there four years now, and I still haven't understood what exactly happened in that room."),
  ]),
  ("השכונה שהשתנתה", "The Neighbourhood That Changed", [
-  ("גדלתי בשכונה שבה כל אחד הכיר את כולם, ואף אחד לא נעל את הדלת בצהריים.",
-   "I grew up in a neighbourhood where everyone knew everyone, and nobody locked the door in the afternoon."),
+  ("גדלתי ברחוב שבו כל אחד הכיר את כולם, ואף אחד לא נעל את הדלת בצהריים.",
+   "I grew up on a street where everyone knew everyone, and nobody locked the door in the afternoon."),
   ("היו בה שתי חנויות קטנות, מספרה ובית קפה אחד שבו ישבו אותם גברים כל בוקר.",
    "It had two small shops, a barber's and one café where the same men sat every morning."),
   ("כשחזרתי לבקר אחרי עשר שנים כמעט לא זיהיתי את הרחוב שבו למדתי לרכוב על אופניים.",
@@ -755,9 +755,9 @@ STORIES['advanced'] = [
    "He left it at the age of nine with his parents and since then had visited only twice."),
   ("במשך כל הנסיעה הוא תיאר רחובות ובתים, ואני זיהיתי כמעט את כולם.",
    "Throughout the drive he described streets and houses, and I recognised almost all of them."),
-  ("כשהגענו לשדה התעופה הוא ביקש שאצלם בשבילו את הכיכר שבה שיחק כילד.",
-   "When we reached the airport he asked me to photograph for him the square where he had played as a child."),
-  ("צילמתי אותה בערב הראשון ושלחתי לו את התמונה, והוא ענה במילה אחת בלבד.",
+  ("כשהגענו לשדה התעופה הוא ביקש שאצלם בשבילו את המגרש שבו שיחק כילד.",
+   "When we reached the airport he asked me to photograph for him the lot where he had played as a child."),
+  ("צילמתי אותו בערב הראשון ושלחתי לו את התמונה, והוא ענה במילה אחת בלבד.",
    "I photographed it on the first evening and sent him the picture, and he answered with a single word."),
   ("כתוב היה שם תודה, ומאז שמרתי את המספר שלו אף על פי שלא התקשרתי אליו.",
    "It said thank you, and since then I kept his number even though I never called him."),
@@ -1220,12 +1220,22 @@ def check(lex, level, sents, known):
                  'past': past, 'reach': reach, 'sub': sub, 'fresh': fresh}
 
 
-def already_met(lex):
-    """Every lemma the app's Hebrew has already used -- the beginner stories, the news, the
-    shelf. What "already met" means for a graded reader, read off the content rather than
-    asserted by whoever wrote the story."""
+def already_met(lex, level):
+    """Every lemma the app's Hebrew has used OUTSIDE this tier -- the other stories, the news,
+    the shelf. What "already met" means for a graded reader, read off the content rather than
+    asserted by whoever wrote the story.
+
+    The tier itself is excluded, and that is the whole trick. These stories are ingested once
+    they are written, so a second run would find every word of them "already met" and the
+    freshness floor would read 7% where it read 27% an hour earlier -- a gate whose answer
+    depends on whether you have run it yet is not a gate. Measured against everything else, the
+    number is the same before and after.
+    """
+    skip = 'story-%s-' % LEVELS[level]['sid']
     known = set()
     for f in glob.glob(paths.build('*', 'text.json')):
+        if os.path.basename(os.path.dirname(f)).startswith(skip):
+            continue
         d = json.load(open(f, encoding='utf-8'))
         for s in d['sentences']:
             for w in s['words']:
@@ -1242,13 +1252,13 @@ def main():
     a = ap.parse_args()
 
     lex = Lexicon()
-    known = already_met(lex)
-    print('%d lemmas already met in this app\'s Hebrew\n' % len(known))
     problems = 0
     for level in sorted(LEVELS):
         if a.level and level != a.level:
             continue
-        print('%s' % level.upper())
+        known = already_met(lex, level)
+        print('%s — %d lemmas already met elsewhere in this app\'s Hebrew'
+              % (level.upper(), len(known)))
         print('  %-22s %-24s %5s %6s %5s %5s %5s %5s %5s'
               % ('title', 'English', 'words', 'avg', 'max', 'past', 'met', 'sub', 'new'))
         for t_he, t_en, sents in STORIES.get(level, []):

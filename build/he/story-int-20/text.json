@@ -491,7 +491,7 @@
    "audio": "audio/s3.mp3"
   },
   {
-   "ar": "בערב האחרון של החופש ישבנו כולנו בגינה.",
+   "ar": "בערב האחרון של החופש ישבנו כולנו בגן.",
    "en": "On the last evening of the holiday we all sat in the garden.",
    "p": null,
    "words": [
@@ -589,23 +589,40 @@
      "_cut": "כ-"
     },
     {
-     "surface": "בגינה",
-     "lemma": "גִּנָּה",
-     "form": "גִּנָּה",
+     "surface": "בגן",
+     "lemma": "גַּן",
+     "form": "גַּן",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
-     "root": "ה",
-     "gloss": "to denounce",
-     "analysis": "VERB:masculine.past.singular.third-person",
-     "caphi": "gina",
-     "caphi_urban": "gina",
+     "root": null,
+     "gloss": "A garden.",
+     "analysis": "NOUN",
+     "caphi": "gan",
+     "caphi_urban": "gan",
      "caphi_raw": null,
-     "maknuune_id": "5533-18",
-     "provenance": "wiktionary:clitic",
-     "_cut": "ב-"
+     "maknuune_id": "4660-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ב-",
+     "options": [
+      {
+       "id": "4660-1",
+       "root": "",
+       "gloss": "A garden.",
+       "analysis": "NOUN",
+       "pointed": "גַּן"
+      },
+      {
+       "id": "4661-1",
+       "root": "",
+       "gloss": "a gene",
+       "analysis": "NOUN",
+       "pointed": "גֶּן"
+      }
+     ],
+     "_cut_for_prompt": "ב-"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   },
   {
    "ar": "אף אחד לא רצה ללכת לישון מוקדם.",

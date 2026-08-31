@@ -14,6 +14,8 @@
  "shelf": 0,
  "book_meta": null,
  "subdialect": null,
+ "register": null,
+ "translation": null,
  "source": "Israeli and world headlines, written in spoken Hebrew by Claude. NOT native-validated.",
  "sentences": [
   {
@@ -41,7 +43,7 @@
      "lemma": "אֻשַּׁר",
      "form": "אֻשַּׁר",
      "vocalized": "אישר",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "passive of אישר (ishér): to be authorized, to be confirmed.",
      "analysis": "VERB:active",
@@ -118,7 +120,7 @@
      "lemma": "פָּגַע",
      "form": "פָּגַע",
      "vocalized": "לפגוע",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": "ע",
      "gloss": "to hurt or injure (someone or something): to cause a wound or injury, or other damage",
      "analysis": "VERB:infinitive",
@@ -126,7 +128,23 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "7460-4",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "7460-4",
+       "root": "ע",
+       "gloss": "to hurt or injure (someone or something): to cause a wound o",
+       "analysis": "VERB:infinitive",
+       "pointed": "לפגוע"
+      },
+      {
+       "id": "9477-1",
+       "root": "",
+       "gloss": "as ל- + פִּגּוּעַ: terrorist attack",
+       "analysis": "NOUN",
+       "pointed": "פִּגּוּעַ"
+      }
+     ]
     },
     {
      "surface": "ביאיר",
@@ -180,7 +198,7 @@
      "lemma": "חִלֵּץ",
      "form": "חִלֵּץ",
      "vocalized": "חילצו",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "to rescue",
      "analysis": "VERB:feminine.masculine.past.plural.third-person",
@@ -339,32 +357,16 @@
      "surface": "הגיעו",
      "lemma": "הִגִּיעַ",
      "form": "הִגִּיעַ",
-     "vocalized": "הַגִּיעוּ",
+     "vocalized": "הִגִּיעוּ",
      "vocalized_from": "lexicon",
      "root": "נ.ע",
      "gloss": "to arrive, to get, to reach",
-     "analysis": "VERB:imperative.masculine.plural",
-     "caphi": "hagiu",
-     "caphi_urban": "hagiu",
+     "analysis": "VERB:feminine.masculine.past.plural.third-person",
+     "caphi": "higiu",
+     "caphi_urban": "higiu",
      "caphi_raw": null,
-     "maknuune_id": "2331-30",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "2331-30",
-       "root": "נ.ע",
-       "gloss": "to arrive, to get, to reach",
-       "analysis": "VERB:imperative.masculine.plural",
-       "pointed": "הַגִּיעוּ"
-      },
-      {
-       "id": "2331-13",
-       "root": "נ.ע",
-       "gloss": "to arrive, to get, to reach",
-       "analysis": "VERB:feminine.masculine.past.plural.third-person",
-       "pointed": "הִגִּיעוּ"
-      }
-     ]
+     "maknuune_id": "2331-13",
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "על",
@@ -479,7 +481,7 @@
      "lemma": "עִתּוֹנַאי",
      "form": "עִתּוֹנַאי",
      "vocalized": "עיתונאים",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "a journalist, reporter, newspaperman",
      "analysis": "NOUN:indefinite.plural",
@@ -571,37 +573,7 @@
      "caphi_urban": "haya",
      "caphi_raw": null,
      "maknuune_id": "500-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "500-1",
-       "root": "",
-       "gloss": "to be:",
-       "analysis": "VERB",
-       "pointed": "הָיָה"
-      },
-      {
-       "id": "500-29",
-       "root": "",
-       "gloss": "to be:",
-       "analysis": "VERB:imperative.masculine.singular",
-       "pointed": "הֱיֵה"
-      },
-      {
-       "id": "727-1",
-       "root": "",
-       "gloss": "as ה- + יָהּ: Jah, one of the names of God and a common th",
-       "analysis": "NAME",
-       "pointed": "יָהּ"
-      },
-      {
-       "id": "12264-3",
-       "root": "",
-       "gloss": "as ה- + ־יָהוּ: A theophoric suffix, meaning \"the Lord\", use",
-       "analysis": "SUFFIX:alternative",
-       "pointed": "־יָה"
-      }
-     ]
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "יום",
@@ -631,23 +603,7 @@
      "caphi_urban": "kashe",
      "caphi_raw": null,
      "maknuune_id": "4156-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "4156-1",
-       "root": "",
-       "gloss": "hard (resistant to pressure)",
-       "analysis": "ADJ",
-       "pointed": "קָשֶׁה"
-      },
-      {
-       "id": "4156-3",
-       "root": "",
-       "gloss": "hard (resistant to pressure)",
-       "analysis": "ADJ:feminine",
-       "pointed": "קָשָׁה"
-      }
-     ]
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "בכבישים",
@@ -837,39 +793,16 @@
      "surface": "נמלט",
      "lemma": "נִמְלַט",
      "form": "נִמְלַט",
-     "vocalized": "נִמְלַט",
+     "vocalized": "נִמְלָט",
      "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to flee, escape; be a fugitive",
-     "analysis": "VERB",
+     "analysis": "VERB:masculine.present.singular",
      "caphi": "nimlat",
      "caphi_urban": "nimlat",
      "caphi_raw": null,
-     "maknuune_id": "4197-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "4197-1",
-       "root": "",
-       "gloss": "to flee, escape; be a fugitive",
-       "analysis": "VERB",
-       "pointed": "נִמְלַט"
-      },
-      {
-       "id": "4197-16",
-       "root": "",
-       "gloss": "to flee, escape; be a fugitive",
-       "analysis": "VERB:masculine.present.singular",
-       "pointed": "נִמְלָט"
-      },
-      {
-       "id": "4197-23",
-       "root": "",
-       "gloss": "to flee, escape; be a fugitive",
-       "analysis": "VERB:feminine.first-person.future.masculine.plural",
-       "pointed": "נִמָּלֵט"
-      }
-     ]
+     "maknuune_id": "4197-16",
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "ועדיין",
@@ -1036,7 +969,7 @@
      "lemma": "צָפַן",
      "form": "צָפַן",
      "vocalized": "לצפון",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "to hide",
      "analysis": "VERB:infinitive",
@@ -1044,7 +977,30 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "15119-3",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "15119-3",
+       "root": "",
+       "gloss": "to hide",
+       "analysis": "VERB:infinitive",
+       "pointed": "לצפון"
+      },
+      {
+       "id": "3829-1",
+       "root": "",
+       "gloss": "as ל- + צָפוֹן: north",
+       "analysis": "NOUN",
+       "pointed": "צָפוֹן"
+      },
+      {
+       "id": "3830-1",
+       "root": "",
+       "gloss": "as ל- + צָפוּן: hidden",
+       "analysis": "ADJ",
+       "pointed": "צָפוּן"
+      }
+     ]
     },
     {
      "surface": "ובלילה",
@@ -1668,7 +1624,7 @@
      "lemma": "אֲוִיר",
      "form": "אֲוִיר",
      "vocalized": "האוויר",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "air",
      "analysis": "NOUN:definite.singular",
@@ -1729,7 +1685,7 @@
      "lemma": "חִפּוּשׂ",
      "form": "חִפּוּשׂ",
      "vocalized": "החיפושים",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "searching, search",
      "analysis": "NOUN:definite.plural",
@@ -1874,7 +1830,7 @@
      "lemma": "חֹמֶר",
      "form": "חֹמֶר",
      "vocalized": "חומרי",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "clay, (especially architecture) mortar.",
      "analysis": "NOUN:feminine.first-person.masculine.possessed-form.singular",
@@ -2189,7 +2145,7 @@
      "lemma": "שָׁלַט",
      "form": "שָׁלַט",
      "vocalized": "תשלוט",
-     "vocalized_from": "lexicon",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "to rule (be in charge of, reign over)",
      "analysis": "VERB:future.masculine.second-person.singular",

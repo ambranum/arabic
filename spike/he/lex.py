@@ -51,11 +51,17 @@ NOMINAL_SLOT = set('בכלמה')
 TENSED = {'past', 'future', 'imperative'}
 
 # Where the prefix is the ENTRY'S OWN and the alternative is therefore a coincidence of
-# spelling: the ה of a definite noun, the ל of an infinitive, the מ of a present participle.
-# Each of these entries already spells the whole surface and points every letter of it, so a
-# clitic re-reading can only take pointing away -- לְהַגִּיעַ "to arrive" against לה- + פּוּךְ
-# "kohl", מְחַפֵּשׂ "searching" against מ- + חֳפָשִׁים.
-OWN_PREFIX = [('ה', 'definite'), ('ל', 'infinitive'), ('מ', 'present'), ('מ', 'participle')]
+# spelling: the ה of a definite noun, the מ of a present participle. Each of these entries
+# already spells the whole surface and points every letter of it, so a clitic re-reading can
+# only take pointing away -- מְחַפֵּשׂ "searching" against מ- + חֳפָשִׁים.
+#
+# The ל of an infinitive WAS on this list and had to come off. It is not the same case: ה- and
+# מ- attach to a shape that is otherwise not a word, but ל- + a noun is the ordinary dative and
+# collides with the infinitive of every piel verb built on that noun's root. It cost six texts
+# their reading of לבית, which is "to the house" everywhere in this app and was taken as
+# לְבַיֵּת "to domesticate"; and three more לשוק, "to the market", taken as לְשַׁוֵּק "to
+# market". Neither ever reached adjudication, because this list said the ל was accounted for.
+OWN_PREFIX = [('ה', 'definite'), ('מ', 'present'), ('מ', 'participle')]
 
 
 def _tensed(r):
@@ -283,10 +289,18 @@ class Lexicon:
             hit = self._hit(stem)
             if not hit or (strict and self._accounts_for(exact, pre)):
                 continue
-            # A different LEMMA is the test, not a different row: Wiktionary lists בְּחִירוֹת
+            # A different WORD is the test, not a different row: Wiktionary lists בְּחִירוֹת
             # both as the plural of בְּחִירָה and as its own entry, and "the choices" read two
             # ways is not an ambiguity, it is the same word card either way.
-            alt = [r for r in hit if str(r['LEMMA_SEARCH']) not in lemmas]
+            #
+            # The pair is the pointed lemma AND the part of speech, not LEMMA_SEARCH. The
+            # skeleton was too coarse by exactly the amount that matters here: the piel שִׁוֵּק
+            # "to market" and the noun שׁוּק "market" share the skeleton שוק, so לשוק compared
+            # its own lemma against itself and came back unambiguous. Same for בִּיֵּת and
+            # בַּיִת under בית. Both still dedup under the pair when they are genuinely one
+            # word, which is what the בְּחִירוֹת case needs.
+            ident = {(r['LEMMA'], str(r['POS'])) for r in exact}
+            alt = [r for r in hit if (r['LEMMA'], str(r['POS'])) not in ident]
             if pre[-1] in NOMINAL_SLOT:
                 alt = [r for r in alt if not _tensed(r)]
             if alt:
