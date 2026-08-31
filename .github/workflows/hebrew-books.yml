@@ -23,11 +23,11 @@ on:
         type: boolean
         default: false
       annotate:
-        description: 'Annotate and adjudicate the books and stories (612 decisions outstanding, all advanced)'
+        description: 'Annotate and adjudicate the books, stories and news (15 outstanding, all in archived news)'
         type: boolean
         default: true
       audio:
-        description: 'Voice every book and story sentence (1,077 done, 210 advanced-story ones missing)'
+        description: 'Voice every book and story sentence (1,287 done, none missing)'
         type: boolean
         default: true
       vocab:
@@ -66,13 +66,19 @@ jobs:
       # Per text, not all at once: a failure halfway through leaves the ones already done in the
       # tree and adjudicated, and the resolution trail means a re-run does not pay for them
       # twice. `set -e` off for the loop so one bad text cannot cost the other nine.
+      #
+      # The news is in the glob even though daily-news.yml adjudicates each morning's article as
+      # it writes it. A change to the lexicon can make a text that was settled ambiguous again,
+      # and the daily job never looks back: dropping the infinitive ל from OWN_PREFIX left
+      # fifteen words unresolved across three archived articles, in a paper nothing would have
+      # revisited. A text with nothing ambiguous costs one file read and no API call.
       - name: Annotate and adjudicate
         if: inputs.annotate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           rc=0
-          for f in texts/he/book-by-*.json texts/he/story-*.json; do
+          for f in texts/he/book-by-*.json texts/he/story-*.json texts/he/news-*.json; do
             echo "::group::$f"
             python3 pipeline/daily_news.py --lang he --adjudicate "$f" || rc=1
             echo "::endgroup::"
