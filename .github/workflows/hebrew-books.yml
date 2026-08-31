@@ -23,13 +23,13 @@ on:
         type: boolean
         default: false
       annotate:
-        description: 'Annotate and adjudicate — done, except the 102 words one batch lost'
+        description: 'Annotate and adjudicate the books and stories'
         type: boolean
-        default: false
+        default: true
       audio:
-        description: 'Voice every book sentence — done 2026-08-30 (687 clips)'
+        description: 'Voice every book and story sentence (687 done, +72 new)'
         type: boolean
-        default: false
+        default: true
       vocab:
         description: 'Voice every word for the flashcards (~1,550 clips, ElevenLabs)'
         type: boolean
@@ -72,7 +72,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           rc=0
-          for f in texts/he/book-by-*.json; do
+          for f in texts/he/book-by-*.json texts/he/story-beg-*.json; do
             echo "::group::$f"
             python3 pipeline/daily_news.py --lang he --adjudicate "$f" || rc=1
             echo "::endgroup::"
@@ -91,7 +91,7 @@ jobs:
           # the books are read in the same voice as the news and the reactions.
         run: |
           rc=0
-          for f in texts/he/book-by-*.json; do
+          for f in texts/he/book-by-*.json texts/he/story-beg-*.json; do
             echo "::group::$f"
             python3 pipeline/he_ingest.py "$f" --lang he --audio || rc=1
             echo "::endgroup::"

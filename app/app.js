@@ -2152,11 +2152,13 @@ function storiesSection(sub){
 
 function storiesHome(){
   $('title').textContent = 'Short Stories';
-  let h = `<p class="hint">Graded short stories in spoken Palestinian, by level. Tap any word
-    to see its root, meaning and pronunciation — all from the lexicon. The <b>stories</b>
+  let h = `<p class="hint">Graded short stories in spoken ${esc(LANG.name)}, by level. Tap any
+    word to see its root, meaning and pronunciation — all from the lexicon. The <b>stories</b>
     themselves are written by Claude, not native-checked, so read for practice and don't
     memorise the phrasing.</p><div class="vtiles">`;
-  h += STORY_LEVELS.map(([key, label, blurb]) => {
+  // Only the levels that have stories in them. Hebrew has beginner and nothing else yet, and a
+  // tile reading "Advanced 0" is a promise the section cannot keep.
+  h += STORY_LEVELS.filter(([key]) => storiesAt(key).length).map(([key, label, blurb]) => {
     const n = storiesAt(key).length;
     return `<button class="vtile wide" onclick="location.hash='/stories/${key}'">
       <div class="vtile-h"><span class="vtile-t">${esc(label)}</span>
