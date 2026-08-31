@@ -72,7 +72,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           rc=0
-          for f in texts/he/book-by-*.json texts/he/story-beg-*.json; do
+          for f in texts/he/book-by-*.json texts/he/story-*.json; do
             echo "::group::$f"
             python3 pipeline/daily_news.py --lang he --adjudicate "$f" || rc=1
             echo "::endgroup::"
@@ -91,7 +91,7 @@ jobs:
           # the books are read in the same voice as the news and the reactions.
         run: |
           rc=0
-          for f in texts/he/book-by-*.json texts/he/story-beg-*.json; do
+          for f in texts/he/book-by-*.json texts/he/story-*.json; do
             echo "::group::$f"
             python3 pipeline/he_ingest.py "$f" --lang he --audio || rc=1
             echo "::endgroup::"
