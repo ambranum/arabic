@@ -3047,6 +3047,12 @@ function planPool(pool) {
   if (pool === 'unit') return (LSN.units || []).map(u => ({id: 'lsn:' + u.id, title: 'Unit ' + u.n + ' — ' + u.title.en, link: '/lessons/' + u.id}));
   if (pool === 'reaction') return (RX.cats || []).map(c => ({id: 'rx:' + c.id, title: c.en + ' reactions', link: '/reactions/' + c.id}));
   if (pool === 'dialogue') return (TBL.dialogues || []).map(dg => ({id: 'tbl:' + dg.id, title: dg.title.en, link: '/table/' + dg.id}));
+  // The shelf, in shelf order then chapter order — the same order the Books section shows.
+  // Books were browsable and nothing else: a plan could send you to a story or the paper but
+  // never to a chapter, so ten voiced books sat outside the daily path entirely.
+  if (pool === 'book') return LIB.texts.filter(t => t.kind === 'book-chapter')
+    .sort((a, b) => (a.shelf || 0) - (b.shelf || 0) || (a.chapter || 0) - (b.chapter || 0))
+    .map(t => ({id: t.id, title: t.title.en, link: '/text/' + t.id}));
   if (pool === 'news') return LIB.texts.filter(t => t.kind === 'news')
     .sort((a, b) => (b.date || '').localeCompare(a.date || '')).map(t => ({id: t.id, title: t.title.en, link: '/text/' + t.id}));
   return storiesAt(pool).map(t => ({id: t.id, title: t.title.en, link: '/text/' + t.id}));   // ordered by id
@@ -3320,9 +3326,11 @@ function resolveTask(cfg, sp, ord, k, minutes, carAvail, phaseIndex) {
       if ((sp.act === 'shadow' || sp.act === 'drill432') && link.startsWith('/text/'))
         link = link.replace('/text/', '/speak/');
       t.title = pick.title; t.link = link;
-      if (sp.act === 'read' || sp.pool === 'reaction' || sp.pool === 'dialogue' || sp.pool === 'unit') t.cid = pick.id;   // advances the systematic path
+      if (sp.act === 'read' || sp.pool === 'reaction' || sp.pool === 'dialogue' || sp.pool === 'unit'
+          || sp.pool === 'book') t.cid = pick.id;   // advances the systematic path
       if (POOL_LABEL[sp.pool]) t.seq = POOL_LABEL[sp.pool] + ' ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
       else if (sp.pool === 'news') t.seq = 'Latest news';
+      else if (sp.pool === 'book') t.seq = 'Chapter ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
       else if (sp.pool === 'reaction') t.seq = 'Reactions · set ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
       else if (sp.pool === 'dialogue') t.seq = 'Conversation ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');
       else if (sp.pool === 'unit') t.seq = 'Lesson unit ' + pick.pos + ' of ' + pick.total + (pick.allSeen ? ' · revisiting' : '');

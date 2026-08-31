@@ -86,13 +86,17 @@ window.CURRICULUM = {
      focus: 'Get the ear and the mouth right first — the uvular ר, ח and כ as one sound, צ as ts, '
           + 'the letters that are now identical, and where the beat falls. Short and deliberate, '
           + 'before habits set.',
-     milestone: 'You can hear and make the sounds that trip up every English speaker.',
+     milestone: 'You can hear and make the sounds that trip up every English speaker, and read '
+              + 'a short story without the English.',
      mix: [
        {act: 'sound',   min: 15, src: 'inapp'},
        {act: 'grammar', min: 15, src: 'inapp'},
        {act: 'verbs',   min: 10, src: 'inapp'},
        {act: 'srs',     min: 10, src: 'inapp'},
-       {act: 'read',    min: 15, src: 'inapp', pool: 'news'},
+       // A beginner story, not the paper. The paper is real Hebrew about whatever happened
+       // yesterday, which is the right thing to read LATER and the wrong thing to be handed on
+       // day one -- it does not know what you have met.
+       {act: 'read',    min: 15, src: 'inapp', pool: 'beginner'},
      ]},
 
     {id: 1, name: 'Reaction', hours: 50,
@@ -102,11 +106,13 @@ window.CURRICULUM = {
      milestone: 'The reactions are automatic — you can hold your end of a conversation you are mostly listening to.',
      mix: [
        {act: 'drill432', min: 15, src: 'inapp', pool: 'reaction'},
-       {act: 'shadow',   min: 15, src: 'inapp', pool: 'news'},
+       // Shadowing wants something you can already mostly read, and every story is voiced.
+       {act: 'shadow',   min: 15, src: 'inapp', pool: 'beginner'},
        {act: 'sound',    min: 10, src: 'inapp'},
        {act: 'grammar',  min: 15, src: 'inapp'},
        {act: 'verbs',    min: 10, src: 'inapp'},
-       {act: 'read',     min: 20, src: 'inapp', pool: 'news'},
+       {act: 'read',     min: 20, src: 'inapp', pool: 'beginner'},
+       {act: 'read',     min: 15, src: 'inapp', pool: 'news'},
        {act: 'srs',      min: 10, src: 'inapp'},
        {act: 'produce',  min: 10, src: 'inapp'},
        {act: 'listen',   min: 15, src: 'external', res: 'podcasts'},
@@ -115,13 +121,18 @@ window.CURRICULUM = {
      ]},
 
     {id: 2, name: 'The paper', hours: 200,
-     focus: 'A real Hebrew article every morning, and the binyanim underneath it. This is the '
-          + 'phase that compounds: the paper is written fresh each day, so the reading never '
-          + 'runs out and the vocabulary is whatever Israel is actually talking about.',
+     focus: 'A real Hebrew article every morning, the longer stories, and the public-domain '
+          + 'shelf underneath them both. This is the phase that compounds: the paper is written '
+          + 'fresh each day, so the reading never runs out and the vocabulary is whatever Israel '
+          + 'is actually talking about.',
      milestone: 'You can read the day’s news with the English hidden, and say what it said.',
      mix: [
        {act: 'read',     min: 25, src: 'inapp', pool: 'news'},
-       {act: 'shadow',   min: 15, src: 'inapp', pool: 'news'},
+       {act: 'read',     min: 20, src: 'inapp', pool: 'intermediate'},
+       // The Ben-Yehuda shelf, in order. Published Hebrew rather than written for you, which is
+       // what this phase is for: the paper for what is happening, a book for how it is written.
+       {act: 'read',     min: 20, src: 'inapp', pool: 'book'},
+       {act: 'shadow',   min: 15, src: 'inapp', pool: 'intermediate'},
        {act: 'grammar',  min: 15, src: 'inapp'},
        {act: 'verbs',    min: 15, src: 'inapp'},
        {act: 'drill432', min: 10, src: 'inapp', pool: 'reaction'},
