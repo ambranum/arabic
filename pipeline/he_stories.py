@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Graded short stories in spoken Israeli Hebrew -> texts/he/story-{beg,int}-NN.json.
+"""Graded short stories in spoken Israeli Hebrew -> texts/he/story-{beg,int,adv}-NN.json.
 
 This is the one piece of Hebrew content that is WRITTEN rather than looked up, and it is worth
 being plain about what that means. The Ben-Yehuda shelf is somebody else's published Hebrew,
@@ -78,13 +78,23 @@ def vav_consecutives(lex, toks):
         if VAV_PREFIX.match(t) and len(t) > 3 and _future_only(lex, he_norm(t[1:])):
             out.append(t)
     return out
-# tier -> (id prefix, max average sentence, minimum share of sentences carrying a past-tense
-# verb, minimum share of lemmas already met elsewhere in the app's Hebrew)
+FINITE = ('past', 'present', 'future', 'imperative')
+
+# tier -> (id prefix, sentence length floor and ceiling, minimum share of sentences carrying a
+# past-tense verb, minimum share of lemmas already met elsewhere in the app's Hebrew, minimum
+# share of sentences carrying two clauses, minimum share of DISTINCT lemmas that are new)
 LEVELS = {
     'beginner':     {'sid': 'beg', 'min_sentence': 0.0, 'max_sentence': 9.0,
-                     'min_past': 0.0, 'min_reach': 0.0},
+                     'min_past': 0.0, 'min_reach': 0.0, 'min_sub': 0.0, 'min_fresh': 0.0},
     'intermediate': {'sid': 'int', 'min_sentence': 7.0, 'max_sentence': 14.0,
-                     'min_past': 0.5, 'min_reach': 0.7},
+                     'min_past': 0.5, 'min_reach': 0.7, 'min_sub': 0.0, 'min_fresh': 0.0},
+    # Advanced is a claim in two directions and the gate makes both. It has to be HARDER --
+    # longer sentences, two clauses at a time, still narrating in the past -- and it has to
+    # actually TEACH something, which the tiers below cannot: a fifth of its lemmas must be
+    # words the app's Hebrew has never used. Without that floor "advanced" is intermediate with
+    # commas, which is the failure mode of every graded reader that grades itself by feel.
+    'advanced':     {'sid': 'adv', 'min_sentence': 12.0, 'max_sentence': 21.0,
+                     'min_past': 0.5, 'min_reach': 0.5, 'min_sub': 0.6, 'min_fresh': 0.2},
 }
 MAX_UNKNOWN = 0             # every word taps, at every level
 
@@ -607,6 +617,489 @@ STORIES['intermediate'] = [
 ]
 
 
+STORIES['advanced'] = [
+ ("המכתב שלא נשלח", "The Letter That Was Never Sent", [
+  ("אחרי שאבא שלי נפטר מצאתי במגירה שלו מכתב ארוך שכתב לאח שלו ומעולם לא שלח אותו.",
+   "After my father passed away I found in his drawer a long letter he had written to his brother and never sent."),
+  ("הם הפסיקו לדבר לפני עשרים שנה בגלל ריב על ירושה שאף אחד כבר לא זכר בדיוק.",
+   "They stopped speaking twenty years ago because of a quarrel over an inheritance nobody remembered exactly any more."),
+  ("קראתי את המכתב פעמיים והתיישבתי ליד השולחן בלי לזוז, כי לא הבנתי מה מבקשים ממני.",
+   "I read the letter twice and sat down at the table without moving, because I didn't understand what was being asked of me."),
+  ("בסוף החלטתי לנסוע אליו בעצמי, למרות שלא פגשתי אותו מאז שהייתי ילד קטן בכיתה ג.",
+   "In the end I decided to drive to him myself, even though I hadn't met him since I was a small child in third grade."),
+  ("הוא פתח את הדלת, הביט בי כמה שניות ארוכות ולחש את השם של אבא שלי.",
+   "He opened the door, gazed at me for a few long seconds and whispered my father's name."),
+  ("התיישבנו במטבח הצר שלו עד הערב ולא קראנו את המכתב, כי כבר לא היה צורך.",
+   "We sat down in his narrow kitchen until evening and didn't read the letter, because there was no longer any need."),
+  ("כשיצאתי הוא ביקש שאבוא שוב, והבטחתי לו שאבוא, וזאת ההבטחה היחידה ששמרתי השנה.",
+   "When I left he asked me to come again, and I promised him I would, and that's the only promise I kept this year."),
+ ]),
+ ("הדירה הראשונה", "The First Flat", [
+  ("הדירה הראשונה ששכרתי הייתה צרה מאוד וקרה בחורף, אבל הרגשתי בה חופשי לגמרי.",
+   "The first flat I rented was very narrow and cold in winter, but I felt completely free in it."),
+  ("שילמתי עליה כמעט את כל המשכורת, ולכן במשך חודשיים בישלתי רק אורז וביצים.",
+   "I paid almost my whole salary for it, so for two months I cooked nothing but rice and eggs."),
+  ("החלון היחיד הביט אל חצר קטנה שבה שכן זקן גידל עגבניות בתוך פחים ישנים.",
+   "The only window looked onto a small yard where an old neighbour grew tomatoes in old tins."),
+  ("בלילות הראשונים לא הצלחתי להירדם, כי כל רעש שעלה מהרחוב נשמע לי חזק מדי.",
+   "In the first nights I couldn't fall asleep, because every noise that rose from the street sounded too loud to me."),
+  ("אחרי חודש התרגלתי, וכשחזרתי מהעבודה הרגשתי שאני נכנס הביתה ולא סתם לחדר שכור.",
+   "After a month I got used to it, and when I came back from work I felt I was coming home and not just into a rented room."),
+  ("מאז עברו שמונה שנים ואני גר במקום מרווח יותר, שיש בו חדר לכל אחד מהילדים.",
+   "Eight years have passed since and I live somewhere more spacious, where there's a room for each of the children."),
+  ("אבל בכל פעם שאני חולף ליד הבניין ההוא אני מרים את הראש ומחפש את החלון.",
+   "But every time I pass that building I lift my head and look for the window."),
+ ]),
+ ("הראיון", "The Interview", [
+  ("הגעתי לראיון עשרים דקות מוקדם מדי, ולכן התיישבתי בבית קפה ממול וניסיתי להירגע.",
+   "I arrived twenty minutes too early for the interview, so I sat down in a café opposite and tried to calm down."),
+  ("הכנתי תשובות לכל שאלה שעלתה בדעתי, אבל הם שאלו דווקא דברים אחרים לגמרי.",
+   "I had prepared answers to every question that occurred to me, but they asked completely different things."),
+  ("אישה אחת שאלה מה הדבר האחרון שלמדתי, ולא הבנתי אם היא מתכוונת לעבודה או לחיים.",
+   "One woman asked what the last thing I had learned was, and I didn't understand whether she meant at work or in life."),
+  ("סיפרתי על שכן שלימד אותי לתקן ברז דולף, וכולם צחקו ואני הסמקתי מול כולם.",
+   "I told them about a neighbour who taught me to fix a dripping tap, and everyone laughed and I blushed in front of them all."),
+  ("יצאתי משם בטוח שנכשלתי, ובערב הסברתי לאשתי שאין שום סיכוי שיתקשרו אליי.",
+   "I left sure I had failed, and in the evening I explained to my wife that there was no chance at all they would call."),
+  ("אחרי שלושה ימים הם התקשרו והודיעו שדווקא התשובה על הברז שכנעה אותם לקחת אותי.",
+   "After three days they called and announced that it was actually the answer about the tap that convinced them to take me."),
+  ("אני עובד שם כבר ארבע שנים, ועדיין לא הבנתי מה בדיוק קרה בחדר ההוא.",
+   "I've been working there four years now, and I still haven't understood what exactly happened in that room."),
+ ]),
+ ("השכונה שהשתנתה", "The Neighbourhood That Changed", [
+  ("גדלתי בשכונה שבה כל אחד הכיר את כולם, ואף אחד לא נעל את הדלת בצהריים.",
+   "I grew up in a neighbourhood where everyone knew everyone, and nobody locked the door in the afternoon."),
+  ("היו בה שתי חנויות קטנות, מספרה ובית קפה אחד שבו ישבו אותם גברים כל בוקר.",
+   "It had two small shops, a barber's and one café where the same men sat every morning."),
+  ("כשחזרתי לבקר אחרי עשר שנים כמעט לא זיהיתי את הרחוב שבו למדתי לרכוב על אופניים.",
+   "When I came back to visit after ten years I barely recognised the street where I learned to ride a bicycle."),
+  ("במקום החנות נפתחה חנות בגדים יקרה, ובמקום המספרה בנו משרד עם חלונות ענקיים.",
+   "In place of the shop an expensive clothes shop had opened, and in place of the barber's they built an office with enormous windows."),
+  ("פגשתי אישה אחת שזכרה את אמא שלי, והיא סיפרה לי מי עוד נשאר ומי כבר עזב.",
+   "I met a woman who remembered my mother, and she told me who was still there and who had already left."),
+  ("היא טענה שהשכונה לא נהייתה גרועה יותר אלא רק אחרת, וכנראה שהיא צדקה.",
+   "She argued that the neighbourhood hadn't got worse but only different, and she was probably right."),
+  ("בכל זאת יצאתי משם עצוב, כי הבנתי שהמקום ממשיך בלעדיי ולא מחכה לאף אחד.",
+   "All the same I left sad, because I realised the place goes on without me and waits for nobody."),
+ ]),
+ ("הקיץ ההוא", "That Summer", [
+  ("בקיץ שאחרי בית הספר עבדתי במסעדה קטנה על החוף ולא תכננתי שום דבר.",
+   "In the summer after school I worked in a small restaurant on the beach and planned nothing at all."),
+  ("התחלנו את המשמרת בארבע אחר הצהריים וסיימנו אחרי חצות, וכל הזמן היה חם ורועש.",
+   "We started the shift at four in the afternoon and finished after midnight, and it was hot and noisy the whole time."),
+  ("היינו חמישה עובדים בערך בגיל שלי, ואחרי המשמרת ירדנו למים למרות שהיינו מותשים.",
+   "There were five of us, roughly my age, and after the shift we went down to the water even though we were exhausted."),
+  ("אחד מהם ניגן בגיטרה בצורה לא טובה במיוחד, אבל אף אחד לא ביקש ממנו להפסיק.",
+   "One of them played guitar not especially well, but nobody asked him to stop."),
+  ("דיברנו על מה שנעשה בשנה הבאה, וכל אחד תיאר תוכנית שלא התגשמה אף פעם.",
+   "We talked about what we would do the following year, and each of us described a plan that never came true."),
+  ("בסוף אוגוסט נסגרה המסעדה לעונה, והתפזרנו בלי שהבטחנו לשמור על קשר.",
+   "At the end of August the restaurant closed for the season, and we scattered without promising to stay in touch."),
+  ("אני זוכר את הקיץ ההוא טוב יותר מכל שנה אחרת, אף על פי שלא קרה בו כלום.",
+   "I remember that summer better than any other year, even though nothing happened in it."),
+ ]),
+ ("הרכבת האחרונה", "The Last Train", [
+  ("איחרתי לרכבת האחרונה בשתי דקות וראיתי אותה יוצאת מהתחנה בזמן שרצתי על הרציף.",
+   "I missed the last train by two minutes and watched it leaving the station while I was running along the platform."),
+  ("התיישבתי על הספסל והבנתי שאין לי דרך לחזור הביתה לפני הבוקר.",
+   "I sat down on the bench and realised I had no way of getting home before morning."),
+  ("איש אחד שניקה את הרציף שאל לאן אני צריך להגיע, וכשעניתי הוא צחק בקול.",
+   "A man who was cleaning the platform asked where I needed to get to, and when I answered he laughed out loud."),
+  ("הוא הסביר שהוא גר באותו כיוון ושהוא מסיים את המשמרת בעוד עשרים דקות.",
+   "He explained that he lived in the same direction and that he was finishing his shift in twenty minutes."),
+  ("נסענו יחד במכונית ישנה שלו והוא סיפר על שלושת הילדים שלו כל הדרך.",
+   "We drove together in his old car and he talked about his three children the whole way."),
+  ("כשירדתי ליד הבית ניסיתי לשלם לו, אבל הוא סירב ואמר שגם לו קרה דבר כזה פעם.",
+   "When I got out near my house I tried to pay him, but he refused and said the same thing had happened to him once."),
+  ("מאז אני מגיע לתחנה עשר דקות מוקדם, ותמיד נזכר באיש שניקה את הרציף.",
+   "Since then I get to the station ten minutes early, and I always remember the man who cleaned the platform."),
+ ]),
+ ("החנות שנסגרה", "The Shop That Closed", [
+  ("החנות בפינת הרחוב הייתה פתוחה שישים שנה, ומעולם לא ראיתי אותה סגורה באמצע היום.",
+   "The shop on the street corner had been open for sixty years, and I never saw it closed in the middle of the day."),
+  ("בעל החנות הכיר את כל הלקוחות בשם וידע מי אוהב חלב וכמה לחם כל אחד לוקח.",
+   "The shopkeeper knew all the customers by name and knew who liked milk and how much bread each one took."),
+  ("כשהוא חלה בחורף בתו החליפה אותו, אבל היא לא הצליחה לזכור את כל ההזמנות.",
+   "When he fell ill in the winter his daughter replaced him, but she couldn't remember all the orders."),
+  ("באביב הוא חזר לכמה שבועות, ואז תלה מודעה קטנה שהודיעה על סגירה בסוף החודש.",
+   "In the spring he came back for a few weeks, and then hung a small notice announcing a closure at the end of the month."),
+  ("ביום האחרון נכנסו הרבה אנשים שלא קנו כלום ורק לחצו את היד שלו ואמרו תודה.",
+   "On the last day a lot of people came in who bought nothing and only shook his hand and said thank you."),
+  ("שאלתי אותו מה יעשה עכשיו והוא ענה שסוף סוף ילמד לשחות בבריכה העירונית.",
+   "I asked him what he would do now and he answered that he would finally learn to swim at the municipal pool."),
+  ("החנות עמדה ריקה כמעט שנה, ועכשיו יש שם בית קפה שאני נכנס אליו לפעמים.",
+   "The shop stood empty for almost a year, and now there's a café there that I go into sometimes."),
+ ]),
+ ("השעון של סבא", "Grandpa's Watch", [
+  ("כשסבא שלי נפטר קיבלתי ממנו שעון ישן שהוא ענד על היד כל השנים שהכרתי אותו.",
+   "When my grandfather died I received from him an old watch that he wore on his wrist all the years I knew him."),
+  ("השעון פיגר שלוש דקות בכל יום, וסבא סירב לתקן אותו כי כך התרגל לחשב.",
+   "The watch lost three minutes a day, and grandpa refused to fix it because that was how he was used to calculating."),
+  ("הנחתי אותו במגירה ולא נגעתי בו שנתיים, כי חשבתי שלא מתאים לי לענוד אותו.",
+   "I put it in a drawer and didn't touch it for two years, because I thought it didn't suit me to wear it."),
+  ("ביום שנולד הבן שלי הוצאתי אותו והבנתי שהוא עדיין עובד, למרות שאיש לא מתח אותו.",
+   "On the day my son was born I took it out and realised it was still working, even though nobody had wound it."),
+  ("לקחתי אותו לשען זקן ברחוב יפו, והוא הסתכל עליו והחזיר לי אותו בלי לגעת.",
+   "I took it to an old watchmaker on Jaffa Street, and he looked at it and gave it back to me without touching it."),
+  ("הוא אמר ששעון שמפגר שלוש דקות בדיוק כבר שישים שנה לא צריך שום תיקון.",
+   "He said a watch that has lost exactly three minutes a day for sixty years needs no repair at all."),
+  ("אני עונד אותו בכל אירוע משפחתי, ותמיד מגיע שלוש דקות אחרי כולם.",
+   "I wear it at every family occasion, and I always arrive three minutes after everyone else."),
+ ]),
+ ("שיחה במונית", "A Conversation in a Taxi", [
+  ("לקחתי מונית לשדה התעופה בחמש בבוקר, ובהתחלה לא רציתי לדבר עם אף אחד.",
+   "I took a taxi to the airport at five in the morning, and at first I didn't want to talk to anyone."),
+  ("הנהג שאל לאן אני טס, וכשאמרתי לו הוא סיפר שהוא נולד באותה עיר בדיוק.",
+   "The driver asked where I was flying to, and when I told him he said he had been born in that very city."),
+  ("הוא עזב אותה בגיל תשע עם ההורים שלו ומאז ביקר שם רק פעמיים.",
+   "He left it at the age of nine with his parents and since then had visited only twice."),
+  ("במשך כל הנסיעה הוא תיאר רחובות ובתים, ואני זיהיתי כמעט את כולם.",
+   "Throughout the drive he described streets and houses, and I recognised almost all of them."),
+  ("כשהגענו לשדה התעופה הוא ביקש שאצלם בשבילו את הכיכר שבה שיחק כילד.",
+   "When we reached the airport he asked me to photograph for him the square where he had played as a child."),
+  ("צילמתי אותה בערב הראשון ושלחתי לו את התמונה, והוא ענה במילה אחת בלבד.",
+   "I photographed it on the first evening and sent him the picture, and he answered with a single word."),
+  ("כתוב היה שם תודה, ומאז שמרתי את המספר שלו אף על פי שלא התקשרתי אליו.",
+   "It said thank you, and since then I kept his number even though I never called him."),
+ ]),
+ ("הלילה בלי חשמל", "The Night Without Electricity", [
+  ("בערב אחד בחורף נפל החשמל בכל הבניין, ותוך רגע הכול נהיה חשוך ושקט לגמרי.",
+   "One winter evening the power went out in the whole building, and in a moment everything became completely dark and quiet."),
+  ("ירדנו כולנו למדרגות עם נרות, וזאת הייתה הפעם הראשונה שראיתי את כל השכנים ביחד.",
+   "We all came down to the stairs with candles, and it was the first time I had seen all the neighbours together."),
+  ("שכנה מהקומה השנייה הביאה קומקום ישן שפועל על גז והרתיחה תה לכולם.",
+   "A neighbour from the second floor brought an old kettle that runs on gas and boiled tea for everyone."),
+  ("ילד קטן ביקש לשמוע סיפורי רוחות, וההורים שלו הסכימו מיד למרות שהשעה הייתה מאוחרת.",
+   "A small boy asked to hear ghost stories, and his parents agreed at once even though the hour was late."),
+  ("ישבנו שם כמעט שלוש שעות וגילינו שהזוג מהקומה העליונה מתגורר איתנו כבר תשע שנים מבלי שידענו.",
+   "We sat there almost three hours and discovered that the couple from the top floor had been living with us for nine years without our knowing."),
+  ("כשהחשמל חזר כולם צעקו מרוב שמחה, ואז טיפסו לדירות והדלת נסגרה אחרי כל אחד.",
+   "When the power came back everyone shouted for joy, and then climbed to their flats and the door closed behind each one."),
+  ("למחרת נפגשנו במדרגות והחלפנו שלום, ומאז אנחנו עושים את זה כל בוקר.",
+   "The next day we met on the stairs and exchanged greetings, and since then we do it every morning."),
+ ]),
+ ("איך למדתי לבשל", "How I Learned to Cook", [
+  ("עד גיל עשרים ושתיים לא בישלתי כלום, כי תמיד מישהו אחר עמד במטבח במקומי.",
+   "Until the age of twenty-two I cooked nothing, because someone else always stood in the kitchen instead of me."),
+  ("כשעברתי לגור לבד גיליתי שאני יודע להכין רק חביתה, וגם אותה שרפתי פעמיים.",
+   "When I moved to live alone I discovered I only knew how to make an omelette, and I burned even that twice."),
+  ("התקשרתי לאמא שלי וביקשתי מתכון פשוט, והיא הכתיבה לי אותו בטלפון בסבלנות אינסופית.",
+   "I called my mother and asked for a simple recipe, and she dictated it to me on the phone with endless patience."),
+  ("בפעם הראשונה שכחתי את המלח לגמרי, ובפעם השנייה הוספתי כל כך הרבה שלא יכולתי לאכול.",
+   "The first time I forgot the salt entirely, and the second time I added so much I couldn't eat it."),
+  ("אחרי חודשיים כבר הכנתי מרק שהחברים שלי אכלו בלי שהתלוננו, וזאת הייתה הצלחה גדולה.",
+   "After two months I was already making a soup my friends ate without complaining, and that was a great success."),
+  ("היום אני מבשל כמעט כל ערב, ואף פעם לא מודד שום דבר בכוס או בכפית.",
+   "Today I cook almost every evening, and I never measure anything in a cup or a teaspoon."),
+  ("כשאמא שלי מגיעה לבקר היא טועמת ואומרת שזה טעים, ואז מוסיפה קצת מלח בשקט.",
+   "When my mother comes to visit she tastes it and says it's delicious, and then quietly adds a little salt."),
+ ]),
+ ("הצילום הישן", "The Old Photograph", [
+  ("בזמן שסידרתי ארונות מצאתי מעטפה ובתוכה צילום שחור לבן שלא זיהיתי אף אחד בו.",
+   "While I was tidying cupboards I found an envelope and inside it a black and white photograph in which I recognised nobody."),
+  ("בגב הצילום מישהו רשם תאריך משנת חמישים ושבע ושתי מילים שלא הצלחתי לפענח.",
+   "On the back of the photograph someone had written a date from nineteen fifty-seven and two words I couldn't decipher."),
+  ("הראיתי אותו לאמא שלי, והיא לקחה משקפיים והביטה בו זמן רב מבלי לומר מילה.",
+   "I showed it to my mother, and she took her glasses and gazed at it a long while without saying a word."),
+  ("בסוף היא הצביעה על ילדה קטנה בשמאל והסבירה שזאת אחותה שנפטרה לפני שנולדתי.",
+   "In the end she pointed at a small girl on the left and explained that it was her sister who died before I was born."),
+  ("מעולם לא שמעתי עליה, כי במשפחה שלנו לא נהגו לדבר על דברים שכואבים.",
+   "I had never heard of her, because in our family it wasn't the custom to talk about painful things."),
+  ("אמא סיפרה על אותה שנה כמעט שעה, ובסוף ביקשה שאחזיר את הצילום למקום.",
+   "Mum talked about that year for almost an hour, and at the end asked me to put the photograph back."),
+  ("החזרתי אותו, אבל צילמתי אותו קודם בטלפון, כי הבנתי שלא נדבר על זה שוב.",
+   "I put it back, but I photographed it first on my phone, because I understood we wouldn't speak of it again."),
+ ]),
+ ("המעבר לעיר", "The Move to the City", [
+  ("עברתי לעיר הגדולה בגיל שלושים, אחרי ששלוש עשרה שנים גרתי במושב קטן בדרום.",
+   "I moved to the big city at thirty, after living thirteen years in a small village in the south."),
+  ("בשבוע הראשון הלכתי לאיבוד שלוש פעמים, כי כל הרחובות נראו לי בדיוק אותו דבר.",
+   "In the first week I got lost three times, because all the streets looked exactly the same to me."),
+  ("הרעש הפריע לי מאוד בהתחלה, ובלילות הראשונים ישנתי עם כרית על האוזניים.",
+   "The noise bothered me a lot at first, and in the first nights I slept with a pillow over my ears."),
+  ("אחרי חודש גיליתי שוק קטן ליד הבית שבו המוכרים זיהו אותי כבר בשבוע השני.",
+   "After a month I discovered a small market near the house where the sellers recognised me by the second week."),
+  ("מצאתי עבודה קרובה לבית ולכן ויתרתי על המכונית, ומאז אני הולך לכל מקום ברגל.",
+   "I found work close to home so I gave up the car, and since then I walk everywhere."),
+  ("החברים מהמושב שואלים אם אני מתגעגע, ואני עונה שכן אבל שלא הייתי חוזר.",
+   "My friends from the village ask whether I miss it, and I answer that I do but that I wouldn't go back."),
+  ("בשבתות אני יושב במרפסת, שומע את העיר מרחוק ומרגיש שהמקום הזה כבר שלי.",
+   "On Saturdays I sit on the balcony, hear the city from a distance and feel that this place is mine now."),
+ ]),
+ ("הבוקר של הבחינה", "The Morning of the Exam", [
+  ("בבוקר של הבחינה האחרונה התעוררתי שעה לפני השעון, ולא הצלחתי להירדם שוב.",
+   "On the morning of the last exam I woke an hour before the alarm, and couldn't fall asleep again."),
+  ("למדתי חודש שלם ובכל זאת הרגשתי שאני לא זוכר שום דבר שקראתי בשבוע האחרון.",
+   "I had studied a whole month and still felt I remembered nothing I had read in the last week."),
+  ("בדרך לאוניברסיטה פגשתי סטודנטית מהקורס שאמרה שגם היא לא ישנה כמעט בכלל.",
+   "On the way to the university I met a student from the course who said she had hardly slept either."),
+  ("ישבנו יחד על המדשאה עשרים דקות ובחנו זה את זה על החומר בקול רם.",
+   "We sat together on the lawn for twenty minutes and tested each other on the material out loud."),
+  ("כשנכנסתי לאולם וקיבלתי את השאלון הבנתי שדווקא כל מה שחזרנו עליו מופיע בו.",
+   "When I entered the hall and received the paper I realised that everything we had gone over was in it."),
+  ("סיימתי חצי שעה לפני הזמן ויצאתי, ואז עמדתי בחוץ וחיכיתי לה שתסיים גם.",
+   "I finished half an hour early and left, and then stood outside and waited for her to finish too."),
+  ("קיבלנו את אותו הציון בדיוק, ומאז אנחנו לומדים יחד לכל בחינה שנייה.",
+   "We got exactly the same mark, and since then we study together for every other exam."),
+ ]),
+ ("הכלב שחיכה", "The Dog That Waited", [
+  ("ברחוב שלנו הסתובב כלב חום שהתיישב כל בוקר מול אותו בניין וחיכה שם למישהו.",
+   "On our street there was a brown dog that sat down every morning opposite the same building and waited there for someone."),
+  ("בהתחלה חשבנו שהוא אבד, אבל הפרווה שלו נראתה מסורקת ולכן הבנו שמישהו מטפל בו.",
+   "At first we thought he was lost, but his coat looked brushed so we realised somebody was looking after him."),
+  ("שכנה אחת סיפרה שהאישה שגידלה אותו הועברה בסתיו לבית אבות בעיר אחרת.",
+   "One neighbour said that the woman who raised him had been moved in the autumn to a care home in another city."),
+  ("הבן שלה לקח את הכלב אליו, אבל הוא נמלט בכל הזדמנות, חזר לרחוב והתיישב מול הבניין.",
+   "Her son took the dog to his place, but he escaped at every opportunity, came back to the street and sat down opposite the building."),
+  ("במשך חודשיים כמעט כל מי שגר ברחוב הביא לו מים או שאריות בדרך לעבודה.",
+   "For two months almost everyone who lived on the street brought him water or leftovers on the way to work."),
+  ("באחד הימים הבן הביא את אמא שלו לביקור, והכלב זיהה אותה מרחוק והתחיל לנבוח.",
+   "One day the son brought his mother for a visit, and the dog recognised her from afar and started barking."),
+  ("מאז הם באים כל שבוע, והכלב יושב איתה על הספסל ומחכה שהיא תלטף אותו.",
+   "Since then they come every week, and the dog sits with her on the bench and waits for her to stroke him."),
+ ]),
+ ("הגינה על הגג", "The Garden on the Roof", [
+  ("שכן אחד ביקש רשות מכל הדיירים להשתמש בגג, ורק אחרי חצי שנה כולם הסכימו.",
+   "One neighbour asked all the residents for permission to use the roof, and only after six months did everyone agree."),
+  ("הוא הזמין עשרים עציצים ריקים ושק אדמה כבד, סחב את הכול לבד במדרגות הצרות.",
+   "He ordered twenty empty pots and a heavy sack of soil, dragged it all up the narrow stairs alone."),
+  ("בהתחלה צחקנו עליו קצת, כי לא האמנו שמשהו יגדל שם בחום של הקיץ.",
+   "At first we laughed at him a bit, because we didn't believe anything would grow up there in the summer heat."),
+  ("באביב הוא הזמין את כל הבניין לעלות, ושם גילינו עגבניות, נענע ושתי גפנים קטנות.",
+   "In the spring he invited the whole building up, and there we discovered tomatoes, mint and two small vines."),
+  ("מאז כל אחד מטפל בפינה שלו, והילדים טיפסו לשם כל אחר צהריים והשקו לפי רשימה שתלינו על הדלת.",
+   "Since then everyone looks after their own corner, and the children climbed up every afternoon and watered according to a list we hung on the door."),
+  ("השכן שהתחיל את הכול עזב לפני שנה, אבל הוא השאיר לנו דף ארוך ובו כל ההוראות.",
+   "The neighbour who started it all left a year ago, but he left us a long page with all the instructions."),
+  ("אנחנו עדיין קוראים לגג הגינה שלו, אף על פי שהוא לא ראה אותה כבר מזמן.",
+   "We still call the roof his garden, even though he hasn't seen it for a long time."),
+ ]),
+ ("השיר ברדיו", "The Song on the Radio", [
+  ("נסעתי לבד בכביש ריק בשתיים בלילה, וברדיו התנגן שיר שלא שמעתי שנים.",
+   "I was driving alone on an empty road at two in the morning, and on the radio played a song I hadn't heard in years."),
+  ("עצרתי בצד הדרך והקשבתי עד הסוף, כי פתאום נזכרתי איפה שמעתי אותו לראשונה.",
+   "I pulled over at the side of the road and listened to the end, because I suddenly remembered where I first heard it."),
+  ("סבתא שלי נהגה לשיר אותו במטבח בזמן שקילפה תפוחי אדמה לארוחת הצהריים.",
+   "My grandmother used to sing it in the kitchen while she peeled potatoes for lunch."),
+  ("לא ידעתי בכלל שזה שיר אמיתי, וכל השנים חשבתי שהיא המציאה אותו בעצמה.",
+   "I had no idea it was a real song, and all those years I thought she had made it up herself."),
+  ("חיפשתי אותו למחרת ומצאתי הקלטה ישנה משנת ארבעים ותשע עם זמרת שאיש לא זוכר.",
+   "I looked it up the next day and found an old recording from nineteen forty-nine with a singer nobody remembers."),
+  ("שלחתי אותו לאמא ולדודות שלי, וכולן ענו תוך דקות שגם הן שכחו אותו לגמרי.",
+   "I sent it to my mother and my aunts, and they all replied within minutes that they had completely forgotten it too."),
+  ("עכשיו אנחנו שרים אותו בכל ארוחה משפחתית, אף על פי שאיש לא זוכר את המילים.",
+   "Now we sing it at every family meal, even though nobody remembers the words."),
+ ]),
+ ("הספר ששכחתי ברכבת", "The Book I Left on the Train", [
+  ("שכחתי ספר על המושב ברכבת, ורק אחרי שהגעתי הביתה גיליתי שהתיק שלי ריק.",
+   "I left a book on the seat on the train, and only after I got home did I discover my bag was empty."),
+  ("זה לא היה ספר יקר, אבל רשמתי בשוליים שלו הערות וציטוטים במשך חצי שנה.",
+   "It wasn't an expensive book, but I had written notes and quotations in its margins over six months."),
+  ("התקשרתי למחלקת האבידות ואמרו לי לבוא בעוד שבוע, כי הכול מגיע אליהם באיחור.",
+   "I called the lost property office and they told me to come in a week, because everything reaches them late."),
+  ("כשהגעתי לשם המצאי היה עצום, ופקידה עייפה הוציאה ארגז מלא ספרים שאיש לא תבע.",
+   "When I got there the stock was enormous, and a tired clerk pulled out a box full of books nobody had claimed."),
+  ("הספר שלי לא היה שם, אבל מצאתי בארגז רומן ישן שרציתי לקרוא כבר שנים.",
+   "My book wasn't there, but in the box I found an old novel I had wanted to read for years."),
+  ("הפקידה אמרה שאם אף אחד לא בא אחרי חודשיים אפשר לקחת, ורשמה את השם שלי.",
+   "The clerk said that if nobody came after two months you could take it, and she wrote down my name."),
+  ("היא התקשרה אליי בפברואר, ואני נוסע ברכבת עם הרומן ההוא כבר שנה שלמה.",
+   "She called me in February, and I've been riding the train with that novel for a whole year now."),
+ ]),
+ ("יום ההולדת של אמא", "Mum's Birthday", [
+  ("שלושה שבועות תכננו לאמא מסיבה מפתיעה, ושמרנו את הסוד בקושי רב מאוד.",
+   "For three weeks we planned a surprise party for Mum, and kept the secret only with great difficulty."),
+  ("אחותי הזמינה עשרים אורחים, הבטחתי לה שאביא את אמא הביתה בדיוק בשבע וחצי.",
+   "My sister invited twenty guests and I promised her I would bring Mum home at exactly half past seven."),
+  ("לקחתי אותה לקניות בקניון והמצאתי תירוצים חדשים בכל פעם שהיא רצתה לחזור.",
+   "I took her shopping at the mall and invented new excuses every time she wanted to go back."),
+  ("כשנכנסנו לבית כולם צעקו הפתעה, והיא נעצרה בדלת וחייכה בלי להגיד כלום.",
+   "When we came into the house everyone shouted surprise, and she stopped in the doorway and smiled without saying anything."),
+  ("אחר כך היא הודתה שידעה הכול כבר שבועיים, כי שכחנו רשימה על שולחן המטבח.",
+   "Afterwards she admitted she had known everything for two weeks, because we forgot a list on the kitchen table."),
+  ("היא התאמנה על הפרצוף המופתע כל ערב מול המראה, וגם צילמה את עצמה פעמיים.",
+   "She had practised the surprised face every evening in front of the mirror, and even photographed herself twice."),
+  ("כולם צחקו חצי שעה, ומאז אנחנו נזכרים בהצגה הזאת בכל יום הולדת שמגיע.",
+   "Everyone laughed for half an hour, and since then we think back to that performance at every birthday that comes."),
+ ]),
+ ("החבר מהאוניברסיטה", "The Friend from University", [
+  ("הכרתי אותו ביום הראשון באוניברסיטה, כי שנינו הגענו בטעות לאותה כיתה שגויה.",
+   "I met him on the first day at university, because we both arrived by mistake at the same wrong classroom."),
+  ("במשך שלוש שנים ישבנו יחד בכל שיעור וחילקנו כל כריך שמישהו מאיתנו הביא.",
+   "For three years we sat together in every class and shared every sandwich either of us brought."),
+  ("אחרי הלימודים הוא נסע לעבוד בחוץ לארץ, ואני נשארתי ומצאתי עבודה בעיר.",
+   "After our studies he went to work abroad, and I stayed and found work in the city."),
+  ("בהתחלה כתבנו כל שבוע, אחר כך כל חודש, ואחרי שנתיים הפסקנו כמעט לגמרי.",
+   "At first we wrote every week, then every month, and after two years we stopped almost entirely."),
+  ("לפני חודש הוא הודיע שהוא חוזר לביקור, וקבענו להיפגש באותו בית קפה הישן.",
+   "A month ago he announced he was coming back for a visit, and we arranged to meet in that same old café."),
+  ("פחדתי שלא יהיה לנו על מה לדבר, אבל אחרי חמש דקות זה נמשך כאילו לא עברו שנים.",
+   "I was afraid we wouldn't have anything to talk about, but after five minutes it went on as if no years had passed."),
+  ("ישבנו שם עד שסגרו את המקום, והבטחנו זה לזה שלא נחכה שוב כל כך הרבה.",
+   "We sat there until they closed the place, and promised each other we wouldn't wait that long again."),
+ ]),
+ ("הארנק שאבד", "The Wallet That Was Lost", [
+  ("איבדתי את הארנק שלי בקניון ביום שישי, וגיליתי את זה רק כשעמדתי בקופה.",
+   "I lost my wallet at the mall on Friday, and discovered it only when I was standing at the till."),
+  ("חזרתי על כל המסלול שעברתי, בדקתי בכל חנות ושאלתי כל מוכר שנראה לי מוכר.",
+   "I retraced the whole route I had taken, checked in every shop and asked every seller who looked familiar to me."),
+  ("ביטלתי את הכרטיסים בטלפון תוך חצי שעה, אבל הצטערתי בעיקר על תצלום דהוי שהחזקתי בתא הפנימי.",
+   "I cancelled the cards by phone within half an hour, but mostly I regretted a faded photo I kept in the inner compartment."),
+  ("אחרי ארבעה ימים התקשרה אליי אישה שמצאה אותו ברחוב ליד תחנת האוטובוס.",
+   "After four days a woman called me who had found it in the street near the bus stop."),
+  ("היא הסבירה שחיפשה אותי לפי כרטיס ספרייה שנשאר שם, כי הכסף כבר נעלם.",
+   "She explained that she had searched for me by a library card that was still there, because the money had already gone."),
+  ("נפגשנו למחרת והצעתי לה משהו, אבל היא סירבה וביקשה רק שאעשה את זה למישהו אחר.",
+   "We met the next day and I offered her something, but she refused and asked only that I do the same for someone else."),
+  ("התמונה נשארה שלמה בפנים, ומאז היא תלויה במסגרת במסדרון ולא נודדת איתי.",
+   "The photograph stayed whole inside, and since then it hangs in a frame in the hallway and doesn't travel with me."),
+ ]),
+ ("שנה בחוץ לארץ", "A Year Abroad", [
+  ("בגיל עשרים ושש עזבתי הכול ונסעתי לשנה לעיר קרה שלא הכרתי בה איש.",
+   "At twenty-six I left everything and went for a year to a cold city where I knew nobody."),
+  ("בחודשיים הראשונים כמעט לא דיברתי עם אף אחד, כי השפה שם נשמעה לי בלתי אפשרית.",
+   "In the first two months I hardly spoke to anyone, because the language there sounded impossible to me."),
+  ("מצאתי עבודה במאפייה קטנה, והמנהל לימד אותי מילים חדשות בזמן שלשנו בצק יחד.",
+   "I found work in a small bakery, and the manager taught me new words while we kneaded dough together."),
+  ("בחורף החשיך שם בארבע אחר הצהריים, וזה הפחיד אותי הרבה יותר מהקור עצמו.",
+   "In winter it got dark there at four in the afternoon, and that frightened me far more than the cold itself."),
+  ("באביב התחלתי להבין את הבדיחות של הלקוחות, וזה שינה את הכול תוך שבועות.",
+   "In the spring I started to understand the customers' jokes, and that changed everything within weeks."),
+  ("כשהגיע הזמן לחזור ארזתי מזוודה אחת בלבד, כי כל השאר כבר לא נראה לי חשוב.",
+   "When the time came to go back I packed only one suitcase, because everything else no longer seemed important to me."),
+  ("המנהל העניק לי שקית קמח כמזכרת, ואני עדיין מחביא אותה במדף העליון בארון.",
+   "The manager gave me a bag of flour as a keepsake, and I still hide it on the top shelf of the cupboard."),
+ ]),
+ ("הכביש למדבר", "The Road to the Desert", [
+  ("יצאנו לדרום בחמש בבוקר, כי רצינו להגיע למכתש לפני שהשמש תעלה גבוה.",
+   "We set out south at five in the morning, because we wanted to reach the crater before the sun rose high."),
+  ("אחרי שעתיים נגמר הכביש הסלול, המשכנו על דרך עפר צרה והמכונית רעדה כל הזמן.",
+   "After two hours the paved road ended, we continued on a narrow dirt track and the car shook the whole time."),
+  ("עצרנו ליד עץ בודד, שתינו קפה מהתרמוס ולא שמענו שום דבר מלבד הרוח בענפים.",
+   "We stopped by a lone tree, drank coffee from the thermos and heard nothing but the wind in the branches."),
+  ("חבר שלי נשבע שראה יעל על הרכס, אבל אף אחד מאיתנו לא הצליח לצלם אותה.",
+   "A friend of mine swore he saw an ibex on the ridge, but none of us managed to photograph it."),
+  ("בצהריים הגענו למקום שממנו רואים את כל המכתש, שתקנו שם כמה דקות ואיש לא צילם.",
+   "At midday we reached a place from which you can see the whole crater, we were silent there a few minutes and nobody took a photograph."),
+  ("בדרך חזרה נתקע הרכב בחול, וחפרנו כמעט שעה עד שהצלחנו לצאת משם.",
+   "On the way back the vehicle got stuck in sand, and we dug for almost an hour until we managed to get out."),
+  ("הגענו הביתה מלוכלכים ומאוחר, וכולנו הסכמנו שנחזור לשם כבר בחורף הבא.",
+   "We got home dirty and late, and we all agreed we would go back there the very next winter."),
+ ]),
+ ("מה שלא אמרתי", "What I Didn't Say", [
+  ("בערב שלפני הטיסה של אחי ישבנו במטבח ודיברנו על דברים לא חשובים בכלל.",
+   "On the evening before my brother's flight we sat in the kitchen and talked about entirely unimportant things."),
+  ("רציתי לומר לו שאני גאה בו, אבל בכל פעם שפתחתי את הפה יצא משהו אחר.",
+   "I wanted to tell him I was proud of him, but every time I opened my mouth something else came out."),
+  ("דיברנו על הכבודה, על השעה שהוא צריך לצאת ועל מזג האוויר שמחכה לו שם.",
+   "We talked about the luggage, about the time he had to leave and about the weather waiting for him there."),
+  ("בבוקר הסעתי אותו לשדה התעופה, והוא נרדם במכונית אחרי חמש דקות נסיעה.",
+   "In the morning I drove him to the airport, and he fell asleep in the car after five minutes of driving."),
+  ("כשהעירו את הנוסעים לטיסה הוא חיבק אותי חזק ואמר שהוא יתקשר בערב.",
+   "When they called the passengers for the flight he hugged me hard and said he would call in the evening."),
+  ("חזרתי לבד לחניון והבנתי שוב שלא הצלחתי לומר את המשפט האחד שתכננתי.",
+   "I went back to the car park alone and realised again that I hadn't managed to say the one sentence I had planned."),
+  ("כתבתי לו אותו באותו לילה בהודעה, והוא ענה שידע את זה ממילא.",
+   "I wrote it to him that same night in a message, and he answered that he knew it anyway."),
+ ]),
+ ("המורה של אחותי", "My Sister's Teacher", [
+  ("אחותי שנאה בית ספר עד כיתה חמש, בכתה כל בוקר והתחננה שנשאיר אותה בבית.",
+   "My sister hated school until fifth grade, cried every morning and begged us to leave her at home."),
+  ("בשנה ההיא הגיעה מורה חדשה שהחליטה לשבת איתה חצי שעה אחרי כל שיעור.",
+   "That year a new teacher arrived who decided to sit with her for half an hour after every lesson."),
+  ("היא גילתה שאחותי לא רואה טוב את הלוח, שלחה אותה לבדיקה והתקשרה אלינו בערב.",
+   "She discovered that my sister couldn't see the board well, sent her for a test and called us in the evening."),
+  ("קיבלנו משקפיים תוך עשרה ימים, ותוך חודשיים הציונים שלה השתנו לגמרי.",
+   "We got glasses within ten days, and within two months her marks changed completely."),
+  ("אמא שלי הודתה למורה בכל פגישה, והמורה ענתה בכל פעם שזאת העבודה שלה.",
+   "My mother thanked the teacher at every meeting, and the teacher answered each time that it was her job."),
+  ("אחותי סיימה תואר בהוראה לפני שנתיים ועובדת עכשיו באותו בית ספר בדיוק.",
+   "My sister finished a teaching degree two years ago and now works at that very same school."),
+  ("המורה כבר פרשה מההוראה, אבל היא הגיעה לטקס והתיישבה בשורה הראשונה.",
+   "The teacher has already retired from teaching, but she came to the ceremony and sat down in the front row."),
+ ]),
+ ("שיעורי נהיגה", "Driving Lessons", [
+  ("התחלתי ללמוד נהיגה בגיל שלושים ושמונה, אחרי שכל החברים שלי כבר נהגו שנים.",
+   "I started learning to drive at thirty-eight, after all my friends had already been driving for years."),
+  ("המורה שלי היה איש שקט שכמעט לא דיבר, ורק הצביע לאן צריך לפנות.",
+   "My instructor was a quiet man who barely spoke, and only pointed where I needed to turn."),
+  ("בשיעור השלישי כיביתי את המנוע ארבע פעמים ברמזור אחד, והוא רק חייך ואמר שוב.",
+   "In the third lesson I stalled the engine four times at one traffic light, and he only smiled and said again."),
+  ("נכשלתי במבחן הראשון בגלל חנייה, ולמדתי אותה אחר כך שלושה שבועות ברציפות.",
+   "I failed the first test because of parking, and afterwards I practised it for three weeks straight."),
+  ("במבחן השני הבוחן כמעט לא כתב כלום, וזה הפחיד אותי הרבה יותר מהצעקות.",
+   "In the second test the examiner wrote almost nothing, and that frightened me far more than shouting would have."),
+  ("כשקיבלתי את הרישיון התקשרתי קודם כול למורה, והוא ענה שהוא ידע מההתחלה.",
+   "When I got my licence I called the instructor first of all, and he answered that he had known from the start."),
+  ("אני נוהג היום כל יום לעבודה, ועדיין מכבה את הרדיו כשאני מחפש חנייה.",
+   "Today I drive to work every day, and I still turn off the radio when I'm looking for parking."),
+ ]),
+ ("המפתח מתחת לשטיח", "The Key Under the Mat", [
+  ("במשך שלושים שנה השאירו ההורים שלי מפתח מתחת לשטיח שליד דלת הכניסה.",
+   "For thirty years my parents left a key under the mat by the front door."),
+  ("כל השכנים ידעו על זה, וכמה מהם השתמשו בו כשהם שכחו את המפתחות שלהם.",
+   "All the neighbours knew about it, and several of them used it when they forgot their own keys."),
+  ("פעם אחת הגעתי בלילה בלי להודיע, מצאתי את המפתח בדיוק במקום ונכנסתי בשקט.",
+   "Once I arrived at night without letting them know, found the key exactly in place and went in quietly."),
+  ("אמא שלי טענה תמיד שגנב לא מחפש מתחת לשטיח, כי זה פשוט מדי בשבילו.",
+   "My mother always argued that a thief doesn't look under the mat, because it's too simple for him."),
+  ("אחרי שהם עזבו לדירה קטנה יותר הם התקינו מנעול חדש עם קוד, וזרקו את השטיח.",
+   "After they left for a smaller flat they installed a new lock with a code, and threw the mat away."),
+  ("שכחתי את הקוד בביקור הראשון ועמדתי בחוץ עשרים דקות עד שמישהו פתח לי.",
+   "I forgot the code on the first visit and stood outside twenty minutes until someone opened for me."),
+  ("אמא צחקה ואמרה שהיא הזהירה אותם, ואבא שלי הסכים איתה בשקט מוחלט.",
+   "Mum laughed and said she had warned them, and my father agreed with her in complete silence."),
+ ]),
+ ("השכנה מלמטה", "The Neighbour Downstairs", [
+  ("השכנה מלמטה התלוננה על רעש כל שבוע, ובהתחלה כעסתי עליה מאוד.",
+   "The neighbour downstairs complained about noise every week, and at first I was very angry with her."),
+  ("ירדתי אליה פעם אחת כדי לריב, אבל היא הזמינה אותי להיכנס והציעה עוגיות.",
+   "I went down to her once in order to argue, but she invited me in and offered biscuits."),
+  ("היא הסבירה שהיא עובדת בלילות בבית חולים וישנה בשעות שאנחנו בבית.",
+   "She explained that she works nights at a hospital and sleeps at the hours when we're at home."),
+  ("הצעתי שנקבע שעות שקטות, והיא הסכימה מיד ורשמה אותן על פתק בטלפון.",
+   "I suggested we set quiet hours, and she agreed immediately and noted them on a note in her phone."),
+  ("מאז לא שמעתי ממנה תלונה אחת, והיא עצרה אותי במדרגות רק כדי לשאול מה שלומנו.",
+   "Since then I haven't heard a single complaint from her, and she stopped me on the stairs only to ask how we were."),
+  ("בקיץ היא נסעה לחודש והשאירה לנו את הצמחים שלה ואת המפתח שלה.",
+   "In summer she went away for a month and left us her plants and her key."),
+  ("החזרתי לה הכול ירוק ופורח, והיא הודתה לי כאילו הצלתי משהו יקר ערך.",
+   "I gave it all back to her green and blooming, and she thanked me as if I had rescued something precious."),
+ ]),
+ ("הטלפון באמצע הלילה", "The Call in the Middle of the Night", [
+  ("הטלפון צלצל בשתיים וחצי בלילה, וקפצתי מהמיטה לפני שהספקתי להתעורר לגמרי.",
+   "The phone rang at half past two in the night, and I jumped out of bed before I had fully woken."),
+  ("קול של גבר מבוגר שאל אם מדובר במוסך, וברקע שמעתי גשם וכביש.",
+   "The voice of an older man asked whether this was a garage, and in the background I heard rain and a road."),
+  ("הסברתי לו שטעה במספר, אבל משהו בקול שלו גרם לי להישאר על הקו.",
+   "I explained to him that he had the wrong number, but something in his voice made me stay on the line."),
+  ("הוא סיפר שהמכונית שלו נעצרה בצד הדרך ושהוא לא זוכר לאן הוא נסע.",
+   "He said his car had stopped at the side of the road and that he couldn't remember where he was driving."),
+  ("שאלתי איפה הוא נמצא בדיוק, והוא תיאר גשר וצומת שזיהיתי מיד לפי התיאור.",
+   "I asked exactly where he was, and he described a bridge and a junction I recognised at once from the description."),
+  ("התקשרתי למשטרה ונשארתי איתו בטלפון עוד עשרים דקות עד שהם הגיעו אליו.",
+   "I called the police and stayed on the phone with him another twenty minutes until they reached him."),
+  ("הוא לא ידע את השם שלי ואני לא ידעתי את שלו, ומאז חשבתי עליו הרבה.",
+   "He didn't know my name and I didn't know his, and since then I have thought about him a lot."),
+ ]),
+ ("הדרך חזרה", "The Way Back", [
+  ("אחרי שתים עשרה שנים בחוץ לארץ החלטנו לחזור, ומכרנו כמעט הכול תוך חודשיים.",
+   "After twelve years abroad we decided to come back, and sold almost everything within two months."),
+  ("הילדים לא רצו לעזוב את החברים שלהם, והבת הגדולה לא דיברה איתנו שבוע.",
+   "The children didn't want to leave their friends, and my eldest daughter didn't speak to us for a week."),
+  ("נחתנו בקיץ בחום נורא, והדירה שקיבלנו הייתה קטנה בהרבה ממה שזכרנו.",
+   "We landed in summer in terrible heat, and the flat we got was much smaller than we remembered."),
+  ("בשבועות הראשונים הילדים התעקשו לדבר בבית רק בשפה שהם למדו שם.",
+   "In the first weeks the children insisted on speaking at home only in the language they had learned there."),
+  ("בספטמבר הם התחילו בבית ספר חדש, ואחרי חודש הם כבר ריבו בעברית שוטפת.",
+   "In September they started a new school, and after a month they were already quarrelling in fluent Hebrew."),
+  ("בחורף הראשון ירד גשם שבוע שלם, והבת הגדולה אמרה שהיא אוהבת את הריח.",
+   "In the first winter it rained a whole week, and my eldest daughter said she liked the smell."),
+  ("אני עדיין מתגעגע לעיר ההיא לפעמים, אבל אף אחד מאיתנו לא הציע לחזור.",
+   "I still miss that city sometimes, but none of us has suggested going back."),
+ ]),
+]
+
 
 def has_past(lex, sentence):
     """Does this sentence carry a past-tense verb? Asked of the lexicon, not of a suffix."""
@@ -620,6 +1113,56 @@ def has_past(lex, sentence):
         if all(k.startswith('VERB') for k in kinds) and any('past' in k for k in kinds):
             return True
     return False
+
+
+def finite_verbs(lex, sentence):
+    """How many conjugated verbs this sentence carries -- its clause count, near enough.
+
+    What makes a sentence advanced is not its length, it is that it holds two thoughts at once:
+    "the letter he wrote and never sent", "I left sure I had failed". Beginner Hebrew is a
+    chain of one-verb sentences; advanced Hebrew hangs clauses off each other.
+
+    The first version of this counted subordinating CONJUNCTIONS from a word list and measured
+    the wrong thing in both directions -- it scored a story of relative clauses at 29% because
+    they hang off a bare ש-, and one of plain "and then" sentences at 71% because they happened
+    to contain כי. Counting the verbs asks the question directly.
+
+    Same all-readings-are-verbs strictness as has_past, and for the same reason: מת, כתב and
+    שלח are each also a noun. Two adjustments, both for false NEGATIVES rather than to be
+    lenient. It asks look() rather than the form table, so a verb the lexicon reaches by its
+    other spelling counts (בישלתי is only there as a ktiv match). And it ignores a NOUN row in
+    the possessed form, which is a Wiktionary artefact that collides exactly with the
+    first-person past: החלטתי, הרגשתי and חזרתי each carry "my decision", "my feeling", "my
+    return" beside the verb, and without this every such sentence read as verbless.
+
+    Measured over what this app already has: two finite verbs in 3% of beginner sentences,
+    38% of intermediate, 36% of the Ben-Yehuda shelf and 74% of the daily paper."""
+    n = 0
+    for t in he_ingest.tokenize(sentence):
+        recs, _prov, cut = lex.look(t)
+        if not recs or cut:
+            continue
+        kinds = {str(r['ANALYSIS'] or '') for r in recs}
+        kinds = {k for k in kinds if not (k.startswith('NOUN') and 'possessed-form' in k)}
+        if kinds and all(k.startswith('VERB') for k in kinds) and any(
+                any(f in k for f in FINITE) for k in kinds):
+            n += 1
+    return n
+
+
+def fresh_lemmas(lex, toks, known):
+    """Share of a story's DISTINCT lemmas that this app's Hebrew has not used before.
+
+    Counted per lemma rather than per token on purpose: a story that says one new word forty
+    times has taught one word, and by token it would look like a whole new vocabulary."""
+    lem = set()
+    for t in toks:
+        recs, _prov, _cut = lex.look(t)
+        if recs:
+            lem.add(str(lex.readings(recs)[0]['LEMMA']))
+    if not lem:
+        return 0.0
+    return sum(1 for x in lem if x not in known) / len(lem)
 
 
 def met_before(lex, toks, known):
@@ -645,6 +1188,8 @@ def check(lex, level, sents, known):
     avg = statistics.mean(lengths)
     past = sum(1 for he, _ in sents if has_past(lex, he)) / len(sents)
     reach = met_before(lex, toks, known)
+    sub = sum(1 for he, _ in sents if finite_verbs(lex, he) >= 2) / len(sents)
+    fresh = fresh_lemmas(lex, toks, known)
     bad = []
     if len(unknown) > MAX_UNKNOWN:
         bad.append('not in the lexicon: ' + ', '.join(unknown))
@@ -665,8 +1210,14 @@ def check(lex, level, sents, known):
     if reach < L['min_reach']:
         bad.append('%.0f%% of its words have been met before (needs %.0f%%)'
                    % (100 * reach, 100 * L['min_reach']))
+    if sub < L['min_sub']:
+        bad.append('only %.0f%% of sentences carry two clauses (needs %.0f%%; intermediate '
+                   'runs 31%%)' % (100 * sub, 100 * L['min_sub']))
+    if fresh < L['min_fresh']:
+        bad.append('only %.0f%% of its lemmas are new to this app (needs %.0f%%)'
+                   % (100 * fresh, 100 * L['min_fresh']))
     return bad, {'tokens': len(toks), 'avg': avg, 'longest': max(lengths),
-                 'past': past, 'reach': reach}
+                 'past': past, 'reach': reach, 'sub': sub, 'fresh': fresh}
 
 
 def already_met(lex):
@@ -698,13 +1249,14 @@ def main():
         if a.level and level != a.level:
             continue
         print('%s' % level.upper())
-        print('  %-22s %-24s %5s %6s %5s %5s %5s'
-              % ('title', 'English', 'words', 'avg', 'max', 'past', 'met'))
+        print('  %-22s %-24s %5s %6s %5s %5s %5s %5s %5s'
+              % ('title', 'English', 'words', 'avg', 'max', 'past', 'met', 'sub', 'new'))
         for t_he, t_en, sents in STORIES.get(level, []):
             bad, st = check(lex, level, sents, known)
-            print('  %-22s %-24s %5d %6.1f %5d %4.0f%% %4.0f%%%s'
+            print('  %-22s %-24s %5d %6.1f %5d %4.0f%% %4.0f%% %4.0f%% %4.0f%%%s'
                   % (t_he[:22], t_en[:24], st['tokens'], st['avg'], st['longest'],
-                     100 * st['past'], 100 * st['reach'], '' if not bad else '  !!'))
+                     100 * st['past'], 100 * st['reach'], 100 * st['sub'], 100 * st['fresh'],
+                     '' if not bad else '  !!'))
             for b in bad:
                 print('       !! %s' % b)
                 problems += 1

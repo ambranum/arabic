@@ -15,6 +15,16 @@
 defineLang({
   code: 'he',
 
+  // Each tier is described by the gate that admits a story to it (pipeline/he_stories.py), not
+  // by how it felt to write one. Advanced makes two claims the tier below cannot: two clauses
+  // in most sentences, where intermediate manages that in 38% and beginner in 3%; and a fifth
+  // of its words new to the app, so the top tier is the one still teaching vocabulary.
+  storyLevels: [
+    ['beginner',     'Beginner',     'Short present-tense sentences about an ordinary day.'],
+    ['intermediate', 'Intermediate', 'Past tense, small plots, one thought a sentence.'],
+    ['advanced',     'Advanced',     'Two clauses a sentence, and words you have not met yet.'],
+  ],
+
   lex: {
     // Hebrew's index is a dictionary in its own right, built from Wiktionary rather than from
     // any text the app ships -- so the corpus, empty or not, cannot stand in for it.

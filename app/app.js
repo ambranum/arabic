@@ -948,11 +948,11 @@ function homeTile(sec) {
 // Which nav tab a text belongs to. Was a nested ternary that handled news and stories and left
 // book chapters lighting nothing at all — you were inside Books with Books unlit.
 const SEC_FOR_KIND = {news: 'news', story: 'stories', 'book-chapter': 'books'};
-const STORY_LEVELS = [
-  ['beginner',     'Beginner',     'Short, present-tense, everyday life. A few sentences each.'],
-  ['intermediate', 'Intermediate', 'Longer past-tense stories with small plots and connectors.'],
-  ['advanced',     'Advanced',     'Full stories — dialogue, idioms, and richer situations.'],
-];
+// What a tier IS differs by language, because the gate that admits a story differs: Arabic's
+// top tier is dialogue and idiom, Hebrew's is two clauses a sentence and vocabulary you have
+// not met. The pack says; a blurb promising dialogue over a set that has none is worse than no
+// blurb at all.
+const STORY_LEVELS = LANG.storyLevels;
 const storiesAt = lvl => LIB.texts.filter(t => t.kind === 'story' && t.level === lvl)
                                   .sort((a, b) => (a.id).localeCompare(b.id));
 
@@ -3013,7 +3013,7 @@ function lvlTag(phaseIdx, small) {
   // of furniture around no content.
   if (!(CUR.phases || []).length) return '';
   const L = levelAt(phaseIdx);
-  return `<span class="lvl" title="${esc(L.band)} · CEFR ${esc(L.cefr)} · phase ${L.phase + 1} of 7 in your plan"
+  return `<span class="lvl" title="${esc(L.band)} · CEFR ${esc(L.cefr)} · phase ${L.phase + 1} of ${CUR.phases.length} in your plan"
      style="--lc:${PHASE_COLOR[L.phase]}">${small ? '' : `<b>${esc(L.band)}</b>`}
      <i>${esc(L.cefr)}</i> <em>Phase ${L.phase + 1}</em></span>`;
 }

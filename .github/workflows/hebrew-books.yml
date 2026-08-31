@@ -23,11 +23,11 @@ on:
         type: boolean
         default: false
       annotate:
-        description: 'Annotate and adjudicate the books and stories'
+        description: 'Annotate and adjudicate the books and stories (612 decisions outstanding, all advanced)'
         type: boolean
         default: true
       audio:
-        description: 'Voice every book and story sentence (687 done, +72 new)'
+        description: 'Voice every book and story sentence (1,077 done, 210 advanced-story ones missing)'
         type: boolean
         default: true
       vocab:

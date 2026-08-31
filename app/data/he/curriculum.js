@@ -111,7 +111,10 @@ window.CURRICULUM = {
        {act: 'sound',    min: 10, src: 'inapp'},
        {act: 'grammar',  min: 15, src: 'inapp'},
        {act: 'verbs',    min: 10, src: 'inapp'},
-       {act: 'read',     min: 20, src: 'inapp', pool: 'beginner'},
+       // Both tiers, because this is where the step between them is taken: the beginner set
+       // is what you can already read, the intermediate set is the one that is teaching.
+       {act: 'read',     min: 15, src: 'inapp', pool: 'beginner'},
+       {act: 'read',     min: 15, src: 'inapp', pool: 'intermediate'},
        {act: 'read',     min: 15, src: 'inapp', pool: 'news'},
        {act: 'srs',      min: 10, src: 'inapp'},
        {act: 'produce',  min: 10, src: 'inapp'},
@@ -128,11 +131,14 @@ window.CURRICULUM = {
      milestone: 'You can read the day’s news with the English hidden, and say what it said.',
      mix: [
        {act: 'read',     min: 25, src: 'inapp', pool: 'news'},
-       {act: 'read',     min: 20, src: 'inapp', pool: 'intermediate'},
+       // The advanced set, which the tier below has been building toward. Same shape and a
+       // real step up: two clauses a sentence instead of one, and a fifth of the words in each
+       // story are ones this app has never used, which is the point of a last tier.
+       {act: 'read',     min: 20, src: 'inapp', pool: 'advanced'},
        // The Ben-Yehuda shelf, in order. Published Hebrew rather than written for you, which is
        // what this phase is for: the paper for what is happening, a book for how it is written.
        {act: 'read',     min: 20, src: 'inapp', pool: 'book'},
-       {act: 'shadow',   min: 15, src: 'inapp', pool: 'intermediate'},
+       {act: 'shadow',   min: 15, src: 'inapp', pool: 'advanced'},
        {act: 'grammar',  min: 15, src: 'inapp'},
        {act: 'verbs',    min: 15, src: 'inapp'},
        {act: 'drill432', min: 10, src: 'inapp', pool: 'reaction'},

@@ -454,6 +454,12 @@ function wadiAra(w) {
 
     // Which licensed lexicon stands behind every word, said once and shown wherever the app
     // makes that claim -- the home page's promise and each word card's provenance line.
+    storyLevels: [
+      ['beginner',     'Beginner',     'Short, present-tense, everyday life. A few sentences each.'],
+      ['intermediate', 'Intermediate', 'Longer past-tense stories with small plots and connectors.'],
+      ['advanced',     'Advanced',     'Full stories — dialogue, idioms, and richer situations.'],
+    ],
+
     lex: {
       // Arabic's word index is derived from the corpus, so either file can answer a lookup.
       source: 'corpus',

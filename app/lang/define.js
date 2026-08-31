@@ -28,7 +28,7 @@ const LANG_FULL = LANG_CHROME.concat([
   'script.minStem', 'script.fixes', 'phon.fields', 'verb.classOrder', 'verb.persons',
   'verb.tier', 'kbd.letters', 'kbd.toggle', 'tts.lang', 'tutorPrompt',
   'homeMasthead', 'chapterPrefix', 'sections', 'verb.classNoun', 'bibleBlurb',
-  'tutorStarters', 'lex.name', 'lex.blurb', 'lex.credit', 'lex.usage',
+  'tutorStarters', 'lex.name', 'lex.blurb', 'lex.credit', 'lex.usage', 'storyLevels',
   'verb.blurb', 'verb.classPlural', 'verb.weakOrder', 'lex.source',
   'script.chars', 'searchHint', 'dateLine', 'ornament']);
 
