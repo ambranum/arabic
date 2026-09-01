@@ -25,9 +25,9 @@
  "subdialect": null,
  "register": {
   "archaic_per_1k": 0.0,
-  "vav_consecutive_per_1k": 3.9,
-  "avg_sentence_words": 8.7,
-  "pointed": 0.975
+  "vav_consecutive_per_1k": 4.0,
+  "avg_sentence_words": 8.8,
+  "pointed": 1.0
  },
  "translation": "English by Claude — the Hebrew is Project Ben-Yehuda's, verbatim",
  "source": "Project Ben-Yehuda — public domain, verbatim",
@@ -153,19 +153,34 @@
      "_cut": "מ-"
     },
     {
-     "surface": "עֲיֵפָה־עֲיֵפָה",
-     "lemma": null,
-     "form": "עֲיֵפָה־עֲיֵפָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "עֲיֵפָה",
+     "lemma": "עָיֵף",
+     "form": "עָיֵף",
+     "vocalized": "עֲיֵפָה",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "tired (in need of rest or sleep)",
+     "analysis": "ADJ:feminine",
+     "caphi": "ayefa",
+     "caphi_urban": "ayefa",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "4803-4",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "עֲיֵפָה",
+     "lemma": "עָיֵף",
+     "form": "עָיֵף",
+     "vocalized": "עֲיֵפָה",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "tired (in need of rest or sleep)",
+     "analysis": "ADJ:feminine",
+     "caphi": "ayefa",
+     "caphi_urban": "ayefa",
+     "caphi_raw": null,
+     "maknuune_id": "4803-4",
+     "provenance": "wiktionary:pointed"
     }
    ],
    "audio": "audio/s0.mp3"
@@ -275,19 +290,34 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "כִּסֵּא־נוֹחַ",
-     "lemma": null,
-     "form": "כִּסֵּא־נוֹחַ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "כִּסֵּא",
+     "lemma": "כִּסֵּא",
+     "form": "כִּסֵּא",
+     "vocalized": "כִּסֵּא",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "chair",
+     "analysis": "NOUN",
+     "caphi": "kise",
+     "caphi_urban": "kise",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "1894-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "נוֹחַ",
+     "lemma": "נוֹחַ",
+     "form": "נוֹחַ",
+     "vocalized": "נוֹחַ",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "comfortable, easy",
+     "analysis": "ADJ",
+     "caphi": "nóax",
+     "caphi_urban": "nóax",
+     "caphi_raw": null,
+     "maknuune_id": "967-1",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "וְהֶעֱמִידָה",
@@ -511,20 +541,50 @@
      "_cut": "ה-"
     },
     {
-     "surface": "עַל־יָדָהּ",
-     "lemma": "עַל יַד־",
-     "form": "עַל יַד־",
-     "vocalized": "עַל־יָדָהּ",
+     "surface": "עַל",
+     "lemma": "עַל",
+     "form": "עַל",
+     "vocalized": "עַל",
      "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": "beside, near",
-     "analysis": "PREP:alternative",
-     "caphi": "l-yd",
-     "caphi_urban": "l-yd",
+     "gloss": "on, on top of",
+     "analysis": "PREP",
+     "caphi": "al",
+     "caphi_urban": "al",
      "caphi_raw": null,
-     "maknuune_id": "6050-3",
-     "provenance": "wiktionary:clitic",
-     "_cut": "-ה"
+     "maknuune_id": "547-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "יָדָהּ",
+     "lemma": "יָדָהּ",
+     "form": "יָדָהּ",
+     "vocalized": "יָדָהּ",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "singular form of יד f (yad) with third-person feminine singular personal pronoun as possessor: her hand.",
+     "analysis": "NOUN",
+     "caphi": "yádah",
+     "caphi_urban": "yádah",
+     "caphi_raw": null,
+     "maknuune_id": "5413-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "5413-1",
+       "root": "",
+       "gloss": "singular form of יד f (yad) with third-person feminine singu",
+       "analysis": "NOUN",
+       "pointed": "יָדָהּ"
+      },
+      {
+       "id": "4-18",
+       "root": "",
+       "gloss": "arm",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "יָדָהּ"
+      }
+     ]
     },
     {
      "surface": "וּבִקְשָׁה",
@@ -1488,19 +1548,35 @@
      "provenance": "wiktionary:pointed"
     },
     {
-     "surface": "וְתָמִיד־תָּמִיד",
-     "lemma": null,
-     "form": "וְתָמִיד־תָּמִיד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "וְתָמִיד",
+     "lemma": "תָּמִיד",
+     "form": "תָּמִיד",
+     "vocalized": "וְתָמִיד",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "Always, regularly.",
+     "analysis": "ADV",
+     "caphi": "tamid",
+     "caphi_urban": "tamid",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "3524-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "תָּמִיד",
+     "lemma": "תָּמִיד",
+     "form": "תָּמִיד",
+     "vocalized": "תָּמִיד",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "Always, regularly.",
+     "analysis": "ADV",
+     "caphi": "tamid",
+     "caphi_urban": "tamid",
+     "caphi_raw": null,
+     "maknuune_id": "3524-1",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "גָּמְרָה",
@@ -2296,21 +2372,6 @@
      "caphi_raw": null,
      "maknuune_id": "7432-2",
      "provenance": "wiktionary:pointed"
-    },
-    {
-     "surface": "־",
-     "lemma": null,
-     "form": "־",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
-     "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
-     "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
     },
     {
      "surface": "בִּקְשָׁה",
@@ -3114,35 +3175,34 @@
      "provenance": "unresolved"
     },
     {
-     "surface": "כָּל־כָּךְ",
-     "lemma": "כֶּלֶךְ",
-     "form": "כֶּלֶךְ",
-     "vocalized": "כָּל־כָּךְ",
+     "surface": "כָּל",
+     "lemma": "כֹּל",
+     "form": "כֹּל",
+     "vocalized": "כָּל",
      "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-     "analysis": "NOUN:masculine.possessed-form.second-person.singular",
-     "caphi": "kilxxa",
-     "caphi_urban": "kilxxa",
+     "gloss": "All, whole, entirety, everything; found almost exclusively in singular definite and singular construct forms; used to translate English all, each, every, everything, and so on.",
+     "analysis": "NOUN",
+     "caphi": "kol",
+     "caphi_urban": "kol",
      "caphi_raw": null,
-     "maknuune_id": "16984-7",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "16984-7",
-       "root": "",
-       "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-       "analysis": "NOUN:masculine.possessed-form.second-person.singular",
-       "pointed": "כִּלְכְךָ"
-      },
-      {
-       "id": "16984-8",
-       "root": "",
-       "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-       "analysis": "NOUN:feminine.possessed-form.second-person.singular",
-       "pointed": "כִּלְכֵךְ"
-      }
-     ]
+     "maknuune_id": "1550-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "כָּךְ",
+     "lemma": "כָּךְ",
+     "form": "כָּךְ",
+     "vocalized": "כָּךְ",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "Such, so, thus, in this way, in that way.",
+     "analysis": "ADV",
+     "caphi": "kax",
+     "caphi_urban": "kax",
+     "caphi_raw": null,
+     "maknuune_id": "6101-1",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "בָּעֲנָפִים",
@@ -4583,9 +4643,39 @@
      "provenance": "unresolved"
     },
     {
-     "surface": "בַּחוּרִים־בַּחוּרִים",
+     "surface": "בַּחוּרִים",
+     "lemma": "בָּחוּר",
+     "form": "בָּחוּר",
+     "vocalized": "בַּחוּרִים",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "guy, boy",
+     "analysis": "NOUN:indefinite.plural",
+     "caphi": "baxurim",
+     "caphi_urban": "baxurim",
+     "caphi_raw": null,
+     "maknuune_id": "1864-3",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "בַּחוּרִים",
+     "lemma": "בָּחוּר",
+     "form": "בָּחוּר",
+     "vocalized": "בַּחוּרִים",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "guy, boy",
+     "analysis": "NOUN:indefinite.plural",
+     "caphi": "baxurim",
+     "caphi_urban": "baxurim",
+     "caphi_raw": null,
+     "maknuune_id": "1864-3",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "עֶגְלוֹנִים",
      "lemma": null,
-     "form": "בַּחוּרִים־בַּחוּרִים",
+     "form": "עֶגְלוֹנִים",
      "vocalized": null,
      "vocalized_from": "unvocalized:no-entry",
      "root": null,
@@ -4598,9 +4688,9 @@
      "provenance": "unresolved"
     },
     {
-     "surface": "עֶגְלוֹנִים־עֶגְלוֹנִים",
+     "surface": "עֶגְלוֹנִים",
      "lemma": null,
-     "form": "עֶגְלוֹנִים־עֶגְלוֹנִים",
+     "form": "עֶגְלוֹנִים",
      "vocalized": null,
      "vocalized_from": "unvocalized:no-entry",
      "root": null,
@@ -4658,19 +4748,34 @@
      "provenance": "wiktionary:pointed"
     },
     {
-     "surface": "דִּיוֹ־דִּיוֹ",
-     "lemma": null,
-     "form": "דִּיוֹ־דִּיוֹ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "דִּיוֹ",
+     "lemma": "דִּיוֹ",
+     "form": "דִּיוֹ",
+     "vocalized": "דִּיוֹ",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "giddyup (directed at a horse)",
+     "analysis": "INTJ",
+     "caphi": "di",
+     "caphi_urban": "di",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "4870-1",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "דִּיוֹ",
+     "lemma": "דִּיוֹ",
+     "form": "דִּיוֹ",
+     "vocalized": "דִּיוֹ",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "giddyup (directed at a horse)",
+     "analysis": "INTJ",
+     "caphi": "di",
+     "caphi_urban": "di",
+     "caphi_raw": null,
+     "maknuune_id": "4870-1",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "בְּקוֹל",
@@ -4998,19 +5103,34 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "לְאַט־לְאַט",
-     "lemma": null,
-     "form": "לְאַט־לְאַט",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "לְאַט",
+     "lemma": "לְאַט",
+     "form": "לְאַט",
+     "vocalized": "לְאַט",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "slowly",
+     "analysis": "ADV",
+     "caphi": "lat",
+     "caphi_urban": "lat",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "8121-1",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "לְאַט",
+     "lemma": "לְאַט",
+     "form": "לְאַט",
+     "vocalized": "לְאַט",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "slowly",
+     "analysis": "ADV",
+     "caphi": "lat",
+     "caphi_urban": "lat",
+     "caphi_raw": null,
+     "maknuune_id": "8121-1",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "וְלֹא",
@@ -5307,19 +5427,70 @@
      "provenance": "unresolved"
     },
     {
-     "surface": "מְיָאוּ־מְיָאוּ",
-     "lemma": null,
-     "form": "מְיָאוּ־מְיָאוּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "מְיָאוּ",
+     "lemma": "יָא",
+     "form": "יָא",
+     "vocalized": "מְיָאוּ",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "Vocative particle preceding a noun, especially a slur or pejorative.",
+     "analysis": "PARTICLE",
+     "caphi": "ya",
+     "caphi_urban": "ya",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "1462-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "מ-ו",
+     "options": [
+      {
+       "id": "1462-1",
+       "root": "",
+       "gloss": "Vocative particle preceding a noun, especially a slur or pej",
+       "analysis": "PARTICLE",
+       "pointed": "יָא"
+      },
+      {
+       "id": "17207-3",
+       "root": "",
+       "gloss": "Used to directly address someone.",
+       "analysis": "PARTICLE:alternative",
+       "pointed": "יָא"
+      }
+     ],
+     "_cut_for_prompt": "מ-ו"
+    },
+    {
+     "surface": "מְיָאוּ",
+     "lemma": "יָא",
+     "form": "יָא",
+     "vocalized": "מְיָאוּ",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "Vocative particle preceding a noun, especially a slur or pejorative.",
+     "analysis": "PARTICLE",
+     "caphi": "ya",
+     "caphi_urban": "ya",
+     "caphi_raw": null,
+     "maknuune_id": "1462-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "מ-ו",
+     "options": [
+      {
+       "id": "1462-1",
+       "root": "",
+       "gloss": "Vocative particle preceding a noun, especially a slur or pej",
+       "analysis": "PARTICLE",
+       "pointed": "יָא"
+      },
+      {
+       "id": "17207-3",
+       "root": "",
+       "gloss": "Used to directly address someone.",
+       "analysis": "PARTICLE:alternative",
+       "pointed": "יָא"
+      }
+     ],
+     "_cut_for_prompt": "מ-ו"
     },
     {
      "surface": "עַכְשָׁו",
@@ -5382,19 +5553,34 @@
      "provenance": "wiktionary:pointed"
     },
     {
-     "surface": "הַב־הַב",
-     "lemma": null,
-     "form": "הַב־הַב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "הַב",
+     "lemma": "הַב",
+     "form": "הַב",
+     "vocalized": "הַב",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "Masculine singular imperative of יָהַב (yaháv).",
+     "analysis": "VERB",
+     "caphi": "hav",
+     "caphi_urban": "hav",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "10914-1",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "הַב",
+     "lemma": "הַב",
+     "form": "הַב",
+     "vocalized": "הַב",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "Masculine singular imperative of יָהַב (yaháv).",
+     "analysis": "VERB",
+     "caphi": "hav",
+     "caphi_urban": "hav",
+     "caphi_raw": null,
+     "maknuune_id": "10914-1",
+     "provenance": "wiktionary:pointed"
     }
    ],
    "audio": "audio/s30.mp3"
@@ -5735,19 +5921,34 @@
      "provenance": "wiktionary:pointed"
     },
     {
-     "surface": "הַב־הַב",
-     "lemma": null,
-     "form": "הַב־הַב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "הַב",
+     "lemma": "הַב",
+     "form": "הַב",
+     "vocalized": "הַב",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "Masculine singular imperative of יָהַב (yaháv).",
+     "analysis": "VERB",
+     "caphi": "hav",
+     "caphi_urban": "hav",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "10914-1",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "הַב",
+     "lemma": "הַב",
+     "form": "הַב",
+     "vocalized": "הַב",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "Masculine singular imperative of יָהַב (yaháv).",
+     "analysis": "VERB",
+     "caphi": "hav",
+     "caphi_urban": "hav",
+     "caphi_raw": null,
+     "maknuune_id": "10914-1",
+     "provenance": "wiktionary:pointed"
     }
    ],
    "audio": "audio/s33.mp3"
@@ -6090,19 +6291,35 @@
      "_cut_for_prompt": "ול-"
     },
     {
-     "surface": "בְּקוֹלֵי־קוֹלוֹת",
-     "lemma": null,
-     "form": "בְּקוֹלֵי־קוֹלוֹת",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "בְּקוֹלֵי",
+     "lemma": "קוֹל",
+     "form": "קוֹל",
+     "vocalized": "בְּקוֹלֵי",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "voice (also in its figurative senses of statement, opinion, or order)",
+     "analysis": "NOUN:feminine.first-person.masculine.possessed-form.singular",
+     "caphi": "koli",
+     "caphi_urban": "koli",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "3563-6",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ב-"
+    },
+    {
+     "surface": "קוֹלוֹת",
+     "lemma": "קוֹל",
+     "form": "קוֹל",
+     "vocalized": "קוֹלוֹת",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "voice (also in its figurative senses of statement, opinion, or order)",
+     "analysis": "NOUN:indefinite.plural",
+     "caphi": "kolot",
+     "caphi_urban": "kolot",
+     "caphi_raw": null,
+     "maknuune_id": "3563-3",
+     "provenance": "wiktionary:resolved"
     }
    ],
    "audio": "audio/s36.mp3"
@@ -6335,35 +6552,34 @@
      "provenance": "wiktionary:pointed"
     },
     {
-     "surface": "כָּל־כָּךְ",
-     "lemma": "כֶּלֶךְ",
-     "form": "כֶּלֶךְ",
-     "vocalized": "כָּל־כָּךְ",
+     "surface": "כָּל",
+     "lemma": "כֹּל",
+     "form": "כֹּל",
+     "vocalized": "כָּל",
      "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-     "analysis": "NOUN:masculine.possessed-form.second-person.singular",
-     "caphi": "kilxxa",
-     "caphi_urban": "kilxxa",
+     "gloss": "All, whole, entirety, everything; found almost exclusively in singular definite and singular construct forms; used to translate English all, each, every, everything, and so on.",
+     "analysis": "NOUN",
+     "caphi": "kol",
+     "caphi_urban": "kol",
      "caphi_raw": null,
-     "maknuune_id": "16984-7",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "16984-7",
-       "root": "",
-       "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-       "analysis": "NOUN:masculine.possessed-form.second-person.singular",
-       "pointed": "כִּלְכְךָ"
-      },
-      {
-       "id": "16984-8",
-       "root": "",
-       "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-       "analysis": "NOUN:feminine.possessed-form.second-person.singular",
-       "pointed": "כִּלְכֵךְ"
-      }
-     ]
+     "maknuune_id": "1550-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "כָּךְ",
+     "lemma": "כָּךְ",
+     "form": "כָּךְ",
+     "vocalized": "כָּךְ",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "Such, so, thus, in this way, in that way.",
+     "analysis": "ADV",
+     "caphi": "kax",
+     "caphi_urban": "kax",
+     "caphi_raw": null,
+     "maknuune_id": "6101-1",
+     "provenance": "wiktionary:pointed"
     }
    ],
    "audio": "audio/s37.mp3"
@@ -6510,35 +6726,34 @@
      "provenance": "wiktionary:pointed"
     },
     {
-     "surface": "כָּל־כָּךְ",
-     "lemma": "כֶּלֶךְ",
-     "form": "כֶּלֶךְ",
-     "vocalized": "כָּל־כָּךְ",
+     "surface": "כָּל",
+     "lemma": "כֹּל",
+     "form": "כֹּל",
+     "vocalized": "כָּל",
      "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-     "analysis": "NOUN:masculine.possessed-form.second-person.singular",
-     "caphi": "kilxxa",
-     "caphi_urban": "kilxxa",
+     "gloss": "All, whole, entirety, everything; found almost exclusively in singular definite and singular construct forms; used to translate English all, each, every, everything, and so on.",
+     "analysis": "NOUN",
+     "caphi": "kol",
+     "caphi_urban": "kol",
      "caphi_raw": null,
-     "maknuune_id": "16984-7",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "16984-7",
-       "root": "",
-       "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-       "analysis": "NOUN:masculine.possessed-form.second-person.singular",
-       "pointed": "כִּלְכְךָ"
-      },
-      {
-       "id": "16984-8",
-       "root": "",
-       "gloss": "Ferula, A taxonomic genus within the family Apiaceae.",
-       "analysis": "NOUN:feminine.possessed-form.second-person.singular",
-       "pointed": "כִּלְכֵךְ"
-      }
-     ]
+     "maknuune_id": "1550-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "כָּךְ",
+     "lemma": "כָּךְ",
+     "form": "כָּךְ",
+     "vocalized": "כָּךְ",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "Such, so, thus, in this way, in that way.",
+     "analysis": "ADV",
+     "caphi": "kax",
+     "caphi_urban": "kax",
+     "caphi_raw": null,
+     "maknuune_id": "6101-1",
+     "provenance": "wiktionary:pointed"
     }
    ],
    "audio": "audio/s38.mp3"
@@ -7451,42 +7666,19 @@
    "p": 15,
    "words": [
     {
-     "surface": "ּכָּעֲסָה",
-     "lemma": "כַּעַס",
-     "form": "כַּעַס",
-     "vocalized": "ּכָּעֲסָה",
+     "surface": "כָּעֲסָה",
+     "lemma": "כָּעַס",
+     "form": "כָּעַס",
+     "vocalized": "כָּעֲסָה",
      "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": "anger",
-     "analysis": "NOUN:feminine.possessed-form.singular.third-person",
-     "caphi": "kaasah",
-     "caphi_urban": "kaasah",
+     "gloss": "To be angry.",
+     "analysis": "VERB:feminine.past.singular.third-person",
+     "caphi": "kaasa",
+     "caphi_urban": "kaasa",
      "caphi_raw": null,
-     "maknuune_id": "1836-14",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "1836-14",
-       "root": "",
-       "gloss": "anger",
-       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
-       "pointed": "כַּעֲסָהּ"
-      },
-      {
-       "id": "1837-14",
-       "root": "",
-       "gloss": "To be angry.",
-       "analysis": "VERB:feminine.past.singular.third-person",
-       "pointed": "כָּעֲסָה"
-      },
-      {
-       "id": "14311-1",
-       "root": "ה",
-       "gloss": "as כ- + עִסָּה: to massage",
-       "analysis": "VERB",
-       "pointed": "עִסָּה"
-      }
-     ]
+     "maknuune_id": "1837-14",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "נָעֳמִי",
@@ -7836,19 +8028,34 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "סוֹף־סוֹף",
-     "lemma": "סוֹפְסוֹף",
-     "form": "סוֹפְסוֹף",
-     "vocalized": "סוֹף־סוֹף",
+     "surface": "סוֹף",
+     "lemma": "סוֹף",
+     "form": "סוֹף",
+     "vocalized": "סוֹף",
      "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": "alternative form of סוֹף סוֹף",
-     "analysis": "ADV",
-     "caphi": "sofsof",
-     "caphi_urban": "sofsof",
+     "gloss": "An end, a finish.",
+     "analysis": "NOUN",
+     "caphi": "sof",
+     "caphi_urban": "sof",
      "caphi_raw": null,
-     "maknuune_id": "12249-1",
-     "provenance": "wiktionary:exact"
+     "maknuune_id": "5953-1",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "סוֹף",
+     "lemma": "סוֹף",
+     "form": "סוֹף",
+     "vocalized": "סוֹף",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "An end, a finish.",
+     "analysis": "NOUN",
+     "caphi": "sof",
+     "caphi_urban": "sof",
+     "caphi_raw": null,
+     "maknuune_id": "5953-1",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "הַטְּרַקְטוֹר",
@@ -8695,19 +8902,34 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "קְצָת־קְצָת",
-     "lemma": null,
-     "form": "קְצָת־קְצָת",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "קְצָת",
+     "lemma": "קְצָת",
+     "form": "קְצָת",
+     "vocalized": "קְצָת",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "A little, a bit, a little bit.",
+     "analysis": "ADV",
+     "caphi": "ktsat",
+     "caphi_urban": "ktsat",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "2739-1",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "קְצָת",
+     "lemma": "קְצָת",
+     "form": "קְצָת",
+     "vocalized": "קְצָת",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "A little, a bit, a little bit.",
+     "analysis": "ADV",
+     "caphi": "ktsat",
+     "caphi_urban": "ktsat",
+     "caphi_raw": null,
+     "maknuune_id": "2739-1",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "טִרְטַרְתִּי",
@@ -9007,19 +9229,34 @@
      "_cut": "ו-"
     },
     {
-     "surface": "כֻּלָּם־כֻּלָּם",
-     "lemma": null,
-     "form": "כֻּלָּם־כֻּלָּם",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "כֻּלָּם",
+     "lemma": "כֻּלָּם",
+     "form": "כֻּלָּם",
+     "vocalized": "כֻּלָּם",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "form of כָּל (kol) with third-person masculine plural personal pronoun as possessor: all of them",
+     "analysis": "PRON",
+     "caphi": "kulam",
+     "caphi_urban": "kulam",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "4839-1",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "כֻּלָּם",
+     "lemma": "כֻּלָּם",
+     "form": "כֻּלָּם",
+     "vocalized": "כֻּלָּם",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "form of כָּל (kol) with third-person masculine plural personal pronoun as possessor: all of them",
+     "analysis": "PRON",
+     "caphi": "kulam",
+     "caphi_urban": "kulam",
+     "caphi_raw": null,
+     "maknuune_id": "4839-1",
+     "provenance": "wiktionary:pointed"
     },
     {
      "surface": "עַל",
@@ -9084,254 +9321,37 @@
      "provenance": "wiktionary:pointed"
     },
     {
-     "surface": "רָחוֹק־רָחוֹק",
-     "lemma": null,
-     "form": "רָחוֹק־רָחוֹק",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
+     "surface": "רָחוֹק",
+     "lemma": "רָחוֹק",
+     "form": "רָחוֹק",
+     "vocalized": "רָחוֹק",
+     "vocalized_from": "source:pointed",
      "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
+     "gloss": "far, distant; remote",
+     "analysis": "ADJ",
+     "caphi": "raxok",
+     "caphi_urban": "raxok",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
+     "maknuune_id": "1823-1",
+     "provenance": "wiktionary:pointed"
+    },
+    {
+     "surface": "רָחוֹק",
+     "lemma": "רָחוֹק",
+     "form": "רָחוֹק",
+     "vocalized": "רָחוֹק",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "far, distant; remote",
+     "analysis": "ADJ",
+     "caphi": "raxok",
+     "caphi_urban": "raxok",
+     "caphi_raw": null,
+     "maknuune_id": "1823-1",
+     "provenance": "wiktionary:pointed"
     }
    ],
    "audio": "audio/s53.mp3"
-  },
-  {
-   "ar": "את הטקסט[ים] לעיל הפיקו מתנדבי פרויקט בן־יהודה באינטרנט.",
-   "en": "The text(s) above were produced by the volunteers of the Ben-Yehuda Project on the internet.",
-   "p": 18,
-   "words": [
-    {
-     "surface": "את",
-     "lemma": "אֵת",
-     "form": "אֵת",
-     "vocalized": "אֵת",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "Used to introduce a semantically definite direct object.",
-     "analysis": "PREP",
-     "caphi": "et",
-     "caphi_urban": "et",
-     "caphi_raw": null,
-     "maknuune_id": "92-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "הטקסט",
-     "lemma": "טֶקְסְט",
-     "form": "טֶקְסְט",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "text (a written passage)",
-     "analysis": "NOUN",
-     "caphi": "tekst",
-     "caphi_urban": "tekst",
-     "caphi_raw": null,
-     "maknuune_id": "3712-1",
-     "provenance": "wiktionary:clitic",
-     "_cut": "ה-"
-    },
-    {
-     "surface": "ים",
-     "lemma": "־ִים",
-     "form": "־ִים",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-alignment",
-     "root": null,
-     "gloss": "For most masculine nouns and certain feminine nouns, forming plural non-construct forms from corresponding singulars.",
-     "analysis": "SUFFIX",
-     "caphi": "-ym",
-     "caphi_urban": "-ym",
-     "caphi_raw": null,
-     "maknuune_id": "3837-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "לעיל",
-     "lemma": null,
-     "form": "לעיל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
-     "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
-     "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
-    },
-    {
-     "surface": "הפיקו",
-     "lemma": "הֵפִיק",
-     "form": "הֵפִיק",
-     "vocalized": "הֵפִיקוּ",
-     "vocalized_from": "lexicon",
-     "root": "ו",
-     "gloss": "to produce, obtain",
-     "analysis": "VERB:feminine.masculine.past.plural.third-person",
-     "caphi": "hefiku",
-     "caphi_urban": "hefiku",
-     "caphi_raw": null,
-     "maknuune_id": "14996-13",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "מתנדבי",
-     "lemma": "הִתְנַדֵּב",
-     "form": "הִתְנַדֵּב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "to volunteer",
-     "analysis": "VERB:masculine.present.singular",
-     "caphi": "mitnadev",
-     "caphi_urban": "mitnadev",
-     "caphi_raw": null,
-     "maknuune_id": "9228-14",
-     "provenance": "wiktionary:resolved",
-     "_cut": "-י"
-    },
-    {
-     "surface": "פרויקט",
-     "lemma": "פְּרוֹיֶקְט",
-     "form": "פְּרוֹיֶקְט",
-     "vocalized": "פְּרוֹיֶקְט",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "A project.",
-     "analysis": "NOUN",
-     "caphi": "proyekt",
-     "caphi_urban": "proyekt",
-     "caphi_raw": null,
-     "maknuune_id": "1199-1",
-     "provenance": "wiktionary:exact"
-    },
-    {
-     "surface": "בן־יהודה",
-     "lemma": null,
-     "form": "בן־יהודה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-entry",
-     "root": null,
-     "gloss": null,
-     "analysis": null,
-     "caphi": null,
-     "caphi_urban": null,
-     "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "unresolved"
-    },
-    {
-     "surface": "באינטרנט",
-     "lemma": "אִינְטֶרְנֶט",
-     "form": "אִינְטֶרְנֶט",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "An internet: a group of mutually connected computer networks.",
-     "analysis": "NOUN",
-     "caphi": "ínternet",
-     "caphi_urban": "ínternet",
-     "caphi_raw": null,
-     "maknuune_id": "4142-1",
-     "provenance": "wiktionary:clitic",
-     "_cut": "ב-"
-    }
-   ],
-   "audio": "audio/s54.mp3"
-  },
-  {
-   "ar": "הכל זמין תמיד בכתובת הבאה:https://benyehuda.org/read/24301",
-   "en": "Everything is always available at the following address: https://benyehuda.org/read/24301",
-   "p": 18,
-   "words": [
-    {
-     "surface": "הכל",
-     "lemma": "כֹּל",
-     "form": "כֹּל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "All, whole, entirety, everything; found almost exclusively in singular definite and singular construct forms; used to translate English all, each, every, everything, and so on.",
-     "analysis": "NOUN",
-     "caphi": "kol",
-     "caphi_urban": "kol",
-     "caphi_raw": null,
-     "maknuune_id": "1550-1",
-     "provenance": "wiktionary:resolved",
-     "_cut": "ה-"
-    },
-    {
-     "surface": "זמין",
-     "lemma": "זָמִין",
-     "form": "זָמִין",
-     "vocalized": "זָמִין",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "available",
-     "analysis": "ADJ",
-     "caphi": "zamin",
-     "caphi_urban": "zamin",
-     "caphi_raw": null,
-     "maknuune_id": "4599-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "תמיד",
-     "lemma": "תָּמִיד",
-     "form": "תָּמִיד",
-     "vocalized": "תָּמִיד",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "Always, regularly.",
-     "analysis": "ADV",
-     "caphi": "tamid",
-     "caphi_urban": "tamid",
-     "caphi_raw": null,
-     "maknuune_id": "3524-1",
-     "provenance": "wiktionary:exact"
-    },
-    {
-     "surface": "בכתובת",
-     "lemma": "כְּתֹבֶת",
-     "form": "כְּתֹבֶת",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "address, postal address, e-mail address.",
-     "analysis": "NOUN:construct.singular",
-     "caphi": "ktovet-",
-     "caphi_urban": "ktovet-",
-     "caphi_raw": null,
-     "maknuune_id": "2127-4",
-     "provenance": "wiktionary:clitic",
-     "_cut": "ב-"
-    },
-    {
-     "surface": "הבאה",
-     "lemma": "בָּא",
-     "form": "בָּא",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "Coming, next, upcoming.",
-     "analysis": "ADJ:feminine",
-     "caphi": "báa",
-     "caphi_urban": "báa",
-     "caphi_raw": null,
-     "maknuune_id": "3146-3",
-     "provenance": "wiktionary:resolved",
-     "_cut": "ה-"
-    }
-   ],
-   "audio": "audio/s55.mp3"
   }
  ]
 }

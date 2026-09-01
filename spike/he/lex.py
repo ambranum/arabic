@@ -25,7 +25,7 @@ import re
 
 import pandas as pd
 
-from phon import DAGESH, MAQAF, clusters, respell, unpoint
+from phon import DAGESH, MAQAF, NIQQUD, clusters, haser, respell, unpoint
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PARQUET = os.path.join(HERE, 'hebrew_lex.parquet')
@@ -152,6 +152,18 @@ class Lexicon:
                 hit = self._spellable(stem, self.by_skeleton.get(MATRES.sub('', stem)))
                 if hit:
                     return hit, 'wiktionary:ktiv', cut
+        # And the same variation the other way round, which only a POINTED source can answer.
+        # The skeleton already proposes the right rows -- אפרחים and אפרוחים reduce to the same
+        # letters -- and _spellable threw them away, because respell() only knows how to add a
+        # vowel letter the entry does without, never to drop one the text does without. Here the
+        # text has vowels of its own, so spells() can be asked directly: it peels the particles
+        # and compares the publisher's pointing against the entry's. See phon.haser.
+        if any(c in NIQQUD for c in surface):
+            for stem, cut in self.stems(w):
+                rows = self.by_skeleton.get(MATRES.sub('', stem)) or []
+                hit = [r for r in rows if self.spells(surface, r) == cut]
+                if hit:
+                    return hit, 'wiktionary:haser', cut
         return [], 'unresolved', ''
 
     @staticmethod
@@ -214,7 +226,7 @@ class Lexicon:
             mine = ''.join(c + m for c, m in cl)
             if he_norm(unpoint(mine)) != stem:
                 continue
-            if f == mine or respell(unpoint(mine), f) == mine:
+            if f == mine or respell(unpoint(mine), f) == mine or haser(mine, f):
                 return cut
             # A proclitic geminates the first consonant of what follows -- הַסְּנֶה, הַמִּצְרִים --
             # and the citation form does not carry that dagesh. Without this the definite
@@ -222,7 +234,7 @@ class Lexicon:
             if pre:
                 bare = ''.join(c + (m.replace(DAGESH, '') if i == 0 else m)
                                for i, (c, m) in enumerate(cl))
-                if f == bare or respell(unpoint(bare), f) == bare:
+                if f == bare or respell(unpoint(bare), f) == bare or haser(bare, f):
                     return cut
         return None
 

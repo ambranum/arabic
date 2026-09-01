@@ -39,6 +39,8 @@ import os
 import re
 import statistics
 import sys
+import difflib
+import shutil
 import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -77,9 +79,19 @@ VAV_CONSEC = re.compile(r'\bו[֑-ׇ]*[ית][֐-׿֑-ׇ]{2,}')
 # The vav-consecutive is: 1.0 at the tightest gate, 17.1 with no gate at all. So the gate is set
 # where that count is still close to the paper's zero -- a thousand words of this shelf carries
 # about two biblical narrative verbs -- and the shelf quadruples, from 6,837 words to 31,354.
-MAX_ARCHAIC, MAX_VAV, MAX_SENTENCE = 20.0, 4.0, 19.0
+#
+# The numbers above were swept while clean() still let the archive's credit line and the footnote
+# apparatus through, so every text was being scored on its prose PLUS about fourteen tokens of
+# website. That chrome is modern, unpointed and carries no vav-consecutive, so it diluted every
+# ratio by the same trick -- a bigger denominator over an unchanged count. Measured across the
+# thirty-seven, dropping it moves the scores by a median ×1.025 archaic, ×1.022 vav, ×1.010
+# sentence, and ×0.976 tokens. So the thresholds are restated in the units they are now measured
+# in rather than loosened: the same line through the same texts, converted by what the chrome was
+# worth. (It matters at the boundary. Five of the thirty-seven sat inside the old numbers only
+# because the footer was padding them, and would have fallen off the shelf on a unit change.)
+MAX_ARCHAIC, MAX_VAV, MAX_SENTENCE = 20.5, 4.1, 19.2
 MIN_POINTED = 0.90                       # the source's own vowels, or it is not this shelf
-MIN_TOKENS, MAX_TOKENS = 300, 6000
+MIN_TOKENS, MAX_TOKENS = 290, 6000
 GENRES = {'prose', 'drama', 'memoir'}
 
 # Difficulty, and it is measured rather than judged: how long the sentences are and how much of
@@ -162,10 +174,24 @@ def distance(s):
     return s['archaic'] + 3 * s['vav'] + max(0.0, s['sentence'] - 12.4)
 
 
+# What the page carries that the story does not. Every transcription ends with the archive's own
+# credit line, and the shelf was reading it as the last sentence of the book: all thirty-seven
+# chapters closed on "the text(s) above were produced by the volunteers of the Ben-Yehuda Project
+# on the internet", translated into English at the API's expense and, in twenty-five of them, read
+# aloud in the Hebrew voice. It is also where the single most common unresolved word in the whole
+# corpus came from -- לעיל, thirty-seven times, once per book, never once in a story.
+#
+# Above it sit the apparatus lines: the scanned illustration's filename, the illustrator's credit,
+# and the footnote glossary, whose entries the sentence splitter glued onto the last real sentence
+# ("...that he might get hungry… Ivy — a kind of plant with many leaves").
+CREDIT = re.compile(r'את הטקסט\[ים\] לעיל|הכל זמין תמיד בכתובת|benyehuda\.org/read/')
+APPARATUS = re.compile(r'↩︎|\.(?:jpg|jpeg|png|gif)\b|^\s*א?יור\s*:|^\s*האיור\s*:')
+
+
 def clean(text, title=''):
     """The dump is a transcription, not a data file: it keeps the page's own line breaks, its
     tabs, and its title line. Sentences have to be found in prose, so the layout goes first."""
-    t = text.replace('\u00a0', ' ')
+    t = text.replace('\u00a0', ' ').replace('&nbsp;', ' ')
     t = re.sub(r'[ \t]*\n[ \t]*', '\n', t)
     t = re.sub(r'\n{2,}', '\n\n', t).strip()
     lines = [x for x in t.split('\n') if x.strip()]
@@ -173,6 +199,12 @@ def clean(text, title=''):
     head = NIQQUD.sub('', title).strip()
     while lines and (NIQQUD.sub('', lines[0]).strip() == head or len(WORD.findall(lines[0])) <= 3):
         lines.pop(0)
+    # everything from the archive's credit line down is the website, not the book
+    for i, x in enumerate(lines):
+        if CREDIT.search(x):
+            lines = lines[:i]
+            break
+    lines = [x for x in lines if not APPARATUS.search(x)]
     return re.sub(r'\s+', ' ', ' '.join(lines)).strip()
 
 
@@ -268,6 +300,59 @@ def translate(paths_glob):
                                            '' if not left else '  (%d still empty)' % left))
 
 
+def realign(stored, fresh):
+    """Carry the English across a re-extraction. -> (sentences, fresh index -> stored index).
+
+    A translated sentence is worth keeping: the English cost an API call and a person may have
+    read it. But it is only worth keeping ON THE SAME SENTENCE, so the two lists are aligned and
+    the English travels with the Hebrew it was written for. Anything the alignment does not
+    match comes back empty and translate() fills it in on the next run.
+    """
+    sm = difflib.SequenceMatcher(a=[x['ar'] for x in stored], b=fresh, autojunk=False)
+    src = {}
+    for tag, i1, _i2, j1, j2 in sm.get_opcodes():
+        if tag == 'equal':
+            for k in range(j2 - j1):
+                src[j1 + k] = i1 + k
+    out = []
+    for j, ar in enumerate(fresh):
+        old = stored[src[j]] if j in src else {}
+        out.append({'ar': ar, 'en': old.get('en', ''), 'p': j // 3})
+    return out, src
+
+
+def move_clips(tid, src, n):
+    """Renumber a text's audio to follow its sentences. -> (kept, dropped).
+
+    Clips are named for the POSITION they read -- s0.mp3, s1.mp3 -- so a sentence that moves
+    leaves its clip behind on a sentence it does not say. Dropping a line from the middle of a
+    chapter would silently shift every clip after it onto the wrong words, and the reader would
+    hear it before anyone saw it. So the clips are moved with the sentences, and any clip whose
+    sentence no longer exists, or whose words changed, is deleted rather than reused: under a
+    non-deterministic voice a re-synthesis is the only honest way to get it back.
+    """
+    d = paths.build(tid, 'audio')
+    if not os.path.isdir(d):
+        return 0, 0
+    have = {i: os.path.join(d, 's%d.mp3' % i) for i in range(4096)
+            if os.path.exists(os.path.join(d, 's%d.mp3' % i))}
+    tmp = d + '.new'
+    shutil.rmtree(tmp, ignore_errors=True)
+    os.makedirs(tmp)
+    kept = 0
+    for j in range(n):
+        i = src.get(j)
+        if i is not None and i in have:
+            shutil.copy2(have[i], os.path.join(tmp, 's%d.mp3' % j))
+            kept += 1
+    shutil.rmtree(d)
+    os.rename(tmp, d)
+    # app/ holds a copy per clip and build_app.py only ever adds to it, so a stale name would
+    # outlive the clip it was copied from and go on being served.
+    shutil.rmtree(paths.audio(tid), ignore_errors=True)
+    return kept, len(have) - kept
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--write', action='store_true', help='write texts/he/book-*.json')
@@ -341,15 +426,19 @@ def main():
             done = json.load(open(out_path, encoding='utf-8'))
             if any(x.get('en') for x in done.get('sentences', [])):
                 fresh = [t.strip() for t in s['sentences']]
-                if [x['ar'] for x in done['sentences']] != fresh:
-                    print('   !! sentences differ from the stored ones — left alone, clips '
-                          'are keyed by index and would no longer match')
-                    written += 1
-                    continue
-                keep_sentences = done['sentences']
+                stored = done['sentences']
                 # translate() stamps this on the way past. It is a claim about who wrote the
                 # English, so it belongs to the text and not to whichever step last touched it.
                 keep_translation = done.get('translation')
+                if [x['ar'] for x in stored] == fresh:
+                    keep_sentences = stored
+                else:
+                    keep_sentences, src = realign(stored, fresh)
+                    kept, gone = move_clips(slug(mid), src, len(fresh))
+                    lost = sum(1 for x in keep_sentences if not x['en'])
+                    print('   re-extracted: %d sentences -> %d, %d to re-translate, '
+                          '%d clips kept, %d dropped'
+                          % (len(stored), len(fresh), lost, kept, gone))
         doc = {
             'id': slug(mid), 'kind': 'book-chapter', 'dialect': 'he', 'level': name,
             'shelf': shelf, 'book': SHELVES[shelf][0], 'chapter': chap[shelf],

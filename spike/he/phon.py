@@ -211,6 +211,51 @@ def respell(surface, pointed):
     return got
 
 
+def haser(tok, pointed):
+    """Is `pointed` (ktiv male, from the lexicon) the same word as `tok` (pointed, defective)?
+
+    respell() reads the variation one way only: the TEXT may carry a vowel letter the entry
+    does without, because that is what modern unpointed writing does. Ben-Yehuda runs the other
+    way. Its texts are pointed, and pointed Hebrew is written ktiv HASER -- the vowel is a sign,
+    so the letter that would stand for it is left out. אֶפְרֹחִים against the lexicon's
+    אֶפְרוֹחִים, סְעֻדָּה against סְעוּדָה, סִמָּנִים against סִימָנִים: the same word, the same
+    pointing, one letter apart, and respell rejected every one of them because the entry spells
+    it fuller.
+
+    What makes this safe is that the token is pointed BY THE PUBLISHER. A vav or yod may be
+    missing from the text only where the text's own niqqud carries the vowel that letter would
+    have stood for -- holam for the vav, hiriq or tsere for the yod -- so the evidence for the
+    match is the text's, not ours. That is what keeps it from doing what the bare skeleton does:
+    נִרְגָּז does not become נַרְגִּיז, because the text points that letter with a qamatz and the
+    entry's yod stands for a hiriq.
+    """
+    t, f = clusters(tok), clusters(pointed)
+    i = j = dropped = 0
+    while i < len(t) and j < len(f):
+        if t[i][0] == f[j][0] or FINAL.get(t[i][0], t[i][0]) == FINAL.get(f[j][0], f[j][0]):
+            i += 1
+            j += 1
+            continue
+        ch, marks = f[j]
+        prev = t[i - 1][1] if i else ''
+        # a vav standing for a holam or a shuruq the text writes as a bare sign
+        if ch == 'ו' and ((HOLAM in marks or HOLAM_HASER in marks)
+                          and (HOLAM in prev or HOLAM_HASER in prev)
+                          or DAGESH in marks and QUBUTZ in prev):
+            j += 1
+            dropped += 1
+            continue
+        # a silent yod after the hiriq or tsere the text writes without it
+        if ch == 'י' and not marks and any(
+                v in (f[j - 1][1] if j else '') and v in prev for v in (HIRIQ, TSERE, SEGOL)):
+            j += 1
+            dropped += 1
+            continue
+        return False
+    # `dropped`: an alignment that took nothing out is respell()'s job, not this one.
+    return i == len(t) and j == len(f) and dropped > 0
+
+
 def _segment(word):
     """Split into consonant-anchored segments, resolving the vowel letters as we go.
 
@@ -405,7 +450,11 @@ def _realize(word, verb=False):
             out.append(s.cons)
             continue
         # A final he with no mark is a mater, not an /h/: תּוֹרָה = tora, not "torah".
-        if s.cons == 'ה' and k == len(segs) - 1 and not s.marks:
+        # Unless it CARRIES a vowel it took from a following vav -- כָּמוֹהוּ, תָּמְהוּ,
+        # זְכַרְיָהוּ. The vav is absorbed into the segment before it, which makes the he the last
+        # one and left it looking bare, so the rule fired and dropped the /h/ AND the /u/ with
+        # it: kamohu was read "kamo" and tamhu "tam", in 122 lexicon rows as well as here.
+        if s.cons == 'ה' and k == len(segs) - 1 and not s.marks and not s.vowel:
             continue
         c = _cons_sound(s)
         if _genuva(segs, k):

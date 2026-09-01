@@ -484,7 +484,13 @@ const VOCSRC = {
   // Hebrew: the lexicon points ktiv haser and the text is written ktiv male, so the vowels are
   // the lexicon's but the letters are the reader's -- עֲדַיִן's pointing on עדיין's spelling.
   'derived:ktiv'               : "lexicon vowels, on the text's own spelling",
+  // Hebrew again, and the commonest of the lot: Ben-Yehuda's texts arrive pointed, so the vowels
+  // on the page are the publisher's and no derivation of ours improves on them. These three were
+  // missing and the card printed the raw key -- "source:pointed" -- to the reader.
+  'source:pointed'             : 'the vowels printed in the text itself',
+  'unvocalized:clitic'         : 'not shown — the lexicon points the word, not the particle on it',
   'curated'                    : 'hand-written by us, not from the lexicon',
+  'curated:stem'               : "not shown — hand-written entry, and the particle isn't pointed",
   'unvocalized:curated-with-clitic': 'not shown — name carries a prefix'
 };
 const LIB = window.LIBRARY || {texts: [], drills: []};
@@ -5895,6 +5901,8 @@ function showWord(w0, ctx, opts) {
               ? `matched after removing ${esc(w._cut)} — the split is a guess, not a lexicon entry`
             : w.provenance === 'wiktionary:ktiv'
               ? 'matched by ignoring the vowel letters — the entry can spell this word, but it is not an exact entry for it'
+            : w.provenance === 'wiktionary:haser'
+              ? 'matched to the fuller spelling of the same word — the vowels here are the ones printed on the page'
             : w.provenance === 'verbs.js' ? 'from the verb list — paradigm below'
             : amb ? 'lexicon match not yet confirmed — one of several possible entries'
             : w.maknuune_id ? `${esc(LANG.lex.name)} #${esc(w.maknuune_id)}`

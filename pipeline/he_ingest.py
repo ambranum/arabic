@@ -36,6 +36,7 @@ import paths          # noqa: E402
 paths.require('he')
 from voice import language_code, model_id, voice_id   # noqa: E402
 from build_lex import he_norm                          # noqa: E402
+import he_curated                                      # noqa: E402
 from lex import Lexicon                                # noqa: E402
 from phon import NIQQUD, respell, unpoint              # noqa: E402
 
@@ -50,11 +51,39 @@ _SSL = net.SSL_CTX
 # (ג'ורג'). Splitting on the quote shredded them: השב"כ became שב + כ, which the annotator then
 # pointed as שָׁב "returned" and shipped that way. Israelis write these with an ASCII " as often
 # as with ״, so both are accepted, and a quote that is NOT between letters still separates.
-WORD = re.compile(r'[\u0590-\u05FF]+(?:["\'\u05F3\u05F4][\u0590-\u05FF]+)*')
+# The Hebrew block is not all letters. \u0590-\u05FF also holds the MAQAF (־), which is a
+# hyphen: בֶּן־יְהוּדָה is two words joined, the way "well-known" is, and no lexicon has an entry
+# for the pair. Matching it as part of a word made 149 compounds unresolvable in one stroke --
+# בֶּן־יְהוּדָה itself 37 times, חוֹבְבֵי־צִיּוֹן, בְּאֶרֶץ־יִשְׂרָאֵל, כִּי־אִם, לְאַט־לְאַט -- and
+# left the bare ־ standing in the text as a word of its own. So the class is spelled out: the
+# letters, and the marks that belong to a letter. Everything else in the block is punctuation
+# and separates, exactly as a space does. The reader puts it back on the page either way -- it
+# prints whatever lies between one word and the next, verbatim.
+LETTER = r'[\u05D0-\u05EA\u05EF-\u05F2]'
+MARK = r'[\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]'      # niqqud, cantillation, dots
+WORD = re.compile(r'(?:%(l)s%(m)s*)+(?:["\'\u05F3\u05F4](?:%(l)s%(m)s*)+)*'
+                  % {'l': LETTER, 'm': MARK})
+_ACRONYM = re.compile(r'^(%(l)s%(m)s*)?["\u05F4]((?:%(l)s%(m)s*){2,})$'
+                      % {'l': LETTER, 'm': MARK})
 
 
 def tokenize(sent):
-    return WORD.findall(sent.strip())
+    out = []
+    for tok in WORD.findall(sent.strip()):
+        # A gershayim BEFORE THE LAST LETTER makes an acronym -- צה"ל, ד"ר, תנ"ך, ל"ג -- and the
+        # regex keeps those whole on purpose. But Israelis type the same character as an ordinary
+        # quotation mark, and when the quoted word carries a proclitic the opening quote lands
+        # between two letters and is swallowed with them: בַּ"חֶדֶר was one token, and so was
+        # בְּ"גוּלִים. What separates the two is which side the letters are on. An acronym is
+        # mostly before the mark; a quotation is a particle before it and a whole word after.
+        m = _ACRONYM.match(tok)
+        if m:
+            if m.group(1):
+                out.append(m.group(1))
+            out.append(m.group(2))
+        else:
+            out.append(tok)
+    return out
 
 
 def load_resolutions():
@@ -161,6 +190,24 @@ def annotate(lex, surface, res):
                   % (surface, want))
     rec, prov, cands = lex.resolve(surface)
     if rec is None:
+        # Last, and only last. A curated entry can never shadow a real one: it is consulted after
+        # the lexicon has said it has nothing, so the two can't compete and a word that IS in
+        # Wiktionary is never answered by hand. What lives there is names and the closed-class
+        # function words -- see he_curated.py for why those two and nothing else.
+        c = he_curated.lookup(surface, key)
+        if c is None:
+            for stem, cut in lex.stems(key)[1:]:
+                c = he_curated.lookup(stem)
+                if c is not None:
+                    # Same refusal as any clitic match: the entry points the STEM, and nothing
+                    # has pointed the particle in front of it.
+                    c['surface'], c['_cut'] = surface, cut
+                    c['vocalized'], c['vocalized_from'] = None, 'unvocalized:clitic'
+                    break
+        if c is not None:
+            if pointed:                        # the publisher's vowels outrank ours, as always
+                c['vocalized'], c['vocalized_from'] = pointed, 'source:pointed'
+            return c
         return _blank(surface)
     if pointed:
         fit = [c for c in cands if lex.spells(pointed, c) is not None]
