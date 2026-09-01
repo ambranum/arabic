@@ -95,6 +95,67 @@ GENRES = {'prose', 'drama', 'memoir'}
 # paper's own 12.4.
 BANDS = [(11.0, 'beginner', 1), (20.0, 'intermediate', 2), (999.0, 'advanced', 3)]
 
+# One book per shelf, not one book for the whole library. These are thirty-seven standalone works
+# by twelve authors -- Ben-Yehuda is an archive, not an anthology someone edited -- so there is no
+# volume they all belong to. Filing them under a single `book` made the Books section show one
+# 37-chapter title, and because a book takes its level from its first chapter, the whole thing sat
+# under Beginner with a difficulty banner describing only עָפְרָה וְהַבֻּבָּה שֶׁלָּהּ.
+#
+# Grouping by author was the other candidate and it is what a library looks like, but an author
+# here spans the bands -- דושמן alone runs beginner to advanced -- and a book with one level chip
+# and one register banner cannot describe that honestly. The shelf already IS the unit the app
+# grades by, so it becomes the book: three volumes, each level-uniform, each banner true of every
+# chapter in it. The Arabic side works the same way -- a book there is a collection with one level.
+SHELVES = {
+    1: ('benyehuda-1', {'ar': 'הַמַּדָּף הָרִאשׁוֹן', 'en': 'The first shelf'}),
+    2: ('benyehuda-2', {'ar': 'הַמַּדָּף הַשֵּׁנִי', 'en': 'The second shelf'}),
+    3: ('benyehuda-3', {'ar': 'הַמַּדָּף הַשְּׁלִישִׁי', 'en': 'The third shelf'}),
+}
+
+# The dump gives a Hebrew title and nothing else, and `title.en` was being filled with that same
+# Hebrew -- so every card in the Books list, and every reader header, printed Hebrew in the slot
+# the English belongs in. These are ours, translated the way the sentences were, and they are
+# written down rather than generated per run so a rebuild cannot quietly retitle the shelf.
+TITLES_EN = {
+    'book-by-11478': 'Ofra and Her Doll',
+    'book-by-11485': 'The Riddle',
+    'book-by-11497': 'The Broken Windowpane',
+    'book-by-11498': 'Chicks',
+    'book-by-11499': 'Returning What Was Lost',
+    'book-by-11500': 'Havhava and Meah',
+    'book-by-11502': 'On Passover Eve',
+    'book-by-11503': 'Patience',
+    'book-by-11504': 'In Honour of Rabbi Shimon bar Yochai',
+    'book-by-11505': 'Friends',
+    'book-by-11506': 'Lela',
+    'book-by-11513': "Little Naomi's Appetite",
+    'book-by-11517': 'The Change of Name',
+    'book-by-11518': 'On Lag BaOmer',
+    'book-by-11519': 'In Class',
+    'book-by-20271': 'The Caravan',
+    'book-by-20919': 'The Hidden Face',
+    'book-by-23823': "Racheli's Wonderful Shoes",
+    'book-by-24301': 'Little Naomi',
+    'book-by-29717': 'We Are in the Movement',
+    'book-by-30778': 'The Festival of Our Freedom',
+    'book-by-30780': 'The First of May',
+    'book-by-30782': 'How Shall We Welcome the Immigrants?',
+    'book-by-30784': 'The Odessa Committee',
+    'book-by-30793': 'The Children in Cyprus',
+    'book-by-39948': 'Chapter Two: The Mysteries of the Lime Kiln',
+    'book-by-40622': 'The Standard-Bearer',
+    'book-by-44547': 'The Worm and the Crane',
+    'book-by-46040': 'The Buyer of Oxen',
+    'book-by-46211': 'The Talking Talisman',
+    'book-by-46212': 'The Decree of the Barrel',
+    'book-by-52536': 'Nashkan the Dog and His Tail',
+    'book-by-53622': 'The Tale of the Goat That Went Up the Mountain',
+    'book-by-59045': "King Solomon's Three Students",
+    'book-by-59077': 'Clever Dan',
+    'book-by-62450': 'The Chinese',
+    'book-by-64290': 'A Hero and a Sage Before His Wife',
+}
+
 
 def distance(s):
     """How far this text's register is from the daily paper's. 0 is the paper."""
@@ -247,8 +308,13 @@ def main():
     print('%-34s %-20s %-13s %5s %6s %5s %5s' %
           ('title', 'author', 'level', 'tok', 'arch', 'vav', 'sent'))
     written = 0
+    # Chapters are numbered within their own shelf now, and the counter has to advance for
+    # every text that KEEPS its number -- including one left alone below -- or two chapters
+    # end up sharing one.
+    chap = {k: 0 for k in SHELVES}
     for mid, c, s in kept:
         name, shelf = band(s)
+        chap[shelf] += 1
         print('%-34s %-20s %-13s %5d %6.1f %5.1f %5.1f'
               % (c['title'][:34], c['authors'][:20], name, s['tokens'],
                  s['archaic'], s['vav'], s['sentence']))
@@ -266,6 +332,9 @@ def main():
         # sentences. If the dump or clean() ever produces a different list, the file is left
         # exactly as it is and says so, because at that point the clips no longer line up and
         # that is not something to paper over.
+        if slug(mid) not in TITLES_EN:
+            print('   !! no English title for %s — the Hebrew stands in until one is '
+                  'written into TITLES_EN' % slug(mid))
         out_path = paths.texts('%s.json' % slug(mid))
         keep_sentences = keep_translation = None
         if os.path.exists(out_path):
@@ -283,11 +352,11 @@ def main():
                 keep_translation = done.get('translation')
         doc = {
             'id': slug(mid), 'kind': 'book-chapter', 'dialect': 'he', 'level': name,
-            'shelf': shelf, 'book': 'benyehuda', 'chapter': written + 1,
+            'shelf': shelf, 'book': SHELVES[shelf][0], 'chapter': chap[shelf],
             # `ar` is the target script whatever the language, the same as every other text
             # in the repo -- renaming it per language would fork every reader in the app.
-            'title': {'ar': c['title'], 'en': c['title']},
-            'book_title': {'ar': 'סִפְרִיָּה עִבְרִית', 'en': 'The Hebrew shelf'},
+            'title': {'ar': c['title'], 'en': TITLES_EN.get(slug(mid)) or c['title']},
+            'book_title': dict(SHELVES[shelf][1]),
             'book_meta': {'work': c['title'], 'author': c['authors'],
                           'year': '', 'status': 'public domain — Project Ben-Yehuda volunteers',
                           'url': 'https://benyehuda.org' + (c.get('path') or '')},
@@ -308,7 +377,7 @@ def main():
         if keep_translation:
             doc['translation'] = keep_translation
         if keep_sentences:
-            print('   (translated already — sentences kept, %s ch.%d)' % (name, written + 1))
+            print('   (translated already — sentences kept, %s ch.%d)' % (name, chap[shelf]))
         json.dump(doc, open(out_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         written += 1
     if a.write:

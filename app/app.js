@@ -2087,7 +2087,16 @@ function bookView(id) {
   let h = `<div class="bk-hero"><div class="bk-hero-ar" dir="rtl">${esc(b.title.ar)}</div>
      <div class="bk-hero-en">${esc(b.title.en)}</div>
      <div class="bk-hero-s">${(b.chapters[0] || {}).register ? 'Public domain, verbatim' : 'Adapted for learners'} · ${b.chapters.length} chapters · ${readN} read</div></div>`;
-  if (b.meta) h += `<div class="bk-src">${(b.chapters[0] || {}).register ? 'From' : 'Retold from'} ${esc(b.meta.work || b.title.en)}${
+  // A shelf is not one person's book. `meta` is chapter 1's, and printing it as the volume's
+  // source credited ישראל דושמן with thirty-seven works by twelve authors — a misattribution of
+  // public-domain literature, which is the one thing this shelf cannot get wrong. A book that
+  // really is one work still reads exactly as it did.
+  const bkAuthors = [...new Set(b.chapters.map(c => ((c.book_meta || {}).author || '').trim())
+                                          .filter(Boolean))];
+  if (bkAuthors.length > 1)
+    h += `<div class="bk-src">${b.chapters.length} works by ${bkAuthors.length} authors${
+       b.meta && b.meta.status ? ' · ' + esc(b.meta.status) : ''}.</div>`;
+  else if (b.meta) h += `<div class="bk-src">${(b.chapters[0] || {}).register ? 'From' : 'Retold from'} ${esc(b.meta.work || b.title.en)}${
      b.meta.author ? ' — ' + esc(b.meta.author) : ''}${b.meta.year ? ', ' + esc(b.meta.year) : ''}${
      b.meta.status ? ' · ' + esc(b.meta.status) : ''}.</div>`;
   // A book whose chapters carry register numbers was SELECTED, not written, and the honest
@@ -2106,9 +2115,13 @@ function bookView(id) {
      <button class="tog" onclick="location.hash='/books/${esc(b.id)}/print'">⬇ Download as PDF</button></div>`;
   h += `<div class="sec">Chapters</div>`;
   h += b.chapters.map(c => { const done = seen.has(c.id);
+    // Whose story this one is, but only where that varies — on a single-author book the line
+    // would repeat the same name down the whole table of contents.
+    const by = bkAuthors.length > 1 ? ((c.book_meta || {}).author || '').trim() : '';
     return `<button class="bk-ch" onclick="location.hash='/text/${esc(c.id)}'">
       <span class="bk-ch-n${done ? ' read' : ''}">${done ? '✓' : c.chapter}</span>
-      <span class="bk-ch-t"><b dir="rtl">${esc(chTitleAr(c))}</b><span>${esc(chTitleEn(c))}</span></span></button>`;
+      <span class="bk-ch-t"><b dir="rtl">${esc(chTitleAr(c))}</b><span>${esc(chTitleEn(c))}${
+        by ? ` <span dir="rtl">— ${esc(by)}</span>` : ''}</span></span></button>`;
   }).join('');
   $('view').innerHTML = h;
 }
@@ -5072,6 +5085,17 @@ function reader(t) {
       ? `<div class="unval"><b>Not checked by a native speaker.</b> Every word's root,
          meaning and vowels come from the lexicon — but the <i>sentences</i> were written
          by Claude. Fine for reading practice; don't memorise the phrasing yet.</div>`
+      : '') +
+    // Who wrote it. The reader never said, which was survivable while a book was one work by one
+    // author and the cover carried the name — it is not now that a shelf holds a dozen people's
+    // stories, and the reader is where most of them are opened from.
+    // Gated on `register`, which marks a text that was SELECTED verbatim rather than retold. The
+    // Arabic books carry book_meta too, but Jules Verne did not write their Arabic — printing his
+    // name over a Claude retelling would be the same misattribution pointing the other way.
+    ((t.register && t.book_meta && t.book_meta.author)
+      ? `<div class="bk-src">${esc(t.book_meta.author)}${t.book_meta.year ? ', ' + esc(t.book_meta.year) : ''}${
+          t.book_meta.url ? ` · <a href="${esc(t.book_meta.url)}" target="_blank" rel="noopener"
+             style="color:var(--verdigris)">Project Ben-Yehuda</a>` : ''}</div>`
       : '') +
     `<div class="rd" id="rd" data-en="${_rp.en ? 'on' : 'off'}" data-voc="${_rp.voc ? 'on' : 'off'}"
         data-mk="${_rp.mk ? 'on' : 'off'}">`;
