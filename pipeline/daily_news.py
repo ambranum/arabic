@@ -306,7 +306,11 @@ def _resolve_batch(c, ambiguous):
         for o in a["options"]:
             lines.append(f'   id={o["id"]}  root={o["root"]}  {o["analysis"]}  {o["gloss"]}')
     r = c.messages.create(
-        model=MODEL, max_tokens=8000,
+        # Adaptive thinking spends this budget too, so it is not the size of the answer. Forty
+        # decisions with 60-character reasons is ~2,000 tokens of output; at 8,000 the rest was
+        # the thinking budget, and a batch of forty pointed literary sentences is a lot to think
+        # about. Raised so that running out of room is not one of the things that can go wrong.
+        model=MODEL, max_tokens=16000,
         thinking={"type": "adaptive"},
         output_config={"effort": "high", "format": {"type": "json_schema", "schema": RESOLVE_SCHEMA}},
         messages=[{"role": "user", "content":
@@ -324,6 +328,14 @@ def _resolve_batch(c, ambiguous):
     )
     txt = next(b.text for b in r.content if b.type == "text")
     picks = json.loads(txt)["resolutions"]
+    # A batch that answers for six of forty words is not a failure anything else would notice:
+    # the JSON parses, no id is rejected, and the run finishes green having decided nothing.
+    # That is exactly what happened to the 27-book shelf, so the count is on the record now,
+    # with the reason the reply ended -- "max_tokens" here means the answer was cut off and the
+    # batch is too big, not that the words were undecidable.
+    if len(picks) < len(ambiguous):
+        print("  .. %d of %d answered (stop: %s)"
+              % (len(picks), len(ambiguous), getattr(r, "stop_reason", "?")))
     out = {}
     for p in picks:
         n, i = int(p.get("n", 0)), str(p["id"])
@@ -414,12 +426,20 @@ def adjudicate(src):
         # empty balance is the run's, and the next hundred calls will fail exactly the same way.
         # The caller stops on 2 rather than grinding through the rest to print it again.
         return 2 if what else 0
-    if picks:
-        res.update(picks)
-        json.dump(res, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-        print(f"  resolved {len(picks)}/{len(amb)}")
-        if not ingest(src):
-            return 1
+    if not picks:
+        # Silence here reads as success everywhere downstream: the step exits 0, the commit
+        # says "annotation and sense decisions", and the text ships with every word still
+        # flagged. Twenty-seven books went through exactly that.
+        print(f"  !! the adjudicator returned no decisions for {len(amb)} words — "
+              f"nothing was written, and this text is no further along than before")
+        return 1
+    res.update(picks)
+    json.dump(res, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print(f"  resolved {len(picks)}/{len(amb)}")
+    if len(picks) < len(amb):
+        print(f"  .. {len(amb) - len(picks)} left for a later run")
+    if not ingest(src):
+        return 1
     return 0
 
 

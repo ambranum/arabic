@@ -115,8 +115,13 @@ jobs:
           rc=0
           for f in texts/he/book-by-*.json texts/he/story-*.json; do
             echo "::group::$f"
-            python3 pipeline/he_ingest.py "$f" --lang he --audio || rc=1
+            python3 pipeline/he_ingest.py "$f" --lang he --audio; s=$?
             echo "::endgroup::"
+            [ $s -eq 0 ] && continue
+            rc=1
+            # Same contract as the annotate loop: 2 is the API being unavailable to us, not
+            # this text being bad. The save step behind this one keeps the clips already made.
+            [ $s -eq 2 ] && { echo "::error::stopping: the voice API is unavailable, see above"; break; }
           done
           exit $rc
 

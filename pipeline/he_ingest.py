@@ -283,7 +283,10 @@ def main():
             # would otherwise print the same failure sixty times and then hand back an artifact
             # with no audio in it, which reads as a finished run.
             if err is not None and net.fatal(err, 'audio: ', how):
-                raise SystemExit(1)
+                # 2, matching daily_news: the caller's loop stops on it rather than trying the
+                # next hundred texts against the same empty balance. ElevenLabs ran out 12
+                # texts into the shelf and the loop worked through every remaining one.
+                raise SystemExit(2)
         art['sentences'].append(sent)
 
     # The reading view displays `vocalized` in place of the surface, so a pointed form whose
