@@ -46,7 +46,7 @@ window.LANGUAGES = [
     name: 'Modern Hebrew',
     nativeName: 'עברית',
     short: 'Hebrew',
-    blurb: 'Spoken Israeli Hebrew. Sounds, verbs, the dictionary, the daily paper and the Bible — the rest is being built.',
+    blurb: 'Spoken Israeli Hebrew. Sounds, verbs, grammar, the dictionary, 90 graded stories, a public-domain shelf, the daily paper and the Bible.',
     font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
     data: ['library', 'verbs', 'sounds', 'reactions', 'grammar', 'curriculum',
            'assess', 'vocab_audio', 'bible-index'],
@@ -54,8 +54,9 @@ window.LANGUAGES = [
     // could be LOOKED UP rather than written -- 2,084 pointed paradigms and a 12,662-lemma
     // dictionary -- the sections built on them, the daily paper written fresh each morning by
     // the same job that writes the Arabic one, and Sounds, whose lessons are curated teaching
-    // but whose every WORD, vowel, reading and meaning is the lexicon's. Lessons, stories,
-    // grammar, reactions and the dinner table are authored content that does not exist yet, and
+    // but whose every WORD, vowel, reading and meaning is the lexicon's. Since then the authored
+    // content has landed too: 90 graded stories, 20 grammar lessons, the reactions, and the
+    // Ben-Yehuda shelf. Lessons and the dinner table are the two that do not exist yet, and
     // listing a section before it exists is a lie the switcher would tell on every page.
     sections: ['plan', 'sounds', 'reactions', 'grammar', 'verbs', 'news', 'stories',
                'books', 'bible', 'vocab', 'translate', 'tutor', 'account'],

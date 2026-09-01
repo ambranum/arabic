@@ -819,7 +819,7 @@ const HOME_SKYLINE = `<svg class="hm-sky" viewBox="0 0 1200 210" preserveAspectR
 // learning arc (sounds → reactions → grammar → verbs → vocab, etc.).
 const GROUPS = [
   {id: 'practice', label: 'Practice',      blurb: 'The daily drills your plan walks you through.'},
-  {id: 'input',    label: 'Read & Listen', blurb: 'Graded Palestinian to read and hear.'},
+  {id: 'input',    label: 'Read & Listen', blurb: `Graded ${LANG.name} to read and hear.`},
   {id: 'ask',      label: 'Ask & look up', blurb: 'Answers and lookups, on demand.'},
 ];
 // ---------- the section registry -----------------------------------------------------------
@@ -6246,7 +6246,7 @@ function speakView(t) {
   } else {
     h += `<div class="unval" style="border-color:var(--rule);color:var(--ink-soft)">
        <b style="color:var(--verdigris)">Shadowing unlocks with audio.</b> This text doesn’t have spoken
-       audio yet. Once it’s generated with the Palestinian voice, each line gets a player here and you can
+       audio yet. Once the ${esc(LANG.name)} audio is generated, each line gets a player here and you can
        shadow it. For now, the 4/3/2 retell above is your speaking workout.</div>`;
   }
 
