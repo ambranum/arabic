@@ -65,6 +65,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python3 pipeline/he_books.py --lang he --translate
 
+      - name: Save the English
+        if: always()
+        run: bash pipeline/ci_commit.sh "the English for the shelf"
+
       # Per text, not all at once: a failure halfway through leaves the ones already done in the
       # tree and adjudicated, and the resolution trail means a re-run does not pay for them
       # twice. `set -e` off for the loop so one bad text cannot cost the other nine.
@@ -82,10 +86,20 @@ jobs:
           rc=0
           for f in texts/he/book-by-*.json texts/he/story-*.json texts/he/news-*.json; do
             echo "::group::$f"
-            python3 pipeline/daily_news.py --lang he --adjudicate "$f" || rc=1
+            python3 pipeline/daily_news.py --lang he --adjudicate "$f"; s=$?
             echo "::endgroup::"
+            [ $s -eq 0 ] && continue
+            rc=1
+            # 2 means the API itself is unavailable to us -- an empty balance, a dead key. The
+            # next hundred texts will fail identically, and the step after this one commits what
+            # has already been bought, so stopping here is what keeps it.
+            [ $s -eq 2 ] && { echo "::error::stopping: the API is unavailable, see above"; break; }
           done
           exit $rc
+
+      - name: Save the annotation
+        if: always()
+        run: bash pipeline/ci_commit.sh "annotation and sense decisions"
 
       # Last, so the artifact it writes is the annotated one. Clips already on disk are
       # ADOPTED rather than remade -- under a non-deterministic model that is not an
@@ -106,6 +120,10 @@ jobs:
           done
           exit $rc
 
+      - name: Save the sentence audio
+        if: always()
+        run: bash pipeline/ci_commit.sh "book and story audio"
+
       # Every word the app's own content contains, one clip each, so a flashcard plays the
       # pinned voice instead of the browser's. Drawn from the ingested texts, so it must run
       # after them; cached by a hash of the lemma, so a re-run only pays for what is new.
@@ -116,24 +134,9 @@ jobs:
         run: python3 pipeline/vocab_audio.py --lang he
 
       - name: Rebuild the Hebrew app data
+        if: always()
         run: python3 pipeline/build_app.py --lang he
 
-      - name: Commit
-        run: |
-          git config user.name  "hebrew-books"
-          git config user.email "actions@github.com"
-          git add texts/ build/ app/ pipeline/resolutions.he.json
-          git diff --staged --quiet && { echo "nothing changed"; exit 0; }
-          git commit -m "Hebrew: ${{ inputs.vocab && 'vocabulary audio' || (inputs.audio && 'book audio' || 'English and annotation') }}"
-          for attempt in 1 2 3 4 5 6; do
-            if git pull --rebase --autostash origin main; then
-              git push && exit 0
-            else
-              git rebase --abort || true
-              git stash pop 2>/dev/null || true
-              echo "rebase conflicted on attempt $attempt — tree restored"
-            fi
-            sleep $((attempt * 10))
-          done
-          echo "::error::could not push after 6 attempts"
-          exit 1
+      - name: Save the vocabulary audio and the rebuilt app
+        if: always()
+        run: bash pipeline/ci_commit.sh "vocabulary audio"

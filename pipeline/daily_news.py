@@ -262,8 +262,15 @@ def resolve(c, ambiguous):
         chunk = ambiguous[i:i + BATCH]
         if len(ambiguous) > BATCH:
             print(f"  batch {i // BATCH + 1}: {len(chunk)} words")
-        out.update(_batch_or_split(c, chunk))
-    return out
+        try:
+            out.update(_batch_or_split(c, chunk))
+        except Exception as e:
+            # The batches before this one were paid for and answered. Losing them because the
+            # seventh call hit an empty balance is how a re-run buys the same decisions twice --
+            # one text here carries 270 words, seven batches deep. Carry them out on the
+            # exception so the caller can write them to the trail before it stops.
+            e.partial = out
+            raise
 
 
 def _batch_or_split(c, chunk):
@@ -394,10 +401,19 @@ def adjudicate(src):
         # is already in the artifact, flagged, and the card says so. A readable text with
         # honest uncertainty in it beats no text.
         what, fix = explain_api_failure(e)
+        partial = getattr(e, 'partial', None) or {}
+        if partial:
+            res.update(partial)
+            json.dump(res, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+            print(f"  kept {len(partial)} decisions made before it failed")
+            ingest(src)
         print(f"  !! could not resolve: {what}")
         if fix:
             print(f"  !! FIX: {fix}")
-        return 0
+        # 2, not 0. A bad text is one text's problem and the loop should carry on past it; an
+        # empty balance is the run's, and the next hundred calls will fail exactly the same way.
+        # The caller stops on 2 rather than grinding through the rest to print it again.
+        return 2 if what else 0
     if picks:
         res.update(picks)
         json.dump(res, open(rp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
