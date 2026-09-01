@@ -63,11 +63,23 @@ const _minaret = (x, h, y = 196) => `<path d="M${x} ${y}v-${h}h18v${h}" fill="va
     <path d="M${x} ${y - h}h18l-9-15z" fill="var(--paper)"/><path d="M${x + 9} ${y - h - 15}v-9"/>`;
 const _dome = (cx, y, r, o = ' fill="var(--paper)"') =>
   `<path d="M${cx - r} ${y}a${r} ${r} 0 0 1 ${r * 2} 0z"${o}/>`;
+// Courses of dressed stone. Masonry is masonry -- the Herodian ashlar of the Western Wall and
+// any city wall that should read as built rather than as a blank face. Joints stagger row to row,
+// which is the whole reason a wall looks like stone and not like a rectangle.
+const _courses = (x, y, w, h, rows = 5, step = 104) => {
+  let s = `<path d="M${x} ${y}v-${h}h${w}v${h}" fill="var(--paper)"/>`;
+  const ch = h / rows;
+  for (let r = 1; r < rows; r++) s += `<path d="M${x} ${y - ch * r}h${w}" opacity=".5"/>`;
+  for (let r = 0; r < rows; r++)
+    for (let jx = x + (r % 2) * (step / 2) + step; jx < x + w; jx += step)
+      s += `<path d="M${jx} ${y - ch * r}v-${ch}" opacity=".35"/>`;
+  return s; };
 // A column, for the Roman street at Sebastia: shaft, a two-part capital, a base block.
 const _col = (x, h, y = 196) => `<path d="M${x + 1} ${y - 7}v-${h - 14}M${x + 14} ${y - 7}v-${h - 14}"/>
     <path d="M${x - 1} ${y - h + 7}h17v-6h-17z" fill="var(--paper)"/>
     <path d="M${x - 5} ${y - h + 1}h25v-7h-25z" fill="var(--paper)"/>
     <path d="M${x - 3} ${y}h21v-7h-21z" fill="var(--paper)"/>`;
 
-  return {_hills, _ridge, _ground, _house, _arch, _cypress, _olive, _fig, _palm, _water, _boat, _minaret, _dome, _col};
+  return {_hills, _ridge, _ground, _house, _arch, _cypress, _olive, _fig, _palm, _water, _boat,
+          _minaret, _dome, _col, _courses};
 })();
