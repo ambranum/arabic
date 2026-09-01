@@ -27,8 +27,8 @@
      "surface": "במשך",
      "lemma": "בְּמֶשֶׁךְ",
      "form": "בְּמֶשֶׁךְ",
-     "vocalized": "בְּמֶשֶׁךְ",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "during",
      "analysis": "PREP",
@@ -36,14 +36,15 @@
      "caphi_urban": "bméshex",
      "caphi_raw": null,
      "maknuune_id": "7792-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ב-"
     },
     {
      "surface": "שלושים",
      "lemma": "שְׁלוֹשִׁים",
      "form": "שְׁלוֹשִׁים",
-     "vocalized": "שְׁלוֹשִׁים",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "thirty",
      "analysis": "NUM",
@@ -51,7 +52,8 @@
      "caphi_urban": "shloshim",
      "caphi_raw": null,
      "maknuune_id": "1383-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ש-"
     },
     {
      "surface": "שנה",
@@ -87,8 +89,8 @@
      "surface": "ההורים",
      "lemma": "הוֹרֶה",
      "form": "הוֹרֶה",
-     "vocalized": "הַהוֹרִים",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "parent (mother or father)",
      "analysis": "NOUN:definite.plural",
@@ -96,7 +98,8 @@
      "caphi_urban": "hahorim",
      "caphi_raw": null,
      "maknuune_id": "5751-21",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
     },
     {
      "surface": "שלי",
@@ -173,7 +176,7 @@
      "caphi_raw": null,
      "maknuune_id": "4-1",
      "provenance": "wiktionary:clitic",
-     "_cut": "של-"
+     "_cut": "ש-"
     },
     {
      "surface": "דלת",
@@ -304,7 +307,7 @@
      "caphi_raw": null,
      "maknuune_id": "1265-1",
      "provenance": "wiktionary:clitic",
-     "_cut": "וכ-"
+     "_cut": "ו-ה"
     },
     {
      "surface": "מהם",
@@ -319,15 +322,32 @@
      "caphi_urban": "hem",
      "caphi_raw": null,
      "maknuune_id": "2619-1",
-     "provenance": "wiktionary:clitic",
-     "_cut": "מ-"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "מ-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "מ-"
     },
     {
      "surface": "השתמשו",
      "lemma": "הִשְׁתַּמֵּשׁ",
      "form": "הִשְׁתַּמֵּשׁ",
-     "vocalized": "הִשְׁתַּמְּשׁוּ",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": "ש",
      "gloss": "to use, to make use of",
      "analysis": "VERB:imperative.masculine.plural",
@@ -335,7 +355,8 @@
      "caphi_urban": "hishtamshu",
      "caphi_raw": null,
      "maknuune_id": "2578-30",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-ו"
     },
     {
      "surface": "בו",
@@ -365,8 +386,25 @@
      "caphi_urban": "hem",
      "caphi_raw": null,
      "maknuune_id": "2619-1",
-     "provenance": "wiktionary:clitic",
-     "_cut": "כש-"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "כ-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "כ-"
     },
     {
      "surface": "שכחו",
@@ -427,8 +465,25 @@
      "caphi_urban": "hem",
      "caphi_raw": null,
      "maknuune_id": "2619-1",
-     "provenance": "wiktionary:clitic",
-     "_cut": "של-"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ש-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "ש-"
     }
    ],
    "audio": "audio/s1.mp3"
@@ -472,8 +527,8 @@
      "surface": "הגעתי",
      "lemma": "הִגִּיעַ",
      "form": "הִגִּיעַ",
-     "vocalized": "הִגַּעְתִּי",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": "נ.ע",
      "gloss": "to arrive, to get, to reach",
      "analysis": "VERB:feminine.first-person.masculine.past.singular",
@@ -481,7 +536,8 @@
      "caphi_urban": "higati",
      "caphi_raw": null,
      "maknuune_id": "2331-5",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-י"
     },
     {
      "surface": "בלילה",
@@ -518,8 +574,8 @@
      "surface": "להודיע",
      "lemma": "הוֹדִיעַ",
      "form": "הוֹדִיעַ",
-     "vocalized": "לְהוֹדִיעַ",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": "י.ע",
      "gloss": "to inform, to announce, to make known",
      "analysis": "VERB:infinitive",
@@ -527,14 +583,15 @@
      "caphi_urban": "lhodia",
      "caphi_raw": null,
      "maknuune_id": "8300-3",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ל-"
     },
     {
      "surface": "מצאתי",
      "lemma": "מָצָא",
      "form": "מָצָא",
-     "vocalized": "מָצָאתִי",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": "א",
      "gloss": "to find",
      "analysis": "VERB:feminine.first-person.masculine.past.singular",
@@ -542,7 +599,8 @@
      "caphi_urban": "matsati",
      "caphi_raw": null,
      "maknuune_id": "984-8",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "מ-י"
     },
     {
      "surface": "את",
@@ -579,8 +637,8 @@
      "surface": "בדיוק",
      "lemma": "בְּדִיּוּק",
      "form": "בְּדִיּוּק",
-     "vocalized": "בְּדִיּוּק",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "exactly, precisely",
      "analysis": "ADV",
@@ -588,7 +646,8 @@
      "caphi_urban": "bdiyuk",
      "caphi_raw": null,
      "maknuune_id": "1787-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ב-"
     },
     {
      "surface": "במקום",
@@ -619,7 +678,7 @@
      "caphi_raw": null,
      "maknuune_id": "2564-7",
      "provenance": "wiktionary:clitic",
-     "_cut": "ו-"
+     "_cut": "ו-י"
     },
     {
      "surface": "בשקט",
@@ -856,7 +915,7 @@
      "caphi_raw": null,
      "maknuune_id": "3263-14",
      "provenance": "wiktionary:clitic",
-     "_cut": "ב-"
+     "_cut": "ב-ו"
     }
    ],
    "audio": "audio/s3.mp3"
@@ -883,18 +942,19 @@
     },
     {
      "surface": "שהם",
-     "lemma": "שֹׁהַם",
-     "form": "שֹׁהַם",
-     "vocalized": "שֹׁהַם",
-     "vocalized_from": "lexicon",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "onyx (a banded variety of chalcedony, a cryptocrystalline form of quartz)",
-     "analysis": "NOUN",
-     "caphi": "shóham",
-     "caphi_urban": "shóham",
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
      "caphi_raw": null,
-     "maknuune_id": "956-1",
-     "provenance": "wiktionary:exact"
+     "maknuune_id": "2619-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ש-"
     },
     {
      "surface": "עזבו",
@@ -970,7 +1030,23 @@
      "caphi_urban": "hem",
      "caphi_raw": null,
      "maknuune_id": "2619-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ]
     },
     {
      "surface": "התקינו",
@@ -991,8 +1067,8 @@
      "surface": "מנעול",
      "lemma": "מַנְעוּל",
      "form": "מַנְעוּל",
-     "vocalized": "מַנְעוּל",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "lock (something used for fastening, which can only be opened with a key or combination)",
      "analysis": "NOUN",
@@ -1000,7 +1076,8 @@
      "caphi_urban": "manul",
      "caphi_raw": null,
      "maknuune_id": "5527-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "מ-"
     },
     {
      "surface": "חדש",
@@ -1082,8 +1159,8 @@
      "surface": "השטיח",
      "lemma": "שָׁטִיחַ",
      "form": "שָׁטִיחַ",
-     "vocalized": "הַשָּׁטִיחַ",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "A carpet, a rug.",
      "analysis": "NOUN:definite.singular",
@@ -1091,7 +1168,8 @@
      "caphi_urban": "hashatiax",
      "caphi_raw": null,
      "maknuune_id": "2996-9",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
     }
    ],
    "audio": "audio/s4.mp3"
@@ -1105,8 +1183,8 @@
      "surface": "שכחתי",
      "lemma": "שָׁכַח",
      "form": "שָׁכַח",
-     "vocalized": "שָׁכַחְתִּי",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": "ח",
      "gloss": "to forget",
      "analysis": "VERB:feminine.first-person.masculine.past.singular",
@@ -1114,7 +1192,8 @@
      "caphi_urban": "shaxaxti",
      "caphi_raw": null,
      "maknuune_id": "2498-8",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ש-י"
     },
     {
      "surface": "את",
@@ -1160,15 +1239,32 @@
      "caphi_urban": "bikur",
      "caphi_raw": null,
      "maknuune_id": "11987-5",
-     "provenance": "wiktionary:clitic",
-     "_cut": "ב-"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ב-",
+     "options": [
+      {
+       "id": "11987-5",
+       "root": "",
+       "gloss": "A visit: an act of visiting.",
+       "analysis": "NOUN:indefinite.singular",
+       "pointed": "בִּיקּוּר"
+      },
+      {
+       "id": "5499-6",
+       "root": "",
+       "gloss": "to visit",
+       "analysis": "VERB:noun-from-verb",
+       "pointed": "ביקור"
+      }
+     ],
+     "_cut_for_prompt": "ב-"
     },
     {
      "surface": "הראשון",
      "lemma": "הָרִאשׁוֹן",
      "form": "הָרִאשׁוֹן",
-     "vocalized": "הָרִאשׁוֹן",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "masculine singular definite form of רִאשׁוֹן (rishón)",
      "analysis": "ADJ",
@@ -1176,7 +1272,8 @@
      "caphi_urban": "harishon",
      "caphi_raw": null,
      "maknuune_id": "3619-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
     },
     {
      "surface": "ועמדתי",
@@ -1192,14 +1289,14 @@
      "caphi_raw": null,
      "maknuune_id": "2979-6",
      "provenance": "wiktionary:clitic",
-     "_cut": "ו-"
+     "_cut": "ו-י"
     },
     {
      "surface": "בחוץ",
      "lemma": "בַּחוּץ",
      "form": "בַּחוּץ",
-     "vocalized": "בַּחוּץ",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "outside",
      "analysis": "ADV",
@@ -1207,7 +1304,8 @@
      "caphi_urban": "baxuts",
      "caphi_raw": null,
      "maknuune_id": "10971-1",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "ב-"
     },
     {
      "surface": "עשרים",
@@ -1327,8 +1425,8 @@
      "surface": "צחקה",
      "lemma": "צָחַק",
      "form": "צָחַק",
-     "vocalized": "צָחֲקָה",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "to laugh",
      "analysis": "VERB:feminine.past.singular.third-person",
@@ -1336,7 +1434,8 @@
      "caphi_urban": "tsaxaka",
      "caphi_raw": null,
      "maknuune_id": "8335-12",
-     "provenance": "wiktionary:exact"
+     "provenance": "wiktionary:exact",
+     "_cut": "-ה"
     },
     {
      "surface": "ואמרה",

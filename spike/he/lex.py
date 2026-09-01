@@ -186,7 +186,12 @@ class Lexicon:
 
         Two collapses stay, because neither is a choice a reader could see: a construct form
         when the lemma also has a free one (יוֹם / יוֹם־), and an unpointed row when a pointed
-        row spells the same letters.
+        row OF THE SAME LEMMA spells the same letters. That last qualifier was missing, and it
+        is not a detail: the collapse ran across lemmas, so צֶוֶת "crew" -- whose Wiktionary row
+        is spelled unpointed -- was deleted because צִוּוּת "staffing" happens to unpoint to the
+        same letters. The adjudicator was then handed "to staff / staffing / defective spelling
+        of ציוות" and picked one of the three, and the day's news said צִוּוּת where the voice
+        says tsevet. Same word, two spellings, is what this is for; two words are a choice.
         """
         free = {r['LEMMA'] for r in recs if 'construct' not in str(r['ANALYSIS'] or '')}
         keep = [r for r in recs
@@ -201,9 +206,10 @@ class Lexicon:
             if key not in best or score > best[key][0]:
                 best[key] = (score, r)
         out = [r for _, r in sorted(best.values(), key=lambda x: -x[0])]
-        pointed = {unpoint(r['FORM']) for r in out if unpoint(r['FORM']) != str(r['FORM'])}
-        return [r for r in out
-                if unpoint(r['FORM']) != str(r['FORM']) or str(r['FORM']) not in pointed]
+        pointed = {(r['LEMMA'], unpoint(r['FORM'])) for r in out
+                   if unpoint(r['FORM']) != str(r['FORM'])}
+        return [r for r in out if unpoint(r['FORM']) != str(r['FORM'])
+                or (r['LEMMA'], str(r['FORM'])) not in pointed]
 
     def spells(self, tok, rec):
         """Can this entry's pointing be the pointing of THIS token? -> the cut, or None.
@@ -262,6 +268,24 @@ class Lexicon:
         for stem, cut in self.stems(key):
             if skel == MATRES.sub('', stem) and respell(stem, rec['FORM']):
                 return cut
+        # The feminine, and ONLY on this route -- the plural -ות of a -ה noun, and the singular
+        # -ית of a -י adjective. Both are regular Hebrew, and
+        # Wiktionary lists the plural for some nouns and not others, so a lookup tier built on
+        # it would have to guess which -ה noun a given -ות belongs to. Measured over the corpus
+        # it reaches 20 tokens and gets four of them wrong -- פרעות "riots" as "pharaohs",
+        # מהוגנות "decent" as "garden", and באלות "with clubs" as "goddesses", since אֵלָה sits
+        # under the same key as אַלָּה. So it is not a tier. It is a route the trail can name:
+        # nothing resolves this way on its own, and an adjudicator that has read the sentence
+        # can say which -ה noun it is and have that answer validate. The -ית arm is the same
+        # bargain: Wiktionary lists רוּסִית under רוּסִי and lists nothing under פָלַסְטִינִי, so
+        # the feminine of "Palestinian" is a form the lexicon knows the word for and not the
+        # shape of.
+        for end, base in (('ות', 'ה'), ('ית', 'י')):
+            if not key.endswith(end):
+                continue
+            for stem, cut in self.stems(key):
+                if stem.endswith(end) and str(rec['LEMMA_SEARCH']) == stem[:-2] + base:
+                    return (cut or '-') + end
         return None
 
     def alt_readings(self, key, exact, strict=True):

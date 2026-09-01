@@ -188,26 +188,30 @@ def annotate(lex, surface, res):
             # applying it would put a stranger's pointing and gloss on the page.
             print('  !! %s: resolution %s is not a reading of this word — ignored'
                   % (surface, want))
+    # BEFORE the lexicon, which is where pipeline/ingest.py has always consulted the Arabic one.
+    # It was last here, on the theory that a curated entry must never shadow a real one -- and
+    # that theory fails on exactly the words the table exists for. A name is a homograph of an
+    # ordinary word often enough that the lexicon answers it CONFIDENTLY and wrongly: מַנְסוּר
+    # came back as נִסֵּר "to saw". A fallback can never reach those, because nothing failed.
+    # What keeps this safe is not the ordering but the table: names and closed-class function
+    # words only, written down one at a time, each marked `curated:*` on the page.
+    c = he_curated.lookup(surface, key)
+    if c is None:
+        for stem, cut in lex.stems(key)[1:]:
+            c = he_curated.lookup(stem)
+            if c is not None:
+                # Same refusal as any clitic match: the entry points the STEM, and nothing has
+                # pointed the particle in front of it.
+                c['surface'], c['_cut'] = surface, cut
+                c['vocalized'], c['vocalized_from'] = None, 'unvocalized:clitic'
+                break
+    if c is not None:
+        if pointed:                            # the publisher's vowels outrank ours, as always
+            c['vocalized'], c['vocalized_from'] = pointed, 'source:pointed'
+        return c
+
     rec, prov, cands = lex.resolve(surface)
     if rec is None:
-        # Last, and only last. A curated entry can never shadow a real one: it is consulted after
-        # the lexicon has said it has nothing, so the two can't compete and a word that IS in
-        # Wiktionary is never answered by hand. What lives there is names and the closed-class
-        # function words -- see he_curated.py for why those two and nothing else.
-        c = he_curated.lookup(surface, key)
-        if c is None:
-            for stem, cut in lex.stems(key)[1:]:
-                c = he_curated.lookup(stem)
-                if c is not None:
-                    # Same refusal as any clitic match: the entry points the STEM, and nothing
-                    # has pointed the particle in front of it.
-                    c['surface'], c['_cut'] = surface, cut
-                    c['vocalized'], c['vocalized_from'] = None, 'unvocalized:clitic'
-                    break
-        if c is not None:
-            if pointed:                        # the publisher's vowels outrank ours, as always
-                c['vocalized'], c['vocalized_from'] = pointed, 'source:pointed'
-            return c
         return _blank(surface)
     if pointed:
         fit = [c for c in cands if lex.spells(pointed, c) is not None]

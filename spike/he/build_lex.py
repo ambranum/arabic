@@ -141,6 +141,17 @@ def rows():
                 continue
             if re.search(r'[A-Za-z0-9]', form) or not re.search(r'[א-ת]', form):
                 continue
+            # An ACRONYM sneaking in as a FORM of a spelled-out lemma. The lemma test above
+            # catches מצ״ב and שו״ם, whose headword is the acronym; it does not catch ב״ה filed
+            # under בָּרוּךְ הַשֵּׁם or ד״ר under דּוֹקְטוֹר. he_norm drops the gershayim, so those
+            # arrive in the index spelled בה and דר -- and בה, "in it", is an everyday word that
+            # was coming back from the daily paper as "baruch Hashem, thank God". 41 rows, 18 of
+            # whose keys spell a real word, including כי. They are not reachable as acronyms
+            # either: a text types the ASCII quote, which he_norm keeps, so ד"ר never matched
+            # ד״ר anyway. The everyday ones are answered in he_curated.py, where an abbreviation
+            # can also carry the reading its letters do not give.
+            if '\u05f4' in form:
+                continue
             seen.add((key, tuple(tags)))
             # ONE NOTATION FOR THE WHOLE LEXICON. Wiktionary's romanizations were taken
             # verbatim wherever it had one, which left 12% of the shipped rows in a different

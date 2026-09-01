@@ -326,6 +326,24 @@ def _segment(word):
         if (s.cons == 'י' and not s.marks and out
                 and out[-1].vowel == 'i' and not out[-1].is_shva):
             continue                          # silent mater
+        # --- וו and יי for ONE consonant: unpointed Hebrew doubles a consonantal vav or yod
+        # inside a word (צוות, בעייתי, עדיין) and pointed Hebrew does not. respell() keeps the
+        # letters the text actually wrote, so the pointing it hands back carries the double --
+        # and this transducer was then reading it twice. צֶוֶות came out "tsevevt" where the
+        # voice says tsevet, which is the display contradicting the audio on the same word.
+        # The second one carries no niqqud of its own; that is what makes it orthography.
+        # ...but only where the doubling really is orthographic. When the letter BEFORE it
+        # carries a vowel this letter is the mater for -- tsere before a yod, holam before a
+        # vav -- the second one is doing a job, and MALE below reads it. יֵינוֹת stays "yeynot",
+        # the same way בֵּיצָה is "beytsa"; it is צֶוֶות (segol before the vav) and בְּעָיָיתִי
+        # (qamatz before the yod) that are spelling one consonant with two letters.
+        # `out[-1].marks` is the third guard and it is not decoration: a segment whose vowel was
+        # absorbed from a FOLLOWING vav or yod carries no niqqud of its own, and in נְיוּ יוֹרְק
+        # that made the yod of "yu" and the yod of "york" look like a doubled pair across the
+        # space between the two words. It ate one and said "nyurk".
+        if (s.cons in ('ו', 'י') and not s.marks and out and out[-1].cons == s.cons
+                and out[-1].marks and out[-1].sign not in MALE[s.cons]):
+            continue
         out.append(s)
     return out
 
@@ -563,6 +581,11 @@ CASES = [
     ('כָּל', 'kol', 'qamatz qatan: lexical, not derivable'),
     # hiriq male
     ('שִׁיר', 'shir', 'yod as mater after hiriq'),
+    # וו / יי for one consonant, and the three words apart that decide it
+    ('צֶוֶות', 'tsevet', 'doubled vav for one consonant: segol before it, so orthographic'),
+    ('בֵּיצָה', 'beytsa', 'tsere + yod is a mater, not a doubling'),
+    ('יֵינוֹת', 'yeynot', 'consonantal yod, then its tsere mater — both kept'),
+    ('נְיוּ יוֹרְק', 'nyuyork', 'two words: the yods are not a pair across the space'),
     # the homographs that make niqqud matter
     ('סֵפֶר', 'sefer', 'homograph: book'),
     ('סַפָּר', 'sapar', 'homograph: barber'),

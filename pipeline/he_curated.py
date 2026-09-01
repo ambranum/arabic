@@ -52,8 +52,6 @@ FUNCTION = {
     'כמוני':   ('כָּמוֹנִי', 'like me', 'PREP+PRON_1S', 2),
     'כמוהם':   ('כְּמוֹהֶם', 'like them', 'PREP+PRON_3MP', 2),
     'עמהם':    ('עִמָּהֶם', 'with them', 'PREP+PRON_3MP'),
-    'עמה':     ('עִמָּהּ', 'with her', 'PREP+PRON_3FS', 2),
-    'עמנו':    ('עִמָּנוּ', 'with us', 'PREP+PRON_1P', 2),
     'שתיהן':   ('שְׁתֵּיהֶן', 'both of them (f.), the two of them', 'NUM+PRON_3FP'),
     'שתיהם':   ('שְׁתֵּיהֶם', 'both of them, the two of them', 'NUM+PRON_3MP'),
     'שניהם':   ('שְׁנֵיהֶם', 'both of them, the two of them (m.)', 'NUM+PRON_3MP'),
@@ -70,6 +68,19 @@ FUNCTION = {
     # place they can be answered is here.
     'ד"ר':     ('ד"ר', 'Dr. (doctor)', 'ABBREV', 'dóktor'),
     'ל"ג':     ('ל"ג', 'Lag — the 33rd, as in Lag BaOmer', 'ABBREV', 'lag'),
+    'ארה"ב':   ('ארה"ב', 'the USA', 'ABBREV', 'artsot habrit'),
+    'ח"כ':     ('ח"כ', 'MK, member of the Knesset', 'ABBREV', 'xáver knéset'),
+    'רע"מ':    ('רע"מ', 'Ra\u2019am (the United Arab List party)', 'ABBREV', 'rá\u2019am'),
+    'שב"כ':    ('שב"כ', 'the Shin Bet (Israel\u2019s internal security service)', 'ABBREV', 'shabák'),
+    # בָּהּ and בּוֹ are ב־ with a pronoun, the same closed class as בֵּינֵיהֶם above. Neither is in
+    # Wiktionary, and בה was answered by the acronym ב״ה until build_lex stopped indexing those:
+    # the daily paper said “baruch Hashem, thank God” where the sentence said “in it”.
+    'בה':      ('בָּהּ', 'in it, in her', 'PREP+PRON_3FS'),
+    # Four entries came back out after measuring what the table SHADOWS now that it is consulted
+    # first: עִמָּהּ and עִמָּנוּ hid עַם "a nation", whose reading עַמֵּנוּ "our people" is just as
+    # real; בּוֹ was already in Wiktionary and needed no help; and דָּן, the name, hid דָּן "to
+    # discuss", which is what the word is in every sentence about a court. A curated name is only
+    # safe where it is not also an ordinary word.
 }
 
 # Names. No lexicon carries these and none ever will: a name is not a word with a meaning, and
@@ -91,6 +102,21 @@ PROPER = {
     'נורדוי':   ('נוֹרְדוֹי', 'Nordau (Max Nordau)', 'NOUN_PROP', 2),
     'ליאון':    ('לֵיאוֹן', 'Leon (a name)', 'NOUN_PROP'),
     'מטץ':      ('מֶטְץ', 'Metz (a city in France)', 'NOUN_PROP'),
+    # And the people and places the daily paper is full of. News is where this class bites: a
+    # name has no lexical entry anywhere, so every one of these read “not in the lexicon” on
+    # the word card, and two of them read as something else -- דן as “to discuss” and מנסור
+    # as “to saw”.
+    'טראמפ':    ('טְרַאמְפּ', 'Trump (Donald Trump)', 'NOUN_PROP'),
+    'זלנסקי':   ('זֶלֶנְסְקִי', 'Zelensky (Volodymyr Zelensky)', 'NOUN_PROP', 2),
+    'עבאס':     ('עַבַּאס', 'Abbas (a surname)', 'NOUN_PROP'),
+    'מנסור':    ('מַנְסוּר', 'Mansour (a given name)', 'NOUN_PROP'),
+    'דריסקול':  ('דְּרִיסְקוֹל', 'Driscoll (a surname)', 'NOUN_PROP', 2),
+    'גמליאל':   ('גַּמְלִיאֵל', 'Gamliel (a surname)', 'NOUN_PROP'),
+    'חאלד':     ('חָאלֶד', 'Khaled (a given name)', 'NOUN_PROP', 2),
+    'טיימס':    ('טַיְמְס', 'Times (as in Times Square)', 'NOUN_PROP'),
+    'סקוור':    ('סְקְוֵר', 'Square (as in Times Square)', 'NOUN_PROP'),
+    'יורק':     ('יוֹרְק', 'York (as in New York)', 'NOUN_PROP'),
+    'הורמוז':   ('הוֹרְמוּז', 'Hormuz (the strait between Iran and Oman)', 'NOUN_PROP'),
 }
 
 _ALL = {}

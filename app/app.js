@@ -495,7 +495,7 @@ const VOCSRC = {
   // on the page are the publisher's and no derivation of ours improves on them. These three were
   // missing and the card printed the raw key -- "source:pointed" -- to the reader.
   'source:pointed'             : 'the vowels printed in the text itself',
-  'unvocalized:clitic'         : 'not shown — the lexicon points the word, not the particle on it',
+  'unvocalized:clitic'         : 'not shown — the lexicon points the word, not what is attached to it',
   'curated'                    : 'hand-written by us, not from the lexicon',
   'curated:stem'               : "not shown — hand-written entry, and the particle isn't pointed",
   'unvocalized:curated-with-clitic': 'not shown — name carries a prefix'
