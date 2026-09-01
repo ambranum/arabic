@@ -282,7 +282,7 @@ def main():
             # A book is 60-odd sentences, not the news's nine. A dead key or a spent balance
             # would otherwise print the same failure sixty times and then hand back an artifact
             # with no audio in it, which reads as a finished run.
-            if err is not None and net.fatal(err, 'audio: '):
+            if err is not None and net.fatal(err, 'audio: ', how):
                 raise SystemExit(1)
         art['sentences'].append(sent)
 

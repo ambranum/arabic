@@ -75,9 +75,10 @@ def tts(text, out_path, key, voice):
             open(out_path, 'wb').write(r.read())
         return 'generated'
     except urllib.error.HTTPError as e:            # surface ElevenLabs' actual message
-        if net.fatal(e, 'vocab audio: '):          # a rejected key, a spent balance
+        body = e.read().decode('utf-8', 'replace')  # once only -- both readers get this copy
+        if net.fatal(e, 'vocab audio: ', body):     # a rejected key, a spent balance
             raise SystemExit(1)
-        raise RuntimeError('HTTP %s — %s' % (e.code, e.read().decode('utf-8', 'replace')[:300]))
+        raise RuntimeError('HTTP %s — %s' % (e.code, body[:300]))
     except Exception as e:
         if net.fatal(e, 'vocab audio: '):
             raise SystemExit(1)

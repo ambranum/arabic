@@ -44,10 +44,31 @@ def need(module):
             % (module, sys.executable, sys.executable))
 
 
-def explain(e):
-    """-> (what went wrong, what to do about it). ('', '') if this is not a transport failure."""
+SPENT = ('quota_exceeded', 'credits remaining', 'insufficient', 'out of credit',
+         'billing', 'payment')
+
+
+def explain(e, body=''):
+    """-> (what went wrong, what to do about it). ('', '') if this is not a transport failure.
+
+    `body` is the response text, when the caller has already read it -- an HTTPError can only be
+    read once, and every caller here reads it to print.
+    """
     msg = str(e)
     if isinstance(e, urllib.error.HTTPError):
+        if not body:
+            try:
+                body = e.read().decode('utf-8', 'replace')
+            except Exception:
+                body = ''
+        # A 401 does not always mean what it says. ElevenLabs answers a spent balance with 401
+        # and "quota_exceeded" in the body, so the honest reading of the status alone -- "the
+        # API rejected the key" -- sent a perfectly good key off to be regenerated while the
+        # actual problem was a bill. The body settles it, and is checked before the code.
+        if any(t in body.lower() for t in SPENT):
+            return ('the account is out of credit (HTTP %d, %s)'
+                    % (e.code, body.strip()[:90].replace('\n', ' ')),
+                    'Top up the balance for whichever service this was. The key is fine.')
         # Most HTTP answers are about the request. These are about the RUN: the next item will
         # get exactly the same one, so fifty-eight of them is fifty-seven too many.
         if e.code in (401, 403):
@@ -73,9 +94,9 @@ def explain(e):
     return '', ''
 
 
-def fatal(e, prefix=''):
+def fatal(e, prefix='', body=''):
     """Print the diagnosis and stop. Transport failures do not get better on the next item."""
-    what, fix = explain(e)
+    what, fix = explain(e, body)
     if not what:
         return False
     sys.stdout.flush()          # so the diagnosis lands after the line that provoked it

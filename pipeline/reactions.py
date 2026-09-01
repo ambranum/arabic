@@ -96,7 +96,7 @@ def main():
         elif do_audio:
             ok, how, err = tts(it['ar'], clip, key, voice)
             print(f'  {rid} {it["ar"]:16} {how}')
-            if err is not None and net.fatal(err, 'audio: '):
+            if err is not None and net.fatal(err, 'audio: ', how):
                 raise SystemExit(1)
             if ok:
                 rec['audio'] = paths.audio_url('reactions', '%s.mp3' % rid)

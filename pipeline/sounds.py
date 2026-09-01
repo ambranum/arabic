@@ -85,7 +85,7 @@ def main():
             # A transport failure is not about this word, so trying the next fifty-seven only
             # buries the reason. Say it once, and stop before writing a data file that reports
             # the outcome as "audio 0/58" and looks like a finished run.
-            if err is not None and net.fatal(err, 'audio: '):
+            if err is not None and net.fatal(err, 'audio: ', how):
                 raise SystemExit(1)
             if ok:
                 return paths.audio_url('sounds', '%s.mp3' % rid)
