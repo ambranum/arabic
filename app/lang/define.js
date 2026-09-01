@@ -29,7 +29,8 @@ const LANG_FULL = LANG_CHROME.concat([
   'verb.tier', 'kbd.letters', 'kbd.toggle', 'tts.lang', 'tutorPrompt',
   'homeMasthead', 'chapterPrefix', 'sections', 'verb.classNoun', 'bibleBlurb',
   'tutorStarters', 'lex.name', 'lex.blurb', 'lex.credit', 'lex.usage', 'storyLevels',
-  'verb.blurb', 'verb.classPlural', 'verb.weakOrder', 'lex.source',
+  'verb.blurb', 'verb.classPlural', 'verb.weakOrder', 'verb.cite', 'verb.citeNote', 'verb.summary',
+  'lex.source',
   'script.chars', 'searchHint', 'dateLine', 'ornament']);
 
 // Read only on a path a pack can switch off, so required only of a pack that lists the section.

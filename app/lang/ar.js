@@ -519,8 +519,16 @@ function wadiAra(w) {
     variants: [{id: 'wadi', label: 'Wadi Ara', apply: wadiAra}],
   },
 
-    // ---- the verb model -----------------------------------------------------------------
-    verb: {
+  // ---- the verb model -------------------------------------------------------------------
+  verb: {
+    // WHICH FORM A VERB IS FILED UNDER -- in the deck, in the verb list, and on the verb page.
+    // Arabic has no infinitive, so the dictionary form is the 3ms past, and it is also what the
+    // rest of the paradigm is built from. Hebrew's answer is the infinitive; see he.js.
+    cite: 'past',
+    citeNote: 'the \u201Che\u201D past, the form the whole paradigm is built from',
+    // The principal parts a browse card shows. The citation form has to be among them --
+    // a card that never shows the form it banks under is a card you can't recognise later.
+    summary: [['past', 'Past'], ['pres', 'Present'], ['imp', 'Command']],
     classNoun: 'form',
     classPlural: 'Forms',
     blurb: n => `Arabic verbs are built on three- or four-letter roots, run through a set of

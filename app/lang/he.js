@@ -80,6 +80,17 @@ defineLang({
 
   // ---- the verb model -------------------------------------------------------------------
   verb: {
+    // THE INFINITIVE, not the 3ms past. Arabic files a verb under its past because it has no
+    // infinitive to file it under; Hebrew has one, לִכְתּוֹב, and it is what a Hebrew dictionary
+    // lists, what a learner is taught to say, and what survives when a verb has no attested past
+    // in the lexicon at all. The binyan names are still built on the past -- that is why the
+    // Past column and the binyan blurbs below say כָּתַב -- but the CARD is the infinitive.
+    cite: 'inf',
+    citeNote: 'the infinitive, the form a Hebrew dictionary lists',
+    // Infinitive first, because that is what the deck banks and what a dictionary lists.
+    // The past stays beside it: the binyan names are built on it and it is the paradigm's
+    // own base, so a learner needs to see both on the same card.
+    summary: [['inf', 'Infinitive'], ['past', 'Past'], ['pres', 'Present']],
     classNoun: 'binyan',
     classPlural: 'Binyanim',
     blurb: n => `Hebrew verbs are built on three-letter roots, run through seven patterns called

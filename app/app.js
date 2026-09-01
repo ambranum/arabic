@@ -187,6 +187,13 @@ function deckNormIndex() {
   // knows its own citation form, so index that too and they keep resolving.
   for (const [k, c] of marked) { const hp = cardHePast(c);
     if (hp && hp.ar) { const n = arNorm(hp.ar); if (!m.has(n)) m.set(n, k); } }
+  // And under the citation form its paradigm gives it TODAY, which is not always the one it was
+  // filed under: Hebrew verbs used to bank as the 3ms past and now bank as the infinitive, so a
+  // card saved as כָּתַב has to be findable from לִכְתּוֹב or the next tap opens a second card on
+  // a second schedule. Looking it up beats migrating: nothing is rewritten, and the existing
+  // merge screen still offers to tidy the headword when you want it tidied.
+  for (const [k, c] of marked) { const cite = verbCite(cardVerb(c));
+    if (cite && cite.ar) { const n = arNorm(cite.ar); if (!m.has(n)) m.set(n, k); } }
   return (_deckNormIx = m);
 }
 const deckKeyFor = lemma => marked.has(lemma) ? lemma
@@ -3113,7 +3120,7 @@ function verbPlan() {
     || (a.form === 'I' ? 0 : 1) - (b.form === 'I' ? 0 : 1)               // then Form I before derived
     || (a.gloss || '').localeCompare(b.gloss || ''));
   _verbPlan = list.map(v => ({key: verbKey(v), i: v._i, title: v.gloss || v.lemma,
-    ar: (v.past && v.past.ar) || v.lemma, weak: v.weak, tier: LANG.verb.tier(v), link: '/verb/' + v._i}));
+    ar: (verbCite(v) || {}).ar || v.lemma, weak: v.weak, tier: LANG.verb.tier(v), link: '/verb/' + v._i}));
   return _verbPlan;
 }
 // Serve the ord-th not-yet-done item from a namespaced list; cycle back once all are seen (mirrors poolPick).
@@ -4637,7 +4644,7 @@ function trIndex() {
   // a text — 1,873 of the 3,003 had no corpus occurrence, so searching them returned nothing.
   VB.forEach(v => { const key = arNorm(v.lemma); if (!key) return;
     const e = ent(key, v.lemma, v.lemma, {gloss: v.gloss, root: v.root,
-                                          caphi: v.past && v.past.caphi});
+                                          caphi: (verbCite(v) || {}).caphi});
     if (e.vb == null) e.vb = v._i;
     ['past', 'pres', 'imp'].forEach(k => { if (v[k] && v[k].ar) e.surf.add(arNorm(v[k].ar)); });
   });
@@ -4879,7 +4886,7 @@ function verbCard(v){
       <span class="vc-badges">${badges}</span></div>
     <div class="vc-root">${root}</div>
     <div class="vc-pp">
-      ${part('Past', v.past)}${part('Present', v.pres)}${part('Command', v.imp)}</div>
+      ${LANG.verb.summary.map(([k, label]) => part(label, v[k])).join('')}</div>
   </button>`;
 }
 
@@ -4897,7 +4904,7 @@ function verbDetail(i){
   const root = esc((v.root || '').replace(/\./g, ' · '));
 
   let h = `<div class="vd-head">
-    <div class="vd-ar">${esc(v.past ? v.past.ar : '')}</div>
+    <div class="vd-ar">${esc((verbCite(v) || {}).ar || '')}</div>
     <div class="vd-meta"><div class="vd-gl">${esc(v.gloss || '—')}</div>
       <div class="vd-sub">${root} &nbsp;·&nbsp; ${badges}</div>
       <div class="vd-lvl">${lvlTagFor('verb', {tier: LANG.verb.tier(v)})}</div>
@@ -4916,7 +4923,7 @@ function verbDetail(i){
     const part = (k, pp) => pp ? `<div class="pp"><span class="pp-k">${k}</span>
         <span class="pp-ar">${esc(pp.ar)}</span><span class="pp-c">${esc(pp.caphi)}</span></div>` : '';
     h += `<div class="vc-pp" style="max-width:420px">
-        ${part('Past', v.past)}${part('Present', v.pres)}${part('Command', v.imp)}</div>`;
+        ${LANG.verb.summary.map(([k, label]) => part(label, v[k])).join('')}</div>`;
     $('view').innerHTML = h;
     return;
   }
@@ -5451,18 +5458,21 @@ function deckToggleKey(key, build, after) {
 // A verb's card is anchored on its citation form — the "he" past — because that is the entry
 // the rest of the paradigm is built from, and it is what the review card already expects.
 function cardFromVerb(v) {
-  // past.ar, not v.lemma — they differ for a couple of verbs (اِتْشَاوَف vs تْشَاوَف), and the
-  // citation form is the one every other entry point now agrees on.
-  const head = (v.past && v.past.ar) || v.lemma;
+  // The citation slot, not v.lemma — they differ for a couple of verbs (اِتْشَاوَف vs
+  // تْشَاوَف), and the citation form is the one every other entry point now agrees on.
+  const cite = verbCite(v);
+  const head = (cite && cite.ar) || v.lemma;
   return {lemma: head, vocalized: head, surface: head, root: v.root || '',
-          caphi: (v.past && v.past.caphi) || '', gloss: v.gloss || '',
+          caphi: (cite && cite.caphi) || '', gloss: v.gloss || '',
           analysis: 'VERB:' + (v.form || 'I'),
-          he_past: v.past ? {ar: v.past.ar, caphi: v.past.caphi} : null,
+          // The field name is `he_past` in every card ever saved, so it stays; what it HOLDS is
+          // the citation form, which is the past in Arabic and the infinitive in Hebrew.
+          he_past: cite ? {ar: cite.ar, caphi: cite.caphi} : null,
           deck: activeDeck()};
 }
 function deckToggleVerb(i) {
   const v = VB[+i]; if (!v) return;
-  deckToggleKey((v.past && v.past.ar) || v.lemma, () => cardFromVerb(v), () => verbDetail(i));
+  deckToggleKey((verbCite(v) || {}).ar || v.lemma, () => cardFromVerb(v), () => verbDetail(i));
 }
 
 // A translator result. lexLook() gives back a card-shaped record, so this reuses exactly the
@@ -5525,7 +5535,7 @@ function lexFromVerb(v, surface, cell) {
   return {surface: surface || v.lemma, lemma: v.lemma, vocalized: surface || v.lemma,
           form: v.lemma, root: v.root || '', gloss: v.gloss || '',
           analysis: 'VERB:' + (v.form || 'I'),
-          caphi: (cell && cell.ph) || (v.past && v.past.caphi) || '',
+          caphi: (cell && cell.ph) || (verbCite(v) || {}).caphi || '',
           provenance: 'verbs.js', _vb: v};
 }
 
@@ -5759,16 +5769,42 @@ function vbByRoot() {
 // VERB:X — never a bare I, which is ambiguous with the aspect). Then give up: a wrong paradigm
 // is worse than no paradigm, and this now decides which card a word banks under.
 const _VERB_MEASURE = /VERB:(II|III|IV|V|VI|VII|VIII|IX|X|Q)(?![A-Z])/;
+// A verb by its LEMMA, for a lexicon whose roots cannot be trusted. Maknuune states a full
+// Arabic root for every entry; Wiktionary states Hebrew's in a template whose פ/ע/ל arguments
+// are often only partly filled, so the corpus carries roots like "ע.ה" and "ה" and not one
+// Hebrew verb token in the whole shelf could reach its paradigm through vbByRoot(). The pointed
+// lemma can: it IS the 3ms past, which is the key verbs.js files a verb under. Only a UNIQUE
+// match is accepted -- a wrong paradigm is worse than none, and this decides which card a word
+// banks under.
+let _vbByLemmaI = null;
+function vbByLemma() {
+  if (_vbByLemmaI) return _vbByLemmaI;
+  const m = new Map();
+  VB.forEach(v => [v.lemma, v.past && v.past.ar].filter(Boolean).forEach(x => {
+    const n = arNorm(x); if (!n) return;
+    if (!m.has(n)) m.set(n, []);
+    if (!m.get(n).includes(v)) m.get(n).push(v);
+  }));
+  return (_vbByLemmaI = m);
+}
 function findVerb(w) {
   if (w && w._vb) return w._vb.hasConj ? w._vb : null; // came straight from verbs.js via LEX
-  if (!w || !w.root || !String(w.analysis || '').startsWith('VERB')) return null;
-  const cands = vbByRoot().get(w.root); if (!cands) return null;
+  if (!w || !String(w.analysis || '').startsWith('VERB')) return null;
   const n = arNorm(w.lemma || '');
-  if (n) { const byLemma = cands.find(v => arNorm(v.lemma) === n
-             || (v.past && arNorm(v.past.ar) === n));
-    if (byLemma) return byLemma; }
-  const m = String(w.analysis).match(_VERB_MEASURE);
-  return (m && cands.find(v => v.form === m[1])) || null;
+  const cands = w.root ? vbByRoot().get(w.root) : null;
+  if (cands) {
+    if (n) { const byLemma = cands.find(v => arNorm(v.lemma) === n
+               || (v.past && arNorm(v.past.ar) === n)
+               || (verbCite(v) && arNorm(verbCite(v).ar) === n));
+      if (byLemma) return byLemma; }
+    const m = String(w.analysis).match(_VERB_MEASURE);
+    const byForm = m && cands.find(v => v.form === m[1]);
+    if (byForm) return byForm;
+  }
+  // Only now, and only when it is unambiguous. This runs where the root path found nothing at
+  // all, so it can add matches but never overrule one.
+  const g = n && vbByLemma().get(n);
+  return (g && g.length === 1) ? g[0] : null;
 }
 // The table on its own, with no surrounding chrome — the word sheet wraps it in a popup, the
 // review card puts it behind a disclosure. Same paradigm either way, rendered once.
@@ -5937,8 +5973,8 @@ function showWord(w0, ctx, opts) {
      </div>
      ${(() => { const p = msa ? null : verbPast(w);
        return p && arNorm(p.ar) !== arNorm(w.surface || '')
-         ? `<div class="wc-banks">Banks as <b dir="rtl">${esc(p.ar)}</b> — the “he” past, the form
-            the whole paradigm is built from. One card per verb, whatever tense you meet it in.</div>`
+         ? `<div class="wc-banks">Banks as <b dir="rtl">${esc(p.ar)}</b> — ${esc(LANG.verb.citeNote)}.
+            One card per verb, whatever form you meet it in.</div>`
          : ''; })()}`;
   $('cw').classList.add('on');
   $('wc').querySelector('[data-a="close"]').onclick = hideCard;
@@ -6130,7 +6166,12 @@ function addPhraseManual() {
 // phrase uses — بدي أروح is the thing you are learning to say, and reducing it to راح would
 // destroy it. Phrase and reaction cards never come through here (they build their own, keyed
 // ¶/®), so that separation is structural rather than a rule to remember.
-const verbPast = w => { const v = findVerb(w); return (v && v.past && v.past.ar) ? v.past : null; };
+// The slot a verb is FILED under, which is the pack's to name. Arabic has no infinitive and
+// files under the 3ms past; Hebrew has one and files under it -- לִכְתּוֹב, what a dictionary
+// lists and what a learner is taught to say. Everything downstream reads this rather than
+// `v.past`, so the two languages differ in one line instead of in twelve.
+const verbCite = v => (v && v[LANG.verb.cite] && v[LANG.verb.cite].ar) ? v[LANG.verb.cite] : null;
+const verbPast = w => verbCite(findVerb(w));
 
 function cardFromWord(w) {
   const s = cur && cur.sentences ? cur.sentences.find(x => x.words.includes(w)) : null;
@@ -6162,7 +6203,7 @@ function cardHePast(c) {
     const cands = vbByRoot().get(c.root); if (!cands) return null;
     const form = (String(c.analysis).match(/VERB:([IVXQ]+)/) || [])[1];
     const v = cands.find(x => x.form === form) || cands[0];
-    hp = v && v.past ? {ar: v.past.ar, caphi: v.past.caphi} : null;
+    hp = verbCite(v);
   }
   if (!hp || !hp.ar) return null;
   if (arNorm(hp.ar) === arNorm(c.vocalized || c.lemma || '')) return null;   // headword already IS it
@@ -6178,7 +6219,8 @@ function cardVerb(c) {
   const cands = vbByRoot().get(c.root); if (!cands) return null;
   const heads = [c.he_past && c.he_past.ar, c.lemma, c.vocalized].filter(Boolean).map(arNorm);
   for (const h of heads) {
-    const hit = cands.find(v => arNorm(v.lemma) === h || (v.past && arNorm(v.past.ar) === h));
+    const hit = cands.find(v => arNorm(v.lemma) === h || (v.past && arNorm(v.past.ar) === h)
+                                || (verbCite(v) && arNorm(verbCite(v).ar) === h));
     if (hit) return hit;
   }
   const m = String(c.analysis).match(_VERB_MEASURE);
