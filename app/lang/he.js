@@ -36,41 +36,77 @@ function mosaic() {
     <rect width="100%" height="16" fill="url(#${id})"/></svg>`;
 }
 
-// JERUSALEM FROM THE EAST — the view from the Mount of Olives, which is where you stand to see
-// the city whole. The wall along the ridge, the citadel at one end, the Hurva's dome over the
-// Jewish Quarter, olives on the slope in front. Strokes only, one accent fill on the dome.
+// SOLOMON'S TEMPLE — בֵּית הַמִּקְדָּשׁ, drawn from the description in 1 Kings 6-7.
 //
-// The same city the Arabic pack draws, from the other side and picking out other things: that
-// is the honest way for two packs to share one skyline rather than one of them borrowing it.
+// A RECONSTRUCTION, and the drawing should not pretend otherwise. Nobody has seen this building
+// and no stone of it has been dug up; what exists is a written specification -- the porch, the
+// hekhal, the devir behind it, the side chambers in three storeys, the two free-standing pillars
+// Yachin and Boaz with their bowl capitals and pomegranates, the bronze Sea on its twelve oxen,
+// and the altar in the court. Every one of those is in the text and every one of them is here.
+// The proportions are the usual scholarly reading of the cubits; the details the text does not
+// give are simply not drawn, which is why this is a silhouette and not a picture.
+//
+// It is the right subject for a Hebrew home page in a way a photograph of anywhere would not be:
+// the building the language's oldest layer was written about, and which every later Jewish place
+// in this app's section banners -- the Western Wall, Yavne, the synagogue at Baram -- is either
+// the retaining wall of, the answer to, or a substitute for.
 const HE_SKYLINE = (() => {
-  const {_hills, _house, _cypress, _olive, _dome, _courses} = SCN;
-  let crn = '';                              // the wall's crenellations, all the way along
-  for (let x = 8; x < 1200; x += 38) crn += `<path d="M${x} 132v-15h20v15"/>`;
+  const {_hills, _cypress, _olive} = SCN;
+  // Yachin and Boaz: a shaft, a bowl capital, and the two rows of pomegranates the text hangs
+  // on the network above it. They stood FREE, in front of the porch, holding up nothing.
+  const pillar = (x) => {
+    let pom = '';                            // "two rows of pomegranates upon the network"
+    for (let k = 0; k < 7; k++) pom += `<circle cx="${x - 24 + k * 8}" cy="76" r="3.2"/>`;
+    for (let k = 0; k < 6; k++) pom += `<circle cx="${x - 20 + k * 8}" cy="85" r="3.2"/>`;
+    return `<path d="M${x - 15} 172V92h30v80" fill="var(--paper)"/>
+      <path d="M${x - 15} 130h30M${x - 15} 152h30" opacity=".25"/>
+      <path d="M${x - 29} 92h58v-6h-58z" fill="var(--paper)"/>
+      <path d="M${x - 27} 86a27 27 0 0 1 54 0z" fill="var(--paper)"/>${pom}
+      <path d="M${x - 27} 60h54" opacity=".5"/>
+      <path d="M${x - 21} 60q10-14 21-14t21 14z" fill="var(--paper)"/>
+      <path d="M${x - 22} 172h44v-10h-44z" fill="var(--paper)"/>`;
+  };
+  // The flight up to the platform, in front of the door rather than along the whole face --
+  // three lines across a podium read as a podium with lines on it, not as steps.
+  let step = '';
+  for (let k = 0; k < 3; k++)
+    step += `<path d="M${540 - k * 18} ${172 + k * 8}v8h${120 + k * 36}v-8" fill="var(--paper)"/>`;
+  let chamber = '';                          // the side chambers, three storeys of them
+  for (const x0 of [286, 838]) {
+    chamber += `<path d="M${x0} 172v-62h76v62" fill="var(--paper)"/>`;
+    for (let k = 1; k < 3; k++) chamber += `<path d="M${x0} ${172 - k * 21}h76" opacity=".45"/>`;
+    for (let k = 0; k < 3; k++)
+      chamber += `<path d="M${x0 + 32} ${164 - k * 21}v-9h12v9z" opacity=".6"/>`;
+  }
+  let ox = '';                               // the Sea stood on twelve oxen, three to a side
+  for (let k = 0; k < 4; k++)
+    ox += `<path d="M${146 + k * 18} 172v-14M${152 + k * 18} 172v-14" opacity=".55"/>`;
   return `<svg class="hm-sky" viewBox="0 0 1200 210" preserveAspectRatio="xMidYMax meet"
      fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
     <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62">
       ${_hills()}
-      ${_house(300, 74, 40, 3, 132)}${_house(392, 66, 34, 3, 132)}
-      ${_house(740, 70, 38, 3, 132)}${_house(828, 62, 32, 2, 132)}
-      ${_house(1046, 72, 36, 3, 132)}
-      <path d="M552 132V76h148v56" fill="var(--paper)"/><path d="M540 76h172"/>
-      ${_dome(626, 76, 58, ' fill="var(--ochre-wash)" stroke="var(--ochre)"')}
-      <path d="M626 18V4" stroke="var(--ochre)"/>
-      <path d="M570 132v-32a20 20 0 0 1 40 0v32M642 132v-32a20 20 0 0 1 40 0v32" opacity=".5"/>
-      <path d="M582 60h88" opacity=".4"/>
-      <path d="M170 132V56h52v76" fill="var(--paper)"/><path d="M162 56h68"/>
-      <path d="M186 56V26h20v30" fill="var(--paper)"/><path d="M180 26h32l-16-16z"/>
-      <path d="M196 10V0"/>
-      <path d="M176 84h40M176 104h40" opacity=".45"/>
-      ${_courses(0, 196, 1200, 64, 3, 132)}
-      <path d="M0 132h1200" stroke-width="1.9"/>${crn}
-      <path d="M470 196v-46a30 30 0 0 1 60 0v46" fill="var(--paper)"/>
-      <path d="M486 196v-32a14 14 0 0 1 28 0v32" opacity=".5"/>
+      ${chamber}
+      <path d="M362 172V78h476v94" fill="var(--paper)"/>
+      <path d="M350 78h500l-14-14H364z" fill="var(--paper)"/>
+      <path d="M424 172V44h352v128" fill="var(--paper)"/>
+      <path d="M410 44h380l-16-15H426z" fill="var(--paper)"/>
+      <path d="M424 62h352" opacity=".4"/>
+      <path d="M556 172V96h88v76" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M600 172V96" stroke="var(--ochre)" opacity=".5"/>
+      ${pillar(486)}${pillar(714)}
+      <path d="M280 172h640" stroke-width="1.9"/>${step}
+      <path d="M120 172v-26h84v26" fill="var(--paper)"/>
+      <path d="M112 146a46 46 0 0 0 100 0z" fill="var(--paper)"/>
+      <path d="M112 146h100"/><path d="M118 138h88" opacity=".4"/>${ox}
+      <path d="M986 172v-40h96v40" fill="var(--paper)"/>
+      <path d="M1002 132v-20h64v20" fill="var(--paper)"/>
+      <path d="M978 172h112" opacity=".5"/>
+      <path d="M1082 172l40-32v32z" fill="var(--paper)" opacity=".9"/>
+      <path d="M1016 112c4-12 12-18 18-22-2 12-8 18-18 22z" opacity=".7"/>
     </g>
     <g fill="var(--verdigris)" opacity=".5" stroke="none">
-      ${_cypress(268, 52, 132)}${_cypress(714, 48, 132)}${_cypress(1006, 44, 132)}
-      ${_olive(96, .9)}${_olive(880, .8)}${_olive(1130, .95)}
-      ${_cypress(360, 46)}
+      ${_cypress(60, 60)}${_cypress(104, 46)}${_cypress(1148, 56)}
+      ${_olive(238, .78)}${_olive(944, .72)}
     </g>
     <path d="M0 196h1200" stroke="var(--ink-soft)" stroke-width="1.8" opacity=".7"/>
   </svg>`;
