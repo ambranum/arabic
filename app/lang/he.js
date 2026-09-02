@@ -12,6 +12,70 @@
    deterministic (spike/he/phon.py), so pronunciation is nearly free once you have the pointing —
    and there is no CAPHI-style sub-dialect system to model, which is why `phon.variants` is empty
    where Arabic's carries Wadi Ara. */
+// ---------- home artwork --------------------------------------------------------------------
+// Inline SVG in the theme's own variables, like the Arabic pack's: it recolors itself in dark
+// mode, weighs nothing, and carries no licence.
+//
+// The band is TESSERAE. Arabic's is tatreez, Palestinian cross-stitch; the Jewish answer to
+// "what does this tradition put along an edge" is the mosaic floor -- Beit Alpha, Hammat
+// Tiberias, Sepphoris, all of them bordered with rows of small cut stones. So: a course of
+// tesserae between two rules, which is what those borders are, rather than a Star of David,
+// which is a flag rather than a craft.
+let _msN = 0;
+function mosaic() {
+  const id = 'ms' + (_msN++);                       // pattern ids are document-global
+  return `<svg class="tz" height="16" aria-hidden="true"><defs>
+    <pattern id="${id}" width="36" height="16" patternUnits="userSpaceOnUse">
+      <rect x="1"  y="5.5" width="6" height="6" fill="var(--rubric)"/>
+      <rect x="10" y="5.5" width="6" height="6" fill="var(--verdigris)"/>
+      <rect x="19" y="5.5" width="6" height="6" fill="var(--rubric)"/>
+      <rect x="28" y="5.5" width="6" height="6" fill="var(--ochre)"/>
+      <rect x="0" y="0" width="36" height="1.4" fill="var(--ochre)"/>
+      <rect x="0" y="14.6" width="36" height="1.4" fill="var(--ochre)"/>
+    </pattern></defs>
+    <rect width="100%" height="16" fill="url(#${id})"/></svg>`;
+}
+
+// JERUSALEM FROM THE EAST — the view from the Mount of Olives, which is where you stand to see
+// the city whole. The wall along the ridge, the citadel at one end, the Hurva's dome over the
+// Jewish Quarter, olives on the slope in front. Strokes only, one accent fill on the dome.
+//
+// The same city the Arabic pack draws, from the other side and picking out other things: that
+// is the honest way for two packs to share one skyline rather than one of them borrowing it.
+const HE_SKYLINE = (() => {
+  const {_hills, _house, _cypress, _olive, _dome, _courses} = SCN;
+  let crn = '';                              // the wall's crenellations, all the way along
+  for (let x = 8; x < 1200; x += 38) crn += `<path d="M${x} 132v-15h20v15"/>`;
+  return `<svg class="hm-sky" viewBox="0 0 1200 210" preserveAspectRatio="xMidYMax meet"
+     fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62">
+      ${_hills()}
+      ${_house(300, 74, 40, 3, 132)}${_house(392, 66, 34, 3, 132)}
+      ${_house(740, 70, 38, 3, 132)}${_house(828, 62, 32, 2, 132)}
+      ${_house(1046, 72, 36, 3, 132)}
+      <path d="M552 132V76h148v56" fill="var(--paper)"/><path d="M540 76h172"/>
+      ${_dome(626, 76, 58, ' fill="var(--ochre-wash)" stroke="var(--ochre)"')}
+      <path d="M626 18V4" stroke="var(--ochre)"/>
+      <path d="M570 132v-32a20 20 0 0 1 40 0v32M642 132v-32a20 20 0 0 1 40 0v32" opacity=".5"/>
+      <path d="M582 60h88" opacity=".4"/>
+      <path d="M170 132V56h52v76" fill="var(--paper)"/><path d="M162 56h68"/>
+      <path d="M186 56V26h20v30" fill="var(--paper)"/><path d="M180 26h32l-16-16z"/>
+      <path d="M196 10V0"/>
+      <path d="M176 84h40M176 104h40" opacity=".45"/>
+      ${_courses(0, 196, 1200, 64, 3, 132)}
+      <path d="M0 132h1200" stroke-width="1.9"/>${crn}
+      <path d="M470 196v-46a30 30 0 0 1 60 0v46" fill="var(--paper)"/>
+      <path d="M486 196v-32a14 14 0 0 1 28 0v32" opacity=".5"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">
+      ${_cypress(268, 52, 132)}${_cypress(714, 48, 132)}${_cypress(1006, 44, 132)}
+      ${_olive(96, .9)}${_olive(880, .8)}${_olive(1130, .95)}
+      ${_cypress(360, 46)}
+    </g>
+    <path d="M0 196h1200" stroke="var(--ink-soft)" stroke-width="1.8" opacity=".7"/>
+  </svg>`;
+})();
+
 // ---------- section banners ----------------------------------------------------------------
 // The Arabic pack draws a real Palestinian place behind every section title. This is the same
 // idea answered from the other side: thirteen places that matter to Judaism, drawn to the same
@@ -561,11 +625,8 @@ defineLang({
   },
   tts: {lang: 'he-IL', voiceRe: /^he/i},
   searchHint: 'בית · הלך · house · tired…',
-  // A plain rule, not a motif. Arabic's home page carries tatreez and the Old City; borrowing
-  // either for a Hebrew learner would be a claim about whose page this is. A Hebrew visual
-  // identity is worth designing rather than defaulting into, so until then: a line.
-  ornament: () => '<div class="tz-rule" style="height:1px;background:var(--rule)"></div>',
-  // skyline: deliberately absent — see ornament.
+  ornament: () => mosaic(),
+  skyline: () => HE_SKYLINE,
   // Hebrew day and month names as Israelis write them: יום ראשון … and the Gregorian months,
   // which is what a calendar in Israel actually says. The Hebrew calendar's own months are a
   // different thing and are not what a date line means here.

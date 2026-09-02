@@ -8,6 +8,63 @@
 (() => {
   const {_hills, _ridge, _ground, _house, _arch, _cypress, _olive, _fig, _palm, _water, _boat, _minaret, _dome, _col} = SCN;
 
+  // ---------- home artwork ----------
+  // The app ships as one folder with no external assets, so the homepage's "pictures" are inline
+  // SVG drawn in the theme's own variables: they recolor themselves in dark mode, weigh nothing,
+  // and carry no licence. Two pieces: a tatreez band (Palestinian cross-stitch — the diamond
+  // motif), and a Jerusalem skyline with the Dome of the Rock, drawn as a line engraving.
+  let _tzN = 0;
+  function tatreez() {
+    const id = 'tz' + (_tzN++);                       // pattern ids are document-global
+    return `<svg class="tz" height="16" aria-hidden="true"><defs>
+      <pattern id="${id}" width="32" height="16" patternUnits="userSpaceOnUse">
+        <rect x="12" y="4" width="8" height="8" transform="rotate(45 16 8)" fill="var(--rubric)"/>
+        <rect x="14.6" y="6.6" width="2.8" height="2.8" transform="rotate(45 16 8)" fill="var(--paper)"/>
+        <rect x="0" y="6.7" width="2.6" height="2.6" transform="rotate(45 1.3 8)" fill="var(--verdigris)"/>
+        <rect x="29.4" y="6.7" width="2.6" height="2.6" transform="rotate(45 30.7 8)" fill="var(--verdigris)"/>
+        <rect x="0" y="0" width="32" height="1.4" fill="var(--ochre)"/>
+        <rect x="0" y="14.6" width="32" height="1.4" fill="var(--ochre)"/>
+      </pattern></defs>
+      <rect width="100%" height="16" fill="url(#${id})"/></svg>`;
+  }
+  // Jerusalem, looking at the Old City: hills, the wall, cypresses and olives, a minaret, and the
+  // Dome of the Rock. Strokes only, one accent fill on the dome — an engraving, not a postcard.
+  const HOME_SKYLINE = `<svg class="hm-sky" viewBox="0 0 1200 210" preserveAspectRatio="xMidYMax meet"
+     fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62">
+      <path d="M0 190 Q180 148 380 166 T760 158 T1200 172" opacity=".45"/>
+      <path d="M0 208 Q240 180 520 194 T1200 196"/>
+      <circle cx="1010" cy="52" r="24" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M120 196v-32h34v32M124 164v-7h6v7M137 164v-7h6v7M150 164v-7h6v7"/>
+      <path d="M690 196v-26h30v26M694 170v-6h5v6M705 170v-6h5v6M716 170v-6h5v6"/>
+      <path d="M580 196V86m22 110V86M580 92h22M580 86l11-12 11 12M585 120h12M584 146h14"/>
+      <path d="M591 62l0-10m0 0a4 4 0 1 1 3-7" stroke="var(--ochre)"/>
+      <path d="M575 120h32l-4 8h-24z" opacity=".8"/>
+      <path d="M244 196v-60l26-14v74M250 148v-10h7v10M262 148v-10h7v10"/>
+      <path d="M840 196v-44h56v44M848 176v-24a8 8 0 0 1 16 0v24M872 176v-24a8 8 0 0 1 16 0v24"/>
+      <path d="M950 196v-30h40v30M958 186v-20a6 6 0 0 1 12 0v20"/>
+    </g>
+    <g>
+      <path d="M292 196v-58h136v58" stroke="var(--ink-soft)" stroke-width="1.8"/>
+      <path d="M300 138l60-26 68 26" stroke="var(--ink-soft)" stroke-width="1.8"/>
+      <path d="M316 196v-26a9 9 0 0 1 18 0v26M356 196v-26a9 9 0 0 1 18 0v26M396 196v-26a9 9 0 0 1 18 0v26"
+         stroke="var(--ink-soft)" stroke-width="1.6" opacity=".8"/>
+      <path d="M312 112 C312 74 344 52 360 46 C376 52 408 74 408 112"
+         fill="var(--ochre-wash)" stroke="var(--ochre)" stroke-width="2.2"/>
+      <path d="M360 46V30m0 0a5 5 0 1 1 4-8" stroke="var(--ochre)" stroke-width="2"/>
+      <path d="M322 112c8-4 68-4 76 0" stroke="var(--ochre)" stroke-width="1.6" opacity=".7"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">
+      <path d="M96 196c0-30 10-52 14-58 4 6 14 28 14 58z"/>
+      <path d="M198 196c0-24 8-42 11-47 3 5 11 23 11 47z"/>
+      <path d="M478 196c0-34 11-58 15-64 4 6 15 30 15 64z"/>
+      <path d="M772 196c0-26 8-45 12-50 4 5 12 24 12 50z"/>
+      <path d="M1084 196c0-22 7-38 10-43 3 5 10 21 10 43z"/>
+      <path d="M1150 178c-10-2-16-10-16-18 6-4 16-4 22 2 6-6 16-6 22-2 0 8-6 16-16 18v18h-12z" opacity=".9"/>
+    </g>
+    <path d="M0 196h1200" stroke="var(--ink-soft)" stroke-width="1.8" opacity=".7"/>
+  </svg>`;
+
   // ---------- section heroes ------------------------------------------------------------------
   // The home page has a visual identity — a broadsheet masthead, a tatreez band, the Old City on
   // the horizon — and every other page opened as a bare list. Each section now gets its own
