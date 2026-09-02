@@ -70,6 +70,7 @@ OUT = paths.data('lessons.js')
 #   match      pair Hebrew with English
 #   order      put the words in order
 #   quiz       multiple choice, with a reason shown after
+#   table      a conjugation grid with some cells printed and some to fill  (Bet)
 #
 # `a` is always a LIST of accepted answers. Hebrew spelling varies -- ktiv male against haser,
 # איתך against אתך -- and marking a learner wrong for writing it the other correct way teaches
@@ -722,6 +723,21 @@ def build(check_only=False):
                 if hit['prov'].startswith('AMBIG'):
                     ambiguous.append((u['id'], r['he'], hit['lex']))
 
+    # TEACHING ORDER, which is not the order they were written in. The ids are stable and the
+    # numbers are assigned from this list, so a unit can be moved in the sequence without
+    # renaming it and losing whatever progress is filed under it. Past before future; the
+    # binyanim only after pa'al is solid in all three tenses; slang last because it is the
+    # reward.
+    order = ['he-01', 'he-16', 'he-03', 'he-02', 'he-14', 'he-04', 'he-09', 'he-10',
+             'he-05', 'he-15', 'he-11', 'he-12', 'he-13', 'he-07', 'he-06', 'he-08']
+    missing = [u['id'] for u in UNITS if u['id'] not in order]
+    if missing:
+        print('   !! not placed in the teaching order, appended: %s' % ', '.join(missing))
+    rank = {uid: i for i, uid in enumerate(order)}
+    UNITS.sort(key=lambda u: rank.get(u['id'], 999))
+    for i, u in enumerate(UNITS):
+        u['n'] = i + 1
+
     # The plan reads `phase` off a unit to place it on the journey (lvlTagFor's 'unit' arm), and
     # a unit with none lands in phase 0 -- which is why every one of these was reading "Beginner"
     # on the shelf whatever it taught. The level the unit was written at decides it.
@@ -766,5 +782,559 @@ def main():
     return build(check_only=a.check)
 
 
+UNITS += [
+  {
+    'id': 'he-09', 'n': 9, 'level': 'beginner',
+    'title': {'he': 'זמן עבר', 'en': 'The past tense'},
+    'objective': 'Say what happened. The past adds ENDINGS, one per person, and it is the tense '
+                 'you need first to tell anyone anything about your life.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The past is an ending',
+       'body': 'Take the three root letters and hang the person on the end: '
+               'כָּתַב<b>תִּי</b> (I), כָּתַב<b>תָּ</b> (you m.), כָּתַב<b>תְּ</b> (you f.), כָּתַב (he), '
+               'כָּתְב<b>ָה</b> (she), כָּתַב<b>נוּ</b> (we), כְּתַב<b>תֶּם</b> (you pl.), כָּתְב<b>וּ</b> (they). '
+               'The he-form is the bare stem — which is why dictionaries list it, and why this app '
+               'files verbs under it.',
+       'examples': [
+         {'he': 'אתמול כתבתי לו.', 'en': 'Yesterday I wrote to him.'},
+         {'he': 'היא למדה בירושלים.', 'en': 'She studied in Jerusalem.'},
+         {'he': 'לא אכלנו כלום.', 'en': 'We didn’t eat anything.'},
+         {'he': 'הם גרו שם שנתיים.', 'en': 'They lived there for two years.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אתמול', 'en': 'yesterday', 'pos': 'other'},
+         {'he': 'שבוע', 'en': 'week', 'pos': 'noun'},
+         {'he': 'חודש', 'en': 'month', 'pos': 'noun'},
+         {'he': 'שנה', 'en': 'year', 'pos': 'noun'},
+         {'he': 'לפגוש', 'en': 'to meet', 'pos': 'verb'},
+         {'he': 'לחזור', 'en': 'to return', 'pos': 'verb'},
+         {'he': 'לשכוח', 'en': 'to forget', 'pos': 'verb'},
+         {'he': 'לזכור', 'en': 'to remember', 'pos': 'verb'},
+       ]},
+      {'kind': 'table', 'title': 'מלאו את הטבלה', 'en': 'Fill in the table',
+       'instructions': 'Bet’s own drill. Some cells are printed, the rest you type.',
+       'cols': ['שם פועל', 'הוא, עבר', 'אני, עבר', 'הם, עבר'],
+       'rows': [
+         [{'g': 'לכתוב'}, {'g': 'כתב'}, {'g': 'כתבתי'}, {'g': 'כתבו'}],
+         [{'g': 'ללמוד'}, {'a': ['למד']}, {'a': ['למדתי']}, {'a': ['למדו']}],
+         [{'g': 'לגמור'}, {'a': ['גמר']}, {'a': ['גמרתי']}, {'a': ['גמרו']}],
+         [{'g': 'לזכור'}, {'a': ['זכר']}, {'a': ['זכרתי']}, {'a': ['זכרו']}],
+         [{'g': 'לשכוח'}, {'a': ['שכח']}, {'a': ['שכחתי']}, {'a': ['שכחו']}],
+       ]},
+      {'kind': 'bracket', 'title': 'כתבו את הפועל בעבר', 'en': 'Write the verb in the past',
+       'instructions': 'The infinitive is in brackets; write the past form that fits the subject.',
+       'example': {'q': 'אתמול אני ___ מכתב. [לכתוב]', 'a': 'כתבתי'},
+       'items': [
+         {'q': 'בשנה שעברה הם ___ בתל אביב. [לגור]', 'a': ['גרו'], 'en': 'Last year they lived in Tel Aviv.'},
+         {'q': 'היא ___ את החברים שלה בשבת. [לפגוש]', 'a': ['פגשה'], 'en': 'She met her friends on Saturday.'},
+         {'q': 'סליחה, ___ את השם שלך. [לשכוח]', 'a': ['שכחתי'], 'en': 'Sorry, I forgot your name.'},
+         {'q': 'מתי אתם ___ מהחופשה? [לחזור]', 'a': ['חזרתם'], 'en': 'When did you get back from the holiday?'},
+         {'q': 'אנחנו ___ עברית שנה שלמה. [ללמוד]', 'a': ['למדנו'], 'en': 'We studied Hebrew for a whole year.'},
+       ]},
+      {'kind': 'transform', 'title': 'מהווה לעבר', 'en': 'Present to past',
+       'instructions': 'Rewrite in the past. Type the whole sentence.',
+       'example': {'from': 'אני כותב מכתב.', 'to': 'כתבתי מכתב.'},
+       'items': [
+         {'from': 'הוא לומד בבית ספר.', 'to': ['הוא למד בבית ספר.', 'הוא למד בבית ספר'],
+          'en': 'He studies at a school.'},
+         {'from': 'הן חוזרות בערב.', 'to': ['הן חזרו בערב.', 'הן חזרו בערב'], 'en': 'They come back in the evening.'},
+         {'from': 'אנחנו זוכרים הכל.', 'to': ['אנחנו זכרנו הכל.', 'אנחנו זכרנו הכל'], 'en': 'We remember everything.'},
+       ]},
+      {'kind': 'slang', 'he': 'מזמן', 'literal': '“from time”',
+       'meaning': 'Ages ago / for ages.',
+       'when': 'With a past verb it means "ages ago"; with לא it means "not for ages", which is '
+               'where the greeting לא ראיתי אותך מזמן comes from.',
+       'examples': [{'he': 'זה היה מזמן.', 'en': 'That was ages ago.'},
+                    {'he': 'לא דיברנו מזמן.', 'en': 'We haven’t spoken in ages.'}]},
+    ],
+  },
+  {
+    'id': 'he-10', 'n': 10, 'level': 'intermediate',
+    'title': {'he': 'פעל ל״ה', 'en': 'Verbs that end in ה'},
+    'objective': 'לקנות, לרצות, לראות, לעלות — a whole family whose last root letter drops and '
+                 'comes back. Bet gives them a page of their own and so does this unit.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The ה that is not really there',
+       'body': 'These verbs look irregular and are not: their third root letter is a ה that '
+               'behaves like a vowel. Present <b>קונֶה / קונָה / קונִים / קונוֹת</b>, past '
+               '<b>קניתי, קנית, קנה, קנתה, קנינו, קנו</b>. Learn one — קנה — and you have '
+               'לרצות, לראות, לעלות, לשתות, לבנות and a hundred more.',
+       'examples': [
+         {'he': 'קניתי לחם בדרך.', 'en': 'I bought bread on the way.'},
+         {'he': 'ראינו סרט טוב אתמול.', 'en': 'We saw a good film yesterday.'},
+         {'he': 'היא רצתה לבוא.', 'en': 'She wanted to come.'},
+         {'he': 'הם עלו במדרגות.', 'en': 'They went up the stairs.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'לקנות', 'en': 'to buy', 'pos': 'verb'},
+         {'he': 'לרצות', 'en': 'to want', 'pos': 'verb'},
+         {'he': 'לראות', 'en': 'to see', 'pos': 'verb'},
+         {'he': 'לעלות', 'en': 'to go up, to cost', 'pos': 'verb'},
+         {'he': 'לשתות', 'en': 'to drink', 'pos': 'verb'},
+         {'he': 'לבנות', 'en': 'to build', 'pos': 'verb'},
+         {'he': 'לענות', 'en': 'to answer', 'pos': 'verb'},
+         {'he': 'מדרגות', 'en': 'stairs', 'pos': 'noun'},
+       ]},
+      {'kind': 'table', 'title': 'מלאו את הטבלה', 'en': 'Fill in the table',
+       'instructions': 'The same grid Bet prints for this family.',
+       'cols': ['שם פועל', 'הוא, הווה', 'אני, עבר', 'הוא, עבר'],
+       'rows': [
+         [{'g': 'לקנות'}, {'g': 'קונה'}, {'g': 'קניתי'}, {'g': 'קנה'}],
+         [{'g': 'לרצות'}, {'a': ['רוצה']}, {'a': ['רציתי']}, {'a': ['רצה']}],
+         [{'g': 'לראות'}, {'a': ['רואה']}, {'a': ['ראיתי']}, {'a': ['ראה']}],
+         [{'g': 'לשתות'}, {'a': ['שותה']}, {'a': ['שתיתי']}, {'a': ['שתה']}],
+         [{'g': 'לעלות'}, {'a': ['עולה']}, {'a': ['עליתי']}, {'a': ['עלה']}],
+         [{'g': 'לבנות'}, {'a': ['בונה']}, {'a': ['בניתי']}, {'a': ['בנה']}],
+       ]},
+      {'kind': 'bracket', 'title': 'כתבו את הפועל בעבר', 'en': 'Write the verb in the past',
+       'instructions': 'All ל״ה verbs. Watch the endings — they are not the ones you learned in '
+                       'unit 9.',
+       'example': {'q': 'לא ידעתי שצריך ___ חלב. [לקנות] — I didn’t know we needed to buy milk.',
+                   'a': 'לקנות'},
+       'items': [
+         {'q': 'למה הוא ___ במדרגות? [לעלות]', 'a': ['עלה'], 'en': 'Why did he go up the stairs?'},
+         {'q': 'לא תודה, כבר ___ לפני שבאתי. [לשתות]', 'a': ['שתיתי'], 'en': 'No thanks, I already drank before I came.'},
+         {'q': 'הם חלמו על בית, ולפני שנה הם סוף סוף ___ אותו. [לבנות]', 'a': ['בנו'],
+          'en': 'They dreamed of a house, and last year they finally built it.'},
+         {'q': 'שאלתי אותה והיא לא ___. [לענות]', 'a': ['ענתה'], 'en': 'I asked her and she didn’t answer.'},
+         {'q': 'אנחנו ___ את הסרט הזה כבר פעמיים. [לראות]', 'a': ['ראינו'],
+          'en': 'We’ve seen this film twice already.'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'Why is it קניתי and not קנבתי?',
+          'options': ['the third root letter is a ה and drops before the ending',
+                      'because קנה is irregular', 'because the root has only two letters'],
+          'a': 'the third root letter is a ה and drops before the ending',
+          'why': 'ק־נ־ה. The ה never survives in front of a consonant ending, and a י shows up '
+                 'in its place: קָנִיתִי.'},
+         {'q': 'עלה can mean “he went up” and also —',
+          'options': ['“it cost”', '“he answered”', '“he built”'], 'a': '“it cost”',
+          'why': 'כמה זה עולה? is “how much does it cost?” — the same verb.'},
+       ]},
+      {'kind': 'slang', 'he': 'כמה זה עולה', 'literal': '“how much does it go up”',
+       'meaning': 'How much is it?',
+       'when': 'The only way to ask a price. לעלות does double duty as “rise” and “cost”, which '
+               'is why this unit’s verb family is the one you need in a shop.',
+       'examples': [{'he': 'סליחה, כמה זה עולה?', 'en': 'Excuse me, how much is this?'},
+                    {'he': 'זה עלה לי הרבה כסף.', 'en': 'That cost me a lot of money.'}]},
+    ],
+  },
+]
+
+UNITS += [
+  {
+    'id': 'he-11', 'n': 11, 'level': 'intermediate',
+    'title': {'he': 'בניין פיעל', 'en': 'The piel binyan'},
+    'objective': 'The second big verb pattern. Once you can hear פיעל you can guess the meaning '
+                 'of verbs you have never met, which is the whole reason binyanim are worth learning.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Doubled middle, and often intensive',
+       'body': 'פיעל doubles the middle root letter and drops the vowel pattern in: '
+               '<b>דִּבֵּר</b>, <b>סִפֵּר</b>, <b>שִׁלֵּם</b>. The infinitive always starts '
+               'לְ־ + the shape: לדבר, לספר, לשלם. Many are the "doing" version of a noun — '
+               'טיול a trip, <b>לטייל</b> to travel around; ספר a book, <b>לספר</b> to tell.',
+       'examples': [
+         {'he': 'הוא דיבר איתי אתמול.', 'en': 'He spoke with me yesterday.'},
+         {'he': 'ספרי לי מה קרה.', 'en': 'Tell me what happened.'},
+         {'he': 'שילמנו על הכל.', 'en': 'We paid for everything.'},
+         {'he': 'טיילנו בצפון שבוע.', 'en': 'We travelled around the north for a week.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'לדבר', 'en': 'to speak', 'pos': 'verb', 'prep': 'עם'},
+         {'he': 'לספר', 'en': 'to tell', 'pos': 'verb', 'prep': 'ל'},
+         {'he': 'לשלם', 'en': 'to pay', 'pos': 'verb', 'prep': 'על'},
+         {'he': 'לטייל', 'en': 'to travel around, to hike', 'pos': 'verb'},
+         {'he': 'לבשל', 'en': 'to cook', 'pos': 'verb'},
+         {'he': 'לחפש', 'en': 'to look for', 'pos': 'verb'},
+         {'he': 'לקבל', 'en': 'to receive', 'pos': 'verb'},
+         {'he': 'לסדר', 'en': 'to arrange, to tidy', 'pos': 'verb'},
+       ]},
+      {'kind': 'table', 'title': 'מלאו את הטבלה', 'en': 'Fill in the table',
+       'instructions': 'All piel. The doubling is in the middle letter every time.',
+       'cols': ['שם פועל', 'הוא, הווה', 'אני, עבר', 'הוא, עתיד'],
+       'rows': [
+         [{'g': 'לדבר'}, {'g': 'מדבר'}, {'g': 'דיברתי'}, {'g': 'ידבר'}],
+         [{'g': 'לספר'}, {'a': ['מספר']}, {'a': ['סיפרתי']}, {'a': ['יספר']}],
+         [{'g': 'לשלם'}, {'a': ['משלם']}, {'a': ['שילמתי']}, {'a': ['ישלם']}],
+         [{'g': 'לבשל'}, {'a': ['מבשל']}, {'a': ['בישלתי']}, {'a': ['יבשל']}],
+         [{'g': 'לחפש'}, {'a': ['מחפש']}, {'a': ['חיפשתי']}, {'a': ['יחפש']}],
+       ]},
+      {'kind': 'choose', 'title': 'בחרו את המילית', 'en': 'Choose the preposition',
+       'instructions': 'Piel verbs come with their prepositions too.',
+       'items': [
+         {'q': 'דיברתי ___ המנהל אתמול.', 'options': ['עם', 'ל', 'ב', 'על'], 'a': 'עם', 'en': 'לדבר עם'},
+         {'q': 'ספר ___ מה קרה!', 'options': ['ל', 'עם', 'ב', 'מ'], 'a': 'ל', 'en': 'לספר ל־'},
+         {'q': 'מי משלם ___ הארוחה?', 'options': ['על', 'ל', 'ב', 'עם'], 'a': 'על', 'en': 'לשלם על'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Complete the sentence',
+       'instructions': 'Type the piel verb in the present.',
+       'example': {'q': 'אני ___ עם אמא שלי כל יום. [לדבר]', 'a': 'מדבר'},
+       'items': [
+         {'q': 'היא ___ ארוחת ערב עכשיו. [לבשל]', 'a': ['מבשלת'], 'en': 'She’s cooking dinner now.'},
+         {'q': 'אנחנו ___ דירה חדשה. [לחפש]', 'a': ['מחפשים', 'מחפשות'], 'en': 'We’re looking for a new flat.'},
+         {'q': 'הם ___ מכתבים מהבנק כל חודש. [לקבל]', 'a': ['מקבלים'], 'en': 'They get letters from the bank every month.'},
+       ]},
+      {'kind': 'slang', 'he': 'דיברנו', 'literal': '“we spoke”',
+       'meaning': 'Deal. / Agreed. / We’ll be in touch.',
+       'when': 'Closing an arrangement — the Hebrew equivalent of "right, we’ll speak". Said on '
+               'its own at the end of a call or a conversation, and it means the thing is settled.',
+       'examples': [{'he': 'סבבה, דיברנו.', 'en': 'Cool — we’ll be in touch.'},
+                    {'he': 'אז מחר בשמונה? דיברנו.', 'en': 'So tomorrow at eight? Deal.'}]},
+    ],
+  },
+  {
+    'id': 'he-12', 'n': 12, 'level': 'intermediate',
+    'title': {'he': 'בניין הפעיל', 'en': 'The hifil binyan'},
+    'objective': 'The causative: making someone else do the thing. It is also where a surprising '
+                 'number of the most ordinary verbs live — להגיע, להתחיל, להסביר, להזמין.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'A ה in front, and someone else does it',
+       'body': 'הפעיל puts <b>הִ־</b> on the front and often means "cause to": כתב he wrote, '
+               '<b>הכתיב</b> he dictated; בא he came, <b>הביא</b> he brought. The present starts '
+               'with מַ־: <b>מגיע, מתחיל, מסביר</b>. Do not let the "causative" label mislead you '
+               '— many hifil verbs are just ordinary words that happen to live here.',
+       'examples': [
+         {'he': 'מתי אתה מגיע?', 'en': 'When are you arriving?'},
+         {'he': 'היא הסבירה לי הכל.', 'en': 'She explained everything to me.'},
+         {'he': 'הזמנתי שולחן לשמונה.', 'en': 'I booked a table for eight.'},
+         {'he': 'הם התחילו בלעדינו.', 'en': 'They started without us.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'להגיע', 'en': 'to arrive', 'pos': 'verb', 'prep': 'ל'},
+         {'he': 'להתחיל', 'en': 'to begin', 'pos': 'verb'},
+         {'he': 'להסביר', 'en': 'to explain', 'pos': 'verb', 'prep': 'ל'},
+         {'he': 'להזמין', 'en': 'to order, to invite', 'pos': 'verb'},
+         {'he': 'להביא', 'en': 'to bring', 'pos': 'verb'},
+         {'he': 'להחליט', 'en': 'to decide', 'pos': 'verb'},
+         {'he': 'להרגיש', 'en': 'to feel', 'pos': 'verb'},
+         {'he': 'להכיר', 'en': 'to know, to be acquainted with', 'pos': 'verb'},
+       ]},
+      {'kind': 'table', 'title': 'מלאו את הטבלה', 'en': 'Fill in the table',
+       'instructions': 'Present in מ־, past in ה־, future in י־.',
+       'cols': ['שם פועל', 'הוא, הווה', 'הוא, עבר', 'הוא, עתיד'],
+       'rows': [
+         [{'g': 'להגיע'}, {'g': 'מגיע'}, {'g': 'הגיע'}, {'g': 'יגיע'}],
+         [{'g': 'להתחיל'}, {'a': ['מתחיל']}, {'a': ['התחיל']}, {'a': ['יתחיל']}],
+         [{'g': 'להסביר'}, {'a': ['מסביר']}, {'a': ['הסביר']}, {'a': ['יסביר']}],
+         [{'g': 'להזמין'}, {'a': ['מזמין']}, {'a': ['הזמין']}, {'a': ['יזמין']}],
+         [{'g': 'להחליט'}, {'a': ['מחליט']}, {'a': ['החליט']}, {'a': ['יחליט']}],
+       ]},
+      {'kind': 'bracket', 'title': 'כתבו את הפועל', 'en': 'Write the verb',
+       'instructions': 'Tense is whatever the sentence needs — read the time words.',
+       'example': {'q': 'אתמול הוא ___ מאוחר. [להגיע]', 'a': 'הגיע'},
+       'items': [
+         {'q': 'מחר אנחנו ___ בשמונה בבוקר. [להתחיל]', 'a': ['נתחיל'], 'en': 'Tomorrow we’ll start at eight.'},
+         {'q': 'המורה ___ לנו את זה פעמיים כבר. [להסביר]', 'a': ['הסביר', 'הסבירה'],
+          'en': 'The teacher has explained it to us twice already.'},
+         {'q': 'אני ___ שולחן לשניים, בבקשה. [להזמין]', 'a': ['מזמין', 'מזמינה'],
+          'en': 'I’d like to book a table for two, please.'},
+         {'q': 'הם עוד לא ___ איפה לגור. [להחליט]', 'a': ['החליטו'], 'en': 'They haven’t decided where to live yet.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'מגיע', 'en': 'arriving'},
+         {'he': 'מסביר', 'en': 'explaining'},
+         {'he': 'מזמין', 'en': 'ordering'},
+         {'he': 'מרגיש', 'en': 'feeling'},
+         {'he': 'מביא', 'en': 'bringing'},
+         {'he': 'מחליט', 'en': 'deciding'},
+       ]},
+      {'kind': 'slang', 'he': 'מה נסגר', 'literal': '“what got closed”',
+       'meaning': 'What’s going on? / What’s the deal?',
+       'when': 'Asking what is happening, usually with an edge — surprise, confusion or mild '
+               'annoyance. מה נסגר איתו? is “what is up with him?”.',
+       'examples': [{'he': 'מה נסגר פה?', 'en': 'What’s going on here?'},
+                    {'he': 'מה נסגר עם המסיבה?', 'en': 'So what’s the deal with the party?'}]},
+    ],
+  },
+]
+
+UNITS += [
+  {
+    'id': 'he-13', 'n': 13, 'level': 'intermediate',
+    'title': {'he': 'בניין התפעל', 'en': 'The hitpael binyan'},
+    'objective': 'Things you do to yourself, and things people do to each other. Once you spot the '
+                 'מת־ at the front you can read half the verbs on an Israeli sign.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'הת־ at the front, and it comes back to you',
+       'body': 'הִתְפַּעֵל is reflexive or reciprocal: לבש he dressed someone, '
+               '<b>התלבש</b> he got dressed; כתב he wrote, <b>התכתב</b> they wrote to each other. '
+               'Present is <b>מתלבש</b>, past <b>התלבשתי</b>. When the root starts with ס, שׂ, שׁ or '
+               'צ the ת swaps places with it: <b>להשתמש</b>, not להתשמש.',
+       'examples': [
+         {'he': 'אני מתלבש ויוצא.', 'en': 'I’m getting dressed and heading out.'},
+         {'he': 'התקשרתי אליך אתמול.', 'en': 'I called you yesterday.'},
+         {'he': 'הם התחתנו בקיץ.', 'en': 'They got married in the summer.'},
+         {'he': 'איך משתמשים בזה?', 'en': 'How do you use this?'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'להתלבש', 'en': 'to get dressed', 'pos': 'verb'},
+         {'he': 'להתקשר', 'en': 'to phone', 'pos': 'verb', 'prep': 'ל'},
+         {'he': 'להתחתן', 'en': 'to get married', 'pos': 'verb', 'prep': 'עם'},
+         {'he': 'להשתמש', 'en': 'to use', 'pos': 'verb', 'prep': 'ב'},
+         {'he': 'להתעורר', 'en': 'to wake up', 'pos': 'verb'},
+         {'he': 'להצטער', 'en': 'to be sorry', 'pos': 'verb'},
+         {'he': 'להתרגש', 'en': 'to get excited', 'pos': 'verb'},
+         {'he': 'להסתדר', 'en': 'to manage, to work out', 'pos': 'verb'},
+       ]},
+      {'kind': 'table', 'title': 'מלאו את הטבלה', 'en': 'Fill in the table',
+       'instructions': 'Two of these swap the ת with the first root letter. Watch for them.',
+       'cols': ['שם פועל', 'הוא, הווה', 'אני, עבר', 'הם, עתיד'],
+       'rows': [
+         [{'g': 'להתלבש'}, {'g': 'מתלבש'}, {'g': 'התלבשתי'}, {'g': 'יתלבשו'}],
+         [{'g': 'להתקשר'}, {'a': ['מתקשר']}, {'a': ['התקשרתי']}, {'a': ['יתקשרו']}],
+         [{'g': 'להתעורר'}, {'a': ['מתעורר']}, {'a': ['התעוררתי']}, {'a': ['יתעוררו']}],
+         [{'g': 'להשתמש'}, {'a': ['משתמש']}, {'a': ['השתמשתי']}, {'a': ['ישתמשו']}],
+         [{'g': 'להסתדר'}, {'a': ['מסתדר']}, {'a': ['הסתדרתי']}, {'a': ['יסתדרו']}],
+       ]},
+      {'kind': 'quiz', 'title': 'למה ת מתחלפת?', 'en': 'Why does the ת move?',
+       'items': [
+         {'q': 'Why is it להשתמש and not להתשמש?',
+          'options': ['the root starts with ש, so the ת swaps places with it',
+                      'because the verb is irregular',
+                      'because it is a foreign word'],
+          'a': 'the root starts with ש, so the ת swaps places with it',
+          'why': 'ש־מ־ש. A root beginning ס, שׂ, שׁ or צ trades places with the ת of הת־ because the '
+                 'other order is unpronounceable. Same with להסתדר from ס־ד־ר.'},
+         {'q': 'התכתבנו means —',
+          'options': ['we wrote to each other', 'we wrote it down', 'we were written about'],
+          'a': 'we wrote to each other',
+          'why': 'Hitpael is reciprocal as well as reflexive — the action goes back and forth '
+                 'between the people doing it.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['אני', 'מתעורר', 'בשש', 'כל', 'בוקר'], 'a': 'אני מתעורר בשש כל בוקר',
+          'en': 'I wake up at six every morning.'},
+         {'words': ['הם', 'התחתנו', 'לפני', 'שנתיים'], 'a': 'הם התחתנו לפני שנתיים',
+          'en': 'They got married two years ago.'},
+         {'words': ['איך', 'משתמשים', 'במכונה', 'הזאת'], 'a': 'איך משתמשים במכונה הזאת',
+          'en': 'How do you use this machine?'},
+       ]},
+      {'kind': 'slang', 'he': 'יסתדר', 'literal': '“it will arrange itself”',
+       'meaning': 'It’ll work out.',
+       'when': 'The hitpael cousin of יהיה בסדר, and just as common. להסתדר also means to manage '
+               'or to get along: אני מסתדר "I’m managing", הם מסתדרים "they get on".',
+       'examples': [{'he': 'אל תדאג, יסתדר.', 'en': 'Don’t worry, it’ll work out.'},
+                    {'he': 'אנחנו מסתדרים יפה.', 'en': 'We get along well.'}]},
+    ],
+  },
+  {
+    'id': 'he-14', 'n': 14, 'level': 'beginner',
+    'title': {'he': 'שם ותואר', 'en': 'Nouns and adjectives'},
+    'objective': 'The adjective follows the noun and agrees with it — in gender, in number, and in '
+                 'definiteness. That third one is the piece English does not have and learners drop.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'It agrees three times',
+       'body': 'The adjective comes AFTER: <b>בית גדול</b>, a big house. It agrees in gender and '
+               'number — <b>דירה גדולה</b>, <b>בתים גדולים</b>. And if the noun is definite the '
+               'adjective takes ה too: <b>הבית הגדול</b>, "the big house". Say הבית גדול and you '
+               'have said a different thing: "the house is big".',
+       'examples': [
+         {'he': 'בית גדול', 'en': 'a big house'},
+         {'he': 'הבית הגדול', 'en': 'the big house'},
+         {'he': 'הבית גדול.', 'en': 'The house is big.'},
+         {'he': 'הדירות החדשות יקרות.', 'en': 'The new flats are expensive.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'גדול', 'en': 'big', 'pos': 'adj'},
+         {'he': 'קטן', 'en': 'small', 'pos': 'adj'},
+         {'he': 'חדש', 'en': 'new', 'pos': 'adj'},
+         {'he': 'ישן', 'en': 'old', 'pos': 'adj'},
+         {'he': 'יפה', 'en': 'beautiful', 'pos': 'adj'},
+         {'he': 'קשה', 'en': 'hard, difficult', 'pos': 'adj'},
+         {'he': 'קל', 'en': 'easy, light', 'pos': 'adj'},
+         {'he': 'עייף', 'en': 'tired', 'pos': 'adj'},
+         {'he': 'שמח', 'en': 'happy', 'pos': 'adj'},
+         {'he': 'עצוב', 'en': 'sad', 'pos': 'adj'},
+       ]},
+      {'kind': 'choose', 'title': 'בחרו את הצורה', 'en': 'Choose the right form',
+       'instructions': 'Gender, number, and the ה if the noun has one.',
+       'items': [
+         {'q': 'דירה ___', 'options': ['גדולה', 'גדול', 'גדולים'], 'a': 'גדולה',
+          'en': 'דירה is feminine singular.'},
+         {'q': 'הספרים ___', 'options': ['החדשים', 'חדשים', 'החדש'], 'a': 'החדשים',
+          'en': 'Definite noun → the adjective takes ה as well.'},
+         {'q': 'ילדות ___', 'options': ['שמחות', 'שמחים', 'שמחה'], 'a': 'שמחות',
+          'en': 'Feminine plural.'},
+         {'q': 'הבית ___ מאוד.', 'options': ['ישן', 'הישן', 'ישנה'], 'a': 'ישן',
+          'en': 'No ה here — this is a sentence, "the house is very old", not a phrase.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו את שם התואר', 'en': 'Complete the adjective',
+       'instructions': 'Type the adjective in the form the noun needs.',
+       'example': {'q': 'ספר ___ (חדש) — a new book', 'a': 'חדש'},
+       'items': [
+         {'q': 'מכונית ___ (ישן)', 'a': ['ישנה'], 'en': 'an old car'},
+         {'q': 'הבחורות ___ (עייף)', 'a': ['העייפות'], 'en': 'the tired girls'},
+         {'q': 'שאלות ___ (קשה)', 'a': ['קשות'], 'en': 'difficult questions'},
+         {'q': 'הילד ___ (שמח)', 'a': ['השמח'], 'en': 'the happy child'},
+       ]},
+      {'kind': 'transform', 'title': 'מיחיד לרבים', 'en': 'Singular to plural',
+       'instructions': 'Rewrite the phrase in the plural. Type the whole thing.',
+       'example': {'from': 'בית גדול', 'to': 'בתים גדולים'},
+       'items': [
+         {'from': 'דירה יפה', 'to': ['דירות יפות'], 'en': 'a beautiful flat'},
+         {'from': 'הספר החדש', 'to': ['הספרים החדשים'], 'en': 'the new book'},
+         {'from': 'ילד עצוב', 'to': ['ילדים עצובים'], 'en': 'a sad child'},
+       ]},
+      {'kind': 'slang', 'he': 'מגניב', 'literal': '“sneaking, smuggling”',
+       'meaning': 'Cool.',
+       'when': 'Younger than סבבה and a little more enthusiastic. It is an adjective, so it '
+               'agrees when it wants to — but most people leave it flat: זה מגניב.',
+       'examples': [{'he': 'וואו, זה ממש מגניב.', 'en': 'Wow, that’s really cool.'},
+                    {'he': 'מגניב, נתראה שם.', 'en': 'Cool, see you there.'}]},
+    ],
+  },
+]
+
+UNITS += [
+  {
+    'id': 'he-15', 'n': 15, 'level': 'intermediate',
+    'title': {'he': 'סמיכות', 'en': 'The construct: two nouns stuck together'},
+    'objective': 'בית ספר, שכר דירה, ארוחת ערב. Hebrew builds compounds by welding two nouns, and '
+                 'the FIRST one changes shape. It is everywhere and it is invisible until you see it.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The first noun bends',
+       'body': 'English says "a school" as two separate words with "of" understood; Hebrew says '
+               '<b>בֵּית סֵפֶר</b> — literally "house of book". The first noun goes into the '
+               'construct form: בַּיִת becomes בֵּית, אֲרוּחָה becomes אֲרוּחַת, שָׂכָר becomes שְׂכַר. '
+               'And the ה of "the" goes on the SECOND word, never the first: <b>בית הספר</b>.',
+       'examples': [
+         {'he': 'בית ספר', 'en': 'a school (“house of book”)'},
+         {'he': 'בית הספר', 'en': 'the school'},
+         {'he': 'ארוחת ערב', 'en': 'dinner (“meal of evening”)'},
+         {'he': 'שכר הדירה גבוה.', 'en': 'The rent is high.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'ארוחה', 'en': 'meal', 'pos': 'noun'},
+         {'he': 'תחנה', 'en': 'station, stop', 'pos': 'noun'},
+         {'he': 'חנות', 'en': 'shop', 'pos': 'noun'},
+         {'he': 'עוגה', 'en': 'cake', 'pos': 'noun'},
+         {'he': 'קפה', 'en': 'coffee', 'pos': 'noun'},
+         {'he': 'רחוב', 'en': 'street', 'pos': 'noun'},
+         {'he': 'מסעדה', 'en': 'restaurant', 'pos': 'noun'},
+         {'he': 'חוף', 'en': 'beach, shore', 'pos': 'noun'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match the compound',
+       'instructions': 'Tap the Hebrew, then what it actually means.',
+       'pairs': [
+         {'he': 'בית ספר', 'en': 'school'},
+         {'he': 'בית חולים', 'en': 'hospital'},
+         {'he': 'ארוחת בוקר', 'en': 'breakfast'},
+         {'he': 'תחנת רכבת', 'en': 'train station'},
+         {'he': 'שכר דירה', 'en': 'rent'},
+         {'he': 'חוף הים', 'en': 'the seashore'},
+       ]},
+      {'kind': 'choose', 'title': 'איפה ה־?', 'en': 'Where does the ה go?',
+       'instructions': 'Make each compound definite. Only one of these is Hebrew.',
+       'items': [
+         {'q': 'the school', 'options': ['בית הספר', 'הבית ספר', 'הבית הספר'], 'a': 'בית הספר',
+          'en': 'The ה goes on the second noun only.'},
+         {'q': 'the dinner', 'options': ['ארוחת הערב', 'הארוחת ערב', 'הארוחה ערב'],
+          'a': 'ארוחת הערב', 'en': 'Same rule, every time.'},
+         {'q': 'the train station', 'options': ['תחנת הרכבת', 'התחנת רכבת', 'התחנה הרכבת'],
+          'a': 'תחנת הרכבת', 'en': 'The first word stays in the construct form and takes no ה.'},
+       ]},
+      {'kind': 'fill', 'title': 'בנו סמיכות', 'en': 'Build the compound',
+       'instructions': 'Type the whole compound, definite where the English is.',
+       'example': {'q': 'the coffee shop → ___', 'a': 'בית הקפה'},
+       'items': [
+         {'q': 'breakfast → ___', 'a': ['ארוחת בוקר'], 'en': 'meal + morning'},
+         {'q': 'the restaurant’s name → שם ___', 'a': ['המסעדה'], 'en': 'name of + the restaurant'},
+         {'q': 'a bus station → ___', 'a': ['תחנת אוטובוס'], 'en': 'station + bus'},
+       ]},
+      {'kind': 'slang', 'he': 'בית קפה', 'literal': '“house of coffee”',
+       'meaning': 'A café.',
+       'when': 'Worth knowing as a compound rather than a word, because it is the model for '
+               'dozens of them: בית ספר, בית חולים, בית כנסת, בית משפט. Learn the pattern and you '
+               'get the whole family.',
+       'examples': [{'he': 'נפגשים בבית קפה?', 'en': 'Shall we meet at a café?'},
+                    {'he': 'בית הקפה הזה הכי טוב בעיר.', 'en': 'This café is the best in town.'}]},
+    ],
+  },
+  {
+    'id': 'he-16', 'n': 16, 'level': 'beginner',
+    'title': {'he': 'מילות שאלה', 'en': 'Question words'},
+    'objective': 'Seven words that turn you from someone who answers into someone who can ask — '
+                 'which is the point at which a conversation starts going somewhere.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Ask, and the word order barely moves',
+       'body': 'Hebrew questions do not need "do" the way English does. Put the question word at '
+               'the front and leave the rest alone: אתה גר פה → <b>איפה</b> אתה גר? And a yes/no '
+               'question is just the statement with a rising tone, or with <b>האם</b> in writing.',
+       'examples': [
+         {'he': 'מה השם שלך?', 'en': 'What’s your name?'},
+         {'he': 'איפה אתה גר?', 'en': 'Where do you live?'},
+         {'he': 'מתי הם מגיעים?', 'en': 'When are they arriving?'},
+         {'he': 'למה לא אמרת לי?', 'en': 'Why didn’t you tell me?'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'מה', 'en': 'what', 'pos': 'other'},
+         {'he': 'מי', 'en': 'who', 'pos': 'other'},
+         {'he': 'איפה', 'en': 'where', 'pos': 'other'},
+         {'he': 'מתי', 'en': 'when', 'pos': 'other'},
+         {'he': 'למה', 'en': 'why', 'pos': 'other'},
+         {'he': 'איך', 'en': 'how', 'pos': 'other'},
+         {'he': 'כמה', 'en': 'how much, how many', 'pos': 'other'},
+         {'he': 'לאן', 'en': 'where to', 'pos': 'other'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו את מילת השאלה', 'en': 'Complete the question word',
+       'instructions': 'The answer underneath tells you which word is missing.',
+       'example': {'q': '___ אתה גר? — בתל אביב.', 'a': 'איפה'},
+       'items': [
+         {'q': '___ זה עולה? — חמישים שקל.', 'a': ['כמה'], 'en': '“How much is it?” — Fifty shekels.'},
+         {'q': '___ אתם נוסעים? — לים.', 'a': ['לאן'], 'en': '“Where are you going?” — To the sea.'},
+         {'q': '___ לא באת אתמול? — כי הייתי חולה.', 'a': ['למה'], 'en': '“Why didn’t you come?” — Because I was ill.'},
+         {'q': '___ מגיע מחר? — דני ורותי.', 'a': ['מי'], 'en': '“Who’s coming tomorrow?” — Dani and Ruti.'},
+         {'q': '___ קוראים לך? — יעל.', 'a': ['איך'], 'en': '“What’s your name?” — literally “how do they call you”.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את השאלה', 'en': 'Build the question',
+       'instructions': 'Tap the words in order.',
+       'items': [
+         {'words': ['מתי', 'אתה', 'חוזר', 'הביתה'], 'a': 'מתי אתה חוזר הביתה',
+          'en': 'When are you coming home?'},
+         {'words': ['כמה', 'זמן', 'אתם', 'גרים', 'פה'], 'a': 'כמה זמן אתם גרים פה',
+          'en': 'How long have you lived here?'},
+         {'words': ['למה', 'היא', 'לא', 'רוצה', 'לבוא'], 'a': 'למה היא לא רוצה לבוא',
+          'en': 'Why doesn’t she want to come?'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'How do Israelis usually ask someone’s name?',
+          'options': ['איך קוראים לך?', 'מה השם שלך?', 'both, and the first is more common'],
+          'a': 'both, and the first is more common',
+          'why': 'איך קוראים לך — “how do they call you” — is the everyday one. מה השם שלך is '
+                 'correct and a bit more formal.'},
+         {'q': 'איפה and לאן differ how?',
+          'options': ['איפה is where something IS, לאן is where it is GOING',
+                      'they are interchangeable', 'לאן is more polite'],
+          'a': 'איפה is where something IS, לאן is where it is GOING',
+          'why': 'Hebrew keeps them apart the way older English kept "where" and "whither".'},
+       ]},
+      {'kind': 'slang', 'he': 'מה פתאום', 'literal': '“what suddenly”',
+       'meaning': 'No way / of course not / don’t be silly.',
+       'when': 'Rejecting a suggestion or an accusation, usually warmly. It is also how you wave '
+               'away thanks or an offer to pay.',
+       'examples': [{'he': 'מה פתאום, אני משלם.', 'en': 'Don’t be silly, I’m paying.'},
+                    {'he': 'מה פתאום! לא אמרתי את זה.', 'en': 'No way! I didn’t say that.'}]},
+    ],
+  },
+]
+
+
+# The entry point stays at the very BOTTOM: the units are appended to UNITS by module-level
+# statements below the builder, and a guard placed above them runs main() -- and exits -- before
+# they have executed. Eight units built where sixteen were written, and nothing said so.
 if __name__ == '__main__':
     raise SystemExit(main())

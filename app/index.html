@@ -1505,7 +1505,21 @@ window.ALP = (function () {
   .lsn-opt.ok{border-color:var(--verdigris); color:var(--verdigris)}
   .lsn-opt.no{border-color:var(--rubric); color:var(--rubric)}
   .lsn-why{font-size:12.5px; color:var(--muted); margin-top:6px}
-  @media (max-width:560px){ .lsn-match{grid-template-columns:1fr} }
+  /* the conjugation grid — printed cells plain, blanks as inputs */
+  .lsn-grid{width:100%; border-collapse:collapse; margin:4px 0 2px}
+  .lsn-grid th{font-family:var(--arabic); font-size:14px; font-weight:400; color:var(--muted);
+               border-bottom:1px solid var(--rule); padding:5px 6px; text-align:center}
+  .lsn-grid td{border-bottom:1px solid var(--rule); padding:5px 6px; text-align:center}
+  .lg-given{font-family:var(--arabic); font-size:17px; color:var(--muted)}
+  .lsn-in.grid{width:100%; min-width:5.5em; text-align:center}
+  .lg-a{display:block; font-family:var(--arabic); font-size:13px; color:var(--verdigris)}
+  @media (max-width:560px){
+    .lsn-match{grid-template-columns:1fr}
+    .lsn-grid th,.lsn-grid td{padding:4px 3px}
+    .lsn-grid th{font-size:12px}
+    .lg-given{font-size:15px}
+    .lsn-in.grid{min-width:4.2em; font-size:15px}
+  }
 </style>
 </head>
 <body>

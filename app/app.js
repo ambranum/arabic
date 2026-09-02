@@ -1790,7 +1790,8 @@ function lessonsHome() {
   h += (LSN.units || []).map(u => {
     const t = u.title.ar || u.title.he || '';
     const n = u.blocks
-      ? u.blocks.reduce((a, b) => a + (b.items || b.pairs || []).length, 0) + ' exercises'
+      ? u.blocks.reduce((a, b) => a + (b.kind === 'table' ? lsnGridAnswers(b).length
+                                     : (b.items || b.pairs || []).length), 0) + ' exercises'
       : (u.chunks || []).length + ' chunks';
     return `<button class="vtile wide" onclick="location.hash='/lessons/${esc(u.id)}'">
       <div class="vtile-h"><span class="vtile-t">Unit ${u.n} — ${esc(u.title.en)}</span>
@@ -1928,10 +1929,17 @@ function lessonWorkView(u) {
   paint();
 }
 
+// A grid's blanks, flattened in the order they are rendered — the cells carry no index of
+// their own, so the reading order IS the index and both sides have to agree on it.
+const lsnGridAnswers = b => b.rows.reduce((a, r) =>
+  a.concat(r.filter(c => c.g === undefined).map(c => c.a)), []);
+
 function lsnScoreLine(u) {
   let tot = 0, got = 0;
   u.blocks.forEach((b, bi) => {
-    const n = (b.items || b.pairs || []).length; if (!n) return;
+    const n = b.kind === 'table' ? lsnGridAnswers(b).length
+                                 : (b.items || b.pairs || []).length;
+    if (!n) return;
     tot += n; got += Object.keys((LW.b[bi] || {}).done || {}).length;
   });
   return tot ? `${got} of ${tot} answered` + (got === tot ? ' — all done' : '') : 'Read it through.';
@@ -2087,6 +2095,27 @@ function lsnBlockHTML(u, b, bi) {
     h += lsnBtns(bi);
   }
 
+  // Bet's grid: a paradigm with some cells printed and the rest to fill in. The cells are
+  // numbered straight through the table so the same check/reveal machinery drives them.
+  if (b.kind === 'table') {
+    h += head(b.title, b.en);
+    h += `<p class="hint">${esc(b.instructions)}</p>`;
+    let ii = -1;
+    h += `<table class="lsn-grid"><thead><tr>${
+      b.cols.map(c => `<th dir="rtl">${esc(c)}</th>`).join('')}</tr></thead><tbody>` +
+      b.rows.map(r => `<tr>${r.map(c => {
+        if (c.g !== undefined) return `<td class="lg-given" dir="rtl">${arLive(c.g)}</td>`;
+        ii++;
+        const state = st.done[ii] ? 1 : (st.tried && st.tried[ii] ? 0 : -1);
+        return `<td><input class="lsn-in grid${state === 1 ? ' ok' : state === 0 ? ' no' : ''}"
+          dir="rtl" data-b="${bi}" data-i="${ii}" value="${esc((st.val && st.val[ii]) || '')}"
+          autocomplete="off" spellcheck="false"
+          onkeydown="if(event.key==='Enter')lsnCheck(${bi})">${
+          st.shown ? `<span class="lg-a" dir="rtl">${esc(c.a[0])}</span>` : ''}</td>`;
+      }).join('')}</tr>`).join('') + `</tbody></table>`;
+    h += lsnBtns(bi);
+  }
+
   if (b.kind === 'quiz') {
     h += head(b.title, b.en);
     h += b.items.map((it, ii) => {
@@ -2121,7 +2150,8 @@ function lsnCheck(bi) {
     // halfway through should mark what you wrote and leave the rest alone -- a page that turns
     // eight untouched blanks red is telling you that you failed something you never tried.
     if (!String(el.value || '').trim()) { delete st.tried[ii]; delete st.done[ii]; return; }
-    const want = b.kind === 'transform' ? b.items[ii].to : b.items[ii].a;
+    const want = b.kind === 'transform' ? b.items[ii].to
+               : b.kind === 'table' ? lsnGridAnswers(b)[ii] : b.items[ii].a;
     st.tried[ii] = true;
     if (lsnOk(el.value, want)) st.done[ii] = true; else delete st.done[ii];
   });
