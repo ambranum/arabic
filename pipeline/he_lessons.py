@@ -769,15 +769,16 @@ def build(check_only=False):
     # now closes the intermediate block and ביטויים -- the idioms, which is the same reward one
     # level up -- closes the whole thing.
     order = ['he-01', 'he-16', 'he-03', 'he-02', 'he-14', 'he-20', 'he-17', 'he-04',
-             'he-57', 'he-56', 'he-66', 'he-46', 'he-47', 'he-48', 'he-60', 'he-74',
-             'he-62', 'he-73', 'he-09', 'he-19', 'he-18', 'he-21', 'he-10', 'he-53',
-             'he-65', 'he-05', 'he-41', 'he-42', 'he-54', 'he-43', 'he-67', 'he-22',
-             'he-59', 'he-31', 'he-32', 'he-45', 'he-49', 'he-58', 'he-50', 'he-63',
-             'he-51', 'he-76', 'he-61', 'he-71', 'he-72', 'he-75', 'he-15', 'he-68',
-             'he-11', 'he-12', 'he-13', 'he-23', 'he-25', 'he-55', 'he-26', 'he-69',
-             'he-44', 'he-24', 'he-29', 'he-28', 'he-27', 'he-07', 'he-30', 'he-70',
-             'he-06', 'he-08', 'he-33', 'he-34', 'he-36', 'he-35', 'he-37', 'he-38',
-             'he-52', 'he-40', 'he-64', 'he-39']
+             'he-57', 'he-56', 'he-66', 'he-77', 'he-46', 'he-47', 'he-48', 'he-60',
+             'he-74', 'he-62', 'he-73', 'he-86', 'he-87', 'he-09', 'he-19', 'he-18',
+             'he-21', 'he-10', 'he-53', 'he-65', 'he-82', 'he-05', 'he-41', 'he-42',
+             'he-54', 'he-43', 'he-67', 'he-22', 'he-59', 'he-31', 'he-32', 'he-45',
+             'he-49', 'he-58', 'he-50', 'he-85', 'he-63', 'he-51', 'he-76', 'he-84',
+             'he-61', 'he-71', 'he-72', 'he-75', 'he-15', 'he-68', 'he-11', 'he-12',
+             'he-13', 'he-23', 'he-25', 'he-55', 'he-79', 'he-26', 'he-69', 'he-78',
+             'he-44', 'he-80', 'he-24', 'he-29', 'he-28', 'he-27', 'he-81', 'he-07',
+             'he-30', 'he-70', 'he-06', 'he-08', 'he-33', 'he-34', 'he-36', 'he-35',
+             'he-37', 'he-83', 'he-38', 'he-52', 'he-40', 'he-88', 'he-64', 'he-39']
     # NOT `missing` -- that name already holds the vocabulary the lexicon could not answer, and
     # reusing it here overwrote the list with unit ids. The report then said "8 words not in the
     # lexicon" when it meant "8 units not in the order list", and crashed trying to print them
@@ -5323,6 +5324,762 @@ UNITS += [
                'nerve", which is praise.',
        'examples': [{'he': 'איזו חוצפה, לדבר ככה!', 'en': 'What a nerve, to talk like that!'},
                     {'he': 'צריך חוצפה בשביל לבקש את זה.', 'en': 'You need some nerve to ask for that.'}]},
+    ],
+  },
+]
+
+
+# ---------------------------------------------------------------------------------------------
+# UNITS 77-88. Six grammar units on things that are structurally simple and behaviourally hard --
+# a yes/no question with no question word in it, a verb with two objects, an intransitive twin
+# that is a whole separate verb, modals that have to borrow היה to leave the present. Then the
+# little words that carry attitude rather than meaning, which is where a fluent learner still
+# sounds flat. And five more rooms of the week.
+UNITS += [
+  {
+    'id': 'he-77', 'n': 77, 'level': 'beginner',
+    'title': {'he': 'שאלות כן ולא', 'en': 'Questions with no question word'},
+    'objective': 'Hebrew asks yes/no questions by tone alone — the words do not move and nothing '
+                 'is added. Which means you have to hear the question, and produce it.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Same sentence, rising at the end',
+       'body': 'English inverts — "you are coming" becomes "are you coming". Hebrew does not '
+               'move a thing: <b>אתה בא</b> and <b>אתה בא?</b> are the same four letters and '
+               'the question is entirely in the voice. In writing, only the mark tells you. '
+               'There IS a question word, <b>האם</b>, but it is formal and written, and using '
+               'it in speech sounds like a survey. To confirm rather than ask, tack on '
+               '<b>נכון?</b> or <b>לא?</b> at the end.',
+       'examples': [
+         {'he': 'אתה בא איתנו?', 'en': 'Are you coming with us?'},
+         {'he': 'יש לך רגע?', 'en': 'Do you have a minute?'},
+         {'he': 'זה יקר, נכון?', 'en': 'It’s expensive, isn’t it?'},
+         {'he': 'האם קיבלת את המכתב?', 'en': 'Did you receive the letter? — written register.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'האם', 'en': 'whether, “do…?” (written)', 'pos': 'other'},
+         {'he': 'נכון', 'en': 'right; isn’t it?', 'pos': 'adj'},
+         {'he': 'באמת', 'en': 'really', 'pos': 'other'},
+         {'he': 'בטח', 'en': 'sure, of course', 'pos': 'other'},
+         {'he': 'ודאי', 'en': 'certain', 'pos': 'adj'},
+         {'he': 'לענות', 'en': 'to answer', 'pos': 'verb'},
+         {'he': 'לשאול', 'en': 'to ask', 'pos': 'verb'},
+         {'he': 'תשובה', 'en': 'answer', 'pos': 'noun'},
+       ]},
+      {'kind': 'transform', 'title': 'מהצהרה לשאלה', 'en': 'Statement to question',
+       'instructions': 'Nothing moves. Change the punctuation and, out loud, the tone.',
+       'example': {'from': 'אתה בא איתנו.', 'to': 'אתה בא איתנו?'},
+       'items': [
+         {'from': 'יש לך זמן היום.', 'to': ['יש לך זמן היום?'], 'en': 'You have time today.'},
+         {'from': 'היא גרה בתל אביב.', 'to': ['היא גרה בתל אביב?'], 'en': 'She lives in Tel Aviv.'},
+         {'from': 'הם כבר הגיעו.', 'to': ['הם כבר הגיעו?'], 'en': 'They’ve already arrived.'},
+       ]},
+      {'kind': 'choose', 'title': 'איך שואלים?', 'en': 'How do you ask?',
+       'instructions': 'Pick the one an Israeli would say out loud.',
+       'items': [
+         {'q': 'Are you coming?', 'options': ['אתה בא?', 'האם אתה בא?', 'בא אתה?'], 'a': 'אתה בא?',
+          'en': 'No inversion, no האם — just the tone.'},
+         {'q': 'It’s expensive, isn’t it?', 'options': ['זה יקר, נכון?', 'זה יקר, האם?', 'האם זה יקר'],
+          'a': 'זה יקר, נכון?', 'en': 'נכון? and לא? are the tags Hebrew uses.'},
+         {'q': 'On a form: “Have you lived abroad?”',
+          'options': ['האם גרת בחו"ל?', 'גרת בחו"ל?', 'אתה גר בחו"ל'],
+          'a': 'האם גרת בחו"ל?', 'en': 'This is where האם belongs — written, formal, a form.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'זה יקר, ___? — isn’t it', 'a': 'נכון'},
+       'items': [
+         {'q': 'יש ___ רגע?', 'a': ['לך'], 'en': 'Do you have a minute?'},
+         {'q': '___ קיבלת את המכתב?', 'a': ['האם'], 'en': 'Did you receive the letter? — on a form.'},
+         {'q': 'אתה בא, ___?', 'a': ['לא', 'נכון'], 'en': 'You’re coming, aren’t you?'},
+         {'q': '___? לא ידעתי בכלל.', 'a': ['באמת'], 'en': 'Really? I had no idea.'},
+       ]},
+      {'kind': 'slang', 'he': 'מה, באמת?', 'literal': '“what, really?”',
+       'meaning': 'You’re kidding.',
+       'when': 'מה at the front of a question is not asking "what" — it marks surprise or '
+               'disbelief, the way English says "what, seriously?". מה, לא ידעת? is "you '
+               'didn’t KNOW?".',
+       'examples': [{'he': 'מה, באמת? מתי זה קרה?', 'en': 'Really? When did that happen?'},
+                    {'he': 'מה, לא סיפרו לך?', 'en': 'What, nobody told you?'}]},
+    ],
+  },
+  {
+    'id': 'he-78', 'n': 78, 'level': 'intermediate',
+    'title': {'he': 'שני מושאים', 'en': 'Giving someone something'},
+    'objective': 'נתן לי את זה. Verbs that take a person AND a thing put the person on ל and the '
+                 'thing on את — and that order barely moves.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The person takes ל, the thing takes את',
+       'body': '<b>נתתי לו את הספר</b>. <b>הראיתי לה את הבית</b>. <b>שלחתי להם מכתב</b>. The '
+               'person is always on <b>ל</b> — never a bare object — and the thing takes '
+               '<b>את</b> when it is definite and nothing when it is not. Both can be pronouns '
+               'at once: <b>נתתי לו אותו</b>. The verbs that behave this way are a small, high-'
+               'frequency set: נתן, הראה, שלח, הסביר, הביא, החזיר, סיפר, הודיע.',
+       'examples': [
+         {'he': 'נתתי לו את המפתחות.', 'en': 'I gave him the keys.'},
+         {'he': 'תראה לי את התמונה.', 'en': 'Show me the photo.'},
+         {'he': 'שלחתי לה מכתב אתמול.', 'en': 'I sent her a letter yesterday.'},
+         {'he': 'הוא הסביר לנו הכל מההתחלה.', 'en': 'He explained everything to us from the start.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'להראות', 'en': 'to show — להראות ל', 'pos': 'verb'},
+         {'he': 'לשלוח', 'en': 'to send — לשלוח ל', 'pos': 'verb'},
+         {'he': 'להסביר', 'en': 'to explain — להסביר ל', 'pos': 'verb'},
+         {'he': 'להביא', 'en': 'to bring — להביא ל', 'pos': 'verb'},
+         {'he': 'להחזיר', 'en': 'to return, to give back', 'pos': 'verb'},
+         {'he': 'להודיע', 'en': 'to inform — להודיע ל', 'pos': 'verb'},
+         {'he': 'מתנה', 'en': 'present', 'pos': 'noun'},
+         {'he': 'הזדמנות', 'en': 'opportunity', 'pos': 'noun'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Person first, thing second.',
+       'items': [
+         {'words': ['נתתי', 'לו', 'את', 'המפתחות'], 'a': 'נתתי לו את המפתחות',
+          'en': 'I gave him the keys.'},
+         {'words': ['תראה', 'לי', 'את', 'התמונה'], 'a': 'תראה לי את התמונה',
+          'en': 'Show me the photo.'},
+         {'words': ['הוא', 'הסביר', 'לנו', 'הכל'], 'a': 'הוא הסביר לנו הכל',
+          'en': 'He explained everything to us.'},
+         {'words': ['שלחתי', 'להם', 'מכתב', 'אתמול'], 'a': 'שלחתי להם מכתב אתמול',
+          'en': 'I sent them a letter yesterday.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing preposition or pronoun.',
+       'example': {'q': 'נתתי ___ את הספר. — to him', 'a': 'לו'},
+       'items': [
+         {'q': 'תראה ___ מה קנית.', 'a': ['לי'], 'en': 'Show me what you bought.'},
+         {'q': 'הבאתי ___ מתנה קטנה.', 'a': ['לך', 'לה', 'לו'], 'en': 'I brought you / her / him a small present.'},
+         {'q': 'הוא החזיר לי ___ הכסף.', 'a': ['את'], 'en': 'He gave me back the money.'},
+         {'q': 'תודיע ___ כשתדע.', 'a': ['לי'], 'en': 'Let me know when you find out.'},
+         {'q': 'סיפרתי ___ הכל אתמול.', 'a': ['להם', 'לו', 'לה'], 'en': 'I told them / him / her everything yesterday.'},
+       ]},
+      {'kind': 'slang', 'he': 'תן לי לראות', 'literal': '“give me to see”',
+       'meaning': 'Let me see.',
+       'when': 'נתן plus ל plus an infinitive is the Hebrew "let". תן לי לראות, תן לו לדבר, '
+               'אל תיתן לזה לקרות — and it is the same two-object frame with a verb in the '
+               'thing slot.',
+       'examples': [{'he': 'תן לי לראות רגע.', 'en': 'Let me have a look a second.'},
+                    {'he': 'תנו לו לסיים.', 'en': 'Let him finish.'}]},
+    ],
+  },
+  {
+    'id': 'he-79', 'n': 79, 'level': 'intermediate',
+    'title': {'he': 'זוגות פעלים', 'en': 'It broke, and I broke it'},
+    'objective': 'לשבור / להישבר. לפתוח / להיפתח. Hebrew has a separate verb for "it happened by '
+                 'itself", and using the transitive one for both is the commonest structural '
+                 'mistake at this level.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Two verbs, one root',
+       'body': 'The פעל verb takes an object: <b>שברתי את הכוס</b>. Its נפעל twin does not: '
+               '<b>הכוס נשברה</b> — the glass broke, nobody named. Same for '
+               '<b>פתח / נפתח</b>, <b>סגר / נסגר</b>, <b>גמר / נגמר</b>. A second pattern uses '
+               'התפעל: <b>שינה / השתנה</b>, <b>הפסיק / נפסק</b>. The test is simple — is there '
+               'an את after the verb? If not, you probably want the twin.',
+       'examples': [
+         {'he': 'שברתי את הכוס בטעות.', 'en': 'I broke the glass by accident.'},
+         {'he': 'הכוס נשברה על הרצפה.', 'en': 'The glass broke on the floor.'},
+         {'he': 'הדלת נפתחה לבד.', 'en': 'The door opened by itself.'},
+         {'he': 'המצב השתנה לגמרי.', 'en': 'The situation has completely changed.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'להישבר', 'en': 'to break (by itself)', 'pos': 'verb'},
+         {'he': 'להיפתח', 'en': 'to open (by itself)', 'pos': 'verb'},
+         {'he': 'להיסגר', 'en': 'to close (by itself)', 'pos': 'verb'},
+         {'he': 'להיגמר', 'en': 'to end, to run out', 'pos': 'verb'},
+         {'he': 'להשתנות', 'en': 'to change (by itself)', 'pos': 'verb'},
+         {'he': 'לשנות', 'en': 'to change (something)', 'pos': 'verb'},
+         {'he': 'בטעות', 'en': 'by mistake', 'pos': 'other'},
+         {'he': 'לבד', 'en': 'alone, by itself', 'pos': 'other'},
+       ]},
+      {'kind': 'choose', 'title': 'איזה מהשניים?', 'en': 'Which of the two?',
+       'instructions': 'Is there an object after the verb?',
+       'items': [
+         {'q': 'הדלת ___ לבד.', 'options': ['נפתחה', 'פתחה', 'פותחת'], 'a': 'נפתחה',
+          'en': 'The door opened by itself — no object, so the נפעל twin.'},
+         {'q': 'אני ___ את החלון.', 'options': ['פותח', 'נפתח', 'נפתחת'], 'a': 'פותח',
+          'en': 'I open the window — there is an את, so the transitive verb.'},
+         {'q': 'החלב ___, צריך לקנות.', 'options': ['נגמר', 'גמר', 'גומר'], 'a': 'נגמר',
+          'en': 'The milk has run out — it happened, nobody did it.'},
+         {'q': 'המצב ___ לגמרי.', 'options': ['השתנה', 'שינה', 'משנה'], 'a': 'השתנה',
+          'en': 'The situation changed — intransitive.'},
+       ]},
+      {'kind': 'transform', 'title': 'מפעיל לעומד', 'en': 'Transitive to intransitive',
+       'instructions': 'Rewrite so the thing is the subject and nobody did it.',
+       'example': {'from': 'שברתי את הכוס.', 'to': 'הכוס נשברה.'},
+       'items': [
+         {'from': 'סגרתי את הדלת.', 'to': ['הדלת נסגרה.', 'הדלת נסגרה'], 'en': 'I closed the door.'},
+         {'from': 'גמרתי את החלב.', 'to': ['החלב נגמר.', 'החלב נגמר'], 'en': 'I finished the milk.'},
+         {'from': 'שיניתי את התוכנית.', 'to': ['התוכנית השתנתה.', 'התוכנית השתנתה'], 'en': 'I changed the plan.'},
+       ]},
+      {'kind': 'slang', 'he': 'נגמר לי', 'literal': '“it ran out to me”',
+       'meaning': 'I’ve run out of it — or, of patience, I’ve had it.',
+       'when': 'The intransitive twin plus ל puts the person back in as the one affected. '
+               'נגמר לי החלב is about milk; נגמר לי is about you.',
+       'examples': [{'he': 'נגמר לי הכסף עד סוף החודש.', 'en': 'My money runs out before the end of the month.'},
+                    {'he': 'נגמרה לי הסבלנות.', 'en': 'I’ve run out of patience.'}]},
+    ],
+  },
+  {
+    'id': 'he-80', 'n': 80, 'level': 'intermediate',
+    'title': {'he': 'צריך היה, יהיה אפשר', 'en': 'Modals outside the present'},
+    'objective': 'צריך, יכול, אפשר, כדאי, מותר have no past and no future of their own. They '
+                 'borrow היה — and where it goes is not where an English speaker puts it.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'היה carries the tense, the modal stays put',
+       'body': 'Present <b>צריך ללכת</b>. Past <b>הייתי צריך ללכת</b> — היה agrees with the '
+               'person. Future <b>אצטרך ללכת</b>, because צריך does have a real verb behind it. '
+               'The impersonal ones are simpler and do not agree at all: '
+               '<b>אפשר</b> → <b>היה אפשר</b> → <b>יהיה אפשר</b>; <b>כדאי</b> → '
+               '<b>היה כדאי</b>; <b>מותר</b> → <b>היה מותר</b>; <b>אסור</b> → <b>היה אסור</b>. '
+               'One frozen word plus היה, whoever is talking.',
+       'examples': [
+         {'he': 'הייתי צריך לצאת מוקדם.', 'en': 'I had to leave early.'},
+         {'he': 'היה אפשר להזמין מראש.', 'en': 'It was possible to book in advance.'},
+         {'he': 'יהיה אפשר לשלם באשראי?', 'en': 'Will it be possible to pay by card?'},
+         {'he': 'היה כדאי לחכות עוד קצת.', 'en': 'It would have been worth waiting a bit longer.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'צריך', 'en': 'need to, have to', 'pos': 'adj'},
+         {'he': 'כדאי', 'en': 'worth it, advisable', 'pos': 'adj'},
+         {'he': 'מותר', 'en': 'allowed', 'pos': 'adj'},
+         {'he': 'אסור', 'en': 'forbidden', 'pos': 'adj'},
+         {'he': 'חייב', 'en': 'must; owing', 'pos': 'adj'},
+         {'he': 'אפשרות', 'en': 'possibility', 'pos': 'noun'},
+         {'he': 'מראש', 'en': 'in advance', 'pos': 'other'},
+         {'he': 'להספיק', 'en': 'to manage in time', 'pos': 'verb'},
+       ]},
+      {'kind': 'transform', 'title': 'מהווה לעבר', 'en': 'Present to past',
+       'instructions': 'Add היה — and mind whether it agrees or not.',
+       'example': {'from': 'אני צריך ללכת.', 'to': 'הייתי צריך ללכת.'},
+       'items': [
+         {'from': 'אפשר להזמין מראש.', 'to': ['היה אפשר להזמין מראש.', 'היה אפשר להזמין מראש'],
+          'en': 'It’s possible to book in advance.'},
+         {'from': 'היא צריכה לעבוד.', 'to': ['היא הייתה צריכה לעבוד.', 'היא הייתה צריכה לעבוד'],
+          'en': 'She has to work.'},
+         {'from': 'אסור לעשן פה.', 'to': ['היה אסור לעשן פה.', 'היה אסור לעשן פה'],
+          'en': 'Smoking is forbidden here.'},
+         {'from': 'כדאי לחכות.', 'to': ['היה כדאי לחכות.', 'היה כדאי לחכות'], 'en': 'It’s worth waiting.'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'Why is it היה אפשר and not היו אפשר, even about many people?',
+          'options': ['אפשר is impersonal and never agrees', 'It is an exception', 'Because of the past tense'],
+          'a': 'אפשר is impersonal and never agrees',
+          'why': 'There is no subject to agree with — that is what makes it impersonal. Same '
+                 'for כדאי, מותר and אסור.'},
+         {'q': 'הייתי צריך — how many words carry the person?',
+          'options': ['One — הייתי', 'Two — both', 'None'],
+          'a': 'One — הייתי',
+          'why': 'צריך agrees in gender and number (צריכה, צריכים) but not in PERSON. הייתי is '
+                 'what makes it “I”.'},
+       ]},
+      {'kind': 'slang', 'he': 'לא היה צריך', 'literal': '“there was no need”',
+       'meaning': 'You shouldn’t have.',
+       'when': 'The ritual reply to a present, and it is not a refusal. The full exchange is '
+               'לא היה צריך! — מה פתאום, זה כלום, and skipping your line is the only mistake.',
+       'examples': [{'he': 'הבאתי משהו קטן. — לא היה צריך!', 'en': 'I brought something small. — You shouldn’t have!'},
+                    {'he': 'באמת לא היה צריך, תודה.', 'en': 'Really, you shouldn’t have — thank you.'}]},
+    ],
+  },
+  {
+    'id': 'he-81', 'n': 81, 'level': 'intermediate',
+    'title': {'he': 'מידת ודאות', 'en': 'Maybe, probably, definitely'},
+    'objective': 'אולי, כנראה, בטח, בוודאי, אין סיכוי. Hebrew grades certainty with adverbs '
+                 'rather than with modal verbs, and one of them — בטח — means both "certainly" '
+                 'and "yeah, right".',
+    'blocks': [
+      {'kind': 'teach', 'title': 'A ladder of adverbs',
+       'body': 'From least to most sure: <b>אולי</b> (maybe), <b>יכול להיות</b> (could be), '
+               '<b>כנראה</b> (probably), <b>בטוח</b> / <b>בוודאי</b> (certainly). To doubt '
+               'something: <b>אני בספק</b>, <b>אין סיכוי</b>. All of them sit in front of the '
+               'clause and nothing else changes — no subjunctive, no modal verb. Watch '
+               '<b>בטח</b>: said flatly it means "of course"; said with a lift it means '
+               'exactly the opposite.',
+       'examples': [
+         {'he': 'אולי נגיע מאוחר יותר.', 'en': 'Maybe we’ll come later.'},
+         {'he': 'כנראה שהוא כבר הלך.', 'en': 'He’s probably already left.'},
+         {'he': 'אני בטוח שראיתי אותה שם.', 'en': 'I’m sure I saw her there.'},
+         {'he': 'אין סיכוי שזה יהיה מוכן היום.', 'en': 'There’s no chance that’ll be ready today.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אולי', 'en': 'maybe', 'pos': 'other'},
+         {'he': 'כנראה', 'en': 'probably', 'pos': 'other'},
+         {'he': 'בוודאי', 'en': 'certainly', 'pos': 'other'},
+         {'he': 'בטוח', 'en': 'sure, safe', 'pos': 'adj'},
+         {'he': 'ספק', 'en': 'doubt', 'pos': 'noun'},
+         {'he': 'סיכוי', 'en': 'chance', 'pos': 'noun'},
+         {'he': 'לקוות', 'en': 'to hope', 'pos': 'verb'},
+         {'he': 'להאמין', 'en': 'to believe — להאמין ל / ב', 'pos': 'verb'},
+       ]},
+      {'kind': 'choose', 'title': 'כמה בטוח?', 'en': 'How sure?',
+       'instructions': 'Pick the word for the degree of certainty the English shows.',
+       'items': [
+         {'q': 'He’s probably already left.', 'options': ['כנראה', 'אולי', 'בוודאי'], 'a': 'כנראה',
+          'en': 'More than maybe, less than certain.'},
+         {'q': 'There’s no chance.', 'options': ['אין סיכוי', 'אולי לא', 'אני בספק'], 'a': 'אין סיכוי',
+          'en': 'The flattest refusal on the ladder.'},
+         {'q': 'I doubt it.', 'options': ['אני בספק', 'אין סיכוי', 'בטוח'], 'a': 'אני בספק',
+          'en': 'Doubt, not denial.'},
+         {'q': 'I’m sure I saw her.', 'options': ['אני בטוח ש', 'אולי', 'כנראה ש'], 'a': 'אני בטוח ש',
+          'en': 'And note that the clause hangs on ש.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the word for how sure the speaker is.',
+       'example': {'q': '___ נגיע מאוחר יותר. — maybe', 'a': 'אולי'},
+       'items': [
+         {'q': '___ שהוא כבר הלך.', 'a': ['כנראה'], 'en': 'He’s probably already left.'},
+         {'q': 'אין ___ שזה יהיה מוכן היום.', 'a': ['סיכוי'], 'en': 'There’s no chance it’ll be ready today.'},
+         {'q': 'אני ___ שראיתי אותה שם.', 'a': ['בטוח', 'בטוחה'], 'en': 'I’m sure I saw her there.'},
+         {'q': 'אני ___ שיהיה בסדר.', 'a': ['מקווה'], 'en': 'I hope it’ll be all right.'},
+         {'q': 'יכול ___ שהם כבר יצאו.', 'a': ['להיות'], 'en': 'It could be that they’ve already left.'},
+       ]},
+      {'kind': 'slang', 'he': 'בטח', 'literal': '“surely”',
+       'meaning': 'Of course — or “yeah, right”, depending entirely on the tone.',
+       'when': 'Flat and short, it agrees. Drawn out with a rise, it is sarcasm. Israelis rely '
+               'on tone to carry the reversal and a learner reading a transcript will get it '
+               'wrong every time.',
+       'examples': [{'he': 'בטח שאני בא.', 'en': 'Of course I’m coming.'},
+                    {'he': 'בטח, והוא גם ישלם.', 'en': 'Sure, and he’ll pay too. (he won’t)'}]},
+    ],
+  },
+  {
+    'id': 'he-82', 'n': 82, 'level': 'intermediate',
+    'title': {'he': 'גזרת ל״א', 'en': 'The verbs that end in א'},
+    'objective': 'קרא, מצא, יצא, מלא. The א is silent, so the past sounds like it lost a letter '
+                 'and the spelling keeps it — which is exactly the trap when you write.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Written but not heard',
+       'body': 'The third root letter is <b>א</b> and it makes no sound: <b>קָרָא</b> is "kara", '
+               '<b>מָצָא</b> is "matsa". In the past with an ending, the א stays on the page and '
+               'the vowel lengthens: <b>קראתי</b> "karati", <b>מצאתי</b> "matsati" — never '
+               'קרתי. The present is <b>קורא, קוראת, קוראים</b>, and the feminine has no ת '
+               'after the א you might expect. Watch <b>קרא</b> "read/called" against '
+               '<b>קרה</b> "happened" — one letter, and it is the א.',
+       'examples': [
+         {'he': 'קראתי את זה בעיתון.', 'en': 'I read that in the paper.'},
+         {'he': 'מצאתי את המפתחות בכיס.', 'en': 'I found the keys in my pocket.'},
+         {'he': 'היא קוראת ספר כל ערב.', 'en': 'She reads a book every evening.'},
+         {'he': 'מה קרה? לא הבנתי.', 'en': 'What happened? I didn’t understand.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'לקרוא', 'en': 'to read; to call', 'pos': 'verb'},
+         {'he': 'למצוא', 'en': 'to find', 'pos': 'verb'},
+         {'he': 'למלא', 'en': 'to fill (in)', 'pos': 'verb'},
+         {'he': 'לשנוא', 'en': 'to hate', 'pos': 'verb'},
+         {'he': 'לקרות', 'en': 'to happen', 'pos': 'verb'},
+         {'he': 'מלא', 'en': 'full', 'pos': 'adj'},
+         {'he': 'חסר', 'en': 'missing, lacking', 'pos': 'adj'},
+         {'he': 'חן', 'en': 'grace, charm — as in מצא חן בעיניי', 'pos': 'noun'},
+       ]},
+      {'kind': 'table', 'title': 'מלאו את הטבלה', 'en': 'Fill in the table',
+       'instructions': 'The א stays in the writing even where you cannot hear it.',
+       'cols': ['שם פועל', 'הוא, עבר', 'אני, עבר', 'היא, הווה'],
+       'rows': [
+         [{'g': 'לקרוא'}, {'g': 'קרא'}, {'g': 'קראתי'}, {'g': 'קוראת'}],
+         [{'g': 'למצוא'}, {'a': ['מצא']}, {'a': ['מצאתי']}, {'a': ['מוצאת']}],
+         [{'g': 'למלא'}, {'a': ['מילא', 'מלא']}, {'a': ['מילאתי', 'מלאתי']}, {'a': ['ממלאת']}],
+         [{'g': 'לשנוא'}, {'a': ['שנא']}, {'a': ['שנאתי']}, {'a': ['שונאת']}],
+       ]},
+      {'kind': 'bracket', 'title': 'כתבו את הפועל', 'en': 'Write the verb',
+       'instructions': 'The infinitive is in brackets. Do not drop the א.',
+       'example': {'q': '___ את זה בעיתון. [לקרוא]', 'a': 'קראתי'},
+       'items': [
+         {'q': '___ את המפתחות בכיס. [למצוא]', 'a': ['מצאתי'], 'en': 'I found the keys in my pocket.'},
+         {'q': 'היא ___ ספר כל ערב. [לקרוא]', 'a': ['קוראת'], 'en': 'She reads a book every evening.'},
+         {'q': 'צריך ___ את הטופס. [למלא]', 'a': ['למלא'], 'en': 'The form has to be filled in.'},
+         {'q': 'הם ___ אותנו בשם. [לקרוא]', 'a': ['קראו'], 'en': 'They called us by name.'},
+         {'q': 'מה ___ פה אתמול? [לקרות]', 'a': ['קרה'], 'en': 'What happened here yesterday?'},
+       ]},
+      {'kind': 'slang', 'he': 'מצא חן בעיניי', 'literal': '“it found favour in my eyes”',
+       'meaning': 'I liked it.',
+       'when': 'A biblical phrase doing everyday work — it is how Hebrew says a thing pleased '
+               'you, and it puts the THING as the subject, not you. זה מצא חן בעיניי, not '
+               'אני מצאתי חן.',
+       'examples': [{'he': 'הרעיון מצא חן בעיניי.', 'en': 'I liked the idea.'},
+                    {'he': 'זה לא מצא חן בעיניו בכלל.', 'en': 'He didn’t like it at all.'}]},
+    ],
+  },
+  {
+    'id': 'he-83', 'n': 83, 'level': 'advanced',
+    'title': {'he': 'דווקא, בכלל, אפילו', 'en': 'The little words that carry the attitude'},
+    'objective': 'These have almost no dictionary meaning and change the whole point of a '
+                 'sentence. A learner who never uses them sounds flat; one who uses them right '
+                 'sounds native faster than any amount of vocabulary will manage.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Meaning that lives between the words',
+       'body': '<b>דווקא</b> is the hardest word in Hebrew to translate: it marks a contrast '
+               'with what you would expect. <b>דווקא טעים</b> — "actually quite good", against '
+               'expectation. <b>הוא דווקא בא</b> — he came, though we thought he would not. '
+               'Said of a person, <b>הוא עושה את זה דווקא</b> means out of spite. '
+               '<b>בכלל</b> intensifies a negative (לא הבנתי בכלל) or resets a topic '
+               '(בכלל, למה שאלת?). <b>אפילו</b> is "even". <b>ממש</b> is "really", and it is '
+               'used constantly.',
+       'examples': [
+         {'he': 'האוכל שם דווקא טעים.', 'en': 'The food there is actually rather good.'},
+         {'he': 'לא הבנתי בכלל מה הוא אמר.', 'en': 'I didn’t understand a thing he said.'},
+         {'he': 'אפילו הוא הסכים בסוף.', 'en': 'Even he agreed in the end.'},
+         {'he': 'זה ממש לא מה שהתכוונתי.', 'en': 'That’s really not what I meant.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'דווקא', 'en': 'actually, contrary to expectation; on purpose', 'pos': 'other'},
+         {'he': 'בכלל', 'en': 'at all; anyway', 'pos': 'other'},
+         {'he': 'אפילו', 'en': 'even', 'pos': 'other'},
+         {'he': 'ממש', 'en': 'really, absolutely', 'pos': 'other'},
+         {'he': 'בעצם', 'en': 'in fact, come to think of it', 'pos': 'other'},
+         {'he': 'לגמרי', 'en': 'completely', 'pos': 'other'},
+         {'he': 'כמעט', 'en': 'almost', 'pos': 'other'},
+         {'he': 'בערך', 'en': 'roughly, about', 'pos': 'other'},
+       ]},
+      {'kind': 'choose', 'title': 'מה הוא מתכוון?', 'en': 'What is being conveyed?',
+       'instructions': 'These change the point of the sentence, not its facts.',
+       'items': [
+         {'q': 'האוכל שם דווקא טעים.',
+          'options': ['Better than expected', 'The best food there is', 'The food is bad'],
+          'a': 'Better than expected', 'en': 'דווקא marks the contrast with what you assumed.'},
+         {'q': 'הוא עושה את זה דווקא.',
+          'options': ['He does it out of spite', 'He does it well', 'He does it sometimes'],
+          'a': 'He does it out of spite',
+          'en': 'Said of a person’s behaviour, the same word turns into deliberate contrariness.'},
+         {'q': 'בכלל, למה שאלת?',
+          'options': ['Resets the topic — “anyway, why did you ask?”',
+                      'Means “not at all”', 'Is a rebuke'],
+          'a': 'Resets the topic — “anyway, why did you ask?”',
+          'en': 'At the front of a sentence בכלל changes subject; after a negative it intensifies.'},
+         {'q': 'לא הבנתי בכלל.',
+          'options': ['I didn’t understand a thing', 'I understood a little', 'I nearly understood'],
+          'a': 'I didn’t understand a thing', 'en': 'With a negative it means “at all”.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the little word the English is carrying.',
+       'example': {'q': 'האוכל ___ טעים. — actually, against expectation', 'a': 'דווקא'},
+       'items': [
+         {'q': '___ הוא הסכים בסוף.', 'a': ['אפילו'], 'en': 'Even he agreed in the end.'},
+         {'q': 'זה ___ לא מה שהתכוונתי.', 'a': ['ממש'], 'en': 'That’s really not what I meant.'},
+         {'q': 'לא ראיתי אותו ___.', 'a': ['בכלל'], 'en': 'I didn’t see him at all.'},
+         {'q': '___, מתי חזרת?', 'a': ['בעצם'], 'en': 'Come to think of it, when did you get back?'},
+         {'q': 'זה עלה ___ מאתיים שקל.', 'a': ['בערך'], 'en': 'It cost about two hundred shekels.'},
+       ]},
+      {'kind': 'slang', 'he': 'דווקא', 'literal': 'from Aramaic דַּוְקָא, “precisely”',
+       'meaning': 'Precisely the opposite of what you assumed — and, of a person, on purpose.',
+       'when': 'It has no English word. Israeli children accuse each other of doing something '
+               'דווקא, and an adult who says the film was דווקא טוב is saying they expected '
+               'to dislike it. If you learn one word from this unit, this is it.',
+       'examples': [{'he': 'דווקא נהניתי, לא ציפיתי.', 'en': 'I actually enjoyed it, which I hadn’t expected.'},
+                    {'he': 'אל תעשה לי דווקא.', 'en': 'Don’t do it just to spite me.'}]},
+    ],
+  },
+  {
+    'id': 'he-84', 'n': 84, 'level': 'intermediate',
+    'title': {'he': 'חיבה', 'en': 'Small words for people you like'},
+    'objective': 'Hebrew makes things affectionate by shrinking them, doubling them or borrowing '
+                 'a Yiddish ending — and the result is used between adults far more freely than '
+                 'English allows.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Three ways to make a word smaller',
+       'body': 'Double the last syllable: <b>כלב</b> → <b>כלבלב</b>, <b>חתול</b> → '
+               '<b>חתלתול</b>, <b>קטן</b> → <b>קטנטן</b>. Add the Yiddish <b>ל־</b>: '
+               'חיים → <b>חיימ\'ל</b>, and it is used with names among family. Or use a word '
+               'that is affectionate by itself: <b>מותק</b>, <b>נשמה</b>, <b>חמוד</b>, '
+               '<b>יקירי</b>. Note that <b>נשמה</b> — literally "soul" — is said to friends, '
+               'shopkeepers and strangers, and carries no romance at all.',
+       'examples': [
+         {'he': 'תודה נשמה, אתה מציל אותי.', 'en': 'Thanks love, you’re saving me.'},
+         {'he': 'איזה כלבלב חמוד!', 'en': 'What a sweet little dog!'},
+         {'he': 'בוקר טוב, מותק.', 'en': 'Good morning, sweetheart.'},
+         {'he': 'הוא ילד קטנטן, בן שנתיים.', 'en': 'He’s a tiny boy, two years old.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'חמוד', 'en': 'cute, sweet', 'pos': 'adj'},
+         {'he': 'קטנטן', 'en': 'tiny', 'pos': 'adj'},
+         {'he': 'כלבלב', 'en': 'puppy', 'pos': 'noun'},
+         {'he': 'חתלתול', 'en': 'kitten', 'pos': 'noun'},
+         {'he': 'נשמה', 'en': 'soul; used as a term of affection', 'pos': 'noun'},
+         {'he': 'מותק', 'en': 'sweetie', 'pos': 'noun'},
+         {'he': 'תינוק', 'en': 'baby', 'pos': 'noun'},
+         {'he': 'לחבק', 'en': 'to hug', 'pos': 'verb'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'כלבלב', 'en': 'puppy — כלב doubled'},
+         {'he': 'חתלתול', 'en': 'kitten — חתול doubled'},
+         {'he': 'קטנטן', 'en': 'tiny — קטן doubled'},
+         {'he': 'נשמה', 'en': 'love, dear — literally “soul”'},
+         {'he': 'מותק', 'en': 'sweetie — literally “sweetness”'},
+         {'he': 'חמוד', 'en': 'cute'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the affectionate word.',
+       'example': {'q': 'איזה ___ חמוד! — puppy', 'a': 'כלבלב'},
+       'items': [
+         {'q': 'תודה ___, אתה מציל אותי.', 'a': ['נשמה'], 'en': 'Thanks love, you’re saving me.'},
+         {'q': 'בוקר טוב, ___.', 'a': ['מותק'], 'en': 'Good morning, sweetheart.'},
+         {'q': 'הוא ילד ___, בן שנתיים.', 'a': ['קטנטן'], 'en': 'He’s a tiny boy, two years old.'},
+         {'q': 'איזה ___ הילדה הזאת!', 'a': ['חמודה'], 'en': 'What a sweet girl!'},
+         {'q': 'ה___ ישן כל הלילה.', 'a': ['תינוק'], 'en': 'The baby slept all night.'},
+       ]},
+      {'kind': 'slang', 'he': 'נשמה', 'literal': '“soul”',
+       'meaning': 'Love, mate, dear — to almost anyone.',
+       'when': 'A shopkeeper says it to you. A friend says it to you. It is warm and completely '
+               'unromantic, and an English speaker who hears "soul" and reads intimacy into it '
+               'will misjudge a lot of conversations.',
+       'examples': [{'he': 'תודה נשמה!', 'en': 'Thanks, love!'},
+                    {'he': 'נשמה, יש לך רגע?', 'en': 'Mate, do you have a minute?'}]},
+    ],
+  },
+  {
+    'id': 'he-85', 'n': 85, 'level': 'intermediate',
+    'title': {'he': 'אירועי חיים', 'en': 'Weddings, births and funerals'},
+    'objective': 'What you say at each. These are fixed phrases with no room for improvisation, '
+                 'and getting one wrong is the kind of mistake people remember.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'A phrase for each occasion',
+       'body': 'A wedding, a birth, an exam passed, a new flat: <b>מזל טוב</b>, and for the '
+               'parents at a birth, <b>בשעה טובה</b>. For a death, the phrase on hearing the '
+               'news is <b>ברוך דיין האמת</b>, and to the family you say '
+               '<b>שלא תדעו עוד צער</b> or simply <b>אני משתתף בצערכם</b>. During the week of '
+               'mourning — <b>שבעה</b> — people come to the house without being invited, and '
+               'that is the expected thing rather than an intrusion.',
+       'examples': [
+         {'he': 'מזל טוב! שתהיה שעה טובה.', 'en': 'Congratulations! May it be at a good hour.'},
+         {'he': 'הזמינו אותנו לחתונה בקיץ.', 'en': 'They invited us to the wedding in the summer.'},
+         {'he': 'אני משתתף בצערכם.', 'en': 'My condolences.'},
+         {'he': 'הלכנו לנחם אותם בשבעה.', 'en': 'We went to comfort them during the shiva.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'חתונה', 'en': 'wedding', 'pos': 'noun'},
+         {'he': 'כלה', 'en': 'bride', 'pos': 'noun'},
+         {'he': 'חתן', 'en': 'groom', 'pos': 'noun'},
+         {'he': 'להיוולד', 'en': 'to be born', 'pos': 'verb'},
+         {'he': 'לוויה', 'en': 'funeral', 'pos': 'noun'},
+         {'he': 'אבל', 'en': 'mourning', 'pos': 'noun'},
+         {'he': 'צער', 'en': 'sorrow', 'pos': 'noun'},
+         {'he': 'לנחם', 'en': 'to comfort', 'pos': 'verb'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו ברכה לאירוע', 'en': 'Match the phrase to the occasion',
+       'instructions': 'Tap the Hebrew, then when you say it.',
+       'pairs': [
+         {'he': 'מזל טוב', 'en': 'a wedding, a birth, an exam passed'},
+         {'he': 'בשעה טובה', 'en': 'to expectant parents, and at a birth'},
+         {'he': 'ברוך דיין האמת', 'en': 'on first hearing that someone has died'},
+         {'he': 'אני משתתף בצערכם', 'en': 'to the family of someone who has died'},
+         {'he': 'תתחדש', 'en': 'to someone with something new — a car, a haircut'},
+         {'he': 'לחיים', 'en': 'raising a glass'},
+       ]},
+      {'kind': 'choose', 'title': 'מה אומרים?', 'en': 'What do you say?',
+       'instructions': 'One phrase per occasion, and they do not swap.',
+       'items': [
+         {'q': 'A colleague has just had a baby.',
+          'options': ['מזל טוב, בשעה טובה', 'תתחדש', 'שיהיה בהצלחה'],
+          'a': 'מזל טוב, בשעה טובה', 'en': 'Both, together, is the standard.'},
+         {'q': 'A friend tells you their grandmother has died.',
+          'options': ['ברוך דיין האמת', 'מזל טוב', 'שיהיה בהצלחה'],
+          'a': 'ברוך דיין האמת', 'en': 'Said on hearing the news, by religious and secular alike.'},
+         {'q': 'A neighbour shows you their new car.',
+          'options': ['תתחדש!', 'מזל טוב', 'בשעה טובה'],
+          'a': 'תתחדש!', 'en': '“May you be renewed” — for anything new you own or wear.'},
+         {'q': 'Before someone sits an exam.',
+          'options': ['בהצלחה', 'מזל טוב', 'תתחדש'],
+          'a': 'בהצלחה', 'en': 'Congratulations come afterwards, never before.'},
+       ]},
+      {'kind': 'slang', 'he': 'תתחדש', 'literal': '“may you be renewed”',
+       'meaning': 'Said to someone with something new.',
+       'when': 'New shoes, a new car, a haircut, a new job. There is no English equivalent and '
+               'not saying it when a friend is obviously showing you something new is a small '
+               'visible gap.',
+       'examples': [{'he': 'נעליים חדשות? תתחדש!', 'en': 'New shoes? Enjoy them!'},
+                    {'he': 'תתחדשי על הדירה.', 'en': 'Congratulations on the new flat.'}]},
+    ],
+  },
+  {
+    'id': 'he-86', 'n': 86, 'level': 'beginner',
+    'title': {'he': 'ילדים', 'en': 'Children'},
+    'objective': 'The kindergarten, the pick-up, the nap and the tantrum. A vocabulary you need '
+                 'entirely and suddenly, and one that fills a great deal of everyday '
+                 'conversation whether or not you have children yourself.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The words parents use all day',
+       'body': 'A nursery is a <b>מעון</b>, a kindergarten a <b>גן</b> — and the person who runs '
+               'it is a <b>גננת</b>. To pick up is <b>לאסוף</b>. A nap is <b>שנת צהריים</b>. '
+               'Israelis ask <b>בן כמה הוא?</b> — "how old is he", literally "a son of how '
+               'much" — and the answer uses <b>בן</b> or <b>בת</b>: <b>בן שלוש</b>, '
+               '<b>בת חמש</b>.',
+       'examples': [
+         {'he': 'צריך לאסוף את הילדים מהגן בארבע.', 'en': 'The children have to be picked up from kindergarten at four.'},
+         {'he': 'בן כמה הוא? — בן שלוש.', 'en': 'How old is he? — Three.'},
+         {'he': 'התינוקת ישנה עכשיו.', 'en': 'The baby is asleep now.'},
+         {'he': 'הוא לא רוצה לאכול בכלל.', 'en': 'He won’t eat at all.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'תינוק', 'en': 'baby', 'pos': 'noun'},
+         {'he': 'גן', 'en': 'kindergarten; a garden', 'pos': 'noun'},
+         {'he': 'הורים', 'en': 'parents', 'pos': 'noun'},
+         {'he': 'לגדל', 'en': 'to raise, to grow', 'pos': 'verb'},
+         {'he': 'לאסוף', 'en': 'to collect, to pick up', 'pos': 'verb'},
+         {'he': 'משחק', 'en': 'a game; playing', 'pos': 'noun'},
+         {'he': 'צעצוע', 'en': 'toy', 'pos': 'noun'},
+         {'he': 'לבכות', 'en': 'to cry', 'pos': 'verb'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'צריך ___ אותם מהגן. — to pick up', 'a': 'לאסוף'},
+       'items': [
+         {'q': '___ כמה הוא? בן שלוש.', 'a': ['בן'], 'en': 'How old is he? Three.'},
+         {'q': 'ה___ ישן עכשיו, בשקט.', 'a': ['תינוק'], 'en': 'The baby’s asleep now, quietly.'},
+         {'q': 'הילדים ב___ עד ארבע.', 'a': ['גן'], 'en': 'The children are at kindergarten until four.'},
+         {'q': 'הוא ___ כי הוא עייף.', 'a': ['בוכה'], 'en': 'He’s crying because he’s tired.'},
+         {'q': 'קניתי לו ___ ליום ההולדת.', 'a': ['צעצוע'], 'en': 'I bought him a toy for his birthday.'},
+       ]},
+      {'kind': 'choose', 'title': 'מה אומרים?', 'en': 'What do you say?',
+       'instructions': 'Pick the Hebrew a parent would actually use.',
+       'items': [
+         {'q': 'Asking a stranger how old their child is.',
+          'options': ['בן כמה הוא?', 'כמה שנים הוא?', 'איזה גיל?'], 'a': 'בן כמה הוא?',
+          'en': 'Literally “a son of how much” — the standard form.'},
+         {'q': 'Saying your daughter is five.',
+          'options': ['היא בת חמש', 'היא חמש שנים', 'יש לה חמש'], 'a': 'היא בת חמש',
+          'en': 'בן / בת plus the number, and the number is feminine here.'},
+         {'q': 'Telling someone you’ll be a bit late for pick-up.',
+          'options': ['אני קצת מאחר לאסוף', 'אני לא בא', 'תחכו לי'],
+          'a': 'אני קצת מאחר לאסוף', 'en': 'The verb for pick-up is לאסוף.'},
+       ]},
+      {'kind': 'slang', 'he': 'בן כמה?', 'literal': '“a son of how much?”',
+       'meaning': 'How old is he?',
+       'when': 'The whole age system runs on בן and בת: אני בן שלושים, היא בת עשרים. It is not '
+               'only for children, and there is no other way to say it.',
+       'examples': [{'he': 'בת כמה את?', 'en': 'How old are you?'},
+                    {'he': 'אני בן ארבעים ואחת.', 'en': 'I’m forty-one.'}]},
+    ],
+  },
+  {
+    'id': 'he-87', 'n': 87, 'level': 'beginner',
+    'title': {'he': 'ספורט ופנאי', 'en': 'Sport and free time'},
+    'objective': 'What you do at the weekend, and the football that half of every casual '
+                 'conversation with a stranger is made of.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The verb is לשחק, except when it is not',
+       'body': 'You <b>משחק</b> a game — כדורגל, כדורסל, שחמט. But you do NOT play a swim or a '
+               'run: it is <b>שוחה</b>, <b>רץ</b>, <b>רוכב על אופניים</b>. Going to the gym is '
+               '<b>להתאמן</b>, and a training session is an <b>אימון</b>. The football team you '
+               'support is what a stranger will ask about: <b>באיזו קבוצה אתה?</b>',
+       'examples': [
+         {'he': 'אני משחק כדורגל בשישי.', 'en': 'I play football on Fridays.'},
+         {'he': 'היא שוחה בבריכה כל בוקר.', 'en': 'She swims in the pool every morning.'},
+         {'he': 'אני מתאמן שלוש פעמים בשבוע.', 'en': 'I train three times a week.'},
+         {'he': 'ראית את המשחק אתמול?', 'en': 'Did you see the match yesterday?'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'ספורט', 'en': 'sport', 'pos': 'noun'},
+         {'he': 'כדורגל', 'en': 'football', 'pos': 'noun'},
+         {'he': 'כדורסל', 'en': 'basketball', 'pos': 'noun'},
+         {'he': 'בריכה', 'en': 'pool', 'pos': 'noun'},
+         {'he': 'קבוצה', 'en': 'team, group', 'pos': 'noun'},
+         {'he': 'אימון', 'en': 'training session', 'pos': 'noun'},
+         {'he': 'לשחות', 'en': 'to swim', 'pos': 'verb'},
+         {'he': 'להתאמן', 'en': 'to train, to work out', 'pos': 'verb'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word — and mind which verb goes with which sport.',
+       'example': {'q': 'אני ___ כדורגל בשישי. — play', 'a': 'משחק'},
+       'items': [
+         {'q': 'היא ___ בבריכה כל בוקר.', 'a': ['שוחה'], 'en': 'She swims in the pool every morning.'},
+         {'q': 'אני ___ שלוש פעמים בשבוע.', 'a': ['מתאמן', 'מתאמנת'], 'en': 'I train three times a week.'},
+         {'q': 'ראית את ה___ אתמול?', 'a': ['משחק'], 'en': 'Did you see the match yesterday?'},
+         {'q': 'באיזו ___ אתה?', 'a': ['קבוצה'], 'en': 'Which team do you support?'},
+         {'q': 'הוא ___ על אופניים לעבודה.', 'a': ['רוכב'], 'en': 'He cycles to work.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'לשחק כדורגל', 'en': 'to play football'},
+         {'he': 'לשחות בבריכה', 'en': 'to swim in the pool'},
+         {'he': 'לרוץ בפארק', 'en': 'to run in the park'},
+         {'he': 'להתאמן בחדר כושר', 'en': 'to work out at the gym'},
+         {'he': 'לרכוב על אופניים', 'en': 'to ride a bike'},
+         {'he': 'לראות משחק', 'en': 'to watch a match'},
+       ]},
+      {'kind': 'slang', 'he': 'איזה משחק!', 'literal': '“what a game!”',
+       'meaning': 'What a match — and, of a person, what a performance.',
+       'when': 'איזה plus a noun is the standard Hebrew exclamation and works for anything: '
+               'איזה יום, איזה בלגן, איזה כיף. It is the single most useful exclamation frame '
+               'in the language.',
+       'examples': [{'he': 'איזה כיף, סוף סוף חופש.', 'en': 'What fun — a holiday at last.'},
+                    {'he': 'איזה בלגן פה!', 'en': 'What a mess in here!'}]},
+    ],
+  },
+  {
+    'id': 'he-88', 'n': 88, 'level': 'advanced',
+    'title': {'he': 'שירות לקוחות', 'en': 'On the phone to a company'},
+    'objective': 'Cancelling, complaining and being transferred. The hardest listening in the '
+                 'language — fast, scripted, no face — and it runs on a small set of sentences '
+                 'you can prepare.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Get to the sentence that moves you forward',
+       'body': 'You will hear <b>רגע, אני מעביר אותך</b> and <b>נציג יענה לך בעוד…</b>. The '
+               'things you need to say are short and fixed: <b>אני רוצה לבטל את המנוי</b>, '
+               '<b>יש לי בעיה עם החשבון</b>, <b>אפשר לדבר עם מישהו אחר?</b>. Two words carry '
+               'more weight than any argument: <b>תלונה</b> — a formal complaint — and '
+               '<b>מנהל</b>. And <b>אני מבקש את זה בכתב</b> ends most disputes.',
+       'examples': [
+         {'he': 'שלום, אני רוצה לבטל את המנוי.', 'en': 'Hello, I’d like to cancel the subscription.'},
+         {'he': 'יש לי בעיה עם החשבון של החודש.', 'en': 'I have a problem with this month’s bill.'},
+         {'he': 'אפשר לדבר עם מנהל, בבקשה?', 'en': 'Could I speak to a manager, please?'},
+         {'he': 'אני מבקש לקבל את זה בכתב.', 'en': 'I’d like to have that in writing.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'שירות', 'en': 'service', 'pos': 'noun'},
+         {'he': 'לקוח', 'en': 'customer', 'pos': 'noun'},
+         {'he': 'נציג', 'en': 'representative, agent', 'pos': 'noun'},
+         {'he': 'תלונה', 'en': 'complaint', 'pos': 'noun'},
+         {'he': 'מנוי', 'en': 'subscription', 'pos': 'noun'},
+         {'he': 'לבטל', 'en': 'to cancel', 'pos': 'verb'},
+         {'he': 'להמתין', 'en': 'to wait (formal)', 'pos': 'verb'},
+         {'he': 'לטפל', 'en': 'to handle — לטפל ב', 'pos': 'verb'},
+       ]},
+      {'kind': 'choose', 'title': 'מה אומרים?', 'en': 'What do you say?',
+       'instructions': 'Pick the sentence that actually moves the call forward.',
+       'items': [
+         {'q': 'You have been on hold twenty minutes.',
+          'options': ['אני ממתין כבר עשרים דקות', 'זה נורא', 'למה זה לוקח כל כך הרבה?'],
+          'a': 'אני ממתין כבר עשרים דקות', 'en': 'State the fact; it is what gets logged.'},
+         {'q': 'The agent cannot help and you want someone senior.',
+          'options': ['אפשר לדבר עם מנהל?', 'אתה לא מבין', 'תעביר אותי'],
+          'a': 'אפשר לדבר עם מנהל?', 'en': 'Polite, specific, and it is a request they are trained to answer.'},
+         {'q': 'You want the answer recorded.',
+          'options': ['אפשר לקבל את זה בכתב?', 'תזכור מה אמרת', 'אני מקליט'],
+          'a': 'אפשר לקבל את זה בכתב?', 'en': 'The single most useful sentence in Israeli bureaucracy.'},
+         {'q': 'You are cancelling and being offered a discount instead.',
+          'options': ['תודה, אבל אני רוצה לבטל', 'אולי', 'כמה?'],
+          'a': 'תודה, אבל אני רוצה לבטל', 'en': 'Repeat the request unchanged; it is the expected move.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'אני רוצה ___ את המנוי. — to cancel', 'a': 'לבטל'},
+       'items': [
+         {'q': 'יש לי ___ עם החשבון של החודש.', 'a': ['בעיה'], 'en': 'I have a problem with this month’s bill.'},
+         {'q': 'אני רוצה להגיש ___.', 'a': ['תלונה'], 'en': 'I want to make a complaint.'},
+         {'q': 'ה___ אמר שהוא יטפל בזה.', 'a': ['נציג'], 'en': 'The agent said he’d deal with it.'},
+         {'q': 'אפשר לקבל את זה ___?', 'a': ['בכתב'], 'en': 'Could I have that in writing?'},
+         {'q': 'אני ___ כבר עשרים דקות.', 'a': ['ממתין', 'ממתינה'], 'en': 'I’ve been holding for twenty minutes.'},
+       ]},
+      {'kind': 'slang', 'he': 'תעביר אותי לנציג', 'literal': '“transfer me to a representative”',
+       'meaning': 'Get me a human.',
+       'when': 'Said to the recorded menu, out loud, by everyone. Israeli phone systems listen '
+               'for it, and so, eventually, do the people. נציג is the word — not עובד, not '
+               'איש.',
+       'examples': [{'he': 'נציג! תעביר אותי לנציג.', 'en': 'Agent! Put me through to an agent.'},
+                    {'he': 'הנציג יענה בעוד שתי דקות.', 'en': 'An agent will answer in two minutes.'}]},
     ],
   },
 ]
