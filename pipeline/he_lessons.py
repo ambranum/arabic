@@ -660,8 +660,13 @@ UNITS += [
 
 # ---------------------------------------------------------------------------------------------
 def load_resolutions():
+    # The trail may carry an "@texts" section of per-text overrides (see he_ingest.py). Lessons
+    # are not texts and have no id to match against, so the global lines are what apply here --
+    # but the section has to come OUT, or "@texts" reads as a surface whose resolution is a dict.
     p = paths.resolutions()
-    return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else {}
+    raw = json.load(open(p, encoding='utf-8')) if os.path.exists(p) else {}
+    raw.pop('@texts', None)
+    return raw
 
 
 def look_up(lex, word, res):

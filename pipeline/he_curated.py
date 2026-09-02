@@ -59,6 +59,17 @@ FUNCTION = {
     # built on present-day usage.
     'אפוא':    ('אֵפוֹא', 'then, so (in that case)', 'ADV'),
     'שמא':     ('שֶׁמָּא', 'lest, in case, perhaps', 'CONJ'),
+    # The reflexive pronouns. Wiktionary lemmatises עֶצֶם "bone/object" and stops there, so
+    # every עַצְמוֹ in this corpus read as "his object" and every לְעַצְמוֹ as "to close one's
+    # eyes" -- a plural imperative of a different verb. There is no entry to resolve TO.
+    'עצמו':    ('עַצְמוֹ', 'himself, itself', 'PRON_REFL_3MS'),
+    'עצמה':    ('עַצְמָהּ', 'herself, itself', 'PRON_REFL_3FS'),
+    'עצמי':    ('עַצְמִי', 'myself', 'PRON_REFL_1S'),
+    'עצמם':    ('עַצְמָם', 'themselves', 'PRON_REFL_3MP'),
+    'עצמנו':   ('עַצְמֵנוּ', 'ourselves', 'PRON_REFL_1P'),
+    # Same gap on the other side of מִן: the lexicon has מִמֶּנּוּ only as "from us", and the
+    # spelling is identical for "from him", which is what it means on nearly every page here.
+    'ממנו':    ('מִמֶּנּוּ', 'from him, from it (and, spelled the same way, from us)', 'PREP+PRON'),
     'אדות':    ('אֹדוֹת', 'concerning, about (usually עַל אֹדוֹת)', 'PREP'),
     'בינתים':  ('בֵּינָתַיִם', 'meanwhile, in the meantime', 'ADV', 2),
     'ממחרת':   ('מִמָּחֳרָת', 'the next day, on the morrow', 'ADV'),
@@ -140,12 +151,15 @@ PROPER = {
     'סן':       ('סָן', 'San (as in San Francisco)', 'NOUN_PROP', 'san'),
     'פרנסיסקו': ('פְרַנְסִיסְקוֹ', 'Francisco (as in San Francisco)', 'NOUN_PROP', 'fransísko'),
     'ניו':      ('נְיוּ', 'New (as in New York)', 'NOUN_PROP', 'nyu'),
+    # Wiktionary lemmatises צָרְפַת only as Zarephath, the Phoenician town in the book of
+    # Kings. In Hebrew since the middle ages it has also been the ordinary word for France,
+    # which is what it means every time it appears in this corpus.
+    'צרפת':     ('צָרְפַת', 'France', 'NOUN_PROP', 2),
     'פיליאס':   ('פִילְיָאס', 'Phileas (Phileas Fogg)', 'NOUN_PROP', 'filias'),
     'סואץ':     ('סוּאֵץ', 'Suez (the canal and the city in Egypt)', 'NOUN_PROP', 'suéts'),
     # The seven voyages.
     'סינדבאד':  ('סִינְדְּבַּאד', 'Sindbad (the sailor of the Thousand and One Nights)', 'NOUN_PROP', 'sindbád'),
     'סרנדיב':   ('סֶרֶנְדִּיב', 'Serendib (the old name for Sri Lanka)', 'NOUN_PROP', 'serendív'),
-    'בצרה':     ('בַּצְרָה', 'Basra (the port city in Iraq)', 'NOUN_PROP', 'bátsra'),
     # Kalila and Dimna. Both jackals are ordinary Hebrew verbs when unpointed -- כלילה came
     # back as "to include" and דמנה as "to pause" -- so the two title characters would have
     # been glossed as conjugations of something else on every page of their own book.
@@ -168,14 +182,40 @@ PROPER = {
     'טום':      ('טוֹם', 'Tom (Tom Sawyer)', 'NOUN_PROP', 'tom'),
     'סוייר':    ('סוֹיֶיר', 'Sawyer (Tom Sawyer)', 'NOUN_PROP', 'sóyer'),
     'האק':      ('הָאק', 'Huck (Huckleberry Finn)', 'NOUN_PROP', 'hak'),
-    'פין':      ('פִין', 'Finn (Huckleberry Finn)', 'NOUN_PROP', 'fin'),
     'בקי':      ('בֶּקִי', 'Becky (Becky Thatcher)', 'NOUN_PROP', 'béki'),
     'פולי':     ('פּוֹלִי', "Polly (Tom's aunt)", 'NOUN_PROP', 'póli'),
-    'סיד':      ('סִיד', "Sid (Tom's half-brother)", 'NOUN_PROP', 'sid'),
     "ג'ו":      ("ג'ו", "Joe (Injun Joe, and also Tom's friend Joe Harper)", 'NOUN_PROP', 'jo'),
-    'מאף':      ('מָאף', 'Muff (Muff Potter)', 'NOUN_PROP', 'maf'),
     'פוטר':     ('פּוֹטֶר', 'Potter (Muff Potter)', 'NOUN_PROP', 'póter'),
     'מיסיסיפי': ('מִיסִיסִיפִּי', 'Mississippi (the river)', 'NOUN_PROP', 'misisípi'),
+    # WITHDRAWN, and the reason belongs next to the table rather than in a commit message,
+    # because it is the standing hazard of this file. A curated row is consulted BEFORE the
+    # lexicon, so a name that is also an ordinary Hebrew string does not merely fail to help --
+    # it overwrites a correct answer that was already there. Measured across the whole Hebrew
+    # corpus, four of these were doing exactly that:
+    #   פין   (Finn)  shadowed פִּינָּה "corner" via the clitic peeler -- four texts
+    #   בצרה  (Basra) shadowed בְּצָרָה "in trouble"
+    #   מאף   (Muff)  shadowed מֵאַף אֶחָד "from anyone", and מֵאַף "from a nose"
+    #   סיד   (Sid)   shadowed סִיד "lime, plaster" -- and was never used in the book at all
+    # The books were reworded instead: Huck goes by האק, Sindbad sails from the port, and
+    # Potter goes by his surname. A name that cannot be spelled without stepping on a word is
+    # not worth the word.
+    # Sherlock Holmes.
+    'שרלוק':    ('שֶׁרְלוֹק', 'Sherlock (Sherlock Holmes)', 'NOUN_PROP', 'sherlók'),
+    'הולמס':    ('הוֹלְמְס', 'Holmes (Sherlock Holmes)', 'NOUN_PROP', 'hólms'),
+    'ווטסון':   ('וָוטְסוֹן', 'Watson (Doctor Watson, who tells the stories)', 'NOUN_PROP', 'vátson'),
+    'לסטרייד':  ('לֶסְטְרֵייד', 'Lestrade (the police inspector)', 'NOUN_PROP', 'lestréyd'),
+    'מוריארטי': ('מוֹרִיאַרְטִי', 'Moriarty (Holmes’s enemy)', 'NOUN_PROP', 'moriárti'),
+    'בייקר':    ('בֵּייקֶר', 'Baker (as in Baker Street)', 'NOUN_PROP', 'béyker'),
+    'אירן':     ('אִירֶן', 'Irene (Irene Adler)', 'NOUN_PROP', 'íren'),
+    'אדלר':     ('אַדְלֶר', 'Adler (Irene Adler)', 'NOUN_PROP', 'ádler'),
+    'ריכנבאך':  ('רַיְכֶנְבַּאך', 'Reichenbach (the waterfall in Switzerland)', 'NOUN_PROP', 'raykhenbákh'),
+    'נפוליאון': ('נָפּוֹלֵיאוֹן', 'Napoleon (Napoleon Bonaparte)', 'NOUN_PROP', 'napoleón'),
+    'בוהמיה':   ('בּוֹהֶמְיָה', 'Bohemia (the kingdom, now part of the Czech Republic)', 'NOUN_PROP', 'bohémya'),
+    'שווייץ':   ('שְׁוַויְץ', 'Switzerland', 'NOUN_PROP', 'shvayts'),
+    # Maupassant and Chekhov.
+    "ז'ול":     ("ז'ול", 'Jules (the uncle in the Maupassant story)', 'NOUN_PROP', 'zhul'),
+    'ואנקה':    ('וָואנְקָה', 'Vanka (the boy in the Chekhov story)', 'NOUN_PROP', 'vánka'),
+    'נורמנדי':  ('נוֹרְמַנְדִּי', 'Normandy (in northern France)', 'NOUN_PROP', 'normándi'),
 }
 
 _ALL = {}

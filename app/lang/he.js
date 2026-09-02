@@ -664,10 +664,17 @@ defineLang({
   // exists, and the goal has to be the one it can actually reach.
   planEnd: 'the shelf',
   planGoal: 'to reading published Hebrew \u2014 a chapter of it \u2014 with nothing adjusted to fit you',
-  booksBlurb: 'Published Hebrew, not written for you \u2014 short stories from the public '
-    + 'domain, transcribed with their vowels by Project Ben-Yehuda\u2019s volunteers and let onto '
-    + 'this shelf only if they read like present-day Hebrew rather than like scripture. Every '
-    + 'sentence is theirs, verbatim; the English is ours. Tap any word.',
+  // Two kinds of book, and the difference is the whole shape of this shelf: the graded
+  // readers were written FOR you and Ben-Yehuda was not. Saying which is which is the point --
+  // a learner who thinks the retelling is published Hebrew learns the wrong lesson about how
+  // much they can already do, and one who thinks Ben-Yehuda was written for them gives up.
+  booksBlurb: 'Whole books to read start to finish, in two kinds. Nine graded readers \u2014 '
+    + 'Aesop, Juha, Verne, Twain, Stevenson, Holmes \u2014 retold in modern Hebrew and built up '
+    + 'from beginner to advanced, so the vocabulary comes back chapter after chapter. Then the '
+    + 'Ben-Yehuda shelf: published Hebrew, not written for you, transcribed with its vowels by '
+    + 'volunteers and let on only if it reads like present-day Hebrew rather than like '
+    + 'scripture. Tap any word in either. The retellings are by Claude and not native-checked; '
+    + 'every word\u2019s meaning, root and pointing is looked up in the lexicon.',
   assessGreetings: '\u05e9\u05dc\u05d5\u05dd, \u05ea\u05d5\u05d3\u05d4, the basics',
 
   // ---- keyboard, voice ------------------------------------------------------------------

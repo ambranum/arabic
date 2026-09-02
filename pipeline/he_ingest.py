@@ -86,10 +86,33 @@ def tokenize(sent):
     return out
 
 
-def load_resolutions():
-    if os.path.exists(RESOLUTIONS):
-        return json.load(open(RESOLUTIONS, encoding='utf-8'))
-    return {}
+SCOPED = '@texts'      # reserved key in the trail: id-prefix -> {surface: lexicon id}
+
+
+def load_resolutions(text_id=None):
+    """The adjudication trail, flattened for one text.
+
+    A homograph's reading is a property of the CONTEXT, not of the corpus, and one global map
+    from surface to lexicon id cannot say that. חמור is the case that proved it: in the daily
+    paper it is חָמוּר "serious", and in forty tales of ג'וחא it is the donkey, in nearly every
+    one of them. Whichever answer the global line gives is wrong for the other half of the
+    corpus, and it was wrong on the first sentence of the first book.
+
+    So the file may also carry an "@texts" section, keyed by an id PREFIX, and those lines win
+    for texts whose id starts with it. Prefixes are applied shortest-first so a longer, more
+    specific one has the last word. Everything else is unchanged: each line still names a real
+    lexicon id, and he_ingest still refuses one that is not a reading of the word on the page.
+    """
+    if not os.path.exists(RESOLUTIONS):
+        return {}
+    raw = json.load(open(RESOLUTIONS, encoding='utf-8'))
+    scoped = raw.pop(SCOPED, {}) or {}
+    if not text_id:
+        return raw
+    for prefix in sorted(scoped, key=len):
+        if text_id.startswith(prefix):
+            raw.update(scoped[prefix])
+    return raw
 
 
 def _word(rec, surface, prov, cut='', voc=None):
@@ -198,6 +221,17 @@ def annotate(lex, surface, res):
     c = he_curated.lookup(surface, key)
     if c is None:
         for stem, cut in lex.stems(key)[1:]:
+            # PREFIXES ONLY. A name takes particles in front of it -- לְג'וּחָא, מִפּוֹג,
+            # שֶׁפַּסְפַּרְטוּ -- and nothing behind it: Hebrew's suffixes are possessives and
+            # feminine endings, and a borrowed name does not inflect for either. Reaching the
+            # curated table through a stripped SUFFIX is therefore always a coincidence, and
+            # because this table is consulted before the lexicon, a coincidence here does not
+            # merely fail to help -- it overwrites a correct answer. It did: the peeler cut
+            # הַסְּנֶה, the burning bush of the midrash, down to סנ, which is he_norm's spelling
+            # of סָן as in San Francisco, and six sentences of Ben-Yehuda were annotated with a
+            # Californian city. cut is 'prefix-suffix'; anything after the dash disqualifies it.
+            if cut.split('-', 1)[-1]:
+                continue
             c = he_curated.lookup(stem)
             if c is not None:
                 # Same refusal as any clitic match: the entry points the STEM, and nothing has
@@ -281,27 +315,21 @@ def tts(text, out_path, api_key):
         return False, str(e)[:120], e
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('source')
-    ap.add_argument('--audio', action='store_true', help='generate MP3s (needs ELEVENLABS_API_KEY)')
-    ap.add_argument('--lang', default='he', help=argparse.SUPPRESS)
-    a = ap.parse_args()
+def ingest(lex, source, do_audio, key, quiet=False):
+    """One text -> build/he/<id>/text.json. Returns 0, or 1 if the artifact was refused.
 
-    src = json.load(open(a.source, encoding='utf-8'))
+    Takes the Lexicon rather than making one, because the shelf changed the scale this script
+    runs at. Loading the lexicon costs about a second and a half; over four hundred texts that
+    is ten minutes of loading the same file, which is most of a re-ingest.
+    """
+    src = json.load(open(source, encoding='utf-8'))
     if 'sentences' not in src:
-        print('skip %s: not a sentence-text' % os.path.basename(a.source))
+        print('skip %s: not a sentence-text' % os.path.basename(source))
         return 0
 
-    lex, res = Lexicon(), load_resolutions()
+    res = load_resolutions(src['id'])
     outdir = paths.build(src['id'])
     os.makedirs(os.path.join(outdir, 'audio'), exist_ok=True)
-
-    key = os.environ.get('ELEVENLABS_API_KEY')
-    do_audio = a.audio and key
-    if a.audio and not do_audio:
-        print('!! --audio requested but ELEVENLABS_API_KEY not set; '
-              'emitting artifact with audio: null\n')
 
     art = {'id': src['id'], 'title': src['title'], 'dialect': src.get('dialect', 'he'),
            'kind': src.get('kind', 'lesson'), 'date': src.get('date'),
@@ -356,6 +384,10 @@ def main():
     json.dump(art, open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
     total = sum(stats.values()) or 1
+    if quiet:
+        amb = stats.get('AMBIGUOUS-needs-resolution', 0)
+        print('%-26s %5d words, %3d%% ambiguous' % (src['id'], total, round(100 * amb / total)))
+        return 0
     print('\n%-32s %4s  %4s' % ('PROVENANCE', 'N', '%'))
     print('-' * 46)
     for k, v in sorted(stats.items(), key=lambda x: -x[1]):
@@ -366,6 +398,31 @@ def main():
     if amb:
         print('!! %d ambiguous — add ids to %s' % (amb, os.path.relpath(RESOLUTIONS, paths.ROOT)))
     return 0
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('sources', nargs='+')
+    ap.add_argument('--audio', action='store_true', help='generate MP3s (needs ELEVENLABS_API_KEY)')
+    ap.add_argument('--lang', default='he', help=argparse.SUPPRESS)
+    a = ap.parse_args()
+
+    key = os.environ.get('ELEVENLABS_API_KEY')
+    do_audio = a.audio and key
+    if a.audio and not do_audio:
+        print('!! --audio requested but ELEVENLABS_API_KEY not set; '
+              'emitting artifact with audio: null\n')
+
+    lex = Lexicon()
+    # One text prints its whole provenance table, which is what you want when you are looking
+    # at one text. Four hundred of those is not a report, so a batch prints one line each.
+    quiet = len(a.sources) > 1
+    bad = 0
+    for src in a.sources:
+        bad += ingest(lex, src, do_audio, key, quiet=quiet)
+    if quiet:
+        print('\n%d texts, %d refused' % (len(a.sources), bad))
+    return 1 if bad else 0
 
 
 if __name__ == '__main__':

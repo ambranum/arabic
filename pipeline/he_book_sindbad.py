@@ -40,7 +40,7 @@ CHAPTERS = [
   P(('סינדבאד סיפר: אבא שלי מת והשאיר לי הרבה כסף.', 'Sindbad told: my father died and left me a lot of money.'),
     ('הייתי צעיר וטיפש, ובזבזתי את הכול על חברים ועל אוכל.', 'I was young and foolish, and I spent it all on friends and on food.')),
   P(('יום אחד ראיתי שנשאר לי מעט מאוד, ופחדתי מאוד.', 'One day I saw that very little was left, and I was very frightened.'),
-    ('מכרתי את מה שהיה לי, קניתי סחורה ועליתי על ספינה בבצרה.', 'I sold what I had, bought goods and boarded a ship in Basra.')),
+    ('מכרתי את מה שהיה לי, קניתי סחורה ועליתי על ספינה בנמל.', 'I sold what I had, bought goods and boarded a ship at the port.')),
   P(('הים היה שקט, והספינה עברה מאי לאי.', 'The sea was calm, and the ship went from island to island.'),
     ('בכל מקום מכרנו וקנינו, והכסף שלי גדל לאט לאט.', 'At every place we sold and bought, and my money grew little by little.'),
     ('חשבתי שהחיים בים קלים ויפים, אבל טעיתי.', 'I thought that life at sea was easy and lovely, but I was wrong.'))]),
@@ -74,7 +74,7 @@ CHAPTERS = [
   P(('קניתי סחורה חדשה ועליתי שוב על ספינה.', 'I bought new goods and boarded a ship again.'),
     ('החברים שלי אמרו שאני משוגע, ואולי הם צדקו.', 'My friends said I was mad, and perhaps they were right.'),
     ('אבל הים קרא לי, ולא יכולתי להישאר.', 'But the sea called me, and I could not stay.'),
-    ('יצאנו מבצרה בבוקר יפה ושקט.', 'We set out from Basra on a fine, quiet morning.'))]),
+    ('יצאנו מהנמל בבוקר יפה ושקט.', 'We set out from the port on a fine, quiet morning.'))]),
 
  ('The Great White Dome', 'הכיפה הלבנה', [
   P(('הפעם הספינה עצרה באי ירוק ומלא עצים.', 'This time the ship stopped at a green island full of trees.'),

@@ -75,9 +75,9 @@ CHAPTERS = [
     ('כולם צחקו, וגם המבוגרים לא הצליחו לעצור.', 'Everyone laughed, and even the grown-ups could not stop.'),
     ('טום היה מרוצה מאוד, כי סוף סוף היה מעניין.', 'Tom was very pleased, because at last it had been interesting.'))]),
 
- ('Huck Finn', 'האק פין', [
+ ('Huck Finn', 'האק', [
   P(('בעיירה חי ילד אחד שלא הלך לבית ספר בכלל.', 'In the town lived one boy who did not go to school at all.'),
-    ('קראו לו האק פין, והוא ישן איפה שרצה.', 'His name was Huck Finn, and he slept wherever he liked.')),
+    ('קראו לו האק, והוא ישן איפה שרצה.', 'His name was Huck, and he slept wherever he liked.')),
   P(('כל ההורים אמרו לילדים שלהם לא לדבר איתו.', 'All the parents told their children not to talk to him.'),
     ('ולכן כל הילדים רצו לדבר איתו כל הזמן.', 'And therefore all the children wanted to talk to him all the time.')),
   P(('טום פגש אותו בדרך, ולהאק הייתה חתולה מתה ביד.', 'Tom met him on the road, and Huck had a dead cat in his hand.'),
@@ -99,7 +99,7 @@ CHAPTERS = [
     ('הילדים התחבאו מאחורי עץ ולא נשמו.', 'The boys hid behind a tree and did not breathe.')),
   P(('האנשים חפרו קבר, ואז התחילו לריב על כסף.', 'The men dug up a grave, and then began to quarrel about money.'),
     ('אחד מהם, ג\'ו, לקח סכין והרג את הרופא הצעיר.', 'One of them, Joe, took a knife and killed the young doctor.'),
-    ('אחר כך הוא שם את הסכין ביד של מאף פוטר, שהיה שתוי וישן.', 'Afterwards he put the knife in the hand of Muff Potter, who was drunk and asleep.'))]),
+    ('אחר כך הוא שם את הסכין ביד של פוטר, שהיה שתוי וישן.', 'Afterwards he put the knife in the hand of Potter, who was drunk and asleep.'))]),
 
  ('The Oath', 'השבועה', [
   P(('הילדים ברחו משם ורצו עד שלא יכלו יותר.', 'The boys fled from there and ran until they could run no more.'),
@@ -109,14 +109,14 @@ CHAPTERS = [
   P(('הם חתמו בדם מהאצבע ושמו את העץ באדמה.', 'They signed in blood from a finger and put the wood in the ground.'),
     ('אחר כך הם הלכו הביתה, וכל אחד שכב בלי לישון.', 'Afterwards they went home, and each lay without sleeping.'))]),
 
- ('Muff Potter in Prison', 'מאף פוטר בכלא', [
+ ('Potter in Prison', 'פוטר בכלא', [
   P(('בבוקר כל העיירה דיברה על מה שקרה בלילה.', 'In the morning the whole town was talking about what had happened in the night.'),
-    ('לקחו את מאף פוטר לכלא, כי הסכין הייתה שלו.', 'They took Muff Potter to prison, because the knife was his.')),
-  P(('מאף אמר שהוא לא זוכר כלום, ואף אחד לא האמין לו.', 'Muff said he remembered nothing, and nobody believed him.'),
+    ('לקחו את פוטר לכלא, כי הסכין הייתה שלו.', 'They took Potter to prison, because the knife was his.')),
+  P(('פוטר אמר שהוא לא זוכר כלום, ואף אחד לא האמין לו.', 'Potter said he remembered nothing, and nobody believed him.'),
     ('ג\'ו עמד בין האנשים וסיפר בשקט מה ראה.', 'Joe stood among the people and quietly told what he had seen.')),
   P(('טום הסתכל עליו ופחד שהוא יראה את העיניים שלו.', 'Tom looked at him and was afraid he would see his eyes.'),
-    ('בערב הילדים הביאו למאף לחם ותפוזים דרך החלון הקטן.', 'In the evening the boys brought Muff bread and oranges through the small window.'),
-    ('מאף הודה להם, וזה היה קשה יותר מהכול.', 'Muff thanked them, and that was harder than anything.'))]),
+    ('בערב הילדים הביאו לפוטר לחם ותפוזים דרך החלון הקטן.', 'In the evening the boys brought Potter bread and oranges through the small window.'),
+    ('פוטר הודה להם, וזה היה קשה יותר מהכול.', 'Potter thanked them, and that was harder than anything.'))]),
 
  ('Becky Turns Away', 'בקי מסתובבת', [
   P(('בבית הספר בקי לא הסתכלה על טום בכלל.', 'At school Becky did not look at Tom at all.'),
@@ -195,13 +195,13 @@ CHAPTERS = [
     ('אחרי זה התחילה החופשה הגדולה.', 'After that the long holiday began.'))]),
 
  ('The Trial', 'המשפט', [
-  P(('בקיץ התחיל המשפט של מאף פוטר בבית המשפט הקטן.', 'In the summer Muff Potter’s trial began in the small courthouse.'),
+  P(('בקיץ התחיל המשפט של פוטר בבית המשפט הקטן.', 'In the summer Potter’s trial began in the small courthouse.'),
     ('כל העיירה באה, וכולם היו בטוחים שהוא אשם.', 'The whole town came, and everyone was sure he was guilty.')),
   P(('טום לא ישן שלושה לילות וידע שהוא חייב לדבר.', 'Tom did not sleep for three nights and knew that he had to speak.'),
     ('ביום השני הוא הרים את היד וביקש לומר משהו.', 'On the second day he raised his hand and asked to say something.')),
   P(('הוא סיפר הכול: את בית הקברות, את הסכין ואת ג\'ו.', 'He told everything: the graveyard, the knife and Joe.'),
     ('כל האנשים הסתובבו להסתכל, וג\'ו קפץ מהחלון וברח.', 'All the people turned to look, and Joe jumped out of the window and fled.'),
-    ('מאף פוטר יצא חופשי, וטום נהיה גיבור העיירה.', 'Muff Potter went free, and Tom became the town’s hero.'))]),
+    ('פוטר יצא חופשי, וטום נהיה גיבור העיירה.', 'Potter went free, and Tom became the town’s hero.'))]),
 
  ('After the Trial', 'אחרי המשפט', [
   P(('ביום טום היה מאושר, ובלילה הוא פחד.', 'By day Tom was happy, and at night he was afraid.'),
