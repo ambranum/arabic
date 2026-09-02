@@ -135,7 +135,7 @@ CHAPTERS = [
     ('הוא חזר לפוג מפוחד, אבל לא סיפר לו על הצרה כי פחד שהוא יכעס.', 'He came back to Fogg frightened, but did not tell him about the trouble because he was afraid he would be angry.')),
   P(('הם עלו על הרכבת שעוברת את הודו, מבומביי לכלכותה.', 'They boarded the train that crosses India, from Bombay to Calcutta.'),
     ('פיקס ראה כל מה שקרה במקדש והיה מרוצה מאוד.', 'Fix saw everything that happened at the temple and was very pleased.'),
-    ('הוא אמר לעצמו: עכשיו יש לי סיבה לעצור את פוג בהודו, כי המקום הזה שייך לאנגליה.', 'He said to himself: now I have a reason to stop Fogg in India, because this place belongs to England.'),
+    ('הוא אמר לעצמו: עכשיו אני יכול לעצור את פוג בהודו, כי המקום הזה שייך לאנגליה.', 'He said to himself: now I can stop Fogg in India, because this place belongs to England.'),
     ('אבל הוא החליט לחכות לרגע הנכון.', 'But he decided to wait for the right moment.'))]),
 
  ('The Elephant', 'הפיל', [
@@ -189,10 +189,10 @@ CHAPTERS = [
  ('The Court and the Bail', 'בית המשפט והערבות', [
   P(('הם הגיעו לכלכותה ושמחו שהספיקו לספינה להונג קונג.', 'They reached Calcutta and were glad they had made the ship to Hong Kong.'),
     ('אבל ברגע שירדו, המשטרה באה ועצרה את פוג ואת פספרטו.', 'But the moment they got off, the police came and arrested Fogg and Passepartout.'),
-    ('הסיבה הייתה הצרה במקדש שקרתה בבומביי.', 'The reason was the trouble at the temple that had happened in Bombay.'),
+    ('זה קרה בגלל הצרה במקדש שהייתה בבומביי.', 'It happened because of the trouble at the temple in Bombay.'),
     ('פיקס הוא זה שסידר את זה, כדי לעכב אותם עד שהצו יגיע.', 'Fix was the one who had arranged it, in order to delay them until the warrant arrived.')),
   P(('הם הגיעו לבית המשפט, והשופט נתן להם מאסר וקנס גדול.', 'They came to court, and the judge gave them prison and a big fine.'),
-    ('פספרטו הצטער מאוד, כי הוא היה הסיבה לטעות שקרתה.', 'Passepartout was very sorry, because he was the cause of the mistake that had happened.'),
+    ('פספרטו הצטער מאוד, כי הטעות קרתה בגללו.', 'Passepartout was very sorry, because the mistake had happened on his account.'),
     ('אבל פוג נשאר רגוע ושילם את הקנס מיד, בלי לחשוב פעמיים.', 'But Fogg stayed calm and paid the fine at once, without thinking twice.'),
     ('הם יצאו מהר מבית המשפט ועלו על ספינה לכיוון הונג קונג.', 'They left the court quickly and boarded a ship towards Hong Kong.'))]),
 
@@ -304,7 +304,7 @@ CHAPTERS = [
     ('הרגשות של אאודה כלפי פוג נהיו חזקים יותר, אבל היא לא אמרה כלום.', 'Aouda’s feelings for Fogg grew stronger, but she said nothing.'),
     ('היא הסתכלה עליו בשקט והתפלאה על הלב הטוב מתחת לפנים הקרות.', 'She watched him quietly and marvelled at the kind heart beneath the cold face.')),
   P(('פספרטו חשד בפיקס יותר ויותר והחליט להסתכל עליו.', 'Passepartout suspected Fix more and more and decided to watch him.'),
-    ('הוא אמר לעצמו: האיש הזה הולך אחרינו מסיבה, אבל מאיזו סיבה?', 'He said to himself: this man follows us for a reason, but for what reason?'),
+    ('הוא אמר לעצמו: האיש הזה הולך אחרינו, אבל בשביל מה?', 'He said to himself: this man follows us, but what for?'),
     ('הוא עוד לא חיבר את החלקים יחד.', 'He had not yet put the pieces together.'),
     ('ובלי שידעו, כשעברו את האוקיינוס, הם הרוויחו יום שלם בחשבון.', 'And without their knowing, as they crossed the ocean, they gained a whole day in the reckoning.'))]),
 

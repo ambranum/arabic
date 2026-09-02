@@ -88,7 +88,7 @@ CHAPTERS = [
   P(('אחר כך דמנה הלך אל השור ודיבר איתו בשקט.', 'Afterwards Dimna went to the ox and spoke to him quietly.'),
     ('הוא אמר: המלך כבר לא רוצה אותך פה, ואני שמעתי מה הוא אומר.', 'He said: the king no longer wants you here, and I heard what he says.')),
   P(('השור אמר: לא עשיתי לו כלום, למה שיכעס?', 'The ox said: I did nothing to him, why should he be angry?'),
-    ('דמנה אמר: מלך לא צריך סיבה, הוא צריך רק מצב רוח.', 'Dimna said: a king needs no reason, he needs only a mood.')),
+    ('דמנה אמר: מלך לא צריך שום דבר, הוא צריך רק מצב רוח.', 'Dimna said: a king needs nothing at all, he needs only a mood.')),
   P(('הוא אמר: מחר תראה אותו עומד מוכן לקפוץ.', 'He said: tomorrow you will see him standing ready to spring.'),
     ('השור הלך משם עם פחד גדול בלב.', 'The ox went away with great fear in his heart.'))]),
 
@@ -107,7 +107,7 @@ CHAPTERS = [
     ('דמנה דיבר יפה והסביר כל דבר בדרך אחרת.', 'Dimna spoke well and explained everything a different way.')),
   P(('אבל כלילה סיפר את האמת, כי לא יכול היה לשתוק.', 'But Kalila told the truth, because he could not stay silent.'),
     ('דמנה נסגר בבור, ושם הוא מת לבד.', 'Dimna was shut in a pit, and there he died alone.'),
-    ('החכם אמר למלך: זאת הסיבה שמלך צריך לבדוק דברים בעצמו.', 'The sage said to the king: this is why a king must check things himself.'))]),
+    ('החכם אמר למלך: לכן מלך צריך לבדוק דברים בעצמו.', 'The sage said to the king: that is why a king must check things himself.'))]),
 
  ('The Fox and the Drum', 'השועל והתוף', [
   P(('שועל רעב הלך ביער ושמע קול חזק מאוד.', 'A hungry fox walked in the forest and heard a very loud noise.'),

@@ -101,7 +101,7 @@ CHAPTERS = [
     ('היא סיפרה שהיא גרה עם אבא חורג בבית ישן וגדול מחוץ לעיר.', 'She told us that she lived with a stepfather in an old, big house outside the city.')),
   P(('היא סיפרה שהאחות שלה מתה לפני שנתיים, כמה ימים לפני החתונה שלה.', 'She told us that her sister had died two years before, a few days before her own wedding.'),
     ('בלילה ההוא האחות יצאה מהחדר, נפלה, ואמרה מילים על סרט מנוקד.', 'That night the sister had come out of her room, fallen, and said words about a spotted band.'),
-    ('אף אחד לא הבין מה זה, והרופאים לא מצאו שום סיבה למוות.', 'Nobody understood what it meant, and the doctors found no cause of death at all.')),
+    ('אף אחד לא הבין מה זה, והרופאים לא מצאו ממה היא מתה.', 'Nobody understood what it meant, and the doctors did not find what she had died of.')),
   P(('עכשיו גם היא עומדת להתחתן, ולפני שבוע העבירו אותה לחדר של האחות.', 'Now she too was about to marry, and a week before they had moved her into her sister’s room.'),
     ('בלילה הראשון שם היא שמעה בדיוק את אותה שריקה נמוכה בחושך.', 'On her first night there she had heard exactly the same low whistle in the dark.'),
     ('הולמס אמר לה לחזור הביתה כרגיל, ושאנחנו נגיע אחרי הצהריים.', 'Holmes told her to go home as usual, and that we would come in the afternoon.'))]),

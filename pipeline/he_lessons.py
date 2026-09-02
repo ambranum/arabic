@@ -621,6 +621,31 @@ UNITS += [
                '— it is closer to English “huh” or “no kidding”.',
        'examples': [{'he': 'וואלה, לא חשבתי על זה.', 'en': 'Huh, I hadn’t thought of that.'},
                     {'he': 'וואלה? מתי?', 'en': 'Really? When?'}]},
+      {'kind': 'choose', 'title': 'מה אומרים?', 'en': 'What do you say?',
+       'instructions': 'Pick the slang word an Israeli would drop in here.',
+       'items': [
+         {'q': 'A friend says the food was excellent.', 'options': ['אחלה', 'וואלה', 'יאללה'],
+          'a': 'אחלה', 'en': 'אחלה is the everyday “great”.'},
+         {'q': 'You are all standing around and it is time to leave.',
+          'options': ['יאללה', 'בקיצור', 'אחלה'], 'a': 'יאללה',
+          'en': 'יאללה gets a group moving — it is Arabic, and it is in every Israeli’s mouth.'},
+         {'q': 'Someone tells you something surprising and you half believe it.',
+          'options': ['וואלה?', 'יאללה?', 'בקיצור?'], 'a': 'וואלה?',
+          'en': 'וואלה with a rising tone is “really?”; flat, it is “huh, fair enough”.'},
+         {'q': 'You have digressed for a minute and want to get back to the point.',
+          'options': ['בקיצור', 'אחלה', 'וואלה'], 'a': 'בקיצור',
+          'en': 'And it does not mean you are about to be brief.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['יאללה', 'אנחנו', 'הולכים', 'עכשיו'], 'a': 'יאללה אנחנו הולכים עכשיו',
+          'en': 'Come on, we’re going now.'},
+         {'words': ['עשינו', 'חיים', 'בסוף', 'השבוע'], 'a': 'עשינו חיים בסוף השבוע',
+          'en': 'We had a great time at the weekend.'},
+         {'words': ['בקיצור', 'לא', 'הגענו', 'בסוף'], 'a': 'בקיצור לא הגענו בסוף',
+          'en': 'Anyway, in the end we didn’t make it.'},
+       ]},
       {'kind': 'slang', 'he': 'בקיצור', 'literal': '“in short”',
        'meaning': 'Anyway. / Long story short.',
        'when': 'Cuts a story short — and is also how Israelis get to the point after a digression. '
@@ -686,7 +711,12 @@ def look_up(lex, word, res):
         pick = lex.by_id.get(str(want))
         if pick is not None and lex.cut_for(he_norm(word), pick) is not None:
             from phon import respell
-            voc = respell(he_norm(word), pick['FORM']) or (
+            # respell takes the word AS WRITTEN, never he_norm'd. he_norm folds the final
+            # letters -- ם to מ, ך to כ -- and respell returns the surface it was handed, so
+            # normalising first meant the vocabulary tables printed שָׁלוֹמ, כֶּסֶפ, אֵיכְ:
+            # thirty-nine words wearing a medial letter at the end. respell already treats a
+            # final and its medial form as the same letter internally, so it needs no help.
+            voc = respell(word, pick['FORM']) or (
                 str(pick['FORM']) if he_norm(str(pick['FORM'])) == he_norm(word) else None)
             return {'voc': voc, 'say': pick['PHON'] or None,
                     'lex': str(pick['GLOSS'] or '')[:70],
@@ -699,7 +729,7 @@ def look_up(lex, word, res):
         return {'voc': c['vocalized'] or c['lemma'], 'say': c['caphi'],
                 'lex': c['gloss'], 'prov': c['provenance'], 'id': None}
     from phon import respell
-    voc = respell(he_norm(word), rec['FORM']) or (
+    voc = respell(word, rec['FORM']) or (
         str(rec['FORM']) if he_norm(str(rec['FORM'])) == he_norm(word) else None)
     return {'voc': voc, 'say': rec['PHON'] or None, 'lex': str(rec['GLOSS'] or '')[:70],
             'prov': prov, 'id': str(rec['ID'])}
@@ -731,11 +761,18 @@ def build(check_only=False):
     # TEACHING ORDER, which is not the order they were written in. The ids are stable and the
     # numbers are assigned from this list, so a unit can be moved in the sequence without
     # renaming it and losing whatever progress is filed under it. Past before future; the
-    # binyanim only after pa'al is solid in all three tenses; slang last because it is the
-    # reward.
+    # binyanim only after pa'al is solid in all three tenses. The order also has to CLIMB: the
+    # phase chip is read off the unit's level, so an intermediate unit sitting between two
+    # advanced ones drops the shelf from B1 back to A2 and then up again, which reads as a
+    # mistake. Street Hebrew used to close the sequence "because it is the reward"; with a real
+    # advanced tier behind it that ended the course two levels below its own high point, so it
+    # now closes the intermediate block and ביטויים -- the idioms, which is the same reward one
+    # level up -- closes the whole thing.
     order = ['he-01', 'he-16', 'he-03', 'he-02', 'he-14', 'he-20', 'he-17', 'he-04',
-             'he-09', 'he-19', 'he-18', 'he-10', 'he-05', 'he-21', 'he-22', 'he-15',
-             'he-11', 'he-12', 'he-13', 'he-23', 'he-24', 'he-07', 'he-06', 'he-08']
+             'he-09', 'he-19', 'he-18', 'he-21', 'he-10', 'he-05', 'he-22', 'he-31',
+             'he-32', 'he-15', 'he-11', 'he-12', 'he-13', 'he-23', 'he-25', 'he-26',
+             'he-24', 'he-29', 'he-28', 'he-27', 'he-07', 'he-30', 'he-06', 'he-08',
+             'he-33', 'he-34', 'he-36', 'he-35', 'he-37', 'he-38', 'he-40', 'he-39']
     # NOT `missing` -- that name already holds the vocabulary the lexicon could not answer, and
     # reusing it here overwrote the list with unit ids. The report then said "8 words not in the
     # lexicon" when it meant "8 units not in the order list", and crashed trying to print them
@@ -751,9 +788,14 @@ def build(check_only=False):
 
     # The plan reads `phase` off a unit to place it on the journey (lvlTagFor's 'unit' arm), and
     # a unit with none lands in phase 0 -- which is why every one of these was reading "Beginner"
-    # on the shelf whatever it taught. The level the unit was written at decides it.
+    # on the shelf whatever it taught. The level the unit was written at decides it, against the
+    # curriculum's own CEFR ladder rather than against a two-way split: app/data/he/curriculum.js
+    # bands its five phases A1 / A1 / A2 / B1 / B1, so an intermediate unit is phase 2 and an
+    # advanced one is phase 3. Filing every non-beginner unit under phase 1 said "A1" of work
+    # that is plainly past it.
+    PHASE = {'beginner': 0, 'intermediate': 2, 'advanced': 3}
     for u in UNITS:
-        u['phase'] = 0 if u.get('level') == 'beginner' else 1
+        u['phase'] = PHASE.get(u.get('level'), 0)
 
     n = {'teach': 0, 'vocab': 0, 'slang': 0, 'ex': 0, 'items': 0}
     for u in UNITS:
@@ -1893,6 +1935,1069 @@ UNITS += [
                'it, no problem"; נצא בקטנה is "let’s go out, nothing major".',
        'examples': [{'he': 'בקטנה, אין בעיה.', 'en': 'No big deal, no problem.'},
                     {'he': 'נעשה משהו בקטנה בערב.', 'en': 'Let’s do something low-key this evening.'}]},
+    ],
+  },
+]
+
+
+# ---------------------------------------------------------------------------------------------
+# UNITS 25-32 — the intermediate second half. Everything up to here is a learner saying things
+# about themselves; from here the units are about following what someone ELSE says, which is
+# where Gimel and Gimel+ put their weight and where Hebrew starts to feel like a language rather
+# than a set of forms.
+UNITS += [
+  {
+    'id': 'he-25', 'n': 25, 'level': 'intermediate',
+    'title': {'he': 'הבניינים הסבילים', 'en': 'The passive binyanim'},
+    'objective': 'פועל and הופעל — the two binyanim nobody speaks in and everybody reads. You '
+                 'will not need to produce them for years; you need to RECOGNISE them tomorrow, '
+                 'because a newspaper headline is half made of them.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Every active binyan has a shadow',
+       'body': 'פיעל has a passive, פוּעל: <b>סיפר</b> he told → <b>סוּפַּר</b> it was told. '
+               'הפעיל has one too, הוּפעל: <b>הודיע</b> he announced → <b>הוּדַע</b> it was made '
+               'known. You can hear them coming: a <b>u</b> vowel where the active has an '
+               '<b>i</b> or an <b>a</b>. Nobody says these in a café, and the paper cannot get '
+               'through a paragraph without them, because a passive lets you report a thing '
+               'without naming who did it.',
+       'examples': [
+         {'he': 'הכביש נסגר בגלל התאונה.', 'en': 'The road was closed because of the accident.'},
+         {'he': 'סופר לי שהוא עזב.', 'en': 'I was told that he left.'},
+         {'he': 'הבית הזה נבנה לפני מאה שנה.', 'en': 'This house was built a hundred years ago.'},
+         {'he': 'ההחלטה התקבלה אתמול.', 'en': 'The decision was taken yesterday.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'להודיע', 'en': 'to announce, to let know', 'pos': 'verb'},
+         {'he': 'לפרסם', 'en': 'to publish', 'pos': 'verb'},
+         {'he': 'לבנות', 'en': 'to build', 'pos': 'verb'},
+         {'he': 'לסגור', 'en': 'to close', 'pos': 'verb'},
+         {'he': 'החלטה', 'en': 'decision', 'pos': 'noun'},
+         {'he': 'הודעה', 'en': 'message, announcement', 'pos': 'noun'},
+         {'he': 'תאונה', 'en': 'accident', 'pos': 'noun'},
+         {'he': 'כביש', 'en': 'road', 'pos': 'noun'},
+       ]},
+      {'kind': 'quiz', 'title': 'פעיל או סביל?', 'en': 'Active or passive?',
+       'items': [
+         {'q': 'הכביש נסגר. — who closed it?',
+          'options': ['The sentence does not say', 'The road', 'Nobody, it closed itself'],
+          'a': 'The sentence does not say',
+          'why': 'That is the whole job of a passive: it lets the writer report the event and '
+                 'leave the agent out. Reading the paper, keep asking who is missing.'},
+         {'q': 'Which of these is passive?',
+          'options': ['הספר נכתב בשנות השישים', 'הוא כתב את הספר', 'הספר על השולחן'],
+          'a': 'הספר נכתב בשנות השישים',
+          'why': 'נכתב is נפעל, the passive of כתב. The second names the writer; the third has '
+                 'no verb at all.'},
+         {'q': 'What tells you סופר here is not "a writer"?',
+          'options': ['The ל after it', 'It is the first word', 'Nothing — it is ambiguous'],
+          'a': 'The ל after it',
+          'why': 'סוּפַּר לִי — "it was told TO ME". A noun does not take an indirect object. '
+                 'Hebrew asks you to read one word ahead constantly.'},
+       ]},
+      {'kind': 'transform', 'title': 'מפעיל לסביל', 'en': 'Active to passive',
+       'instructions': 'Rewrite so the thing done is the subject and the doer disappears.',
+       'example': {'from': 'הם סגרו את הכביש.', 'to': 'הכביש נסגר.'},
+       'items': [
+         {'from': 'הם בנו את הבית.', 'to': ['הבית נבנה.', 'הבית נבנה'],
+          'en': 'They built the house.'},
+         {'from': 'הם פרסמו את ההודעה.', 'to': ['ההודעה פורסמה.', 'ההודעה פורסמה'],
+          'en': 'They published the announcement.'},
+         {'from': 'הם מכרו את הדירה.', 'to': ['הדירה נמכרה.', 'הדירה נמכרה'],
+          'en': 'They sold the flat.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the passive form. The active verb is given in the English.',
+       'example': {'q': 'הכביש ___ אתמול. — was closed', 'a': 'נסגר'},
+       'items': [
+         {'q': 'הבית הזה ___ לפני מאה שנה.', 'a': ['נבנה'], 'en': 'This house was built a hundred years ago.'},
+         {'q': 'הדירה ___ בשבוע שעבר.', 'a': ['נמכרה'], 'en': 'The flat was sold last week.'},
+         {'q': 'ה___ התקבלה אתמול בערב.', 'a': ['החלטה'], 'en': 'The decision was taken yesterday evening.'},
+         {'q': 'ה___ פורסמה בעיתון.', 'a': ['הודעה'], 'en': 'The announcement was published in the paper.'},
+         {'q': 'החנות ___ בגלל התאונה.', 'a': ['נסגרה'], 'en': 'The shop was closed because of the accident.'},
+       ]},
+      {'kind': 'slang', 'he': 'נסגר', 'literal': '“it was closed”',
+       'meaning': 'It’s settled / it’s a deal.',
+       'when': 'The passive doing everyday work. סָגַרְנוּ is "we agreed", and נִסְגַּר on its own '
+               'ends a negotiation about where to meet.',
+       'examples': [{'he': 'אז נסגר, בשמונה אצלי.', 'en': 'Settled then, eight o’clock at mine.'},
+                    {'he': 'סגרנו על מחיר.', 'en': 'We agreed on a price.'}]},
+    ],
+  },
+  {
+    'id': 'he-26', 'n': 26, 'level': 'intermediate',
+    'title': {'he': 'שם הפעולה', 'en': 'Turning a verb into a noun'},
+    'objective': 'כתיבה, הליכה, נסיעה, החלטה. Every binyan makes its verbs into nouns by one '
+                 'fixed shape, and knowing the shape doubles your vocabulary for free.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'One shape per binyan',
+       'body': 'פעל gives <b>קְטִילָה</b>: כתב → <b>כתיבה</b>, הלך → <b>הליכה</b>, נסע → '
+               '<b>נסיעה</b>. פיעל gives <b>קִיטּוּל</b>: סיפר → <b>סיפור</b>, טייל → '
+               '<b>טיול</b>. הפעיל gives <b>הַקְטָלָה</b>: החליט → <b>החלטה</b>, הרגיש → '
+               '<b>הרגשה</b>. התפעל gives <b>הִתְקַטְּלוּת</b>: התרגש → <b>התרגשות</b>. Meet a '
+               'verb and you have met its noun.',
+       'examples': [
+         {'he': 'הנסיעה לוקחת שעה.', 'en': 'The journey takes an hour.'},
+         {'he': 'ההחלטה הייתה קשה.', 'en': 'The decision was hard.'},
+         {'he': 'הכתיבה שלו מאוד ברורה.', 'en': 'His writing is very clear.'},
+         {'he': 'אחרי הפגישה נדבר.', 'en': 'We’ll talk after the meeting.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'כתיבה', 'en': 'writing', 'pos': 'noun'},
+         {'he': 'קריאה', 'en': 'reading, a call', 'pos': 'noun'},
+         {'he': 'הליכה', 'en': 'walking', 'pos': 'noun'},
+         {'he': 'נסיעה', 'en': 'a journey, a ride', 'pos': 'noun'},
+         {'he': 'פגישה', 'en': 'a meeting', 'pos': 'noun'},
+         {'he': 'החלטה', 'en': 'a decision', 'pos': 'noun'},
+         {'he': 'הרגשה', 'en': 'a feeling', 'pos': 'noun'},
+         {'he': 'שינה', 'en': 'sleep', 'pos': 'noun'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו פועל לשם הפעולה', 'en': 'Match the verb to its noun',
+       'instructions': 'Tap the infinitive, then the noun made from it.',
+       'pairs': [
+         {'he': 'לכתוב', 'en': 'כתיבה — writing'},
+         {'he': 'לנסוע', 'en': 'נסיעה — a journey'},
+         {'he': 'להחליט', 'en': 'החלטה — a decision'},
+         {'he': 'להרגיש', 'en': 'הרגשה — a feeling'},
+         {'he': 'לישון', 'en': 'שינה — sleep'},
+         {'he': 'לקרוא', 'en': 'קריאה — reading'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו את שם הפעולה', 'en': 'Fill in the verbal noun',
+       'instructions': 'The verb is there in the English; type the Hebrew NOUN.',
+       'example': {'q': 'ה___ שלו ברורה מאוד. — his writing', 'a': 'כתיבה'},
+       'items': [
+         {'q': 'ה___ לירושלים לוקחת שעה.', 'a': ['נסיעה'], 'en': 'The journey to Jerusalem takes an hour.'},
+         {'q': 'זו הייתה ___ קשה מאוד.', 'a': ['החלטה'], 'en': 'That was a very hard decision.'},
+         {'q': 'יש לי ___ טובה לגבי זה.', 'a': ['הרגשה'], 'en': 'I have a good feeling about it.'},
+         {'q': 'ה___ בערב עושה לי טוב.', 'a': ['הליכה'], 'en': 'The evening walk does me good.'},
+         {'q': 'אחרי ה___ נדבר על זה.', 'a': ['פגישה'], 'en': 'After the meeting we’ll talk about it.'},
+       ]},
+      {'kind': 'slang', 'he': 'עשה לי הרגשה', 'literal': '“made me a feeling”',
+       'meaning': 'It made me feel …',
+       'when': 'Hebrew builds a lot of emotion with עשה plus a verbal noun rather than with an '
+               'adjective. עָשָׂה לִי טוֹב is "it did me good", and it is far more common than '
+               'anything with a feeling-verb in it.',
+       'examples': [{'he': 'זה עשה לי טוב.', 'en': 'That did me good.'},
+                    {'he': 'הסרט עשה לי הרגשה מוזרה.', 'en': 'The film left me feeling strange.'}]},
+    ],
+  },
+  {
+    'id': 'he-27', 'n': 27, 'level': 'intermediate',
+    'title': {'he': 'משפטי תנאי', 'en': 'If and would'},
+    'objective': 'אם for what might happen, אילו and היה for what did not. The second one is how '
+                 'Hebrew says "would", and there is no other way to say it.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Two ifs, and only one of them is real',
+       'body': '<b>אם</b> + future is a real condition: אם יהיה זמן, נלך — "if there is time, '
+               'we will go". <b>אילו</b> (or לו) + past is a condition that did NOT happen, and '
+               'the other half of the sentence takes <b>היה</b> plus the present participle: '
+               'אילו ידעתי, <b>הייתי אומר</b> לך — "if I had known, I would have told you". That '
+               'הייתי + participle IS the Hebrew conditional; there is no separate word for '
+               '"would".',
+       'examples': [
+         {'he': 'אם יהיה לי זמן, אבוא.', 'en': 'If I have time, I’ll come.'},
+         {'he': 'אילו הייתי יודע, לא הייתי הולך.', 'en': 'If I’d known, I wouldn’t have gone.'},
+         {'he': 'הייתי שמח לעזור.', 'en': 'I’d be glad to help.'},
+         {'he': 'מה היית עושה במקומי?', 'en': 'What would you do in my place?'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אם', 'en': 'if', 'pos': 'other'},
+         {'he': 'אילו', 'en': 'if (contrary to fact)', 'pos': 'other'},
+         {'he': 'תנאי', 'en': 'condition', 'pos': 'noun'},
+         {'he': 'אולי', 'en': 'maybe', 'pos': 'other'},
+         {'he': 'בטח', 'en': 'surely, of course', 'pos': 'other'},
+         {'he': 'להבטיח', 'en': 'to promise', 'pos': 'verb'},
+         {'he': 'לוותר', 'en': 'to give up (on) — לוותר על', 'pos': 'verb'},
+         {'he': 'במקום', 'en': 'instead of, in place of', 'pos': 'other'},
+       ]},
+      {'kind': 'choose', 'title': 'אם או אילו?', 'en': 'אם or אילו?',
+       'instructions': 'One of them is about something that can still happen.',
+       'items': [
+         {'q': '___ יהיה גשם, ניקח מטרייה.', 'options': ['אם', 'אילו', 'כאשר'], 'a': 'אם',
+          'en': 'If it rains, we’ll take an umbrella. — it might still rain.'},
+         {'q': '___ הייתי עשיר, הייתי נוסע לעולם.', 'options': ['אילו', 'אם', 'כי'], 'a': 'אילו',
+          'en': 'If I were rich, I’d travel the world. — I am not rich.'},
+         {'q': '___ ידעתי, לא הייתי שואל.', 'options': ['אילו', 'אם', 'למרות'], 'a': 'אילו',
+          'en': 'Had I known, I wouldn’t have asked.'},
+         {'q': '___ תרצה, אני יכול לעזור.', 'options': ['אם', 'אילו', 'אף על פי'], 'a': 'אם',
+          'en': 'If you want, I can help.'},
+       ]},
+      {'kind': 'transform', 'title': 'מהעבר לתנאי', 'en': 'Past to conditional',
+       'instructions': 'Rewrite with היה so it means "would have".',
+       'example': {'from': 'עזרתי לו.', 'to': 'הייתי עוזר לו.'},
+       'items': [
+         {'from': 'באתי מוקדם.', 'to': ['הייתי בא מוקדם.', 'הייתי בא מוקדם'],
+          'en': 'I came early. → I would have come early.'},
+         {'from': 'היא אמרה לך.', 'to': ['היא הייתה אומרת לך.', 'היא הייתה אומרת לך'],
+          'en': 'She told you. → She would have told you.'},
+         {'from': 'הם קנו את הבית.', 'to': ['הם היו קונים את הבית.', 'הם היו קונים את הבית'],
+          'en': 'They bought the house. → They would have bought the house.'},
+       ]},
+      {'kind': 'slang', 'he': 'הייתי שמח', 'literal': '“I would be glad”',
+       'meaning': 'I’d like / I’d appreciate it.',
+       'when': 'The polite way to ask for something without asking. הייתי שמח אם תוכל is softer '
+               'than any imperative and is what you write in an email to someone you do not know.',
+       'examples': [{'he': 'הייתי שמח אם תוכל לעזור.', 'en': 'I’d appreciate it if you could help.'},
+                    {'he': 'הייתי שמחה לשמוע ממך.', 'en': 'I’d be glad to hear from you.'}]},
+    ],
+  },
+  {
+    'id': 'he-28', 'n': 28, 'level': 'intermediate',
+    'title': {'he': 'משפטי זיקה', 'en': 'The clause that hangs on ש־'},
+    'objective': 'One letter does all of English’s who, which, that and where. Once ש־ is easy, '
+                 'your sentences stop being a list and start being a paragraph.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'ש־ hangs one sentence off another',
+       'body': 'האיש <b>ש</b>גר למטה — "the man who lives downstairs". הספר <b>ש</b>קראתי — "the '
+               'book that I read". Hebrew keeps a pronoun where English drops one: הבית '
+               '<b>ש</b>גרנו <b>בו</b>, literally "the house that we lived IN IT". Also learn '
+               '<b>מי ש</b> "whoever" and <b>מה ש</b> "what / the thing that" — both start '
+               'sentences constantly.',
+       'examples': [
+         {'he': 'זה החבר שסיפרתי לך עליו.', 'en': 'That’s the friend I told you about.'},
+         {'he': 'מה שאמרת נכון.', 'en': 'What you said is right.'},
+         {'he': 'מי שרוצה, שיבוא.', 'en': 'Whoever wants to, let them come.'},
+         {'he': 'הדירה שגרנו בה הייתה קטנה.', 'en': 'The flat we lived in was small.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אשר', 'en': 'which, that (written register)', 'pos': 'other'},
+         {'he': 'כפי', 'en': 'as, according to — כפי ש', 'pos': 'other'},
+         {'he': 'לספר', 'en': 'to tell — לספר על', 'pos': 'verb'},
+         {'he': 'להתייחס', 'en': 'to relate, to refer — להתייחס ל', 'pos': 'verb'},
+         {'he': 'נכון', 'en': 'right, correct', 'pos': 'adj'},
+         {'he': 'ברור', 'en': 'clear', 'pos': 'adj'},
+         {'he': 'עיקר', 'en': 'the main thing', 'pos': 'noun'},
+         {'he': 'פרט', 'en': 'a detail', 'pos': 'noun'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['זה', 'הספר', 'שקראתי', 'בשבוע', 'שעבר'], 'a': 'זה הספר שקראתי בשבוע שעבר',
+          'en': 'That’s the book I read last week.'},
+         {'words': ['מה', 'שאמרת', 'לא', 'היה', 'ברור'], 'a': 'מה שאמרת לא היה ברור',
+          'en': 'What you said wasn’t clear.'},
+         {'words': ['האיש', 'שגר', 'למטה', 'עובד', 'בלילה'], 'a': 'האיש שגר למטה עובד בלילה',
+          'en': 'The man who lives downstairs works nights.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word — ש, מי ש, מה ש, or the pronoun the clause needs.',
+       'example': {'q': 'הבית ___ גרנו בו נמכר. — the house that', 'a': 'ש'},
+       'items': [
+         {'q': '___ שרוצה לבוא, שיגיד לי.', 'a': ['מי'], 'en': 'Whoever wants to come should tell me.'},
+         {'q': '___ שקרה אתמול היה מוזר.', 'a': ['מה'], 'en': 'What happened yesterday was strange.'},
+         {'q': 'זו הדירה שגרנו ___ שנתיים.', 'a': ['בה'], 'en': 'That’s the flat we lived in for two years.'},
+         {'q': 'זה החבר שסיפרתי לך ___.', 'a': ['עליו'], 'en': 'That’s the friend I told you about.'},
+         {'q': 'הכל ___ אמרת נכון.', 'a': ['מה'], 'en': 'Everything you said is right.'},
+       ]},
+      {'kind': 'slang', 'he': 'מה שבא', 'literal': '“what comes”',
+       'meaning': 'Whatever / anything you like.',
+       'when': 'A מה ש clause doing the work of a whole answer. Asked what you want to eat, מה '
+               'שבא is "whatever", and מה שבא לך is "whatever you feel like".',
+       'examples': [{'he': 'תזמין מה שבא לך.', 'en': 'Order whatever you like.'},
+                    {'he': 'נעשה מה שבא, אין לחץ.', 'en': 'We’ll do whatever, no pressure.'}]},
+    ],
+  },
+  {
+    'id': 'he-29', 'n': 29, 'level': 'intermediate',
+    'title': {'he': 'בגלל, למרות, בזכות', 'en': 'Because, despite, thanks to'},
+    'objective': 'The compound prepositions that let you give a reason. Each one takes a noun or '
+                 'takes ש־, never both, and getting that wrong is the most audible mistake a '
+                 'learner makes at this level.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Noun or ש, never both',
+       'body': '<b>בגלל</b> takes a NOUN — בגלל הגשם. To put a whole clause after it you need '
+               '<b>בגלל ש</b> — בגלל שירד גשם. Same pair for <b>למרות</b> / למרות ש, and '
+               '<b>בזכות</b> / בזכות ש. <b>כי</b> is the plain everyday "because" and takes a '
+               'clause on its own. The written register uses <b>מכיוון ש</b> and <b>אף על פי '
+               'ש</b> for the same two jobs.',
+       'examples': [
+         {'he': 'לא באנו בגלל הגשם.', 'en': 'We didn’t come because of the rain.'},
+         {'he': 'לא באנו בגלל שירד גשם.', 'en': 'We didn’t come because it was raining.'},
+         {'he': 'למרות הכל, הוא הצליח.', 'en': 'In spite of everything, he succeeded.'},
+         {'he': 'בזכותך סיימתי בזמן.', 'en': 'Thanks to you I finished on time.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'בגלל', 'en': 'because of', 'pos': 'other'},
+         {'he': 'למרות', 'en': 'despite', 'pos': 'other'},
+         {'he': 'בזכות', 'en': 'thanks to', 'pos': 'other'},
+         {'he': 'בעקבות', 'en': 'following, in the wake of', 'pos': 'other'},
+         {'he': 'לפי', 'en': 'according to', 'pos': 'other'},
+         {'he': 'לגרום', 'en': 'to cause — לגרום ל', 'pos': 'verb'},
+         {'he': 'להשפיע', 'en': 'to influence — להשפיע על', 'pos': 'verb'},
+         {'he': 'גורם', 'en': 'a cause, a factor', 'pos': 'noun'},
+       ]},
+      {'kind': 'choose', 'title': 'בחרו את הצורה', 'en': 'Choose the right form',
+       'instructions': 'Look at what comes after the gap: a noun, or a whole clause?',
+       'items': [
+         {'q': 'איחרנו ___ הפקק.', 'options': ['בגלל', 'בגלל ש', 'כי'], 'a': 'בגלל',
+          'en': 'We were late because of the traffic. — הפקק is a noun.'},
+         {'q': 'איחרנו ___ היה פקק.', 'options': ['בגלל ש', 'בגלל', 'למרות'], 'a': 'בגלל ש',
+          'en': 'We were late because there was traffic. — a whole clause follows.'},
+         {'q': '___ הקור, יצאנו לטייל.', 'options': ['למרות', 'למרות ש', 'בזכות'], 'a': 'למרות',
+          'en': 'Despite the cold, we went out for a walk.'},
+         {'q': '___ העזרה שלך סיימתי.', 'options': ['בזכות', 'בגלל ש', 'אף על פי'], 'a': 'בזכות',
+          'en': 'Thanks to your help I finished. — בזכות is for good causes, בגלל is neutral.'},
+       ]},
+      {'kind': 'transform', 'title': 'משם פעולה למשפט', 'en': 'From a noun to a clause',
+       'instructions': 'Rewrite with ש so a whole clause follows.',
+       'example': {'from': 'לא באנו בגלל הגשם.', 'to': 'לא באנו בגלל שירד גשם.'},
+       'items': [
+         {'from': 'הוא איחר בגלל הפקק.', 'to': ['הוא איחר בגלל שהיה פקק.', 'הוא איחר בגלל שהיה פקק'],
+          'en': 'He was late because of the traffic.'},
+         {'from': 'יצאנו למרות הקור.', 'to': ['יצאנו למרות שהיה קר.', 'יצאנו למרות שהיה קר'],
+          'en': 'We went out despite the cold.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['לא', 'יצאנו', 'בגלל', 'הגשם'], 'a': 'לא יצאנו בגלל הגשם',
+          'en': 'We didn’t go out because of the rain.'},
+         {'words': ['למרות', 'הכל', 'הוא', 'הצליח'], 'a': 'למרות הכל הוא הצליח',
+          'en': 'In spite of everything he succeeded.'},
+         {'words': ['בזכות', 'העזרה', 'שלך', 'סיימתי', 'בזמן'], 'a': 'בזכות העזרה שלך סיימתי בזמן',
+          'en': 'Thanks to your help I finished on time.'},
+         {'words': ['הוא', 'איחר', 'כי', 'היה', 'פקק', 'גדול'], 'a': 'הוא איחר כי היה פקק גדול',
+          'en': 'He was late because there was a big traffic jam.'},
+       ]},
+      {'kind': 'slang', 'he': 'בגללך', 'literal': '“because of you”',
+       'meaning': 'Your fault — or, said warmly, all thanks to you.',
+       'when': 'בגלל takes pronoun endings like any preposition: בגללי, בגללך, בגללו. Note that '
+               'בגללך leans towards blame and בזכותך towards credit, and Israelis hear the '
+               'difference immediately.',
+       'examples': [{'he': 'בגללך איחרנו לסרט.', 'en': 'Because of you we were late for the film.'},
+                    {'he': 'בזכותך הצלחתי.', 'en': 'Thanks to you I managed it.'}]},
+    ],
+  },
+  {
+    'id': 'he-30', 'n': 30, 'level': 'intermediate',
+    'title': {'he': 'בעבודה', 'en': 'At work'},
+    'objective': 'The office day in Hebrew: meetings, deadlines, email, the boss. This is the '
+                 'register most learners meet first in real life and last in a textbook.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Work Hebrew is short Hebrew',
+       'body': 'A workplace runs on a small set of verbs used constantly: <b>לקבוע</b> a meeting, '
+               '<b>להעביר</b> a file, <b>לעדכן</b> someone, <b>לטפל ב</b> something, '
+               '<b>לסגור</b> a task. Note how many take a governed preposition — לטפל <b>ב</b>, '
+               'לעדכן <b>את</b>, לדווח <b>ל</b> — which is the Gimel lesson again: the '
+               'preposition is part of the verb.',
+       'examples': [
+         {'he': 'נקבע פגישה ליום שלישי.', 'en': 'Let’s set a meeting for Tuesday.'},
+         {'he': 'אני מטפל בזה עכשיו.', 'en': 'I’m dealing with it now.'},
+         {'he': 'תעדכן אותי כשתדע.', 'en': 'Update me when you know.'},
+         {'he': 'העברתי לך את הקובץ במייל.', 'en': 'I sent you the file by email.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'משרד', 'en': 'office', 'pos': 'noun'},
+         {'he': 'מנהל', 'en': 'manager', 'pos': 'noun'},
+         {'he': 'עובד', 'en': 'employee, worker', 'pos': 'noun'},
+         {'he': 'ישיבה', 'en': 'a meeting (formal)', 'pos': 'noun'},
+         {'he': 'משימה', 'en': 'a task', 'pos': 'noun'},
+         {'he': 'משכורת', 'en': 'salary', 'pos': 'noun'},
+         {'he': 'להתקשר', 'en': 'to phone — להתקשר ל', 'pos': 'verb'},
+         {'he': 'להעביר', 'en': 'to pass on, to transfer', 'pos': 'verb'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'יש לנו ___ בשתיים. — a meeting', 'a': 'ישיבה'},
+       'items': [
+         {'q': 'ה___ שלי רוצה לדבר איתי.', 'a': ['מנהל'], 'en': 'My manager wants to talk to me.'},
+         {'q': 'קיבלתי את ה___ בסוף החודש.', 'a': ['משכורת'], 'en': 'I got my salary at the end of the month.'},
+         {'q': 'אני ___ אליך אחר כך.', 'a': ['מתקשר', 'מתקשרת'], 'en': 'I’ll call you later.'},
+         {'q': 'תוכל ___ לי את הקובץ?', 'a': ['להעביר'], 'en': 'Could you send me the file?'},
+         {'q': 'יש לי הרבה ___ היום.', 'a': ['משימות', 'עבודה'], 'en': 'I have a lot of tasks today.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'לקבוע פגישה', 'en': 'to set up a meeting'},
+         {'he': 'לטפל בבעיה', 'en': 'to deal with a problem'},
+         {'he': 'לעדכן את הצוות', 'en': 'to update the team'},
+         {'he': 'לשלוח מייל', 'en': 'to send an email'},
+         {'he': 'לסיים בזמן', 'en': 'to finish on time'},
+         {'he': 'לצאת מוקדם', 'en': 'to leave early'},
+       ]},
+      {'kind': 'slang', 'he': 'תכלס', 'literal': 'from תכלית, “purpose” (via Yiddish)',
+       'meaning': 'Bottom line / actually / let’s get to the point.',
+       'when': 'The single most useful word in an Israeli meeting. It marks the moment someone '
+               'stops framing and says the real thing, and it is entirely at home at work.',
+       'examples': [{'he': 'תכלס, זה לא יהיה מוכן היום.', 'en': 'Bottom line, it won’t be ready today.'},
+                    {'he': 'תכלס אתה צודק.', 'en': 'Actually, you’re right.'}]},
+    ],
+  },
+  {
+    'id': 'he-31', 'n': 31, 'level': 'intermediate',
+    'title': {'he': 'אצל הרופא', 'en': 'At the doctor’s'},
+    'objective': 'Say where it hurts, understand what you are told to do, and read a '
+                 'prescription. The one situation where guessing is not good enough.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Hebrew puts the pain in charge',
+       'body': 'English says "I have a headache"; Hebrew says <b>כואב לי הראש</b> — "the head '
+               'hurts TO ME". The body part is the subject and you are the indirect object, so '
+               'the verb agrees with the body part: כואבת לי הבטן, כואבות לי הרגליים. Learn the '
+               'frame and every ache is one noun away.',
+       'examples': [
+         {'he': 'כואב לי הראש.', 'en': 'I have a headache.'},
+         {'he': 'כואבת לי הבטן כבר יומיים.', 'en': 'My stomach has hurt for two days.'},
+         {'he': 'יש לי חום גבוה.', 'en': 'I have a high temperature.'},
+         {'he': 'אני מרגיש לא טוב.', 'en': 'I don’t feel well.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'רופא', 'en': 'doctor', 'pos': 'noun'},
+         {'he': 'מרפאה', 'en': 'clinic', 'pos': 'noun'},
+         {'he': 'תור', 'en': 'appointment, queue', 'pos': 'noun'},
+         {'he': 'בדיקה', 'en': 'a test, an examination', 'pos': 'noun'},
+         {'he': 'תרופה', 'en': 'medicine', 'pos': 'noun'},
+         {'he': 'מרשם', 'en': 'prescription', 'pos': 'noun'},
+         {'he': 'כאב', 'en': 'pain', 'pos': 'noun'},
+         {'he': 'להחלים', 'en': 'to recover', 'pos': 'verb'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Mind the agreement — the body part is the subject.',
+       'example': {'q': '___ לי הראש. — my head hurts', 'a': 'כואב'},
+       'items': [
+         {'q': '___ לי הבטן.', 'a': ['כואבת'], 'en': 'My stomach hurts. — בטן is feminine.'},
+         {'q': 'קבעתי ___ אצל הרופא ליום שני.', 'a': ['תור'], 'en': 'I made a doctor’s appointment for Monday.'},
+         {'q': 'הרופא נתן לי ___ לתרופה.', 'a': ['מרשם'], 'en': 'The doctor gave me a prescription.'},
+         {'q': 'צריך לעשות ___ דם.', 'a': ['בדיקת', 'בדיקה'], 'en': 'A blood test is needed.'},
+         {'q': 'אני מקווה ש___ מהר.', 'a': ['תחלים', 'תחלימי'], 'en': 'I hope you get better soon.'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'Why is it כואבת לי הרגל and not כואב?',
+          'options': ['רגל is feminine and it is the subject',
+                      'Because לי is feminine',
+                      'Because a leg is one of two'],
+          'a': 'רגל is feminine and it is the subject',
+          'why': 'The verb agrees with the body part, never with you. That is the whole trick of '
+                 'this construction.'},
+         {'q': 'A receptionist says יש לך תור בשלוש. What do you have?',
+          'options': ['An appointment at three', 'A queue of three people', 'Three tests'],
+          'a': 'An appointment at three',
+          'why': 'תור is both "queue" and "your turn / appointment" — in a clinic it is always '
+                 'the second.'},
+       ]},
+      {'kind': 'slang', 'he': 'רפואה שלמה', 'literal': '“a complete healing”',
+       'meaning': 'Get well soon.',
+       'when': 'What you say or write to someone who is ill. It comes from the prayer for the '
+               'sick and is used by everyone, religious or not, exactly the way "bless you" is.',
+       'examples': [{'he': 'רפואה שלמה, תשמור על עצמך.', 'en': 'Get well soon, look after yourself.'},
+                    {'he': 'שמעתי שאתה חולה — רפואה שלמה.', 'en': 'I heard you’re ill — get well soon.'}]},
+    ],
+  },
+  {
+    'id': 'he-32', 'n': 32, 'level': 'intermediate',
+    'title': {'he': 'כסף וטפסים', 'en': 'Money and paperwork'},
+    'objective': 'The bank, the bill, the form and the queue. Bureaucratic Hebrew is a small '
+                 'closed vocabulary, and knowing forty words of it removes most of the fear.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The words on the counter',
+       'body': 'A form is a <b>טופס</b> and you <b>ממלא</b> it — fill it. Proof of anything is a '
+               '<b>תעודה</b> or a <b>מסמך</b>. A receipt is a <b>קבלה</b>, which is also the noun from לקבל, "to '
+               'receive". You pay <b>במזומן</b> (cash) or <b>באשראי</b> (card), and the thing '
+               'you are paying is a <b>חשבון</b> — which means both "bill" and "bank account".',
+       'examples': [
+         {'he': 'צריך למלא טופס ולחתום.', 'en': 'You need to fill in a form and sign.'},
+         {'he': 'אפשר לקבל קבלה, בבקשה?', 'en': 'Could I have a receipt, please?'},
+         {'he': 'שילמתי במזומן.', 'en': 'I paid cash.'},
+         {'he': 'פתחתי חשבון בבנק.', 'en': 'I opened an account at the bank.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'טופס', 'en': 'form', 'pos': 'noun'},
+         {'he': 'תעודה', 'en': 'certificate, document', 'pos': 'noun'},
+         {'he': 'קבלה', 'en': 'receipt', 'pos': 'noun'},
+         {'he': 'חשבון', 'en': 'bill, account', 'pos': 'noun'},
+         {'he': 'מזומן', 'en': 'cash', 'pos': 'noun'},
+         {'he': 'ביטוח', 'en': 'insurance', 'pos': 'noun'},
+         {'he': 'מס', 'en': 'tax', 'pos': 'noun'},
+         {'he': 'לחסוך', 'en': 'to save (money)', 'pos': 'verb'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'למלא טופס', 'en': 'to fill in a form'},
+         {'he': 'לשלם במזומן', 'en': 'to pay cash'},
+         {'he': 'לפתוח חשבון', 'en': 'to open an account'},
+         {'he': 'לחכות בתור', 'en': 'to wait in the queue'},
+         {'he': 'לקבל תעודה', 'en': 'to get a certificate'},
+         {'he': 'לחסוך כסף', 'en': 'to save money'},
+       ]},
+      {'kind': 'choose', 'title': 'בחרו את המילה', 'en': 'Choose the word',
+       'instructions': 'One word is the one an Israeli clerk would use.',
+       'items': [
+         {'q': 'איך אתה משלם? ב___ או באשראי?', 'options': ['מזומן', 'כסף', 'חשבון'],
+          'a': 'מזומן', 'en': 'Cash or card?'},
+         {'q': 'צריך ___ מהעבודה שאתה עובד שם.', 'options': ['תעודה', 'קבלה', 'מס'],
+          'a': 'תעודה', 'en': 'You need a document from work saying you work there.'},
+         {'q': 'קח את ה___, זה מוכיח ששילמת.', 'options': ['קבלה', 'מס', 'ביטוח'],
+          'a': 'קבלה', 'en': 'Take the receipt, it proves you paid.'},
+         {'q': 'יש לי ___ בריאות דרך העבודה.', 'options': ['ביטוח', 'מזומן', 'טופס'],
+          'a': 'ביטוח', 'en': 'I have health insurance through work.'},
+       ]},
+      {'kind': 'slang', 'he': 'עלה לי ביוקר', 'literal': '“it went up to me expensively”',
+       'meaning': 'It cost me dearly.',
+       'when': 'Used for money and, more often, for anything else that had a price — a mistake, '
+               'a decision, a night out. Hebrew uses עלה for costing, never שילם.',
+       'examples': [{'he': 'התיקון עלה לי ביוקר.', 'en': 'The repair cost me a fortune.'},
+                    {'he': 'כמה זה עולה?', 'en': 'How much does it cost?'}]},
+    ],
+  },
+]
+
+
+# ---------------------------------------------------------------------------------------------
+# UNITS 33-40 — the advanced set, and they change what a unit is FOR. Up to here every unit
+# taught a form. These teach a use: reading a headline, telling a story in order, disagreeing
+# without being rude, hearing the difference between how Hebrew is spoken and how it is written.
+# That is the ground the curriculum's phase 3 stands on, and nothing below it can reach it.
+UNITS += [
+  {
+    'id': 'he-33', 'n': 33, 'level': 'advanced',
+    'title': {'he': 'סתמי: מה אומרים', 'en': 'When nobody is the subject'},
+    'objective': 'אומרים, כותבים, מדברים על. Hebrew has a whole way of saying things with no one '
+                 'doing them, and half of what you overhear is built this way.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The third-person plural with nobody in it',
+       'body': 'Put a verb in the masculine plural with no subject and it means "people do" or '
+               '"one does": <b>אומרים ש</b>… "they say that", <b>מדברים על</b>… "there is talk '
+               'of", <b>לא עושים את זה</b> "that isn’t done". It is not lazy speech — it is the '
+               'standard Hebrew impersonal, and it is more common in the paper than a passive is. '
+               'The other frame is <b>אי אפשר</b> / <b>אפשר</b>, which take an infinitive and no '
+               'subject at all.',
+       'examples': [
+         {'he': 'אומרים שהמחירים יעלו.', 'en': 'They say prices will go up.'},
+         {'he': 'מדברים על זה כבר חודשיים.', 'en': 'People have been talking about it for two months.'},
+         {'he': 'פה לא מעשנים.', 'en': 'There’s no smoking here.'},
+         {'he': 'אי אפשר להיכנס בלי תעודה.', 'en': 'You can’t get in without a document.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'לדווח', 'en': 'to report — לדווח על', 'pos': 'verb'},
+         {'he': 'לציין', 'en': 'to note, to mention', 'pos': 'verb'},
+         {'he': 'להזכיר', 'en': 'to mention, to remind', 'pos': 'verb'},
+         {'he': 'לשוחח', 'en': 'to converse — לשוחח עם', 'pos': 'verb'},
+         {'he': 'עמדה', 'en': 'position, stance', 'pos': 'noun'},
+         {'he': 'טענה', 'en': 'a claim', 'pos': 'noun'},
+         {'he': 'אפשרות', 'en': 'possibility, option', 'pos': 'noun'},
+         {'he': 'מסקנה', 'en': 'conclusion', 'pos': 'noun'},
+       ]},
+      {'kind': 'transform', 'title': 'מאישי לסתמי', 'en': 'Personal to impersonal',
+       'instructions': 'Rewrite so nobody is named. Drop the subject and use the plural.',
+       'example': {'from': 'האנשים אומרים שזה יקר.', 'to': 'אומרים שזה יקר.'},
+       'items': [
+         {'from': 'העיתון מדווח שהוא התפטר.', 'to': ['מדווחים שהוא התפטר.', 'מדווחים שהוא התפטר'],
+          'en': 'The paper reports that he resigned.'},
+         {'from': 'אנשים מדברים על זה הרבה.', 'to': ['מדברים על זה הרבה.', 'מדברים על זה הרבה'],
+          'en': 'People talk about it a lot.'},
+         {'from': 'הם לא מעשנים פה.', 'to': ['פה לא מעשנים.', 'לא מעשנים פה.', 'פה לא מעשנים', 'לא מעשנים פה'],
+          'en': 'They don’t smoke here.'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'אומרים שהוא עוזב. Who says?',
+          'options': ['Unspecified — that is the point', 'The speaker', 'Everyone, literally'],
+          'a': 'Unspecified — that is the point',
+          'why': 'The impersonal reports a rumour without standing behind it, which is exactly '
+                 'why it is everywhere in gossip and in news alike.'},
+         {'q': 'What is the difference between נסגר and סוגרים?',
+          'options': ['One is passive, the other impersonal',
+                      'One is past, the other present',
+                      'Nothing, they are interchangeable'],
+          'a': 'One is passive, the other impersonal',
+          'why': 'נסגר is a passive verb with the road as subject; סוגרים has no subject at all. '
+                 'Both hide the agent, and Hebrew reaches for the second far more often in speech.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the impersonal verb — masculine plural, no subject.',
+       'example': {'q': '___ שהמחירים יעלו. — they say', 'a': 'אומרים'},
+       'items': [
+         {'q': 'פה לא ___.', 'a': ['מעשנים'], 'en': 'There’s no smoking here.'},
+         {'q': '___ על זה כבר חודשיים.', 'a': ['מדברים'], 'en': 'People have been talking about it for two months.'},
+         {'q': '___ שהוא עוזב את התפקיד.', 'a': ['אומרים', 'מדווחים'], 'en': 'They say he’s leaving the job.'},
+         {'q': 'אי ___ להיכנס בלי תעודה.', 'a': ['אפשר'], 'en': 'You can’t get in without a document.'},
+         {'q': 'ככה לא ___ לאנשים.', 'a': ['מדברים'], 'en': 'That’s not how you talk to people.'},
+       ]},
+      {'kind': 'slang', 'he': 'לא עושים דבר כזה', 'literal': '“one does not do a thing like this”',
+       'meaning': 'That’s just not done.',
+       'when': 'The impersonal used to enforce a norm without accusing the person in front of '
+               'you. Softer than אסור and much more common between friends and family.',
+       'examples': [{'he': 'לא מדברים ככה לאמא.', 'en': 'You don’t talk to your mother like that.'},
+                    {'he': 'לא באים בלי להתקשר.', 'en': 'One doesn’t just turn up without calling.'}]},
+    ],
+  },
+  {
+    'id': 'he-34', 'n': 34, 'level': 'advanced',
+    'title': {'he': 'הפועל והמילית שלו, שלב ב', 'en': 'Verbs and their prepositions II'},
+    'objective': 'Gimel’s core lesson, taken further: twenty verbs whose preposition changes the '
+                 'meaning, or whose preposition is nothing like the English one.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The preposition is part of the word',
+       'body': 'לְהַשְׁפִּיעַ <b>עַל</b> — to influence. לִסְבּוֹל <b>מ</b> — to suffer FROM. '
+               'לְוַתֵּר <b>עַל</b> — to give up ON. לְהִתְרַגֵּל <b>ל</b> — to get used TO. '
+               'לְהִתְלוֹנֵן <b>עַל</b> — to complain ABOUT. Learning the verb without it is '
+               'learning half a word, and the half you learned will not build a sentence. Some '
+               'verbs change meaning outright: חשב <b>על</b> is "think about", חשב <b>ש</b> is '
+               '"think that".',
+       'examples': [
+         {'he': 'זה השפיע עליי מאוד.', 'en': 'That affected me a lot.'},
+         {'he': 'הוא סובל מכאבי גב.', 'en': 'He suffers from back pain.'},
+         {'he': 'ויתרתי על הנסיעה.', 'en': 'I gave up on the trip.'},
+         {'he': 'התרגלתי לרעש.', 'en': 'I got used to the noise.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'לסבול', 'en': 'to suffer — לסבול מ', 'pos': 'verb'},
+         {'he': 'להתרגל', 'en': 'to get used to — להתרגל ל', 'pos': 'verb'},
+         {'he': 'להתלונן', 'en': 'to complain — להתלונן על', 'pos': 'verb'},
+         {'he': 'להתעקש', 'en': 'to insist — להתעקש על', 'pos': 'verb'},
+         {'he': 'להאמין', 'en': 'to believe — להאמין ב', 'pos': 'verb'},
+         {'he': 'לשמור', 'en': 'to keep, to guard — לשמור על', 'pos': 'verb'},
+         {'he': 'לוותר', 'en': 'to give up — לוותר על', 'pos': 'verb'},
+         {'he': 'להתייחס', 'en': 'to refer, to treat — להתייחס ל', 'pos': 'verb'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו את המילית', 'en': 'Fill in the preposition',
+       'instructions': 'One or two letters. This is the part nobody guesses right.',
+       'example': {'q': 'הוא סובל ___ כאבי ראש.', 'a': 'מ'},
+       'items': [
+         {'q': 'זה השפיע ___ כל המשפחה.', 'a': ['על'], 'en': 'It affected the whole family.'},
+         {'q': 'התרגלתי ___ החום.', 'a': ['ל'], 'en': 'I got used to the heat.'},
+         {'q': 'הם התלוננו ___ הרעש.', 'a': ['על'], 'en': 'They complained about the noise.'},
+         {'q': 'אני מאמין ___ זה.', 'a': ['ב'], 'en': 'I believe in that.'},
+         {'q': 'תשמור ___ עצמך.', 'a': ['על'], 'en': 'Look after yourself.'},
+         {'q': 'ויתרנו ___ החופשה.', 'a': ['על'], 'en': 'We gave up the holiday.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'לחשוב על', 'en': 'to think about'},
+         {'he': 'לחשוב ש', 'en': 'to think that'},
+         {'he': 'לדאוג ל', 'en': 'to see to, to provide for'},
+         {'he': 'לדאוג מ', 'en': 'to worry about'},
+         {'he': 'לשאול את', 'en': 'to ask someone'},
+         {'he': 'לבקש מ', 'en': 'to ask something OF someone'},
+       ]},
+      {'kind': 'slang', 'he': 'סובל מזה', 'literal': '“suffers from it”',
+       'meaning': 'Used well beyond illness — for anything you are stuck with.',
+       'when': 'Hebrew uses סבל מ for traffic, bureaucracy and bad management as readily as for '
+               'a headache, and the מ is fixed in all of them.',
+       'examples': [{'he': 'כל השכונה סובלת מהרעש.', 'en': 'The whole neighbourhood suffers from the noise.'},
+                    {'he': 'אני סובל מזה כל בוקר.', 'en': 'I put up with that every morning.'}]},
+    ],
+  },
+  {
+    'id': 'he-35', 'n': 35, 'level': 'advanced',
+    'title': {'he': 'לקרוא עיתון', 'en': 'Reading the paper'},
+    'objective': 'A headline is not a sentence. It drops the verb, front-loads the noun and '
+                 'assumes you know the frame — and once you can read one, the daily news in this '
+                 'app stops being an exercise.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The headline drops what you can guess',
+       'body': 'Hebrew headlines leave out <b>היה</b> and the definite article, and often the '
+               'verb altogether: <b>שר האוצר: “נעשה הכל”</b>, <b>מחאה בתל אביב</b>, '
+               '<b>הוחלט: הבחירות ביוני</b>. A colon carries "said" or "it was decided". A whole '
+               'clause can hang on a construct — <b>ראש הממשלה</b>, <b>שר הביטחון</b>, '
+               '<b>בית המשפט העליון</b> — so the smichut you learned early is what a front page '
+               'is made of.',
+       'examples': [
+         {'he': 'הממשלה החליטה על תקציב חדש.', 'en': 'The government decided on a new budget.'},
+         {'he': 'הכנסת אישרה את החוק.', 'en': 'The Knesset approved the law.'},
+         {'he': 'המחאה נמשכה עד הערב.', 'en': 'The protest continued until evening.'},
+         {'he': 'לפי הדיווח, אין נפגעים.', 'en': 'According to the report, there are no casualties.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'כתבה', 'en': 'an article, a report', 'pos': 'noun'},
+         {'he': 'כותרת', 'en': 'headline, title', 'pos': 'noun'},
+         {'he': 'ממשלה', 'en': 'government', 'pos': 'noun'},
+         {'he': 'כנסת', 'en': 'the Knesset', 'pos': 'noun'},
+         {'he': 'בחירות', 'en': 'elections', 'pos': 'noun'},
+         {'he': 'חוק', 'en': 'law', 'pos': 'noun'},
+         {'he': 'מחאה', 'en': 'protest', 'pos': 'noun'},
+         {'he': 'שופט', 'en': 'judge', 'pos': 'noun'},
+       ]},
+      {'kind': 'choose', 'title': 'מה הכותרת אומרת?', 'en': 'What does the headline say?',
+       'instructions': 'Read the headline, then pick the sentence it stands for.',
+       'items': [
+         {'q': 'הכנסת אישרה: החוק עובר',
+          'options': ['The Knesset approved it and the law passes',
+                      'The Knesset will discuss the law',
+                      'The law was rejected'],
+          'a': 'The Knesset approved it and the law passes',
+          'en': 'The colon carries the announcement.'},
+         {'q': 'מחאה בתל אביב, אלפי משתתפים',
+          'options': ['A protest in Tel Aviv with thousands taking part',
+                      'Tel Aviv protests against thousands',
+                      'Thousands protested and were arrested'],
+          'a': 'A protest in Tel Aviv with thousands taking part',
+          'en': 'No verb at all — two noun phrases side by side.'},
+         {'q': 'לפי הדיווח: אין נפגעים',
+          'options': ['According to the report, nobody was hurt',
+                      'The report was not published',
+                      'There is no report'],
+          'a': 'According to the report, nobody was hurt',
+          'en': 'אין plus a plural noun is the standard way to say "there are no".'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'ראש ה___ נאם אתמול. — government', 'a': 'ממשלה'},
+       'items': [
+         {'q': 'ה___ אישרה את החוק אתמול.', 'a': ['כנסת'], 'en': 'The Knesset approved the law yesterday.'},
+         {'q': 'קראתי ___ מעניינת על זה בעיתון.', 'a': ['כתבה'], 'en': 'I read an interesting article about it in the paper.'},
+         {'q': 'ה___ יהיו בחודש הבא.', 'a': ['בחירות'], 'en': 'The elections will be next month.'},
+         {'q': 'ה___ החליט שהוא לא אשם.', 'a': ['שופט'], 'en': 'The judge decided he was not guilty.'},
+         {'q': 'הייתה ___ גדולה ברחוב.', 'a': ['מחאה', 'הפגנה'], 'en': 'There was a big protest in the street.'},
+       ]},
+      {'kind': 'slang', 'he': 'על הפנים', 'literal': '“on the face”',
+       'meaning': 'Terrible, a disaster.',
+       'when': 'Said of anything that went badly — a film, a match, a government. It is informal '
+               'and everywhere, and it is exactly what a reader says about the news they just read.',
+       'examples': [{'he': 'המצב על הפנים.', 'en': 'The situation is a disaster.'},
+                    {'he': 'הסרט היה על הפנים.', 'en': 'The film was terrible.'}]},
+    ],
+  },
+  {
+    'id': 'he-36', 'n': 36, 'level': 'advanced',
+    'title': {'he': 'לספר סיפור', 'en': 'Telling a story'},
+    'objective': 'Not new grammar — ORDER. The words that put events in sequence are what turn a '
+                 'pile of past-tense sentences into something someone wants to listen to.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The spine of a story is four words long',
+       'body': 'Open with <b>בהתחלה</b> or <b>יום אחד</b>. Move with <b>אחר כך</b>, '
+               '<b>ואז</b>, <b>לאחר מכן</b> (written). Interrupt with <b>פתאום</b>. Close with '
+               '<b>בסוף</b> or <b>לבסוף</b>. Hold two things at once with <b>בזמן ש</b> and '
+               '<b>כש</b>. Israelis also narrate in the PRESENT for effect — אני הולך ברחוב, '
+               'ופתאום — exactly as English does, and it is the most natural thing you can do '
+               'with the tense you learned first.',
+       'examples': [
+         {'he': 'יום אחד הלכתי ברחוב, ופתאום ראיתי אותו.', 'en': 'One day I was walking down the street, and suddenly I saw him.'},
+         {'he': 'בהתחלה זה היה קשה, אחר כך התרגלתי.', 'en': 'At first it was hard, then I got used to it.'},
+         {'he': 'בזמן שחיכיתי, קראתי את כל העיתון.', 'en': 'While I waited, I read the whole paper.'},
+         {'he': 'בסוף הכל הסתדר.', 'en': 'In the end everything worked out.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'בהתחלה', 'en': 'at first', 'pos': 'other'},
+         {'he': 'פתאום', 'en': 'suddenly', 'pos': 'other'},
+         {'he': 'עדיין', 'en': 'still', 'pos': 'other'},
+         {'he': 'מיד', 'en': 'at once', 'pos': 'other'},
+         {'he': 'כבר', 'en': 'already', 'pos': 'other'},
+         {'he': 'להסתדר', 'en': 'to work out, to manage', 'pos': 'verb'},
+         {'he': 'להמשיך', 'en': 'to continue', 'pos': 'verb'},
+         {'he': 'להפסיק', 'en': 'to stop', 'pos': 'verb'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['בהתחלה', 'זה', 'היה', 'קשה', 'אבל', 'התרגלתי'],
+          'a': 'בהתחלה זה היה קשה אבל התרגלתי', 'en': 'At first it was hard but I got used to it.'},
+         {'words': ['בזמן', 'שחיכיתי', 'קראתי', 'את', 'העיתון'],
+          'a': 'בזמן שחיכיתי קראתי את העיתון', 'en': 'While I waited I read the paper.'},
+         {'words': ['ופתאום', 'הוא', 'קם', 'והלך', 'מהחדר'],
+          'a': 'ופתאום הוא קם והלך מהחדר', 'en': 'And suddenly he got up and left the room.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו את מילת הקישור', 'en': 'Fill in the sequencing word',
+       'instructions': 'Type the word that puts the events in order.',
+       'example': {'q': '___ זה היה קשה. — at first', 'a': 'בהתחלה'},
+       'items': [
+         {'q': 'חיכיתי שעה, ו___ הוא הגיע.', 'a': ['פתאום', 'אז'], 'en': 'I waited an hour, and then/suddenly he arrived.'},
+         {'q': '___ הכל הסתדר.', 'a': ['בסוף', 'לבסוף'], 'en': 'In the end everything worked out.'},
+         {'q': 'אכלנו, ו___ הלכנו לים.', 'a': ['אחר כך', 'אז'], 'en': 'We ate, and afterwards we went to the sea.'},
+         {'q': 'הוא ___ גר שם, לא עבר דירה.', 'a': ['עדיין'], 'en': 'He still lives there, he didn’t move.'},
+         {'q': 'תתקשר אליי ___ כשתדע.', 'a': ['מיד'], 'en': 'Call me at once when you know.'},
+       ]},
+      {'kind': 'slang', 'he': 'ואז, בום', 'literal': '“and then, boom”',
+       'meaning': 'And then it all happened at once.',
+       'when': 'The spoken storyteller’s punctuation. Israelis mark the turn of a story out loud '
+               'rather than with grammar, and ואז plus a sound effect is the commonest way.',
+       'examples': [{'he': 'הכל היה בסדר, ואז בום, הכל נפל.', 'en': 'Everything was fine, and then boom, it all collapsed.'},
+                    {'he': 'ואז הבנתי מה קרה.', 'en': 'And then I understood what had happened.'}]},
+    ],
+  },
+  {
+    'id': 'he-37', 'n': 37, 'level': 'advanced',
+    'title': {'he': 'דעה וויכוח', 'en': 'Having an opinion'},
+    'objective': 'Say what you think, disagree, and concede a point. Hebrew argues directly and '
+                 'the softeners are different from English ones — knowing them is the difference '
+                 'between blunt and rude.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Stake the claim, then hedge it',
+       'body': 'Open with <b>לדעתי</b> "in my opinion", <b>נראה לי ש</b> "it seems to me", or '
+               '<b>אני חושב ש</b>. Disagree with <b>אני לא בטוח</b>, <b>דווקא לא</b>, or the '
+               'blunt <b>לא מסכים</b>. Concede with <b>נכון, אבל</b> or <b>בכל זאת</b>. Contrast '
+               'two sides with <b>מצד אחד … מצד שני</b>. Note that Hebrew disagrees far more '
+               'flatly than English and it is not read as rudeness.',
+       'examples': [
+         {'he': 'לדעתי זה לא יעבוד.', 'en': 'In my opinion that won’t work.'},
+         {'he': 'נראה לי שאתה צודק.', 'en': 'I think you’re right.'},
+         {'he': 'נכון, אבל זה לא כל הסיפור.', 'en': 'True, but that’s not the whole story.'},
+         {'he': 'מצד אחד זה יקר, מצד שני אין ברירה.', 'en': 'On one hand it’s expensive, on the other there’s no choice.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'דעה', 'en': 'opinion', 'pos': 'noun'},
+         {'he': 'להביע', 'en': 'to express — להביע דעה', 'pos': 'verb'},
+         {'he': 'להסכים', 'en': 'to agree — להסכים עם', 'pos': 'verb'},
+         {'he': 'להתנגד', 'en': 'to object — להתנגד ל', 'pos': 'verb'},
+         {'he': 'לשכנע', 'en': 'to persuade', 'pos': 'verb'},
+         {'he': 'להדגיש', 'en': 'to emphasise', 'pos': 'verb'},
+         {'he': 'ברירה', 'en': 'choice, alternative', 'pos': 'noun'},
+         {'he': 'לסכם', 'en': 'to sum up', 'pos': 'verb'},
+       ]},
+      {'kind': 'choose', 'title': 'איך עונים?', 'en': 'How do you reply?',
+       'instructions': 'Someone says the line. Pick the reply that does what the English asks.',
+       'items': [
+         {'q': 'זה רעיון גרוע. — disagree, politely',
+          'options': ['אני לא בטוח שזה נכון', 'אתה טועה לגמרי', 'בסדר גמור'],
+          'a': 'אני לא בטוח שזה נכון', 'en': 'The first hedges; the second is a flat contradiction.'},
+         {'q': 'אתה צודק. — concede but keep your point',
+          'options': ['נכון, אבל בכל זאת', 'תודה רבה', 'לא מסכים'],
+          'a': 'נכון, אבל בכל זאת', 'en': 'נכון, אבל is the standard concession before a counter.'},
+         {'q': 'למה אתה חושב ככה? — give a reason',
+          'options': ['כי ראיתי את זה בעצמי', 'לדעתי כן', 'אולי'],
+          'a': 'כי ראיתי את זה בעצמי', 'en': 'A reason needs כי and a clause.'},
+         {'q': 'מה דעתך? — say you are undecided',
+          'options': ['אני עוד לא יודע', 'אני מסכים', 'ברור שלא'],
+          'a': 'אני עוד לא יודע', 'en': '“I don’t know yet” — עוד לא is “not yet”.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['לדעתי', 'זה', 'לא', 'יעבוד', 'בכלל'], 'a': 'לדעתי זה לא יעבוד בכלל',
+          'en': 'In my opinion that won’t work at all.'},
+         {'words': ['מצד', 'אחד', 'זה', 'יקר', 'מצד', 'שני', 'אין', 'ברירה'],
+          'a': 'מצד אחד זה יקר מצד שני אין ברירה',
+          'en': 'On one hand it’s expensive, on the other there’s no choice.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the word that carries the opinion.',
+       'example': {'q': '___ זה לא יעבוד. — in my opinion', 'a': 'לדעתי'},
+       'items': [
+         {'q': '___ לי שאתה צודק.', 'a': ['נראה'], 'en': 'It seems to me you’re right.'},
+         {'q': 'אני לא ___ עם זה בכלל.', 'a': ['מסכים', 'מסכימה'], 'en': 'I don’t agree with that at all.'},
+         {'q': 'מצד ___ זה יקר, מצד שני אין ברירה.', 'a': ['אחד'], 'en': 'On one hand it’s expensive, on the other there’s no choice.'},
+         {'q': 'נכון, ___ זה לא כל הסיפור.', 'a': ['אבל'], 'en': 'True, but that’s not the whole story.'},
+         {'q': 'הוא ניסה ___ אותי ולא הצליח.', 'a': ['לשכנע'], 'en': 'He tried to persuade me and didn’t manage.'},
+       ]},
+      {'kind': 'slang', 'he': 'אין ברירה', 'literal': '“there is no choice”',
+       'meaning': 'Nothing to be done / we have no option.',
+       'when': 'A national reflex, said with a shrug about anything from a queue to a war. It '
+               'ends more Israeli arguments than any counter-argument does.',
+       'examples': [{'he': 'אין ברירה, נחכה.', 'en': 'Nothing for it, we’ll wait.'},
+                    {'he': 'לא רציתי, אבל לא הייתה ברירה.', 'en': 'I didn’t want to, but there was no choice.'}]},
+    ],
+  },
+  {
+    'id': 'he-38', 'n': 38, 'level': 'advanced',
+    'title': {'he': 'דיבור מול כתיבה', 'en': 'Spoken Hebrew and written Hebrew'},
+    'objective': 'They are further apart than in English. The same thought is said one way and '
+                 'written another, and knowing which is which stops you sounding like a document.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Two registers, one language',
+       'body': 'Spoken uses <b>ש</b>, written uses <b>אשר</b>. Spoken says <b>בגלל ש</b>, written '
+               '<b>מכיוון ש</b>. Spoken says <b>אבל</b>, written <b>אולם</b>. Spoken drops '
+               '<b>את</b> after some verbs and written never does. Written Hebrew keeps the '
+               'future for the future; spoken Hebrew often uses the present. None of the written '
+               'forms are wrong out loud — they just sound like you are reading aloud, which is '
+               'a specific and slightly funny effect.',
+       'examples': [
+         {'he': 'האיש שגר למטה — האיש אשר גר למטה', 'en': 'the man who lives downstairs — spoken, then written'},
+         {'he': 'בגלל שירד גשם — מכיוון שירד גשם', 'en': 'because it rained — spoken, then written'},
+         {'he': 'אני הולך מחר. — אלך מחר.', 'en': 'I’m going tomorrow. — I shall go tomorrow.'},
+         {'he': 'זה יקר אבל שווה. — הדבר יקר אולם שווה.', 'en': 'It’s expensive but worth it. — spoken, then written.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'ניב', 'en': 'idiom, turn of phrase', 'pos': 'noun'},
+         {'he': 'משפט', 'en': 'sentence; also a trial', 'pos': 'noun'},
+         {'he': 'לשון', 'en': 'language, tongue', 'pos': 'noun'},
+         {'he': 'להעיר', 'en': 'to remark; to wake someone', 'pos': 'verb'},
+         {'he': 'להשיב', 'en': 'to reply (written register)', 'pos': 'verb'},
+         {'he': 'להוסיף', 'en': 'to add', 'pos': 'verb'},
+         {'he': 'רשמי', 'en': 'official, formal', 'pos': 'adj'},
+         {'he': 'פשוט', 'en': 'simple; simply', 'pos': 'adj'},
+       ]},
+      {'kind': 'transform', 'title': 'מכתיבה לדיבור', 'en': 'Written to spoken',
+       'instructions': 'Rewrite the way you would actually say it.',
+       'example': {'from': 'האיש אשר גר למטה.', 'to': 'האיש שגר למטה.'},
+       'items': [
+         {'from': 'לא הגענו מכיוון שירד גשם.',
+          'to': ['לא הגענו בגלל שירד גשם.', 'לא הגענו בגלל שירד גשם'],
+          'en': 'We didn’t come because it rained.'},
+         {'from': 'הדבר יקר אולם שווה.', 'to': ['זה יקר אבל שווה.', 'זה יקר אבל שווה'],
+          'en': 'It’s expensive but worth it.'},
+       ]},
+      {'kind': 'quiz', 'title': 'איפה תשמע את זה?', 'en': 'Where would you hear this?',
+       'items': [
+         {'q': 'אשר, אולם, מכיוון ש — where do these live?',
+          'options': ['In writing and in the news', 'In the street', 'Only in the Bible'],
+          'a': 'In writing and in the news',
+          'why': 'They are current, formal Hebrew — a newsreader says them, a friend does not.'},
+         {'q': 'Someone says אלך מחר instead of אני הולך מחר. How does it land?',
+          'options': ['Correct but bookish', 'Wrong', 'Rude'],
+          'a': 'Correct but bookish',
+          'why': 'The future tense is perfectly right; spoken Hebrew just reaches for the '
+                 'present far more often, so the future sounds deliberate.'},
+       ]},
+      {'kind': 'choose', 'title': 'דיבור או כתיבה?', 'en': 'Spoken or written?',
+       'instructions': 'Pick the version you would actually say out loud to a friend.',
+       'items': [
+         {'q': 'the man who was here', 'options': ['האיש שהיה פה', 'האיש אשר היה פה', 'האיש הוא היה פה'],
+          'a': 'האיש שהיה פה', 'en': 'ש in speech, אשר on paper.'},
+         {'q': 'but it’s worth it', 'options': ['אבל זה שווה', 'אולם הדבר שווה', 'ברם זה שווה'],
+          'a': 'אבל זה שווה', 'en': 'אולם and ברם are written-register “but”.'},
+         {'q': 'I’ll come tomorrow', 'options': ['אני בא מחר', 'אבוא מחר', 'הנני בא מחר'],
+          'a': 'אני בא מחר', 'en': 'Spoken Hebrew uses the present for a near future far more than the future tense.'},
+         {'q': 'because there was no time', 'options': ['כי לא היה זמן', 'מכיוון שלא היה זמן', 'הואיל ולא היה זמן'],
+          'a': 'כי לא היה זמן', 'en': 'כי is the everyday one; the other two belong in a letter.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['בקיצור', 'לא', 'הגענו', 'בסוף'], 'a': 'בקיצור לא הגענו בסוף',
+          'en': 'Anyway, in the end we didn’t make it.'},
+         {'words': ['זה', 'יקר', 'אבל', 'שווה', 'את', 'זה'], 'a': 'זה יקר אבל שווה את זה',
+          'en': 'It’s expensive but worth it.'},
+         {'words': ['האיש', 'שדיברתי', 'איתו', 'עובד', 'שם'], 'a': 'האיש שדיברתי איתו עובד שם',
+          'en': 'The man I spoke to works there.'},
+       ]},
+      {'kind': 'slang', 'he': 'בסך הכל', 'literal': '“in the sum of everything”',
+       'meaning': 'All in all — or, said flatly, “it’s only …”.',
+       'when': 'A written-looking phrase that lives entirely in speech, which is this unit\'s '
+               'whole point. בסך הכל היה בסדר is "all in all it was fine"; בסך הכל ילד is '
+               '"he\'s only a child".',
+       'examples': [{'he': 'בסך הכל היה בסדר.', 'en': 'All in all it was fine.'},
+                    {'he': 'הוא בסך הכל ילד.', 'en': 'He’s only a child.'}]},
+    ],
+  },
+  {
+    'id': 'he-39', 'n': 39, 'level': 'advanced',
+    'title': {'he': 'ביטויים', 'en': 'Set phrases and idioms'},
+    'objective': 'The phrases that cannot be worked out from their words. Many come straight out '
+                 'of the Bible and the prayer book and are used by people who have never opened '
+                 'either — which is a fact about Hebrew you will meet everywhere.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Old words doing everyday work',
+       'body': '<b>בסדר גמור</b> "absolutely fine". <b>חבל על הזמן</b> literally "a pity about '
+               'the time" and means AMAZING — or occasionally the opposite, and only the tone '
+               'tells you. <b>יש דברים בגו</b> "there’s something in it" is Aramaic. '
+               '<b>עין בעין</b>, <b>בלב שלם</b>, <b>מפה לאוזן</b> — all biblical, all current, '
+               'all said by people who would not call themselves religious at all.',
+       'examples': [
+         {'he': 'חבל על הזמן כמה שזה טעים.', 'en': 'It’s unbelievably good.'},
+         {'he': 'אנחנו לא רואים עין בעין.', 'en': 'We don’t see eye to eye.'},
+         {'he': 'עשיתי את זה בלב שלם.', 'en': 'I did it wholeheartedly.'},
+         {'he': 'זה עובר מפה לאוזן.', 'en': 'It spreads by word of mouth.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'ניב', 'en': 'idiom, turn of phrase', 'pos': 'noun'},
+         {'he': 'פתגם', 'en': 'proverb', 'pos': 'noun'},
+         {'he': 'משל', 'en': 'a parable, a fable', 'pos': 'noun'},
+         {'he': 'לב', 'en': 'heart', 'pos': 'noun'},
+         {'he': 'עין', 'en': 'eye', 'pos': 'noun'},
+         {'he': 'אוזן', 'en': 'ear', 'pos': 'noun'},
+         {'he': 'שלם', 'en': 'whole, complete', 'pos': 'adj'},
+         {'he': 'גמור', 'en': 'complete, utter', 'pos': 'adj'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then what it actually means.',
+       'pairs': [
+         {'he': 'חבל על הזמן', 'en': 'amazing (or: hopeless — tone decides)'},
+         {'he': 'עין בעין', 'en': 'eye to eye, in agreement'},
+         {'he': 'בלב שלם', 'en': 'wholeheartedly'},
+         {'he': 'מפה לאוזן', 'en': 'by word of mouth'},
+         {'he': 'בסדר גמור', 'en': 'absolutely fine'},
+         {'he': 'אין על זה', 'en': 'nothing beats it'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'A friend tries your food and says חבל על הזמן. Should you be pleased?',
+          'options': ['Yes — almost always', 'No, it is an insult', 'It means they are in a hurry'],
+          'a': 'Yes — almost always',
+          'why': 'It is an intensifier, and in the overwhelming majority of uses it is positive. '
+                 'The sarcastic reading exists but is marked heavily by tone.'},
+         {'q': 'Why do so many everyday idioms come from religious texts?',
+          'options': ['Modern Hebrew was rebuilt out of them',
+                      'Israelis are unusually religious',
+                      'They were invented in the 1990s'],
+          'a': 'Modern Hebrew was rebuilt out of them',
+          'why': 'The language was revived from a written corpus that was overwhelmingly '
+                 'liturgical, so its idioms carry that history whether or not the speaker does.'},
+       ]},
+      {'kind': 'slang', 'he': 'אין על זה', 'literal': '“there is nothing on it”',
+       'meaning': 'Nothing beats it.',
+       'when': 'The highest praise available in casual Hebrew, for food, a place, a person. '
+               'אין עליך said to a person means "you are the best".',
+       'examples': [{'he': 'החומוס הזה — אין על זה.', 'en': 'This hummus — nothing beats it.'},
+                    {'he': 'אין עליך, תודה!', 'en': 'You’re the best, thanks!'}]},
+    ],
+  },
+  {
+    'id': 'he-40', 'n': 40, 'level': 'advanced',
+    'title': {'he': 'ראיון ושיחת טלפון', 'en': 'Interviews and phone calls'},
+    'objective': 'Two situations with no body language to help you: a job interview and a phone '
+                 'call. Both run on set phrases, and both are where a learner’s Hebrew first '
+                 'gets tested for real.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The phone has its own opening',
+       'body': 'Israelis answer with <b>הלו</b> or just <b>כן</b>. You identify yourself with '
+               '<b>מדבר</b> / <b>מדברת</b> — "David speaking" is <b>דוד מדבר</b>. Ask for '
+               'someone with <b>אפשר לדבר עם</b>. If they are out: <b>אפשר להשאיר הודעה?</b> '
+               'End with <b>תודה, ביי</b> — and Israelis hang up faster than you expect, which '
+               'is not rudeness.',
+       'examples': [
+         {'he': 'הלו, אפשר לדבר עם דנה?', 'en': 'Hello, could I speak to Dana?'},
+         {'he': 'רגע, אני מעביר אותך.', 'en': 'One moment, I’ll put you through.'},
+         {'he': 'היא לא נמצאת, אפשר להשאיר הודעה?', 'en': 'She’s not in, can I leave a message?'},
+         {'he': 'אני אחזור אליך אחר כך.', 'en': 'I’ll get back to you later.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'ראיון', 'en': 'interview', 'pos': 'noun'},
+         {'he': 'תפקיד', 'en': 'role, position', 'pos': 'noun'},
+         {'he': 'ניסיון', 'en': 'experience; an attempt', 'pos': 'noun'},
+         {'he': 'מועמד', 'en': 'candidate', 'pos': 'noun'},
+         {'he': 'שיחה', 'en': 'call, conversation', 'pos': 'noun'},
+         {'he': 'להשאיר', 'en': 'to leave (something)', 'pos': 'verb'},
+         {'he': 'להתקבל', 'en': 'to be accepted, to get in', 'pos': 'verb'},
+         {'he': 'להתפטר', 'en': 'to resign', 'pos': 'verb'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'הלו, ___ לדבר עם דנה? — could I', 'a': 'אפשר'},
+       'items': [
+         {'q': 'שלום, דוד ___.', 'a': ['מדבר'], 'en': 'Hello, David speaking.'},
+         {'q': 'אפשר ___ הודעה?', 'a': ['להשאיר'], 'en': 'Can I leave a message?'},
+         {'q': 'יש לי חמש שנות ___ בתחום.', 'a': ['ניסיון'], 'en': 'I have five years’ experience in the field.'},
+         {'q': 'הגעתי ל___ בשעה עשר.', 'a': ['ראיון'], 'en': 'I got to the interview at ten.'},
+         {'q': 'אני ___ אליך מחר.', 'a': ['אחזור', 'מתקשר'], 'en': 'I’ll get back to you tomorrow.'},
+       ]},
+      {'kind': 'choose', 'title': 'מה עונים בראיון?', 'en': 'What do you say in an interview?',
+       'instructions': 'Pick the answer that sounds like a Hebrew speaker in a Hebrew interview.',
+       'items': [
+         {'q': 'ספר לי קצת על עצמך.',
+          'options': ['עבדתי חמש שנים בתחום הזה', 'אני בסדר, תודה', 'לא יודע'],
+          'a': 'עבדתי חמש שנים בתחום הזה', 'en': '“Tell me a bit about yourself.”'},
+         {'q': 'למה עזבת את העבודה הקודמת?',
+          'options': ['חיפשתי משהו חדש', 'המנהל היה נורא', 'בגלל הכסף'],
+          'a': 'חיפשתי משהו חדש',
+          'en': '“Why did you leave your last job?” — the neutral answer is the safe one here too.'},
+         {'q': 'יש לך שאלות?',
+          'options': ['כן, על התפקיד עצמו', 'לא, הכל בסדר', 'כמה זה משלם?'],
+          'a': 'כן, על התפקיד עצמו', 'en': '“Do you have questions?”'},
+       ]},
+      {'kind': 'slang', 'he': 'נדבר', 'literal': '“we will talk”',
+       'meaning': 'We’ll speak / let’s leave it there.',
+       'when': 'How an Israeli ends a phone call, and it commits to nothing. Paired with יאללה '
+               '— יאללה, נדבר — it is the standard sign-off between people who know each other.',
+       'examples': [{'he': 'יאללה, נדבר.', 'en': 'Alright, we’ll speak.'},
+                    {'he': 'תודה, נדבר מחר.', 'en': 'Thanks, we’ll talk tomorrow.'}]},
     ],
   },
 ]
