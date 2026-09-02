@@ -728,11 +728,17 @@ def build(check_only=False):
     # renaming it and losing whatever progress is filed under it. Past before future; the
     # binyanim only after pa'al is solid in all three tenses; slang last because it is the
     # reward.
-    order = ['he-01', 'he-16', 'he-03', 'he-02', 'he-14', 'he-04', 'he-09', 'he-10',
-             'he-05', 'he-15', 'he-11', 'he-12', 'he-13', 'he-07', 'he-06', 'he-08']
-    missing = [u['id'] for u in UNITS if u['id'] not in order]
-    if missing:
-        print('   !! not placed in the teaching order, appended: %s' % ', '.join(missing))
+    order = ['he-01', 'he-16', 'he-03', 'he-02', 'he-14', 'he-20', 'he-17', 'he-04',
+             'he-09', 'he-19', 'he-18', 'he-10', 'he-05', 'he-21', 'he-22', 'he-15',
+             'he-11', 'he-12', 'he-13', 'he-23', 'he-24', 'he-07', 'he-06', 'he-08']
+    # NOT `missing` -- that name already holds the vocabulary the lexicon could not answer, and
+    # reusing it here overwrote the list with unit ids. The report then said "8 words not in the
+    # lexicon" when it meant "8 units not in the order list", and crashed trying to print them
+    # as (unit, word, gloss) triples. A wrong count that looks like a real finding is worse than
+    # the crash that followed it.
+    unplaced = [u['id'] for u in UNITS if u['id'] not in order]
+    if unplaced:
+        print('   !! not placed in the teaching order, appended: %s' % ', '.join(unplaced))
     rank = {uid: i for i, uid in enumerate(order)}
     UNITS.sort(key=lambda u: rank.get(u['id'], 999))
     for i, u in enumerate(UNITS):
@@ -1328,6 +1334,560 @@ UNITS += [
                'away thanks or an offer to pay.',
        'examples': [{'he': 'מה פתאום, אני משלם.', 'en': 'Don’t be silly, I’m paying.'},
                     {'he': 'מה פתאום! לא אמרתי את זה.', 'en': 'No way! I didn’t say that.'}]},
+    ],
+  },
+]
+
+UNITS += [
+  {
+    'id': 'he-17', 'n': 17, 'level': 'beginner',
+    'title': {'he': 'מספרים ושעות', 'en': 'Numbers and telling the time'},
+    'objective': 'Hebrew numbers have a gender, and they take the OPPOSITE one from the noun they '
+                 'count. It trips up every learner, so it gets a unit of its own.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The numbers are backwards on purpose',
+       'body': 'A masculine noun takes the feminine-looking number, and a feminine noun takes the '
+               'plain one: <b>שלושה ילדים</b> (m.) but <b>שלוש ילדות</b> (f.). The ־ה forms go with '
+               'masculine nouns. Nobody can explain why; everyone has to learn it. For the time '
+               'you always use the FEMININE set, because שעה is feminine: <b>שלוש</b>, not שלושה.',
+       'examples': [
+         {'he': 'שני ילדים ושלוש בנות', 'en': 'two boys and three girls'},
+         {'he': 'השעה עכשיו ארבע.', 'en': 'It’s four o’clock now.'},
+         {'he': 'בשעה שמונה בערב', 'en': 'at eight in the evening'},
+         {'he': 'רבע לשש', 'en': 'quarter to six'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אחד', 'en': 'one', 'pos': 'num'},
+         {'he': 'שתיים', 'en': 'two (f.)', 'pos': 'num'},
+         {'he': 'שלוש', 'en': 'three (f.)', 'pos': 'num'},
+         {'he': 'ארבע', 'en': 'four (f.)', 'pos': 'num'},
+         {'he': 'חמש', 'en': 'five (f.)', 'pos': 'num'},
+         {'he': 'עשר', 'en': 'ten (f.)', 'pos': 'num'},
+         {'he': 'שעה', 'en': 'hour, o’clock', 'pos': 'noun'},
+         {'he': 'דקה', 'en': 'minute', 'pos': 'noun'},
+         {'he': 'חצי', 'en': 'half', 'pos': 'noun'},
+         {'he': 'רבע', 'en': 'quarter', 'pos': 'noun'},
+       ]},
+      {'kind': 'choose', 'title': 'בחרו את המספר', 'en': 'Choose the number',
+       'instructions': 'Masculine noun → the ־ה form. Feminine noun → the plain one.',
+       'items': [
+         {'q': '___ ילדים', 'options': ['שלושה', 'שלוש', 'שלושת'], 'a': 'שלושה',
+          'en': 'ילדים is masculine, so the number takes ־ה.'},
+         {'q': '___ בנות', 'options': ['שלוש', 'שלושה', 'שלושת'], 'a': 'שלוש',
+          'en': 'בנות is feminine, so the number stays plain.'},
+         {'q': '___ ספרים', 'options': ['חמישה', 'חמש', 'חמישית'], 'a': 'חמישה',
+          'en': 'ספרים is masculine.'},
+         {'q': 'השעה ___.', 'options': ['ארבע', 'ארבעה', 'רביעי'], 'a': 'ארבע',
+          'en': 'The time is always feminine — שעה is a feminine noun.'},
+       ]},
+      {'kind': 'fill', 'title': 'מה השעה?', 'en': 'What time is it?',
+       'instructions': 'Type the missing word.',
+       'example': {'q': '8:30 → שמונה ו___', 'a': 'חצי'},
+       'items': [
+         {'q': '6:15 → שש ו___', 'a': ['רבע'], 'en': 'quarter past six'},
+         {'q': '5:45 → ___ לשש', 'a': ['רבע'], 'en': 'quarter to six'},
+         {'q': '9:30 → תשע ו___', 'a': ['חצי'], 'en': 'half past nine'},
+         {'q': 'ניפגש ___ שמונה בערב.', 'a': ['בשעה'], 'en': 'We’ll meet at eight in the evening.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match the time',
+       'instructions': 'Tap the Hebrew, then the clock time.',
+       'pairs': [
+         {'he': 'שבע ורבע', 'en': '7:15'},
+         {'he': 'עשר וחצי', 'en': '10:30'},
+         {'he': 'רבע לשלוש', 'en': '2:45'},
+         {'he': 'שתים עשרה', 'en': '12:00'},
+         {'he': 'חמש ועשרה', 'en': '5:10'},
+       ]},
+      {'kind': 'slang', 'he': 'עוד חמש דקות', 'literal': '“another five minutes”',
+       'meaning': 'In a minute — and often, considerably longer.',
+       'when': 'The universal Israeli estimate. Take it as "soon-ish" rather than as five '
+               'minutes, and you will be right more often.',
+       'examples': [{'he': 'אני מגיע, עוד חמש דקות.', 'en': 'I’m on my way, five minutes.'},
+                    {'he': 'רגע, עוד שנייה.', 'en': 'Hang on, one second.'}]},
+    ],
+  },
+  {
+    'id': 'he-18', 'n': 18, 'level': 'beginner',
+    'title': {'he': 'ציווי ובקשות', 'en': 'Telling and asking'},
+    'objective': 'How to ask for something without sounding rude — which in Hebrew is not what an '
+                 'English speaker expects, because the blunt form is the normal one.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The imperative is not rude',
+       'body': 'Hebrew’s command form — <b>תן</b> give, <b>בוא</b> come, <b>תגיד</b> tell — is '
+               'ordinary and polite enough with בבקשה. In speech most people use the FUTURE as a '
+               'softer command: <b>תיתן לי</b>, <b>תגיד לי</b>. For "don’t", use <b>אל</b> plus the '
+               'future: אל תלך. Never לא — that is a statement, not an instruction.',
+       'examples': [
+         {'he': 'תן לי את זה, בבקשה.', 'en': 'Give me that, please.'},
+         {'he': 'בוא נלך.', 'en': 'Let’s go.'},
+         {'he': 'אל תדאג.', 'en': 'Don’t worry.'},
+         {'he': 'אפשר לקבל את החשבון?', 'en': 'Could I have the bill?'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אפשר', 'en': 'is it possible, may I', 'pos': 'other'},
+         {'he': 'אסור', 'en': 'forbidden, not allowed', 'pos': 'other'},
+         {'he': 'מותר', 'en': 'allowed', 'pos': 'other'},
+         {'he': 'צריך', 'en': 'need to, must', 'pos': 'other'},
+         {'he': 'לבוא', 'en': 'to come', 'pos': 'verb'},
+         {'he': 'לחכות', 'en': 'to wait', 'pos': 'verb', 'prep': 'ל'},
+         {'he': 'לשבת', 'en': 'to sit', 'pos': 'verb'},
+         {'he': 'לקום', 'en': 'to get up', 'pos': 'verb'},
+       ]},
+      {'kind': 'choose', 'title': 'איך אומרים את זה?', 'en': 'How do you say it?',
+       'instructions': 'Pick the form an Israeli would actually use.',
+       'items': [
+         {'q': 'Don’t go!', 'options': ['אל תלך!', 'לא תלך!', 'לא ללכת!'], 'a': 'אל תלך!',
+          'en': '“Don’t” is אל plus the future. לא makes a statement about the future instead.'},
+         {'q': 'May I sit here?', 'options': ['אפשר לשבת פה?', 'אני שבתי פה?', 'מותר אני לשבת?'],
+          'a': 'אפשר לשבת פה?', 'en': 'אפשר + infinitive is the everyday polite request.'},
+         {'q': 'Wait a moment.', 'options': ['חכה רגע', 'חיכיתי רגע', 'לחכות רגע'], 'a': 'חכה רגע',
+          'en': 'The bare imperative, and it is not rude.'},
+       ]},
+      {'kind': 'transform', 'title': 'מבקשה לשלילה', 'en': 'Turn the request into a prohibition',
+       'instructions': 'Rewrite each command with אל. Type the whole thing.',
+       'example': {'from': 'תלך!', 'to': 'אל תלך!'},
+       'items': [
+         {'from': 'תדאג!', 'to': ['אל תדאג!', 'אל תדאג'], 'en': 'Worry! → Don’t worry!'},
+         {'from': 'תשכח!', 'to': ['אל תשכח!', 'אל תשכח'], 'en': 'Forget! → Don’t forget!'},
+         {'from': 'תגיד לו!', 'to': ['אל תגיד לו!', 'אל תגיד לו'], 'en': 'Tell him! → Don’t tell him!'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את הבקשה', 'en': 'Build the request',
+       'instructions': 'Tap the words in order.',
+       'items': [
+         {'words': ['אפשר', 'לקבל', 'את', 'החשבון', 'בבקשה'], 'a': 'אפשר לקבל את החשבון בבקשה',
+          'en': 'Could I have the bill, please?'},
+         {'words': ['תן', 'לי', 'רגע', 'אחד'], 'a': 'תן לי רגע אחד', 'en': 'Give me one moment.'},
+         {'words': ['אל', 'תשכחי', 'את', 'המפתחות'], 'a': 'אל תשכחי את המפתחות',
+          'en': 'Don’t forget the keys.'},
+       ]},
+      {'kind': 'slang', 'he': 'רגע', 'literal': '“a moment”',
+       'meaning': 'Hang on / wait / hold up.',
+       'when': 'On its own it stops the conversation while you think, object or find something. '
+               'Said sharply it is "hold on a second" in the sense of "wait, that is not right".',
+       'examples': [{'he': 'רגע, מה אמרת?', 'en': 'Hang on, what did you say?'},
+                    {'he': 'רגע אחד ואני בא.', 'en': 'One moment and I’m coming.'}]},
+    ],
+  },
+]
+
+UNITS += [
+  {
+    'id': 'he-19', 'n': 19, 'level': 'beginner',
+    'title': {'he': 'רוצה, יכול, צריך', 'en': 'Want, can, must'},
+    'objective': 'Three words that each take an infinitive after them, and between them carry an '
+                 'enormous amount of ordinary speech. This is the shortcut to long sentences.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Verb + infinitive, and only the first one moves',
+       'body': 'רוצה, יכול, צריך and חייב all agree with the subject, and the verb after them '
+               'stays in the infinitive: <b>אני רוצה ללכת</b>, <b>היא יכולה לבוא</b>, '
+               '<b>אנחנו צריכים לדבר</b>. Note that צריך and יכול inflect like ADJECTIVES — '
+               'צריך / צריכה / צריכים / צריכות — not like verbs.',
+       'examples': [
+         {'he': 'אני רוצה ללמוד עברית.', 'en': 'I want to learn Hebrew.'},
+         {'he': 'את יכולה לעזור לי?', 'en': 'Can you help me?'},
+         {'he': 'אנחנו צריכים לצאת עכשיו.', 'en': 'We need to leave now.'},
+         {'he': 'הוא חייב לעבוד מחר.', 'en': 'He has to work tomorrow.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'יכול', 'en': 'can, able', 'pos': 'other'},
+         {'he': 'חייב', 'en': 'must, obliged', 'pos': 'other'},
+         {'he': 'לצאת', 'en': 'to go out, to leave', 'pos': 'verb'},
+         {'he': 'להיכנס', 'en': 'to enter', 'pos': 'verb', 'prep': 'ל'},
+         {'he': 'לנסוע', 'en': 'to travel, to ride', 'pos': 'verb', 'prep': 'ל'},
+         {'he': 'לישון', 'en': 'to sleep', 'pos': 'verb'},
+         {'he': 'לעזוב', 'en': 'to leave (something)', 'pos': 'verb'},
+         {'he': 'לנוח', 'en': 'to rest', 'pos': 'verb'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Complete the sentence',
+       'instructions': 'Type the modal in the form the subject needs — they inflect like adjectives.',
+       'example': {'q': 'היא ___ לבוא מחר. (יכול)', 'a': 'יכולה'},
+       'items': [
+         {'q': 'אנחנו ___ לדבר איתך. (צריך)', 'a': ['צריכים', 'צריכות'], 'en': 'We need to talk to you.'},
+         {'q': 'הן ___ לצאת מוקדם. (חייב)', 'a': ['חייבות'], 'en': 'They (f.) have to leave early.'},
+         {'q': 'אתה ___ לעזור לי רגע? (יכול)', 'a': ['יכול'], 'en': 'Can you help me a second?'},
+         {'q': 'אני ___ לנוח קצת. (רוצה)', 'a': ['רוצה'], 'en': 'I want to rest a bit.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'The modal agrees; the verb after it does not.',
+       'items': [
+         {'words': ['אני', 'לא', 'יכול', 'לבוא', 'היום'], 'a': 'אני לא יכול לבוא היום',
+          'en': 'I can’t come today.'},
+         {'words': ['הם', 'צריכים', 'לנסוע', 'לירושלים', 'מחר'],
+          'a': 'הם צריכים לנסוע לירושלים מחר', 'en': 'They need to travel to Jerusalem tomorrow.'},
+         {'words': ['את', 'רוצה', 'לשתות', 'משהו'], 'a': 'את רוצה לשתות משהו',
+          'en': 'Do you want something to drink?'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'Which is right for a woman speaking?',
+          'options': ['אני צריכה ללכת', 'אני צריך ללכת', 'אני צריכים ללכת'],
+          'a': 'אני צריכה ללכת',
+          'why': 'צריך behaves like an adjective, so it agrees with the speaker — and the verb '
+                 'after it stays ללכת whatever happens.'},
+         {'q': 'אני יכול לבוא means —',
+          'options': ['I can come', 'I am coming', 'I came'], 'a': 'I can come',
+          'why': 'יכול + infinitive. Present tense on its own would be אני בא.'},
+       ]},
+      {'kind': 'slang', 'he': 'בא לי', 'literal': '“it comes to me”',
+       'meaning': 'I feel like / I fancy.',
+       'when': 'What Israelis say far more than אני רוצה for a passing urge. It takes a noun or an '
+               'infinitive: בא לי קפה, בא לי לצאת. The negative לא בא לי is a complete and '
+               'sufficient refusal.',
+       'examples': [{'he': 'בא לי קפה, אתה בא?', 'en': 'I fancy a coffee, coming?'},
+                    {'he': 'לא בא לי לצאת הערב.', 'en': 'I don’t feel like going out tonight.'}]},
+    ],
+  },
+  {
+    'id': 'he-20', 'n': 20, 'level': 'beginner',
+    'title': {'he': 'המשפחה ושייכות', 'en': 'Family and belonging'},
+    'objective': 'Who is whose. Hebrew has two ways to say "my" — the easy one everybody uses and '
+                 'the tight one that shows up on family words and in writing.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'של, and the endings that replace it',
+       'body': 'The everyday possessive is <b>של</b> with a pronoun stuck on: הבית <b>שלי</b>, '
+               'האח <b>שלך</b>, המשפחה <b>שלנו</b>. There is also an older way that welds the '
+               'ending onto the noun itself — <b>אמא שלי</b> or <b>אִמִּי</b>, <b>בן שלו</b> or '
+               '<b>בְּנוֹ</b> — and family words are exactly where you still hear it.',
+       'examples': [
+         {'he': 'זאת המשפחה שלי.', 'en': 'This is my family.'},
+         {'he': 'האח שלי גר בחיפה.', 'en': 'My brother lives in Haifa.'},
+         {'he': 'איך קוראים לאמא שלך?', 'en': 'What’s your mother’s name?'},
+         {'he': 'הילדים שלהם כבר גדולים.', 'en': 'Their children are grown up already.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'משפחה', 'en': 'family', 'pos': 'noun'},
+         {'he': 'אבא', 'en': 'dad, father', 'pos': 'noun'},
+         {'he': 'אמא', 'en': 'mum, mother', 'pos': 'noun'},
+         {'he': 'אח', 'en': 'brother', 'pos': 'noun'},
+         {'he': 'אחות', 'en': 'sister', 'pos': 'noun'},
+         {'he': 'בן', 'en': 'son', 'pos': 'noun'},
+         {'he': 'בת', 'en': 'daughter', 'pos': 'noun'},
+         {'he': 'סבא', 'en': 'grandfather', 'pos': 'noun'},
+         {'he': 'סבתא', 'en': 'grandmother', 'pos': 'noun'},
+         {'he': 'בעל', 'en': 'husband, owner', 'pos': 'noun'},
+         {'he': 'אישה', 'en': 'woman, wife', 'pos': 'noun'},
+       ]},
+      {'kind': 'fill', 'title': 'של מי?', 'en': 'Whose is it?',
+       'instructions': 'Type the right form of של.',
+       'example': {'q': 'זה הספר ___. (אני)', 'a': 'שלי'},
+       'items': [
+         {'q': 'האחות ___ לומדת רפואה. (הוא)', 'a': ['שלו'], 'en': 'His sister studies medicine.'},
+         {'q': 'איפה המפתחות ___? (אתה)', 'a': ['שלך'], 'en': 'Where are your keys?'},
+         {'q': 'הבית ___ קטן אבל יפה. (אנחנו)', 'a': ['שלנו'], 'en': 'Our house is small but pretty.'},
+         {'q': 'הילדים ___ באים בשבת. (הם)', 'a': ['שלהם'], 'en': 'Their children are coming on Saturday.'},
+         {'q': 'סבתא ___ בת תשעים. (היא)', 'a': ['שלה'], 'en': 'Her grandmother is ninety.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'אבא שלי', 'en': 'my dad'},
+         {'he': 'אמא שלה', 'en': 'her mum'},
+         {'he': 'האח שלנו', 'en': 'our brother'},
+         {'he': 'הבת שלהם', 'en': 'their daughter'},
+         {'he': 'סבא וסבתא', 'en': 'grandma and grandpa'},
+         {'he': 'המשפחה שלך', 'en': 'your family'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'אשתו means —',
+          'options': ['his wife', 'my wife', 'the woman'], 'a': 'his wife',
+          'why': 'אישה with the old ־וֹ ending welded on. You will meet it in writing and on '
+                 'family words far more than anywhere else.'},
+         {'q': 'Which is the everyday way to say “my brother”?',
+          'options': ['האח שלי', 'אחי', 'both, and the first is more common in speech'],
+          'a': 'both, and the first is more common in speech',
+          'why': 'אחי is correct and alive — it is also, on its own, slang for "mate".'},
+       ]},
+      {'kind': 'slang', 'he': 'אחי', 'literal': '“my brother”',
+       'meaning': 'Mate, bro.',
+       'when': 'Address to a friend, a stranger, a taxi driver. The feminine אחותי works the same '
+               'way. It is warm rather than familiar, and it is everywhere.',
+       'examples': [{'he': 'אחי, מה קורה?', 'en': 'Mate, what’s up?'},
+                    {'he': 'תודה אחי, אתה מציל.', 'en': 'Thanks mate, you’re a lifesaver.'}]},
+    ],
+  },
+]
+
+UNITS += [
+  {
+    'id': 'he-21', 'n': 21, 'level': 'beginner',
+    'title': {'he': 'במסעדה ובבית קפה', 'en': 'Eating out'},
+    'objective': 'Order, ask what something is, and pay — the single most useful hour of Hebrew '
+                 'for anyone who has actually landed.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'What the waiter will say to you',
+       'body': 'You will hear <b>מה תרצה?</b> or just <b>כן?</b>, and at the end <b>הכל בסדר?</b>. '
+               'To order, אפשר plus the thing, or <b>אני אקח</b> — "I’ll take". To pay: '
+               '<b>אפשר לשלם?</b> or <b>חשבון, בבקשה</b>. Splitting the bill is <b>בנפרד</b>; '
+               'together is <b>ביחד</b>.',
+       'examples': [
+         {'he': 'אפשר תפריט, בבקשה?', 'en': 'Could I have a menu, please?'},
+         {'he': 'אני אקח את הסלט.', 'en': 'I’ll take the salad.'},
+         {'he': 'מה יש לכם צמחוני?', 'en': 'What vegetarian do you have?'},
+         {'he': 'חשבון בבקשה, בנפרד.', 'en': 'The bill please, separately.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'תפריט', 'en': 'menu', 'pos': 'noun'},
+         {'he': 'מנה', 'en': 'dish, portion', 'pos': 'noun'},
+         {'he': 'חשבון', 'en': 'bill, account', 'pos': 'noun'},
+         {'he': 'מלצר', 'en': 'waiter', 'pos': 'noun'},
+         {'he': 'לחם', 'en': 'bread', 'pos': 'noun'},
+         {'he': 'סלט', 'en': 'salad', 'pos': 'noun'},
+         {'he': 'מים', 'en': 'water', 'pos': 'noun'},
+         {'he': 'יין', 'en': 'wine', 'pos': 'noun'},
+         {'he': 'טעים', 'en': 'tasty', 'pos': 'adj'},
+         {'he': 'רעב', 'en': 'hungry', 'pos': 'adj'},
+       ]},
+      {'kind': 'choose', 'title': 'מה אומרים?', 'en': 'What do you say?',
+       'instructions': 'Pick the line that fits the moment.',
+       'items': [
+         {'q': 'The waiter asks מה תרצו? You want the fish.',
+          'options': ['אני אקח את הדג', 'אני לוקח דג אתמול', 'יש לי דג'], 'a': 'אני אקח את הדג',
+          'en': '“I’ll take the fish.”'},
+         {'q': 'You are done and want to pay.',
+          'options': ['אפשר לשלם?', 'אפשר לאכול?', 'כמה אתה?'], 'a': 'אפשר לשלם?',
+          'en': '“Can I pay?”'},
+         {'q': 'You want to know if there is anything vegetarian.',
+          'options': ['יש משהו צמחוני?', 'אני צמחוני מחר?', 'צמחוני יש לי?'],
+          'a': 'יש משהו צמחוני?', 'en': '“Is there anything vegetarian?”'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Complete the exchange',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'אפשר ___, בבקשה? — Could I have a menu, please?', 'a': 'תפריט'},
+       'items': [
+         {'q': 'המנה הזאת ממש ___!', 'a': ['טעימה'], 'en': 'This dish is really tasty!'},
+         {'q': 'אני ___, בוא נאכל משהו.', 'a': ['רעב', 'רעבה'], 'en': 'I’m hungry, let’s eat something.'},
+         {'q': '___ בבקשה, אנחנו משלמים ביחד.', 'a': ['חשבון'], 'en': 'The bill please, we’re paying together.'},
+         {'q': 'אפשר עוד ___, בבקשה?', 'a': ['מים'], 'en': 'Could we have some more water, please?'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את ההזמנה', 'en': 'Build the order',
+       'instructions': 'Tap the words in order.',
+       'items': [
+         {'words': ['אני', 'אקח', 'את', 'הסלט', 'בבקשה'], 'a': 'אני אקח את הסלט בבקשה',
+          'en': 'I’ll take the salad, please.'},
+         {'words': ['מה', 'אתם', 'ממליצים', 'היום'], 'a': 'מה אתם ממליצים היום',
+          'en': 'What do you recommend today?'},
+       ]},
+      {'kind': 'slang', 'he': 'בתיאבון', 'literal': '“with appetite”',
+       'meaning': 'Enjoy your meal.',
+       'when': 'Said by the waiter putting the plate down, and by anyone at the table before '
+               'people start. Answer with תודה, or בתיאבון back.',
+       'examples': [{'he': 'בתיאבון!', 'en': 'Enjoy!'},
+                    {'he': 'תודה, גם לך.', 'en': 'Thanks, you too.'}]},
+    ],
+  },
+  {
+    'id': 'he-22', 'n': 22, 'level': 'intermediate',
+    'title': {'he': 'איך מגיעים?', 'en': 'Getting around'},
+    'objective': 'Ask the way, understand the answer, and survive an Israeli bus. Directions are '
+                 'short words said fast, so they have to be automatic.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Right, left, straight',
+       'body': '<b>ימינה</b> right, <b>שמאלה</b> left, <b>ישר</b> straight on. That ־ה ending means '
+               '"towards" and you will meet it again in <b>הביתה</b> homewards, <b>ימינה</b>, '
+               '<b>שמאלה</b>, <b>צפונה</b> northward. To ask: <b>איך מגיעים ל…?</b> — "how does one '
+               'get to…", with no subject at all.',
+       'examples': [
+         {'he': 'איך מגיעים לתחנה המרכזית?', 'en': 'How do you get to the central station?'},
+         {'he': 'תמשיך ישר ואז ימינה.', 'en': 'Keep straight on and then right.'},
+         {'he': 'זה רחוק מפה?', 'en': 'Is it far from here?'},
+         {'he': 'אני נוסע הביתה.', 'en': 'I’m travelling home.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אוטובוס', 'en': 'bus', 'pos': 'noun'},
+         {'he': 'רכבת', 'en': 'train', 'pos': 'noun'},
+         {'he': 'מונית', 'en': 'taxi', 'pos': 'noun'},
+         {'he': 'כביש', 'en': 'road', 'pos': 'noun'},
+         {'he': 'כרטיס', 'en': 'ticket', 'pos': 'noun'},
+         {'he': 'ימינה', 'en': 'to the right', 'pos': 'other'},
+         {'he': 'שמאלה', 'en': 'to the left', 'pos': 'other'},
+         {'he': 'ישר', 'en': 'straight on', 'pos': 'other'},
+         {'he': 'רחוק', 'en': 'far', 'pos': 'adj'},
+         {'he': 'קרוב', 'en': 'near', 'pos': 'adj'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו את ההוראות', 'en': 'Complete the directions',
+       'instructions': 'Type the missing direction word.',
+       'example': {'q': 'תמשיך ___ עד הרמזור. — Keep straight on to the lights.', 'a': 'ישר'},
+       'items': [
+         {'q': 'בסוף הרחוב תפנה ___.', 'a': ['ימינה'], 'en': 'At the end of the street turn right.'},
+         {'q': 'התחנה ___ מאוד, שתי דקות ברגל.', 'a': ['קרובה'], 'en': 'The stop is very close, two minutes on foot.'},
+         {'q': 'אחרי בית הקפה תפני ___.', 'a': ['שמאלה'], 'en': 'After the café turn left.'},
+         {'q': 'צריך לקנות ___ לפני שעולים.', 'a': ['כרטיס'], 'en': 'You have to buy a ticket before boarding.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'תחנה מרכזית', 'en': 'central bus station'},
+         {'he': 'איך מגיעים', 'en': 'how do you get to'},
+         {'he': 'זה רחוק?', 'en': 'is it far?'},
+         {'he': 'ברגל', 'en': 'on foot'},
+         {'he': 'הביתה', 'en': 'homewards'},
+         {'he': 'תפנה ימינה', 'en': 'turn right'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'What does the ־ה on ימינה, שמאלה and הביתה do?',
+          'options': ['it means “towards”', 'it makes the word feminine', 'it makes it definite'],
+          'a': 'it means “towards”',
+          'why': 'An old directional ending that survives on a handful of very common words. '
+                 'הביתה is "homewards", not "the house".'},
+         {'q': 'איך מגיעים has no subject. Why?',
+          'options': ['it is an impersonal “how does one get”', 'the subject was dropped by mistake',
+                      'it is a command'],
+          'a': 'it is an impersonal “how does one get”',
+          'why': 'Hebrew uses a bare plural verb for “one does”: אומרים "they say / one says", '
+                 'איך אומרים "how do you say".'},
+       ]},
+      {'kind': 'slang', 'he': 'תכלס', 'literal': 'from Yiddish תכלית, “purpose, the point”',
+       'meaning': 'Basically / honestly / bottom line.',
+       'when': 'Getting to the point, or conceding one. תכלס, אתה צודק — "honestly, you’re right". '
+               'Extremely common and slightly blunt.',
+       'examples': [{'he': 'תכלס, זה לא כזה רחוק.', 'en': 'Honestly, it’s not that far.'},
+                    {'he': 'תכלס, מה עושים עכשיו?', 'en': 'So, bottom line — what do we do now?'}]},
+    ],
+  },
+]
+
+UNITS += [
+  {
+    'id': 'he-23', 'n': 23, 'level': 'intermediate',
+    'title': {'he': 'בניין נפעל', 'en': 'The nifal binyan'},
+    'objective': 'The passive-and-middle pattern, and the last of the five you meet constantly. '
+                 'נכנס, נמצא, נגמר, נשאר — none of them feels passive, and all of them are nifal.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'A נ in front, and it happened to you',
+       'body': 'Nifal is paʿal’s passive — כתב he wrote, <b>נכתב</b> it was written — but most of '
+               'the nifal verbs you will actually use are not passive at all: <b>נכנס</b> to go '
+               'in, <b>נמצא</b> to be located, <b>נגמר</b> to run out, <b>נשאר</b> to stay. The '
+               'present and past both start with נ; the infinitive starts <b>לְהִי־</b>: להיכנס.',
+       'examples': [
+         {'he': 'הוא נכנס בלי לדפוק.', 'en': 'He came in without knocking.'},
+         {'he': 'איפה נמצא בית הקפה?', 'en': 'Where is the café?'},
+         {'he': 'הכסף נגמר.', 'en': 'The money ran out.'},
+         {'he': 'נשארתי בבית כל היום.', 'en': 'I stayed home all day.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'להיכנס', 'en': 'to enter', 'pos': 'verb', 'prep': 'ל'},
+         {'he': 'להישאר', 'en': 'to stay, to remain', 'pos': 'verb'},
+         {'he': 'להיגמר', 'en': 'to end, to run out', 'pos': 'verb'},
+         {'he': 'להימצא', 'en': 'to be located', 'pos': 'verb'},
+         {'he': 'להיפגש', 'en': 'to meet up', 'pos': 'verb', 'prep': 'עם'},
+         {'he': 'להיזהר', 'en': 'to be careful', 'pos': 'verb'},
+         {'he': 'להירשם', 'en': 'to register', 'pos': 'verb', 'prep': 'ל'},
+       ]},
+      {'kind': 'table', 'title': 'מלאו את הטבלה', 'en': 'Fill in the table',
+       'instructions': 'Present and past both open with נ; the infinitive opens with להי־.',
+       'cols': ['שם פועל', 'הוא, הווה', 'הוא, עבר', 'הם, עתיד'],
+       'rows': [
+         [{'g': 'להיכנס'}, {'g': 'נכנס'}, {'g': 'נכנס'}, {'g': 'ייכנסו'}],
+         [{'g': 'להישאר'}, {'a': ['נשאר']}, {'a': ['נשאר']}, {'a': ['יישארו']}],
+         [{'g': 'להיגמר'}, {'a': ['נגמר']}, {'a': ['נגמר']}, {'a': ['ייגמרו']}],
+         [{'g': 'להיפגש'}, {'a': ['נפגש']}, {'a': ['נפגש']}, {'a': ['ייפגשו']}],
+       ]},
+      {'kind': 'bracket', 'title': 'כתבו את הפועל', 'en': 'Write the verb',
+       'instructions': 'Read the time words and pick the tense yourself.',
+       'example': {'q': 'אתמול הוא ___ מאוחר. [להיכנס]', 'a': 'נכנס'},
+       'items': [
+         {'q': 'החלב ___, צריך לקנות. [להיגמר]', 'a': ['נגמר'], 'en': 'The milk’s run out, we need to buy some.'},
+         {'q': 'אנחנו ___ בבית קפה מחר. [להיפגש]', 'a': ['ניפגש'], 'en': 'We’ll meet at a café tomorrow.'},
+         {'q': 'היא ___ בעבודה עד מאוחר אתמול. [להישאר]', 'a': ['נשארה'], 'en': 'She stayed at work late yesterday.'},
+         {'q': 'תמיד צריך ___ בכביש הזה. [להיזהר]', 'a': ['להיזהר'], 'en': 'You always have to be careful on this road.'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'הוא נכנס can mean “he enters” AND “he entered”. Why?',
+          'options': ['nifal’s masculine-singular present and past look identical',
+                      'because it is irregular', 'because נכנס is not really a verb'],
+          'a': 'nifal’s masculine-singular present and past look identical',
+          'why': 'Only in this one cell. The context, or the time word, tells you which — and in '
+                 'the feminine they separate: נכנסת against נכנסה.'},
+         {'q': 'הכסף נגמר is closest to —',
+          'options': ['“the money ran out”', '“someone finished the money”', '“the money is over there”'],
+          'a': '“the money ran out”',
+          'why': 'Nifal is often what English does with an intransitive verb: it broke, it opened, '
+                 'it ran out — nobody named as doing it.'},
+       ]},
+      {'kind': 'slang', 'he': 'נגמר לי', 'literal': '“it ran out to me”',
+       'meaning': 'I’ve run out of it — or I’ve had enough.',
+       'when': 'נגמר לי החלב is "I’m out of milk". On its own, נגמר לי הכוח or just נגמר לי means '
+               'you are done, out of patience or energy.',
+       'examples': [{'he': 'נגמר לי הקפה.', 'en': 'I’ve run out of coffee.'},
+                    {'he': 'נגמר לי, אני הולך לישון.', 'en': 'I’m done — I’m going to bed.'}]},
+    ],
+  },
+  {
+    'id': 'he-24', 'n': 24, 'level': 'intermediate',
+    'title': {'he': 'מילות קישור', 'en': 'Joining sentences up'},
+    'objective': 'The words that turn a list of short sentences into speech: because, but, so, if, '
+                 'in order to, even though. This is the unit that makes you sound less like a book.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'ש is the workhorse',
+       'body': 'A great deal of Hebrew subordination is just <b>ש־</b> glued to the front: '
+               'אמרתי <b>ש</b>אני בא, "I said that I’m coming"; <b>כדי ש</b>… "so that"; '
+               '<b>למרות ש</b>… "even though"; <b>בגלל ש</b>… "because". Note the pair: '
+               '<b>בגלל</b> takes a NOUN, <b>כי</b> or בגלל ש takes a whole clause.',
+       'examples': [
+         {'he': 'לא באתי כי הייתי חולה.', 'en': 'I didn’t come because I was ill.'},
+         {'he': 'לא באתי בגלל הגשם.', 'en': 'I didn’t come because of the rain.'},
+         {'he': 'רציתי לבוא, אבל לא יכולתי.', 'en': 'I wanted to come, but I couldn’t.'},
+         {'he': 'אם יהיה זמן, נעבור אצלכם.', 'en': 'If there’s time, we’ll drop by yours.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אבל', 'en': 'but', 'pos': 'other'},
+         {'he': 'כי', 'en': 'because', 'pos': 'other'},
+         {'he': 'אז', 'en': 'so, then', 'pos': 'other'},
+         {'he': 'אם', 'en': 'if', 'pos': 'other'},
+         {'he': 'כדי', 'en': 'in order to', 'pos': 'other'},
+         {'he': 'למרות', 'en': 'despite', 'pos': 'other'},
+         {'he': 'בגלל', 'en': 'because of', 'pos': 'other'},
+         {'he': 'גם', 'en': 'also', 'pos': 'other'},
+         {'he': 'רק', 'en': 'only', 'pos': 'other'},
+       ]},
+      {'kind': 'choose', 'title': 'כי או בגלל?', 'en': 'כי or בגלל?',
+       'instructions': 'בגלל takes a noun. כי takes a whole clause with a verb in it.',
+       'items': [
+         {'q': 'נשארנו בבית ___ הגשם.', 'options': ['בגלל', 'כי', 'כדי'], 'a': 'בגלל',
+          'en': 'הגשם is a noun → בגלל.'},
+         {'q': 'נשארנו בבית ___ ירד גשם.', 'options': ['כי', 'בגלל', 'למרות'], 'a': 'כי',
+          'en': 'ירד גשם is a clause → כי.'},
+         {'q': 'למדתי הרבה ___ לעבור את המבחן.', 'options': ['כדי', 'כי', 'אבל'], 'a': 'כדי',
+          'en': 'כדי + infinitive: “in order to”.'},
+         {'q': 'יצאנו ___ שהיה קר.', 'options': ['למרות', 'בגלל', 'כדי'], 'a': 'למרות',
+          'en': 'למרות ש — “even though”.'},
+       ]},
+      {'kind': 'fill', 'title': 'חברו את המשפטים', 'en': 'Join the sentences',
+       'instructions': 'Type the connective that fits.',
+       'example': {'q': 'רציתי לבוא ___ לא יכולתי. — I wanted to come but I couldn’t.', 'a': 'אבל'},
+       'items': [
+         {'q': '___ יהיה יפה מחר, נלך לים.', 'a': ['אם'], 'en': 'If it’s nice tomorrow, we’ll go to the sea.'},
+         {'q': 'הוא לא אכל ___ הוא לא היה רעב.', 'a': ['כי'], 'en': 'He didn’t eat because he wasn’t hungry.'},
+         {'q': 'קמתי מוקדם ___ להספיק לרכבת.', 'a': ['כדי'], 'en': 'I got up early in order to catch the train.'},
+         {'q': 'היא באה, ו___ אחותה באה.', 'a': ['גם'], 'en': 'She came, and her sister came too.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Two clauses and the word that joins them.',
+       'items': [
+         {'words': ['לא', 'הלכתי', 'כי', 'הייתי', 'עייף'], 'a': 'לא הלכתי כי הייתי עייף',
+          'en': 'I didn’t go because I was tired.'},
+         {'words': ['אם', 'תרצה', 'נוכל', 'להיפגש', 'מחר'], 'a': 'אם תרצה נוכל להיפגש מחר',
+          'en': 'If you want, we can meet tomorrow.'},
+         {'words': ['היא', 'עבדה', 'למרות', 'שהיא', 'הייתה', 'חולה'],
+          'a': 'היא עבדה למרות שהיא הייתה חולה', 'en': 'She worked even though she was ill.'},
+       ]},
+      {'kind': 'slang', 'he': 'בקטנה', 'literal': '“in a small one”',
+       'meaning': 'No big deal / a little bit / take it easy.',
+       'when': 'Downplaying something — an effort, a favour, a plan. עשינו את זה בקטנה is "we did '
+               'it, no problem"; נצא בקטנה is "let’s go out, nothing major".',
+       'examples': [{'he': 'בקטנה, אין בעיה.', 'en': 'No big deal, no problem.'},
+                    {'he': 'נעשה משהו בקטנה בערב.', 'en': 'Let’s do something low-key this evening.'}]},
     ],
   },
 ]
