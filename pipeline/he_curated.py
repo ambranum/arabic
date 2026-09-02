@@ -125,6 +125,57 @@ PROPER = {
     # as g'xa -- the j lost and the u with it. A borrowed name is exactly where a derived
     # pronunciation should not be trusted, so it is written out.
     "ג'וחא":    ("ג'וּחָא", 'Juha (Nasreddin, the wise fool of the folk tales)', 'NOUN_PROP', 'juxa'),
+    # Around the World in Eighty Days. Two of these are why the table is consulted BEFORE the
+    # lexicon rather than after it: פוג came back as פּוּג "to expire" and סן as a real word,
+    # confidently, so a fallback would never have reached them -- nothing failed.
+    'פוג':      ('פוֹג', 'Fogg (Phileas Fogg)', 'NOUN_PROP', 'fog'),
+    'פספרטו':   ('פַּסְפַּרְטוּ', "Passepartout (Fogg's servant)", 'NOUN_PROP', 'paspartú'),
+    'פיקס':     ('פִיקְס', 'Fix (the detective)', 'NOUN_PROP', 'fiks'),
+    'אאודה':    ('אָאוּדָה', 'Aouda (the woman rescued in India)', 'NOUN_PROP', 'aúda'),
+    'בומביי':   ('בּוֹמְבֵּיי', 'Bombay (Mumbai, in India)', 'NOUN_PROP', 'bombéy'),
+    'כלכותה':   ('כַּלְכּוּתָּה', 'Calcutta (Kolkata, in India)', 'NOUN_PROP', 'kalkúta'),
+    'הונג':     ('הוֹנְג', 'Hong (as in Hong Kong)', 'NOUN_PROP', 'hong'),
+    'קונג':     ('קוֹנְג', 'Kong (as in Hong Kong)', 'NOUN_PROP', 'kong'),
+    'יוקוהמה':  ('יוֹקוֹהָמָה', 'Yokohama (in Japan)', 'NOUN_PROP', 'yokoháma'),
+    'סן':       ('סָן', 'San (as in San Francisco)', 'NOUN_PROP', 'san'),
+    'פרנסיסקו': ('פְרַנְסִיסְקוֹ', 'Francisco (as in San Francisco)', 'NOUN_PROP', 'fransísko'),
+    'ניו':      ('נְיוּ', 'New (as in New York)', 'NOUN_PROP', 'nyu'),
+    'פיליאס':   ('פִילְיָאס', 'Phileas (Phileas Fogg)', 'NOUN_PROP', 'filias'),
+    'סואץ':     ('סוּאֵץ', 'Suez (the canal and the city in Egypt)', 'NOUN_PROP', 'suéts'),
+    # The seven voyages.
+    'סינדבאד':  ('סִינְדְּבַּאד', 'Sindbad (the sailor of the Thousand and One Nights)', 'NOUN_PROP', 'sindbád'),
+    'סרנדיב':   ('סֶרֶנְדִּיב', 'Serendib (the old name for Sri Lanka)', 'NOUN_PROP', 'serendív'),
+    'בצרה':     ('בַּצְרָה', 'Basra (the port city in Iraq)', 'NOUN_PROP', 'bátsra'),
+    # Kalila and Dimna. Both jackals are ordinary Hebrew verbs when unpointed -- כלילה came
+    # back as "to include" and דמנה as "to pause" -- so the two title characters would have
+    # been glossed as conjugations of something else on every page of their own book.
+    'כלילה':    ('כְּלִילָה', 'Kalila (one of the two jackals)', 'NOUN_PROP', 'klilá'),
+    'דמנה':     ('דִּמְנָה', 'Dimna (the other of the two jackals)', 'NOUN_PROP', 'dimná'),
+    # Treasure Island.
+    "ג'ים":     ("ג'ים", 'Jim (Jim Hawkins, who tells the story)', 'NOUN_PROP', 'jim'),
+    'הוקינס':   ('הוֹקִינְס', 'Hawkins (Jim Hawkins)', 'NOUN_PROP', 'hókins'),
+    'סילבר':    ('סִילְבֶר', 'Silver (Long John Silver, the cook)', 'NOUN_PROP', 'sílver'),
+    'פלינט':    ('פְלִינְט', 'Flint (the pirate captain who buried the treasure)', 'NOUN_PROP', 'flint'),
+    'ליבסי':    ('לִיבְּסִי', 'Livesey (the doctor)', 'NOUN_PROP', 'lívsi'),
+    'טרלוני':   ('טְרֶלוֹנִי', 'Trelawney (the squire)', 'NOUN_PROP', 'trelóni'),
+    'סמולט':    ('סְמוֹלֶט', 'Smollett (the captain of the ship)', 'NOUN_PROP', 'smólet'),
+    'בילי':     ('בִּילִי', 'Billy (Billy Bones, the old sailor)', 'NOUN_PROP', 'bíli'),
+    'בונס':     ('בּוֹנְס', 'Bones (Billy Bones)', 'NOUN_PROP', 'bons'),
+    'גאן':      ('גָּאן', 'Gunn (Ben Gunn, the man left on the island)', 'NOUN_PROP', 'gan'),
+    'בריסטול':  ('בְּרִיסְטוֹל', 'Bristol (the English port)', 'NOUN_PROP', 'brístol'),
+    "ג'ון":     ("ג'ון", 'John (Long John Silver)', 'NOUN_PROP', 'jon'),
+    # Tom Sawyer.
+    'טום':      ('טוֹם', 'Tom (Tom Sawyer)', 'NOUN_PROP', 'tom'),
+    'סוייר':    ('סוֹיֶיר', 'Sawyer (Tom Sawyer)', 'NOUN_PROP', 'sóyer'),
+    'האק':      ('הָאק', 'Huck (Huckleberry Finn)', 'NOUN_PROP', 'hak'),
+    'פין':      ('פִין', 'Finn (Huckleberry Finn)', 'NOUN_PROP', 'fin'),
+    'בקי':      ('בֶּקִי', 'Becky (Becky Thatcher)', 'NOUN_PROP', 'béki'),
+    'פולי':     ('פּוֹלִי', "Polly (Tom's aunt)", 'NOUN_PROP', 'póli'),
+    'סיד':      ('סִיד', "Sid (Tom's half-brother)", 'NOUN_PROP', 'sid'),
+    "ג'ו":      ("ג'ו", "Joe (Injun Joe, and also Tom's friend Joe Harper)", 'NOUN_PROP', 'jo'),
+    'מאף':      ('מָאף', 'Muff (Muff Potter)', 'NOUN_PROP', 'maf'),
+    'פוטר':     ('פּוֹטֶר', 'Potter (Muff Potter)', 'NOUN_PROP', 'póter'),
+    'מיסיסיפי': ('מִיסִיסִיפִּי', 'Mississippi (the river)', 'NOUN_PROP', 'misisípi'),
 }
 
 _ALL = {}
