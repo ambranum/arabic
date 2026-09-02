@@ -30,14 +30,26 @@ TXT = paths.texts('ref')
 # slug -> filename. "Speaking Arabic.pdf" is byte-identical to "Spoken Arabic Lessons.pdf"
 # (same md5), so only one of the pair is rendered.
 BOOKS = {
-    'najah':        'Najah lessons.pdf',
-    'speaking':     'Speaking Arabic.pdf',
-    'spoken-extra': 'Spoken Arabic Lessons additional.pdf',
-    'vocab-gram':   'Vocab and Grammar.pdf',
-    'stories':      'Short Stories.pdf',
-    'verb-forms':   'Verb Forms.pdf',
-    'verb-drills':  'Verb Drills.pdf',
-}
+    'ar': {
+        'najah':        'Najah lessons.pdf',
+        'speaking':     'Speaking Arabic.pdf',
+        'spoken-extra': 'Spoken Arabic Lessons additional.pdf',
+        'vocab-gram':   'Vocab and Grammar.pdf',
+        'stories':      'Short Stories.pdf',
+        'verb-forms':   'Verb Forms.pdf',
+        'verb-drills':  'Verb Drills.pdf',
+    },
+    # The Hebrew shelf. Same job, same treatment: image scans with no text layer, rendered so
+    # they can be read. The last two DO have a text layer and are read straight out of the PDF.
+    'he': {
+        'aleph':     'Aleph ++.pdf',
+        'bet':       'Bet.pdf',
+        'gimel':     'Gimel.pdf',
+        'gimel-plus': 'Gimmel +.pdf',
+        'pod':       'HebrewPod.pdf',
+        'reichman':  'Reichman.pdf',
+    },
+}[paths.LANG]
 DPI = 200   # crisp enough for Arabic diacritics without huge files
 
 

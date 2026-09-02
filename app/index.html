@@ -1434,6 +1434,78 @@ window.ALP = (function () {
     background:var(--verdigris-2); border-radius:8px; padding:11px 13px; margin-bottom:6px}
   .as-placed b{color:var(--verdigris)}
   .as-cta{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:12px}
+  /* ---- interactive teaching units ------------------------------------------------------ */
+  /* The workbook look: a numbered item, the sentence with a gap in it, the English under it,
+     and the answer only once you have earned it or asked for it. */
+  .lsn-b{margin:22px 0 26px}
+  .lsn-bh{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+          border-bottom:1px solid var(--rule); padding-bottom:6px; margin-bottom:10px}
+  .lsn-bh span{font-family:var(--arabic); font-size:19px; color:var(--ink)}
+  .lsn-bh em{font-style:normal; font-size:12.5px; color:var(--muted); letter-spacing:.04em;
+             text-transform:uppercase}
+  .lsn-teach p{margin:0 0 10px}
+  .lsn-eg{background:var(--paper-2); border:1px solid var(--rule); border-radius:8px;
+          padding:8px 12px; margin:0 0 14px; font-size:15px}
+  .lsn-eg b{font-family:var(--arabic); color:var(--ochre); margin-inline-end:10px}
+  .lsn-item{display:grid; grid-template-columns:26px 1fr; gap:4px 8px; align-items:start;
+            padding:9px 0; border-bottom:1px dashed var(--rule)}
+  .lsn-item.ok{background:color-mix(in srgb, var(--verdigris) 7%, transparent)}
+  .lsn-n{color:var(--muted); font-size:12px; padding-top:6px; font-variant-numeric:tabular-nums}
+  .lsn-q,.lsn-built,.lsn-bank,.lsn-en,.lsn-a,.lsn-quizq,.lsn-opts,.lsn-why{grid-column:2}
+  .lsn-q{font-family:var(--arabic); font-size:19px; line-height:2.1}
+  .lsn-en{font-size:12.5px; color:var(--muted)}
+  .lsn-hint{display:block; color:var(--ochre)}
+  .lsn-a{font-family:var(--arabic); font-size:16px; color:var(--verdigris)}
+  .lsn-in{font-family:var(--arabic); font-size:17px; background:var(--paper-2);
+          border:0; border-bottom:2px solid var(--ochre); color:var(--ink);
+          width:6.5em; text-align:center; padding:1px 4px; border-radius:4px 4px 0 0}
+  .lsn-in.wide{width:100%; text-align:right; margin-top:4px}
+  .lsn-in:focus{outline:2px solid var(--verdigris); outline-offset:1px}
+  .lsn-in.ok,.lsn-sel.ok{border-bottom-color:var(--verdigris); color:var(--verdigris)}
+  .lsn-in.no,.lsn-sel.no,.lsn-built.no{border-bottom-color:var(--rubric)}
+  .lsn-sel{font-family:var(--arabic); font-size:16px; background:var(--paper-2); color:var(--ink);
+           border:1px solid var(--rule); border-bottom:2px solid var(--ochre); border-radius:6px;
+           padding:2px 6px}
+  .lsn-ctl{margin-top:12px}
+  /* vocabulary — מילים חדשות, sorted by part of speech the way Bet prints it */
+  .lsn-voc{width:100%; border-collapse:collapse; font-size:14.5px}
+  .lsn-voc td{border-bottom:1px solid var(--rule); padding:7px 6px; vertical-align:top}
+  .lv-he{font-family:var(--arabic); font-size:19px; white-space:nowrap}
+  .lv-prep{color:var(--ochre); margin-inline-start:6px; font-size:16px}
+  .lv-say{color:var(--muted); font-size:12.5px; font-family:var(--sans)}
+  .lv-lex{display:block; color:var(--muted); font-size:11.5px}
+  .lv-pos{color:var(--muted); font-size:11.5px; text-align:end}
+  .lv-add{width:32px; text-align:end}
+  /* the slang card, in HebrewPod's shape: literal, then meaning, then when you would say it */
+  .lsn-slang{border:1px solid var(--ochre); border-radius:10px; padding:14px 16px;
+             background:color-mix(in srgb, var(--ochre) 6%, transparent)}
+  .lsn-sl-he{font-family:var(--arabic); font-size:26px; line-height:1.6}
+  .lsn-sl-lit{color:var(--muted); font-size:12.5px; margin-top:2px}
+  .lsn-sl-mean{font-size:17px; color:var(--ochre); margin:6px 0 2px}
+  .lsn-sl-when{font-size:13.5px; margin:6px 0 10px}
+  /* match and order boards */
+  .lsn-match{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+  .lsn-mcol{display:flex; flex-direction:column; gap:6px}
+  .lsn-tile{background:var(--paper-2); border:1px solid var(--rule); border-radius:8px;
+            color:var(--ink); padding:7px 10px; font-family:var(--arabic); font-size:16px;
+            cursor:pointer; text-align:center}
+  .lsn-tile.en{font-family:var(--sans); font-size:13.5px}
+  .lsn-tile.sel{border-color:var(--verdigris); outline:2px solid var(--verdigris)}
+  .lsn-tile.ok{border-color:var(--verdigris); color:var(--verdigris); opacity:.55; cursor:default}
+  .lsn-tile.small{padding:3px 8px; font-size:15px; cursor:default}
+  .lsn-built{min-height:34px; display:flex; flex-wrap:wrap; gap:5px; padding:4px;
+             border-bottom:2px solid var(--ochre)}
+  .lsn-bank{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px}
+  .lsn-ph{color:var(--muted); font-size:12.5px; font-family:var(--sans)}
+  /* quiz */
+  .lsn-quizq{font-size:15px; margin-bottom:6px}
+  .lsn-opts{display:flex; flex-direction:column; gap:6px}
+  .lsn-opt{background:var(--paper-2); border:1px solid var(--rule); border-radius:8px;
+           color:var(--ink); padding:8px 11px; text-align:start; cursor:pointer; font-size:14px}
+  .lsn-opt.ok{border-color:var(--verdigris); color:var(--verdigris)}
+  .lsn-opt.no{border-color:var(--rubric); color:var(--rubric)}
+  .lsn-why{font-size:12.5px; color:var(--muted); margin-top:6px}
+  @media (max-width:560px){ .lsn-match{grid-template-columns:1fr} }
 </style>
 </head>
 <body>

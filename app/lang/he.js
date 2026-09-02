@@ -169,6 +169,39 @@ const HE_ART = (() => {
     <g fill="var(--verdigris)" opacity=".5" stroke="none">${cap}</g>
     ${_ground()}`; }},
 
+  // BEN-YEHUDA'S HOUSE — the room the modern language was assembled in, lamp still on.
+  lessons: {ar: 'שִׁעוּרִים', place: 'Ben-Yehuda’s house', placeAr: 'בֵּיתוֹ שֶׁל בֶּן־יְהוּדָה',
+    what: 'where the language was made speakable again', art: () => {
+    let win = '';                            // Jerusalem stone, arched windows, iron balconies
+    for (let k = 0; k < 3; k++) {
+      const x = 452 + k * 106;
+      win += `<path d="M${x} 130v-40a26 26 0 0 1 52 0v40" fill="var(--paper)"/>
+              <path d="M${x + 26} 130V64" opacity=".4"/>
+              <path d="M${x - 8} 130h68v10h-68z" fill="var(--paper)"/>`;
+      for (let b = 0; b < 6; b++) win += `<path d="M${x - 4 + b * 12} 140v-10" opacity=".5"/>`;
+    }
+    return `
+    <g stroke="var(--ink-soft)" stroke-width="1.6" opacity=".62" fill="none">
+      ${_hills()}
+      ${_house(120, 116, 62, 3)}${_house(258, 96, 52, 3)}
+      ${_house(940, 104, 56, 3)}${_house(1064, 96, 48, 3)}
+      <path d="M420 196V54h340v142" fill="var(--paper)"/>
+      <path d="M406 54h368l-16-16H422z" fill="var(--paper)"/>
+      ${_courses(420, 196, 340, 142, 7, 86)}
+      <path d="M406 54h368"/>
+      ${win}
+      <path d="M556 196v-46a34 34 0 0 1 68 0v46" fill="var(--paper)"/>
+      <path d="M590 196v-40" opacity=".4"/>
+      <path d="M660 90h44v40h-44z" fill="var(--ochre-wash)" stroke="var(--ochre)"/>
+      <path d="M682 90v40M660 110h44" stroke="var(--ochre)" opacity=".5"/>
+      <path d="M330 196v-84h10v84" opacity=".7"/>
+      <path d="M326 112h18v-10h-18z"/><path d="M335 102v-8"/>
+    </g>
+    <g fill="var(--verdigris)" opacity=".5" stroke="none">
+      ${_cypress(388, 70)}${_cypress(806, 62)}${_cypress(852, 48)}
+      ${_olive(224, .74)}${_olive(1150, .7)}
+    </g>${_ground()}`; }},
+
   // SAFED — the town stepping up its ridge, alleys as stairs, a synagogue dome among the roofs.
   stories: {ar: 'סִפּוּרִים', place: 'Safed', placeAr: 'צְפַת',
     what: 'the hill town and its stairs', art: () => {

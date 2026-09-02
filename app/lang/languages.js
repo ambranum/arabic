@@ -48,7 +48,7 @@ window.LANGUAGES = [
     short: 'Hebrew',
     blurb: 'Spoken Israeli Hebrew. Sounds, verbs, grammar, the dictionary, 90 graded stories, a public-domain shelf, the daily paper and the Bible.',
     font: '"Taamey Frank CLM","SBL Hebrew","Ezra SIL","Times New Roman",serif',
-    data: ['library', 'verbs', 'sounds', 'reactions', 'grammar', 'curriculum',
+    data: ['library', 'verbs', 'sounds', 'reactions', 'grammar', 'lessons', 'curriculum',
            'assess', 'vocab_audio', 'bible-index'],
     // What actually exists, and nothing else. Hebrew arrives with the things Stage A proved
     // could be LOOKED UP rather than written -- 2,084 pointed paradigms and a 12,662-lemma
@@ -56,9 +56,12 @@ window.LANGUAGES = [
     // the same job that writes the Arabic one, and Sounds, whose lessons are curated teaching
     // but whose every WORD, vowel, reading and meaning is the lexicon's. Since then the authored
     // content has landed too: 90 graded stories, 20 grammar lessons, the reactions, and the
-    // Ben-Yehuda shelf. Lessons and the dinner table are the two that do not exist yet, and
-    // listing a section before it exists is a lie the switcher would tell on every page.
-    sections: ['plan', 'sounds', 'reactions', 'grammar', 'verbs', 'news', 'stories',
+    // Ben-Yehuda shelf, and now the lessons -- which could not be transcribed the way Arabic's
+    // were, because the Hebrew reference shelf is commercial and this repo is the public site,
+    // so they are written in those books' idiom instead and are worked rather than read. The
+    // dinner table is the one that does not exist yet, and listing a section before it exists
+    // is a lie the switcher would tell on every page.
+    sections: ['plan', 'lessons', 'sounds', 'reactions', 'grammar', 'verbs', 'news', 'stories',
                'books', 'bible', 'vocab', 'translate', 'tutor', 'account'],
   },
 ];

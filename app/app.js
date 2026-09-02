@@ -811,8 +811,12 @@ const SECTION_DEFS = {
       : 'Build your study plan'},
   lessons: {icon: 'lesson', lex: 1, label: 'Lessons', group: 'practice',
     view: id => lessonsSection(id),
+    // Arabic's units are transcribed from the user's own books; Hebrew's are written here in
+    // those books' idiom and are worked rather than read. The line says which you are getting.
     status: () => (LSN.units || []).length
-      ? (LSN.units || []).length + ' units, from native materials' : 'Teaching units'},
+      ? (LSN.units || []).length + ' units, ' + ((LSN.units[0] || {}).blocks
+          ? 'to work through' : 'from native materials')
+      : 'Teaching units'},
   sounds: {icon: 'sound', lex: 1, label: 'Sounds', group: 'practice',
     view: id => soundsSection(id),
     status: () => SND.lessons ? SND.lessons.length + ' sound contrasts to master'
@@ -1766,18 +1770,33 @@ function lessonsSection(sub) {
 
 function lessonsHome() {
   $('title').textContent = 'Lessons';
+  // Two kinds of unit, and they are honestly different things, so the page says which it has.
+  // Arabic's are transcribed from the user's own courses and are READ; Hebrew's are written in
+  // those courses' idiom and are WORKED, with the answers checked as you type them.
+  const worked = ((LSN.units || [])[0] || {}).blocks;
   let h = `<p class="hint">Structured teaching units — the spine your plan walks through, one unit
-    at a time. Each one: the new chunks, one grammar point, and the same drills the source course
-    uses, ending with you producing real sentences about your real life.</p>
-    <div class="refsrc"><b>From native teaching materials.</b> The Arabic in these units is copied
-    verbatim from courses written by native-speaker teachers (each item names its page). English
-    glosses follow the books where given.</div>
+    at a time.${worked
+      ? ' Each one: the grammar point, the new words, and exercises you actually fill in.'
+      : ' Each one: the new chunks, one grammar point, and the same drills the source course uses,'
+        + ' ending with you producing real sentences about your real life.'}</p>
+    <div class="refsrc">${worked
+      ? `<b>Written for this app.</b> The method is the Aleph, Bet and Gimel workbooks’ — a worked
+         example, then numbered items with a gap — plus the HebrewPod slang cards. The sentences
+         are ours, and every vocabulary word in them was looked up in ${esc(LANG.lex.name)}.`
+      : `<b>From native teaching materials.</b> The Arabic in these units is copied verbatim from
+         courses written by native-speaker teachers (each item names its page). English glosses
+         follow the books where given.`}</div>
     <div class="vtiles">`;
-  h += (LSN.units || []).map(u => `<button class="vtile wide" onclick="location.hash='/lessons/${u.id}'">
+  h += (LSN.units || []).map(u => {
+    const t = u.title.ar || u.title.he || '';
+    const n = u.blocks
+      ? u.blocks.reduce((a, b) => a + (b.items || b.pairs || []).length, 0) + ' exercises'
+      : (u.chunks || []).length + ' chunks';
+    return `<button class="vtile wide" onclick="location.hash='/lessons/${esc(u.id)}'">
       <div class="vtile-h"><span class="vtile-t">Unit ${u.n} — ${esc(u.title.en)}</span>
         <span class="vtile-n">${lsnDone(u.id) ? '✓ done' : ''}</span></div>
-      <div class="vtile-s">${lvlTagFor('unit', u)} <span dir="rtl">${esc(u.title.ar)}</span> · ${u.chunks.length} chunks</div>
-    </button>`).join('');
+      <div class="vtile-s">${lvlTagFor('unit', u)} <span dir="rtl">${esc(t)}</span> · ${n}</div>
+    </button>`; }).join('');
   h += `</div>`;
   $('view').innerHTML = h;
 }
@@ -1863,7 +1882,304 @@ function lsnDrillHTML(u, d) {
   return h;
 }
 
+
+// ---------- interactive teaching units -----------------------------------------------------
+// The Arabic units are TRANSCRIBED from the user's own books and are read; the Hebrew ones are
+// written in those books' idiom and are WORKED. A unit that carries `blocks` comes through here.
+//
+// Everything is checked in the browser against a list of accepted answers, and the check is
+// deliberately generous: pointing is stripped, final letters are folded, punctuation and
+// doubled spaces go, and every item carries alternatives. Hebrew is spelled more than one way
+// (איתך / אתך, ktiv male against haser) and marking a learner wrong for the other correct
+// spelling teaches them to distrust the app, which is worse than missing a typo.
+const lsnKey = s => arNorm(String(s == null ? '' : s))
+  .replace(/[.,!?;:"'׳״()‘’“”\-]/g, ' ')
+  .replace(/\s+/g, ' ').trim();
+const lsnOk = (given, accept) => {
+  const g = lsnKey(given);
+  return !!g && (Array.isArray(accept) ? accept : [accept]).some(a => lsnKey(a) === g);
+};
+// Per-unit scratch state: which items are answered right, and the match/order boards. It is
+// deliberately NOT persisted — a drill you have done is worth doing again, and the thing worth
+// keeping out of a lesson is the vocabulary, which goes to the deck like any other word.
+let LW = {};
+const lwB = bi => (LW.b[bi] = LW.b[bi] || {done: {}, shown: false, sel: null, pick: {}, ord: {}});
+
+function lessonWorkView(u) {
+  $('title').textContent = 'Unit ' + u.n;
+  LW = {id: u.id, b: {}};
+  let h = `<div class="lsn-head">
+      <div class="lsn-title" dir="rtl">${esc(u.title.he)}</div>
+      <div class="lsn-title-en">${esc(u.title.en)}</div>
+      <p class="hint">${esc(u.objective)}</p>
+      <div class="refsrc">Written for this app in the idiom of the Aleph, Bet and Gimel
+        workbooks and the HebrewPod slang cards — the method is theirs, the sentences are ours.
+        Every vocabulary word below was looked up in ${esc(LANG.lex.name)}. Tap any word to
+        open its card.</div></div>`;
+  h += `<div id="lsn-blocks">${u.blocks.map((b, bi) => lsnBlockHTML(u, b, bi)).join('')}</div>`;
+  const i = (LSN.units || []).findIndex(x => x.id === u.id);
+  const next = (LSN.units || [])[i + 1];
+  h += `<div class="lsn-finish"><div class="lsn-prog" id="lsn-score">${lsnScoreLine(u)}</div>
+      <button class="tog go lsn-fin" onclick="lsnFinish('${esc(u.id)}')">${
+        lsnDone(u.id) ? '✓ Unit complete — tap to reopen' : 'Mark unit complete'}</button>
+      ${next ? `<button class="tog" onclick="location.hash='/lessons/${esc(next.id)}'">Next unit →</button>` : ''}
+    </div>`;
+  $('view').innerHTML = h;
+  paint();
+}
+
+function lsnScoreLine(u) {
+  let tot = 0, got = 0;
+  u.blocks.forEach((b, bi) => {
+    const n = (b.items || b.pairs || []).length; if (!n) return;
+    tot += n; got += Object.keys((LW.b[bi] || {}).done || {}).length;
+  });
+  return tot ? `${got} of ${tot} answered` + (got === tot ? ' — all done' : '') : 'Read it through.';
+}
+function lsnRefresh(u, bi) {
+  const el = document.querySelector(`[data-lb="${bi}"]`);
+  if (el) el.outerHTML = lsnBlockHTML(u, u.blocks[bi], bi);
+  const sc = $('lsn-score'); if (sc) sc.textContent = lsnScoreLine(u);
+  paint();
+}
+
+// A blank rendered as an input. `q` carries ___ where the answer goes; everything around it is
+// live Hebrew so the rest of the sentence is still tappable while you work on the gap.
+function lsnGap(q, bi, ii, val, state) {
+  const cls = 'lsn-in' + (state === 1 ? ' ok' : state === 0 ? ' no' : '');
+  const box = `<input class="${cls}" dir="rtl" data-b="${bi}" data-i="${ii}"
+     value="${esc(val || '')}" autocomplete="off" autocapitalize="off" spellcheck="false"
+     onkeydown="if(event.key==='Enter')lsnCheck(${bi})">`;
+  const parts = String(q).split('___');
+  return parts.map(p => arLive(p)).join(box);
+}
+
+function lsnBlockHTML(u, b, bi) {
+  const st = lwB(bi);
+  const head = (t, en) => `<div class="lsn-bh"><span dir="rtl">${esc(t || '')}</span>${
+    en ? `<em>${esc(en)}</em>` : ''}</div>`;
+  let h = `<div class="lsn-b lsn-${esc(b.kind)}" data-lb="${bi}">`;
+
+  if (b.kind === 'teach') {
+    h += `<div class="lsn-bh"><span>${esc(b.title)}</span></div>
+      <div class="lsn-teach"><p>${b.body}</p>` +
+      (b.examples || []).map(e => `<div class="lsn-gx"><span dir="rtl">${arLive(e.he)}</span>
+        <em>${esc(e.en)}</em></div>`).join('') + `</div>`;
+  }
+
+  if (b.kind === 'vocab') {
+    h += head(b.title, b.note || 'New words');
+    h += `<table class="lsn-voc"><tbody>` + b.rows.map(r => {
+      const head = r.voc || r.he;
+      return `<tr><td class="lv-he" dir="rtl">${arLive(head)}${
+        r.prep ? `<span class="lv-prep" dir="rtl">${esc(r.prep)}</span>` : ''}</td>
+        <td class="lv-say">${esc(r.say || '')}</td>
+        <td class="lv-en">${esc(r.en)}${
+          r.lex && lsnKey(r.lex) !== lsnKey(r.en)
+            ? `<span class="lv-lex">${esc(LANG.lex.name)}: ${esc(r.lex)}</span>` : ''}</td>
+        <td class="lv-pos">${esc(r.pos || '')}</td>
+        <td class="lv-add">${deckBtnHTML(head, `lsnSaveWord(${bi},'${cssq(r.he)}')`, '+')}</td></tr>`;
+    }).join('') + `</tbody></table>`;
+  }
+
+  if (b.kind === 'slang') {
+    h += `<div class="lsn-slang">
+      <div class="lsn-sl-he" dir="rtl">${arLive(b.he)}</div>
+      <div class="lsn-sl-lit">${esc(b.literal)}</div>
+      <div class="lsn-sl-mean">${esc(b.meaning)}</div>
+      <p class="lsn-sl-when">${esc(b.when)}</p>` +
+      (b.examples || []).map(e => `<div class="lsn-gx"><span dir="rtl">${arLive(e.he)}</span>
+        <em>${esc(e.en)}</em></div>`).join('') +
+      `<div class="ctl">${deckBtnHTML(b.he, `lsnSaveSlang(${bi})`, '+ Add to my deck')}</div></div>`;
+  }
+
+  if (b.kind === 'fill' || b.kind === 'bracket') {
+    h += head(b.title, b.en);
+    h += `<p class="hint">${esc(b.instructions)}</p>`;
+    if (b.example) h += `<div class="lsn-eg"><b>דוגמה</b>
+      <span dir="rtl">${arLive(String(b.example.q).replace('___', ' ' + b.example.a + ' '))}</span></div>`;
+    h += b.items.map((it, ii) => {
+      const state = st.done[ii] ? 1 : (st.tried && st.tried[ii] ? 0 : -1);
+      return `<div class="lsn-item${state === 1 ? ' ok' : ''}">
+        <span class="lsn-n">${ii + 1}</span>
+        <div class="lsn-q" dir="rtl">${lsnGap(it.q, bi, ii, st.val && st.val[ii], state)}</div>
+        <div class="lsn-en">${esc(it.en || '')}${
+          it.hint ? `<span class="lsn-hint">${esc(it.hint)}</span>` : ''}</div>
+        ${state === 1 || st.shown ? `<div class="lsn-a" dir="rtl">${esc(it.a[0])}</div>` : ''}
+      </div>`;
+    }).join('');
+    h += lsnBtns(bi);
+  }
+
+  if (b.kind === 'choose') {
+    h += head(b.title, b.en);
+    h += `<p class="hint">${esc(b.instructions)}</p>`;
+    h += b.items.map((it, ii) => {
+      const state = st.done[ii] ? 1 : (st.tried && st.tried[ii] ? 0 : -1);
+      const sel = `<select class="lsn-sel${state === 1 ? ' ok' : state === 0 ? ' no' : ''}"
+         dir="rtl" data-b="${bi}" data-i="${ii}"><option value=""></option>` +
+        it.options.map(o => `<option${(st.val && st.val[ii]) === o ? ' selected' : ''}>${esc(o)}</option>`).join('') +
+        `</select>`;
+      const q = String(it.q).indexOf('___') >= 0
+        ? String(it.q).split('___').map(p => arLive(p)).join(sel)
+        : arLive(it.q) + ' ' + sel;
+      return `<div class="lsn-item${state === 1 ? ' ok' : ''}">
+        <span class="lsn-n">${ii + 1}</span>
+        <div class="lsn-q" dir="rtl">${q}</div>
+        <div class="lsn-en">${esc(it.en || '')}</div>
+        ${state === 1 || st.shown ? `<div class="lsn-a" dir="rtl">${esc(it.a)}</div>` : ''}</div>`;
+    }).join('');
+    h += lsnBtns(bi);
+  }
+
+  if (b.kind === 'transform') {
+    h += head(b.title, b.en);
+    h += `<p class="hint">${esc(b.instructions)}</p>`;
+    if (b.example) h += `<div class="lsn-eg"><b>דוגמה</b>
+      <span dir="rtl">${arLive(b.example.from)}</span> → <span dir="rtl">${arLive(b.example.to)}</span></div>`;
+    h += b.items.map((it, ii) => {
+      const state = st.done[ii] ? 1 : (st.tried && st.tried[ii] ? 0 : -1);
+      return `<div class="lsn-item${state === 1 ? ' ok' : ''}">
+        <span class="lsn-n">${ii + 1}</span>
+        <div class="lsn-q" dir="rtl">${arLive(it.from)}</div>
+        <input class="lsn-in wide${state === 1 ? ' ok' : state === 0 ? ' no' : ''}" dir="rtl"
+          data-b="${bi}" data-i="${ii}" value="${esc((st.val && st.val[ii]) || '')}"
+          autocomplete="off" spellcheck="false"
+          onkeydown="if(event.key==='Enter')lsnCheck(${bi})">
+        <div class="lsn-en">${esc(it.en || '')}</div>
+        ${state === 1 || st.shown ? `<div class="lsn-a" dir="rtl">${esc(it.to[0])}</div>` : ''}</div>`;
+    }).join('');
+    h += lsnBtns(bi);
+  }
+
+  if (b.kind === 'match') {
+    h += head(b.title, b.en);
+    h += `<p class="hint">${esc(b.instructions)}</p>`;
+    const order = st.ord.en || (st.ord.en = b.pairs.map((_, i) => i).sort(() => Math.random() - .5));
+    h += `<div class="lsn-match"><div class="lsn-mcol">` +
+      b.pairs.map((p, i) => `<button class="lsn-tile${st.done[i] ? ' ok' : ''}${
+        st.sel === i ? ' sel' : ''}" dir="rtl" ${st.done[i] ? 'disabled' : ''}
+        onclick="lsnMatchHe(${bi},${i})">${esc(p.he)}</button>`).join('') +
+      `</div><div class="lsn-mcol">` +
+      order.map(i => `<button class="lsn-tile en${st.done[i] ? ' ok' : ''}"
+        ${st.done[i] ? 'disabled' : ''} onclick="lsnMatchEn(${bi},${i})">${esc(b.pairs[i].en)}</button>`).join('') +
+      `</div></div>`;
+  }
+
+  if (b.kind === 'order') {
+    h += head(b.title, b.en);
+    h += `<p class="hint">${esc(b.instructions)}</p>`;
+    h += b.items.map((it, ii) => {
+      const built = (st.pick[ii] || []);
+      const shuf = st.ord[ii] || (st.ord[ii] = it.words.map((_, i) => i).sort(() => Math.random() - .5));
+      const state = st.done[ii] ? 1 : (st.tried && st.tried[ii] ? 0 : -1);
+      return `<div class="lsn-item${state === 1 ? ' ok' : ''}">
+        <span class="lsn-n">${ii + 1}</span>
+        <div class="lsn-built${state === 0 ? ' no' : ''}" dir="rtl">${
+          built.length ? built.map(w => `<span class="lsn-tile small">${esc(it.words[w])}</span>`).join('')
+                       : '<span class="lsn-ph">tap the words in order…</span>'}</div>
+        <div class="lsn-bank" dir="rtl">${shuf.filter(w => built.indexOf(w) < 0).map(w =>
+          `<button class="lsn-tile" onclick="lsnOrderPick(${bi},${ii},${w})">${esc(it.words[w])}</button>`).join('')}</div>
+        <div class="lsn-en">${esc(it.en || '')}</div>
+        <div class="ctl"><button class="tog" onclick="lsnOrderClear(${bi},${ii})">Clear</button></div>
+        ${state === 1 || st.shown ? `<div class="lsn-a" dir="rtl">${esc(it.a)}</div>` : ''}</div>`;
+    }).join('');
+    h += lsnBtns(bi);
+  }
+
+  if (b.kind === 'quiz') {
+    h += head(b.title, b.en);
+    h += b.items.map((it, ii) => {
+      const chosen = st.val && st.val[ii];
+      return `<div class="lsn-item${st.done[ii] ? ' ok' : ''}">
+        <div class="lsn-quizq">${esc(it.q)}</div>
+        <div class="lsn-opts">${it.options.map(o => {
+          const on = chosen === o, right = st.done[ii] && on, wrong = chosen && on && !st.done[ii];
+          return `<button class="lsn-opt${right ? ' ok' : wrong ? ' no' : ''}"
+            ${st.done[ii] ? 'disabled' : ''} dir="auto"
+            onclick="lsnQuiz(${bi},${ii},'${cssq(o)}')">${esc(o)}</button>`;
+        }).join('')}</div>
+        ${st.done[ii] ? `<div class="lsn-why">${esc(it.why || '')}</div>` : ''}</div>`;
+    }).join('');
+  }
+
+  return h + `</div>`;
+}
+
+const lsnBtns = bi => `<div class="ctl lsn-ctl">
+  <button class="tog go" onclick="lsnCheck(${bi})">Check</button>
+  <button class="tog" onclick="lsnShow(${bi})">Show answers</button></div>`;
+
+function lsnCheck(bi) {
+  const u = lsnById(LW.id); if (!u) return;
+  const b = u.blocks[bi], st = lwB(bi);
+  st.val = st.val || {}; st.tried = st.tried || {};
+  document.querySelectorAll(`[data-b="${bi}"]`).forEach(el => {
+    const ii = +el.dataset.i;
+    st.val[ii] = el.value;
+    // An item you have not attempted is not an item you got wrong. Checking a block you are
+    // halfway through should mark what you wrote and leave the rest alone -- a page that turns
+    // eight untouched blanks red is telling you that you failed something you never tried.
+    if (!String(el.value || '').trim()) { delete st.tried[ii]; delete st.done[ii]; return; }
+    const want = b.kind === 'transform' ? b.items[ii].to : b.items[ii].a;
+    st.tried[ii] = true;
+    if (lsnOk(el.value, want)) st.done[ii] = true; else delete st.done[ii];
+  });
+  if (b.kind === 'order') b.items.forEach((it, ii) => {
+    const built = (st.pick[ii] || []).map(w => it.words[w]).join(' ');
+    if (!built) { delete st.tried[ii]; delete st.done[ii]; return; }
+    st.tried[ii] = true;
+    if (lsnOk(built, it.a)) st.done[ii] = true; else delete st.done[ii];
+  });
+  lsnRefresh(u, bi);
+}
+function lsnShow(bi) {
+  const u = lsnById(LW.id); if (!u) return;
+  lwB(bi).shown = !lwB(bi).shown; lsnRefresh(u, bi);
+}
+function lsnQuiz(bi, ii, opt) {
+  const u = lsnById(LW.id); if (!u) return;
+  const st = lwB(bi); st.val = st.val || {}; st.val[ii] = opt;
+  if (u.blocks[bi].items[ii].a === opt) st.done[ii] = true;
+  lsnRefresh(u, bi);
+}
+function lsnMatchHe(bi, i) { const u = lsnById(LW.id); if (!u) return;
+  const st = lwB(bi); st.sel = st.sel === i ? null : i; lsnRefresh(u, bi); }
+function lsnMatchEn(bi, i) { const u = lsnById(LW.id); if (!u) return;
+  const st = lwB(bi);
+  if (st.sel === i) { st.done[i] = true; st.sel = null; }
+  else if (st.sel != null) { st.sel = null; }        // wrong pair: just drop the selection
+  lsnRefresh(u, bi); }
+function lsnOrderPick(bi, ii, w) { const u = lsnById(LW.id); if (!u) return;
+  const st = lwB(bi); st.pick[ii] = (st.pick[ii] || []).concat([w]); lsnRefresh(u, bi); }
+function lsnOrderClear(bi, ii) { const u = lsnById(LW.id); if (!u) return;
+  const st = lwB(bi); st.pick[ii] = []; delete st.done[ii];
+  if (st.tried) delete st.tried[ii]; lsnRefresh(u, bi); }
+
+// A vocabulary row and a slang card go to the deck as ordinary cards, pointed and glossed the
+// way the lexicon has them — the same card the same word would make if you met it in the paper.
+function lsnSaveWord(bi, he) {
+  const u = lsnById(LW.id); if (!u) return;
+  const r = (u.blocks[bi].rows || []).find(x => x.he === he); if (!r) return;
+  const head = r.voc || r.he;
+  deckToggleKey(head, () => srsInit({
+    lemma: head, vocalized: head, surface: r.he, root: null, caphi: r.say || '',
+    gloss: r.en, analysis: (r.pos || '').toUpperCase(), text: u.id, deck: activeDeck(),
+  }), () => lsnRefresh(u, bi));
+}
+function lsnSaveSlang(bi) {
+  const u = lsnById(LW.id); if (!u) return;
+  const b = u.blocks[bi];
+  deckToggleKey(b.he, () => srsInit({
+    lemma: b.he, vocalized: b.he, surface: b.he, kind: 'phrase', gloss: b.meaning,
+    example_ar: (b.examples || [])[0] ? b.examples[0].he : null,
+    example_en: (b.examples || [])[0] ? b.examples[0].en : null,
+    text: u.id, deck: activeDeck(),
+  }), () => lsnRefresh(u, bi));
+}
+
 function lessonView(u) {
+  if (u.blocks) return lessonWorkView(u);      // the interactive kind — see lsnBlockHTML
   $('title').textContent = 'Unit ' + u.n;
   let h = `<div class="lsn-head">
       <div class="lsn-title" dir="rtl">${esc(u.title.ar)}</div>

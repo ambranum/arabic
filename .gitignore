@@ -9,6 +9,19 @@ __pycache__/
 reference/Palestinian_Arabic_Verbs_-_Lingualism.pdf
 reference/Palestinian\ Arabic\ Verbs\ -\ Lingualism.apkg
 reference/.DS_Store
+# The Hebrew reference shelf, and it is ALL third-party. The Aleph/Bet/Gimel workbooks and the
+# Reichman course pack are published books; the HebrewPod files are HebrewPod101.com products
+# and say so on every page. Same rule as Lingualism: read them, learn their METHOD, never ship
+# them. pipeline/he_lessons.py writes its own sentences in their idiom, which is why the lessons
+# can be public when the books cannot.
+reference/Aleph*.pdf
+reference/Bet.pdf
+reference/Gimel.pdf
+reference/Gimmel*.pdf
+reference/Reichman.pdf
+reference/HebrewPod.pdf
+reference/100*.pdf
+reference/Copy\ of\ Hebrew\ Material.docx
 ab_voice_test/
 # rendered reference pages — 70+MB of local working images, regenerable
 build/*/ref/
