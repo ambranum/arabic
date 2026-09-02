@@ -674,6 +674,10 @@ function wadiAra(w) {
                       'تموز', 'آب', 'أيلول', 'تشرين الأول', 'تشرين التاني', 'كانون الأول'];
       return DAYS[d.getDay()] + '، ' + d.getDate() + ' ' + MONTHS[d.getMonth()];
     },
+    // Where the plan ENDS, named in two or three words for the journey page's kicker.
+    // It used to be hardcoded as "the table", which is this language's destination and not
+    // the app's -- the Hebrew plan ends at a different place and now says so.
+    planEnd: 'the table',
     planGoal: 'all the way to holding your own at a Palestinian family dinner',
     booksBlurb: 'Whole stories to read start to finish — graded for learners, in spoken '
       + 'Palestinian, with tap-any-word for every word. A connected book, with vocabulary that '

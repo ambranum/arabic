@@ -3779,7 +3779,7 @@ function planWelcome() {
   const path = ph.map(p => esc(p.name)).join(' → ');
   const nWord = ['no', 'a one', 'a two', 'a three', 'a four', 'a five', 'a six', 'a seven'][ph.length] || ('a ' + ph.length);
   $('view').innerHTML = `<div class="hero"><div class="big">
-      <div class="k">Your path to the table</div>
+      <div class="k">Your path to ${esc(LANG.planEnd)}</div>
       <div class="t">A study plan built around your week</div>
       <div class="s">Tell us how much time you have and where (a commute? somewhere you can talk out
       loud?) and we’ll turn it into a daily checklist — reading, speaking drills, flashcards and a

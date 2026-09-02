@@ -34,7 +34,7 @@ const LANG_FULL = LANG_CHROME.concat([
   'script.chars', 'searchHint', 'dateLine', 'ornament']);
 
 // Read only on a path a pack can switch off, so required only of a pack that lists the section.
-const LANG_IF_SECTION = {plan: ['planGoal'],
+const LANG_IF_SECTION = {plan: ['planGoal', 'planEnd'],
                          bible: ['bible.intro', 'bible.credit', 'bible.wordNote']};
 
 
