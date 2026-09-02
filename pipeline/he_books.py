@@ -107,6 +107,13 @@ GENRES = {'prose', 'drama', 'memoir'}
 # paper's own 12.4.
 BANDS = [(11.0, 'beginner', 1), (20.0, 'intermediate', 2), (999.0, 'advanced', 3)]
 
+# Where each shelf sits in the Books section's running order -- a different number from the key
+# above, which names the shelf. The graded readers this project writes (pipeline/he_book_*.py)
+# take 1-2, 10-14 and 20-21 inside their bands, and Ben-Yehuda comes after them in each: a
+# retelling built for a learner is the way IN to a level, and published literature that was
+# never adjusted for anyone is what you read once you are there.
+ORDER = {1: 5, 2: 15, 3: 25}
+
 # One book per shelf, not one book for the whole library. These are thirty-seven standalone works
 # by twelve authors -- Ben-Yehuda is an archive, not an anthology someone edited -- so there is no
 # volume they all belong to. Filing them under a single `book` made the Books section show one
@@ -441,7 +448,7 @@ def main():
                           % (len(stored), len(fresh), lost, kept, gone))
         doc = {
             'id': slug(mid), 'kind': 'book-chapter', 'dialect': 'he', 'level': name,
-            'shelf': shelf, 'book': SHELVES[shelf][0], 'chapter': chap[shelf],
+            'shelf': ORDER[shelf], 'book': SHELVES[shelf][0], 'chapter': chap[shelf],
             # `ar` is the target script whatever the language, the same as every other text
             # in the repo -- renaming it per language would fork every reader in the app.
             'title': {'ar': c['title'], 'en': TITLES_EN.get(slug(mid)) or c['title']},

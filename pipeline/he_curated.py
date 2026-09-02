@@ -117,6 +117,14 @@ PROPER = {
     'סקוור':    ('סְקְוֵר', 'Square (as in Times Square)', 'NOUN_PROP'),
     'יורק':     ('יוֹרְק', 'York (as in New York)', 'NOUN_PROP'),
     'הורמוז':   ('הוֹרְמוּז', 'Hormuz (the strait between Iran and Oman)', 'NOUN_PROP'),
+    # And the characters on the shelf. A retelling says its hero's name in every other
+    # sentence, so one missing row is 254 unresolvable tokens rather than one.
+    #
+    # These carry their pronunciation as a STRING rather than a stress number, because
+    # phon_stressed cannot read them: it has no rule for the geresh, and "ג'וּחָא" came back
+    # as g'xa -- the j lost and the u with it. A borrowed name is exactly where a derived
+    # pronunciation should not be trusted, so it is written out.
+    "ג'וחא":    ("ג'וּחָא", 'Juha (Nasreddin, the wise fool of the folk tales)', 'NOUN_PROP', 'juxa'),
 }
 
 _ALL = {}

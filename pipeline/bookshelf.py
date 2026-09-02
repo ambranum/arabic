@@ -97,10 +97,10 @@ def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='ال�
         total += len(sentences)
         print('wrote %s  (%d paragraphs, %d sentences)' % (cid, len(paras), len(sentences)))
 
-    # Arabic characters ≈ ElevenLabs credits, so this line is also the voicing bill.
+    # Characters in the target script ≈ ElevenLabs credits, so this line is also the voicing bill.
     chars = sum(len(a) for (_en, _ar, paras) in chapters for para in paras for (a, _e) in para)
     u = unit.lower()
     plural = u[:-1] + 'ies' if u.endswith('y') else u + 's'      # story -> stories, not storys
-    print('\n%d %s, %d sentences, %d Arabic chars -> texts/book-%s-ch*.json'
-          % (len(chapters), plural, total, chars, book_id))
+    print('\n%d %s, %d sentences, %d chars -> %s/book-%s-ch*.json'
+          % (len(chapters), plural, total, chars, os.path.relpath(outdir, ROOT), book_id))
     return len(chapters), total
