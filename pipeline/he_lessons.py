@@ -769,13 +769,15 @@ def build(check_only=False):
     # now closes the intermediate block and ביטויים -- the idioms, which is the same reward one
     # level up -- closes the whole thing.
     order = ['he-01', 'he-16', 'he-03', 'he-02', 'he-14', 'he-20', 'he-17', 'he-04',
-             'he-57', 'he-56', 'he-46', 'he-47', 'he-48', 'he-60', 'he-62', 'he-09',
-             'he-19', 'he-18', 'he-21', 'he-10', 'he-53', 'he-05', 'he-41', 'he-42',
-             'he-54', 'he-43', 'he-22', 'he-59', 'he-31', 'he-32', 'he-45', 'he-49',
-             'he-58', 'he-50', 'he-63', 'he-51', 'he-61', 'he-15', 'he-11', 'he-12',
-             'he-13', 'he-23', 'he-25', 'he-55', 'he-26', 'he-44', 'he-24', 'he-29',
-             'he-28', 'he-27', 'he-07', 'he-30', 'he-06', 'he-08', 'he-33', 'he-34',
-             'he-36', 'he-35', 'he-37', 'he-38', 'he-52', 'he-40', 'he-64', 'he-39']
+             'he-57', 'he-56', 'he-66', 'he-46', 'he-47', 'he-48', 'he-60', 'he-74',
+             'he-62', 'he-73', 'he-09', 'he-19', 'he-18', 'he-21', 'he-10', 'he-53',
+             'he-65', 'he-05', 'he-41', 'he-42', 'he-54', 'he-43', 'he-67', 'he-22',
+             'he-59', 'he-31', 'he-32', 'he-45', 'he-49', 'he-58', 'he-50', 'he-63',
+             'he-51', 'he-76', 'he-61', 'he-71', 'he-72', 'he-75', 'he-15', 'he-68',
+             'he-11', 'he-12', 'he-13', 'he-23', 'he-25', 'he-55', 'he-26', 'he-69',
+             'he-44', 'he-24', 'he-29', 'he-28', 'he-27', 'he-07', 'he-30', 'he-70',
+             'he-06', 'he-08', 'he-33', 'he-34', 'he-36', 'he-35', 'he-37', 'he-38',
+             'he-52', 'he-40', 'he-64', 'he-39']
     # NOT `missing` -- that name already holds the vocabulary the lexicon could not answer, and
     # reusing it here overwrote the list with unit ids. The report then said "8 words not in the
     # lexicon" when it meant "8 units not in the order list", and crashed trying to print them
@@ -4554,6 +4556,773 @@ UNITS += [
                'times a day.',
        'examples': [{'he': 'יקר, אבל מה אפשר לעשות.', 'en': 'It’s expensive, but what can you do.'},
                     {'he': 'ככה זה, מה לעשות.', 'en': 'That’s how it is, what can you do.'}]},
+    ],
+  },
+]
+
+
+# ---------------------------------------------------------------------------------------------
+# UNITS 65-76. The five grammar units here are all the same KIND of gap: things Hebrew marks
+# that English does not mark at all, so a learner never notices they are missing until a native
+# speaker corrects them. A noun's gender when nothing on it says so. A plural that changes the
+# word. A construct that changes it again in the plural. The rest are the parts of Israeli life
+# that have their own vocabulary and are usually left to the learner to absorb by accident --
+# including the one this app's own reader is most likely to be living through.
+UNITS += [
+  {
+    'id': 'he-65', 'n': 65, 'level': 'intermediate',
+    'title': {'he': 'גזרת ע״ו', 'en': 'The hollow verbs'},
+    'objective': 'לקום, לשים, לבוא, לגור, לרוץ, לשיר. Their middle root letter is a vowel, so '
+                 'the past has no vowel-changes at all and the present looks like nothing else '
+                 'in the language.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Two letters and a long vowel',
+       'body': 'These verbs have only two consonants you can hear: ק־ם, ש־ם, ב־א. The present '
+               'is <b>קם, קמה, קמים, קמות</b> — no מ prefix, which is why they look wrong at '
+               'first. The past is flat: <b>קמתי, קמת, קם, קמה, קמנו, קמו</b>. The future '
+               'lengthens: <b>אקום, תקום, יקום</b>. Note that <b>גר</b> and <b>בא</b> are the '
+               'same shape, which is why "I live in Tel Aviv" is אני גר and not אני מגור.',
+       'examples': [
+         {'he': 'אני קם בשש כל בוקר.', 'en': 'I get up at six every morning.'},
+         {'he': 'שמתי את המפתחות על השולחן.', 'en': 'I put the keys on the table.'},
+         {'he': 'הם גרים פה כבר עשר שנים.', 'en': 'They’ve lived here for ten years.'},
+         {'he': 'מתי אתה בא?', 'en': 'When are you coming?'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'לקום', 'en': 'to get up', 'pos': 'verb'},
+         {'he': 'לשים', 'en': 'to put', 'pos': 'verb'},
+         {'he': 'לבוא', 'en': 'to come', 'pos': 'verb'},
+         {'he': 'לגור', 'en': 'to live, to reside', 'pos': 'verb'},
+         {'he': 'לרוץ', 'en': 'to run', 'pos': 'verb'},
+         {'he': 'לשיר', 'en': 'to sing', 'pos': 'verb'},
+         {'he': 'לטוס', 'en': 'to fly', 'pos': 'verb'},
+         {'he': 'לזוז', 'en': 'to move', 'pos': 'verb'},
+       ]},
+      {'kind': 'table', 'title': 'מלאו את הטבלה', 'en': 'Fill in the table',
+       'instructions': 'Some cells are printed, the rest you type.',
+       'cols': ['שם פועל', 'הוא, הווה', 'אני, עבר', 'אני, עתיד'],
+       'rows': [
+         [{'g': 'לקום'}, {'g': 'קם'}, {'g': 'קמתי'}, {'g': 'אקום'}],
+         [{'g': 'לשים'}, {'a': ['שם']}, {'a': ['שמתי']}, {'a': ['אשים']}],
+         [{'g': 'לגור'}, {'a': ['גר']}, {'a': ['גרתי']}, {'a': ['אגור']}],
+         [{'g': 'לרוץ'}, {'a': ['רץ']}, {'a': ['רצתי']}, {'a': ['ארוץ']}],
+         [{'g': 'לטוס'}, {'a': ['טס']}, {'a': ['טסתי']}, {'a': ['אטוס']}],
+       ]},
+      {'kind': 'bracket', 'title': 'כתבו את הפועל', 'en': 'Write the verb',
+       'instructions': 'The infinitive is in brackets; write the form the sentence needs.',
+       'example': {'q': 'אני ___ בשש כל בוקר. [לקום]', 'a': 'קם'},
+       'items': [
+         {'q': 'הם ___ בחיפה כבר שנים. [לגור]', 'a': ['גרים'], 'en': 'They’ve lived in Haifa for years.'},
+         {'q': 'אתמול ___ את התיק פה. [לשים]', 'a': ['שמתי'], 'en': 'Yesterday I put the bag here.'},
+         {'q': 'מחר אנחנו ___ ללונדון. [לטוס]', 'a': ['נטוס'], 'en': 'Tomorrow we fly to London.'},
+         {'q': 'היא ___ כל בוקר בפארק. [לרוץ]', 'a': ['רצה'], 'en': 'She runs in the park every morning.'},
+         {'q': 'מתי אתם ___? [לבוא]', 'a': ['באים'], 'en': 'When are you coming?'},
+       ]},
+      {'kind': 'slang', 'he': 'קום קום', 'literal': '“get up, get up”',
+       'meaning': 'Come on, up you get.',
+       'when': 'The hollow verbs make short, punchy imperatives — קום, שים, בוא, זוז — and those '
+               'four are the most-used commands in Hebrew. בוא נלך, "come let’s go", is how '
+               'almost every plan starts.',
+       'examples': [{'he': 'בוא נלך, מאוחר.', 'en': 'Come on, let’s go, it’s late.'},
+                    {'he': 'זוז שנייה, אני לא רואה.', 'en': 'Move a second, I can’t see.'}]},
+    ],
+  },
+  {
+    'id': 'he-66', 'n': 66, 'level': 'beginner',
+    'title': {'he': 'ריבוי חריג', 'en': 'Plurals that change the word'},
+    'objective': 'אישה → נשים. איש → אנשים. בית → בתים. Hebrew has a set of plurals you cannot '
+                 'derive, and they are all extremely common words, so they have to be learned '
+                 'one at a time.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The regular rule, and the words that ignore it',
+       'body': 'Normally masculine takes <b>־ים</b> and feminine <b>־ות</b>: ספר → ספרים, '
+               'מכונית → מכוניות. Then there are these: <b>אישה → נשים</b>, '
+               '<b>איש → אנשים</b>, <b>בית → בתים</b>, <b>בן → בנים</b>, <b>בת → בנות</b>, '
+               '<b>עיר → ערים</b>, <b>שנה → שנים</b>, <b>יום → ימים</b>, <b>לילה → לילות</b> '
+               '(masculine with a feminine ending), <b>אב → אבות</b>. There is no rule to reach '
+               'for; there is only the list, and it is short.',
+       'examples': [
+         {'he': 'יש הרבה אנשים בתחנה.', 'en': 'There are a lot of people at the stop.'},
+         {'he': 'שתי נשים חיכו בחוץ.', 'en': 'Two women waited outside.'},
+         {'he': 'בנינו שני בתים בשכונה.', 'en': 'We built two houses in the neighbourhood.'},
+         {'he': 'עברו שלוש שנים מאז.', 'en': 'Three years have gone by since then.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'נשים', 'en': 'women — from אישה', 'pos': 'noun'},
+         {'he': 'אנשים', 'en': 'people — from איש', 'pos': 'noun'},
+         {'he': 'בתים', 'en': 'houses — from בית', 'pos': 'noun'},
+         {'he': 'ערים', 'en': 'cities — from עיר', 'pos': 'noun'},
+         {'he': 'שנים', 'en': 'years — from שנה', 'pos': 'noun'},
+         {'he': 'ימים', 'en': 'days — from יום', 'pos': 'noun'},
+         {'he': 'לילות', 'en': 'nights — from לילה, masculine', 'pos': 'noun'},
+         {'he': 'אבות', 'en': 'fathers — from אב', 'pos': 'noun'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו יחיד לרבים', 'en': 'Match singular to plural',
+       'instructions': 'Tap the singular, then its plural.',
+       'pairs': [
+         {'he': 'אישה', 'en': 'נשים — women'},
+         {'he': 'איש', 'en': 'אנשים — people, men'},
+         {'he': 'בית', 'en': 'בתים — houses'},
+         {'he': 'עיר', 'en': 'ערים — cities'},
+         {'he': 'שנה', 'en': 'שנים — years'},
+         {'he': 'לילה', 'en': 'לילות — nights'},
+       ]},
+      {'kind': 'transform', 'title': 'מיחיד לרבים', 'en': 'Singular to plural',
+       'instructions': 'Rewrite in the plural — and mind what else has to agree.',
+       'example': {'from': 'יש פה איש אחד.', 'to': 'יש פה אנשים.'},
+       'items': [
+         {'from': 'הבית גדול.', 'to': ['הבתים גדולים.', 'הבתים גדולים'], 'en': 'The house is big.'},
+         {'from': 'העיר יפה.', 'to': ['הערים יפות.', 'הערים יפות'], 'en': 'The city is beautiful.'},
+         {'from': 'האישה עובדת פה.', 'to': ['הנשים עובדות פה.', 'הנשים עובדות פה'], 'en': 'The woman works here.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the plural.',
+       'example': {'q': 'יש הרבה ___ בתחנה. — people', 'a': 'אנשים'},
+       'items': [
+         {'q': 'עברו שלוש ___ מאז.', 'a': ['שנים'], 'en': 'Three years have gone by since.'},
+         {'q': 'שתי ___ חיכו בחוץ.', 'a': ['נשים'], 'en': 'Two women waited outside.'},
+         {'q': 'בשכונה יש הרבה ___ ישנים.', 'a': ['בתים'], 'en': 'There are a lot of old houses in the neighbourhood.'},
+         {'q': 'עבדתי שם חמישה ___.', 'a': ['ימים'], 'en': 'I worked there for five days.'},
+         {'q': 'ביקרנו בשלוש ___ בצפון.', 'a': ['ערים'], 'en': 'We visited three cities in the north.'},
+       ]},
+      {'kind': 'slang', 'he': 'אנשים', 'literal': '“people”',
+       'meaning': 'Also: “folks”, as a sceptical aside.',
+       'when': 'אנשים on its own, with a shrug, means "people, eh" — the way English says '
+               '"people". נו, אנשים is a whole comment on human behaviour.',
+       'examples': [{'he': 'מה לעשות, אנשים.', 'en': 'What can you do — people.'},
+                    {'he': 'יש אנשים ויש אנשים.', 'en': 'There are people, and then there are people.'}]},
+    ],
+  },
+  {
+    'id': 'he-67', 'n': 67, 'level': 'intermediate',
+    'title': {'he': 'מין השם', 'en': 'The nouns that hide their gender'},
+    'objective': 'עיר, דרך, ארץ, רוח, יד, רגל, אבן, כוס are all FEMININE with nothing on them to '
+                 'say so. Every adjective and verb near them agrees, so getting this wrong is '
+                 'audible in every sentence.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'No ה, still feminine',
+       'body': 'Most feminine nouns end in <b>ה</b> or <b>ת</b> and are easy. These do not, and '
+               'they are all everyday words: <b>עיר</b>, <b>דרך</b>, <b>ארץ</b>, <b>רוח</b>, '
+               '<b>נפש</b>, <b>אבן</b>, <b>כוס</b>, and the paired body parts <b>יד</b>, '
+               '<b>רגל</b>, <b>עין</b>, <b>אוזן</b>. So: עיר <b>יפה</b>, הדרך <b>ארוכה</b>, '
+               'כוס <b>אחת</b>. Going the other way, <b>לילה</b> and <b>כיסא</b> look feminine '
+               'and are masculine — לילה <b>טוב</b>.',
+       'examples': [
+         {'he': 'זו עיר יפה מאוד.', 'en': 'That’s a very beautiful city.'},
+         {'he': 'הדרך ארוכה, ניקח אוטו.', 'en': 'The way is long, we’ll take a car.'},
+         {'he': 'תביא לי כוס אחת.', 'en': 'Bring me one glass.'},
+         {'he': 'לילה טוב, נתראה מחר.', 'en': 'Good night, see you tomorrow.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'עיר', 'en': 'city — feminine', 'pos': 'noun'},
+         {'he': 'דרך', 'en': 'way, road — feminine', 'pos': 'noun'},
+         {'he': 'ארץ', 'en': 'land, country — feminine', 'pos': 'noun'},
+         {'he': 'רוח', 'en': 'wind, spirit — feminine', 'pos': 'noun'},
+         {'he': 'נפש', 'en': 'soul, person — feminine', 'pos': 'noun'},
+         {'he': 'אבן', 'en': 'stone — feminine', 'pos': 'noun'},
+         {'he': 'כוס', 'en': 'glass — feminine', 'pos': 'noun'},
+         {'he': 'כיכר', 'en': 'square (in a town) — feminine', 'pos': 'noun'},
+       ]},
+      {'kind': 'choose', 'title': 'זכר או נקבה?', 'en': 'Masculine or feminine?',
+       'instructions': 'The adjective tells you which the noun is.',
+       'items': [
+         {'q': 'זו עיר ___.', 'options': ['גדולה', 'גדול', 'גדולים'], 'a': 'גדולה',
+          'en': 'עיר is feminine, with nothing on it to say so.'},
+         {'q': 'הדרך ___ מאוד.', 'options': ['ארוכה', 'ארוך', 'ארוכים'], 'a': 'ארוכה',
+          'en': 'דרך is feminine too.'},
+         {'q': 'היה לילה ___.', 'options': ['ארוך', 'ארוכה', 'ארוכות'], 'a': 'ארוך',
+          'en': 'לילה LOOKS feminine and is masculine — the trap in the other direction.'},
+         {'q': 'תביא כוס ___ מים.', 'options': ['אחת', 'אחד', 'ראשון'], 'a': 'אחת',
+          'en': 'כוס is feminine, so the number is too.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the adjective in the gender the noun needs.',
+       'example': {'q': 'עיר ___ — a beautiful city', 'a': 'יפה'},
+       'items': [
+         {'q': 'הרוח הייתה ___ מאוד אתמול.', 'a': ['חזקה'], 'en': 'The wind was very strong yesterday.'},
+         {'q': 'היד שלי ___.', 'a': ['כואבת'], 'en': 'My hand hurts.'},
+         {'q': 'הארץ הזאת ___ מאוד.', 'a': ['קטנה'], 'en': 'This country is very small.'},
+         {'q': 'זו אבן ___, אל תרים אותה.', 'a': ['כבדה'], 'en': 'That’s a heavy stone, don’t lift it.'},
+         {'q': 'היה לילה ___ ושקט.', 'a': ['ארוך'], 'en': 'It was a long, quiet night.'},
+       ]},
+      {'kind': 'slang', 'he': 'בארץ', 'literal': '“in the land”',
+       'meaning': 'In Israel.',
+       'when': 'Israelis say בארץ for their own country and לחוץ לארץ (or חו"ל) for everywhere '
+               'else. It is not patriotic, it is just how the geography is divided in speech: '
+               'you are either בארץ or בחו"ל.',
+       'examples': [{'he': 'אתה בארץ בשבוע הבא?', 'en': 'Are you in the country next week?'},
+                    {'he': 'הם חזרו מחו"ל אתמול.', 'en': 'They got back from abroad yesterday.'}]},
+    ],
+  },
+  {
+    'id': 'he-68', 'n': 68, 'level': 'intermediate',
+    'title': {'he': 'סמיכות ברבים', 'en': 'When the construct goes plural'},
+    'objective': 'בית ספר → בתי ספר. The FIRST word changes, not the second, and it changes into '
+                 'a form you have not seen. This is where a learner who is otherwise fluent '
+                 'still says בית ספרים.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The first word takes the plural, in a special shape',
+       'body': 'A construct is two nouns glued into one idea: <b>בית ספר</b> "school", '
+               '<b>בית קפה</b> "café", <b>עורך דין</b> "lawyer". To make it plural you pluralise '
+               'the FIRST word — and masculine ־ים becomes <b>־י</b>: '
+               '<b>בתי ספר</b>, <b>בתי קפה</b>, <b>עורכי דין</b>, <b>אנשי עסקים</b>, '
+               '<b>גני ילדים</b>. Feminine ־ות stays: <b>תחנות אוטובוס</b>. And the ה of '
+               '"the" goes on the SECOND word: <b>בית הספר</b>, not הבית ספר.',
+       'examples': [
+         {'he': 'יש שני בתי קפה ברחוב.', 'en': 'There are two cafés on the street.'},
+         {'he': 'הילדים הולכים לבית הספר בשמונה.', 'en': 'The children go to school at eight.'},
+         {'he': 'דיברנו עם עורכי הדין.', 'en': 'We spoke to the lawyers.'},
+         {'he': 'יש הרבה גני ילדים בשכונה.', 'en': 'There are a lot of kindergartens in the neighbourhood.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'בית ספר', 'en': 'school', 'pos': 'noun'},
+         {'he': 'בית מלון', 'en': 'hotel', 'pos': 'noun'},
+         {'he': 'בית חולים', 'en': 'hospital', 'pos': 'noun'},
+         {'he': 'גן ילדים', 'en': 'kindergarten', 'pos': 'noun'},
+         {'he': 'עורך דין', 'en': 'lawyer', 'pos': 'noun'},
+         {'he': 'תחנת אוטובוס', 'en': 'bus stop', 'pos': 'noun'},
+         {'he': 'חדר כושר', 'en': 'gym', 'pos': 'noun'},
+         {'he': 'יום הולדת', 'en': 'birthday', 'pos': 'noun'},
+       ]},
+      {'kind': 'transform', 'title': 'מיחיד לרבים', 'en': 'Singular to plural',
+       'instructions': 'Only the first word changes.',
+       'example': {'from': 'בית ספר', 'to': 'בתי ספר'},
+       'items': [
+         {'from': 'בית קפה', 'to': ['בתי קפה'], 'en': 'a café'},
+         {'from': 'עורך דין', 'to': ['עורכי דין'], 'en': 'a lawyer'},
+         {'from': 'גן ילדים', 'to': ['גני ילדים'], 'en': 'a kindergarten'},
+         {'from': 'בית חולים', 'to': ['בתי חולים'], 'en': 'a hospital'},
+       ]},
+      {'kind': 'choose', 'title': 'איפה שמים את ה?', 'en': 'Where does “the” go?',
+       'instructions': 'A construct takes its definite article in one place only.',
+       'items': [
+         {'q': 'the school', 'options': ['בית הספר', 'הבית ספר', 'הבית הספר'], 'a': 'בית הספר',
+          'en': 'The ה goes on the second word, always.'},
+         {'q': 'the cafés', 'options': ['בתי הקפה', 'הבתי קפה', 'בתים הקפה'], 'a': 'בתי הקפה',
+          'en': 'Plural on the first word, ה on the second.'},
+         {'q': 'the bus stop', 'options': ['תחנת האוטובוס', 'התחנת אוטובוס', 'תחנה האוטובוס'],
+          'a': 'תחנת האוטובוס', 'en': 'Feminine construct — תחנה becomes תחנת.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the construct in the number the sentence needs.',
+       'example': {'q': 'יש שני ___ ברחוב. — cafés', 'a': 'בתי קפה'},
+       'items': [
+         {'q': 'הילדים הולכים ל___ בשמונה.', 'a': ['בית הספר'], 'en': 'The children go to school at eight.'},
+         {'q': 'לקחו אותו ל___.', 'a': ['בית חולים', 'בית החולים'], 'en': 'They took him to hospital.'},
+         {'q': 'אני מתאמן ב___ פעמיים בשבוע.', 'a': ['חדר כושר'], 'en': 'I train at the gym twice a week.'},
+         {'q': 'מחכים ב___ ליד הבית.', 'a': ['תחנת האוטובוס'], 'en': 'We wait at the bus stop near the house.'},
+       ]},
+      {'kind': 'slang', 'he': 'יום הולדת שמח', 'literal': '“happy day of birth”',
+       'meaning': 'Happy birthday.',
+       'when': 'A construct so common nobody hears it as two words any more. Note the adjective '
+               'agrees with יום, the first word — יום הולדת שמח, never שמחה.',
+       'examples': [{'he': 'יום הולדת שמח!', 'en': 'Happy birthday!'},
+                    {'he': 'חגגנו את יום ההולדת שלה בבית.', 'en': 'We celebrated her birthday at home.'}]},
+    ],
+  },
+  {
+    'id': 'he-69', 'n': 69, 'level': 'intermediate',
+    'title': {'he': 'הבינוני כשם עצם', 'en': 'The word for the person who does it'},
+    'objective': 'מורה is "teaching". שומר is "guarding". Hebrew turns the present participle '
+                 'into the name of the job, so learning a verb often hands you the worker for '
+                 'free.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The doer is the participle',
+       'body': 'From שמר "guarded" you get <b>שומר</b>, which is both "guarding" and "a guard". '
+               'From עבד, <b>עובד</b> — "working" and "a worker". From מכר, <b>מוכר</b> — and '
+               'from לימד, <b>מורה</b>. The same word can be a verb or a noun in the same '
+               'sentence and only the syntax tells you: <b>המורה מלמד</b> — "the teacher '
+               'teaches". A second family uses the <b>קַטָּל</b> shape for trades: '
+               '<b>טבח</b>, <b>נגר</b>, <b>ספר</b>.',
+       'examples': [
+         {'he': 'השומר בכניסה ביקש תעודה.', 'en': 'The guard at the entrance asked for ID.'},
+         {'he': 'המוכר אמר שאין במידה שלי.', 'en': 'The salesman said they don’t have my size.'},
+         {'he': 'היא עובדת כמורה בבית ספר.', 'en': 'She works as a teacher in a school.'},
+         {'he': 'הטבח במסעדה הזאת מצוין.', 'en': 'The cook at this restaurant is excellent.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'שומר', 'en': 'guard; guarding', 'pos': 'noun'},
+         {'he': 'מוכר', 'en': 'salesperson; selling', 'pos': 'noun'},
+         {'he': 'עובד', 'en': 'worker; working', 'pos': 'noun'},
+         {'he': 'מורה', 'en': 'teacher', 'pos': 'noun'},
+         {'he': 'טבח', 'en': 'cook', 'pos': 'noun'},
+         {'he': 'מלצר', 'en': 'waiter', 'pos': 'noun'},
+         {'he': 'שוטר', 'en': 'police officer', 'pos': 'noun'},
+         {'he': 'נהג', 'en': 'driver', 'pos': 'noun'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו פועל לעושה', 'en': 'Match the verb to the doer',
+       'instructions': 'Tap the verb, then the person who does it.',
+       'pairs': [
+         {'he': 'לשמור', 'en': 'שומר — a guard'},
+         {'he': 'למכור', 'en': 'מוכר — a salesperson'},
+         {'he': 'לעבוד', 'en': 'עובד — a worker'},
+         {'he': 'לנהוג', 'en': 'נהג — a driver'},
+         {'he': 'לבשל', 'en': 'טבח — a cook'},
+         {'he': 'ללמד', 'en': 'מורה — a teacher'},
+       ]},
+      {'kind': 'quiz', 'title': 'שם עצם או פועל?', 'en': 'Noun or verb?',
+       'items': [
+         {'q': 'In המורה מלמד, what is מורה doing?',
+          'options': ['It is the noun — the teacher', 'It is the verb', 'Both at once'],
+          'a': 'It is the noun — the teacher',
+          'why': 'It has the definite article and it is the subject, so it is a noun. מלמד is '
+                 'the verb. Same shape, different job.'},
+         {'q': 'הוא עובד קשה — noun or verb?',
+          'options': ['Verb — he works hard', 'Noun — he is a hard worker'],
+          'a': 'Verb — he works hard',
+          'why': 'No article and an adverb after it. For the noun you would say הוא עובד טוב '
+                 'in the sense of “a good worker”, and Hebrew is genuinely ambiguous there.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the person who does it.',
+       'example': {'q': 'ה___ בכניסה ביקש תעודה. — the guard', 'a': 'שומר'},
+       'items': [
+         {'q': 'ה___ הביא לנו את התפריט.', 'a': ['מלצר'], 'en': 'The waiter brought us the menu.'},
+         {'q': 'ה___ עצר אותנו בכביש.', 'a': ['שוטר'], 'en': 'The police officer stopped us on the road.'},
+         {'q': 'היא עובדת כ___ בבית ספר.', 'a': ['מורה'], 'en': 'She works as a teacher in a school.'},
+         {'q': 'ה___ של המונית לא ידע את הדרך.', 'a': ['נהג'], 'en': 'The taxi driver didn’t know the way.'},
+         {'q': 'ה___ בחנות אמר שאין.', 'a': ['מוכר'], 'en': 'The salesman in the shop said there aren’t any.'},
+       ]},
+      {'kind': 'slang', 'he': 'עובד עליי', 'literal': '“working on me”',
+       'meaning': 'Winding me up / pulling my leg.',
+       'when': 'עבד with על means to trick or tease, not to work on something. אתה עובד עליי? '
+               'is "are you kidding me?" and is said constantly, in both senses of disbelief.',
+       'examples': [{'he': 'אתה עובד עליי, נכון?', 'en': 'You’re winding me up, right?'},
+                    {'he': 'הוא עבד עליהם כל הערב.', 'en': 'He was pulling their leg all evening.'}]},
+    ],
+  },
+  {
+    'id': 'he-70', 'n': 70, 'level': 'intermediate',
+    'title': {'he': 'פנייה', 'en': 'What to call people'},
+    'objective': 'Israelis address strangers, colleagues and friends with a small set of words '
+                 'that do not map onto English at all — and using the formal ones by default '
+                 'makes you sound stiff rather than polite.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'There is no “you” to choose',
+       'body': 'Hebrew has no formal אתה. Everybody is <b>אתה</b> or <b>את</b>, including your '
+               'boss and a government clerk. Politeness lives in the words around it instead: '
+               '<b>סליחה</b>, <b>בבקשה</b>, <b>אפשר</b>. <b>אדוני</b> and <b>גברתי</b> exist '
+               'but are formal to the point of distance — a police officer or a waiter in a '
+               'very good restaurant. To a group, <b>חבר\'ה</b>. To a friend, '
+               '<b>אחי</b> or <b>גבר</b>, and among friends and family <b>מותק</b> and '
+               '<b>יקירי</b>, which are far less loaded than “darling”.',
+       'examples': [
+         {'he': 'סליחה, אפשר לשאול משהו?', 'en': 'Excuse me, may I ask something?'},
+         {'he': 'חבר\'ה, אנחנו זזים!', 'en': 'Folks, we’re off!'},
+         {'he': 'אחי, תודה רבה על הכל.', 'en': 'Mate, thanks a lot for everything.'},
+         {'he': 'גברתי, שכחת את התיק.', 'en': 'Madam, you forgot your bag.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'אדוני', 'en': 'sir', 'pos': 'other'},
+         {'he': 'גברתי', 'en': 'madam', 'pos': 'other'},
+         {'he': 'אח', 'en': 'brother → אחי, “mate”', 'pos': 'noun'},
+         {'he': 'גבר', 'en': 'man → “mate” between men', 'pos': 'noun'},
+         {'he': 'מותק', 'en': 'sweetie, love', 'pos': 'noun'},
+         {'he': 'יקירי', 'en': 'my dear', 'pos': 'other'},
+         {'he': 'חבר', 'en': 'friend', 'pos': 'noun'},
+         {'he': 'נימוס', 'en': 'politeness, manners', 'pos': 'noun'},
+       ]},
+      {'kind': 'choose', 'title': 'איך פונים?', 'en': 'How do you address them?',
+       'instructions': 'Pick what an Israeli would actually say.',
+       'items': [
+         {'q': 'Stopping a stranger in the street to ask directions.',
+          'options': ['סליחה, אפשר לשאול?', 'אדוני הנכבד', 'הלו!'],
+          'a': 'סליחה, אפשר לשאול?', 'en': 'סליחה does all the work; no title needed.'},
+         {'q': 'Getting a group of friends moving.',
+          'options': ['חבר\'ה, יאללה', 'רבותיי', 'אנשים'],
+          'a': 'חבר\'ה, יאללה', 'en': 'רבותיי is parliamentary; חבר\'ה is everyone else.'},
+         {'q': 'Thanking a friend warmly.',
+          'options': ['אחי, תודה', 'אדוני, תודה', 'תודה לך, אזרח'],
+          'a': 'אחי, תודה', 'en': 'And אחי is said to women too, increasingly.'},
+         {'q': 'Talking to your manager at work.',
+          'options': ['אתה', 'אדוני', 'כבודו'],
+          'a': 'אתה', 'en': 'There is no formal “you” to fall back on, and reaching for one is odd.'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': '___, אפשר לשאול משהו? — excuse me', 'a': 'סליחה'},
+       'items': [
+         {'q': '___, אנחנו מתחילים בעוד רגע.', 'a': ["חבר'ה"], 'en': 'Folks, we’re starting in a moment.'},
+         {'q': '___, שכחת את התיק.', 'a': ['גברתי', 'אדוני'], 'en': 'Madam / sir, you forgot your bag.'},
+         {'q': '___, תודה רבה על הכל.', 'a': ['אחי'], 'en': 'Mate, thanks a lot for everything.'},
+         {'q': 'תגיד לי ___, איפה התחנה?', 'a': ['סליחה'], 'en': 'Tell me — sorry — where’s the station?'},
+       ]},
+      {'kind': 'slang', 'he': 'אחי', 'literal': '“my brother”',
+       'meaning': 'Mate, man, dude.',
+       'when': 'Between friends, to strangers your own age, and increasingly to women as well. '
+               'It marks the conversation as informal and equal, and dropping it into a work '
+               'email would be very funny and very wrong.',
+       'examples': [{'he': 'אחי, אתה לא מאמין מה קרה.', 'en': 'Mate, you won’t believe what happened.'},
+                    {'he': 'תודה אחי, אתה מציל.', 'en': 'Thanks mate, you’re a lifesaver.'}]},
+    ],
+  },
+  {
+    'id': 'he-71', 'n': 71, 'level': 'intermediate',
+    'title': {'he': 'עלייה ואולפן', 'en': 'Arriving and learning the language'},
+    'objective': 'The vocabulary of being new here — which is the situation a great many people '
+                 'using this app are actually in, and it has its own words that no general '
+                 'course teaches.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'The words for arriving',
+       'body': 'Moving to Israel is <b>עלייה</b>, literally "going up", and a person who has '
+               'done it is an <b>עולה</b> — עולה חדש for the first years. The language school '
+               'is an <b>אולפן</b>, a word that means a studio everywhere else. Someone born '
+               'here is a <b>צבר</b>; someone long-established is a <b>ותיק</b>. And '
+               '<b>מבטא</b>, accent, is discussed openly and usually kindly: '
+               '<b>יש לך מבטא יפה</b> is a compliment.',
+       'examples': [
+         {'he': 'עליתי לארץ לפני שלוש שנים.', 'en': 'I moved to Israel three years ago.'},
+         {'he': 'אני לומדת עברית באולפן בבוקר.', 'en': 'I study Hebrew at an ulpan in the morning.'},
+         {'he': 'יש לך מבטא, מאיפה אתה?', 'en': 'You have an accent — where are you from?'},
+         {'he': 'קיבלתי תעודת זהות אחרי חודש.', 'en': 'I got an ID card after a month.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'עלייה', 'en': 'immigration to Israel; a rise', 'pos': 'noun'},
+         {'he': 'עולה', 'en': 'an immigrant to Israel', 'pos': 'noun'},
+         {'he': 'אולפן', 'en': 'Hebrew language school', 'pos': 'noun'},
+         {'he': 'מבטא', 'en': 'accent', 'pos': 'noun'},
+         {'he': 'זהות', 'en': 'identity', 'pos': 'noun'},
+         {'he': 'אזרחות', 'en': 'citizenship', 'pos': 'noun'},
+         {'he': 'ותיק', 'en': 'long-established, a veteran', 'pos': 'adj'},
+         {'he': 'שפה', 'en': 'language', 'pos': 'noun'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'אני לומד עברית ב___. — at an ulpan', 'a': 'אולפן'},
+       'items': [
+         {'q': '___ לארץ לפני שלוש שנים.', 'a': ['עליתי'], 'en': 'I moved to Israel three years ago.'},
+         {'q': 'יש לך ___ יפה, מאיפה אתה?', 'a': ['מבטא'], 'en': 'You have a nice accent, where are you from?'},
+         {'q': 'קיבלתי תעודת ___ אחרי חודש.', 'a': ['זהות'], 'en': 'I got an ID card after a month.'},
+         {'q': 'עברית היא ___ קשה בהתחלה.', 'a': ['שפה'], 'en': 'Hebrew is a hard language at first.'},
+         {'q': 'הוא ___ פה, נולד בתל אביב.', 'a': ['צבר'], 'en': 'He’s a sabra, born in Tel Aviv.'},
+       ]},
+      {'kind': 'choose', 'title': 'מה עונים?', 'en': 'What do you reply?',
+       'instructions': 'These questions get asked in the first two minutes. Pick a reply that '
+                       'keeps the conversation going.',
+       'items': [
+         {'q': 'מאיפה אתה?', 'options': ['מאנגליה, אבל אני פה שלוש שנים', 'מפה', 'זה מסובך'],
+          'a': 'מאיפה אתה?' == '' and '' or 'מאנגליה, אבל אני פה שלוש שנים',
+          'en': 'Where are you from? — say where, then how long.'},
+         {'q': 'כמה זמן אתה בארץ?', 'options': ['שלוש שנים בערך', 'הרבה', 'למה?'],
+          'a': 'שלוש שנים בערך', 'en': 'How long have you been in the country?'},
+         {'q': 'איפה למדת עברית?', 'options': ['באולפן, ואחר כך לבד', 'בבית', 'לא למדתי'],
+          'a': 'באולפן, ואחר כך לבד', 'en': 'Where did you learn Hebrew?'},
+       ]},
+      {'kind': 'slang', 'he': 'עברית קשה שפה', 'literal': '“Hebrew hard language” — with the '
+                                                          'words in the wrong order on purpose',
+       'meaning': 'A joke about speaking Hebrew badly, said BY Hebrew speakers.',
+       'when': 'The word order is deliberately broken, the way a beginner would break it. '
+               'Israelis say it to each other when something is confusing, and to a learner it '
+               'is a friendly wave rather than a correction.',
+       'examples': [{'he': 'לא הבנתי כלום. עברית קשה שפה.', 'en': 'I understood nothing. Hebrew hard language.'},
+                    {'he': 'אל תדאג, גם לנו קשה.', 'en': 'Don’t worry, it’s hard for us too.'}]},
+    ],
+  },
+  {
+    'id': 'he-72', 'n': 72, 'level': 'intermediate',
+    'title': {'he': 'דתי וחילוני', 'en': 'Religious and secular'},
+    'objective': 'A set of words that come up in ordinary conversation constantly — kosher, '
+                 'Shabbat, synagogue, secular — and that a learner needs in order to follow what '
+                 'people are actually saying about each other.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Four words people use about themselves',
+       'body': '<b>חילוני</b> — secular. <b>דתי</b> — religious. <b>מסורתי</b> — traditional: '
+               'observing some things, and it is the largest group of the three. '
+               '<b>חרדי</b> — ultra-orthodox. People describe themselves with these readily and '
+               'ask about others. Practically: <b>כשר</b> covers food, <b>שומר שבת</b> means '
+               'not driving or working on Saturday, and <b>בית כנסת</b> is a synagogue. Note '
+               'that a great deal of the vocabulary is shared regardless — חג שמח and בעזרת השם '
+               'are said by everyone.',
+       'examples': [
+         {'he': 'המשפחה שלי מסורתית, לא דתית.', 'en': 'My family is traditional, not religious.'},
+         {'he': 'המסעדה כשרה, אז היא סגורה בשבת.', 'en': 'The restaurant is kosher, so it’s closed on Saturday.'},
+         {'he': 'הוא שומר שבת ולא נוסע.', 'en': 'He observes Shabbat and doesn’t drive.'},
+         {'he': 'יש בית כנסת בסוף הרחוב.', 'en': 'There’s a synagogue at the end of the street.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'דת', 'en': 'religion', 'pos': 'noun'},
+         {'he': 'דתי', 'en': 'religious', 'pos': 'adj'},
+         {'he': 'חילוני', 'en': 'secular', 'pos': 'adj'},
+         {'he': 'מסורתי', 'en': 'traditional (partly observant)', 'pos': 'adj'},
+         {'he': 'כשר', 'en': 'kosher', 'pos': 'adj'},
+         {'he': 'בית כנסת', 'en': 'synagogue', 'pos': 'noun'},
+         {'he': 'רב', 'en': 'rabbi; also: a great deal', 'pos': 'noun'},
+         {'he': 'תפילה', 'en': 'prayer', 'pos': 'noun'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'המסעדה ___, אז אין בשר וחלב. — kosher', 'a': 'כשרה'},
+       'items': [
+         {'q': 'המשפחה שלי ___, לא דתית.', 'a': ['מסורתית'], 'en': 'My family is traditional, not religious.'},
+         {'q': 'הוא ___ שבת ולא נוסע.', 'a': ['שומר'], 'en': 'He observes Shabbat and doesn’t drive.'},
+         {'q': 'יש ___ כנסת בסוף הרחוב.', 'a': ['בית'], 'en': 'There’s a synagogue at the end of the street.'},
+         {'q': 'רוב האנשים בעיר הזאת ___.', 'a': ['חילונים'], 'en': 'Most people in this city are secular.'},
+         {'q': 'בשבת הכל ___ פה.', 'a': ['סגור'], 'en': 'On Saturday everything here is closed.'},
+       ]},
+      {'kind': 'quiz', 'title': 'בדיקה מהירה', 'en': 'Quick check',
+       'items': [
+         {'q': 'Someone says אני מסורתי. What does that tell you?',
+          'options': ['They keep some traditions but are not strictly observant',
+                      'They are ultra-orthodox', 'They are not Jewish'],
+          'a': 'They keep some traditions but are not strictly observant',
+          'why': 'מסורתי is its own category, not a halfway apology — Friday dinner and a '
+                 'synagogue on the high holidays, and the car still gets driven.'},
+         {'q': 'Why do many shops and buses stop on Friday evening?',
+          'options': ['Shabbat begins at sunset on Friday',
+                      'It is the end of the working month', 'A national holiday every week'],
+          'a': 'Shabbat begins at sunset on Friday',
+          'why': 'The Hebrew day starts in the evening, which is also why ערב שבת means Friday '
+                 'and not Saturday night.'},
+       ]},
+      {'kind': 'slang', 'he': 'בעזרת השם', 'literal': '“with God’s help”',
+       'meaning': 'Hopefully / all being well.',
+       'when': 'Said by religious speakers literally and by plenty of secular ones as a set '
+               'phrase, exactly like "God willing" in English. Its short written form is '
+               'בס"ד at the top of a page.',
+       'examples': [{'he': 'ניפגש מחר, בעזרת השם.', 'en': 'We’ll meet tomorrow, all being well.'},
+                    {'he': 'יהיה בסדר, בעזרת השם.', 'en': 'It’ll be fine, God willing.'}]},
+    ],
+  },
+  {
+    'id': 'he-73', 'n': 73, 'level': 'beginner',
+    'title': {'he': 'חירום', 'en': 'Emergencies'},
+    'objective': 'Ten sentences that have to come out without thinking. This unit is short on '
+                 'purpose and worth more than any other in the course on one particular day.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Say what, then where',
+       'body': 'The frame is always the same: <b>יש</b> + what, then the place. '
+               '<b>יש תאונה ברחוב הרצל</b>. <b>יש שריפה בבניין</b>. For a person: '
+               '<b>מישהו נפצע</b>. To call for help: <b>תעזרו!</b> or <b>הצילו!</b> The '
+               'services: <b>משטרה</b> 100, <b>אמבולנס</b> (מד"א) 101, <b>מכבי אש</b> 102. '
+               'And <b>דחוף</b> — urgent — is the word that moves a queue.',
+       'examples': [
+         {'he': 'יש תאונה ברחוב הראשי.', 'en': 'There’s an accident on the main street.'},
+         {'he': 'מישהו נפצע, צריך אמבולנס.', 'en': 'Someone’s hurt, we need an ambulance.'},
+         {'he': 'תתקשרו למשטרה, מהר!', 'en': 'Call the police, quickly!'},
+         {'he': 'זה דחוף, בבקשה.', 'en': 'It’s urgent, please.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'משטרה', 'en': 'police', 'pos': 'noun'},
+         {'he': 'אמבולנס', 'en': 'ambulance', 'pos': 'noun'},
+         {'he': 'עזרה', 'en': 'help', 'pos': 'noun'},
+         {'he': 'סכנה', 'en': 'danger', 'pos': 'noun'},
+         {'he': 'פצוע', 'en': 'injured', 'pos': 'adj'},
+         {'he': 'דחוף', 'en': 'urgent', 'pos': 'adj'},
+         {'he': 'להציל', 'en': 'to save, to rescue', 'pos': 'verb'},
+         {'he': 'חירום', 'en': 'emergency', 'pos': 'noun'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word. These are worth knowing cold.',
+       'example': {'q': 'יש ___ ברחוב. — an accident', 'a': 'תאונה'},
+       'items': [
+         {'q': 'מישהו ___, צריך אמבולנס.', 'a': ['נפצע'], 'en': 'Someone’s hurt, we need an ambulance.'},
+         {'q': 'תתקשרו ל___, מהר!', 'a': ['משטרה'], 'en': 'Call the police, quickly!'},
+         {'q': 'זה ___, בבקשה.', 'a': ['דחוף'], 'en': 'It’s urgent, please.'},
+         {'q': 'צריך ___, אני לא מסתדר.', 'a': ['עזרה'], 'en': 'I need help, I can’t manage.'},
+         {'q': 'יש ___ בבניין!', 'a': ['שריפה'], 'en': 'There’s a fire in the building!'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['יש', 'תאונה', 'ברחוב', 'הראשי'], 'a': 'יש תאונה ברחוב הראשי',
+          'en': 'There’s an accident on the main street.'},
+         {'words': ['מישהו', 'נפצע', 'צריך', 'אמבולנס'], 'a': 'מישהו נפצע צריך אמבולנס',
+          'en': 'Someone is hurt, an ambulance is needed.'},
+         {'words': ['אני', 'לא', 'מרגיש', 'טוב', 'בכלל'], 'a': 'אני לא מרגיש טוב בכלל',
+          'en': 'I don’t feel well at all.'},
+       ]},
+      {'kind': 'slang', 'he': 'מד"א', 'literal': 'the initials of מגן דוד אדום',
+       'meaning': 'The ambulance service — said as one word, "Mada".',
+       'when': 'Israeli institutions live in their acronyms and are said as words, not letters: '
+               'מד"א, צה"ל, שב"כ, קופ"ח. A learner who expects the full name will not catch '
+               'them in speech.',
+       'examples': [{'he': 'תתקשר למד"א, מאה ואחת.', 'en': 'Call Mada — one-oh-one.'},
+                    {'he': 'מד"א הגיעו תוך חמש דקות.', 'en': 'The ambulance came within five minutes.'}]},
+    ],
+  },
+  {
+    'id': 'he-74', 'n': 74, 'level': 'beginner',
+    'title': {'he': 'בסופר', 'en': 'At the supermarket'},
+    'objective': 'Weights, quantities, offers and the checkout. The one shop everybody enters '
+                 'weekly, and the numbers unit finally gets used on real things.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Quantities come before the thing',
+       'body': 'Hebrew counts by weight in kilos and by the piece: <b>קילו עגבניות</b>, '
+               '<b>חצי קילו גבינה</b>, <b>שתי חבילות</b>, <b>שקית לחם</b>. An offer is a '
+               '<b>מבצע</b>, and the sign will say <b>1+1</b> — said "אחד פלוס אחד". '
+               '<b>הנחה</b> is a discount. At the till you will be asked '
+               '<b>שקית?</b> and <b>חשבונית?</b>, and both answers are one word.',
+       'examples': [
+         {'he': 'אפשר חצי קילו עגבניות?', 'en': 'Half a kilo of tomatoes, please?'},
+         {'he': 'יש מבצע על הגבינה הזאת.', 'en': 'There’s an offer on this cheese.'},
+         {'he': 'איפה המדף של הלחם?', 'en': 'Where’s the bread shelf?'},
+         {'he': 'לא צריך שקית, תודה.', 'en': 'No bag, thanks.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'עגלה', 'en': 'trolley; a cart', 'pos': 'noun'},
+         {'he': 'קופה', 'en': 'till, checkout', 'pos': 'noun'},
+         {'he': 'מבצע', 'en': 'a special offer; an operation', 'pos': 'noun'},
+         {'he': 'מחיר', 'en': 'price', 'pos': 'noun'},
+         {'he': 'מדף', 'en': 'shelf', 'pos': 'noun'},
+         {'he': 'שקית', 'en': 'bag', 'pos': 'noun'},
+         {'he': 'מוצר', 'en': 'product', 'pos': 'noun'},
+         {'he': 'ירקות', 'en': 'vegetables', 'pos': 'noun'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'יש ___ על הגבינה. — an offer', 'a': 'מבצע'},
+       'items': [
+         {'q': 'אפשר חצי ___ עגבניות?', 'a': ['קילו'], 'en': 'Half a kilo of tomatoes, please?'},
+         {'q': 'איפה ה___ של הלחם?', 'a': ['מדף'], 'en': 'Where’s the bread shelf?'},
+         {'q': 'לא צריך ___, תודה.', 'a': ['שקית'], 'en': 'No bag, thanks.'},
+         {'q': 'יש תור ארוך ב___.', 'a': ['קופה'], 'en': 'There’s a long queue at the till.'},
+         {'q': 'קניתי ___ ופירות טריים.', 'a': ['ירקות'], 'en': 'I bought fresh vegetables and fruit.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'כמה זה קילו?', 'en': 'How much is a kilo?'},
+         {'he': 'יש מבצע?', 'en': 'Is there an offer on?'},
+         {'he': 'איפה החלב?', 'en': 'Where’s the milk?'},
+         {'he': 'שקית, בבקשה', 'en': 'A bag, please'},
+         {'he': 'זה הכל', 'en': 'That’s everything'},
+         {'he': 'אפשר לשלם באשראי?', 'en': 'Can I pay by card?'},
+       ]},
+      {'kind': 'slang', 'he': 'בקטנה', 'literal': '“in a small one”',
+       'meaning': 'Just a little / no big deal.',
+       'when': 'Ordering, buying and agreeing all use it: תן לי בקטנה is "just a small one", and '
+               'נעשה משהו בקטנה is "let’s do something low-key".',
+       'examples': [{'he': 'תן לי בקטנה, אני לא רעב.', 'en': 'Just a small one, I’m not hungry.'},
+                    {'he': 'בקטנה, בלי לחץ.', 'en': 'No big deal, no pressure.'}]},
+    ],
+  },
+  {
+    'id': 'he-75', 'n': 75, 'level': 'intermediate',
+    'title': {'he': 'טיולים בארץ', 'en': 'Getting out of the city'},
+    'objective': 'A country you can cross in a day, and a national habit of walking around in '
+                 'it. The landscape words come up constantly in conversation and never in a '
+                 'textbook.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'North, south and the words in between',
+       'body': 'The country divides in speech into <b>הצפון</b>, <b>המרכז</b>, <b>הדרום</b>, '
+               'plus <b>הגליל</b> and <b>הנגב</b> by name. You walk a <b>שביל</b>, you go to a '
+               '<b>נחל</b> (a stream, usually dry) or a <b>מפל</b>, and you are told constantly '
+               'to take <b>הרבה מים</b> and a <b>כובע</b>. A nature reserve is a '
+               '<b>שמורה</b>. The verb is <b>לטייל</b>, and it covers everything from a walk to '
+               'a year in South America.',
+       'examples': [
+         {'he': 'נסענו לטייל בצפון בסוף השבוע.', 'en': 'We went hiking in the north at the weekend.'},
+         {'he': 'קחו הרבה מים וכובע, חם היום.', 'en': 'Take plenty of water and a hat, it’s hot today.'},
+         {'he': 'השביל מתחיל אחרי החנייה.', 'en': 'The trail starts after the car park.'},
+         {'he': 'יש מפל יפה בסוף הנחל.', 'en': 'There’s a lovely waterfall at the end of the stream.'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'טיול', 'en': 'a trip, a walk', 'pos': 'noun'},
+         {'he': 'שביל', 'en': 'trail, path', 'pos': 'noun'},
+         {'he': 'נחל', 'en': 'stream, wadi', 'pos': 'noun'},
+         {'he': 'מפל', 'en': 'waterfall', 'pos': 'noun'},
+         {'he': 'הר', 'en': 'mountain', 'pos': 'noun'},
+         {'he': 'מדבר', 'en': 'desert', 'pos': 'noun'},
+         {'he': 'שמורה', 'en': 'nature reserve', 'pos': 'noun'},
+         {'he': 'תרמיל', 'en': 'backpack', 'pos': 'noun'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the missing word.',
+       'example': {'q': 'ה___ מתחיל אחרי החנייה. — the trail', 'a': 'שביל'},
+       'items': [
+         {'q': 'נסענו ל___ בצפון בסוף השבוע.', 'a': ['טיול'], 'en': 'We went on a trip to the north at the weekend.'},
+         {'q': 'קחו הרבה מים ו___.', 'a': ['כובע'], 'en': 'Take plenty of water and a hat.'},
+         {'q': 'יש ___ יפה בסוף הנחל.', 'a': ['מפל'], 'en': 'There’s a lovely waterfall at the end of the stream.'},
+         {'q': 'ב___ אין צל בכלל.', 'a': ['מדבר'], 'en': 'In the desert there’s no shade at all.'},
+         {'q': 'עלינו על ה___ בשעתיים.', 'a': ['הר'], 'en': 'We climbed the mountain in two hours.'},
+       ]},
+      {'kind': 'order', 'title': 'סדרו את המשפט', 'en': 'Put the sentence in order',
+       'instructions': 'Tap the words in the right order.',
+       'items': [
+         {'words': ['נסענו', 'לטייל', 'בגליל', 'בסוף', 'השבוע'], 'a': 'נסענו לטייל בגליל בסוף השבוע',
+          'en': 'We went hiking in the Galilee at the weekend.'},
+         {'words': ['קחו', 'הרבה', 'מים', 'חם', 'היום'], 'a': 'קחו הרבה מים חם היום',
+          'en': 'Take plenty of water, it’s hot today.'},
+         {'words': ['השביל', 'ארוך', 'אבל', 'לא', 'קשה'], 'a': 'השביל ארוך אבל לא קשה',
+          'en': 'The trail is long but not hard.'},
+       ]},
+      {'kind': 'slang', 'he': 'טיול אחרי צבא', 'literal': '“a trip after the army”',
+       'meaning': 'The long backpacking trip Israelis take in their early twenties.',
+       'when': 'A whole institution in two words, and the reason Hebrew is spoken in hostels in '
+               'South America and south-east Asia. Asked where someone has been, this is often '
+               'the answer.',
+       'examples': [{'he': 'הוא בטיול אחרי צבא בדרום אמריקה.', 'en': 'He’s on his post-army trip in South America.'},
+                    {'he': 'חזרתי מטיול של חצי שנה.', 'en': 'I got back from a six-month trip.'}]},
+    ],
+  },
+  {
+    'id': 'he-76', 'n': 76, 'level': 'intermediate',
+    'title': {'he': 'אנשים ואופי', 'en': 'Describing people'},
+    'objective': 'Beyond נחמד. The adjectives Israelis actually use about each other, several of '
+                 'which are compliments in Hebrew and would not be in English.',
+    'blocks': [
+      {'kind': 'teach', 'title': 'Directness is a virtue here',
+       'body': '<b>ישיר</b> — direct — is praise. So is <b>חרוץ</b> (hard-working) and '
+               '<b>נדיב</b> (generous). <b>עקשן</b>, stubborn, is said with something close to '
+               'affection. On the other side: <b>עצלן</b>, <b>קמצן</b>, and '
+               '<b>חוצפן</b> — cheeky, from <b>חוצפה</b>, which is a fault and a compliment in '
+               'the same breath depending entirely on who is speaking. All of them agree like '
+               'ordinary adjectives: נחמד, נחמדה, נחמדים.',
+       'examples': [
+         {'he': 'הוא בחור נחמד ורציני.', 'en': 'He’s a nice, serious guy.'},
+         {'he': 'היא מאוד ישירה, זה טוב.', 'en': 'She’s very direct, and that’s a good thing.'},
+         {'he': 'הוא עקשן, אבל בסוף הוא צודק.', 'en': 'He’s stubborn, but in the end he’s right.'},
+         {'he': 'איזו חוצפה!', 'en': 'What a cheek!'},
+       ]},
+      {'kind': 'vocab', 'title': 'מילים חדשות',
+       'rows': [
+         {'he': 'נחמד', 'en': 'nice', 'pos': 'adj'},
+         {'he': 'רציני', 'en': 'serious', 'pos': 'adj'},
+         {'he': 'חרוץ', 'en': 'hard-working', 'pos': 'adj'},
+         {'he': 'עצלן', 'en': 'lazy', 'pos': 'adj'},
+         {'he': 'נדיב', 'en': 'generous', 'pos': 'adj'},
+         {'he': 'קמצן', 'en': 'stingy', 'pos': 'adj'},
+         {'he': 'עקשן', 'en': 'stubborn', 'pos': 'adj'},
+         {'he': 'חכם', 'en': 'clever, wise', 'pos': 'adj'},
+       ]},
+      {'kind': 'fill', 'title': 'השלימו', 'en': 'Fill in the gap',
+       'instructions': 'Type the adjective, agreeing with the person.',
+       'example': {'q': 'הוא בחור ___. — nice', 'a': 'נחמד'},
+       'items': [
+         {'q': 'היא מאוד ___, עובדת מהבוקר עד הלילה.', 'a': ['חרוצה'], 'en': 'She’s very hard-working, from morning till night.'},
+         {'q': 'הוא ___ ולא מוותר אף פעם.', 'a': ['עקשן'], 'en': 'He’s stubborn and never gives in.'},
+         {'q': 'הם אנשים ___ מאוד, תמיד עוזרים.', 'a': ['נדיבים'], 'en': 'They’re very generous people, always helping.'},
+         {'q': 'הילד ה___ הזה לא עשה כלום.', 'a': ['עצלן'], 'en': 'That lazy boy did nothing.'},
+         {'q': 'היא בחורה ___ מאוד.', 'a': ['חכמה'], 'en': 'She’s a very clever girl.'},
+       ]},
+      {'kind': 'match', 'title': 'התאימו', 'en': 'Match them up',
+       'instructions': 'Tap the Hebrew, then the English.',
+       'pairs': [
+         {'he': 'ישיר', 'en': 'direct — and it is a compliment'},
+         {'he': 'חרוץ', 'en': 'hard-working'},
+         {'he': 'עקשן', 'en': 'stubborn'},
+         {'he': 'קמצן', 'en': 'stingy'},
+         {'he': 'נדיב', 'en': 'generous'},
+         {'he': 'חוצפן', 'en': 'cheeky'},
+       ]},
+      {'kind': 'slang', 'he': 'חוצפה', 'literal': 'from the root ח־צ־פ, insolence',
+       'meaning': 'Nerve, gall — and sometimes admirable nerve.',
+       'when': 'The word came into English from Yiddish precisely because it has no equivalent. '
+               'איזו חוצפה is outrage; יש לו חוצפה בריאה is closer to "he has some healthy '
+               'nerve", which is praise.',
+       'examples': [{'he': 'איזו חוצפה, לדבר ככה!', 'en': 'What a nerve, to talk like that!'},
+                    {'he': 'צריך חוצפה בשביל לבקש את זה.', 'en': 'You need some nerve to ask for that.'}]},
     ],
   },
 ]
