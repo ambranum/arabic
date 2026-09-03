@@ -43,6 +43,36 @@ def P(*pairs):   # a paragraph: P(("ar","en"), ("ar","en"), ...)
     return list(pairs)
 
 
+import re
+
+_AR_END = re.compile(r'(?<=[.؟!])\s+(?=\S)')
+_EN_END = re.compile(r'(?<=[.?!])\s+(?=[A-Z"“‘\'])')
+_ABBREV = re.compile(r'\b(Mr|Mrs|Dr|St|No)\.$')
+
+
+def split_pair(ar, en):
+    """One (ar, en) pair -> a list of pairs, one per spoken sentence.
+
+    A pair written as `قال: خلص. بكرا منرجع.` is two sentences the reader taps, translates and
+    (in the shadow drill) repeats as one unit, and it is what pushed the second-edition books to
+    a 90th-percentile sentence length half again over their level. The two halves were written
+    in parallel, so when the Arabic and the English hold the SAME number of sentences the split
+    is safe; when they do not, the pair is left whole and reported, for a human to look at.
+    """
+    a = [s for s in _AR_END.split(ar.strip()) if s]
+    e = [s for s in _EN_END.split(en.strip()) if s]
+    # "Mr. Holmes" is not a sentence boundary: glue an abbreviation back onto what follows.
+    i = 0
+    while i < len(e) - 1:
+        if _ABBREV.search(e[i]):
+            e[i:i + 2] = [e[i] + ' ' + e[i + 1]]
+        else:
+            i += 1
+    if len(a) > 1 and len(a) == len(e):
+        return list(zip(a, e))
+    return [(ar, en)]
+
+
 LEVELS = ('beginner', 'intermediate', 'advanced')   # the only strings the app maps to a phase
 
 
@@ -76,12 +106,19 @@ def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='ال�
         os.remove(old)
 
     total = 0
+    splits, uneven = 0, []
     for i, (en, ar, paras) in enumerate(chapters, 1):
         cid = 'book-%s-ch%02d' % (book_id, i)
         sentences = []
         for pi, para in enumerate(paras):
             for (a, e) in para:
-                sentences.append({'ar': a, 'en': e, 'p': pi})
+                parts = split_pair(a, e)
+                if len(parts) > 1:
+                    splits += len(parts) - 1
+                elif len(_AR_END.split(a.strip())) > 1:
+                    uneven.append((cid, a))
+                for (a2, e2) in parts:
+                    sentences.append({'ar': a2, 'en': e2, 'p': pi})
         art = {
             'id': cid,
             'title': {'en': '%s %d — %s' % (unit, i, en), 'ar': '%s %d — %s' % (unit_ar, i, ar)},
@@ -103,4 +140,9 @@ def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='ال�
     plural = u[:-1] + 'ies' if u.endswith('y') else u + 's'      # story -> stories, not storys
     print('\n%d %s, %d sentences, %d chars -> %s/book-%s-ch*.json'
           % (len(chapters), plural, total, chars, os.path.relpath(outdir, ROOT), book_id))
+    if splits:
+        print('%d pairs split at sentence boundaries (Arabic and English agreed on the count)' % splits)
+    for cid, a in uneven:
+        print('!! %s: multi-sentence Arabic whose English does not split the same way, left whole:\n     %s'
+              % (cid, a))
     return len(chapters), total

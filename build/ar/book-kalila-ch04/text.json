@@ -25,10 +25,74 @@
  "source": "adapted by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "الأسد حب شتربة كتير.",
-   "en": "The lion grew very fond of Shatraba.",
+   "ar": "بالأول، كان الأسد يسأل دمنة عن كل إشي.",
+   "en": "At first, the lion asked Dimna about everything.",
    "p": 0,
    "words": [
+    {
+     "surface": "بالأول",
+     "root": "ء.و.ل",
+     "lemma": "أَوَّل",
+     "form": "أَوَّل",
+     "caphi_raw": "2 a w w a l",
+     "caphi": "2awwal",
+     "gloss": "first;early",
+     "analysis": "ADJ_NUM:S",
+     "maknuune_id": "663",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "663",
+       "root": "ء.و.ل",
+       "gloss": "first;early",
+       "analysis": "ADJ_NUM:S"
+      },
+      {
+       "id": "662",
+       "root": "ء.و.ل",
+       "gloss": "first;early_[auto]",
+       "analysis": "ADJ_NUM:P"
+      },
+      {
+       "id": "664",
+       "root": "ء.و.ل",
+       "gloss": "everything;all_sb's_wealth",
+       "analysis": "ADJ_NUM:PHRASE"
+      },
+      {
+       "id": "36050",
+       "root": "و.ل.ل",
+       "gloss": "Oh!_(surprise)",
+       "analysis": "INTERJ"
+      },
+      {
+       "id": "36051",
+       "root": "و.ل.ل",
+       "gloss": "Oh!_(surprise)",
+       "analysis": "INTERJ:PHRASE"
+      }
+     ],
+     "caphi_urban": "2awwal",
+     "vocalized": "بِالأَوَّل",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
     {
      "surface": "الأسد",
      "root": "ء.س.د",
@@ -84,58 +148,408 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "حب",
-     "root": "ح.ب.ب",
-     "lemma": "حُبّ",
-     "form": "حُبّ",
-     "caphi_raw": "7 u b b",
-     "caphi": "7ubb",
-     "gloss": "love;affection",
+     "surface": "يسأل",
+     "root": "س.ء.ل",
+     "lemma": "سَأَل",
+     "form": "يِسْأَل",
+     "caphi_raw": "y i s 2 a l",
+     "caphi": "yis2al",
+     "gloss": "ask;inquire",
+     "analysis": "VERB:I",
+     "maknuune_id": "13501",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yis2al",
+     "vocalized": "يِسْأَل",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "دمنة",
+     "root": "د.م.ن",
+     "lemma": "أَدْمَن",
+     "form": "يِدْمِن",
+     "caphi_raw": "y i d m i n",
+     "caphi": "yidmin",
+     "gloss": "be_addicted_to",
+     "analysis": "VERB:I",
+     "maknuune_id": "10286",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yidmin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "عن",
+     "root": "—",
+     "lemma": "عَن",
+     "form": "عَن",
+     "caphi_raw": "3an",
+     "caphi": "3an",
+     "gloss": "about, from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "عَن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "3an"
+    },
+    {
+     "surface": "كل",
+     "root": "ك.ل.ل",
+     "lemma": "كُلّ",
+     "form": "كُلّ",
+     "caphi_raw": "k u l l",
+     "caphi": "kull",
+     "gloss": "the_whole_thing/every",
+     "analysis": "NOUN_QUANT:MS",
+     "maknuune_id": "28275",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kull",
+     "vocalized": "كُلّ",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "إشي",
+     "root": "ش.ي.ء",
+     "lemma": "إِشِي",
+     "form": "إِشِي",
+     "caphi_raw": "2 i sh i",
+     "caphi": "2ishi",
+     "gloss": "thing",
      "analysis": "NOUN:MS",
-     "maknuune_id": "5045",
+     "maknuune_id": "17250",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2ishi",
+     "vocalized": "إِشِي",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وكان دمنة سعيد، لأنه صار جوا بعد ما كان برا.",
+   "en": "And Dimna was happy, because he was inside after having been outside.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "وكان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "دمنة",
+     "root": "د.م.ن",
+     "lemma": "أَدْمَن",
+     "form": "يِدْمِن",
+     "caphi_raw": "y i d m i n",
+     "caphi": "yidmin",
+     "gloss": "be_addicted_to",
+     "analysis": "VERB:I",
+     "maknuune_id": "10286",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yidmin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "سعيد",
+     "root": "س.ع.د",
+     "lemma": "سَعِيد",
+     "form": "سَعِيد",
+     "caphi_raw": "s a 3 ii d",
+     "caphi": "sa3iid",
+     "gloss": "happy",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "14198",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "5045",
-       "root": "ح.ب.ب",
-       "gloss": "love;affection",
-       "analysis": "NOUN:MS"
+       "id": "14198",
+       "root": "س.ع.د",
+       "gloss": "happy",
+       "analysis": "ADJ:MS"
       },
       {
-       "id": "5046",
-       "root": "ح.ب.ب",
-       "gloss": "grains;pills;pimples",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "5073",
-       "root": "ح.ب.ب",
-       "gloss": "love;kiss_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "5077",
-       "root": "ح.ب.ب",
-       "gloss": "love;kiss_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "5049",
-       "root": "ح.ب.ب",
-       "gloss": "It_is_a_sarcastic_idiomatic_expression_t",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "5050",
-       "root": "ح.ب.ب",
-       "gloss": "It_is_a_sarcastic_idiomatic_expression_t",
-       "analysis": "VERB:PHRASE"
+       "id": "14209",
+       "root": "س.ع.د",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "ADJ:PHRASE"
       }
      ],
-     "caphi_urban": "7ubb",
-     "vocalized": "حُبّ",
+     "caphi_urban": "sa3iid",
+     "vocalized": "سَعِيد",
      "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "لأنه",
+     "root": "NTWS",
+     "lemma": "أَنّ",
+     "form": "لِأَن",
+     "caphi_raw": "l i 2 a n n",
+     "caphi": "li2ann",
+     "gloss": "because",
+     "analysis": "CONJ:PHRASE",
+     "maknuune_id": "620",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "li2ann",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "صار",
+     "root": "ص.ي.ر",
+     "lemma": "صَار",
+     "form": "يصِير",
+     "caphi_raw": "y s. ii r",
+     "caphi": "ys.iir",
+     "gloss": "become",
+     "analysis": "VERB:I",
+     "maknuune_id": "18259",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "ys.iir",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "جوا",
+     "root": "ج.و.و",
+     "lemma": "جُوَّا",
+     "form": "جُوَّا",
+     "caphi_raw": "J u w w a",
+     "caphi": "Juwwa",
+     "gloss": "in",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "4950",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "juwwa",
+     "vocalized": "جُوَّا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بعد",
+     "root": "ب.ع.د",
+     "lemma": "بَعِد",
+     "form": "بَعِد",
+     "caphi_raw": "b a 3 i d",
+     "caphi": "ba3id",
+     "gloss": "still;after",
+     "analysis": "NOUN",
+     "maknuune_id": "1786",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "ba3id",
+     "vocalized": "بَعِد",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "ما",
+     "root": "NTWS",
+     "lemma": "مَا",
+     "form": "مَا",
+     "caphi_raw": "m aa",
+     "caphi": "maa",
+     "gloss": "who;that_(relative)",
+     "analysis": "PRON_REL",
+     "maknuune_id": "30118",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "maa",
+     "vocalized": "مَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "برا",
+     "root": "ب.ر.ر",
+     "lemma": "بَرَّا",
+     "form": "بَرَّا",
+     "caphi_raw": "b a r r a",
+     "caphi": "barra",
+     "gloss": "outside",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "1156",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "barra",
+     "vocalized": "بَرَّا",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "بس الأسد كان بيحب يحكي مع شتربة كمان.",
+   "en": "But the lion liked to talk with Shatraba too.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "بس",
+     "root": "NTWS",
+     "lemma": "بَسّ",
+     "form": "بَسّ",
+     "caphi_raw": "b a s s",
+     "caphi": "bass",
+     "gloss": "but",
+     "analysis": "CONJ",
+     "maknuune_id": "1439",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "bass",
+     "vocalized": "بَسّ",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "الأسد",
+     "root": "ء.س.د",
+     "lemma": "أَسَد",
+     "form": "أَسَد",
+     "caphi_raw": "2 a s a d",
+     "caphi": "2asad",
+     "gloss": "lion",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "304",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "304",
+       "root": "ء.س.د",
+       "gloss": "lion",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "305",
+       "root": "ء.س.د",
+       "gloss": "lion_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "13946",
+       "root": "س.د.د",
+       "gloss": "damp",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "13948",
+       "root": "س.د.د",
+       "gloss": "damp_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "13953",
+       "root": "س.د.د",
+       "gloss": "quickly",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "13954",
+       "root": "س.د.د",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2asad",
+     "vocalized": "الأَسَد",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بيحب",
+     "root": "ح.ب.ب",
+     "lemma": "حَبّ",
+     "form": "يحِبّ",
+     "caphi_raw": "y 7 i b b",
+     "caphi": "y7ibb",
+     "gloss": "love;kiss",
+     "analysis": "VERB:I",
+     "maknuune_id": "5076",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "y7ibb",
+     "vocalized": "بِيحِبّ",
+     "vocalized_from": "derived:verb"
+    },
+    {
+     "surface": "يحكي",
+     "root": "ح.ك.ي",
+     "lemma": "حَكَى",
+     "form": "يِحْكِي",
+     "caphi_raw": "y i 7 K i",
+     "caphi": "yi7Ki",
+     "gloss": "talk;tell;recount",
+     "analysis": "VERB:I",
+     "maknuune_id": "6626",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "yi7ki",
+     "vocalized": "يِحْكِي",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "مع",
+     "root": "—",
+     "lemma": "مَع",
+     "form": "مَع",
+     "caphi_raw": "ma3",
+     "caphi": "ma3",
+     "gloss": "with",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "مَع",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "ma3"
     },
     {
      "surface": "شتربة",
@@ -152,7 +566,195 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "كتير",
+     "surface": "كمان",
+     "root": "ك.م.ن",
+     "lemma": "كَمَان",
+     "form": "كَمَان",
+     "caphi_raw": "k a m aa n",
+     "caphi": "kamaan",
+     "gloss": "as_well;also",
+     "analysis": "ADV",
+     "maknuune_id": "28395",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kamaan",
+     "vocalized": "كَمَان",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "الثور كان عاقل، وشاف بلاد كتيرة مع التاجر.",
+   "en": "The ox was wise, and had seen many countries with the merchant.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "الثور",
+     "root": "ث.و.ر",
+     "lemma": "ثَور",
+     "form": "ثَور",
+     "caphi_raw": "T oo r",
+     "caphi": "Toor",
+     "gloss": "ox",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "3487",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3487",
+       "root": "ث.و.ر",
+       "gloss": "ox",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "3488",
+       "root": "ث.و.ر",
+       "gloss": "ox_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "3489",
+       "root": "ث.و.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "3490",
+       "root": "ث.و.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "toor",
+     "vocalized": "الثَّور",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "عاقل",
+     "root": "ع.ق.ل",
+     "lemma": "عَاقِل",
+     "form": "عَاقِل",
+     "caphi_raw": "3 aa Q i l",
+     "caphi": "3aaQil",
+     "gloss": "sane;wise;reasonable",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "21389",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "3aa2il",
+     "vocalized": "عَاقِل",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "وشاف",
+     "root": "NTWS",
+     "lemma": "شَاف",
+     "form": "شَاف",
+     "caphi_raw": "sh aa f",
+     "caphi": "shaaf",
+     "gloss": "jug",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "15452",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "15452",
+       "root": "NTWS",
+       "gloss": "jug",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "17208",
+       "root": "ش.و.ف",
+       "gloss": "see;look;think;believe_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17203",
+       "root": "ش.و.ف",
+       "gloss": "meet_the_potential_wife_for_the_first_ti",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "17204",
+       "root": "ش.و.ف",
+       "gloss": "see;look;think;believe_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17206",
+       "root": "ش.و.ف",
+       "gloss": "see;look;think;believe",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "shaaf",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "بلاد",
+     "root": "ب.ل.د",
+     "lemma": "بْلَاد",
+     "form": "بْلَاد",
+     "caphi_raw": "b l aa d",
+     "caphi": "blaad",
+     "gloss": "country",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "2118",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2118",
+       "root": "ب.ل.د",
+       "gloss": "country",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "2120",
+       "root": "ب.ل.د",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "2124",
+       "root": "ب.ل.د",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "2123",
+       "root": "ب.ل.د",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "blaad",
+     "vocalized": "بْلَاد",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "كتيرة",
      "root": "ك.ث.ر",
      "lemma": "كْثِير",
      "form": "كْثِير",
@@ -166,17 +768,389 @@
      "caphi_urban": "ktiir",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "مع",
+     "root": "—",
+     "lemma": "مَع",
+     "form": "مَع",
+     "caphi_raw": "ma3",
+     "caphi": "ma3",
+     "gloss": "with",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "مَع",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "ma3"
+    },
+    {
+     "surface": "التاجر",
+     "root": "ت.ج.ر",
+     "lemma": "تَاجِر",
+     "form": "تَاجِر",
+     "caphi_raw": "t aa J i r",
+     "caphi": "taaJir",
+     "gloss": "merchant",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "2861",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2861",
+       "root": "ت.ج.ر",
+       "gloss": "merchant",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "2863",
+       "root": "ت.ج.ر",
+       "gloss": "merchant_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "2865",
+       "root": "ت.ج.ر",
+       "gloss": "sb_who_uses_religion_and_exploits_the_pe",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "66",
+       "root": "ء.ج.ر",
+       "gloss": "Hasanat_(Credit_for_good_deeds,_which_Al",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "11218",
+       "root": "ر.ج.ل",
+       "gloss": "foot",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "11236",
+       "root": "ر.ج.ل",
+       "gloss": "foot",
+       "analysis": "NOUN:FS"
+      }
+     ],
+     "caphi_urban": "taajir",
+     "vocalized": "التَّاجِر",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null
   },
   {
-   "ar": "صاروا يقعدوا مع بعض كل يوم.",
-   "en": "They began sitting together every day.",
+   "ar": "كان بيحكي عن المدن والأسواق والناس، والأسد بيسمع ومبسوط.",
+   "en": "He would talk about cities and markets and people, and the lion listened, pleased.",
    "p": 0,
    "words": [
     {
-     "surface": "صاروا",
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بيحكي",
+     "root": "ح.ك.ي",
+     "lemma": "حَكَى",
+     "form": "يِحْكِي",
+     "caphi_raw": "y i 7 K i",
+     "caphi": "yi7Ki",
+     "gloss": "talk;tell;recount",
+     "analysis": "VERB:I",
+     "maknuune_id": "6626",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6626",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "6631",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_(repeatedly)",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "6575",
+       "root": "ح.ك.ك",
+       "gloss": "scratch;itch",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "6576",
+       "root": "ح.ك.ك",
+       "gloss": "scratch;itch",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yi7ki",
+     "vocalized": "بِيِحْكِي",
+     "vocalized_from": "derived:verb"
+    },
+    {
+     "surface": "عن",
+     "root": "—",
+     "lemma": "عَن",
+     "form": "عَن",
+     "caphi_raw": "3an",
+     "caphi": "3an",
+     "gloss": "about, from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "عَن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "3an"
+    },
+    {
+     "surface": "المدن",
+     "root": "م.د.ن",
+     "lemma": "مَدِينِة",
+     "form": "مُدُن",
+     "caphi_raw": "m u d u n",
+     "caphi": "mudun",
+     "gloss": "city_[auto]",
+     "analysis": "NOUN:P",
+     "maknuune_id": "30352",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "mudun",
+     "vocalized": "المُدُن",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "والأسواق",
+     "root": "س.و.ق",
+     "lemma": "سُوق",
+     "form": "أَسْوَاق",
+     "caphi_raw": "2 a s w aa Q",
+     "caphi": "2aswaaQ",
+     "gloss": "shop_[auto]",
+     "analysis": "NOUN:P",
+     "maknuune_id": "15274",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "15274",
+       "root": "س.و.ق",
+       "gloss": "shop_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "15273",
+       "root": "س.و.ق",
+       "gloss": "driver",
+       "analysis": "NOUN:MS"
+      }
+     ],
+     "caphi_urban": "2aswaa2",
+     "vocalized": "والأَسْوَاق",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "والناس",
+     "root": "ن.و.س",
+     "lemma": "نَاس",
+     "form": "نَاس",
+     "caphi_raw": "n aa s",
+     "caphi": "naas",
+     "gloss": "people",
+     "analysis": "NOUN:P",
+     "maknuune_id": "33748",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "naas",
+     "vocalized": "والنَّاس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "والأسد",
+     "root": "ء.س.د",
+     "lemma": "أَسَد",
+     "form": "أَسَد",
+     "caphi_raw": "2 a s a d",
+     "caphi": "2asad",
+     "gloss": "lion",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "304",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "304",
+       "root": "ء.س.د",
+       "gloss": "lion",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "305",
+       "root": "ء.س.د",
+       "gloss": "lion_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "13946",
+       "root": "س.د.د",
+       "gloss": "damp",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "13948",
+       "root": "س.د.د",
+       "gloss": "damp_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "13953",
+       "root": "س.د.د",
+       "gloss": "quickly",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "13954",
+       "root": "س.د.د",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2asad",
+     "vocalized": "والأَسَد",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "بيسمع",
+     "root": "س.م.ع",
+     "lemma": "سِمِع",
+     "form": "يِسْمَع",
+     "caphi_raw": "y i s m a 3",
+     "caphi": "yisma3",
+     "gloss": "listen;hear",
+     "analysis": "VERB:I",
+     "maknuune_id": "14953",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14953",
+       "root": "س.م.ع",
+       "gloss": "listen;hear",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "14954",
+       "root": "س.م.ع",
+       "gloss": "make_sth_heard",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yisma3",
+     "vocalized": "بِيِسْمَع",
+     "vocalized_from": "derived:verb"
+    },
+    {
+     "surface": "ومبسوط",
+     "root": "ب.س.ط",
+     "lemma": "مَبْسُوط",
+     "form": "مَبْسُوط",
+     "caphi_raw": "m a b s. uu t.",
+     "caphi": "mabs.uut.",
+     "gloss": "happy",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "1452",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "mabs.uut.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "مرت الأيام، وصار الأسد وشتربة يقعدوا مع بعض كل يوم.",
+   "en": "The days passed, and the lion and Shatraba began sitting together every day.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "مرت",
+     "root": "م.ر.ر",
+     "lemma": "مُرّ",
+     "form": "مُرّ",
+     "caphi_raw": "m u r r",
+     "caphi": "murr",
+     "gloss": "bitter",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "30421",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30421",
+       "root": "م.ر.ر",
+       "gloss": "bitter",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "30438",
+       "root": "م.ر.ر",
+       "gloss": "pass_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "30446",
+       "root": "م.ر.ر",
+       "gloss": "pass_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "30442",
+       "root": "م.ر.ر",
+       "gloss": "pass",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "murr",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "الأيام",
+     "root": "ي.و.م",
+     "lemma": "يَوم",
+     "form": "أَيَّام",
+     "caphi_raw": "2 a y y aa m",
+     "caphi": "2ayyaam",
+     "gloss": "day_[auto]",
+     "analysis": "NOUN:P",
+     "maknuune_id": "36282",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ayyaam",
+     "vocalized": "الأَيَّام",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "وصار",
      "root": "ص.ي.ر",
      "lemma": "صَار",
      "form": "صَار",
@@ -189,7 +1163,75 @@
      "provenance": "maknuune:resolved",
      "caphi_urban": "s.aar",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "الأسد",
+     "root": "ء.س.د",
+     "lemma": "أَسَد",
+     "form": "أَسَد",
+     "caphi_raw": "2 a s a d",
+     "caphi": "2asad",
+     "gloss": "lion",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "304",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "304",
+       "root": "ء.س.د",
+       "gloss": "lion",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "305",
+       "root": "ء.س.د",
+       "gloss": "lion_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "13946",
+       "root": "س.د.د",
+       "gloss": "damp",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "13948",
+       "root": "س.د.د",
+       "gloss": "damp_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "13953",
+       "root": "س.د.د",
+       "gloss": "quickly",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "13954",
+       "root": "س.د.د",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2asad",
+     "vocalized": "الأَسَد",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "وشتربة",
+     "root": null,
+     "lemma": null,
+     "form": "وشتربة",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "وشتربة",
+     "vocalized_from": "lexicon:exact"
     },
     {
      "surface": "يقعدوا",
@@ -289,10 +1331,1114 @@
    "audio": null
   },
   {
-   "ar": "الثور كان عاقل وبيحكي حكي حلو.",
-   "en": "The ox was wise and spoke well.",
-   "p": 0,
+   "ar": "من الصبح للمسا، ما حدا بيقدر يفوت عليهم.",
+   "en": "From morning to evening, no one could go in to them.",
+   "p": 1,
    "words": [
+    {
+     "surface": "من",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "مِن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    },
+    {
+     "surface": "الصبح",
+     "root": "ص.ب.ح",
+     "lemma": "صُبِح",
+     "form": "صُبِح",
+     "caphi_raw": "s. u b i 7",
+     "caphi": "s.ubi7",
+     "gloss": "morning",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "17379",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.ubi7",
+     "vocalized": "الصُّبِح",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "للمسا",
+     "root": "م.س.ي",
+     "lemma": "مَسَا",
+     "form": "مَسَا",
+     "caphi_raw": "m a s a",
+     "caphi": "masa",
+     "gloss": "evening",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "30747",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30747",
+       "root": "م.س.ي",
+       "gloss": "evening",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "30750",
+       "root": "م.س.ي",
+       "gloss": "good_evening!",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30751",
+       "root": "م.س.ي",
+       "gloss": "in_the_evening",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "masa",
+     "vocalized": "المَسَا",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "ما",
+     "root": "NTWS",
+     "lemma": "مَا",
+     "form": "مَا",
+     "caphi_raw": "m aa",
+     "caphi": "maa",
+     "gloss": "who;that_(relative)",
+     "analysis": "PRON_REL",
+     "maknuune_id": "30118",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "maa",
+     "vocalized": "مَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "حدا",
+     "root": "ح.د.د",
+     "lemma": "حَدَا",
+     "form": "حَدَا",
+     "caphi_raw": "7 a d a",
+     "caphi": "7ada",
+     "gloss": "the_person_who_sings_folk_songs",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "5412",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "5412",
+       "root": "ح.د.د",
+       "gloss": "the_person_who_sings_folk_songs",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "35111",
+       "root": "و.ح.د",
+       "gloss": "someone;somebody",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "5418",
+       "root": "ح.د.د",
+       "gloss": "the_person_who_sings_folk_songs_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "35112",
+       "root": "و.ح.د",
+       "gloss": "someone;somebody_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "7ada",
+     "vocalized": "حَدَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بيقدر",
+     "root": "ق.د.ر",
+     "lemma": "قِدِر",
+     "form": "يِقْدَر",
+     "caphi_raw": "y i Q d a r",
+     "caphi": "yiQdar",
+     "gloss": "can;manage",
+     "analysis": "VERB:I",
+     "maknuune_id": "25336",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "25336",
+       "root": "ق.د.ر",
+       "gloss": "can;manage",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "25337",
+       "root": "ق.د.ر",
+       "gloss": "appreciate;destine;enable_or_make_sb_cap",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yi2dar",
+     "vocalized": "بِيِقْدَر",
+     "vocalized_from": "derived:verb"
+    },
+    {
+     "surface": "يفوت",
+     "root": "ف.و.ت",
+     "lemma": "فَات",
+     "form": "يفُوت",
+     "caphi_raw": "y f uu t",
+     "caphi": "yfuut",
+     "gloss": "enter;miss_sth_(sth_escapes_a_person)",
+     "analysis": "VERB:I",
+     "maknuune_id": "24857",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "24857",
+       "root": "ف.و.ت",
+       "gloss": "enter;miss_sth_(sth_escapes_a_person)",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "24858",
+       "root": "ف.و.ت",
+       "gloss": "make_sb_enter_(causative);miss_sth_(inte",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yfuut",
+     "vocalized": "يفُوت",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "عليهم",
+     "root": "—",
+     "lemma": "على",
+     "form": "على",
+     "caphi_raw": "3ala",
+     "caphi": "3ala",
+     "gloss": "on, at, upon",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "3ala"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "الوزرا القدام زعلوا، ودمنة زعل أكتر من الكل.",
+   "en": "The old ministers were upset, and Dimna was more upset than any of them.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "الوزرا",
+     "root": null,
+     "lemma": null,
+     "form": "الوزرا",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "الوزرا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "القدام",
+     "root": "ق.د.م",
+     "lemma": "قُدَّام",
+     "form": "قُدَّام",
+     "caphi_raw": "Q u d d aa m",
+     "caphi": "Quddaam",
+     "gloss": "in_front_of",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "25356",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "25356",
+       "root": "ق.د.م",
+       "gloss": "in_front_of",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "25358",
+       "root": "ق.د.م",
+       "gloss": "in_front_of",
+       "analysis": "NOUN:MS"
+      }
+     ],
+     "caphi_urban": "2uddaam",
+     "vocalized": "القُدَّام",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "زعلوا",
+     "root": "ز.ع.ل",
+     "lemma": "زَعَل",
+     "form": "زَعَل",
+     "caphi_raw": "z a 3 a l",
+     "caphi": "za3al",
+     "gloss": "sadness;anger",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "12901",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12901",
+       "root": "ز.ع.ل",
+       "gloss": "sadness;anger",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "12909",
+       "root": "ز.ع.ل",
+       "gloss": "make_sb_angry_with_wth_or_sb_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12914",
+       "root": "ز.ع.ل",
+       "gloss": "be_angry_with_sb;be_sad_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12915",
+       "root": "ز.ع.ل",
+       "gloss": "make_sb_angry_with_wth_or_sb_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12902",
+       "root": "ز.ع.ل",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "12903",
+       "root": "ز.ع.ل",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "za3al",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "ودمنة",
+     "root": "د.م.ن",
+     "lemma": "أَدْمَن",
+     "form": "يِدْمِن",
+     "caphi_raw": "y i d m i n",
+     "caphi": "yidmin",
+     "gloss": "be_addicted_to",
+     "analysis": "VERB:I",
+     "maknuune_id": "10286",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yidmin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "زعل",
+     "root": "ز.ع.ل",
+     "lemma": "زِعِل",
+     "form": "زِعِل",
+     "caphi_raw": "z i 3 i l",
+     "caphi": "zi3il",
+     "gloss": "be_angry_with_sb;be_sad_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "12914",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "zi3il",
+     "vocalized": "زِعِل",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "أكتر",
+     "root": "—",
+     "lemma": "أَكتَر",
+     "form": "أَكتَر",
+     "caphi_raw": "2aktar",
+     "caphi": "2aktar",
+     "gloss": "more",
+     "analysis": "ADJ_COMP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "أَكتَر",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "2aktar"
+    },
+    {
+     "surface": "من",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "مِن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    },
+    {
+     "surface": "الكل",
+     "root": "ك.ل.ل",
+     "lemma": "كُلّ",
+     "form": "كُلّ",
+     "caphi_raw": "k u l l",
+     "caphi": "kull",
+     "gloss": "the_whole_thing/every",
+     "analysis": "NOUN_QUANT:MS",
+     "maknuune_id": "28275",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "kull",
+     "vocalized": "الكُلّ",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "كان يوقف عند الباب ويسمع ضحكهم من جوا.",
+   "en": "He would stand at the gate and hear their laughter from inside.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "يوقف",
+     "root": "و.ق.ف",
+     "lemma": "وَقَّف",
+     "form": "يوَقِّف",
+     "caphi_raw": "y w a Q Q i f",
+     "caphi": "ywaQQif",
+     "gloss": "stand;stop",
+     "analysis": "VERB:I",
+     "maknuune_id": "35925",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "35925",
+       "root": "و.ق.ف",
+       "gloss": "stand;stop",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "35926",
+       "root": "و.ق.ف",
+       "gloss": "stand",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "ywa22if",
+     "vocalized": "يوَقِّف",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "عند",
+     "root": "ع.ن.د",
+     "lemma": "عِنْد",
+     "form": "عِنْد",
+     "caphi_raw": "3 i n d",
+     "caphi": "3ind",
+     "gloss": "at",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "21887",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "3ind",
+     "vocalized": "عِنْد",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "الباب",
+     "root": "ب.و.ب",
+     "lemma": "بَاب",
+     "form": "بَاب",
+     "caphi_raw": "b aa b",
+     "caphi": "baab",
+     "gloss": "door",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "2553",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2553",
+       "root": "ب.و.ب",
+       "gloss": "door",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "2554",
+       "root": "ب.و.ب",
+       "gloss": "door_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "2555",
+       "root": "ب.و.ب",
+       "gloss": "door_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "2556",
+       "root": "ب.و.ب",
+       "gloss": "door_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "2557",
+       "root": "ب.و.ب",
+       "gloss": "wealth;livelihood",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "2558",
+       "root": "ب.و.ب",
+       "gloss": "happiness",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "baab",
+     "vocalized": "البَاب",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "ويسمع",
+     "root": "س.م.ع",
+     "lemma": "سِمِع",
+     "form": "يِسْمَع",
+     "caphi_raw": "y i s m a 3",
+     "caphi": "yisma3",
+     "gloss": "listen;hear",
+     "analysis": "VERB:I",
+     "maknuune_id": "14953",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14953",
+       "root": "س.م.ع",
+       "gloss": "listen;hear",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "14954",
+       "root": "س.م.ع",
+       "gloss": "make_sth_heard",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yisma3",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "ضحكهم",
+     "root": "ض.ح.ك",
+     "lemma": "ضِحِك",
+     "form": "ضِحِك",
+     "caphi_raw": "D. e 7 i k",
+     "caphi": "D.e7ik",
+     "gloss": "laughing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "18368",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "18368",
+       "root": "ض.ح.ك",
+       "gloss": "laughing",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "18378",
+       "root": "ض.ح.ك",
+       "gloss": "make_sb_laugh_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18383",
+       "root": "ض.ح.ك",
+       "gloss": "laugh_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18384",
+       "root": "ض.ح.ك",
+       "gloss": "make_sb_laugh_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18371",
+       "root": "ض.ح.ك",
+       "gloss": "to_burst_into_laughter",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "18372",
+       "root": "ض.ح.ك",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "D.e7ik",
+     "vocalized": "ضِحِكهم",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "من",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "مِن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    },
+    {
+     "surface": "جوا",
+     "root": "ج.و.و",
+     "lemma": "جُوَّا",
+     "form": "جُوَّا",
+     "caphi_raw": "J u w w a",
+     "caphi": "Juwwa",
+     "gloss": "in",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "4950",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "juwwa",
+     "vocalized": "جُوَّا",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "نفس الباب اللي كان واقف عنده من الأول.",
+   "en": "The same gate he had stood at from the beginning.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "نفس",
+     "root": "ن.ف.س",
+     "lemma": "نَفْس",
+     "form": "نَفْس",
+     "caphi_raw": "n a f s",
+     "caphi": "nafs",
+     "gloss": "soul",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "32973",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "nafs",
+     "vocalized": "نَفْس",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "الباب",
+     "root": "ب.و.ب",
+     "lemma": "بَاب",
+     "form": "بَاب",
+     "caphi_raw": "b aa b",
+     "caphi": "baab",
+     "gloss": "door",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "2553",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2553",
+       "root": "ب.و.ب",
+       "gloss": "door",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "2554",
+       "root": "ب.و.ب",
+       "gloss": "door_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "2555",
+       "root": "ب.و.ب",
+       "gloss": "door_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "2556",
+       "root": "ب.و.ب",
+       "gloss": "door_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "2557",
+       "root": "ب.و.ب",
+       "gloss": "wealth;livelihood",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "2558",
+       "root": "ب.و.ب",
+       "gloss": "happiness",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "baab",
+     "vocalized": "البَاب",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "اللي",
+     "root": "—",
+     "lemma": "اللي",
+     "form": "اللي",
+     "caphi_raw": "2illi",
+     "caphi": "2illi",
+     "gloss": "who, which, that",
+     "analysis": "PRON_REL",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "اللي",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "2illi"
+    },
+    {
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "واقف",
+     "root": "و.ق.ف",
+     "lemma": "وَاقِف",
+     "form": "وَاقِف",
+     "caphi_raw": "w aa Q u f",
+     "caphi": "waaQuf",
+     "gloss": "standing",
+     "analysis": "NOUN_ACT:MS",
+     "maknuune_id": "35913",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "waa2uf",
+     "vocalized": "وَاقِف",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "عنده",
+     "root": "ع.ن.د",
+     "lemma": "عِنْد",
+     "form": "عِنْد",
+     "caphi_raw": "3 i n d",
+     "caphi": "3ind",
+     "gloss": "at",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "21887",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21887",
+       "root": "ع.ن.د",
+       "gloss": "at",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "21893",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "21897",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "21890",
+       "root": "ع.ن.د",
+       "gloss": "does_not_have",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "21891",
+       "root": "ع.ن.د",
+       "gloss": "at ours",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "21895",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "3ind",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "من",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "مِن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    },
+    {
+     "surface": "الأول",
+     "root": "ء.و.ل",
+     "lemma": "أَوَّل",
+     "form": "أَوَّل",
+     "caphi_raw": "2 a w w a l",
+     "caphi": "2awwal",
+     "gloss": "first;early",
+     "analysis": "ADJ_NUM:S",
+     "maknuune_id": "663",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "663",
+       "root": "ء.و.ل",
+       "gloss": "first;early",
+       "analysis": "ADJ_NUM:S"
+      },
+      {
+       "id": "662",
+       "root": "ء.و.ل",
+       "gloss": "first;early_[auto]",
+       "analysis": "ADJ_NUM:P"
+      },
+      {
+       "id": "664",
+       "root": "ء.و.ل",
+       "gloss": "everything;all_sb's_wealth",
+       "analysis": "ADJ_NUM:PHRASE"
+      },
+      {
+       "id": "36050",
+       "root": "و.ل.ل",
+       "gloss": "Oh!_(surprise)",
+       "analysis": "INTERJ"
+      },
+      {
+       "id": "36051",
+       "root": "و.ل.ل",
+       "gloss": "Oh!_(surprise)",
+       "analysis": "INTERJ:PHRASE"
+      }
+     ],
+     "caphi_urban": "2awwal",
+     "vocalized": "الأَوَّل",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "راح دمنة عند أخوه وقال: شفت شو صار؟",
+   "en": "Dimna went to his brother and said: did you see what happened?",
+   "p": 2,
+   "words": [
+    {
+     "surface": "راح",
+     "root": "ر.و.ح",
+     "lemma": "رَاح",
+     "form": "رَاح",
+     "caphi_raw": "r aa 7",
+     "caphi": "raa7",
+     "gloss": "will",
+     "analysis": "PART_FUT",
+     "maknuune_id": "12342",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12342",
+       "root": "ر.و.ح",
+       "gloss": "will",
+       "analysis": "PART_FUT"
+      },
+      {
+       "id": "12382",
+       "root": "ر.و.ح",
+       "gloss": "nearly;it_was_about_to",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "12399",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12383",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12390",
+       "root": "ر.و.ح",
+       "gloss": "go",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "12379",
+       "root": "ر.و.ح",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "raa7",
+     "vocalized": "رَاح",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "دمنة",
+     "root": "د.م.ن",
+     "lemma": "أَدْمَن",
+     "form": "يِدْمِن",
+     "caphi_raw": "y i d m i n",
+     "caphi": "yidmin",
+     "gloss": "be_addicted_to",
+     "analysis": "VERB:I",
+     "maknuune_id": "10286",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yidmin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "عند",
+     "root": "ع.ن.د",
+     "lemma": "عِنْد",
+     "form": "عِنْد",
+     "caphi_raw": "3 i n d",
+     "caphi": "3ind",
+     "gloss": "at",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "21887",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "3ind",
+     "vocalized": "عِنْد",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "أخوه",
+     "root": "ء.خ.و",
+     "lemma": "أَخ",
+     "form": "إِخْوِة",
+     "caphi_raw": "2 i kh w e",
+     "caphi": "2ikhwe",
+     "gloss": "siblings",
+     "analysis": "NOUN:P",
+     "maknuune_id": "164",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ikhwe",
+     "vocalized": "أِخْوِه",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "وقال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "شفت",
+     "root": "ش.ف.ف",
+     "lemma": "شَفّ",
+     "form": "شِفّ",
+     "caphi_raw": "sh i f f",
+     "caphi": "shiff",
+     "gloss": "run_over_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "16524",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "16524",
+       "root": "ش.ف.ف",
+       "gloss": "run_over_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "16528",
+       "root": "ش.ف.ف",
+       "gloss": "run_over_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "16526",
+       "root": "ش.ف.ف",
+       "gloss": "run_over",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "shiff",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "شو",
+     "root": "ش.و",
+     "lemma": "شُو",
+     "form": "شُو",
+     "caphi_raw": "sh uu",
+     "caphi": "shuu",
+     "gloss": "what",
+     "analysis": "PRON_REL",
+     "maknuune_id": "17123",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "shuu",
+     "vocalized": "شُو",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "صار",
+     "root": "ص.ي.ر",
+     "lemma": "صَار",
+     "form": "يصِير",
+     "caphi_raw": "y s. ii r",
+     "caphi": "ys.iir",
+     "gloss": "become",
+     "analysis": "VERB:I",
+     "maknuune_id": "18259",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "ys.iir",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "أنا جبت الثور بإيدي، وهلق الثور أقرب للملك مني.",
+   "en": "I brought the ox with my own hands, and now the ox is closer to the king than I am.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "أنا",
+     "root": "NTWS",
+     "lemma": "أَنَا",
+     "form": "أَنَا",
+     "caphi_raw": "2 a n a",
+     "caphi": "2ana",
+     "gloss": "I;me",
+     "analysis": "PRON:1S",
+     "maknuune_id": "568",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ana",
+     "vocalized": "أَنَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "جبت",
+     "root": null,
+     "lemma": null,
+     "form": "جبت",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "جبت",
+     "vocalized_from": "lexicon:exact"
+    },
     {
      "surface": "الثور",
      "root": "ث.و.ر",
@@ -336,326 +2482,20 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "كان",
-     "root": "ك.و.ن",
-     "lemma": "كَان",
-     "form": "كَان",
-     "caphi_raw": "k aa n",
-     "caphi": "kaan",
-     "gloss": "be;become_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "28578",
-     "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "kaan",
-     "vocalized": "كَان",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "عاقل",
-     "root": "ع.ق.ل",
-     "lemma": "عَاقِل",
-     "form": "عَاقِل",
-     "caphi_raw": "3 aa Q i l",
-     "caphi": "3aaQil",
-     "gloss": "sane;wise;reasonable",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "21389",
+     "surface": "بإيدي",
+     "root": "ء.ي.د",
+     "lemma": "أَيَّد",
+     "form": "يؤيِّد",
+     "caphi_raw": "y 2 a y y i d",
+     "caphi": "y2ayyid",
+     "gloss": "support;assist",
+     "analysis": "VERB:I",
+     "maknuune_id": "684",
      "village": null,
      "provenance": "maknuune:unique",
-     "caphi_urban": "3aa2il",
-     "vocalized": "عَاقِل",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "وبيحكي",
-     "root": "ح.ك.ي",
-     "lemma": "حَكَى",
-     "form": "يِحْكِي",
-     "caphi_raw": "y i 7 K i",
-     "caphi": "yi7Ki",
-     "gloss": "talk;tell;recount",
-     "analysis": "VERB:I",
-     "maknuune_id": "6626",
-     "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "6626",
-       "root": "ح.ك.ي",
-       "gloss": "talk;tell;recount",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "6631",
-       "root": "ح.ك.ي",
-       "gloss": "talk;tell;recount_(repeatedly)",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "6575",
-       "root": "ح.ك.ك",
-       "gloss": "scratch;itch",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "6576",
-       "root": "ح.ك.ك",
-       "gloss": "scratch;itch",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "yi7ki",
-     "vocalized": "وبِيِحْكِي",
-     "vocalized_from": "derived:verb"
-    },
-    {
-     "surface": "حكي",
-     "root": "ح.ك.ي",
-     "lemma": "حَكِي",
-     "form": "حَكِي",
-     "caphi_raw": "7 a k i",
-     "caphi": "7aki",
-     "gloss": "speech",
-     "analysis": "NOUN:MS",
-     "maknuune_id": "6618",
-     "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "6618",
-       "root": "ح.ك.ي",
-       "gloss": "speech",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "6628",
-       "root": "ح.ك.ي",
-       "gloss": "talk;tell;recount_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "6630",
-       "root": "ح.ك.ي",
-       "gloss": "talk;tell;recount_(repeatedly)",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "6632",
-       "root": "ح.ك.ي",
-       "gloss": "talk;tell;recount_(repeatedly)",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "6620",
-       "root": "ح.ك.ي",
-       "gloss": "pontificate_on_sth",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "6621",
-       "root": "ح.ك.ي",
-       "gloss": "I_forgot_to_mention_sth_about_X",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
-     "caphi_urban": "7aki",
-     "vocalized": "حَكِي",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "حلو",
-     "root": "ح.ل.ي",
-     "lemma": "حِلو",
-     "form": "حِلو",
-     "caphi_raw": "7 i l uu",
-     "caphi": "7iluu",
-     "gloss": "sweet",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "6842",
-     "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "6842",
-       "root": "ح.ل.ي",
-       "gloss": "sweet",
-       "analysis": "ADJ:MS"
-      },
-      {
-       "id": "6846",
-       "root": "ح.ل.ي",
-       "gloss": "Nice!",
-       "analysis": "INTERJ"
-      },
-      {
-       "id": "6849",
-       "root": "ح.ل.ي",
-       "gloss": "dessert",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "6856",
-       "root": "ح.ل.ي",
-       "gloss": "good_omen;glad_tidings",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "6857",
-       "root": "ح.ل.ي",
-       "gloss": "friendliness/_approachability",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "6858",
-       "root": "ح.ل.ي",
-       "gloss": "sweet_-and-sour_candy_that_looks_like_th",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
-     "caphi_urban": "7iluu",
-     "vocalized": "حِلو",
-     "vocalized_from": "lexicon:exact"
-    }
-   ],
-   "audio": null
-  },
-  {
-   "ar": "دمنة زعل كتير من هالشغلة.",
-   "en": "Dimna became very unhappy about this.",
-   "p": 1,
-   "words": [
-    {
-     "surface": "دمنة",
-     "root": "د.م.ن",
-     "lemma": "أَدْمَن",
-     "form": "يِدْمِن",
-     "caphi_raw": "y i d m i n",
-     "caphi": "yidmin",
-     "gloss": "be_addicted_to",
-     "analysis": "VERB:I",
-     "maknuune_id": "10286",
-     "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "yidmin",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
-    },
-    {
-     "surface": "زعل",
-     "root": "ز.ع.ل",
-     "lemma": "زِعِل",
-     "form": "زِعِل",
-     "caphi_raw": "z i 3 i l",
-     "caphi": "zi3il",
-     "gloss": "be_angry_with_sb;be_sad_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "12914",
-     "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "zi3il",
-     "vocalized": "زِعِل",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "كتير",
-     "root": "ك.ث.ر",
-     "lemma": "كْثِير",
-     "form": "كْثِير",
-     "caphi_raw": "K T ii r",
-     "caphi": "KTiir",
-     "gloss": "a_lot_of;many",
-     "analysis": "ADJ",
-     "maknuune_id": "27400",
-     "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "ktiir",
+     "caphi_urban": "y2ayyid",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
-    },
-    {
-     "surface": "من",
-     "root": "—",
-     "lemma": "مِن",
-     "form": "مِن",
-     "caphi_raw": "min",
-     "caphi": "min",
-     "gloss": "from",
-     "analysis": "PREP",
-     "maknuune_id": null,
-     "village": null,
-     "vocalized": "مِن",
-     "vocalized_from": "curated",
-     "provenance": "curated:function-word",
-     "caphi_urban": "min"
-    },
-    {
-     "surface": "هالشغلة",
-     "root": null,
-     "lemma": null,
-     "form": "هالشغلة",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "هالشغلة",
-     "vocalized_from": "lexicon:exact"
-    }
-   ],
-   "audio": null
-  },
-  {
-   "ar": "قال: أنا جبته وهلق صار أقرب مني.",
-   "en": "He said: I brought him and now he is closer than me.",
-   "p": 1,
-   "words": [
-    {
-     "surface": "قال",
-     "root": "ق.و.ل",
-     "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
-     "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
-     "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "2aal",
-     "vocalized": "قَال",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "أنا",
-     "root": "NTWS",
-     "lemma": "أَنَا",
-     "form": "أَنَا",
-     "caphi_raw": "2 a n a",
-     "caphi": "2ana",
-     "gloss": "I;me",
-     "analysis": "PRON:1S",
-     "maknuune_id": "568",
-     "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "2ana",
-     "vocalized": "أَنَا",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "جبته",
-     "root": null,
-     "lemma": null,
-     "form": "جبته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جبته",
-     "vocalized_from": "lexicon:exact"
     },
     {
      "surface": "وهلق",
@@ -674,20 +2514,46 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
-     "surface": "صار",
-     "root": "ص.ي.ر",
-     "lemma": "صَار",
-     "form": "يصِير",
-     "caphi_raw": "y s. ii r",
-     "caphi": "ys.iir",
-     "gloss": "become",
-     "analysis": "VERB:I",
-     "maknuune_id": "18259",
+     "surface": "الثور",
+     "root": "ث.و.ر",
+     "lemma": "ثَور",
+     "form": "ثَور",
+     "caphi_raw": "T oo r",
+     "caphi": "Toor",
+     "gloss": "ox",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "3487",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "ys.iir",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-alignment"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3487",
+       "root": "ث.و.ر",
+       "gloss": "ox",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "3488",
+       "root": "ث.و.ر",
+       "gloss": "ox_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "3489",
+       "root": "ث.و.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "3490",
+       "root": "ث.و.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "toor",
+     "vocalized": "الثَّور",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "أقرب",
@@ -704,6 +2570,60 @@
      "caphi_urban": "2a2rab",
      "vocalized": "أَقْرَب",
      "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "للملك",
+     "root": "م.ل.ك",
+     "lemma": "مَلِك",
+     "form": "مَلِك",
+     "caphi_raw": "m a l i k",
+     "caphi": "malik",
+     "gloss": "king",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "31157",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "31157",
+       "root": "م.ل.ك",
+       "gloss": "king",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "31170",
+       "root": "م.ل.ك",
+       "gloss": "possess;own;get_married_or_engaged_[auto",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "31160",
+       "root": "م.ل.ك",
+       "gloss": "king_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "31163",
+       "root": "م.ل.ك",
+       "gloss": "the_lion",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "31164",
+       "root": "م.ل.ك",
+       "gloss": "possess;own;get_married_or_engaged_[auto",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "31167",
+       "root": "م.ل.ك",
+       "gloss": "possess;own;get_married_or_engaged",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "malik",
+     "vocalized": "المَلِك",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "مني",
@@ -725,8 +2645,94 @@
    "audio": null
   },
   {
-   "ar": "قال له كليلة: إنت عملتها بإيدك.",
-   "en": "Kalila said to him: you did this with your own hand.",
+   "ar": "كان الملك يسألني، وهلق بيسأله.",
+   "en": "The king used to ask me, and now he asks him.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "الملك",
+     "root": "م.ل.ك",
+     "lemma": "مَلِك",
+     "form": "مَلِك",
+     "caphi_raw": "m a l i k",
+     "caphi": "malik",
+     "gloss": "king",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "31157",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "malik",
+     "vocalized": "المَلِك",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "يسألني",
+     "root": null,
+     "lemma": null,
+     "form": "يسألني",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "يسألني",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "وهلق",
+     "root": "NTWS",
+     "lemma": "هَلَّق",
+     "form": "هَلَّق",
+     "caphi_raw": "h a l l a q||2",
+     "caphi": "hallaq||2",
+     "gloss": "now",
+     "analysis": "ADV",
+     "maknuune_id": "34542",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "hallaq",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "بيسأله",
+     "root": "س.ء.ل",
+     "lemma": "سَأَل",
+     "form": "يِسْأَل",
+     "caphi_raw": "y i s 2 a l",
+     "caphi": "yis2al",
+     "gloss": "ask;inquire",
+     "analysis": "VERB:I",
+     "maknuune_id": "13501",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yis2al",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال كليلة: ومين قال لك تجيبه؟",
+   "en": "Kalila said: and who told you to bring him?",
    "p": 2,
    "words": [
     {
@@ -744,22 +2750,6 @@
      "caphi_urban": "2aal",
      "vocalized": "قَال",
      "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "له",
-     "root": "—",
-     "lemma": "لُه",
-     "form": "لُه",
-     "caphi_raw": "2ilo",
-     "caphi": "2ilo",
-     "gloss": "to him, for him",
-     "analysis": "PREP",
-     "maknuune_id": null,
-     "village": null,
-     "vocalized": "لُه",
-     "vocalized_from": "curated",
-     "provenance": "curated:story-word",
-     "caphi_urban": "2ilo"
     },
     {
      "surface": "كليلة",
@@ -815,6 +2805,152 @@
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
+    {
+     "surface": "ومين",
+     "root": "م.ي.ن",
+     "lemma": "مِين",
+     "form": "مِين",
+     "caphi_raw": "m ii n",
+     "caphi": "miin",
+     "gloss": "who?",
+     "analysis": "PRON_INTERROG",
+     "maknuune_id": "31534",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "31534",
+       "root": "م.ي.ن",
+       "gloss": "who?",
+       "analysis": "PRON_INTERROG"
+      },
+      {
+       "id": "31535",
+       "root": "م.ي.ن",
+       "gloss": "who",
+       "analysis": "PRON_REL"
+      },
+      {
+       "id": "473",
+       "root": "ء.ل.م",
+       "gloss": "pain",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "475",
+       "root": "ء.ل.م",
+       "gloss": "hurt_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "477",
+       "root": "ء.ل.م",
+       "gloss": "hurt_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "29807",
+       "root": "ل.م.م",
+       "gloss": "familiarize_oneself",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "miin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "قال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "لك",
+     "root": null,
+     "lemma": null,
+     "form": "لك",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "لك",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "تجيبه",
+     "root": "ج.ي.ب",
+     "lemma": "جَيبِة",
+     "form": "جَيبِة",
+     "caphi_raw": "J ee b e",
+     "caphi": "Jeebe",
+     "gloss": "pocket",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "4971",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "4971",
+       "root": "ج.ي.ب",
+       "gloss": "pocket",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "4969",
+       "root": "ج.ي.ب",
+       "gloss": "pocket_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "4970",
+       "root": "ج.ي.ب",
+       "gloss": "pocket_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "4980",
+       "root": "ج.ي.ب",
+       "gloss": "It_is_an_expression_that_means_tha_sb_ha",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "4972",
+       "root": "ج.ي.ب",
+       "gloss": "bringing",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "4973",
+       "root": "ج.ي.ب",
+       "gloss": "pocket",
+       "analysis": "NOUN:MS"
+      }
+     ],
+     "caphi_urban": "jeebe",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "إنت عملتها بإيدك، فليش زعلان من غيرك؟",
+   "en": "You did it with your own hand, so why are you angry at someone else?",
+   "p": 2,
+   "words": [
     {
      "surface": "إنت",
      "root": "NTWS",
@@ -900,14 +3036,142 @@
      "caphi_urban": "ydikk",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "فليش",
+     "root": "NTWS",
+     "lemma": "لَيش",
+     "form": "لَيش",
+     "caphi_raw": "l ee sh",
+     "caphi": "leesh",
+     "gloss": "why?",
+     "analysis": "ADV_INTERROG",
+     "maknuune_id": "30063",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30063",
+       "root": "NTWS",
+       "gloss": "why?",
+       "analysis": "ADV_INTERROG"
+      },
+      {
+       "id": "30066",
+       "root": "NTWS",
+       "gloss": "why",
+       "analysis": "ADV_REL"
+      },
+      {
+       "id": "30064",
+       "root": "NTWS",
+       "gloss": "Why?",
+       "analysis": "ADV_INTERROG:PHRASE"
+      },
+      {
+       "id": "30065",
+       "root": "NTWS",
+       "gloss": "Why?",
+       "analysis": "ADV_INTERROG:PHRASE"
+      }
+     ],
+     "caphi_urban": "leesh",
+     "vocalized": "فَلَيش",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "زعلان",
+     "root": "ز.ع.ل",
+     "lemma": "زَعْلَان",
+     "form": "زَعْلَان",
+     "caphi_raw": "z a 3 l aa n",
+     "caphi": "za3laan",
+     "gloss": "angry;sad",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "12899",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "za3laan",
+     "vocalized": "زَعْلَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "من",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "مِن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    },
+    {
+     "surface": "غيرك",
+     "root": "غ.ي.ر",
+     "lemma": "غَيَّر",
+     "form": "غَيِّر",
+     "caphi_raw": "gh a y y i r",
+     "caphi": "ghayyir",
+     "gloss": "change_sb_(transitive)_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "23086",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23086",
+       "root": "غ.ي.ر",
+       "gloss": "change_sb_(transitive)_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "23088",
+       "root": "غ.ي.ر",
+       "gloss": "except_for",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "23093",
+       "root": "غ.ي.ر",
+       "gloss": "change_sb_(transitive)_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "23084",
+       "root": "غ.ي.ر",
+       "gloss": "other_things",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "23090",
+       "root": "غ.ي.ر",
+       "gloss": "change_sb_(transitive)",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "23080",
+       "root": "غ.ي.ر",
+       "gloss": "jealousy",
+       "analysis": "NOUN:FS"
+      }
+     ],
+     "caphi_urban": "ghayyir",
+     "vocalized": "غَيِّرك",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null
   },
   {
-   "ar": "قال دمنة: واللي عملته بقدر أفكه.",
-   "en": "Dimna said: and what I made I can undo.",
-   "p": 2,
+   "ar": "قال دمنة: صح، أنا عملتها.",
+   "en": "Dimna said: true, I did it.",
+   "p": 3,
    "words": [
     {
      "surface": "قال",
@@ -941,6 +3205,98 @@
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
+    {
+     "surface": "صح",
+     "root": "ص.ح.ح",
+     "lemma": "صَحّ",
+     "form": "صَحّ",
+     "caphi_raw": "s. a 7 7",
+     "caphi": "s.a77",
+     "gloss": "check_mark;correct",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "17499",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17499",
+       "root": "ص.ح.ح",
+       "gloss": "check_mark;correct",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "17507",
+       "root": "ص.ح.ح",
+       "gloss": "recover_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "17511",
+       "root": "ص.ح.ح",
+       "gloss": "recover_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "17500",
+       "root": "ص.ح.ح",
+       "gloss": "It_is_an_expression_that_means_that_\"May",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "17502",
+       "root": "ص.ح.ح",
+       "gloss": "be_given_sth_advantageously;sb_is_entitl",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "17508",
+       "root": "ص.ح.ح",
+       "gloss": "recover",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "s.a77",
+     "vocalized": "صَحّ",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "أنا",
+     "root": "NTWS",
+     "lemma": "أَنَا",
+     "form": "أَنَا",
+     "caphi_raw": "2 a n a",
+     "caphi": "2ana",
+     "gloss": "I;me",
+     "analysis": "PRON:1S",
+     "maknuune_id": "568",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ana",
+     "vocalized": "أَنَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "عملتها",
+     "root": null,
+     "lemma": null,
+     "form": "عملتها",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "عملتها",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "واللي عملته بقدر أفكه.",
+   "en": "And what I made, I can undo.",
+   "p": 3,
+   "words": [
     {
      "surface": "واللي",
      "root": "—",
@@ -1054,6 +3410,1400 @@
      "caphi_urban": "fakke",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال كليلة: شو قصدك؟",
+   "en": "Kalila said: what do you mean?",
+   "p": 3,
+   "words": [
+    {
+     "surface": "قال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "كليلة",
+     "root": "ك.ل.ل",
+     "lemma": "كِلِّيل",
+     "form": "كِلِّيل",
+     "caphi_raw": "t sh i l l ii l",
+     "caphi": "tshilliil",
+     "gloss": "an_old_house_wall",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "28276",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "28276",
+       "root": "ك.ل.ل",
+       "gloss": "an_old_house_wall",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "30088",
+       "root": "ل.ي.ل",
+       "gloss": "night",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30091",
+       "root": "ل.ي.ل",
+       "gloss": "night_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "30092",
+       "root": "ل.ي.ل",
+       "gloss": "at_midnight",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30089",
+       "root": "ل.ي.ل",
+       "gloss": "night_time",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "30093",
+       "root": "ل.ي.ل",
+       "gloss": "night_fall",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "tshilliil",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "شو",
+     "root": "ش.و",
+     "lemma": "شُو",
+     "form": "شُو",
+     "caphi_raw": "sh uu",
+     "caphi": "shuu",
+     "gloss": "what",
+     "analysis": "PRON_REL",
+     "maknuune_id": "17123",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "shuu",
+     "vocalized": "شُو",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "قصدك",
+     "root": "ق.ص.د",
+     "lemma": "قَصِد",
+     "form": "قَصِد",
+     "caphi_raw": "Q a s. i d",
+     "caphi": "Qas.id",
+     "gloss": "intention;purpose",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26074",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26074",
+       "root": "ق.ص.د",
+       "gloss": "intention;purpose",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26089",
+       "root": "ق.ص.د",
+       "gloss": "mean;approach_sb_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26081",
+       "root": "ق.ص.د",
+       "gloss": "mean;approach_sb_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "26085",
+       "root": "ق.ص.د",
+       "gloss": "mean;approach_sb",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "2as.id",
+     "vocalized": "قَصِدك",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال دمنة: بدي أفرق بين الأسد والثور.",
+   "en": "Dimna said: I want to separate the lion and the ox.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "قال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "دمنة",
+     "root": "د.م.ن",
+     "lemma": "أَدْمَن",
+     "form": "يِدْمِن",
+     "caphi_raw": "y i d m i n",
+     "caphi": "yidmin",
+     "gloss": "be_addicted_to",
+     "analysis": "VERB:I",
+     "maknuune_id": "10286",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yidmin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "بدي",
+     "root": "ب.د.د",
+     "lemma": "بِدّ",
+     "form": "بِدِّي",
+     "caphi_raw": "b i d d i",
+     "caphi": "biddi",
+     "gloss": "I_want",
+     "analysis": "NOUN:PHRASE",
+     "maknuune_id": "965",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "965",
+       "root": "ب.د.د",
+       "gloss": "I_want",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "1031",
+       "root": "ب.د.ي",
+       "gloss": "be_altruistic_towards_sb_and_prioritize_",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "1033",
+       "root": "ب.د.ي",
+       "gloss": "be_altruistic_towards_sb_and_prioritize_",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "1032",
+       "root": "ب.د.ي",
+       "gloss": "be_altruistic_towards_sb_and_prioritize_",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "biddi",
+     "vocalized": "بِدِّي",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "أفرق",
+     "root": "ف.ر.ق",
+     "lemma": "فَرَق",
+     "form": "اِفْرُق",
+     "caphi_raw": "2 i f r u Q",
+     "caphi": "2ifruQ",
+     "gloss": "split;divide;make_a_difference_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "23737",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23737",
+       "root": "ف.ر.ق",
+       "gloss": "split;divide;make_a_difference_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "23738",
+       "root": "ف.ر.ق",
+       "gloss": "split;divide;make_a_difference_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "23742",
+       "root": "ف.ر.ق",
+       "gloss": "split;divide;make_a_difference;recognize",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "2ifru2",
+     "vocalized": "أِفْرُق",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "بين",
+     "root": "—",
+     "lemma": "بين",
+     "form": "بين",
+     "caphi_raw": "been",
+     "caphi": "been",
+     "gloss": "between",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "بين",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "been"
+    },
+    {
+     "surface": "الأسد",
+     "root": "ء.س.د",
+     "lemma": "أَسَد",
+     "form": "أَسَد",
+     "caphi_raw": "2 a s a d",
+     "caphi": "2asad",
+     "gloss": "lion",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "304",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "304",
+       "root": "ء.س.د",
+       "gloss": "lion",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "305",
+       "root": "ء.س.د",
+       "gloss": "lion_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "13946",
+       "root": "س.د.د",
+       "gloss": "damp",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "13948",
+       "root": "س.د.د",
+       "gloss": "damp_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "13953",
+       "root": "س.د.د",
+       "gloss": "quickly",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "13954",
+       "root": "س.د.د",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2asad",
+     "vocalized": "الأَسَد",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "والثور",
+     "root": "ث.و.ر",
+     "lemma": "ثَور",
+     "form": "ثَور",
+     "caphi_raw": "T oo r",
+     "caphi": "Toor",
+     "gloss": "ox",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "3487",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3487",
+       "root": "ث.و.ر",
+       "gloss": "ox",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "3488",
+       "root": "ث.و.ر",
+       "gloss": "ox_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "3489",
+       "root": "ث.و.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "3490",
+       "root": "ث.و.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "toor",
+     "vocalized": "والثَّور",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "مش بالقوة، أنا أضعف منهم.",
+   "en": "Not by force; I am weaker than both.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "مش",
+     "root": "NTWS",
+     "lemma": "مِش",
+     "form": "مِش",
+     "caphi_raw": "m i sh",
+     "caphi": "mish",
+     "gloss": "not",
+     "analysis": "PART_NEG",
+     "maknuune_id": "30759",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "mish",
+     "vocalized": "مِش",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بالقوة",
+     "root": "ق.و.ي",
+     "lemma": "قُوِّة",
+     "form": "قُوِّة",
+     "caphi_raw": "Q u w w e",
+     "caphi": "Quwwe",
+     "gloss": "power;strength",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "27054",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2uwwe",
+     "vocalized": "بِالقُوِّة",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "أنا",
+     "root": "NTWS",
+     "lemma": "أَنَا",
+     "form": "أَنَا",
+     "caphi_raw": "2 a n a",
+     "caphi": "2ana",
+     "gloss": "I;me",
+     "analysis": "PRON:1S",
+     "maknuune_id": "568",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ana",
+     "vocalized": "أَنَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "أضعف",
+     "root": "ض.ع.ف",
+     "lemma": "ضِعِف",
+     "form": "اِضْعَف",
+     "caphi_raw": "2 i D. 3 a f",
+     "caphi": "2iD.3af",
+     "gloss": "become_weak;lose_weight_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "18501",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2iD.3af",
+     "vocalized": "أِضْعَف",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "منهم",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "بالكلام.",
+   "en": "By words.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "بالكلام",
+     "root": "ك.ل.م",
+     "lemma": "كَلَام",
+     "form": "كَلَام",
+     "caphi_raw": "k a l aa m",
+     "caphi": "kalaam",
+     "gloss": "talk",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "28283",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "28283",
+       "root": "ك.ل.م",
+       "gloss": "talk",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "28289",
+       "root": "ك.ل.م",
+       "gloss": "want_to_discuss_sth_important_with_sb_br",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "kalaam",
+     "vocalized": "بِالكَلَام",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "خاف كليلة وقال: يا أخي، هاد الطريق ما بيرجع منه حدا.",
+   "en": "Kalila was afraid and said: brother, no one comes back from this road.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "خاف",
+     "root": "خ.و.ف",
+     "lemma": "خَاف",
+     "form": "خَاف",
+     "caphi_raw": "kh aa f",
+     "caphi": "khaaf",
+     "gloss": "be_afraid_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "8933",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "8933",
+       "root": "خ.و.ف",
+       "gloss": "be_afraid_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "8937",
+       "root": "خ.و.ف",
+       "gloss": "be_afraid_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "8935",
+       "root": "خ.و.ف",
+       "gloss": "be_afraid",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "khaaf",
+     "vocalized": "خَاف",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "كليلة",
+     "root": "ك.ل.ل",
+     "lemma": "كِلِّيل",
+     "form": "كِلِّيل",
+     "caphi_raw": "t sh i l l ii l",
+     "caphi": "tshilliil",
+     "gloss": "an_old_house_wall",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "28276",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "28276",
+       "root": "ك.ل.ل",
+       "gloss": "an_old_house_wall",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "30088",
+       "root": "ل.ي.ل",
+       "gloss": "night",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30091",
+       "root": "ل.ي.ل",
+       "gloss": "night_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "30092",
+       "root": "ل.ي.ل",
+       "gloss": "at_midnight",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30089",
+       "root": "ل.ي.ل",
+       "gloss": "night_time",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "30093",
+       "root": "ل.ي.ل",
+       "gloss": "night_fall",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "tshilliil",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "وقال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "يا",
+     "root": "NTWS",
+     "lemma": "يَا",
+     "form": "يَا",
+     "caphi_raw": "y aa",
+     "caphi": "yaa",
+     "gloss": "Oh!",
+     "analysis": "PART_VOC",
+     "maknuune_id": "36173",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yaa",
+     "vocalized": "يَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "أخي",
+     "root": "ء.خ.و",
+     "lemma": "آخَى",
+     "form": "آخَى",
+     "caphi_raw": "2 aa kh a",
+     "caphi": "2aakha",
+     "gloss": "fraternize_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "170",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "170",
+       "root": "ء.خ.و",
+       "gloss": "fraternize_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "172",
+       "root": "ء.خ.و",
+       "gloss": "fraternize_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "171",
+       "root": "ء.خ.و",
+       "gloss": "fraternize",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "2aakha",
+     "vocalized": "أخَي",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "هاد",
+     "root": "NTWS",
+     "lemma": "هَاد",
+     "form": "هَاد",
+     "caphi_raw": "h aa d",
+     "caphi": "haad",
+     "gloss": "there_(expletive)",
+     "analysis": "INTERJ",
+     "maknuune_id": "33882",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "haad",
+     "vocalized": "هَاد",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "الطريق",
+     "root": "ط.ر.ق",
+     "lemma": "طَرِيق",
+     "form": "طَرِيق",
+     "caphi_raw": "t. a r ii Q",
+     "caphi": "t.ariiQ",
+     "gloss": "way;road;path",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "19028",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19028",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19030",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19031",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19036",
+       "root": "ط.ر.ق",
+       "gloss": "about_to_happen;about_to_ocuur;be_alread",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "19037",
+       "root": "ط.ر.ق",
+       "gloss": "sb_is_about_to_arrive",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "19038",
+       "root": "ط.ر.ق",
+       "gloss": "have_a_safe_trip!/_May_Allab_bless_you!",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "t.arii2",
+     "vocalized": "الطَّرِيق",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "ما",
+     "root": "NTWS",
+     "lemma": "مَا",
+     "form": "مَا",
+     "caphi_raw": "m aa",
+     "caphi": "maa",
+     "gloss": "who;that_(relative)",
+     "analysis": "PRON_REL",
+     "maknuune_id": "30118",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "maa",
+     "vocalized": "مَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بيرجع",
+     "root": "ر.ج.ع",
+     "lemma": "رِجِع",
+     "form": "يِرْجَع",
+     "caphi_raw": "y i r J a 3",
+     "caphi": "yirJa3",
+     "gloss": "return;come_back",
+     "analysis": "VERB:I",
+     "maknuune_id": "11202",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "11202",
+       "root": "ر.ج.ع",
+       "gloss": "return;come_back",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "11204",
+       "root": "ر.ج.ع",
+       "gloss": "return",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yirja3",
+     "vocalized": "بِيِرْجَع",
+     "vocalized_from": "derived:verb"
+    },
+    {
+     "surface": "منه",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    },
+    {
+     "surface": "حدا",
+     "root": "ح.د.د",
+     "lemma": "حَدَا",
+     "form": "حَدَا",
+     "caphi_raw": "7 a d a",
+     "caphi": "7ada",
+     "gloss": "the_person_who_sings_folk_songs",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "5412",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "5412",
+       "root": "ح.د.د",
+       "gloss": "the_person_who_sings_folk_songs",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "35111",
+       "root": "و.ح.د",
+       "gloss": "someone;somebody",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "5418",
+       "root": "ح.د.د",
+       "gloss": "the_person_who_sings_folk_songs_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "35112",
+       "root": "و.ح.د",
+       "gloss": "someone;somebody_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "7ada",
+     "vocalized": "حَدَا",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ضحك دمنة وقال: الطريق للي ما بيعرف يمشي.",
+   "en": "Dimna laughed and said: the road is for those who do not know how to walk.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "ضحك",
+     "root": "ض.ح.ك",
+     "lemma": "ضِحِك",
+     "form": "ضِحِك",
+     "caphi_raw": "D. e 7 i k",
+     "caphi": "D.e7ik",
+     "gloss": "laughing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "18368",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "18368",
+       "root": "ض.ح.ك",
+       "gloss": "laughing",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "18378",
+       "root": "ض.ح.ك",
+       "gloss": "make_sb_laugh_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18383",
+       "root": "ض.ح.ك",
+       "gloss": "laugh_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18384",
+       "root": "ض.ح.ك",
+       "gloss": "make_sb_laugh_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18371",
+       "root": "ض.ح.ك",
+       "gloss": "to_burst_into_laughter",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "18372",
+       "root": "ض.ح.ك",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "D.e7ik",
+     "vocalized": "ضِحِك",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "دمنة",
+     "root": "د.م.ن",
+     "lemma": "أَدْمَن",
+     "form": "يِدْمِن",
+     "caphi_raw": "y i d m i n",
+     "caphi": "yidmin",
+     "gloss": "be_addicted_to",
+     "analysis": "VERB:I",
+     "maknuune_id": "10286",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yidmin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "وقال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "الطريق",
+     "root": "ط.ر.ق",
+     "lemma": "طَرِيق",
+     "form": "طَرِيق",
+     "caphi_raw": "t. a r ii Q",
+     "caphi": "t.ariiQ",
+     "gloss": "way;road;path",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "19028",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19028",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19030",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19031",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19036",
+       "root": "ط.ر.ق",
+       "gloss": "about_to_happen;about_to_ocuur;be_alread",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "19037",
+       "root": "ط.ر.ق",
+       "gloss": "sb_is_about_to_arrive",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "19038",
+       "root": "ط.ر.ق",
+       "gloss": "have_a_safe_trip!/_May_Allab_bless_you!",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "t.arii2",
+     "vocalized": "الطَّرِيق",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "للي",
+     "root": "—",
+     "lemma": "اللي",
+     "form": "اللي",
+     "caphi_raw": "2illi",
+     "caphi": "2illi",
+     "gloss": "who, which, that",
+     "analysis": "PRON_REL",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "2illi"
+    },
+    {
+     "surface": "ما",
+     "root": "NTWS",
+     "lemma": "مَا",
+     "form": "مَا",
+     "caphi_raw": "m aa",
+     "caphi": "maa",
+     "gloss": "who;that_(relative)",
+     "analysis": "PRON_REL",
+     "maknuune_id": "30118",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "maa",
+     "vocalized": "مَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بيعرف",
+     "root": "ع.ر.ف",
+     "lemma": "عِرِف",
+     "form": "يِعْرَف",
+     "caphi_raw": "y i 3 r a f",
+     "caphi": "yi3raf",
+     "gloss": "know",
+     "analysis": "VERB:I",
+     "maknuune_id": "20545",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "20545",
+       "root": "ع.ر.ف",
+       "gloss": "know",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "20547",
+       "root": "ع.ر.ف",
+       "gloss": "define;express;recommend;introduce",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yi3raf",
+     "vocalized": "بِيِعْرَف",
+     "vocalized_from": "derived:verb"
+    },
+    {
+     "surface": "يمشي",
+     "root": "م.ش.ي",
+     "lemma": "مِشِي",
+     "form": "يِمْشِي",
+     "caphi_raw": "y i m sh i",
+     "caphi": "yimshi",
+     "gloss": "walk",
+     "analysis": "VERB:I",
+     "maknuune_id": "30794",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30794",
+       "root": "م.ش.ي",
+       "gloss": "walk",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "30795",
+       "root": "م.ش.ي",
+       "gloss": "ignore_faults;make_academic_progress_and",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "30801",
+       "root": "م.ش.ي",
+       "gloss": "walk",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yimshi",
+     "vocalized": "يِمْشِي",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "أنا بعرف.",
+   "en": "I know.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "أنا",
+     "root": "NTWS",
+     "lemma": "أَنَا",
+     "form": "أَنَا",
+     "caphi_raw": "2 a n a",
+     "caphi": "2ana",
+     "gloss": "I;me",
+     "analysis": "PRON:1S",
+     "maknuune_id": "568",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ana",
+     "vocalized": "أَنَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بعرف",
+     "root": "ع.ر.ف",
+     "lemma": "عِرِف",
+     "form": "يِعْرَف",
+     "caphi_raw": "y i 3 r a f",
+     "caphi": "yi3raf",
+     "gloss": "know",
+     "analysis": "VERB:I",
+     "maknuune_id": "20545",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "20545",
+       "root": "ع.ر.ف",
+       "gloss": "know",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "20547",
+       "root": "ع.ر.ف",
+       "gloss": "define;express;recommend;introduce",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yi3raf",
+     "vocalized": "بَعْرَف",
+     "vocalized_from": "derived:verb"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "فسكت كليلة، وبعدين قال: طيب، خليني أحكي لك قصة.",
+   "en": "So Kalila was silent, and then he said: fine, let me tell you a story.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "فسكت",
+     "root": "س.ك.ت",
+     "lemma": "سَكَّت",
+     "form": "سَكِّت",
+     "caphi_raw": "s a k k i t",
+     "caphi": "sakkit",
+     "gloss": "silence;shut_sb_up_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "14472",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14472",
+       "root": "س.ك.ت",
+       "gloss": "silence;shut_sb_up_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14477",
+       "root": "س.ك.ت",
+       "gloss": "keep_silent_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14478",
+       "root": "س.ك.ت",
+       "gloss": "silence;shut_sb_up_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14471",
+       "root": "س.ك.ت",
+       "gloss": "keep_silent_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14473",
+       "root": "س.ك.ت",
+       "gloss": "keep_silent_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14474",
+       "root": "س.ك.ت",
+       "gloss": "keep_silent",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "sakkit",
+     "vocalized": "فَسَكِّت",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "كليلة",
+     "root": "ك.ل.ل",
+     "lemma": "كِلِّيل",
+     "form": "كِلِّيل",
+     "caphi_raw": "t sh i l l ii l",
+     "caphi": "tshilliil",
+     "gloss": "an_old_house_wall",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "28276",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "28276",
+       "root": "ك.ل.ل",
+       "gloss": "an_old_house_wall",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "30088",
+       "root": "ل.ي.ل",
+       "gloss": "night",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30091",
+       "root": "ل.ي.ل",
+       "gloss": "night_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "30092",
+       "root": "ل.ي.ل",
+       "gloss": "at_midnight",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30089",
+       "root": "ل.ي.ل",
+       "gloss": "night_time",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "30093",
+       "root": "ل.ي.ل",
+       "gloss": "night_fall",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "tshilliil",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "وبعدين",
+     "root": "ب.ع.د",
+     "lemma": "بَعْدَين",
+     "form": "وبَعْدَين",
+     "caphi_raw": "w u b a 3 d ee n",
+     "caphi": "wuba3deen",
+     "gloss": "then;afterwards",
+     "analysis": "ADV:PHRASE",
+     "maknuune_id": "1783",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "wuba3deen",
+     "vocalized": "وبَعْدَين",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "قال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "طيب",
+     "root": "ط.ي.ب",
+     "lemma": "طَيِّب",
+     "form": "طَيِّب",
+     "caphi_raw": "t. a y y i b",
+     "caphi": "t.ayyib",
+     "gloss": "kind-hearted;tasty",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "19753",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19753",
+       "root": "ط.ي.ب",
+       "gloss": "kind-hearted;tasty",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "19754",
+       "root": "ط.ي.ب",
+       "gloss": "OK!",
+       "analysis": "INTERJ"
+      },
+      {
+       "id": "19756",
+       "root": "ط.ي.ب",
+       "gloss": "recover_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "19757",
+       "root": "ط.ي.ب",
+       "gloss": "perfume;make_sb_feel_good_(gladden_sb's_",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "19755",
+       "root": "ط.ي.ب",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "ADJ:PHRASE"
+      },
+      {
+       "id": "19761",
+       "root": "ط.ي.ب",
+       "gloss": "perfume;make_sb_feel_good_(gladden_sb's_",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "t.ayyib",
+     "vocalized": "طَيِّب",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "خليني",
+     "root": null,
+     "lemma": null,
+     "form": "خليني",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "خليني",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "أحكي",
+     "root": "ح.ك.ي",
+     "lemma": "حَكَى",
+     "form": "اِحْكِي",
+     "caphi_raw": "2 i 7 K i",
+     "caphi": "2i7Ki",
+     "gloss": "talk;tell;recount_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "6624",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2i7ki",
+     "vocalized": "أِحْكِي",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "لك",
+     "root": null,
+     "lemma": null,
+     "form": "لك",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "لك",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "قصة",
+     "root": "ق.ص.ص",
+     "lemma": "قِصَّة",
+     "form": "قِصَّة",
+     "caphi_raw": "Q i s. s. a",
+     "caphi": "Qis.s.a",
+     "gloss": "story",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "26124",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2is.s.a",
+     "vocalized": "قِصَّة",
+     "vocalized_from": "lexicon:exact"
     }
    ],
    "audio": null
