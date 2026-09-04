@@ -5,7 +5,7 @@
  * a deploy invalidates old caches. IMPORTANT: the HTML document is fetched NETWORK-FIRST so a new
  * deploy shows up immediately (never a stale shell); data/audio/icons are cache-first for speed
  * and offline. */
-const CACHE_VERSION = 'alp-5356743e4c';
+const CACHE_VERSION = 'alp-f23d3ac0b1';
 // The shell is what has to be there for the app to start at all, in every language: the
 // document, the boot roster it reads to decide which language to load, the shared seam, and
 // app.js itself. Without app.js an offline load serves the HTML and nothing runs.
@@ -14,8 +14,16 @@ const CACHE_VERSION = 'alp-5356743e4c';
 // Precaching them would mean every install downloads both languages, which is the exact cost
 // the per-language split exists to avoid. They are still cached on first use by the fetch
 // handler below, so a language you have actually opened works offline afterwards.
-const SHELL = ['./index.html', './app.js', './lang/languages.js', './lang/define.js',
-               './lang/scenery.js', './manifest.webmanifest', './icon-192.png'];
+//
+// The shell entries carry ?v=<build> because that is what the page actually asks for --
+// index.html appends it to every script it loads -- and caches.match() does NOT ignore the
+// query. Precaching the bare paths would fill the cache with URLs nothing ever requests and
+// leave an offline first-run with no app.js. The build stamp is this cache's version without
+// the prefix: build_app.py writes one hash into both, so they cannot drift.
+const V = '?v=' + CACHE_VERSION.replace(/^alp-/, '');
+const SHELL = ['./index.html', './app.js' + V, './lang/languages.js' + V,
+               './lang/define.js' + V, './lang/scenery.js' + V,
+               './manifest.webmanifest', './icon-192.png'];
 
 self.addEventListener('install', e => {
   self.skipWaiting();

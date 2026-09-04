@@ -510,12 +510,17 @@ const LIB = window.LIBRARY || {texts: [], drills: []};
 //
 // <script> tags, not fetch(), for the reason everything else here is a <script> tag: on file://
 // a fetch() of a sibling file is a CORS error, and this app is meant to work by double-click.
+//
+// ALP_V is the ?v=<build> that index.html appends to everything it loads, and these lazy bodies
+// need it for the same reason: the service worker serves .js cache-first, so without a version
+// in the URL a corpus or lexicon cached before a deploy is served after it. It is '' on file://
+// and before index.html has set it, which is the pre-existing behaviour.
 const _needing = {};
 function needFile(name) {
   if (_needing[name]) return _needing[name];
   return (_needing[name] = new Promise((ok, no) => {
     const el = document.createElement('script');
-    el.src = 'data/' + LANG.code + '/' + name + '.js';
+    el.src = 'data/' + LANG.code + '/' + name + '.js' + (window.ALP_V || '');
     el.onload = ok;
     el.onerror = () => { delete _needing[name]; no(new Error(name + ' could not be loaded')); };
     document.head.appendChild(el);
@@ -1256,7 +1261,7 @@ function loadBibBook(id) {
       ok((_bibCache[id] = d.chapters));
     };
     const s = document.createElement('script');
-    s.src = 'data/' + LANG.code + '/bible/' + id + '.js';
+    s.src = 'data/' + LANG.code + '/bible/' + id + '.js' + (window.ALP_V || '');
     s.onload = done;
     s.onerror = () => no(new Error('bible book ' + id + ' is missing'));
     document.head.appendChild(s);

@@ -13,7 +13,27 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" href="icon-192.png">
 <title>Arabrit</title>
-<script src="lang/languages.js"></script>
+<script>
+/* The build stamp, and why every script this page loads carries it in its URL.
+ *
+ * The service worker serves .js cache-first, and these are all fixed URLs, so a cached
+ * data/<lang>/library.js survives any number of refreshes: the only thing that frees it is the
+ * SW itself updating and its activate step dropping the old cache. That is an extra round trip
+ * the page cannot make on its own, and a home-screen PWA resumed from the app switcher may not
+ * make it for days -- which is how a phone sat on yesterday's news while a laptop had today's.
+ *
+ * So the version goes in the URL. index.html is fetched network-first, so ALP_BUILD is always
+ * the current deploy's; a cache entry from the previous build simply cannot be matched, and the
+ * first refresh after a deploy is right without waiting on the SW lifecycle. build_app.py writes
+ * the same hash here and into CACHE_VERSION, so the two always agree and the SW precaches these
+ * exact versioned URLs.
+ *
+ * Not on file://, where a query string stops the browser finding the file at all -- and where
+ * there is no service worker, so there is nothing to bust. The app still opens by double-click. */
+window.ALP_BUILD = 'f23d3ac0b1';   /* rewritten by pipeline/build_app.py */
+window.ALP_V = location.protocol === 'file:' ? '' : '?v=' + window.ALP_BUILD;
+document.write('<scr' + 'ipt src="lang/languages.js' + window.ALP_V + '"></scr' + 'ipt>');
+</script>
 <script>
 /* Which language is this page? Answer it before a single byte of content is requested.
  *
@@ -1571,7 +1591,8 @@ window.ALP = (function () {
   const files = ['vendor/supabase.js', 'data/supaconfig.js', 'data/pushconfig.js']
     .concat(L.data.map(n => 'data/' + L.code + '/' + n + '.js'))
     .concat(['lang/define.js', 'lang/scenery.js', 'lang/' + L.code + '.js', 'app.js']);
-  document.write(files.map(f => '<scr' + 'ipt src="' + f + '"></scr' + 'ipt>').join(''));
+  document.write(files.map(f => '<scr' + 'ipt src="' + f + window.ALP_V +
+                                '"></scr' + 'ipt>').join(''));
 })();
 </script>
 </body>

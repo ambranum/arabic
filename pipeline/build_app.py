@@ -19,6 +19,69 @@ import paths  # noqa: E402  -- where this language's generated data lives
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 OUT  = paths.data('library.js')
 
+# ---------- the deploy stamp: one hash, written into two files ----------
+# A hash of the app shell + all data goes into the service worker's cache name, so every deploy
+# gets a fresh cache and the SW's activate step drops the stale one — no learner stuck on old
+# JS/data behind the cache. (The HTML is fetched network-first regardless; this covers the
+# cache-first data/JS assets.)
+#
+# The SAME hash goes into index.html as window.ALP_BUILD, which the page appends to the URL of
+# every script it loads. That is the half that makes a refresh enough. A new cache name only
+# takes effect once the browser has fetched, installed and activated the new service worker —
+# an extra round trip the page cannot make on its own, and one a home-screen PWA resumed from
+# the app switcher may not make for days. A phone in that state served a cached
+# data/he/library.js and showed yesterday's news while a laptop showed today's. With the version
+# in the URL there is nothing to match, so the first refresh after a deploy is already right.
+def stamp_build():
+    import re as _re
+    sw_path   = os.path.join(ROOT, 'app', 'service-worker.js')
+    html_path = os.path.join(ROOT, 'app', 'index.html')
+    if not os.path.exists(sw_path):
+        return None
+    # index.html is hashed with its own stamp NEUTRALISED, for exactly the reason
+    # service-worker.js is left out of the file list below: hash a file that contains the hash
+    # and each run's version depends on the previous run's, and the value never settles.
+    build_re = _re.compile(r"window\.ALP_BUILD = '[^']*';")
+    ash = hashlib.md5()
+    # Everything the browser executes, so a code change always moves the cache version.
+    # index.html alone stopped being enough the moment the app moved into app.js: a JS-only
+    # change would have left the version untouched and shipped new code behind a stale cache.
+    # The nested data glob is for the per-language directories B5 introduces.
+    shell = [html_path] + \
+        sorted(p for p in glob.glob(os.path.join(ROOT, 'app', '*.js'))
+               if os.path.basename(p) != 'service-worker.js') + \
+        sorted(glob.glob(os.path.join(ROOT, 'app', 'lang', '*.js'))) + \
+        sorted(glob.glob(os.path.join(ROOT, 'app', 'data', '**', '*.js'), recursive=True))
+    for p in shell:
+        try:
+            blob = open(p, 'rb').read()
+        except OSError:
+            continue
+        if p == html_path:
+            blob = build_re.sub("window.ALP_BUILD = '';", blob.decode('utf-8')).encode('utf-8')
+        ash.update(blob)
+    appver = ash.hexdigest()[:10]
+
+    sw = open(sw_path, encoding='utf-8').read()
+    sw2 = _re.sub(r"const CACHE_VERSION = '[^']*';",
+                  "const CACHE_VERSION = 'alp-%s';" % appver, sw, count=1)
+    if sw2 != sw:
+        open(sw_path, 'w', encoding='utf-8').write(sw2)
+
+    # The page and the service worker have to name the SAME versioned URLs — the SW precaches
+    # './app.js?v=' + CACHE_VERSION without its prefix — so both are written here, from one hash.
+    html = open(html_path, encoding='utf-8').read()
+    if 'window.ALP_BUILD' not in html:
+        print("!! app/index.html has no window.ALP_BUILD to stamp — its scripts will not be "
+              "cache-busted; see the build-stamp comment in its <head>.")
+    else:
+        html2 = build_re.sub("window.ALP_BUILD = '%s';" % appver, html, count=1)
+        if html2 != html:
+            open(html_path, 'w', encoding='utf-8').write(html2)
+    print(f"sw cache version: alp-{appver}")
+    return appver
+
+
 def main():
     audio_root = paths.audio()
     copied = 0
@@ -110,37 +173,7 @@ def main():
         if os.path.splitext(os.path.basename(p))[0] not in live:
             os.remove(p); print('  removed stale body:', os.path.basename(p))
 
-    # Stamp the service worker's cache name with a hash of the app shell + all data, so every
-    # deploy gets a fresh cache and the SW's activate step drops the stale one — no learner stuck
-    # on old JS/data behind the cache. (The HTML is fetched network-first regardless; this covers
-    # the cache-first data/JS assets.)
-    sw_path = os.path.join(ROOT, 'app', 'service-worker.js')
-    if os.path.exists(sw_path):
-        import re as _re
-        ash = hashlib.md5()
-        # Everything the browser executes, so a code change always moves the cache version.
-        # index.html alone stopped being enough the moment the app moved into app.js: a JS-only
-        # change would have left the version untouched and shipped new code behind a stale
-        # cache. The nested data glob is for the per-language directories B5 introduces.
-        # service-worker.js is deliberately absent: this hash is written INTO it, so including
-        # it makes each run's version depend on the previous run's and the value never settles.
-        shell = [os.path.join(ROOT, 'app', 'index.html')] + \
-            sorted(p for p in glob.glob(os.path.join(ROOT, 'app', '*.js'))
-                   if os.path.basename(p) != 'service-worker.js') + \
-            sorted(glob.glob(os.path.join(ROOT, 'app', 'lang', '*.js'))) + \
-            sorted(glob.glob(os.path.join(ROOT, 'app', 'data', '**', '*.js'), recursive=True))
-        for p in shell:
-            try:
-                ash.update(open(p, 'rb').read())
-            except OSError:
-                pass
-        appver = ash.hexdigest()[:10]
-        sw = open(sw_path, encoding='utf-8').read()
-        sw2 = _re.sub(r"const CACHE_VERSION = '[^']*';",
-                      "const CACHE_VERSION = 'alp-%s';" % appver, sw, count=1)
-        if sw2 != sw:
-            open(sw_path, 'w', encoding='utf-8').write(sw2)
-        print(f"sw cache version: alp-{appver}")
+    stamp_build()
 
     print(f"audio version: {audio_version}")
     print(f"texts : {len(texts)}")
