@@ -11,6 +11,8 @@
  "book": null,
  "chapter": null,
  "book_title": null,
+ "shelf": 0,
+ "book_meta": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -1750,31 +1752,11 @@
      "form": "مَدِينِة",
      "caphi_raw": "m a d ii n e",
      "caphi": "madiine",
-     "gloss": "Medina_is_a_city_in_western_Saudi_Arabia",
-     "analysis": "NOUN_PROP",
-     "maknuune_id": "30350",
+     "gloss": "city",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "30351",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "30350",
-       "root": "م.د.ن",
-       "gloss": "Medina_is_a_city_in_western_Saudi_Arabia",
-       "analysis": "NOUN_PROP"
-      },
-      {
-       "id": "30351",
-       "root": "م.د.ن",
-       "gloss": "city",
-       "analysis": "NOUN:FS"
-      },
-      {
-       "id": "30352",
-       "root": "م.د.ن",
-       "gloss": "city_[auto]",
-       "analysis": "NOUN:P"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "madiine",
      "vocalized": "المَدِينِة",
      "vocalized_from": "derived:affix"

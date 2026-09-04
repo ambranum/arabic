@@ -11,6 +11,8 @@
  "book": null,
  "chapter": null,
  "book_title": null,
+ "shelf": 0,
+ "book_meta": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -368,30 +370,16 @@
     {
      "surface": "بلشت",
      "root": "ب.ل.ش",
-     "lemma": "بَلَش",
-     "form": "يِبْلَش",
-     "caphi_raw": "y i b l a sh",
-     "caphi": "yiblash",
-     "gloss": "be_busy_with_sth",
+     "lemma": "بَلَّش",
+     "form": "يبَلِّش",
+     "caphi_raw": "y b a l l i sh",
+     "caphi": "yballish",
+     "gloss": "start",
      "analysis": "VERB:I",
-     "maknuune_id": "2146",
+     "maknuune_id": "2147",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "2146",
-       "root": "ب.ل.ش",
-       "gloss": "be_busy_with_sth",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "2147",
-       "root": "ب.ل.ش",
-       "gloss": "start",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "yiblash",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "yballish",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
@@ -623,7 +611,7 @@
      ],
      "caphi_urban": "yD.ayyi3",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:ambiguous-person"
     },
     {
      "surface": "صغيرة",

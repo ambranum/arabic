@@ -11,6 +11,8 @@
  "book": null,
  "chapter": null,
  "book_title": null,
+ "shelf": 0,
+ "book_meta": null,
  "subdialect": "urban",
  "source": "Intermediate short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -1078,55 +1080,17 @@
     {
      "surface": "حول",
      "root": "ح.و.ل",
-     "lemma": "أَحْوَل",
-     "form": "حُول",
-     "caphi_raw": "7 uu l",
-     "caphi": "7uul",
-     "gloss": "cross-eyed_[auto]",
-     "analysis": "ADJ:P",
-     "maknuune_id": "7340",
+     "lemma": "حَوَل",
+     "form": "حَوَل",
+     "caphi_raw": "7 a w a l",
+     "caphi": "7awal",
+     "gloss": "the_state_of_being_cross-eyed",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "7347",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "7340",
-       "root": "ح.و.ل",
-       "gloss": "cross-eyed_[auto]",
-       "analysis": "ADJ:P"
-      },
-      {
-       "id": "7347",
-       "root": "ح.و.ل",
-       "gloss": "the_state_of_being_cross-eyed",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "7354",
-       "root": "ح.و.ل",
-       "gloss": "transfer;change_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "7355",
-       "root": "ح.و.ل",
-       "gloss": "prevent;act_as_a_barrier_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "7369",
-       "root": "ح.و.ل",
-       "gloss": "transfer;change_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "7371",
-       "root": "ح.و.ل",
-       "gloss": "become_cross-eyed_[auto]",
-       "analysis": "VERB:P"
-      }
-     ],
-     "caphi_urban": "7uul",
-     "vocalized": "حُول",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "7awal",
+     "vocalized": "حَوَل",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -1484,49 +1448,11 @@
      "form": "رَاح",
      "caphi_raw": "r aa 7",
      "caphi": "raa7",
-     "gloss": "will",
-     "analysis": "PART_FUT",
-     "maknuune_id": "12342",
+     "gloss": "go_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "12399",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "12342",
-       "root": "ر.و.ح",
-       "gloss": "will",
-       "analysis": "PART_FUT"
-      },
-      {
-       "id": "12382",
-       "root": "ر.و.ح",
-       "gloss": "nearly;it_was_about_to",
-       "analysis": "VERB_PSEUDO"
-      },
-      {
-       "id": "12399",
-       "root": "ر.و.ح",
-       "gloss": "go_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "12383",
-       "root": "ر.و.ح",
-       "gloss": "go_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "12390",
-       "root": "ر.و.ح",
-       "gloss": "go",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "12379",
-       "root": "ر.و.ح",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "VERB:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "raa7",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
@@ -1542,45 +1468,7 @@
      "analysis": "ADJ:MS",
      "maknuune_id": "112",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "112",
-       "root": "ء.خ.ر",
-       "gloss": "last",
-       "analysis": "ADJ:MS"
-      },
-      {
-       "id": "132",
-       "root": "ء.خ.ر",
-       "gloss": "delay_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "140",
-       "root": "ء.خ.ر",
-       "gloss": "delay_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "114",
-       "root": "ء.خ.ر",
-       "gloss": "last_[auto]",
-       "analysis": "ADJ:P"
-      },
-      {
-       "id": "126",
-       "root": "ء.خ.ر",
-       "gloss": "very_far",
-       "analysis": "ADJ:PHRASE"
-      },
-      {
-       "id": "127",
-       "root": "ء.خ.ر",
-       "gloss": "very_far",
-       "analysis": "ADJ:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "2aakhir",
      "vocalized": "آخِر",
      "vocalized_from": "lexicon:exact"

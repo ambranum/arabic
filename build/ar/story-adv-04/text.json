@@ -11,6 +11,8 @@
  "book": null,
  "chapter": null,
  "book_title": null,
+ "shelf": 0,
+ "book_meta": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -423,35 +425,15 @@
      "surface": "حاولوا",
      "root": "ح.و.ل",
      "lemma": "حَاوَل",
-     "form": "حَاوِل",
-     "caphi_raw": "7 aa w i l",
-     "caphi": "7aawil",
+     "form": "حَاوَل",
+     "caphi_raw": "7 aa w a l",
+     "caphi": "7aawal",
      "gloss": "try_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "7357",
+     "analysis": "VERB:P",
+     "maknuune_id": "7373",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "7357",
-       "root": "ح.و.ل",
-       "gloss": "try_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "7373",
-       "root": "ح.و.ل",
-       "gloss": "try_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "7366",
-       "root": "ح.و.ل",
-       "gloss": "try",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "7aawil",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "7aawal",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
@@ -570,27 +552,7 @@
      "analysis": "VERB:P",
      "maknuune_id": "35600",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "35600",
-       "root": "و.ص.ل",
-       "gloss": "reach",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "35598",
-       "root": "و.ص.ل",
-       "gloss": "reach",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "35599",
-       "root": "و.ص.ل",
-       "gloss": "reach",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "twas.s.al",
      "vocalized": "تْوَصَّل",
      "vocalized_from": "lexicon:exact"
@@ -741,24 +703,10 @@
      "caphi_raw": "sh uu",
      "caphi": "shuu",
      "gloss": "what",
-     "analysis": "PRON_INTERROG",
-     "maknuune_id": "17122",
+     "analysis": "PRON_REL",
+     "maknuune_id": "17123",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "17122",
-       "root": "ش.و",
-       "gloss": "what",
-       "analysis": "PRON_INTERROG"
-      },
-      {
-       "id": "17123",
-       "root": "ش.و",
-       "gloss": "what",
-       "analysis": "PRON_REL"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "shuu",
      "vocalized": "شُو",
      "vocalized_from": "lexicon:exact"
@@ -964,45 +912,7 @@
      "analysis": "VERB:P",
      "maknuune_id": "27011",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "2aal",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
@@ -1630,30 +1540,16 @@
     {
      "surface": "بلشت",
      "root": "ب.ل.ش",
-     "lemma": "بَلَش",
-     "form": "يِبْلَش",
-     "caphi_raw": "y i b l a sh",
-     "caphi": "yiblash",
-     "gloss": "be_busy_with_sth",
+     "lemma": "بَلَّش",
+     "form": "يبَلِّش",
+     "caphi_raw": "y b a l l i sh",
+     "caphi": "yballish",
+     "gloss": "start",
      "analysis": "VERB:I",
-     "maknuune_id": "2146",
+     "maknuune_id": "2147",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "2146",
-       "root": "ب.ل.ش",
-       "gloss": "be_busy_with_sth",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "2147",
-       "root": "ب.ل.ش",
-       "gloss": "start",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "yiblash",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "yballish",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
@@ -1935,41 +1831,15 @@
      "surface": "تحط",
      "root": "ح.ط.ط",
      "lemma": "حَطّ",
-     "form": "حُطّ",
-     "caphi_raw": "7 u t. t.",
-     "caphi": "7ut.t.",
-     "gloss": "put;place;devalue_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "6327",
+     "form": "يحُطّ",
+     "caphi_raw": "y 7 u t. t.",
+     "caphi": "y7ut.t.",
+     "gloss": "put;place;devalue",
+     "analysis": "VERB:I",
+     "maknuune_id": "6329",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "6327",
-       "root": "ح.ط.ط",
-       "gloss": "put;place;devalue_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "6334",
-       "root": "ح.ط.ط",
-       "gloss": "put;place;devalue_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "6324",
-       "root": "ح.ط.ط",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "6329",
-       "root": "ح.ط.ط",
-       "gloss": "put;place;devalue",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "7ut.t.",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "y7ut.t.",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     },
@@ -2572,45 +2442,7 @@
      "analysis": "VERB:P",
      "maknuune_id": "27011",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "27011",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26994",
-       "root": "ق.و.ل",
-       "gloss": "gossip",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26995",
-       "root": "ق.و.ل",
-       "gloss": "Unbelievable!",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26996",
-       "root": "ق.و.ل",
-       "gloss": "It_is_an_expression_that_the_speaker_say",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26998",
-       "root": "ق.و.ل",
-       "gloss": "care_about",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "27004",
-       "root": "ق.و.ل",
-       "gloss": "say_[auto]",
-       "analysis": "VERB:C"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "2aal",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"

@@ -11,6 +11,8 @@
  "book": null,
  "chapter": null,
  "book_title": null,
+ "shelf": 0,
+ "book_meta": null,
  "subdialect": "urban",
  "source": "Advanced short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -834,33 +836,7 @@
      "analysis": "VERB:P",
      "maknuune_id": "18260",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "18260",
-       "root": "ص.ي.ر",
-       "gloss": "become_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "18257",
-       "root": "ص.ي.ر",
-       "gloss": "be_affected",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "18258",
-       "root": "ص.ي.ر",
-       "gloss": "become_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "18259",
-       "root": "ص.ي.ر",
-       "gloss": "become",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "s.aar",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
@@ -1384,55 +1360,17 @@
     {
      "surface": "ركض",
      "root": "ر.ك.ض",
-     "lemma": "رَكِض",
-     "form": "رَكِض",
-     "caphi_raw": "r a K i D.",
-     "caphi": "raKiD.",
-     "gloss": "running",
-     "analysis": "NOUN:MS",
-     "maknuune_id": "12076",
+     "lemma": "رَكَض",
+     "form": "رَكَض",
+     "caphi_raw": "r a k a D.",
+     "caphi": "rakaD.",
+     "gloss": "run;rush_to_do_sth;hasten_to_do_sth_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "12083",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "12076",
-       "root": "ر.ك.ض",
-       "gloss": "running",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "12080",
-       "root": "ر.ك.ض",
-       "gloss": "take_care_of_sb_and_provide_him_with_the",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "12082",
-       "root": "ر.ك.ض",
-       "gloss": "take_care_of_sb_and_provide_him_with_the",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "12083",
-       "root": "ر.ك.ض",
-       "gloss": "run;rush_to_do_sth;hasten_to_do_sth_[aut",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "12077",
-       "root": "ر.ك.ض",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "12078",
-       "root": "ر.ك.ض",
-       "gloss": "take_care_of_sb_and_provide_him_with_the",
-       "analysis": "VERB:C"
-      }
-     ],
-     "caphi_urban": "rakiD.",
-     "vocalized": "رَكِض",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "rakaD.",
+     "vocalized": "رَكَض",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -2472,8 +2410,8 @@
       }
      ],
      "caphi_urban": "ydawwin",
-     "vocalized": "وبَدَوِّن",
-     "vocalized_from": "derived:verb"
+     "vocalized": null,
+     "vocalized_from": "unvocalized:ambiguous-person"
     },
     {
      "surface": "خناق",

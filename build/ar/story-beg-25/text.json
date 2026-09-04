@@ -11,6 +11,8 @@
  "book": null,
  "chapter": null,
  "book_title": null,
+ "shelf": 0,
+ "book_meta": null,
  "subdialect": "urban",
  "source": "Beginner short story written in spoken Palestinian by Claude. NOT native-validated.",
  "sentences": [
@@ -432,39 +434,7 @@
      "analysis": "ADV",
      "maknuune_id": "17238",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "17238",
-       "root": "ش.و.ي",
-       "gloss": "a_little_bit",
-       "analysis": "ADV"
-      },
-      {
-       "id": "17239",
-       "root": "ش.و.ي",
-       "gloss": "grilling;barbecue",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "17244",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "17241",
-       "root": "ش.و.ي",
-       "gloss": "grill_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "17242",
-       "root": "ش.و.ي",
-       "gloss": "grill",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "shwayy",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
@@ -496,8 +466,8 @@
       }
      ],
      "caphi_urban": "yirja3",
-     "vocalized": "وبَرْجَع",
-     "vocalized_from": "derived:verb"
+     "vocalized": null,
+     "vocalized_from": "unvocalized:ambiguous-person"
     },
     {
      "surface": "عالبيت",
