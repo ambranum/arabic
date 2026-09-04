@@ -56,6 +56,13 @@ def annotate_word(lex, surface, res):
         # curated.PROPER then pulled الآلة, الهوا and كلهم onto "God" as well. This needs
         # per-token adjudication alongside the AMBIGUOUS queue, not a heuristic here.
         # The app corrects the handful that matter at display time — see LEX_FIX in index.html.
+        # A THIRD attempt at restricting this branch, and a third one that measured worse. The
+        # Hebrew side fixed the identical bug by letting a curated name be reached only through
+        # a PREFIX, and here that costs 1,085 tokens: Arabic's prepositions carry their pronoun
+        # as a SUFFIX, and عليه معي منه عنه بينهم are exactly what this table is for. Reached
+        # by prefix alone they fall back to the lexicon and become "attic", "bleat", "because
+        # of". The suffix path is load-bearing; it is the short curated ENTRIES that are unsafe,
+        # not the path that finds them.
         stems, _ = lex.morph(surface)
         for st in stems[1:]:
             c = curated.lookup(st, st)

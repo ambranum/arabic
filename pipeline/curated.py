@@ -185,6 +185,72 @@ MODERN = {
     "صاروخ":     ("صاروخ",     "s.aaruukh",    "rocket, missile", "NOUN:MS"),
 }
 
+# ---------------------------------------------------------------------------------------
+# THE GRADED READERS' OWN VOCABULARY. Maknuune is a lexicon of Palestinian content words and
+# these are the ones it turned out not to have — measured, not guessed: every entry below was
+# an `unresolved` token in app/data/ar/corpus.js, which is to say a word a learner tapped and
+# got nothing for. 4,448 such tokens remained after the spelling rules in maknuune.py, and the
+# ones here are the head of that distribution.
+#
+# Three kinds, and the third is the reason this list is not longer:
+#
+#   RANKS AND TITLES. Loanwords a dialect lexicon has no reason to carry — captain, squire,
+#   colonel, general — and the nine graded readers are full of them because they are sea
+#   stories and detective stories. الكابتن alone was 70 tokens, the single commonest word in
+#   the books with no card behind it.
+#
+#   EVERYDAY WORDS Maknuune simply lacks: بكرا "tomorrow", مرا "woman", مبارح "yesterday".
+#   These are not obscure. They are among the first hundred words anyone learns, and every one
+#   of them was untappable.
+#
+#   BASE FORMS ONLY. Nothing inflected or cliticised is written down here. مرته "his wife" and
+#   بالكابتن "with the captain" are reached by the peeler once the base exists, and curating
+#   each surface separately would be a second lexicon to maintain and get wrong.
+PROPER.update({
+    # Countries and places the daily paper needs.
+    "إسرائيل":  ("إِسرائيل",  "2israa2iil", "Israel", "NOUN_PROP"),
+    "السعودية": ("السَّعودية", "2issa3uudiyye", "Saudi Arabia", "NOUN_PROP"),
+    "فرنسا":    ("فَرَنسا",   "faransa",    "France", "NOUN_PROP"),
+    "ديسمبر":   ("ديسَمبر",   "disamber",   "December", "NOUN_PROP"),
+})
+
+MODERN.update({
+    # Ranks and titles. The readers are sea stories and detective stories; a dialect lexicon
+    # has no reason to carry the English navy's vocabulary, and every one of these is a word
+    # a reader meets on the first page and taps.
+    "كابتن":    ("كابتِن",   "kaabtin",    "captain", "NOUN:MS"),
+    "قبطان":    ("قُبطان",   "2ubt.aan",   "sea captain, skipper", "NOUN:MS"),
+    "جنرال":    ("جِنِرال",  "jineraal",   "general (military rank)", "NOUN:MS"),
+    "كولونيل":  ("كولونيل",  "koloniil",   "colonel", "NOUN:MS"),
+    "سكوير":    ("سكواير",   "skwaayer",   "squire", "NOUN:MS"),
+    "حمال":     ("حَمّال",    "7ammaal",    "porter, carrier", "NOUN:MS"),
+    "مليار":    ("مِليار",   "milyaar",    "billion", "NOUN:MS"),
+    "رسوم":     ("رُسوم",    "rusuum",     "fees, duties, tariffs", "NOUN:P"),
+    # Everyday words the lexicon does not have. Ordinary spoken Palestinian, every one of them
+    # in the first hundred words a learner meets.
+    "بكرا":     ("بُكرا",    "bukra",      "tomorrow", "ADV"),
+    "مبارح":    ("مبارِح",   "mbaari7",    "yesterday", "ADV"),
+    # مرا "woman" is NOT here either, for the same reason as لك: the peeler takes the ت off
+    # مرات "times" and lands on it, so 20 tokens of "woman" would cost 8 of "three times".
+        "مقفول":    ("مَقفول",   "ma2fuul",    "locked, shut", "ADJ:MS"),
+    "ضد":       ("ضِدّ",     "d.idd",      "against", "PREP"),
+    "غصن":      ("غُصن",     "ghus.n",     "branch, bough", "NOUN:MS"),
+    "دجاج":     ("دَجاج",    "djaaj",      "chickens, poultry", "NOUN:P"),
+    "سلحفاة":   ("سُلَحفاة",  "sula7faa",   "tortoise, turtle", "NOUN:FS"),
+    "سعادة":    ("سَعادة",   "sa3aade",    "excellency (form of address)", "NOUN:FS"),
+    "سنتين":    ("سَنتين",   "santeen",    "two years", "NOUN:D"),
+    # Teen numerals. Palestinian says them as one word and the lexicon lists the MSA shapes.
+    "اتناعشر":  ("اتناعشَر",  "itna3shar",  "twelve", "NUM"),
+    "خمستعشر":  ("خمستَعشَر", "khamasta3shar", "fifteen", "NUM"),
+})
+
+# لك "to you" is NOT here, and it is the biggest single word still without a card at 43 tokens.
+# Two letters is too few: the peeler reaches it by stripping a ت or a بال from the front, so
+# adding it turned تلك "that night" and دير بالك "watch out" and علكة "chewing gum" into "to
+# you". A curated entry that overwrites a correct answer is worse than a missing one, and this
+# table's whole safety rests on that. It needs a minimum-stem rule, which has been tried twice
+# here and made other things worse — see the note on annotate_word in ingest.py.
+
 # STORY — words the short stories need that the lexicon can't resolve on its own:
 # character/pet names (proper nouns, like PROPER), and a handful of everyday possessive
 # forms whose base+clitic collides with a homograph verb (بيت+نا "our house" vs بيّتنا

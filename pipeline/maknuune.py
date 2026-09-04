@@ -36,6 +36,33 @@ class Lexicon:
             self.by_lemma.setdefault(rec['_L'], []).append(rec)
             self.by_id[str(rec['ID'])] = rec
 
+    @staticmethod
+    def spellings(w):
+        """The word as the LEXICON might file it — dialect letters mapped back, nothing stripped.
+
+        Split out of morph()'s coda() so candidates() can ask which stems are still the word
+        itself rather than a fragment of it. That distinction is what stops the b- heuristic
+        from throwing the answer away: see the pos filter there.
+        """
+        out = []
+        for a_, b_ in (('ت', 'ث'), ('د', 'ذ'), ('ض', 'ظ')):
+            if a_ in w:
+                out.append(w.replace(a_, b_))
+        # ص -> ز only at the FRONT. A ص before a voiced consonant is said, and so written, ز:
+        # زغير for صغير "small", the commonest untappable word in the books at 106 tokens.
+        # Anywhere else in the word it is a different letter doing its own job, and swapping
+        # every ز turned وزيت "and oil" into "make an order" and المزيفة "forged" into
+        # "spending the summer". Initial only.
+        if w.startswith('ز') and len(w) > 2:
+            out.append('ص' + w[1:])
+        # NOT a final ا -> ة rule. It looks like the same phenomenon -- the lexicon files مرة
+        # and the dialect writes مرا -- and measured over the corpus it is a net loss: Arabic
+        # is full of words that legitimately end in alif, and mapping them all wrecked more
+        # than it fixed. وأنا "I" (165 tokens) became an interjection, كلها "all of it" became
+        # "to him", بالمسا "in the evening" became "frighten", لنا "to us" became "will not".
+        # The handful of real cases -- بكرا, مرا -- are curated by name in curated.py instead.
+        return out
+
     def morph(self, w):
         """Peel Palestinian clitics. Returns (ordered stems, ANALYSIS constraint or None).
 
@@ -51,10 +78,18 @@ class Lexicon:
         w = norm(w); pos = None
 
         def coda(x):
-            out = []
-            for a_, b_ in (('ت','ث'), ('د','ذ'), ('ض','ظ')):
-                if a_ in x: out.append(x.replace(a_, b_))
-            return out
+            """Dialect spelling -> the letters the lexicon files the word under.
+
+            Each pair is the same phenomenon: the writer spelled what Palestinian SAYS and
+            Maknuune files what the word IS. ث/ذ/ظ merge into ت/د/ض in this dialect, and a ص
+            before a voiced consonant is said, and written, ز -- زغير for صغير "small", which
+            was the single commonest untappable word in the books at 106 tokens.
+
+            Safe by construction: candidates() returns an exact match without ever calling
+            morph(), so a variant can only be reached by a word that has already missed. زيت
+            "oil" is in the lexicon as itself and never gets here.
+            """
+            return Lexicon.spellings(x)
 
         def desuffix(x):
             """Every suffix-stripped form of x, cheapest first."""
@@ -110,7 +145,27 @@ class Lexicon:
             for y in desuffix(x):
                 tier3 += [y] + coda(y)
 
+        # Tier 1 and 2 are the word with letters taken off the FRONT; 1b and 3 have had letters
+        # taken off the BACK as well. Kept separately because the curated table may only be
+        # reached the first way -- see prefix_stems().
+        self._pre_only = list(dict.fromkeys(tier1 + tier2))
         return list(dict.fromkeys(tier1 + tier1b + tier2 + tier3)), pos
+
+    def prefix_stems(self, w):
+        """The stems reachable by stripping PREFIXES only.
+
+        The curated table is consulted before the lexicon, so a stem that reaches it overrides
+        a real answer rather than merely failing to help. Suffix stripping is where that goes
+        wrong: مرات "times" loses its ت and lands on a curated مرا "woman"; بكرات "come early"
+        lands on بكرا "tomorrow". A proclitic is different — a word genuinely does carry و/ب/ال
+        in front of it, and بالكابتن IS the captain.
+
+        Arabic's clitics run both ways, so this cannot be the whole story the way it is in
+        Hebrew, where suffixes are possessives and a borrowed name never takes one. It is the
+        half that was doing the damage.
+        """
+        self.morph(w)
+        return self._pre_only
 
     def candidates(self, w):
         """Exact match wins. Only fall back to clitic-stripping if the word isn't real.
@@ -130,13 +185,21 @@ class Lexicon:
             return exact
 
         stems, pos = self.morph(w)
+        spell = {bare} | set(self.spellings(bare))     # the word itself, however it is spelled
         hits, seen = [], set()
         for st in stems:
             if st == bare: continue
             for tbl in (self.by_form, self.by_lemma):
                 for r in tbl.get(st, []):
                     if r['ID'] not in seen:
-                        seen.add(r['ID']); hits.append(r)
+                        seen.add(r['ID'])
+                        r = dict(r); r['_stem'] = st       # which spelling found it
+                        hits.append(r)
+        # The pos filter exists to stop a STRIPPED fragment beating a correct word: مش بطال
+        # became "be long" when the ب was read as a verb prefix. It must not be applied to the
+        # word's own spelling, which is not a fragment of anything. بكرا "tomorrow" starts with
+        # ب, so the heuristic declared it VERB:I and then discarded بكره — the actual answer —
+        # leaving يبَكِّر "come early" as the best candidate for the word "tomorrow".
         if pos:
             keep = [h for h in hits if str(h['ANALYSIS']).startswith(pos)]
             if keep: hits = keep
