@@ -3066,7 +3066,45 @@
      "analysis": "NOUN:PHRASE",
      "maknuune_id": "36285",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "36285",
+       "root": "ي.و.م",
+       "gloss": "today",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36281",
+       "root": "ي.و.م",
+       "gloss": "day",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "36282",
+       "root": "ي.و.م",
+       "gloss": "day_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36283",
+       "root": "ي.و.م",
+       "gloss": "hopefully",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36284",
+       "root": "ي.و.م",
+       "gloss": "an_eventful_day",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36286",
+       "root": "ي.و.م",
+       "gloss": "everyday",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
      "caphi_urban": "2ilyoom",
      "vocalized": "وبِاليَوم",
      "vocalized_from": "derived:affix"
@@ -5595,17 +5633,45 @@
     },
     {
      "surface": "رابعتهم",
-     "root": null,
-     "lemma": null,
-     "form": "رابعتهم",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "رابعتهم",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.ب.ع",
+     "lemma": "رَابِع",
+     "form": "رَابِع",
+     "caphi_raw": "r aa b i 3",
+     "caphi": "raabi3",
+     "gloss": "fourth",
+     "analysis": "ADJ_NUM",
+     "maknuune_id": "11069",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "11069",
+       "root": "ر.ب.ع",
+       "gloss": "fourth",
+       "analysis": "ADJ_NUM"
+      },
+      {
+       "id": "11089",
+       "root": "ر.ب.ع",
+       "gloss": "take_quarter_of_the_crop_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "11096",
+       "root": "ر.ب.ع",
+       "gloss": "take_quarter_of_the_crop_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "11092",
+       "root": "ر.ب.ع",
+       "gloss": "take_quarter_of_the_crop",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "raabi3",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -5980,7 +6046,33 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "8654",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "8654",
+       "root": "خ.ل.ي",
+       "gloss": "openness",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "8656",
+       "root": "خ.ل.ي",
+       "gloss": "let;allow_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "8661",
+       "root": "خ.ل.ي",
+       "gloss": "let;allow_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "8658",
+       "root": "خ.ل.ي",
+       "gloss": "let;allow",
+       "analysis": "VERB:I"
+      }
+     ],
      "caphi_urban": "khala",
      "vocalized": "خَلَاهم",
      "vocalized_from": "derived:affix"

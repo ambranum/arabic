@@ -1491,6 +1491,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -1501,12 +1507,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -2323,17 +2323,19 @@
     },
     {
      "surface": "بتوديني",
-     "root": null,
-     "lemma": null,
-     "form": "بتوديني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بتوديني",
-     "vocalized_from": "lexicon:exact"
+     "root": "و.د.ي",
+     "lemma": "وَدَّى",
+     "form": "يوَدِّي",
+     "caphi_raw": "y w a d d i",
+     "caphi": "ywaddi",
+     "gloss": "send;drop_sb_off",
+     "analysis": "VERB:I",
+     "maknuune_id": "35227",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "ywaddi",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "ليوكوهاما",
@@ -3783,31 +3785,111 @@
     },
     {
      "surface": "لقيتوه",
-     "root": null,
-     "lemma": null,
-     "form": "لقيتوه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لقيتوه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ل.ق.ي",
+     "lemma": "لَقَى",
+     "form": "لَقَى",
+     "caphi_raw": "l a Q a",
+     "caphi": "laQa",
+     "gloss": "find_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "29691",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "29691",
+       "root": "ل.ق.ي",
+       "gloss": "find_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "29692",
+       "root": "ل.ق.ي",
+       "gloss": "find_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "29672",
+       "root": "ل.ق.ي",
+       "gloss": "find_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "29681",
+       "root": "ل.ق.ي",
+       "gloss": "find",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "29689",
+       "root": "ل.ق.ي",
+       "gloss": "find_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "29690",
+       "root": "ل.ق.ي",
+       "gloss": "find",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "la2a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "ابعتوه",
-     "root": null,
-     "lemma": null,
-     "form": "ابعتوه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ابعتوه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ب.ع.ث",
+     "lemma": "بَعَث",
+     "form": "اِبْعَث",
+     "caphi_raw": "2 i b 3 a T",
+     "caphi": "2ib3aT",
+     "gloss": "send_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "1748",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "1748",
+       "root": "ب.ع.ث",
+       "gloss": "send_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "1860",
+       "root": "ب.ع.ع",
+       "gloss": "vomit;throw_up",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "1862",
+       "root": "ب.ع.ع",
+       "gloss": "vomit;throw_up_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "1861",
+       "root": "ب.ع.ع",
+       "gloss": "vomit;throw_up",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "1743",
+       "root": "ب.ع.ث",
+       "gloss": "sending_sth",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "1750",
+       "root": "ب.ع.ث",
+       "gloss": "send",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "2ib3at",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "ليوكوهاما",

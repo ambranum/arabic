@@ -895,6 +895,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -905,12 +911,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -2549,6 +2549,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -2559,12 +2565,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -2811,17 +2811,19 @@
     },
     {
      "surface": "غطتني",
-     "root": null,
-     "lemma": null,
-     "form": "غطتني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "غطتني",
-     "vocalized_from": "lexicon:exact"
+     "root": "غ.ط.ط",
+     "lemma": "غَطَّة",
+     "form": "غَطَّة",
+     "caphi_raw": "gh a t. t. a",
+     "caphi": "ghat.t.a",
+     "gloss": "disappearance",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "22659",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "ghat.t.a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "وصرت",
@@ -3161,17 +3163,33 @@
    "words": [
     {
      "surface": "شفتها",
-     "root": null,
-     "lemma": null,
-     "form": "شفتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "شفتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ش.ف.ف",
+     "lemma": "شِفِّة",
+     "form": "شِفِّة",
+     "caphi_raw": "sh i f f e",
+     "caphi": "shiffe",
+     "gloss": "lip",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "16522",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "16522",
+       "root": "ش.ف.ف",
+       "gloss": "lip",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "16523",
+       "root": "ش.ف.ف",
+       "gloss": "lip_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "shiffe",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "بتبعد",
@@ -3241,6 +3259,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -3251,12 +3275,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -3353,17 +3371,57 @@
     },
     {
      "surface": "سمعني",
-     "root": null,
-     "lemma": null,
-     "form": "سمعني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سمعني",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.م.ع",
+     "lemma": "سَمَع",
+     "form": "سَمَع",
+     "caphi_raw": "s a m a 3",
+     "caphi": "sama3",
+     "gloss": "hearing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "14942",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14942",
+       "root": "س.م.ع",
+       "gloss": "hearing",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "14943",
+       "root": "س.م.ع",
+       "gloss": "reputation_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "14952",
+       "root": "س.م.ع",
+       "gloss": "make_sth_heard_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14955",
+       "root": "س.م.ع",
+       "gloss": "listen;hear_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14956",
+       "root": "س.م.ع",
+       "gloss": "make_sth_heard_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14944",
+       "root": "س.م.ع",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "sama3",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -3619,17 +3677,19 @@
     },
     {
      "surface": "فمسكتها",
-     "root": null,
-     "lemma": null,
-     "form": "فمسكتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "فمسكتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "م.س.ك",
+     "lemma": "مَسْكِة",
+     "form": "مَسْكِة",
+     "caphi_raw": "m a s k e",
+     "caphi": "maske",
+     "gloss": "the_bridal_bouquet",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "30718",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "maske",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -3641,17 +3701,57 @@
    "words": [
     {
      "surface": "وضليت",
-     "root": null,
-     "lemma": null,
-     "form": "وضليت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وضليت",
-     "vocalized_from": "lexicon:exact"
+     "root": "ض.ل.ل",
+     "lemma": "ضَلّ",
+     "form": "ضِلّ",
+     "caphi_raw": "D. i l l",
+     "caphi": "D.ill",
+     "gloss": "be_disoriented;lose_the_right_path_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "18543",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "18543",
+       "root": "ض.ل.ل",
+       "gloss": "be_disoriented;lose_the_right_path_[auto",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18546",
+       "root": "ض.ل.ل",
+       "gloss": "be_disoriented;lose_the_right_path_[auto",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18544",
+       "root": "ض.ل.ل",
+       "gloss": "be_disoriented;lose_the_right_path",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "19843",
+       "root": "ظ.ل.ل",
+       "gloss": "shadow",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19846",
+       "root": "ظ.ل.ل",
+       "gloss": "remain;lstay;ast;continue_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "19848",
+       "root": "ظ.ل.ل",
+       "gloss": "remain;lstay;ast;continue_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "D.ill",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "عليها",
@@ -3777,17 +3877,33 @@
     },
     {
      "surface": "بيرميني",
-     "root": null,
-     "lemma": null,
-     "form": "بيرميني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بيرميني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.م.ي",
+     "lemma": "رَمَى",
+     "form": "يِرْمِي",
+     "caphi_raw": "y i r m i",
+     "caphi": "yirmi",
+     "gloss": "throw",
+     "analysis": "VERB:I",
+     "maknuune_id": "12228",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12228",
+       "root": "ر.م.ي",
+       "gloss": "throw",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "12237",
+       "root": "ر.م.ي",
+       "gloss": "throw_things_in_a_disorganized_way",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yirmi",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -3912,16 +4028,34 @@
     {
      "surface": "آخرتي",
      "root": "ء.خ.ر",
-     "lemma": "آخِر",
-     "form": "آخِر",
-     "caphi_raw": "2 aa kh i r",
-     "caphi": "2aakhir",
-     "gloss": "last",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "112",
+     "lemma": "آخْرِة",
+     "form": "آخْرِة",
+     "caphi_raw": "2 aa kh r e",
+     "caphi": "2aakhre",
+     "gloss": "The_Day_of_the_Judgment",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "119",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
+      {
+       "id": "119",
+       "root": "ء.خ.ر",
+       "gloss": "The_Day_of_the_Judgment",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "120",
+       "root": "ء.خ.ر",
+       "gloss": "dessert",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "129",
+       "root": "ء.خ.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
       {
        "id": "112",
        "root": "ء.خ.ر",
@@ -3939,29 +4073,11 @@
        "root": "ء.خ.ر",
        "gloss": "delay_[auto]",
        "analysis": "VERB:P"
-      },
-      {
-       "id": "114",
-       "root": "ء.خ.ر",
-       "gloss": "last_[auto]",
-       "analysis": "ADJ:P"
-      },
-      {
-       "id": "126",
-       "root": "ء.خ.ر",
-       "gloss": "very_far",
-       "analysis": "ADJ:PHRASE"
-      },
-      {
-       "id": "127",
-       "root": "ء.خ.ر",
-       "gloss": "very_far",
-       "analysis": "ADJ:PHRASE"
       }
      ],
-     "caphi_urban": "2aakhir",
+     "caphi_urban": "2aakhre",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -4125,17 +4241,57 @@
     },
     {
      "surface": "رماني",
-     "root": null,
-     "lemma": null,
-     "form": "رماني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "رماني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.م.ي",
+     "lemma": "رَمِي",
+     "form": "رَمِي",
+     "caphi_raw": "r a m i",
+     "caphi": "rami",
+     "gloss": "throwing;shooting",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "12219",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12219",
+       "root": "ر.م.ي",
+       "gloss": "throwing;shooting",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "12231",
+       "root": "ر.م.ي",
+       "gloss": "throw_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12233",
+       "root": "ر.م.ي",
+       "gloss": "throwing_sth",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "12236",
+       "root": "ر.م.ي",
+       "gloss": "throw_things_in_a_disorganized_way",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12238",
+       "root": "ر.م.ي",
+       "gloss": "throw_things_in_a_disorganized_way",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12217",
+       "root": "ر.م.ي",
+       "gloss": "ignore_it",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "rami",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "على",

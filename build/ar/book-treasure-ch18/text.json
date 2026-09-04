@@ -1611,6 +1611,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -1621,12 +1627,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -1925,17 +1925,57 @@
     },
     {
      "surface": "سكينته",
-     "root": null,
-     "lemma": null,
-     "form": "سكينته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سكينته",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ك.ن",
+     "lemma": "سِكِّين",
+     "form": "سِكِّين",
+     "caphi_raw": "s i K K ii n",
+     "caphi": "siKKiin",
+     "gloss": "knife",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "14547",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14547",
+       "root": "س.ك.ن",
+       "gloss": "knife",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "14549",
+       "root": "س.ك.ن",
+       "gloss": "knife_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "14552",
+       "root": "س.ك.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "14553",
+       "root": "س.ك.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "14554",
+       "root": "س.ك.ن",
+       "gloss": "The_person_whose_job_is_to_sharpen_knive",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "14555",
+       "root": "س.ك.ن",
+       "gloss": "an_idiomatic_exoression_that_means_\"_to_",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "sikkiin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -2501,17 +2541,33 @@
     },
     {
      "surface": "غراي",
-     "root": null,
-     "lemma": null,
-     "form": "غراي",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "غراي",
-     "vocalized_from": "lexicon:exact"
+     "root": "غ.ر.ر",
+     "lemma": "غُرَّة",
+     "form": "غُرَّة",
+     "caphi_raw": "gh u r r a",
+     "caphi": "ghurra",
+     "gloss": "forelock",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "22450",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "22450",
+       "root": "غ.ر.ر",
+       "gloss": "forelock",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "22452",
+       "root": "غ.ر.ر",
+       "gloss": "forelock_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "ghurra",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "هاد",
@@ -3253,17 +3309,33 @@
     },
     {
      "surface": "وغراي",
-     "root": null,
-     "lemma": null,
-     "form": "وغراي",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وغراي",
-     "vocalized_from": "lexicon:exact"
+     "root": "غ.ر.ر",
+     "lemma": "غُرَّة",
+     "form": "غُرَّة",
+     "caphi_raw": "gh u r r a",
+     "caphi": "ghurra",
+     "gloss": "forelock",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "22450",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "22450",
+       "root": "غ.ر.ر",
+       "gloss": "forelock",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "22452",
+       "root": "غ.ر.ر",
+       "gloss": "forelock_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "ghurra",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "أطلقوا",
@@ -4263,17 +4335,19 @@
     },
     {
      "surface": "حوالينا",
-     "root": null,
-     "lemma": null,
-     "form": "حوالينا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "حوالينا",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.و.ل",
+     "lemma": "حَوَالِة",
+     "form": "حَوَالِة",
+     "caphi_raw": "7 a w aa l e",
+     "caphi": "7awaale",
+     "gloss": "bank_transfer",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "7342",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "7awaale",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -5135,17 +5209,33 @@
     },
     {
      "surface": "ببندقيته",
-     "root": null,
-     "lemma": null,
-     "form": "ببندقيته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ببندقيته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ب.ن.د.ق",
+     "lemma": "بُنْدُقِيِّة",
+     "form": "بُنْدُقِيِّة",
+     "caphi_raw": "b u n d u q i y y e",
+     "caphi": "bunduqiyye",
+     "gloss": "gun",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "2371",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2371",
+       "root": "ب.ن.د.ق",
+       "gloss": "gun",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "2374",
+       "root": "ب.ن.د.ق",
+       "gloss": "gun_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "bunduqiyye",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "وراح",

@@ -55,6 +55,9 @@ class Lexicon:
         # "spending the summer". Initial only.
         if w.startswith('ز') and len(w) > 2:
             out.append('ص' + w[1:])
+        # NOT a final-hamza rule. ضوء -> ضو "light" is right and it is not worth what it costs:
+        # بهدوء "calmly" loses its hamza, then its بـ, and lands on "demolish" — 15 tokens for
+        # 4. ضوء is curated by name instead.
         # NOT a final ا -> ة rule. It looks like the same phenomenon -- the lexicon files مرة
         # and the dialect writes مرا -- and measured over the corpus it is a net loss: Arabic
         # is full of words that legitimately end in alif, and mapping them all wrecked more
@@ -94,18 +97,44 @@ class Lexicon:
         def desuffix(x):
             """Every suffix-stripped form of x, cheapest first."""
             out = []
-            for suf in ['ها','هم','هن','نا','كم','ي','ك','ه']:      # object / possessive
-                if x.endswith(suf) and len(x) > len(suf) + 1:
+            # A feminine noun's ة becomes ت the moment anything is glued to it: قهوة -> قهوته,
+            # طنجرة -> طنجرتك, ساعة -> ساعتين. norm() has already folded ة to ه, so stripping
+            # the suffix leaves ...ت where the lexicon has ...ه and the word misses by one
+            # letter. Offering the ه form is what lets an ordinary possessed noun resolve.
+            def fem(b):
+                out = [b[:-1] + 'ه'] if b.endswith('ت') and len(b) > 2 else []
+                # A final-weak verb keeps its ي in the lexicon and shows ا once something is
+                # glued on: أعطى -> أعطاه, so stripping the ه leaves اعطا where اعطي is filed.
+                # Applied to the STRIPPED STEM only, never to the whole word — the wider version
+                # of this rule was measured and thrown away (see spellings()).
+                if b.endswith('ا') and len(b) > 2:
+                    out.append(b[:-1] + 'ي')
+                return out
+
+            # 'ني' is the object "me" and it was missing: شافني "he saw me", بتوجعني "it hurts
+            # me", بتساعدني "will you help me". Stripping the 'ي' of the possessive instead left
+            # شافن, which is not a word, so eight everyday verbs in one book had no card. Listed
+            # before 'نا' and 'ي' because the loop takes every match and the longest is the one
+            # that leaves a real stem.
+            for suf in ['ني','ها','هم','هن','نا','كم','ي','ك','ه']:  # object / possessive
+                # 'ني' needs THREE letters behind it, not two. An Arabic verb stem is at least
+                # three, and the looser guard let لأني "because" become لأ "No!" (26 tokens) and
+                # عيني "my eye" become the relative pronoun. Anything shorter that ends in ني
+                # is a word that happens to, not a verb carrying an object.
+                need = 3 if suf == 'ني' else 2      # 2 preserves the original guard exactly
+                if x.endswith(suf) and len(x) - len(suf) >= need:
                     base = x[:-len(suf)]
-                    out += [base, base + 'ه', 'ي' + base]
+                    out += [base, base + 'ه', 'ي' + base] + fem(base)
             for suf in ['وا','تو','تي','نا','ت','و']:                # past subject
                 if x.endswith(suf) and len(x) > len(suf) + 1:
                     out.append(x[:-len(suf)])
             if x.endswith('ات') and len(x) > 3:                      # sound fem. plural
                 out += [x[:-2] + 'ه', x[:-2]]
-            for suf in ('ين','ون'):                                  # sound masc. plural
+            for suf in ('ين','ون'):                        # sound masc. plural, and the DUAL
                 if x.endswith(suf) and len(x) > len(suf) + 2:
-                    out.append(x[:-len(suf)])
+                    base = x[:-len(suf)]
+                    # ساعتين "two hours" is ساعة + ـتين. Same one-letter miss as above.
+                    out += [base] + fem(base)
             if x.endswith('ه') and len(x) > 2:                       # feminine ending
                 out.append(x[:-1])
             return out
@@ -114,6 +143,11 @@ class Lexicon:
         # are real words, not fragments.
         tier1 = [w] + coda(w)
         # TIER 1b — suffixes off the whole word (طيارات -> طيارة, no prefix involved).
+        # NOT stripped twice, though Arabic does stack them: سألوه is سأل + وا + ه. Measured, a
+        # second pass resolves 1,292 more tokens and wrecks 542, because every extra stem is
+        # another chance for a wrong word to win — لأني "because" became "No!", بقوة "with
+        # force" became "pour water", الموت "death" became "pain". One strip is the floor that
+        # keeps the stem list honest. Stacked suffixes need per-word adjudication, not a wider net.
         tier1b = []
         for x in tier1:
             for y in desuffix(x):
@@ -127,10 +161,18 @@ class Lexicon:
             pre += [w[2:], 'ي' + w[2:], 'ت' + w[2:]]; pos = 'VERB:I'
         elif w.startswith('ب') and len(w) > 2:
             pre += [w[1:], 'ي' + w[1:]]; pos = 'VERB:I'
-        for p_ in ['عال','بال','وال','فال','لل','ال','و','ع','ل','ف','ك']:
+        # Proclitics STACK, and this list is single-strip, so a compound has to be spelled out:
+        # وبالمسا is و + بـ + الـ and one pass only ever took the و off. And هال is the spoken
+        # demonstrative — هالبيت "this house" — which nothing here knew at all. Written out
+        # rather than made compositional, because a second pass over the prefix list is the same
+        # trade the suffix side lost: more stems, more chances for a wrong word to win.
+        for p_ in ['وبال', 'فبال', 'وهال', 'بهال', 'لهال', 'هال', 'فب',   # 'وب' costs وبده 9 tokens
+                   
+                   'عال','بال','وال','فال','لل','ال','و','ع','ل','ف','ك']:
             if w.startswith(p_) and len(w) > len(p_) + 1:
                 pre += [w[len(p_):], 'ال' + w[len(p_):]]
-                if p_ in ('ال','بال','عال','وال','فال'): pos = pos or 'NOUN'
+                if p_ in ('ال','بال','عال','وال','فال','وبال','فبال','هال','بهال','وهال','لهال'):
+                    pos = pos or 'NOUN'
         # imperfect without b-: تضرب, ترمي, نوصل. Maknuune stores the يـ form.
         for base in [w] + list(pre):
             if base and base[0] in 'تنأا' and len(base) > 2:
@@ -148,6 +190,15 @@ class Lexicon:
         # Tier 1 and 2 are the word with letters taken off the FRONT; 1b and 3 have had letters
         # taken off the BACK as well. Kept separately because the curated table may only be
         # reached the first way -- see prefix_stems().
+        # A SECOND pass of suffix stripping, kept aside. Arabic stacks its suffixes -- سألوه is
+        # سأل + وا + ه, شفتوا is شاف + ت + وا -- and one pass leaves سالو and شفت, neither of
+        # which is a word. Folding these into the main list resolves 1,292 more tokens and
+        # WRECKS 542, because every extra stem is another chance for a wrong word to win: لأني
+        # "because" became "No!", بقوة "with force" became "pour water". So they are held here
+        # and candidates() reaches for them only when nothing else matched at all, where they
+        # cannot displace an answer because there is none.
+        self._deep = list(dict.fromkeys(
+            [z for y in tier1b + tier3 for z in desuffix(y)]))
         self._pre_only = list(dict.fromkeys(tier1 + tier2))
         return list(dict.fromkeys(tier1 + tier1b + tier2 + tier3)), pos
 
@@ -195,6 +246,16 @@ class Lexicon:
                         seen.add(r['ID'])
                         r = dict(r); r['_stem'] = st       # which spelling found it
                         hits.append(r)
+        # LAST RESORT ONLY: a word nothing matched gets the deeper peel. See morph()._deep.
+        if not hits:
+            for st in self._deep:
+                if st == bare: continue
+                for tbl in (self.by_form, self.by_lemma):
+                    for r in tbl.get(st, []):
+                        if r['ID'] not in seen:
+                            seen.add(r['ID'])
+                            r = dict(r); r['_stem'] = st
+                            hits.append(r)
         # The pos filter exists to stop a STRIPPED fragment beating a correct word: مش بطال
         # became "be long" when the ب was read as a verb prefix. It must not be applied to the
         # word's own spelling, which is not a fragment of anything. بكرا "tomorrow" starts with

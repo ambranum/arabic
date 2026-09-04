@@ -383,23 +383,41 @@
    "audio": null
   },
   {
-   "ar": "بيعطوه قرشين.",
-   "en": "They offered him two coins.",
+   "ar": "بيحطوا له قرشين.",
+   "en": "They put two coins down for him.",
    "p": 0,
    "words": [
     {
-     "surface": "بيعطوه",
-     "root": null,
-     "lemma": null,
-     "form": "بيعطوه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "surface": "بيحطوا",
+     "root": "ح.ط.ط",
+     "lemma": "حَطّ",
+     "form": "يحُطّ",
+     "caphi_raw": "y 7 u t. t.",
+     "caphi": "y7ut.t.",
+     "gloss": "put;place;devalue",
+     "analysis": "VERB:I",
+     "maknuune_id": "6329",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "y7ut.t.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "له",
+     "root": "—",
+     "lemma": "لُه",
+     "form": "لُه",
+     "caphi_raw": "2ilo",
+     "caphi": "2ilo",
+     "gloss": "to him, for him",
+     "analysis": "PREP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بيعطوه",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "لُه",
+     "vocalized_from": "curated",
+     "provenance": "curated:story-word",
+     "caphi_urban": "2ilo"
     },
     {
      "surface": "قرشين",
@@ -873,17 +891,39 @@
     },
     {
      "surface": "شفتوا",
-     "root": null,
-     "lemma": null,
-     "form": "شفتوا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "شفتوا",
-     "vocalized_from": "lexicon:exact"
+     "root": "ش.ف.ف",
+     "lemma": "شَفّ",
+     "form": "شِفّ",
+     "caphi_raw": "sh i f f",
+     "caphi": "shiff",
+     "gloss": "run_over_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "16524",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "16524",
+       "root": "ش.ف.ف",
+       "gloss": "run_over_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "16528",
+       "root": "ش.ف.ف",
+       "gloss": "run_over_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "16526",
+       "root": "ش.ف.ف",
+       "gloss": "run_over",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "shiff",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null

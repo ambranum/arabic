@@ -441,17 +441,19 @@
    "words": [
     {
      "surface": "وبالصناديق",
-     "root": null,
-     "lemma": null,
-     "form": "وبالصناديق",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبالصناديق",
-     "vocalized_from": "lexicon:exact"
+     "root": "ص.ن.د.ق",
+     "lemma": "صَنْدُوق",
+     "form": "صَنَادِيق",
+     "caphi_raw": "s. a n aa d ii Q",
+     "caphi": "s.anaadiiQ",
+     "gloss": "box_[auto]",
+     "analysis": "NOUN:P",
+     "maknuune_id": "18044",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.anaadii2",
+     "vocalized": "وبِالصَّنَادِيق",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null
@@ -1955,17 +1957,33 @@
     },
     {
      "surface": "بتساعدني",
-     "root": null,
-     "lemma": null,
-     "form": "بتساعدني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بتساعدني",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ع.د",
+     "lemma": "سَاعَد",
+     "form": "يسَاعِد",
+     "caphi_raw": "y s aa 3 i d",
+     "caphi": "ysaa3id",
+     "gloss": "help",
+     "analysis": "VERB:I",
+     "maknuune_id": "14213",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14213",
+       "root": "س.ع.د",
+       "gloss": "help",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "14217",
+       "root": "س.ع.د",
+       "gloss": "help_one_another;help_each_other",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "ysaa3id",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -2065,17 +2083,33 @@
     },
     {
      "surface": "بهالبيت",
-     "root": null,
-     "lemma": null,
-     "form": "بهالبيت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بهالبيت",
-     "vocalized_from": "lexicon:exact"
+     "root": "ب.ي.ت",
+     "lemma": "بَيَّت",
+     "form": "يبَيِّت",
+     "caphi_raw": "y b a y y i t",
+     "caphi": "ybayyit",
+     "gloss": "make_sb_sleep_(causative)",
+     "analysis": "VERB:I",
+     "maknuune_id": "2713",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2713",
+       "root": "ب.ي.ت",
+       "gloss": "make_sb_sleep_(causative)",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "28760",
+       "root": "ل.ب.ي",
+       "gloss": "comply_with_sb's_requests_and_do_whateve",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "ybayyit",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "كل",

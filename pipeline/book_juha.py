@@ -849,11 +849,11 @@ CHAPTERS = [
   P(('مرته إجت.', "His wife came."),
     ('وفتحت المراية.', "And opened the mirror."),
     ('وتطلعت.', "And looked."),
-    ('وشافت مرا.', "And saw a woman."),
-    ('مرا كبيرة بالعمر.', "An old woman."),
+    ('وشافت مرة.', "And saw a woman."),
+    ('مرة كبيرة بالعمر.', "An old woman."),
     ('وصرخت: يا جحا!', "And cried: Juha!"),
     ('مش بس زلمة!', "Not only a man!"),
-    ('في مرا كمان!', "There is a woman too!"),
+    ('في مرة كمان!', "There is a woman too!"),
     ('ومين هاي؟', "And who is she?"))]),
 
  ('The Wrong Grave', 'القبر الغلط', [
@@ -1167,7 +1167,7 @@ CHAPTERS = [
     ('كل يوم.', "Every day."),
     ('بيقولوا: جحا غبي.', "They said: Juha is stupid."),
     ('وعندهم لعبة.', "And they had a game."),
-    ('بيعطوه قرشين.', "They offered him two coins."),
+    ('بيحطوا له قرشين.', "They put two coins down for him."),
     ('واحد كبير.', "One big."),
     ('وواحد زغير.', "And one small."),
     ('وبيقولوا: خد واحد.', "And said: take one.")),

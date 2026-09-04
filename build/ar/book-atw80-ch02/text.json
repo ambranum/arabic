@@ -603,17 +603,33 @@
    "words": [
     {
      "surface": "وبأوضته",
-     "root": null,
-     "lemma": null,
-     "form": "وبأوضته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبأوضته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ء.و.ض",
+     "lemma": "أَوضَة",
+     "form": "أَوضَة",
+     "caphi_raw": "2 oo D. a",
+     "caphi": "2ooD.a",
+     "gloss": "room",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "657",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "657",
+       "root": "ء.و.ض",
+       "gloss": "room",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "658",
+       "root": "ء.و.ض",
+       "gloss": "room_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "2ooD.a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "لقى",
@@ -1495,6 +1511,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -1505,12 +1527,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -2370,7 +2386,45 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "22391",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "22391",
+       "root": "غ.د.ي",
+       "gloss": "lunch",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "22392",
+       "root": "غ.د.ي",
+       "gloss": "invite_sb_for_lunch;prepare_lunch_for_sb",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "22396",
+       "root": "غ.د.ي",
+       "gloss": "invite_sb_for_lunch;prepare_lunch_for_sb",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "22394",
+       "root": "غ.د.ي",
+       "gloss": "invite_sb_for_lunch;prepare_lunch_for_sb",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "22402",
+       "root": "غ.ذ.ي",
+       "gloss": "feed_sth;nourish_sth_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "22404",
+       "root": "غ.ذ.ي",
+       "gloss": "feed_sth;nourish_sth",
+       "analysis": "VERB:P"
+      }
+     ],
      "caphi_urban": "ghadaa2",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
@@ -2545,17 +2599,39 @@
    "words": [
     {
      "surface": "وبالمسا",
-     "root": null,
-     "lemma": null,
-     "form": "وبالمسا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبالمسا",
-     "vocalized_from": "lexicon:exact"
+     "root": "م.س.ي",
+     "lemma": "مَسَا",
+     "form": "مَسَا",
+     "caphi_raw": "m a s a",
+     "caphi": "masa",
+     "gloss": "evening",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "30747",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30747",
+       "root": "م.س.ي",
+       "gloss": "evening",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "30750",
+       "root": "م.س.ي",
+       "gloss": "good_evening!",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30751",
+       "root": "م.س.ي",
+       "gloss": "in_the_evening",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "masa",
+     "vocalized": "وبِالمَسَا",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "قعد",
@@ -3155,17 +3231,57 @@
    "words": [
     {
      "surface": "وهاليوم",
-     "root": null,
-     "lemma": null,
-     "form": "وهاليوم",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وهاليوم",
-     "vocalized_from": "lexicon:exact"
+     "root": "ي.و.م",
+     "lemma": "يَوم",
+     "form": "يَوم",
+     "caphi_raw": "y oo m",
+     "caphi": "yoom",
+     "gloss": "day",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "36281",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "36281",
+       "root": "ي.و.م",
+       "gloss": "day",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "36282",
+       "root": "ي.و.م",
+       "gloss": "day_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36283",
+       "root": "ي.و.م",
+       "gloss": "hopefully",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36284",
+       "root": "ي.و.م",
+       "gloss": "an_eventful_day",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36285",
+       "root": "ي.و.م",
+       "gloss": "today",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36286",
+       "root": "ي.و.م",
+       "gloss": "everyday",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "yoom",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "ما",
@@ -4123,17 +4239,39 @@
     },
     {
      "surface": "يمسكوه",
-     "root": null,
-     "lemma": null,
-     "form": "يمسكوه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يمسكوه",
-     "vocalized_from": "lexicon:exact"
+     "root": "م.س.ك",
+     "lemma": "مِسِك",
+     "form": "يِمْسِك",
+     "caphi_raw": "y i m s i k",
+     "caphi": "yimsik",
+     "gloss": "catch;hold;grab;arrest",
+     "analysis": "VERB:I",
+     "maknuune_id": "30729",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30729",
+       "root": "م.س.ك",
+       "gloss": "catch;hold;grab;arrest",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "30730",
+       "root": "م.س.ك",
+       "gloss": "catch;hold;arrest",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "30735",
+       "root": "م.س.ك",
+       "gloss": "make_sb_hold_(causative);give_sb_authori",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yimsik",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null

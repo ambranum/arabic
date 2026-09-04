@@ -61,6 +61,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -71,12 +77,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -277,17 +277,57 @@
     },
     {
      "surface": "لاحظته",
-     "root": null,
-     "lemma": null,
-     "form": "لاحظته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لاحظته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ل.ح.ظ",
+     "lemma": "لَاحَظ",
+     "form": "لَاحِظ",
+     "caphi_raw": "l aa 7 i Z.",
+     "caphi": "laa7iZ.",
+     "gloss": "notice_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "28862",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "28862",
+       "root": "ل.ح.ظ",
+       "gloss": "notice_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "28864",
+       "root": "ل.ح.ظ",
+       "gloss": "notice_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "28863",
+       "root": "ل.ح.ظ",
+       "gloss": "notice",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "6362",
+       "root": "ح.ظ.ظ",
+       "gloss": "luck",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "6363",
+       "root": "ح.ظ.ظ",
+       "gloss": "luck_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "6364",
+       "root": "ح.ظ.ظ",
+       "gloss": "luckless_people_should_not_bother_themse",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "laa7iZ.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "قبل",
@@ -1435,17 +1475,19 @@
     },
     {
      "surface": "جواته",
-     "root": null,
-     "lemma": null,
-     "form": "جواته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جواته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ج.و.و",
+     "lemma": "جُوَّاة",
+     "form": "جُوَّاة",
+     "caphi_raw": "dj u w w aa t",
+     "caphi": "djuwwaat",
+     "gloss": "in",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "4951",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "djuwwaat",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -2091,6 +2133,12 @@
        "root": "ح.م.ل",
        "gloss": "get_pregnant",
        "analysis": "VERB:I"
+      },
+      {
+       "id": "7002",
+       "root": "ح.م.ل",
+       "gloss": "campaign;expedition;attack;campaigns;exp",
+       "analysis": "NOUN:FS"
       }
      ],
      "caphi_urban": "7imlat",
@@ -2229,17 +2277,23 @@
     },
     {
      "surface": "لقيته",
-     "root": "ق.و.ت",
-     "lemma": "قَات",
-     "form": "قِيت",
-     "caphi_raw": "q ii t",
-     "caphi": "qiit",
-     "gloss": "give_sustenance_to_sb;give_sb_the_feeling_of_strength_and_satiation",
-     "analysis": "VERB:C",
-     "maknuune_id": "26923",
+     "root": "ل.ق.ي",
+     "lemma": "لْقِيِّة",
+     "form": "لْقِيِّة",
+     "caphi_raw": "l Q i y y e",
+     "caphi": "lQiyye",
+     "gloss": "lucky_find;good_chance",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "29665",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
+      {
+       "id": "29665",
+       "root": "ل.ق.ي",
+       "gloss": "lucky_find;good_chance",
+       "analysis": "NOUN:FS"
+      },
       {
        "id": "26923",
        "root": "ق.و.ت",
@@ -2253,9 +2307,9 @@
        "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "qiit",
+     "caphi_urban": "l2iyye",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -2435,17 +2489,19 @@
     },
     {
      "surface": "ودفعته",
-     "root": null,
-     "lemma": null,
-     "form": "ودفعته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ودفعته",
-     "vocalized_from": "lexicon:exact"
+     "root": "د.ف.ع",
+     "lemma": "دُفْعَة",
+     "form": "دُفْعَة",
+     "caphi_raw": "d u f 3 a",
+     "caphi": "duf3a",
+     "gloss": "batch",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "9828",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "duf3a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "بالنهر",

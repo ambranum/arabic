@@ -320,7 +320,21 @@
      "analysis": "NOUN:P",
      "maknuune_id": "2689",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2689",
+       "root": "ب.ي.ت",
+       "gloss": "house",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36300",
+       "root": "NTWS",
+       "gloss": "Oh;Ugh!",
+       "analysis": "INTERJ"
+      }
+     ],
      "caphi_urban": "byuut",
      "vocalized": "بْيُوتهم",
      "vocalized_from": "derived:affix"
@@ -461,17 +475,19 @@
     },
     {
      "surface": "هاكون",
-     "root": null,
-     "lemma": null,
-     "form": "هاكون",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "هاكون",
-     "vocalized_from": "lexicon:exact"
+     "root": "NTWS",
+     "lemma": "هَا",
+     "form": "هَا",
+     "caphi_raw": "h a",
+     "caphi": "ha",
+     "gloss": "Ah!;what!",
+     "analysis": "INTERJ",
+     "maknuune_id": "33880",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "ha",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "هلق",
@@ -1491,17 +1507,19 @@
     },
     {
      "surface": "الصناعية",
-     "root": null,
-     "lemma": null,
-     "form": "الصناعية",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الصناعية",
-     "vocalized_from": "lexicon:exact"
+     "root": "ص.ن.ع",
+     "lemma": "صِنَاعَة",
+     "form": "صِنَاعَة",
+     "caphi_raw": "s. i n aa 3 a",
+     "caphi": "s.inaa3a",
+     "gloss": "manufacture;industry;trade;craft",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "18056",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.inaa3a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "بتبين",
@@ -2253,17 +2271,57 @@
     },
     {
      "surface": "لجامعاتها",
-     "root": null,
-     "lemma": null,
-     "form": "لجامعاتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لجامعاتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ج.م.ع",
+     "lemma": "جَامْعَة",
+     "form": "جَامْعَة",
+     "caphi_raw": "J aa m 3 a",
+     "caphi": "Jaam3a",
+     "gloss": "university",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "4484",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "4484",
+       "root": "ج.م.ع",
+       "gloss": "university",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "4490",
+       "root": "ج.م.ع",
+       "gloss": "mosque",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "4511",
+       "root": "ج.م.ع",
+       "gloss": "copulate;have_sexual_intercourse_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "4520",
+       "root": "ج.م.ع",
+       "gloss": "copulate;have_sexual_intercourse_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "4498",
+       "root": "ج.م.ع",
+       "gloss": "mosque_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "4515",
+       "root": "ج.م.ع",
+       "gloss": "copulate;have_sexual_intercourse",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "jaam3a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "بمجالات",

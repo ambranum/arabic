@@ -484,7 +484,21 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "26925",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26925",
+       "root": "ق.و.ت",
+       "gloss": "sustenance;the_feeling_of_strength_and_s",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "27054",
+       "root": "ق.و.ي",
+       "gloss": "power;strength",
+       "analysis": "NOUN:FS"
+      }
+     ],
      "caphi_urban": "quut",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
@@ -1485,17 +1499,19 @@
     },
     {
      "surface": "بسلوك",
-     "root": null,
-     "lemma": null,
-     "form": "بسلوك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بسلوك",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ل.ل",
+     "lemma": "سَلّ",
+     "form": "يِسِلّ",
+     "caphi_raw": "y s i l l",
+     "caphi": "ysill",
+     "gloss": "pig_out_on_sth",
+     "analysis": "VERB:I",
+     "maknuune_id": "14762",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "ysill",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:ambiguous-person"
     },
     {
      "surface": "جنسي",
@@ -1859,17 +1875,33 @@
     },
     {
      "surface": "بمنطقته",
-     "root": null,
-     "lemma": null,
-     "form": "بمنطقته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بمنطقته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ن.ط.ق",
+     "lemma": "مَنْطِقَة",
+     "form": "مَنْطِقَة",
+     "caphi_raw": "m a n t. i Q a",
+     "caphi": "mant.iQa",
+     "gloss": "area",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "32589",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "32589",
+       "root": "ن.ط.ق",
+       "gloss": "area",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "32592",
+       "root": "ن.ط.ق",
+       "gloss": "area_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "mant.i2a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": "audio/s6.mp3"

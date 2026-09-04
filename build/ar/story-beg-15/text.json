@@ -149,17 +149,31 @@
      "surface": "بأوضتي",
      "root": "ء.و.ض",
      "lemma": "أَوضَة",
-     "form": "أُوَض",
-     "caphi_raw": "2 u w a D.",
-     "caphi": "2uwaD.",
-     "gloss": "room_[auto]",
-     "analysis": "NOUN:P",
-     "maknuune_id": "658",
+     "form": "أَوضَة",
+     "caphi_raw": "2 oo D. a",
+     "caphi": "2ooD.a",
+     "gloss": "room",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "657",
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "2uwaD.",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "657",
+       "root": "ء.و.ض",
+       "gloss": "room",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "658",
+       "root": "ء.و.ض",
+       "gloss": "room_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "2ooD.a",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": "audio/s0.mp3"
@@ -429,17 +443,33 @@
     },
     {
      "surface": "بتساعدني",
-     "root": null,
-     "lemma": null,
-     "form": "بتساعدني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بتساعدني",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ع.د",
+     "lemma": "سَاعَد",
+     "form": "يسَاعِد",
+     "caphi_raw": "y s aa 3 i d",
+     "caphi": "ysaa3id",
+     "gloss": "help",
+     "analysis": "VERB:I",
+     "maknuune_id": "14213",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14213",
+       "root": "س.ع.د",
+       "gloss": "help",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "14217",
+       "root": "س.ع.د",
+       "gloss": "help_one_another;help_each_other",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "ysaa3id",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "أنام",

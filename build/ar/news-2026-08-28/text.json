@@ -1738,7 +1738,21 @@
      "analysis": "NOUN_ACT:MS",
      "maknuune_id": "6656",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6656",
+       "root": "ح.ل.ت",
+       "gloss": "shaving_sb's_head_completely_bald",
+       "analysis": "NOUN_ACT:MS"
+      },
+      {
+       "id": "7367",
+       "root": "ح.و.ل",
+       "gloss": "condition;case;situation",
+       "analysis": "NOUN:FS"
+      }
+     ],
      "caphi_urban": "7aalit",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
@@ -2667,17 +2681,19 @@
     },
     {
      "surface": "الشمالية",
-     "root": null,
-     "lemma": null,
-     "form": "الشمالية",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الشمالية",
-     "vocalized_from": "lexicon:exact"
+     "root": "ش.م.ل",
+     "lemma": "شَمَال",
+     "form": "شَمَال",
+     "caphi_raw": "sh a m aa l",
+     "caphi": "shamaal",
+     "gloss": "north;North",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "16949",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "shamaal",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "هدّدت",

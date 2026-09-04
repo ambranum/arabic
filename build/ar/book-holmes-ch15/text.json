@@ -545,17 +545,19 @@
     },
     {
      "surface": "يحاكموك",
-     "root": null,
-     "lemma": null,
-     "form": "يحاكموك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يحاكموك",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.ك.م",
+     "lemma": "حَاكَم",
+     "form": "يحَاكِم",
+     "caphi_raw": "y 7 aa k i m",
+     "caphi": "y7aakim",
+     "gloss": "bring_sb_to_justice;go_on_trial;take_sb_to_the_court",
+     "analysis": "VERB:I",
+     "maknuune_id": "6603",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "y7aakim",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "عليها",
@@ -1103,6 +1105,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -1113,12 +1121,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -1897,17 +1899,19 @@
    "words": [
     {
      "surface": "وبالصحيفة",
-     "root": null,
-     "lemma": null,
-     "form": "وبالصحيفة",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبالصحيفة",
-     "vocalized_from": "lexicon:exact"
+     "root": "ص.ح.ف",
+     "lemma": "صَحِيفِة",
+     "form": "صَحِيفِة",
+     "caphi_raw": "s. a 7 ii f e",
+     "caphi": "s.a7iife",
+     "gloss": "paper;document",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "17519",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.a7iife",
+     "vocalized": "وبِالصَّحِيفِة",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "كنت",
@@ -1981,17 +1985,33 @@
     },
     {
      "surface": "جنيهين",
-     "root": null,
-     "lemma": null,
-     "form": "جنيهين",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جنيهين",
-     "vocalized_from": "lexicon:exact"
+     "root": "ج.ن.ن",
+     "lemma": "جِنِّي",
+     "form": "جِنِّي",
+     "caphi_raw": "J i n n i",
+     "caphi": "Jinni",
+     "gloss": "Genie",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "4661",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "4661",
+       "root": "ج.ن.ن",
+       "gloss": "Genie",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "4669",
+       "root": "ج.ن.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "jinni",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "بالأسبوع",
@@ -3825,6 +3845,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -3835,12 +3861,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -3917,45 +3937,57 @@
     },
     {
      "surface": "مرتي",
-     "root": "م.ر.ر",
-     "lemma": "مُرّ",
-     "form": "مُرّ",
-     "caphi_raw": "m u r r",
-     "caphi": "murr",
-     "gloss": "bitter",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "30421",
+     "root": "م.ر.ء",
+     "lemma": "مَرَة",
+     "form": "مَرَة",
+     "caphi_raw": "m a r a",
+     "caphi": "mara",
+     "gloss": "woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "30368",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
+      {
+       "id": "30368",
+       "root": "م.ر.ء",
+       "gloss": "woman",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30423",
+       "root": "م.ر.ر",
+       "gloss": "once",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30369",
+       "root": "م.ر.ء",
+       "gloss": "jobless",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30424",
+       "root": "م.ر.ر",
+       "gloss": "sometimes",
+       "analysis": "NOUN:FP"
+      },
+      {
+       "id": "30434",
+       "root": "م.ر.ر",
+       "gloss": "an_idiomatic_expression_that_means\"_to_a",
+       "analysis": "NOUN:PHRASE"
+      },
       {
        "id": "30421",
        "root": "م.ر.ر",
        "gloss": "bitter",
        "analysis": "ADJ:MS"
-      },
-      {
-       "id": "30438",
-       "root": "م.ر.ر",
-       "gloss": "pass_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "30446",
-       "root": "م.ر.ر",
-       "gloss": "pass_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "30442",
-       "root": "م.ر.ر",
-       "gloss": "pass",
-       "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "murr",
+     "caphi_urban": "mara",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "من",
@@ -5459,17 +5491,33 @@
     },
     {
      "surface": "وأعطيته",
-     "root": null,
-     "lemma": null,
-     "form": "وأعطيته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وأعطيته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ع.ط.ي",
+     "lemma": "عَطِيِّة",
+     "form": "عَطِيِّة",
+     "caphi_raw": "3 a t. i y y e",
+     "caphi": "3at.iyye",
+     "gloss": "gift;blessing",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "21125",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21125",
+       "root": "ع.ط.ي",
+       "gloss": "gift;blessing",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "21128",
+       "root": "ع.ط.ي",
+       "gloss": "gift;blessing_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "3at.iyye",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "لصاحب",
@@ -5573,17 +5621,57 @@
     },
     {
      "surface": "زارني",
-     "root": null,
-     "lemma": null,
-     "form": "زارني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "زارني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ز.و.ر",
+     "lemma": "زَار",
+     "form": "زَار",
+     "caphi_raw": "z aa r",
+     "caphi": "zaar",
+     "gloss": "visit_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "13367",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13367",
+       "root": "ز.و.ر",
+       "gloss": "visit_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "13357",
+       "root": "ز.و.ر",
+       "gloss": "visit_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "13362",
+       "root": "ز.و.ر",
+       "gloss": "visit",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "18260",
+       "root": "ص.ي.ر",
+       "gloss": "become_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18257",
+       "root": "ص.ي.ر",
+       "gloss": "be_affected",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "18258",
+       "root": "ص.ي.ر",
+       "gloss": "become_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "zaar",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null

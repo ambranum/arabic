@@ -733,17 +733,33 @@
     },
     {
      "surface": "شفته",
-     "root": null,
-     "lemma": null,
-     "form": "شفته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "شفته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ش.ف.ف",
+     "lemma": "شِفِّة",
+     "form": "شِفِّة",
+     "caphi_raw": "sh i f f e",
+     "caphi": "shiffe",
+     "gloss": "lip",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "16522",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "16522",
+       "root": "ش.ف.ف",
+       "gloss": "lip",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "16523",
+       "root": "ش.ف.ف",
+       "gloss": "lip_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "shiffe",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -801,17 +817,19 @@
     },
     {
      "surface": "وحواليه",
-     "root": null,
-     "lemma": null,
-     "form": "وحواليه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وحواليه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.و.ل",
+     "lemma": "حَوَالِة",
+     "form": "حَوَالِة",
+     "caphi_raw": "7 a w aa l e",
+     "caphi": "7awaale",
+     "gloss": "bank_transfer",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "7342",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "7awaale",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "ألف",
@@ -1281,17 +1299,57 @@
    "words": [
     {
      "surface": "أخدوني",
-     "root": null,
-     "lemma": null,
-     "form": "أخدوني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "أخدوني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ء.خ.ذ",
+     "lemma": "أَخِذ",
+     "form": "أَخِذ",
+     "caphi_raw": "2 a kh i D",
+     "caphi": "2akhiD",
+     "gloss": "taking",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "87",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "87",
+       "root": "ء.خ.ذ",
+       "gloss": "taking",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "94",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "99",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "100",
+       "root": "ء.خ.ذ",
+       "gloss": "take_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "107",
+       "root": "ء.خ.ذ",
+       "gloss": "taking_sth",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "86",
+       "root": "ء.خ.ذ",
+       "gloss": "A_metaphor_for_heavy_rain,_that_is,_the_",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "2akhid",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "للملك",
@@ -1420,44 +1478,56 @@
     {
      "surface": "قصتي",
      "root": "ق.ص.ص",
-     "lemma": "قَصّ",
-     "form": "قُصّ",
-     "caphi_raw": "Q u s. s.",
-     "caphi": "Qus.s.",
-     "gloss": "cut_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "26130",
+     "lemma": "قَصَّة",
+     "form": "قَصَّة",
+     "caphi_raw": "Q a s. s. a",
+     "caphi": "Qas.s.a",
+     "gloss": "design;haircut",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "26123",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
+      {
+       "id": "26123",
+       "root": "ق.ص.ص",
+       "gloss": "design;haircut",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "26124",
+       "root": "ق.ص.ص",
+       "gloss": "story",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "26126",
+       "root": "ق.ص.ص",
+       "gloss": "story_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26127",
+       "root": "ق.ص.ص",
+       "gloss": "haircut",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26128",
+       "root": "ق.ص.ص",
+       "gloss": "the_design_of_the_gown",
+       "analysis": "NOUN:PHRASE"
+      },
       {
        "id": "26130",
        "root": "ق.ص.ص",
        "gloss": "cut_[auto]",
        "analysis": "VERB:C"
-      },
-      {
-       "id": "26132",
-       "root": "ق.ص.ص",
-       "gloss": "cut_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "26129",
-       "root": "ق.ص.ص",
-       "gloss": "to_unearth_facts_and_secrets_about_sb",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "26131",
-       "root": "ق.ص.ص",
-       "gloss": "cut",
-       "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "2us.s.",
+     "caphi_urban": "2as.s.a",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "وقصة",
@@ -1595,17 +1665,45 @@
    "words": [
     {
      "surface": "وفرجيته",
-     "root": null,
-     "lemma": null,
-     "form": "وفرجيته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وفرجيته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ف.ر.ج",
+     "lemma": "فَرْجَى",
+     "form": "فَرْجَي",
+     "caphi_raw": "f a r J i",
+     "caphi": "farJi",
+     "gloss": "show;make_sb_see_sth_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "23480",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23480",
+       "root": "ف.ر.ج",
+       "gloss": "show;make_sb_see_sth_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "23490",
+       "root": "ف.ر.ج",
+       "gloss": "show;make_sb_see_sth_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "23478",
+       "root": "ف.ر.ج",
+       "gloss": "threaten_sb;be_very_tough_to_sb;be_harsh",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "23484",
+       "root": "ف.ر.ج",
+       "gloss": "show;make_sb_see_sth",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "farji",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "اللي",
@@ -1625,17 +1723,33 @@
     },
     {
      "surface": "جبته",
-     "root": null,
-     "lemma": null,
-     "form": "جبته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جبته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ج.ب.ب",
+     "lemma": "جِبِّة",
+     "form": "جِبِّة",
+     "caphi_raw": "dj i b b e",
+     "caphi": "djibbe",
+     "gloss": "jacket",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "3509",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3509",
+       "root": "ج.ب.ب",
+       "gloss": "jacket",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "3510",
+       "root": "ج.ب.ب",
+       "gloss": "jacket_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "djibbe",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "عالطوف",
@@ -1663,17 +1777,33 @@
    "words": [
     {
      "surface": "وأعطيته",
-     "root": null,
-     "lemma": null,
-     "form": "وأعطيته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وأعطيته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ع.ط.ي",
+     "lemma": "عَطِيِّة",
+     "form": "عَطِيِّة",
+     "caphi_raw": "3 a t. i y y e",
+     "caphi": "3at.iyye",
+     "gloss": "gift;blessing",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "21125",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21125",
+       "root": "ع.ط.ي",
+       "gloss": "gift;blessing",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "21128",
+       "root": "ع.ط.ي",
+       "gloss": "gift;blessing_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "3at.iyye",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "أحسن",
@@ -3465,17 +3595,19 @@
     },
     {
      "surface": "وبالمساجد",
-     "root": null,
-     "lemma": null,
-     "form": "وبالمساجد",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبالمساجد",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ج.د",
+     "lemma": "مَسْجِد",
+     "form": "مَسَاجِد",
+     "caphi_raw": "m a s aa J i d",
+     "caphi": "masaaJid",
+     "gloss": "mosque_[auto]",
+     "analysis": "NOUN:P",
+     "maknuune_id": "13702",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "masaajid",
+     "vocalized": "وبِالمَسَاجِد",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "وبريحة",
@@ -3491,7 +3623,7 @@
      "provenance": "maknuune:unique",
      "caphi_urban": "yrayyi7",
      "vocalized": null,
-     "vocalized_from": "unvocalized:ambiguous-person"
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "الخبز",
@@ -4743,6 +4875,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -4753,12 +4891,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -4935,17 +5067,33 @@
     },
     {
      "surface": "هالخدمة",
-     "root": null,
-     "lemma": null,
-     "form": "هالخدمة",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "هالخدمة",
-     "vocalized_from": "lexicon:exact"
+     "root": "خ.د.م",
+     "lemma": "خِدْمِة",
+     "form": "خِدْمِة",
+     "caphi_raw": "kh i d m e",
+     "caphi": "khidme",
+     "gloss": "service",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "7738",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "7738",
+       "root": "خ.د.م",
+       "gloss": "service",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "7741",
+       "root": "خ.د.م",
+       "gloss": "servant_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "khidme",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "رح",
@@ -4965,17 +5113,57 @@
     },
     {
      "surface": "تخليني",
-     "root": null,
-     "lemma": null,
-     "form": "تخليني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "تخليني",
-     "vocalized_from": "lexicon:exact"
+     "root": "خ.ل.ي",
+     "lemma": "تَخَلِّي",
+     "form": "تَخَلِّي",
+     "caphi_raw": "t a kh a l l i",
+     "caphi": "takhalli",
+     "gloss": "leaving",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "8653",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "8653",
+       "root": "خ.ل.ي",
+       "gloss": "leaving",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "8657",
+       "root": "خ.ل.ي",
+       "gloss": "forego;forsake_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "8660",
+       "root": "خ.ل.ي",
+       "gloss": "forego;forsake",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "8659",
+       "root": "خ.ل.ي",
+       "gloss": "forego;forsake_[auto]",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "8656",
+       "root": "خ.ل.ي",
+       "gloss": "let;allow_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "8661",
+       "root": "خ.ل.ي",
+       "gloss": "let;allow_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "takhalli",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "أرجع",

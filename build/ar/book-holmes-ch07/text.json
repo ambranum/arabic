@@ -652,7 +652,21 @@
      "analysis": "NOUN:P",
      "maknuune_id": "2689",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2689",
+       "root": "ب.ي.ت",
+       "gloss": "house",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36300",
+       "root": "NTWS",
+       "gloss": "Oh;Ugh!",
+       "analysis": "INTERJ"
+      }
+     ],
      "caphi_urban": "byuut",
      "vocalized": "بْيُوتهم",
      "vocalized_from": "derived:affix"
@@ -3581,17 +3595,33 @@
     },
     {
      "surface": "حصتها",
-     "root": null,
-     "lemma": null,
-     "form": "حصتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "حصتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.ص.ص",
+     "lemma": "حِصَّة",
+     "form": "حِصَّة",
+     "caphi_raw": "7 i s. s. a",
+     "caphi": "7is.s.a",
+     "gloss": "class;share;portion",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "6203",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6203",
+       "root": "ح.ص.ص",
+       "gloss": "class;share;portion",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "6204",
+       "root": "ح.ص.ص",
+       "gloss": "class;share;portion_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "7is.s.a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -4959,17 +4989,31 @@
      "surface": "وأوضتي",
      "root": "ء.و.ض",
      "lemma": "أَوضَة",
-     "form": "أُوَض",
-     "caphi_raw": "2 u w a D.",
-     "caphi": "2uwaD.",
-     "gloss": "room_[auto]",
-     "analysis": "NOUN:P",
-     "maknuune_id": "658",
+     "form": "أَوضَة",
+     "caphi_raw": "2 oo D. a",
+     "caphi": "2ooD.a",
+     "gloss": "room",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "657",
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "2uwaD.",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "657",
+       "root": "ء.و.ض",
+       "gloss": "room",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "658",
+       "root": "ء.و.ض",
+       "gloss": "room_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "2ooD.a",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -6098,18 +6142,18 @@
     {
      "surface": "وبالليل",
      "root": "ل.ي.ل",
-     "lemma": "لَيل",
-     "form": "بِالَّليل",
-     "caphi_raw": "b i l l ee l",
-     "caphi": "billeel",
-     "gloss": "in_the_night",
-     "analysis": "NOUN:PHRASE",
-     "maknuune_id": "30090",
+     "lemma": "لَيَّل",
+     "form": "يلَيِّل",
+     "caphi_raw": "y l a y y i l",
+     "caphi": "ylayyil",
+     "gloss": "night_fall",
+     "analysis": "VERB:I",
+     "maknuune_id": "30094",
      "village": null,
      "provenance": "maknuune:unique",
-     "caphi_urban": "billeel",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "caphi_urban": "ylayyil",
+     "vocalized": "وبِاللَّيِّل",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "صحيت",
@@ -7487,17 +7531,33 @@
     },
     {
      "surface": "أوضته",
-     "root": null,
-     "lemma": null,
-     "form": "أوضته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "أوضته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ء.و.ض",
+     "lemma": "أَوضَة",
+     "form": "أَوضَة",
+     "caphi_raw": "2 oo D. a",
+     "caphi": "2ooD.a",
+     "gloss": "room",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "657",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "657",
+       "root": "ء.و.ض",
+       "gloss": "room",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "658",
+       "root": "ء.و.ض",
+       "gloss": "room_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "2ooD.a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null

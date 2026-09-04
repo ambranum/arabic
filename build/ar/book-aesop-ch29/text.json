@@ -1550,7 +1550,21 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "26925",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26925",
+       "root": "ق.و.ت",
+       "gloss": "sustenance;the_feeling_of_strength_and_s",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "27054",
+       "root": "ق.و.ي",
+       "gloss": "power;strength",
+       "analysis": "NOUN:FS"
+      }
+     ],
      "caphi_urban": "quut",
      "vocalized": "قُوتها",
      "vocalized_from": "derived:affix"
@@ -1797,17 +1811,19 @@
     },
     {
      "surface": "بإيديه",
-     "root": null,
-     "lemma": null,
-     "form": "بإيديه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بإيديه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ء.ي.د",
+     "lemma": "أَيَّد",
+     "form": "يؤيِّد",
+     "caphi_raw": "y 2 a y y i d",
+     "caphi": "y2ayyid",
+     "gloss": "support;assist",
+     "analysis": "VERB:I",
+     "maknuune_id": "684",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "y2ayyid",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "الاتنين",
@@ -3106,16 +3122,28 @@
     {
      "surface": "شفتي",
      "root": "ش.ف.ف",
-     "lemma": "شَفّ",
-     "form": "شِفّ",
-     "caphi_raw": "sh i f f",
-     "caphi": "shiff",
-     "gloss": "run_over_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "16524",
+     "lemma": "شِفِّة",
+     "form": "شِفِّة",
+     "caphi_raw": "sh i f f e",
+     "caphi": "shiffe",
+     "gloss": "lip",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "16522",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
+      {
+       "id": "16522",
+       "root": "ش.ف.ف",
+       "gloss": "lip",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "16523",
+       "root": "ش.ف.ف",
+       "gloss": "lip_[auto]",
+       "analysis": "NOUN:P"
+      },
       {
        "id": "16524",
        "root": "ش.ف.ف",
@@ -3135,9 +3163,9 @@
        "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "shiff",
+     "caphi_urban": "shiffe",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null

@@ -39,17 +39,19 @@
     },
     {
      "surface": "أمريكاني",
-     "root": null,
-     "lemma": null,
-     "form": "أمريكاني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "أَمريكا",
+     "form": "أَمريكا",
+     "caphi_raw": "2ameerka",
+     "caphi": "2ameerka",
+     "gloss": "America",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "أمريكاني",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "2ameerka"
     },
     {
      "surface": "انقتل",
@@ -585,17 +587,45 @@
     },
     {
      "surface": "سفينتين",
-     "root": null,
-     "lemma": null,
-     "form": "سفينتين",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سفينتين",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ف.ن",
+     "lemma": "سَفِينِة",
+     "form": "سَفِينِة",
+     "caphi_raw": "s a f ii n e",
+     "caphi": "safiine",
+     "gloss": "ship",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "14370",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14370",
+       "root": "س.ف.ن",
+       "gloss": "ship",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "14371",
+       "root": "س.ف.ن",
+       "gloss": "chicken_breast",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "14372",
+       "root": "س.ف.ن",
+       "gloss": "ship_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "14373",
+       "root": "س.ف.ن",
+       "gloss": "chicken_breast_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "safiine",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "انفجروا",
@@ -1887,17 +1917,45 @@
     },
     {
      "surface": "غويانا",
-     "root": null,
-     "lemma": null,
-     "form": "غويانا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "غويانا",
-     "vocalized_from": "lexicon:exact"
+     "root": "غ.و.ي",
+     "lemma": "غَوَى",
+     "form": "غَوَى",
+     "caphi_raw": "gh a w a",
+     "caphi": "ghawa",
+     "gloss": "tempt;lure_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "23029",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23029",
+       "root": "غ.و.ي",
+       "gloss": "tempt;lure_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "23025",
+       "root": "غ.و.ي",
+       "gloss": "tempt;lure_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "23026",
+       "root": "غ.و.ي",
+       "gloss": "tempt;lure",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "23027",
+       "root": "غ.و.ي",
+       "gloss": "tempt;lure",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "ghawa",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "أنقذوا",
@@ -1942,7 +2000,21 @@
      "analysis": "NOUN_NUM",
      "maknuune_id": "13647",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13647",
+       "root": "س.ت.ت",
+       "gloss": "sixties;sixty",
+       "analysis": "NOUN_NUM"
+      },
+      {
+       "id": "29119",
+       "root": "ل.س.س",
+       "gloss": "still",
+       "analysis": "ADV"
+      }
+     ],
      "caphi_urban": "sittiin",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
@@ -2429,17 +2501,57 @@
     },
     {
      "surface": "بكتاباتهم",
-     "root": null,
-     "lemma": null,
-     "form": "بكتاباتهم",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بكتاباتهم",
-     "vocalized_from": "lexicon:exact"
+     "root": "ك.ت.ب",
+     "lemma": "كْتَابِة",
+     "form": "كْتَابِة",
+     "caphi_raw": "k t aa b e",
+     "caphi": "ktaabe",
+     "gloss": "what_is_written_on_the_surface_of_sth",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "27320",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "27320",
+       "root": "ك.ت.ب",
+       "gloss": "what_is_written_on_the_surface_of_sth",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "27321",
+       "root": "ك.ت.ب",
+       "gloss": "an_old_school_where_kids_in_the_past_use",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "27323",
+       "root": "ك.ت.ب",
+       "gloss": "book",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "27326",
+       "root": "ك.ت.ب",
+       "gloss": "writer_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "27327",
+       "root": "ك.ت.ب",
+       "gloss": "an_old_school_where_kids_in_the_past_use",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "27328",
+       "root": "ك.ت.ب",
+       "gloss": "book_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "ktaabe",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": "audio/s7.mp3"
@@ -2529,17 +2641,51 @@
     },
     {
      "surface": "مرته",
-     "root": null,
-     "lemma": null,
-     "form": "مرته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مرته",
-     "vocalized_from": "lexicon:exact"
+     "root": "م.ر.ء",
+     "lemma": "مَرَة",
+     "form": "مَرَة",
+     "caphi_raw": "m a r a",
+     "caphi": "mara",
+     "gloss": "woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "30368",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30368",
+       "root": "م.ر.ء",
+       "gloss": "woman",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30423",
+       "root": "م.ر.ر",
+       "gloss": "once",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30369",
+       "root": "م.ر.ء",
+       "gloss": "jobless",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30424",
+       "root": "م.ر.ر",
+       "gloss": "sometimes",
+       "analysis": "NOUN:FP"
+      },
+      {
+       "id": "30434",
+       "root": "م.ر.ر",
+       "gloss": "an_idiomatic_expression_that_means\"_to_a",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "mara",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "أوشا",

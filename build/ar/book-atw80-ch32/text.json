@@ -673,6 +673,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -683,12 +689,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -1701,17 +1701,19 @@
     },
     {
      "surface": "بيهمني",
-     "root": null,
-     "lemma": null,
-     "form": "بيهمني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بيهمني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ه.م.م",
+     "lemma": "هَمّ",
+     "form": "يهِمّ",
+     "caphi_raw": "y h i m m",
+     "caphi": "yhimm",
+     "gloss": "consider_sth_as_important;be_significant",
+     "analysis": "VERB:I",
+     "maknuune_id": "34679",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yhimm",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "بعدين",
@@ -2041,17 +2043,19 @@
    "words": [
     {
      "surface": "وبالصبح",
-     "root": null,
-     "lemma": null,
-     "form": "وبالصبح",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبالصبح",
-     "vocalized_from": "lexicon:exact"
+     "root": "ص.ب.ح",
+     "lemma": "صَبَّح",
+     "form": "يصَبِّح",
+     "caphi_raw": "y s. a b b i 7",
+     "caphi": "ys.abbi7",
+     "gloss": "greet_sb_in_the_morning;wake_up_in_the_morning;do_the_firt_thing_when_sb_wakes_up",
+     "analysis": "VERB:I",
+     "maknuune_id": "17392",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "ys.abbi7",
+     "vocalized": "وبِالصَّبِّح",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "صار",

@@ -391,17 +391,33 @@
    "words": [
     {
      "surface": "وحطته",
-     "root": null,
-     "lemma": null,
-     "form": "وحطته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وحطته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.ط.ط",
+     "lemma": "حَطَّة",
+     "form": "حَطَّة",
+     "caphi_raw": "7 a t. t. a",
+     "caphi": "7at.t.a",
+     "gloss": "engagement_party_in_some_villages",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "6320",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6320",
+       "root": "ح.ط.ط",
+       "gloss": "engagement_party_in_some_villages",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "6322",
+       "root": "ح.ط.ط",
+       "gloss": "White_transparent_silk_called_\"Al-Ayyoba",
+       "analysis": "NOUN:FS"
+      }
+     ],
+     "caphi_urban": "7at.t.a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "على",
@@ -653,17 +669,57 @@
    "words": [
     {
      "surface": "وبالطريق",
-     "root": null,
-     "lemma": null,
-     "form": "وبالطريق",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبالطريق",
-     "vocalized_from": "lexicon:exact"
+     "root": "ط.ر.ق",
+     "lemma": "طَرِيق",
+     "form": "طَرِيق",
+     "caphi_raw": "t. a r ii Q",
+     "caphi": "t.ariiQ",
+     "gloss": "way;road;path",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "19028",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19028",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19030",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19031",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19036",
+       "root": "ط.ر.ق",
+       "gloss": "about_to_happen;about_to_ocuur;be_alread",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "19037",
+       "root": "ط.ر.ق",
+       "gloss": "sb_is_about_to_arrive",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "19038",
+       "root": "ط.ر.ق",
+       "gloss": "have_a_safe_trip!/_May_Allab_bless_you!",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "t.arii2",
+     "vocalized": "وبِالطَّرِيق",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "صارت",
@@ -803,17 +859,33 @@
    "words": [
     {
      "surface": "وبالمصاري",
-     "root": null,
-     "lemma": null,
-     "form": "وبالمصاري",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبالمصاري",
-     "vocalized_from": "lexicon:exact"
+     "root": "م.ص.ر",
+     "lemma": "مَصَارِي",
+     "form": "مَصَارِي",
+     "caphi_raw": "m a s. aa r i",
+     "caphi": "mas.aari",
+     "gloss": "money",
+     "analysis": "NOUN:P",
+     "maknuune_id": "30808",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30808",
+       "root": "م.ص.ر",
+       "gloss": "money",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "30809",
+       "root": "م.ص.ر",
+       "gloss": "very_cheap",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "mas.aari",
+     "vocalized": "وبِالمَصَارِي",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "بشتري",
@@ -842,8 +914,8 @@
       }
      ],
      "caphi_urban": "yishtiri",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:ambiguous-person"
+     "vocalized": "بِشْتِرِي",
+     "vocalized_from": "derived:verb"
     },
     {
      "surface": "بيض",
@@ -1617,6 +1689,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -1627,12 +1705,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",

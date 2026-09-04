@@ -316,32 +316,38 @@
     {
      "surface": "بغناه",
      "root": "غ.ن.ي",
-     "lemma": "غِنَا",
-     "form": "غِنَا",
-     "caphi_raw": "gh i n aa 2",
-     "caphi": "ghinaa2",
-     "gloss": "singing;wealth;richness",
-     "analysis": "NOUN:MS",
-     "maknuune_id": "22965",
+     "lemma": "غِنِي",
+     "form": "يِغْنِى",
+     "caphi_raw": "y i gh n a",
+     "caphi": "yighna",
+     "gloss": "become_rich",
+     "analysis": "VERB:I",
+     "maknuune_id": "22982",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "22965",
+       "id": "22982",
        "root": "غ.ن.ي",
-       "gloss": "singing;wealth;richness",
-       "analysis": "NOUN:MS"
+       "gloss": "become_rich",
+       "analysis": "VERB:I"
       },
       {
-       "id": "22968",
+       "id": "22984",
        "root": "غ.ن.ي",
-       "gloss": "singing",
-       "analysis": "NOUN:MS"
+       "gloss": "sing",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "22983",
+       "root": "غ.ن.ي",
+       "gloss": "grant_sb_wealth;make_sb_rich;suffice",
+       "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "ghinaa2",
+     "caphi_urban": "yighna",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:weak-final-verb"
     },
     {
      "surface": "الحلو",
@@ -1191,17 +1197,57 @@
     },
     {
      "surface": "لقيناه",
-     "root": null,
-     "lemma": null,
-     "form": "لقيناه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لقيناه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ل.ق.ي",
+     "lemma": "لَقَى",
+     "form": "لَقَى",
+     "caphi_raw": "l a Q a",
+     "caphi": "laQa",
+     "gloss": "find_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "29691",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "29691",
+       "root": "ل.ق.ي",
+       "gloss": "find_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "29692",
+       "root": "ل.ق.ي",
+       "gloss": "find_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "29672",
+       "root": "ل.ق.ي",
+       "gloss": "find_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "29681",
+       "root": "ل.ق.ي",
+       "gloss": "find",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "29689",
+       "root": "ل.ق.ي",
+       "gloss": "find_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "29690",
+       "root": "ل.ق.ي",
+       "gloss": "find",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "la2a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "واقف",
@@ -2003,17 +2049,39 @@
    "words": [
     {
      "surface": "راقبناهم",
-     "root": null,
-     "lemma": null,
-     "form": "راقبناهم",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "راقبناهم",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.ق.ب",
+     "lemma": "رَاقَب",
+     "form": "رَاقِب",
+     "caphi_raw": "r aa q i b",
+     "caphi": "raaqib",
+     "gloss": "watch;observe;spy_on_sb;hack;bug_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "11910",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "11910",
+       "root": "ر.ق.ب",
+       "gloss": "watch;observe;spy_on_sb;hack;bug_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "11916",
+       "root": "ر.ق.ب",
+       "gloss": "watch;observe;spy_on_sb;hack;bug_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "11913",
+       "root": "ر.ق.ب",
+       "gloss": "watch;observe;spy_on_sb;hack;bug",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "raaqib",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "لما",

@@ -240,6 +240,13 @@ MODERN.update({
     "سعادة":    ("سَعادة",   "sa3aade",    "excellency (form of address)", "NOUN:FS"),
     "سنتين":    ("سَنتين",   "santeen",    "two years", "NOUN:D"),
     # Teen numerals. Palestinian says them as one word and the lexicon lists the MSA shapes.
+    "ضوء":      ("ضَوء",     "d.aw",       "light", "NOUN:MS"),
+    "خروف":     ("خَروف",    "kharuuf",    "sheep, lamb", "NOUN:MS"),
+    "زبط":      ("زَبط",     "zabt.",      "exactness (بالزبط = exactly)", "NOUN:MS"),
+    "استلف":    ("استَلَف",   "stalaf",     "he borrowed", "VERB"),
+    # Keyed as norm() leaves it: the tatweel goes, the drawn-out aaa stays, because that IS
+    # the word on the page — a donkey brays at length and the book spells it that way.
+    "هيهاااو":  ("هيـهاااو",  "hiihaaaw",   "hee-haw (a donkey's bray)", "INTJ"),
     "اتناعشر":  ("اتناعشَر",  "itna3shar",  "twelve", "NUM"),
     "خمستعشر":  ("خمستَعشَر", "khamasta3shar", "fifteen", "NUM"),
 })

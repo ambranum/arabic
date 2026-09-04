@@ -1379,6 +1379,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -1389,12 +1395,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -1815,17 +1815,57 @@
     },
     {
      "surface": "رقبتها",
-     "root": null,
-     "lemma": null,
-     "form": "رقبتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "رقبتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.ق.ب",
+     "lemma": "رَقَبِة",
+     "form": "رَقَبِة",
+     "caphi_raw": "r a Q a b e",
+     "caphi": "raQabe",
+     "gloss": "neck",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "11894",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "11894",
+       "root": "ر.ق.ب",
+       "gloss": "neck",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "11896",
+       "root": "ر.ق.ب",
+       "gloss": "neck_[auto]",
+       "analysis": "NOUN:PL"
+      },
+      {
+       "id": "11903",
+       "root": "ر.ق.ب",
+       "gloss": "neck_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "11905",
+       "root": "ر.ق.ب",
+       "gloss": "be_responsible_for_sth;undertake_a_task",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "11907",
+       "root": "ر.ق.ب",
+       "gloss": "it_is_an_expression_that_is_used_to_refe",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "11895",
+       "root": "ر.ق.ب",
+       "gloss": "neck",
+       "analysis": "NOUN:FS"
+      }
+     ],
+     "caphi_urban": "ra2abe",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "طوق",
@@ -2973,17 +3013,19 @@
     },
     {
      "surface": "لجهتها",
-     "root": null,
-     "lemma": null,
-     "form": "لجهتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لجهتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "و.ج.ه",
+     "lemma": "جِهَة",
+     "form": "جِهَة",
+     "caphi_raw": "j i h a",
+     "caphi": "jiha",
+     "gloss": "side;part;direction;sectors;offices;institutions;officials;individuals",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "35090",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "jiha",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -3547,6 +3589,18 @@
        "root": "خ.ب.ء",
        "gloss": "hideout_[auto]",
        "analysis": "NOUN:P"
+      },
+      {
+       "id": "7537",
+       "root": "خ.ب.ء",
+       "gloss": "hiding_sth;concealing_sth",
+       "analysis": "NOUN_ACT:MS"
+      },
+      {
+       "id": "7538",
+       "root": "خ.ب.ء",
+       "gloss": "hidden",
+       "analysis": "NOUN_PASS"
       }
      ],
      "caphi_urban": "makhba2",
@@ -3799,17 +3853,57 @@
     },
     {
      "surface": "ضلينا",
-     "root": null,
-     "lemma": null,
-     "form": "ضلينا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ضلينا",
-     "vocalized_from": "lexicon:exact"
+     "root": "ض.ل.ل",
+     "lemma": "ضَلّ",
+     "form": "ضِلّ",
+     "caphi_raw": "D. i l l",
+     "caphi": "D.ill",
+     "gloss": "be_disoriented;lose_the_right_path_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "18543",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "18543",
+       "root": "ض.ل.ل",
+       "gloss": "be_disoriented;lose_the_right_path_[auto",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18546",
+       "root": "ض.ل.ل",
+       "gloss": "be_disoriented;lose_the_right_path_[auto",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18544",
+       "root": "ض.ل.ل",
+       "gloss": "be_disoriented;lose_the_right_path",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "19843",
+       "root": "ظ.ل.ل",
+       "gloss": "shadow",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19846",
+       "root": "ظ.ل.ل",
+       "gloss": "remain;lstay;ast;continue_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "19848",
+       "root": "ظ.ل.ل",
+       "gloss": "remain;lstay;ast;continue_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "D.ill",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "هيك",
@@ -5171,17 +5265,19 @@
     },
     {
      "surface": "قادتهم",
-     "root": null,
-     "lemma": null,
-     "form": "قادتهم",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "قادتهم",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.و.د",
+     "lemma": "قَائِد",
+     "form": "قَادِة",
+     "caphi_raw": "q aa d e",
+     "caphi": "qaade",
+     "gloss": "leader_[auto]",
+     "analysis": "NOUN:P",
+     "maknuune_id": "26936",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "qaade",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "فوق",

@@ -1721,6 +1721,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -1731,12 +1737,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -3569,17 +3569,57 @@
    "words": [
     {
      "surface": "اقتلني",
-     "root": null,
-     "lemma": null,
-     "form": "اقتلني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "اقتلني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.ت.ل",
+     "lemma": "قَتَل",
+     "form": "اِقْتُل",
+     "caphi_raw": "2 i Q t u l",
+     "caphi": "2iQtul",
+     "gloss": "kill;murder;hit;beat_sb_severely_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "25159",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "25159",
+       "root": "ق.ت.ل",
+       "gloss": "kill;murder;hit;beat_sb_severely_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "25160",
+       "root": "ق.ت.ل",
+       "gloss": "kill;murder;hit;beat_sb_severely_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "25153",
+       "root": "ق.ت.ل",
+       "gloss": "killing;murder",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "25161",
+       "root": "ق.ت.ل",
+       "gloss": "kill_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "25175",
+       "root": "ق.ت.ل",
+       "gloss": "kill;murder;hit;beat_sb_severely_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "25179",
+       "root": "ق.ت.ل",
+       "gloss": "kill_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "2i2tul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "إذا",
@@ -3947,17 +3987,57 @@
     },
     {
      "surface": "ورماه",
-     "root": null,
-     "lemma": null,
-     "form": "ورماه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ورماه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.م.ي",
+     "lemma": "رَمِي",
+     "form": "رَمِي",
+     "caphi_raw": "r a m i",
+     "caphi": "rami",
+     "gloss": "throwing;shooting",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "12219",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12219",
+       "root": "ر.م.ي",
+       "gloss": "throwing;shooting",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "12231",
+       "root": "ر.م.ي",
+       "gloss": "throw_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12233",
+       "root": "ر.م.ي",
+       "gloss": "throwing_sth",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "12236",
+       "root": "ر.م.ي",
+       "gloss": "throw_things_in_a_disorganized_way",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12238",
+       "root": "ر.م.ي",
+       "gloss": "throw_things_in_a_disorganized_way",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12217",
+       "root": "ر.م.ي",
+       "gloss": "ignore_it",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "rami",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "بكل",
@@ -3972,8 +4052,8 @@
      "village": null,
      "provenance": "maknuune:unique",
      "caphi_urban": "ykill",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:ambiguous-person"
+     "vocalized": "بِكِلّ",
+     "vocalized_from": "derived:verb"
     },
     {
      "surface": "قوته",
@@ -3986,7 +4066,21 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "26925",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26925",
+       "root": "ق.و.ت",
+       "gloss": "sustenance;the_feeling_of_strength_and_s",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "27054",
+       "root": "ق.و.ي",
+       "gloss": "power;strength",
+       "analysis": "NOUN:FS"
+      }
+     ],
      "caphi_urban": "quut",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
@@ -4389,17 +4483,51 @@
     },
     {
      "surface": "مرتين",
-     "root": null,
-     "lemma": null,
-     "form": "مرتين",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مرتين",
-     "vocalized_from": "lexicon:exact"
+     "root": "م.ر.ء",
+     "lemma": "مَرَة",
+     "form": "مَرَة",
+     "caphi_raw": "m a r a",
+     "caphi": "mara",
+     "gloss": "woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "30368",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30368",
+       "root": "م.ر.ء",
+       "gloss": "woman",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30423",
+       "root": "م.ر.ر",
+       "gloss": "once",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30369",
+       "root": "م.ر.ء",
+       "gloss": "jobless",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30424",
+       "root": "م.ر.ر",
+       "gloss": "sometimes",
+       "analysis": "NOUN:FP"
+      },
+      {
+       "id": "30434",
+       "root": "م.ر.ر",
+       "gloss": "an_idiomatic_expression_that_means\"_to_a",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "mara",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -4903,17 +5031,57 @@
     },
     {
      "surface": "سكينته",
-     "root": null,
-     "lemma": null,
-     "form": "سكينته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سكينته",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ك.ن",
+     "lemma": "سِكِّين",
+     "form": "سِكِّين",
+     "caphi_raw": "s i K K ii n",
+     "caphi": "siKKiin",
+     "gloss": "knife",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "14547",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14547",
+       "root": "س.ك.ن",
+       "gloss": "knife",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "14549",
+       "root": "س.ك.ن",
+       "gloss": "knife_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "14552",
+       "root": "س.ك.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "14553",
+       "root": "س.ك.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "14554",
+       "root": "س.ك.ن",
+       "gloss": "The_person_whose_job_is_to_sharpen_knive",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "14555",
+       "root": "س.ك.ن",
+       "gloss": "an_idiomatic_exoression_that_means_\"_to_",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "sikkiin",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "على",

@@ -611,6 +611,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -621,12 +627,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -1425,17 +1425,19 @@
     },
     {
      "surface": "حوالينا",
-     "root": null,
-     "lemma": null,
-     "form": "حوالينا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "حوالينا",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.و.ل",
+     "lemma": "حَوَالِة",
+     "form": "حَوَالِة",
+     "caphi_raw": "7 a w aa l e",
+     "caphi": "7awaale",
+     "gloss": "bank_transfer",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "7342",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "7awaale",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -1479,17 +1481,19 @@
     },
     {
      "surface": "الشمالية",
-     "root": null,
-     "lemma": null,
-     "form": "الشمالية",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الشمالية",
-     "vocalized_from": "lexicon:exact"
+     "root": "ش.م.ل",
+     "lemma": "شَمَال",
+     "form": "شَمَال",
+     "caphi_raw": "sh a m aa l",
+     "caphi": "shamaal",
+     "gloss": "north;North",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "16949",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "shamaal",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "طلع",
@@ -2815,17 +2819,39 @@
    "words": [
     {
      "surface": "قاتلوهم",
-     "root": null,
-     "lemma": null,
-     "form": "قاتلوهم",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "قاتلوهم",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.ت.ل",
+     "lemma": "قَاتَل",
+     "form": "قَاتِل",
+     "caphi_raw": "q aa t i l",
+     "caphi": "qaatil",
+     "gloss": "fight_(with_weapons)_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "25162",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "25162",
+       "root": "ق.ت.ل",
+       "gloss": "fight_(with_weapons)_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "25181",
+       "root": "ق.ت.ل",
+       "gloss": "fight_(with_weapons)_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "25172",
+       "root": "ق.ت.ل",
+       "gloss": "fight_(with_weapons)",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "qaatil",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "برا",
@@ -3443,17 +3469,51 @@
    "words": [
     {
      "surface": "نطيت",
-     "root": null,
-     "lemma": null,
-     "form": "نطيت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "نطيت",
-     "vocalized_from": "lexicon:exact"
+     "root": "ن.ط.ط",
+     "lemma": "نَطّ",
+     "form": "نُطّ",
+     "caphi_raw": "n u t. t.",
+     "caphi": "nut.t.",
+     "gloss": "jump_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "32569",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "32569",
+       "root": "ن.ط.ط",
+       "gloss": "jump_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "32573",
+       "root": "ن.ط.ط",
+       "gloss": "jump_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "32568",
+       "root": "ن.ط.ط",
+       "gloss": "boil_with_rage",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "32571",
+       "root": "ن.ط.ط",
+       "gloss": "jump",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "32567",
+       "root": "ن.ط.ط",
+       "gloss": "jump",
+       "analysis": "NOUN:FS"
+      }
+     ],
+     "caphi_urban": "nut.t.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "عالجنب",
@@ -3809,17 +3869,33 @@
    "words": [
     {
      "surface": "وغراي",
-     "root": null,
-     "lemma": null,
-     "form": "وغراي",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وغراي",
-     "vocalized_from": "lexicon:exact"
+     "root": "غ.ر.ر",
+     "lemma": "غُرَّة",
+     "form": "غُرَّة",
+     "caphi_raw": "gh u r r a",
+     "caphi": "ghurra",
+     "gloss": "forelock",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "22450",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "22450",
+       "root": "غ.ر.ر",
+       "gloss": "forelock",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "22452",
+       "root": "غ.ر.ر",
+       "gloss": "forelock_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "ghurra",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "كان",
@@ -4677,17 +4753,33 @@
     },
     {
      "surface": "برصاصتين",
-     "root": null,
-     "lemma": null,
-     "form": "برصاصتين",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "برصاصتين",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.ص.ص",
+     "lemma": "رَصَاصِة",
+     "form": "رَصَاصِة",
+     "caphi_raw": "r a s. aa s. e",
+     "caphi": "ras.aas.e",
+     "gloss": "bullet",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "11648",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "11648",
+       "root": "ر.ص.ص",
+       "gloss": "bullet",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "11651",
+       "root": "ر.ص.ص",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "ras.aas.e",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "بكتفه",
@@ -4717,7 +4809,7 @@
      ],
      "caphi_urban": "ykattif",
      "vocalized": null,
-     "vocalized_from": "unvocalized:ambiguous-person"
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "وبإجره",

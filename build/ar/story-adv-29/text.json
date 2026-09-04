@@ -155,6 +155,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -165,12 +171,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -863,17 +863,19 @@
     },
     {
      "surface": "محبتي",
-     "root": null,
-     "lemma": null,
-     "form": "محبتي",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "محبتي",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.ب.ب",
+     "lemma": "مَحَبِّة",
+     "form": "مَحَبِّة",
+     "caphi_raw": "m a 7 a b b a",
+     "caphi": "ma7abba",
+     "gloss": "love;affection",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "5042",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "ma7abba",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": "audio/s5.mp3"
@@ -1483,17 +1485,33 @@
     },
     {
      "surface": "وعطيتها",
-     "root": null,
-     "lemma": null,
-     "form": "وعطيتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وعطيتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ع.ط.ي",
+     "lemma": "عَطِيِّة",
+     "form": "عَطِيِّة",
+     "caphi_raw": "3 a t. i y y e",
+     "caphi": "3at.iyye",
+     "gloss": "gift;blessing",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "21125",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21125",
+       "root": "ع.ط.ي",
+       "gloss": "gift;blessing",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "21128",
+       "root": "ع.ط.ي",
+       "gloss": "gift;blessing_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "3at.iyye",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "البطاقة",
@@ -1535,17 +1553,57 @@
    "words": [
     {
      "surface": "قرأتها",
-     "root": null,
-     "lemma": null,
-     "form": "قرأتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "قرأتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.ر.ء",
+     "lemma": "قَرَا",
+     "form": "قَرَا",
+     "caphi_raw": "Q a r a",
+     "caphi": "Qara",
+     "gloss": "read_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "25431",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "25431",
+       "root": "ق.ر.ء",
+       "gloss": "read_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "25432",
+       "root": "ق.ر.ء",
+       "gloss": "make_sb_read_(causative);teach_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "25421",
+       "root": "ق.ر.ء",
+       "gloss": "recite_some_verses_from_the_Quraan_to_sb",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "25424",
+       "root": "ق.ر.ء",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "25425",
+       "root": "ق.ر.ء",
+       "gloss": "read_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "25426",
+       "root": "ق.ر.ء",
+       "gloss": "make_sb_read_(causative);teach_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "2ara",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "وعيونها",
@@ -1643,17 +1701,19 @@
    "words": [
     {
      "surface": "حضنتني",
-     "root": null,
-     "lemma": null,
-     "form": "حضنتني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "حضنتني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.ض.ن",
+     "lemma": "حَضْنَة",
+     "form": "حَضْنَة",
+     "caphi_raw": "7 a dh. n a",
+     "caphi": "7adh.na",
+     "gloss": "a_piece_of_fabric_that_protects_the_people_in_the_tent_from_the_sun_rays",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "6288",
+     "village": "الخليل > الظاهرية > الرماضين",
+     "provenance": "maknuune:unique",
+     "caphi_urban": "7adh.na",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "بقوة",

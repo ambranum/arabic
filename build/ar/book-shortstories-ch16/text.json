@@ -517,6 +517,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -527,12 +533,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -1287,17 +1287,57 @@
    "words": [
     {
      "surface": "وهاليوم",
-     "root": null,
-     "lemma": null,
-     "form": "وهاليوم",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وهاليوم",
-     "vocalized_from": "lexicon:exact"
+     "root": "ي.و.م",
+     "lemma": "يَوم",
+     "form": "يَوم",
+     "caphi_raw": "y oo m",
+     "caphi": "yoom",
+     "gloss": "day",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "36281",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "36281",
+       "root": "ي.و.م",
+       "gloss": "day",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "36282",
+       "root": "ي.و.م",
+       "gloss": "day_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36283",
+       "root": "ي.و.م",
+       "gloss": "hopefully",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36284",
+       "root": "ي.و.م",
+       "gloss": "an_eventful_day",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36285",
+       "root": "ي.و.م",
+       "gloss": "today",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36286",
+       "root": "ي.و.م",
+       "gloss": "everyday",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "yoom",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "قرر",
@@ -1849,6 +1889,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -1859,12 +1905,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -3039,17 +3079,19 @@
    "words": [
     {
      "surface": "بياكلوه",
-     "root": null,
-     "lemma": null,
-     "form": "بياكلوه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بياكلوه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ء.ك.ل",
+     "lemma": "أَكَل",
+     "form": "يَاكُل",
+     "caphi_raw": "y aa k u l",
+     "caphi": "yaakul",
+     "gloss": "eat;get_punished;sting;bite;kiss_violently",
+     "analysis": "VERB:I",
+     "maknuune_id": "435",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yaakul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -3395,17 +3437,19 @@
     },
     {
      "surface": "بياكلوه",
-     "root": null,
-     "lemma": null,
-     "form": "بياكلوه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بياكلوه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ء.ك.ل",
+     "lemma": "أَكَل",
+     "form": "يَاكُل",
+     "caphi_raw": "y aa k u l",
+     "caphi": "yaakul",
+     "gloss": "eat;get_punished;sting;bite;kiss_violently",
+     "analysis": "VERB:I",
+     "maknuune_id": "435",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yaakul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -3489,17 +3533,39 @@
    "words": [
     {
      "surface": "بقوقعته",
-     "root": null,
-     "lemma": null,
-     "form": "بقوقعته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بقوقعته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.و.ق.ع",
+     "lemma": "قَوقَعَة",
+     "form": "قَوقَعَة",
+     "caphi_raw": "q oo q a 3 a",
+     "caphi": "qooqa3a",
+     "gloss": "shell;cochlear",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "26981",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26981",
+       "root": "ق.و.ق.ع",
+       "gloss": "shell;cochlear",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "26982",
+       "root": "ق.و.ق.ع",
+       "gloss": "shell;cochlear_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26983",
+       "root": "ق.و.ق.ع",
+       "gloss": "cochlear_implant",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "qooqa3a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -3705,17 +3771,57 @@
     },
     {
      "surface": "وتخيلته",
-     "root": null,
-     "lemma": null,
-     "form": "وتخيلته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وتخيلته",
-     "vocalized_from": "lexicon:exact"
+     "root": "خ.ي.ل",
+     "lemma": "تَخَيُّل",
+     "form": "تَخَيُّل",
+     "caphi_raw": "t a kh a y y u l",
+     "caphi": "takhayyul",
+     "gloss": "the_state_of_imagining_things",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "9055",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "9055",
+       "root": "خ.ي.ل",
+       "gloss": "the_state_of_imagining_things",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "9071",
+       "root": "خ.ي.ل",
+       "gloss": "imagine_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "9065",
+       "root": "خ.ي.ل",
+       "gloss": "imagine_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "9068",
+       "root": "خ.ي.ل",
+       "gloss": "imagine",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "9056",
+       "root": "خ.ي.ل",
+       "gloss": "horse",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "9064",
+       "root": "خ.ي.ل",
+       "gloss": "go_back_and_forth;loaf_around_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "takhayyul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "بيتحرك",
@@ -4029,17 +4135,39 @@
    "words": [
     {
      "surface": "وقوقعته",
-     "root": null,
-     "lemma": null,
-     "form": "وقوقعته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وقوقعته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.و.ق.ع",
+     "lemma": "قَوقَعَة",
+     "form": "قَوقَعَة",
+     "caphi_raw": "q oo q a 3 a",
+     "caphi": "qooqa3a",
+     "gloss": "shell;cochlear",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "26981",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26981",
+       "root": "ق.و.ق.ع",
+       "gloss": "shell;cochlear",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "26982",
+       "root": "ق.و.ق.ع",
+       "gloss": "shell;cochlear_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26983",
+       "root": "ق.و.ق.ع",
+       "gloss": "cochlear_implant",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "qooqa3a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "لذيذة",
@@ -4539,17 +4667,19 @@
    "words": [
     {
      "surface": "أعطوني",
-     "root": null,
-     "lemma": null,
-     "form": "أعطوني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "أعطوني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ع.ط.ي",
+     "lemma": "عَطْوِة",
+     "form": "عَطْوِة",
+     "caphi_raw": "3 a t. w e",
+     "caphi": "3at.we",
+     "gloss": "Atwa_is_a_temporary_armistice_in_which_its_duration_ranges_from_three_day_to_a_year_or_more,_and_until_the_end_of_the_case_and_reconciliation_between_the_two_parties._It_depends_on_the_sponsor,_his_relations_and_his_interest_in_the_case._Atwa_is_usually_given_in_criminal_cases,_“murder,_blood_and_honor”.",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "21124",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "3at.we",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "محار",
@@ -5427,17 +5557,57 @@
    "words": [
     {
      "surface": "وأخدوني",
-     "root": null,
-     "lemma": null,
-     "form": "وأخدوني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وأخدوني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ء.خ.ذ",
+     "lemma": "وَاخَذ",
+     "form": "وَاخَذ",
+     "caphi_raw": "w aa kh a Z",
+     "caphi": "waakhaZ",
+     "gloss": "blame_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "104",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "104",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "106",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "105",
+       "root": "ء.خ.ذ",
+       "gloss": "blame",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "87",
+       "root": "ء.خ.ذ",
+       "gloss": "taking",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "94",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "99",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "waakhaz",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "من",
@@ -7827,6 +7997,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -7837,12 +8013,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",

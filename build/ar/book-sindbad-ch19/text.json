@@ -115,6 +115,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -125,12 +131,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -519,17 +519,19 @@
    "words": [
     {
      "surface": "وحواليه",
-     "root": null,
-     "lemma": null,
-     "form": "وحواليه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وحواليه",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.و.ل",
+     "lemma": "حَوَالِة",
+     "form": "حَوَالِة",
+     "caphi_raw": "7 a w aa l e",
+     "caphi": "7awaale",
+     "gloss": "bank_transfer",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "7342",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "7awaale",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "عنب",
@@ -931,17 +933,57 @@
     },
     {
      "surface": "وعصرته",
-     "root": null,
-     "lemma": null,
-     "form": "وعصرته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وعصرته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ع.ص.ر",
+     "lemma": "عَصِر",
+     "form": "عَصِر",
+     "caphi_raw": "3 a s. i r",
+     "caphi": "3as.ir",
+     "gloss": "The_Asr_prayer_is_one_of_the_five_mandatory_salah._As_an_Islamic_day_starts_at_sunset;from_2_until_5_p.m",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "20906",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "20906",
+       "root": "ع.ص.ر",
+       "gloss": "The_Asr_prayer_is_one_of_the_five_mandat",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "20908",
+       "root": "ع.ص.ر",
+       "gloss": "age",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "20919",
+       "root": "ع.ص.ر",
+       "gloss": "press;squeeze_(repeatedly);hold_urine_fo",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "20924",
+       "root": "ع.ص.ر",
+       "gloss": "press;squeeze;bargain_for_a_lower_price_",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "20925",
+       "root": "ع.ص.ر",
+       "gloss": "press;squeeze_(repeatedly);hold_urine_fo",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "20910",
+       "root": "ع.ص.ر",
+       "gloss": "It_is_an_expression_that_means_that_obst",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "3as.ir",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "بالقرع",
@@ -975,17 +1017,39 @@
     },
     {
      "surface": "وسكرته",
-     "root": null,
-     "lemma": null,
-     "form": "وسكرته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وسكرته",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ك.ر",
+     "lemma": "سُكَّرَة",
+     "form": "سُكَّرَة",
+     "caphi_raw": "s u k k a r a",
+     "caphi": "sukkara",
+     "gloss": "very_kind-hearted",
+     "analysis": "ADJ/NOUN",
+     "maknuune_id": "14495",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14495",
+       "root": "س.ك.ر",
+       "gloss": "very_kind-hearted",
+       "analysis": "ADJ/NOUN"
+      },
+      {
+       "id": "14498",
+       "root": "س.ك.ر",
+       "gloss": "door_handle;grain_of_sugar",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "14499",
+       "root": "س.ك.ر",
+       "gloss": "one_grain_of_sugar",
+       "analysis": "NOUN:FS"
+      }
+     ],
+     "caphi_urban": "sukkara",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "وحطيته",
@@ -2215,17 +2279,57 @@
     },
     {
      "surface": "أعطيني",
-     "root": null,
-     "lemma": null,
-     "form": "أعطيني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "أعطيني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ع.ط.ي",
+     "lemma": "عَطَى",
+     "form": "اِعْطِي",
+     "caphi_raw": "2 i 3 t. i",
+     "caphi": "2i3t.i",
+     "gloss": "give;marry_sb_off_to_someone_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "21137",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21137",
+       "root": "ع.ط.ي",
+       "gloss": "give;marry_sb_off_to_someone_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "21138",
+       "root": "ع.ط.ي",
+       "gloss": "give;marry_sb_off_to_someone_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "21144",
+       "root": "ع.ط.ي",
+       "gloss": "give;marry_sb_off_to_someone_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "21129",
+       "root": "ع.ط.ي",
+       "gloss": "promise_to_do_something",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "21130",
+       "root": "ع.ط.ي",
+       "gloss": "promise_to_do_something",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "21134",
+       "root": "ع.ط.ي",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "2i3t.i",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -2237,17 +2341,33 @@
    "words": [
     {
      "surface": "أعطيته",
-     "root": null,
-     "lemma": null,
-     "form": "أعطيته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "أعطيته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ع.ط.ي",
+     "lemma": "عَطِيِّة",
+     "form": "عَطِيِّة",
+     "caphi_raw": "3 a t. i y y e",
+     "caphi": "3at.iyye",
+     "gloss": "gift;blessing",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "21125",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21125",
+       "root": "ع.ط.ي",
+       "gloss": "gift;blessing",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "21128",
+       "root": "ع.ط.ي",
+       "gloss": "gift;blessing_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "3at.iyye",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "القرع",
@@ -3655,17 +3775,19 @@
     },
     {
      "surface": "ورفعتهم",
-     "root": null,
-     "lemma": null,
-     "form": "ورفعتهم",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ورفعتهم",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.ف.ع",
+     "lemma": "رَفِع",
+     "form": "رَفْعَة",
+     "caphi_raw": "r a f 3 a",
+     "caphi": "raf3a",
+     "gloss": "hairstyle",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "11843",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "raf3a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "عن",
@@ -3685,31 +3807,111 @@
     },
     {
      "surface": "رقبتي",
-     "root": null,
-     "lemma": null,
-     "form": "رقبتي",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "رقبتي",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.ق.ب",
+     "lemma": "رَقَبِة",
+     "form": "رَقَبِة",
+     "caphi_raw": "r a Q a b e",
+     "caphi": "raQabe",
+     "gloss": "neck",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "11894",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "11894",
+       "root": "ر.ق.ب",
+       "gloss": "neck",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "11896",
+       "root": "ر.ق.ب",
+       "gloss": "neck_[auto]",
+       "analysis": "NOUN:PL"
+      },
+      {
+       "id": "11903",
+       "root": "ر.ق.ب",
+       "gloss": "neck_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "11905",
+       "root": "ر.ق.ب",
+       "gloss": "be_responsible_for_sth;undertake_a_task",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "11907",
+       "root": "ر.ق.ب",
+       "gloss": "it_is_an_expression_that_is_used_to_refe",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "11895",
+       "root": "ر.ق.ب",
+       "gloss": "neck",
+       "analysis": "NOUN:FS"
+      }
+     ],
+     "caphi_urban": "ra2abe",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "ورميته",
-     "root": null,
-     "lemma": null,
-     "form": "ورميته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ورميته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.م.ي",
+     "lemma": "رَمِي",
+     "form": "رَمِي",
+     "caphi_raw": "r a m i",
+     "caphi": "rami",
+     "gloss": "throwing;shooting",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "12219",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12219",
+       "root": "ر.م.ي",
+       "gloss": "throwing;shooting",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "12231",
+       "root": "ر.م.ي",
+       "gloss": "throw_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12233",
+       "root": "ر.م.ي",
+       "gloss": "throwing_sth",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "12236",
+       "root": "ر.م.ي",
+       "gloss": "throw_things_in_a_disorganized_way",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12238",
+       "root": "ر.م.ي",
+       "gloss": "throw_things_in_a_disorganized_way",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12217",
+       "root": "ر.م.ي",
+       "gloss": "ignore_it",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "rami",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "عالأرض",
@@ -4059,17 +4261,39 @@
     },
     {
      "surface": "وقتلته",
-     "root": null,
-     "lemma": null,
-     "form": "وقتلته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وقتلته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.ت.ل",
+     "lemma": "قَتْلِة",
+     "form": "قَتْلِة",
+     "caphi_raw": "Q a t l e",
+     "caphi": "Qatle",
+     "gloss": "beating;hitting",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "25152",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "25152",
+       "root": "ق.ت.ل",
+       "gloss": "beating;hitting",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "25156",
+       "root": "ق.ت.ل",
+       "gloss": "beat_sb_severely",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "25157",
+       "root": "ق.ت.ل",
+       "gloss": "be_beaten_severely",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2atle",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -4113,17 +4337,39 @@
     },
     {
      "surface": "قتلته",
-     "root": null,
-     "lemma": null,
-     "form": "قتلته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "قتلته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.ت.ل",
+     "lemma": "قَتْلِة",
+     "form": "قَتْلِة",
+     "caphi_raw": "Q a t l e",
+     "caphi": "Qatle",
+     "gloss": "beating;hitting",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "25152",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "25152",
+       "root": "ق.ت.ل",
+       "gloss": "beating;hitting",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "25156",
+       "root": "ق.ت.ل",
+       "gloss": "beat_sb_severely",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "25157",
+       "root": "ق.ت.ل",
+       "gloss": "be_beaten_severely",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2atle",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -4661,17 +4907,57 @@
     },
     {
      "surface": "وأخدوني",
-     "root": null,
-     "lemma": null,
-     "form": "وأخدوني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وأخدوني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ء.خ.ذ",
+     "lemma": "وَاخَذ",
+     "form": "وَاخَذ",
+     "caphi_raw": "w aa kh a Z",
+     "caphi": "waakhaZ",
+     "gloss": "blame_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "104",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "104",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "106",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "105",
+       "root": "ء.خ.ذ",
+       "gloss": "blame",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "87",
+       "root": "ء.خ.ذ",
+       "gloss": "taking",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "94",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "99",
+       "root": "ء.خ.ذ",
+       "gloss": "blame_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "waakhaz",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null

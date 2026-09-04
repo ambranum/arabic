@@ -1219,17 +1219,19 @@
     },
     {
      "surface": "فرانكو",
-     "root": null,
-     "lemma": null,
-     "form": "فرانكو",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "فرانكو",
-     "vocalized_from": "lexicon:exact"
+     "root": "ف.ر.ن",
+     "lemma": "فَرَّان",
+     "form": "فَرَّان",
+     "caphi_raw": "f a r r aa n",
+     "caphi": "farraan",
+     "gloss": "the_oven_man;a_person_who_works_in_a_place_like_a_\"bakery\"_in_which_there_is_a_large_oven_where_all_the_people_living_in_the_neighbourhood_to_bake_their_food_in_it.",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "23825",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "farraan",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "باريزي",
@@ -1304,7 +1306,21 @@
      "analysis": "NOUN_NUM",
      "maknuune_id": "13647",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13647",
+       "root": "س.ت.ت",
+       "gloss": "sixties;sixty",
+       "analysis": "NOUN_NUM"
+      },
+      {
+       "id": "29119",
+       "root": "ل.س.س",
+       "gloss": "still",
+       "analysis": "ADV"
+      }
+     ],
      "caphi_urban": "sittiin",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
@@ -1801,17 +1817,33 @@
     },
     {
      "surface": "خطته",
-     "root": null,
-     "lemma": null,
-     "form": "خطته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "خطته",
-     "vocalized_from": "lexicon:exact"
+     "root": "خ.ط.ط",
+     "lemma": "خُطَّة",
+     "form": "خُطَّة",
+     "caphi_raw": "kh u t. t. a",
+     "caphi": "khut.t.a",
+     "gloss": "plan",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "8384",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "8384",
+       "root": "خ.ط.ط",
+       "gloss": "plan",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "8388",
+       "root": "خ.ط.ط",
+       "gloss": "plan_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "khut.t.a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "وقال",
@@ -1992,7 +2024,21 @@
      "analysis": "NOUN:P",
      "maknuune_id": "2689",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2689",
+       "root": "ب.ي.ت",
+       "gloss": "house",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36300",
+       "root": "NTWS",
+       "gloss": "Oh;Ugh!",
+       "analysis": "INTERJ"
+      }
+     ],
      "caphi_urban": "byuut",
      "vocalized": "بْيُوتهم",
      "vocalized_from": "derived:affix"
@@ -2093,17 +2139,19 @@
     },
     {
      "surface": "السياحية",
-     "root": null,
-     "lemma": null,
-     "form": "السياحية",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "السياحية",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.ي.ح",
+     "lemma": "سِيَاحَة",
+     "form": "سِيَاحَة",
+     "caphi_raw": "s i y aa 7 a",
+     "caphi": "siyaa7a",
+     "gloss": "tourism",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "15350",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "siyaa7a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": "audio/s8.mp3"

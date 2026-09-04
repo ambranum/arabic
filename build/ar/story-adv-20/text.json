@@ -300,16 +300,22 @@
     {
      "surface": "دراستي",
      "root": "د.ر.س",
-     "lemma": "دْرَاس",
-     "form": "لوح الدرَاس",
-     "caphi_raw": "l oo 7 # 2 i d r aa s",
-     "caphi": "loo7#2idraas",
-     "gloss": "An_old_tool_used_to_mash_olives;A_wooden_board_that__is_3_meters_long_and_2_meters_wide._In_the_bottom,_there_are_stones_inside_cavities_that_help_to_break_the_stalks_of_the_wheat_or_barley",
-     "analysis": "NOUN:PHRASE",
-     "maknuune_id": "9472",
+     "lemma": "دْرَاسِة",
+     "form": "دْرَاسِة",
+     "caphi_raw": "d r aa s e",
+     "caphi": "draase",
+     "gloss": "study;studies;research",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "9468",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
+      {
+       "id": "9468",
+       "root": "د.ر.س",
+       "gloss": "study;studies;research",
+       "analysis": "NOUN:FS"
+      },
       {
        "id": "9472",
        "root": "د.ر.س",
@@ -329,7 +335,7 @@
        "analysis": "NOUN:MS"
       }
      ],
-     "caphi_urban": "loo7#2idraas",
+     "caphi_urban": "draase",
      "vocalized": null,
      "vocalized_from": "unvocalized:no-alignment"
     }
@@ -847,17 +853,33 @@
     },
     {
      "surface": "يحترموك",
-     "root": null,
-     "lemma": null,
-     "form": "يحترموك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يحترموك",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.ر.م",
+     "lemma": "اِحْتَرَم",
+     "form": "يِحْتِرِم",
+     "caphi_raw": "y i 7 t i r i m",
+     "caphi": "yi7tirim",
+     "gloss": "respect;revere",
+     "analysis": "VERB:I",
+     "maknuune_id": "5758",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "5758",
+       "root": "ح.ر.م",
+       "gloss": "respect;revere",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "5759",
+       "root": "ح.ر.م",
+       "gloss": "respect;revere",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yi7tirim",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "الناس",
@@ -967,6 +989,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -977,12 +1005,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -1725,17 +1747,57 @@
     },
     {
      "surface": "بهالدنيا",
-     "root": null,
-     "lemma": null,
-     "form": "بهالدنيا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بهالدنيا",
-     "vocalized_from": "lexicon:exact"
+     "root": "د.ن.ي",
+     "lemma": "دِنْيَا",
+     "form": "دِنْيَا",
+     "caphi_raw": "d i n y a",
+     "caphi": "dinya",
+     "gloss": "life;sky",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "10338",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "10338",
+       "root": "د.ن.ي",
+       "gloss": "life;sky",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10339",
+       "root": "د.ن.ي",
+       "gloss": "life",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10340",
+       "root": "د.ن.ي",
+       "gloss": "we_are_approaching_the_Day_of_Judgment",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10341",
+       "root": "د.ن.ي",
+       "gloss": "be_angry_with_sb",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10342",
+       "root": "د.ن.ي",
+       "gloss": "let_the_cat_out_of_the_bag",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10343",
+       "root": "د.ن.ي",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "dinya",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
    "audio": "audio/s8.mp3"
@@ -2691,17 +2753,39 @@
     },
     {
      "surface": "استقبلوني",
-     "root": null,
-     "lemma": null,
-     "form": "استقبلوني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "استقبلوني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.ب.ل",
+     "lemma": "اِسْتَقْبَل",
+     "form": "اِسْتَقْبِل",
+     "caphi_raw": "2 i s t a Q b i l",
+     "caphi": "2istaQbil",
+     "gloss": "receive_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "25116",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "25116",
+       "root": "ق.ب.ل",
+       "gloss": "receive_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "25131",
+       "root": "ق.ب.ل",
+       "gloss": "receive_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "25121",
+       "root": "ق.ب.ل",
+       "gloss": "receive",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "2ista2bil",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "عالباب",

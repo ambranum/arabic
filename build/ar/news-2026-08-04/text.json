@@ -975,17 +975,19 @@
     },
     {
      "surface": "قيادتها",
-     "root": null,
-     "lemma": null,
-     "form": "قيادتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "قيادتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.و.د",
+     "lemma": "قِيَادِة",
+     "form": "قِيَادِة",
+     "caphi_raw": "q i y aa d e",
+     "caphi": "qiyaade",
+     "gloss": "leadership",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "26931",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "qiyaade",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "بعد",
@@ -1005,17 +1007,33 @@
     },
     {
      "surface": "هالكلام",
-     "root": null,
-     "lemma": null,
-     "form": "هالكلام",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "هالكلام",
-     "vocalized_from": "lexicon:exact"
+     "root": "ك.ل.م",
+     "lemma": "كَلَام",
+     "form": "كَلَام",
+     "caphi_raw": "k a l aa m",
+     "caphi": "kalaam",
+     "gloss": "talk",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "28283",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "28283",
+       "root": "ك.ل.م",
+       "gloss": "talk",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "28289",
+       "root": "ك.ل.م",
+       "gloss": "want_to_discuss_sth_important_with_sb_br",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "kalaam",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
    "audio": "audio/s2.mp3"
@@ -1670,7 +1688,21 @@
      "analysis": "NOUN:P",
      "maknuune_id": "2689",
      "village": null,
-     "provenance": "maknuune:unique",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2689",
+       "root": "ب.ي.ت",
+       "gloss": "house",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36300",
+       "root": "NTWS",
+       "gloss": "Oh;Ugh!",
+       "analysis": "INTERJ"
+      }
+     ],
      "caphi_urban": "byuut",
      "vocalized": "بْيُوتهم",
      "vocalized_from": "derived:affix"
@@ -1899,17 +1931,33 @@
     },
     {
      "surface": "يشوفوها",
-     "root": null,
-     "lemma": null,
-     "form": "يشوفوها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يشوفوها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ش.و.ف",
+     "lemma": "شَاف",
+     "form": "يشُوف",
+     "caphi_raw": "y sh uu f",
+     "caphi": "yshuuf",
+     "gloss": "see;look;think;believe",
+     "analysis": "VERB:I",
+     "maknuune_id": "17206",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17206",
+       "root": "ش.و.ف",
+       "gloss": "see;look;think;believe",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "17207",
+       "root": "ش.و.ف",
+       "gloss": "cover_the_Saj_with_dough_clay_in_order_t",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yshuuf",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "من",

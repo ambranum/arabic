@@ -221,17 +221,19 @@
    "words": [
     {
      "surface": "ولقيته",
-     "root": null,
-     "lemma": null,
-     "form": "ولقيته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ولقيته",
-     "vocalized_from": "lexicon:exact"
+     "root": "ل.ق.ي",
+     "lemma": "لْقِيِّة",
+     "form": "لْقِيِّة",
+     "caphi_raw": "l Q i y y e",
+     "caphi": "lQiyye",
+     "gloss": "lucky_find;good_chance",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "29665",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "l2iyye",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "مع",
@@ -781,17 +783,57 @@
     },
     {
      "surface": "سمعتها",
-     "root": null,
-     "lemma": null,
-     "form": "سمعتها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سمعتها",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.م.ع",
+     "lemma": "سُمْعَة",
+     "form": "سُمْعَة",
+     "caphi_raw": "s u m 3 a",
+     "caphi": "sum3a",
+     "gloss": "reputation",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "14939",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14939",
+       "root": "س.م.ع",
+       "gloss": "reputation",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "14940",
+       "root": "س.م.ع",
+       "gloss": "a_surprising_piece_of_news",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "14943",
+       "root": "س.م.ع",
+       "gloss": "reputation_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "14947",
+       "root": "س.م.ع",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "14948",
+       "root": "س.م.ع",
+       "gloss": "good_reputation",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "14949",
+       "root": "س.م.ع",
+       "gloss": "bad_reputation",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "sum3a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     }
    ],
    "audio": null
@@ -1555,17 +1597,19 @@
     },
     {
      "surface": "هالأيام",
-     "root": null,
-     "lemma": null,
-     "form": "هالأيام",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "هالأيام",
-     "vocalized_from": "lexicon:exact"
+     "root": "ي.و.م",
+     "lemma": "يَوم",
+     "form": "أَيَّام",
+     "caphi_raw": "2 a y y aa m",
+     "caphi": "2ayyaam",
+     "gloss": "day_[auto]",
+     "analysis": "NOUN:P",
+     "maknuune_id": "36282",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ayyaam",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
    "audio": null
@@ -2177,17 +2221,35 @@
     },
     {
      "surface": "فكرتك",
-     "root": "NTWS",
-     "lemma": "كَرِت",
-     "form": "كَرِت",
-     "caphi_raw": "k a r t",
-     "caphi": "kart",
-     "gloss": "card",
-     "analysis": "NOUN:MS",
-     "maknuune_id": "27586",
+     "root": "ف.ك.ر",
+     "lemma": "فِكْرَة",
+     "form": "فِكْرَة",
+     "caphi_raw": "f i k r a",
+     "caphi": "fikra",
+     "gloss": "idea;notion;thought",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "24520",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
+      {
+       "id": "24520",
+       "root": "ف.ك.ر",
+       "gloss": "idea;notion;thought",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "24525",
+       "root": "ف.ك.ر",
+       "gloss": "idea;notion;thought_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "24526",
+       "root": "ف.ك.ر",
+       "gloss": "by_the_way!",
+       "analysis": "NOUN:PHRASE"
+      },
       {
        "id": "27586",
        "root": "NTWS",
@@ -2205,29 +2267,11 @@
        "root": "NTWS",
        "gloss": "card_[auto]",
        "analysis": "NOUN:P"
-      },
-      {
-       "id": "27589",
-       "root": "ك.ر.ت",
-       "gloss": "kick_sb_out_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "27590",
-       "root": "ك.ر.ت",
-       "gloss": "kick_sb_out",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "27588",
-       "root": "ك.ر.ت",
-       "gloss": "shoehorn",
-       "analysis": "NOUN:FS"
       }
      ],
-     "caphi_urban": "kart",
-     "vocalized": "فَكَرِتك",
-     "vocalized_from": "derived:affix"
+     "caphi_urban": "fikra",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "عملت",
@@ -2803,17 +2847,57 @@
     },
     {
      "surface": "فرجاني",
-     "root": null,
-     "lemma": null,
-     "form": "فرجاني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "فرجاني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ف.ر.ج",
+     "lemma": "فَرْجَى",
+     "form": "فَرْجَي",
+     "caphi_raw": "f a r J i",
+     "caphi": "farJi",
+     "gloss": "show;make_sb_see_sth_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "23480",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23480",
+       "root": "ف.ر.ج",
+       "gloss": "show;make_sb_see_sth_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "23490",
+       "root": "ف.ر.ج",
+       "gloss": "show;make_sb_see_sth_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "23478",
+       "root": "ف.ر.ج",
+       "gloss": "threaten_sb;be_very_tough_to_sb;be_harsh",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "23484",
+       "root": "ف.ر.ج",
+       "gloss": "show;make_sb_see_sth",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "11280",
+       "root": "ر.ج.ي",
+       "gloss": "hope",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "11288",
+       "root": "ر.ج.ي",
+       "gloss": "beg;hope_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "farji",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:weak-final-verb"
     },
     {
      "surface": "إعلان",
@@ -3059,17 +3143,33 @@
     },
     {
      "surface": "جنيهات",
-     "root": null,
-     "lemma": null,
-     "form": "جنيهات",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جنيهات",
-     "vocalized_from": "lexicon:exact"
+     "root": "ج.ن.ن",
+     "lemma": "جِنِّي",
+     "form": "جِنِّي",
+     "caphi_raw": "J i n n i",
+     "caphi": "Jinni",
+     "gloss": "Genie",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "4661",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "4661",
+       "root": "ج.ن.ن",
+       "gloss": "Genie",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "4669",
+       "root": "ج.ن.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "jinni",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "بالأسبوع",
@@ -4369,6 +4469,12 @@
        "analysis": "PART_RESTRICT"
       },
       {
+       "id": "28651",
+       "root": "NTWS",
+       "gloss": "to",
+       "analysis": "PREP"
+      },
+      {
        "id": "28664",
        "root": "NTWS",
        "gloss": "No!",
@@ -4379,12 +4485,6 @@
        "root": "NTWS",
        "gloss": "no;not",
        "analysis": "PART_NEG"
-      },
-      {
-       "id": "28666",
-       "root": "NTWS",
-       "gloss": "no_need!;no!",
-       "analysis": "PART_NEG:PHRASE"
       }
      ],
      "caphi_urban": "2ana",
@@ -5031,17 +5131,57 @@
     },
     {
      "surface": "دفشني",
-     "root": null,
-     "lemma": null,
-     "form": "دفشني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "دفشني",
-     "vocalized_from": "lexicon:exact"
+     "root": "د.ف.ش",
+     "lemma": "دِفِش",
+     "form": "دِفِش",
+     "caphi_raw": "d i f i sh",
+     "caphi": "difish",
+     "gloss": "violent;fierce",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "9796",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "9796",
+       "root": "د.ف.ش",
+       "gloss": "violent;fierce",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "9808",
+       "root": "د.ف.ش",
+       "gloss": "push_violently_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "9812",
+       "root": "د.ف.ش",
+       "gloss": "push;add_a_few_marks_to_sb_in_order_to_h",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "9814",
+       "root": "د.ف.ش",
+       "gloss": "push_violently_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "9818",
+       "root": "د.ف.ش",
+       "gloss": "become_violent;become_coarse;get_coarse_",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "9806",
+       "root": "د.ف.ش",
+       "gloss": "push;add_a_few_marks_to_sb_in_order_to_h",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "difish",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "بينهم",
@@ -6575,17 +6715,45 @@
     },
     {
      "surface": "بهالوقت",
-     "root": null,
-     "lemma": null,
-     "form": "بهالوقت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بهالوقت",
-     "vocalized_from": "lexicon:exact"
+     "root": "و.ق.ت",
+     "lemma": "وَقَّت",
+     "form": "يوَقِّت",
+     "caphi_raw": "y w a Q Q i t",
+     "caphi": "ywaQQit",
+     "gloss": "time_sth;schedule_a_time_for_sth",
+     "analysis": "VERB:I",
+     "maknuune_id": "35868",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "35868",
+       "root": "و.ق.ت",
+       "gloss": "time_sth;schedule_a_time_for_sth",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "29986",
+       "root": "ل.و.ق",
+       "gloss": "twist_(mouth)",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "29989",
+       "root": "ل.و.ق",
+       "gloss": "twist_(mouth)_repeatedly;grimace_at_sb_[",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "29992",
+       "root": "ل.و.ق",
+       "gloss": "visit_so_many_people_and_go_to_several_p",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "ywa22it",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "بخسر",
@@ -6793,17 +6961,33 @@
     },
     {
      "surface": "جنيهات",
-     "root": null,
-     "lemma": null,
-     "form": "جنيهات",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جنيهات",
-     "vocalized_from": "lexicon:exact"
+     "root": "ج.ن.ن",
+     "lemma": "جِنِّي",
+     "form": "جِنِّي",
+     "caphi_raw": "J i n n i",
+     "caphi": "Jinni",
+     "gloss": "Genie",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "4661",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "4661",
+       "root": "ج.ن.ن",
+       "gloss": "Genie",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "4669",
+       "root": "ج.ن.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "jinni",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "بالأسبوع",
@@ -7539,17 +7723,33 @@
     },
     {
      "surface": "بيعطيني",
-     "root": null,
-     "lemma": null,
-     "form": "بيعطيني",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بيعطيني",
-     "vocalized_from": "lexicon:exact"
+     "root": "ع.ط.ي",
+     "lemma": "عَطَى",
+     "form": "يِعْطِي",
+     "caphi_raw": "y i 3 t. i",
+     "caphi": "yi3t.i",
+     "gloss": "give;marry_sb_off_to_someone",
+     "analysis": "VERB:I",
+     "maknuune_id": "21140",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21140",
+       "root": "ع.ط.ي",
+       "gloss": "give;marry_sb_off_to_someone",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "21141",
+       "root": "ع.ط.ي",
+       "gloss": "give;marry_sb_off_to_someone",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yi3t.i",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "أربع",
@@ -7569,17 +7769,33 @@
     },
     {
      "surface": "جنيهات",
-     "root": null,
-     "lemma": null,
-     "form": "جنيهات",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جنيهات",
-     "vocalized_from": "lexicon:exact"
+     "root": "ج.ن.ن",
+     "lemma": "جِنِّي",
+     "form": "جِنِّي",
+     "caphi_raw": "J i n n i",
+     "caphi": "Jinni",
+     "gloss": "Genie",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "4661",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "4661",
+       "root": "ج.ن.ن",
+       "gloss": "Genie",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "4669",
+       "root": "ج.ن.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "jinni",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -7591,17 +7807,19 @@
    "words": [
     {
      "surface": "وهالصبح",
-     "root": null,
-     "lemma": null,
-     "form": "وهالصبح",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وهالصبح",
-     "vocalized_from": "lexicon:exact"
+     "root": "ص.ب.ح",
+     "lemma": "صُبِح",
+     "form": "صُبِح",
+     "caphi_raw": "s. u b i 7",
+     "caphi": "s.ubi7",
+     "gloss": "morning",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "17379",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.ubi7",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "رحت",
