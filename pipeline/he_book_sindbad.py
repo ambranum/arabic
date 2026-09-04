@@ -401,7 +401,7 @@ CHAPTERS = [
     ('ולחייט, ולימדתי אותו לכסות את העץ בעור ובצמר.', 'And to a tailor, and taught him to cover the wood with leather and wool.'),
     ('ואחרי שבוע, שמתי את האוכף על הסוס של המלך.', 'And after a week, I put the saddle on the king’s horse.'),
     ('והמלך רכב, ולא ירד עד הערב.', 'And the king rode, and did not get down until evening.'),
-    ('הוא אמר: סינדבאד, זה הדבר הכי טוב שקרה בממלכה שלי.', 'He said: Sindbad, this is the best thing that has happened in my kingdom.')),
+    ('הוא אמר: סינדבאד, זה הדבר הכי טוב שהיה בממלכה שלי.', 'He said: Sindbad, this is the best thing that has been in my kingdom.')),
   P(('וכל שר ביקש אוכף, וכל סוחר, וכל קצין.', 'And every minister asked for a saddle, and every merchant, and every officer.'),
     ('ונהייתי עשיר, בלי ים ובלי סחורה, רק מאוכף.', 'And I became rich, without sea and without goods, only from a saddle.'),
     ('ויום אחד המלך אמר לי: סינדבאד, נהיית אחד מאיתנו.', 'And one day the king said to me: Sindbad, you have become one of us.'),

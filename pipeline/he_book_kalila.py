@@ -243,7 +243,7 @@ CHAPTERS = [
     ('ולידו כלילה, והוא בכה.', 'And beside him Kalila, and he wept.'))]),
 
  ('The Trial of Dimna', 'המשפט של דמנה', [
-  P(('אחרי מה שקרה, האריה לא יצא מהמקום שלו כמה ימים.', 'After what happened, the lion did not leave his place for some days.'),
+  P(('אחרי הדבר הזה, האריה לא יצא מהמקום שלו כמה ימים.', 'After that thing, the lion did not leave his place for some days.'),
     ('הוא שאל את עצמו: השור רצה להרוג אותי, או שאני דמיינתי?', 'He asked himself: did the ox want to kill me, or did I imagine it?'),
     ('והחיות דיברו ביניהן בסוד.', 'And the animals talked among themselves in secret.'),
     ('כולן ראו את דמנה הולך וחוזר בין האריה והשור, וכולן הבינו.', 'They had all seen Dimna going back and forth between the lion and the ox, and they all understood.')),
