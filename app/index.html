@@ -471,7 +471,7 @@ window.ALP = (function () {
   .rx-drill-n{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
   .rx-cue{font-family:var(--serif); font-size:24px; margin:10px 0 14px; color:var(--ink)}
   /* Sounds */
-  .snd-target{font-family:var(--arabic); font-size:22px; color:var(--verdigris); margin:0 0 12px}
+  .snd-target{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:22px; color:var(--verdigris); margin:0 0 12px}
   .snd-target span{font-size:26px}
   .snd-tip{margin:0 0 18px}
   .snd-row{display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid var(--paper-3); flex-wrap:wrap}
@@ -490,7 +490,7 @@ window.ALP = (function () {
   .tbl-listen{margin:6px 0 18px}
   .tbl-lines{margin-top:8px}
   .tbl-line{display:flex; align-items:flex-start; gap:12px; padding:11px 0; border-bottom:1px solid var(--paper-3)}
-  .tbl-sp{flex:none; width:78px; font-family:var(--arabic); font-size:14px; color:var(--verdigris); text-align:left; padding-top:4px}
+  .tbl-sp{flex:none; width:78px; font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:14px; color:var(--verdigris); text-align:left; padding-top:4px}
   .tbl-body{flex:1}
   .tbl-ar{font-family:var(--arabic); direction:rtl; font-size:22px; line-height:1.7; color:var(--ink)}
   .tbl-en{font-size:13px; color:var(--muted); margin-top:2px}
@@ -608,7 +608,7 @@ window.ALP = (function () {
   /* ---------- Arabic keyboard (shared, for anyone without one on their machine) ---------- */
   .kbd-wrap{position:relative}
   .kbd-tog{position:absolute; top:50%; transform:translateY(-50%); right:7px;
-    font-family:var(--arabic); font-size:17px; line-height:1; width:30px; height:30px;
+    font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:17px; line-height:1; width:30px; height:30px;
     border:1px solid var(--rule); border-radius:7px; background:var(--paper);
     color:var(--muted); cursor:pointer; padding:0}
   .kbd-tog:hover{color:var(--ink); border-color:var(--verdigris)}
@@ -629,7 +629,7 @@ window.ALP = (function () {
   .akbd-x{font:inherit; font-size:12px; text-transform:none; letter-spacing:0; border:0;
     background:none; color:var(--verdigris); cursor:pointer; padding:2px 4px; touch-action:none}
   .akbd-r{display:flex; justify-content:center; gap:4px; margin-bottom:4px}
-  .akbd-k{position:relative; font-family:var(--arabic); font-size:19px; line-height:1;
+  .akbd-k{position:relative; font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:19px; line-height:1;
     flex:1 1 0; min-width:0; max-width:46px; height:40px; border:1px solid var(--rule);
     border-radius:7px; background:var(--paper-2); color:var(--ink); cursor:pointer; padding:0;
     touch-action:none; user-select:none; -webkit-user-select:none}
@@ -809,7 +809,7 @@ window.ALP = (function () {
   /* production exercise */
   .pex{border:1px solid var(--rule); border-radius:8px; padding:12px 13px; margin-bottom:10px}
   .pex-q{font-family:var(--serif); font-size:15.5px; line-height:1.4; margin-bottom:9px}
-  .pex-in{width:100%; font:inherit; font-family:var(--arabic); font-size:20px; padding:9px 11px;
+  .pex-in{width:100%; font:inherit; font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:20px; padding:9px 11px;
     border:1px solid var(--rule); border-radius:7px; background:var(--paper); color:var(--ink)}
   .pex-in:focus-visible{outline:2px solid var(--verdigris); outline-offset:1px}
   .pex-res{margin-top:9px}
@@ -991,7 +991,7 @@ window.ALP = (function () {
   .g-tr{font-family:var(--mono); font-size:12px; color:var(--verdigris)}
   .g-en{font-size:12.5px; color:var(--muted)}
   .gex{border:1px solid var(--rule); border-radius:8px; padding:12px 13px; margin-bottom:9px}
-  .gex-ar{font-family:var(--arabic); font-size:20px; line-height:1.8; color:var(--ink)}
+  .gex-ar{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:20px; line-height:1.8; color:var(--ink)}
   .gex-ar .gx{color:var(--rubric); font-weight:700}
   .gex-en{font-size:13px; color:var(--muted); margin-top:5px; line-height:1.5}
   .gex-src{font:inherit; font-size:11.5px; color:var(--verdigris); background:none; border:none;
@@ -1078,7 +1078,7 @@ window.ALP = (function () {
     border:1px solid var(--rule); border-radius:9px; padding:10px 12px}
   .bib-b:hover{border-color:var(--verdigris)}
   .bib-b-en{font-size:15px}
-  .bib-b-ar{font-family:var(--arabic); font-size:15px; color:var(--muted)}
+  .bib-b-ar{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:15px; color:var(--muted)}
   .bib-hd{text-align:center; padding-bottom:14px; border-bottom:1px solid var(--rule); margin-bottom:16px}
   .bib-hd-en{font-family:var(--serif); font-size:26px}
   .bib-hd-ar{font-family:var(--arabic); direction:rtl; font-size:22px; color:var(--muted); margin-top:2px}
@@ -1249,12 +1249,12 @@ window.ALP = (function () {
   .mg-rows{display:flex; flex-direction:column; gap:7px; margin-bottom:10px}
   .mg-row{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; font-size:13px}
   .mg-row.keep{font-weight:600}
-  .mg-ar{font-family:var(--arabic); font-size:19px; min-width:5em}
+  .mg-ar{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:19px; min-width:5em}
   .mg-gl{color:var(--ink-soft); flex:1}
   .mg-st{font-size:11.5px; color:var(--muted); font-family:var(--mono)}
   .mg-tag{font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
   .mg-row.keep .mg-tag{color:var(--verdigris)}
-  .wc-banks b{font-family:var(--arabic); font-size:14px; color:var(--ink-soft); font-weight:400}
+  .wc-banks b{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:14px; color:var(--ink-soft); font-weight:400}
   /* shown on a word tapped in the Van Dyck Bible — readable, not bankable */
   .msa-note{margin:12px 0 4px; padding:10px 12px; border-radius:9px; font-size:12.5px;
     line-height:1.5; background:var(--paper-2); border:1px solid var(--paper-3); color:var(--ink-soft)}
@@ -1277,7 +1277,7 @@ window.ALP = (function () {
   .warmup-t{font-weight:600; flex:1}
   .wex{display:flex; align-items:center; gap:10px; margin:6px 0; font-size:14px}
   .wex-q{flex:1; color:var(--muted)}
-  .wex-a{font-family:var(--arabic); font-size:18px; color:var(--ink)}
+  .wex-a{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:18px; color:var(--ink)}
   #recBtn.rec-on{background:var(--brick,#B4372A); color:#fff}
   .dstats{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:6px 0 4px}
   @media (max-width:560px){ .dstats{grid-template-columns:repeat(2,1fr)} }
@@ -1323,7 +1323,7 @@ window.ALP = (function () {
     color:var(--muted); margin-bottom:14px}
   .gs-listen .gs-phase{color:var(--verdigris)}
   .gs-turn .gs-phase{color:var(--ochre)}
-  .gs-ar{font-family:var(--arabic); font-size:30px; line-height:1.7; color:var(--ink)}
+  .gs-ar{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:30px; line-height:1.7; color:var(--ink)}
   .gs-en{font-size:13.5px; color:var(--muted); margin-top:10px; line-height:1.5}
   .gs-progbar{height:6px; border-radius:4px; background:var(--paper-3); margin-top:18px; overflow:hidden}
   .gs-progbar.off{visibility:hidden}
@@ -1341,7 +1341,7 @@ window.ALP = (function () {
   .tut-b.err{align-self:flex-start; background:var(--ochre-wash); color:var(--ink-soft);
     border:1px solid var(--ochre); font-size:13px}
   .tut-b b{font-weight:700}
-  .tut-b .rt{font-family:var(--arabic); font-size:1.15em}
+  .tut-b .rt{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:1.15em}
   .tut-dots{align-self:flex-start; color:var(--muted); font-size:20px; letter-spacing:3px;
     padding:6px 4px}
   .tut-row{display:flex; gap:8px; align-items:flex-end; margin-top:4px}
@@ -1356,7 +1356,7 @@ window.ALP = (function () {
   .tut-chip{font:inherit; font-size:12.5px; text-align:left; padding:9px 12px; border-radius:10px;
     border:1px solid var(--rule); background:none; color:var(--ink-soft); cursor:pointer; line-height:1.4}
   .tut-chip:hover{border-color:var(--verdigris); background:var(--verdigris-2)}
-  .tut-chip .rt{font-family:var(--arabic)}
+  .tut-chip .rt{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate}
   .tut-saves{align-self:flex-start; max-width:88%; margin:-4px 0 2px; display:flex;
     flex-direction:column; gap:6px; padding:10px 0 2px}
   .tut-saves-h{font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
@@ -1367,7 +1367,7 @@ window.ALP = (function () {
   .tut-save:hover{border-style:solid}
   .tut-save.done{border-style:solid; border-color:var(--rule); background:var(--paper-2);
     color:var(--muted); cursor:default}
-  .tut-save .rt{font-family:var(--arabic); font-size:1.12em}
+  .tut-save .rt{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:1.12em}
   .tut-loop{font-size:12.5px; color:var(--ink-soft); border:1px solid var(--verdigris);
     background:var(--verdigris-2); border-radius:8px; padding:9px 12px; margin:0 0 14px; line-height:1.5}
   /* ---- Lessons (native-sourced teaching units) ---- */
@@ -1387,7 +1387,7 @@ window.ALP = (function () {
   /* the word key under a reading passage — glosses lifted out of the Arabic itself */
   .lsn-key{display:flex; flex-wrap:wrap; gap:5px 14px; margin-top:9px; padding-top:9px;
     border-top:1px dashed var(--rule); font-family:var(--sans); font-size:12px; color:var(--muted)}
-  .lsn-kw b{font-family:var(--arabic); font-size:14px; color:var(--ink-soft); margin-inline-end:6px;
+  .lsn-kw b{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:14px; color:var(--ink-soft); margin-inline-end:6px;
     font-weight:400}
   .lsn-reply{font-family:var(--arabic); direction:rtl; font-size:17px; color:var(--ink); margin-top:3px}
   .lsn-replyen{font-size:12px; color:var(--muted)}
@@ -1414,7 +1414,7 @@ window.ALP = (function () {
     color:var(--verdigris); font-weight:700; margin-bottom:2px; direction:rtl; text-align:right}
   .lsn-lar{display:block; font-family:var(--arabic); direction:rtl; font-size:19px; line-height:1.9}
   .lsn-len{display:block; font-size:12.5px; color:var(--muted); margin-top:2px}
-  .lsn-text{font-family:var(--arabic); font-size:19px; line-height:2.1; border-left:3px solid var(--rule);
+  .lsn-text{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:19px; line-height:2.1; border-left:3px solid var(--rule);
     padding:2px 14px}
   .lsn-text p{margin:0 0 10px}
   .lsn-ten{display:block; font-family:var(--sans); direction:ltr; text-align:left; font-size:12.5px;
@@ -1460,37 +1460,41 @@ window.ALP = (function () {
   .lsn-b{margin:22px 0 26px}
   .lsn-bh{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
           border-bottom:1px solid var(--rule); padding-bottom:6px; margin-bottom:10px}
+  /* No `direction` here, for the same reason as .gsub above: a teach-block heading is a MIXED
+     line — "שלום is the one nobody says" — and the ones that are target-language throughout
+     carry their own dir="rtl" from the renderer. Forcing rtl on all of them would read the
+     English half backwards. */
   .lsn-bh span{font-family:var(--arabic); font-size:19px; color:var(--ink)}
   .lsn-bh em{font-style:normal; font-size:12.5px; color:var(--muted); letter-spacing:.04em;
              text-transform:uppercase}
   .lsn-teach p{margin:0 0 10px}
   .lsn-eg{background:var(--paper-2); border:1px solid var(--rule); border-radius:8px;
           padding:8px 12px; margin:0 0 14px; font-size:15px}
-  .lsn-eg b{font-family:var(--arabic); color:var(--ochre); margin-inline-end:10px}
+  .lsn-eg b{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; color:var(--ochre); margin-inline-end:10px}
   .lsn-item{display:grid; grid-template-columns:26px 1fr; gap:4px 8px; align-items:start;
             padding:9px 0; border-bottom:1px dashed var(--rule)}
   .lsn-item.ok{background:color-mix(in srgb, var(--verdigris) 7%, transparent)}
   .lsn-n{color:var(--muted); font-size:12px; padding-top:6px; font-variant-numeric:tabular-nums}
   .lsn-q,.lsn-built,.lsn-bank,.lsn-en,.lsn-a,.lsn-quizq,.lsn-opts,.lsn-why{grid-column:2}
-  .lsn-q{font-family:var(--arabic); font-size:19px; line-height:2.1}
+  .lsn-q{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:19px; line-height:2.1}
   .lsn-en{font-size:12.5px; color:var(--muted)}
   .lsn-hint{display:block; color:var(--ochre)}
-  .lsn-a{font-family:var(--arabic); font-size:16px; color:var(--verdigris)}
-  .lsn-in{font-family:var(--arabic); font-size:17px; background:var(--paper-2);
+  .lsn-a{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:16px; color:var(--verdigris)}
+  .lsn-in{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:17px; background:var(--paper-2);
           border:0; border-bottom:2px solid var(--ochre); color:var(--ink);
           width:6.5em; text-align:center; padding:1px 4px; border-radius:4px 4px 0 0}
   .lsn-in.wide{width:100%; text-align:right; margin-top:4px}
   .lsn-in:focus{outline:2px solid var(--verdigris); outline-offset:1px}
   .lsn-in.ok,.lsn-sel.ok{border-bottom-color:var(--verdigris); color:var(--verdigris)}
   .lsn-in.no,.lsn-sel.no,.lsn-built.no{border-bottom-color:var(--rubric)}
-  .lsn-sel{font-family:var(--arabic); font-size:16px; background:var(--paper-2); color:var(--ink);
+  .lsn-sel{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:16px; background:var(--paper-2); color:var(--ink);
            border:1px solid var(--rule); border-bottom:2px solid var(--ochre); border-radius:6px;
            padding:2px 6px}
   .lsn-ctl{margin-top:12px}
   /* vocabulary — מילים חדשות, sorted by part of speech the way Bet prints it */
   .lsn-voc{width:100%; border-collapse:collapse; font-size:14.5px}
   .lsn-voc td{border-bottom:1px solid var(--rule); padding:7px 6px; vertical-align:top}
-  .lv-he{font-family:var(--arabic); font-size:19px; white-space:nowrap}
+  .lv-he{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:19px; white-space:nowrap}
   .lv-prep{color:var(--ochre); margin-inline-start:6px; font-size:16px}
   .lv-say{color:var(--muted); font-size:12.5px; font-family:var(--sans)}
   .lv-lex{display:block; color:var(--muted); font-size:11.5px}
@@ -1499,7 +1503,7 @@ window.ALP = (function () {
   /* the slang card, in HebrewPod's shape: literal, then meaning, then when you would say it */
   .lsn-slang{border:1px solid var(--ochre); border-radius:10px; padding:14px 16px;
              background:color-mix(in srgb, var(--ochre) 6%, transparent)}
-  .lsn-sl-he{font-family:var(--arabic); font-size:26px; line-height:1.6}
+  .lsn-sl-he{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:26px; line-height:1.6}
   .lsn-sl-lit{color:var(--muted); font-size:12.5px; margin-top:2px}
   .lsn-sl-mean{font-size:17px; color:var(--ochre); margin:6px 0 2px}
   .lsn-sl-when{font-size:13.5px; margin:6px 0 10px}
@@ -1507,9 +1511,12 @@ window.ALP = (function () {
   .lsn-match{display:grid; grid-template-columns:1fr 1fr; gap:8px}
   .lsn-mcol{display:flex; flex-direction:column; gap:6px}
   .lsn-tile{background:var(--paper-2); border:1px solid var(--rule); border-radius:8px;
-            color:var(--ink); padding:7px 10px; font-family:var(--arabic); font-size:16px;
+            color:var(--ink); padding:7px 10px; font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:16px;
             cursor:pointer; text-align:center}
-  .lsn-tile.en{font-family:var(--sans); font-size:13.5px}
+  /* The English half of the matching exercise reuses the tile. It must NOT inherit the rtl
+     the tile now carries for its target-language twin, or "How are you?" renders with the
+     question mark on the left. */
+  .lsn-tile.en{font-family:var(--sans); font-size:13.5px; direction:ltr; unicode-bidi:isolate}
   .lsn-tile.sel{border-color:var(--verdigris); outline:2px solid var(--verdigris)}
   .lsn-tile.ok{border-color:var(--verdigris); color:var(--verdigris); opacity:.55; cursor:default}
   .lsn-tile.small{padding:3px 8px; font-size:15px; cursor:default}
@@ -1530,9 +1537,9 @@ window.ALP = (function () {
   .lsn-grid th{font-family:var(--arabic); font-size:14px; font-weight:400; color:var(--muted);
                border-bottom:1px solid var(--rule); padding:5px 6px; text-align:center}
   .lsn-grid td{border-bottom:1px solid var(--rule); padding:5px 6px; text-align:center}
-  .lg-given{font-family:var(--arabic); font-size:17px; color:var(--muted)}
+  .lg-given{font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:17px; color:var(--muted)}
   .lsn-in.grid{width:100%; min-width:5.5em; text-align:center}
-  .lg-a{display:block; font-family:var(--arabic); font-size:13px; color:var(--verdigris)}
+  .lg-a{display:block; font-family:var(--arabic); direction:rtl; unicode-bidi:isolate; font-size:13px; color:var(--verdigris)}
   @media (max-width:560px){
     .lsn-match{grid-template-columns:1fr}
     .lsn-grid th,.lsn-grid td{padding:4px 3px}

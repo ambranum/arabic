@@ -1563,11 +1563,23 @@ function tutorClearChat() { _tutorMsgs = []; tutorHome(); }
 function tutFmt(t) {
   let s = esc(t);
   s = s.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
-  // The tutor's own Arabic is tappable as well: it answers in words, and any one of them can
-  // be the word you didn't know. The run matched here holds only Arabic, digits and .،؟! —
-  // none of which esc() rewrites — so re-tokenizing it cannot double-escape anything.
-  s = s.replace(/[؀-ۿݐ-ݿ][؀-ۿݐ-ݿً-ٟ\s\d.،؟!]*[؀-ۿݐ-ݿ]/g,
-    m => '<span class="rt">' + arLive(m) + '</span>');
+  // The tutor's own target-language text is tappable as well: it answers in words, and any one
+  // of them can be the word you didn't know. The run matched here holds only that script,
+  // digits and punctuation — none of which esc() rewrites — so re-tokenizing it cannot
+  // double-escape anything.
+  //
+  // LANG.script.run, not a literal range. This used to hardcode the Arabic block, which meant
+  // that on the Hebrew side no run ever matched: the tutor's Hebrew was never wrapped, so it
+  // was neither tappable nor marked rtl, and a reply with any punctuation in it came out
+  // reading left to right. The packs have carried a `run` for each script all along.
+  // The trailing punctuation belongs INSIDE the span. A question mark left outside it is a
+  // neutral character sitting in an ltr paragraph, so it renders to the right of the phrase it
+  // ends -- "מה שלומך ?" with the mark on the wrong side. arLive already gives punctuation its
+  // own <span class="pu">, which is what the reading view does with it everywhere else.
+  const pesc = (LANG.script.punct || '').replace(/[\\^\]-]/g, '\\$&');
+  s = s.replace(new RegExp(LANG.script.run.source + '([' + pesc + ']*)', 'g'),
+    m => { const t = m.replace(/\s+$/, '');
+           return t ? '<span class="rt">' + arLive(t) + '</span>' + m.slice(t.length) : m; });
   return s.replace(/\n/g, '<br>');
 }
 
