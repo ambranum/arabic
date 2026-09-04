@@ -48,6 +48,12 @@ from lex import Lexicon                                # noqa: E402
 from phon import unpoint                               # noqa: E402
 import he_curated                                      # noqa: E402
 
+import hashlib                                       # noqa: E402
+import re                                            # noqa: E402
+import urllib.request                                # noqa: E402
+import net                                           # noqa: E402  -- one HTTPS context
+from voice import voice_id                           # noqa: E402  -- the pinned app voice
+
 OUT = paths.data('lessons.js')
 
 
@@ -735,7 +741,120 @@ def look_up(lex, word, res):
             'prov': prov, 'id': str(rec['ID'])}
 
 
-def build(check_only=False):
+
+# ==========================================================================================
+# AUDIO. The Arabic lessons have been voiced since they shipped -- 1,481 clips across 44 of
+# the 50 units -- and the Hebrew ones had none at all, which made the app's most-used teaching
+# screen the one place where one language simply could not be heard.
+#
+# WHAT SPEAKS, and what deliberately does not. Arabic voices a clip per CHUNK, because an
+# Arabic unit is a list of chunks to hear and repeat. A Hebrew unit is not shaped like that:
+# it is blocks of worked exercises. So the rule here is about the TEXT, not the block --
+# anything that is a whole Hebrew phrase a learner should hear said out loud. Single words are
+# skipped on purpose: `--min-words 2` is the default because the word-audio bank already holds
+# 2,057 clips and the word card plays from there, so voicing them again here would pay twice
+# for the same second of speech. Anything carrying a blank (___) is skipped too -- an exercise
+# prompt with a hole in it cannot be read aloud.
+#
+# CLIP NAMES ARE THE TEXT, not the position. Every other generator in this repo names clips
+# positionally (`s0.mp3` in a directory named for the text) and that has gone wrong twice: a
+# rewritten chapter adopts the previous edition's audio against different sentences, silently,
+# because ingest adopts any clip it finds on disk. Here the filename is a hash of the Hebrew
+# itself, so a clip can only ever be adopted against the exact words it says, a phrase repeated
+# across units costs one clip rather than five, and re-running after an edit regenerates
+# precisely what changed.
+
+AUDIO_DIR = paths.audio('lessons')
+
+# Where Hebrew that can be spoken actually lives in a block. Everything else in a unit is
+# English scaffolding, a single vocabulary word, or an exercise with a hole in it.
+SAY_KEYS = ('he', 'a', 'q', 'from', 'to')
+BLANK = ('___', '____', '…')
+
+
+def _say_texts(node, out):
+    """Collect every speakable Hebrew string in a block, wherever it sits in the tree."""
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if isinstance(v, str):
+                if k in SAY_KEYS:
+                    out.append((node, k, v))
+            else:
+                _say_texts(v, out)
+    elif isinstance(node, list):
+        for v in node:
+            _say_texts(v, out)
+    return out
+
+
+def _speakable(s, min_words):
+    if not s or any(b in s for b in BLANK):
+        return False
+    if not re.search(r'[֐-׿]', s):          # must actually be Hebrew
+        return False
+    return len([w for w in s.split() if w.strip()]) >= min_words
+
+
+def _clip_name(text):
+    return hashlib.sha1(text.encode('utf-8')).hexdigest()[:16] + '.mp3'
+
+
+def tts(text, path, key, voice, model='eleven_multilingual_v2'):
+    if os.path.exists(path):
+        return True, 'cached'
+    req = urllib.request.Request(
+        'https://api.elevenlabs.io/v1/text-to-speech/%s' % voice,
+        data=json.dumps({'text': text, 'model_id': model}).encode(),
+        headers={'xi-api-key': key, 'Content-Type': 'application/json'})
+    try:
+        with urllib.request.urlopen(req, timeout=90, context=net.SSL_CTX) as r:
+            open(path, 'wb').write(r.read())
+        return True, 'generated'
+    except Exception as e:
+        return False, str(e)[:100]
+
+
+def attach_audio(units, do_audio, min_words, estimate):
+    """Stamp `audio` onto every speakable phrase, generating the clip when asked to.
+
+    Adoption is unconditional and generation is not: a clip already on disk is wired into the
+    data whether or not this run has a key, which is what lets the site be rebuilt on a machine
+    that has none without silently dropping the audio it already has.
+    """
+    key, voice = os.environ.get('ELEVENLABS_API_KEY'), voice_id()
+    if do_audio and not (key and voice):
+        print('!! --audio requested but ELEVENLABS_API_KEY is not set; '
+              'existing clips are still adopted, nothing new is generated\n')
+        do_audio = False
+    if do_audio:
+        os.makedirs(AUDIO_DIR, exist_ok=True)
+
+    seen, chars, made, adopted, skipped = set(), 0, 0, 0, 0
+    for u in units:
+        for b in u.get('blocks', []):
+            for owner, k, text in _say_texts(b, []):
+                if not _speakable(text, min_words):
+                    skipped += 1
+                    continue
+                name = _clip_name(text)
+                clip, rel = os.path.join(AUDIO_DIR, name), paths.audio_url('lessons', name)
+                if text not in seen:
+                    seen.add(text)
+                    chars += len(text)
+                if os.path.exists(clip):
+                    owner['audio'] = rel
+                    adopted += 1
+                elif do_audio:
+                    ok, how = tts(text, clip, key, voice)
+                    print('  %s  %-30s %s' % (name[:8], text[:28], how))
+                    if ok:
+                        owner['audio'] = rel
+                        made += 1
+    return {'phrases': len(seen), 'chars': chars, 'adopted': adopted,
+            'generated': made, 'skipped': skipped}
+
+
+def build(check_only=False, do_audio=False, min_words=2, estimate=False):
     lex, res = Lexicon(), load_resolutions()
     missing, ambiguous, rows = [], [], 0
     for u in UNITS:
@@ -821,6 +940,17 @@ def build(check_only=False):
     if check_only:
         return 0
 
+    st = attach_audio(UNITS, do_audio, min_words, estimate)
+    # ElevenLabs bills per character, and a run that turns out to be four times the size you
+    # pictured is a thing to learn BEFORE spending it, not after.
+    print('audio: %d phrases at >=%d words · %d adopted from disk · %d generated · %d skipped'
+          % (st['phrases'], min_words, st['adopted'], st['generated'], st['skipped']))
+    print('       %s characters ≈ %s credits if generated from scratch'
+          % (format(st['chars'], ','), format(st['chars'], ',')))
+    if estimate:
+        print('\n(estimate only — nothing was generated and nothing was written)')
+        return 0
+
     with open(OUT, 'w', encoding='utf-8') as f:
         f.write('// GENERATED by pipeline/he_lessons.py -- do not edit by hand.\n')
         f.write('// Interactive teaching units. The prose, the sentences and the exercise design\n')
@@ -836,9 +966,17 @@ def build(check_only=False):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true', help='report the lexicon check, write nothing')
+    ap.add_argument('--audio', action='store_true',
+                    help='generate a clip per phrase (needs ELEVENLABS_API_KEY)')
+    ap.add_argument('--min-words', type=int, default=2, metavar='N',
+                    help='only voice phrases of at least N words (default 2 — single words are '
+                         'already in the word-audio bank and play from the word card)')
+    ap.add_argument('--estimate', action='store_true',
+                    help='print the character/credit cost and exit — generates and writes nothing')
     ap.add_argument('--lang', default='he', help=argparse.SUPPRESS)
     a = ap.parse_args()
-    return build(check_only=a.check)
+    return build(check_only=a.check, do_audio=a.audio, min_words=a.min_words,
+                 estimate=a.estimate)
 
 
 UNITS += [
