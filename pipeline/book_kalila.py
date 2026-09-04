@@ -26,7 +26,7 @@ Run:  python3 pipeline/book_kalila.py    then ingest each chapter + build_app.py
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bookshelf import P, emit_book
+from bookshelf import P, book
 BOOK_ID = 'kalila'
 BOOK_TITLE = {'en': 'Kalila and Dimna', 'ar': 'كليلة ودمنة'}
 
@@ -641,6 +641,6 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, unit='Tale', unit_ar='حكاية', shelf=12,
+    raise SystemExit(book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, unit='Tale', unit_ar='حكاية', shelf=12,
               meta={'work': 'كليلة ودمنة', 'author': 'Ibn al-Muqaffaʿ, from the Panchatantra',
-                    'year': '8th century', 'status': 'public domain — medieval'})
+                    'year': '8th century', 'status': 'public domain — medieval'}))

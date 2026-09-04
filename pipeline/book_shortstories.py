@@ -30,7 +30,7 @@ Run:  python3 pipeline/book_shortstories.py    then ingest each chapter + build_
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bookshelf import P, emit_book
+from bookshelf import P, book
 
 BOOK_ID = 'shortstories'
 BOOK_TITLE = {'en': 'Twenty Stories: Maupassant & Chekhov', 'ar': 'عشرون قصة: موباسان وتشيخوف'}
@@ -919,8 +919,8 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'advanced', CHAPTERS, unit='Story', unit_ar='قصة', shelf=21,
+    raise SystemExit(book(BOOK_ID, BOOK_TITLE, 'advanced', CHAPTERS, unit='Story', unit_ar='قصة', shelf=21,
               meta={'work': 'short stories by Guy de Maupassant and Anton Chekhov',
                     'author': 'Maupassant (d. 1893) and Chekhov (d. 1904)',
                     'year': '1880s–1900s',
-                    'status': 'public domain — retold from the plots, no translation used'})
+                    'status': 'public domain — retold from the plots, no translation used'}))

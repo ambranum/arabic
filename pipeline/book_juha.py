@@ -22,7 +22,7 @@ Run:  python3 pipeline/book_juha.py    then ingest each chapter + build_app.py.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bookshelf import P, emit_book
+from bookshelf import P, book
 
 BOOK_ID = 'juha'
 BOOK_TITLE = {'en': 'Juha', 'ar': 'جحا'}
@@ -1284,6 +1284,6 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'beginner', CHAPTERS, unit='Tale', unit_ar='حكاية', shelf=1,
+    raise SystemExit(book(BOOK_ID, BOOK_TITLE, 'beginner', CHAPTERS, unit='Tale', unit_ar='حكاية', shelf=1,
               meta={'work': 'the Juha / Nasreddin folk tales', 'author': 'traditional',
-                    'year': 'medieval', 'status': 'public domain — folk material, no known author'})
+                    'year': 'medieval', 'status': 'public domain — folk material, no known author'}))

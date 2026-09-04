@@ -146,3 +146,114 @@ def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='ال�
         print('!! %s: multi-sentence Arabic whose English does not split the same way, left whole:\n     %s'
               % (cid, a))
     return len(chapters), total
+
+
+# ==========================================================================================
+# THE GATE. The Hebrew shelf has had one since it shipped: he_bookshelf refuses to write a
+# chapter containing a word the reader will not be able to tap, and the result is that Hebrew's
+# books and stories carry ZERO unresolved tokens out of 57,000. Arabic had no such rule and
+# carries 3,106 across 1,845 distinct words, which is the whole difference between the two
+# sides — not the lexicon, the gate.
+#
+# Why this one has a BASELINE and the Hebrew one does not. Hebrew's books were written under
+# the gate, so every refusal was answered by rewriting the sentence before it ever shipped.
+# Arabic's nine books already exist, and a hard gate applied to them now refuses all nine and
+# blocks the shelf until 1,845 words are dealt with. Worse, a good number of them cannot be
+# dealt with: لك "to you" and مرا "woman" were both measured as unsafe to curate, because at
+# two and three letters the peeler reaches them from تلك and مرات and overwrites a correct
+# answer (see curated.py).
+#
+# So the rule is a ratchet rather than a wall. Every unresolved word already in a book is
+# recorded in book_unresolved.json, and the gate refuses a word that is NOT on that list. New
+# prose has to be as clean as Hebrew's; old prose is held exactly where it is and can only get
+# better. When a word stops appearing the baseline shrinks itself on the next --write, so the
+# number is always the real debt and never a stale allowance.
+
+BASELINE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'book_unresolved.json')
+
+
+def _baseline():
+    try:
+        return json.load(open(BASELINE, encoding='utf-8'))
+    except Exception:
+        return {}
+
+
+def unresolved_words(chapters):
+    """-> {surface: [chapter numbers]} for every word the reader could not tap.
+
+    Asks the ANNOTATOR, not the lexicon. Only ingest.annotate_word knows the curated table, the
+    clitic peeler and the resolution trail, and in the order the page will see them — so the
+    gate cannot drift from what actually gets written. Imported here rather than at module
+    scope because it pulls in pandas and the emitter is imported by scripts that never gate.
+    """
+    import ingest
+    from maknuune import Lexicon
+    lex, res = Lexicon(), ingest.load_resolutions()
+    out = {}
+    for i, (_en, _ar, paras) in enumerate(chapters, 1):
+        for para in paras:
+            for (ar, _e) in para:
+                for t in ingest.tokenize(ar):
+                    if ingest.annotate_word(lex, t, res)['provenance'] == 'unresolved':
+                        out.setdefault(t, []).append(i)
+    return out
+
+
+def check_book(book_id, chapters):
+    """-> (problems, stats). A problem is a thing that must be fixed before this book ships."""
+    bad = []
+    for i, (en, _ar, paras) in enumerate(chapters, 1):
+        for (ar, e) in [(a, e) for para in paras for (a, e) in para]:
+            if not str(ar).strip() or not str(e).strip():
+                bad.append('ch%02d %s — empty side: %r / %r' % (i, en, ar, e))
+    words = unresolved_words(chapters)
+    allowed = set(_baseline().get(book_id, []))
+    new = sorted(w for w in words if w not in allowed)
+    for w in new:
+        chs = words[w]
+        bad.append('not in the lexicon: %s (ch%s)'
+                   % (w, ', ch'.join(str(c) for c in sorted(set(chs))[:4])))
+    gone = sorted(allowed - set(words))
+    return bad, {'debt': len(words), 'tokens': sum(len(v) for v in words.values()),
+                 'new': new, 'fixed': gone, 'words': sorted(words)}
+
+
+def book(book_id, title, level, chapters, **kw):
+    """Check this book, and write it only if it passes. The book scripts' whole main().
+
+    --write is required, which it was not before: running a book script used to emit on the
+    spot, so there was no way to ask "would this be clean?" without changing the shelf.
+    """
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--write', action='store_true', help='emit texts/ar/book-%s-ch*.json' % book_id)
+    ap.add_argument('--lang', default=paths.LANG, choices=paths.LANGS, help=argparse.SUPPRESS)
+    a = ap.parse_args()
+
+    bad, st = check_book(book_id, chapters)
+    n_s = sum(len(p) for _e, _a, paras in chapters for p in paras)
+    print('%s — %s, %d chapters, %d sentences · %d words the reader cannot tap (%d tokens)'
+          % (title['en'], level, len(chapters), n_s, st['debt'], st['tokens']))
+    for b in bad:
+        print('  !! %s' % b)
+    if bad:
+        print('\n%d problem(s) — nothing written. A word with no card behind it is a page the '
+              'reader can look at but not use; the Hebrew shelf has none, and every one of '
+              'these is either a curated entry (pipeline/curated.py) or a rewritten sentence.'
+              % len(bad))
+        return 1
+    if st['fixed']:
+        print('  %d word(s) no longer appear and leave the baseline: %s'
+              % (len(st['fixed']), ', '.join(st['fixed'][:8])))
+    if not a.write:
+        print('all clear. --write to emit.')
+        return 0
+    emit_book(book_id, title, level, chapters, **kw)
+    # The baseline is rewritten from what is actually here, so it shrinks on its own and can
+    # never grant an allowance for a word the book no longer contains.
+    b = _baseline()
+    b[book_id] = st['words']
+    json.dump(b, open(BASELINE, 'w', encoding='utf-8'),
+              ensure_ascii=False, indent=1, sort_keys=True)
+    return 0

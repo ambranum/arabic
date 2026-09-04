@@ -26,7 +26,7 @@ Run:  python3 pipeline/book_holmes.py    then ingest each chapter + build_app.py
 import os, sys
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bookshelf import P, emit_book
+from bookshelf import P, book
 
 BOOK_ID = 'holmes'
 BOOK_TITLE = {'en': 'Sherlock Holmes: Ten Stories', 'ar': 'شرلوك هولمز: عشر قصص'}
@@ -1199,7 +1199,7 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'advanced', CHAPTERS, shelf=20,
+    raise SystemExit(book(BOOK_ID, BOOK_TITLE, 'advanced', CHAPTERS, shelf=20,
               meta={'work': 'the Sherlock Holmes stories', 'author': 'Arthur Conan Doyle',
                     'year': '1891–1904',
-                    'status': 'public domain — all Holmes entered the US public domain by 2023'})
+                    'status': 'public domain — all Holmes entered the US public domain by 2023'}))

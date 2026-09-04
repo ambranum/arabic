@@ -25,7 +25,7 @@ Run:  python3 pipeline/book_tomsawyer.py    then ingest each chapter + build_app
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bookshelf import P, emit_book
+from bookshelf import P, book
 
 BOOK_ID = 'tomsawyer'
 BOOK_TITLE = {'en': 'The Adventures of Tom Sawyer', 'ar': 'مغامرات توم سوير'}
@@ -973,6 +973,6 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=14,
+    raise SystemExit(book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=14,
               meta={'work': 'The Adventures of Tom Sawyer', 'author': 'Mark Twain',
-                    'year': '1876', 'status': 'public domain'})
+                    'year': '1876', 'status': 'public domain'}))

@@ -25,7 +25,7 @@ Run:  python3 pipeline/book_treasure.py    then ingest each chapter + build_app.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bookshelf import P, emit_book
+from bookshelf import P, book
 
 BOOK_ID = 'treasure'
 BOOK_TITLE = {'en': 'Treasure Island', 'ar': 'جزيرة الكنز'}
@@ -981,6 +981,6 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=13,
+    raise SystemExit(book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=13,
               meta={'work': 'Treasure Island', 'author': 'Robert Louis Stevenson',
-                    'year': '1883', 'status': 'public domain'})
+                    'year': '1883', 'status': 'public domain'}))

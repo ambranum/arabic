@@ -23,7 +23,7 @@ Run:  python3 pipeline/book_aesop.py    then ingest each chapter + build_app.py.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bookshelf import P, emit_book
+from bookshelf import P, book
 
 BOOK_ID = 'aesop'
 BOOK_TITLE = {'en': "Aesop's Fables", 'ar': 'خرافات إيسوب'}
@@ -1010,6 +1010,6 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'beginner', CHAPTERS, unit='Fable', unit_ar='خرافة', shelf=2,
+    raise SystemExit(book(BOOK_ID, BOOK_TITLE, 'beginner', CHAPTERS, unit='Fable', unit_ar='خرافة', shelf=2,
               meta={'work': "Aesop's Fables", 'author': 'Aesop (traditional)',
-                    'year': 'c. 600 BCE', 'status': 'public domain — ancient, anonymous'})
+                    'year': 'c. 600 BCE', 'status': 'public domain — ancient, anonymous'}))

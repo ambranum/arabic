@@ -12,7 +12,7 @@ Run:  python3 pipeline/book_atw80.py    then ingest each chapter + build_app.py.
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from bookshelf import P, emit_book
+from bookshelf import P, book
 
 BOOK_ID = 'atw80'
 BOOK_TITLE = {'en': 'Around the World in 80 Days', 'ar': 'حول العالم في ثمانين يوم'}
@@ -1346,6 +1346,6 @@ CHAPTERS = [
 ]
 
 if __name__ == '__main__':
-    emit_book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=10,
+    raise SystemExit(book(BOOK_ID, BOOK_TITLE, 'intermediate', CHAPTERS, shelf=10,
               meta={'work': 'Le Tour du monde en quatre-vingts jours', 'author': 'Jules Verne',
-                    'year': '1873', 'status': 'public domain'})
+                    'year': '1873', 'status': 'public domain'}))
