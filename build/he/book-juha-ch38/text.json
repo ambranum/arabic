@@ -195,8 +195,8 @@
      "surface": "מכתב",
      "lemma": "מִכְתָּב",
      "form": "מִכְתָּב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מִכְתָּב",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "letter (written message)",
      "analysis": "NOUN",
@@ -204,8 +204,7 @@
      "caphi_urban": "mixtav",
      "caphi_raw": null,
      "maknuune_id": "5253-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -264,8 +263,8 @@
      "surface": "בשביל",
      "lemma": "בִּשְׁבִיל",
      "form": "בִּשְׁבִיל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "בִּשְׁבִיל",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "For, for the sake of, for the benefit of, in order for.",
      "analysis": "PREP",
@@ -273,8 +272,7 @@
      "caphi_urban": "bishvil",
      "caphi_raw": null,
      "maknuune_id": "3244-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ב-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "אחי",
@@ -347,18 +345,18 @@
     },
     {
      "surface": "ולא",
-     "lemma": "וָלֹא",
-     "form": "וָלֹא",
+     "lemma": "לֹא",
+     "form": "לֹא",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "or else",
-     "analysis": "CONJ",
-     "caphi": "valo",
-     "caphi_urban": "valo",
+     "gloss": "Not; used in negating verbs, adjectives, and adverbs.",
+     "analysis": "ADV",
+     "caphi": "lo",
+     "caphi_urban": "lo",
      "caphi_raw": null,
-     "maknuune_id": "3130-1",
-     "provenance": "wiktionary:exact",
+     "maknuune_id": "1535-1",
+     "provenance": "wiktionary:resolved",
      "_cut": "ו-"
     },
     {
@@ -564,8 +562,8 @@
      "surface": "הרגל",
      "lemma": "הֶרְגֵּל",
      "form": "הֶרְגֵּל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הֶרְגֵּל",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "habit",
      "analysis": "NOUN",
@@ -574,7 +572,6 @@
      "caphi_raw": null,
      "maknuune_id": "12999-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-",
      "options": [
       {
        "id": "12999-1",
@@ -589,9 +586,15 @@
        "gloss": "foot, leg",
        "analysis": "NOUN:definite.singular",
        "pointed": "הָרֶגֶל"
+      },
+      {
+       "id": "313-1",
+       "root": "",
+       "gloss": "as ה- + רִגֵּל: defective spelling of ריגל",
+       "analysis": "VERB",
+       "pointed": "רִגֵּל"
       }
-     ],
-     "_cut_for_prompt": "ה-"
+     ]
     },
     {
      "surface": "שלי",
@@ -612,8 +615,8 @@
      "surface": "כואבת",
      "lemma": "כָּאַב",
      "form": "כָּאַב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "כּוֹאֶבֶת",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to hurt, ache",
      "analysis": "VERB:feminine.present.singular",
@@ -621,8 +624,7 @@
      "caphi_urban": "koevet",
      "caphi_raw": null,
      "maknuune_id": "7767-16",
-     "provenance": "wiktionary:exact",
-     "_cut": "כ-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -636,8 +638,8 @@
      "surface": "האיש",
      "lemma": "אִישׁ",
      "form": "אִישׁ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הָאִישׁ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "A man, adult male human being.",
      "analysis": "NOUN:definite.singular",
@@ -645,8 +647,7 @@
      "caphi_urban": "haish",
      "caphi_raw": null,
      "maknuune_id": "1096-11",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "שאל",
@@ -682,8 +683,8 @@
      "surface": "הקשר",
      "lemma": "קַשָּׁר",
      "form": "קַשָּׁר",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הַקַּשָּׁר",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "signaller, signal operator",
      "analysis": "NOUN:definite.singular",
@@ -692,7 +693,6 @@
      "caphi_raw": null,
      "maknuune_id": "10778-11",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-",
      "options": [
       {
        "id": "10778-11",
@@ -707,16 +707,29 @@
        "gloss": "link, relationship",
        "analysis": "NOUN:definite.singular",
        "pointed": "הַקֶּשֶׁר"
+      },
+      {
+       "id": "3843-1",
+       "root": "",
+       "gloss": "as ה- + קִשֵּׁר: To connect, tie.",
+       "analysis": "VERB",
+       "pointed": "קִשֵּׁר"
+      },
+      {
+       "id": "10776-1",
+       "root": "",
+       "gloss": "as ה- + קָשַׁר: to tie, link together",
+       "analysis": "VERB",
+       "pointed": "קָשַׁר"
       }
-     ],
-     "_cut_for_prompt": "ה-"
+     ]
     },
     {
      "surface": "לרגל",
      "lemma": "רִגֵּל",
      "form": "רִגֵּל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לְרַגֵּל",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to spy",
      "analysis": "VERB:infinitive",
@@ -725,7 +738,6 @@
      "caphi_raw": null,
      "maknuune_id": "5552-3",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
      "options": [
       {
        "id": "5552-3",
@@ -733,9 +745,15 @@
        "gloss": "to spy",
        "analysis": "VERB:infinitive",
        "pointed": "לְרַגֵּל"
+      },
+      {
+       "id": "312-1",
+       "root": "",
+       "gloss": "as ל- + רֶגֶל: foot, leg",
+       "analysis": "NOUN",
+       "pointed": "רֶגֶל"
       }
-     ],
-     "_cut_for_prompt": "ל-"
+     ]
     }
    ],
    "audio": null
@@ -779,8 +797,8 @@
      "surface": "אתה",
      "lemma": "אַתָּה",
      "form": "אַתָּה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "אַתָּה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "you, thou (second-person singular masculine)",
      "analysis": "PRON",
@@ -789,7 +807,6 @@
      "caphi_raw": null,
      "maknuune_id": "417-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "417-1",
@@ -833,15 +850,14 @@
        "analysis": "PREP:feminine",
        "pointed": "אֹתָהּ"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "כותב",
      "lemma": "כּוֹתֵב",
      "form": "כּוֹתֵב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "כּוֹתֵב",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "A (male) writer or author.",
      "analysis": "NOUN",
@@ -850,7 +866,6 @@
      "caphi_raw": null,
      "maknuune_id": "8185-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "כ-",
      "options": [
       {
        "id": "8185-1",
@@ -866,8 +881,7 @@
        "analysis": "VERB:masculine.present.singular",
        "pointed": "כּוֹתֵב"
       }
-     ],
-     "_cut_for_prompt": "כ-"
+     ]
     },
     {
      "surface": "ביד",
@@ -973,8 +987,8 @@
      "surface": "מאוד",
      "lemma": "מְאוֹד",
      "form": "מְאוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מְאוֹד",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Very, quite.",
      "analysis": "ADV",
@@ -982,8 +996,7 @@
      "caphi_urban": "mod",
      "caphi_raw": null,
      "maknuune_id": "5424-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1140,8 +1153,8 @@
      "surface": "הכתב",
      "lemma": "כְּתָב",
      "form": "כְּתָב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הַכְּתָב",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "writing, script, handwriting",
      "analysis": "NOUN:definite.singular",
@@ -1150,7 +1163,6 @@
      "caphi_raw": null,
      "maknuune_id": "90-9",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-",
      "options": [
       {
        "id": "90-9",
@@ -1179,9 +1191,15 @@
        "gloss": "to be written: to get written, to undergo writing, to come i",
        "analysis": "VERB:imperative.masculine.singular",
        "pointed": "הִכָּתֵב"
+      },
+      {
+       "id": "89-1",
+       "root": "",
+       "gloss": "as ה- + כָּתַב: to write",
+       "analysis": "VERB",
+       "pointed": "כָּתַב"
       }
-     ],
-     "_cut_for_prompt": "ה-"
+     ]
     },
     {
      "surface": "שלי",
@@ -1217,8 +1235,8 @@
      "surface": "מאוד",
      "lemma": "מְאוֹד",
      "form": "מְאוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מְאוֹד",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Very, quite.",
      "analysis": "ADV",
@@ -1226,8 +1244,7 @@
      "caphi_urban": "mod",
      "caphi_raw": null,
      "maknuune_id": "5424-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1414,8 +1431,8 @@
      "surface": "לנסוע",
      "lemma": "נָסַע",
      "form": "נָסַע",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לנסוע",
+     "vocalized_from": "source:pointed",
      "root": "נ.ע",
      "gloss": "To travel.",
      "analysis": "VERB:infinitive",
@@ -1423,8 +1440,7 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "4196-3",
-     "provenance": "wiktionary:exact",
-     "_cut": "ל-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1782,8 +1798,8 @@
      "surface": "בשביל",
      "lemma": "בִּשְׁבִיל",
      "form": "בִּשְׁבִיל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "בִּשְׁבִיל",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "For, for the sake of, for the benefit of, in order for.",
      "analysis": "PREP",
@@ -1791,15 +1807,14 @@
      "caphi_urban": "bishvil",
      "caphi_raw": null,
      "maknuune_id": "3244-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ב-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "הרגל",
      "lemma": "הֶרְגֵּל",
      "form": "הֶרְגֵּל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הֶרְגֵּל",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "habit",
      "analysis": "NOUN",
@@ -1808,7 +1823,6 @@
      "caphi_raw": null,
      "maknuune_id": "12999-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-",
      "options": [
       {
        "id": "12999-1",
@@ -1823,9 +1837,15 @@
        "gloss": "foot, leg",
        "analysis": "NOUN:definite.singular",
        "pointed": "הָרֶגֶל"
+      },
+      {
+       "id": "313-1",
+       "root": "",
+       "gloss": "as ה- + רִגֵּל: defective spelling of ריגל",
+       "analysis": "VERB",
+       "pointed": "רִגֵּל"
       }
-     ],
-     "_cut_for_prompt": "ה-"
+     ]
     }
    ],
    "audio": null

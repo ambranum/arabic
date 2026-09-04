@@ -331,8 +331,8 @@
      "surface": "הביתה",
      "lemma": "הַבַּיְתָה",
      "form": "הַבַּיְתָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הַבַּיְתָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Home, homeward, to one's home.",
      "analysis": "ADV",
@@ -340,15 +340,14 @@
      "caphi_urban": "habáyta",
      "caphi_raw": null,
      "maknuune_id": "4474-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-ה"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "הייתה",
      "lemma": "הָיְתָה",
      "form": "הָיְתָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הָיְיתָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Third-person feminine singular past (suffix conjugation) of הָיָה (hayá)",
      "analysis": "VERB:alternative",
@@ -356,15 +355,14 @@
      "caphi_urban": "hayta",
      "caphi_raw": null,
      "maknuune_id": "3986-3",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-ה"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "ארוכה",
      "lemma": "אָרֹךְ",
      "form": "אָרֹךְ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "ארוכה",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "long (having a great distance from one end to the other)",
      "analysis": "ADJ:feminine",
@@ -372,15 +370,14 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "7466-3",
-     "provenance": "wiktionary:exact",
-     "_cut": "-ה"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "מאוד",
      "lemma": "מְאוֹד",
      "form": "מְאוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מְאוֹד",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Very, quite.",
      "analysis": "ADV",
@@ -388,8 +385,7 @@
      "caphi_urban": "mod",
      "caphi_raw": null,
      "maknuune_id": "5424-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -433,8 +429,8 @@
      "surface": "כבדים",
      "lemma": "כָּבֵד",
      "form": "כָּבֵד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "כְּבֵדִים",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "liver (organ of the body)",
      "analysis": "NOUN:indefinite.plural",
@@ -443,7 +439,6 @@
      "caphi_raw": null,
      "maknuune_id": "3475-3",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "כ-",
      "options": [
       {
        "id": "3475-3",
@@ -451,16 +446,22 @@
        "gloss": "liver (organ of the body)",
        "analysis": "NOUN:indefinite.plural",
        "pointed": "כְּבֵדִים"
+      },
+      {
+       "id": "252-3",
+       "root": "",
+       "gloss": "as כ- + בַּד: fabric, cloth, linen",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "בַּדִּים"
       }
-     ],
-     "_cut_for_prompt": "כ-"
+     ]
     },
     {
      "surface": "והיה",
      "lemma": "וְהָיָה",
      "form": "וְהָיָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "וְהָיָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Third-person masculine singular vav-consecutive perfect (hence future tense) of הָיָה (hayá).",
      "analysis": "VERB",
@@ -468,8 +469,7 @@
      "caphi_urban": "vhaya",
      "caphi_raw": null,
      "maknuune_id": "7286-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ו-ה"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "חם",
@@ -597,8 +597,8 @@
      "surface": "הוריד",
      "lemma": "הוֹרִיד",
      "form": "הוֹרִיד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הוֹרִיד",
+     "vocalized_from": "lexicon",
      "root": "י",
      "gloss": "to take down, to bring down, to lower",
      "analysis": "VERB",
@@ -607,7 +607,6 @@
      "caphi_raw": null,
      "maknuune_id": "4383-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-",
      "options": [
       {
        "id": "4383-1",
@@ -637,8 +636,7 @@
        "analysis": "NOUN:definite.singular",
        "pointed": "הַוְּרִיד"
       }
-     ],
-     "_cut_for_prompt": "ה-"
+     ]
     },
     {
      "surface": "את",
@@ -684,7 +682,7 @@
      "caphi_raw": null,
      "maknuune_id": "913-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-ה",
+     "_cut": "ל-",
      "options": [
       {
        "id": "913-1",
@@ -722,7 +720,7 @@
        "pointed": "אֲדֻמֶּה"
       }
      ],
-     "_cut_for_prompt": "ל-ה"
+     "_cut_for_prompt": "ל-"
     }
    ],
    "audio": null
@@ -920,8 +918,8 @@
      "surface": "כאבו",
      "lemma": "כָּאַב",
      "form": "כָּאַב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "כַּאֲבוּ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to hurt, ache",
      "analysis": "VERB:imperative.masculine.plural",
@@ -930,7 +928,6 @@
      "caphi_raw": null,
      "maknuune_id": "7767-31",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "כ-ו",
      "options": [
       {
        "id": "7767-31",
@@ -953,15 +950,14 @@
        "analysis": "VERB:feminine.masculine.past.plural.third-person",
        "pointed": "כָּאֲבוּ"
       }
-     ],
-     "_cut_for_prompt": "כ-ו"
+     ]
     },
     {
      "surface": "מאוד",
      "lemma": "מְאוֹד",
      "form": "מְאוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מְאוֹד",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Very, quite.",
      "analysis": "ADV",
@@ -969,8 +965,7 @@
      "caphi_urban": "mod",
      "caphi_raw": null,
      "maknuune_id": "5424-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1014,8 +1009,8 @@
      "surface": "החיים",
      "lemma": "חַיִּים",
      "form": "חַיִּים",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הַחַיִּים",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "life (period during which one is alive)",
      "analysis": "NOUN:definite.plural",
@@ -1023,8 +1018,7 @@
      "caphi_urban": "haxayim",
      "caphi_raw": null,
      "maknuune_id": "1982-7",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "שלי",
@@ -1227,8 +1221,8 @@
      "surface": "המוות",
      "lemma": "מָוֶת",
      "form": "מָוֶת",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "המוות",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "death",
      "analysis": "NOUN:definite.singular",
@@ -1236,15 +1230,14 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "1924-8",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "בוא",
      "lemma": "בּוֹא",
      "form": "בּוֹא",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "בּוֹא",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "infinitive absolute of בָּא (bá)",
      "analysis": "VERB",
@@ -1253,7 +1246,6 @@
      "caphi_raw": null,
      "maknuune_id": "794-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ב-",
      "options": [
       {
        "id": "794-1",
@@ -1269,15 +1261,14 @@
        "analysis": "VERB:imperative.masculine.singular",
        "pointed": "בּוֹא"
       }
-     ],
-     "_cut_for_prompt": "ב-"
+     ]
     },
     {
      "surface": "אליי",
      "lemma": "אֵל",
      "form": "אֵל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "אליי",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "god (a deity or supreme being; a supernatural, typically immortal, being with superior powers, to which personhood is attributed)",
      "analysis": "NOUN:feminine.first-person.masculine.possessed-form.singular",
@@ -1285,8 +1276,7 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "357-19",
-     "provenance": "wiktionary:exact",
-     "_cut": "-י"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1414,8 +1404,8 @@
      "surface": "מישהו",
      "lemma": "מִישֶׁהוּ",
      "form": "מִישֶׁהוּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מִישֶׁהוּ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "someone, somebody",
      "analysis": "PRON",
@@ -1423,8 +1413,7 @@
      "caphi_urban": "míshehu",
      "caphi_raw": null,
      "maknuune_id": "4554-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-ו"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "עמד",
@@ -1524,7 +1513,7 @@
      "caphi_raw": null,
      "maknuune_id": "1004-3",
      "provenance": "wiktionary:clitic",
-     "_cut": "ו-"
+     "_cut": "ול-"
     },
     {
      "surface": "שחור",
@@ -1639,7 +1628,7 @@
      "caphi_raw": null,
      "maknuune_id": "5168-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-י",
+     "_cut": "וב-",
      "options": [
       {
        "id": "5168-1",
@@ -1663,7 +1652,7 @@
        "pointed": "אֱתִי"
       }
      ],
-     "_cut_for_prompt": "ו-י"
+     "_cut_for_prompt": "וב-"
     }
    ],
    "audio": null
@@ -1692,8 +1681,8 @@
      "surface": "הסתכל",
      "lemma": "הִסְתַּכֵּל",
      "form": "הִסְתַּכֵּל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הִסְתַּכֵּל",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to look at",
      "analysis": "VERB",
@@ -1701,8 +1690,7 @@
      "caphi_urban": "histakel",
      "caphi_raw": null,
      "maknuune_id": "4631-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "בו",
@@ -1739,8 +1727,8 @@
      "surface": "מאוד",
      "lemma": "מְאוֹד",
      "form": "מְאוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מְאוֹד",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Very, quite.",
      "analysis": "ADV",
@@ -1748,8 +1736,7 @@
      "caphi_urban": "mod",
      "caphi_raw": null,
      "maknuune_id": "5424-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1824,8 +1811,8 @@
      "surface": "קראתי",
      "lemma": "קָרָא",
      "form": "קָרָא",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "קָרָאתִי",
+     "vocalized_from": "lexicon",
      "root": "א",
      "gloss": "to read",
      "analysis": "VERB:feminine.first-person.masculine.past.singular",
@@ -1833,8 +1820,7 @@
      "caphi_urban": "karati",
      "caphi_raw": null,
      "maknuune_id": "169-9",
-     "provenance": "wiktionary:exact",
-     "_cut": "-י"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "לך",
@@ -1923,8 +1909,8 @@
      "surface": "להרים",
      "lemma": "הֵרִים",
      "form": "הֵרִים",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לְהָרִים",
+     "vocalized_from": "lexicon",
      "root": "ו",
      "gloss": "to pick up",
      "analysis": "VERB:infinitive",
@@ -1933,7 +1919,6 @@
      "caphi_raw": null,
      "maknuune_id": "5570-3",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
      "options": [
       {
        "id": "5570-3",
@@ -1948,9 +1933,22 @@
        "gloss": "to-infinitive of הֵרִים (herím).",
        "analysis": "VERB",
        "pointed": "לְהָרִים"
+      },
+      {
+       "id": "5569-1",
+       "root": "",
+       "gloss": "as ל- + הָרִים: plural indefinite form of הַר (har): mountai",
+       "analysis": "NOUN",
+       "pointed": "הָרִים"
+      },
+      {
+       "id": "3046-3",
+       "root": "",
+       "gloss": "as ל- + הַר: mountain (mass of earth and rock)",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "הָרִים"
       }
-     ],
-     "_cut_for_prompt": "ל-"
+     ]
     },
     {
      "surface": "את",

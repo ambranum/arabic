@@ -61,7 +61,14 @@ _SSL = net.SSL_CTX
 # prints whatever lies between one word and the next, verbatim.
 LETTER = r'[\u05D0-\u05EA\u05EF-\u05F2]'
 MARK = r'[\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]'      # niqqud, cantillation, dots
-WORD = re.compile(r'(?:%(l)s%(m)s*)+(?:["\'\u05F3\u05F4](?:%(l)s%(m)s*)+)*'
+# The trailing geresh is PART OF THE WORD. A geresh after the last letter is how Hebrew writes
+# the sounds its alphabet does not have -- ג׳ for j, צ׳ for ch, ז׳ for zh -- so ג׳ורג׳ "George"
+# ends in one, and without the optional tail below the regex stopped at the last letter and
+# handed back ג׳ורג. The word then missed its own entry, which is why pipeline/he_curated.py
+# carries a second, truncated key for every such name. Only the geresh and the apostrophe people
+# type for it are allowed to trail: a gershayim or a double quote in that position is a closing
+# quotation mark, and "שלום" has to keep coming back as שלום.
+WORD = re.compile(r'(?:%(l)s%(m)s*)+(?:["\'\u05F3\u05F4](?:%(l)s%(m)s*)+)*[\'\u05F3]?'
                   % {'l': LETTER, 'm': MARK})
 _ACRONYM = re.compile(r'^(%(l)s%(m)s*)?["\u05F4]((?:%(l)s%(m)s*){2,})$'
                       % {'l': LETTER, 'm': MARK})
@@ -220,7 +227,16 @@ def annotate(lex, surface, res):
     # words only, written down one at a time, each marked `curated:*` on the page.
     c = he_curated.lookup(surface, key)
     if c is None:
-        for stem, cut in lex.stems(key)[1:]:
+        # `pre_cut`, NOT `cut`. This loop used to bind the peeler's own variable, so by the time
+        # it fell through -- which it does for almost every word, because almost no word is a
+        # curated name -- `cut` no longer held what lex.look() found. It held the LAST stem the
+        # peeler could imagine, 'ש-ה' for שקרה, for any word whose first letter can be a
+        # particle. Two things then went wrong at once, and both of them silently. _word() reads
+        # cut as "this matched by cutting a proclitic" and refuses to point the word, so exact
+        # matches came out unpointed and stamped unvocalized:clitic. And the alt-readings branch
+        # below is guarded by `if not cut`, so the one place that offers ש- + קָרָה beside
+        # שִׁקְּרָה never ran, and the adjudicator was never shown the reading the sentence meant.
+        for stem, pre_cut in lex.stems(key)[1:]:
             # PREFIXES ONLY. A name takes particles in front of it -- לְג'וּחָא, מִפּוֹג,
             # שֶׁפַּסְפַּרְטוּ -- and nothing behind it: Hebrew's suffixes are possessives and
             # feminine endings, and a borrowed name does not inflect for either. Reaching the
@@ -230,13 +246,13 @@ def annotate(lex, surface, res):
             # הַסְּנֶה, the burning bush of the midrash, down to סנ, which is he_norm's spelling
             # of סָן as in San Francisco, and six sentences of Ben-Yehuda were annotated with a
             # Californian city. cut is 'prefix-suffix'; anything after the dash disqualifies it.
-            if cut.split('-', 1)[-1]:
+            if pre_cut.split('-', 1)[-1]:
                 continue
             c = he_curated.lookup(stem)
             if c is not None:
                 # Same refusal as any clitic match: the entry points the STEM, and nothing has
                 # pointed the particle in front of it.
-                c['surface'], c['_cut'] = surface, cut
+                c['surface'], c['_cut'] = surface, pre_cut
                 c['vocalized'], c['vocalized_from'] = None, 'unvocalized:clitic'
                 break
     if c is not None:

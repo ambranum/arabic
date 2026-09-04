@@ -75,8 +75,8 @@
      "surface": "בין",
      "lemma": "בֵּין",
      "form": "בֵּין",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "בֵּין",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "between, among, amid",
      "analysis": "PREP",
@@ -85,7 +85,6 @@
      "caphi_raw": null,
      "maknuune_id": "531-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ב-",
      "options": [
       {
        "id": "531-1",
@@ -100,16 +99,43 @@
        "gloss": "to understand.",
        "analysis": "VERB:imperative.masculine.singular",
        "pointed": "בִּין"
+      },
+      {
+       "id": "6490-1",
+       "root": "",
+       "gloss": "as ב- + ־ִין: For most masculine nouns and certain feminin",
+       "analysis": "SUFFIX",
+       "pointed": "־ִין"
+      },
+      {
+       "id": "3837-3",
+       "root": "",
+       "gloss": "as ב- + ־ִים: For most masculine nouns and certain feminin",
+       "analysis": "SUFFIX:alternative",
+       "pointed": "־ין"
+      },
+      {
+       "id": "396-1",
+       "root": "",
+       "gloss": "as בֵּן spelled full: son",
+       "analysis": "NOUN",
+       "pointed": "בֵּין"
+      },
+      {
+       "id": "400-6",
+       "root": "",
+       "gloss": "as בַּת spelled full: daughter",
+       "analysis": "NOUN:masculine",
+       "pointed": "בֵּין"
       }
-     ],
-     "_cut_for_prompt": "ב-"
+     ]
     },
     {
      "surface": "האי",
      "lemma": "אִי",
      "form": "אִי",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הָאִי",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "an island",
      "analysis": "NOUN:definite.singular",
@@ -117,34 +143,23 @@
      "caphi_urban": "hai",
      "caphi_raw": null,
      "maknuune_id": "1969-8",
-     "provenance": "wiktionary:exact",
-     "_cut": "-י"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "לכפר",
-     "lemma": "כִּפֵּר",
-     "form": "כִּפֵּר",
+     "lemma": "כְּפָר",
+     "form": "כְּפָר",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "to cover",
-     "analysis": "VERB:infinitive",
-     "caphi": "lxaper",
-     "caphi_urban": "lxaper",
+     "gloss": "village",
+     "analysis": "NOUN",
+     "caphi": "kfar",
+     "caphi_urban": "kfar",
      "caphi_raw": null,
-     "maknuune_id": "11087-6",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
-     "options": [
-      {
-       "id": "11087-6",
-       "root": "",
-       "gloss": "to cover",
-       "analysis": "VERB:infinitive",
-       "pointed": "לְכַפֵּר"
-      }
-     ],
-     "_cut_for_prompt": "ל-"
+     "maknuune_id": "2049-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ל-"
     },
     {
      "surface": "לא",
@@ -211,8 +226,8 @@
      "surface": "הזרם",
      "lemma": "זֶרֶם",
      "form": "זֶרֶם",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הַזֶּרֶם",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "a stream",
      "analysis": "NOUN:definite.singular",
@@ -220,8 +235,7 @@
      "caphi_urban": "hazerem",
      "caphi_raw": null,
      "maknuune_id": "2099-9",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "חזק",
@@ -311,8 +325,8 @@
      "surface": "המותניים",
      "lemma": "מֹתֶן",
      "form": "מֹתֶן",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "המותניים",
+     "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "hip, waist",
      "analysis": "NOUN:definite.plural",
@@ -320,8 +334,7 @@
      "caphi_urban": null,
      "caphi_raw": null,
      "maknuune_id": "14267-36",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "ואז",
@@ -343,8 +356,8 @@
      "surface": "שחה",
      "lemma": "שָׂחָה",
      "form": "שָׂחָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "שָׂחָה",
+     "vocalized_from": "lexicon",
      "root": "ה",
      "gloss": "To swim.",
      "analysis": "VERB",
@@ -353,7 +366,6 @@
      "caphi_raw": null,
      "maknuune_id": "3611-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "3611-1",
@@ -369,8 +381,7 @@
        "analysis": "VERB:imperative.masculine.singular",
        "pointed": "שְׂחֵה"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     }
    ],
    "audio": null
@@ -394,7 +405,7 @@
      "caphi_raw": null,
      "maknuune_id": "2099-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
+     "_cut": "וה-",
      "options": [
       {
        "id": "2099-1",
@@ -432,7 +443,7 @@
        "pointed": "זֵרָם"
       }
      ],
-     "_cut_for_prompt": "ו-"
+     "_cut_for_prompt": "וה-"
     },
     {
      "surface": "לקח",
@@ -468,8 +479,8 @@
      "surface": "למטה",
      "lemma": "לְמַטָּה",
      "form": "לְמַטָּה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לְמַטָּה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "down, downward",
      "analysis": "ADV",
@@ -477,8 +488,7 @@
      "caphi_urban": "lmáta",
      "caphi_raw": null,
      "maknuune_id": "11862-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ל-ה"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "אבל",
@@ -529,8 +539,8 @@
      "surface": "שחיין",
      "lemma": "שְׁחִין",
      "form": "שְׁחִין",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "שְׁחִיין",
+     "vocalized_from": "derived:ktiv",
      "root": null,
      "gloss": "boils, severe inflammation of the skin",
      "analysis": "NOUN",
@@ -539,7 +549,6 @@
      "caphi_raw": null,
      "maknuune_id": "11782-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ש-",
      "options": [
       {
        "id": "11782-1",
@@ -555,8 +564,7 @@
        "analysis": "NOUN",
        "pointed": "שַׂחְיָן"
       }
-     ],
-     "_cut_for_prompt": "ש-"
+     ]
     },
     {
      "surface": "טוב",
@@ -600,8 +608,8 @@
      "surface": "הגיע",
      "lemma": "הִגִּיעַ",
      "form": "הִגִּיעַ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הִגִּיעַ",
+     "vocalized_from": "lexicon",
      "root": "נ.ע",
      "gloss": "to arrive, to get, to reach",
      "analysis": "VERB",
@@ -609,8 +617,7 @@
      "caphi_urban": "higía",
      "caphi_raw": null,
      "maknuune_id": "2331-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "לחוף",
@@ -673,7 +680,7 @@
      "caphi_raw": null,
      "maknuune_id": "2049-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "מ-",
+     "_cut": "מה-",
      "options": [
       {
        "id": "2049-1",
@@ -711,7 +718,7 @@
        "pointed": "כַּפֵּר"
       }
      ],
-     "_cut_for_prompt": "מ-"
+     "_cut_for_prompt": "מה-"
     },
     {
      "surface": "והלך",
@@ -821,14 +828,14 @@
      "caphi_raw": null,
      "maknuune_id": "3986-3",
      "provenance": "wiktionary:clitic",
-     "_cut": "ו-ה"
+     "_cut": "ו-"
     },
     {
      "surface": "ספינה",
      "lemma": "סְפִינָה",
      "form": "סְפִינָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "סְפִינָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "ship, boat",
      "analysis": "NOUN",
@@ -837,7 +844,6 @@
      "caphi_raw": null,
      "maknuune_id": "9236-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "9236-1",
@@ -853,15 +859,14 @@
        "analysis": "VERB:noun-from-verb",
        "pointed": "סְפִינָה"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "קשורה",
      "lemma": "קָשׁוּר",
      "form": "קָשׁוּר",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "קְשׁוּרָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Tied, connected, bound.",
      "analysis": "ADJ:feminine",
@@ -869,8 +874,7 @@
      "caphi_urban": "kshura",
      "caphi_raw": null,
      "maknuune_id": "2792-3",
-     "provenance": "wiktionary:exact",
-     "_cut": "-ה"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "אז",
@@ -906,8 +910,8 @@
      "surface": "עלה",
      "lemma": "עָלָה",
      "form": "עָלָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "עָלָה",
+     "vocalized_from": "lexicon",
      "root": "ע.ה",
      "gloss": "To ascend, rise, go up; to move from a point to a higher point.",
      "analysis": "VERB",
@@ -916,7 +920,6 @@
      "caphi_raw": null,
      "maknuune_id": "740-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "740-1",
@@ -953,8 +956,7 @@
        "analysis": "NOUN:feminine.possessed-form.singular.third-person",
        "pointed": "עֻלָּהּ"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "עליה",
@@ -1072,8 +1074,8 @@
      "surface": "זזה",
      "lemma": "זָז",
      "form": "זָז",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "זָזָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to move",
      "analysis": "VERB:feminine.present.singular",
@@ -1081,8 +1083,7 @@
      "caphi_urban": "zaza",
      "caphi_raw": null,
      "maknuune_id": "8267-15",
-     "provenance": "wiktionary:exact",
-     "_cut": "-ה"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1106,33 +1107,23 @@
      "caphi_raw": null,
      "maknuune_id": "2331-12",
      "provenance": "wiktionary:clitic",
-     "_cut": "ו-ה"
+     "_cut": "וכש-"
     },
     {
      "surface": "לכפר",
-     "lemma": "כִּפֵּר",
-     "form": "כִּפֵּר",
+     "lemma": "כְּפָר",
+     "form": "כְּפָר",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "to cover",
-     "analysis": "VERB:infinitive",
-     "caphi": "lxaper",
-     "caphi_urban": "lxaper",
+     "gloss": "village",
+     "analysis": "NOUN",
+     "caphi": "kfar",
+     "caphi_urban": "kfar",
      "caphi_raw": null,
-     "maknuune_id": "11087-6",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
-     "options": [
-      {
-       "id": "11087-6",
-       "root": "",
-       "gloss": "to cover",
-       "analysis": "VERB:infinitive",
-       "pointed": "לְכַפֵּר"
-      }
-     ],
-     "_cut_for_prompt": "ל-"
+     "maknuune_id": "2049-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ל-"
     },
     {
      "surface": "הוא",
@@ -1184,8 +1175,8 @@
      "surface": "בין",
      "lemma": "בֵּין",
      "form": "בֵּין",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "בֵּין",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "between, among, amid",
      "analysis": "PREP",
@@ -1194,7 +1185,6 @@
      "caphi_raw": null,
      "maknuune_id": "531-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ב-",
      "options": [
       {
        "id": "531-1",
@@ -1209,16 +1199,43 @@
        "gloss": "to understand.",
        "analysis": "VERB:imperative.masculine.singular",
        "pointed": "בִּין"
+      },
+      {
+       "id": "6490-1",
+       "root": "",
+       "gloss": "as ב- + ־ִין: For most masculine nouns and certain feminin",
+       "analysis": "SUFFIX",
+       "pointed": "־ִין"
+      },
+      {
+       "id": "3837-3",
+       "root": "",
+       "gloss": "as ב- + ־ִים: For most masculine nouns and certain feminin",
+       "analysis": "SUFFIX:alternative",
+       "pointed": "־ין"
+      },
+      {
+       "id": "396-1",
+       "root": "",
+       "gloss": "as בֵּן spelled full: son",
+       "analysis": "NOUN",
+       "pointed": "בֵּין"
+      },
+      {
+       "id": "400-6",
+       "root": "",
+       "gloss": "as בַּת spelled full: daughter",
+       "analysis": "NOUN:masculine",
+       "pointed": "בֵּין"
       }
-     ],
-     "_cut_for_prompt": "ב-"
+     ]
     },
     {
      "surface": "הבתים",
      "lemma": "בַּיִת",
      "form": "בַּיִת",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הַבָּתִּים",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "house",
      "analysis": "NOUN:definite.plural",
@@ -1226,8 +1243,7 @@
      "caphi_urban": "habatim",
      "caphi_raw": null,
      "maknuune_id": "373-21",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1256,8 +1272,8 @@
      "surface": "הגיע",
      "lemma": "הִגִּיעַ",
      "form": "הִגִּיעַ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הִגִּיעַ",
+     "vocalized_from": "lexicon",
      "root": "נ.ע",
      "gloss": "to arrive, to get, to reach",
      "analysis": "VERB",
@@ -1265,8 +1281,7 @@
      "caphi_urban": "higía",
      "caphi_raw": null,
      "maknuune_id": "2331-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "לבית",
@@ -1303,8 +1318,8 @@
      "surface": "דודה",
      "lemma": "דּוֹד",
      "form": "דּוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "דּוֹדָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "uncle (the brother or brother-in-law of one’s parent)",
      "analysis": "NOUN:feminine",
@@ -1313,7 +1328,6 @@
      "caphi_raw": null,
      "maknuune_id": "1642-5",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "1642-5",
@@ -1343,8 +1357,7 @@
        "analysis": "NOUN:feminine.possessed-form.singular.third-person",
        "pointed": "דּוּדָהּ"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "פולי",
@@ -1375,7 +1388,7 @@
      "caphi_raw": null,
      "maknuune_id": "560-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-ה",
+     "_cut": "ו-",
      "options": [
       {
        "id": "560-1",
@@ -1413,7 +1426,7 @@
        "pointed": "רְאֵה"
       }
      ],
-     "_cut_for_prompt": "ו-ה"
+     "_cut_for_prompt": "ו-"
     },
     {
      "surface": "אור",
@@ -1489,8 +1502,8 @@
      "surface": "הציץ",
      "lemma": "הֵצִיץ",
      "form": "הֵצִיץ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הֵצִיץ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to peek, to take a peek, to glance",
      "analysis": "VERB",
@@ -1498,8 +1511,7 @@
      "caphi_urban": "hetsits",
      "caphi_raw": null,
      "maknuune_id": "3273-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "מהחלון",
@@ -1521,8 +1533,8 @@
      "surface": "דודה",
      "lemma": "דּוֹד",
      "form": "דּוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "דּוֹדָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "uncle (the brother or brother-in-law of one’s parent)",
      "analysis": "NOUN:feminine",
@@ -1531,7 +1543,6 @@
      "caphi_raw": null,
      "maknuune_id": "1642-5",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "1642-5",
@@ -1561,8 +1572,7 @@
        "analysis": "NOUN:feminine.possessed-form.singular.third-person",
        "pointed": "דּוּדָהּ"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "פולי",
@@ -1631,7 +1641,7 @@
      "caphi_raw": null,
      "maknuune_id": "1868-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
+     "_cut": "וה-",
      "options": [
       {
        "id": "1868-1",
@@ -1648,7 +1658,7 @@
        "pointed": "אָח"
       }
      ],
-     "_cut_for_prompt": "ו-"
+     "_cut_for_prompt": "וה-"
     },
     {
      "surface": "שלו",
@@ -1712,7 +1722,7 @@
      "caphi_raw": null,
      "maknuune_id": "1642-5",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-ה",
+     "_cut": "ה-",
      "options": [
       {
        "id": "1642-5",
@@ -1743,7 +1753,7 @@
        "pointed": "דּוּדָהּ"
       }
      ],
-     "_cut_for_prompt": "ה-ה"
+     "_cut_for_prompt": "ה-"
     },
     {
      "surface": "והאימא",
@@ -1759,7 +1769,7 @@
      "caphi_raw": null,
      "maknuune_id": "454-4",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
+     "_cut": "וה-",
      "options": [
       {
        "id": "454-4",
@@ -1776,7 +1786,7 @@
        "pointed": "אִמָּא"
       }
      ],
-     "_cut_for_prompt": "ו-"
+     "_cut_for_prompt": "וה-"
     },
     {
      "surface": "של",
@@ -1851,8 +1861,8 @@
      "surface": "בוכות",
      "lemma": "בָּכָה",
      "form": "בָּכָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "בּוֹכוֹת",
+     "vocalized_from": "lexicon",
      "root": "ה",
      "gloss": "To cry, weep.",
      "analysis": "VERB:feminine.plural.present",
@@ -1860,8 +1870,7 @@
      "caphi_urban": "boxot",
      "caphi_raw": null,
      "maknuune_id": "6058-17",
-     "provenance": "wiktionary:exact",
-     "_cut": "ב-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -1915,7 +1924,7 @@
      "caphi_raw": null,
      "maknuune_id": "1144-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "מ-",
+     "_cut": "מה-",
      "options": [
       {
        "id": "1144-1",
@@ -1932,7 +1941,7 @@
        "pointed": "דָּלֶת"
       }
      ],
-     "_cut_for_prompt": "מ-"
+     "_cut_for_prompt": "מה-"
     },
     {
      "surface": "שמאחור",
@@ -1948,7 +1957,7 @@
      "caphi_raw": null,
      "maknuune_id": "7887-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ש-",
+     "_cut": "שמ-",
      "options": [
       {
        "id": "7887-1",
@@ -1965,7 +1974,7 @@
        "pointed": "אִחוּר"
       }
      ],
-     "_cut_for_prompt": "ש-"
+     "_cut_for_prompt": "שמ-"
     },
     {
      "surface": "זחל",
@@ -2034,7 +2043,7 @@
      "caphi_raw": null,
      "maknuune_id": "1907-1",
      "provenance": "wiktionary:ktiv",
-     "_cut": "ל-ה"
+     "_cut": "ל-"
     },
     {
      "surface": "ושמע",
@@ -2102,8 +2111,8 @@
      "surface": "דודה",
      "lemma": "דּוֹד",
      "form": "דּוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "דּוֹדָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "uncle (the brother or brother-in-law of one’s parent)",
      "analysis": "NOUN:feminine",
@@ -2112,7 +2121,6 @@
      "caphi_raw": null,
      "maknuune_id": "1642-5",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "1642-5",
@@ -2142,8 +2150,7 @@
        "analysis": "NOUN:feminine.possessed-form.singular.third-person",
        "pointed": "דּוּדָהּ"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "פולי",
@@ -2307,8 +2314,8 @@
      "surface": "עשה",
      "lemma": "עָשָׂה",
      "form": "עָשָׂה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "עָשָׂה",
+     "vocalized_from": "lexicon",
      "root": "ע.ה",
      "gloss": "To do (to perform an action, to accomplish a thing).",
      "analysis": "VERB",
@@ -2317,7 +2324,6 @@
      "caphi_raw": null,
      "maknuune_id": "565-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "565-1",
@@ -2340,15 +2346,14 @@
        "analysis": "VERB:imperative.masculine.singular",
        "pointed": "עֲשֵׂה"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "שטויות",
      "lemma": "שְׁטוּיוֹת",
      "form": "שְׁטוּיוֹת",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "שְׁטוּיוֹת",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "plural indefinite form of שְׁטוּת (shtut)",
      "analysis": "NOUN",
@@ -2357,7 +2362,6 @@
      "caphi_raw": null,
      "maknuune_id": "8676-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ש-",
      "options": [
       {
        "id": "8676-1",
@@ -2373,8 +2377,7 @@
        "analysis": "NOUN:indefinite.plural",
        "pointed": "שטויות"
       }
-     ],
-     "_cut_for_prompt": "ש-"
+     ]
     }
    ],
    "audio": null
@@ -2398,7 +2401,7 @@
      "caphi_raw": null,
      "maknuune_id": "1953-1",
      "provenance": "wiktionary:clitic",
-     "_cut": "ו-"
+     "_cut": "וה-"
     },
     {
      "surface": "שלו",
@@ -2459,7 +2462,7 @@
      "caphi_raw": null,
      "maknuune_id": "1953-1",
      "provenance": "wiktionary:clitic",
-     "_cut": "מ-"
+     "_cut": "מה-"
     },
     {
      "surface": "של",
@@ -2528,7 +2531,7 @@
      "caphi_raw": null,
      "maknuune_id": "454-4",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
+     "_cut": "וה-",
      "options": [
       {
        "id": "454-4",
@@ -2545,7 +2548,7 @@
        "pointed": "אִמָּא"
       }
      ],
-     "_cut_for_prompt": "ו-"
+     "_cut_for_prompt": "וה-"
     },
     {
      "surface": "של",
@@ -2627,8 +2630,8 @@
      "surface": "הכיתי",
      "lemma": "הִכָּה",
      "form": "הִכָּה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הִכֵּיתִי",
+     "vocalized_from": "lexicon",
      "root": "נ.ה",
      "gloss": "to hit, smite, strike",
      "analysis": "VERB:feminine.first-person.masculine.past.singular",
@@ -2637,7 +2640,6 @@
      "caphi_raw": null,
      "maknuune_id": "7108-7",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-י",
      "options": [
       {
        "id": "7108-7",
@@ -2653,8 +2655,7 @@
        "analysis": "VERB:feminine.first-person.masculine.past.singular",
        "pointed": "הֻכֵּיתִי"
       }
-     ],
-     "_cut_for_prompt": "ה-י"
+     ]
     },
     {
      "surface": "אותו",
@@ -2690,8 +2691,8 @@
      "surface": "משהו",
      "lemma": "מַשֶּׁהוּ",
      "form": "מַשֶּׁהוּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מַשֶּׁהוּ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "something",
      "analysis": "PRON",
@@ -2699,8 +2700,7 @@
      "caphi_urban": "máshehu",
      "caphi_raw": null,
      "maknuune_id": "4553-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-ו"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "שהוא",
@@ -2737,8 +2737,8 @@
      "surface": "עשה",
      "lemma": "עָשָׂה",
      "form": "עָשָׂה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "עָשָׂה",
+     "vocalized_from": "lexicon",
      "root": "ע.ה",
      "gloss": "To do (to perform an action, to accomplish a thing).",
      "analysis": "VERB",
@@ -2747,7 +2747,6 @@
      "caphi_raw": null,
      "maknuune_id": "565-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "565-1",
@@ -2770,8 +2769,7 @@
        "analysis": "VERB:imperative.masculine.singular",
        "pointed": "עֲשֵׂה"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "שאלוהים",
@@ -2906,7 +2904,7 @@
      "caphi_raw": null,
      "maknuune_id": "161-1",
      "provenance": "wiktionary:clitic",
-     "_cut": "ש-"
+     "_cut": "שב-"
     },
     {
      "surface": "ראשון",
@@ -2927,8 +2925,8 @@
      "surface": "תהיה",
      "lemma": "תִּהְיֶה",
      "form": "תִּהְיֶה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "תִּהְיֶה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Second-person masculine singular future (prefix conjugation) of הָיָה (hayá).",
      "analysis": "VERB",
@@ -2937,7 +2935,6 @@
      "caphi_raw": null,
      "maknuune_id": "7420-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "7420-1",
@@ -2960,8 +2957,7 @@
        "analysis": "VERB:noun-from-verb",
        "pointed": "תְּהִיָּה"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "הלוויה",
@@ -2977,7 +2973,7 @@
      "caphi_raw": null,
      "maknuune_id": "12447-30",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-ה",
+     "_cut": "-יה",
      "options": [
       {
        "id": "12447-30",
@@ -2994,7 +2990,7 @@
        "pointed": "הִלְווּ"
       }
      ],
-     "_cut_for_prompt": "ה-ה"
+     "_cut_for_prompt": "-יה"
     },
     {
      "surface": "לשלושת",
@@ -3040,8 +3036,8 @@
      "surface": "החברים",
      "lemma": "חָבֵר",
      "form": "חָבֵר",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הַחֲבֵרִים",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "A (male) friend.",
      "analysis": "NOUN:definite.masculine.plural",
@@ -3049,8 +3045,7 @@
      "caphi_urban": "haxaverim",
      "caphi_raw": null,
      "maknuune_id": "846-23",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
@@ -3194,7 +3189,7 @@
      "caphi_raw": null,
      "maknuune_id": "942-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "מ-",
+     "_cut": "מה-",
      "options": [
       {
        "id": "942-1",
@@ -3218,7 +3213,7 @@
        "pointed": "נְהַר"
       }
      ],
-     "_cut_for_prompt": "מ-"
+     "_cut_for_prompt": "מה-"
     }
    ],
    "audio": null
@@ -3273,69 +3268,6 @@
      "caphi_raw": null,
      "maknuune_id": "1907-1",
      "provenance": "wiktionary:ktiv",
-     "_cut": "ל-ה"
-    },
-    {
-     "surface": "ורוצה",
-     "lemma": "רוֹצֶה",
-     "form": "רוֹצֶה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "masculine singular present participle and present tense of רצה (ratsá)",
-     "analysis": "VERB",
-     "caphi": "rotse",
-     "caphi_urban": "rotse",
-     "caphi_raw": null,
-     "maknuune_id": "3009-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-ה",
-     "options": [
-      {
-       "id": "3009-1",
-       "root": "",
-       "gloss": "masculine singular present participle and present tense of ר",
-       "analysis": "VERB",
-       "pointed": "רוֹצֶה"
-      },
-      {
-       "id": "3010-1",
-       "root": "",
-       "gloss": "feminine singular present participle and present tense of רצ",
-       "analysis": "VERB",
-       "pointed": "רוֹצָה"
-      },
-      {
-       "id": "3490-15",
-       "root": "ה",
-       "gloss": "To want.",
-       "analysis": "VERB:masculine.present.singular",
-       "pointed": "רוֹצֶה"
-      },
-      {
-       "id": "3490-16",
-       "root": "ה",
-       "gloss": "To want.",
-       "analysis": "VERB:feminine.present.singular",
-       "pointed": "רוֹצָה"
-      }
-     ],
-     "_cut_for_prompt": "ו-ה"
-    },
-    {
-     "surface": "לצאת",
-     "lemma": "יָצָא",
-     "form": "יָצָא",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": "י.א",
-     "gloss": "To go out (of, from), come out (of, from), exit (from), leave, depart, get out (of, from).",
-     "analysis": "VERB:infinitive",
-     "caphi": "latset",
-     "caphi_urban": "latset",
-     "caphi_raw": null,
-     "maknuune_id": "877-3",
-     "provenance": "wiktionary:exact",
      "_cut": "ל-"
     },
     {
@@ -3352,7 +3284,7 @@
      "caphi_raw": null,
      "maknuune_id": "3009-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-ה",
+     "_cut": "ו-",
      "options": [
       {
        "id": "3009-1",
@@ -3383,14 +3315,76 @@
        "pointed": "רוֹצָה"
       }
      ],
-     "_cut_for_prompt": "ו-ה"
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "לצאת",
+     "lemma": "יָצָא",
+     "form": "יָצָא",
+     "vocalized": "לָצֵאת",
+     "vocalized_from": "lexicon",
+     "root": "י.א",
+     "gloss": "To go out (of, from), come out (of, from), exit (from), leave, depart, get out (of, from).",
+     "analysis": "VERB:infinitive",
+     "caphi": "latset",
+     "caphi_urban": "latset",
+     "caphi_raw": null,
+     "maknuune_id": "877-3",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "ורוצה",
+     "lemma": "רוֹצֶה",
+     "form": "רוֹצֶה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "masculine singular present participle and present tense of רצה (ratsá)",
+     "analysis": "VERB",
+     "caphi": "rotse",
+     "caphi_urban": "rotse",
+     "caphi_raw": null,
+     "maknuune_id": "3009-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "3009-1",
+       "root": "",
+       "gloss": "masculine singular present participle and present tense of ר",
+       "analysis": "VERB",
+       "pointed": "רוֹצֶה"
+      },
+      {
+       "id": "3010-1",
+       "root": "",
+       "gloss": "feminine singular present participle and present tense of רצ",
+       "analysis": "VERB",
+       "pointed": "רוֹצָה"
+      },
+      {
+       "id": "3490-15",
+       "root": "ה",
+       "gloss": "To want.",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "רוֹצֶה"
+      },
+      {
+       "id": "3490-16",
+       "root": "ה",
+       "gloss": "To want.",
+       "analysis": "VERB:feminine.present.singular",
+       "pointed": "רוֹצָה"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
     },
     {
      "surface": "לחבק",
      "lemma": "חָבַק",
      "form": "חָבַק",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לַחֲבֹק",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "To clasp, embrace.",
      "analysis": "VERB:infinitive",
@@ -3399,7 +3393,6 @@
      "caphi_raw": null,
      "maknuune_id": "3585-4",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
      "options": [
       {
        "id": "3585-4",
@@ -3414,9 +3407,22 @@
        "gloss": "to hug (embrace)",
        "analysis": "VERB:infinitive",
        "pointed": "לְחַבֵּק"
+      },
+      {
+       "id": "3583-1",
+       "root": "",
+       "gloss": "as ל- + חֲבָק: A girth or cinch: a strap around an animal's",
+       "analysis": "NOUN",
+       "pointed": "חֲבָק"
+      },
+      {
+       "id": "3584-1",
+       "root": "",
+       "gloss": "as ל- + חֶבֶק: Deadlock.",
+       "analysis": "NOUN",
+       "pointed": "חֶבֶק"
       }
-     ],
-     "_cut_for_prompt": "ל-"
+     ]
     },
     {
      "surface": "את",
@@ -3437,8 +3443,8 @@
      "surface": "דודה",
      "lemma": "דּוֹד",
      "form": "דּוֹד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "דּוֹדָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "uncle (the brother or brother-in-law of one’s parent)",
      "analysis": "NOUN:feminine",
@@ -3447,7 +3453,6 @@
      "caphi_raw": null,
      "maknuune_id": "1642-5",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "1642-5",
@@ -3477,8 +3482,7 @@
        "analysis": "NOUN:feminine.possessed-form.singular.third-person",
        "pointed": "דּוּדָהּ"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     },
     {
      "surface": "פולי",
@@ -3683,7 +3687,7 @@
      "caphi_raw": null,
      "maknuune_id": "3123-3",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
+     "_cut": "וה-",
      "options": [
       {
        "id": "3123-3",
@@ -3700,7 +3704,7 @@
        "pointed": "אוֹרְחִים"
       }
      ],
-     "_cut_for_prompt": "ו-"
+     "_cut_for_prompt": "וה-"
     },
     {
      "surface": "הלכו",
@@ -3731,7 +3735,7 @@
      "caphi_raw": null,
      "maknuune_id": "1642-5",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-ה",
+     "_cut": "וה-",
      "options": [
       {
        "id": "1642-5",
@@ -3762,14 +3766,14 @@
        "pointed": "דּוּדָהּ"
       }
      ],
-     "_cut_for_prompt": "ו-ה"
+     "_cut_for_prompt": "וה-"
     },
     {
      "surface": "נרדמה",
      "lemma": "נִרְדַּם",
      "form": "נִרְדַּם",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "נִרְדְּמָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to sleep deeply, fall into a deep sleep",
      "analysis": "VERB:feminine.past.singular.third-person",
@@ -3777,15 +3781,14 @@
      "caphi_urban": "nirdma",
      "caphi_raw": null,
      "maknuune_id": "16139-14",
-     "provenance": "wiktionary:exact",
-     "_cut": "-ה"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "מתפללת",
      "lemma": "הִתְפַּלֵּל",
      "form": "הִתְפַּלֵּל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מִתְפַּלֶּלֶת",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "To pray, to daven: to talk to God or a higher power, especially to ask for blessings.",
      "analysis": "VERB:feminine.present.singular",
@@ -3793,8 +3796,7 @@
      "caphi_urban": "mitpalelet",
      "caphi_raw": null,
      "maknuune_id": "3098-15",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "על",
@@ -3893,7 +3895,7 @@
      "caphi_raw": null,
      "maknuune_id": "1907-1",
      "provenance": "wiktionary:ktiv",
-     "_cut": "ל-ה"
+     "_cut": "ל-"
     },
     {
      "surface": "ועמד",
@@ -3932,8 +3934,8 @@
      "surface": "לידה",
      "lemma": "לְיָדָהּ",
      "form": "לְיָדָהּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לְיָדָהּ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Form of לְיַד (lyad) including third-person feminine singular personal pronoun as object.",
      "analysis": "PREP",
@@ -3942,7 +3944,6 @@
      "caphi_raw": null,
      "maknuune_id": "3024-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-ה",
      "options": [
       {
        "id": "3024-1",
@@ -3950,9 +3951,29 @@
        "gloss": "Form of לְיַד (lyad) including third-person feminine singula",
        "analysis": "PREP",
        "pointed": "לְיָדָהּ"
+      },
+      {
+       "id": "5412-1",
+       "root": "ה",
+       "gloss": "as ל- + יָדָה: to throw, cast",
+       "analysis": "VERB",
+       "pointed": "יָדָה"
+      },
+      {
+       "id": "5413-1",
+       "root": "",
+       "gloss": "as ל- + יָדָהּ: singular form of יד f (yad) with third-perso",
+       "analysis": "NOUN",
+       "pointed": "יָדָהּ"
+      },
+      {
+       "id": "3023-1",
+       "root": "",
+       "gloss": "as לֵדָה spelled full: birth, childbirth, delivery",
+       "analysis": "NOUN",
+       "pointed": "לֵידָה"
       }
-     ],
-     "_cut_for_prompt": "ל-ה"
+     ]
     }
    ],
    "audio": null
@@ -4006,7 +4027,7 @@
      "caphi_raw": null,
      "maknuune_id": "3004-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
+     "_cut": "וה-",
      "options": [
       {
        "id": "3004-1",
@@ -4023,7 +4044,7 @@
        "pointed": "פָּנִים"
       }
      ],
-     "_cut_for_prompt": "ו-"
+     "_cut_for_prompt": "וה-"
     },
     {
      "surface": "שלה",
@@ -4101,7 +4122,7 @@
      "caphi_raw": null,
      "maknuune_id": "857-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-י",
+     "_cut": "ה-",
      "options": [
       {
        "id": "857-1",
@@ -4125,7 +4146,7 @@
        "pointed": "לֵחִי"
       }
      ],
-     "_cut_for_prompt": "ה-י"
+     "_cut_for_prompt": "ה-"
     },
     {
      "surface": "שלה",
@@ -4146,8 +4167,8 @@
      "surface": "דמעה",
      "lemma": "דִּמְעָה",
      "form": "דִּמְעָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "דִּמְעָה",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "tear (a drop of clear, salty liquid produced from the eyes by crying or irritation)",
      "analysis": "NOUN",
@@ -4156,7 +4177,6 @@
      "caphi_raw": null,
      "maknuune_id": "9389-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
        "id": "9389-1",
@@ -4172,8 +4192,7 @@
        "analysis": "VERB:feminine.past.singular.third-person",
        "pointed": "דָּמְעָה"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
     }
    ],
    "audio": null
@@ -4202,8 +4221,8 @@
      "surface": "הוציא",
      "lemma": "הוֹצִיא",
      "form": "הוֹצִיא",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הוֹצִיא",
+     "vocalized_from": "lexicon",
      "root": "י.א",
      "gloss": "to take or bring out or forth",
      "analysis": "VERB",
@@ -4212,7 +4231,6 @@
      "caphi_raw": null,
      "maknuune_id": "4140-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-",
      "options": [
       {
        "id": "4140-1",
@@ -4227,9 +4245,15 @@
        "gloss": "to be removed, taken out",
        "analysis": "VERB:active",
        "pointed": "הוֹצִיא"
+      },
+      {
+       "id": "6744-1",
+       "root": "",
+       "gloss": "as הוֹצֵא spelled full: masculine singular imperative of הוֹצִיא",
+       "analysis": "VERB",
+       "pointed": "הוֹצֵיא"
       }
-     ],
-     "_cut_for_prompt": "ה-"
+     ]
     },
     {
      "surface": "את",
@@ -4291,7 +4315,7 @@
      "caphi_raw": null,
      "maknuune_id": "9401-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-ה",
+     "_cut": "ה-",
      "options": [
       {
        "id": "9401-1",
@@ -4308,7 +4332,7 @@
        "pointed": "קְלִיפָה"
       }
      ],
-     "_cut_for_prompt": "ה-ה"
+     "_cut_for_prompt": "ה-"
     },
     {
      "surface": "מהכיס",
@@ -4324,7 +4348,7 @@
      "caphi_raw": null,
      "maknuune_id": "7641-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "מ-",
+     "_cut": "מה-",
      "options": [
       {
        "id": "7641-1",
@@ -4355,7 +4379,7 @@
        "pointed": "כַּיֵּס"
       }
      ],
-     "_cut_for_prompt": "מ-"
+     "_cut_for_prompt": "מה-"
     },
     {
      "surface": "וקרא",
@@ -4408,8 +4432,8 @@
      "surface": "אנחנו",
      "lemma": "אֲנַחְנוּ",
      "form": "אֲנַחְנוּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "אֲנַחְנוּ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "We; the subject form of the first-person plural personal pronoun.",
      "analysis": "PRON",
@@ -4417,8 +4441,7 @@
      "caphi_urban": "anáxnu",
      "caphi_raw": null,
      "maknuune_id": "3162-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "-ו"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "לא",
@@ -4439,8 +4462,8 @@
      "surface": "מתים",
      "lemma": "מְתִים",
      "form": "מְתִים",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "מְתִים",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "men (especially few in number)",
      "analysis": "NOUN",
@@ -4449,7 +4472,6 @@
      "caphi_raw": null,
      "maknuune_id": "13208-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "מ-",
      "options": [
       {
        "id": "13208-1",
@@ -4472,15 +4494,14 @@
        "analysis": "ADJ:masculine.plural",
        "pointed": "מֵתִים"
       }
-     ],
-     "_cut_for_prompt": "מ-"
+     ]
     },
     {
      "surface": "אנחנו",
      "lemma": "אֲנַחְנוּ",
      "form": "אֲנַחְנוּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "אֲנַחְנוּ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "We; the subject form of the first-person plural personal pronoun.",
      "analysis": "PRON",
@@ -4488,8 +4509,7 @@
      "caphi_urban": "anáxnu",
      "caphi_raw": null,
      "maknuune_id": "3162-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "-ו"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "שודדי",
@@ -4505,7 +4525,7 @@
      "caphi_raw": null,
      "maknuune_id": "8433-1",
      "provenance": "wiktionary:clitic",
-     "_cut": "ש-י"
+     "_cut": "-י"
     },
     {
      "surface": "ים",
@@ -4565,8 +4585,8 @@
      "surface": "לשים",
      "lemma": "שָׂם",
      "form": "שָׂם",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לָשִׂים",
+     "vocalized_from": "lexicon",
      "root": "י",
      "gloss": "to put, place",
      "analysis": "VERB:infinitive",
@@ -4575,7 +4595,6 @@
      "caphi_raw": null,
      "maknuune_id": "2002-4",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
      "options": [
       {
        "id": "2002-4",
@@ -4597,9 +4616,22 @@
        "gloss": "to knead",
        "analysis": "VERB:masculine.plural.present",
        "pointed": "לָשִׁים"
+      },
+      {
+       "id": "808-1",
+       "root": "",
+       "gloss": "as ל- + שִׂים: Masculine singular imperative of שָׂם (sám)",
+       "analysis": "VERB",
+       "pointed": "שִׂים"
+      },
+      {
+       "id": "3844-1",
+       "root": "",
+       "gloss": "as לֶשֶׁם spelled full: A kind of stone",
+       "analysis": "NOUN",
+       "pointed": "לֶשֶׁים"
       }
-     ],
-     "_cut_for_prompt": "ל-"
+     ]
     },
     {
      "surface": "אותה",
@@ -4620,8 +4652,8 @@
      "surface": "לידה",
      "lemma": "לְיָדָהּ",
      "form": "לְיָדָהּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לְיָדָהּ",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Form of לְיַד (lyad) including third-person feminine singular personal pronoun as object.",
      "analysis": "PREP",
@@ -4630,7 +4662,6 @@
      "caphi_raw": null,
      "maknuune_id": "3024-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-ה",
      "options": [
       {
        "id": "3024-1",
@@ -4638,9 +4669,29 @@
        "gloss": "Form of לְיַד (lyad) including third-person feminine singula",
        "analysis": "PREP",
        "pointed": "לְיָדָהּ"
+      },
+      {
+       "id": "5412-1",
+       "root": "ה",
+       "gloss": "as ל- + יָדָה: to throw, cast",
+       "analysis": "VERB",
+       "pointed": "יָדָה"
+      },
+      {
+       "id": "5413-1",
+       "root": "",
+       "gloss": "as ל- + יָדָהּ: singular form of יד f (yad) with third-perso",
+       "analysis": "NOUN",
+       "pointed": "יָדָהּ"
+      },
+      {
+       "id": "3023-1",
+       "root": "",
+       "gloss": "as לֵדָה spelled full: birth, childbirth, delivery",
+       "analysis": "NOUN",
+       "pointed": "לֵידָה"
       }
-     ],
-     "_cut_for_prompt": "ל-ה"
+     ]
     }
    ],
    "audio": null
@@ -4768,7 +4819,7 @@
      "caphi_raw": null,
      "maknuune_id": "12447-30",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-ה",
+     "_cut": "ה-יה",
      "options": [
       {
        "id": "12447-30",
@@ -4785,7 +4836,7 @@
        "pointed": "הִלְווּ"
       }
      ],
-     "_cut_for_prompt": "ה-ה"
+     "_cut_for_prompt": "ה-יה"
     },
     {
      "surface": "ועל",
@@ -4807,8 +4858,8 @@
      "surface": "הרעיון",
      "lemma": "רַעֲיוֹן",
      "form": "רַעֲיוֹן",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הָרַעֲיוֹן",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "idea",
      "analysis": "NOUN:definite.singular",
@@ -4816,23 +4867,22 @@
      "caphi_urban": "haraayon",
      "caphi_raw": null,
      "maknuune_id": "1479-7",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "הגדול",
-     "lemma": "גִּדּוּל",
-     "form": "גִּדּוּל",
+     "lemma": "גָּדוֹל",
+     "form": "גָּדוֹל",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "growing, growth",
-     "analysis": "NOUN:definite.singular",
-     "caphi": "hagidul",
-     "caphi_urban": "hagidul",
+     "gloss": "big, large",
+     "analysis": "ADJ",
+     "caphi": "gadol",
+     "caphi_urban": "gadol",
      "caphi_raw": null,
-     "maknuune_id": "15432-16",
-     "provenance": "wiktionary:exact",
+     "maknuune_id": "1481-1",
+     "provenance": "wiktionary:resolved",
      "_cut": "ה-"
     },
     {
@@ -4849,7 +4899,7 @@
      "caphi_raw": null,
      "maknuune_id": "3045-1",
      "provenance": "wiktionary:clitic",
-     "_cut": "ו-"
+     "_cut": "וה-"
     },
     {
      "surface": "את",
@@ -4880,7 +4930,7 @@
      "caphi_raw": null,
      "maknuune_id": "9401-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-ה",
+     "_cut": "ה-",
      "options": [
       {
        "id": "9401-1",
@@ -4897,14 +4947,14 @@
        "pointed": "קְלִיפָה"
       }
      ],
-     "_cut_for_prompt": "ה-ה"
+     "_cut_for_prompt": "ה-"
     },
     {
      "surface": "לכיס",
      "lemma": "כִּיֵּס",
      "form": "כִּיֵּס",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לְכַיֵּס",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to pickpocket",
      "analysis": "VERB:infinitive",
@@ -4913,7 +4963,6 @@
      "caphi_raw": null,
      "maknuune_id": "7654-3",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
      "options": [
       {
        "id": "7654-3",
@@ -4921,9 +4970,22 @@
        "gloss": "to pickpocket",
        "analysis": "VERB:infinitive",
        "pointed": "לְכַיֵּס"
+      },
+      {
+       "id": "7641-1",
+       "root": "",
+       "gloss": "as ל- + כִּיס: pouch, bag, purse",
+       "analysis": "NOUN",
+       "pointed": "כִּיס"
+      },
+      {
+       "id": "7642-1",
+       "root": "",
+       "gloss": "as ל- + כַּיָּס: defective spelling of כייס",
+       "analysis": "NOUN",
+       "pointed": "כַּיָּס"
       }
-     ],
-     "_cut_for_prompt": "ל-"
+     ]
     }
    ],
    "audio": null
@@ -5017,7 +5079,7 @@
      "caphi_raw": null,
      "maknuune_id": "857-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-י",
+     "_cut": "ה-",
      "options": [
       {
        "id": "857-1",
@@ -5041,7 +5103,7 @@
        "pointed": "לֵחִי"
       }
      ],
-     "_cut_for_prompt": "ה-י"
+     "_cut_for_prompt": "ה-"
     },
     {
      "surface": "והיא",
@@ -5164,8 +5226,8 @@
      "surface": "לנהר",
      "lemma": "נָהַר",
      "form": "נָהַר",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לִנְהֹר",
+     "vocalized_from": "lexicon",
      "root": "ה",
      "gloss": "to shine",
      "analysis": "VERB:infinitive",
@@ -5174,7 +5236,6 @@
      "caphi_raw": null,
      "maknuune_id": "944-4",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
      "options": [
       {
        "id": "944-4",
@@ -5182,9 +5243,15 @@
        "gloss": "to shine",
        "analysis": "VERB:infinitive",
        "pointed": "לִנְהֹר"
+      },
+      {
+       "id": "942-1",
+       "root": "",
+       "gloss": "as ל- + נָהָר: river (especially the Nile, Euphrates, etc.)",
+       "analysis": "NOUN",
+       "pointed": "נָהָר"
       }
-     ],
-     "_cut_for_prompt": "ל-"
+     ]
     },
     {
      "surface": "ושחה",
@@ -5200,7 +5267,7 @@
      "caphi_raw": null,
      "maknuune_id": "3611-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-ה",
+     "_cut": "ו-",
      "options": [
       {
        "id": "3611-1",
@@ -5217,7 +5284,7 @@
        "pointed": "שְׂחֵה"
       }
      ],
-     "_cut_for_prompt": "ו-ה"
+     "_cut_for_prompt": "ו-"
     },
     {
      "surface": "לאי",
@@ -5233,7 +5300,7 @@
      "caphi_raw": null,
      "maknuune_id": "1969-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-י",
+     "_cut": "ל-",
      "options": [
       {
        "id": "1969-1",
@@ -5271,14 +5338,14 @@
        "pointed": "־ָאִי"
       }
      ],
-     "_cut_for_prompt": "-י"
+     "_cut_for_prompt": "ל-"
     },
     {
      "surface": "לפני",
      "lemma": "לִפְנֵי",
      "form": "לִפְנֵי",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לִפְנֵי",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "before, in advance of, prior to",
      "analysis": "PREP",
@@ -5286,15 +5353,14 @@
      "caphi_urban": "lífney",
      "caphi_raw": null,
      "maknuune_id": "3430-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "ל-י"
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "השחר",
      "lemma": "הִשְׁחִיר",
      "form": "הִשְׁחִיר",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "הֻשְׁחַר",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "to blacken",
      "analysis": "VERB:passive",
@@ -5303,7 +5369,6 @@
      "caphi_raw": null,
      "maknuune_id": "5509-4",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ה-",
      "options": [
       {
        "id": "5509-4",
@@ -5325,9 +5390,15 @@
        "gloss": "to blacken",
        "analysis": "VERB:imperative.masculine.singular",
        "pointed": "הַשְׁחֵר"
+      },
+      {
+       "id": "77-1",
+       "root": "",
+       "gloss": "as ה- + שָׁחֹר: black",
+       "analysis": "ADJ",
+       "pointed": "שָׁחֹר"
       }
-     ],
-     "_cut_for_prompt": "ה-"
+     ]
     }
    ],
    "audio": null
