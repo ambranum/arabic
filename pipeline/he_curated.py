@@ -224,6 +224,8 @@ PROPER = {
     "ג'ורג":    ("ג'וֹרְג'", 'George (George Merry, one of the pirates)', 'NOUN_PROP', 'jorj'),
     'אלן':      ('אָלָן', 'Alan (a sailor)', 'NOUN_PROP', 'álan'),
     'הארי':     ('הָארִי', 'Harry (a sailor)', 'NOUN_PROP', 'hári'),
+    'הרפר':     ('הַרְפֶּר', "Harper (Joe Harper, Tom's friend)", 'NOUN_PROP', 'hárper'),
+    'אינדיאני': ('אִינְדִּיאָנִי', 'Indian (as in Injun Joe, the half-Indian)', 'NOUN_PROP', 'indiáni'),
 }
 
 _ALL = {}

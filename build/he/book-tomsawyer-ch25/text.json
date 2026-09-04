@@ -27,8 +27,8 @@
  "source": "retold in modern Hebrew by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "בלילה האק ראה שני אנשים יוצאים מהחדר עם שקית.",
-   "en": "At night Huck saw two men come out of the room with a bag.",
+   "ar": "בלילה הרביעי הדלת מאחור נפתחה.",
+   "en": "On the fourth night the back door opened.",
    "p": 0,
    "words": [
     {
@@ -48,11 +48,443 @@
      "_cut": "ב-"
     },
     {
-     "surface": "האק",
+     "surface": "הרביעי",
+     "lemma": "רְבִיעִי",
+     "form": "רְבִיעִי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "fourth",
+     "analysis": "ADJ",
+     "caphi": "rvii",
+     "caphi_urban": "rvii",
+     "caphi_raw": null,
+     "maknuune_id": "587-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ה-י"
+    },
+    {
+     "surface": "הדלת",
+     "lemma": "דֶּלֶת",
+     "form": "דֶּלֶת",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "door (portal of entry)",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hadelet",
+     "caphi_urban": "hadelet",
+     "caphi_raw": null,
+     "maknuune_id": "1144-11",
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "מאחור",
+     "lemma": "מֵאָחוֹר",
+     "form": "מֵאָחוֹר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "behind; from behind",
+     "analysis": "ADV",
+     "caphi": "meaxor",
+     "caphi_urban": "meaxor",
+     "caphi_raw": null,
+     "maknuune_id": "14824-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "מ-"
+    },
+    {
+     "surface": "נפתחה",
+     "lemma": "נִפְתַּח",
+     "form": "נִפְתַּח",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ח",
+     "gloss": "To open, be opened: to be made open.",
+     "analysis": "VERB:feminine.past.singular.third-person",
+     "caphi": "niftxa",
+     "caphi_urban": "niftxa",
+     "caphi_raw": null,
+     "maknuune_id": "13835-15",
+     "provenance": "wiktionary:exact",
+     "_cut": "-ה"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "והם יצאו ממנה ג'ו האינדיאני והזקן, ובידיים שלהם משהו.",
+   "en": "And out of it came Injun Joe and the old man, and in their hands something.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "והם",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
+     "caphi_raw": null,
+     "maknuune_id": "2619-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "יצאו",
+     "lemma": "יָצָא",
+     "form": "יָצָא",
+     "vocalized": "יָצְאוּ",
+     "vocalized_from": "lexicon",
+     "root": "י.א",
+     "gloss": "To go out (of, from), come out (of, from), exit (from), leave, depart, get out (of, from).",
+     "analysis": "VERB:feminine.masculine.past.plural.third-person",
+     "caphi": "yatsu",
+     "caphi_urban": "yatsu",
+     "caphi_raw": null,
+     "maknuune_id": "877-16",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "ממנה",
+     "lemma": "מִמֵּן",
+     "form": "מִמֵּן",
+     "vocalized": "מִמְּנָה",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "to fund, to finance",
+     "analysis": "VERB:feminine.past.singular.third-person",
+     "caphi": "mimna",
+     "caphi_urban": "mimna",
+     "caphi_raw": null,
+     "maknuune_id": "1212-23",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "ג'ו",
+     "lemma": "ג'ו",
+     "form": "ג'ו",
+     "vocalized": "ג'ו",
+     "vocalized_from": "curated",
+     "root": null,
+     "gloss": "Joe (Injun Joe, and also Tom's friend Joe Harper)",
+     "analysis": "NOUN_PROP",
+     "caphi": "jo",
+     "caphi_urban": "jo",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun"
+    },
+    {
+     "surface": "האינדיאני",
+     "lemma": "אִינְדִּיאָנִי",
+     "form": "אִינְדִּיאָנִי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Indian (as in Injun Joe, the half-Indian)",
+     "analysis": "NOUN_PROP",
+     "caphi": "indiáni",
+     "caphi_urban": "indiáni",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "והזקן",
+     "lemma": "זָקָן",
+     "form": "זָקָן",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "beard",
+     "analysis": "NOUN",
+     "caphi": "zakan",
+     "caphi_urban": "zakan",
+     "caphi_raw": null,
+     "maknuune_id": "2347-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "2347-1",
+       "root": "",
+       "gloss": "beard",
+       "analysis": "NOUN",
+       "pointed": "זָקָן"
+      },
+      {
+       "id": "2348-1",
+       "root": "",
+       "gloss": "old, elderly, aged",
+       "analysis": "ADJ",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-1",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB",
+       "pointed": "זָקַן"
+      },
+      {
+       "id": "6106-6",
+       "root": "",
+       "gloss": "old woman",
+       "analysis": "NOUN:masculine",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-14",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-28",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "זְקַן"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "ובידיים",
+     "lemma": "יָד",
+     "form": "יָד",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "arm",
+     "analysis": "NOUN:dual.indefinite",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "4-3",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "שלהם",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
+     "caphi_raw": null,
+     "maknuune_id": "2619-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ש-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "ש-"
+    },
+    {
+     "surface": "משהו",
+     "lemma": "מַשֶּׁהוּ",
+     "form": "מַשֶּׁהוּ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "something",
+     "analysis": "PRON",
+     "caphi": "máshehu",
+     "caphi_urban": "máshehu",
+     "caphi_raw": null,
+     "maknuune_id": "4553-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "מ-ו"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "לא ארגז, קטן יותר.",
+   "en": "Not a box, smaller.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "לא",
+     "lemma": "לֹא",
+     "form": "לֹא",
+     "vocalized": "לֹא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Not; used in negating verbs, adjectives, and adverbs.",
+     "analysis": "ADV",
+     "caphi": "lo",
+     "caphi_urban": "lo",
+     "caphi_raw": null,
+     "maknuune_id": "1535-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "ארגז",
+     "lemma": "אַרְגָּז",
+     "form": "אַרְגָּז",
+     "vocalized": "אַרְגָּז",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "box with golden gifts of the Philistines",
+     "analysis": "NOUN",
+     "caphi": "argaz",
+     "caphi_urban": "argaz",
+     "caphi_raw": null,
+     "maknuune_id": "12235-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "קטן",
+     "lemma": "קָטָן",
+     "form": "קָטָן",
+     "vocalized": "קָטָן",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Little, small, diminutive.",
+     "analysis": "ADJ",
+     "caphi": "katan",
+     "caphi_urban": "katan",
+     "caphi_raw": null,
+     "maknuune_id": "572-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "יותר",
+     "lemma": "יוֹתֵר",
+     "form": "יוֹתֵר",
+     "vocalized": "יוֹתֵר",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "more",
+     "analysis": "ADV",
+     "caphi": "yoter",
+     "caphi_urban": "yoter",
+     "caphi_raw": null,
+     "maknuune_id": "2615-1",
+     "provenance": "wiktionary:resolved"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "והם הלכו בסמטה, והאק מאחורי שניהם, יחף, כמו חתול.",
+   "en": "And they walked in the alley, and Huck after them, barefoot, like a cat.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "והם",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
+     "caphi_raw": null,
+     "maknuune_id": "2619-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "הלכו",
+     "lemma": "הָלַךְ",
+     "form": "הָלַךְ",
+     "vocalized": "הָלְכוּ",
+     "vocalized_from": "lexicon",
+     "root": "ה",
+     "gloss": "to walk, go, especially on foot",
+     "analysis": "VERB:feminine.masculine.past.plural.third-person",
+     "caphi": "halxu",
+     "caphi_urban": "halxu",
+     "caphi_raw": null,
+     "maknuune_id": "193-16",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "בסמטה",
+     "lemma": "סִמְטָה",
+     "form": "סִמְטָה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "alley, alleyway, lane, narrow passageway",
+     "analysis": "NOUN",
+     "caphi": "simta",
+     "caphi_urban": "simta",
+     "caphi_raw": null,
+     "maknuune_id": "10953-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ב-ה"
+    },
+    {
+     "surface": "והאק",
      "lemma": "הָאק",
      "form": "הָאק",
-     "vocalized": "הָאק",
-     "vocalized_from": "curated",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "Huck (Huckleberry Finn)",
      "analysis": "NOUN_PROP",
@@ -60,167 +492,24 @@
      "caphi_urban": "hak",
      "caphi_raw": null,
      "maknuune_id": null,
-     "provenance": "curated:proper-noun"
+     "provenance": "curated:proper-noun",
+     "_cut": "ו-"
     },
     {
-     "surface": "ראה",
-     "lemma": "רָאָה",
-     "form": "רָאָה",
-     "vocalized": "רָאָה",
-     "vocalized_from": "lexicon",
-     "root": "ה",
-     "gloss": "To see, to have vision; figuratively, to perceive.",
-     "analysis": "VERB",
-     "caphi": "raa",
-     "caphi_urban": "raa",
-     "caphi_raw": null,
-     "maknuune_id": "560-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "שני",
-     "lemma": "שְׁנַייִם",
-     "form": "שְׁנַייִם",
-     "vocalized": "שְׁנֵי",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "two",
-     "analysis": "NUM:construct",
-     "caphi": "shney",
-     "caphi_urban": "shney",
-     "caphi_raw": null,
-     "maknuune_id": "82-3",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "אנשים",
-     "lemma": "אֲנָשִׁים",
-     "form": "אֲנָשִׁים",
-     "vocalized": "אֲנָשִׁים",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "plural indefinite form of אִישׁ (ísh)",
-     "analysis": "NOUN",
-     "caphi": "anashim",
-     "caphi_urban": "anashim",
-     "caphi_raw": null,
-     "maknuune_id": "3723-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "יוצאים",
-     "lemma": "יָצָא",
-     "form": "יָצָא",
-     "vocalized": "יוֹצְאִים",
-     "vocalized_from": "lexicon",
-     "root": "י.א",
-     "gloss": "To go out (of, from), come out (of, from), exit (from), leave, depart, get out (of, from).",
-     "analysis": "VERB:masculine.plural.present",
-     "caphi": "yotsim",
-     "caphi_urban": "yotsim",
-     "caphi_raw": null,
-     "maknuune_id": "877-19",
-     "provenance": "wiktionary:exact"
-    },
-    {
-     "surface": "מהחדר",
-     "lemma": "חֶדֶר",
-     "form": "חֶדֶר",
+     "surface": "מאחורי",
+     "lemma": "מֵאֲחוֹרֵי",
+     "form": "מֵאֲחוֹרֵי",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "room",
-     "analysis": "NOUN",
-     "caphi": "xéder",
-     "caphi_urban": "xéder",
-     "caphi_raw": null,
-     "maknuune_id": "798-1",
-     "provenance": "wiktionary:resolved",
-     "_cut": "מה-"
-    },
-    {
-     "surface": "עם",
-     "lemma": "עִם",
-     "form": "עִם",
-     "vocalized": "עִם",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "With: used to indicate togetherness, being together.",
+     "gloss": "behind, in back of",
      "analysis": "PREP",
-     "caphi": "im",
-     "caphi_urban": "im",
+     "caphi": "meaxórey",
+     "caphi_urban": "meaxórey",
      "caphi_raw": null,
-     "maknuune_id": "1032-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "שקית",
-     "lemma": "שַׂקִּית",
-     "form": "שַׂקִּית",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "a small bag, pouch",
-     "analysis": "NOUN",
-     "caphi": "sakit",
-     "caphi_urban": "sakit",
-     "caphi_raw": null,
-     "maknuune_id": "8209-1",
+     "maknuune_id": "6854-1",
      "provenance": "wiktionary:exact",
-     "_cut": "ש-"
-    }
-   ],
-   "audio": null
-  },
-  {
-   "ar": "הוא הלך אחרי שניהם בשקט בין הבתים והגנים.",
-   "en": "He followed the two of them quietly among the houses and gardens.",
-   "p": 0,
-   "words": [
-    {
-     "surface": "הוא",
-     "lemma": "הוּא",
-     "form": "הוּא",
-     "vocalized": "הוּא",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "he",
-     "analysis": "PRON",
-     "caphi": "hu",
-     "caphi_urban": "hu",
-     "caphi_raw": null,
-     "maknuune_id": "501-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "הלך",
-     "lemma": "הָלַךְ",
-     "form": "הָלַךְ",
-     "vocalized": "הָלַךְ",
-     "vocalized_from": "lexicon",
-     "root": "ה",
-     "gloss": "to walk, go, especially on foot",
-     "analysis": "VERB",
-     "caphi": "halax",
-     "caphi_urban": "halax",
-     "caphi_raw": null,
-     "maknuune_id": "193-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "אחרי",
-     "lemma": "אַחֲרֵי",
-     "form": "אַחֲרֵי",
-     "vocalized": "אַחֲרֵי",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "after",
-     "analysis": "PREP",
-     "caphi": "axárey",
-     "caphi_urban": "axárey",
-     "caphi_raw": null,
-     "maknuune_id": "5874-1",
-     "provenance": "wiktionary:resolved"
+     "_cut": "מ-י"
     },
     {
      "surface": "שניהם",
@@ -238,124 +527,58 @@
      "provenance": "curated:function-word"
     },
     {
-     "surface": "בשקט",
-     "lemma": "שֶׁקֶט",
-     "form": "שֶׁקֶט",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "surface": "יחף",
+     "lemma": "יָחֵף",
+     "form": "יָחֵף",
+     "vocalized": "יָחֵף",
+     "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "serenity, rest",
-     "analysis": "NOUN",
-     "caphi": "shéket",
-     "caphi_urban": "shéket",
+     "gloss": "barefoot",
+     "analysis": "ADJ",
+     "caphi": "yaxef",
+     "caphi_urban": "yaxef",
      "caphi_raw": null,
-     "maknuune_id": "8219-1",
-     "provenance": "wiktionary:resolved",
-     "_cut": "ב-"
+     "maknuune_id": "2509-1",
+     "provenance": "wiktionary:exact"
     },
     {
-     "surface": "בין",
-     "lemma": "בֵּין",
-     "form": "בֵּין",
+     "surface": "כמו",
+     "lemma": "כְּמוֹ",
+     "form": "כְּמוֹ",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "between, among, amid",
+     "gloss": "like, as",
      "analysis": "PREP",
-     "caphi": "beyn",
-     "caphi_urban": "beyn",
+     "caphi": "kmo",
+     "caphi_urban": "kmo",
      "caphi_raw": null,
-     "maknuune_id": "531-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ב-",
-     "options": [
-      {
-       "id": "531-1",
-       "root": "",
-       "gloss": "between, among, amid",
-       "analysis": "PREP",
-       "pointed": "בֵּין"
-      },
-      {
-       "id": "398-28",
-       "root": "",
-       "gloss": "to understand.",
-       "analysis": "VERB:imperative.masculine.singular",
-       "pointed": "בִּין"
-      }
-     ],
-     "_cut_for_prompt": "ב-"
-    },
-    {
-     "surface": "הבתים",
-     "lemma": "בַּיִת",
-     "form": "בַּיִת",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "house",
-     "analysis": "NOUN:definite.plural",
-     "caphi": "habatim",
-     "caphi_urban": "habatim",
-     "caphi_raw": null,
-     "maknuune_id": "373-21",
+     "maknuune_id": "4902-1",
      "provenance": "wiktionary:exact",
-     "_cut": "ה-"
+     "_cut": "-ו"
     },
     {
-     "surface": "והגנים",
-     "lemma": "גַּנִּים",
-     "form": "גַּנִּים",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "surface": "חתול",
+     "lemma": "חָתוּל",
+     "form": "חָתוּל",
+     "vocalized": "חָתוּל",
+     "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "plural indefinite form of גַּן (gan)",
+     "gloss": "cat",
      "analysis": "NOUN",
-     "caphi": "ganim",
-     "caphi_urban": "ganim",
+     "caphi": "xatul",
+     "caphi_urban": "xatul",
      "caphi_raw": null,
-     "maknuune_id": "4662-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
-     "options": [
-      {
-       "id": "4662-1",
-       "root": "",
-       "gloss": "plural indefinite form of גַּן (gan)",
-       "analysis": "NOUN",
-       "pointed": "גַּנִּים"
-      },
-      {
-       "id": "4663-1",
-       "root": "",
-       "gloss": "plural indefinite form of גֶּן (gen)",
-       "analysis": "NOUN",
-       "pointed": "גֶּנִים"
-      },
-      {
-       "id": "4660-3",
-       "root": "",
-       "gloss": "A garden.",
-       "analysis": "NOUN:indefinite.plural",
-       "pointed": "גַּנִּים"
-      },
-      {
-       "id": "4661-3",
-       "root": "",
-       "gloss": "a gene",
-       "analysis": "NOUN:indefinite.plural",
-       "pointed": "גֶּנִים"
-      }
-     ],
-     "_cut_for_prompt": "ו-"
+     "maknuune_id": "2-1",
+     "provenance": "wiktionary:resolved"
     }
    ],
    "audio": null
   },
   {
-   "ar": "הם עלו לגבעה ועצרו ליד הבית של אישה זקנה.",
-   "en": "They went up the hill and stopped by an old woman’s house.",
-   "p": 1,
+   "ar": "הם הלכו לגבעה, לכיוון הבית של האלמנה.",
+   "en": "They walked to the hill, toward the widow’s house.",
+   "p": 0,
    "words": [
     {
      "surface": "הם",
@@ -389,44 +612,19 @@
      ]
     },
     {
-     "surface": "עלו",
-     "lemma": "עָלָה",
-     "form": "עָלָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": "ע.ה",
-     "gloss": "To ascend, rise, go up; to move from a point to a higher point.",
-     "analysis": "VERB:imperative.masculine.plural",
-     "caphi": "alu",
-     "caphi_urban": "alu",
+     "surface": "הלכו",
+     "lemma": "הָלַךְ",
+     "form": "הָלַךְ",
+     "vocalized": "הָלְכוּ",
+     "vocalized_from": "lexicon",
+     "root": "ה",
+     "gloss": "to walk, go, especially on foot",
+     "analysis": "VERB:feminine.masculine.past.plural.third-person",
+     "caphi": "halxu",
+     "caphi_urban": "halxu",
      "caphi_raw": null,
-     "maknuune_id": "740-30",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ו",
-     "options": [
-      {
-       "id": "740-30",
-       "root": "ע.ה",
-       "gloss": "To ascend, rise, go up; to move from a point to a higher poi",
-       "analysis": "VERB:imperative.masculine.plural",
-       "pointed": "עֲלוּ"
-      },
-      {
-       "id": "2478-17",
-       "root": "",
-       "gloss": "yoke",
-       "analysis": "NOUN:masculine.possessed-form.singular.third-person",
-       "pointed": "עֻלּוֹ"
-      },
-      {
-       "id": "740-13",
-       "root": "ע.ה",
-       "gloss": "To ascend, rise, go up; to move from a point to a higher poi",
-       "analysis": "VERB:feminine.masculine.past.plural.third-person",
-       "pointed": "עָלוּ"
-      }
-     ],
-     "_cut_for_prompt": "-ו"
+     "maknuune_id": "193-16",
+     "provenance": "wiktionary:resolved"
     },
     {
      "surface": "לגבעה",
@@ -445,52 +643,20 @@
      "_cut": "ל-ה"
     },
     {
-     "surface": "ועצרו",
-     "lemma": "עָצַר",
-     "form": "עָצַר",
+     "surface": "לכיוון",
+     "lemma": "כִּוּוּן",
+     "form": "כִּוּוּן",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
-     "root": "ע",
-     "gloss": "To stop, to stop moving, to halt, to stop the motion of. (See usage note below.)",
-     "analysis": "VERB:imperative.masculine.plural",
-     "caphi": "itsru",
-     "caphi_urban": "itsru",
-     "caphi_raw": null,
-     "maknuune_id": "1808-41",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-ו",
-     "options": [
-      {
-       "id": "1808-41",
-       "root": "ע",
-       "gloss": "To stop, to stop moving, to halt, to stop the motion of. (Se",
-       "analysis": "VERB:imperative.masculine.plural",
-       "pointed": "עִצְרוּ"
-      },
-      {
-       "id": "1808-16",
-       "root": "ע",
-       "gloss": "To stop, to stop moving, to halt, to stop the motion of. (Se",
-       "analysis": "VERB:feminine.masculine.past.plural.third-person",
-       "pointed": "עָצְרוּ"
-      }
-     ],
-     "_cut_for_prompt": "ו-ו"
-    },
-    {
-     "surface": "ליד",
-     "lemma": "לְיַד־",
-     "form": "לְיַד־",
-     "vocalized": "לְיַד",
-     "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "Beside, near, by, near to, next to, adjacent to, alongside.",
-     "analysis": "PREP",
-     "caphi": "lyad-",
-     "caphi_urban": "lyad-",
+     "gloss": "A direction, an orientation, a heading.",
+     "analysis": "NOUN:indefinite.singular",
+     "caphi": null,
+     "caphi_urban": null,
      "caphi_raw": null,
-     "maknuune_id": "5841-1",
-     "provenance": "wiktionary:resolved"
+     "maknuune_id": "5146-7",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ל-"
     },
     {
      "surface": "הבית",
@@ -523,95 +689,66 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "אישה",
-     "lemma": "אִשָּׁה",
-     "form": "אִשָּׁה",
-     "vocalized": "אִישָּׁה",
-     "vocalized_from": "derived:ktiv",
-     "root": null,
-     "gloss": "woman (an adult female human)",
-     "analysis": "NOUN",
-     "caphi": "isha",
-     "caphi_urban": "isha",
-     "caphi_raw": null,
-     "maknuune_id": "1090-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "זקנה",
-     "lemma": "זָקֵן",
-     "form": "זָקֵן",
+     "surface": "האלמנה",
+     "lemma": "אַלְמָנָה",
+     "form": "אַלְמָנָה",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "old, elderly, aged",
-     "analysis": "ADJ:feminine",
-     "caphi": "zkena",
-     "caphi_urban": "zkena",
+     "gloss": "widow (a woman whose spouse (traditionally husband) has died (and who has not remarried); a woman in relation to her late spouse; feminine of widower)",
+     "analysis": "NOUN",
+     "caphi": "almana",
+     "caphi_urban": "almana",
      "caphi_raw": null,
-     "maknuune_id": "2348-3",
+     "maknuune_id": "5036-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
+     "_cut": "ה-ה",
      "options": [
       {
-       "id": "2348-3",
+       "id": "5036-1",
        "root": "",
-       "gloss": "old, elderly, aged",
-       "analysis": "ADJ:feminine",
-       "pointed": "זְקֵנָה"
-      },
-      {
-       "id": "6104-1",
-       "root": "",
-       "gloss": "old age, the state of being elderly or aged",
+       "gloss": "widow (a woman whose spouse (traditionally husband) has died",
        "analysis": "NOUN",
-       "pointed": "זִקְנָה"
+       "pointed": "אַלְמָנָה"
       },
       {
-       "id": "6105-1",
+       "id": "5039-3",
        "root": "",
-       "gloss": "feminine singular indefinite form of זָקֵן (zakén)",
-       "analysis": "ADJ",
-       "pointed": "זְקֵנָה"
+       "gloss": "widower (a man whose spouse has died (and who has not remarr",
+       "analysis": "NOUN:feminine",
+       "pointed": "אַלְמָנָה"
       },
       {
-       "id": "2350-15",
-       "root": "",
-       "gloss": "to grow old, to grow elderly, to age",
-       "analysis": "VERB:feminine.present.singular",
-       "pointed": "זְקֵנָה"
-      },
-      {
-       "id": "2350-31",
-       "root": "",
-       "gloss": "to grow old, to grow elderly, to age",
+       "id": "14363-39",
+       "root": "א",
+       "gloss": "to bundle, bind.",
        "analysis": "VERB:feminine.imperative.plural",
-       "pointed": "זְקַנָּה"
+       "pointed": "אַלֵּמְנָה"
       },
       {
-       "id": "2347-15",
+       "id": "5039-14",
        "root": "",
-       "gloss": "beard",
+       "gloss": "widower (a man whose spouse has died (and who has not remarr",
        "analysis": "NOUN:feminine.possessed-form.singular.third-person",
-       "pointed": "זְקָנָהּ"
+       "pointed": "אַלְמָנָהּ"
       }
      ],
-     "_cut_for_prompt": "-ה"
+     "_cut_for_prompt": "ה-ה"
     }
    ],
    "audio": null
   },
   {
-   "ar": "האק שמע את ג'ו אומר שהוא בא לעשות לה רע.",
-   "en": "Huck heard Joe say that he had come to do her harm.",
-   "p": 1,
+   "ar": "והאק חשב: הם קוברים את המטמון אצל האלמנה?",
+   "en": "And Huck thought: are they burying the treasure at the widow’s?",
+   "p": 0,
    "words": [
     {
-     "surface": "האק",
+     "surface": "והאק",
      "lemma": "הָאק",
      "form": "הָאק",
-     "vocalized": "הָאק",
-     "vocalized_from": "curated",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "Huck (Huckleberry Finn)",
      "analysis": "NOUN_PROP",
@@ -619,22 +756,113 @@
      "caphi_urban": "hak",
      "caphi_raw": null,
      "maknuune_id": null,
-     "provenance": "curated:proper-noun"
+     "provenance": "curated:proper-noun",
+     "_cut": "ו-"
     },
     {
-     "surface": "שמע",
-     "lemma": "שָׁמַע",
-     "form": "שָׁמַע",
-     "vocalized": "שָׁמַע",
+     "surface": "חשב",
+     "lemma": "חָשַׁב",
+     "form": "חָשַׁב",
+     "vocalized": "חָשַׁב",
      "vocalized_from": "lexicon",
-     "root": "ע",
-     "gloss": "to hear, to be able to hear",
+     "root": null,
+     "gloss": "to think",
      "analysis": "VERB",
-     "caphi": "shama",
-     "caphi_urban": "shama",
+     "caphi": "xashav",
+     "caphi_urban": "xashav",
      "caphi_raw": null,
-     "maknuune_id": "665-1",
-     "provenance": "wiktionary:resolved"
+     "maknuune_id": "1501-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "1501-1",
+       "root": "",
+       "gloss": "to think",
+       "analysis": "VERB",
+       "pointed": "חָשַׁב"
+      },
+      {
+       "id": "1502-1",
+       "root": "",
+       "gloss": "an accountant",
+       "analysis": "NOUN",
+       "pointed": "חַשָּׁב"
+      },
+      {
+       "id": "1503-1",
+       "root": "",
+       "gloss": "defective spelling of חישב: to compute.",
+       "analysis": "VERB",
+       "pointed": "חִשֵּׁב"
+      },
+      {
+       "id": "1504-1",
+       "root": "",
+       "gloss": "defective spelling of חושב: to be calculate.",
+       "analysis": "VERB",
+       "pointed": "חֻשַּׁב"
+      },
+      {
+       "id": "5543-3",
+       "root": "",
+       "gloss": "to be considered (assigned some quality)",
+       "analysis": "VERB:active",
+       "pointed": "חָשַׁב"
+      },
+      {
+       "id": "9613-4",
+       "root": "",
+       "gloss": "to be calculated",
+       "analysis": "VERB:active",
+       "pointed": "חִשֵּׁב"
+      }
+     ]
+    },
+    {
+     "surface": "הם",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": "הֵם",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
+     "caphi_raw": null,
+     "maknuune_id": "2619-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ]
+    },
+    {
+     "surface": "קוברים",
+     "lemma": "קָבַר",
+     "form": "קָבַר",
+     "vocalized": "קוֹבְרִים",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "to bury, to inter",
+     "analysis": "VERB:masculine.plural.present",
+     "caphi": "kovrim",
+     "caphi_urban": "kovrim",
+     "caphi_raw": null,
+     "maknuune_id": "3594-21",
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "את",
@@ -649,6 +877,655 @@
      "caphi_urban": "et",
      "caphi_raw": null,
      "maknuune_id": "92-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "המטמון",
+     "lemma": "מַטְמוֹן",
+     "form": "מַטְמוֹן",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "cache",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hamatmon",
+     "caphi_urban": "hamatmon",
+     "caphi_raw": null,
+     "maknuune_id": "13040-8",
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "אצל",
+     "lemma": "אֵצֶל",
+     "form": "אֵצֶל",
+     "vocalized": "אֵצֶל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "At or to the home or office of (a person), or the like.",
+     "analysis": "PREP",
+     "caphi": "étsel",
+     "caphi_urban": "étsel",
+     "caphi_raw": null,
+     "maknuune_id": "4431-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "האלמנה",
+     "lemma": "אַלְמָנָה",
+     "form": "אַלְמָנָה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "widow (a woman whose spouse (traditionally husband) has died (and who has not remarried); a woman in relation to her late spouse; feminine of widower)",
+     "analysis": "NOUN",
+     "caphi": "almana",
+     "caphi_urban": "almana",
+     "caphi_raw": null,
+     "maknuune_id": "5036-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-ה",
+     "options": [
+      {
+       "id": "5036-1",
+       "root": "",
+       "gloss": "widow (a woman whose spouse (traditionally husband) has died",
+       "analysis": "NOUN",
+       "pointed": "אַלְמָנָה"
+      },
+      {
+       "id": "5039-3",
+       "root": "",
+       "gloss": "widower (a man whose spouse has died (and who has not remarr",
+       "analysis": "NOUN:feminine",
+       "pointed": "אַלְמָנָה"
+      },
+      {
+       "id": "14363-39",
+       "root": "א",
+       "gloss": "to bundle, bind.",
+       "analysis": "VERB:feminine.imperative.plural",
+       "pointed": "אַלֵּמְנָה"
+      },
+      {
+       "id": "5039-14",
+       "root": "",
+       "gloss": "widower (a man whose spouse has died (and who has not remarr",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "אַלְמָנָהּ"
+      }
+     ],
+     "_cut_for_prompt": "ה-ה"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "והם עצרו מתחת לעץ, קרוב לבית, והאק עמד מאחורי שיח, ושמע.",
+   "en": "And they stopped under a tree, close to the house, and Huck stood behind a bush, and listened.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "והם",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
+     "caphi_raw": null,
+     "maknuune_id": "2619-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "עצרו",
+     "lemma": "עָצַר",
+     "form": "עָצַר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ע",
+     "gloss": "To stop, to stop moving, to halt, to stop the motion of. (See usage note below.)",
+     "analysis": "VERB:imperative.masculine.plural",
+     "caphi": "itsru",
+     "caphi_urban": "itsru",
+     "caphi_raw": null,
+     "maknuune_id": "1808-41",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "-ו",
+     "options": [
+      {
+       "id": "1808-41",
+       "root": "ע",
+       "gloss": "To stop, to stop moving, to halt, to stop the motion of. (Se",
+       "analysis": "VERB:imperative.masculine.plural",
+       "pointed": "עִצְרוּ"
+      },
+      {
+       "id": "1808-16",
+       "root": "ע",
+       "gloss": "To stop, to stop moving, to halt, to stop the motion of. (Se",
+       "analysis": "VERB:feminine.masculine.past.plural.third-person",
+       "pointed": "עָצְרוּ"
+      }
+     ],
+     "_cut_for_prompt": "-ו"
+    },
+    {
+     "surface": "מתחת",
+     "lemma": "מִתַּחַת",
+     "form": "מִתַּחַת",
+     "vocalized": "מִתַּחַת",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Under, below.",
+     "analysis": "PREP",
+     "caphi": "mitáxat",
+     "caphi_urban": "mitáxat",
+     "caphi_raw": null,
+     "maknuune_id": "16281-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "לעץ",
+     "lemma": "עֵץ",
+     "form": "עֵץ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "tree",
+     "analysis": "NOUN",
+     "caphi": "ets",
+     "caphi_urban": "ets",
+     "caphi_raw": null,
+     "maknuune_id": "506-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ל-"
+    },
+    {
+     "surface": "קרוב",
+     "lemma": "קָרוֹב",
+     "form": "קָרוֹב",
+     "vocalized": "קָרוֹב",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "close, near",
+     "analysis": "ADJ",
+     "caphi": "karov",
+     "caphi_urban": "karov",
+     "caphi_raw": null,
+     "maknuune_id": "3573-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "לבית",
+     "lemma": "בַּיִת",
+     "form": "בַּיִת",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "house",
+     "analysis": "NOUN",
+     "caphi": "báyit",
+     "caphi_urban": "báyit",
+     "caphi_raw": null,
+     "maknuune_id": "373-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ל-"
+    },
+    {
+     "surface": "והאק",
+     "lemma": "הָאק",
+     "form": "הָאק",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Huck (Huckleberry Finn)",
+     "analysis": "NOUN_PROP",
+     "caphi": "hak",
+     "caphi_urban": "hak",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "עמד",
+     "lemma": "עָמַד",
+     "form": "עָמַד",
+     "vocalized": "עָמַד",
+     "vocalized_from": "lexicon",
+     "root": "ע",
+     "gloss": "to stand (to support oneself on the feet in an erect position)",
+     "analysis": "VERB",
+     "caphi": "amad",
+     "caphi_urban": "amad",
+     "caphi_raw": null,
+     "maknuune_id": "2979-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "מאחורי",
+     "lemma": "מֵאֲחוֹרֵי",
+     "form": "מֵאֲחוֹרֵי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "behind, in back of",
+     "analysis": "PREP",
+     "caphi": "meaxórey",
+     "caphi_urban": "meaxórey",
+     "caphi_raw": null,
+     "maknuune_id": "6854-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "מ-י"
+    },
+    {
+     "surface": "שיח",
+     "lemma": "שִׂיחַ",
+     "form": "שִׂיחַ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "A bush, a shrub.",
+     "analysis": "NOUN",
+     "caphi": "síax",
+     "caphi_urban": "síax",
+     "caphi_raw": null,
+     "maknuune_id": "892-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "ש-"
+    },
+    {
+     "surface": "ושמע",
+     "lemma": "שֵׁמַע",
+     "form": "שֵׁמַע",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "audio",
+     "analysis": "NOUN",
+     "caphi": "shéma",
+     "caphi_urban": "shéma",
+     "caphi_raw": null,
+     "maknuune_id": "664-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "664-1",
+       "root": "",
+       "gloss": "audio",
+       "analysis": "NOUN",
+       "pointed": "שֵׁמַע"
+      },
+      {
+       "id": "665-1",
+       "root": "ע",
+       "gloss": "to hear, to be able to hear",
+       "analysis": "VERB",
+       "pointed": "שָׁמַע"
+      },
+      {
+       "id": "666-1",
+       "root": "",
+       "gloss": "the Shema",
+       "analysis": "NAME",
+       "pointed": "שְׁמַע"
+      },
+      {
+       "id": "7596-3",
+       "root": "ע",
+       "gloss": "to sound, to be heard",
+       "analysis": "VERB:active",
+       "pointed": "שָׁמַע"
+      },
+      {
+       "id": "665-31",
+       "root": "ע",
+       "gloss": "to hear, to be able to hear",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "שְׁמַע"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הזקן אמר: יש אור בבית, יש אצלה אנשים.",
+   "en": "The old man said: there is a light in the house, she has people over.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "הזקן",
+     "lemma": "זָקֵן",
+     "form": "זָקֵן",
+     "vocalized": "הַזָּקֵן",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "old person",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hazaken",
+     "caphi_urban": "hazaken",
+     "caphi_raw": null,
+     "maknuune_id": "2349-10",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "יש",
+     "lemma": "יֵשׁ",
+     "form": "יֵשׁ",
+     "vocalized": "יֵשׁ",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "there is or are; there exist(s); see usage notes below.",
+     "analysis": "ADV",
+     "caphi": "yesh",
+     "caphi_urban": "yesh",
+     "caphi_raw": null,
+     "maknuune_id": "2371-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "אור",
+     "lemma": "אוֹר",
+     "form": "אוֹר",
+     "vocalized": "אוֹר",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "light, visible light: electromagnetic radiation of a frequency perceptible to the eye",
+     "analysis": "NOUN",
+     "caphi": "or",
+     "caphi_urban": "or",
+     "caphi_raw": null,
+     "maknuune_id": "497-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "497-1",
+       "root": "",
+       "gloss": "light, visible light: electromagnetic radiation of a frequen",
+       "analysis": "NOUN",
+       "pointed": "אוֹר"
+      },
+      {
+       "id": "499-1",
+       "root": "",
+       "gloss": "Ur (an ancient city-state in Sumer)",
+       "analysis": "NAME",
+       "pointed": "אוּר"
+      }
+     ]
+    },
+    {
+     "surface": "בבית",
+     "lemma": "בַּיִת",
+     "form": "בַּיִת",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "house",
+     "analysis": "NOUN",
+     "caphi": "báyit",
+     "caphi_urban": "báyit",
+     "caphi_raw": null,
+     "maknuune_id": "373-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ב-"
+    },
+    {
+     "surface": "יש",
+     "lemma": "יֵשׁ",
+     "form": "יֵשׁ",
+     "vocalized": "יֵשׁ",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "there is or are; there exist(s); see usage notes below.",
+     "analysis": "ADV",
+     "caphi": "yesh",
+     "caphi_urban": "yesh",
+     "caphi_raw": null,
+     "maknuune_id": "2371-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "אצלה",
+     "lemma": "אֲצֻלָּה",
+     "form": "אֲצֻלָּה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "nobility, aristocracy",
+     "analysis": "NOUN",
+     "caphi": "atsula",
+     "caphi_urban": "atsula",
+     "caphi_raw": null,
+     "maknuune_id": "5222-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "-ה",
+     "options": [
+      {
+       "id": "5222-1",
+       "root": "",
+       "gloss": "nobility, aristocracy",
+       "analysis": "NOUN",
+       "pointed": "אֲצֻלָּה"
+      },
+      {
+       "id": "11545-19",
+       "root": "ה",
+       "gloss": "to roast, to grill",
+       "analysis": "VERB:feminine.first-person.future.masculine.singular",
+       "pointed": "אֶצְלֶה"
+      }
+     ],
+     "_cut_for_prompt": "-ה"
+    },
+    {
+     "surface": "אנשים",
+     "lemma": "אֲנָשִׁים",
+     "form": "אֲנָשִׁים",
+     "vocalized": "אֲנָשִׁים",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "plural indefinite form of אִישׁ (ísh)",
+     "analysis": "NOUN",
+     "caphi": "anashim",
+     "caphi_urban": "anashim",
+     "caphi_raw": null,
+     "maknuune_id": "3723-1",
+     "provenance": "wiktionary:resolved"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ג'ו האינדיאני אמר: נחכה עד שהם ילכו.",
+   "en": "Injun Joe said: we wait until they go.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "ג'ו",
+     "lemma": "ג'ו",
+     "form": "ג'ו",
+     "vocalized": "ג'ו",
+     "vocalized_from": "curated",
+     "root": null,
+     "gloss": "Joe (Injun Joe, and also Tom's friend Joe Harper)",
+     "analysis": "NOUN_PROP",
+     "caphi": "jo",
+     "caphi_urban": "jo",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun"
+    },
+    {
+     "surface": "האינדיאני",
+     "lemma": "אִינְדִּיאָנִי",
+     "form": "אִינְדִּיאָנִי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Indian (as in Injun Joe, the half-Indian)",
+     "analysis": "NOUN_PROP",
+     "caphi": "indiáni",
+     "caphi_urban": "indiáni",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "נחכה",
+     "lemma": "חִכָּה",
+     "form": "חִכָּה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ה",
+     "gloss": "to wait, wait for",
+     "analysis": "VERB:feminine.first-person.future.masculine.plural",
+     "caphi": "nxake",
+     "caphi_urban": "nxake",
+     "caphi_raw": null,
+     "maknuune_id": "7703-27",
+     "provenance": "wiktionary:exact",
+     "_cut": "-ה"
+    },
+    {
+     "surface": "עד",
+     "lemma": "עַד",
+     "form": "עַד",
+     "vocalized": "עַד",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Until, till, up until (a time).",
+     "analysis": "PREP",
+     "caphi": "ad",
+     "caphi_urban": "ad",
+     "caphi_raw": null,
+     "maknuune_id": "1599-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "שהם",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
+     "caphi_raw": null,
+     "maknuune_id": "2619-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ש-"
+    },
+    {
+     "surface": "ילכו",
+     "lemma": "הָלַךְ",
+     "form": "הָלַךְ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ה",
+     "gloss": "to walk, go, especially on foot",
+     "analysis": "VERB:future.masculine.plural.third-person",
+     "caphi": "yelxu",
+     "caphi_urban": "yelxu",
+     "caphi_raw": null,
+     "maknuune_id": "193-29",
+     "provenance": "wiktionary:exact",
+     "_cut": "-ו"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הזקן אמר: ג'ו, בוא נעזוב את העבודה הזאת, האלמנה לא עשתה לך כלום.",
+   "en": "The old man said: Joe, let us leave this job, the widow did nothing to you.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "הזקן",
+     "lemma": "זָקֵן",
+     "form": "זָקֵן",
+     "vocalized": "הַזָּקֵן",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "old person",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hazaken",
+     "caphi_urban": "hazaken",
+     "caphi_raw": null,
+     "maknuune_id": "2349-10",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
      "provenance": "wiktionary:resolved"
     },
     {
@@ -667,26 +1544,542 @@
      "provenance": "curated:proper-noun"
     },
     {
-     "surface": "אומר",
-     "lemma": "אָמַר",
-     "form": "אָמַר",
-     "vocalized": "אוֹמֵר",
-     "vocalized_from": "lexicon",
-     "root": "א",
-     "gloss": "to say, tell",
-     "analysis": "VERB:masculine.present.singular",
-     "caphi": "omer",
-     "caphi_urban": "omer",
+     "surface": "בוא",
+     "lemma": "בּוֹא",
+     "form": "בּוֹא",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "infinitive absolute of בָּא (bá)",
+     "analysis": "VERB",
+     "caphi": "bo",
+     "caphi_urban": "bo",
      "caphi_raw": null,
-     "maknuune_id": "528-19",
+     "maknuune_id": "794-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ב-",
+     "options": [
+      {
+       "id": "794-1",
+       "root": "",
+       "gloss": "infinitive absolute of בָּא (bá)",
+       "analysis": "VERB",
+       "pointed": "בּוֹא"
+      },
+      {
+       "id": "3145-31",
+       "root": "ו.א",
+       "gloss": "To come.",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "בּוֹא"
+      }
+     ],
+     "_cut_for_prompt": "ב-"
+    },
+    {
+     "surface": "נעזוב",
+     "lemma": "עָזַב",
+     "form": "עָזַב",
+     "vocalized": "נעזוב",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "to leave, leave behind, depart",
+     "analysis": "VERB:feminine.first-person.future.masculine.plural",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "184-23",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "את",
+     "lemma": "אֵת",
+     "form": "אֵת",
+     "vocalized": "אֵת",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Used to introduce a semantically definite direct object.",
+     "analysis": "PREP",
+     "caphi": "et",
+     "caphi_urban": "et",
+     "caphi_raw": null,
+     "maknuune_id": "92-1",
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "שהוא",
-     "lemma": "הוּא",
-     "form": "הוּא",
+     "surface": "העבודה",
+     "lemma": "עֲבוֹדָה",
+     "form": "עֲבוֹדָה",
+     "vocalized": "הָעֲבוֹדָה",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "worship, service",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "haavoda",
+     "caphi_urban": "haavoda",
+     "caphi_raw": null,
+     "maknuune_id": "2055-9",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הזאת",
+     "lemma": "זֹאת",
+     "form": "זֹאת",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "feminine singular of זֶה (zé)",
+     "analysis": "DET",
+     "caphi": "zot",
+     "caphi_urban": "zot",
+     "caphi_raw": null,
+     "maknuune_id": "752-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "האלמנה",
+     "lemma": "אַלְמָנָה",
+     "form": "אַלְמָנָה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "widow (a woman whose spouse (traditionally husband) has died (and who has not remarried); a woman in relation to her late spouse; feminine of widower)",
+     "analysis": "NOUN",
+     "caphi": "almana",
+     "caphi_urban": "almana",
+     "caphi_raw": null,
+     "maknuune_id": "5036-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-ה",
+     "options": [
+      {
+       "id": "5036-1",
+       "root": "",
+       "gloss": "widow (a woman whose spouse (traditionally husband) has died",
+       "analysis": "NOUN",
+       "pointed": "אַלְמָנָה"
+      },
+      {
+       "id": "5039-3",
+       "root": "",
+       "gloss": "widower (a man whose spouse has died (and who has not remarr",
+       "analysis": "NOUN:feminine",
+       "pointed": "אַלְמָנָה"
+      },
+      {
+       "id": "14363-39",
+       "root": "א",
+       "gloss": "to bundle, bind.",
+       "analysis": "VERB:feminine.imperative.plural",
+       "pointed": "אַלֵּמְנָה"
+      },
+      {
+       "id": "5039-14",
+       "root": "",
+       "gloss": "widower (a man whose spouse has died (and who has not remarr",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "אַלְמָנָהּ"
+      }
+     ],
+     "_cut_for_prompt": "ה-ה"
+    },
+    {
+     "surface": "לא",
+     "lemma": "לֹא",
+     "form": "לֹא",
+     "vocalized": "לֹא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Not; used in negating verbs, adjectives, and adverbs.",
+     "analysis": "ADV",
+     "caphi": "lo",
+     "caphi_urban": "lo",
+     "caphi_raw": null,
+     "maknuune_id": "1535-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "עשתה",
+     "lemma": "עָשָׂה",
+     "form": "עָשָׂה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ע.ה",
+     "gloss": "To do (to perform an action, to accomplish a thing).",
+     "analysis": "VERB:feminine.past.singular.third-person",
+     "caphi": "asta",
+     "caphi_urban": "asta",
+     "caphi_raw": null,
+     "maknuune_id": "565-16",
+     "provenance": "wiktionary:exact",
+     "_cut": "-ה"
+    },
+    {
+     "surface": "לך",
+     "lemma": "לך",
+     "form": "לך",
+     "vocalized": "לך",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "Form of ל־ (l'-) including second-person masculine singular personal pronoun as object.",
+     "analysis": "PREP",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "4695-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "כלום",
+     "lemma": "כְּלוּם",
+     "form": "כְּלוּם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "anything",
+     "analysis": "PRON",
+     "caphi": "klum",
+     "caphi_urban": "klum",
+     "caphi_raw": null,
+     "maknuune_id": "5854-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "כ-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ג'ו האינדיאני אמר: בעלה, בעלה היה השופט, ודן אותי למכות, מול הכפר.",
+   "en": "Injun Joe said: her husband, her husband was the judge, and sentenced me to a beating, in front of the village.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "ג'ו",
+     "lemma": "ג'ו",
+     "form": "ג'ו",
+     "vocalized": "ג'ו",
+     "vocalized_from": "curated",
+     "root": null,
+     "gloss": "Joe (Injun Joe, and also Tom's friend Joe Harper)",
+     "analysis": "NOUN_PROP",
+     "caphi": "jo",
+     "caphi_urban": "jo",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun"
+    },
+    {
+     "surface": "האינדיאני",
+     "lemma": "אִינְדִּיאָנִי",
+     "form": "אִינְדִּיאָנִי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Indian (as in Injun Joe, the half-Indian)",
+     "analysis": "NOUN_PROP",
+     "caphi": "indiáni",
+     "caphi_urban": "indiáni",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "בעלה",
+     "lemma": "בַּעַל",
+     "form": "בַּעַל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "master, owner",
+     "analysis": "NOUN:feminine",
+     "caphi": "baala",
+     "caphi_urban": "baala",
+     "caphi_raw": null,
+     "maknuune_id": "1098-6",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ב-ה",
+     "options": [
+      {
+       "id": "1098-6",
+       "root": "",
+       "gloss": "master, owner",
+       "analysis": "NOUN:feminine",
+       "pointed": "בַּעֲלָה"
+      },
+      {
+       "id": "2369-1",
+       "root": "",
+       "gloss": "mistress (female master or owner)",
+       "analysis": "NOUN",
+       "pointed": "בַּעֲלָה"
+      },
+      {
+       "id": "1101-5",
+       "root": "",
+       "gloss": "having, possessing, (endowed) with",
+       "analysis": "ADJ:feminine",
+       "pointed": "בַּעַלָה"
+      },
+      {
+       "id": "1099-13",
+       "root": "",
+       "gloss": "lord, idol",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "בַּעֲלָהּ"
+      },
+      {
+       "id": "1102-14",
+       "root": "",
+       "gloss": "to have sexual intercourse",
+       "analysis": "VERB:feminine.past.singular.third-person",
+       "pointed": "בָּעֲלָה"
+      }
+     ],
+     "_cut_for_prompt": "ב-ה"
+    },
+    {
+     "surface": "בעלה",
+     "lemma": "בַּעַל",
+     "form": "בַּעַל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "master, owner",
+     "analysis": "NOUN:feminine",
+     "caphi": "baala",
+     "caphi_urban": "baala",
+     "caphi_raw": null,
+     "maknuune_id": "1098-6",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ב-ה",
+     "options": [
+      {
+       "id": "1098-6",
+       "root": "",
+       "gloss": "master, owner",
+       "analysis": "NOUN:feminine",
+       "pointed": "בַּעֲלָה"
+      },
+      {
+       "id": "2369-1",
+       "root": "",
+       "gloss": "mistress (female master or owner)",
+       "analysis": "NOUN",
+       "pointed": "בַּעֲלָה"
+      },
+      {
+       "id": "1101-5",
+       "root": "",
+       "gloss": "having, possessing, (endowed) with",
+       "analysis": "ADJ:feminine",
+       "pointed": "בַּעַלָה"
+      },
+      {
+       "id": "1099-13",
+       "root": "",
+       "gloss": "lord, idol",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "בַּעֲלָהּ"
+      },
+      {
+       "id": "1102-14",
+       "root": "",
+       "gloss": "to have sexual intercourse",
+       "analysis": "VERB:feminine.past.singular.third-person",
+       "pointed": "בָּעֲלָה"
+      }
+     ],
+     "_cut_for_prompt": "ב-ה"
+    },
+    {
+     "surface": "היה",
+     "lemma": "הָיָה",
+     "form": "הָיָה",
+     "vocalized": "הָיָה",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "to be:",
+     "analysis": "VERB",
+     "caphi": "haya",
+     "caphi_urban": "haya",
+     "caphi_raw": null,
+     "maknuune_id": "500-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "השופט",
+     "lemma": "שׁוֹפֵט",
+     "form": "שׁוֹפֵט",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "judge (a public official whose duty it is to administer the law, especially by presiding over trials and rendering judgments; a justice)",
+     "analysis": "NOUN",
+     "caphi": "shofet",
+     "caphi_urban": "shofet",
+     "caphi_raw": null,
+     "maknuune_id": "7362-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-",
+     "options": [
+      {
+       "id": "7362-1",
+       "root": "",
+       "gloss": "judge (a public official whose duty it is to administer the ",
+       "analysis": "NOUN",
+       "pointed": "שׁוֹפֵט"
+      },
+      {
+       "id": "11879-16",
+       "root": "",
+       "gloss": "to judge",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "שׁוֹפֵט"
+      }
+     ],
+     "_cut_for_prompt": "ה-"
+    },
+    {
+     "surface": "ודן",
+     "lemma": "דָּן",
+     "form": "דָּן",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ו",
+     "gloss": "To discuss [with עַל (al) ‘on’].",
+     "analysis": "VERB",
+     "caphi": "dan",
+     "caphi_urban": "dan",
+     "caphi_raw": null,
+     "maknuune_id": "706-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "אותי",
+     "lemma": "אוֹתִי",
+     "form": "אוֹתִי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Form of אֵת (et) including first-person singular personal pronoun as object",
+     "analysis": "PREP",
+     "caphi": "oti",
+     "caphi_urban": "oti",
+     "caphi_raw": null,
+     "maknuune_id": "10438-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "-י"
+    },
+    {
+     "surface": "למכות",
+     "lemma": "מַכּוֹת",
+     "form": "מַכּוֹת",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "plural indefinite form of מַכָּה (maká)",
+     "analysis": "NOUN",
+     "caphi": "makot",
+     "caphi_urban": "makot",
+     "caphi_raw": null,
+     "maknuune_id": "6296-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ל-",
+     "options": [
+      {
+       "id": "6296-1",
+       "root": "",
+       "gloss": "plural indefinite form of מַכָּה (maká)",
+       "analysis": "NOUN",
+       "pointed": "מַכּוֹת"
+      },
+      {
+       "id": "6291-3",
+       "root": "",
+       "gloss": "an attack, an assault, a hit, a wound",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "מַכּוֹת"
+      },
+      {
+       "id": "7108-19",
+       "root": "נ.ה",
+       "gloss": "to hit, smite, strike",
+       "analysis": "VERB:feminine.plural.present",
+       "pointed": "מַכּוֹת"
+      },
+      {
+       "id": "11016-29",
+       "root": "נ.ה",
+       "gloss": "to be hit, smitten, struck.",
+       "analysis": "VERB:feminine.plural.present",
+       "pointed": "מֻכּוֹת"
+      }
+     ],
+     "_cut_for_prompt": "ל-"
+    },
+    {
+     "surface": "מול",
+     "lemma": "מוּל",
+     "form": "מוּל",
+     "vocalized": "מוּל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Opposite, against, facing.",
+     "analysis": "PREP",
+     "caphi": "mul",
+     "caphi_urban": "mul",
+     "caphi_raw": null,
+     "maknuune_id": "4165-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הכפר",
+     "lemma": "כְּפָר",
+     "form": "כְּפָר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "village",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hakfar",
+     "caphi_urban": "hakfar",
+     "caphi_raw": null,
+     "maknuune_id": "2049-9",
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא מת, והיא תשלם במקומו.",
+   "en": "He died, and she will pay instead of him.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "he",
      "analysis": "PRON",
@@ -694,38 +2087,273 @@
      "caphi_urban": "hu",
      "caphi_raw": null,
      "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "מת",
+     "lemma": "מֵת",
+     "form": "מֵת",
+     "vocalized": "מֵת",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Dead, having died.",
+     "analysis": "ADJ",
+     "caphi": "met",
+     "caphi_urban": "met",
+     "caphi_raw": null,
+     "maknuune_id": "1922-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "1922-1",
+       "root": "",
+       "gloss": "Dead, having died.",
+       "analysis": "ADJ",
+       "pointed": "מֵת"
+      },
+      {
+       "id": "1923-7",
+       "root": "",
+       "gloss": "To die.",
+       "analysis": "VERB:masculine.past.second-person.singular",
+       "pointed": "מַתָּ"
+      },
+      {
+       "id": "1923-8",
+       "root": "",
+       "gloss": "To die.",
+       "analysis": "VERB:feminine.past.second-person.singular",
+       "pointed": "מַתְּ"
+      }
+     ]
+    },
+    {
+     "surface": "והיא",
+     "lemma": "הִיא",
+     "form": "הִיא",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "she, it",
+     "analysis": "PRON",
+     "caphi": "hi",
+     "caphi_urban": "hi",
+     "caphi_raw": null,
+     "maknuune_id": "950-1",
      "provenance": "wiktionary:resolved",
-     "_cut": "ש-"
+     "_cut": "ו-"
     },
     {
-     "surface": "בא",
-     "lemma": "בָּא",
-     "form": "בָּא",
-     "vocalized": "בָּא",
+     "surface": "תשלם",
+     "lemma": "שָׁלַם",
+     "form": "שָׁלַם",
+     "vocalized": "תִּשְׁלַם",
      "vocalized_from": "lexicon",
-     "root": "ו.א",
-     "gloss": "To come.",
-     "analysis": "VERB",
-     "caphi": "ba",
-     "caphi_urban": "ba",
+     "root": null,
+     "gloss": "to be safe (mind, body or state)",
+     "analysis": "VERB:future.masculine.second-person.singular",
+     "caphi": "tishlam",
+     "caphi_urban": "tishlam",
      "caphi_raw": null,
-     "maknuune_id": "3145-1",
+     "maknuune_id": "3334-20",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3334-20",
+       "root": "",
+       "gloss": "to be safe (mind, body or state)",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תִּשְׁלַם"
+      },
+      {
+       "id": "12581-30",
+       "root": "",
+       "gloss": "to pay",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תְּשַׁלֵּם"
+      },
+      {
+       "id": "12880-35",
+       "root": "",
+       "gloss": "to be completed",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תֻּשְׁלַם"
+      },
+      {
+       "id": "17478-23",
+       "root": "",
+       "gloss": "to be completed, to be finished, to be ended",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תִּשָּׁלֵם"
+      }
+     ]
+    },
+    {
+     "surface": "במקומו",
+     "lemma": "מָקוֹם",
+     "form": "מָקוֹם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "place (location or position)",
+     "analysis": "NOUN:masculine.possessed-form.singular.third-person",
+     "caphi": "mkomo",
+     "caphi_urban": "mkomo",
+     "caphi_raw": null,
+     "maknuune_id": "557-13",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ב-ו"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ואני לא רוצה להרוג אותה, אני רוצה לחתוך לה את הפנים.",
+   "en": "And I do not want to kill her, I want to cut her face.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "ואני",
+     "lemma": "אֲנִי",
+     "form": "אֲנִי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "I (first person nominative singular pronoun, masculine and feminine)",
+     "analysis": "PRON",
+     "caphi": "ani",
+     "caphi_urban": "ani",
+     "caphi_raw": null,
+     "maknuune_id": "309-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "לא",
+     "lemma": "לֹא",
+     "form": "לֹא",
+     "vocalized": "לֹא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Not; used in negating verbs, adjectives, and adverbs.",
+     "analysis": "ADV",
+     "caphi": "lo",
+     "caphi_urban": "lo",
+     "caphi_raw": null,
+     "maknuune_id": "1535-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "רוצה",
+     "lemma": "רָצָה",
+     "form": "רָצָה",
+     "vocalized": "רוֹצֶה",
+     "vocalized_from": "lexicon",
+     "root": "ה",
+     "gloss": "To want.",
+     "analysis": "VERB:masculine.present.singular",
+     "caphi": "rotse",
+     "caphi_urban": "rotse",
+     "caphi_raw": null,
+     "maknuune_id": "3490-15",
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "לעשות",
-     "lemma": "עָשָׂה",
-     "form": "עָשָׂה",
-     "vocalized": "לַעֲשׂוֹת",
-     "vocalized_from": "lexicon",
-     "root": "ע.ה",
-     "gloss": "To do (to perform an action, to accomplish a thing).",
+     "surface": "להרוג",
+     "lemma": "הָרַג",
+     "form": "הָרַג",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ה",
+     "gloss": "to kill (put to death).",
      "analysis": "VERB:infinitive",
-     "caphi": "laasot",
-     "caphi_urban": "laasot",
+     "caphi": null,
+     "caphi_urban": null,
      "caphi_raw": null,
-     "maknuune_id": "565-7",
+     "maknuune_id": "6347-4",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ל-",
+     "options": [
+      {
+       "id": "6347-4",
+       "root": "ה",
+       "gloss": "to kill (put to death).",
+       "analysis": "VERB:infinitive",
+       "pointed": "להרוג"
+      }
+     ],
+     "_cut_for_prompt": "ל-"
+    },
+    {
+     "surface": "אותה",
+     "lemma": "אוֹתָהּ",
+     "form": "אוֹתָהּ",
+     "vocalized": "אוֹתָהּ",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "The same.",
+     "analysis": "DET",
+     "caphi": "otah",
+     "caphi_urban": "otah",
+     "caphi_raw": null,
+     "maknuune_id": "9611-1",
      "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אני",
+     "lemma": "אֲנִי",
+     "form": "אֲנִי",
+     "vocalized": "אֲנִי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "I (first person nominative singular pronoun, masculine and feminine)",
+     "analysis": "PRON",
+     "caphi": "ani",
+     "caphi_urban": "ani",
+     "caphi_raw": null,
+     "maknuune_id": "309-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "רוצה",
+     "lemma": "רָצָה",
+     "form": "רָצָה",
+     "vocalized": "רוֹצֶה",
+     "vocalized_from": "lexicon",
+     "root": "ה",
+     "gloss": "To want.",
+     "analysis": "VERB:masculine.present.singular",
+     "caphi": "rotse",
+     "caphi_urban": "rotse",
+     "caphi_raw": null,
+     "maknuune_id": "3490-15",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "לחתוך",
+     "lemma": "חָתַךְ",
+     "form": "חָתַךְ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "to cut",
+     "analysis": "VERB:infinitive",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "6334-3",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ל-",
+     "options": [
+      {
+       "id": "6334-3",
+       "root": "",
+       "gloss": "to cut",
+       "analysis": "VERB:infinitive",
+       "pointed": "לחתוך"
+      }
+     ],
+     "_cut_for_prompt": "ל-"
     },
     {
      "surface": "לה",
@@ -743,49 +2371,41 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "רע",
-     "lemma": "רַע",
-     "form": "רַע",
-     "vocalized": "רַע",
+     "surface": "את",
+     "lemma": "אֵת",
+     "form": "אֵת",
+     "vocalized": "אֵת",
      "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "An evil, trouble; something bad.",
-     "analysis": "NOUN",
-     "caphi": "ra",
-     "caphi_urban": "ra",
+     "gloss": "Used to introduce a semantically definite direct object.",
+     "analysis": "PREP",
+     "caphi": "et",
+     "caphi_urban": "et",
      "caphi_raw": null,
-     "maknuune_id": "341-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "341-1",
-       "root": "",
-       "gloss": "An evil, trouble; something bad.",
-       "analysis": "NOUN",
-       "pointed": "רַע"
-      },
-      {
-       "id": "343-1",
-       "root": "",
-       "gloss": "friend, colleague",
-       "analysis": "NOUN",
-       "pointed": "רֵעַ"
-      },
-      {
-       "id": "16381-1",
-       "root": "",
-       "gloss": "evil, badness, cruelty.",
-       "analysis": "NOUN",
-       "pointed": "רֹעַ"
-      }
-     ]
+     "maknuune_id": "92-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הפנים",
+     "lemma": "פָּנִים",
+     "form": "פָּנִים",
+     "vocalized": "הַפָּנִים",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "face",
+     "analysis": "NOUN:definite.plural",
+     "caphi": "hapanim",
+     "caphi_urban": "hapanim",
+     "caphi_raw": null,
+     "maknuune_id": "3004-8",
+     "provenance": "wiktionary:resolved"
     }
    ],
    "audio": null
   },
   {
-   "ar": "האק רץ למטה וקרא לשכנים, וכולם עלו עם נשק.",
-   "en": "Huck ran down and called the neighbours, and they all came up with guns.",
+   "ar": "האק לא חיכה לשמוע את השאר.",
+   "en": "Huck did not wait to hear the rest.",
    "p": 2,
    "words": [
     {
@@ -804,6 +2424,185 @@
      "provenance": "curated:proper-noun"
     },
     {
+     "surface": "לא",
+     "lemma": "לֹא",
+     "form": "לֹא",
+     "vocalized": "לֹא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Not; used in negating verbs, adjectives, and adverbs.",
+     "analysis": "ADV",
+     "caphi": "lo",
+     "caphi_urban": "lo",
+     "caphi_raw": null,
+     "maknuune_id": "1535-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "חיכה",
+     "lemma": "חִכָּה",
+     "form": "חִכָּה",
+     "vocalized": "חִיכָּה",
+     "vocalized_from": "lexicon",
+     "root": "ה",
+     "gloss": "to wait, wait for",
+     "analysis": "VERB:masculine.past.singular.third-person",
+     "caphi": "xika",
+     "caphi_urban": "xika",
+     "caphi_raw": null,
+     "maknuune_id": "7703-16",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "לשמוע",
+     "lemma": "שָׁמַע",
+     "form": "שָׁמַע",
+     "vocalized": "לשמוע",
+     "vocalized_from": "source:pointed",
+     "root": "ע",
+     "gloss": "to hear, to be able to hear",
+     "analysis": "VERB:infinitive",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "665-4",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "את",
+     "lemma": "אֵת",
+     "form": "אֵת",
+     "vocalized": "אֵת",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Used to introduce a semantically definite direct object.",
+     "analysis": "PREP",
+     "caphi": "et",
+     "caphi_urban": "et",
+     "caphi_raw": null,
+     "maknuune_id": "92-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "השאר",
+     "lemma": "שְׁאָר",
+     "form": "שְׁאָר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "A remnant, a remainder, a rest.",
+     "analysis": "NOUN",
+     "caphi": "shar",
+     "caphi_urban": "shar",
+     "caphi_raw": null,
+     "maknuune_id": "7485-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ה-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא חזר אחורה, לאט, ואז רץ.",
+   "en": "He went back, slowly, and then ran.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "חזר",
+     "lemma": "חָזַר",
+     "form": "חָזַר",
+     "vocalized": "חָזַר",
+     "vocalized_from": "lexicon",
+     "root": "ח",
+     "gloss": "to return (to come back after some period of time, or at regular intervals)",
+     "analysis": "VERB",
+     "caphi": "xazar",
+     "caphi_urban": "xazar",
+     "caphi_raw": null,
+     "maknuune_id": "4374-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אחורה",
+     "lemma": "אָחוֹרָה",
+     "form": "אָחוֹרָה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "backward, backwards, astern",
+     "analysis": "ADV",
+     "caphi": "axóra",
+     "caphi_urban": "axóra",
+     "caphi_raw": null,
+     "maknuune_id": "16635-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "-ה",
+     "options": [
+      {
+       "id": "16635-1",
+       "root": "",
+       "gloss": "backward, backwards, astern",
+       "analysis": "ADV",
+       "pointed": "אָחוֹרָה"
+      },
+      {
+       "id": "7887-28",
+       "root": "",
+       "gloss": "A delay: an instance of lateness, a discrepancy between an e",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "אִחוּרָהּ"
+      }
+     ],
+     "_cut_for_prompt": "-ה"
+    },
+    {
+     "surface": "לאט",
+     "lemma": "לְאַט",
+     "form": "לְאַט",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "slowly",
+     "analysis": "ADV",
+     "caphi": "lat",
+     "caphi_urban": "lat",
+     "caphi_raw": null,
+     "maknuune_id": "8121-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "ל-"
+    },
+    {
+     "surface": "ואז",
+     "lemma": "אָז",
+     "form": "אָז",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "So, therefore, then, thus.",
+     "analysis": "ADV",
+     "caphi": "az",
+     "caphi_urban": "az",
+     "caphi_raw": null,
+     "maknuune_id": "5621-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ו-"
+    },
+    {
      "surface": "רץ",
      "lemma": "רָץ",
      "form": "רָץ",
@@ -817,6 +2616,1584 @@
      "caphi_raw": null,
      "maknuune_id": "5007-1",
      "provenance": "wiktionary:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "רץ על הגבעה לבית של הזקן שיש לו שני בנים.",
+   "en": "Ran up the hill to the house of the old man who has two sons.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "רץ",
+     "lemma": "רָץ",
+     "form": "רָץ",
+     "vocalized": "רָץ",
+     "vocalized_from": "lexicon",
+     "root": "ו",
+     "gloss": "To run; to move forward quickly on legs.",
+     "analysis": "VERB",
+     "caphi": "rats",
+     "caphi_urban": "rats",
+     "caphi_raw": null,
+     "maknuune_id": "5007-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "על",
+     "lemma": "עַל",
+     "form": "עַל",
+     "vocalized": "עַל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "on, on top of",
+     "analysis": "PREP",
+     "caphi": "al",
+     "caphi_urban": "al",
+     "caphi_raw": null,
+     "maknuune_id": "547-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הגבעה",
+     "lemma": "גִּבְעָה",
+     "form": "גִּבְעָה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "A hill.",
+     "analysis": "NOUN",
+     "caphi": "giva",
+     "caphi_urban": "giva",
+     "caphi_raw": null,
+     "maknuune_id": "1959-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ה-ה"
+    },
+    {
+     "surface": "לבית",
+     "lemma": "בַּיִת",
+     "form": "בַּיִת",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "house",
+     "analysis": "NOUN",
+     "caphi": "báyit",
+     "caphi_urban": "báyit",
+     "caphi_raw": null,
+     "maknuune_id": "373-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ל-"
+    },
+    {
+     "surface": "של",
+     "lemma": "שֶׁל",
+     "form": "שֶׁל",
+     "vocalized": "שֶׁל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Of, belonging to, owned by, pertaining to.",
+     "analysis": "PREP",
+     "caphi": "shel",
+     "caphi_urban": "shel",
+     "caphi_raw": null,
+     "maknuune_id": "2365-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הזקן",
+     "lemma": "זָקֵן",
+     "form": "זָקֵן",
+     "vocalized": "הַזָּקֵן",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "old person",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hazaken",
+     "caphi_urban": "hazaken",
+     "caphi_raw": null,
+     "maknuune_id": "2349-10",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "שיש",
+     "lemma": "יֵשׁ",
+     "form": "יֵשׁ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "there is or are; there exist(s); see usage notes below.",
+     "analysis": "ADV",
+     "caphi": "yesh",
+     "caphi_urban": "yesh",
+     "caphi_raw": null,
+     "maknuune_id": "2371-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ש-"
+    },
+    {
+     "surface": "לו",
+     "lemma": "לוֹ",
+     "form": "לוֹ",
+     "vocalized": "לוֹ",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Form of ל־ (l'-) including third-person masculine singular personal pronoun as object.",
+     "analysis": "PREP",
+     "caphi": "lo",
+     "caphi_urban": "lo",
+     "caphi_raw": null,
+     "maknuune_id": "5706-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "שני",
+     "lemma": "שְׁנַייִם",
+     "form": "שְׁנַייִם",
+     "vocalized": "שְׁנֵי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "two",
+     "analysis": "NUM:construct",
+     "caphi": "shney",
+     "caphi_urban": "shney",
+     "caphi_raw": null,
+     "maknuune_id": "82-3",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "בנים",
+     "lemma": "בָּנִים",
+     "form": "בָּנִים",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "plural indefinite form of בֵּן (bén)",
+     "analysis": "NOUN",
+     "caphi": "banim",
+     "caphi_urban": "banim",
+     "caphi_raw": null,
+     "maknuune_id": "5301-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ב-",
+     "options": [
+      {
+       "id": "5301-1",
+       "root": "",
+       "gloss": "plural indefinite form of בֵּן (bén)",
+       "analysis": "NOUN",
+       "pointed": "בָּנִים"
+      },
+      {
+       "id": "396-3",
+       "root": "",
+       "gloss": "son",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "בָּנִים"
+      },
+      {
+       "id": "398-16",
+       "root": "",
+       "gloss": "to understand.",
+       "analysis": "VERB:masculine.plural.present",
+       "pointed": "בָּנִים"
+      }
+     ],
+     "_cut_for_prompt": "ב-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ודפק על הדלת בידיים, וצעק: תפתחו!",
+   "en": "And knocked on the door with his hands, and shouted: open!",
+   "p": 2,
+   "words": [
+    {
+     "surface": "ודפק",
+     "lemma": "דָּפַק",
+     "form": "דָּפַק",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "to knock",
+     "analysis": "VERB",
+     "caphi": "dafak",
+     "caphi_urban": "dafak",
+     "caphi_raw": null,
+     "maknuune_id": "4449-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "4449-1",
+       "root": "",
+       "gloss": "to knock",
+       "analysis": "VERB",
+       "pointed": "דָּפַק"
+      },
+      {
+       "id": "16614-1",
+       "root": "",
+       "gloss": "heartbeat, pulse",
+       "analysis": "NOUN",
+       "pointed": "דֹּפֶק"
+      },
+      {
+       "id": "4449-38",
+       "root": "",
+       "gloss": "to knock",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "דְּפֹק"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "על",
+     "lemma": "עַל",
+     "form": "עַל",
+     "vocalized": "עַל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "on, on top of",
+     "analysis": "PREP",
+     "caphi": "al",
+     "caphi_urban": "al",
+     "caphi_raw": null,
+     "maknuune_id": "547-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הדלת",
+     "lemma": "דֶּלֶת",
+     "form": "דֶּלֶת",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "door (portal of entry)",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hadelet",
+     "caphi_urban": "hadelet",
+     "caphi_raw": null,
+     "maknuune_id": "1144-11",
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "בידיים",
+     "lemma": "יָד",
+     "form": "יָד",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "arm",
+     "analysis": "NOUN:dual.indefinite",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "4-3",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ב-"
+    },
+    {
+     "surface": "וצעק",
+     "lemma": "צָעַק",
+     "form": "צָעַק",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "to shout, to yell",
+     "analysis": "VERB",
+     "caphi": "tsaak",
+     "caphi_urban": "tsaak",
+     "caphi_raw": null,
+     "maknuune_id": "13079-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "13079-1",
+       "root": "",
+       "gloss": "to shout, to yell",
+       "analysis": "VERB",
+       "pointed": "צָעַק"
+      },
+      {
+       "id": "13079-29",
+       "root": "",
+       "gloss": "to shout, to yell",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "צְעַק"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "תפתחו",
+     "lemma": "פָּתַח",
+     "form": "פָּתַח",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ח",
+     "gloss": "to open (something)",
+     "analysis": "VERB:future.masculine.plural.second-person",
+     "caphi": "tiftxu",
+     "caphi_urban": "tiftxu",
+     "caphi_raw": null,
+     "maknuune_id": "2296-26",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "-ו",
+     "options": [
+      {
+       "id": "2296-26",
+       "root": "ח",
+       "gloss": "to open (something)",
+       "analysis": "VERB:future.masculine.plural.second-person",
+       "pointed": "תִּפְתְּחוּ"
+      },
+      {
+       "id": "12623-32",
+       "root": "",
+       "gloss": "to develop",
+       "analysis": "VERB:future.masculine.plural.second-person",
+       "pointed": "תְּפַתְּחוּ"
+      },
+      {
+       "id": "13835-30",
+       "root": "ח",
+       "gloss": "To open, be opened: to be made open.",
+       "analysis": "VERB:future.masculine.plural.second-person",
+       "pointed": "תִּפָּתְחוּ"
+      }
+     ],
+     "_cut_for_prompt": "-ו"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "תפתחו מהר!",
+   "en": "Open quickly!",
+   "p": 2,
+   "words": [
+    {
+     "surface": "תפתחו",
+     "lemma": "פָּתַח",
+     "form": "פָּתַח",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ח",
+     "gloss": "to open (something)",
+     "analysis": "VERB:future.masculine.plural.second-person",
+     "caphi": "tiftxu",
+     "caphi_urban": "tiftxu",
+     "caphi_raw": null,
+     "maknuune_id": "2296-26",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "-ו",
+     "options": [
+      {
+       "id": "2296-26",
+       "root": "ח",
+       "gloss": "to open (something)",
+       "analysis": "VERB:future.masculine.plural.second-person",
+       "pointed": "תִּפְתְּחוּ"
+      },
+      {
+       "id": "12623-32",
+       "root": "",
+       "gloss": "to develop",
+       "analysis": "VERB:future.masculine.plural.second-person",
+       "pointed": "תְּפַתְּחוּ"
+      },
+      {
+       "id": "13835-30",
+       "root": "ח",
+       "gloss": "To open, be opened: to be made open.",
+       "analysis": "VERB:future.masculine.plural.second-person",
+       "pointed": "תִּפָּתְחוּ"
+      }
+     ],
+     "_cut_for_prompt": "-ו"
+    },
+    {
+     "surface": "מהר",
+     "lemma": "מַהֵר",
+     "form": "מַהֵר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "quickly, rapidly, fast",
+     "analysis": "ADV",
+     "caphi": "maher",
+     "caphi_urban": "maher",
+     "caphi_raw": null,
+     "maknuune_id": "432-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "מ-",
+     "options": [
+      {
+       "id": "432-1",
+       "root": "",
+       "gloss": "quickly, rapidly, fast",
+       "analysis": "ADV",
+       "pointed": "מַהֵר"
+      },
+      {
+       "id": "433-1",
+       "root": "",
+       "gloss": "defective spelling of מיהר",
+       "analysis": "VERB",
+       "pointed": "מִהֵר"
+      },
+      {
+       "id": "434-1",
+       "root": "",
+       "gloss": "to acquire a wife by paying her purchase price",
+       "analysis": "VERB",
+       "pointed": "מָהַר"
+      },
+      {
+       "id": "435-1",
+       "root": "",
+       "gloss": "defective spelling of מוהר",
+       "analysis": "NOUN",
+       "pointed": "מֹהַר"
+      },
+      {
+       "id": "4723-38",
+       "root": "",
+       "gloss": "to hurry",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "מַהֵר"
+      },
+      {
+       "id": "434-32",
+       "root": "",
+       "gloss": "to acquire a wife by paying her purchase price",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "מְהַר"
+      }
+     ],
+     "_cut_for_prompt": "מ-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הזקן פתח, ואמר: מי אתה?",
+   "en": "The old man opened, and said: who are you?",
+   "p": 2,
+   "words": [
+    {
+     "surface": "הזקן",
+     "lemma": "זָקֵן",
+     "form": "זָקֵן",
+     "vocalized": "הַזָּקֵן",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "old person",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hazaken",
+     "caphi_urban": "hazaken",
+     "caphi_raw": null,
+     "maknuune_id": "2349-10",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "פתח",
+     "lemma": "פָּתַח",
+     "form": "פָּתַח",
+     "vocalized": "פָּתַח",
+     "vocalized_from": "lexicon",
+     "root": "ח",
+     "gloss": "to open (something)",
+     "analysis": "VERB",
+     "caphi": "patax",
+     "caphi_urban": "patax",
+     "caphi_raw": null,
+     "maknuune_id": "2296-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "ואמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "מי",
+     "lemma": "מִי",
+     "form": "מִי",
+     "vocalized": "מִי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "who, what person or persons",
+     "analysis": "PRON",
+     "caphi": "mi",
+     "caphi_urban": "mi",
+     "caphi_raw": null,
+     "maknuune_id": "3495-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אתה",
+     "lemma": "אַתָּה",
+     "form": "אַתָּה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "you, thou (second-person singular masculine)",
+     "analysis": "PRON",
+     "caphi": "ata",
+     "caphi_urban": "ata",
+     "caphi_raw": null,
+     "maknuune_id": "417-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "-ה",
+     "options": [
+      {
+       "id": "417-1",
+       "root": "",
+       "gloss": "you, thou (second-person singular masculine)",
+       "analysis": "PRON",
+       "pointed": "אַתָּה"
+      },
+      {
+       "id": "418-1",
+       "root": "",
+       "gloss": "to come",
+       "analysis": "VERB",
+       "pointed": "אָתָה"
+      },
+      {
+       "id": "5905-3",
+       "root": "",
+       "gloss": "Form of אֶת (ét) including third-person masculine singular p",
+       "analysis": "PREP:feminine",
+       "pointed": "אִתָּהּ"
+      },
+      {
+       "id": "7347-1",
+       "root": "",
+       "gloss": "Form of אֶת (ét) including third-person feminine singular pe",
+       "analysis": "PREP",
+       "pointed": "אִתָּהּ"
+      },
+      {
+       "id": "96-23",
+       "root": "",
+       "gloss": "shovel",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "אִתָּהּ"
+      },
+      {
+       "id": "5904-3",
+       "root": "",
+       "gloss": "defective spelling of אוֹתוֹ.",
+       "analysis": "PREP:feminine",
+       "pointed": "אֹתָהּ"
+      }
+     ],
+     "_cut_for_prompt": "-ה"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "האק אמר: האק, אל תספר לאף אחד שבאתי, אבל תשמע.",
+   "en": "Huck said: Huck, do not tell anyone that I came, but listen.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "האק",
+     "lemma": "הָאק",
+     "form": "הָאק",
+     "vocalized": "הָאק",
+     "vocalized_from": "curated",
+     "root": null,
+     "gloss": "Huck (Huckleberry Finn)",
+     "analysis": "NOUN_PROP",
+     "caphi": "hak",
+     "caphi_urban": "hak",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "האק",
+     "lemma": "הָאק",
+     "form": "הָאק",
+     "vocalized": "הָאק",
+     "vocalized_from": "curated",
+     "root": null,
+     "gloss": "Huck (Huckleberry Finn)",
+     "analysis": "NOUN_PROP",
+     "caphi": "hak",
+     "caphi_urban": "hak",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun"
+    },
+    {
+     "surface": "אל",
+     "lemma": "אֶל",
+     "form": "אֶל",
+     "vocalized": "אֶל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "to, towards, into",
+     "analysis": "PREP",
+     "caphi": "el",
+     "caphi_urban": "el",
+     "caphi_raw": null,
+     "maknuune_id": "361-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "תספר",
+     "lemma": "סָפַר",
+     "form": "סָפַר",
+     "vocalized": "תִּסְפֹּר",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "to count",
+     "analysis": "VERB:future.masculine.second-person.singular",
+     "caphi": "tispor",
+     "caphi_urban": "tispor",
+     "caphi_raw": null,
+     "maknuune_id": "1117-25",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "1117-25",
+       "root": "",
+       "gloss": "to count",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תִּסְפֹּר"
+      },
+      {
+       "id": "2187-34",
+       "root": "",
+       "gloss": "To be told, to be recounted.",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תְּסֻפַּר"
+      },
+      {
+       "id": "4008-30",
+       "root": "",
+       "gloss": "to tell (a story), to narrate, to recount",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תְּסַפֵּר"
+      }
+     ]
+    },
+    {
+     "surface": "לאף",
+     "lemma": "אַף",
+     "form": "אַף",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "nose",
+     "analysis": "NOUN",
+     "caphi": "af",
+     "caphi_urban": "af",
+     "caphi_raw": null,
+     "maknuune_id": "918-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ל-"
+    },
+    {
+     "surface": "אחד",
+     "lemma": "אֶחָד",
+     "form": "אֶחָד",
+     "vocalized": "אֶחָד",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "one",
+     "analysis": "NUM",
+     "caphi": "exad",
+     "caphi_urban": "exad",
+     "caphi_raw": null,
+     "maknuune_id": "535-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "שבאתי",
+     "lemma": "אִתִּי",
+     "form": "אִתִּי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Form of אֶת (ét) including first-person singular personal pronoun as object: with me.",
+     "analysis": "PREP",
+     "caphi": "iti",
+     "caphi_urban": "iti",
+     "caphi_raw": null,
+     "maknuune_id": "5168-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ש-י",
+     "options": [
+      {
+       "id": "5168-1",
+       "root": "",
+       "gloss": "Form of אֶת (ét) including first-person singular personal pr",
+       "analysis": "PREP",
+       "pointed": "אִתִּי"
+      },
+      {
+       "id": "96-8",
+       "root": "",
+       "gloss": "shovel",
+       "analysis": "NOUN:feminine.first-person.masculine.possessed-form.singular",
+       "pointed": "אִתִּי"
+      },
+      {
+       "id": "418-31",
+       "root": "",
+       "gloss": "to come",
+       "analysis": "VERB:feminine.imperative.singular",
+       "pointed": "אֱתִי"
+      }
+     ],
+     "_cut_for_prompt": "ש-י"
+    },
+    {
+     "surface": "אבל",
+     "lemma": "אֲבָל",
+     "form": "אֲבָל",
+     "vocalized": "אֲבָל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "but",
+     "analysis": "CONJ",
+     "caphi": "aval",
+     "caphi_urban": "aval",
+     "caphi_raw": null,
+     "maknuune_id": "610-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "תשמע",
+     "lemma": "שָׁמַע",
+     "form": "שָׁמַע",
+     "vocalized": "תִּשְׁמַע",
+     "vocalized_from": "lexicon",
+     "root": "ע",
+     "gloss": "to hear, to be able to hear",
+     "analysis": "VERB:future.masculine.second-person.singular",
+     "caphi": "tishma",
+     "caphi_urban": "tishma",
+     "caphi_raw": null,
+     "maknuune_id": "665-23",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "665-23",
+       "root": "ע",
+       "gloss": "to hear, to be able to hear",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תִּשְׁמַע"
+      },
+      {
+       "id": "7596-22",
+       "root": "ע",
+       "gloss": "to sound, to be heard",
+       "analysis": "VERB:future.masculine.second-person.singular",
+       "pointed": "תִּשָּׁמַע"
+      }
+     ]
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "וסיפר הכול.",
+   "en": "And told everything.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "וסיפר",
+     "lemma": "סִפֵּר",
+     "form": "סִפֵּר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "to tell (a story), to narrate, to recount",
+     "analysis": "VERB:masculine.past.singular.third-person",
+     "caphi": "siper",
+     "caphi_urban": "siper",
+     "caphi_raw": null,
+     "maknuune_id": "4008-18",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "הכול",
+     "lemma": "כֹּל",
+     "form": "כֹּל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "All, whole, entirety, everything; found almost exclusively in singular definite and singular construct forms; used to translate English all, each, every, everything, and so on.",
+     "analysis": "NOUN:alternative",
+     "caphi": "kol",
+     "caphi_urban": "kol",
+     "caphi_raw": null,
+     "maknuune_id": "1550-4",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-",
+     "options": [
+      {
+       "id": "1550-4",
+       "root": "",
+       "gloss": "All, whole, entirety, everything; found almost exclusively i",
+       "analysis": "NOUN:alternative",
+       "pointed": "כּוֹל"
+      },
+      {
+       "id": "14962-1",
+       "root": "",
+       "gloss": "excessive spelling of כֹּל",
+       "analysis": "NOUN",
+       "pointed": "כול"
+      }
+     ],
+     "_cut_for_prompt": "ה-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הזקן והבנים שלו לקחו את הרובים שלהם, והם יצאו לחושך.",
+   "en": "The old man and his sons took their guns, and went out into the dark.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "הזקן",
+     "lemma": "זָקֵן",
+     "form": "זָקֵן",
+     "vocalized": "הַזָּקֵן",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "old person",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hazaken",
+     "caphi_urban": "hazaken",
+     "caphi_raw": null,
+     "maknuune_id": "2349-10",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "והבנים",
+     "lemma": "בָּנִים",
+     "form": "בָּנִים",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "plural indefinite form of בֵּן (bén)",
+     "analysis": "NOUN",
+     "caphi": "banim",
+     "caphi_urban": "banim",
+     "caphi_raw": null,
+     "maknuune_id": "5301-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "5301-1",
+       "root": "",
+       "gloss": "plural indefinite form of בֵּן (bén)",
+       "analysis": "NOUN",
+       "pointed": "בָּנִים"
+      },
+      {
+       "id": "396-3",
+       "root": "",
+       "gloss": "son",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "בָּנִים"
+      },
+      {
+       "id": "398-16",
+       "root": "",
+       "gloss": "to understand.",
+       "analysis": "VERB:masculine.plural.present",
+       "pointed": "בָּנִים"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "שלו",
+     "lemma": "שֶׁלּוֹ",
+     "form": "שֶׁלּוֹ",
+     "vocalized": "שֶׁלּוֹ",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Form of שֶׁל (shel) including third-person masculine singular personal pronoun as object.",
+     "analysis": "PREP",
+     "caphi": "shelo",
+     "caphi_urban": "shelo",
+     "caphi_raw": null,
+     "maknuune_id": "3165-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "לקחו",
+     "lemma": "לָקַח",
+     "form": "לָקַח",
+     "vocalized": "לָקְחוּ",
+     "vocalized_from": "lexicon",
+     "root": "ל.ח",
+     "gloss": "to take (grasp with the hands)",
+     "analysis": "VERB:feminine.masculine.past.plural.third-person",
+     "caphi": "lakxu",
+     "caphi_urban": "lakxu",
+     "caphi_raw": null,
+     "maknuune_id": "966-20",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "את",
+     "lemma": "אֵת",
+     "form": "אֵת",
+     "vocalized": "אֵת",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Used to introduce a semantically definite direct object.",
+     "analysis": "PREP",
+     "caphi": "et",
+     "caphi_urban": "et",
+     "caphi_raw": null,
+     "maknuune_id": "92-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הרובים",
+     "lemma": "רוֹבֶה",
+     "form": "רוֹבֶה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "gun, rifle",
+     "analysis": "NOUN:indefinite.plural",
+     "caphi": "rovim",
+     "caphi_urban": "rovim",
+     "caphi_raw": null,
+     "maknuune_id": "1509-3",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-",
+     "options": [
+      {
+       "id": "1509-3",
+       "root": "",
+       "gloss": "gun, rifle",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "רוֹבִים"
+      },
+      {
+       "id": "604-16",
+       "root": "ה",
+       "gloss": "to increase, to multiply",
+       "analysis": "VERB:masculine.plural.present",
+       "pointed": "רוֹבִים"
+      }
+     ],
+     "_cut_for_prompt": "ה-"
+    },
+    {
+     "surface": "שלהם",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
+     "caphi_raw": null,
+     "maknuune_id": "2619-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ש-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "ש-"
+    },
+    {
+     "surface": "והם",
+     "lemma": "הֵם",
+     "form": "הֵם",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "they (the third-person masculine plural personal pronoun, masculine plural of הוא (hu'))",
+     "analysis": "PRON",
+     "caphi": "hem",
+     "caphi_urban": "hem",
+     "caphi_raw": null,
+     "maknuune_id": "2619-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "2619-1",
+       "root": "",
+       "gloss": "they (the third-person masculine plural personal pronoun, ma",
+       "analysis": "PRON",
+       "pointed": "הֵם"
+      },
+      {
+       "id": "2621-1",
+       "root": "",
+       "gloss": "heme",
+       "analysis": "NOUN",
+       "pointed": "הם"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "יצאו",
+     "lemma": "יָצָא",
+     "form": "יָצָא",
+     "vocalized": "יָצְאוּ",
+     "vocalized_from": "lexicon",
+     "root": "י.א",
+     "gloss": "To go out (of, from), come out (of, from), exit (from), leave, depart, get out (of, from).",
+     "analysis": "VERB:feminine.masculine.past.plural.third-person",
+     "caphi": "yatsu",
+     "caphi_urban": "yatsu",
+     "caphi_raw": null,
+     "maknuune_id": "877-16",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "לחושך",
+     "lemma": "חֹשֶׁךְ",
+     "form": "חֹשֶׁךְ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "darkness",
+     "analysis": "NOUN:indefinite.singular",
+     "caphi": "xoshex",
+     "caphi_urban": "xoshex",
+     "caphi_raw": null,
+     "maknuune_id": "10596-3",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ל-",
+     "options": [
+      {
+       "id": "10596-3",
+       "root": "",
+       "gloss": "darkness",
+       "analysis": "NOUN:indefinite.singular",
+       "pointed": "חוֹשֶׁךְ"
+      },
+      {
+       "id": "12488-7",
+       "root": "",
+       "gloss": "sense",
+       "analysis": "NOUN:masculine.possessed-form.second-person.singular",
+       "pointed": "חוּשְׁךָ"
+      },
+      {
+       "id": "12488-8",
+       "root": "",
+       "gloss": "sense",
+       "analysis": "NOUN:feminine.possessed-form.second-person.singular",
+       "pointed": "חוּשֵׁךְ"
+      }
+     ],
+     "_cut_for_prompt": "ל-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "והאק רץ אחרי שניהם עד השיח, ועמד, ושמע.",
+   "en": "And Huck ran after them to the bush, and stood, and listened.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "והאק",
+     "lemma": "הָאק",
+     "form": "הָאק",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Huck (Huckleberry Finn)",
+     "analysis": "NOUN_PROP",
+     "caphi": "hak",
+     "caphi_urban": "hak",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "רץ",
+     "lemma": "רָץ",
+     "form": "רָץ",
+     "vocalized": "רָץ",
+     "vocalized_from": "lexicon",
+     "root": "ו",
+     "gloss": "To run; to move forward quickly on legs.",
+     "analysis": "VERB",
+     "caphi": "rats",
+     "caphi_urban": "rats",
+     "caphi_raw": null,
+     "maknuune_id": "5007-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "אחרי",
+     "lemma": "אַחֲרֵי",
+     "form": "אַחֲרֵי",
+     "vocalized": "אַחֲרֵי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "after",
+     "analysis": "PREP",
+     "caphi": "axárey",
+     "caphi_urban": "axárey",
+     "caphi_raw": null,
+     "maknuune_id": "5874-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "שניהם",
+     "lemma": "שְׁנֵיהֶם",
+     "form": "שְׁנֵיהֶם",
+     "vocalized": "שְׁנֵיהֶם",
+     "vocalized_from": "curated",
+     "root": null,
+     "gloss": "both of them, the two of them (m.)",
+     "analysis": "NUM+PRON_3MP",
+     "caphi": "shneyhem",
+     "caphi_urban": "shneyhem",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:function-word"
+    },
+    {
+     "surface": "עד",
+     "lemma": "עַד",
+     "form": "עַד",
+     "vocalized": "עַד",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Until, till, up until (a time).",
+     "analysis": "PREP",
+     "caphi": "ad",
+     "caphi_urban": "ad",
+     "caphi_raw": null,
+     "maknuune_id": "1599-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "השיח",
+     "lemma": "שִׂיחַ",
+     "form": "שִׂיחַ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "A bush, a shrub.",
+     "analysis": "NOUN",
+     "caphi": "síax",
+     "caphi_urban": "síax",
+     "caphi_raw": null,
+     "maknuune_id": "892-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "ועמד",
+     "lemma": "עָמַד",
+     "form": "עָמַד",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "ע",
+     "gloss": "to stand (to support oneself on the feet in an erect position)",
+     "analysis": "VERB",
+     "caphi": "amad",
+     "caphi_urban": "amad",
+     "caphi_raw": null,
+     "maknuune_id": "2979-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "2979-1",
+       "root": "ע",
+       "gloss": "to stand (to support oneself on the feet in an erect positio",
+       "analysis": "VERB",
+       "pointed": "עָמַד"
+      },
+      {
+       "id": "2979-37",
+       "root": "ע",
+       "gloss": "to stand (to support oneself on the feet in an erect positio",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "עֲמֹד"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "ושמע",
+     "lemma": "שֵׁמַע",
+     "form": "שֵׁמַע",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "audio",
+     "analysis": "NOUN",
+     "caphi": "shéma",
+     "caphi_urban": "shéma",
+     "caphi_raw": null,
+     "maknuune_id": "664-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "664-1",
+       "root": "",
+       "gloss": "audio",
+       "analysis": "NOUN",
+       "pointed": "שֵׁמַע"
+      },
+      {
+       "id": "665-1",
+       "root": "ע",
+       "gloss": "to hear, to be able to hear",
+       "analysis": "VERB",
+       "pointed": "שָׁמַע"
+      },
+      {
+       "id": "666-1",
+       "root": "",
+       "gloss": "the Shema",
+       "analysis": "NAME",
+       "pointed": "שְׁמַע"
+      },
+      {
+       "id": "7596-3",
+       "root": "ע",
+       "gloss": "to sound, to be heard",
+       "analysis": "VERB:active",
+       "pointed": "שָׁמַע"
+      },
+      {
+       "id": "665-31",
+       "root": "ע",
+       "gloss": "to hear, to be able to hear",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "שְׁמַע"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "שקט, ואז קול של רובים, וקולות, ורגליים רצות.",
+   "en": "Silence, and then a sound of guns, and shouts, and running feet.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "שקט",
+     "lemma": "שָׁקֵט",
+     "form": "שָׁקֵט",
+     "vocalized": "שָׁקֵט",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "serene, peaceful",
+     "analysis": "ADJ",
+     "caphi": "shaket",
+     "caphi_urban": "shaket",
+     "caphi_raw": null,
+     "maknuune_id": "8218-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "ואז",
+     "lemma": "אָז",
+     "form": "אָז",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "So, therefore, then, thus.",
+     "analysis": "ADV",
+     "caphi": "az",
+     "caphi_urban": "az",
+     "caphi_raw": null,
+     "maknuune_id": "5621-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "קול",
+     "lemma": "קוֹל",
+     "form": "קוֹל",
+     "vocalized": "קוֹל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "voice (also in its figurative senses of statement, opinion, or order)",
+     "analysis": "NOUN",
+     "caphi": "kol",
+     "caphi_urban": "kol",
+     "caphi_raw": null,
+     "maknuune_id": "3563-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "של",
+     "lemma": "שֶׁל",
+     "form": "שֶׁל",
+     "vocalized": "שֶׁל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Of, belonging to, owned by, pertaining to.",
+     "analysis": "PREP",
+     "caphi": "shel",
+     "caphi_urban": "shel",
+     "caphi_raw": null,
+     "maknuune_id": "2365-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "רובים",
+     "lemma": "רוֹבֶה",
+     "form": "רוֹבֶה",
+     "vocalized": "רוֹבִים",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "gun, rifle",
+     "analysis": "NOUN:indefinite.plural",
+     "caphi": "rovim",
+     "caphi_urban": "rovim",
+     "caphi_raw": null,
+     "maknuune_id": "1509-3",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "1509-3",
+       "root": "",
+       "gloss": "gun, rifle",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "רוֹבִים"
+      },
+      {
+       "id": "604-16",
+       "root": "ה",
+       "gloss": "to increase, to multiply",
+       "analysis": "VERB:masculine.plural.present",
+       "pointed": "רוֹבִים"
+      }
+     ]
+    },
+    {
+     "surface": "וקולות",
+     "lemma": "קוֹלוֹת",
+     "form": "קוֹלוֹת",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "plural indefinite form of קוֹל (kol)",
+     "analysis": "NOUN",
+     "caphi": "kolot",
+     "caphi_urban": "kolot",
+     "caphi_raw": null,
+     "maknuune_id": "4127-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "4127-1",
+       "root": "",
+       "gloss": "plural indefinite form of קוֹל (kol)",
+       "analysis": "NOUN",
+       "pointed": "קוֹלוֹת"
+      },
+      {
+       "id": "3563-3",
+       "root": "",
+       "gloss": "voice (also in its figurative senses of statement, opinion, ",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "קוֹלוֹת"
+      },
+      {
+       "id": "2937-19",
+       "root": "ה",
+       "gloss": "to toast",
+       "analysis": "VERB:feminine.plural.present",
+       "pointed": "קוֹלוֹת"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "ורגליים",
+     "lemma": "רֶגֶל",
+     "form": "רֶגֶל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "foot, leg",
+     "analysis": "NOUN:dual.indefinite",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "312-3",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "רצות",
+     "lemma": "רָץ",
+     "form": "רָץ",
+     "vocalized": "רָצוֹת",
+     "vocalized_from": "lexicon",
+     "root": "ו",
+     "gloss": "To run; to move forward quickly on legs.",
+     "analysis": "VERB:feminine.plural.present",
+     "caphi": "ratsot",
+     "caphi_urban": "ratsot",
+     "caphi_raw": null,
+     "maknuune_id": "5007-17",
+     "provenance": "wiktionary:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "והאק לא חיכה, רץ מהגבעה למטה, ולא עצר עד הכפר.",
+   "en": "And Huck did not wait, ran down the hill, and did not stop until the village.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "והאק",
+     "lemma": "הָאק",
+     "form": "הָאק",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Huck (Huckleberry Finn)",
+     "analysis": "NOUN_PROP",
+     "caphi": "hak",
+     "caphi_urban": "hak",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "לא",
+     "lemma": "לֹא",
+     "form": "לֹא",
+     "vocalized": "לֹא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Not; used in negating verbs, adjectives, and adverbs.",
+     "analysis": "ADV",
+     "caphi": "lo",
+     "caphi_urban": "lo",
+     "caphi_raw": null,
+     "maknuune_id": "1535-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "חיכה",
+     "lemma": "חִכָּה",
+     "form": "חִכָּה",
+     "vocalized": "חִיכָּה",
+     "vocalized_from": "lexicon",
+     "root": "ה",
+     "gloss": "to wait, wait for",
+     "analysis": "VERB:masculine.past.singular.third-person",
+     "caphi": "xika",
+     "caphi_urban": "xika",
+     "caphi_raw": null,
+     "maknuune_id": "7703-16",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "רץ",
+     "lemma": "רָץ",
+     "form": "רָץ",
+     "vocalized": "רָץ",
+     "vocalized_from": "lexicon",
+     "root": "ו",
+     "gloss": "To run; to move forward quickly on legs.",
+     "analysis": "VERB",
+     "caphi": "rats",
+     "caphi_urban": "rats",
+     "caphi_raw": null,
+     "maknuune_id": "5007-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "מהגבעה",
+     "lemma": "גִּבְעָה",
+     "form": "גִּבְעָה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "A hill.",
+     "analysis": "NOUN",
+     "caphi": "giva",
+     "caphi_urban": "giva",
+     "caphi_raw": null,
+     "maknuune_id": "1959-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "מ-ה"
     },
     {
      "surface": "למטה",
@@ -835,398 +4212,427 @@
      "_cut": "ל-ה"
     },
     {
-     "surface": "וקרא",
-     "lemma": "קָרָא",
-     "form": "קָרָא",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": "א",
-     "gloss": "to read",
-     "analysis": "VERB",
-     "caphi": "kara",
-     "caphi_urban": "kara",
-     "caphi_raw": null,
-     "maknuune_id": "169-1",
-     "provenance": "wiktionary:resolved",
-     "_cut": "ו-"
-    },
-    {
-     "surface": "לשכנים",
-     "lemma": "שָׁכֵן",
-     "form": "שָׁכֵן",
+     "surface": "ולא",
+     "lemma": "וָלֹא",
+     "form": "וָלֹא",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "neighbor",
-     "analysis": "NOUN:indefinite.plural",
-     "caphi": "shxenim",
-     "caphi_urban": "shxenim",
+     "gloss": "or else",
+     "analysis": "CONJ",
+     "caphi": "valo",
+     "caphi_urban": "valo",
      "caphi_raw": null,
-     "maknuune_id": "9678-3",
-     "provenance": "wiktionary:resolved",
-     "_cut": "ל-"
-    },
-    {
-     "surface": "וכולם",
-     "lemma": "כֻּלָּם",
-     "form": "כֻּלָּם",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "form of כָּל (kol) with third-person masculine plural personal pronoun as possessor: all of them",
-     "analysis": "PRON",
-     "caphi": "kulam",
-     "caphi_urban": "kulam",
-     "caphi_raw": null,
-     "maknuune_id": "4839-1",
-     "provenance": "wiktionary:ktiv",
+     "maknuune_id": "3130-1",
+     "provenance": "wiktionary:exact",
      "_cut": "ו-"
     },
     {
-     "surface": "עלו",
-     "lemma": "עָלָה",
-     "form": "עָלָה",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": "ע.ה",
-     "gloss": "To ascend, rise, go up; to move from a point to a higher point.",
-     "analysis": "VERB:imperative.masculine.plural",
-     "caphi": "alu",
-     "caphi_urban": "alu",
-     "caphi_raw": null,
-     "maknuune_id": "740-30",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ו",
-     "options": [
-      {
-       "id": "740-30",
-       "root": "ע.ה",
-       "gloss": "To ascend, rise, go up; to move from a point to a higher poi",
-       "analysis": "VERB:imperative.masculine.plural",
-       "pointed": "עֲלוּ"
-      },
-      {
-       "id": "2478-17",
-       "root": "",
-       "gloss": "yoke",
-       "analysis": "NOUN:masculine.possessed-form.singular.third-person",
-       "pointed": "עֻלּוֹ"
-      },
-      {
-       "id": "740-13",
-       "root": "ע.ה",
-       "gloss": "To ascend, rise, go up; to move from a point to a higher poi",
-       "analysis": "VERB:feminine.masculine.past.plural.third-person",
-       "pointed": "עָלוּ"
-      }
-     ],
-     "_cut_for_prompt": "-ו"
-    },
-    {
-     "surface": "עם",
-     "lemma": "עִם",
-     "form": "עִם",
-     "vocalized": "עִם",
+     "surface": "עצר",
+     "lemma": "עָצַר",
+     "form": "עָצַר",
+     "vocalized": "עָצַר",
      "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "With: used to indicate togetherness, being together.",
-     "analysis": "PREP",
-     "caphi": "im",
-     "caphi_urban": "im",
+     "root": "ע",
+     "gloss": "To stop, to stop moving, to halt, to stop the motion of. (See usage note below.)",
+     "analysis": "VERB",
+     "caphi": "atsar",
+     "caphi_urban": "atsar",
      "caphi_raw": null,
-     "maknuune_id": "1032-1",
+     "maknuune_id": "1808-1",
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "נשק",
-     "lemma": "נֶשֶׁק",
-     "form": "נֶשֶׁק",
-     "vocalized": "נֶשֶׁק",
+     "surface": "עד",
+     "lemma": "עַד",
+     "form": "עַד",
+     "vocalized": "עַד",
      "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "arms, weaponry",
-     "analysis": "NOUN",
-     "caphi": "néshek",
-     "caphi_urban": "néshek",
+     "gloss": "Until, till, up until (a time).",
+     "analysis": "PREP",
+     "caphi": "ad",
+     "caphi_urban": "ad",
      "caphi_raw": null,
-     "maknuune_id": "3312-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "3312-1",
-       "root": "",
-       "gloss": "arms, weaponry",
-       "analysis": "NOUN",
-       "pointed": "נֶשֶׁק"
-      },
-      {
-       "id": "3313-1",
-       "root": "",
-       "gloss": "to kiss",
-       "analysis": "VERB",
-       "pointed": "נָשַׁק"
-      },
-      {
-       "id": "3314-1",
-       "root": "",
-       "gloss": "defective spelling of נישק",
-       "analysis": "VERB",
-       "pointed": "נִשֵּׁק"
-      },
-      {
-       "id": "8710-28",
-       "root": "",
-       "gloss": "kiss",
-       "analysis": "VERB:imperative.masculine.singular",
-       "pointed": "נַשֵּׁק"
-      },
-      {
-       "id": "3313-24",
-       "root": "",
-       "gloss": "to kiss",
-       "analysis": "VERB:feminine.first-person.future.masculine.plural",
-       "pointed": "נִשַּׁק"
-      }
-     ]
+     "maknuune_id": "1599-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הכפר",
+     "lemma": "כְּפָר",
+     "form": "כְּפָר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "village",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hakfar",
+     "caphi_urban": "hakfar",
+     "caphi_raw": null,
+     "maknuune_id": "2049-9",
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
     }
    ],
    "audio": null
   },
   {
-   "ar": "האנשים ברחו לתוך היער, והאישה ניצלה.",
-   "en": "The men fled into the forest, and the woman was saved.",
-   "p": 2,
+   "ar": "ובבוקר כל הכפר ידע: מישהו תקף את האלמנה, והזקן גירש אותם.",
+   "en": "And in the morning the whole village knew: someone had attacked the widow, and the old man had driven them off.",
+   "p": 3,
    "words": [
     {
-     "surface": "האנשים",
-     "lemma": "אִישׁ",
-     "form": "אִישׁ",
+     "surface": "ובבוקר",
+     "lemma": "בּוֹקֵר",
+     "form": "בּוֹקֵר",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "A man, adult male human being.",
-     "analysis": "NOUN:definite.plural",
-     "caphi": "haanashim",
-     "caphi_urban": "haanashim",
-     "caphi_raw": null,
-     "maknuune_id": "1096-23",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
-    },
-    {
-     "surface": "ברחו",
-     "lemma": "בָּרַח",
-     "form": "בָּרַח",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": "ח",
-     "gloss": "to run away",
-     "analysis": "VERB:imperative.masculine.plural",
-     "caphi": "birxu",
-     "caphi_urban": "birxu",
-     "caphi_raw": null,
-     "maknuune_id": "9625-31",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ב-ו",
-     "options": [
-      {
-       "id": "9625-31",
-       "root": "ח",
-       "gloss": "to run away",
-       "analysis": "VERB:imperative.masculine.plural",
-       "pointed": "בִּרְחוּ"
-      },
-      {
-       "id": "9625-14",
-       "root": "ח",
-       "gloss": "to run away",
-       "analysis": "VERB:feminine.masculine.past.plural.third-person",
-       "pointed": "בָּרְחוּ"
-      }
-     ],
-     "_cut_for_prompt": "ב-ו"
-    },
-    {
-     "surface": "לתוך",
-     "lemma": "לְתוֹךְ",
-     "form": "לְתוֹךְ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "into, inside",
-     "analysis": "PREP",
-     "caphi": "ltox",
-     "caphi_urban": "ltox",
-     "caphi_raw": null,
-     "maknuune_id": "11398-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-",
-     "options": [
-      {
-       "id": "11398-1",
-       "root": "",
-       "gloss": "into, inside",
-       "analysis": "PREP",
-       "pointed": "לְתוֹךְ"
-      },
-      {
-       "id": "14733-3",
-       "root": "",
-       "gloss": "to mediate",
-       "analysis": "VERB:infinitive",
-       "pointed": "לְתַוֵּךְ"
-      }
-     ],
-     "_cut_for_prompt": "ל-"
-    },
-    {
-     "surface": "היער",
-     "lemma": "יַעַר",
-     "form": "יַעַר",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "forest",
-     "analysis": "NOUN:definite.singular",
-     "caphi": "hayaar",
-     "caphi_urban": "hayaar",
-     "caphi_raw": null,
-     "maknuune_id": "1425-9",
-     "provenance": "wiktionary:exact",
-     "_cut": "ה-"
-    },
-    {
-     "surface": "והאישה",
-     "lemma": "אִישָׁהּ",
-     "form": "אִישָׁהּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "singular form of אִישׁ (ish) with third-person feminine singular personal pronoun as possessor",
+     "gloss": "A cowboy, cattleman.",
      "analysis": "NOUN",
-     "caphi": "ishah",
-     "caphi_urban": "ishah",
+     "caphi": "boker",
+     "caphi_urban": "boker",
      "caphi_raw": null,
-     "maknuune_id": "1091-1",
+     "maknuune_id": "1640-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-ה",
+     "_cut": "ו-",
      "options": [
       {
-       "id": "1091-1",
+       "id": "1640-1",
        "root": "",
-       "gloss": "singular form of אִישׁ (ish) with third-person feminine sing",
+       "gloss": "A cowboy, cattleman.",
        "analysis": "NOUN",
-       "pointed": "אִישָׁהּ"
+       "pointed": "בּוֹקֵר"
       },
       {
-       "id": "1096-17",
+       "id": "1639-8",
        "root": "",
-       "gloss": "A man, adult male human being.",
-       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
-       "pointed": "אִישָׁהּ"
-      },
-      {
-       "id": "1092-5",
-       "root": "",
-       "gloss": "burnt offering",
-       "analysis": "NOUN:construct.singular",
-       "pointed": "אִישֶּׁה"
-      },
-      {
-       "id": "2871-3",
-       "root": "",
-       "gloss": "women",
+       "gloss": "A morning, dawn.",
        "analysis": "NOUN:indefinite.singular",
-       "pointed": "אישה"
+       "pointed": "בּוֹקֶר"
       },
       {
-       "id": "12891-19",
-       "root": "נ.ה",
-       "gloss": "To forget",
-       "analysis": "VERB:feminine.first-person.future.masculine.singular",
-       "pointed": "אישה"
+       "id": "1641-17",
+       "root": "",
+       "gloss": "to be visited",
+       "analysis": "VERB:masculine.past.singular.third-person",
+       "pointed": "בּוּקַּר"
+      },
+      {
+       "id": "5499-3",
+       "root": "",
+       "gloss": "to visit",
+       "analysis": "VERB:passive",
+       "pointed": "בוקר"
       }
      ],
-     "_cut_for_prompt": "ו-ה"
+     "_cut_for_prompt": "ו-"
     },
     {
-     "surface": "ניצלה",
-     "lemma": "נִצֵּל",
-     "form": "נִצֵּל",
+     "surface": "כל",
+     "lemma": "כֹּל",
+     "form": "כֹּל",
+     "vocalized": "כֹּל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "All, whole, entirety, everything; found almost exclusively in singular definite and singular construct forms; used to translate English all, each, every, everything, and so on.",
+     "analysis": "NOUN",
+     "caphi": "kol",
+     "caphi_urban": "kol",
+     "caphi_raw": null,
+     "maknuune_id": "1550-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "הכפר",
+     "lemma": "כְּפָר",
+     "form": "כְּפָר",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "to utilize",
-     "analysis": "VERB:feminine.past.singular.third-person",
+     "gloss": "village",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hakfar",
+     "caphi_urban": "hakfar",
+     "caphi_raw": null,
+     "maknuune_id": "2049-9",
+     "provenance": "wiktionary:exact",
+     "_cut": "ה-"
+    },
+    {
+     "surface": "ידע",
+     "lemma": "יָדַע",
+     "form": "יָדַע",
+     "vocalized": "יָדַע",
+     "vocalized_from": "lexicon",
+     "root": "י.ע",
+     "gloss": "To know (a fact).",
+     "analysis": "VERB",
+     "caphi": "yada",
+     "caphi_urban": "yada",
+     "caphi_raw": null,
+     "maknuune_id": "818-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "מישהו",
+     "lemma": "מִישֶׁהוּ",
+     "form": "מִישֶׁהוּ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "someone, somebody",
+     "analysis": "PRON",
+     "caphi": "míshehu",
+     "caphi_urban": "míshehu",
+     "caphi_raw": null,
+     "maknuune_id": "4554-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "מ-ו"
+    },
+    {
+     "surface": "תקף",
+     "lemma": "תָּקַף",
+     "form": "תָּקַף",
+     "vocalized": "תָּקַף",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "to attack",
+     "analysis": "VERB",
+     "caphi": "takaf",
+     "caphi_urban": "takaf",
+     "caphi_raw": null,
+     "maknuune_id": "13293-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "את",
+     "lemma": "אֵת",
+     "form": "אֵת",
+     "vocalized": "אֵת",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Used to introduce a semantically definite direct object.",
+     "analysis": "PREP",
+     "caphi": "et",
+     "caphi_urban": "et",
+     "caphi_raw": null,
+     "maknuune_id": "92-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "האלמנה",
+     "lemma": "אַלְמָנָה",
+     "form": "אַלְמָנָה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "widow (a woman whose spouse (traditionally husband) has died (and who has not remarried); a woman in relation to her late spouse; feminine of widower)",
+     "analysis": "NOUN",
+     "caphi": "almana",
+     "caphi_urban": "almana",
+     "caphi_raw": null,
+     "maknuune_id": "5036-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-ה",
+     "options": [
+      {
+       "id": "5036-1",
+       "root": "",
+       "gloss": "widow (a woman whose spouse (traditionally husband) has died",
+       "analysis": "NOUN",
+       "pointed": "אַלְמָנָה"
+      },
+      {
+       "id": "5039-3",
+       "root": "",
+       "gloss": "widower (a man whose spouse has died (and who has not remarr",
+       "analysis": "NOUN:feminine",
+       "pointed": "אַלְמָנָה"
+      },
+      {
+       "id": "14363-39",
+       "root": "א",
+       "gloss": "to bundle, bind.",
+       "analysis": "VERB:feminine.imperative.plural",
+       "pointed": "אַלֵּמְנָה"
+      },
+      {
+       "id": "5039-14",
+       "root": "",
+       "gloss": "widower (a man whose spouse has died (and who has not remarr",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "אַלְמָנָהּ"
+      }
+     ],
+     "_cut_for_prompt": "ה-ה"
+    },
+    {
+     "surface": "והזקן",
+     "lemma": "זָקָן",
+     "form": "זָקָן",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "beard",
+     "analysis": "NOUN",
+     "caphi": "zakan",
+     "caphi_urban": "zakan",
+     "caphi_raw": null,
+     "maknuune_id": "2347-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ו-",
+     "options": [
+      {
+       "id": "2347-1",
+       "root": "",
+       "gloss": "beard",
+       "analysis": "NOUN",
+       "pointed": "זָקָן"
+      },
+      {
+       "id": "2348-1",
+       "root": "",
+       "gloss": "old, elderly, aged",
+       "analysis": "ADJ",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-1",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB",
+       "pointed": "זָקַן"
+      },
+      {
+       "id": "6106-6",
+       "root": "",
+       "gloss": "old woman",
+       "analysis": "NOUN:masculine",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-14",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-28",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "זְקַן"
+      }
+     ],
+     "_cut_for_prompt": "ו-"
+    },
+    {
+     "surface": "גירש",
+     "lemma": "גֹּרַשׁ",
+     "form": "גֹּרַשׁ",
+     "vocalized": "גירש",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "to be expelled, driven out, exiled",
+     "analysis": "VERB:active",
      "caphi": null,
      "caphi_urban": null,
      "caphi_raw": null,
-     "maknuune_id": "7637-20",
+     "maknuune_id": "9585-3",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
      "options": [
       {
-       "id": "7637-20",
+       "id": "9585-3",
        "root": "",
-       "gloss": "to utilize",
-       "analysis": "VERB:feminine.past.singular.third-person",
-       "pointed": "ניצלה"
+       "gloss": "to be expelled, driven out, exiled",
+       "analysis": "VERB:active",
+       "pointed": "גירש"
       },
       {
-       "id": "7638-21",
+       "id": "9586-20",
        "root": "",
-       "gloss": "to be saved, rescued; to survive",
-       "analysis": "VERB:feminine.past.singular.third-person",
-       "pointed": "ניצלה"
+       "gloss": "to expel, to drive out, to exile",
+       "analysis": "VERB:masculine.past.singular.third-person",
+       "pointed": "גירש"
       }
-     ],
-     "_cut_for_prompt": "-ה"
+     ]
+    },
+    {
+     "surface": "אותם",
+     "lemma": "אוֹתָם",
+     "form": "אוֹתָם",
+     "vocalized": "אוֹתָם",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Form of את (et) including third-person masculine plural personal pronoun as object: they, them (as a direct object).",
+     "analysis": "PREP",
+     "caphi": "otam",
+     "caphi_urban": "otam",
+     "caphi_raw": null,
+     "maknuune_id": "17106-1",
+     "provenance": "wiktionary:exact"
     }
    ],
    "audio": null
   },
   {
-   "ar": "האק ביקש שלא יגידו שזה הוא, כי פחד מג'ו.",
-   "en": "Huck asked them not to say it was him, because he was afraid of Joe.",
-   "p": 2,
+   "ar": "אבל אף אחד לא ידע מי הזהיר את הזקן.",
+   "en": "But no one knew who had warned the old man.",
+   "p": 3,
    "words": [
     {
-     "surface": "האק",
-     "lemma": "הָאק",
-     "form": "הָאק",
-     "vocalized": "הָאק",
-     "vocalized_from": "curated",
+     "surface": "אבל",
+     "lemma": "אֲבָל",
+     "form": "אֲבָל",
+     "vocalized": "אֲבָל",
+     "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "Huck (Huckleberry Finn)",
-     "analysis": "NOUN_PROP",
-     "caphi": "hak",
-     "caphi_urban": "hak",
+     "gloss": "but",
+     "analysis": "CONJ",
+     "caphi": "aval",
+     "caphi_urban": "aval",
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "curated:proper-noun"
+     "maknuune_id": "610-1",
+     "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "ביקש",
-     "lemma": "בִּקֵּשׁ",
-     "form": "בִּקֵּשׁ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "surface": "אף",
+     "lemma": "אַף",
+     "form": "אַף",
+     "vocalized": "אַף",
+     "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "to ask for, request",
-     "analysis": "VERB:masculine.past.singular.third-person",
-     "caphi": "bikesh",
-     "caphi_urban": "bikesh",
+     "gloss": "nose",
+     "analysis": "NOUN",
+     "caphi": "af",
+     "caphi_urban": "af",
      "caphi_raw": null,
-     "maknuune_id": "7455-20",
-     "provenance": "wiktionary:exact",
-     "_cut": "ב-"
+     "maknuune_id": "918-1",
+     "provenance": "wiktionary:exact"
     },
     {
-     "surface": "שלא",
+     "surface": "אחד",
+     "lemma": "אֶחָד",
+     "form": "אֶחָד",
+     "vocalized": "אֶחָד",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "one",
+     "analysis": "NUM",
+     "caphi": "exad",
+     "caphi_urban": "exad",
+     "caphi_raw": null,
+     "maknuune_id": "535-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "לא",
      "lemma": "לֹא",
      "form": "לֹא",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "vocalized": "לֹא",
+     "vocalized_from": "lexicon",
      "root": null,
      "gloss": "Not; used in negating verbs, adjectives, and adverbs.",
      "analysis": "ADV",
@@ -1234,64 +4640,184 @@
      "caphi_urban": "lo",
      "caphi_raw": null,
      "maknuune_id": "1535-1",
-     "provenance": "wiktionary:clitic",
-     "_cut": "ש-"
+     "provenance": "wiktionary:exact"
     },
     {
-     "surface": "יגידו",
-     "lemma": "הִגִּיד",
-     "form": "הִגִּיד",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": "נ",
-     "gloss": "to tell, say",
-     "analysis": "VERB:future.masculine.plural.third-person",
-     "caphi": "yagidu",
-     "caphi_urban": "yagidu",
+     "surface": "ידע",
+     "lemma": "יָדַע",
+     "form": "יָדַע",
+     "vocalized": "יָדַע",
+     "vocalized_from": "lexicon",
+     "root": "י.ע",
+     "gloss": "To know (a fact).",
+     "analysis": "VERB",
+     "caphi": "yada",
+     "caphi_urban": "yada",
      "caphi_raw": null,
-     "maknuune_id": "7715-26",
-     "provenance": "wiktionary:exact",
-     "_cut": "-ו"
+     "maknuune_id": "818-1",
+     "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "שזה",
-     "lemma": "זֶה",
-     "form": "זֶה",
+     "surface": "מי",
+     "lemma": "מִי",
+     "form": "מִי",
+     "vocalized": "מִי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "who, what person or persons",
+     "analysis": "PRON",
+     "caphi": "mi",
+     "caphi_urban": "mi",
+     "caphi_raw": null,
+     "maknuune_id": "3495-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הזהיר",
+     "lemma": "הִזְהִיר",
+     "form": "הִזְהִיר",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "this",
-     "analysis": "DET",
-     "caphi": "ze",
-     "caphi_urban": "ze",
+     "gloss": "To warn, to caution.",
+     "analysis": "VERB",
+     "caphi": "hizhir",
+     "caphi_urban": "hizhir",
      "caphi_raw": null,
-     "maknuune_id": "2600-1",
+     "maknuune_id": "6850-1",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "-ה",
+     "_cut": "ה-",
      "options": [
       {
-       "id": "2600-1",
+       "id": "6850-1",
        "root": "",
-       "gloss": "this",
-       "analysis": "DET",
-       "pointed": "זֶה"
-      },
-      {
-       "id": "2814-3",
-       "root": "",
-       "gloss": "This, this one.",
-       "analysis": "PRON:masculine",
-       "pointed": "זה"
+       "gloss": "To warn, to caution.",
+       "analysis": "VERB",
+       "pointed": "הִזְהִיר"
       }
      ],
-     "_cut_for_prompt": "-ה"
+     "_cut_for_prompt": "ה-"
     },
     {
-     "surface": "הוא",
+     "surface": "את",
+     "lemma": "אֵת",
+     "form": "אֵת",
+     "vocalized": "אֵת",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Used to introduce a semantically definite direct object.",
+     "analysis": "PREP",
+     "caphi": "et",
+     "caphi_urban": "et",
+     "caphi_raw": null,
+     "maknuune_id": "92-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הזקן",
+     "lemma": "זָקֵן",
+     "form": "זָקֵן",
+     "vocalized": "הַזָּקֵן",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "old person",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hazaken",
+     "caphi_urban": "hazaken",
+     "caphi_raw": null,
+     "maknuune_id": "2349-10",
+     "provenance": "wiktionary:resolved"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "חוץ מהזקן, והוא נשבע לשתוק.",
+   "en": "Except the old man, and he had sworn to keep quiet.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "חוץ",
+     "lemma": "חוּץ",
+     "form": "חוּץ",
+     "vocalized": "חוּץ",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Outside (of)",
+     "analysis": "NOUN",
+     "caphi": "xuts",
+     "caphi_urban": "xuts",
+     "caphi_raw": null,
+     "maknuune_id": "2124-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "מהזקן",
+     "lemma": "זָקָן",
+     "form": "זָקָן",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "beard",
+     "analysis": "NOUN",
+     "caphi": "zakan",
+     "caphi_urban": "zakan",
+     "caphi_raw": null,
+     "maknuune_id": "2347-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "מ-",
+     "options": [
+      {
+       "id": "2347-1",
+       "root": "",
+       "gloss": "beard",
+       "analysis": "NOUN",
+       "pointed": "זָקָן"
+      },
+      {
+       "id": "2348-1",
+       "root": "",
+       "gloss": "old, elderly, aged",
+       "analysis": "ADJ",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-1",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB",
+       "pointed": "זָקַן"
+      },
+      {
+       "id": "6106-6",
+       "root": "",
+       "gloss": "old woman",
+       "analysis": "NOUN:masculine",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-14",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "זָקֵן"
+      },
+      {
+       "id": "2350-28",
+       "root": "",
+       "gloss": "to grow old, to grow elderly, to age",
+       "analysis": "VERB:imperative.masculine.singular",
+       "pointed": "זְקַן"
+      }
+     ],
+     "_cut_for_prompt": "מ-"
+    },
+    {
+     "surface": "והוא",
      "lemma": "הוּא",
      "form": "הוּא",
-     "vocalized": "הוּא",
-     "vocalized_from": "lexicon",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "he",
      "analysis": "PRON",
@@ -1299,90 +4825,49 @@
      "caphi_urban": "hu",
      "caphi_raw": null,
      "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "נשבע",
+     "lemma": "נִשְׁבַּע",
+     "form": "נִשְׁבַּע",
+     "vocalized": "נִשְׁבָּע",
+     "vocalized_from": "lexicon",
+     "root": "ע",
+     "gloss": "to swear, to promise",
+     "analysis": "VERB:masculine.present.singular",
+     "caphi": "nishba",
+     "caphi_urban": "nishba",
+     "caphi_raw": null,
+     "maknuune_id": "9754-14",
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "כי",
-     "lemma": "כִּי",
-     "form": "כִּי",
-     "vocalized": "כִּי",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "because, for, since",
-     "analysis": "CONJ",
-     "caphi": "ki",
-     "caphi_urban": "ki",
-     "caphi_raw": null,
-     "maknuune_id": "1691-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "פחד",
-     "lemma": "פַּחַד",
-     "form": "פַּחַד",
-     "vocalized": "פַּחַד",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "fear",
-     "analysis": "NOUN",
-     "caphi": "páxad",
-     "caphi_urban": "páxad",
-     "caphi_raw": null,
-     "maknuune_id": "1763-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "1763-1",
-       "root": "",
-       "gloss": "fear",
-       "analysis": "NOUN",
-       "pointed": "פַּחַד"
-      },
-      {
-       "id": "1764-1",
-       "root": "",
-       "gloss": "to fear, to be scared, afraid, frightened of (a person or th",
-       "analysis": "VERB",
-       "pointed": "פָּחַד"
-      },
-      {
-       "id": "1765-1",
-       "root": "",
-       "gloss": "defective spelling of פיחד",
-       "analysis": "VERB",
-       "pointed": "פִּחֵד"
-      },
-      {
-       "id": "1764-28",
-       "root": "",
-       "gloss": "to fear, to be scared, afraid, frightened of (a person or th",
-       "analysis": "VERB:imperative.masculine.singular",
-       "pointed": "פְּחַד"
-      },
-      {
-       "id": "2184-36",
-       "root": "",
-       "gloss": "To fear, to be afraid or scared.",
-       "analysis": "VERB:imperative.masculine.singular",
-       "pointed": "פַּחֵד"
-      }
-     ]
-    },
-    {
-     "surface": "מג'ו",
-     "lemma": "ג'ו",
-     "form": "ג'ו",
+     "surface": "לשתוק",
+     "lemma": "שָׁתַק",
+     "form": "שָׁתַק",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "Joe (Injun Joe, and also Tom's friend Joe Harper)",
-     "analysis": "NOUN_PROP",
-     "caphi": "jo",
-     "caphi_urban": "jo",
+     "gloss": "to shut up, to be silent, to be quiet",
+     "analysis": "VERB:infinitive",
+     "caphi": null,
+     "caphi_urban": null,
      "caphi_raw": null,
-     "maknuune_id": null,
-     "provenance": "curated:proper-noun",
-     "_cut": "מ-"
+     "maknuune_id": "2515-5",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ל-",
+     "options": [
+      {
+       "id": "2515-5",
+       "root": "",
+       "gloss": "to shut up, to be silent, to be quiet",
+       "analysis": "VERB:infinitive",
+       "pointed": "לשתוק"
+      }
+     ],
+     "_cut_for_prompt": "ל-"
     }
    ],
    "audio": null
