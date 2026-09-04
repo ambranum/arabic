@@ -765,6 +765,7 @@ def look_up(lex, word, res):
 # precisely what changed.
 
 AUDIO_DIR = paths.audio('lessons')
+_made = [0]      # clips written this run, for the failure message
 
 # Where Hebrew that can be spoken actually lives in a block. Everything else in a unit is
 # English scaffolding, a single vocabulary word, or an exercise with a hole in it.
@@ -788,9 +789,19 @@ def _say_texts(node, out):
 
 
 def _speakable(s, min_words):
+    """Is this a Hebrew phrase a learner should hear said?
+
+    "Contains Hebrew" is not the test, and using it billed for lines like
+    "What does נו do at the start of a sentence?" and "A friend tries your food and says…" --
+    quiz prompts that are English sentences with one Hebrew word quoted inside them. Read by a
+    Hebrew voice they are gibberish, and they are not what the clip is for. So the text has to
+    be MOSTLY Hebrew: more Hebrew letters than Latin ones.
+    """
     if not s or any(b in s for b in BLANK):
         return False
-    if not re.search(r'[֐-׿]', s):          # must actually be Hebrew
+    heb = len(re.findall(r'[֐-׿]', s))
+    lat = len(re.findall(r'[A-Za-z]', s))
+    if not heb or lat >= heb:
         return False
     return len([w for w in s.split() if w.strip()]) >= min_words
 
@@ -811,6 +822,12 @@ def tts(text, path, key, voice, model='eleven_multilingual_v2'):
             open(path, 'wb').write(r.read())
         return True, 'generated'
     except Exception as e:
+        # A TRANSPORT failure does not get better on the next phrase, and net.py exists because
+        # this exact loop once printed the same TLS line once per item and still exited 0. If
+        # net can name it -- an unverifiable certificate, a rejected key, a spent balance -- say
+        # so once and stop. Anything it cannot name is per-item and the run carries on.
+        if net.fatal(e, prefix='after %d clip(s): ' % _made[0]):
+            raise SystemExit(1)
         return False, str(e)[:100]
 
 
@@ -850,6 +867,7 @@ def attach_audio(units, do_audio, min_words, estimate):
                     if ok:
                         owner['audio'] = rel
                         made += 1
+                        _made[0] = made
     return {'phrases': len(seen), 'chars': chars, 'adopted': adopted,
             'generated': made, 'skipped': skipped}
 
