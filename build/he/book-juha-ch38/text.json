@@ -27,44 +27,42 @@
  "source": "retold in modern Hebrew by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "מישהו ביקש מג'וחא לכתוב לו מכתב.",
-   "en": "Someone asked Juha to write him a letter.",
+   "ar": "איש בא לג'וחא עם נייר.",
+   "en": "A man came to Juha with a paper.",
    "p": 0,
    "words": [
     {
-     "surface": "מישהו",
-     "lemma": "מִישֶׁהוּ",
-     "form": "מִישֶׁהוּ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
+     "surface": "איש",
+     "lemma": "אִישׁ",
+     "form": "אִישׁ",
+     "vocalized": "אִישׁ",
+     "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "someone, somebody",
-     "analysis": "PRON",
-     "caphi": "míshehu",
-     "caphi_urban": "míshehu",
+     "gloss": "A man, adult male human being.",
+     "analysis": "NOUN",
+     "caphi": "ish",
+     "caphi_urban": "ish",
      "caphi_raw": null,
-     "maknuune_id": "4554-1",
-     "provenance": "wiktionary:exact",
-     "_cut": "מ-ו"
+     "maknuune_id": "1096-1",
+     "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "ביקש",
-     "lemma": "בִּקֵּשׁ",
-     "form": "בִּקֵּשׁ",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "to ask for, request",
-     "analysis": "VERB:masculine.past.singular.third-person",
-     "caphi": "bikesh",
-     "caphi_urban": "bikesh",
+     "surface": "בא",
+     "lemma": "בָּא",
+     "form": "בָּא",
+     "vocalized": "בָּא",
+     "vocalized_from": "lexicon",
+     "root": "ו.א",
+     "gloss": "To come.",
+     "analysis": "VERB",
+     "caphi": "ba",
+     "caphi_urban": "ba",
      "caphi_raw": null,
-     "maknuune_id": "7455-20",
-     "provenance": "wiktionary:exact",
-     "_cut": "ב-"
+     "maknuune_id": "3145-1",
+     "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "מג'וחא",
+     "surface": "לג'וחא",
      "lemma": "ג'וּחָא",
      "form": "ג'וּחָא",
      "vocalized": null,
@@ -77,37 +75,121 @@
      "caphi_raw": null,
      "maknuune_id": null,
      "provenance": "curated:proper-noun",
-     "_cut": "מ-"
+     "_cut": "ל-"
     },
     {
-     "surface": "לכתוב",
+     "surface": "עם",
+     "lemma": "עִם",
+     "form": "עִם",
+     "vocalized": "עִם",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "With: used to indicate togetherness, being together.",
+     "analysis": "PREP",
+     "caphi": "im",
+     "caphi_urban": "im",
+     "caphi_raw": null,
+     "maknuune_id": "1032-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "נייר",
+     "lemma": "נְיָר",
+     "form": "נְיָר",
+     "vocalized": "נְיָיר",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "paper",
+     "analysis": "NOUN:construct.singular",
+     "caphi": "nyar",
+     "caphi_urban": "nyar",
+     "caphi_raw": null,
+     "maknuune_id": "2961-5",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2961-5",
+       "root": "",
+       "gloss": "paper",
+       "analysis": "NOUN:construct.singular",
+       "pointed": "נְיָיר"
+      },
+      {
+       "id": "11333-1",
+       "root": "",
+       "gloss": "as נִיר spelled full: plowed",
+       "analysis": "ADJ",
+       "pointed": "נִייר"
+      }
+     ]
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: תכתוב לי מכתב.",
+   "en": "He said: write me a letter.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "תכתוב",
      "lemma": "כָּתַב",
      "form": "כָּתַב",
-     "vocalized": "לכתוב",
+     "vocalized": "תכתוב",
      "vocalized_from": "source:pointed",
      "root": null,
      "gloss": "to write",
-     "analysis": "VERB:infinitive",
+     "analysis": "VERB:future.masculine.second-person.singular",
      "caphi": null,
      "caphi_urban": null,
      "caphi_raw": null,
-     "maknuune_id": "89-7",
-     "provenance": "wiktionary:resolved"
+     "maknuune_id": "89-27",
+     "provenance": "wiktionary:exact"
     },
     {
-     "surface": "לו",
-     "lemma": "לוֹ",
-     "form": "לוֹ",
-     "vocalized": "לוֹ",
+     "surface": "לי",
+     "lemma": "לִי",
+     "form": "לִי",
+     "vocalized": "לִי",
      "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "Form of ל־ (l'-) including third-person masculine singular personal pronoun as object.",
+     "gloss": "Form of ל־ (l'-) including first-person singular personal pronoun as object: me",
      "analysis": "PREP",
-     "caphi": "lo",
-     "caphi_urban": "lo",
+     "caphi": "li",
+     "caphi_urban": "li",
      "caphi_raw": null,
-     "maknuune_id": "5706-1",
-     "provenance": "wiktionary:resolved"
+     "maknuune_id": "5712-1",
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "מכתב",
@@ -129,9 +211,226 @@
    "audio": null
   },
   {
-   "ar": "הוא אמר: אני לא יכול, כואבות לי הרגליים.",
-   "en": "He said: I cannot, my legs hurt.",
+   "ar": "הוא אמר: זה בשביל אחי בעיר.",
+   "en": "He said: it is for my brother in the city.",
    "p": 0,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "זה",
+     "lemma": "זוֹ",
+     "form": "זוֹ",
+     "vocalized": "זה",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "This, this one.",
+     "analysis": "PRON:masculine",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "2814-3",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "בשביל",
+     "lemma": "בִּשְׁבִיל",
+     "form": "בִּשְׁבִיל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "For, for the sake of, for the benefit of, in order for.",
+     "analysis": "PREP",
+     "caphi": "bishvil",
+     "caphi_urban": "bishvil",
+     "caphi_raw": null,
+     "maknuune_id": "3244-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "ב-"
+    },
+    {
+     "surface": "אחי",
+     "lemma": "אָחִי",
+     "form": "אָחִי",
+     "vocalized": "אָחִי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "singular form of אָח (ákh) with first-person singular personal pronoun as possessor",
+     "analysis": "NOUN",
+     "caphi": "axi",
+     "caphi_urban": "axi",
+     "caphi_raw": null,
+     "maknuune_id": "4769-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "בעיר",
+     "lemma": "עִיר",
+     "form": "עִיר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "city",
+     "analysis": "NOUN",
+     "caphi": "ir",
+     "caphi_urban": "ir",
+     "caphi_raw": null,
+     "maknuune_id": "1902-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ב-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ג'וחא ישב ולא לקח את העט.",
+   "en": "Juha sat and did not take the pen.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "ג'וחא",
+     "lemma": "ג'וּחָא",
+     "form": "ג'וּחָא",
+     "vocalized": "ג'וּחָא",
+     "vocalized_from": "curated",
+     "root": null,
+     "gloss": "Juha (Nasreddin, the wise fool of the folk tales)",
+     "analysis": "NOUN_PROP",
+     "caphi": "juxa",
+     "caphi_urban": "juxa",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun"
+    },
+    {
+     "surface": "ישב",
+     "lemma": "יָשַׁב",
+     "form": "יָשַׁב",
+     "vocalized": "יָשַׁב",
+     "vocalized_from": "lexicon",
+     "root": "י",
+     "gloss": "to sit, to be in a position with the torso upright and the legs supported",
+     "analysis": "VERB",
+     "caphi": "yashav",
+     "caphi_urban": "yashav",
+     "caphi_raw": null,
+     "maknuune_id": "3587-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "ולא",
+     "lemma": "וָלֹא",
+     "form": "וָלֹא",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "or else",
+     "analysis": "CONJ",
+     "caphi": "valo",
+     "caphi_urban": "valo",
+     "caphi_raw": null,
+     "maknuune_id": "3130-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "לקח",
+     "lemma": "לָקַח",
+     "form": "לָקַח",
+     "vocalized": "לָקַח",
+     "vocalized_from": "lexicon",
+     "root": "ל.ח",
+     "gloss": "to take (grasp with the hands)",
+     "analysis": "VERB",
+     "caphi": "lakax",
+     "caphi_urban": "lakax",
+     "caphi_raw": null,
+     "maknuune_id": "966-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "את",
+     "lemma": "אֵת",
+     "form": "אֵת",
+     "vocalized": "אֵת",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Used to introduce a semantically definite direct object.",
+     "analysis": "PREP",
+     "caphi": "et",
+     "caphi_urban": "et",
+     "caphi_raw": null,
+     "maknuune_id": "92-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "העט",
+     "lemma": "עֵט",
+     "form": "עֵט",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "a pen",
+     "analysis": "NOUN",
+     "caphi": "et",
+     "caphi_urban": "et",
+     "caphi_raw": null,
+     "maknuune_id": "1436-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-",
+     "options": [
+      {
+       "id": "1436-1",
+       "root": "",
+       "gloss": "a pen",
+       "analysis": "NOUN",
+       "pointed": "עֵט"
+      },
+      {
+       "id": "1437-1",
+       "root": "",
+       "gloss": "to lunge, to pounce",
+       "analysis": "VERB",
+       "pointed": "עָט"
+      }
+     ],
+     "_cut_for_prompt": "ה-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: אני לא יכול היום.",
+   "en": "He said: I cannot today.",
+   "p": 1,
    "words": [
     {
      "surface": "הוא",
@@ -209,58 +508,128 @@
      "provenance": "wiktionary:exact"
     },
     {
-     "surface": "כואבות",
+     "surface": "היום",
+     "lemma": "הַיּוֹם",
+     "form": "הַיּוֹם",
+     "vocalized": "הַיּוֹם",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "today",
+     "analysis": "ADV",
+     "caphi": "hayom",
+     "caphi_urban": "hayom",
+     "caphi_raw": null,
+     "maknuune_id": "320-1",
+     "provenance": "wiktionary:resolved"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: הרגל שלי כואבת.",
+   "en": "He said: my leg hurts.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "הרגל",
+     "lemma": "הֶרְגֵּל",
+     "form": "הֶרְגֵּל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "habit",
+     "analysis": "NOUN",
+     "caphi": "hergel",
+     "caphi_urban": "hergel",
+     "caphi_raw": null,
+     "maknuune_id": "12999-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-",
+     "options": [
+      {
+       "id": "12999-1",
+       "root": "",
+       "gloss": "habit",
+       "analysis": "NOUN",
+       "pointed": "הֶרְגֵּל"
+      },
+      {
+       "id": "312-9",
+       "root": "",
+       "gloss": "foot, leg",
+       "analysis": "NOUN:definite.singular",
+       "pointed": "הָרֶגֶל"
+      }
+     ],
+     "_cut_for_prompt": "ה-"
+    },
+    {
+     "surface": "שלי",
+     "lemma": "שֶׁלִּי",
+     "form": "שֶׁלִּי",
+     "vocalized": "שֶׁלִּי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Form of שֶׁל (shel) including first-person singular personal pronoun as object.",
+     "analysis": "PREP",
+     "caphi": "sheli",
+     "caphi_urban": "sheli",
+     "caphi_raw": null,
+     "maknuune_id": "5423-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "כואבת",
      "lemma": "כָּאַב",
      "form": "כָּאַב",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
      "gloss": "to hurt, ache",
-     "analysis": "VERB:feminine.plural.present",
-     "caphi": "koavot",
-     "caphi_urban": "koavot",
+     "analysis": "VERB:feminine.present.singular",
+     "caphi": "koevet",
+     "caphi_urban": "koevet",
      "caphi_raw": null,
-     "maknuune_id": "7767-18",
+     "maknuune_id": "7767-16",
      "provenance": "wiktionary:exact",
      "_cut": "כ-"
-    },
-    {
-     "surface": "לי",
-     "lemma": "לִי",
-     "form": "לִי",
-     "vocalized": "לִי",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "Form of ל־ (l'-) including first-person singular personal pronoun as object: me",
-     "analysis": "PREP",
-     "caphi": "li",
-     "caphi_urban": "li",
-     "caphi_raw": null,
-     "maknuune_id": "5712-1",
-     "provenance": "wiktionary:exact"
-    },
-    {
-     "surface": "הרגליים",
-     "lemma": "רֶגֶל",
-     "form": "רֶגֶל",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "foot, leg",
-     "analysis": "NOUN:dual.indefinite",
-     "caphi": null,
-     "caphi_urban": null,
-     "caphi_raw": null,
-     "maknuune_id": "312-3",
-     "provenance": "wiktionary:clitic",
-     "_cut": "ה-"
     }
    ],
    "audio": null
   },
   {
-   "ar": "האיש שאל: מה הקשר בין רגליים לכתיבה?",
-   "en": "The man asked: what have legs to do with writing?",
+   "ar": "האיש שאל: מה הקשר לרגל?",
+   "en": "The man asked: what does the leg have to do with it?",
    "p": 1,
    "words": [
     {
@@ -343,115 +712,285 @@
      "_cut_for_prompt": "ה-"
     },
     {
-     "surface": "בין",
-     "lemma": "בֵּין",
-     "form": "בֵּין",
+     "surface": "לרגל",
+     "lemma": "רִגֵּל",
+     "form": "רִגֵּל",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "between, among, amid",
-     "analysis": "PREP",
-     "caphi": "beyn",
-     "caphi_urban": "beyn",
+     "gloss": "to spy",
+     "analysis": "VERB:infinitive",
+     "caphi": "lragel",
+     "caphi_urban": "lragel",
      "caphi_raw": null,
-     "maknuune_id": "531-1",
+     "maknuune_id": "5552-3",
      "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ב-",
+     "_cut": "ל-",
      "options": [
       {
-       "id": "531-1",
+       "id": "5552-3",
        "root": "",
-       "gloss": "between, among, amid",
-       "analysis": "PREP",
-       "pointed": "בֵּין"
-      },
-      {
-       "id": "398-28",
-       "root": "",
-       "gloss": "to understand.",
-       "analysis": "VERB:imperative.masculine.singular",
-       "pointed": "בִּין"
+       "gloss": "to spy",
+       "analysis": "VERB:infinitive",
+       "pointed": "לְרַגֵּל"
       }
      ],
-     "_cut_for_prompt": "ב-"
-    },
-    {
-     "surface": "רגליים",
-     "lemma": "רֶגֶל",
-     "form": "רֶגֶל",
-     "vocalized": "רגליים",
-     "vocalized_from": "source:pointed",
-     "root": null,
-     "gloss": "foot, leg",
-     "analysis": "NOUN:dual.indefinite",
-     "caphi": null,
-     "caphi_urban": null,
-     "caphi_raw": null,
-     "maknuune_id": "312-3",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "312-3",
-       "root": "",
-       "gloss": "foot, leg",
-       "analysis": "NOUN:dual.indefinite",
-       "pointed": "רגליים"
-      },
-      {
-       "id": "7756-1",
-       "root": "",
-       "gloss": "as רגלים spelled full: plural indefinite form of רֶגֶל (régel)",
-       "analysis": "NOUN",
-       "pointed": "רגליים"
-      }
-     ]
-    },
-    {
-     "surface": "לכתיבה",
-     "lemma": "כָּתַב",
-     "form": "כָּתַב",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "to write",
-     "analysis": "VERB:noun-from-verb",
-     "caphi": "ktiva",
-     "caphi_urban": "ktiva",
-     "caphi_raw": null,
-     "maknuune_id": "89-9",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ל-ה",
-     "options": [
-      {
-       "id": "89-9",
-       "root": "",
-       "gloss": "to write",
-       "analysis": "VERB:noun-from-verb",
-       "pointed": "כְּתִיבָה"
-      },
-      {
-       "id": "8510-1",
-       "root": "",
-       "gloss": "writing (the process of representing a language with symbols",
-       "analysis": "NOUN",
-       "pointed": "כְּתִיבָה"
-      },
-      {
-       "id": "3087-13",
-       "root": "",
-       "gloss": "notation, spelling, orthography",
-       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
-       "pointed": "כְּתִיבָהּ"
-      }
-     ],
-     "_cut_for_prompt": "ל-ה"
+     "_cut_for_prompt": "ל-"
     }
    ],
    "audio": null
   },
   {
-   "ar": "הוא אמר: אף אחד לא קורא את הכתב שלי.",
-   "en": "He said: nobody can read my handwriting.",
+   "ar": "הוא אמר: אתה כותב ביד.",
+   "en": "He said: you write with your hand.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אתה",
+     "lemma": "אַתָּה",
+     "form": "אַתָּה",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "you, thou (second-person singular masculine)",
+     "analysis": "PRON",
+     "caphi": "ata",
+     "caphi_urban": "ata",
+     "caphi_raw": null,
+     "maknuune_id": "417-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "-ה",
+     "options": [
+      {
+       "id": "417-1",
+       "root": "",
+       "gloss": "you, thou (second-person singular masculine)",
+       "analysis": "PRON",
+       "pointed": "אַתָּה"
+      },
+      {
+       "id": "418-1",
+       "root": "",
+       "gloss": "to come",
+       "analysis": "VERB",
+       "pointed": "אָתָה"
+      },
+      {
+       "id": "5905-3",
+       "root": "",
+       "gloss": "Form of אֶת (ét) including third-person masculine singular p",
+       "analysis": "PREP:feminine",
+       "pointed": "אִתָּהּ"
+      },
+      {
+       "id": "7347-1",
+       "root": "",
+       "gloss": "Form of אֶת (ét) including third-person feminine singular pe",
+       "analysis": "PREP",
+       "pointed": "אִתָּהּ"
+      },
+      {
+       "id": "96-23",
+       "root": "",
+       "gloss": "shovel",
+       "analysis": "NOUN:feminine.possessed-form.singular.third-person",
+       "pointed": "אִתָּהּ"
+      },
+      {
+       "id": "5904-3",
+       "root": "",
+       "gloss": "defective spelling of אוֹתוֹ.",
+       "analysis": "PREP:feminine",
+       "pointed": "אֹתָהּ"
+      }
+     ],
+     "_cut_for_prompt": "-ה"
+    },
+    {
+     "surface": "כותב",
+     "lemma": "כּוֹתֵב",
+     "form": "כּוֹתֵב",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "A (male) writer or author.",
+     "analysis": "NOUN",
+     "caphi": "kotev",
+     "caphi_urban": "kotev",
+     "caphi_raw": null,
+     "maknuune_id": "8185-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "כ-",
+     "options": [
+      {
+       "id": "8185-1",
+       "root": "",
+       "gloss": "A (male) writer or author.",
+       "analysis": "NOUN",
+       "pointed": "כּוֹתֵב"
+      },
+      {
+       "id": "89-19",
+       "root": "",
+       "gloss": "to write",
+       "analysis": "VERB:masculine.present.singular",
+       "pointed": "כּוֹתֵב"
+      }
+     ],
+     "_cut_for_prompt": "כ-"
+    },
+    {
+     "surface": "ביד",
+     "lemma": "יָד",
+     "form": "יָד",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "arm",
+     "analysis": "NOUN",
+     "caphi": "yad",
+     "caphi_urban": "yad",
+     "caphi_raw": null,
+     "maknuune_id": "4-1",
+     "provenance": "wiktionary:clitic",
+     "_cut": "ב-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ג'וחא אמר: זה נכון מאוד.",
+   "en": "Juha said: that is quite right.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "ג'וחא",
+     "lemma": "ג'וּחָא",
+     "form": "ג'וּחָא",
+     "vocalized": "ג'וּחָא",
+     "vocalized_from": "curated",
+     "root": null,
+     "gloss": "Juha (Nasreddin, the wise fool of the folk tales)",
+     "analysis": "NOUN_PROP",
+     "caphi": "juxa",
+     "caphi_urban": "juxa",
+     "caphi_raw": null,
+     "maknuune_id": null,
+     "provenance": "curated:proper-noun"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "זה",
+     "lemma": "זוֹ",
+     "form": "זוֹ",
+     "vocalized": "זה",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "This, this one.",
+     "analysis": "PRON:masculine",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "2814-3",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "נכון",
+     "lemma": "נָכוֹן",
+     "form": "נָכוֹן",
+     "vocalized": "נָכוֹן",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Right, correct.",
+     "analysis": "ADJ",
+     "caphi": "naxon",
+     "caphi_urban": "naxon",
+     "caphi_raw": null,
+     "maknuune_id": "3501-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3501-1",
+       "root": "",
+       "gloss": "Right, correct.",
+       "analysis": "ADJ",
+       "pointed": "נָכוֹן"
+      },
+      {
+       "id": "5145-29",
+       "root": "",
+       "gloss": "To direct (as traffic).",
+       "analysis": "VERB:feminine.first-person.future.masculine.plural",
+       "pointed": "נְכַוֵּן"
+      }
+     ]
+    },
+    {
+     "surface": "מאוד",
+     "lemma": "מְאוֹד",
+     "form": "מְאוֹד",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Very, quite.",
+     "analysis": "ADV",
+     "caphi": "mod",
+     "caphi_urban": "mod",
+     "caphi_raw": null,
+     "maknuune_id": "5424-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "מ-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: אבל אף אחד לא קורא.",
+   "en": "He said: but no one can read it.",
    "p": 2,
    "words": [
     {
@@ -482,6 +1021,21 @@
      "caphi_urban": "amar",
      "caphi_raw": null,
      "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אבל",
+     "lemma": "אֲבָל",
+     "form": "אֲבָל",
+     "vocalized": "אֲבָל",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "but",
+     "analysis": "CONJ",
+     "caphi": "aval",
+     "caphi_urban": "aval",
+     "caphi_raw": null,
+     "maknuune_id": "610-1",
      "provenance": "wiktionary:resolved"
     },
     {
@@ -543,20 +1097,43 @@
      "caphi_raw": null,
      "maknuune_id": "169-18",
      "provenance": "wiktionary:resolved"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: הכתב שלי קשה מאוד.",
+   "en": "He said: my handwriting is very hard.",
+   "p": 2,
+   "words": [
     {
-     "surface": "את",
-     "lemma": "אֵת",
-     "form": "אֵת",
-     "vocalized": "אֵת",
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
      "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "Used to introduce a semantically definite direct object.",
-     "analysis": "PREP",
-     "caphi": "et",
-     "caphi_urban": "et",
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
      "caphi_raw": null,
-     "maknuune_id": "92-1",
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
      "provenance": "wiktionary:resolved"
     },
     {
@@ -620,15 +1197,174 @@
      "caphi_raw": null,
      "maknuune_id": "5423-1",
      "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "קשה",
+     "lemma": "קָשֶׁה",
+     "form": "קָשֶׁה",
+     "vocalized": "קָשֶׁה",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "hard (resistant to pressure)",
+     "analysis": "ADJ",
+     "caphi": "kashe",
+     "caphi_urban": "kashe",
+     "caphi_raw": null,
+     "maknuune_id": "4156-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "מאוד",
+     "lemma": "מְאוֹד",
+     "form": "מְאוֹד",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "Very, quite.",
+     "analysis": "ADV",
+     "caphi": "mod",
+     "caphi_urban": "mod",
+     "caphi_raw": null,
+     "maknuune_id": "5424-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "מ-"
     }
    ],
    "audio": null
   },
   {
-   "ar": "אז אני צריך ללכת ולקרוא להם.",
-   "en": "So I have to walk over and read it to them.",
+   "ar": "הוא אמר: רק אני קורא אותו.",
+   "en": "He said: only I read it.",
    "p": 2,
    "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "רק",
+     "lemma": "רַק",
+     "form": "רַק",
+     "vocalized": "רַק",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "only",
+     "analysis": "ADV",
+     "caphi": "rak",
+     "caphi_urban": "rak",
+     "caphi_raw": null,
+     "maknuune_id": "3055-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אני",
+     "lemma": "אֲנִי",
+     "form": "אֲנִי",
+     "vocalized": "אֲנִי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "I (first person nominative singular pronoun, masculine and feminine)",
+     "analysis": "PRON",
+     "caphi": "ani",
+     "caphi_urban": "ani",
+     "caphi_raw": null,
+     "maknuune_id": "309-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "קורא",
+     "lemma": "קָרָא",
+     "form": "קָרָא",
+     "vocalized": "קוֹרֵא",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to read",
+     "analysis": "VERB:masculine.present.singular",
+     "caphi": "kore",
+     "caphi_urban": "kore",
+     "caphi_raw": null,
+     "maknuune_id": "169-18",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אותו",
+     "lemma": "אוֹתוֹ",
+     "form": "אוֹתוֹ",
+     "vocalized": "אוֹתוֹ",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "The same.",
+     "analysis": "DET",
+     "caphi": "oto",
+     "caphi_urban": "oto",
+     "caphi_raw": null,
+     "maknuune_id": "3607-1",
+     "provenance": "wiktionary:resolved"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: אז אני אצטרך לנסוע.",
+   "en": "He said: so I shall have to travel.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
     {
      "surface": "אז",
      "lemma": "אָז",
@@ -660,83 +1396,436 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "צריך",
-     "lemma": "צָרִיךְ",
-     "form": "צָרִיךְ",
-     "vocalized": "צָרִיךְ",
+     "surface": "אצטרך",
+     "lemma": "הִצְטָרֵךְ",
+     "form": "הִצְטָרֵךְ",
+     "vocalized": "אֶצְטָרֵךְ",
      "vocalized_from": "lexicon",
      "root": null,
-     "gloss": "Needing, in need of (something).",
-     "analysis": "ADJ",
-     "caphi": "tsarix",
-     "caphi_urban": "tsarix",
+     "gloss": "To need.",
+     "analysis": "VERB:feminine.first-person.future.masculine.singular",
+     "caphi": "etstarex",
+     "caphi_urban": "etstarex",
      "caphi_raw": null,
-     "maknuune_id": "6946-1",
-     "provenance": "wiktionary:resolved"
+     "maknuune_id": "14874-18",
+     "provenance": "wiktionary:exact"
     },
     {
-     "surface": "ללכת",
-     "lemma": "הָלַךְ",
-     "form": "הָלַךְ",
-     "vocalized": "לָלֶכֶת",
-     "vocalized_from": "lexicon",
-     "root": "ה",
-     "gloss": "to walk, go, especially on foot",
+     "surface": "לנסוע",
+     "lemma": "נָסַע",
+     "form": "נָסַע",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": "נ.ע",
+     "gloss": "To travel.",
      "analysis": "VERB:infinitive",
-     "caphi": "laléxet",
-     "caphi_urban": "laléxet",
+     "caphi": null,
+     "caphi_urban": null,
      "caphi_raw": null,
-     "maknuune_id": "193-3",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "ולקרוא",
-     "lemma": "קָרוּא",
-     "form": "קָרוּא",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "Read.",
-     "analysis": "ADJ",
-     "caphi": "karu",
-     "caphi_urban": "karu",
-     "caphi_raw": null,
-     "maknuune_id": "4935-1",
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "_cut": "ו-",
-     "options": [
-      {
-       "id": "4935-1",
-       "root": "",
-       "gloss": "Read.",
-       "analysis": "ADJ",
-       "pointed": "קָרוּא"
-      },
-      {
-       "id": "169-8",
-       "root": "א",
-       "gloss": "to read",
-       "analysis": "VERB:participle.passive",
-       "pointed": "קָרוּא"
-      }
-     ],
-     "_cut_for_prompt": "ו-"
-    },
-    {
-     "surface": "להם",
-     "lemma": "לָהֶם",
-     "form": "לָהֶם",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:clitic",
-     "root": null,
-     "gloss": "Form of לְ־ (l'-) including third-person masculine plural personal pronoun as object.",
-     "analysis": "PREP",
-     "caphi": "lahem",
-     "caphi_urban": "lahem",
-     "caphi_raw": null,
-     "maknuune_id": "6026-1",
+     "maknuune_id": "4196-3",
      "provenance": "wiktionary:exact",
      "_cut": "ל-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: אני אלך עד העיר.",
+   "en": "He said: I shall go all the way to the city.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אני",
+     "lemma": "אֲנִי",
+     "form": "אֲנִי",
+     "vocalized": "אֲנִי",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "I (first person nominative singular pronoun, masculine and feminine)",
+     "analysis": "PRON",
+     "caphi": "ani",
+     "caphi_urban": "ani",
+     "caphi_raw": null,
+     "maknuune_id": "309-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אלך",
+     "lemma": "אֵלֵךְ",
+     "form": "אֵלֵךְ",
+     "vocalized": "אֵלֵךְ",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "First-person singular future (prefix conjugation) of הָלַךְ (halách).",
+     "analysis": "VERB",
+     "caphi": "elex",
+     "caphi_urban": "elex",
+     "caphi_raw": null,
+     "maknuune_id": "6073-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6073-1",
+       "root": "",
+       "gloss": "First-person singular future (prefix conjugation) of הָלַךְ ",
+       "analysis": "VERB",
+       "pointed": "אֵלֵךְ"
+      },
+      {
+       "id": "357-12",
+       "root": "",
+       "gloss": "god (a deity or supreme being; a supernatural, typically imm",
+       "analysis": "NOUN:feminine.possessed-form.second-person.singular",
+       "pointed": "אֵלֵךְ"
+      },
+      {
+       "id": "193-21",
+       "root": "ה",
+       "gloss": "to walk, go, especially on foot",
+       "analysis": "VERB:feminine.first-person.future.masculine.singular",
+       "pointed": "אֵלֵךְ"
+      },
+      {
+       "id": "357-11",
+       "root": "",
+       "gloss": "god (a deity or supreme being; a supernatural, typically imm",
+       "analysis": "NOUN:masculine.possessed-form.second-person.singular",
+       "pointed": "אֵלְךָ"
+      }
+     ]
+    },
+    {
+     "surface": "עד",
+     "lemma": "עַד",
+     "form": "עַד",
+     "vocalized": "עַד",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "Until, till, up until (a time).",
+     "analysis": "PREP",
+     "caphi": "ad",
+     "caphi_urban": "ad",
+     "caphi_raw": null,
+     "maknuune_id": "1599-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "העיר",
+     "lemma": "עִיר",
+     "form": "עִיר",
+     "vocalized": "הָעִיר",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "city",
+     "analysis": "NOUN:definite.singular",
+     "caphi": "hair",
+     "caphi_urban": "hair",
+     "caphi_raw": null,
+     "maknuune_id": "1902-9",
+     "provenance": "wiktionary:resolved"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: ואני אקרא לאחיך בקול.",
+   "en": "He said: and I shall read it aloud to your brother.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "ואני",
+     "lemma": "אֲנִי",
+     "form": "אֲנִי",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "I (first person nominative singular pronoun, masculine and feminine)",
+     "analysis": "PRON",
+     "caphi": "ani",
+     "caphi_urban": "ani",
+     "caphi_raw": null,
+     "maknuune_id": "309-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "אקרא",
+     "lemma": "קָרָא",
+     "form": "קָרָא",
+     "vocalized": "אֶקְרָא",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to read",
+     "analysis": "VERB:feminine.first-person.future.masculine.singular",
+     "caphi": "ekra",
+     "caphi_urban": "ekra",
+     "caphi_raw": null,
+     "maknuune_id": "169-22",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "169-22",
+       "root": "א",
+       "gloss": "to read",
+       "analysis": "VERB:feminine.first-person.future.masculine.singular",
+       "pointed": "אֶקְרָא"
+      },
+      {
+       "id": "10647-22",
+       "root": "א",
+       "gloss": "to be read",
+       "analysis": "VERB:feminine.first-person.future.masculine.singular",
+       "pointed": "אֵקָּרֵא"
+      }
+     ]
+    },
+    {
+     "surface": "לאחיך",
+     "lemma": "אֲחַיֵּךְ",
+     "form": "אֲחַיֵּךְ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "First-person singular future (prefix conjugation) of חייך / חִיֵּךְ (khiyékh)",
+     "analysis": "VERB",
+     "caphi": "axayex",
+     "caphi_urban": "axayex",
+     "caphi_raw": null,
+     "maknuune_id": "7328-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ל-",
+     "options": [
+      {
+       "id": "7328-1",
+       "root": "",
+       "gloss": "First-person singular future (prefix conjugation) of חייך / ",
+       "analysis": "VERB",
+       "pointed": "אֲחַיֵּךְ"
+      },
+      {
+       "id": "4653-28",
+       "root": "ח.י",
+       "gloss": "to smile",
+       "analysis": "VERB:feminine.first-person.future.masculine.singular",
+       "pointed": "אֲחַיֵּךְ"
+      },
+      {
+       "id": "1868-11",
+       "root": "",
+       "gloss": "brother (son of the same parents as another person)",
+       "analysis": "NOUN:masculine.possessed-form.second-person.singular",
+       "pointed": "אָחִיךָ"
+      },
+      {
+       "id": "1868-12",
+       "root": "",
+       "gloss": "brother (son of the same parents as another person)",
+       "analysis": "NOUN:feminine.possessed-form.second-person.singular",
+       "pointed": "אָחִיךְ"
+      },
+      {
+       "id": "7327-1",
+       "root": "",
+       "gloss": "singular form of אָח (ách) with second-person masculine sing",
+       "analysis": "NOUN",
+       "pointed": "אחיך"
+      }
+     ],
+     "_cut_for_prompt": "ל-"
+    },
+    {
+     "surface": "בקול",
+     "lemma": "קוֹל",
+     "form": "קוֹל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "voice (also in its figurative senses of statement, opinion, or order)",
+     "analysis": "NOUN",
+     "caphi": "kol",
+     "caphi_urban": "kol",
+     "caphi_raw": null,
+     "maknuune_id": "3563-1",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ב-"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "הוא אמר: וזה רחוק בשביל הרגל.",
+   "en": "He said: and that is far for the leg.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "הוא",
+     "lemma": "הוּא",
+     "form": "הוּא",
+     "vocalized": "הוּא",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "he",
+     "analysis": "PRON",
+     "caphi": "hu",
+     "caphi_urban": "hu",
+     "caphi_raw": null,
+     "maknuune_id": "501-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "אמר",
+     "lemma": "אָמַר",
+     "form": "אָמַר",
+     "vocalized": "אָמַר",
+     "vocalized_from": "lexicon",
+     "root": "א",
+     "gloss": "to say, tell",
+     "analysis": "VERB",
+     "caphi": "amar",
+     "caphi_urban": "amar",
+     "caphi_raw": null,
+     "maknuune_id": "528-1",
+     "provenance": "wiktionary:resolved"
+    },
+    {
+     "surface": "וזה",
+     "lemma": "זוֹ",
+     "form": "זוֹ",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "This, this one.",
+     "analysis": "PRON:masculine",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "2814-3",
+     "provenance": "wiktionary:resolved",
+     "_cut": "ו-"
+    },
+    {
+     "surface": "רחוק",
+     "lemma": "רָחוֹק",
+     "form": "רָחוֹק",
+     "vocalized": "רָחוֹק",
+     "vocalized_from": "lexicon",
+     "root": null,
+     "gloss": "far, distant; remote",
+     "analysis": "ADJ",
+     "caphi": "raxok",
+     "caphi_urban": "raxok",
+     "caphi_raw": null,
+     "maknuune_id": "1823-1",
+     "provenance": "wiktionary:exact"
+    },
+    {
+     "surface": "בשביל",
+     "lemma": "בִּשְׁבִיל",
+     "form": "בִּשְׁבִיל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "For, for the sake of, for the benefit of, in order for.",
+     "analysis": "PREP",
+     "caphi": "bishvil",
+     "caphi_urban": "bishvil",
+     "caphi_raw": null,
+     "maknuune_id": "3244-1",
+     "provenance": "wiktionary:exact",
+     "_cut": "ב-"
+    },
+    {
+     "surface": "הרגל",
+     "lemma": "הֶרְגֵּל",
+     "form": "הֶרְגֵּל",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
+     "root": null,
+     "gloss": "habit",
+     "analysis": "NOUN",
+     "caphi": "hergel",
+     "caphi_urban": "hergel",
+     "caphi_raw": null,
+     "maknuune_id": "12999-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ה-",
+     "options": [
+      {
+       "id": "12999-1",
+       "root": "",
+       "gloss": "habit",
+       "analysis": "NOUN",
+       "pointed": "הֶרְגֵּל"
+      },
+      {
+       "id": "312-9",
+       "root": "",
+       "gloss": "foot, leg",
+       "analysis": "NOUN:definite.singular",
+       "pointed": "הָרֶגֶל"
+      }
+     ],
+     "_cut_for_prompt": "ה-"
     }
    ],
    "audio": null
