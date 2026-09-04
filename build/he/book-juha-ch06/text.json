@@ -1615,7 +1615,7 @@
    "audio": null
   },
   {
-   "ar": "הוא אמר: וכאן יש אור טוב.",
+   "ar": "הוא אמר: ופה יש אור טוב.",
    "en": "He said: and here there is good light.",
    "p": 3,
    "words": [
@@ -1650,20 +1650,44 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "וכאן",
-     "lemma": "אֹן",
-     "form": "אֹן",
+     "surface": "ופה",
+     "lemma": "פֹּה",
+     "form": "פֹּה",
      "vocalized": null,
      "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "Heliopolis (the ancient capital of the 13th nome of Lower Egypt, located in the northern suburbs of modern Cairo, Egypt)",
-     "analysis": "NAME",
-     "caphi": "on",
-     "caphi_urban": "on",
+     "gloss": "here, this place, at this place, in this place",
+     "analysis": "ADV",
+     "caphi": "po",
+     "caphi_urban": "po",
      "caphi_raw": null,
-     "maknuune_id": "1512-1",
-     "provenance": "wiktionary:clitic",
-     "_cut": "ו-"
+     "maknuune_id": "2641-1",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "-ה",
+     "options": [
+      {
+       "id": "2641-1",
+       "root": "",
+       "gloss": "here, this place, at this place, in this place",
+       "analysis": "ADV",
+       "pointed": "פֹּה"
+      },
+      {
+       "id": "2642-1",
+       "root": "",
+       "gloss": "mouth",
+       "analysis": "NOUN",
+       "pointed": "פֶּה"
+      },
+      {
+       "id": "2643-1",
+       "root": "",
+       "gloss": "Fa: the fourth solfège syllable, representing the note F.",
+       "analysis": "NAME",
+       "pointed": "פָה"
+      }
+     ],
+     "_cut_for_prompt": "-ה"
     },
     {
      "surface": "יש",

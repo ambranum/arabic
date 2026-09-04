@@ -2193,7 +2193,7 @@ UNITS += [
        'example': {'q': 'הבית ___ גרנו בו נמכר. — the house that', 'a': 'ש'},
        'items': [
          {'q': '___ שרוצה לבוא, שיגיד לי.', 'a': ['מי'], 'en': 'Whoever wants to come should tell me.'},
-         {'q': '___ שקרה אתמול היה מוזר.', 'a': ['מה'], 'en': 'What happened yesterday was strange.'},
+         {'q': '___ שאמרת אתמול היה מוזר.', 'a': ['מה'], 'en': 'What you said yesterday was strange.'},
          {'q': 'זו הדירה שגרנו ___ שנתיים.', 'a': ['בה'], 'en': 'That’s the flat we lived in for two years.'},
          {'q': 'זה החבר שסיפרתי לך ___.', 'a': ['עליו'], 'en': 'That’s the friend I told you about.'},
          {'q': 'הכל ___ אמרת נכון.', 'a': ['מה'], 'en': 'Everything you said is right.'},

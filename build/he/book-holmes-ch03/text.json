@@ -27,8 +27,8 @@
  "source": "retold in modern Hebrew by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "למחרת בשעה שלוש נכנס לרחוב בייקר איש סוסים מלוכלך, עם זקן אדום ובגדים עם ריח של אורווה.",
-   "en": "The next day at three there came into Baker Street a dirty groom, with a red beard and clothes with a smell of stable.",
+   "ar": "למחרת בשעה שלוש נכנס לרחוב בייקר איש סוסים מלוכלך, עם שערות אדומות ובגדים עם ריח של אורווה.",
+   "en": "The next day at three there came into Baker Street a dirty groom, with red hair and clothes with a smell of stable.",
    "p": 0,
    "words": [
     {
@@ -233,57 +233,52 @@
      "provenance": "wiktionary:resolved"
     },
     {
-     "surface": "זקן",
-     "lemma": "זָקֵן",
-     "form": "זָקֵן",
-     "vocalized": "זָקֵן",
-     "vocalized_from": "lexicon",
+     "surface": "שערות",
+     "lemma": "שֵׂעָר",
+     "form": "שֵׂעָר",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:clitic",
      "root": null,
-     "gloss": "old, elderly, aged",
-     "analysis": "ADJ",
-     "caphi": "zaken",
-     "caphi_urban": "zaken",
+     "gloss": "hair",
+     "analysis": "NOUN:indefinite.plural",
+     "caphi": "sarot",
+     "caphi_urban": "sarot",
      "caphi_raw": null,
-     "maknuune_id": "2348-1",
-     "provenance": "wiktionary:resolved"
-    },
-    {
-     "surface": "אדום",
-     "lemma": "אֱדוֹם",
-     "form": "אֱדוֹם",
-     "vocalized": "אֱדוֹם",
-     "vocalized_from": "lexicon",
-     "root": null,
-     "gloss": "Edom (name given to Esau)",
-     "analysis": "NAME",
-     "caphi": "edom",
-     "caphi_urban": "edom",
-     "caphi_raw": null,
-     "maknuune_id": "372-1",
+     "maknuune_id": "2119-16",
      "provenance": "AMBIGUOUS-needs-resolution",
+     "_cut": "ש-",
      "options": [
       {
-       "id": "372-1",
+       "id": "2119-16",
        "root": "",
-       "gloss": "Edom (name given to Esau)",
-       "analysis": "NAME",
-       "pointed": "אֱדוֹם"
+       "gloss": "hair",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "שְׂעָרוֹת"
       },
       {
-       "id": "12827-20",
+       "id": "2335-3",
        "root": "",
-       "gloss": "to pause",
-       "analysis": "VERB:feminine.first-person.future.masculine.singular",
-       "pointed": "אדום"
-      },
-      {
-       "id": "370-1",
-       "root": "",
-       "gloss": "as אָדֹם spelled full: red",
-       "analysis": "ADJ",
-       "pointed": "אָדוֹם"
+       "gloss": "hair (a pigmented filament of keratin which grows from a fol",
+       "analysis": "NOUN:indefinite.plural",
+       "pointed": "שְׂעָרוֹת"
       }
-     ]
+     ],
+     "_cut_for_prompt": "ש-"
+    },
+    {
+     "surface": "אדומות",
+     "lemma": "אָדֹם",
+     "form": "אָדֹם",
+     "vocalized": "אדומות",
+     "vocalized_from": "source:pointed",
+     "root": null,
+     "gloss": "red",
+     "analysis": "ADJ:feminine.plural",
+     "caphi": null,
+     "caphi_urban": null,
+     "caphi_raw": null,
+     "maknuune_id": "370-7",
+     "provenance": "wiktionary:exact"
     },
     {
      "surface": "ובגדים",

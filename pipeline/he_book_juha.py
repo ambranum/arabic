@@ -60,7 +60,7 @@ CHAPTERS = [
     ('הוא חזר לבית של הסעודה.', 'He came back to the house of the feast.'),
     ('בעל הבית קם וקיבל אותו יפה.', 'The master of the house rose and received him nicely.'),
     ('הוא הושיב אותו ליד השולחן.', 'He sat him beside the table.')),
-  P(('הביאו לו צלחת מלאה אורז.', 'They brought him a plate full of rice.'),
+  P(('הביאו לו צלחת מלאה אוכל.', 'They brought him a plate full of food.'),
     ('ג\'וחא לקח את שרוול המעיל.', 'Juha took the sleeve of the coat.'),
     ('הוא הכניס אותו לתוך הצלחת.', 'He put it into the plate.'),
     ('הוא אמר: תאכל, מעיל, בבקשה.', 'He said: eat, coat, please.'),
@@ -153,7 +153,7 @@ CHAPTERS = [
     ('ג\'וחא אמר: בתוך הבית שלי.', 'Juha said: inside my house.'),
     ('השכן קם וצעק: אז למה כאן?', 'The neighbour got up and shouted: then why here?'),
     ('ג\'וחא אמר: בבית אין אור.', 'Juha said: in the house there is no light.'),
-    ('הוא אמר: וכאן יש אור טוב.', 'He said: and here there is good light.'))]),
+    ('הוא אמר: ופה יש אור טוב.', 'He said: and here there is good light.'))]),
  ('Three Days of Bread', 'לחם לשלושה ימים', [
   P(('בכפר היה רעב באותה שנה.', 'In the village there was hunger that year.'),
     ('לא היה מספיק אוכל לכולם.', 'There was not enough food for everyone.'),

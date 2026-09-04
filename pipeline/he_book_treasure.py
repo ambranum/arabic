@@ -262,7 +262,7 @@ CHAPTERS = [
     ('המפקד אמר: כי אני לא יודע לאן אנחנו הולכים.', 'The captain said: because I do not know where we are going.'),
     ('וכל מלח בנמל יודע יותר ממני.', 'And every sailor in the harbour knows more than I do.'),
     ('אומרים שיש מפה, ומטמון, ושהמפה אצלך.', 'They say there is a map, and a treasure, and that the map is with you.'),
-    ('טרלוני נהיה אדום ואמר: לא סיפרתי לאף אחד!', 'Trelawney went red and said: I told no one!'),
+    ('הפנים של טרלוני נהיו אדומות והוא אמר: לא סיפרתי לאף אחד!', 'Trelawney’s face went red and he said: I told no one!'),
     ('הרופא אמר בשקט: מישהו סיפר.', 'The doctor said quietly: someone told.'),
     ('המפקד אמר: ואחר כך, הצוות, אני לא בחרתי אותם.', 'The captain said: and then, the crew, I did not choose them.'),
     ('והעוזר הראשון שלי שותה, והמלחים לא מכבדים אותו.', 'And my first mate drinks, and the sailors do not respect him.')),
