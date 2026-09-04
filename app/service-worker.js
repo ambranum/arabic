@@ -5,7 +5,7 @@
  * a deploy invalidates old caches. IMPORTANT: the HTML document is fetched NETWORK-FIRST so a new
  * deploy shows up immediately (never a stale shell); data/audio/icons are cache-first for speed
  * and offline. */
-const CACHE_VERSION = 'alp-dc07e77278';
+const CACHE_VERSION = 'alp-a7f90b9814';
 // The shell is what has to be there for the app to start at all, in every language: the
 // document, the boot roster it reads to decide which language to load, the shared seam, and
 // app.js itself. Without app.js an offline load serves the HTML and nothing runs.
