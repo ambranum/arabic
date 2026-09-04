@@ -216,6 +216,14 @@ PROPER = {
     "ז'ול":     ("ז'ול", 'Jules (the uncle in the Maupassant story)', 'NOUN_PROP', 'zhul'),
     'ואנקה':    ('וָואנְקָה', 'Vanka (the boy in the Chekhov story)', 'NOUN_PROP', 'vánka'),
     'נורמנדי':  ('נוֹרְמַנְדִּי', 'Normandy (in northern France)', 'NOUN_PROP', 'normándi'),
+    # Second-edition Treasure Island (2026-09-04): the twins now carry the whole cast.
+    'הנדס':     ('הֶנְדְס', 'Hands (Israel Hands, the coxswain)', 'NOUN_PROP', 'hends'),
+    'היספניולה': ('הִיסְפָּנְיוֹלָה', 'Hispaniola (the ship)', 'NOUN_PROP', 'hispanyóla'),
+    'גריי':     ('גְּרֵיי', 'Gray (Abraham Gray, the sailor who stayed loyal)', 'NOUN_PROP', 'grey'),
+    "ג'ורג'":   ("ג'וֹרְג'", 'George (George Merry, one of the pirates)', 'NOUN_PROP', 'jorj'),
+    "ג'ורג":    ("ג'וֹרְג'", 'George (George Merry, one of the pirates)', 'NOUN_PROP', 'jorj'),
+    'אלן':      ('אָלָן', 'Alan (a sailor)', 'NOUN_PROP', 'álan'),
+    'הארי':     ('הָארִי', 'Harry (a sailor)', 'NOUN_PROP', 'hári'),
 }
 
 _ALL = {}
