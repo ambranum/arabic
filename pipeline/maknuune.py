@@ -3,7 +3,16 @@
 SPEC 7.4.2: retrieve real candidates, never generate. Morphology narrows by POS,
 because the clitic tells you the part of speech before you look at anything else.
 """
-import pandas as pd, re, os
+try:
+    import pandas as pd
+except ModuleNotFoundError:                       # the python3 first on PATH is not the one
+    raise SystemExit(                             # that can run this pipeline. Say so, once.
+        "\n!! This needs pandas, and the python3 at the front of your PATH does not have it.\n"
+        "   Re-run the same command with the interpreter that does:\n"
+        "       /usr/local/bin/python3 <the rest of your command>\n"
+        "   (Homebrew's python3 is first on PATH here and carries no pandas; the framework\n"
+        "    build at /usr/local/bin/python3 is the one the pipeline has always used.)\n")
+import re, os
 
 DIAC = re.compile(r'[ً-ْٰـ]')
 _HERE = os.path.dirname(os.path.abspath(__file__))
