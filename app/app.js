@@ -1983,13 +1983,17 @@ function lsnBlockHTML(u, b, bi) {
   const st = lwB(bi);
   const head = (t, en) => `<div class="lsn-bh"><span dir="rtl">${esc(t || '')}</span>${
     en ? `<em>${esc(en)}</em>` : ''}</div>`;
+  // A speaker button for one clip, or nothing when that phrase has none. The generator keys
+  // audio per FIELD (audio_he, audio_from, audio_to…), because one node can hold two phrases.
+  const say = u => u ? `<button class="say" onclick="sndPlay('${cssq(u)}')"
+      aria-label="Play">${svg('spk')}</button>` : '';
   let h = `<div class="lsn-b lsn-${esc(b.kind)}" data-lb="${bi}">`;
 
   if (b.kind === 'teach') {
     h += `<div class="lsn-bh"><span>${esc(b.title)}</span></div>
       <div class="lsn-teach"><p>${b.body}</p>` +
       (b.examples || []).map(e => `<div class="lsn-gx"><span dir="rtl">${arLive(e.he)}</span>
-        <em>${esc(e.en)}</em></div>`).join('') + `</div>`;
+        ${say(e.audio_he)}<em>${esc(e.en)}</em></div>`).join('') + `</div>`;
   }
 
   if (b.kind === 'vocab') {
@@ -2009,12 +2013,12 @@ function lsnBlockHTML(u, b, bi) {
 
   if (b.kind === 'slang') {
     h += `<div class="lsn-slang">
-      <div class="lsn-sl-he" dir="rtl">${arLive(b.he)}</div>
+      <div class="lsn-sl-he" dir="rtl">${arLive(b.he)}${say(b.audio_he)}</div>
       <div class="lsn-sl-lit">${esc(b.literal)}</div>
       <div class="lsn-sl-mean">${esc(b.meaning)}</div>
       <p class="lsn-sl-when">${esc(b.when)}</p>` +
       (b.examples || []).map(e => `<div class="lsn-gx"><span dir="rtl">${arLive(e.he)}</span>
-        <em>${esc(e.en)}</em></div>`).join('') +
+        ${say(e.audio_he)}<em>${esc(e.en)}</em></div>`).join('') +
       `<div class="ctl">${deckBtnHTML(b.he, `lsnSaveSlang(${bi})`, '+ Add to my deck')}</div></div>`;
   }
 
@@ -2047,7 +2051,7 @@ function lsnBlockHTML(u, b, bi) {
         `</select>`;
       const q = String(it.q).indexOf('___') >= 0
         ? String(it.q).split('___').map(p => arLive(p)).join(sel)
-        : arLive(it.q) + ' ' + sel;
+        : arLive(it.q) + say(it.audio_q) + ' ' + sel;
       return `<div class="lsn-item${state === 1 ? ' ok' : ''}">
         <span class="lsn-n">${ii + 1}</span>
         <div class="lsn-q" dir="rtl">${q}</div>
@@ -2061,12 +2065,13 @@ function lsnBlockHTML(u, b, bi) {
     h += head(b.title, b.en);
     h += `<p class="hint">${esc(b.instructions)}</p>`;
     if (b.example) h += `<div class="lsn-eg"><b>דוגמה</b>
-      <span dir="rtl">${arLive(b.example.from)}</span> → <span dir="rtl">${arLive(b.example.to)}</span></div>`;
+      <span dir="rtl">${arLive(b.example.from)}</span>${say(b.example.audio_from)}
+      → <span dir="rtl">${arLive(b.example.to)}</span>${say(b.example.audio_to)}</div>`;
     h += b.items.map((it, ii) => {
       const state = st.done[ii] ? 1 : (st.tried && st.tried[ii] ? 0 : -1);
       return `<div class="lsn-item${state === 1 ? ' ok' : ''}">
         <span class="lsn-n">${ii + 1}</span>
-        <div class="lsn-q" dir="rtl">${arLive(it.from)}</div>
+        <div class="lsn-q" dir="rtl">${arLive(it.from)}${say(it.audio_from)}</div>
         <input class="lsn-in wide${state === 1 ? ' ok' : state === 0 ? ' no' : ''}" dir="rtl"
           data-b="${bi}" data-i="${ii}" value="${esc((st.val && st.val[ii]) || '')}"
           autocomplete="off" spellcheck="false"

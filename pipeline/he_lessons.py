@@ -858,14 +858,19 @@ def attach_audio(units, do_audio, min_words, estimate):
                 if text not in seen:
                     seen.add(text)
                     chars += len(text)
+                # `audio_<field>`, not `audio`. One node can hold two speakable fields — a
+                # transform item has both `from` and `to` — and a single `audio` key meant the
+                # second one silently overwrote the first: 981 adoptions came out as 948 fields
+                # and 24 clips were generated, paid for, and referenced by nothing.
+                fld = 'audio_' + k
                 if os.path.exists(clip):
-                    owner['audio'] = rel
+                    owner[fld] = rel
                     adopted += 1
                 elif do_audio:
                     ok, how = tts(text, clip, key, voice)
                     print('  %s  %-30s %s' % (name[:8], text[:28], how))
                     if ok:
-                        owner['audio'] = rel
+                        owner[fld] = rel
                         made += 1
                         _made[0] = made
     return {'phrases': len(seen), 'chars': chars, 'adopted': adopted,
