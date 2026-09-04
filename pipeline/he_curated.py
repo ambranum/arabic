@@ -226,6 +226,28 @@ PROPER = {
     'הארי':     ('הָארִי', 'Harry (a sailor)', 'NOUN_PROP', 'hári'),
     'הרפר':     ('הַרְפֶּר', "Harper (Joe Harper, Tom's friend)", 'NOUN_PROP', 'hárper'),
     'אינדיאני': ('אִינְדִּיאָנִי', 'Indian (as in Injun Joe, the half-Indian)', 'NOUN_PROP', 'indiáni'),
+    # --- Sherlock Holmes, second edition: the ten stories' own people ---
+    'וילסון': ('וִילְסוֹן', 'Wilson (Jabez Wilson, the red-headed pawnbroker)', 'NOUN_PROP', 'wílson'),
+    'ספולדינג': ('סְפּוֹלְדִינְג', "Spaulding (Wilson's assistant)", 'NOUN_PROP', 'spólding'),
+    'רוילוט': ('רוֹיְלוֹט', 'Roylott (Dr Grimesby Roylott, the stepfather)', 'NOUN_PROP', 'róylot'),
+    'הלן': ('הֶלֶן', 'Helen (Helen Stoner, who came before dawn)', 'NOUN_PROP', 'hélen'),
+    'פיטרסון': ('פִּיטֶרְסוֹן', 'Peterson (the commissionaire with the goose)', 'NOUN_PROP', 'píterson'),
+    'הנרי': ('הֶנְרִי', 'Henry (Henry Baker, who lost his hat)', 'NOUN_PROP', 'hénri'),
+    'ריידר': ('רַיְידֶר', 'Ryder (James Ryder, the hotel attendant)', 'NOUN_PROP', 'ráyder'),
+    'נוויל': ('נֶוִיל', 'Neville (Neville St Clair, the man with the twisted lip)', 'NOUN_PROP', 'névil'),
+    'קיוביט': ('קְיוּבִּיט', 'Cubitt (Hilton Cubitt, of the dancing men)', 'NOUN_PROP', 'kyúbit'),
+    'אלסי': ('אֶלְסִי', "Elsie (Cubitt's American wife)", 'NOUN_PROP', 'élsi'),
+    'סליני': ('סְלֵינִי', 'Slaney (Abe Slaney, of the Chicago gang)', 'NOUN_PROP', 'sléni'),
+    'אייב': ('אַיְיבּ', 'Abe (Abe Slaney)', 'NOUN_PROP', 'eyb'),
+    'מורן': ('מוֹרָן', "Moran (Colonel Sebastian Moran, Moriarty's last man)", 'NOUN_PROP', 'morán'),
+    'אדייר': ('אַדֵייר', 'Adair (Ronald Adair, shot in a locked room)', 'NOUN_PROP', 'adéyr'),
+    'רונלד': ('רוֹנַלְד', 'Ronald (Ronald Adair)', 'NOUN_PROP', 'rónald'),
+    # --- Twenty Stories, second edition ---
+    'מאטילדה': ('מָאטִילְדָה', 'Mathilde (Mathilde Loisel, of the necklace)', 'NOUN_PROP', 'matílda'),
+    'פורסטייה': ('פוֹרֶסְטְיֶה', 'Forestier (the rich friend who lent the necklace)', 'NOUN_PROP', 'forestyé'),
+    'מוריסו': ('מוֹרִיסוֹ', 'Morissot (the watchmaker who went fishing)', 'NOUN_PROP', 'morisó'),
+    'סובאז': ('סוֹבָאז', 'Sauvage (Morissot\u2019s fishing friend)', 'NOUN_PROP', 'sováz'),
+    'שנחאי': ('שַׁנְחַאי', 'Shanghai (the Chinese port)', 'NOUN_PROP', 'shankhai'),
 }
 
 _ALL = {}
