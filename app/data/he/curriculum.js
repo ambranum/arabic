@@ -21,10 +21,14 @@ window.CURRICULUM = {
   // hours; it is an estimate, and the app shows it as one.
   totalHours: 1100,
 
-  // How far up each ordered list a phase reaches. Nine grammar lessons, and verbs by BINYAN
-  // (see LANG.verb.tier in lang/he.js): 1 = paal, 2 = nifal/piel/hifil, 3 = hitpael and the
-  // two passives, which are the ones you meet last in speech.
-  grammarCap: [2, 5, 9, 9, 9],
+  // How far up each ordered list a phase reaches. TWENTY grammar lessons now, in two halves:
+  // eleven on how a sentence is built, then nine on the binyanim. The cap used to read
+  // [2, 5, 9, 9, 9], which was right when nine was all there was and would now have stranded
+  // every lesson past the ninth — a learner would have finished the plan without meeting the
+  // binyanim at all. Verbs are still capped by BINYAN (see LANG.verb.tier in lang/he.js):
+  // 1 = paal, 2 = nifal/piel/hifil, 3 = hitpael and the two passives, the ones you meet last
+  // in speech.
+  grammarCap: [4, 8, 12, 16, 20],
   verbTier:   [1, 2, 3, 3, 3],
   reviewDays: [2, 7, 21, 45, 90],
 

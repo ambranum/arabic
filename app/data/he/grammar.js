@@ -2,8 +2,1822 @@
 // Prose is curated teaching; every WORD in every table is mined from
 // app/data/he/verbs.js, which is itself looked up in the lexicon.
 window.GRAMMAR = {
- "intro": "Hebrew's central grammar is not a sentence pattern — it is the <b>binyanim</b>, the seven shapes a three-letter root is poured into. Learn to see the root through the shape and a word you have never met is half known. Every word in the tables below is a real dictionary entry: the pairs are one root the lexicon happens to have in both binyanim, not examples anyone wrote.",
+ "intro": "Two halves. The first eleven lessons are how a <b>sentence</b> is built — that Hebrew leaves out “is”, that “I have” is “there is to me”, that one letter does the work of “that”, “which” and “who”. The last nine are how a <b>word</b> is built: the <b>binyanim</b>, the seven shapes a three-letter root is poured into, where learning to see the root through the shape leaves a word you have never met half known. The prose and the paradigm tables are written; every example sentence is a real one out of this app’s own Hebrew, and every word in the verb tables is a real dictionary entry.",
  "lessons": [
+  {
+   "id": "nominal",
+   "title": "Sentences with no “is”",
+   "sub": "הבית גדול — “the house (is) big”",
+   "body": [
+    "Hebrew has no word for “is / am / are” in the present tense. You put the two things next to each other and stop: <b>הבית גדול</b> is literally “the house big”, and it means “the house is big”. Same with <b>אני עייף</b> “I am tired” and <b>הקפה חם</b> “the coffee is hot”.",
+    "This is the first thing that stops you sounding translated. When English reaches for “is”, Hebrew reaches for nothing at all — subject, then the describing word, done. The verb <b>היה</b> exists, but it is for the past and the future only; there is a lesson on it further down."
+   ],
+   "tables": [
+    {
+     "title": "The pattern",
+     "rows": [
+      [
+       "הבית גדול",
+       "ha-báyit gadól",
+       "the house is big"
+      ],
+      [
+       "אני עייף",
+       "aní ayéf",
+       "I am tired"
+      ],
+      [
+       "היא רופאה",
+       "hi rofá",
+       "she is a doctor"
+      ],
+      [
+       "הם בבית",
+       "hem ba-báyit",
+       "they are at home"
+      ],
+      [
+       "זה יפה",
+       "ze yafé",
+       "that is beautiful"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "הרחוב רטוב והעצים ירוקים.",
+     "en": "The street is wet and the trees are green.",
+     "src": "story-beg-08",
+     "title": "A Rainy Day",
+     "hi": [
+      "רטוב"
+     ]
+    },
+    {
+     "ar": "בערב הרחוב שקט מאוד.",
+     "en": "In the evening the street is very quiet.",
+     "src": "story-beg-09",
+     "title": "My Street",
+     "hi": [
+      "שקט"
+     ]
+    },
+    {
+     "ar": "זה היום הראשון בשבוע.",
+     "en": "It's the first day of the week.",
+     "src": "story-beg-15",
+     "title": "Sunday",
+     "hi": [
+      "הראשון"
+     ]
+    },
+    {
+     "ar": "האוכל טעים והמקום שקט.",
+     "en": "The food is tasty and the place is quiet.",
+     "src": "story-beg-16",
+     "title": "At the Restaurant",
+     "hi": [
+      "טעים"
+     ]
+    },
+    {
+     "ar": "אחרי הצהריים הרחוב שקט.",
+     "en": "In the afternoon the street is quiet.",
+     "src": "story-beg-18",
+     "title": "The Afternoon",
+     "hi": [
+      "שקט"
+     ]
+    },
+    {
+     "ar": "הטלפון שלי ישן וקטן.",
+     "en": "My phone is old and small.",
+     "src": "story-beg-21",
+     "title": "My Phone",
+     "hi": [
+      "ישן"
+     ]
+    },
+    {
+     "ar": "המים חמים והחול חם מאוד.",
+     "en": "The water is warm and the sand is very hot.",
+     "src": "story-beg-06",
+     "title": "A Day at the Sea",
+     "hi": [
+      "חמים"
+     ]
+    },
+    {
+     "ar": "אבל הוא כלב טוב ושקט.",
+     "en": "But he's a good, quiet dog.",
+     "src": "story-beg-14",
+     "title": "The Neighbours' Dog",
+     "hi": [
+      "טוב"
+     ]
+    },
+    {
+     "ar": "אני שמח שיש לי אותם.",
+     "en": "I'm glad I have them.",
+     "src": "story-beg-20",
+     "title": "Friends",
+     "hi": [
+      "שמח"
+     ]
+    },
+    {
+     "ar": "אני נוסע ברכבת לעיר אחרת.",
+     "en": "I travel by train to another city.",
+     "src": "story-beg-25",
+     "title": "The Train",
+     "hi": [
+      "אחרת"
+     ]
+    },
+    {
+     "ar": "אחרי חצי שעה האוכל מוכן.",
+     "en": "After half an hour the food is ready.",
+     "src": "story-beg-27",
+     "title": "Cooking",
+     "hi": [
+      "מוכן"
+     ]
+    },
+    {
+     "ar": "בחורף אני צריך גם מעיל.",
+     "en": "In winter I need a coat as well.",
+     "src": "story-beg-28",
+     "title": "Clothes",
+     "hi": [
+      "צריך"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "article",
+   "title": "The definite article ה־",
+   "sub": "“the”, glued to the front",
+   "body": [
+    "There is one word for “the” and it is a single letter: <b>ה־</b>, stuck onto the front of the noun. <b>בית</b> is “a house”, <b>הבית</b> is “the house”.",
+    "Two things follow from it being glued on rather than standing alone. An adjective after a definite noun takes the ה too, so “the big house” is <b>הבית הגדול</b>, with the article twice — miss the second one and you have said “the house is big” instead, which is the lesson above. And when a preposition comes in front, the two letters merge: ב + ה becomes <b>ב</b> with a different vowel, so “in the house” is <b>בבית</b> (ba-báyit) against “in a house” <b>בבית</b> (be-váyit) — same letters, and only the vowels tell them apart."
+   ],
+   "tables": [
+    {
+     "title": "With and without",
+     "rows": [
+      [
+       "בית · הבית",
+       "báyit · ha-báyit",
+       "a house · the house"
+      ],
+      [
+       "בית גדול",
+       "báyit gadól",
+       "a big house"
+      ],
+      [
+       "הבית הגדול",
+       "ha-báyit ha-gadól",
+       "the big house (the article twice)"
+      ],
+      [
+       "הבית גדול",
+       "ha-báyit gadól",
+       "the house is big (article once)"
+      ],
+      [
+       "בבית",
+       "ba-báyit",
+       "in the house (ב + ה merged)"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "הכול טרי וזול.",
+     "en": "Everything is fresh and cheap.",
+     "src": "story-beg-04",
+     "title": "At the Market",
+     "hi": [
+      "הכול"
+     ]
+    },
+    {
+     "ar": "השכנים מדברים ברחוב.",
+     "en": "The neighbours talk in the street.",
+     "src": "story-beg-09",
+     "title": "My Street",
+     "hi": [
+      "השכנים"
+     ]
+    },
+    {
+     "ar": "סוף סוף האוטובוס מגיע.",
+     "en": "Finally the bus arrives.",
+     "src": "story-beg-03",
+     "title": "The Bus",
+     "hi": [
+      "האוטובוס"
+     ]
+    },
+    {
+     "ar": "הרחוב רטוב והעצים ירוקים.",
+     "en": "The street is wet and the trees are green.",
+     "src": "story-beg-08",
+     "title": "A Rainy Day",
+     "hi": [
+      "והעצים"
+     ]
+    },
+    {
+     "ar": "האוכל טעים והמקום שקט.",
+     "en": "The food is tasty and the place is quiet.",
+     "src": "story-beg-16",
+     "title": "At the Restaurant",
+     "hi": [
+      "והמקום"
+     ]
+    },
+    {
+     "ar": "אחרי הצהריים הרחוב שקט.",
+     "en": "In the afternoon the street is quiet.",
+     "src": "story-beg-18",
+     "title": "The Afternoon",
+     "hi": [
+      "הצהריים"
+     ]
+    },
+    {
+     "ar": "המורה כותבת על הלוח.",
+     "en": "The teacher writes on the board.",
+     "src": "story-beg-24",
+     "title": "In the Classroom",
+     "hi": [
+      "הלוח"
+     ]
+    },
+    {
+     "ar": "הרכבת יוצאת בשמונה בבוקר.",
+     "en": "The train leaves at eight in the morning.",
+     "src": "story-beg-25",
+     "title": "The Train",
+     "hi": [
+      "הרכבת"
+     ]
+    },
+    {
+     "ar": "בחוץ יש שמש והרחוב שקט.",
+     "en": "Outside there's sun and the street is quiet.",
+     "src": "story-beg-01",
+     "title": "Morning Coffee",
+     "hi": [
+      "והרחוב"
+     ]
+    },
+    {
+     "ar": "האוטובוס מאחר קצת, כמו תמיד.",
+     "en": "The bus is a little late, as always.",
+     "src": "story-beg-03",
+     "title": "The Bus",
+     "hi": [
+      "האוטובוס"
+     ]
+    },
+    {
+     "ar": "המוכר צועק על העגבניות שלו.",
+     "en": "The seller shouts about his tomatoes.",
+     "src": "story-beg-04",
+     "title": "At the Market",
+     "hi": [
+      "העגבניות"
+     ]
+    },
+    {
+     "ar": "המים חמים והחול חם מאוד.",
+     "en": "The water is warm and the sand is very hot.",
+     "src": "story-beg-06",
+     "title": "A Day at the Sea",
+     "hi": [
+      "המים",
+      "והחול"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pronouns",
+   "title": "The people: I, you, he, she…",
+   "sub": "subject pronouns",
+   "body": [
+    "Hebrew keeps a separate “you” for men and women and a separate “they” as well, so there are ten of these where English has seven.",
+    "In the past and future the verb ending already says who is acting, so the pronoun is often dropped: <b>הלכתי</b> is “I went” on its own. In the present it is NOT dropped, because the present tense marks gender and number but not person — <b>הולך</b> is “going, masculine singular”, and only the pronoun tells you whether that is I, you or he."
+   ],
+   "tables": [
+    {
+     "title": "Subject pronouns",
+     "rows": [
+      [
+       "אני",
+       "aní",
+       "I"
+      ],
+      [
+       "אתה",
+       "atá",
+       "you (m)"
+      ],
+      [
+       "את",
+       "at",
+       "you (f)"
+      ],
+      [
+       "הוא",
+       "hu",
+       "he"
+      ],
+      [
+       "היא",
+       "hi",
+       "she"
+      ],
+      [
+       "אנחנו",
+       "anákhnu",
+       "we"
+      ],
+      [
+       "אתם",
+       "atém",
+       "you (m pl)"
+      ],
+      [
+       "אתן",
+       "atén",
+       "you (f pl)"
+      ],
+      [
+       "הם",
+       "hem",
+       "they (m)"
+      ],
+      [
+       "הן",
+       "hen",
+       "they (f)"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "אני מחכה לאוטובוס בתחנה.",
+     "en": "I'm waiting for the bus at the stop.",
+     "src": "story-beg-03",
+     "title": "The Bus",
+     "hi": [
+      "אני"
+     ]
+    },
+    {
+     "ar": "בקיץ אנחנו נוסעים לים.",
+     "en": "In summer we go to the sea.",
+     "src": "story-beg-06",
+     "title": "A Day at the Sea",
+     "hi": [
+      "אנחנו"
+     ]
+    },
+    {
+     "ar": "אני אוהב לגור פה.",
+     "en": "I like living here.",
+     "src": "story-beg-09",
+     "title": "My Street",
+     "hi": [
+      "אני"
+     ]
+    },
+    {
+     "ar": "אנחנו יושבים במסעדה קטנה.",
+     "en": "We're sitting in a small restaurant.",
+     "src": "story-beg-16",
+     "title": "At the Restaurant",
+     "hi": [
+      "אנחנו"
+     ]
+    },
+    {
+     "ar": "אנחנו מדברים על העבודה.",
+     "en": "We talk about work.",
+     "src": "story-beg-16",
+     "title": "At the Restaurant",
+     "hi": [
+      "אנחנו"
+     ]
+    },
+    {
+     "ar": "בערב אנחנו יושבים בגן.",
+     "en": "In the evening we sit in the garden.",
+     "src": "story-beg-17",
+     "title": "The Garden",
+     "hi": [
+      "אנחנו"
+     ]
+    },
+    {
+     "ar": "אנחנו נפגשים כל שבוע.",
+     "en": "We meet every week.",
+     "src": "story-beg-20",
+     "title": "Friends",
+     "hi": [
+      "אנחנו"
+     ]
+    },
+    {
+     "ar": "לפעמים אנחנו הולכים לסרט.",
+     "en": "Sometimes we go to a film.",
+     "src": "story-beg-20",
+     "title": "Friends",
+     "hi": [
+      "אנחנו"
+     ]
+    },
+    {
+     "ar": "אני קורא הודעות מהמשפחה.",
+     "en": "I read messages from the family.",
+     "src": "story-beg-21",
+     "title": "My Phone",
+     "hi": [
+      "אני"
+     ]
+    },
+    {
+     "ar": "היום אני הולך לדואר.",
+     "en": "Today I go to the post office.",
+     "src": "story-beg-22",
+     "title": "At the Post Office",
+     "hi": [
+      "אני"
+     ]
+    },
+    {
+     "ar": "אני צריך לשלוח מכתב.",
+     "en": "I need to send a letter.",
+     "src": "story-beg-22",
+     "title": "At the Post Office",
+     "hi": [
+      "אני"
+     ]
+    },
+    {
+     "ar": "אחרי שעתיים אני מגיע.",
+     "en": "After two hours I arrive.",
+     "src": "story-beg-25",
+     "title": "The Train",
+     "hi": [
+      "אני"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "yesh",
+   "title": "“There is” and “there isn’t” — יש and אין",
+   "sub": "יש · אין",
+   "body": [
+    "Two words carry all of English’s “there is”, “there are”, “there was” and their negatives. <b>יש</b> says something exists, <b>אין</b> says it does not, and neither of them inflects for anything at all — no gender, no number, no person.",
+    "For the past and the future you put <b>היה</b> in front: <b>היה יש</b> is not said, but <b>היו הרבה אנשים</b> “there were a lot of people” is, and for the negative you get <b>לא היה</b>. In the present, יש and אין do the whole job by themselves."
+   ],
+   "tables": [
+    {
+     "title": "Existence",
+     "rows": [
+      [
+       "יש",
+       "yesh",
+       "there is, there are"
+      ],
+      [
+       "אין",
+       "eyn",
+       "there is not, there are not"
+      ],
+      [
+       "יש אנשים בחוץ",
+       "yesh anashím ba-khúts",
+       "there are people outside"
+      ],
+      [
+       "אין מים",
+       "eyn máyim",
+       "there is no water"
+      ],
+      [
+       "היו הרבה אנשים",
+       "hayú harbé anashím",
+       "there were a lot of people"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "יש הרבה אנשים בתחנה.",
+     "en": "There are a lot of people at the stop.",
+     "src": "story-beg-03",
+     "title": "The Bus",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "בקופה יש תור ארוך.",
+     "en": "At the checkout there's a long queue.",
+     "src": "story-beg-13",
+     "title": "At the Shop",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "אחרי שעה יש הפסקה.",
+     "en": "After an hour there's a break.",
+     "src": "story-beg-24",
+     "title": "In the Classroom",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "בחוץ יש שדות ועצים.",
+     "en": "Outside there are fields and trees.",
+     "src": "story-beg-25",
+     "title": "The Train",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "בחוץ יש שמש והרחוב שקט.",
+     "en": "Outside there's sun and the street is quiet.",
+     "src": "story-beg-01",
+     "title": "Morning Coffee",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "על השולחן יש חלה ויין.",
+     "en": "On the table there's challah and wine.",
+     "src": "story-beg-07",
+     "title": "Friday Dinner",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "יש שם מכולת ובית קפה.",
+     "en": "There's a corner shop and a café there.",
+     "src": "story-beg-09",
+     "title": "My Street",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "לשכנים שלי יש כלב גדול.",
+     "en": "My neighbours have a big dog.",
+     "src": "story-beg-14",
+     "title": "The Neighbours' Dog",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "בעבודה יש הרבה דברים לעשות.",
+     "en": "At work there's a lot to do.",
+     "src": "story-beg-15",
+     "title": "Sunday",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "ליד הבית שלי יש ספרייה.",
+     "en": "There's a library near my house.",
+     "src": "story-beg-19",
+     "title": "At the Library",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "במטבח יש ריח טוב מאוד.",
+     "en": "In the kitchen there's a very good smell.",
+     "src": "story-beg-27",
+     "title": "Cooking",
+     "hi": [
+      "יש"
+     ]
+    },
+    {
+     "ar": "בשוק יש ירקות, פירות ולחם טרי.",
+     "en": "At the market there are vegetables, fruit and fresh bread.",
+     "src": "story-beg-04",
+     "title": "At the Market",
+     "hi": [
+      "יש"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "having",
+   "title": "Having — יש לי",
+   "sub": "“there is to me”",
+   "body": [
+    "Hebrew has no verb “to have”. It says the thing exists, and then says to whom: <b>יש לי</b> is literally “there is to me”, and it means “I have”.",
+    "So the thing owned is the subject of the sentence and the owner is a prepositional phrase, which is why nothing agrees with the owner. <b>יש לי ספר</b>, <b>יש לה ספר</b> and <b>יש להם ספר</b> differ in one word. The negative is <b>אין לי</b>, and the past is <b>היה לי</b> — and there the verb agrees with the THING, so it is <b>הייתה לי בעיה</b> “I had a problem”, feminine, because בעיה is feminine."
+   ],
+   "tables": [
+    {
+     "title": "To me, to you, to him…",
+     "rows": [
+      [
+       "יש לי",
+       "yesh li",
+       "I have"
+      ],
+      [
+       "יש לך",
+       "yesh lekhá / lakh",
+       "you have (m / f)"
+      ],
+      [
+       "יש לו",
+       "yesh lo",
+       "he has"
+      ],
+      [
+       "יש לה",
+       "yesh la",
+       "she has"
+      ],
+      [
+       "יש לנו",
+       "yesh lánu",
+       "we have"
+      ],
+      [
+       "יש לכם",
+       "yesh lakhém",
+       "you have (pl)"
+      ],
+      [
+       "יש להם",
+       "yesh lahém",
+       "they have"
+      ],
+      [
+       "אין לי",
+       "eyn li",
+       "I do not have"
+      ],
+      [
+       "היה לי",
+       "hayá li",
+       "I had"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "יש לנו חתול קטן.",
+     "en": "We have a little cat.",
+     "src": "story-beg-05",
+     "title": "Our Cat",
+     "hi": [
+      "יש",
+      "לנו"
+     ]
+    },
+    {
+     "ar": "יש לי שני חברים טובים.",
+     "en": "I have two good friends.",
+     "src": "story-beg-20",
+     "title": "Friends",
+     "hi": [
+      "יש",
+      "לי"
+     ]
+    },
+    {
+     "ar": "יש לי אח קטן ואחות גדולה.",
+     "en": "I have a little brother and a big sister.",
+     "src": "story-beg-02",
+     "title": "My Family",
+     "hi": [
+      "יש",
+      "לי"
+     ]
+    },
+    {
+     "ar": "הוא חום ויש לו עיניים שחורות.",
+     "en": "He's brown and has black eyes.",
+     "src": "story-beg-14",
+     "title": "The Neighbours' Dog",
+     "hi": [
+      "ויש",
+      "לו"
+     ]
+    },
+    {
+     "ar": "קוראים לי דני ויש לי משפחה גדולה.",
+     "en": "My name is Danny and I have a big family.",
+     "src": "story-beg-02",
+     "title": "My Family",
+     "hi": [
+      "ויש",
+      "לי"
+     ]
+    },
+    {
+     "ar": "אמרתי: אין לי בגדאד.",
+     "en": "I said: I do not have Baghdad.",
+     "src": "book-sindbad-ch23",
+     "title": "Chapter 23 — Serendib",
+     "hi": [
+      "אין",
+      "לי"
+     ]
+    },
+    {
+     "ar": "יש לי שורשים עמוקים באדמה.",
+     "en": "I have deep roots in the earth.",
+     "src": "book-aesop-ch01",
+     "title": "Fable 1 — The Oak and the Reed",
+     "hi": [
+      "יש",
+      "לי"
+     ]
+    },
+    {
+     "ar": "אחד אמר: יש לנו משחק.",
+     "en": "One said: we have a game.",
+     "src": "book-juha-ch28",
+     "title": "Tale 28 — The Egg",
+     "hi": [
+      "יש",
+      "לנו"
+     ]
+    },
+    {
+     "ar": "הוא אמר: יש לי הרבה זמן.",
+     "en": "He said: I have a lot of time.",
+     "src": "book-aesop-ch03",
+     "title": "Fable 3 — The Tortoise and the Hare",
+     "hi": [
+      "יש",
+      "לי"
+     ]
+    },
+    {
+     "ar": "הוא אמר: יש לך צוואר ארוך.",
+     "en": "He said: you have a long neck.",
+     "src": "book-aesop-ch10",
+     "title": "Fable 10 — The Wolf and the Crane",
+     "hi": [
+      "יש",
+      "לך"
+     ]
+    },
+    {
+     "ar": "הוא אמר: יש לי רעיון פשוט.",
+     "en": "He said: I have a simple idea.",
+     "src": "book-aesop-ch22",
+     "title": "Fable 22 — Belling the Cat",
+     "hi": [
+      "יש",
+      "לי"
+     ]
+    },
+    {
+     "ar": "הנמלה אמרה: אין לי זמן עכשיו.",
+     "en": "The ant said: I have no time now.",
+     "src": "book-aesop-ch28",
+     "title": "Fable 28 — The Ant and the Grasshopper",
+     "hi": [
+      "אין",
+      "לי"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "wanting",
+   "title": "Wanting — רוצה",
+   "sub": "and צריך, “need”",
+   "body": [
+    "<b>רוצה</b> is an ordinary present-tense verb, which means it agrees with the speaker in gender and number and not in person: a man says <b>אני רוצה</b>, a woman says <b>אני רוצה</b> too — the spelling is the same and the vowels differ — and a group says <b>אנחנו רוצים</b>.",
+    "What follows it is the infinitive: <b>אני רוצה ללכת</b> “I want to go”. If you want someone ELSE to do the thing, Hebrew switches to <b>ש</b> plus the future: <b>אני רוצה שתלך</b> “I want you to go”, literally “I want that you will go”. <b>צריך</b> “need” and <b>אוהב</b> “like” take the infinitive the same way."
+   ],
+   "tables": [
+    {
+     "title": "Want, need, like",
+     "rows": [
+      [
+       "אני רוצה",
+       "aní rotsé / rotsá",
+       "I want (m / f)"
+      ],
+      [
+       "אנחנו רוצים",
+       "anákhnu rotsím",
+       "we want"
+      ],
+      [
+       "אני רוצה ללכת",
+       "aní rotsé lalékhet",
+       "I want to go"
+      ],
+      [
+       "אני רוצה שתלך",
+       "aní rotsé she-teléch",
+       "I want you to go"
+      ],
+      [
+       "אני צריך",
+       "aní tsaríkh",
+       "I need"
+      ],
+      [
+       "אני אוהב",
+       "aní ohév",
+       "I like, I love"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "בשמונה כולם רוצים לישון.",
+     "en": "At eight everyone wants to sleep.",
+     "src": "story-beg-18",
+     "title": "The Afternoon",
+     "hi": [
+      "רוצים"
+     ]
+    },
+    {
+     "ar": "אני לא רוצה לצאת מהבית.",
+     "en": "I don't want to leave the house.",
+     "src": "story-beg-08",
+     "title": "A Rainy Day",
+     "hi": [
+      "רוצה"
+     ]
+    },
+    {
+     "ar": "לפני השינה אני לא רוצה אותו.",
+     "en": "Before sleep I don't want it.",
+     "src": "story-beg-21",
+     "title": "My Phone",
+     "hi": [
+      "רוצה"
+     ]
+    },
+    {
+     "ar": "אף אחד לא רצה ללכת לישון מוקדם.",
+     "en": "Nobody wanted to go to bed early.",
+     "src": "story-int-20",
+     "title": "The End of Summer",
+     "hi": [
+      "רצה"
+     ]
+    },
+    {
+     "ar": "יצאנו מוקדם בבוקר כי רצינו להגיע לפני החום.",
+     "en": "We left early in the morning because we wanted to arrive before the heat.",
+     "src": "story-int-03",
+     "title": "The Trip North",
+     "hi": [
+      "רצינו"
+     ]
+    },
+    {
+     "ar": "הוא כתב שהוא חושב עליי ושהוא רוצה להיפגש.",
+     "en": "He wrote that he thinks about me and wants to meet.",
+     "src": "story-int-10",
+     "title": "The Letter",
+     "hi": [
+      "רוצה"
+     ]
+    },
+    {
+     "ar": "הבנתי את זה רק כשהגעתי הביתה ורציתי להתקשר.",
+     "en": "I only realised when I got home and wanted to make a call.",
+     "src": "story-int-26",
+     "title": "The Phone That Was Lost",
+     "hi": [
+      "ורציתי"
+     ]
+    },
+    {
+     "ar": "היה קר מאוד, אבל אף אחד לא רצה להיכנס הביתה.",
+     "en": "It was very cold, but nobody wanted to go inside.",
+     "src": "story-int-25",
+     "title": "The Day of Snow",
+     "hi": [
+      "רצה"
+     ]
+    },
+    {
+     "ar": "הוא לא רצה כסף ורק אמר שזה קרה גם לו פעם.",
+     "en": "He didn't want money and only said it had happened to him too once.",
+     "src": "story-int-26",
+     "title": "The Phone That Was Lost",
+     "hi": [
+      "רצה"
+     ]
+    },
+    {
+     "ar": "לקחתי אותה לקניות בקניון והמצאתי תירוצים חדשים בכל פעם שהיא רצתה לחזור.",
+     "en": "I took her shopping at the mall and invented new excuses every time she wanted to go back.",
+     "src": "story-adv-19",
+     "title": "Mum's Birthday",
+     "hi": [
+      "רצתה"
+     ]
+    },
+    {
+     "ar": "יצאנו לדרום בחמש בבוקר, כי רצינו להגיע למכתש לפני שהשמש תעלה גבוה.",
+     "en": "We set out south at five in the morning, because we wanted to reach the crater before the sun rose high.",
+     "src": "story-adv-23",
+     "title": "The Road to the Desert",
+     "hi": [
+      "רצינו"
+     ]
+    },
+    {
+     "ar": "לקחתי מונית לשדה התעופה בחמש בבוקר, ובהתחלה לא רציתי לדבר עם אף אחד.",
+     "en": "I took a taxi to the airport at five in the morning, and at first I didn't want to talk to anyone.",
+     "src": "story-adv-09",
+     "title": "A Conversation in a Taxi",
+     "hi": [
+      "רציתי"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "negation",
+   "title": "Saying no — לא and אל",
+   "sub": "and where אין comes in",
+   "body": [
+    "<b>לא</b> negates almost everything, and it goes in front of what it negates: <b>לא הלכתי</b> “I did not go”, <b>לא טוב</b> “not good”. It never changes shape.",
+    "Two places take a different word. To tell someone NOT to do something you use <b>אל</b> with the future, not לא: <b>אל תלך</b> “do not go”. And to say a thing does not exist you use <b>אין</b>, from the lesson above: <b>אין לי זמן</b> “I have no time”. Saying <b>לא</b> where Hebrew wants אל or אין is one of the most audible mistakes a learner makes."
+   ],
+   "tables": [
+    {
+     "title": "Three different “no”",
+     "rows": [
+      [
+       "לא הלכתי",
+       "lo halákhti",
+       "I did not go"
+      ],
+      [
+       "לא טוב",
+       "lo tov",
+       "not good"
+      ],
+      [
+       "אל תלך",
+       "al teléch",
+       "do not go (command)"
+      ],
+      [
+       "אין לי זמן",
+       "eyn li zman",
+       "I have no time"
+      ],
+      [
+       "לא, תודה",
+       "lo, todá",
+       "no, thank you"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "הוא לא אוהב מים בכלל.",
+     "en": "He doesn't like water at all.",
+     "src": "story-beg-05",
+     "title": "Our Cat",
+     "hi": [
+      "לא"
+     ]
+    },
+    {
+     "ar": "אני לא רוצה לצאת מהבית.",
+     "en": "I don't want to leave the house.",
+     "src": "story-beg-08",
+     "title": "A Rainy Day",
+     "hi": [
+      "לא"
+     ]
+    },
+    {
+     "ar": "בסוף השבוע אני לא עובד.",
+     "en": "At the weekend I don't work.",
+     "src": "story-beg-30",
+     "title": "The Weekend",
+     "hi": [
+      "לא"
+     ]
+    },
+    {
+     "ar": "אני קם מאוחר ולא ממהר.",
+     "en": "I get up late and don't rush.",
+     "src": "story-beg-30",
+     "title": "The Weekend",
+     "hi": [
+      "ולא"
+     ]
+    },
+    {
+     "ar": "לפני השינה אני לא רוצה אותו.",
+     "en": "Before sleep I don't want it.",
+     "src": "story-beg-21",
+     "title": "My Phone",
+     "hi": [
+      "לא"
+     ]
+    },
+    {
+     "ar": "היא לא נתנה לנו לטעום לפני הארוחה.",
+     "en": "She wouldn't let us taste it before the meal.",
+     "src": "story-int-06",
+     "title": "Grandma's Cake",
+     "hi": [
+      "לא"
+     ]
+    },
+    {
+     "ar": "היא ראתה אותי מהמטבח ולא אמרה מילה.",
+     "en": "She saw me from the kitchen and didn't say a word.",
+     "src": "story-int-06",
+     "title": "Grandma's Cake",
+     "hi": [
+      "ולא"
+     ]
+    },
+    {
+     "ar": "אחר כך ישבנו בשמש ולא דיברנו הרבה.",
+     "en": "Afterwards we sat in the sun and didn't talk much.",
+     "src": "story-int-09",
+     "title": "A Day in Jerusalem",
+     "hi": [
+      "ולא"
+     ]
+    },
+    {
+     "ar": "בלילה לפני זה כמעט לא ישנתי בכלל.",
+     "en": "The night before I hardly slept at all.",
+     "src": "story-int-14",
+     "title": "The Exam",
+     "hi": [
+      "לא"
+     ]
+    },
+    {
+     "ar": "רק בערב הבנתי שהוא לא בתיק שלי.",
+     "en": "Only in the evening did I realise it wasn't in my bag.",
+     "src": "story-int-16",
+     "title": "The Book I Forgot",
+     "hi": [
+      "לא"
+     ]
+    },
+    {
+     "ar": "אף אחד לא רצה ללכת לישון מוקדם.",
+     "en": "Nobody wanted to go to bed early.",
+     "src": "story-int-20",
+     "title": "The End of Summer",
+     "hi": [
+      "לא"
+     ]
+    },
+    {
+     "ar": "כשהאור נדלק אף אחד לא קם מיד.",
+     "en": "When the lights came on nobody got up straight away.",
+     "src": "story-int-23",
+     "title": "The Film",
+     "hi": [
+      "לא"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "haya",
+   "title": "Was and will be — היה",
+   "sub": "the verb the present does without",
+   "body": [
+    "The lesson on nominal sentences said Hebrew leaves “is” out. <b>היה</b> is what comes back the moment the sentence stops being about now: <b>הבית גדול</b> “the house is big” becomes <b>הבית היה גדול</b> in the past and <b>הבית יהיה גדול</b> in the future.",
+    "It agrees with the subject like any other verb, and it is irregular enough to be worth learning as a table rather than as a pattern. It is also the verb that puts יש and אין into the past: <b>היו הרבה אנשים</b>, <b>לא היה זמן</b>."
+   ],
+   "tables": [
+    {
+     "title": "היה, past",
+     "rows": [
+      [
+       "הייתי",
+       "hayíti",
+       "I was"
+      ],
+      [
+       "היית",
+       "hayíta / hayít",
+       "you were (m / f)"
+      ],
+      [
+       "היה",
+       "hayá",
+       "he was"
+      ],
+      [
+       "הייתה",
+       "haytá",
+       "she was"
+      ],
+      [
+       "היינו",
+       "hayínu",
+       "we were"
+      ],
+      [
+       "הייתם",
+       "heyitém",
+       "you were (pl)"
+      ],
+      [
+       "היו",
+       "hayú",
+       "they were"
+      ]
+     ]
+    },
+    {
+     "title": "היה, future",
+     "rows": [
+      [
+       "אהיה",
+       "ehyé",
+       "I will be"
+      ],
+      [
+       "תהיה",
+       "tihyé",
+       "you will be (m)"
+      ],
+      [
+       "יהיה",
+       "yihyé",
+       "he will be"
+      ],
+      [
+       "תהיה",
+       "tihyé",
+       "she will be"
+      ],
+      [
+       "נהיה",
+       "nihyé",
+       "we will be"
+      ],
+      [
+       "יהיו",
+       "yihyú",
+       "they will be"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "בהתחלה זה היה קשה מאוד.",
+     "en": "At first it was very hard.",
+     "src": "story-beg-11",
+     "title": "Learning Hebrew",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "כשהם הלכו המטבח היה מלא כלים.",
+     "en": "When they left the kitchen was full of dishes.",
+     "src": "story-int-27",
+     "title": "A Meal with Friends",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "הספר עוד היה שם, רטוב קצת מהלילה.",
+     "en": "The book was still there, a little wet from the night.",
+     "src": "story-int-16",
+     "title": "The Book I Forgot",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "יצאתי מהבית בשש וחצי כשעוד היה חושך.",
+     "en": "I left the house at half past six when it was still dark.",
+     "src": "story-int-24",
+     "title": "The Journey to Work",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "הוא היה רטוב ופחד מכל רעש ברחוב.",
+     "en": "He was wet and frightened by every noise in the street.",
+     "src": "story-int-29",
+     "title": "The Dog on the Stairs",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "כולם צחקו, אבל זה היה צחוק טוב ונעים.",
+     "en": "Everyone laughed, but it was a good, warm laugh.",
+     "src": "story-int-01",
+     "title": "The First Lesson",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "כל הדרך הביתה חשבתי כמה זה היה קרוב.",
+     "en": "All the way home I thought how close it had been.",
+     "src": "story-int-11",
+     "title": "The Last Train",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "היום אני לא זוכר איך היה במקום הקודם.",
+     "en": "Today I don't remember what it was like in the old place.",
+     "src": "story-int-12",
+     "title": "The New Flat",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "אחרי שעתיים יצאתי מהחדר בלי לדעת מה יהיה.",
+     "en": "After two hours I left the room without knowing what would happen.",
+     "src": "story-int-14",
+     "title": "The Exam",
+     "hi": [
+      "יהיה"
+     ]
+    },
+    {
+     "ar": "קניתי עגבניות, לחם וגבינה, והכול היה טרי מאוד.",
+     "en": "I bought tomatoes, bread and cheese, and everything was very fresh.",
+     "src": "story-int-21",
+     "title": "The Market on Friday",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "הסרט היה איטי מאוד ובהתחלה לא הבנתי אותו.",
+     "en": "The film was very slow and at first I didn't understand it.",
+     "src": "story-int-23",
+     "title": "The Film",
+     "hi": [
+      "היה"
+     ]
+    },
+    {
+     "ar": "בישלנו כל היום ובסוף היה יותר מדי אוכל.",
+     "en": "We cooked all day and in the end there was too much food.",
+     "src": "story-int-27",
+     "title": "A Meal with Friends",
+     "hi": [
+      "היה"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shel",
+   "title": "Mine, yours, his — של",
+   "sub": "the easy way, and the short way",
+   "body": [
+    "Possession is one word, <b>של</b>, and it takes the endings: <b>הספר שלי</b> “my book”, literally “the book of-me”. Note the noun keeps its <b>ה</b> — it is “THE book of me”, never “book of me”.",
+    "There is a second, older way that glues the ending straight onto the noun — <b>ספרי</b> for “my book”, <b>שמו</b> for “his name”. You will meet it constantly in writing and in fixed phrases, and almost never in speech, where של does the work. Learn to recognise it; use the של form."
+   ],
+   "tables": [
+    {
+     "title": "Of me, of you, of him…",
+     "rows": [
+      [
+       "שלי",
+       "shelí",
+       "my, mine"
+      ],
+      [
+       "שלך",
+       "shelkhá / shelákh",
+       "your (m / f)"
+      ],
+      [
+       "שלו",
+       "sheló",
+       "his"
+      ],
+      [
+       "שלה",
+       "shelá",
+       "her"
+      ],
+      [
+       "שלנו",
+       "shelánu",
+       "our"
+      ],
+      [
+       "שלכם",
+       "shelakhém",
+       "your (pl)"
+      ],
+      [
+       "שלהם",
+       "shelahém",
+       "their"
+      ],
+      [
+       "הספר שלי",
+       "ha-séfer shelí",
+       "my book"
+      ],
+      [
+       "שמו",
+       "shmo",
+       "his name (the glued form)"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "לשכן שלי קוראים יוסי.",
+     "en": "My neighbour's name is Yossi.",
+     "src": "story-beg-12",
+     "title": "My Neighbour",
+     "hi": [
+      "שלי"
+     ]
+    },
+    {
+     "ar": "הטלפון שלי ישן וקטן.",
+     "en": "My phone is old and small.",
+     "src": "story-beg-21",
+     "title": "My Phone",
+     "hi": [
+      "שלי"
+     ]
+    },
+    {
+     "ar": "סבתא שלי גרה איתנו בבית.",
+     "en": "My grandmother lives with us in the house.",
+     "src": "story-beg-02",
+     "title": "My Family",
+     "hi": [
+      "שלי"
+     ]
+    },
+    {
+     "ar": "המוכר צועק על העגבניות שלו.",
+     "en": "The seller shouts about his tomatoes.",
+     "src": "story-beg-04",
+     "title": "At the Market",
+     "hi": [
+      "שלו"
+     ]
+    },
+    {
+     "ar": "לשכנים שלי יש כלב גדול.",
+     "en": "My neighbours have a big dog.",
+     "src": "story-beg-14",
+     "title": "The Neighbours' Dog",
+     "hi": [
+      "שלי"
+     ]
+    },
+    {
+     "ar": "ליד הבית שלי יש ספרייה.",
+     "en": "There's a library near my house.",
+     "src": "story-beg-19",
+     "title": "At the Library",
+     "hi": [
+      "שלי"
+     ]
+    },
+    {
+     "ar": "היום יום הולדת של אחותי.",
+     "en": "Today is my sister's birthday.",
+     "src": "story-beg-23",
+     "title": "A Birthday",
+     "hi": [
+      "של"
+     ]
+    },
+    {
+     "ar": "הנעליים שלי ישנות אבל נוחות.",
+     "en": "My shoes are old but comfortable.",
+     "src": "story-beg-28",
+     "title": "Clothes",
+     "hi": [
+      "שלי"
+     ]
+    },
+    {
+     "ar": "אני אוהב את המשפחה שלי מאוד.",
+     "en": "I love my family very much.",
+     "src": "story-beg-02",
+     "title": "My Family",
+     "hi": [
+      "שלי"
+     ]
+    },
+    {
+     "ar": "מאחורי הבית שלנו יש גן קטן.",
+     "en": "Behind our house there's a small garden.",
+     "src": "story-beg-17",
+     "title": "The Garden",
+     "hi": [
+      "שלנו"
+     ]
+    },
+    {
+     "ar": "הם מספרים לי על העבודה שלהם.",
+     "en": "They tell me about their work.",
+     "src": "story-beg-20",
+     "title": "Friends",
+     "hi": [
+      "שלהם"
+     ]
+    },
+    {
+     "ar": "לפעמים אני מדבר עם אמא שלי.",
+     "en": "Sometimes I talk with my mum.",
+     "src": "story-beg-21",
+     "title": "My Phone",
+     "hi": [
+      "שלי"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "questions",
+   "title": "Asking things",
+   "sub": "מה, מי, איפה, למה…",
+   "body": [
+    "The question word goes first and nothing else moves. Hebrew does not invert the sentence and has no “do” to insert, so <b>אתה הולך</b> “you are going” becomes <b>לאן אתה הולך</b> “where are you going” with a word added and nothing rearranged.",
+    "A yes/no question is the statement with a question mark on it and a rise at the end: <b>אתה בא?</b> “are you coming?”. There is a formal particle <b>האם</b> for these, and in speech it is essentially never used."
+   ],
+   "tables": [
+    {
+     "title": "Question words",
+     "rows": [
+      [
+       "מה",
+       "ma",
+       "what"
+      ],
+      [
+       "מי",
+       "mi",
+       "who"
+      ],
+      [
+       "איפה",
+       "éyfo",
+       "where"
+      ],
+      [
+       "לאן",
+       "le-án",
+       "where to"
+      ],
+      [
+       "מאיפה",
+       "me-éyfo",
+       "where from"
+      ],
+      [
+       "מתי",
+       "matáy",
+       "when"
+      ],
+      [
+       "למה",
+       "láma",
+       "why"
+      ],
+      [
+       "איך",
+       "eykh",
+       "how"
+      ],
+      [
+       "כמה",
+       "káma",
+       "how much, how many"
+      ],
+      [
+       "איזה",
+       "éyze",
+       "which"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "איפה היית?",
+     "en": "Where were you?",
+     "src": "book-kalila-ch07",
+     "title": "Tale 7 — Dimna Speaks to the Ox",
+     "hi": [
+      "איפה"
+     ]
+    },
+    {
+     "ar": "אמרתי: מה?",
+     "en": "I said: what?",
+     "src": "book-sindbad-ch15",
+     "title": "Chapter 15 — The Law of the City",
+     "hi": [
+      "מה"
+     ]
+    },
+    {
+     "ar": "ושאלתי: למה?",
+     "en": "And I asked: why?",
+     "src": "book-sindbad-ch20",
+     "title": "Chapter 20 — The City of Apes",
+     "hi": [
+      "למה"
+     ]
+    },
+    {
+     "ar": "למה איחרת?",
+     "en": "Why are you late?",
+     "src": "book-tomsawyer-ch07",
+     "title": "Chapter 7 — Tom and Becky",
+     "hi": [
+      "למה"
+     ]
+    },
+    {
+     "ar": "אמרנו: מה קרה?",
+     "en": "We said: what happened?",
+     "src": "book-sindbad-ch21",
+     "title": "Chapter 21 — The Mountain of Wrecks",
+     "hi": [
+      "מה"
+     ]
+    },
+    {
+     "ar": "והסבל אמר: למה?",
+     "en": "And the porter said: why?",
+     "src": "book-sindbad-ch27",
+     "title": "Chapter 27 — The Elephant Who Carried Me",
+     "hi": [
+      "למה"
+     ]
+    },
+    {
+     "ar": "מה עשית לחתול?",
+     "en": "What did you do to the cat?",
+     "src": "book-tomsawyer-ch11",
+     "title": "Chapter 11 — Becky Turns Away",
+     "hi": [
+      "מה"
+     ]
+    },
+    {
+     "ar": "האק אמר: איך?",
+     "en": "Huck said: how?",
+     "src": "book-tomsawyer-ch21",
+     "title": "Chapter 21 — After the Trial",
+     "hi": [
+      "איך"
+     ]
+    },
+    {
+     "ar": "טום אמר: למה?",
+     "en": "Tom said: why?",
+     "src": "book-tomsawyer-ch29",
+     "title": "Chapter 29 — Out of the Hill",
+     "hi": [
+      "למה"
+     ]
+    },
+    {
+     "ar": "טרלוני אמר: ולמה?",
+     "en": "Trelawney said: and why?",
+     "src": "book-treasure-ch09",
+     "title": "Chapter 9 — Powder and Arms",
+     "hi": [
+      "ולמה"
+     ]
+    },
+    {
+     "ar": "האמא אמרה: גדולה כמה?",
+     "en": "The mother said: big how much?",
+     "src": "book-aesop-ch13",
+     "title": "Fable 13 — The Frog and the Ox",
+     "hi": [
+      "כמה"
+     ]
+    },
+    {
+     "ar": "האריה אמר: ומי אתה?",
+     "en": "The lion said: and who are you?",
+     "src": "book-kalila-ch03",
+     "title": "Tale 3 — The Ox Called Shatraba",
+     "hi": [
+      "ומי"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "relative",
+   "title": "The one that — ש־",
+   "sub": "one letter does the whole job",
+   "body": [
+    "English has “that”, “which”, “who”, “where” and drops them half the time. Hebrew has <b>ש־</b>, one letter glued to the front of the next word, and never drops it: <b>האיש שבא</b> “the man who came”, <b>הספר שקראתי</b> “the book that I read”, <b>המקום שגרנו בו</b> “the place we lived in”.",
+    "The same <b>ש־</b> is also plain “that” after verbs of saying and thinking — <b>הוא אמר שהוא בא</b> “he said that he is coming” — and it is the ש in <b>אני רוצה שתלך</b> from the wanting lesson. One letter, three jobs in English, and you never have a choice about whether to include it."
+   ],
+   "tables": [
+    {
+     "title": "ש־ at work",
+     "rows": [
+      [
+       "האיש שבא",
+       "ha-ísh she-ba",
+       "the man who came"
+      ],
+      [
+       "הספר שקראתי",
+       "ha-séfer she-karáti",
+       "the book that I read"
+      ],
+      [
+       "הבית שגרנו בו",
+       "ha-báyit she-gárnu bo",
+       "the house we lived in"
+      ],
+      [
+       "הוא אמר שהוא בא",
+       "hu amár she-hu ba",
+       "he said that he is coming"
+      ],
+      [
+       "אני חושב שכן",
+       "aní khoshév she-ken",
+       "I think so"
+      ]
+     ]
+    }
+   ],
+   "examples": [
+    {
+     "ar": "אני יוצא ושמח שגמרתי.",
+     "en": "I leave, glad that I'm finished.",
+     "src": "story-beg-22",
+     "title": "At the Post Office",
+     "hi": [
+      "שגמרתי"
+     ]
+    },
+    {
+     "ar": "השאלות היו קשות יותר ממה שחשבתי.",
+     "en": "The questions were harder than I had thought.",
+     "src": "story-int-14",
+     "title": "The Exam",
+     "hi": [
+      "שחשבתי"
+     ]
+    },
+    {
+     "ar": "האישה ששאלה אותי הייתה נחמדה ודיברה לאט.",
+     "en": "The woman who questioned me was nice and spoke slowly.",
+     "src": "story-int-07",
+     "title": "The Interview",
+     "hi": [
+      "ששאלה"
+     ]
+    },
+    {
+     "ar": "בבוקר הסתכלנו מהחלון ולא האמנו למה שראינו.",
+     "en": "In the morning we looked out of the window and didn't believe what we saw.",
+     "src": "story-int-25",
+     "title": "The Day of Snow",
+     "hi": [
+      "שראינו"
+     ]
+    },
+    {
+     "ar": "אישה מבוגרת שעמדה שם צחקה ואמרה שגם היא שכחה מעיל.",
+     "en": "An older woman standing there laughed and said she had forgotten a coat too.",
+     "src": "story-int-05",
+     "title": "Rain on the Way",
+     "hi": [
+      "שעמדה"
+     ]
+    },
+    {
+     "ar": "הגענו הביתה מלוכלכים ומאוחר, וכולנו הסכמנו שנחזור לשם כבר בחורף הבא.",
+     "en": "We got home dirty and late, and we all agreed we would go back there the very next winter.",
+     "src": "story-adv-23",
+     "title": "The Road to the Desert",
+     "hi": [
+      "שנחזור"
+     ]
+    },
+    {
+     "ar": "נחתנו בקיץ בחום נורא, והדירה שקיבלנו הייתה קטנה בהרבה ממה שזכרנו.",
+     "en": "We landed in summer in terrible heat, and the flat we got was much smaller than we remembered.",
+     "src": "story-adv-30",
+     "title": "The Way Back",
+     "hi": [
+      "שקיבלנו"
+     ]
+    },
+    {
+     "ar": "האיש שעבד שם הכיר כל לקוח וזכר מה כל אחד אוהב.",
+     "en": "The man who worked there knew every customer and remembered what each liked.",
+     "src": "story-int-22",
+     "title": "The Shop That Closed",
+     "hi": [
+      "שעבד"
+     ]
+    },
+    {
+     "ar": "יצאתי משם בטוח שנכשלתי, ובערב הסברתי לאשתי שאין שום סיכוי שיתקשרו אליי.",
+     "en": "I left sure I had failed, and in the evening I explained to my wife that there was no chance at all they would call.",
+     "src": "story-adv-03",
+     "title": "The Interview",
+     "hi": [
+      "שנכשלתי"
+     ]
+    },
+    {
+     "ar": "כשהגענו לשדה התעופה הוא ביקש שאצלם בשבילו את המגרש שבו שיחק כילד.",
+     "en": "When we reached the airport he asked me to photograph for him the lot where he had played as a child.",
+     "src": "story-adv-09",
+     "title": "A Conversation in a Taxi",
+     "hi": [
+      "שאצלם"
+     ]
+    },
+    {
+     "ar": "שכנה מהקומה השנייה הביאה קומקום ישן שפועל על גז והרתיחה תה לכולם.",
+     "en": "A neighbour from the second floor brought an old kettle that runs on gas and boiled tea for everyone.",
+     "src": "story-adv-10",
+     "title": "The Night Without Electricity",
+     "hi": [
+      "שפועל"
+     ]
+    },
+    {
+     "ar": "בדרך לאוניברסיטה פגשתי סטודנטית מהקורס שאמרה שגם היא לא ישנה כמעט בכלל.",
+     "en": "On the way to the university I met a student from the course who said she had hardly slept either.",
+     "src": "story-adv-14",
+     "title": "The Morning of the Exam",
+     "hi": [
+      "שאמרה"
+     ]
+    }
+   ]
+  },
   {
    "id": "root-binyan",
    "title": "Roots and patterns",
@@ -258,15 +2072,6 @@ window.GRAMMAR = {
      ]
     },
     {
-     "ar": "בשישי בערב כולם אוכלים ביחד.",
-     "en": "On Friday evening everyone eats together.",
-     "src": "story-beg-02",
-     "title": "My Family",
-     "hi": [
-      "אוכלים"
-     ]
-    },
-    {
      "ar": "המוכר צועק על העגבניות שלו.",
      "en": "The seller shouts about his tomatoes.",
      "src": "story-beg-04",
@@ -276,12 +2081,21 @@ window.GRAMMAR = {
      ]
     },
     {
-     "ar": "אנחנו אוכלים ושותים מים קרים.",
-     "en": "We eat and drink cold water.",
-     "src": "story-beg-06",
-     "title": "A Day at the Sea",
+     "ar": "אחרי האוכל אנחנו שותים תה.",
+     "en": "After the meal we drink tea.",
+     "src": "story-beg-07",
+     "title": "Friday Dinner",
      "hi": [
-      "אוכלים"
+      "שותים"
+     ]
+    },
+    {
+     "ar": "אני לא רוצה לצאת מהבית.",
+     "en": "I don't want to leave the house.",
+     "src": "story-beg-08",
+     "title": "A Rainy Day",
+     "hi": [
+      "לצאת"
      ]
     }
    ]
@@ -480,39 +2294,39 @@ window.GRAMMAR = {
      ]
     },
     {
-     "ar": "במתקפה רוסית ליד קייב נהרגו 37 אנשים אחרי שמחסן חומרי נפץ נפגע והתפוצץ, וזלנסקי פתח בחקירה.",
-     "en": "In a Russian attack near Kyiv 37 people were killed after an explosives warehouse was hit and blew up, and Zelensky opened an investigation.",
-     "src": "news-2026-08-29",
-     "title": "Today's News — 2026-08-29",
+     "ar": "בסוף אוגוסט נסגרה המסעדה לעונה, והתפזרנו בלי שהבטחנו לשמור על קשר.",
+     "en": "At the end of August the restaurant closed for the season, and we scattered without promising to stay in touch.",
+     "src": "story-adv-05",
+     "title": "That Summer",
      "hi": [
-      "נהרגו"
+      "נסגרה"
      ]
     },
     {
-     "ar": "ארבעה אנשים נהרגו בתאונות דרכים תוך כמה שעות, ביניהם בן 93 בצומת ליד רעננה ופגע וברח באזור אשכול.",
-     "en": "Four people were killed in car accidents within a few hours, among them a 93-year-old at a junction near Ra'anana and a hit-and-run in the Eshkol area.",
-     "src": "news-2026-08-30",
-     "title": "Today's News — 2026-08-30",
+     "ar": "למחרת נפגשנו במדרגות והחלפנו שלום, ומאז אנחנו עושים את זה כל בוקר.",
+     "en": "The next day we met on the stairs and exchanged greetings, and since then we do it every morning.",
+     "src": "story-adv-10",
+     "title": "The Night Without Electricity",
      "hi": [
-      "נהרגו"
+      "נפגשנו"
      ]
     },
     {
-     "ar": "בגרנד קניון בארה\"ב היו שיטפונות פתאומיים, ולפחות 20 מטיילים נעדרים. יותר מ-62 אנשים פונו מהאזור וכמה גשרים נהרסו.",
-     "en": "There were flash floods at the Grand Canyon in the U.S., and at least 20 hikers are missing. More than 62 people were evacuated from the area and several bridges were destroyed.",
-     "src": "news-2026-08-31",
-     "title": "Today's News — 2026-08-31",
+     "ar": "אחרי הלימודים הוא נסע לעבוד בחוץ לארץ, ואני נשארתי ומצאתי עבודה בעיר.",
+     "en": "After our studies he went to work abroad, and I stayed and found work in the city.",
+     "src": "story-adv-20",
+     "title": "The Friend from University",
      "hi": [
-      "נהרסו"
+      "נשארתי"
      ]
     },
     {
-     "ar": "16 לוחמים שסירבו לצאת לסיור עם פרמדיקית בעזה נשלחו לכלא. חמישה מהם קיבלו עשרה ימי מחבוש, ו-11 קיבלו חמישה ימים.",
-     "en": "Sixteen soldiers who refused to go on patrol with a female paramedic in Gaza were sent to jail. Five of them got ten days' detention, and eleven got five days.",
-     "src": "news-2026-08-31",
-     "title": "Today's News — 2026-08-31",
+     "ar": "התמונה נשארה שלמה בפנים, ומאז היא תלויה במסגרת במסדרון ולא נודדת איתי.",
+     "en": "The photograph stayed whole inside, and since then it hangs in a frame in the hallway and doesn't travel with me.",
+     "src": "story-adv-21",
+     "title": "The Wallet That Was Lost",
      "hi": [
-      "נשלחו"
+      "נשארה"
      ]
     }
    ]
@@ -666,12 +2480,76 @@ window.GRAMMAR = {
      ]
     },
     {
-     "ar": "השב\"כ אישר שהיה איום ממשי לפגוע ביאיר נתניהו, ולכן חילצו אותו במהירות חזרה לארץ.",
-     "en": "The Shin Bet confirmed there was a real threat to harm Yair Netanyahu, so they quickly brought him back to Israel.",
-     "src": "news-2026-08-29",
-     "title": "Today's News — 2026-08-29",
+     "ar": "כשהגענו לשדה התעופה הוא ביקש שאצלם בשבילו את המגרש שבו שיחק כילד.",
+     "en": "When we reached the airport he asked me to photograph for him the lot where he had played as a child.",
+     "src": "story-adv-09",
+     "title": "A Conversation in a Taxi",
      "hi": [
-      "חילצו"
+      "ביקש",
+      "שיחק"
+     ]
+    },
+    {
+     "ar": "כשיצאתי הוא ביקש שאבוא שוב, והבטחתי לו שאבוא, וזאת ההבטחה היחידה ששמרתי השנה.",
+     "en": "When I left he asked me to come again, and I promised him I would, and that's the only promise I kept this year.",
+     "src": "story-adv-01",
+     "title": "The Letter That Was Never Sent",
+     "hi": [
+      "ביקש"
+     ]
+    },
+    {
+     "ar": "בקיץ שאחרי בית הספר עבדתי במסעדה קטנה על החוף ולא תכננתי שום דבר.",
+     "en": "In the summer after school I worked in a small restaurant on the beach and planned nothing at all.",
+     "src": "story-adv-05",
+     "title": "That Summer",
+     "hi": [
+      "תכננתי"
+     ]
+    },
+    {
+     "ar": "בגב הצילום מישהו רשם תאריך משנת חמישים ושבע ושתי מילים שלא הצלחתי לפענח.",
+     "en": "On the back of the photograph someone had written a date from nineteen fifty-seven and two words I couldn't decipher.",
+     "src": "story-adv-12",
+     "title": "The Old Photograph",
+     "hi": [
+      "לפענח"
+     ]
+    },
+    {
+     "ar": "מצאתי עבודה במאפייה קטנה, והמנהל לימד אותי מילים חדשות בזמן שלשנו בצק יחד.",
+     "en": "I found work in a small bakery, and the manager taught me new words while we kneaded dough together.",
+     "src": "story-adv-22",
+     "title": "A Year Abroad",
+     "hi": [
+      "לימד"
+     ]
+    },
+    {
+     "ar": "ילד קטן ביקש לשמוע סיפורי רוחות, וההורים שלו הסכימו מיד למרות שהשעה הייתה מאוחרת.",
+     "en": "A small boy asked to hear ghost stories, and his parents agreed at once even though the hour was late.",
+     "src": "story-adv-10",
+     "title": "The Night Without Electricity",
+     "hi": [
+      "ביקש"
+     ]
+    },
+    {
+     "ar": "מאז הם באים כל שבוע, והכלב יושב איתה על הספסל ומחכה שהיא תלטף אותו.",
+     "en": "Since then they come every week, and the dog sits with her on the bench and waits for her to stroke him.",
+     "src": "story-adv-15",
+     "title": "The Dog That Waited",
+     "hi": [
+      "תלטף"
+     ]
+    },
+    {
+     "ar": "ישבנו שם עד שסגרו את המקום, והבטחנו זה לזה שלא נחכה שוב כל כך הרבה.",
+     "en": "We sat there until they closed the place, and promised each other we wouldn't wait that long again.",
+     "src": "story-adv-20",
+     "title": "The Friend from University",
+     "hi": [
+      "נחכה"
      ]
     },
     {
@@ -682,16 +2560,6 @@ window.GRAMMAR = {
      "hi": [
       "מסרבים"
      ]
-    },
-    {
-     "ar": "בכיר אמריקני אמר שצבא ארה\"ב תקף שני משגרים באיראן, אחרי שבועות של שקט. לפי הדיווח, המשגרים נערכו לשגר מוקשים ימיים לכיוון מיצר הורמוז.",
-     "en": "A senior American official said the U.S. military struck two launchers in Iran after weeks of quiet. According to the report, the launchers were being prepared to fire naval mines toward the Strait of Hormuz.",
-     "src": "news-2026-08-31",
-     "title": "Today's News — 2026-08-31",
-     "hi": [
-      "לשגר",
-      "משגרים"
-     ]
     }
    ]
   },
@@ -701,7 +2569,7 @@ window.GRAMMAR = {
    "sub": "שִׁמֵּר → שֻׁמַּר — preserve → be preserved",
    "body": [
     "<b>פֻּעַל</b> is פיעל made passive, and it is nearly always exactly that: if you know the piel, you know the pual. It is uncommon in speech outside the present tense, where it supplies a great many everyday adjectives — מְבֻשָּׁל \"cooked\", מְסֻדָּר \"tidy\".",
-    "Everything this app has in Hebrew — 73 texts, 1104 sentences — turns up <b>8</b> with a פֻּעַל verb in it, and not one of them is spelled a way that can only be read as that verb. So this lesson has its tables and no sentences. That is not a gap in the reading. It is how rare this binyan is once people are actually speaking."
+    "Everything this app has in Hebrew — 400 texts, 9323 sentences — turns up <b>59</b> with a פֻּעַל verb in it, and not one of them is spelled a way that can only be read as that verb. So this lesson has its tables and no sentences. That is not a gap in the reading. It is how rare this binyan is once people are actually speaking."
    ],
    "tables": [
     {
@@ -1053,7 +2921,7 @@ window.GRAMMAR = {
    "sub": "הִכְנִיס → הֻכְנַס — bring in → be brought in",
    "body": [
     "<b>הֻפְעַל</b> is הפעיל made passive, and like פועל it is a mechanical partner: the causative done to you. Rare in speech, common in the news, which is where you will meet it first — הֻחְלַט \"it was decided\", הֻפְסַק \"it was stopped\".",
-    "Everything this app has in Hebrew — 73 texts, 1104 sentences — turns up <b>6</b> with a הֻפְעַל verb in it, and not one of them is spelled a way that can only be read as that verb. So this lesson has its tables and no sentences. That is not a gap in the reading. It is how rare this binyan is once people are actually speaking."
+    "Everything this app has in Hebrew — 400 texts, 9323 sentences — turns up <b>35</b> with a הֻפְעַל verb in it, and not one of them is spelled a way that can only be read as that verb. So this lesson has its tables and no sentences. That is not a gap in the reading. It is how rare this binyan is once people are actually speaking."
    ],
    "tables": [
     {
@@ -1362,12 +3230,39 @@ window.GRAMMAR = {
      ]
     },
     {
-     "ar": "נהג אוטובוס בבית שמש סירב להוריד נוסע במקום לא חוקי, והנוסע היכה אותו קשה. \"התעוררתי באמבולנס\", סיפר הנהג.",
-     "en": "A bus driver in Beit Shemesh refused to let a passenger off at an illegal spot, and the passenger beat him badly. \"I woke up in an ambulance,\" the driver said.",
-     "src": "news-2026-08-31",
-     "title": "Today's News — 2026-08-31",
+     "ar": "בשבועות הראשונים הילדים התעקשו לדבר בבית רק בשפה שהם למדו שם.",
+     "en": "In the first weeks the children insisted on speaking at home only in the language they had learned there.",
+     "src": "story-adv-30",
+     "title": "The Way Back",
+     "hi": [
+      "התעקשו"
+     ]
+    },
+    {
+     "ar": "בבוקר של הבחינה האחרונה התעוררתי שעה לפני השעון, ולא הצלחתי להירדם שוב.",
+     "en": "On the morning of the last exam I woke an hour before the alarm, and couldn't fall asleep again.",
+     "src": "story-adv-14",
+     "title": "The Morning of the Exam",
      "hi": [
       "התעוררתי"
+     ]
+    },
+    {
+     "ar": "אחרי ארבעה ימים התקשרה אליי אישה שמצאה אותו ברחוב ליד תחנת האוטובוס.",
+     "en": "After four days a woman called me who had found it in the street near the bus stop.",
+     "src": "story-adv-21",
+     "title": "The Wallet That Was Lost",
+     "hi": [
+      "התקשרה"
+     ]
+    },
+    {
+     "ar": "כשהעירו את הנוסעים לטיסה הוא חיבק אותי חזק ואמר שהוא יתקשר בערב.",
+     "en": "When they called the passengers for the flight he hugged me hard and said he would call in the evening.",
+     "src": "story-adv-24",
+     "title": "What I Didn't Say",
+     "hi": [
+      "יתקשר"
      ]
     }
    ]

@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
-"""Build app/data/he/grammar.js — the binyan system, taught from the verb data.
+"""Build app/data/he/grammar.js — twenty lessons: eleven on the sentence, nine on the binyanim.
 
-The Arabic grammar module mines its examples from the corpus: twenty structures, thirty real
-sentences each, out of 384 texts. Hebrew has eighteen sentences, so that road is closed until the
-daily paper has run for a month or two, and pretending otherwise would mean writing the examples.
+The sentence half came second and could not have come first. This module used to open by saying
+that the Arabic side mines its examples from 384 texts while Hebrew had eighteen sentences, so
+that road was closed — true when it was written, and false now: the Hebrew corpus is 400 texts
+and 9,301 sentences with an English pair, which is enough to show a pattern rather than assert
+it. See SENT_SPEC below for the eleven and for what each matcher counts as evidence.
 
-But Hebrew's central grammar is not a sentence pattern at all. It is the BINYANIM -- seven fixed
+The other half is the BINYANIM -- seven fixed
 shapes a three-letter root is poured into, each with its own job -- and the evidence for it is
 already in the repo, looked up: 2,084 pointed paradigms carrying a root, a binyan and a gloss,
 1,272 distinct roots, 502 of them attested in two binyanim and 169 in three or more. שָׁמַר "to
@@ -162,6 +164,372 @@ def corpus_examples(binyan_of):
     return out, raw
 
 
+
+# ==========================================================================================
+# THE SENTENCE LESSONS. The nine binyan lessons below teach how a WORD is built. These eleven
+# teach how a SENTENCE is built, and until now Hebrew had none of them: a learner could
+# conjugate שָׁמַר through seven shapes and had never been shown how to say "I want", "there is"
+# or "the one that".
+#
+# The reason they were missing is in this module's own docstring, and it expired. Mining
+# examples needs a corpus, Hebrew had eighteen sentences when the binyan lessons were written,
+# and it now has 9,301 with an English pair. So these lessons are built the way the Arabic ones
+# are: the prose and the closed-class paradigm tables are hand-written, and every EXAMPLE
+# SENTENCE is a real sentence out of the app's own annotated Hebrew, chosen by a matcher.
+#
+# A matcher is handed one sentence's word list and returns the surfaces to highlight, or []
+# for no match. It answers "does this sentence SHOW the pattern", never "is this sentence
+# correct" -- the corpus is the authority on the second question and this file is not.
+
+SUBJ_PRON = {'אני', 'אתה', 'את', 'הוא', 'היא', 'אנחנו', 'אתם', 'אתן', 'הם', 'הן'}
+L_PRON = {'לי', 'לך', 'לו', 'לה', 'לנו', 'לכם', 'לכן', 'להם', 'להן'}
+SHEL = {'של', 'שלי', 'שלך', 'שלו', 'שלה', 'שלנו', 'שלכם', 'שלכן', 'שלהם', 'שלהן'}
+QWORD = {'מה', 'מי', 'איפה', 'למה', 'מתי', 'איך', 'כמה', 'איזה', 'איזו', 'לאן', 'מאיפה'}
+YESH = {'יש', 'אין'}
+
+
+def _pos(w):
+    return str(w.get('analysis') or '').split(':')[0]
+
+
+def _cut(w):
+    return str(w.get('_cut') or '')
+
+
+def _bare(s):
+    """The word without a leading vav, which is how half of Hebrew narration starts."""
+    return s[1:] if len(s) > 2 and s[0] == 'ו' else s
+
+
+def m_nominal(ws, _ar):
+    """No verb anywhere, and something doing the describing. Hebrew's present tense IS a
+    participle and is tagged VERB, so 'no VERB in the sentence' is exactly the sentence that
+    has left the copula out -- הבית גדול, 'the house big'.
+
+    יש and אין are refused. They are not tagged VERB and so they sail through the test above,
+    but יש לנו חתול קטן is the HAVING pattern with an adjective in it, and showing it here
+    teaches the reader that leaving out 'is' looks like יש, which is the opposite of true."""
+    if len(ws) < 4 or any(_pos(w) == 'VERB' for w in ws):
+        return []
+    if any(_bare(w['surface']) in YESH for w in ws):
+        return []
+    adj = [w['surface'] for w in ws if _pos(w) == 'ADJ']
+    return adj[:1] if adj else []
+
+
+def m_article(ws, _ar):
+    """The article is not a word, it is a letter glued on, so the evidence for it is the
+    peeler's own answer: this token matched only after ה- came off the front."""
+    return [w['surface'] for w in ws if _cut(w) in ('ה-', 'וה-')][:2]
+
+
+def m_pron(ws, _ar):
+    return [w['surface'] for w in ws if _bare(w['surface']) in SUBJ_PRON][:1]
+
+
+def m_yesh(ws, _ar):
+    """יש / אין on their own -- existence. The having lesson takes the ones with a ל־ pronoun,
+    so this one refuses them, or the two lessons would show the same twelve sentences."""
+    hit = [w['surface'] for w in ws if _bare(w['surface']) in YESH]
+    if not hit or any(_bare(w['surface']) in L_PRON for w in ws):
+        return []
+    return hit[:1]
+
+
+def m_having(ws, _ar):
+    """יש plus a ל־ pronoun, and they have to be NEAR each other: יש לי is the construction,
+    while a יש at the start of a sentence and a להם at the end of it are two separate facts."""
+    for i, w in enumerate(ws):
+        if _bare(w['surface']) not in YESH:
+            continue
+        for nxt in ws[i + 1:i + 3]:
+            if _bare(nxt['surface']) in L_PRON:
+                return [w['surface'], nxt['surface']]
+    return []
+
+
+def m_want(ws, _ar):
+    """Matched on the GLOSS the lexicon gave the word, not on a list of spellings. רוצה is a
+    participle and inflects for gender and number, and the lexicon already knows which forms
+    belong to רָצָה -- restating that here as a spelling list would be a second, worse copy."""
+    out = []
+    for w in ws:
+        g = str(w.get('gloss') or '').lower()
+        if _pos(w) == 'VERB' and (g.startswith('to want') or 'want' in g.split(',')[0]):
+            out.append(w['surface'])
+    return out[:1]
+
+
+def m_neg(ws, _ar):
+    return [w['surface'] for w in ws if _bare(w['surface']) in ('לא', 'אל')][:1]
+
+
+def m_haya(ws, _ar):
+    """The verb הָיָה. Hebrew has no present tense of it, which is the nominal-sentence lesson;
+    this is what happens when the same sentence moves into the past or the future."""
+    return [w['surface'] for w in ws
+            if _pos(w) == 'VERB' and str(w.get('lemma') or '') == 'הָיָה'][:1]
+
+
+def m_shel(ws, _ar):
+    return [w['surface'] for w in ws if _bare(w['surface']) in SHEL][:1]
+
+
+def m_q(ws, ar):
+    """A question word AND a question mark. Without the second test this lesson filled up with
+    sentences that are not questions at all: מה is 'what' in חשבתי מה לעשות 'I thought about
+    what to do', and כמה is 'a few' in אחרי כמה ימים. Both are the right word doing a job this
+    lesson is not about."""
+    if '?' not in ar:
+        return []
+    return [w['surface'] for w in ws if _bare(w['surface']) in QWORD][:1]
+
+
+def m_rel(ws, _ar):
+    """ש־ glued to a verb. Same evidence as the article: the token only resolved once ש- came
+    off the front, and what is behind it is a verb, which is what makes it a clause rather
+    than the noun שם or the number שתיים."""
+    return [w['surface'] for w in ws
+            if _cut(w) in ('ש-', 'וש-') and _pos(w) == 'VERB'][:1]
+
+
+SENT_SPEC = [
+    {'id': 'nominal', 'title': 'Sentences with no “is”', 'sub': 'הבית גדול — “the house (is) big”',
+     'body': [
+        'Hebrew has no word for “is / am / are” in the present tense. You put the two things '
+        'next to each other and stop: <b>הבית גדול</b> is literally “the house big”, and it '
+        'means “the house is big”. Same with <b>אני עייף</b> “I am tired” and '
+        '<b>הקפה חם</b> “the coffee is hot”.',
+        'This is the first thing that stops you sounding translated. When English reaches for '
+        '“is”, Hebrew reaches for nothing at all — subject, then the describing word, done. '
+        'The verb <b>היה</b> exists, but it is for the past and the future only; there is a '
+        'lesson on it further down.'],
+     'tables': [{'title': 'The pattern', 'rows': [
+        ['הבית גדול', 'ha-báyit gadól', 'the house is big'],
+        ['אני עייף', 'aní ayéf', 'I am tired'],
+        ['היא רופאה', 'hi rofá', 'she is a doctor'],
+        ['הם בבית', 'hem ba-báyit', 'they are at home'],
+        ['זה יפה', 'ze yafé', 'that is beautiful']]}],
+     'match': m_nominal},
+
+    {'id': 'article', 'title': 'The definite article ה־', 'sub': '“the”, glued to the front',
+     'body': [
+        'There is one word for “the” and it is a single letter: <b>ה־</b>, stuck onto the front '
+        'of the noun. <b>בית</b> is “a house”, <b>הבית</b> is “the house”.',
+        'Two things follow from it being glued on rather than standing alone. An adjective '
+        'after a definite noun takes the ה too, so “the big house” is <b>הבית הגדול</b>, with '
+        'the article twice — miss the second one and you have said “the house is big” instead, '
+        'which is the lesson above. And when a preposition comes in front, the two letters '
+        'merge: ב + ה becomes <b>ב</b> with a different vowel, so “in the house” is '
+        '<b>בבית</b> (ba-báyit) against “in a house” <b>בבית</b> (be-váyit) — same letters, and '
+        'only the vowels tell them apart.'],
+     'tables': [{'title': 'With and without', 'rows': [
+        ['בית · הבית', 'báyit · ha-báyit', 'a house · the house'],
+        ['בית גדול', 'báyit gadól', 'a big house'],
+        ['הבית הגדול', 'ha-báyit ha-gadól', 'the big house (the article twice)'],
+        ['הבית גדול', 'ha-báyit gadól', 'the house is big (article once)'],
+        ['בבית', 'ba-báyit', 'in the house (ב + ה merged)']]}],
+     'match': m_article},
+
+    {'id': 'pronouns', 'title': 'The people: I, you, he, she…', 'sub': 'subject pronouns',
+     'body': [
+        'Hebrew keeps a separate “you” for men and women and a separate “they” as well, so '
+        'there are ten of these where English has seven.',
+        'In the past and future the verb ending already says who is acting, so the pronoun is '
+        'often dropped: <b>הלכתי</b> is “I went” on its own. In the present it is NOT dropped, '
+        'because the present tense marks gender and number but not person — <b>הולך</b> is '
+        '“going, masculine singular”, and only the pronoun tells you whether that is I, you or '
+        'he.'],
+     'tables': [{'title': 'Subject pronouns', 'rows': [
+        ['אני', 'aní', 'I'], ['אתה', 'atá', 'you (m)'], ['את', 'at', 'you (f)'],
+        ['הוא', 'hu', 'he'], ['היא', 'hi', 'she'], ['אנחנו', 'anákhnu', 'we'],
+        ['אתם', 'atém', 'you (m pl)'], ['אתן', 'atén', 'you (f pl)'],
+        ['הם', 'hem', 'they (m)'], ['הן', 'hen', 'they (f)']]}],
+     'match': m_pron},
+
+    {'id': 'yesh', 'title': '“There is” and “there isn’t” — יש and אין', 'sub': 'יש · אין',
+     'body': [
+        'Two words carry all of English’s “there is”, “there are”, “there was” and their '
+        'negatives. <b>יש</b> says something exists, <b>אין</b> says it does not, and neither '
+        'of them inflects for anything at all — no gender, no number, no person.',
+        'For the past and the future you put <b>היה</b> in front: <b>היה יש</b> is not said, '
+        'but <b>היו הרבה אנשים</b> “there were a lot of people” is, and for the negative you '
+        'get <b>לא היה</b>. In the present, יש and אין do the whole job by themselves.'],
+     'tables': [{'title': 'Existence', 'rows': [
+        ['יש', 'yesh', 'there is, there are'],
+        ['אין', 'eyn', 'there is not, there are not'],
+        ['יש אנשים בחוץ', 'yesh anashím ba-khúts', 'there are people outside'],
+        ['אין מים', 'eyn máyim', 'there is no water'],
+        ['היו הרבה אנשים', 'hayú harbé anashím', 'there were a lot of people']]}],
+     'match': m_yesh},
+
+    {'id': 'having', 'title': 'Having — יש לי', 'sub': '“there is to me”',
+     'body': [
+        'Hebrew has no verb “to have”. It says the thing exists, and then says to whom: '
+        '<b>יש לי</b> is literally “there is to me”, and it means “I have”.',
+        'So the thing owned is the subject of the sentence and the owner is a prepositional '
+        'phrase, which is why nothing agrees with the owner. <b>יש לי ספר</b>, <b>יש לה ספר</b> '
+        'and <b>יש להם ספר</b> differ in one word. The negative is <b>אין לי</b>, and the past '
+        'is <b>היה לי</b> — and there the verb agrees with the THING, so it is '
+        '<b>הייתה לי בעיה</b> “I had a problem”, feminine, because בעיה is feminine.'],
+     'tables': [{'title': 'To me, to you, to him…', 'rows': [
+        ['יש לי', 'yesh li', 'I have'], ['יש לך', 'yesh lekhá / lakh', 'you have (m / f)'],
+        ['יש לו', 'yesh lo', 'he has'], ['יש לה', 'yesh la', 'she has'],
+        ['יש לנו', 'yesh lánu', 'we have'], ['יש לכם', 'yesh lakhém', 'you have (pl)'],
+        ['יש להם', 'yesh lahém', 'they have'],
+        ['אין לי', 'eyn li', 'I do not have'],
+        ['היה לי', 'hayá li', 'I had']]}],
+     'match': m_having},
+
+    {'id': 'wanting', 'title': 'Wanting — רוצה', 'sub': 'and צריך, “need”',
+     'body': [
+        '<b>רוצה</b> is an ordinary present-tense verb, which means it agrees with the speaker '
+        'in gender and number and not in person: a man says <b>אני רוצה</b>, a woman says '
+        '<b>אני רוצה</b> too — the spelling is the same and the vowels differ — and a group '
+        'says <b>אנחנו רוצים</b>.',
+        'What follows it is the infinitive: <b>אני רוצה ללכת</b> “I want to go”. If you want '
+        'someone ELSE to do the thing, Hebrew switches to <b>ש</b> plus the future: '
+        '<b>אני רוצה שתלך</b> “I want you to go”, literally “I want that you will go”. '
+        '<b>צריך</b> “need” and <b>אוהב</b> “like” take the infinitive the same way.'],
+     'tables': [{'title': 'Want, need, like', 'rows': [
+        ['אני רוצה', 'aní rotsé / rotsá', 'I want (m / f)'],
+        ['אנחנו רוצים', 'anákhnu rotsím', 'we want'],
+        ['אני רוצה ללכת', 'aní rotsé lalékhet', 'I want to go'],
+        ['אני רוצה שתלך', 'aní rotsé she-teléch', 'I want you to go'],
+        ['אני צריך', 'aní tsaríkh', 'I need'],
+        ['אני אוהב', 'aní ohév', 'I like, I love']]}],
+     'match': m_want},
+
+    {'id': 'negation', 'title': 'Saying no — לא and אל', 'sub': 'and where אין comes in',
+     'body': [
+        '<b>לא</b> negates almost everything, and it goes in front of what it negates: '
+        '<b>לא הלכתי</b> “I did not go”, <b>לא טוב</b> “not good”. It never changes shape.',
+        'Two places take a different word. To tell someone NOT to do something you use '
+        '<b>אל</b> with the future, not לא: <b>אל תלך</b> “do not go”. And to say a thing does '
+        'not exist you use <b>אין</b>, from the lesson above: <b>אין לי זמן</b> “I have no '
+        'time”. Saying <b>לא</b> where Hebrew wants אל or אין is one of the most audible '
+        'mistakes a learner makes.'],
+     'tables': [{'title': 'Three different “no”', 'rows': [
+        ['לא הלכתי', 'lo halákhti', 'I did not go'],
+        ['לא טוב', 'lo tov', 'not good'],
+        ['אל תלך', 'al teléch', 'do not go (command)'],
+        ['אין לי זמן', 'eyn li zman', 'I have no time'],
+        ['לא, תודה', 'lo, todá', 'no, thank you']]}],
+     'match': m_neg},
+
+    {'id': 'haya', 'title': 'Was and will be — היה', 'sub': 'the verb the present does without',
+     'body': [
+        'The lesson on nominal sentences said Hebrew leaves “is” out. <b>היה</b> is what comes '
+        'back the moment the sentence stops being about now: <b>הבית גדול</b> “the house is '
+        'big” becomes <b>הבית היה גדול</b> in the past and <b>הבית יהיה גדול</b> in the future.',
+        'It agrees with the subject like any other verb, and it is irregular enough to be worth '
+        'learning as a table rather than as a pattern. It is also the verb that puts יש and '
+        'אין into the past: <b>היו הרבה אנשים</b>, <b>לא היה זמן</b>.'],
+     'tables': [{'title': 'היה, past', 'rows': [
+        ['הייתי', 'hayíti', 'I was'], ['היית', 'hayíta / hayít', 'you were (m / f)'],
+        ['היה', 'hayá', 'he was'], ['הייתה', 'haytá', 'she was'],
+        ['היינו', 'hayínu', 'we were'], ['הייתם', 'heyitém', 'you were (pl)'],
+        ['היו', 'hayú', 'they were']]},
+        {'title': 'היה, future', 'rows': [
+        ['אהיה', 'ehyé', 'I will be'], ['תהיה', 'tihyé', 'you will be (m)'],
+        ['יהיה', 'yihyé', 'he will be'], ['תהיה', 'tihyé', 'she will be'],
+        ['נהיה', 'nihyé', 'we will be'], ['יהיו', 'yihyú', 'they will be']]}],
+     'match': m_haya},
+
+    {'id': 'shel', 'title': 'Mine, yours, his — של', 'sub': 'the easy way, and the short way',
+     'body': [
+        'Possession is one word, <b>של</b>, and it takes the endings: <b>הספר שלי</b> “my book”, '
+        'literally “the book of-me”. Note the noun keeps its <b>ה</b> — it is “THE book of me”, '
+        'never “book of me”.',
+        'There is a second, older way that glues the ending straight onto the noun — '
+        '<b>ספרי</b> for “my book”, <b>שמו</b> for “his name”. You will meet it constantly in '
+        'writing and in fixed phrases, and almost never in speech, where של does the work. '
+        'Learn to recognise it; use the של form.'],
+     'tables': [{'title': 'Of me, of you, of him…', 'rows': [
+        ['שלי', 'shelí', 'my, mine'], ['שלך', 'shelkhá / shelákh', 'your (m / f)'],
+        ['שלו', 'sheló', 'his'], ['שלה', 'shelá', 'her'],
+        ['שלנו', 'shelánu', 'our'], ['שלכם', 'shelakhém', 'your (pl)'],
+        ['שלהם', 'shelahém', 'their'],
+        ['הספר שלי', 'ha-séfer shelí', 'my book'],
+        ['שמו', 'shmo', 'his name (the glued form)']]}],
+     'match': m_shel},
+
+    {'id': 'questions', 'title': 'Asking things', 'sub': 'מה, מי, איפה, למה…',
+     'body': [
+        'The question word goes first and nothing else moves. Hebrew does not invert the '
+        'sentence and has no “do” to insert, so <b>אתה הולך</b> “you are going” becomes '
+        '<b>לאן אתה הולך</b> “where are you going” with a word added and nothing rearranged.',
+        'A yes/no question is the statement with a question mark on it and a rise at the end: '
+        '<b>אתה בא?</b> “are you coming?”. There is a formal particle <b>האם</b> for these, and '
+        'in speech it is essentially never used.'],
+     'tables': [{'title': 'Question words', 'rows': [
+        ['מה', 'ma', 'what'], ['מי', 'mi', 'who'], ['איפה', 'éyfo', 'where'],
+        ['לאן', 'le-án', 'where to'], ['מאיפה', 'me-éyfo', 'where from'],
+        ['מתי', 'matáy', 'when'], ['למה', 'láma', 'why'], ['איך', 'eykh', 'how'],
+        ['כמה', 'káma', 'how much, how many'], ['איזה', 'éyze', 'which']]}],
+     'match': m_q},
+
+    {'id': 'relative', 'title': 'The one that — ש־', 'sub': 'one letter does the whole job',
+     'body': [
+        'English has “that”, “which”, “who”, “where” and drops them half the time. Hebrew has '
+        '<b>ש־</b>, one letter glued to the front of the next word, and never drops it: '
+        '<b>האיש שבא</b> “the man who came”, <b>הספר שקראתי</b> “the book that I read”, '
+        '<b>המקום שגרנו בו</b> “the place we lived in”.',
+        'The same <b>ש־</b> is also plain “that” after verbs of saying and thinking — '
+        '<b>הוא אמר שהוא בא</b> “he said that he is coming” — and it is the ש in '
+        '<b>אני רוצה שתלך</b> from the wanting lesson. One letter, three jobs in English, and '
+        'you never have a choice about whether to include it.'],
+     'tables': [{'title': 'ש־ at work', 'rows': [
+        ['האיש שבא', 'ha-ísh she-ba', 'the man who came'],
+        ['הספר שקראתי', 'ha-séfer she-karáti', 'the book that I read'],
+        ['הבית שגרנו בו', 'ha-báyit she-gárnu bo', 'the house we lived in'],
+        ['הוא אמר שהוא בא', 'hu amár she-hu ba', 'he said that he is coming'],
+        ['אני חושב שכן', 'aní khoshév she-ken', 'I think so']]}],
+     'match': m_rel},
+]
+
+
+def sentence_examples(spec):
+    """Real sentences for each sentence pattern, from the app's own annotated Hebrew.
+
+    Same discipline as corpus_examples above and for the same reasons: spoken registers first,
+    at most two sentences from any one text, and a head-of-sentence dedupe because the paper
+    reruns a story the next morning with the tail reworded. What is NOT reused is the
+    one_reading() guard. That test asks whether a word's letters can be read only one way,
+    which is the right question when the claim is "this word is a piel" and the wrong one here:
+    the claim is about the shape of the sentence, and יש לי is יש לי however many ways יש can
+    be read on its own.
+    """
+    rows = collections.defaultdict(list)
+    for f in sorted(glob.glob(paths.build('*', 'text.json'))):
+        d = json.load(open(f, encoding='utf-8'))
+        rank = KIND_ORDER.get(d.get('kind'), 2)
+        title = d['title'].get('en') or d['id']
+        for sn in d['sentences']:
+            if not sn.get('en') or not sn.get('words'):
+                continue
+            for les in spec:
+                hi = les['match'](sn['words'], sn['ar'])
+                if hi:
+                    rows[les['id']].append((rank, len(sn['words']), d['id'], title,
+                                            sn['ar'], sn['en'], sorted(set(hi))))
+    out = {}
+    for lid, rs in rows.items():
+        rs.sort(key=lambda r: r[:2])
+        picked, per, said = [], collections.Counter(), set()
+        for _rank, _n, tid, ttl, ar, en, hi in rs:
+            head = ' '.join(ar.split()[:6])
+            if per[tid] >= PER_TEXT or head in said:
+                continue
+            said.add(head)
+            per[tid] += 1
+            picked.append({'ar': ar, 'en': en, 'src': tid, 'title': ttl, 'hi': hi})
+            if len(picked) >= EXAMPLES:
+                break
+        out[lid] = picked
+    return out
+
+
 def load():
     s = open(VERBS, encoding='utf-8').read()
     d = json.loads(s[s.index('window.VERBS = ') + len('window.VERBS = '):s.rindex(';')])
@@ -287,6 +655,21 @@ def main():
     SEEN.update(rich)
 
     L = []
+
+    # 0 -----------------------------------------------------------------------------------
+    # How a SENTENCE is built, before how a word is. This is the order the Arabic side teaches
+    # in and the order a beginner needs: nothing in the binyan lessons helps you say "I have".
+    sx = sentence_examples(SENT_SPEC)
+    for les in SENT_SPEC:
+        found = sx.get(les['id'], [])
+        if len(found) < MIN_EXAMPLES:
+            raise SystemExit('!! %s: only %d real sentences (need %d) — the corpus cannot '
+                             'show this pattern yet, and a lesson that illustrates itself '
+                             'with two sentences is not one.' % (les['id'], len(found),
+                                                                 MIN_EXAMPLES))
+        L.append({'id': les['id'], 'title': les['title'], 'sub': les['sub'],
+                  'body': list(les['body']), 'tables': list(les.get('tables', [])),
+                  'examples': found})
 
     # 1 -----------------------------------------------------------------------------------
     tabs = []
@@ -415,11 +798,14 @@ def main():
                     'rows': [[NAMES[b], str(len(by_form[b])), JOB[b]] for b in NAMES]}]})
 
     doc = {
-        'intro': "Hebrew's central grammar is not a sentence pattern — it is the <b>binyanim</b>, "
-                 'the seven shapes a three-letter root is poured into. Learn to see the root '
-                 'through the shape and a word you have never met is half known. Every word in '
-                 'the tables below is a real dictionary entry: the pairs are one root the '
-                 'lexicon happens to have in both binyanim, not examples anyone wrote.',
+        'intro': 'Two halves. The first eleven lessons are how a <b>sentence</b> is built — '
+                 'that Hebrew leaves out “is”, that “I have” is “there is to me”, that one '
+                 'letter does the work of “that”, “which” and “who”. The last nine are how a '
+                 '<b>word</b> is built: the <b>binyanim</b>, the seven shapes a three-letter '
+                 'root is poured into, where learning to see the root through the shape leaves '
+                 'a word you have never met half known. The prose and the paradigm tables are '
+                 'written; every example sentence is a real one out of this app’s own Hebrew, '
+                 'and every word in the verb tables is a real dictionary entry.',
         'lessons': L,
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
