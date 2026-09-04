@@ -25,8 +25,8 @@
  "source": "adapted by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "جحا حمل الملح على حماره.",
-   "en": "Juha loaded salt on his donkey.",
+   "ar": "جحا بيبيع ملح.",
+   "en": "Juha sold salt.",
    "p": 0,
    "words": [
     {
@@ -46,61 +46,37 @@
      "caphi_urban": "ju7a"
     },
     {
-     "surface": "حمل",
-     "root": "ح.م.ل",
-     "lemma": "حَمِل",
-     "form": "حَمِل",
-     "caphi_raw": "7 a m i l",
-     "caphi": "7amil",
-     "gloss": "carrying_things;getting_pregnant;pregnancy",
-     "analysis": "NOUN:MS",
-     "maknuune_id": "7015",
+     "surface": "بيبيع",
+     "root": "ب.ي.ع",
+     "lemma": "بَاع",
+     "form": "يبِيع",
+     "caphi_raw": "y b ii 3",
+     "caphi": "ybii3",
+     "gloss": "sell",
+     "analysis": "VERB:I",
+     "maknuune_id": "2788",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "7015",
-       "root": "ح.م.ل",
-       "gloss": "carrying_things;getting_pregnant;pregnan",
-       "analysis": "NOUN:MS"
+       "id": "2788",
+       "root": "ب.ي.ع",
+       "gloss": "sell",
+       "analysis": "VERB:I"
       },
       {
-       "id": "7023",
-       "root": "ح.م.ل",
-       "gloss": "make_sb_carry;get_sb_pregnant_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "7036",
-       "root": "ح.م.ل",
-       "gloss": "carry_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "7037",
-       "root": "ح.م.ل",
-       "gloss": "make_sb_carry;get_sb_pregnant_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "7021",
-       "root": "ح.م.ل",
-       "gloss": "It_is_an_idiomatic_expression_that_means",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "7022",
-       "root": "ح.م.ل",
-       "gloss": "carry_[auto]",
-       "analysis": "VERB:C"
+       "id": "2789",
+       "root": "ب.ي.ع",
+       "gloss": "make_sb_sell_(causative",
+       "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "7amil",
-     "vocalized": "حَمِل",
-     "vocalized_from": "lexicon:exact"
+     "caphi_urban": "ybii3",
+     "vocalized": "بِيبِيع",
+     "vocalized_from": "derived:verb"
     },
     {
-     "surface": "الملح",
+     "surface": "ملح",
      "root": "م.ل.ح",
      "lemma": "مِلِح",
      "form": "مِلِح",
@@ -119,6 +95,18 @@
        "analysis": "NOUN:MS"
       },
       {
+       "id": "31092",
+       "root": "م.ل.ح",
+       "gloss": "add_salt;eat_sth_salty;add_salt_to_the_b",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "31099",
+       "root": "م.ل.ح",
+       "gloss": "add_salt;eat_sth_salty;add_salt_to_the_b",
+       "analysis": "VERB:P"
+      },
+      {
        "id": "31082",
        "root": "م.ل.ح",
        "gloss": "add_insult_to_injury",
@@ -135,17 +123,49 @@
        "root": "م.ل.ح",
        "gloss": "a_traitor;ingrate;ungrateful",
        "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "31080",
-       "root": "م.ل.ح",
-       "gloss": "salt",
-       "analysis": "NOUN:MS"
       }
      ],
      "caphi_urban": "mili7",
-     "vocalized": "المِلِح",
-     "vocalized_from": "derived:affix"
+     "vocalized": "مِلِح",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "بيحمله على حماره.",
+   "en": "He carried it on his donkey.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "بيحمله",
+     "root": "ح.م.ل",
+     "lemma": "حِمِل",
+     "form": "يِحْمِل",
+     "caphi_raw": "y i 7 m i l",
+     "caphi": "yi7mil",
+     "gloss": "carry",
+     "analysis": "VERB:I",
+     "maknuune_id": "7029",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "7029",
+       "root": "ح.م.ل",
+       "gloss": "carry",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "7030",
+       "root": "ح.م.ل",
+       "gloss": "make_sb_carry;get_sb_pregnant",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yi7mil",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "على",
@@ -218,13 +238,399 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
-   "ar": "الحمار وقع بالمي والملح داب.",
-   "en": "The donkey fell in the water and the salt melted.",
+   "ar": "من الضيعة للمدينة.",
+   "en": "From the village to the town.",
    "p": 0,
    "words": [
+    {
+     "surface": "من",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "مِن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    },
+    {
+     "surface": "الضيعة",
+     "root": "ض.ي.ع",
+     "lemma": "ضَاع",
+     "form": "ضِيع",
+     "caphi_raw": "D. ii 3",
+     "caphi": "D.ii3",
+     "gloss": "get_lost;become_lost_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "18605",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "18605",
+       "root": "ض.ي.ع",
+       "gloss": "get_lost;become_lost_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18606",
+       "root": "ض.ي.ع",
+       "gloss": "lose_sth_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18610",
+       "root": "ض.ي.ع",
+       "gloss": "lose_sth_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18608",
+       "root": "ض.ي.ع",
+       "gloss": "lose_sth",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "18607",
+       "root": "ض.ي.ع",
+       "gloss": "get_lost;become_lost",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "D.ii3",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "للمدينة",
+     "root": "م.د.ن",
+     "lemma": "مَدِينِة",
+     "form": "مَدِينِة",
+     "caphi_raw": "m a d ii n e",
+     "caphi": "madiine",
+     "gloss": "Medina_is_a_city_in_western_Saudi_Arabia",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": "30350",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30350",
+       "root": "م.د.ن",
+       "gloss": "Medina_is_a_city_in_western_Saudi_Arabia",
+       "analysis": "NOUN_PROP"
+      },
+      {
+       "id": "30351",
+       "root": "م.د.ن",
+       "gloss": "city",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30352",
+       "root": "م.د.ن",
+       "gloss": "city_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "madiine",
+     "vocalized": "المَدِينِة",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والطريق فيها نهر.",
+   "en": "And the road had a river in it.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "والطريق",
+     "root": "ط.ر.ق",
+     "lemma": "طَرِيق",
+     "form": "طَرِيق",
+     "caphi_raw": "t. a r ii Q",
+     "caphi": "t.ariiQ",
+     "gloss": "way;road;path",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "19028",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19028",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19030",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19031",
+       "root": "ط.ر.ق",
+       "gloss": "way;road;path_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19036",
+       "root": "ط.ر.ق",
+       "gloss": "about_to_happen;about_to_ocuur;be_alread",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "19037",
+       "root": "ط.ر.ق",
+       "gloss": "sb_is_about_to_arrive",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "19038",
+       "root": "ط.ر.ق",
+       "gloss": "have_a_safe_trip!/_May_Allab_bless_you!",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "t.arii2",
+     "vocalized": "والطَّرِيق",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "فيها",
+     "root": "—",
+     "lemma": "في",
+     "form": "في",
+     "caphi_raw": "fi",
+     "caphi": "fi",
+     "gloss": "in",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "fi"
+    },
+    {
+     "surface": "نهر",
+     "root": "ن.ه.ر",
+     "lemma": "نَهِر",
+     "form": "نَهِر",
+     "caphi_raw": "n a h i r",
+     "caphi": "nahir",
+     "gloss": "river",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "33601",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "nahir",
+     "vocalized": "نَهِر",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "نهر زغير.",
+   "en": "A small river.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "نهر",
+     "root": "ن.ه.ر",
+     "lemma": "نَهِر",
+     "form": "نَهِر",
+     "caphi_raw": "n a h i r",
+     "caphi": "nahir",
+     "gloss": "river",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "33601",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "nahir",
+     "vocalized": "نَهِر",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "زغير",
+     "root": null,
+     "lemma": null,
+     "form": "زغير",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "زغير",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والحمار بيعبره.",
+   "en": "And the donkey crossed it.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "والحمار",
+     "root": "ح.م.ر",
+     "lemma": "حْمَار",
+     "form": "حْمَار",
+     "caphi_raw": "7 m aa r",
+     "caphi": "7maar",
+     "gloss": "donkey",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "6905",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6905",
+       "root": "ح.م.ر",
+       "gloss": "donkey",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "6908",
+       "root": "ح.م.ر",
+       "gloss": "donkey_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "6911",
+       "root": "ح.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6914",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6915",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6910",
+       "root": "ح.م.ر",
+       "gloss": "chickenpox",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "7maar",
+     "vocalized": "والحْمَار",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "بيعبره",
+     "root": "ع.ب.ر",
+     "lemma": "عَبَّر",
+     "form": "يعَبِّر",
+     "caphi_raw": "y 3 a b b i r",
+     "caphi": "y3abbir",
+     "gloss": "express;show_consideration_or_respect_for_sb",
+     "analysis": "VERB:I",
+     "maknuune_id": "19971",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19971",
+       "root": "ع.ب.ر",
+       "gloss": "express;show_consideration_or_respect_fo",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "19974",
+       "root": "ع.ب.ر",
+       "gloss": "cross;pass;remember;thread_the_needle",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "y3abbir",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "بيوم، الحمار وقع بالنهر.",
+   "en": "One day, the donkey fell in the river.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "بيوم",
+     "root": "ي.و.م",
+     "lemma": "يَوم",
+     "form": "يَوم",
+     "caphi_raw": "y oo m",
+     "caphi": "yoom",
+     "gloss": "day",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "36281",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "36281",
+       "root": "ي.و.م",
+       "gloss": "day",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "36282",
+       "root": "ي.و.م",
+       "gloss": "day_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36283",
+       "root": "ي.و.م",
+       "gloss": "hopefully",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36284",
+       "root": "ي.و.م",
+       "gloss": "an_eventful_day",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36285",
+       "root": "ي.و.م",
+       "gloss": "today",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36286",
+       "root": "ي.و.م",
+       "gloss": "everyday",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "yoom",
+     "vocalized": "بِيَوم",
+     "vocalized_from": "derived:affix"
+    },
     {
      "surface": "الحمار",
      "root": "ح.م.ر",
@@ -296,41 +702,43 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "بالمي",
-     "root": "ء.ل.م",
-     "lemma": "أَلَّم",
-     "form": "يؤلِّم",
-     "caphi_raw": "y 2 a l l i m",
-     "caphi": "y2allim",
-     "gloss": "hurt",
+     "surface": "بالنهر",
+     "root": "ن.ه.ر",
+     "lemma": "نَهَر",
+     "form": "يِنْهَر",
+     "caphi_raw": "y i n h a r",
+     "caphi": "yinhar",
+     "gloss": "scold;tell_sb_off",
      "analysis": "VERB:I",
-     "maknuune_id": "476",
+     "maknuune_id": "33607",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "476",
-       "root": "ء.ل.م",
-       "gloss": "hurt",
+       "id": "33607",
+       "root": "ن.ه.ر",
+       "gloss": "scold;tell_sb_off",
        "analysis": "VERB:I"
       },
       {
-       "id": "29808",
-       "root": "ل.م.م",
-       "gloss": "familiarize_oneself",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "29801",
-       "root": "ل.م.م",
-       "gloss": "collect;gather",
+       "id": "34300",
+       "root": "ه.ر.ر",
+       "gloss": "dribble;leak;have_diarrhoea;have_hair_lo",
        "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "y2allim",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
-    },
+     "caphi_urban": "yinhar",
+     "vocalized": "بِالنّهَر",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والملح داب.",
+   "en": "And the salt dissolved.",
+   "p": 1,
+   "words": [
     {
      "surface": "والملح",
      "root": "م.ل.ح",
@@ -428,15 +836,155 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
-   "ar": "الحمل صار خفيف والحمار مبسوط.",
-   "en": "The load became light and the donkey was happy.",
+   "ar": "كله.",
+   "en": "All of it.",
    "p": 1,
    "words": [
     {
-     "surface": "الحمل",
+     "surface": "كله",
+     "root": "—",
+     "lemma": "لُه",
+     "form": "لُه",
+     "caphi_raw": "2ilo",
+     "caphi": "2ilo",
+     "gloss": "to him, for him",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:story-word",
+     "caphi_urban": "2ilo"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والحمار قام.",
+   "en": "And the donkey got up.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "والحمار",
+     "root": "ح.م.ر",
+     "lemma": "حْمَار",
+     "form": "حْمَار",
+     "caphi_raw": "7 m aa r",
+     "caphi": "7maar",
+     "gloss": "donkey",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "6905",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6905",
+       "root": "ح.م.ر",
+       "gloss": "donkey",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "6908",
+       "root": "ح.م.ر",
+       "gloss": "donkey_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "6911",
+       "root": "ح.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6914",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6915",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6910",
+       "root": "ح.م.ر",
+       "gloss": "chickenpox",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "7maar",
+     "vocalized": "والحْمَار",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "قام",
+     "root": "ق.و.م",
+     "lemma": "قَام",
+     "form": "قَام",
+     "caphi_raw": "Q aa m",
+     "caphi": "Qaam",
+     "gloss": "do;undertake;stand_up",
+     "analysis": "VERB:P",
+     "maknuune_id": "27046",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "27046",
+       "root": "ق.و.م",
+       "gloss": "do;undertake;stand_up",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "27148",
+       "root": "ق.ي.م",
+       "gloss": "remove;carry",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "27022",
+       "root": "ق.و.م",
+       "gloss": "take_care_of_sb_(in_terms_of_food_and_cl",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27023",
+       "root": "ق.و.م",
+       "gloss": "be_angry_with_sb",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27024",
+       "root": "ق.و.م",
+       "gloss": "be_angry_with_sb",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27025",
+       "root": "ق.و.م",
+       "gloss": "do_social_responsibilities_that_are_comm",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "2aam",
+     "vocalized": "قَام",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والحمل خفيف.",
+   "en": "And the load was light.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "والحمل",
      "root": "ح.م.ل",
      "lemma": "حَمِل",
      "form": "حَمِل",
@@ -462,24 +1010,8 @@
       }
      ],
      "caphi_urban": "7amil",
-     "vocalized": "الحَمِل",
+     "vocalized": "والحَمِل",
      "vocalized_from": "derived:affix"
-    },
-    {
-     "surface": "صار",
-     "root": "ص.ي.ر",
-     "lemma": "صَار",
-     "form": "يصِير",
-     "caphi_raw": "y s. ii r",
-     "caphi": "ys.iir",
-     "gloss": "become",
-     "analysis": "VERB:I",
-     "maknuune_id": "18259",
-     "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "ys.iir",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "خفيف",
@@ -510,7 +1042,15 @@
      "caphi_urban": "khafiif",
      "vocalized": "خَفِيف",
      "vocalized_from": "lexicon:exact"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والحمار مبسوط.",
+   "en": "And the donkey was pleased.",
+   "p": 1,
+   "words": [
     {
      "surface": "والحمار",
      "root": "ح.م.ر",
@@ -582,12 +1122,52 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
-   "ar": "المرة الجاي، الحمار وقع بالمي بالقصد.",
-   "en": "The next time, the donkey fell in the water on purpose.",
+   "ar": "وجحا زعلان.",
+   "en": "And Juha was upset.",
    "p": 1,
+   "words": [
+    {
+     "surface": "وجحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
+    },
+    {
+     "surface": "زعلان",
+     "root": "ز.ع.ل",
+     "lemma": "زَعْلَان",
+     "form": "زَعْلَان",
+     "caphi_raw": "z a 3 l aa n",
+     "caphi": "za3laan",
+     "gloss": "angry;sad",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "12899",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "za3laan",
+     "vocalized": "زَعْلَان",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "المرة الجاية، وصلوا للنهر.",
+   "en": "The next time, they reached the river.",
+   "p": 2,
    "words": [
     {
      "surface": "المرة",
@@ -638,7 +1218,7 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "الجاي",
+     "surface": "الجاية",
      "root": "ج.ي.ء",
      "lemma": "جَاي",
      "form": "جَاي",
@@ -648,33 +1228,129 @@
      "analysis": "NOUN_ACT:MS",
      "maknuune_id": "4957",
      "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "jaay",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "وصلوا",
+     "root": "و.ص.ل",
+     "lemma": "وَصَّل",
+     "form": "وَصِّل",
+     "caphi_raw": "w a s. s. i l",
+     "caphi": "was.s.il",
+     "gloss": "convey;deliver;take_sb_from_one_place_to_another_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "35580",
+     "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "4957",
-       "root": "ج.ي.ء",
-       "gloss": "coming",
-       "analysis": "NOUN_ACT:MS"
+       "id": "35580",
+       "root": "و.ص.ل",
+       "gloss": "convey;deliver;take_sb_from_one_place_to",
+       "analysis": "VERB:C"
       },
       {
-       "id": "4946",
-       "root": "ج.و.ه",
-       "gloss": "prestige;high_status",
+       "id": "35592",
+       "root": "و.ص.ل",
+       "gloss": "reach;arrive;attain_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35593",
+       "root": "و.ص.ل",
+       "gloss": "convey;deliver;take_sb_from_one_place_to",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35594",
+       "root": "و.ص.ل",
+       "gloss": "link;join_together;install_hair_extensio",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35578",
+       "root": "و.ص.ل",
+       "gloss": "get_to_a_point",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "35579",
+       "root": "و.ص.ل",
+       "gloss": "reach;arrive;attain_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "was.s.il",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "للنهر",
+     "root": "ن.ه.ر",
+     "lemma": "نَهِر",
+     "form": "نَهِر",
+     "caphi_raw": "n a h i r",
+     "caphi": "nahir",
+     "gloss": "river",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "33601",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "33601",
+       "root": "ن.ه.ر",
+       "gloss": "river",
        "analysis": "NOUN:MS"
       },
       {
-       "id": "4947",
-       "root": "ج.و.ه",
-       "gloss": "for_the_love_of_Prophet_Muhammad_PBUH",
-       "analysis": "NOUN:PHRASE"
+       "id": "33608",
+       "root": "ن.ه.ر",
+       "gloss": "scold;tell_sb_off_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "33603",
+       "root": "ن.ه.ر",
+       "gloss": "river_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "33606",
+       "root": "ن.ه.ر",
+       "gloss": "scold;tell_sb_off_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "33607",
+       "root": "ن.ه.ر",
+       "gloss": "scold;tell_sb_off",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "34299",
+       "root": "ه.ر.ر",
+       "gloss": "dribble;leak;have_diarrhoea;have_hair_lo",
+       "analysis": "VERB:C"
       }
      ],
-     "caphi_urban": "jaay",
-     "vocalized": "الجَاي",
+     "caphi_urban": "nahir",
+     "vocalized": "النَّهِر",
      "vocalized_from": "derived:affix"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والحمار وقع.",
+   "en": "And the donkey fell.",
+   "p": 2,
+   "words": [
     {
-     "surface": "الحمار",
+     "surface": "والحمار",
      "root": "ح.م.ر",
      "lemma": "حْمَار",
      "form": "حْمَار",
@@ -724,7 +1400,7 @@
       }
      ],
      "caphi_urban": "7maar",
-     "vocalized": "الحْمَار",
+     "vocalized": "والحْمَار",
      "vocalized_from": "derived:affix"
     },
     {
@@ -742,43 +1418,15 @@
      "caphi_urban": "wi2i3",
      "vocalized": "وِقِع",
      "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "بالمي",
-     "root": "ء.ل.م",
-     "lemma": "أَلَّم",
-     "form": "يؤلِّم",
-     "caphi_raw": "y 2 a l l i m",
-     "caphi": "y2allim",
-     "gloss": "hurt",
-     "analysis": "VERB:I",
-     "maknuune_id": "476",
-     "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "476",
-       "root": "ء.ل.م",
-       "gloss": "hurt",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "29808",
-       "root": "ل.م.م",
-       "gloss": "familiarize_oneself",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "29801",
-       "root": "ل.م.م",
-       "gloss": "collect;gather",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "y2allim",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "بالقصد.",
+   "en": "On purpose.",
+   "p": 2,
+   "words": [
     {
      "surface": "بالقصد",
      "root": "ق.ص.د",
@@ -796,45 +1444,351 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
-   "ar": "بس هاي المرة كان شايل صوف.",
-   "en": "But this time it was carrying wool.",
+   "ar": "والملح داب.",
+   "en": "And the salt dissolved.",
    "p": 2,
    "words": [
     {
-     "surface": "بس",
-     "root": "NTWS",
-     "lemma": "بَسّ",
-     "form": "بَسّ",
-     "caphi_raw": "b a s s",
-     "caphi": "bass",
-     "gloss": "but",
-     "analysis": "CONJ",
-     "maknuune_id": "1439",
+     "surface": "والملح",
+     "root": "م.ل.ح",
+     "lemma": "مِلِح",
+     "form": "مِلِح",
+     "caphi_raw": "m i l i 7",
+     "caphi": "mili7",
+     "gloss": "salt",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "31079",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "bass",
-     "vocalized": "بَسّ",
-     "vocalized_from": "lexicon:exact"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "31079",
+       "root": "م.ل.ح",
+       "gloss": "salt",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "31082",
+       "root": "م.ل.ح",
+       "gloss": "add_insult_to_injury",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "31084",
+       "root": "م.ل.ح",
+       "gloss": "live_with_sb_intimately_for_so_long_that",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "31085",
+       "root": "م.ل.ح",
+       "gloss": "a_traitor;ingrate;ungrateful",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "31080",
+       "root": "م.ل.ح",
+       "gloss": "salt",
+       "analysis": "NOUN:MS"
+      }
+     ],
+     "caphi_urban": "mili7",
+     "vocalized": "والمِلِح",
+     "vocalized_from": "derived:affix"
     },
     {
-     "surface": "هاي",
-     "root": "NTWS",
-     "lemma": "هَاي",
-     "form": "هَاي",
-     "caphi_raw": "h aa y",
-     "caphi": "haay",
-     "gloss": "this",
-     "analysis": "PRON_DEM:FS",
-     "maknuune_id": "33887",
+     "surface": "داب",
+     "root": "ذ.و.ب",
+     "lemma": "ذَاب",
+     "form": "ذَاب",
+     "caphi_raw": "D aa b",
+     "caphi": "Daab",
+     "gloss": "melt;be_shy_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "10853",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "10853",
+       "root": "ذ.و.ب",
+       "gloss": "melt;be_shy_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "10847",
+       "root": "ذ.و.ب",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "10849",
+       "root": "ذ.و.ب",
+       "gloss": "melt;be_shy_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "10851",
+       "root": "ذ.و.ب",
+       "gloss": "melt;be_shy",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "10848",
+       "root": "ذ.و.ب",
+       "gloss": "it_is_an_idiomatice_expression_that_mean",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "daab",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والحمار مبسوط.",
+   "en": "And the donkey was pleased.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "والحمار",
+     "root": "ح.م.ر",
+     "lemma": "حْمَار",
+     "form": "حْمَار",
+     "caphi_raw": "7 m aa r",
+     "caphi": "7maar",
+     "gloss": "donkey",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "6905",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6905",
+       "root": "ح.م.ر",
+       "gloss": "donkey",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "6908",
+       "root": "ح.م.ر",
+       "gloss": "donkey_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "6911",
+       "root": "ح.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6914",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6915",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6910",
+       "root": "ح.م.ر",
+       "gloss": "chickenpox",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "7maar",
+     "vocalized": "والحْمَار",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "مبسوط",
+     "root": "ب.س.ط",
+     "lemma": "مَبْسُوط",
+     "form": "مَبْسُوط",
+     "caphi_raw": "m a b s. uu t.",
+     "caphi": "mabs.uut.",
+     "gloss": "happy",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "1452",
      "village": null,
      "provenance": "maknuune:unique",
-     "caphi_urban": "haay",
-     "vocalized": "هَاي",
+     "caphi_urban": "mabs.uut.",
+     "vocalized": "مَبْسُوط",
      "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وجحا فهم.",
+   "en": "And Juha understood.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "وجحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
     },
+    {
+     "surface": "فهم",
+     "root": "ف.ه.م",
+     "lemma": "فِهِم",
+     "form": "فِهِم",
+     "caphi_raw": "f i h i m",
+     "caphi": "fihim",
+     "gloss": "understanding",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "24818",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "24818",
+       "root": "ف.ه.م",
+       "gloss": "understanding",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "24826",
+       "root": "ف.ه.م",
+       "gloss": "explain_sth_to_sb_in_order_to_make_it_un",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "24839",
+       "root": "ف.ه.م",
+       "gloss": "understand;become_aware;have_knowledge_[",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "24840",
+       "root": "ف.ه.م",
+       "gloss": "explain_sth_to_sb_in_order_to_make_it_un",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "24822",
+       "root": "ف.ه.م",
+       "gloss": "sb_who_does_not_act_in_a_way_that_shows_",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "24825",
+       "root": "ف.ه.م",
+       "gloss": "understand;become_aware;have_knowledge_[",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "fihim",
+     "vocalized": "فِهِم",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وقال: طيب.",
+   "en": "And said: fine.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "وقال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "طيب",
+     "root": "ط.ي.ب",
+     "lemma": "طَيِّب",
+     "form": "طَيِّب",
+     "caphi_raw": "t. a y y i b",
+     "caphi": "t.ayyib",
+     "gloss": "kind-hearted;tasty",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "19753",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19753",
+       "root": "ط.ي.ب",
+       "gloss": "kind-hearted;tasty",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "19754",
+       "root": "ط.ي.ب",
+       "gloss": "OK!",
+       "analysis": "INTERJ"
+      },
+      {
+       "id": "19756",
+       "root": "ط.ي.ب",
+       "gloss": "recover_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "19757",
+       "root": "ط.ي.ب",
+       "gloss": "perfume;make_sb_feel_good_(gladden_sb's_",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "19755",
+       "root": "ط.ي.ب",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "ADJ:PHRASE"
+      },
+      {
+       "id": "19761",
+       "root": "ط.ي.ب",
+       "gloss": "perfume;make_sb_feel_good_(gladden_sb's_",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "t.ayyib",
+     "vocalized": "طَيِّب",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "المرة الجاية، جحا حمل صوف.",
+   "en": "The next time, Juha loaded wool.",
+   "p": 3,
+   "words": [
     {
      "surface": "المرة",
      "root": "م.ر.ء",
@@ -884,35 +1838,89 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "كان",
-     "root": "ك.و.ن",
-     "lemma": "كَان",
-     "form": "كَان",
-     "caphi_raw": "k aa n",
-     "caphi": "kaan",
-     "gloss": "be;become_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "28578",
+     "surface": "الجاية",
+     "root": "ج.ي.ء",
+     "lemma": "جَاي",
+     "form": "جَاي",
+     "caphi_raw": "J aa y",
+     "caphi": "Jaay",
+     "gloss": "coming",
+     "analysis": "NOUN_ACT:MS",
+     "maknuune_id": "4957",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "kaan",
-     "vocalized": "كَان",
-     "vocalized_from": "lexicon:exact"
+     "caphi_urban": "jaay",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "شايل",
-     "root": "ش.ي.ل",
-     "lemma": "شَايِل",
-     "form": "شَايِل",
-     "caphi_raw": "sh aa y i l",
-     "caphi": "shaayil",
-     "gloss": "taking_the_responsibiity;undertaking",
-     "analysis": "NOUN_ACT:MS",
-     "maknuune_id": "17336",
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "shaayil",
-     "vocalized": "شَايِل",
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
+    },
+    {
+     "surface": "حمل",
+     "root": "ح.م.ل",
+     "lemma": "حَمِل",
+     "form": "حَمِل",
+     "caphi_raw": "7 a m i l",
+     "caphi": "7amil",
+     "gloss": "carrying_things;getting_pregnant;pregnancy",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "7015",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "7015",
+       "root": "ح.م.ل",
+       "gloss": "carrying_things;getting_pregnant;pregnan",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "7023",
+       "root": "ح.م.ل",
+       "gloss": "make_sb_carry;get_sb_pregnant_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "7036",
+       "root": "ح.م.ل",
+       "gloss": "carry_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "7037",
+       "root": "ح.م.ل",
+       "gloss": "make_sb_carry;get_sb_pregnant_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "7021",
+       "root": "ح.م.ل",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "7022",
+       "root": "ح.م.ل",
+       "gloss": "carry_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "7amil",
+     "vocalized": "حَمِل",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -932,15 +1940,93 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   },
   {
-   "ar": "الصوف شرب المي وصار تقيل كتير.",
-   "en": "The wool drank the water and became very heavy.",
-   "p": 2,
+   "ar": "مش ملح.",
+   "en": "Not salt.",
+   "p": 3,
    "words": [
     {
-     "surface": "الصوف",
+     "surface": "مش",
+     "root": "NTWS",
+     "lemma": "مِش",
+     "form": "مِش",
+     "caphi_raw": "m i sh",
+     "caphi": "mish",
+     "gloss": "not",
+     "analysis": "PART_NEG",
+     "maknuune_id": "30759",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "mish",
+     "vocalized": "مِش",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "ملح",
+     "root": "م.ل.ح",
+     "lemma": "مِلِح",
+     "form": "مِلِح",
+     "caphi_raw": "m i l i 7",
+     "caphi": "mili7",
+     "gloss": "salt",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "31079",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "31079",
+       "root": "م.ل.ح",
+       "gloss": "salt",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "31092",
+       "root": "م.ل.ح",
+       "gloss": "add_salt;eat_sth_salty;add_salt_to_the_b",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "31099",
+       "root": "م.ل.ح",
+       "gloss": "add_salt;eat_sth_salty;add_salt_to_the_b",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "31082",
+       "root": "م.ل.ح",
+       "gloss": "add_insult_to_injury",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "31084",
+       "root": "م.ل.ح",
+       "gloss": "live_with_sb_intimately_for_so_long_that",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "31085",
+       "root": "م.ل.ح",
+       "gloss": "a_traitor;ingrate;ungrateful",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "mili7",
+     "vocalized": "مِلِح",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "صوف كتير، وخفيف.",
+   "en": "A lot of wool, and light.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "صوف",
      "root": "ص.و.ف",
      "lemma": "صُوف",
      "form": "صُوف",
@@ -952,7 +2038,295 @@
      "village": null,
      "provenance": "maknuune:unique",
      "caphi_urban": "s.uuf",
-     "vocalized": "الصُّوف",
+     "vocalized": "صُوف",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "كتير",
+     "root": "ك.ث.ر",
+     "lemma": "كْثِير",
+     "form": "كْثِير",
+     "caphi_raw": "K T ii r",
+     "caphi": "KTiir",
+     "gloss": "a_lot_of;many",
+     "analysis": "ADJ",
+     "maknuune_id": "27400",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "ktiir",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "وخفيف",
+     "root": "خ.ف.ف",
+     "lemma": "خَفِيف",
+     "form": "خَفِيف",
+     "caphi_raw": "kh a f ii f",
+     "caphi": "khafiif",
+     "gloss": "light",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "8433",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "8433",
+       "root": "خ.ف.ف",
+       "gloss": "light",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "8440",
+       "root": "خ.ف.ف",
+       "gloss": "very_elegant_and_ridy;not_demanding_at_a",
+       "analysis": "ADJ:PHRASE"
+      }
+     ],
+     "caphi_urban": "khafiif",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ووصلوا للنهر.",
+   "en": "And they reached the river.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "ووصلوا",
+     "root": "و.ص.ل",
+     "lemma": "وَصَّل",
+     "form": "وَصِّل",
+     "caphi_raw": "w a s. s. i l",
+     "caphi": "was.s.il",
+     "gloss": "convey;deliver;take_sb_from_one_place_to_another_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "35580",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "35580",
+       "root": "و.ص.ل",
+       "gloss": "convey;deliver;take_sb_from_one_place_to",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "35592",
+       "root": "و.ص.ل",
+       "gloss": "reach;arrive;attain_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35593",
+       "root": "و.ص.ل",
+       "gloss": "convey;deliver;take_sb_from_one_place_to",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35594",
+       "root": "و.ص.ل",
+       "gloss": "link;join_together;install_hair_extensio",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35578",
+       "root": "و.ص.ل",
+       "gloss": "get_to_a_point",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "35579",
+       "root": "و.ص.ل",
+       "gloss": "reach;arrive;attain_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "was.s.il",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "للنهر",
+     "root": "ن.ه.ر",
+     "lemma": "نَهِر",
+     "form": "نَهِر",
+     "caphi_raw": "n a h i r",
+     "caphi": "nahir",
+     "gloss": "river",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "33601",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "33601",
+       "root": "ن.ه.ر",
+       "gloss": "river",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "33608",
+       "root": "ن.ه.ر",
+       "gloss": "scold;tell_sb_off_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "33603",
+       "root": "ن.ه.ر",
+       "gloss": "river_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "33606",
+       "root": "ن.ه.ر",
+       "gloss": "scold;tell_sb_off_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "33607",
+       "root": "ن.ه.ر",
+       "gloss": "scold;tell_sb_off",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "34299",
+       "root": "ه.ر.ر",
+       "gloss": "dribble;leak;have_diarrhoea;have_hair_lo",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "nahir",
+     "vocalized": "النَّهِر",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والحمار وقع.",
+   "en": "And the donkey fell.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "والحمار",
+     "root": "ح.م.ر",
+     "lemma": "حْمَار",
+     "form": "حْمَار",
+     "caphi_raw": "7 m aa r",
+     "caphi": "7maar",
+     "gloss": "donkey",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "6905",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6905",
+       "root": "ح.م.ر",
+       "gloss": "donkey",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "6908",
+       "root": "ح.م.ر",
+       "gloss": "donkey_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "6911",
+       "root": "ح.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6914",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6915",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6910",
+       "root": "ح.م.ر",
+       "gloss": "chickenpox",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "7maar",
+     "vocalized": "والحْمَار",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "وقع",
+     "root": "و.ق.ع",
+     "lemma": "وِقِع",
+     "form": "وِقِع",
+     "caphi_raw": "w i Q i 3",
+     "caphi": "wiQi3",
+     "gloss": "fall_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "35906",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "wi2i3",
+     "vocalized": "وِقِع",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "بالقصد.",
+   "en": "On purpose.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "بالقصد",
+     "root": "ق.ص.د",
+     "lemma": "قَصَد",
+     "form": "يِقْصِد",
+     "caphi_raw": "y i Q s. i d",
+     "caphi": "yiQs.id",
+     "gloss": "mean;approach_sb",
+     "analysis": "VERB:I",
+     "maknuune_id": "26085",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yi2s.id",
+     "vocalized": "بِالقْصِد",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والصوف شرب المي.",
+   "en": "And the wool drank the water.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "والصوف",
+     "root": "ص.و.ف",
+     "lemma": "صُوف",
+     "form": "صُوف",
+     "caphi_raw": "s. uu f",
+     "caphi": "s.uuf",
+     "gloss": "wool",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "18189",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.uuf",
+     "vocalized": "والصُّوف",
      "vocalized_from": "derived:affix"
     },
     {
@@ -1011,58 +2385,28 @@
     },
     {
      "surface": "المي",
-     "root": "ء.ل.م",
-     "lemma": "أَلَم",
-     "form": "أَلَم",
-     "caphi_raw": "2 a l a m",
-     "caphi": "2alam",
-     "gloss": "pain",
+     "root": "م.و.ه",
+     "lemma": "مَيّ",
+     "form": "مَيّ",
+     "caphi_raw": "m a. y y",
+     "caphi": "ma.yy",
+     "gloss": "water",
      "analysis": "NOUN:MS",
-     "maknuune_id": "473",
+     "maknuune_id": "31436",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "473",
-       "root": "ء.ل.م",
-       "gloss": "pain",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "474",
-       "root": "ء.ل.م",
-       "gloss": "pain_[auto]",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "31436",
-       "root": "م.و.ه",
-       "gloss": "water",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "31437",
-       "root": "م.و.ه",
-       "gloss": "life_is_just_a_bowl_of_cherries",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "31442",
-       "root": "م.و.ه",
-       "gloss": "the_bathroom",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "31448",
-       "root": "م.و.ه",
-       "gloss": "an_easy_exam",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
-     "caphi_urban": "2alam",
-     "vocalized": "اَلَمي",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "ma.yy",
+     "vocalized": "المَيّ",
      "vocalized_from": "derived:affix"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وصار تقيل.",
+   "en": "And became heavy.",
+   "p": 3,
+   "words": [
     {
      "surface": "وصار",
      "root": "ص.ي.ر",
@@ -1079,6 +2423,68 @@
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     },
+    {
+     "surface": "تقيل",
+     "root": "ث.ق.ل",
+     "lemma": "ثْقِيل",
+     "form": "ثْقِيل",
+     "caphi_raw": "T q ii l , t 2 ii l , th g ii l",
+     "caphi": "Tqiil,t2iil,thgiil",
+     "gloss": "heavy;taciturn",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "3384",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3384",
+       "root": "ث.ق.ل",
+       "gloss": "heavy;taciturn",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "3388",
+       "root": "ث.ق.ل",
+       "gloss": "humorless;sb_who_is_trying_to_be_funny,_",
+       "analysis": "ADJ:PHRASE"
+      },
+      {
+       "id": "27124",
+       "root": "ق.ي.ل",
+       "gloss": "take_a_nap_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "27126",
+       "root": "ق.ي.ل",
+       "gloss": "take_a_nap_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "27125",
+       "root": "ق.ي.ل",
+       "gloss": "take_a_nap",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "27117",
+       "root": "ق.ي.ل",
+       "gloss": "dismiss;sack",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "tqiil,t2iil,thgiil",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "تقيل كتير.",
+   "en": "Very heavy.",
+   "p": 3,
+   "words": [
     {
      "surface": "تقيل",
      "root": "ث.ق.ل",
@@ -1150,28 +2556,160 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": "audio/s5.mp3"
+   "audio": null
   },
   {
-   "ar": "قال جحا: كل شغلة إلها وقتها.",
-   "en": "Juha said: everything has its time.",
-   "p": 2,
+   "ar": "والحمار قام بصعوبة.",
+   "en": "And the donkey got up with difficulty.",
+   "p": 3,
    "words": [
     {
-     "surface": "قال",
+     "surface": "والحمار",
+     "root": "ح.م.ر",
+     "lemma": "حْمَار",
+     "form": "حْمَار",
+     "caphi_raw": "7 m aa r",
+     "caphi": "7maar",
+     "gloss": "donkey",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "6905",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6905",
+       "root": "ح.م.ر",
+       "gloss": "donkey",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "6908",
+       "root": "ح.م.ر",
+       "gloss": "donkey_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "6911",
+       "root": "ح.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6914",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6915",
+       "root": "ح.م.ر",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "6910",
+       "root": "ح.م.ر",
+       "gloss": "chickenpox",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "7maar",
+     "vocalized": "والحْمَار",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "قام",
+     "root": "ق.و.م",
+     "lemma": "قَام",
+     "form": "قَام",
+     "caphi_raw": "Q aa m",
+     "caphi": "Qaam",
+     "gloss": "do;undertake;stand_up",
+     "analysis": "VERB:P",
+     "maknuune_id": "27046",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "27046",
+       "root": "ق.و.م",
+       "gloss": "do;undertake;stand_up",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "27148",
+       "root": "ق.ي.م",
+       "gloss": "remove;carry",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "27022",
+       "root": "ق.و.م",
+       "gloss": "take_care_of_sb_(in_terms_of_food_and_cl",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27023",
+       "root": "ق.و.م",
+       "gloss": "be_angry_with_sb",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27024",
+       "root": "ق.و.م",
+       "gloss": "be_angry_with_sb",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "27025",
+       "root": "ق.و.م",
+       "gloss": "do_social_responsibilities_that_are_comm",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "2aam",
+     "vocalized": "قَام",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بصعوبة",
+     "root": "ص.ع.ب",
+     "lemma": "صُعُوبِة",
+     "form": "صُعُوبِة",
+     "caphi_raw": "s. u 3 uu b e",
+     "caphi": "s.u3uube",
+     "gloss": "difficulty;hardship",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "17779",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.u3uube",
+     "vocalized": "بِصُعُوبِة",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وقال جحا: كل شغلة إلها وقتها.",
+   "en": "And Juha said: every trick has its day.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "2aal",
-     "vocalized": "قَال",
-     "vocalized_from": "lexicon:exact"
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "جحا",
@@ -1292,7 +2830,7 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s6.mp3"
+   "audio": null
   }
  ]
 }

@@ -25,8 +25,8 @@
  "source": "adapted by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "جحا اشترى خبز لتلات أيام.",
-   "en": "Juha bought bread for three days.",
+   "ar": "جحا راح عالفرن.",
+   "en": "Juha went to the bakery.",
    "p": 0,
    "words": [
     {
@@ -46,7 +46,99 @@
      "caphi_urban": "ju7a"
     },
     {
-     "surface": "اشترى",
+     "surface": "راح",
+     "root": "ر.و.ح",
+     "lemma": "رَاح",
+     "form": "رَاح",
+     "caphi_raw": "r aa 7",
+     "caphi": "raa7",
+     "gloss": "will",
+     "analysis": "PART_FUT",
+     "maknuune_id": "12342",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12342",
+       "root": "ر.و.ح",
+       "gloss": "will",
+       "analysis": "PART_FUT"
+      },
+      {
+       "id": "12382",
+       "root": "ر.و.ح",
+       "gloss": "nearly;it_was_about_to",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "12399",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12383",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12390",
+       "root": "ر.و.ح",
+       "gloss": "go",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "12379",
+       "root": "ر.و.ح",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "raa7",
+     "vocalized": "رَاح",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "عالفرن",
+     "root": "ف.ر.ن",
+     "lemma": "فُرُن",
+     "form": "فُرُن",
+     "caphi_raw": "f u r u n",
+     "caphi": "furun",
+     "gloss": "oven",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "23823",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23823",
+       "root": "ف.ر.ن",
+       "gloss": "oven",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "23824",
+       "root": "ف.ر.ن",
+       "gloss": "oven_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "furun",
+     "vocalized": "عَالفُرُن",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "واشترى خبز.",
+   "en": "And bought bread.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "واشترى",
      "root": "ش.ر.ي",
      "lemma": "شَرَى",
      "form": "اِشْتِرِي",
@@ -81,11 +173,17 @@
        "root": "ش.ر.ي",
        "gloss": "buy_[auto]",
        "analysis": "VERB:I"
+      },
+      {
+       "id": "16227",
+       "root": "ش.ر.ي",
+       "gloss": "buy;purchase_[auto]",
+       "analysis": "VERB:I"
       }
      ],
      "caphi_urban": "2ishtiri",
-     "vocalized": "اِشْتِرِى",
-     "vocalized_from": "derived:affix"
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "خبز",
@@ -102,7 +200,55 @@
      "caphi_urban": "khubiz",
      "vocalized": "خُبِز",
      "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "خبز كتير.",
+   "en": "A lot of bread.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "خبز",
+     "root": "خ.ب.ز",
+     "lemma": "خُبِز",
+     "form": "خُبِز",
+     "caphi_raw": "kh u b i z",
+     "caphi": "khubiz",
+     "gloss": "bread",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "7592",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "khubiz",
+     "vocalized": "خُبِز",
+     "vocalized_from": "lexicon:exact"
     },
+    {
+     "surface": "كتير",
+     "root": "ك.ث.ر",
+     "lemma": "كْثِير",
+     "form": "كْثِير",
+     "caphi_raw": "K T ii r",
+     "caphi": "KTiir",
+     "gloss": "a_lot_of;many",
+     "analysis": "ADJ",
+     "maknuune_id": "27400",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "ktiir",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "لتلات أيام.",
+   "en": "For three days.",
+   "p": 0,
+   "words": [
     {
      "surface": "لتلات",
      "root": "ث.ل.ث",
@@ -174,15 +320,15 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
-   "ar": "حطه عالطاولة وراح ينام.",
-   "en": "He put it on the table and went to sleep.",
+   "ar": "وحطه عالطاولة.",
+   "en": "And put it on the table.",
    "p": 0,
    "words": [
     {
-     "surface": "حطه",
+     "surface": "وحطه",
      "root": "ح.ط.ط",
      "lemma": "حَطَّة",
      "form": "حَطَّة",
@@ -205,11 +351,35 @@
        "root": "ح.ط.ط",
        "gloss": "White_transparent_silk_called_\"Al-Ayyoba",
        "analysis": "NOUN:FS"
+      },
+      {
+       "id": "6327",
+       "root": "ح.ط.ط",
+       "gloss": "put;place;devalue_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "6334",
+       "root": "ح.ط.ط",
+       "gloss": "put;place;devalue_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "6324",
+       "root": "ح.ط.ط",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "6329",
+       "root": "ح.ط.ط",
+       "gloss": "put;place;devalue",
+       "analysis": "VERB:I"
       }
      ],
      "caphi_urban": "7at.t.a",
-     "vocalized": "حَطَّه",
-     "vocalized_from": "derived:affix"
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "عالطاولة",
@@ -240,7 +410,15 @@
      "caphi_urban": "t.aawle",
      "vocalized": "عَالطَّاوْلِة",
      "vocalized_from": "derived:affix"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وراح ينام.",
+   "en": "And went to bed.",
+   "p": 0,
+   "words": [
     {
      "surface": "وراح",
      "root": "ر.و.ح",
@@ -312,11 +490,11 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
-   "ar": "الصبح لقي الخبز كله ناقص.",
-   "en": "In the morning he found all the bread was short.",
+   "ar": "الصبح، فاق.",
+   "en": "In the morning, he woke.",
    "p": 1,
    "words": [
     {
@@ -336,58 +514,278 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "لقي",
-     "root": "ل.ق.ي",
-     "lemma": "لَقَى",
-     "form": "لَقَى",
-     "caphi_raw": "l a Q a",
-     "caphi": "laQa",
-     "gloss": "find_[auto]",
+     "surface": "فاق",
+     "root": "ف.و.ق",
+     "lemma": "فَاق",
+     "form": "فَاق",
+     "caphi_raw": "f aa q",
+     "caphi": "faaq",
+     "gloss": "exceed;surpass",
      "analysis": "VERB:P",
-     "maknuune_id": "29691",
+     "maknuune_id": "24936",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "29691",
-       "root": "ل.ق.ي",
-       "gloss": "find_[auto]",
+       "id": "24936",
+       "root": "ف.و.ق",
+       "gloss": "exceed;surpass",
        "analysis": "VERB:P"
       },
       {
-       "id": "29692",
-       "root": "ل.ق.ي",
-       "gloss": "find_[auto]",
+       "id": "24997",
+       "root": "ف.ي.ق",
+       "gloss": "wake_up;start_to_realize",
        "analysis": "VERB:P"
       },
       {
-       "id": "29672",
-       "root": "ل.ق.ي",
-       "gloss": "find_[auto]",
+       "id": "24933",
+       "root": "ف.و.ق",
+       "gloss": "exceed;surpass",
        "analysis": "VERB:C"
       },
       {
-       "id": "29681",
-       "root": "ل.ق.ي",
-       "gloss": "find",
+       "id": "24934",
+       "root": "ف.و.ق",
+       "gloss": "exceed;surpass",
        "analysis": "VERB:I"
       },
       {
-       "id": "29689",
-       "root": "ل.ق.ي",
-       "gloss": "find_[auto]",
+       "id": "24993",
+       "root": "ف.ي.ق",
+       "gloss": "wake_up;start_to_realize",
        "analysis": "VERB:C"
       },
       {
-       "id": "29690",
-       "root": "ل.ق.ي",
-       "gloss": "find",
+       "id": "24995",
+       "root": "ف.ي.ق",
+       "gloss": "wake_up;start_to_realize",
        "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "la2a",
-     "vocalized": "لَقَي",
+     "caphi_urban": "faaq",
+     "vocalized": "فَاق",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وراح عالطاولة.",
+   "en": "And went to the table.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "وراح",
+     "root": "ر.و.ح",
+     "lemma": "رَاح",
+     "form": "رَاح",
+     "caphi_raw": "r aa 7",
+     "caphi": "raa7",
+     "gloss": "will",
+     "analysis": "PART_FUT",
+     "maknuune_id": "12342",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12342",
+       "root": "ر.و.ح",
+       "gloss": "will",
+       "analysis": "PART_FUT"
+      },
+      {
+       "id": "12382",
+       "root": "ر.و.ح",
+       "gloss": "nearly;it_was_about_to",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "12399",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12383",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12390",
+       "root": "ر.و.ح",
+       "gloss": "go",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "12379",
+       "root": "ر.و.ح",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "raa7",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "عالطاولة",
+     "root": "ط.و.ل",
+     "lemma": "طَاوْلِة",
+     "form": "طَاوْلِة",
+     "caphi_raw": "t. aa w l e",
+     "caphi": "t.aawle",
+     "gloss": "table",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "19708",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19708",
+       "root": "ط.و.ل",
+       "gloss": "table",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "19709",
+       "root": "ط.و.ل",
+       "gloss": "table_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "t.aawle",
+     "vocalized": "عَالطَّاوْلِة",
      "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والخبز ناقص.",
+   "en": "And the bread was less.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "والخبز",
+     "root": "خ.ب.ز",
+     "lemma": "خَبِز",
+     "form": "خَبِز",
+     "caphi_raw": "kh a b i z",
+     "caphi": "khabiz",
+     "gloss": "baking",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "7588",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "7588",
+       "root": "خ.ب.ز",
+       "gloss": "baking",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "7592",
+       "root": "خ.ب.ز",
+       "gloss": "bread",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "7593",
+       "root": "خ.ب.ز",
+       "gloss": "the_bread_that_does_not_have_yeast_in_it",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "7596",
+       "root": "خ.ب.ز",
+       "gloss": "sb_needs_alot_of_life_experiences_in_ord",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "7597",
+       "root": "خ.ب.ز",
+       "gloss": "Yufka",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "7594",
+       "root": "خ.ب.ز",
+       "gloss": "bread",
+       "analysis": "NOUN:MS"
+      }
+     ],
+     "caphi_urban": "khabiz",
+     "vocalized": "والخَبِز",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "ناقص",
+     "root": "ن.ق.ص",
+     "lemma": "نَاقِص",
+     "form": "نَاقِص",
+     "caphi_raw": "n aa Q i s.",
+     "caphi": "naaQis.",
+     "gloss": "inhumane;bad",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "33240",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "33240",
+       "root": "ن.ق.ص",
+       "gloss": "inhumane;bad",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "33242",
+       "root": "ن.ق.ص",
+       "gloss": "the_missing_part",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "33243",
+       "root": "ن.ق.ص",
+       "gloss": "the_missing_part_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "33245",
+       "root": "ن.ق.ص",
+       "gloss": "it_is_an_expression_that_means_that_sb_o",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "naa2is.",
+     "vocalized": "نَاقِص",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "نص الخبز راح.",
+   "en": "Half the bread was gone.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "نص",
+     "root": "ن.ص.ف",
+     "lemma": "نُصّ",
+     "form": "نُصّ",
+     "caphi_raw": "n u s. s.",
+     "caphi": "nus.s.",
+     "gloss": "half",
+     "analysis": "NOUN_QUANT:MS",
+     "maknuune_id": "32494",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "nus.s.",
+     "vocalized": "نُصّ",
+     "vocalized_from": "lexicon:exact"
     },
     {
      "surface": "الخبز",
@@ -444,69 +842,65 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "كله",
-     "root": "—",
-     "lemma": "لُه",
-     "form": "لُه",
-     "caphi_raw": "2ilo",
-     "caphi": "2ilo",
-     "gloss": "to him, for him",
-     "analysis": "PREP",
-     "maknuune_id": null,
-     "village": null,
-     "vocalized": null,
-     "vocalized_from": "curated",
-     "provenance": "curated:story-word",
-     "caphi_urban": "2ilo"
-    },
-    {
-     "surface": "ناقص",
-     "root": "ن.ق.ص",
-     "lemma": "نَاقِص",
-     "form": "نَاقِص",
-     "caphi_raw": "n aa Q i s.",
-     "caphi": "naaQis.",
-     "gloss": "inhumane;bad",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "33240",
+     "surface": "راح",
+     "root": "ر.و.ح",
+     "lemma": "رَاح",
+     "form": "رَاح",
+     "caphi_raw": "r aa 7",
+     "caphi": "raa7",
+     "gloss": "will",
+     "analysis": "PART_FUT",
+     "maknuune_id": "12342",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "33240",
-       "root": "ن.ق.ص",
-       "gloss": "inhumane;bad",
-       "analysis": "ADJ:MS"
+       "id": "12342",
+       "root": "ر.و.ح",
+       "gloss": "will",
+       "analysis": "PART_FUT"
       },
       {
-       "id": "33242",
-       "root": "ن.ق.ص",
-       "gloss": "the_missing_part",
-       "analysis": "NOUN:MS"
+       "id": "12382",
+       "root": "ر.و.ح",
+       "gloss": "nearly;it_was_about_to",
+       "analysis": "VERB_PSEUDO"
       },
       {
-       "id": "33243",
-       "root": "ن.ق.ص",
-       "gloss": "the_missing_part_[auto]",
-       "analysis": "NOUN:P"
+       "id": "12399",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:P"
       },
       {
-       "id": "33245",
-       "root": "ن.ق.ص",
-       "gloss": "it_is_an_expression_that_means_that_sb_o",
-       "analysis": "NOUN:PHRASE"
+       "id": "12383",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12390",
+       "root": "ر.و.ح",
+       "gloss": "go",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "12379",
+       "root": "ر.و.ح",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
       }
      ],
-     "caphi_urban": "naa2is.",
-     "vocalized": "نَاقِص",
+     "caphi_urban": "raa7",
+     "vocalized": "رَاح",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
-   "ar": "قال: في فار بالبيت.",
-   "en": "He said: there is a mouse in the house.",
+   "ar": "قال جحا: في فار بالبيت.",
+   "en": "Juha said: there is a mouse in the house.",
    "p": 1,
    "words": [
     {
@@ -524,6 +918,22 @@
      "caphi_urban": "2aal",
      "vocalized": "قَال",
      "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
     },
     {
      "surface": "في",
@@ -606,15 +1016,107 @@
      "caphi_urban": "bilbeet"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
-   "ar": "جاب قطة زغيرة.",
-   "en": "He brought a small cat.",
+   "ar": "وراح عالسوق.",
+   "en": "And went to the market.",
    "p": 1,
    "words": [
     {
-     "surface": "جاب",
+     "surface": "وراح",
+     "root": "ر.و.ح",
+     "lemma": "رَاح",
+     "form": "رَاح",
+     "caphi_raw": "r aa 7",
+     "caphi": "raa7",
+     "gloss": "will",
+     "analysis": "PART_FUT",
+     "maknuune_id": "12342",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12342",
+       "root": "ر.و.ح",
+       "gloss": "will",
+       "analysis": "PART_FUT"
+      },
+      {
+       "id": "12382",
+       "root": "ر.و.ح",
+       "gloss": "nearly;it_was_about_to",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "12399",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12383",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12390",
+       "root": "ر.و.ح",
+       "gloss": "go",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "12379",
+       "root": "ر.و.ح",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "raa7",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "عالسوق",
+     "root": "س.و.ق",
+     "lemma": "سُوق",
+     "form": "سُوق",
+     "caphi_raw": "s uu Q",
+     "caphi": "suuQ",
+     "gloss": "shop",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "15270",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "15270",
+       "root": "س.و.ق",
+       "gloss": "shop",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "15274",
+       "root": "س.و.ق",
+       "gloss": "shop_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "suu2",
+     "vocalized": "عَالسُّوق",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وجاب قطة.",
+   "en": "And brought a cat.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "وجاب",
      "root": "ج.ي.ب",
      "lemma": "جَاب",
      "form": "جَاب",
@@ -664,9 +1166,71 @@
       }
      ],
      "caphi_urban": "jaab",
-     "vocalized": "جَاب",
-     "vocalized_from": "lexicon:exact"
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
+    {
+     "surface": "قطة",
+     "root": "ق.ط.ط",
+     "lemma": "قُطّ",
+     "form": "قُطّ",
+     "caphi_raw": "2 u t. t.",
+     "caphi": "2ut.t.",
+     "gloss": "cat",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26280",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26280",
+       "root": "ق.ط.ط",
+       "gloss": "cat",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26288",
+       "root": "ق.ط.ط",
+       "gloss": "cut_sth_off_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "26290",
+       "root": "ق.ط.ط",
+       "gloss": "cut_sth_off_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26281",
+       "root": "ق.ط.ط",
+       "gloss": "cat_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26282",
+       "root": "ق.ط.ط",
+       "gloss": "cat",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26283",
+       "root": "ق.ط.ط",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2ut.t.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قطة زغيرة.",
+   "en": "A small cat.",
+   "p": 1,
+   "words": [
     {
      "surface": "قطة",
      "root": "ق.ط.ط",
@@ -736,47 +1300,551 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   },
   {
-   "ar": "تاني يوم، الخبز واللبن كمان ناقصين.",
-   "en": "The next day, the bread and the milk were both short.",
+   "ar": "وبالمسا، حط خبز.",
+   "en": "And in the evening, he put out bread.",
    "p": 2,
    "words": [
     {
-     "surface": "تاني",
-     "root": "ث.ن.ي",
-     "lemma": "ثَانِي",
-     "form": "ثَانِي",
-     "caphi_raw": "T aa n i",
-     "caphi": "Taani",
-     "gloss": "second",
-     "analysis": "ADJ_NUM",
-     "maknuune_id": "3454",
+     "surface": "وبالمسا",
+     "root": null,
+     "lemma": null,
+     "form": "وبالمسا",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "وبالمسا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "حط",
+     "root": "ح.ط.ط",
+     "lemma": "حَطّ",
+     "form": "حَطّ",
+     "caphi_raw": "7 a t. t.",
+     "caphi": "7at.t.",
+     "gloss": "put;place;devalue_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "6334",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "taani",
+     "caphi_urban": "7at.t.",
+     "vocalized": "حَطّ",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "خبز",
+     "root": "خ.ب.ز",
+     "lemma": "خُبِز",
+     "form": "خُبِز",
+     "caphi_raw": "kh u b i z",
+     "caphi": "khubiz",
+     "gloss": "bread",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "7592",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "khubiz",
+     "vocalized": "خُبِز",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وحط صحن لبن للقطة.",
+   "en": "And put out a plate of yoghurt for the cat.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "وحط",
+     "root": "ح.ط.ط",
+     "lemma": "حَطّ",
+     "form": "حُطّ",
+     "caphi_raw": "7 u t. t.",
+     "caphi": "7ut.t.",
+     "gloss": "put;place;devalue_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "6327",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6327",
+       "root": "ح.ط.ط",
+       "gloss": "put;place;devalue_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "6334",
+       "root": "ح.ط.ط",
+       "gloss": "put;place;devalue_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "6324",
+       "root": "ح.ط.ط",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "6329",
+       "root": "ح.ط.ط",
+       "gloss": "put;place;devalue",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "28853",
+       "root": "ل.ح.ط",
+       "gloss": "go_bankrupt;be_penniless;lose_everything",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "28855",
+       "root": "ل.ح.ط",
+       "gloss": "go_bankrupt;be_penniless;lose_everything",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "7ut.t.",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
-     "surface": "يوم",
-     "root": "ي.و.م",
-     "lemma": "يَوم",
-     "form": "يَوم",
-     "caphi_raw": "y oo m",
-     "caphi": "yoom",
-     "gloss": "day",
+     "surface": "صحن",
+     "root": "ص.ح.ن",
+     "lemma": "صَحِن",
+     "form": "صَحِن",
+     "caphi_raw": "s. a 7 i n",
+     "caphi": "s.a7in",
+     "gloss": "plate",
      "analysis": "NOUN:MS",
-     "maknuune_id": "36281",
+     "maknuune_id": "17524",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "yoom",
-     "vocalized": "يَوم",
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17524",
+       "root": "ص.ح.ن",
+       "gloss": "plate",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "17525",
+       "root": "ص.ح.ن",
+       "gloss": "plate_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "s.a7in",
+     "vocalized": "صَحِن",
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "الخبز",
+     "surface": "لبن",
+     "root": "ل.ب.ن",
+     "lemma": "لَبَن",
+     "form": "لَبَن",
+     "caphi_raw": "l a b a n",
+     "caphi": "laban",
+     "gloss": "yogurt;Mansaf_(it_is_a_traditional_Arab_dish_made_of_lamb_cooked_in_a_sauce_of_fermented_dried_yogurt_and_served_with_rice)",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "28749",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "28749",
+       "root": "ل.ب.ن",
+       "gloss": "yogurt;Mansaf_(it_is_a_traditional_Arab_",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "28750",
+       "root": "ل.ب.ن",
+       "gloss": "yogurt_(type)",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "28751",
+       "root": "ل.ب.ن",
+       "gloss": "yogurt_(type)",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "28756",
+       "root": "ل.ب.ن",
+       "gloss": "a_leather_bag_made_from_sheep_wool_or_go",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "laban",
+     "vocalized": "لَبَن",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "للقطة",
+     "root": "ل.ق.ط",
+     "lemma": "لُقْطَة",
+     "form": "لُقْطَة",
+     "caphi_raw": "l u Q t. a",
+     "caphi": "luQt.a",
+     "gloss": "lucky_find;good_chance",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "29585",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "29585",
+       "root": "ل.ق.ط",
+       "gloss": "lucky_find;good_chance",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "26280",
+       "root": "ق.ط.ط",
+       "gloss": "cat",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26288",
+       "root": "ق.ط.ط",
+       "gloss": "cut_sth_off_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "26290",
+       "root": "ق.ط.ط",
+       "gloss": "cut_sth_off_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26281",
+       "root": "ق.ط.ط",
+       "gloss": "cat_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26282",
+       "root": "ق.ط.ط",
+       "gloss": "cat",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "lu2t.a",
+     "vocalized": "لِلُقْطَة",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وقال: الليلة، الفار بيموت.",
+   "en": "And said: tonight, the mouse dies.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "وقال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "الليلة",
+     "root": "ل.ي.ل",
+     "lemma": "لَيلِة",
+     "form": "لَيلِة",
+     "caphi_raw": "l ee l e",
+     "caphi": "leele",
+     "gloss": "night",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "30088",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "leele",
+     "vocalized": "اللَّيلِة",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "الفار",
+     "root": "ف.ء.ر",
+     "lemma": "فَار",
+     "form": "فَار",
+     "caphi_raw": "f aa r",
+     "caphi": "faar",
+     "gloss": "mouse",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "23121",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23121",
+       "root": "ف.ء.ر",
+       "gloss": "mouse",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "23122",
+       "root": "ف.ء.ر",
+       "gloss": "mouse_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "faar",
+     "vocalized": "الفَار",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "بيموت",
+     "root": "م.و.ت",
+     "lemma": "مَات",
+     "form": "يمُوت",
+     "caphi_raw": "y m uu t",
+     "caphi": "ymuut",
+     "gloss": "die;struggle_very_hard",
+     "analysis": "VERB:I",
+     "maknuune_id": "31361",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "31361",
+       "root": "م.و.ت",
+       "gloss": "die;struggle_very_hard",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "31362",
+       "root": "م.و.ت",
+       "gloss": "kill;beat_sb_repeatedly;make_sb_struggle",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "ymuut",
+     "vocalized": "بِيمُوت",
+     "vocalized_from": "derived:verb"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وراح ينام.",
+   "en": "And went to bed.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "وراح",
+     "root": "ر.و.ح",
+     "lemma": "رَاح",
+     "form": "رَاح",
+     "caphi_raw": "r aa 7",
+     "caphi": "raa7",
+     "gloss": "will",
+     "analysis": "PART_FUT",
+     "maknuune_id": "12342",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12342",
+       "root": "ر.و.ح",
+       "gloss": "will",
+       "analysis": "PART_FUT"
+      },
+      {
+       "id": "12382",
+       "root": "ر.و.ح",
+       "gloss": "nearly;it_was_about_to",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "12399",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12383",
+       "root": "ر.و.ح",
+       "gloss": "go_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12390",
+       "root": "ر.و.ح",
+       "gloss": "go",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "12379",
+       "root": "ر.و.ح",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "raa7",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "ينام",
+     "root": "ن.و.م",
+     "lemma": "نَام",
+     "form": "ينَام",
+     "caphi_raw": "y n aa m",
+     "caphi": "ynaam",
+     "gloss": "sleep",
+     "analysis": "VERB:I",
+     "maknuune_id": "33812",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "ynaam",
+     "vocalized": "ينَام",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "مرتاح.",
+   "en": "At ease.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "مرتاح",
+     "root": "ر.و.ح",
+     "lemma": "مِرْتَاح",
+     "form": "مِرْتَاح",
+     "caphi_raw": "m i r t aa 7",
+     "caphi": "mirtaa7",
+     "gloss": "comfortable",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "12345",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12345",
+       "root": "ر.و.ح",
+       "gloss": "comfortable",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "12346",
+       "root": "ر.و.ح",
+       "gloss": "very_rich",
+       "analysis": "ADJ:MS"
+      }
+     ],
+     "caphi_urban": "mirtaa7",
+     "vocalized": "مِرْتَاح",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "الصبح، فاق.",
+   "en": "In the morning, he woke.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "الصبح",
+     "root": "ص.ب.ح",
+     "lemma": "صُبِح",
+     "form": "صُبِح",
+     "caphi_raw": "s. u b i 7",
+     "caphi": "s.ubi7",
+     "gloss": "morning",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "17379",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "s.ubi7",
+     "vocalized": "الصُّبِح",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "فاق",
+     "root": "ف.و.ق",
+     "lemma": "فَاق",
+     "form": "فَاق",
+     "caphi_raw": "f aa q",
+     "caphi": "faaq",
+     "gloss": "exceed;surpass",
+     "analysis": "VERB:P",
+     "maknuune_id": "24936",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "24936",
+       "root": "ف.و.ق",
+       "gloss": "exceed;surpass",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "24997",
+       "root": "ف.ي.ق",
+       "gloss": "wake_up;start_to_realize",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "24933",
+       "root": "ف.و.ق",
+       "gloss": "exceed;surpass",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "24934",
+       "root": "ف.و.ق",
+       "gloss": "exceed;surpass",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "24993",
+       "root": "ف.ي.ق",
+       "gloss": "wake_up;start_to_realize",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "24995",
+       "root": "ف.ي.ق",
+       "gloss": "wake_up;start_to_realize",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "faaq",
+     "vocalized": "فَاق",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والخبز ناقص.",
+   "en": "And the bread was less.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "والخبز",
      "root": "خ.ب.ز",
      "lemma": "خَبِز",
      "form": "خَبِز",
@@ -826,9 +1894,59 @@
       }
      ],
      "caphi_urban": "khabiz",
-     "vocalized": "الخَبِز",
+     "vocalized": "والخَبِز",
      "vocalized_from": "derived:affix"
     },
+    {
+     "surface": "ناقص",
+     "root": "ن.ق.ص",
+     "lemma": "نَاقِص",
+     "form": "نَاقِص",
+     "caphi_raw": "n aa Q i s.",
+     "caphi": "naaQis.",
+     "gloss": "inhumane;bad",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "33240",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "33240",
+       "root": "ن.ق.ص",
+       "gloss": "inhumane;bad",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "33242",
+       "root": "ن.ق.ص",
+       "gloss": "the_missing_part",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "33243",
+       "root": "ن.ق.ص",
+       "gloss": "the_missing_part_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "33245",
+       "root": "ن.ق.ص",
+       "gloss": "it_is_an_expression_that_means_that_sb_o",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "naa2is.",
+     "vocalized": "نَاقِص",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "واللبن ناقص.",
+   "en": "And the yoghurt was less.",
+   "p": 3,
+   "words": [
     {
      "surface": "واللبن",
      "root": "ل.ب.ن",
@@ -872,37 +1990,7 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "كمان",
-     "root": "ك.م.ن",
-     "lemma": "كَمَان",
-     "form": "كَمَان",
-     "caphi_raw": "k a m aa n",
-     "caphi": "kamaan",
-     "gloss": "as_well;also",
-     "analysis": "ADV",
-     "maknuune_id": "28395",
-     "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "28395",
-       "root": "ك.م.ن",
-       "gloss": "as_well;also",
-       "analysis": "ADV"
-      },
-      {
-       "id": "28398",
-       "root": "ك.م.ن",
-       "gloss": "also;as_well",
-       "analysis": "ADV"
-      }
-     ],
-     "caphi_urban": "kamaan",
-     "vocalized": "كَمَان",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "ناقصين",
+     "surface": "ناقص",
      "root": "ن.ق.ص",
      "lemma": "نَاقِص",
      "form": "نَاقِص",
@@ -940,16 +2028,152 @@
       }
      ],
      "caphi_urban": "naa2is.",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized": "نَاقِص",
+     "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s5.mp3"
+   "audio": null
   },
   {
-   "ar": "قال جحا: هلق صار عندي فار وقطة.",
-   "en": "Juha said: now I have a mouse and a cat.",
-   "p": 2,
+   "ar": "والقطة نايمة، وبطنها كبير.",
+   "en": "And the cat asleep, with a big belly.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "والقطة",
+     "root": "ل.ق.ط",
+     "lemma": "لُقْطَة",
+     "form": "لُقْطَة",
+     "caphi_raw": "l u Q t. a",
+     "caphi": "luQt.a",
+     "gloss": "lucky_find;good_chance",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "29585",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "29585",
+       "root": "ل.ق.ط",
+       "gloss": "lucky_find;good_chance",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "26280",
+       "root": "ق.ط.ط",
+       "gloss": "cat",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26281",
+       "root": "ق.ط.ط",
+       "gloss": "cat_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26282",
+       "root": "ق.ط.ط",
+       "gloss": "cat",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26283",
+       "root": "ق.ط.ط",
+       "gloss": "it_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26284",
+       "root": "ق.ط.ط",
+       "gloss": "It_is_a_traditional_dish_that_is_made_of",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "lu2t.a",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "نايمة",
+     "root": "ن.و.م",
+     "lemma": "نَايِم",
+     "form": "نَايِم",
+     "caphi_raw": "n aa y i m",
+     "caphi": "naayim",
+     "gloss": "sleeping",
+     "analysis": "NOUN_ACT:MS",
+     "maknuune_id": "33786",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "33786",
+       "root": "ن.و.م",
+       "gloss": "sleeping",
+       "analysis": "NOUN_ACT:MS"
+      },
+      {
+       "id": "33806",
+       "root": "ن.و.م",
+       "gloss": "it_is_an_expression_that_means_that_sb_s",
+       "analysis": "NOUN_ACT:PHRASE"
+      },
+      {
+       "id": "33807",
+       "root": "ن.و.م",
+       "gloss": "it_is_an_expression_that_means_that_sb_i",
+       "analysis": "NOUN_ACT:PHRASE"
+      },
+      {
+       "id": "33808",
+       "root": "ن.و.م",
+       "gloss": "it_is_an_expression_that_means_that_sb_i",
+       "analysis": "NOUN_ACT:PHRASE"
+      }
+     ],
+     "caphi_urban": "naayim",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "وبطنها",
+     "root": "ط.ن.ن",
+     "lemma": "طَنّ",
+     "form": "يطِنّ",
+     "caphi_raw": "y t. i n n",
+     "caphi": "yt.inn",
+     "gloss": "hum_[auto]",
+     "analysis": "VERB:I",
+     "maknuune_id": "19556",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yt.inn",
+     "vocalized": "وبِطِنّها",
+     "vocalized_from": "derived:verb"
+    },
+    {
+     "surface": "كبير",
+     "root": "ك.ب.ر",
+     "lemma": "كْبِير",
+     "form": "كْبِير",
+     "caphi_raw": "k b ii r",
+     "caphi": "kbiir",
+     "gloss": "big",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "27220",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kbiir",
+     "vocalized": "كْبِير",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال جحا: يا الله.",
+   "en": "Juha said: good Lord.",
+   "p": 3,
    "words": [
     {
      "surface": "قال",
@@ -984,7 +2208,187 @@
      "caphi_urban": "ju7a"
     },
     {
-     "surface": "هلق",
+     "surface": "يا",
+     "root": "NTWS",
+     "lemma": "يَا",
+     "form": "يَا",
+     "caphi_raw": "y aa",
+     "caphi": "yaa",
+     "gloss": "Oh!",
+     "analysis": "PART_VOC",
+     "maknuune_id": "36173",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yaa",
+     "vocalized": "يَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "الله",
+     "root": "—",
+     "lemma": "لُه",
+     "form": "لُه",
+     "caphi_raw": "2ilo",
+     "caphi": "2ilo",
+     "gloss": "to him, for him",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:story-word",
+     "caphi_urban": "2ilo"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "مبارح كان عندي فار.",
+   "en": "Yesterday I had a mouse.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "مبارح",
+     "root": null,
+     "lemma": null,
+     "form": "مبارح",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "مبارح",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "كان",
+     "root": "ك.و.ن",
+     "lemma": "كَان",
+     "form": "كَان",
+     "caphi_raw": "k aa n",
+     "caphi": "kaan",
+     "gloss": "be;become_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "28578",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kaan",
+     "vocalized": "كَان",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "عندي",
+     "root": "ع.ن.د",
+     "lemma": "عِنْد",
+     "form": "عِنْد",
+     "caphi_raw": "3 i n d",
+     "caphi": "3ind",
+     "gloss": "at",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "21887",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21887",
+       "root": "ع.ن.د",
+       "gloss": "at",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "21893",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "21897",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "21890",
+       "root": "ع.ن.د",
+       "gloss": "does_not_have",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "21891",
+       "root": "ع.ن.د",
+       "gloss": "at ours",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "21895",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "3ind",
+     "vocalized": "عِنْدي",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "فار",
+     "root": "ف.ء.ر",
+     "lemma": "فَار",
+     "form": "فَار",
+     "caphi_raw": "f aa r",
+     "caphi": "faar",
+     "gloss": "mouse",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "23121",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23121",
+       "root": "ف.ء.ر",
+       "gloss": "mouse",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "24888",
+       "root": "ف.و.ر",
+       "gloss": "boil_(shorter_time)_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "23122",
+       "root": "ف.ء.ر",
+       "gloss": "mouse_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "24885",
+       "root": "ف.و.ر",
+       "gloss": "boil_(shorter_time)",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "24886",
+       "root": "ف.و.ر",
+       "gloss": "boil_(shorter_time)",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "faar",
+     "vocalized": "فَار",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وهلق عندي فار وقطة.",
+   "en": "And now I have a mouse and a cat.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "وهلق",
      "root": "NTWS",
      "lemma": "هَلَّق",
      "form": "هَلَّق",
@@ -996,24 +2400,8 @@
      "village": null,
      "provenance": "maknuune:unique",
      "caphi_urban": "hallaq",
-     "vocalized": "هَلَّق",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "صار",
-     "root": "ص.ي.ر",
-     "lemma": "صَار",
-     "form": "يصِير",
-     "caphi_raw": "y s. ii r",
-     "caphi": "ys.iir",
-     "gloss": "become",
-     "analysis": "VERB:I",
-     "maknuune_id": "18259",
-     "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "ys.iir",
      "vocalized": null,
-     "vocalized_from": "unvocalized:no-alignment"
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "عندي",
@@ -1172,7 +2560,7 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     }
    ],
-   "audio": "audio/s6.mp3"
+   "audio": null
   }
  ]
 }

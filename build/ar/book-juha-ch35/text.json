@@ -25,12 +25,120 @@
  "source": "adapted by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "سألوا جحا: شو أحلى إشي بالدنيا؟",
-   "en": "They asked Juha: what is the sweetest thing in the world?",
+   "ar": "الناس قعدوا بالمقهى.",
+   "en": "The people sat in the café.",
    "p": 0,
    "words": [
     {
-     "surface": "سألوا",
+     "surface": "الناس",
+     "root": "ن.و.س",
+     "lemma": "نَاس",
+     "form": "نَاس",
+     "caphi_raw": "n aa s",
+     "caphi": "naas",
+     "gloss": "people",
+     "analysis": "NOUN:P",
+     "maknuune_id": "33748",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "naas",
+     "vocalized": "النَّاس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "قعدوا",
+     "root": "ق.ع.د",
+     "lemma": "قَعَد",
+     "form": "قَعَد",
+     "caphi_raw": "q a 3 a d",
+     "caphi": "qa3ad",
+     "gloss": "wooden_bucket_for_milking",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26427",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26427",
+       "root": "ق.ع.د",
+       "gloss": "wooden_bucket_for_milking",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26428",
+       "root": "ق.ع.د",
+       "gloss": "flatbread_topped_with_a_variety_of_possi",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26437",
+       "root": "ق.ع.د",
+       "gloss": "make_sb_sit_(causative);sack_sb;prepare_",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "26444",
+       "root": "ق.ع.د",
+       "gloss": "sit_down_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26445",
+       "root": "ق.ع.د",
+       "gloss": "make_sb_sit_(causative);sack_sb;prepare_",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26432",
+       "root": "ق.ع.د",
+       "gloss": "flatbread_topped_with_a_variety_of_possi",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "qa3ad",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "بالمقهى",
+     "root": "ق.ه.و",
+     "lemma": "مَقْهَى",
+     "form": "مَقْهَى",
+     "caphi_raw": "m a q h a",
+     "caphi": "maqha",
+     "gloss": "cafe;coffeehouse",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26909",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26909",
+       "root": "ق.ه.و",
+       "gloss": "cafe;coffeehouse",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26908",
+       "root": "ق.ه.و",
+       "gloss": "cafe;coffeehouse_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "maqha",
+     "vocalized": "بِالمَقْهَى",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وسألوا جحا.",
+   "en": "And asked Juha.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "وسألوا",
      "root": "س.ء.ل",
      "lemma": "سَأَل",
      "form": "سَأَل",
@@ -81,7 +189,7 @@
      ],
      "caphi_urban": "sa2al",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "جحا",
@@ -98,7 +206,15 @@
      "vocalized_from": "curated",
      "provenance": "curated:proper-noun",
      "caphi_urban": "ju7a"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "شو أحلى شي بالدنيا؟",
+   "en": "What is the sweetest thing in the world?",
+   "p": 0,
+   "words": [
     {
      "surface": "شو",
      "root": "ش.و",
@@ -107,24 +223,10 @@
      "caphi_raw": "sh uu",
      "caphi": "shuu",
      "gloss": "what",
-     "analysis": "PRON_INTERROG",
-     "maknuune_id": "17122",
+     "analysis": "PRON_REL",
+     "maknuune_id": "17123",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "17122",
-       "root": "ش.و",
-       "gloss": "what",
-       "analysis": "PRON_INTERROG"
-      },
-      {
-       "id": "17123",
-       "root": "ش.و",
-       "gloss": "what",
-       "analysis": "PRON_REL"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "shuu",
      "vocalized": "شُو",
      "vocalized_from": "lexicon:exact"
@@ -146,19 +248,19 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "إشي",
+     "surface": "شي",
      "root": "ش.ي.ء",
-     "lemma": "إِشِي",
-     "form": "إِشِي",
-     "caphi_raw": "2 i sh i",
-     "caphi": "2ishi",
+     "lemma": "شِي",
+     "form": "شِي",
+     "caphi_raw": "sh ii",
+     "caphi": "shii",
      "gloss": "thing",
      "analysis": "NOUN:MS",
-     "maknuune_id": "17250",
+     "maknuune_id": "17248",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "2ishi",
-     "vocalized": "إِشِي",
+     "caphi_urban": "shii",
+     "vocalized": "شِي",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -216,28 +318,94 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
-   "ar": "قال: العسل.",
-   "en": "He said: honey.",
-   "p": 1,
+   "ar": "جحا فكر.",
+   "en": "Juha thought.",
+   "p": 0,
    "words": [
     {
-     "surface": "قال",
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
+    },
+    {
+     "surface": "فكر",
+     "root": "ف.ك.ر",
+     "lemma": "فِكِر",
+     "form": "فِكِر",
+     "caphi_raw": "f i k i r",
+     "caphi": "fikir",
+     "gloss": "mentality;thinking;intellect",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "24523",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "24523",
+       "root": "ف.ك.ر",
+       "gloss": "mentality;thinking;intellect",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "24527",
+       "root": "ف.ك.ر",
+       "gloss": "think_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "24531",
+       "root": "ف.ك.ر",
+       "gloss": "think_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "24529",
+       "root": "ف.ك.ر",
+       "gloss": "think",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "fikir",
+     "vocalized": "فِكِر",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وقال: العسل.",
+   "en": "And said: honey.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "وقال",
      "root": "ق.و.ل",
      "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
      "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "2aal",
-     "vocalized": "قَال",
-     "vocalized_from": "lexicon:exact"
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "العسل",
@@ -288,15 +456,93 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
-   "ar": "قالوا: والصحة؟",
-   "en": "They said: and health?",
+   "ar": "الناس ضحكوا.",
+   "en": "The people laughed.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "الناس",
+     "root": "ن.و.س",
+     "lemma": "نَاس",
+     "form": "نَاس",
+     "caphi_raw": "n aa s",
+     "caphi": "naas",
+     "gloss": "people",
+     "analysis": "NOUN:P",
+     "maknuune_id": "33748",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "naas",
+     "vocalized": "النَّاس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "ضحكوا",
+     "root": "ض.ح.ك",
+     "lemma": "ضِحِك",
+     "form": "ضِحِك",
+     "caphi_raw": "D. e 7 i k",
+     "caphi": "D.e7ik",
+     "gloss": "laughing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "18368",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "18368",
+       "root": "ض.ح.ك",
+       "gloss": "laughing",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "18378",
+       "root": "ض.ح.ك",
+       "gloss": "make_sb_laugh_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18383",
+       "root": "ض.ح.ك",
+       "gloss": "laugh_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18384",
+       "root": "ض.ح.ك",
+       "gloss": "make_sb_laugh_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18371",
+       "root": "ض.ح.ك",
+       "gloss": "to_burst_into_laughter",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "18372",
+       "root": "ض.ح.ك",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "D.e7ik",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال واحد: لا.",
+   "en": "One said: no.",
    "p": 1,
    "words": [
     {
-     "surface": "قالوا",
+     "surface": "قال",
      "root": "ق.و.ل",
      "lemma": "قَال",
      "form": "قَال",
@@ -308,8 +554,444 @@
      "village": null,
      "provenance": "maknuune:resolved",
      "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "واحد",
+     "root": "و.ح.د",
+     "lemma": "وَاحَد",
+     "form": "وَاحَد",
+     "caphi_raw": "w aa 7 a d",
+     "caphi": "waa7ad",
+     "gloss": "one;1",
+     "analysis": "NOUN_NUM",
+     "maknuune_id": "35105",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "waa7ad",
+     "vocalized": "وَاحَد",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "لا",
+     "root": "NTWS",
+     "lemma": "لَا",
+     "form": "لَا",
+     "caphi_raw": "l aa",
+     "caphi": "laa",
+     "gloss": "no;not",
+     "analysis": "PART_NEG",
+     "maknuune_id": "28665",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "laa",
+     "vocalized": "لَا",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "المصاري أحلى.",
+   "en": "Money is sweeter.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "المصاري",
+     "root": "م.ص.ر",
+     "lemma": "مَصَارِي",
+     "form": "مَصَارِي",
+     "caphi_raw": "m a s. aa r i",
+     "caphi": "mas.aari",
+     "gloss": "money",
+     "analysis": "NOUN:P",
+     "maknuune_id": "30808",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "mas.aari",
+     "vocalized": "المَصَارِي",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "أحلى",
+     "root": "ح.ل.ي",
+     "lemma": "أَحْلَى",
+     "form": "أَحْلَى",
+     "caphi_raw": "2 a 7 l a",
+     "caphi": "2a7la",
+     "gloss": "more/most_beautiful",
+     "analysis": "ADJ_COMP",
+     "maknuune_id": "6841",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2a7la",
+     "vocalized": "أَحْلَى",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال تاني: لا.",
+   "en": "Another said: no.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "قال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "تاني",
+     "root": "ث.ن.ي",
+     "lemma": "ثَانِي",
+     "form": "ثَانِي",
+     "caphi_raw": "T aa n i",
+     "caphi": "Taani",
+     "gloss": "second",
+     "analysis": "ADJ_NUM",
+     "maknuune_id": "3454",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "taani",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "لا",
+     "root": "NTWS",
+     "lemma": "لَا",
+     "form": "لَا",
+     "caphi_raw": "l aa",
+     "caphi": "laa",
+     "gloss": "no;not",
+     "analysis": "PART_NEG",
+     "maknuune_id": "28665",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "laa",
+     "vocalized": "لَا",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "الحب أحلى.",
+   "en": "Love is sweeter.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "الحب",
+     "root": "ح.ب.ب",
+     "lemma": "حُبّ",
+     "form": "حُبّ",
+     "caphi_raw": "7 u b b",
+     "caphi": "7ubb",
+     "gloss": "love;affection",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "5045",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "5045",
+       "root": "ح.ب.ب",
+       "gloss": "love;affection",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "5046",
+       "root": "ح.ب.ب",
+       "gloss": "grains;pills;pimples",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "5054",
+       "root": "ح.ب.ب",
+       "gloss": "cress",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "5055",
+       "root": "ح.ب.ب",
+       "gloss": "acni",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "5064",
+       "root": "ح.ب.ب",
+       "gloss": "hail",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "7ubb",
+     "vocalized": "الحُبّ",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "أحلى",
+     "root": "ح.ل.ي",
+     "lemma": "أَحْلَى",
+     "form": "أَحْلَى",
+     "caphi_raw": "2 a 7 l a",
+     "caphi": "2a7la",
+     "gloss": "more/most_beautiful",
+     "analysis": "ADJ_COMP",
+     "maknuune_id": "6841",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2a7la",
+     "vocalized": "أَحْلَى",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال تالت: لا.",
+   "en": "A third said: no.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "قال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "تالت",
+     "root": "ث.ل.ث",
+     "lemma": "ثَالِث",
+     "form": "ثَالِث",
+     "caphi_raw": "T aa l i T",
+     "caphi": "TaaliT",
+     "gloss": "thirs",
+     "analysis": "ADJ_NUM",
+     "maknuune_id": "3405",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "taalit",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "لا",
+     "root": "NTWS",
+     "lemma": "لَا",
+     "form": "لَا",
+     "caphi_raw": "l aa",
+     "caphi": "laa",
+     "gloss": "no;not",
+     "analysis": "PART_NEG",
+     "maknuune_id": "28665",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "laa",
+     "vocalized": "لَا",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "النوم أحلى.",
+   "en": "Sleep is sweeter.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "النوم",
+     "root": "ن.و.م",
+     "lemma": "نَوم",
+     "form": "نَوم",
+     "caphi_raw": "n oo m",
+     "caphi": "noom",
+     "gloss": "sleep",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "33790",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "33790",
+       "root": "ن.و.م",
+       "gloss": "sleep",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "33791",
+       "root": "ن.و.م",
+       "gloss": "sb_who_sleeps_a_lot_for_long_hours",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33792",
+       "root": "ن.و.م",
+       "gloss": "light_sleep",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33793",
+       "root": "ن.و.م",
+       "gloss": "heavy_sleep",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33794",
+       "root": "ن.و.م",
+       "gloss": "very_light_sleep",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33795",
+       "root": "ن.و.م",
+       "gloss": "have_enough_sleep",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "noom",
+     "vocalized": "النَّوم",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "أحلى",
+     "root": "ح.ل.ي",
+     "lemma": "أَحْلَى",
+     "form": "أَحْلَى",
+     "caphi_raw": "2 a 7 l a",
+     "caphi": "2a7la",
+     "gloss": "more/most_beautiful",
+     "analysis": "ADJ_COMP",
+     "maknuune_id": "6841",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2a7la",
+     "vocalized": "أَحْلَى",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وتخانقوا.",
+   "en": "And they argued.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "وتخانقوا",
+     "root": "خ.ن.ق",
+     "lemma": "تْخَانَق",
+     "form": "تْخَانَق",
+     "caphi_raw": "t kh aa n a 2",
+     "caphi": "tkhaana2",
+     "gloss": "quarrel_with_sb;wrangle_with_sb_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "8867",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "8867",
+       "root": "خ.ن.ق",
+       "gloss": "quarrel_with_sb;wrangle_with_sb_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "8856",
+       "root": "خ.ن.ق",
+       "gloss": "quarrel_with_sb;wrangle_with_sb_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "8862",
+       "root": "خ.ن.ق",
+       "gloss": "quarrel_with_sb;wrangle_with_sb",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "8855",
+       "root": "خ.ن.ق",
+       "gloss": "yell_as_sb;scold_sb_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "8866",
+       "root": "خ.ن.ق",
+       "gloss": "yell_as_sb;scold_sb_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "8861",
+       "root": "خ.ن.ق",
+       "gloss": "yell_as_sb;scold_sb",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "tkhaana2",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وقال واحد: والصحة يا جحا؟",
+   "en": "And one said: and health, Juha?",
+   "p": 2,
+   "words": [
+    {
+     "surface": "وقال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "واحد",
+     "root": "و.ح.د",
+     "lemma": "وَاحَد",
+     "form": "وَاحَد",
+     "caphi_raw": "w aa 7 a d",
+     "caphi": "waa7ad",
+     "gloss": "one;1",
+     "analysis": "NOUN_NUM",
+     "maknuune_id": "35105",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "waa7ad",
+     "vocalized": "وَاحَد",
+     "vocalized_from": "lexicon:exact"
     },
     {
      "surface": "والصحة",
@@ -340,29 +1022,61 @@
      "caphi_urban": "s.i77a",
      "vocalized": "والصِّحَّة",
      "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "يا",
+     "root": "NTWS",
+     "lemma": "يَا",
+     "form": "يَا",
+     "caphi_raw": "y aa",
+     "caphi": "yaa",
+     "gloss": "Oh!",
+     "analysis": "PART_VOC",
+     "maknuune_id": "36173",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yaa",
+     "vocalized": "يَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
-   "ar": "قال: الصحة مش إشي بالدنيا.",
-   "en": "He said: health is not a thing in the world.",
+   "ar": "مش الصحة أحلى شي؟",
+   "en": "Is health not the sweetest thing?",
    "p": 2,
    "words": [
     {
-     "surface": "قال",
-     "root": "ق.و.ل",
-     "lemma": "قَال",
-     "form": "قَال",
-     "caphi_raw": "Q aa l",
-     "caphi": "Qaal",
-     "gloss": "say_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "27011",
+     "surface": "مش",
+     "root": "NTWS",
+     "lemma": "مِش",
+     "form": "مِش",
+     "caphi_raw": "m i sh",
+     "caphi": "mish",
+     "gloss": "not",
+     "analysis": "PART_NEG",
+     "maknuune_id": "30759",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "2aal",
-     "vocalized": "قَال",
+     "caphi_urban": "mish",
+     "vocalized": "مِش",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -396,35 +1110,405 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "مش",
-     "root": "NTWS",
-     "lemma": "مِش",
-     "form": "مِش",
-     "caphi_raw": "m i sh",
-     "caphi": "mish",
-     "gloss": "not",
-     "analysis": "PART_NEG",
-     "maknuune_id": "30759",
+     "surface": "أحلى",
+     "root": "ح.ل.ي",
+     "lemma": "أَحْلَى",
+     "form": "أَحْلَى",
+     "caphi_raw": "2 a 7 l a",
+     "caphi": "2a7la",
+     "gloss": "more/most_beautiful",
+     "analysis": "ADJ_COMP",
+     "maknuune_id": "6841",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "mish",
-     "vocalized": "مِش",
+     "caphi_urban": "2a7la",
+     "vocalized": "أَحْلَى",
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "إشي",
+     "surface": "شي",
      "root": "ش.ي.ء",
-     "lemma": "إِشِي",
-     "form": "إِشِي",
-     "caphi_raw": "2 i sh i",
-     "caphi": "2ishi",
+     "lemma": "شِي",
+     "form": "شِي",
+     "caphi_raw": "sh ii",
+     "caphi": "shii",
      "gloss": "thing",
      "analysis": "NOUN:MS",
-     "maknuune_id": "17250",
+     "maknuune_id": "17248",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "2ishi",
-     "vocalized": "إِشِي",
+     "caphi_urban": "shii",
+     "vocalized": "شِي",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "جحا هز راسه.",
+   "en": "Juha shook his head.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
+    },
+    {
+     "surface": "هز",
+     "root": "ه.ز.ز",
+     "lemma": "هَزّ",
+     "form": "هَزّ",
+     "caphi_raw": "h a z z",
+     "caphi": "hazz",
+     "gloss": "shaking;dancing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "34362",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "34362",
+       "root": "ه.ز.ز",
+       "gloss": "shaking;dancing",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "34365",
+       "root": "ه.ز.ز",
+       "gloss": "shake;dance_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "34369",
+       "root": "ه.ز.ز",
+       "gloss": "shake;dance_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "34364",
+       "root": "ه.ز.ز",
+       "gloss": "sleep_soundly_because_sb_was_very_tired",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "34367",
+       "root": "ه.ز.ز",
+       "gloss": "shake;dance",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "hazz",
+     "vocalized": "هَزّ",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "راسه",
+     "root": "ر.ء.س",
+     "lemma": "رَاس",
+     "form": "رَاس",
+     "caphi_raw": "r aa s",
+     "caphi": "raas",
+     "gloss": "head",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "10896",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "10896",
+       "root": "ر.ء.س",
+       "gloss": "head",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "10897",
+       "root": "ر.ء.س",
+       "gloss": "beginning",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "10945",
+       "root": "ر.ء.س",
+       "gloss": "chair;head_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "10899",
+       "root": "ر.ء.س",
+       "gloss": "head",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "10901",
+       "root": "ر.ء.س",
+       "gloss": "be_stubborn",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10902",
+       "root": "ر.ء.س",
+       "gloss": "supervise_sb's_work;oversee_sb's_work_cl",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "raas",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وقال: لا.",
+   "en": "And said: no.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "وقال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قُول",
+     "caphi_raw": "Q uu l",
+     "caphi": "Quul",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "27004",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2uul",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:no-alignment"
+    },
+    {
+     "surface": "لا",
+     "root": "NTWS",
+     "lemma": "لَا",
+     "form": "لَا",
+     "caphi_raw": "l aa",
+     "caphi": "laa",
+     "gloss": "no;not",
+     "analysis": "PART_NEG",
+     "maknuune_id": "28665",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "laa",
+     "vocalized": "لَا",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "الناس استغربوا.",
+   "en": "The people were surprised.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "الناس",
+     "root": "ن.و.س",
+     "lemma": "نَاس",
+     "form": "نَاس",
+     "caphi_raw": "n aa s",
+     "caphi": "naas",
+     "gloss": "people",
+     "analysis": "NOUN:P",
+     "maknuune_id": "33748",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "naas",
+     "vocalized": "النَّاس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "استغربوا",
+     "root": "غ.ر.ب",
+     "lemma": "اِسْتَغْرَب",
+     "form": "اِسْتَغْرِب",
+     "caphi_raw": "2 i s t a gh r i b",
+     "caphi": "2istaghrib",
+     "gloss": "consider_sth_strange_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "22424",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "22424",
+       "root": "غ.ر.ب",
+       "gloss": "consider_sth_strange_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "22433",
+       "root": "غ.ر.ب",
+       "gloss": "consider_sth_strange_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "22428",
+       "root": "غ.ر.ب",
+       "gloss": "consider_sth_strange",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "2istaghrib",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قالوا: ليش؟",
+   "en": "They said: why?",
+   "p": 2,
+   "words": [
+    {
+     "surface": "قالوا",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "ليش",
+     "root": "NTWS",
+     "lemma": "لَيش",
+     "form": "لَيش",
+     "caphi_raw": "l ee sh",
+     "caphi": "leesh",
+     "gloss": "why",
+     "analysis": "ADV_REL",
+     "maknuune_id": "30066",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "leesh",
+     "vocalized": "لَيش",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال جحا: العسل شي بالدنيا.",
+   "en": "Juha said: honey is a thing in the world.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "قال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
+    },
+    {
+     "surface": "العسل",
+     "root": "ع.س.ل",
+     "lemma": "عَسَل",
+     "form": "عَسَل",
+     "caphi_raw": "3 a s a l",
+     "caphi": "3asal",
+     "gloss": "honey",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "20805",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "20805",
+       "root": "ع.س.ل",
+       "gloss": "honey",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "20807",
+       "root": "ع.س.ل",
+       "gloss": "honeymoon",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "20808",
+       "root": "ع.س.ل",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "20809",
+       "root": "ع.س.ل",
+       "gloss": "It_is_an_idiomatic_expression_that's_use",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "20810",
+       "root": "ع.س.ل",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "3asal",
+     "vocalized": "العَسَل",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "شي",
+     "root": "ش.ي.ء",
+     "lemma": "شِي",
+     "form": "شِي",
+     "caphi_raw": "sh ii",
+     "caphi": "shii",
+     "gloss": "thing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "17248",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "shii",
+     "vocalized": "شِي",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -482,12 +1566,392 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
+  },
+  {
+   "ar": "والمصاري شي بالدنيا.",
+   "en": "And money is a thing in the world.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "والمصاري",
+     "root": "م.ص.ر",
+     "lemma": "مَصَارِي",
+     "form": "مَصَارِي",
+     "caphi_raw": "m a s. aa r i",
+     "caphi": "mas.aari",
+     "gloss": "money",
+     "analysis": "NOUN:P",
+     "maknuune_id": "30808",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30808",
+       "root": "م.ص.ر",
+       "gloss": "money",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "30809",
+       "root": "م.ص.ر",
+       "gloss": "very_cheap",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "mas.aari",
+     "vocalized": "والمَصَارِي",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "شي",
+     "root": "ش.ي.ء",
+     "lemma": "شِي",
+     "form": "شِي",
+     "caphi_raw": "sh ii",
+     "caphi": "shii",
+     "gloss": "thing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "17248",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "shii",
+     "vocalized": "شِي",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بالدنيا",
+     "root": "د.ن.ي",
+     "lemma": "دِنْيَا",
+     "form": "دِنْيَا",
+     "caphi_raw": "d i n y a",
+     "caphi": "dinya",
+     "gloss": "life;sky",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "10338",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "10338",
+       "root": "د.ن.ي",
+       "gloss": "life;sky",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10339",
+       "root": "د.ن.ي",
+       "gloss": "life",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10340",
+       "root": "د.ن.ي",
+       "gloss": "we_are_approaching_the_Day_of_Judgment",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10341",
+       "root": "د.ن.ي",
+       "gloss": "be_angry_with_sb",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10342",
+       "root": "د.ن.ي",
+       "gloss": "let_the_cat_out_of_the_bag",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10343",
+       "root": "د.ن.ي",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "dinya",
+     "vocalized": "بِالدِّنْيَا",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والنوم شي بالدنيا.",
+   "en": "And sleep is a thing in the world.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "والنوم",
+     "root": "ن.و.م",
+     "lemma": "نَوم",
+     "form": "نَوم",
+     "caphi_raw": "n oo m",
+     "caphi": "noom",
+     "gloss": "sleep",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "33790",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "33790",
+       "root": "ن.و.م",
+       "gloss": "sleep",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "33791",
+       "root": "ن.و.م",
+       "gloss": "sb_who_sleeps_a_lot_for_long_hours",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33792",
+       "root": "ن.و.م",
+       "gloss": "light_sleep",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33793",
+       "root": "ن.و.م",
+       "gloss": "heavy_sleep",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33794",
+       "root": "ن.و.م",
+       "gloss": "very_light_sleep",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33795",
+       "root": "ن.و.م",
+       "gloss": "have_enough_sleep",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "noom",
+     "vocalized": "والنَّوم",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "شي",
+     "root": "ش.ي.ء",
+     "lemma": "شِي",
+     "form": "شِي",
+     "caphi_raw": "sh ii",
+     "caphi": "shii",
+     "gloss": "thing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "17248",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "shii",
+     "vocalized": "شِي",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بالدنيا",
+     "root": "د.ن.ي",
+     "lemma": "دِنْيَا",
+     "form": "دِنْيَا",
+     "caphi_raw": "d i n y a",
+     "caphi": "dinya",
+     "gloss": "life;sky",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "10338",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "10338",
+       "root": "د.ن.ي",
+       "gloss": "life;sky",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10339",
+       "root": "د.ن.ي",
+       "gloss": "life",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10340",
+       "root": "د.ن.ي",
+       "gloss": "we_are_approaching_the_Day_of_Judgment",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10341",
+       "root": "د.ن.ي",
+       "gloss": "be_angry_with_sb",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10342",
+       "root": "د.ن.ي",
+       "gloss": "let_the_cat_out_of_the_bag",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10343",
+       "root": "د.ن.ي",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "dinya",
+     "vocalized": "بِالدِّنْيَا",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "بس الصحة، مش شي بالدنيا.",
+   "en": "But health is not a thing in the world.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "بس",
+     "root": "NTWS",
+     "lemma": "بَسّ",
+     "form": "بَسّ",
+     "caphi_raw": "b a s s",
+     "caphi": "bass",
+     "gloss": "but",
+     "analysis": "CONJ",
+     "maknuune_id": "1439",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "bass",
+     "vocalized": "بَسّ",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "الصحة",
+     "root": "ص.ح.ح",
+     "lemma": "صِحَّة",
+     "form": "صِحَّة",
+     "caphi_raw": "s. i 7 7 a",
+     "caphi": "s.i77a",
+     "gloss": "health",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "17497",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17497",
+       "root": "ص.ح.ح",
+       "gloss": "health",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "17499",
+       "root": "ص.ح.ح",
+       "gloss": "check_mark;correct",
+       "analysis": "NOUN:FS"
+      }
+     ],
+     "caphi_urban": "s.i77a",
+     "vocalized": "الصِّحَّة",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "مش",
+     "root": "NTWS",
+     "lemma": "مِش",
+     "form": "مِش",
+     "caphi_raw": "m i sh",
+     "caphi": "mish",
+     "gloss": "not",
+     "analysis": "PART_NEG",
+     "maknuune_id": "30759",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "mish",
+     "vocalized": "مِش",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "شي",
+     "root": "ش.ي.ء",
+     "lemma": "شِي",
+     "form": "شِي",
+     "caphi_raw": "sh ii",
+     "caphi": "shii",
+     "gloss": "thing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "17248",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "shii",
+     "vocalized": "شِي",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "بالدنيا",
+     "root": "د.ن.ي",
+     "lemma": "دِنْيَا",
+     "form": "دِنْيَا",
+     "caphi_raw": "d i n y a",
+     "caphi": "dinya",
+     "gloss": "life;sky",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "10338",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "10338",
+       "root": "د.ن.ي",
+       "gloss": "life;sky",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10339",
+       "root": "د.ن.ي",
+       "gloss": "life",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10340",
+       "root": "د.ن.ي",
+       "gloss": "we_are_approaching_the_Day_of_Judgment",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10341",
+       "root": "د.ن.ي",
+       "gloss": "be_angry_with_sb",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10342",
+       "root": "د.ن.ي",
+       "gloss": "let_the_cat_out_of_the_bag",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10343",
+       "root": "د.ن.ي",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "dinya",
+     "vocalized": "بِالدِّنْيَا",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
   },
   {
    "ar": "الصحة هي الدنيا.",
    "en": "Health is the world.",
-   "p": 2,
+   "p": 3,
    "words": [
     {
      "surface": "الصحة",
@@ -530,21 +1994,7 @@
      "analysis": "PRON:FS",
      "maknuune_id": "34853",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "34853",
-       "root": "NTWS",
-       "gloss": "she",
-       "analysis": "PRON:FS"
-      },
-      {
-       "id": "34854",
-       "root": "NTWS",
-       "gloss": "she",
-       "analysis": "PRON:FS"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "hii",
      "vocalized": "هِي",
      "vocalized_from": "lexicon:exact"
@@ -604,7 +2054,155 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
+  },
+  {
+   "ar": "بلاها، ما في دنيا.",
+   "en": "Without it, there is no world.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "بلاها",
+     "root": "ب.ل.ي",
+     "lemma": "بَلَا",
+     "form": "بَلَا",
+     "caphi_raw": "b a l a",
+     "caphi": "bala",
+     "gloss": "tribulation;affliction",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "2317",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "2317",
+       "root": "ب.ل.ي",
+       "gloss": "tribulation;affliction",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "2321",
+       "root": "ب.ل.ي",
+       "gloss": "It_is_a_binomial_that_means_\"evil_incarn",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "2322",
+       "root": "ب.ل.ي",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "2323",
+       "root": "ب.ل.ي",
+       "gloss": "troublemaker",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "28664",
+       "root": "NTWS",
+       "gloss": "No!",
+       "analysis": "INTERJ"
+      },
+      {
+       "id": "28665",
+       "root": "NTWS",
+       "gloss": "no;not",
+       "analysis": "PART_NEG"
+      }
+     ],
+     "caphi_urban": "bala",
+     "vocalized": "بَلَاها",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "ما",
+     "root": "NTWS",
+     "lemma": "مَا",
+     "form": "مَا",
+     "caphi_raw": "m aa",
+     "caphi": "maa",
+     "gloss": "who;that_(relative)",
+     "analysis": "PRON_REL",
+     "maknuune_id": "30118",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "maa",
+     "vocalized": "مَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "في",
+     "root": "—",
+     "lemma": "في",
+     "form": "في",
+     "caphi_raw": "fi",
+     "caphi": "fi",
+     "gloss": "in",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "في",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "fi"
+    },
+    {
+     "surface": "دنيا",
+     "root": "د.ن.ي",
+     "lemma": "دِنْيَا",
+     "form": "دِنْيَا",
+     "caphi_raw": "d i n y a",
+     "caphi": "dinya",
+     "gloss": "life;sky",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "10338",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "10338",
+       "root": "د.ن.ي",
+       "gloss": "life;sky",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10339",
+       "root": "د.ن.ي",
+       "gloss": "life",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "10340",
+       "root": "د.ن.ي",
+       "gloss": "we_are_approaching_the_Day_of_Judgment",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10341",
+       "root": "د.ن.ي",
+       "gloss": "be_angry_with_sb",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10342",
+       "root": "د.ن.ي",
+       "gloss": "let_the_cat_out_of_the_bag",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10343",
+       "root": "د.ن.ي",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "dinya",
+     "vocalized": "دِنْيَا",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
   }
  ]
 }

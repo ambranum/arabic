@@ -25,79 +25,251 @@
  "source": "adapted by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "سألوا جحا: القمر أهم ولا الشمس؟",
-   "en": "They asked Juha: is the moon more important or the sun?",
+   "ar": "الناس بالمقهى تخانقوا.",
+   "en": "The people in the café were arguing.",
    "p": 0,
    "words": [
     {
-     "surface": "سألوا",
-     "root": "س.ء.ل",
-     "lemma": "سَأَل",
-     "form": "سَأَل",
-     "caphi_raw": "s a 2 a l",
-     "caphi": "sa2al",
-     "gloss": "ask;inquire_[auto]",
-     "analysis": "VERB:P",
-     "maknuune_id": "13505",
+     "surface": "الناس",
+     "root": "ن.و.س",
+     "lemma": "نَاس",
+     "form": "نَاس",
+     "caphi_raw": "n aa s",
+     "caphi": "naas",
+     "gloss": "people",
+     "analysis": "NOUN:P",
+     "maknuune_id": "33748",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "naas",
+     "vocalized": "النَّاس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "بالمقهى",
+     "root": "ق.ه.و",
+     "lemma": "مَقْهَى",
+     "form": "مَقْهَى",
+     "caphi_raw": "m a q h a",
+     "caphi": "maqha",
+     "gloss": "cafe;coffeehouse",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26909",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "13505",
-       "root": "س.ء.ل",
-       "gloss": "ask;inquire_[auto]",
+       "id": "26909",
+       "root": "ق.ه.و",
+       "gloss": "cafe;coffeehouse",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26908",
+       "root": "ق.ه.و",
+       "gloss": "cafe;coffeehouse_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "maqha",
+     "vocalized": "بِالمَقْهَى",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "تخانقوا",
+     "root": "خ.ن.ق",
+     "lemma": "تْخَانَق",
+     "form": "تْخَانَق",
+     "caphi_raw": "t kh aa n a 2",
+     "caphi": "tkhaana2",
+     "gloss": "quarrel_with_sb;wrangle_with_sb_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "8867",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "8867",
+       "root": "خ.ن.ق",
+       "gloss": "quarrel_with_sb;wrangle_with_sb_[auto]",
        "analysis": "VERB:P"
       },
       {
-       "id": "15432",
-       "root": "س.ي.ل",
-       "gloss": "flow;stream;have_a_runny_nose_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "13498",
-       "root": "س.ء.ل",
-       "gloss": "an_idiomatic_expresion_that_means_that_i",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "13499",
-       "root": "س.ء.ل",
-       "gloss": "ask;inquire_[auto]",
+       "id": "8856",
+       "root": "خ.ن.ق",
+       "gloss": "quarrel_with_sb;wrangle_with_sb_[auto]",
        "analysis": "VERB:C"
       },
       {
-       "id": "13501",
-       "root": "س.ء.ل",
-       "gloss": "ask;inquire",
+       "id": "8862",
+       "root": "خ.ن.ق",
+       "gloss": "quarrel_with_sb;wrangle_with_sb",
        "analysis": "VERB:I"
       },
       {
-       "id": "15428",
-       "root": "س.ي.ل",
-       "gloss": "flow;stream;have_a_runny_nose_[auto]",
+       "id": "8855",
+       "root": "خ.ن.ق",
+       "gloss": "yell_as_sb;scold_sb_[auto]",
        "analysis": "VERB:C"
+      },
+      {
+       "id": "8866",
+       "root": "خ.ن.ق",
+       "gloss": "yell_as_sb;scold_sb_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "8861",
+       "root": "خ.ن.ق",
+       "gloss": "yell_as_sb;scold_sb",
+       "analysis": "VERB:I"
       }
      ],
-     "caphi_urban": "sa2al",
+     "caphi_urban": "tkhaana2",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "على سؤال.",
+   "en": "Over a question.",
+   "p": 0,
+   "words": [
     {
-     "surface": "جحا",
+     "surface": "على",
      "root": "—",
-     "lemma": "جُحا",
-     "form": "جُحا",
-     "caphi_raw": "ju7a",
-     "caphi": "ju7a",
-     "gloss": "Juha (the folk-tale trickster)",
-     "analysis": "NOUN_PROP",
+     "lemma": "على",
+     "form": "على",
+     "caphi_raw": "3ala",
+     "caphi": "3ala",
+     "gloss": "on, at, upon",
+     "analysis": "PREP",
      "maknuune_id": null,
      "village": null,
-     "vocalized": "جُحا",
+     "vocalized": "على",
      "vocalized_from": "curated",
-     "provenance": "curated:proper-noun",
-     "caphi_urban": "ju7a"
+     "provenance": "curated:function-word",
+     "caphi_urban": "3ala"
+    },
+    {
+     "surface": "سؤال",
+     "root": "س.ء.ل",
+     "lemma": "سُؤَال",
+     "form": "سُؤَال",
+     "caphi_raw": "s u 2 aa l",
+     "caphi": "su2aal",
+     "gloss": "question",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "13494",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13494",
+       "root": "س.ء.ل",
+       "gloss": "question",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "13496",
+       "root": "س.ء.ل",
+       "gloss": "question_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "su2aal",
+     "vocalized": "سُؤَال",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "الشمس أهم، ولا القمر؟",
+   "en": "Is the sun more important, or the moon?",
+   "p": 0,
+   "words": [
+    {
+     "surface": "الشمس",
+     "root": "ش.م.س",
+     "lemma": "شَمِس",
+     "form": "شَمِس",
+     "caphi_raw": "sh a m i s",
+     "caphi": "shamis",
+     "gloss": "sun",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "16904",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "16904",
+       "root": "ش.م.س",
+       "gloss": "sun",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "16907",
+       "root": "ش.م.س",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16908",
+       "root": "ش.م.س",
+       "gloss": "prison;jail",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16909",
+       "root": "ش.م.س",
+       "gloss": "noon",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16910",
+       "root": "ش.م.س",
+       "gloss": "wake_up_early_in_the_morning_and_be_very",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "shamis",
+     "vocalized": "الشَّمِس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "أهم",
+     "root": "ه.م.م",
+     "lemma": "هَمّ",
+     "form": "يهِمّ",
+     "caphi_raw": "y h i m m",
+     "caphi": "yhimm",
+     "gloss": "consider_sth_as_important;be_significant",
+     "analysis": "VERB:I",
+     "maknuune_id": "34679",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "yhimm",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "ولا",
+     "root": "NTWS",
+     "lemma": "لَا",
+     "form": "وِلَا",
+     "caphi_raw": "w i l l a",
+     "caphi": "willa",
+     "gloss": "or;otherwise;in_a_tag_question",
+     "analysis": "PART_NEG:PHRASE",
+     "maknuune_id": "28669",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "willa",
+     "vocalized": "وِلَا",
+     "vocalized_from": "lexicon:exact"
     },
     {
      "surface": "القمر",
@@ -152,38 +324,46 @@
      "caphi_urban": "qamar",
      "vocalized": "القَمَر",
      "vocalized_from": "derived:affix"
-    },
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "نص قالوا الشمس.",
+   "en": "Half said the sun.",
+   "p": 0,
+   "words": [
     {
-     "surface": "أهم",
-     "root": "ه.م.م",
-     "lemma": "هَمّ",
-     "form": "يهِمّ",
-     "caphi_raw": "y h i m m",
-     "caphi": "yhimm",
-     "gloss": "consider_sth_as_important;be_significant",
-     "analysis": "VERB:I",
-     "maknuune_id": "34679",
+     "surface": "نص",
+     "root": "ن.ص.ف",
+     "lemma": "نُصّ",
+     "form": "نُصّ",
+     "caphi_raw": "n u s. s.",
+     "caphi": "nus.s.",
+     "gloss": "half",
+     "analysis": "NOUN_QUANT:MS",
+     "maknuune_id": "32494",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "yhimm",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "caphi_urban": "nus.s.",
+     "vocalized": "نُصّ",
+     "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "ولا",
-     "root": "NTWS",
-     "lemma": "لَا",
-     "form": "وِلَا",
-     "caphi_raw": "w i l l a",
-     "caphi": "willa",
-     "gloss": "or;otherwise;in_a_tag_question",
-     "analysis": "PART_NEG:PHRASE",
-     "maknuune_id": "28669",
+     "surface": "قالوا",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "willa",
-     "vocalized": "وِلَا",
-     "vocalized_from": "lexicon:exact"
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "الشمس",
@@ -234,11 +414,199 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s0.mp3"
+   "audio": null
   },
   {
-   "ar": "جحا فكر وقال: القمر.",
-   "en": "Juha thought and said: the moon.",
+   "ar": "ونص قالوا القمر.",
+   "en": "And half said the moon.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "ونص",
+     "root": "ن.ص.ف",
+     "lemma": "نُصّ",
+     "form": "نُصّ",
+     "caphi_raw": "n u s. s.",
+     "caphi": "nus.s.",
+     "gloss": "half",
+     "analysis": "NOUN_QUANT:MS",
+     "maknuune_id": "32494",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "nus.s.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "قالوا",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "القمر",
+     "root": "ق.م.ر",
+     "lemma": "قَمَر",
+     "form": "قَمَر",
+     "caphi_raw": "q a m a r",
+     "caphi": "qamar",
+     "gloss": "moon",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26698",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26698",
+       "root": "ق.م.ر",
+       "gloss": "moon",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26699",
+       "root": "ق.م.ر",
+       "gloss": "moon_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26700",
+       "root": "ق.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26701",
+       "root": "ق.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26702",
+       "root": "ق.م.ر",
+       "gloss": "very_beautiful",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26703",
+       "root": "ق.م.ر",
+       "gloss": "the_person_who_can't_think_clearly",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "qamar",
+     "vocalized": "القَمَر",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وقالوا: نسأل جحا.",
+   "en": "And they said: let us ask Juha.",
+   "p": 0,
+   "words": [
+    {
+     "surface": "وقالوا",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "نسأل",
+     "root": "س.ء.ل",
+     "lemma": "سَأَل",
+     "form": "سَأَل",
+     "caphi_raw": "s a 2 a l",
+     "caphi": "sa2al",
+     "gloss": "ask;inquire_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "13505",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13505",
+       "root": "س.ء.ل",
+       "gloss": "ask;inquire_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "15432",
+       "root": "س.ي.ل",
+       "gloss": "flow;stream;have_a_runny_nose_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "13498",
+       "root": "س.ء.ل",
+       "gloss": "an_idiomatic_expresion_that_means_that_i",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "13499",
+       "root": "س.ء.ل",
+       "gloss": "ask;inquire_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "13501",
+       "root": "س.ء.ل",
+       "gloss": "ask;inquire",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "15428",
+       "root": "س.ي.ل",
+       "gloss": "flow;stream;have_a_runny_nose_[auto]",
+       "analysis": "VERB:C"
+      }
+     ],
+     "caphi_urban": "sa2al",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "جحا إجا.",
+   "en": "Juha came.",
    "p": 1,
    "words": [
     {
@@ -258,7 +626,123 @@
      "caphi_urban": "ju7a"
     },
     {
-     "surface": "فكر",
+     "surface": "إجا",
+     "root": "—",
+     "lemma": "إجا",
+     "form": "إجا",
+     "caphi_raw": "2ija",
+     "caphi": "2ija",
+     "gloss": "he came",
+     "analysis": "VERB:P",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "إجا",
+     "vocalized_from": "curated",
+     "provenance": "curated:story-word",
+     "caphi_urban": "2ija"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وسمع السؤال.",
+   "en": "And heard the question.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "وسمع",
+     "root": "س.م.ع",
+     "lemma": "سَمَع",
+     "form": "سَمَع",
+     "caphi_raw": "s a m a 3",
+     "caphi": "sama3",
+     "gloss": "hearing",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "14942",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14942",
+       "root": "س.م.ع",
+       "gloss": "hearing",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "14943",
+       "root": "س.م.ع",
+       "gloss": "reputation_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "14952",
+       "root": "س.م.ع",
+       "gloss": "make_sth_heard_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14955",
+       "root": "س.م.ع",
+       "gloss": "listen;hear_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14956",
+       "root": "س.م.ع",
+       "gloss": "make_sth_heard_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14944",
+       "root": "س.م.ع",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "sama3",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "السؤال",
+     "root": "س.ء.ل",
+     "lemma": "سُؤَال",
+     "form": "سُؤَال",
+     "caphi_raw": "s u 2 aa l",
+     "caphi": "su2aal",
+     "gloss": "question",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "13494",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13494",
+       "root": "س.ء.ل",
+       "gloss": "question",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "13496",
+       "root": "س.ء.ل",
+       "gloss": "question_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "su2aal",
+     "vocalized": "السُّؤَال",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وفكر.",
+   "en": "And thought.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "وفكر",
      "root": "ف.ك.ر",
      "lemma": "فِكِر",
      "form": "فِكِر",
@@ -296,9 +780,159 @@
       }
      ],
      "caphi_urban": "fikir",
-     "vocalized": "فِكِر",
-     "vocalized_from": "lexicon:exact"
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وشرب قهوته.",
+   "en": "And drank his coffee.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "وشرب",
+     "root": "ش.ر.ب",
+     "lemma": "شُرُب",
+     "form": "شُرُب",
+     "caphi_raw": "sh u r u b",
+     "caphi": "shurub",
+     "gloss": "drinking;drinking_alcohol",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "15914",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "15914",
+       "root": "ش.ر.ب",
+       "gloss": "drinking;drinking_alcohol",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "15917",
+       "root": "ش.ر.ب",
+       "gloss": "A_pottery_jug_with_a_long_neck;But_witho",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "15929",
+       "root": "ش.ر.ب",
+       "gloss": "make_sb_drink_(causative);imbibe;absorb_",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "15935",
+       "root": "ش.ر.ب",
+       "gloss": "drink_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "15936",
+       "root": "ش.ر.ب",
+       "gloss": "make_sb_drink_(causative);imbibe;absorb_",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "15924",
+       "root": "ش.ر.ب",
+       "gloss": "Deeply_saddened_by_someone's_death",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "shurub",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
+    {
+     "surface": "قهوته",
+     "root": null,
+     "lemma": null,
+     "form": "قهوته",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "قهوته",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وفكر كمان.",
+   "en": "And thought some more.",
+   "p": 1,
+   "words": [
+    {
+     "surface": "وفكر",
+     "root": "ف.ك.ر",
+     "lemma": "فِكِر",
+     "form": "فِكِر",
+     "caphi_raw": "f i k i r",
+     "caphi": "fikir",
+     "gloss": "mentality;thinking;intellect",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "24523",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "24523",
+       "root": "ف.ك.ر",
+       "gloss": "mentality;thinking;intellect",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "24527",
+       "root": "ف.ك.ر",
+       "gloss": "think_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "24531",
+       "root": "ف.ك.ر",
+       "gloss": "think_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "24529",
+       "root": "ف.ك.ر",
+       "gloss": "think",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "fikir",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "كمان",
+     "root": "ك.م.ن",
+     "lemma": "كَمَان",
+     "form": "كَمَان",
+     "caphi_raw": "k a m aa n",
+     "caphi": "kamaan",
+     "gloss": "as_well;also",
+     "analysis": "ADV",
+     "maknuune_id": "28395",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kamaan",
+     "vocalized": "كَمَان",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وقال: القمر.",
+   "en": "And said: the moon.",
+   "p": 1,
+   "words": [
     {
      "surface": "وقال",
      "root": "ق.و.ل",
@@ -370,26 +1004,200 @@
      "vocalized_from": "derived:affix"
     }
    ],
-   "audio": "audio/s1.mp3"
+   "audio": null
   },
   {
-   "ar": "سألوه: ليش؟",
-   "en": "They asked him: why?",
-   "p": 1,
+   "ar": "نص الناس فرحوا.",
+   "en": "Half the people cheered.",
+   "p": 2,
    "words": [
     {
-     "surface": "سألوه",
-     "root": null,
-     "lemma": null,
-     "form": "سألوه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سألوه",
+     "surface": "نص",
+     "root": "ن.ص.ف",
+     "lemma": "نُصّ",
+     "form": "نُصّ",
+     "caphi_raw": "n u s. s.",
+     "caphi": "nus.s.",
+     "gloss": "half",
+     "analysis": "NOUN_QUANT:MS",
+     "maknuune_id": "32494",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "nus.s.",
+     "vocalized": "نُصّ",
      "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "الناس",
+     "root": "ن.و.س",
+     "lemma": "نَاس",
+     "form": "نَاس",
+     "caphi_raw": "n aa s",
+     "caphi": "naas",
+     "gloss": "people",
+     "analysis": "NOUN:P",
+     "maknuune_id": "33748",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "naas",
+     "vocalized": "النَّاس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "فرحوا",
+     "root": "ف.ر.ح",
+     "lemma": "فَرَح",
+     "form": "فَرَح",
+     "caphi_raw": "f a r a 7",
+     "caphi": "fara7",
+     "gloss": "happiness",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "23501",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "23501",
+       "root": "ف.ر.ح",
+       "gloss": "happiness",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "23504",
+       "root": "ف.ر.ح",
+       "gloss": "make_sb_happy;gladden_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "23507",
+       "root": "ف.ر.ح",
+       "gloss": "be_happy;be_glad_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "23508",
+       "root": "ف.ر.ح",
+       "gloss": "make_sb_happy;gladden_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "23503",
+       "root": "ف.ر.ح",
+       "gloss": "be_happy;be_glad_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "23505",
+       "root": "ف.ر.ح",
+       "gloss": "be_happy;be_glad",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "fara7",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "ونص زعلوا.",
+   "en": "And half were upset.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "ونص",
+     "root": "ن.ص.ف",
+     "lemma": "نُصّ",
+     "form": "نُصّ",
+     "caphi_raw": "n u s. s.",
+     "caphi": "nus.s.",
+     "gloss": "half",
+     "analysis": "NOUN_QUANT:MS",
+     "maknuune_id": "32494",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "nus.s.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "زعلوا",
+     "root": "ز.ع.ل",
+     "lemma": "زَعَل",
+     "form": "زَعَل",
+     "caphi_raw": "z a 3 a l",
+     "caphi": "za3al",
+     "gloss": "sadness;anger",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "12901",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "12901",
+       "root": "ز.ع.ل",
+       "gloss": "sadness;anger",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "12909",
+       "root": "ز.ع.ل",
+       "gloss": "make_sb_angry_with_wth_or_sb_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "12914",
+       "root": "ز.ع.ل",
+       "gloss": "be_angry_with_sb;be_sad_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12915",
+       "root": "ز.ع.ل",
+       "gloss": "make_sb_angry_with_wth_or_sb_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "12902",
+       "root": "ز.ع.ل",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "12903",
+       "root": "ز.ع.ل",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "VERB:PHRASE"
+      }
+     ],
+     "caphi_urban": "za3al",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قالوا: ليش القمر؟",
+   "en": "They said: why the moon?",
+   "p": 2,
+   "words": [
+    {
+     "surface": "قالوا",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "ليش",
@@ -398,47 +1206,245 @@
      "form": "لَيش",
      "caphi_raw": "l ee sh",
      "caphi": "leesh",
-     "gloss": "why?",
-     "analysis": "ADV_INTERROG",
-     "maknuune_id": "30063",
+     "gloss": "why",
+     "analysis": "ADV_REL",
+     "maknuune_id": "30066",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "leesh",
+     "vocalized": "لَيش",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "القمر",
+     "root": "ق.م.ر",
+     "lemma": "قَمَر",
+     "form": "قَمَر",
+     "caphi_raw": "q a m a r",
+     "caphi": "qamar",
+     "gloss": "moon",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26698",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "30063",
-       "root": "NTWS",
-       "gloss": "why?",
-       "analysis": "ADV_INTERROG"
+       "id": "26698",
+       "root": "ق.م.ر",
+       "gloss": "moon",
+       "analysis": "NOUN:MS"
       },
       {
-       "id": "30066",
-       "root": "NTWS",
-       "gloss": "why",
-       "analysis": "ADV_REL"
+       "id": "26699",
+       "root": "ق.م.ر",
+       "gloss": "moon_[auto]",
+       "analysis": "NOUN:P"
       },
       {
-       "id": "30064",
-       "root": "NTWS",
-       "gloss": "Why?",
-       "analysis": "ADV_INTERROG:PHRASE"
+       "id": "26700",
+       "root": "ق.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
       },
       {
-       "id": "30065",
-       "root": "NTWS",
-       "gloss": "Why?",
-       "analysis": "ADV_INTERROG:PHRASE"
+       "id": "26701",
+       "root": "ق.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26702",
+       "root": "ق.م.ر",
+       "gloss": "very_beautiful",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26703",
+       "root": "ق.م.ر",
+       "gloss": "the_person_who_can't_think_clearly",
+       "analysis": "NOUN:PHRASE"
       }
      ],
-     "caphi_urban": "leesh",
-     "vocalized": "لَيش",
+     "caphi_urban": "qamar",
+     "vocalized": "القَمَر",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "الشمس أكبر!",
+   "en": "The sun is bigger!",
+   "p": 2,
+   "words": [
+    {
+     "surface": "الشمس",
+     "root": "ش.م.س",
+     "lemma": "شَمِس",
+     "form": "شَمِس",
+     "caphi_raw": "sh a m i s",
+     "caphi": "shamis",
+     "gloss": "sun",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "16904",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "16904",
+       "root": "ش.م.س",
+       "gloss": "sun",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "16907",
+       "root": "ش.م.س",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16908",
+       "root": "ش.م.س",
+       "gloss": "prison;jail",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16909",
+       "root": "ش.م.س",
+       "gloss": "noon",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16910",
+       "root": "ش.م.س",
+       "gloss": "wake_up_early_in_the_morning_and_be_very",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "shamis",
+     "vocalized": "الشَّمِس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "أكبر",
+     "root": "ك.ب.ر",
+     "lemma": "أَكْبَر",
+     "form": "أَكْبَر",
+     "caphi_raw": "2 a k b a r",
+     "caphi": "2akbar",
+     "gloss": "bigger;older",
+     "analysis": "ADJ_COMP",
+     "maknuune_id": "27257",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2akbar",
+     "vocalized": "أَكْبَر",
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s2.mp3"
+   "audio": null
   },
   {
-   "ar": "قال: لأنه بيطلع بالليل.",
-   "en": "He said: because it comes out at night.",
+   "ar": "والشمس بتدفي!",
+   "en": "And the sun warms!",
+   "p": 2,
+   "words": [
+    {
+     "surface": "والشمس",
+     "root": "ش.م.س",
+     "lemma": "شَمِس",
+     "form": "شَمِس",
+     "caphi_raw": "sh a m i s",
+     "caphi": "shamis",
+     "gloss": "sun",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "16904",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "16904",
+       "root": "ش.م.س",
+       "gloss": "sun",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "16907",
+       "root": "ش.م.س",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16908",
+       "root": "ش.م.س",
+       "gloss": "prison;jail",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16909",
+       "root": "ش.م.س",
+       "gloss": "noon",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "16910",
+       "root": "ش.م.س",
+       "gloss": "wake_up_early_in_the_morning_and_be_very",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "shamis",
+     "vocalized": "والشَّمِس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "بتدفي",
+     "root": "د.ف.ي",
+     "lemma": "دِفِي",
+     "form": "يِدْفَا",
+     "caphi_raw": "y i d f a",
+     "caphi": "yidfa",
+     "gloss": "feel_warm",
+     "analysis": "VERB:I",
+     "maknuune_id": "9888",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "9888",
+       "root": "د.ف.ي",
+       "gloss": "feel_warm",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "9889",
+       "root": "د.ف.ي",
+       "gloss": "warm_sth",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "9890",
+       "root": "د.ف.ي",
+       "gloss": "feel_warm;be_warm;get_dressed_in_a_way_t",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "9856",
+       "root": "د.ف.ف",
+       "gloss": "push",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yidfa",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:weak-final-verb"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال جحا: صحيح.",
+   "en": "Juha said: true.",
    "p": 2,
    "words": [
     {
@@ -458,20 +1464,222 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "لأنه",
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
+    },
+    {
+     "surface": "صحيح",
+     "root": "ص.ح.ح",
+     "lemma": "صَحِيح",
+     "form": "صَحِيح",
+     "caphi_raw": "s. a 7 ii 7",
+     "caphi": "s.a7ii7",
+     "gloss": "correct;right;well;healthy",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "17495",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17495",
+       "root": "ص.ح.ح",
+       "gloss": "correct;right;well;healthy",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "17501",
+       "root": "ص.ح.ح",
+       "gloss": "An_integer_(from_the_Latin_integer_meani",
+       "analysis": "ADJ:PHRASE"
+      }
+     ],
+     "caphi_urban": "s.a7ii7",
+     "vocalized": "صَحِيح",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "بس اسمعوا.",
+   "en": "But listen.",
+   "p": 2,
+   "words": [
+    {
+     "surface": "بس",
      "root": "NTWS",
-     "lemma": "أَنّ",
-     "form": "لِأَن",
-     "caphi_raw": "l i 2 a n n",
-     "caphi": "li2ann",
-     "gloss": "because",
-     "analysis": "CONJ:PHRASE",
-     "maknuune_id": "620",
+     "lemma": "بَسّ",
+     "form": "بَسّ",
+     "caphi_raw": "b a s s",
+     "caphi": "bass",
+     "gloss": "but",
+     "analysis": "CONJ",
+     "maknuune_id": "1439",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "li2ann",
+     "caphi_urban": "bass",
+     "vocalized": "بَسّ",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "اسمعوا",
+     "root": "س.م.ع",
+     "lemma": "سِمِع",
+     "form": "اِسْمَع",
+     "caphi_raw": "2 i s m a 3",
+     "caphi": "2isma3",
+     "gloss": "listen;hear_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "14951",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14951",
+       "root": "س.م.ع",
+       "gloss": "listen;hear_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14942",
+       "root": "س.م.ع",
+       "gloss": "hearing",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "14943",
+       "root": "س.م.ع",
+       "gloss": "reputation_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "14952",
+       "root": "س.م.ع",
+       "gloss": "make_sth_heard_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14955",
+       "root": "س.م.ع",
+       "gloss": "listen;hear_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14956",
+       "root": "س.م.ع",
+       "gloss": "make_sth_heard_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "2isma3",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "قال جحا: القمر بيطلع بالليل.",
+   "en": "Juha said: the moon comes out at night.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "قال",
+     "root": "ق.و.ل",
+     "lemma": "قَال",
+     "form": "قَال",
+     "caphi_raw": "Q aa l",
+     "caphi": "Qaal",
+     "gloss": "say_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "27011",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "2aal",
+     "vocalized": "قَال",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "جحا",
+     "root": "—",
+     "lemma": "جُحا",
+     "form": "جُحا",
+     "caphi_raw": "ju7a",
+     "caphi": "ju7a",
+     "gloss": "Juha (the folk-tale trickster)",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "جُحا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "ju7a"
+    },
+    {
+     "surface": "القمر",
+     "root": "ق.م.ر",
+     "lemma": "قَمَر",
+     "form": "قَمَر",
+     "caphi_raw": "q a m a r",
+     "caphi": "qamar",
+     "gloss": "moon",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26698",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26698",
+       "root": "ق.م.ر",
+       "gloss": "moon",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26699",
+       "root": "ق.م.ر",
+       "gloss": "moon_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26700",
+       "root": "ق.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26701",
+       "root": "ق.م.ر",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26702",
+       "root": "ق.م.ر",
+       "gloss": "very_beautiful",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26703",
+       "root": "ق.م.ر",
+       "gloss": "the_person_who_can't_think_clearly",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "qamar",
+     "vocalized": "القَمَر",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "بيطلع",
@@ -526,96 +1734,160 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s3.mp3"
+   "audio": null
   },
   {
-   "ar": "وقتها بنكون محتاجين ضوء.",
-   "en": "That is when we need light.",
-   "p": 2,
+   "ar": "وبالليل، الدنيا عتمة.",
+   "en": "And at night, the world is dark.",
+   "p": 3,
    "words": [
     {
-     "surface": "وقتها",
-     "root": "و.ق.ت",
-     "lemma": "وَقِت",
-     "form": "وَقِت",
-     "caphi_raw": "w a Q i t",
-     "caphi": "waQit",
-     "gloss": "time",
-     "analysis": "NOUN:MS",
-     "maknuune_id": "35857",
+     "surface": "وبالليل",
+     "root": "ل.ي.ل",
+     "lemma": "لَيل",
+     "form": "بِالَّليل",
+     "caphi_raw": "b i l l ee l",
+     "caphi": "billeel",
+     "gloss": "in_the_night",
+     "analysis": "NOUN:PHRASE",
+     "maknuune_id": "30090",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "billeel",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
+    },
+    {
+     "surface": "الدنيا",
+     "root": "د.ن.ي",
+     "lemma": "دِنْيَا",
+     "form": "دِنْيَا",
+     "caphi_raw": "d i n y a",
+     "caphi": "dinya",
+     "gloss": "life;sky",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "10338",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "35857",
-       "root": "و.ق.ت",
-       "gloss": "time",
-       "analysis": "NOUN:MS"
+       "id": "10338",
+       "root": "د.ن.ي",
+       "gloss": "life;sky",
+       "analysis": "NOUN:FS"
       },
       {
-       "id": "35867",
-       "root": "و.ق.ت",
-       "gloss": "time_sth;schedule_a_time_for_sth_[auto]",
-       "analysis": "VERB:C"
+       "id": "10339",
+       "root": "د.ن.ي",
+       "gloss": "life",
+       "analysis": "NOUN:FS"
       },
       {
-       "id": "35869",
-       "root": "و.ق.ت",
-       "gloss": "time_sth;schedule_a_time_for_sth_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "35859",
-       "root": "و.ق.ت",
-       "gloss": "time_[auto]",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "35860",
-       "root": "و.ق.ت",
-       "gloss": "Hello,_hope_you_are_doing_well!",
+       "id": "10340",
+       "root": "د.ن.ي",
+       "gloss": "we_are_approaching_the_Day_of_Judgment",
        "analysis": "NOUN:PHRASE"
       },
       {
-       "id": "35861",
-       "root": "و.ق.ت",
-       "gloss": "sometimes;occasionally",
+       "id": "10341",
+       "root": "د.ن.ي",
+       "gloss": "be_angry_with_sb",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10342",
+       "root": "د.ن.ي",
+       "gloss": "let_the_cat_out_of_the_bag",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "10343",
+       "root": "د.ن.ي",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
        "analysis": "NOUN:PHRASE"
       }
      ],
-     "caphi_urban": "wa2it",
-     "vocalized": "وَقِتها",
+     "caphi_urban": "dinya",
+     "vocalized": "الدِّنْيَا",
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "بنكون",
-     "root": "ك.و.ن",
-     "lemma": "كَوَّن",
-     "form": "يكَوِّن",
-     "caphi_raw": "y k a w w i n",
-     "caphi": "ykawwin",
-     "gloss": "form_sth;give_existence_to_sth;work_independently_and_manage_to_make_wealth_without_the_help_of_anyone",
-     "analysis": "VERB:I",
-     "maknuune_id": "28576",
+     "surface": "عتمة",
+     "root": "ع.ت.م",
+     "lemma": "عَتْمِة",
+     "form": "عَتْمِة",
+     "caphi_raw": "3 a t m e",
+     "caphi": "3atme",
+     "gloss": "darkness",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "20094",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "3atme",
+     "vocalized": "عَتْمِة",
+     "vocalized_from": "lexicon:exact"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وإحنا محتاجين ضوء.",
+   "en": "And we need light.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "وإحنا",
+     "root": "NTWS",
+     "lemma": "إِحْنَا",
+     "form": "إِحْنَا",
+     "caphi_raw": "2 i 7 n a",
+     "caphi": "2i7na",
+     "gloss": "we;us",
+     "analysis": "PRON:1P",
+     "maknuune_id": "82",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "28576",
-       "root": "ك.و.ن",
-       "gloss": "form_sth;give_existence_to_sth;work_inde",
-       "analysis": "VERB:I"
+       "id": "82",
+       "root": "NTWS",
+       "gloss": "we;us",
+       "analysis": "PRON:1P"
       },
       {
-       "id": "28575",
-       "root": "ك.و.ن",
-       "gloss": "be;become",
-       "analysis": "VERB:I"
+       "id": "7185",
+       "root": "ح.ن.ي",
+       "gloss": "Henna",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "7189",
+       "root": "ح.ن.ي",
+       "gloss": "Erithacus_is_a_genus_of_passerine_bird_t",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "7190",
+       "root": "ح.ن.ي",
+       "gloss": "continuously;unstoppably",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30049",
+       "root": "ل.ي.ح",
+       "gloss": "hit;beat_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "30047",
+       "root": "ل.ي.ح",
+       "gloss": "hit;beat_[auto]",
+       "analysis": "VERB:C"
       }
      ],
-     "caphi_urban": "ykawwin",
-     "vocalized": "بِنْكَوِّن",
-     "vocalized_from": "derived:verb"
+     "caphi_urban": "2i7na",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "محتاجين",
@@ -662,12 +1934,12 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s4.mp3"
+   "audio": null
   },
   {
-   "ar": "والشمس بتطلع بالنهار والدنيا ضوء.",
-   "en": "And the sun comes out in the day when the world is already light.",
-   "p": 2,
+   "ar": "والشمس بتطلع بالنهار.",
+   "en": "And the sun comes out by day.",
+   "p": 3,
    "words": [
     {
      "surface": "والشمس",
@@ -774,9 +2046,31 @@
      "caphi_urban": "nhaar",
      "vocalized": "بِالنّهَار",
      "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "وبالنهار، الدنيا ضوء.",
+   "en": "And by day, the world is light.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "وبالنهار",
+     "root": null,
+     "lemma": null,
+     "form": "وبالنهار",
+     "caphi": null,
+     "gloss": null,
+     "analysis": null,
+     "maknuune_id": null,
+     "provenance": "unresolved",
+     "caphi_urban": null,
+     "vocalized": "وبالنهار",
+     "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "والدنيا",
+     "surface": "الدنيا",
      "root": "د.ن.ي",
      "lemma": "دِنْيَا",
      "form": "دِنْيَا",
@@ -826,7 +2120,7 @@
       }
      ],
      "caphi_urban": "dinya",
-     "vocalized": "والدِّنْيَا",
+     "vocalized": "الدِّنْيَا",
      "vocalized_from": "derived:affix"
     },
     {
@@ -844,7 +2138,163 @@
      "vocalized_from": "lexicon:exact"
     }
    ],
-   "audio": "audio/s5.mp3"
+   "audio": null
+  },
+  {
+   "ar": "فشو لزومها؟",
+   "en": "So what is it for?",
+   "p": 3,
+   "words": [
+    {
+     "surface": "فشو",
+     "root": "ف.ش.ش",
+     "lemma": "فَشّ",
+     "form": "فِشّ",
+     "caphi_raw": "f i sh sh",
+     "caphi": "fishsh",
+     "gloss": "release_(negative_feelings_e.g._anger_or_sadness)_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "24026",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "24026",
+       "root": "ف.ش.ش",
+       "gloss": "release_(negative_feelings_e.g._anger_or",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "24030",
+       "root": "ف.ش.ش",
+       "gloss": "release_(negative_feelings_e.g._anger_or",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "24945",
+       "root": "ف.ي",
+       "gloss": "there_is_no;nothing",
+       "analysis": "PREP:PHRASE"
+      },
+      {
+       "id": "24023",
+       "root": "ف.ش.ش",
+       "gloss": "sluggish",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "24028",
+       "root": "ف.ش.ش",
+       "gloss": "release_(negative_feelings_e.g._anger_or",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "17122",
+       "root": "ش.و",
+       "gloss": "what",
+       "analysis": "PRON_INTERROG"
+      }
+     ],
+     "caphi_urban": "fishsh",
+     "vocalized": "فِشّو",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "لزومها",
+     "root": "ل.ز.م",
+     "lemma": "لْزُوم",
+     "form": "لْزُوم",
+     "caphi_raw": "l z uu m",
+     "caphi": "lzuum",
+     "gloss": "need;necessity",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "29094",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "lzuum",
+     "vocalized": "لْزُومها",
+     "vocalized_from": "derived:affix"
+    }
+   ],
+   "audio": null
+  },
+  {
+   "ar": "والناس سكتوا.",
+   "en": "And the people fell silent.",
+   "p": 3,
+   "words": [
+    {
+     "surface": "والناس",
+     "root": "ن.و.س",
+     "lemma": "نَاس",
+     "form": "نَاس",
+     "caphi_raw": "n aa s",
+     "caphi": "naas",
+     "gloss": "people",
+     "analysis": "NOUN:P",
+     "maknuune_id": "33748",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "naas",
+     "vocalized": "والنَّاس",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "سكتوا",
+     "root": "س.ك.ت",
+     "lemma": "سَكَّت",
+     "form": "سَكِّت",
+     "caphi_raw": "s a k k i t",
+     "caphi": "sakkit",
+     "gloss": "silence;shut_sb_up_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "14472",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "14472",
+       "root": "س.ك.ت",
+       "gloss": "silence;shut_sb_up_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14477",
+       "root": "س.ك.ت",
+       "gloss": "keep_silent_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14478",
+       "root": "س.ك.ت",
+       "gloss": "silence;shut_sb_up_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "14471",
+       "root": "س.ك.ت",
+       "gloss": "keep_silent_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14473",
+       "root": "س.ك.ت",
+       "gloss": "keep_silent_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "14474",
+       "root": "س.ك.ت",
+       "gloss": "keep_silent",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "sakkit",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    }
+   ],
+   "audio": null
   }
  ]
 }
