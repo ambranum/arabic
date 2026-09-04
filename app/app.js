@@ -969,6 +969,16 @@ function route() {
   const want = [];
   if ((kind === 'text' || kind === 'speak') && id && !textReady(id)) want.push(needText(id));
   if (kind === 'drill' && id && !textReady(id)) want.push(needText(id));
+  // The print view lays out EVERY chapter of a book on one page, and chapter bodies arrive one
+  // file at a time. Without this it rendered whatever happened to be in memory: thirty chapter
+  // headings and no text, unless you had already opened all thirty to pull each body in by
+  // hand — which is exactly what people were doing to get a PDF. Asking for them here rather
+  // than inside the view keeps the one loading gate the router already has, and a book is
+  // 20–40 files of ~18 KB, which is a fair thing to fetch when someone has asked to print it.
+  if (kind === 'books' && id && arg === 'print') {
+    const bk = bookById(id);
+    if (bk) bk.chapters.forEach(c => { if (!textReady(c.id)) want.push(needText(c.id)); });
+  }
   if (kind === 'verb' && VB[+id] && VB[+id].hasConj && !conjReady(+id)) want.push(needConj(+id));
   // Translate would be WRONG rather than merely thin without the whole corpus -- searching a
   // partial index quietly returns "no results" for words that are there. It is the one page
@@ -2473,8 +2483,9 @@ function bookPrintView(id) {
     <div class="bk-print">
       <div class="bk-print-title"><div class="ar" dir="rtl">${esc(b.title.ar)}</div>
         <div class="en">${esc(b.title.en)}</div>
-        <div class="sub">Adapted for learners of spoken Palestinian Arabic</div>
-        <div class="sub2">Retelling written by Claude — not checked by a native speaker · word data from the Maknuune lexicon</div></div>`;
+        <div class="sub">Adapted for learners of spoken ${esc(LANG.name)}</div>
+        <div class="sub2">Retelling written by Claude — not checked by a native speaker · word data
+          from ${esc(LANG.lex.name)}</div></div>`;
   b.chapters.forEach(c => {
     h += `<div class="bk-print-ch"><h2 dir="rtl">${esc(c.title.ar)}</h2><h3>${esc(chTitleEn(c))}</h3>`;
     // group sentences into paragraphs, English and Arabic side by side
