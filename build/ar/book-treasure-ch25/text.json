@@ -2497,17 +2497,19 @@
     },
     {
      "surface": "هوكينز",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "هوكينز",
      "form": "هوكينز",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "hookinz",
+     "caphi": "hookinz",
+     "gloss": "Hawkins (Jim Hawkins)",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "هوكينز",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "hookinz"
     }
    ],
    "audio": null
@@ -2623,7 +2625,7 @@
    "audio": null
   },
   {
-   "ar": "قلت: بدي أوصل السفينة للخليج الشمالي، وأرسيها عالشط.",
+   "ar": "قلت: بدي أوصل السفينة للخليج الشمالي، وأوقفها عالشط.",
    "en": "I said: I want to take the ship to the north inlet, and beach her on the shore.",
    "p": 2,
    "words": [
@@ -2785,17 +2787,19 @@
     },
     {
      "surface": "للخليج",
-     "root": null,
-     "lemma": null,
-     "form": "للخليج",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "خَليج",
+     "form": "خَليج",
+     "caphi_raw": "khaliij",
+     "caphi": "khaliij",
+     "gloss": "bay, inlet",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "للخليج",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "khaliij"
     },
     {
      "surface": "الشمالي",
@@ -2814,18 +2818,58 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "وأرسيها",
-     "root": null,
-     "lemma": null,
-     "form": "وأرسيها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وأرسيها",
-     "vocalized_from": "lexicon:exact"
+     "surface": "وأوقفها",
+     "root": "و.ق.ف",
+     "lemma": "وِقِف",
+     "form": "اُوقَف",
+     "caphi_raw": "2 uu Q a f",
+     "caphi": "2uuQaf",
+     "gloss": "stand_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "35924",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "35924",
+       "root": "و.ق.ف",
+       "gloss": "stand_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "35915",
+       "root": "و.ق.ف",
+       "gloss": "charity_to_be_named_after_sb",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "35916",
+       "root": "و.ق.ف",
+       "gloss": "stopping;suspension",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "35923",
+       "root": "و.ق.ف",
+       "gloss": "stand;stop_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "35927",
+       "root": "و.ق.ف",
+       "gloss": "stand_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "35928",
+       "root": "و.ق.ف",
+       "gloss": "stand;stop_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "2uu2af",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "عالشط",
@@ -3571,17 +3615,19 @@
     },
     {
      "surface": "وشراب",
-     "root": null,
-     "lemma": null,
-     "form": "وشراب",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "شَراب",
+     "form": "شَراب",
+     "caphi_raw": "sharaab",
+     "caphi": "sharaab",
+     "gloss": "drink, liquor",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وشراب",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "sharaab"
     },
     {
      "surface": "ومنديل",
@@ -3695,8 +3741,8 @@
    "audio": null
   },
   {
-   "ar": "وأنا بقول لك كيف تقودها.",
-   "en": "And I tell you how to sail her.",
+   "ar": "وأنا بقول كيف تقودها.",
+   "en": "And I say how to sail her.",
    "p": 2,
    "words": [
     {
@@ -3768,20 +3814,6 @@
      "caphi_urban": "y2uul",
      "vocalized": "بَقُول",
      "vocalized_from": "derived:verb"
-    },
-    {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
     },
     {
      "surface": "كيف",
@@ -5723,17 +5755,19 @@
     },
     {
      "surface": "أربعتعشر",
-     "root": null,
-     "lemma": null,
-     "form": "أربعتعشر",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "أربَعتَعشَر",
+     "form": "أربَعتَعشَر",
+     "caphi_raw": "2arba3ta3shar",
+     "caphi": "2arba3ta3shar",
+     "gloss": "fourteen",
+     "analysis": "NUM",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "أربعتعشر",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "أربَعتَعشَر",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2arba3ta3shar"
     },
     {
      "surface": "سنة",
