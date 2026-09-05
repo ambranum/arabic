@@ -2761,7 +2761,7 @@
    "audio": null
   },
   {
-   "ar": "لا يد، ولا وجه، ولا فرق بين مفتوح العين ومسكرها.",
+   "ar": "لا إيد، ولا وجه، ولا فرق بين مفتوح العين ومسكرها.",
    "en": "No hand, no face, no difference between eyes open and eyes closed.",
    "p": 2,
    "words": [
@@ -2782,18 +2782,58 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "يد",
-     "root": null,
-     "lemma": null,
-     "form": "يد",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يد",
-     "vocalized_from": "lexicon:exact"
+     "surface": "إيد",
+     "root": "ء.ي.د",
+     "lemma": "أَيَّد",
+     "form": "أَيِّد",
+     "caphi_raw": "2 a y y i d",
+     "caphi": "2ayyid",
+     "gloss": "support;assist_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "683",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "683",
+       "root": "ء.ي.د",
+       "gloss": "support;assist_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "685",
+       "root": "ء.ي.د",
+       "gloss": "support;assist_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "36210",
+       "root": "ي.د.ي",
+       "gloss": "hand",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "684",
+       "root": "ء.ي.د",
+       "gloss": "support;assist",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "36211",
+       "root": "ي.د.ي",
+       "gloss": "hand_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36212",
+       "root": "ي.د.ي",
+       "gloss": "out_of_sb's_hand",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2ayyid",
+     "vocalized": "إَيِّد",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "ولا",
@@ -4951,7 +4991,7 @@
    "audio": null
   },
   {
-   "ar": "أنا بروح بالممرات، والخيط بيرجعني لك.",
+   "ar": "أنا بروح بالممرات، والخيط بيرجعني عندك.",
    "en": "I go through the passages, and the string brings me back to you.",
    "p": 3,
    "words": [
@@ -5076,18 +5116,58 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
+     "surface": "عندك",
+     "root": "ع.ن.د",
+     "lemma": "عِنْد",
+     "form": "عِنْد",
+     "caphi_raw": "3 i n d",
+     "caphi": "3ind",
+     "gloss": "at",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "21887",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21887",
+       "root": "ع.ن.د",
+       "gloss": "at",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "21893",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "21897",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "21890",
+       "root": "ع.ن.د",
+       "gloss": "does_not_have",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "21891",
+       "root": "ع.ن.د",
+       "gloss": "at ours",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "21895",
+       "root": "ع.ن.د",
+       "gloss": "be_stubborn_and_unwilling_to_change_sb's",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "3ind",
+     "vocalized": "عِنْدك",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null

@@ -1719,8 +1719,8 @@
    "audio": null
   },
   {
-   "ar": "وسمعت صوت وراها، ولفت، ومسكت ولد من ياقته.",
-   "en": "And she heard a sound behind her, turned, and caught a boy by his collar.",
+   "ar": "وسمعت صوت وراها، ولفت، ومسكت ولد من قميصه.",
+   "en": "And she heard a sound behind her, turned, and caught a boy by his shirt.",
    "p": 1,
    "words": [
     {
@@ -1988,18 +1988,40 @@
      "caphi_urban": "min"
     },
     {
-     "surface": "ياقته",
-     "root": null,
-     "lemma": null,
-     "form": "ياقته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ياقته",
-     "vocalized_from": "lexicon:exact"
+     "surface": "قميصه",
+     "root": "ق.م.ص",
+     "lemma": "قَمِيص",
+     "form": "قَمِيص",
+     "caphi_raw": "Q a m ii s.",
+     "caphi": "Qamiis.",
+     "gloss": "shirt",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26713",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26713",
+       "root": "ق.م.ص",
+       "gloss": "shirt",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26714",
+       "root": "ق.م.ص",
+       "gloss": "shirt_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26716",
+       "root": "ق.م.ص",
+       "gloss": "night_dress;lingerie",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2amiis.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -2543,65 +2565,57 @@
    "audio": null
   },
   {
-   "ar": "قلت لك مية مرة.",
-   "en": "I told you a hundred times.",
+   "ar": "قلتها مية مرة.",
+   "en": "I have said it a hundred times.",
    "p": 1,
    "words": [
     {
-     "surface": "قلت",
+     "surface": "قلتها",
      "root": "ق.ل.ل",
-     "lemma": "قَلّ",
-     "form": "قِلّ",
-     "caphi_raw": "Q i l l",
-     "caphi": "Qill",
-     "gloss": "be_reduced;bediminished;be_less",
-     "analysis": "VERB:C",
-     "maknuune_id": "26651",
+     "lemma": "قُلّة",
+     "form": "قُلّة",
+     "caphi_raw": "Q u l l e",
+     "caphi": "Qulle",
+     "gloss": "a_jar_of_water",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "26638",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "26651",
+       "id": "26638",
        "root": "ق.ل.ل",
-       "gloss": "be_reduced;bediminished;be_less",
-       "analysis": "VERB:C"
+       "gloss": "a_jar_of_water",
+       "analysis": "NOUN:FS"
       },
       {
-       "id": "26656",
+       "id": "26639",
        "root": "ق.ل.ل",
-       "gloss": "be_reduced;bediminished;be_less_[auto]",
-       "analysis": "VERB:P"
+       "gloss": "shortage;paucity",
+       "analysis": "NOUN:FS"
       },
       {
-       "id": "26642",
+       "id": "26641",
        "root": "ق.ل.ل",
-       "gloss": "tell_sb_off;insult_oneself",
-       "analysis": "VERB:PHRASE"
+       "gloss": "a_jar_of_water_[auto]",
+       "analysis": "NOUN:P"
       },
       {
-       "id": "26652",
+       "id": "26643",
        "root": "ق.ل.ل",
-       "gloss": "be_reduced;bediminished;be_less",
-       "analysis": "VERB:I"
+       "gloss": "preposterous",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "26644",
+       "root": "ق.ل.ل",
+       "gloss": "disrespect",
+       "analysis": "NOUN:PHRASE"
       }
      ],
-     "caphi_urban": "2ill",
+     "caphi_urban": "2ulle",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
-    },
-    {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "unvocalized:no-alignment"
     },
     {
      "surface": "مية",
@@ -4813,17 +4827,19 @@
     },
     {
      "surface": "خدش",
-     "root": null,
-     "lemma": null,
-     "form": "خدش",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "خَدش",
+     "form": "خَدش",
+     "caphi_raw": "khadsh",
+     "caphi": "khadsh",
+     "gloss": "scratch",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "خدش",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "خَدش",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "khadsh"
     }
    ],
    "audio": null
@@ -5769,8 +5785,8 @@
    "audio": null
   },
   {
-   "ar": "بس سيد قال: بس الخيط اللي خيطتي فيه ياقته كان أبيض.",
-   "en": "But Sid said: but the thread you sewed his collar with was white.",
+   "ar": "بس سيد قال: بس الخيط اللي خيطتي فيه قميصه كان أبيض.",
+   "en": "But Sid said: but the thread you sewed his shirt with was white.",
    "p": 3,
    "words": [
     {
@@ -6004,18 +6020,40 @@
      "caphi_urban": "fi"
     },
     {
-     "surface": "ياقته",
-     "root": null,
-     "lemma": null,
-     "form": "ياقته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ياقته",
-     "vocalized_from": "lexicon:exact"
+     "surface": "قميصه",
+     "root": "ق.م.ص",
+     "lemma": "قَمِيص",
+     "form": "قَمِيص",
+     "caphi_raw": "Q a m ii s.",
+     "caphi": "Qamiis.",
+     "gloss": "shirt",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26713",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26713",
+       "root": "ق.م.ص",
+       "gloss": "shirt",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26714",
+       "root": "ق.م.ص",
+       "gloss": "shirt_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26716",
+       "root": "ق.م.ص",
+       "gloss": "night_dress;lingerie",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2amiis.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "كان",
