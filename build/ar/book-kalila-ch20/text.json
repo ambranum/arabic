@@ -201,17 +201,19 @@
     },
     {
      "surface": "الاستعجال",
-     "root": null,
-     "lemma": null,
-     "form": "الاستعجال",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "استِعجال",
+     "form": "استِعجال",
+     "caphi_raw": "sti3jaal",
+     "caphi": "sti3jaal",
+     "gloss": "haste, hurrying",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الاستعجال",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "sti3jaal"
     }
    ],
    "audio": null
@@ -1407,8 +1409,8 @@
    "audio": null
   },
   {
-   "ar": "وكان الناسك يثق فيه زي ما بيثق بولده.",
-   "en": "And the ascetic trusted it as he would trust his own son.",
+   "ar": "وكان الناسك بيحبه ويصدقه زي ولده.",
+   "en": "And the ascetic loved it and believed it like his own son.",
    "p": 0,
    "words": [
     {
@@ -1482,34 +1484,50 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "يثق",
-     "root": null,
-     "lemma": null,
-     "form": "يثق",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يثق",
-     "vocalized_from": "lexicon:exact"
+     "surface": "بيحبه",
+     "root": "ح.ب.ب",
+     "lemma": "حَبّ",
+     "form": "يحِبّ",
+     "caphi_raw": "y 7 i b b",
+     "caphi": "y7ibb",
+     "gloss": "love;kiss",
+     "analysis": "VERB:I",
+     "maknuune_id": "5076",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "y7ibb",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "فيه",
-     "root": "—",
-     "lemma": "في",
-     "form": "في",
-     "caphi_raw": "fi",
-     "caphi": "fi",
-     "gloss": "in",
-     "analysis": "PREP",
-     "maknuune_id": null,
+     "surface": "ويصدقه",
+     "root": "ص.د.ق",
+     "lemma": "صَدَق",
+     "form": "يُصْدُق",
+     "caphi_raw": "y u s. d u q",
+     "caphi": "yus.duq",
+     "gloss": "be_honest;be_truthful",
+     "analysis": "VERB:I",
+     "maknuune_id": "17612",
      "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17612",
+       "root": "ص.د.ق",
+       "gloss": "be_honest;be_truthful",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "17613",
+       "root": "ص.د.ق",
+       "gloss": "believe;certify",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yus.duq",
      "vocalized": null,
-     "vocalized_from": "curated",
-     "provenance": "curated:function-word",
-     "caphi_urban": "fi"
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "زي",
@@ -1528,70 +1546,64 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "ما",
-     "root": "NTWS",
-     "lemma": "مَا",
-     "form": "مَا",
-     "caphi_raw": "m aa",
-     "caphi": "maa",
-     "gloss": "who;that_(relative)",
-     "analysis": "PRON_REL",
-     "maknuune_id": "30118",
-     "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "maa",
-     "vocalized": "مَا",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "بيثق",
-     "root": null,
-     "lemma": null,
-     "form": "بيثق",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بيثق",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "بولده",
+     "surface": "ولده",
      "root": "و.ل.د",
-     "lemma": "وِلِد",
-     "form": "يُولَد",
-     "caphi_raw": "y uu l a d",
-     "caphi": "yuulad",
-     "gloss": "deliver;give_birth_to_a_baby;suffer",
-     "analysis": "VERB:I",
-     "maknuune_id": "36021",
+     "lemma": "وَلَد",
+     "form": "وَلَد",
+     "caphi_raw": "w a l a d",
+     "caphi": "walad",
+     "gloss": "boy",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "36009",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "36021",
+       "id": "36009",
        "root": "و.ل.د",
-       "gloss": "deliver;give_birth_to_a_baby;suffer",
-       "analysis": "VERB:I"
+       "gloss": "boy",
+       "analysis": "NOUN:MS"
       },
       {
-       "id": "36022",
+       "id": "36019",
        "root": "و.ل.د",
        "gloss": "deliver_a_baby;help_a_woman_give_birth_t",
-       "analysis": "VERB:I"
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "36024",
+       "root": "و.ل.د",
+       "gloss": "deliver;give_birth_to_a_baby;suffer_[aut",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "36025",
+       "root": "و.ل.د",
+       "gloss": "deliver_a_baby;help_a_woman_give_birth_t",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "36011",
+       "root": "و.ل.د",
+       "gloss": "boy_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "36014",
+       "root": "و.ل.د",
+       "gloss": "inexperienced;immature",
+       "analysis": "NOUN:PHRASE"
       }
      ],
-     "caphi_urban": "yuulad",
+     "caphi_urban": "walad",
      "vocalized": null,
-     "vocalized_from": "unvocalized:ambiguous-person"
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
   },
   {
-   "ar": "بيوم، راحت المرا تجيب مي من البير.",
+   "ar": "بيوم، راحت المرة تجيب مي من البير.",
    "en": "One day, the wife went to fetch water from the well.",
    "p": 1,
    "words": [
@@ -1666,18 +1678,52 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "المرا",
-     "root": null,
-     "lemma": null,
-     "form": "المرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "المرا",
-     "vocalized_from": "lexicon:exact"
+     "surface": "المرة",
+     "root": "م.ر.ء",
+     "lemma": "مَرَة",
+     "form": "مَرَة",
+     "caphi_raw": "m a r a",
+     "caphi": "mara",
+     "gloss": "woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "30368",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30368",
+       "root": "م.ر.ء",
+       "gloss": "woman",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30423",
+       "root": "م.ر.ر",
+       "gloss": "once",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "30369",
+       "root": "م.ر.ء",
+       "gloss": "jobless",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "30424",
+       "root": "م.ر.ر",
+       "gloss": "sometimes",
+       "analysis": "NOUN:FP"
+      },
+      {
+       "id": "30434",
+       "root": "م.ر.ر",
+       "gloss": "an_idiomatic_expression_that_means\"_to_a",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "mara",
+     "vocalized": "المَرَة",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "تجيب",
@@ -6067,17 +6113,19 @@
     },
     {
      "surface": "مقتولة",
-     "root": null,
-     "lemma": null,
-     "form": "مقتولة",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَقتول",
+     "form": "مَقتول",
+     "caphi_raw": "ma2tuul",
+     "caphi": "ma2tuul",
+     "gloss": "killed",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مقتولة",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "ma2tuul"
     },
     {
      "surface": "ومقطعة",

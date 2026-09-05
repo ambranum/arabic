@@ -1551,17 +1551,19 @@
    "words": [
     {
      "surface": "الوزرا",
-     "root": null,
-     "lemma": null,
-     "form": "الوزرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "وُزَرا",
+     "form": "وُزَرا",
+     "caphi_raw": "wuzara",
+     "caphi": "wuzara",
+     "gloss": "ministers",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الوزرا",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "wuzara"
     },
     {
      "surface": "القدام",
@@ -2431,17 +2433,19 @@
     },
     {
      "surface": "جبت",
-     "root": null,
-     "lemma": null,
-     "form": "جبت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "جِبت",
+     "form": "جِبت",
+     "caphi_raw": "jibt",
+     "caphi": "jibt",
+     "gloss": "I brought",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جبت",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "جِبت",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "jibt"
     },
     {
      "surface": "الثور",
@@ -2737,7 +2741,7 @@
    "audio": null
   },
   {
-   "ar": "قال كليلة: ومين قال لك تجيبه؟",
+   "ar": "قال كليلة: ومين قال إنك تجيبه؟",
    "en": "Kalila said: and who told you to bring him?",
    "p": 2,
    "words": [
@@ -2844,18 +2848,58 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
+     "surface": "إنك",
+     "root": "ء.ن.ن",
+     "lemma": "أَنّ",
+     "form": "أَنّ",
+     "caphi_raw": "2 a n n",
+     "caphi": "2ann",
+     "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);it_introduces_the_perfective_verb_(بعد_أن_أكلت)",
+     "analysis": "CONJ",
+     "maknuune_id": "615",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "615",
+       "root": "ء.ن.ن",
+       "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
+       "analysis": "CONJ"
+      },
+      {
+       "id": "616",
+       "root": "NTWS",
+       "gloss": "if",
+       "analysis": "CONJ_SUB"
+      },
+      {
+       "id": "619",
+       "root": "ء.ن.ن",
+       "gloss": "(to)_want_sth",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "621",
+       "root": "NTWS",
+       "gloss": "it_is",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "624",
+       "root": "ء.ن.ن",
+       "gloss": "moan_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "618",
+       "root": "NTWS",
+       "gloss": "suspicious;questionable",
+       "analysis": "VERB_PSEUDO:PHRASE"
+      }
+     ],
+     "caphi_urban": "2ann",
+     "vocalized": "إَنّك",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "تجيبه",
@@ -4559,7 +4603,7 @@
    "audio": null
   },
   {
-   "ar": "فسكت كليلة، وبعدين قال: طيب، خليني أحكي لك قصة.",
+   "ar": "فسكت كليلة، وبعدين قال: طيب، خليني أحكي قصة.",
    "en": "So Kalila was silent, and then he said: fine, let me tell you a story.",
    "p": 3,
    "words": [
@@ -4782,20 +4826,6 @@
      "caphi_urban": "2i7ki",
      "vocalized": "أِحْكِي",
      "vocalized_from": "derived:affix"
-    },
-    {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
     },
     {
      "surface": "قصة",

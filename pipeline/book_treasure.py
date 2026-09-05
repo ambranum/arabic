@@ -104,7 +104,7 @@ CHAPTERS = [
     ('قال الكابتن: أنا بموت بلا رم.', "The Captain said: I die without rum."),
     ('قال الدكتور: هاد قرارك.', "The doctor said: that is your decision.")),
   P(('بالليل، ناداني الكابتن على أوضته.', "At night, the Captain called me to his room."),
-    ('قال: يا جيم، إنت الوحيد اللي بثق فيه.', "He said: Jim, you are the only one I trust."),
+    ('قال: يا جيم، إنت الوحيد اللي بصدقه.', "He said: Jim, you are the only one I believe."),
     ('الكلب الأسود مش لحاله. في كتار، وكلهم بدهم صندوقي.', "Black Dog is not alone. There are many, and they all want my chest."),
     ('سألته: وليش بدهم صندوقك؟', "I asked him: and why do they want your chest?"),
     ('قال: لأنه أنا كنت المساعد الأول عند فلينت.', "He said: because I was Flint's first mate."),

@@ -1509,17 +1509,19 @@
     },
     {
      "surface": "ملسا",
-     "root": null,
-     "lemma": null,
-     "form": "ملسا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَلسا",
+     "form": "مَلسا",
+     "caphi_raw": "malsa",
+     "caphi": "malsa",
+     "gloss": "smooth (feminine)",
+     "analysis": "ADJ:FS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ملسا",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مَلسا",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "malsa"
     },
     {
      "surface": "وبيضا",
@@ -2627,8 +2629,8 @@
    "audio": null
   },
   {
-   "ar": "وتذكرت قصة سمعتها من البحارة، عن طير اسمه الرخ.",
-   "en": "And I remembered a story I had heard from sailors, about a bird called the Rukh.",
+   "ar": "وتذكرت قصة سمعتها من البحارة، عن طير عملاق بيعيش بالجزر.",
+   "en": "And I remembered a story I had heard from sailors, about a giant bird that lives on the islands.",
    "p": 2,
    "words": [
     {
@@ -2858,34 +2860,94 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "اسمه",
-     "root": "س.م.و",
-     "lemma": "اِسِم",
-     "form": "اِسِم",
-     "caphi_raw": "2 i s i m",
-     "caphi": "2isim",
-     "gloss": "name",
-     "analysis": "NOUN:MS",
-     "maknuune_id": "15006",
+     "surface": "عملاق",
+     "root": "ع.م.ل.ق",
+     "lemma": "عِمْلَاق",
+     "form": "عِمْلَاق",
+     "caphi_raw": "3 i m l aa q",
+     "caphi": "3imlaaq",
+     "gloss": "giant;huge",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "21817",
      "village": null,
-     "provenance": "maknuune:resolved",
-     "caphi_urban": "2isim",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21817",
+       "root": "ع.م.ل.ق",
+       "gloss": "giant;huge",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "21818",
+       "root": "ع.م.ل.ق",
+       "gloss": "giant;huge_[auto]",
+       "analysis": "ADJ:P"
+      }
+     ],
+     "caphi_urban": "3imlaaq",
+     "vocalized": "عِمْلَاق",
+     "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "الرخ",
-     "root": null,
-     "lemma": null,
-     "form": "الرخ",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الرخ",
-     "vocalized_from": "lexicon:exact"
+     "surface": "بيعيش",
+     "root": "ع.ي.ش",
+     "lemma": "عَاش",
+     "form": "يعِيش",
+     "caphi_raw": "y 3 ii sh",
+     "caphi": "y3iish",
+     "gloss": "live",
+     "analysis": "VERB:I",
+     "maknuune_id": "22239",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "22239",
+       "root": "ع.ي.ش",
+       "gloss": "live",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "22240",
+       "root": "ع.ي.ش",
+       "gloss": "provide_subsistence_to_sb_to_live",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "y3iish",
+     "vocalized": "بِيعِيش",
+     "vocalized_from": "derived:verb"
+    },
+    {
+     "surface": "بالجزر",
+     "root": "ج.ز.ر",
+     "lemma": "جَزِيرَة",
+     "form": "جُزُر",
+     "caphi_raw": "J u z u r",
+     "caphi": "Juzur",
+     "gloss": "island;Jazeera_[auto]",
+     "analysis": "NOUN:P",
+     "maknuune_id": "3989",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3989",
+       "root": "ج.ز.ر",
+       "gloss": "island;Jazeera_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "3993",
+       "root": "ج.ز.ر",
+       "gloss": "carrots",
+       "analysis": "NOUN:MS"
+      }
+     ],
+     "caphi_urban": "juzur",
+     "vocalized": "بِالجُزُر",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null
@@ -3153,8 +3215,8 @@
    "audio": null
   },
   {
-   "ar": "هاي بيضة الرخ.",
-   "en": "This was the Rukh's egg.",
+   "ar": "هاي بيضة الطير العملاق.",
+   "en": "This was the giant bird's egg.",
    "p": 2,
    "words": [
     {
@@ -3222,40 +3284,114 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "الرخ",
-     "root": null,
-     "lemma": null,
-     "form": "الرخ",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الرخ",
-     "vocalized_from": "lexicon:exact"
+     "surface": "الطير",
+     "root": "ط.ي.ر",
+     "lemma": "طَير",
+     "form": "طَير",
+     "caphi_raw": "t. ee r",
+     "caphi": "t.eer",
+     "gloss": "bird",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "19781",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19781",
+       "root": "ط.ي.ر",
+       "gloss": "bird",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19782",
+       "root": "ط.ي.ر",
+       "gloss": "bird_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19783",
+       "root": "ط.ي.ر",
+       "gloss": "It_must_be_full_of_shortcomings",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "t.eer",
+     "vocalized": "الطَّير",
+     "vocalized_from": "derived:affix"
+    },
+    {
+     "surface": "العملاق",
+     "root": "ع.م.ل.ق",
+     "lemma": "عِمْلَاق",
+     "form": "عِمْلَاق",
+     "caphi_raw": "3 i m l aa q",
+     "caphi": "3imlaaq",
+     "gloss": "giant;huge",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "21817",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "21817",
+       "root": "ع.م.ل.ق",
+       "gloss": "giant;huge",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "21818",
+       "root": "ع.م.ل.ق",
+       "gloss": "giant;huge_[auto]",
+       "analysis": "ADJ:P"
+      }
+     ],
+     "caphi_urban": "3imlaaq",
+     "vocalized": "العِمْلَاق",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null
   },
   {
-   "ar": "والرخ نزل عليها، وغطاها بجناحيه، ونام.",
-   "en": "And the Rukh came down on it, covered it with its wings, and slept.",
+   "ar": "والطير نزل عليها، وغطاها بجناحيه، ونام.",
+   "en": "And the bird came down on it, covered it with its wings, and slept.",
    "p": 2,
    "words": [
     {
-     "surface": "والرخ",
-     "root": null,
-     "lemma": null,
-     "form": "والرخ",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "والرخ",
-     "vocalized_from": "lexicon:exact"
+     "surface": "والطير",
+     "root": "ط.ي.ر",
+     "lemma": "طَير",
+     "form": "طَير",
+     "caphi_raw": "t. ee r",
+     "caphi": "t.eer",
+     "gloss": "bird",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "19781",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19781",
+       "root": "ط.ي.ر",
+       "gloss": "bird",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19782",
+       "root": "ط.ي.ر",
+       "gloss": "bird_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19783",
+       "root": "ط.ي.ر",
+       "gloss": "It_must_be_full_of_shortcomings",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "t.eer",
+     "vocalized": "والطَّير",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "نزل",
@@ -3971,17 +4107,19 @@
     },
     {
      "surface": "جذع",
-     "root": null,
-     "lemma": null,
-     "form": "جذع",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "جِذع",
+     "form": "جِذع",
+     "caphi_raw": "jiz3",
+     "caphi": "jiz3",
+     "gloss": "tree trunk",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جذع",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "جِذع",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "jiz3"
     },
     {
      "surface": "شجرة",

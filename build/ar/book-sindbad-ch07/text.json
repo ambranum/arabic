@@ -1373,17 +1373,19 @@
     },
     {
      "surface": "بمخالبه",
-     "root": null,
-     "lemma": null,
-     "form": "بمخالبه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَخالِب",
+     "form": "مَخالِب",
+     "caphi_raw": "makhaalib",
+     "caphi": "makhaalib",
+     "gloss": "claws, talons",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بمخالبه",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "makhaalib"
     },
     {
      "surface": "حية",
@@ -2175,19 +2177,19 @@
     },
     {
      "surface": "ألماس",
-     "root": "م.س.س",
-     "lemma": "مَاسّ",
-     "form": "مَاسّ",
-     "caphi_raw": "m aa s s",
-     "caphi": "maass",
-     "gloss": "urgent",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "30713",
+     "root": "—",
+     "lemma": "ألماس",
+     "form": "ألماس",
+     "caphi_raw": "2almaas",
+     "caphi": "2almaas",
+     "gloss": "diamonds",
+     "analysis": "NOUN:MS",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "maass",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized": "ألماس",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2almaas"
     }
    ],
    "audio": null
@@ -2245,19 +2247,19 @@
     },
     {
      "surface": "ألماس",
-     "root": "م.س.س",
-     "lemma": "مَاسّ",
-     "form": "مَاسّ",
-     "caphi_raw": "m aa s s",
-     "caphi": "maass",
-     "gloss": "urgent",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "30713",
+     "root": "—",
+     "lemma": "ألماس",
+     "form": "ألماس",
+     "caphi_raw": "2almaas",
+     "caphi": "2almaas",
+     "gloss": "diamonds",
+     "analysis": "NOUN:MS",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "maass",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized": "ألماس",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2almaas"
     }
    ],
    "audio": null
@@ -2317,17 +2319,19 @@
     },
     {
      "surface": "خزائن",
-     "root": null,
-     "lemma": null,
-     "form": "خزائن",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "خَزائِن",
+     "form": "خَزائِن",
+     "caphi_raw": "khazaa2in",
+     "caphi": "khazaa2in",
+     "gloss": "treasuries, storerooms",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "خزائن",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "خَزائِن",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "khazaa2in"
     },
     {
      "surface": "الخلفاء",
@@ -3219,8 +3223,8 @@
    "audio": null
   },
   {
-   "ar": "وهاي اللي كان الرخ بيصيدها.",
-   "en": "And these were what the Rukh hunted.",
+   "ar": "وهاي اللي كان الطير بيصيدها.",
+   "en": "And these were what the bird hunted.",
    "p": 2,
    "words": [
     {
@@ -3272,18 +3276,40 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "الرخ",
-     "root": null,
-     "lemma": null,
-     "form": "الرخ",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الرخ",
-     "vocalized_from": "lexicon:exact"
+     "surface": "الطير",
+     "root": "ط.ي.ر",
+     "lemma": "طَير",
+     "form": "طَير",
+     "caphi_raw": "t. ee r",
+     "caphi": "t.eer",
+     "gloss": "bird",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "19781",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "19781",
+       "root": "ط.ي.ر",
+       "gloss": "bird",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "19782",
+       "root": "ط.ي.ر",
+       "gloss": "bird_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "19783",
+       "root": "ط.ي.ر",
+       "gloss": "It_must_be_full_of_shortcomings",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "t.eer",
+     "vocalized": "الطَّير",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "بيصيدها",
@@ -4739,17 +4765,19 @@
     },
     {
      "surface": "ومدبوحة",
-     "root": null,
-     "lemma": null,
-     "form": "ومدبوحة",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَدبوح",
+     "form": "مَدبوح",
+     "caphi_raw": "madbuu7",
+     "caphi": "madbuu7",
+     "gloss": "slaughtered",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ومدبوحة",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "madbuu7"
     }
    ],
    "audio": null
@@ -5343,17 +5371,19 @@
     },
     {
      "surface": "الألماس",
-     "root": null,
-     "lemma": null,
-     "form": "الألماس",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "ألماس",
+     "form": "ألماس",
+     "caphi_raw": "2almaas",
+     "caphi": "2almaas",
+     "gloss": "diamonds",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الألماس",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2almaas"
     }
    ],
    "audio": null
@@ -5455,17 +5485,19 @@
     },
     {
      "surface": "الألماس",
-     "root": null,
-     "lemma": null,
-     "form": "الألماس",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "ألماس",
+     "form": "ألماس",
+     "caphi_raw": "2almaas",
+     "caphi": "2almaas",
+     "gloss": "diamonds",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الألماس",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2almaas"
     },
     {
      "surface": "من",

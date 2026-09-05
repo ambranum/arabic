@@ -1369,8 +1369,8 @@
    "audio": null
   },
   {
-   "ar": "والأصحاب اللي كانوا ياكلوا عندي، ما عادوا يجوا.",
-   "en": "And the friends who used to eat at my house no longer came.",
+   "ar": "والأصحاب اللي كانوا ياكلوا عندي، ما عاد حدا فيهم إجا.",
+   "en": "And of the friends who used to eat at my house, not one of them came any more.",
    "p": 1,
    "words": [
     {
@@ -1508,7 +1508,7 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "عادوا",
+     "surface": "عاد",
      "root": "ع.و.د",
      "lemma": "عَاد",
      "form": "عَاد",
@@ -1558,22 +1558,82 @@
       }
      ],
      "caphi_urban": "3aad",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized": "عَاد",
+     "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "يجوا",
-     "root": null,
-     "lemma": null,
-     "form": "يجوا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يجوا",
+     "surface": "حدا",
+     "root": "ح.د.د",
+     "lemma": "حَدَا",
+     "form": "حَدَا",
+     "caphi_raw": "7 a d a",
+     "caphi": "7ada",
+     "gloss": "the_person_who_sings_folk_songs",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "5412",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "5412",
+       "root": "ح.د.د",
+       "gloss": "the_person_who_sings_folk_songs",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "35111",
+       "root": "و.ح.د",
+       "gloss": "someone;somebody",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "5418",
+       "root": "ح.د.د",
+       "gloss": "the_person_who_sings_folk_songs_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "35112",
+       "root": "و.ح.د",
+       "gloss": "someone;somebody_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "7ada",
+     "vocalized": "حَدَا",
      "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "فيهم",
+     "root": "—",
+     "lemma": "في",
+     "form": "في",
+     "caphi_raw": "fi",
+     "caphi": "fi",
+     "gloss": "in",
+     "analysis": "PREP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "fi"
+    },
+    {
+     "surface": "إجا",
+     "root": "—",
+     "lemma": "إجا",
+     "form": "إجا",
+     "caphi_raw": "2ija",
+     "caphi": "2ija",
+     "gloss": "he came",
+     "analysis": "VERB:P",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "إجا",
+     "vocalized_from": "curated",
+     "provenance": "curated:story-word",
+     "caphi_urban": "2ija"
     }
    ],
    "audio": null
@@ -1601,57 +1661,19 @@
     },
     {
      "surface": "لحالي",
-     "root": "ح.و.ل",
-     "lemma": "حَالِي",
-     "form": "حَالِي",
-     "caphi_raw": "7 aa l i",
-     "caphi": "7aali",
-     "gloss": "current",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "7339",
+     "root": "—",
+     "lemma": "لَحال",
+     "form": "لَحال",
+     "caphi_raw": "la7aal",
+     "caphi": "la7aal",
+     "gloss": "by oneself, alone",
+     "analysis": "ADV",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "7339",
-       "root": "ح.و.ل",
-       "gloss": "current",
-       "analysis": "ADJ:MS"
-      },
-      {
-       "id": "7353",
-       "root": "ح.و.ل",
-       "gloss": "myself",
-       "analysis": "NOUN:PHRASE"
-      },
-      {
-       "id": "7346",
-       "root": "ح.و.ل",
-       "gloss": "situation;condition",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "7370",
-       "root": "ح.و.ل",
-       "gloss": "prevent;act_as_a_barrier_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "7348",
-       "root": "ح.و.ل",
-       "gloss": "situation;condition_[auto]",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "7349",
-       "root": "ح.و.ل",
-       "gloss": "The_Department_of_Passports_and_Civil_St",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
-     "caphi_urban": "7aali",
-     "vocalized": "لِحَالِي",
-     "vocalized_from": "derived:affix"
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "la7aal"
     },
     {
      "surface": "وتذكرت",

@@ -127,6 +127,11 @@ class Lexicon:
                     out += [base, base + 'ه', 'ي' + base] + fem(base)
             for suf in ['وا','تو','تي','نا','ت','و']:                # past subject
                 if x.endswith(suf) and len(x) > len(suf) + 1:
+                    # NOT widened to base+'ي' / base+'ا' for final-weak verbs, though استنّت and
+                    # يبكوا both need it. Measured: it resolves 122 more tokens and wrecks about
+                    # 45, because every past-subject ending is common and the extra stems are
+                    # short — كلنا "all of us" became the relative pronoun, ناموا "they slept"
+                    # became "my mom". Those verbs are curated by name instead.
                     out.append(x[:-len(suf)])
             if x.endswith('ات') and len(x) > 3:                      # sound fem. plural
                 out += [x[:-2] + 'ه', x[:-2]]
@@ -166,7 +171,8 @@ class Lexicon:
         # demonstrative — هالبيت "this house" — which nothing here knew at all. Written out
         # rather than made compositional, because a second pass over the prefix list is the same
         # trade the suffix side lost: more stems, more chances for a wrong word to win.
-        for p_ in ['وبال', 'فبال', 'وعال', 'ولل', 'وهال', 'بهال', 'لهال', 'هال', 'فب',
+        for p_ in ['وبال', 'فبال', 'وعال', 'ولل', 'وبهال', 'وهال', 'بهال', 'لهال', 'هال',
+                   'فب', 'ومن', 'من',
                    
                    'عال','بال','وال','فال','لل','ال','و','ع','ل','ف','ك']:
             if w.startswith(p_) and len(w) > len(p_) + 1:

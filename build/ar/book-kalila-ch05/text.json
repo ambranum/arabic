@@ -4105,7 +4105,7 @@
    "audio": null
   },
   {
-   "ar": "قال: أنا ما قلت لك تشتغل بشغلي.",
+   "ar": "قال: أنا ما قلت إنك تشتغل بشغلي.",
    "en": "He said: I did not tell you to work at my job.",
    "p": 3,
    "words": [
@@ -4200,18 +4200,58 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
+     "surface": "إنك",
+     "root": "ء.ن.ن",
+     "lemma": "أَنّ",
+     "form": "أَنّ",
+     "caphi_raw": "2 a n n",
+     "caphi": "2ann",
+     "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);it_introduces_the_perfective_verb_(بعد_أن_أكلت)",
+     "analysis": "CONJ",
+     "maknuune_id": "615",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "615",
+       "root": "ء.ن.ن",
+       "gloss": "introduces_a_verb_clause_(يريد_أن_يقرأ);",
+       "analysis": "CONJ"
+      },
+      {
+       "id": "616",
+       "root": "NTWS",
+       "gloss": "if",
+       "analysis": "CONJ_SUB"
+      },
+      {
+       "id": "619",
+       "root": "ء.ن.ن",
+       "gloss": "(to)_want_sth",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "621",
+       "root": "NTWS",
+       "gloss": "it_is",
+       "analysis": "VERB_PSEUDO"
+      },
+      {
+       "id": "624",
+       "root": "ء.ن.ن",
+       "gloss": "moan_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "618",
+       "root": "NTWS",
+       "gloss": "suspicious;questionable",
+       "analysis": "VERB_PSEUDO:PHRASE"
+      }
+     ],
+     "caphi_urban": "2ann",
+     "vocalized": "إَنّك",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "تشتغل",

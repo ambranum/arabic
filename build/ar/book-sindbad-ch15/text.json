@@ -3357,8 +3357,8 @@
    "audio": null
   },
   {
-   "ar": "قال الملك: إنت واحد منا.",
-   "en": "The king said: you are one of us.",
+   "ar": "قال الملك: إنت واحد من ناسنا.",
+   "en": "The king said: you are one of our own.",
    "p": 2,
    "words": [
     {
@@ -3452,18 +3452,74 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "منا",
-     "root": null,
-     "lemma": null,
-     "form": "منا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "surface": "من",
+     "root": "—",
+     "lemma": "مِن",
+     "form": "مِن",
+     "caphi_raw": "min",
+     "caphi": "min",
+     "gloss": "from",
+     "analysis": "PREP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "منا",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مِن",
+     "vocalized_from": "curated",
+     "provenance": "curated:function-word",
+     "caphi_urban": "min"
+    },
+    {
+     "surface": "ناسنا",
+     "root": "ن.و.س",
+     "lemma": "نَاس",
+     "form": "نَاس",
+     "caphi_raw": "n aa s",
+     "caphi": "naas",
+     "gloss": "people",
+     "analysis": "NOUN:P",
+     "maknuune_id": "33748",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "33748",
+       "root": "ن.و.س",
+       "gloss": "people",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "33749",
+       "root": "ن.و.س",
+       "gloss": "it_is_an_expression_that_means_that_sb_a",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33750",
+       "root": "ن.و.س",
+       "gloss": "it_is_an_expression_that_means_that_sb_a",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "33751",
+       "root": "ن.و.س",
+       "gloss": "ground_thyme",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "36163",
+       "root": "ي.ء.س",
+       "gloss": "despair;hopelessness;desperation",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "36172",
+       "root": "ي.ء.س",
+       "gloss": "disappoint_sb;make_sb_lose_hope_[auto]",
+       "analysis": "VERB:P"
+      }
+     ],
+     "caphi_urban": "naas",
+     "vocalized": "نَاسنا",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null
