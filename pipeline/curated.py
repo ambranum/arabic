@@ -576,6 +576,36 @@ MODERN.update({
     # Sindbad. Seven sea voyages, so: diamonds, pearls, ivory, a roc, an elephant's trunk and a
     # harbour. None of it is everyday Palestinian and none of it is in Maknuune.
     "ألماس":    ("ألماس",    "2almaas",    "diamonds", "NOUN:MS"),
+    # THE AMBIGUOUS QUEUE, the part of it a resolution cannot reach. A resolution picks among the
+    # candidates the morphology allows; these five have no right candidate at all, because the
+    # exact surface matches a different word and the real answer never enters the list. قلت
+    # matches قَلّ "be reduced" rather than قال "say"; شفت matches شَفّ "run over" rather than
+    # شاف "see"; وكل matches وَكَّل "authorize" rather than و + كل. Each was checked with
+    # pipeline/collide.py first, and each captures only its own family:
+    #   وجه   252 tokens across ووجهه، وجهه، وجهها، الوجه، وجهك — every one a face
+    #   شفت   128 tokens across وشفت، شفته، شفتوا، شفتها — every one seeing
+    #   قلت    72 tokens across وقلت، قلته، قلتها — and نقلت "I transferred", 2 tokens, wrong
+    #   وكل    20 tokens across وكلهم، وكله، وكلنا — every one "all of"
+    # وبعد is NOT here: it would have taken وبعدين "and then" with it, 441 tokens that are
+    # already right. It gets a resolution pointing at the real بَعِد entry instead.
+    "وجه":        ("وِجِه",      "wijih",       "face", "NOUN:MS"),
+    "أخد":        ("أخَد",      "2akhad",      "he took", "VERB"),
+    "قلب":        ("قَلب",      "2alb",        "heart", "NOUN:MS"),
+    # خالة is not in Maknuune at all. It takes خالي "my maternal uncle" with it — six tokens —
+    # so that one is written down too rather than left reading "aunt".
+    "خالة":       ("خالة",      "khaale",      "maternal aunt", "NOUN:FS"),
+    "أبدا":       ("أبَداً",     "2abadan",     "never, not at all", "ADV"),
+    "فرنك":       ("فرَنك",     "frank",       "franc", "NOUN:MS"),
+    "ميل":        ("ميل",       "miil",        "mile", "NOUN:MS"),
+    "خالي":       ("خالي",      "khaali",      "my maternal uncle", "NOUN:MS"),
+    "ضل":         ("ضَلّ",       "d.all",       "stay, remain", "VERB"),
+    # ضل takes فضلك "please" with it, six tokens, so فضلك is written down too.
+    "فضلك":       ("فَضلَك",    "fad.lak",     "please (من فضلك)", "NOUN:MS"),
+    "بلا":        ("بَلا",      "bala",        "without", "PREP"),
+    "شفت":        ("شُفت",      "shuft",       "I saw, you saw", "VERB"),
+    "قلت":        ("قُلت",      "2ult",        "I said, you said", "VERB"),
+    "وكل":        ("وكُلّ",      "wkull",       "and every, and all", "PART"),
+    "جنيه":       ("جْنيه",     "jneeh",       "pound (the currency)", "NOUN:MS"),
     # THE NEWS, second half: the modern vocabulary a daily paper needs and a dialect lexicon
     # has no reason to hold — tariffs, sanctions, aftershocks, antibiotics, an envoy.
     "أوروبي":       ("أوروبي",       "2uurubbi",       "European", "ADJ:MS"),
