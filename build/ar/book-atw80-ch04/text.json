@@ -237,31 +237,35 @@
     },
     {
      "surface": "7",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "7",
      "form": "7",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "sab3a",
+     "caphi": "sab3a",
+     "gloss": "7",
+     "analysis": "NOUN_NUM",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "7",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:numeral",
+     "caphi_urban": "sab3a"
     },
     {
      "surface": "50",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "50",
      "form": "50",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "khamsiin",
+     "caphi": "khamsiin",
+     "gloss": "50",
+     "analysis": "NOUN_NUM",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "50",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:numeral",
+     "caphi_urban": "khamsiin"
     },
     {
      "surface": "فوغ",
@@ -559,17 +563,19 @@
    "words": [
     {
      "surface": "لدوفر",
-     "root": null,
-     "lemma": null,
-     "form": "لدوفر",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "دوفَر",
+     "form": "دوفَر",
+     "caphi_raw": "duufar",
+     "caphi": "duufar",
+     "gloss": "Dover",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لدوفر",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "duufar"
     },
     {
      "surface": "وكاليه",
@@ -1093,8 +1099,8 @@
    "audio": null
   },
   {
-   "ar": "قال باسبارتو: والشنط؟",
-   "en": "Passepartout said: and the luggage?",
+   "ar": "قال باسبارتو: والشنطة؟",
+   "en": "Passepartout said: and the bag?",
    "p": 1,
    "words": [
     {
@@ -1130,18 +1136,40 @@
      "caphi_urban": "baasbartu"
     },
     {
-     "surface": "والشنط",
-     "root": null,
-     "lemma": null,
-     "form": "والشنط",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "والشنط",
-     "vocalized_from": "lexicon:exact"
+     "surface": "والشنطة",
+     "root": "ش.ن.ط",
+     "lemma": "شَنْطَة",
+     "form": "شَنْطَة",
+     "caphi_raw": "sh a n t.IIt a",
+     "caphi": "shant.IIta",
+     "gloss": "bag",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "17007",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "17007",
+       "root": "ش.ن.ط",
+       "gloss": "bag",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "17008",
+       "root": "ش.ن.ط",
+       "gloss": "bag_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "17009",
+       "root": "ش.ن.ط",
+       "gloss": "bag_[auto]",
+       "analysis": "NOUN:P"
+      }
+     ],
+     "caphi_urban": "shant.IIta",
+     "vocalized": "والشَّنْطَة",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null
@@ -1369,17 +1397,19 @@
     },
     {
      "surface": "جوارب",
-     "root": null,
-     "lemma": null,
-     "form": "جوارب",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "جَوارِب",
+     "form": "جَوارِب",
+     "caphi_raw": "jawaarib",
+     "caphi": "jawaarib",
+     "gloss": "socks",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "جوارب",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "جَوارِب",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "jawaarib"
     },
     {
      "surface": "لكل",
@@ -2481,7 +2511,7 @@
    "audio": null
   },
   {
-   "ar": "وبالطريق للمحطة، وقفت لهم مرا فقيرة، وبإيدها ولد.",
+   "ar": "وبالطريق للمحطة، وقفت لهم ست فقيرة، وبإيدها ولد.",
    "en": "And on the way to the station, a poor woman stopped them, a child in her hand.",
    "p": 2,
    "words": [
@@ -2640,17 +2670,19 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "مرا",
-     "root": null,
-     "lemma": null,
-     "form": "مرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مرا",
+     "surface": "ست",
+     "root": "س.ت.ت",
+     "lemma": "سِتّ",
+     "form": "سِتّ",
+     "caphi_raw": "s i t t",
+     "caphi": "sitt",
+     "gloss": "lady;woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "13642",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "sitt",
+     "vocalized": "سِتّ",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -4397,31 +4429,35 @@
     },
     {
      "surface": "8",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "8",
      "form": "8",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "tmaanye",
+     "caphi": "tmaanye",
+     "gloss": "8",
+     "analysis": "NOUN_NUM",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "8",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:numeral",
+     "caphi_urban": "tmaanye"
     },
     {
      "surface": "45",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "45",
      "form": "45",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "khamse w-2arb3iin",
+     "caphi": "khamse w-2arb3iin",
+     "gloss": "45",
+     "analysis": "NOUN_NUM",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "45",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:numeral",
+     "caphi_urban": "khamsew-2arb3iin"
     },
     {
      "surface": "صفر",
@@ -4871,17 +4907,19 @@
     },
     {
      "surface": "مشعول",
-     "root": null,
-     "lemma": null,
-     "form": "مشعول",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَشعول",
+     "form": "مَشعول",
+     "caphi_raw": "mash3uul",
+     "caphi": "mash3uul",
+     "gloss": "lit, alight",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مشعول",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مَشعول",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "mash3uul"
     }
    ],
    "audio": null
@@ -4971,17 +5009,19 @@
     },
     {
      "surface": "مشعول",
-     "root": null,
-     "lemma": null,
-     "form": "مشعول",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَشعول",
+     "form": "مَشعول",
+     "caphi_raw": "mash3uul",
+     "caphi": "mash3uul",
+     "gloss": "lit, alight",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مشعول",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مَشعول",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "mash3uul"
     }
    ],
    "audio": null

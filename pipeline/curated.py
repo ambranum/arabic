@@ -222,6 +222,47 @@ PROPER.update({
     "بيلي":     ("بيلي",     "bili",       "Billy", "NOUN_PROP"),
     "بطرس":     ("بُطرُس",   "but.rus",    "Peter (Aunt Polly's cat)", "NOUN_PROP"),
     "غون":      ("غون",      "ghuun",      "Gunn (Ben Gunn)", "NOUN_PROP"),
+    "فيلياس":   ("فيلياس",   "filyaas",    "Phileas (Phileas Fogg)", "NOUN_PROP"),
+    "سانفرانسيسكو":("سان فرانسيسكو","saan fransiisko","San Francisco", "NOUN_PROP"),
+    "سكوتلانديارد":("سكوتلاند يارد","skotlaand yaard","Scotland Yard", "NOUN_PROP"),
+    "بونسبي":   ("بونسبي",   "bunsbi",     "Bunsby", "NOUN_PROP"),
+    "ريفورم":   ("ريفورم",   "rifoorm",    "Reform (the Reform Club)", "NOUN_PROP"),
+    "مادج":     ("مادج",     "maadj",      "Madge", "NOUN_PROP"),
+    "غرانت":    ("غرانت",    "graant",     "Grant", "NOUN_PROP"),
+    "كرومارتي": ("كرومارتي", "krumaarti",  "Cromarty (Sir Francis Cromarty)", "NOUN_PROP"),
+    "كامرفيلد": ("كامرفيلد", "kaamerfiild","Camerfield", "NOUN_PROP"),
+    "ماندبوي":  ("ماندبوي",  "maandbooy",  "Mandiboy", "NOUN_PROP"),
+    "ستامب":    ("ستامب",    "staamb",     "Stamp", "NOUN_PROP"),
+    "سميث":     ("سميث",     "smiith",     "Smith", "NOUN_PROP"),
+    "سافيل":    ("سافيل",    "saafiil",    "Savile (Savile Row)", "NOUN_PROP"),
+    "سوتي":     ("سوتي",     "suuti",      "suttee (the widow-burning rite)", "NOUN:MS"),
+    "يانكي":    ("يانكي",    "yaanki",     "Yankee", "NOUN:MS"),
+    "مورمون":   ("مورمون",   "muurmuun",   "Mormon", "NOUN_PROP"),
+    "أكتوبر":   ("أكتوبِر",   "2oktoober",  "October", "NOUN_PROP"),
+    "نوفمبر":   ("نوفَمبِر",   "noofamber",  "November", "NOUN_PROP"),
+    "فرنسي":    ("فَرَنسي",   "faransi",    "French", "ADJ:MS"),
+    # Places and ships on the route.
+    "كلكتا":    ("كَلكُتا",   "kalkuta",    "Calcutta", "NOUN_PROP"),
+    "شنغهاي":   ("شَنغهاي",  "shanghaay",  "Shanghai", "NOUN_PROP"),
+    "سنغافورة": ("سِنغافورة", "singhafuura","Singapore", "NOUN_PROP"),
+    "اليابان":  ("اليابان",  "2ilyaabaan", "Japan", "NOUN_PROP"),
+    "ياباني":   ("ياباني",   "yaabaani",   "Japanese", "ADJ:MS"),
+    "سويس":     ("السّويس",   "2issuwees",  "Suez", "NOUN_PROP"),
+    "أوروبا":   ("أوروبا",   "2uurubba",   "Europe", "NOUN_PROP"),
+    "إيطاليا":  ("إيطاليا",  "2iit.aalya", "Italy", "NOUN_PROP"),
+    "أيرلندا":  ("أيرلَندا",  "2ayrlanda",  "Ireland", "NOUN_PROP"),
+    "باريس":    ("باريس",    "baariis",    "Paris", "NOUN_PROP"),
+    "دوفر":     ("دوفَر",    "duufar",     "Dover", "NOUN_PROP"),
+    "ليفربول":  ("ليفَربول",  "liifarbuul", "Liverpool", "NOUN_PROP"),
+    "شيكاغو":   ("شيكاغو",   "shiikaaghu", "Chicago", "NOUN_PROP"),
+    "روكي":     ("روكي",     "ruuki",      "Rocky (the Rocky Mountains)", "NOUN_PROP"),
+    "سكوتلاند": ("سكوتلاند", "skotlaand",  "Scotland (Scotland Yard)", "NOUN_PROP"),
+    "التايمز":  ("التايمز",  "2ittaayimz", "The Times", "NOUN_PROP"),
+    "المونغوليا":("المونغوليا","2ilmungholya","the Mongolia (the steamer)", "NOUN_PROP"),
+    "الكارناتيك":("الكارناتيك","2ilkarnaatiik","the Carnatic (the steamer)", "NOUN_PROP"),
+    "الرانغون": ("الرانغون", "2irrangoon", "the Rangoon (the steamer)", "NOUN_PROP"),
+    "التانكادير":("التانكادير","2ittankadiir","the Tankadere (the pilot boat)", "NOUN_PROP"),
+    "الهنريتا": ("الهِنريتا", "2ilhinriita","the Henrietta (the steamer)", "NOUN_PROP"),
     "يوهوهو":   ("يوهوهو",   "yo-ho-ho",   "yo-ho-ho (the pirates' chorus)", "INTJ"),
     "بونز":     ("بونز",     "buunz",      "Bones (Billy Bones)", "NOUN_PROP"),
     "هنتر":     ("هَنتِر",    "hanter",     "Hunter", "NOUN_PROP"),
@@ -285,6 +326,53 @@ MODERN.update({
     # Sindbad. Seven sea voyages, so: diamonds, pearls, ivory, a roc, an elephant's trunk and a
     # harbour. None of it is everyday Palestinian and none of it is in Maknuune.
     "ألماس":    ("ألماس",    "2almaas",    "diamonds", "NOUN:MS"),
+    # Around the World in 80 Days. A book about consulates, timetables and steamships, so the
+    # missing words are the machinery of Victorian travel plus one Indian acrobat troupe.
+    "بهلوان":   ("بَهلَوان",  "bahlawaan",  "acrobat", "NOUN:MS"),
+    "بهلوانات": ("بَهلَوانات", "bahlawaanaat","acrobats", "NOUN:P"),
+    "كمساري":   ("كُمساري",  "kumsaari",   "ticket conductor", "NOUN:MS"),
+    "قنصل":     ("قُنصُل",   "2uns.ul",    "consul", "NOUN:MS"),
+    "قنصلية":   ("قُنصُليّة",  "2uns.uliyye","consulate", "NOUN:FS"),
+    "أنوف":     ("أنوف",     "2unuuf",     "noses", "NOUN:P"),
+    "جاموس":    ("جاموس",    "jaamuus",    "buffalo", "NOUN:MS"),
+    "سائق":     ("سائِق",    "saa2i2",     "driver", "NOUN:MS"),
+    "قاطرة":    ("قاطِرة",   "2aat.ira",   "locomotive, engine", "NOUN:FS"),
+    "زلاجة":    ("زَلّاجة",   "zallaaja",   "sledge, sled", "NOUN:FS"),
+    "موانئ":    ("مَوانِئ",   "mawaani2",   "ports, harbours", "NOUN:P"),
+    "إطفاء":    ("إطفاء",    "2it.faa2",   "putting out (fire), extinguishing", "NOUN:MS"),
+    "مكافأة":   ("مُكافأة",  "mukaafa2a",  "reward", "NOUN:FS"),
+    "جورب":     ("جَورَب",   "jawrab",     "sock", "NOUN:MS"),
+    "جوارب":    ("جَوارِب",   "jawaarib",   "socks", "NOUN:P"),
+    "ماكينة":   ("ماكينة",   "maakiine",   "engine, machine", "NOUN:FS"),
+    "بورصة":    ("بورصة",    "buurs.a",    "stock exchange", "NOUN:FS"),
+    "صواري":    ("صَواري",   "s.awaari",   "masts", "NOUN:P"),
+    "كابينة":   ("كابينة",   "kaabiine",   "cabin", "NOUN:FS"),
+    "صحرا":     ("صَحرا",    "s.a7ra",     "desert", "NOUN:FS"),
+    "أحرار":    ("أحرار",    "2a7raar",    "free men", "NOUN:P"),
+    "خشن":      ("خِشِن",    "khishin",    "rough, coarse", "ADJ:MS"),
+    "موقوف":    ("مَوقوف",   "maw2uuf",    "under arrest, detained", "ADJ:MS"),
+    "مصدوم":    ("مَصدوم",   "mas.duum",   "shocked, stunned", "ADJ:MS"),
+    "ماهر":     ("ماهِر",    "maahir",     "skilful", "ADJ:MS"),
+    "متأكد":    ("مِتأكِّد",   "mit2akkid",  "sure, certain", "ADJ:MS"),
+    "شاكرة":    ("شاكرة",    "shaakra",    "grateful (feminine)", "ADJ:FS"),
+    "مشعول":    ("مَشعول",   "mash3uul",   "lit, alight", "ADJ:MS"),
+    "مشعولة":   ("مَشعولة",  "mash3uule",  "lit, alight (feminine)", "ADJ:FS"),
+    # Hundreds. Palestinian says each as one word; the lexicon has only مية.
+    "مئتين":    ("مِتين",    "miteen",     "two hundred", "NUM"),
+    "تلاتمية":  ("تلاتميّة",  "tlatmiyye",  "three hundred", "NUM"),
+    "خمسمية":   ("خَمسميّة",  "khamsmiyye", "five hundred", "NUM"),
+    "تمانمية":  ("تمانميّة",  "tmanmiyye",  "eight hundred", "NUM"),
+    "ستاشر":    ("سِتّاشَر",   "sittaashar", "sixteen", "NUM"),
+    "تمانتعشر": ("تمانتَعشَر", "tmanta3shar","eighteen", "NUM"),
+    # Verbs and adverbs.
+    "دلني":     ("دِلّني",    "dillni",     "show me the way", "VERB"),
+    "استخبوا":  ("استَخَبّوا",  "stakhabbu",  "they hid", "VERB"),
+    "بنتقابل":  ("بنِتقابَل",  "bnit2aabal", "we meet", "VERB"),
+    "بيتسلقوا": ("بيتسَلَّقوا", "byitsalla2u","they climb", "VERB"),
+    "واشتروا":  ("واشتَروا",  "wishtaru",   "and they bought", "VERB"),
+    "أخيرا":    ("أخيراً",    "2akhiiran",  "finally, at last", "ADV"),
+    "نظريا":    ("نَظَرياً",   "naz.ariyyan","in theory", "ADV"),
+    "فعلا":     ("فِعلاً",    "fi3lan",     "indeed, actually", "ADV"),
     # Treasure Island. A sea story with a ship's chandlery in it — a spyglass, gunpowder, tar,
     # a sealed packet, a parrot — and none of it is in a lexicon of spoken Palestinian.
     "منظار":    ("مِنظار",   "minz.aar",   "spyglass, telescope", "NOUN:MS"),
@@ -576,18 +664,63 @@ def _norm(x):
 # it reads eleven, and the pronunciation is derivable, so handle it programmatically
 # rather than leave a quarter of a news sentence bare.
 _AR_DIGITS = "٠١٢٣٤٥٦٧٨٩"
-_NUM_NAMES = {0:"sifr",1:"waaHad",2:"tneen",3:"tlaate",4:"2arb3a",5:"khamse",
-              6:"sitte",7:"sab3a",8:"tmaanye",9:"tis3a",10:"3ashara",11:"iH.da3sh",
-              12:"tna3sh",20:"3ishriin",30:"talaatiin",50:"khamsiin",100:"miyye",
-              1000:"2alf"}
+
+# ==========================================================================================
+# HOW TO SAY A NUMBER. This used to be a lookup table of thirteen values, and everything else
+# fell through to str(val) — the card for 45 said its pronunciation was "45". It also only
+# accepted ARABIC-INDIC digits, which meant that Around the World in 80 Days, a book whose plot
+# is a railway timetable, had 74 tokens of bare Western numerals with no card behind them: the
+# clock times (8:45, 7:25), the wager (20,000 pounds), the year 1872.
+#
+# Generated rather than listed, because a table stops at whatever number somebody remembered to
+# add and the next book brings a bigger one. Palestinian builds numbers the ordinary Levantine
+# way: units first in the compound (waaHad w-3ishriin, not 3ishriin waaHad), and the teens and
+# the hundreds are single words rather than phrases.
+_UNITS = ["sifr", "waaHad", "tneen", "tlaate", "2arb3a", "khamse",
+          "sitte", "sab3a", "tmaanye", "tis3a"]
+_TEENS = ["3ashara", "iH.da3sh", "tna3sh", "tlat.t.a3sh", "2arba3ta3sh", "khamsta3sh",
+          "sitta3sh", "sab3ata3sh", "tmanta3sh", "tis3ata3sh"]
+_TENS = {2: "3ishriin", 3: "talaatiin", 4: "2arb3iin", 5: "khamsiin",
+         6: "sittiin", 7: "sab3iin", 8: "tmaaniin", 9: "tis3iin"}
+_HUNDREDS = {1: "miyye", 2: "miteen", 3: "tlatmiyye", 4: "2arba3miyye", 5: "khamsmiyye",
+             6: "sittmiyye", 7: "sab3amiyye", 8: "tmanmiyye", 9: "tis3amiyye"}
+
+
+def say_number(n):
+    """-> how a Palestinian speaker reads the integer n aloud. Handles 0..99,999."""
+    if n < 10:
+        return _UNITS[n]
+    if n < 20:
+        return _TEENS[n - 10]
+    if n < 100:
+        tens, unit = divmod(n, 10)
+        return _TENS[tens] if not unit else '%s w-%s' % (_UNITS[unit], _TENS[tens])
+    if n < 1000:
+        h, rest = divmod(n, 100)
+        return _HUNDREDS[h] if not rest else '%s w-%s' % (_HUNDREDS[h], say_number(rest))
+    th, rest = divmod(n, 1000)
+    head = '2alf' if th == 1 else ('2alfeen' if th == 2 else '%s 2aalaaf' % say_number(th))
+    return head if not rest else '%s w-%s' % (head, say_number(rest))
+
 
 def numeral(surface):
-    """-> word dict for an Arabic-Indic numeral, else None."""
-    core = surface.strip("،.؟!")
-    if not core or not all(ch in _AR_DIGITS for ch in core):
+    """-> word dict for a numeral written in either digit set, else None.
+
+    Both sets on purpose. The books are translated prose and use Western digits; the news
+    scraper brings back Arabic-Indic ones. Neither is a word the lexicon can hold, and a reader
+    who taps 1872 wants the same thing either way — the value and how to say it.
+    """
+    core = surface.strip("،.؟!,")
+    if not core:
         return None
-    val = int("".join(str(_AR_DIGITS.index(ch)) for ch in core))
-    say = _NUM_NAMES.get(val, str(val))
+    if all(ch in _AR_DIGITS for ch in core):
+        digits = "".join(str(_AR_DIGITS.index(ch)) for ch in core)
+    elif core.isdigit() and core.isascii():
+        digits = core
+    else:
+        return None
+    val = int(digits)
+    say = say_number(val) if val < 100000 else digits
     return {"surface": surface, "root": "—", "lemma": core, "form": core,
             "caphi_raw": say, "caphi": say, "gloss": f"{val}", "analysis": "NOUN_NUM",
             "maknuune_id": None, "village": None,

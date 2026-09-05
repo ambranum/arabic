@@ -1145,7 +1145,7 @@
    "audio": null
   },
   {
-   "ar": "من سان فرانسيسكو!",
+   "ar": "من سانفرانسيسكو!",
    "en": "From San Francisco!",
    "p": 1,
    "words": [
@@ -1166,34 +1166,20 @@
      "caphi_urban": "min"
     },
     {
-     "surface": "سان",
-     "root": null,
-     "lemma": null,
-     "form": "سان",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سان",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "فرانسيسكو",
+     "surface": "سانفرانسيسكو",
      "root": "—",
-     "lemma": "فرانسيسكو",
-     "form": "فرانسيسكو",
-     "caphi_raw": "fransisko",
-     "caphi": "fransisko",
-     "gloss": "Francisco (as in San Francisco)",
+     "lemma": "سان فرانسيسكو",
+     "form": "سان فرانسيسكو",
+     "caphi_raw": "saan fransiisko",
+     "caphi": "saan fransiisko",
+     "gloss": "San Francisco",
      "analysis": "NOUN_PROP",
      "maknuune_id": null,
      "village": null,
-     "vocalized": "فرانسيسكو",
+     "vocalized": "سان فرانسيسكو",
      "vocalized_from": "curated",
      "provenance": "curated:proper-noun",
-     "caphi_urban": "fransisko"
+     "caphi_urban": "saanfransiisko"
     }
    ],
    "audio": null
@@ -1255,7 +1241,7 @@
    "audio": null
   },
   {
-   "ar": "قال بروكتور: قلت لك بنتقابل!",
+   "ar": "قال بروكتور: أنا حكيت إنا بنتقابل!",
    "en": "Proctor said: I told you we would meet!",
    "p": 1,
    "words": [
@@ -1292,74 +1278,106 @@
      "caphi_urban": "brooktor"
     },
     {
-     "surface": "قلت",
-     "root": "ق.ل.ل",
-     "lemma": "قَلّ",
-     "form": "قِلّ",
-     "caphi_raw": "Q i l l",
-     "caphi": "Qill",
-     "gloss": "be_reduced;bediminished;be_less",
-     "analysis": "VERB:C",
-     "maknuune_id": "26651",
+     "surface": "أنا",
+     "root": "NTWS",
+     "lemma": "أَنَا",
+     "form": "أَنَا",
+     "caphi_raw": "2 a n a",
+     "caphi": "2ana",
+     "gloss": "I;me",
+     "analysis": "PRON:1S",
+     "maknuune_id": "568",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ana",
+     "vocalized": "أَنَا",
+     "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "حكيت",
+     "root": "ح.ك.ي",
+     "lemma": "حَكِي",
+     "form": "حَكِي",
+     "caphi_raw": "7 a k i",
+     "caphi": "7aki",
+     "gloss": "speech",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "6618",
      "village": null,
      "provenance": "AMBIGUOUS-needs-resolution",
      "options": [
       {
-       "id": "26651",
-       "root": "ق.ل.ل",
-       "gloss": "be_reduced;bediminished;be_less",
-       "analysis": "VERB:C"
+       "id": "6618",
+       "root": "ح.ك.ي",
+       "gloss": "speech",
+       "analysis": "NOUN:MS"
       },
       {
-       "id": "26656",
-       "root": "ق.ل.ل",
-       "gloss": "be_reduced;bediminished;be_less_[auto]",
+       "id": "6628",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_[auto]",
        "analysis": "VERB:P"
       },
       {
-       "id": "26642",
-       "root": "ق.ل.ل",
-       "gloss": "tell_sb_off;insult_oneself",
+       "id": "6630",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_(repeatedly)",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "6632",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_(repeatedly)",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "6620",
+       "root": "ح.ك.ي",
+       "gloss": "pontificate_on_sth",
        "analysis": "VERB:PHRASE"
       },
       {
-       "id": "26652",
-       "root": "ق.ل.ل",
-       "gloss": "be_reduced;bediminished;be_less",
-       "analysis": "VERB:I"
+       "id": "6621",
+       "root": "ح.ك.ي",
+       "gloss": "I_forgot_to_mention_sth_about_X",
+       "analysis": "NOUN:PHRASE"
       }
      ],
-     "caphi_urban": "2ill",
+     "caphi_urban": "7aki",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
+     "surface": "إنا",
+     "root": "NTWS",
+     "lemma": "أَنَا",
+     "form": "أَنَا",
+     "caphi_raw": "2 a n a",
+     "caphi": "2ana",
+     "gloss": "I;me",
+     "analysis": "PRON:1S",
+     "maknuune_id": "568",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "2ana",
+     "vocalized": "إَنَا",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "بنتقابل",
-     "root": null,
-     "lemma": null,
-     "form": "بنتقابل",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "بنِتقابَل",
+     "form": "بنِتقابَل",
+     "caphi_raw": "bnit2aabal",
+     "caphi": "bnit2aabal",
+     "gloss": "we meet",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بنتقابل",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "بنِتقابَل",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "bnit2aabal"
     }
    ],
    "audio": null
@@ -2887,17 +2905,19 @@
     },
     {
      "surface": "الكمساري",
-     "root": null,
-     "lemma": null,
-     "form": "الكمساري",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "كُمساري",
+     "form": "كُمساري",
+     "caphi_raw": "kumsaari",
+     "caphi": "kumsaari",
+     "gloss": "ticket conductor",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الكمساري",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "kumsaari"
     },
     {
      "surface": "قال",
