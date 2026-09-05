@@ -40,7 +40,7 @@ def load_resolutions():
 def tokenize(sent):
     # Split on whitespace and punctuation — including the colon/semicolon and quotes that
     # dialogue uses (قال: ...), so "قال:" tokenizes as قال, not an unmatchable "قال:".
-    return [w for w in re.split(r'[\s،.؟!:؛…"«»”“\-—()]+', sent.strip()) if w]
+    return [w for w in re.split(r'[\s،.؟!?,:؛;…"«»”“\-—()]+', sent.strip()) if w]
 
 def annotate_word(lex, surface, res):
     key = norm(surface)
@@ -77,7 +77,9 @@ def annotate_word(lex, surface, res):
     # tagged الخليل>الظاهرية>الرماضين). Only ~2% are tagged; untagged is the general form.
     cands.sort(key=lambda c: str(c.get('SOURCE')) not in ('nan', 'None', ''))
     if not cands:
-        return {"surface": surface, "root": None, "lemma": None, "form": surface,
+        # Last chance: the token may not be an Arabic word at all — see curated.not_a_word.
+        return curated.not_a_word(surface) or {
+                "surface": surface, "root": None, "lemma": None, "form": surface,
                 "caphi": None, "gloss": None, "analysis": None, "maknuune_id": None,
                 "provenance": "unresolved"}
     if surface in res or key in res:

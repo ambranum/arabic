@@ -3019,17 +3019,19 @@
     },
     {
      "surface": "الإسطبل",
-     "root": null,
-     "lemma": null,
-     "form": "الإسطبل",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "إسطَبل",
+     "form": "إسطَبل",
+     "caphi_raw": "2is.t.abl",
+     "caphi": "2is.t.abl",
+     "gloss": "stable",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الإسطبل",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2is.t.abl"
     }
    ],
    "audio": null
@@ -3141,17 +3143,19 @@
     },
     {
      "surface": "إلريج",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "إلريج",
      "form": "إلريج",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "2ilrij",
+     "caphi": "2ilrij",
+     "gloss": "Elrige (Elrige's Farm)",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "إلريج",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "2ilrij"
     },
     {
      "surface": "وأعطيها",
@@ -3925,17 +3929,19 @@
     },
     {
      "surface": "ملامحه",
-     "root": null,
-     "lemma": null,
-     "form": "ملامحه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَلامِح",
+     "form": "مَلامِح",
+     "caphi_raw": "malaami7",
+     "caphi": "malaami7",
+     "gloss": "features (of a face)",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ملامحه",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "malaami7"
     },
     {
      "surface": "حادة",
@@ -4499,17 +4505,19 @@
     },
     {
      "surface": "الكلبشات",
-     "root": null,
-     "lemma": null,
-     "form": "الكلبشات",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "كَلَبشات",
+     "form": "كَلَبشات",
+     "caphi_raw": "kalabshaat",
+     "caphi": "kalabshaat",
+     "gloss": "handcuffs",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الكلبشات",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "kalabshaat"
     },
     {
      "surface": "قبل",
@@ -5017,7 +5025,7 @@
    "audio": null
   },
   {
-   "ar": "وأنا اللي بعت لك.",
+   "ar": "وأنا اللي بعت وراك.",
    "en": "And I am the one who sent for you.",
    "p": 2,
    "words": [
@@ -5128,18 +5136,58 @@
      "vocalized_from": "unvocalized:no-alignment"
     },
     {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
+     "surface": "وراك",
+     "root": "و.ر.ي",
+     "lemma": "وَرَا",
+     "form": "وَرَا",
+     "caphi_raw": "w a r a",
+     "caphi": "wara",
+     "gloss": "behind",
+     "analysis": "ADV",
+     "maknuune_id": "35352",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "35352",
+       "root": "و.ر.ي",
+       "gloss": "behind",
+       "analysis": "ADV"
+      },
+      {
+       "id": "35353",
+       "root": "و.ر.ي",
+       "gloss": "behind",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "35357",
+       "root": "و.ر.ي",
+       "gloss": "behind",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "35354",
+       "root": "و.ر.ي",
+       "gloss": "penniless;does_not_bring_a_gift_or_any_f",
+       "analysis": "ADV:PHRASE"
+      },
+      {
+       "id": "35355",
+       "root": "و.ر.ي",
+       "gloss": "because_of",
+       "analysis": "ADV:PHRASE"
+      },
+      {
+       "id": "35356",
+       "root": "و.ر.ي",
+       "gloss": "without_sb's_permission;without_knowing_",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "wara",
+     "vocalized": "وَرَاك",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null
@@ -5331,59 +5379,67 @@
     },
     {
      "surface": "COME",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "COME",
      "form": "COME",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "COME",
+     "caphi": "COME",
+     "gloss": "English, printed in the story as it stands",
+     "analysis": "FOREIGN",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "COME",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:latin-script",
+     "caphi_urban": "COME"
     },
     {
      "surface": "HERE",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "HERE",
      "form": "HERE",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "HERE",
+     "caphi": "HERE",
+     "gloss": "English, printed in the story as it stands",
+     "analysis": "FOREIGN",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "HERE",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:latin-script",
+     "caphi_urban": "HERE"
     },
     {
      "surface": "AT",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "AT",
      "form": "AT",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "AT",
+     "caphi": "AT",
+     "gloss": "English, printed in the story as it stands",
+     "analysis": "FOREIGN",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "AT",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:latin-script",
+     "caphi_urban": "At"
     },
     {
      "surface": "ONCE",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "ONCE",
      "form": "ONCE",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "ONCE",
+     "caphi": "ONCE",
+     "gloss": "English, printed in the story as it stands",
+     "analysis": "FOREIGN",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "ONCE",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:latin-script",
+     "caphi_urban": "ONCE"
     }
    ],
    "audio": null
@@ -8129,17 +8185,19 @@
     },
     {
      "surface": "وقضت",
-     "root": null,
-     "lemma": null,
-     "form": "وقضت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "وقَضَت",
+     "form": "وقَضَت",
+     "caphi_raw": "w2ad.at",
+     "caphi": "w2ad.at",
+     "gloss": "and she spent (time)",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وقضت",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "وقَضَت",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "w2ad.at"
     },
     {
      "surface": "حياتها",
@@ -8221,17 +8279,19 @@
     },
     {
      "surface": "الفقرا",
-     "root": null,
-     "lemma": null,
-     "form": "الفقرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "فُقَرا",
+     "form": "فُقَرا",
+     "caphi_raw": "fu2ara",
+     "caphi": "fu2ara",
+     "gloss": "the poor",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الفقرا",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "fu2ara"
     },
     {
      "surface": "وما",

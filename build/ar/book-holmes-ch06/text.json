@@ -25,7 +25,7 @@
  "source": "adapted by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "الساعة عشرة بالليل، التقينا ببيكر ستريت.",
+   "ar": "الساعة عشرة بالليل، التقينا ببايكر ستريت.",
    "en": "At ten at night, we met at Baker Street.",
    "p": 0,
    "words": [
@@ -184,18 +184,20 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "ببيكر",
-     "root": null,
-     "lemma": null,
-     "form": "ببيكر",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "surface": "ببايكر",
+     "root": "—",
+     "lemma": "بايكر",
+     "form": "بايكر",
+     "caphi_raw": "baayker",
+     "caphi": "baayker",
+     "gloss": "Baker (Baker Street; Henry Baker)",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ببيكر",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "baayker"
     },
     {
      "surface": "ستريت",
@@ -3349,17 +3351,19 @@
     },
     {
      "surface": "أطفوا",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "أطفوا",
      "form": "أطفوا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "2at.fu",
+     "caphi": "2at.fu",
+     "gloss": "they put out (a light)",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "أطفوا",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2at.fu"
     },
     {
      "surface": "الفانوس",
@@ -5279,8 +5283,8 @@
    "audio": null
   },
   {
-   "ar": "وهولمز نط، ومسكه من ياقته.",
-   "en": "And Holmes leapt, and seized him by the collar.",
+   "ar": "وهولمز نط، ومسكه من قميصه.",
+   "en": "And Holmes leapt, and seized him by the shirt.",
    "p": 3,
    "words": [
     {
@@ -5412,18 +5416,40 @@
      "caphi_urban": "min"
     },
     {
-     "surface": "ياقته",
-     "root": null,
-     "lemma": null,
-     "form": "ياقته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ياقته",
-     "vocalized_from": "lexicon:exact"
+     "surface": "قميصه",
+     "root": "ق.م.ص",
+     "lemma": "قَمِيص",
+     "form": "قَمِيص",
+     "caphi_raw": "Q a m ii s.",
+     "caphi": "Qamiis.",
+     "gloss": "shirt",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "26713",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26713",
+       "root": "ق.م.ص",
+       "gloss": "shirt",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "26714",
+       "root": "ق.م.ص",
+       "gloss": "shirt_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "26716",
+       "root": "ق.م.ص",
+       "gloss": "night_dress;lingerie",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2amiis.",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -6125,17 +6151,19 @@
     },
     {
      "surface": "بيستنوه",
-     "root": null,
-     "lemma": null,
-     "form": "بيستنوه",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "بيستَنّوه",
+     "form": "بيستَنّوه",
+     "caphi_raw": "byistannuu",
+     "caphi": "byistannuu",
+     "gloss": "they wait for him",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بيستنوه",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "بيستَنّوه",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "byistannuu"
     },
     {
      "surface": "عالباب",
@@ -6701,17 +6729,19 @@
     },
     {
      "surface": "الكلبشات",
-     "root": null,
-     "lemma": null,
-     "form": "الكلبشات",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "كَلَبشات",
+     "form": "كَلَبشات",
+     "caphi_raw": "kalabshaat",
+     "caphi": "kalabshaat",
+     "gloss": "handcuffs",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الكلبشات",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "kalabshaat"
     },
     {
      "surface": "قال",
@@ -7771,19 +7801,19 @@
     },
     {
      "surface": "ويلسون",
-     "root": "ل.س.س",
-     "lemma": "لَسّ",
-     "form": "يلِسّ",
-     "caphi_raw": "y l i s s",
-     "caphi": "yliss",
-     "gloss": "pig_out",
-     "analysis": "VERB:I",
-     "maknuune_id": "29122",
+     "root": "—",
+     "lemma": "ويلسون",
+     "form": "ويلسون",
+     "caphi_raw": "wilson",
+     "caphi": "wilson",
+     "gloss": "Wilson",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "yliss",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized": "ويلسون",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "wilson"
     },
     {
      "surface": "من",
@@ -9183,17 +9213,19 @@
     },
     {
      "surface": "مهترية",
-     "root": null,
-     "lemma": null,
-     "form": "مهترية",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مِهتَرية",
+     "form": "مِهتَرية",
+     "caphi_raw": "mihtariya",
+     "caphi": "mihtariya",
+     "gloss": "worn out, frayed (feminine)",
+     "analysis": "ADJ:FS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مهترية",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مِهتَرية",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "mihtariya"
     },
     {
      "surface": "ووسخة",
@@ -9527,8 +9559,8 @@
    "audio": null
   },
   {
-   "ar": "وإنهم رح يجوا يوم السبت، لما البنك مسكر يومين.",
-   "en": "And that they would come on Saturday, when the bank was closed for two days.",
+   "ar": "وإنهم رح يوصلوا يوم السبت، لما البنك مسكر يومين.",
+   "en": "And that they would arrive on Saturday, when the bank was closed for two days.",
    "p": 4,
    "words": [
     {
@@ -9602,18 +9634,20 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "يجوا",
-     "root": null,
-     "lemma": null,
-     "form": "يجوا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يجوا",
-     "vocalized_from": "lexicon:exact"
+     "surface": "يوصلوا",
+     "root": "و.ص.ل",
+     "lemma": "وِصِل",
+     "form": "يُوصَل",
+     "caphi_raw": "y uu s. a l",
+     "caphi": "yuus.al",
+     "gloss": "reach;arrive;attain",
+     "analysis": "VERB:I",
+     "maknuune_id": "35586",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "yuus.al",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "يوم",

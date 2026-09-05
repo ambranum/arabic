@@ -2,7 +2,7 @@
  "id": "book-holmes-ch13",
  "title": {
   "en": "Chapter 13 — A Wife Who Saw Her Husband",
-  "ar": "الفصل 13 — مرا شافت زوجها"
+  "ar": "الفصل 13 — ست شافت زوجها"
  },
  "dialect": "pal",
  "kind": "book-chapter",
@@ -3189,8 +3189,8 @@
    "audio": null
   },
   {
-   "ar": "تعال معي على بيته بالريف، وبحكي لك بالطريق.",
-   "en": "Come with me to his house in the country, and I will tell you on the way.",
+   "ar": "تعال معي على بيته بالريف، وبحكي بالطريق.",
+   "en": "Come with me to his house in the country, and I will talk on the way.",
    "p": 1,
    "words": [
     {
@@ -3273,17 +3273,19 @@
     },
     {
      "surface": "بالريف",
-     "root": null,
-     "lemma": null,
-     "form": "بالريف",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "ريف",
+     "form": "ريف",
+     "caphi_raw": "riif",
+     "caphi": "riif",
+     "gloss": "countryside",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بالريف",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "riif"
     },
     {
      "surface": "وبحكي",
@@ -3324,22 +3326,8 @@
       }
      ],
      "caphi_urban": "yi7ki",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:ambiguous-person"
-    },
-    {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
+     "vocalized": "وبِحْكِي",
+     "vocalized_from": "derived:verb"
     },
     {
      "surface": "بالطريق",
@@ -3649,7 +3637,7 @@
    "audio": null
   },
   {
-   "ar": "عنده مرا وولدين، وبيت حلو.",
+   "ar": "عنده ست وولدين، وبيت حلو.",
    "en": "He has a wife and two children, and a fine house.",
    "p": 1,
    "words": [
@@ -3708,17 +3696,19 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "مرا",
-     "root": null,
-     "lemma": null,
-     "form": "مرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مرا",
+     "surface": "ست",
+     "root": "س.ت.ت",
+     "lemma": "سِتّ",
+     "form": "سِتّ",
+     "caphi_raw": "s i t t",
+     "caphi": "sitt",
+     "gloss": "lady;woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "13642",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "sitt",
+     "vocalized": "سِتّ",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -7103,17 +7093,19 @@
    "words": [
     {
      "surface": "أربعمية",
-     "root": null,
-     "lemma": null,
-     "form": "أربعمية",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "أربَعميّة",
+     "form": "أربَعميّة",
+     "caphi_raw": "2arba3miyye",
+     "caphi": "2arba3miyye",
+     "gloss": "four hundred",
+     "analysis": "NUM",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "أربعمية",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "أربَعميّة",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2arba3miyye"
     },
     {
      "surface": "وواحد",
@@ -7431,7 +7423,7 @@
    "audio": null
   },
   {
-   "ar": "قلت: والمرا؟",
+   "ar": "قلت: والست؟",
    "en": "I said: and the wife?",
    "p": 3,
    "words": [
@@ -7478,18 +7470,46 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "والمرا",
-     "root": null,
-     "lemma": null,
-     "form": "والمرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "والمرا",
-     "vocalized_from": "lexicon:exact"
+     "surface": "والست",
+     "root": "س.ت.ت",
+     "lemma": "سِتّ",
+     "form": "سِتّ",
+     "caphi_raw": "s i t t",
+     "caphi": "sitt",
+     "gloss": "lady;woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "13642",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13642",
+       "root": "س.ت.ت",
+       "gloss": "lady;woman",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "13643",
+       "root": "س.ت.ت",
+       "gloss": "housewife;the_lady_who_can_cook_and_clea",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "13644",
+       "root": "س.ت.ت",
+       "gloss": "it_is_an_idiomatic_expression_that_is_us",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "13645",
+       "root": "س.ت.ت",
+       "gloss": "it_is_an_idiomatic_expression_that_is_us",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "sitt",
+     "vocalized": "والسِّتّ",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null

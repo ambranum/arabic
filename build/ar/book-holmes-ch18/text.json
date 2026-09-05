@@ -205,17 +205,19 @@
     },
     {
      "surface": "مصدق",
-     "root": null,
-     "lemma": null,
-     "form": "مصدق",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مْصَدِّق",
+     "form": "مْصَدِّق",
+     "caphi_raw": "ms.addi2",
+     "caphi": "ms.addi2",
+     "gloss": "believing, convinced",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مصدق",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مْصَدِّق",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "ms.addi2"
     }
    ],
    "audio": null
@@ -2321,17 +2323,19 @@
     },
     {
      "surface": "بليز",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "بليز",
      "form": "بليز",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "bleez",
+     "caphi": "bleez",
+     "gloss": "Blaze (Silver Blaze)",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "بليز",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "bleez"
     }
    ],
    "audio": null
@@ -3873,7 +3877,7 @@
    "audio": null
   },
   {
-   "ar": "قال هولمز: المدرب كان عنده مرا تانية بلندن.",
+   "ar": "قال هولمز: المدرب كان عنده ست تانية بلندن.",
    "en": "Holmes said: the trainer had another woman in London.",
    "p": 2,
    "words": [
@@ -3996,17 +4000,19 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "مرا",
-     "root": null,
-     "lemma": null,
-     "form": "مرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مرا",
+     "surface": "ست",
+     "root": "س.ت.ت",
+     "lemma": "سِتّ",
+     "form": "سِتّ",
+     "caphi_raw": "s i t t",
+     "caphi": "sitt",
+     "gloss": "lady;woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "13642",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "sitt",
+     "vocalized": "سِتّ",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -5335,17 +5341,19 @@
     },
     {
      "surface": "الإسطبل",
-     "root": null,
-     "lemma": null,
-     "form": "الإسطبل",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "إسطَبل",
+     "form": "إسطَبل",
+     "caphi_raw": "2is.t.abl",
+     "caphi": "2is.t.abl",
+     "gloss": "stable",
+     "analysis": "NOUN:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الإسطبل",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "2is.t.abl"
     },
     {
      "surface": "عشان",
@@ -5455,8 +5463,8 @@
    "audio": null
   },
   {
-   "ar": "وشعل شمعة، لأنه الشغل دقيق.",
-   "en": "And lit a candle, because the work was fine.",
+   "ar": "وشعل شمعة، لأنه الشغل بده تركيز.",
+   "en": "And lit a candle, because the work needed concentration.",
    "p": 2,
    "words": [
     {
@@ -5570,17 +5578,73 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "دقيق",
-     "root": null,
-     "lemma": null,
-     "form": "دقيق",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "دقيق",
+     "surface": "بده",
+     "root": "ب.د.د",
+     "lemma": "بِدّ",
+     "form": "بِدّ",
+     "caphi_raw": "b i d d",
+     "caphi": "bidd",
+     "gloss": "want",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "964",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "964",
+       "root": "ب.د.د",
+       "gloss": "want",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "968",
+       "root": "ب.د.د",
+       "gloss": "see_phrases",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "962",
+       "root": "ب.د.د",
+       "gloss": "frontier;border_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "965",
+       "root": "ب.د.د",
+       "gloss": "I_want",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "966",
+       "root": "ب.د.د",
+       "gloss": "I_do_not_want",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "967",
+       "root": "ب.د.د",
+       "gloss": "not_that_much;not_as_much_as_expected",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "bidd",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
+    },
+    {
+     "surface": "تركيز",
+     "root": "ر.ك.ز",
+     "lemma": "تَرْكِيز",
+     "form": "تَرْكِيز",
+     "caphi_raw": "t a r k ii z",
+     "caphi": "tarkiiz",
+     "gloss": "concentration",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "12063",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "tarkiiz",
+     "vocalized": "تَرْكِيز",
      "vocalized_from": "lexicon:exact"
     }
    ],
@@ -5803,17 +5867,19 @@
     },
     {
      "surface": "سيمبسون",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "سيمبسون",
      "form": "سيمبسون",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "simbson",
+     "caphi": "simbson",
+     "gloss": "Simpson",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "سيمبسون",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "simbson"
     },
     {
      "surface": "لقاها",
@@ -6501,17 +6567,19 @@
    "words": [
     {
      "surface": "وحدوته",
-     "root": null,
-     "lemma": null,
-     "form": "وحدوته",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "حَدّوتة",
+     "form": "حَدّوتة",
+     "caphi_raw": "7adduute",
+     "caphi": "7adduute",
+     "gloss": "tale, story",
+     "analysis": "NOUN:FS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وحدوته",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "7adduute"
     },
     {
      "surface": "ضربت",
@@ -7723,17 +7791,19 @@
     },
     {
      "surface": "دربيشير",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "دربيشير",
      "form": "دربيشير",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "darbishiir",
+     "caphi": "darbishiir",
+     "gloss": "Derbyshire",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "دربيشير",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "darbishiir"
     }
    ],
    "audio": null

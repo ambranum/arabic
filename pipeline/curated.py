@@ -223,6 +223,72 @@ PROPER.update({
     "بطرس":     ("بُطرُس",   "but.rus",    "Peter (Aunt Polly's cat)", "NOUN_PROP"),
     "غون":      ("غون",      "ghuun",      "Gunn (Ben Gunn)", "NOUN_PROP"),
     "فيلياس":   ("فيلياس",   "filyaas",    "Phileas (Phileas Fogg)", "NOUN_PROP"),
+    # The Holmes cast and its map of London — more names than any other book on the shelf.
+    "أدلر":       ("أدلر",       "2adler",        "Adler (Irene Adler)", "NOUN_PROP"),
+    "أوكشوت":     ("أوكشوت",     "2okshoot",      "Oakshott", "NOUN_PROP"),
+    "بليز":       ("بليز",       "bleez",         "Blaze (Silver Blaze)", "NOUN_PROP"),
+    "هورنر":      ("هورنر",      "horner",        "Horner", "NOUN_PROP"),
+    "سيمبسون":    ("سيمبسون",    "simbson",       "Simpson", "NOUN_PROP"),
+    "رونالد":     ("رونالد",     "ronald",        "Ronald (Ronald Adair)", "NOUN_PROP"),
+    "موران":      ("موران",      "moraan",        "Moran (Colonel Moran)", "NOUN_PROP"),
+    "بريكنريدج":  ("بريكنريدج",  "brekinrij",     "Breckinridge", "NOUN_PROP"),
+    "غريغوري":    ("غريغوري",    "griigori",      "Gregory (Inspector Gregory)", "NOUN_PROP"),
+    "هاركر":      ("هاركر",      "haarker",       "Harker", "NOUN_PROP"),
+    "تشيزيك":     ("تشيزيك",     "tshiizik",      "Chiswick", "NOUN_PROP"),
+    "نورفولك":    ("نورفولك",    "norfolk",       "Norfolk", "NOUN_PROP"),
+    "بوهيميا":    ("بوهيميا",    "bohiimya",      "Bohemia", "NOUN_PROP"),
+    "مونيكا":     ("مونيكا",     "moniika",       "Monica", "NOUN_PROP"),
+    "دنكان":      ("دنكان",      "dankan",        "Duncan", "NOUN_PROP"),
+    "بيترسون":    ("بيترسون",    "biiterson",     "Peterson", "NOUN_PROP"),
+    "ألمانيا":    ("ألمانيا",    "2almaanya",     "Germany", "NOUN_PROP"),
+    "ألماني":     ("ألماني",     "2almaani",      "German", "NOUN_PROP"),
+    "بايكر":      ("بايكر",      "baayker",       "Baker (Baker Street; Henry Baker)", "NOUN_PROP"),
+    "غاردن":      ("غاردن",      "gaardin",       "Garden (Covent Garden)", "NOUN_PROP"),
+    "دربيشير":    ("دربيشير",    "darbishiir",    "Derbyshire", "NOUN_PROP"),
+    "بورجيا":     ("بورجيا",     "borjya",        "Borgia", "NOUN_PROP"),
+    "بريدينغ":    ("بريدينغ",    "briidiing",     "Breeding", "NOUN_PROP"),
+    "أورمشتاين":  ("أورمشتاين",  "2ormshtaayn",   "Ormstein", "NOUN_PROP"),
+    "وارسو":      ("وارسو",      "waarso",        "Warsaw", "NOUN_PROP"),
+    "جيرسي":      ("جيرسي",      "jeersi",        "Jersey", "NOUN_PROP"),
+    "لودج":       ("لودج",       "lodj",          "Lodge (Briony Lodge)", "NOUN_PROP"),
+    "سيربنتاين":  ("سيربنتاين",  "serbentaayn",   "Serpentine", "NOUN_PROP"),
+    "أفينيو":     ("أفينيو",     "2afinyu",       "Avenue", "NOUN_PROP"),
+    "غودفري":     ("غودفري",     "gudfri",        "Godfrey", "NOUN_PROP"),
+    "جابيز":      ("جابيز",      "jaabiiz",       "Jabez (Jabez Wilson)", "NOUN_PROP"),
+    "ويلسون":     ("ويلسون",     "wilson",        "Wilson", "NOUN_PROP"),
+    "أركري":      ("أركري",      "2arkri",        "Archery", "NOUN_PROP"),
+    "أرمور":      ("أرمور",      "2armuur",       "Armour", "NOUN_PROP"),
+    "أثينا":      ("أثينا",      "2athiina",      "Athens", "NOUN_PROP"),
+    "ستراند":     ("ستراند",     "straand",       "Strand", "NOUN_PROP"),
+    "كوبرغ":      ("كوبرغ",      "koburgh",       "Coburg (Saxe-Coburg Square)", "NOUN_PROP"),
+    "ستونر":      ("ستونر",      "stoner",        "Stoner (Helen Stoner)", "NOUN_PROP"),
+    "رويلوت":     ("رويلوت",     "roylot",        "Roylott (Dr Grimesby Roylott)", "NOUN_PROP"),
+    "موركار":     ("موركار",     "morkaar",       "Morcar (the Countess of Morcar)", "NOUN_PROP"),
+    "غودج":       ("غودج",       "gudj",          "Goodge (Goodge Street)", "NOUN_PROP"),
+    "كوفنت":      ("كوفنت",      "kofent",        "Covent (Covent Garden)", "NOUN_PROP"),
+    "بريكستون":   ("بريكستون",   "brikston",      "Brixton", "NOUN_PROP"),
+    "جيمس":       ("جيمس",       "jeems",         "James", "NOUN_PROP"),
+    "كوزموبوليتان": ("كوزموبوليتان", "kozmopolitaan", "Cosmopolitan (the hotel)", "NOUN_PROP"),
+    "دارتمور":    ("دارتمور",    "daartmoor",     "Dartmoor", "NOUN_PROP"),
+    "ويسيكس":     ("ويسيكس",     "wiisiks",       "Wessex", "NOUN_PROP"),
+    "سترايكر":    ("سترايكر",    "straayker",     "Straker (John Straker)", "NOUN_PROP"),
+    "كينغز":      ("كينغز",      "kiingz",        "King's (King's Pyland)", "NOUN_PROP"),
+    "بايلاند":    ("بايلاند",    "baaylaand",     "Pyland (King's Pyland)", "NOUN_PROP"),
+    "كينسينغتون": ("كينسينغتون", "kinsingtoon",   "Kensington", "NOUN_PROP"),
+    "ستيبني":     ("ستيبني",     "stibni",        "Stepney", "NOUN_PROP"),
+    "ريدينغ":     ("ريدينغ",     "riidiing",      "Reading", "NOUN_PROP"),
+    "ساندفورد":   ("ساندفورد",   "saandford",     "Sandeford", "NOUN_PROP"),
+    "ثورستون":    ("ثورستون",    "thorston",      "Thurston", "NOUN_PROP"),
+    "إلريج":      ("إلريج",      "2ilrij",        "Elrige (Elrige's Farm)", "NOUN_PROP"),
+    "بروكسل":     ("بروكسل",     "bruksil",       "Brussels", "NOUN_PROP"),
+    "سويسرا":     ("سويسرا",     "swiisra",       "Switzerland", "NOUN_PROP"),
+    "سويسري":     ("سويسري",     "swiisri",       "Swiss", "NOUN_PROP"),
+    "مايرينغن":   ("مايرينغن",   "maayringin",    "Meiringen", "NOUN_PROP"),
+    "رايخنباخ":   ("رايخنباخ",   "raaykhinbaakh", "Reichenbach", "NOUN_PROP"),
+    "مايكروفت":   ("مايكروفت",   "maaykroft",     "Mycroft", "NOUN_PROP"),
+    "سيباستيان":  ("سيباستيان",  "sibaastyaan",   "Sebastian (Colonel Sebastian Moran)", "NOUN_PROP"),
+    "هدسون":      ("هدسون",      "hadson",        "Hudson (Mrs Hudson)", "NOUN_PROP"),
+    "هنري":       ("هنري",       "henri",         "Henry (Henry Baker)", "NOUN_PROP"),
     "سانفرانسيسكو":("سان فرانسيسكو","saan fransiisko","San Francisco", "NOUN_PROP"),
     "سكوتلانديارد":("سكوتلاند يارد","skotlaand yaard","Scotland Yard", "NOUN_PROP"),
     "بونسبي":   ("بونسبي",   "bunsbi",     "Bunsby", "NOUN_PROP"),
@@ -326,6 +392,96 @@ MODERN.update({
     # Sindbad. Seven sea voyages, so: diamonds, pearls, ivory, a roc, an elephant's trunk and a
     # harbour. None of it is everyday Palestinian and none of it is in Maknuune.
     "ألماس":    ("ألماس",    "2almaas",    "diamonds", "NOUN:MS"),
+    # Sherlock Holmes. Ten stories, and the vocabulary is a Victorian crime scene: a stable, a
+    # noose, handcuffs, plaster of Paris, a magnifying glass, a sundial, an air rifle.
+    "إسطبل":      ("إسطَبل",     "2is.t.abl",    "stable", "NOUN:MS"),
+    "مساء":     ("مَسا",     "masa",       "evening", "NOUN:MS"),
+    "بحيرة":    ("بُحَيرة",   "bu7ayra",    "lake", "NOUN:FS"),
+    "حقيبة":    ("حَقيبة",   "7a2iibe",    "case, bag", "NOUN:FS"),
+    "جايزة":    ("جايزة",    "jaayze",     "prize, reward", "NOUN:FS"),
+    "فقرا":     ("فُقَرا",    "fu2ara",     "the poor", "NOUN:P"),
+    "فهد":      ("فَهد",     "fahd",       "cheetah, leopard", "NOUN:MS"),
+    "غجر":        ("غَجَر",      "ghajar",       "gypsies", "NOUN:P"),
+    "غجري":       ("غَجَري",     "ghajari",      "gypsy", "ADJ:MS"),
+    "شريط":       ("شْريط",      "shriit.",      "band, ribbon, tape", "NOUN:MS"),
+    "كلبشات":     ("كَلَبشات",   "kalabshaat",   "handcuffs", "NOUN:P"),
+    "حانة":       ("حانة",       "7aana",        "tavern, pub", "NOUN:FS"),
+    "ريف":        ("ريف",        "riif",         "countryside", "NOUN:MS"),
+    "جبس":        ("جِبس",       "jibs",         "plaster", "NOUN:MS"),
+    "مقصورة":     ("مَقصورة",    "ma2s.uura",    "compartment (of a train)", "NOUN:FS"),
+    "هوائية":     ("هَوائيّة",   "hawaa2iyye",   "air- (بندقية هوائية = air rifle)", "ADJ:FS"),
+    "هوائي":      ("هَوائي",     "hawaa2i",      "air-, pneumatic", "ADJ:MS"),
+    "خدوش":       ("خُدوش",      "khuduush",     "scratches", "NOUN:P"),
+    "حاخام":      ("حاخام",      "7aakhaam",     "rabbi", "NOUN:MS"),
+    "أوبرا":      ("أوبرا",      "2obra",        "opera", "NOUN:FS"),
+    "صارمة":      ("صارمة",      "s.aarme",      "stern, strict (feminine)", "ADJ:FS"),
+    "سيجار":      ("سيجار",      "siigaar",      "cigar", "NOUN:MS"),
+    "سيجارة":     ("سيجارة",     "siigaara",     "cigarette", "NOUN:FS"),
+    "رفوف":       ("رْفوف",      "rfuuf",        "shelves", "NOUN:P"),
+    "مفتعل":      ("مِفتَعَل",   "mifta3al",     "staged, put on", "ADJ:MS"),
+    "مليونير":    ("مِليونير",   "milyoneer",    "millionaire", "NOUN:MS"),
+    "جرايم":      ("جَرايِم",    "jaraayim",     "crimes", "NOUN:P"),
+    "أنشوطة":     ("أُنشوطة",    "2unshuut.a",   "noose, slip-knot", "NOUN:FS"),
+    "سرطان":      ("سَرَطان",    "sarat.aan",    "cancer", "NOUN:MS"),
+    "قضيب":       ("قَضيب",      "2ad.iib",      "rod, bar", "NOUN:MS"),
+    "زهور":       ("زُهور",      "zuhuur",       "flowers", "NOUN:P"),
+    "جارح":       ("جارِح",      "jaari7",       "predatory, savage", "ADJ:MS"),
+    "مكبرة":      ("مْكَبِّرة",  "mkabbira",     "magnifying (عدسة مكبرة = magnifying glass)", "ADJ:FS"),
+    "بطانة":      ("بِطانة",     "bit.aana",     "lining", "NOUN:FS"),
+    "فاصولية":    ("فاصولية",    "faas.uulya",   "beans", "NOUN:P"),
+    "مسائية":     ("مَسائيّة",   "masaa2iyye",   "evening (of a newspaper)", "ADJ:FS"),
+    "مزرور":      ("مَزرور",     "mazruur",      "buttoned up", "ADJ:MS"),
+    "بائع":       ("بائِع",      "baa2i3",       "seller, dealer", "NOUN:MS"),
+    "متراهنين":   ("مِتراهنين",  "mitraahniin",  "betting, wagering (plural)", "ADJ:P"),
+    "مشعث":       ("مْشَعَّث",   "msha33ath",    "dishevelled, tousled", "ADJ:MS"),
+    "مكياج":      ("مِكياج",     "mikyaaj",      "make-up", "NOUN:MS"),
+    "مصدق":       ("مْصَدِّق",   "ms.addi2",     "believing, convinced", "ADJ:MS"),
+    "حدوته":      ("حَدّوتة",    "7adduute",     "tale, story", "NOUN:FS"),
+    "مصباح":      ("مِصباح",     "mis.baa7",     "lamp", "NOUN:MS"),
+    "تصفيق":      ("تَصفيق",     "tas.fii2",     "applause, clapping", "NOUN:MS"),
+    "كيميائية":   ("كيميائيّة",  "kiimyaa2iyye", "chemical (feminine)", "ADJ:FS"),
+    "كيمياء":     ("كيمياء",     "kiimyaa2",     "chemistry", "NOUN:FS"),
+    "بلياردو":    ("بِلياردو",   "bilyaardo",    "billiards", "NOUN:MS"),
+    "مزولة":      ("مَزولة",     "mazuula",      "sundial", "NOUN:FS"),
+    "ملامح":      ("مَلامِح",    "malaami7",     "features (of a face)", "NOUN:P"),
+    "بروفيسور":   ("بروفيسور",   "brofisoor",    "professor", "NOUN:MS"),
+    "غايرة":      ("غايرة",      "ghaayra",      "jealous (feminine)", "ADJ:FS"),
+    "رذاذ":       ("رَذاذ",      "razaaz",       "spray, fine mist", "NOUN:MS"),
+    "صعود":       ("صُعود",      "s.u3uud",      "climbing, going up", "NOUN:MS"),
+    "مسنودة":     ("مَسنودة",    "masnuude",     "propped, leaning (feminine)", "ADJ:FS"),
+    "ملف":        ("مَلَفّ",     "malaff",       "file, dossier", "NOUN:MS"),
+    "براندي":     ("براندي",     "braandi",      "brandy", "NOUN:MS"),
+    "مختبر":      ("مُختَبَر",   "mukhtabar",    "laboratory", "NOUN:MS"),
+    "زنبرك":      ("زُنبُرُك",   "zunburuk",     "spring (the coiled kind)", "NOUN:MS"),
+    "ثواني":      ("ثَواني",     "thawaani",     "seconds", "NOUN:P"),
+    "مهترية":     ("مِهتَرية",   "mihtariya",    "worn out, frayed (feminine)", "ADJ:FS"),
+    "اشمئزاز":    ("اشمِئزاز",   "shmi2zaaz",    "disgust, revulsion", "NOUN:MS"),
+    "كرام":       ("كِرام",      "kiraam",       "noble, honourable (plural)", "ADJ:P"),
+    "فهرس":       ("فِهرِس",     "fihris",       "index", "NOUN:MS"),
+    "بينما":      ("بينَما",     "beenama",      "while, whereas", "PART"),
+    "إيطالي":     ("إيطالي",     "2iit.aali",    "Italian", "ADJ:MS"),
+    "إيطالية":    ("إيطاليّة",   "2iit.aaliyye", "Italian (feminine)", "ADJ:FS"),
+    "البريطانية": ("البريطانيّة", "2ilbrit.aaniyye", "the British (feminine)", "ADJ:FS"),
+    "أفريقيا":    ("أفريقيا",    "2afrii2ya",    "Africa", "NOUN_PROP"),
+    "كونتيسة":    ("كونتيسة",    "kontiise",     "countess", "NOUN:FS"),
+    "سبعمية":     ("سَبعميّة",   "sab3amiyye",   "seven hundred", "NUM"),
+    "أربعمية":    ("أربَعميّة",  "2arba3miyye",  "four hundred", "NUM"),
+    "سبعتعشر":    ("سَبعَتعشَر", "sab3ata3shar", "seventeen", "NUM"),
+    "أبريل":      ("أبريل",      "2abriil",      "April", "NOUN_PROP"),
+    "يناير":      ("يَناير",     "yanaayir",     "January", "NOUN_PROP"),
+    "فبراير":     ("فبراير",     "fibraayir",    "February", "NOUN_PROP"),
+    "انسكر":      ("انسَكَر",    "nsakar",       "it was shut, locked", "VERB"),
+    "أطفوا":      ("أطفوا",      "2at.fu",       "they put out (a light)", "VERB"),
+    "بيستنوه":    ("بيستَنّوه",  "byistannuu",   "they wait for him", "VERB"),
+    "اتباعت":     ("اتباعَت",    "tbaa3at",      "she/it was sold", "VERB"),
+    "انلاحق":     ("انلاحَق",    "nlaa7a2",      "he was chased, pursued", "VERB"),
+    "بيغلوا":     ("بيغلوا",     "byighlu",      "they boil", "VERB"),
+    "وقضت":       ("وقَضَت",     "w2ad.at",      "and she spent (time)", "VERB"),
+    "تتأثر":      ("تِتأثَّر",   "tit2aththar",  "she is affected, moved", "VERB"),
+    "انزلقت":     ("انزَلَقَت",  "nzala2at",     "she/it slipped", "VERB"),
+    "بيتقاربوا":  ("بيتقاربوا",  "byit2aarabu",  "they come close together", "VERB"),
+    "ينادوه":     ("ينادوه",     "ynaaduu",      "they call him", "VERB"),
+    "وخادمتك":    ("وخادِمتَك",  "wkhaadimtak",  "and your servant (feminine)", "NOUN:FS"),
     # Around the World in 80 Days. A book about consulates, timetables and steamships, so the
     # missing words are the machinery of Victorian travel plus one Indian acrobat troupe.
     "بهلوان":   ("بَهلَوان",  "bahlawaan",  "acrobat", "NOUN:MS"),
@@ -726,6 +882,50 @@ def numeral(surface):
             "maknuune_id": None, "village": None,
             "vocalized": core, "vocalized_from": "curated",
             "provenance": "curated:numeral"}
+
+# ==========================================================================================
+# TOKENS THAT ARE NOT ARABIC WORDS. Two kinds turn up in translated prose and neither is a
+# lexicon failure, though both counted as one:
+#
+#   LATIN SCRIPT. The Dancing Men turns on an English cipher, so the Arabic page carries
+#   ELSIE PREPARE TO MEET THY GOD and the letter frequencies E T A O I N — 33 tokens in
+#   Sherlock Holmes that no Arabic lexicon will ever hold.
+#
+#   A SINGLE ARABIC LETTER, used as an initial: the two on the hat in The Blue Carbuncle are
+#   ه and ب. The letter is not the word.
+#
+# Read LAST, after the curated tables and the lexicon have both had their turn, so it cannot
+# shadow anything: و and ب and ل are one-letter words as well as letters, and they must stay
+# words. What it gives back is honest — the token as written, said as what it is.
+_LETTER_NAMES = {
+    'ا': '2alif', 'ب': 'baa2', 'ت': 'taa2', 'ث': 'thaa2', 'ج': 'jiim', 'ح': '7aa2',
+    'خ': 'khaa2', 'د': 'daal', 'ذ': 'zaal', 'ر': 'raa2', 'ز': 'zaay', 'س': 'siin',
+    'ش': 'shiin', 'ص': 's.aad', 'ض': 'd.aad', 'ط': 't.aa2', 'ظ': 'z.aa2', 'ع': '3een',
+    'غ': 'gheen', 'ف': 'faa2', 'ق': '2aaf', 'ك': 'kaaf', 'ل': 'laam', 'م': 'miim',
+    'ن': 'nuun', 'ه': 'haa2', 'و': 'waaw', 'ي': 'yaa2'}
+
+
+def _shell(surface, lemma, caphi, gloss, pos, prov):
+    return {"surface": surface, "root": "—", "lemma": lemma, "form": lemma,
+            "caphi_raw": caphi, "caphi": caphi, "gloss": gloss, "analysis": pos,
+            "maknuune_id": None, "village": None,
+            "vocalized": lemma, "vocalized_from": "curated", "provenance": prov}
+
+
+def not_a_word(surface):
+    """-> word dict for a token no Arabic lexicon can hold, else None. Consulted LAST."""
+    core = surface.strip("،.؟!?,:;\"'()")
+    if not core:
+        return None
+    if core.isascii() and any(ch.isalpha() for ch in core) and core.replace("'", "").isalpha():
+        return _shell(surface, core, core,
+                      'English, printed in the story as it stands', 'FOREIGN',
+                      'curated:latin-script')
+    if len(core) == 1 and core in _LETTER_NAMES:
+        return _shell(surface, core, _LETTER_NAMES[core],
+                      'the letter %s' % _LETTER_NAMES[core], 'LETTER', 'curated:letter')
+    return None
+
 
 _ALL = {}
 for src, tag in ((FUNCTION, 'function-word'), (PROPER, 'proper-noun'), (MODERN, 'modern-term'),
