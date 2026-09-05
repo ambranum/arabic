@@ -25,7 +25,7 @@
  "source": "adapted by Claude — NOT native-validated",
  "sentences": [
   {
-   "ar": "السيدة أوريل كانت مرا بتحسب كل قرش، بس مش عشان هي فقيرة.",
+   "ar": "السيدة أوريل كانت ست بتحسب كل قرش، بس مش عشان هي فقيرة.",
    "en": "Madame Oreille was a woman who counted every penny, but not because she was poor.",
    "p": 0,
    "words": [
@@ -85,17 +85,19 @@
     },
     {
      "surface": "أوريل",
-     "root": null,
-     "lemma": null,
+     "root": "—",
+     "lemma": "أوريل",
      "form": "أوريل",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "caphi_raw": "2ooriil",
+     "caphi": "2ooriil",
+     "gloss": "Aurel",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
+     "village": null,
      "vocalized": "أوريل",
-     "vocalized_from": "lexicon:exact"
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "2ooriil"
     },
     {
      "surface": "كانت",
@@ -114,17 +116,19 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "مرا",
-     "root": null,
-     "lemma": null,
-     "form": "مرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مرا",
+     "surface": "ست",
+     "root": "س.ت.ت",
+     "lemma": "سِتّ",
+     "form": "سِتّ",
+     "caphi_raw": "s i t t",
+     "caphi": "sitt",
+     "gloss": "lady;woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "13642",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "sitt",
+     "vocalized": "سِتّ",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -625,17 +629,19 @@
     },
     {
      "surface": "محدود",
-     "root": null,
-     "lemma": null,
-     "form": "محدود",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَحدود",
+     "form": "مَحدود",
+     "caphi_raw": "ma7duud",
+     "caphi": "ma7duud",
+     "gloss": "limited",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "محدود",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مَحدود",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "ma7duud"
     },
     {
      "surface": "وعمره",
@@ -1475,17 +1481,19 @@
     },
     {
      "surface": "اشترت",
-     "root": null,
-     "lemma": null,
-     "form": "اشترت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "اشتَرَت",
+     "form": "اشتَرَت",
+     "caphi_raw": "shtarat",
+     "caphi": "shtarat",
+     "gloss": "she bought",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "اشترت",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "اشتَرَت",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "shtarat"
     },
     {
      "surface": "له",
@@ -2003,7 +2011,7 @@
    "audio": null
   },
   {
-   "ar": "صرخت المرا: شو هاد؟",
+   "ar": "صرخت الست: شو هاد؟",
    "en": "The wife screamed: what is this?",
    "p": 1,
    "words": [
@@ -2062,18 +2070,46 @@
      "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "المرا",
-     "root": null,
-     "lemma": null,
-     "form": "المرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "المرا",
-     "vocalized_from": "lexicon:exact"
+     "surface": "الست",
+     "root": "س.ت.ت",
+     "lemma": "سِتّ",
+     "form": "سِتّ",
+     "caphi_raw": "s i t t",
+     "caphi": "sitt",
+     "gloss": "lady;woman",
+     "analysis": "NOUN:FS",
+     "maknuune_id": "13642",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13642",
+       "root": "س.ت.ت",
+       "gloss": "lady;woman",
+       "analysis": "NOUN:FS"
+      },
+      {
+       "id": "13643",
+       "root": "س.ت.ت",
+       "gloss": "housewife;the_lady_who_can_cook_and_clea",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "13644",
+       "root": "س.ت.ت",
+       "gloss": "it_is_an_idiomatic_expression_that_is_us",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "13645",
+       "root": "س.ت.ت",
+       "gloss": "it_is_an_idiomatic_expression_that_is_us",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "sitt",
+     "vocalized": "السِّتّ",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "شو",
@@ -2713,17 +2749,19 @@
     },
     {
      "surface": "ثقوب",
-     "root": null,
-     "lemma": null,
-     "form": "ثقوب",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "ثُقوب",
+     "form": "ثُقوب",
+     "caphi_raw": "thu2uub",
+     "caphi": "thu2uub",
+     "gloss": "holes",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ثقوب",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "ثُقوب",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "thu2uub"
     },
     {
      "surface": "محروقة",
@@ -3641,17 +3679,19 @@
     },
     {
      "surface": "مؤمن",
-     "root": null,
-     "lemma": null,
-     "form": "مؤمن",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مْؤَمَّن",
+     "form": "مْؤَمَّن",
+     "caphi_raw": "mu2amman",
+     "caphi": "mu2amman",
+     "gloss": "insured",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مؤمن",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مْؤَمَّن",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "mu2amman"
     },
     {
      "surface": "ضد",
@@ -4625,17 +4665,19 @@
     },
     {
      "surface": "احترقت",
-     "root": null,
-     "lemma": null,
-     "form": "احترقت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "احتَرَقَت",
+     "form": "احتَرَقَت",
+     "caphi_raw": "7tara2at",
+     "caphi": "7tara2at",
+     "gloss": "she/it burned down",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "احترقت",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "احتَرَقَت",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "7tara2at"
     }
    ],
    "audio": null
@@ -4763,7 +4805,7 @@
    "audio": null
   },
   {
-   "ar": "المدير تطلع بالشمسية، وبالمرا، وصار يفهم شوي شوي.",
+   "ar": "المدير تطلع بالشمسية، وبالست، وصار يفهم شوي شوي.",
    "en": "The director looked at the umbrella, and at the woman, and began to understand, little by little.",
    "p": 3,
    "words": [
@@ -4876,18 +4918,20 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "وبالمرا",
-     "root": null,
-     "lemma": null,
-     "form": "وبالمرا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وبالمرا",
-     "vocalized_from": "lexicon:exact"
+     "surface": "وبالست",
+     "root": "ل.س.س",
+     "lemma": "لَسّ",
+     "form": "يلِسّ",
+     "caphi_raw": "y l i s s",
+     "caphi": "yliss",
+     "gloss": "pig_out",
+     "analysis": "VERB:I",
+     "maknuune_id": "29122",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yliss",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "وصار",
@@ -5319,17 +5363,19 @@
     },
     {
      "surface": "مؤمن",
-     "root": null,
-     "lemma": null,
-     "form": "مؤمن",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مْؤَمَّن",
+     "form": "مْؤَمَّن",
+     "caphi_raw": "mu2amman",
+     "caphi": "mu2amman",
+     "gloss": "insured",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مؤمن",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مْؤَمَّن",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "mu2amman"
     }
    ],
    "audio": null

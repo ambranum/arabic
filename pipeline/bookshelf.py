@@ -168,6 +168,12 @@ def emit_book(book_id, title, level, chapters, *, unit='Chapter', unit_ar='ال�
 # prose has to be as clean as Hebrew's; old prose is held exactly where it is and can only get
 # better. When a word stops appearing the baseline shrinks itself on the next --write, so the
 # number is always the real debt and never a stale allowance.
+#
+# THE RATCHET HAS SINCE CLOSED. Every one of the 1,845 words was dealt with, book by book, and
+# book_unresolved.json is nine empty lists — so this behaves as a HARD gate now, exactly like the
+# Hebrew one, and a new unresolved word in any book stops the shelf. The baseline stays because
+# it is what made getting here possible and what would make it possible again: a book rewritten
+# from scratch can record its debt, pay it down, and never be allowed to grow it.
 
 BASELINE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'book_unresolved.json')
 

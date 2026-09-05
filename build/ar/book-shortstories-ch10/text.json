@@ -435,17 +435,19 @@
     },
     {
      "surface": "المتوحش",
-     "root": null,
-     "lemma": null,
-     "form": "المتوحش",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مِتوَحِّش",
+     "form": "مِتوَحِّش",
+     "caphi_raw": "mitwa77ish",
+     "caphi": "mitwa77ish",
+     "gloss": "savage, wild",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "المتوحش",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "mitwa77ish"
     },
     {
      "surface": "وكانوا",
@@ -1895,8 +1897,8 @@
    "audio": null
   },
   {
-   "ar": "ودخل الألمان القرية.",
-   "en": "And the Germans entered the village.",
+   "ar": "ودخل جيش ألمانيا القرية.",
+   "en": "And the German army entered the village.",
    "p": 1,
    "words": [
     {
@@ -1948,18 +1950,36 @@
      "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
-     "surface": "الألمان",
-     "root": null,
-     "lemma": null,
-     "form": "الألمان",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الألمان",
+     "surface": "جيش",
+     "root": "ج.ي.ش",
+     "lemma": "جَيش",
+     "form": "جَيش",
+     "caphi_raw": "J ee sh",
+     "caphi": "Jeesh",
+     "gloss": "army;the_military",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "5014",
+     "village": null,
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "jeesh",
+     "vocalized": "جَيش",
      "vocalized_from": "lexicon:exact"
+    },
+    {
+     "surface": "ألمانيا",
+     "root": "—",
+     "lemma": "ألمانيا",
+     "form": "ألمانيا",
+     "caphi_raw": "2almaanya",
+     "caphi": "2almaanya",
+     "gloss": "Germany",
+     "analysis": "NOUN_PROP",
+     "maknuune_id": null,
+     "village": null,
+     "vocalized": "ألمانيا",
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "2almaanya"
     },
     {
      "surface": "القرية",
@@ -2235,17 +2255,19 @@
     },
     {
      "surface": "سمان",
-     "root": null,
-     "lemma": null,
-     "form": "سمان",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "سُمان",
+     "form": "سُمان",
+     "caphi_raw": "sumaan",
+     "caphi": "sumaan",
+     "gloss": "quail",
+     "analysis": "NOUN:P",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سمان",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "سُمان",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "sumaan"
     },
     {
      "surface": "وشعرهم",
@@ -4265,8 +4287,8 @@
    "audio": null
   },
   {
-   "ar": "وأنا كنت جنبه، وطلب مني أكتب لك.",
-   "en": "And I was beside him, and he asked me to write to you.",
+   "ar": "وأنا كنت جنبه، وطلب مني أكتب لأهله.",
+   "en": "And I was beside him, and he asked me to write to his family.",
    "p": 2,
    "words": [
     {
@@ -4468,18 +4490,58 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "لك",
-     "root": null,
-     "lemma": null,
-     "form": "لك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "لك",
-     "vocalized_from": "lexicon:exact"
+     "surface": "لأهله",
+     "root": "ء.ه.ل",
+     "lemma": "أَهِل",
+     "form": "أَهِل",
+     "caphi_raw": "2 a h i l",
+     "caphi": "2ahil",
+     "gloss": "family;relatives",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "628",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "628",
+       "root": "ء.ه.ل",
+       "gloss": "family;relatives",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "635",
+       "root": "ء.ه.ل",
+       "gloss": "welcome_sb_by_saying_\"2_a_h_l_a_n\"_(welc",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "637",
+       "root": "ء.ه.ل",
+       "gloss": "welcome_sb_by_saying_\"2_a_h_l_a_n\"_(welc",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "629",
+       "root": "ء.ه.ل",
+       "gloss": "family;relatives_[auto]",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "631",
+       "root": "ء.ه.ل",
+       "gloss": "be_luckless;be_insane",
+       "analysis": "NOUN:PHRASE"
+      },
+      {
+       "id": "632",
+       "root": "ء.ه.ل",
+       "gloss": "orphan",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "2ahil",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     }
    ],
    "audio": null
@@ -7757,7 +7819,7 @@
    "audio": null
   },
   {
-   "ar": "وإجا الضباط الألمان، والقرية كلها، عالنار.",
+   "ar": "وإجا الضباط الألمانيين، والقرية كلها، عالنار.",
    "en": "And the German officers came, and the whole village, to the fire.",
    "p": 4,
    "words": [
@@ -7794,18 +7856,20 @@
      "vocalized_from": "derived:affix"
     },
     {
-     "surface": "الألمان",
-     "root": null,
-     "lemma": null,
-     "form": "الألمان",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "surface": "الألمانيين",
+     "root": "—",
+     "lemma": "ألماني",
+     "form": "ألماني",
+     "caphi_raw": "2almaani",
+     "caphi": "2almaani",
+     "gloss": "German",
+     "analysis": "NOUN_PROP",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "الألمان",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:proper-noun",
+     "caphi_urban": "2almaani"
     },
     {
      "surface": "والقرية",
