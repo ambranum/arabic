@@ -283,17 +283,33 @@
     },
     {
      "surface": "وعالمصاري",
-     "root": null,
-     "lemma": null,
-     "form": "وعالمصاري",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وعالمصاري",
-     "vocalized_from": "lexicon:exact"
+     "root": "م.ص.ر",
+     "lemma": "مَصَارِي",
+     "form": "مَصَارِي",
+     "caphi_raw": "m a s. aa r i",
+     "caphi": "mas.aari",
+     "gloss": "money",
+     "analysis": "NOUN:P",
+     "maknuune_id": "30808",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "30808",
+       "root": "م.ص.ر",
+       "gloss": "money",
+       "analysis": "NOUN:P"
+      },
+      {
+       "id": "30809",
+       "root": "م.ص.ر",
+       "gloss": "very_cheap",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "mas.aari",
+     "vocalized": "وعَالمَصَارِي",
+     "vocalized_from": "derived:affix"
     },
     {
      "surface": "وعلى",
@@ -883,17 +899,19 @@
     },
     {
      "surface": "مربوطة",
-     "root": null,
-     "lemma": null,
-     "form": "مربوطة",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مَربوط",
+     "form": "مَربوط",
+     "caphi_raw": "marbuut.",
+     "caphi": "marbuut.",
+     "gloss": "tied, tied up",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مربوطة",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": null,
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "marbuut."
     },
     {
      "surface": "بحبل",
@@ -908,8 +926,8 @@
      "village": null,
      "provenance": "maknuune:unique",
      "caphi_urban": "y7abbil",
-     "vocalized": null,
-     "vocalized_from": "unvocalized:ambiguous-person"
+     "vocalized": "بِحَبِّل",
+     "vocalized_from": "derived:verb"
     }
    ],
    "audio": null
@@ -1409,31 +1427,61 @@
    "words": [
     {
      "surface": "وللتالت",
-     "root": null,
-     "lemma": null,
-     "form": "وللتالت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وللتالت",
-     "vocalized_from": "lexicon:exact"
+     "root": "ت.ل.ل",
+     "lemma": "تَالّ",
+     "form": "تَالّ",
+     "caphi_raw": "t a l l",
+     "caphi": "tall",
+     "gloss": "grabbing_sb's_arm_and_dragging_him/her_somewhere",
+     "analysis": "NOUN_ACT:MS",
+     "maknuune_id": "3148",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "tall",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "وللرابع",
-     "root": null,
-     "lemma": null,
-     "form": "وللرابع",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وللرابع",
-     "vocalized_from": "lexicon:exact"
+     "root": "ر.ب.ع",
+     "lemma": "رَابِع",
+     "form": "رَابِع",
+     "caphi_raw": "r aa b i 3",
+     "caphi": "raabi3",
+     "gloss": "fourth",
+     "analysis": "ADJ_NUM",
+     "maknuune_id": "11069",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "11069",
+       "root": "ر.ب.ع",
+       "gloss": "fourth",
+       "analysis": "ADJ_NUM"
+      },
+      {
+       "id": "11089",
+       "root": "ر.ب.ع",
+       "gloss": "take_quarter_of_the_crop_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "11096",
+       "root": "ر.ب.ع",
+       "gloss": "take_quarter_of_the_crop_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "11092",
+       "root": "ر.ب.ع",
+       "gloss": "take_quarter_of_the_crop",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "raabi3",
+     "vocalized": "والرَّابِع",
+     "vocalized_from": "derived:affix"
     }
    ],
    "audio": null

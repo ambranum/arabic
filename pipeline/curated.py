@@ -212,6 +212,7 @@ PROPER.update({
     "السعودية": ("السَّعودية", "2issa3uudiyye", "Saudi Arabia", "NOUN_PROP"),
     "فرنسا":    ("فَرَنسا",   "faransa",    "France", "NOUN_PROP"),
     "ديسمبر":   ("ديسَمبر",   "disamber",   "December", "NOUN_PROP"),
+    "رودس":     ("رودُس",     "rodos",      "Rhodes (the Greek island)", "NOUN_PROP"),
 })
 
 MODERN.update({
@@ -241,6 +242,29 @@ MODERN.update({
     "سنتين":    ("سَنتين",   "santeen",    "two years", "NOUN:D"),
     # Teen numerals. Palestinian says them as one word and the lexicon lists the MSA shapes.
     "ضوء":      ("ضَوء",     "d.aw",       "light", "NOUN:MS"),
+    # Aesop's cast. A fable is mostly animals and trees, and a lexicon of everyday Palestinian
+    # speech turns out not to carry an oak, a stork, a peacock or a frog — measured, one by one,
+    # against Maknuune. Broken plurals are written out beside their singulars because nothing
+    # derives them: ضفدع does not get you ضفادع by any rule.
+    "سنديانة":  ("سِنديانة",  "sindyaane",  "oak tree", "NOUN:FS"),
+    "لقلق":     ("لَقلَق",    "la2la2",     "stork", "NOUN:MS"),
+    "طاووس":    ("طاووس",    "t.aawuus",   "peacock", "NOUN:MS"),
+    "غزال":     ("غَزال",    "ghazaal",    "gazelle, deer", "NOUN:MS"),
+    "ضفدع":     ("ضِفدَع",   "d.ifda3",    "frog", "NOUN:MS"),
+    "ضفادع":    ("ضَفادِع",  "d.afaadi3",  "frogs", "NOUN:P"),
+    "صيصان":    ("صيصان",   "s.iis.aan",  "chicks", "NOUN:P"),
+    "جلود":     ("جْلود",    "jluud",      "hides, skins", "NOUN:P"),
+    "جذور":     ("جْذور",    "jduur",      "roots", "NOUN:P"),
+    "أغصان":    ("أَغصان",   "2aghs.aan",  "branches", "NOUN:P"),
+    "معطف":     ("مِعطَف",   "mi3t.af",    "coat", "NOUN:MS"),
+    "أشياء":    ("أَشياء",   "2ashyaa2",   "things", "NOUN:P"),
+    "صفق":      ("صَفَّق",    "s.affa2",    "he clapped, applauded", "VERB"),
+    "مسطح":     ("مُسَطَّح",  "musat.t.a7", "flat", "ADJ:MS"),
+    "مربوط":    ("مَربوط",   "marbuut.",   "tied, tied up", "ADJ:MS"),
+    "انحنت":    ("انحَنَت",   "in7anat",    "she/it bent over", "VERB"),
+    "تخبوا":    ("تخَبّوا",   "tkhabbu",    "they hid", "VERB"),
+    "منسمع":    ("ما منِسمَع", "ma mnisma3", "we do not hear", "VERB"),
+    "كااااع":   ("كااااع",   "kaaa3",      "caw (a crow's call)", "INTJ"),
     "خروف":     ("خَروف",    "kharuuf",    "sheep, lamb", "NOUN:MS"),
     "زبط":      ("زَبط",     "zabt.",      "exactness (بالزبط = exactly)", "NOUN:MS"),
     "استلف":    ("استَلَف",   "stalaf",     "he borrowed", "VERB"),

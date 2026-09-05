@@ -166,12 +166,13 @@ class Lexicon:
         # demonstrative — هالبيت "this house" — which nothing here knew at all. Written out
         # rather than made compositional, because a second pass over the prefix list is the same
         # trade the suffix side lost: more stems, more chances for a wrong word to win.
-        for p_ in ['وبال', 'فبال', 'وهال', 'بهال', 'لهال', 'هال', 'فب',   # 'وب' costs وبده 9 tokens
+        for p_ in ['وبال', 'فبال', 'وعال', 'ولل', 'وهال', 'بهال', 'لهال', 'هال', 'فب',
                    
                    'عال','بال','وال','فال','لل','ال','و','ع','ل','ف','ك']:
             if w.startswith(p_) and len(w) > len(p_) + 1:
                 pre += [w[len(p_):], 'ال' + w[len(p_):]]
-                if p_ in ('ال','بال','عال','وال','فال','وبال','فبال','هال','بهال','وهال','لهال'):
+                if p_ in ('ال','بال','عال','وال','فال','وبال','فبال','وعال','ولل',
+                          'هال','بهال','وهال','لهال'):
                     pos = pos or 'NOUN'
         # imperfect without b-: تضرب, ترمي, نوصل. Maknuune stores the يـ form.
         for base in [w] + list(pre):
