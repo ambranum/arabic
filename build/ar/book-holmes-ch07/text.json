@@ -304,21 +304,7 @@
      "analysis": "NOUN_ACT:MS",
      "maknuune_id": "28700",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "28700",
-       "root": "ل.ب.س",
-       "gloss": "wearing",
-       "analysis": "NOUN_ACT:MS"
-      },
-      {
-       "id": "28707",
-       "root": "ل.ب.س",
-       "gloss": "well-groomed;elegant",
-       "analysis": "NOUN_ACT:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "laabis",
      "vocalized": "لَابِس",
      "vocalized_from": "lexicon:exact"
@@ -654,21 +640,7 @@
      "analysis": "NOUN:P",
      "maknuune_id": "2689",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "2689",
-       "root": "ب.ي.ت",
-       "gloss": "house",
-       "analysis": "NOUN:P"
-      },
-      {
-       "id": "36300",
-       "root": "NTWS",
-       "gloss": "Oh;Ugh!",
-       "analysis": "INTERJ"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "byuut",
      "vocalized": "بْيُوتهم",
      "vocalized_from": "derived:affix"
@@ -1080,21 +1052,7 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "8931",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "8931",
-       "root": "خ.و.ف",
-       "gloss": "fear",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "8932",
-       "root": "خ.و.ف",
-       "gloss": "I_am_afraid_that_...........",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "khoof",
      "vocalized": "الخَوف",
      "vocalized_from": "derived:affix"
@@ -1109,57 +1067,19 @@
    "words": [
     {
      "surface": "وعمرها",
-     "root": "ع.م.ر",
-     "lemma": "عُمُر",
-     "form": "عُمُر",
-     "caphi_raw": "3 u m u r",
-     "caphi": "3umur",
-     "gloss": "age",
+     "root": "—",
+     "lemma": "عُمر",
+     "form": "عُمر",
+     "caphi_raw": "3umr",
+     "caphi": "3umr",
+     "gloss": "age, lifetime",
      "analysis": "NOUN:MS",
-     "maknuune_id": "21715",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "21715",
-       "root": "ع.م.ر",
-       "gloss": "age",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "21717",
-       "root": "ع.م.ر",
-       "gloss": "lifelong;long_time",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "21730",
-       "root": "ع.م.ر",
-       "gloss": "build_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "21736",
-       "root": "ع.م.ر",
-       "gloss": "prosper;thrive_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "21739",
-       "root": "ع.م.ر",
-       "gloss": "build_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "21718",
-       "root": "ع.م.ر",
-       "gloss": "age",
-       "analysis": "NOUN:P"
-      }
-     ],
-     "caphi_urban": "3umur",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-prefix"
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "3umr"
     },
     {
      "surface": "تلاتين",
@@ -1407,19 +1327,19 @@
     },
     {
      "surface": "وبعربية",
-     "root": "ع.ر.ب",
-     "lemma": "عَرَبِي",
-     "form": "عَرَبِي",
-     "caphi_raw": "3 a r a b i",
-     "caphi": "3arabi",
-     "gloss": "Arab",
-     "analysis": "ADJ:MS",
-     "maknuune_id": "20378",
+     "root": "—",
+     "lemma": "عَرَبيّة",
+     "form": "عَرَبيّة",
+     "caphi_raw": "3arabiyye",
+     "caphi": "3arabiyye",
+     "gloss": "carriage, cab",
+     "analysis": "NOUN:FS",
+     "maknuune_id": null,
      "village": null,
-     "provenance": "maknuune:unique",
-     "caphi_urban": "3arabi",
      "vocalized": null,
-     "vocalized_from": "unvocalized:unknown-suffix"
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "3arabiyye"
     },
     {
      "surface": "مكشوفة",
@@ -3155,56 +3075,18 @@
     },
     {
      "surface": "لكل",
-     "root": "ء.ك.ل",
-     "lemma": "أَكَل",
-     "form": "كُل",
-     "caphi_raw": "k u l",
-     "caphi": "kul",
-     "gloss": "eat;get_punished;sting;bite;kiss_violently_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "430",
+     "root": "ك.ل.ل",
+     "lemma": "كُلّ",
+     "form": "كُلّ",
+     "caphi_raw": "k u l l",
+     "caphi": "kull",
+     "gloss": "the_whole_thing/every",
+     "analysis": "NOUN_QUANT:MS",
+     "maknuune_id": "28275",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "430",
-       "root": "ء.ك.ل",
-       "gloss": "eat;get_punished;sting;bite;kiss_violent",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "28275",
-       "root": "ك.ل.ل",
-       "gloss": "the_whole_thing/every",
-       "analysis": "NOUN_QUANT:MS"
-      },
-      {
-       "id": "28278",
-       "root": "ك.ل.ل",
-       "gloss": "be_very_tired;be_fed_up",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "28280",
-       "root": "ك.ل.ل",
-       "gloss": "be_very_tired;be_fed_up_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "28277",
-       "root": "ك.ل.ل",
-       "gloss": "be_sick_of_sth",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "28279",
-       "root": "ك.ل.ل",
-       "gloss": "be_very_tired;be_fed_up",
-       "analysis": "VERB:I"
-      }
-     ],
-     "caphi_urban": "kul",
-     "vocalized": "لِكُل",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "kull",
+     "vocalized": "لِكُلّ",
      "vocalized_from": "derived:affix"
     },
     {
@@ -4512,21 +4394,7 @@
      "analysis": "NOUN:FS",
      "maknuune_id": "5451",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "5451",
-       "root": "ح.د.ق",
-       "gloss": "garden",
-       "analysis": "NOUN:FS"
-      },
-      {
-       "id": "5452",
-       "root": "ح.د.ق",
-       "gloss": "garden_[auto]",
-       "analysis": "NOUN:P"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "7adiiqa",
      "vocalized": "الحَدِيقَة",
      "vocalized_from": "derived:affix"
@@ -5644,45 +5512,7 @@
      "analysis": "ADJ:MS",
      "maknuune_id": "3384",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "3384",
-       "root": "ث.ق.ل",
-       "gloss": "heavy;taciturn",
-       "analysis": "ADJ:MS"
-      },
-      {
-       "id": "3388",
-       "root": "ث.ق.ل",
-       "gloss": "humorless;sb_who_is_trying_to_be_funny,_",
-       "analysis": "ADJ:PHRASE"
-      },
-      {
-       "id": "27124",
-       "root": "ق.ي.ل",
-       "gloss": "take_a_nap_[auto]",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "27126",
-       "root": "ق.ي.ل",
-       "gloss": "take_a_nap_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "27125",
-       "root": "ق.ي.ل",
-       "gloss": "take_a_nap",
-       "analysis": "VERB:I"
-      },
-      {
-       "id": "27117",
-       "root": "ق.ي.ل",
-       "gloss": "dismiss;sack",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "tqiil,t2iil,thgiil",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
@@ -5792,45 +5622,7 @@
      "analysis": "VERB:C",
      "maknuune_id": "23216",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "23216",
-       "root": "ف.ت.ح",
-       "gloss": "be_opened;be_deflowered;start_yelling_an",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "23217",
-       "root": "ف.ت.ح",
-       "gloss": "be_opened;be_deflowered;start_yelling_an",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "23228",
-       "root": "ف.ت.ح",
-       "gloss": "be_opened;be_deflowered;start_yelling_an",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "23182",
-       "root": "ف.ت.ح",
-       "gloss": "crave_for_sth",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "23213",
-       "root": "ف.ت.ح",
-       "gloss": "cry_loudly_and_uncontrollably",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "23222",
-       "root": "ف.ت.ح",
-       "gloss": "be_opened;be_deflowered;start_yelling_an",
-       "analysis": "VERB:I"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "2infiti7",
      "vocalized": "اِنْفِتِح",
      "vocalized_from": "lexicon:exact"
@@ -5942,54 +5734,16 @@
     {
      "surface": "ووقعت",
      "root": "و.ق.ع",
-     "lemma": "وَقَّع",
-     "form": "وَقِّع",
-     "caphi_raw": "w a Q Q i 3",
-     "caphi": "waQQi3",
-     "gloss": "dropp;sign;involve_sb_in_a_bad_situation_[auto]",
-     "analysis": "VERB:C",
-     "maknuune_id": "35899",
+     "lemma": "وِقِع",
+     "form": "وِقِع",
+     "caphi_raw": "w i Q i 3",
+     "caphi": "wiQi3",
+     "gloss": "fall_[auto]",
+     "analysis": "VERB:P",
+     "maknuune_id": "35906",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "35899",
-       "root": "و.ق.ع",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-       "analysis": "VERB:C"
-      },
-      {
-       "id": "35906",
-       "root": "و.ق.ع",
-       "gloss": "fall_[auto]",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "35907",
-       "root": "و.ق.ع",
-       "gloss": "dropp;sign;involve_sb_in_a_bad_situation",
-       "analysis": "VERB:P"
-      },
-      {
-       "id": "35893",
-       "root": "و.ق.ع",
-       "gloss": "sb_will_fall_down_(It_is_an_idiomatic_ex",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "35894",
-       "root": "و.ق.ع",
-       "gloss": "sb_was_made_a_scapegoat_for_what_happene",
-       "analysis": "VERB:PHRASE"
-      },
-      {
-       "id": "35896",
-       "root": "و.ق.ع",
-       "gloss": "lest_you_fall_down",
-       "analysis": "VERB:PHRASE"
-      }
-     ],
-     "caphi_urban": "wa22i3",
+     "provenance": "maknuune:resolved",
+     "caphi_urban": "wi2i3",
      "vocalized": null,
      "vocalized_from": "unvocalized:unknown-prefix"
     },
@@ -7278,21 +7032,7 @@
      "analysis": "NOUN:MS",
      "maknuune_id": "8931",
      "village": null,
-     "provenance": "AMBIGUOUS-needs-resolution",
-     "options": [
-      {
-       "id": "8931",
-       "root": "خ.و.ف",
-       "gloss": "fear",
-       "analysis": "NOUN:MS"
-      },
-      {
-       "id": "8932",
-       "root": "خ.و.ف",
-       "gloss": "I_am_afraid_that_...........",
-       "analysis": "NOUN:PHRASE"
-      }
-     ],
+     "provenance": "maknuune:resolved",
      "caphi_urban": "khoof",
      "vocalized": "الخَوف",
      "vocalized_from": "derived:affix"

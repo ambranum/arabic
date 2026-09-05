@@ -597,6 +597,16 @@ MODERN.update({
     "أبدا":       ("أبَداً",     "2abadan",     "never, not at all", "ADV"),
     "فرنك":       ("فرَنك",     "frank",       "franc", "NOUN:MS"),
     "ميل":        ("ميل",       "miil",        "mile", "NOUN:MS"),
+    "كتار":       ("كْتار",     "ktaar",       "many, a lot (plural)", "ADJ:P"),
+    # رم "rum" is two letters and reaches رمى "he threw" and كرمة "vine". Spelled روم in the
+    # book instead, which is how Arabic writes it anyway.
+    "روم":        ("روم",       "ruum",        "rum", "NOUN:MS"),
+    "سير":        ("سير",       "seer",        "Sir (the title)", "NOUN_PROP"),
+    "موج":        ("مَوج",      "mawj",        "wave, waves", "NOUN:P"),
+    "ضيعة":       ("ضَيعة",     "d.ee3a",      "village", "NOUN:FS"),
+    "عربية":      ("عَرَبيّة",    "3arabiyye",   "carriage, cab", "NOUN:FS"),
+    "سيدتي":      ("سيدتي",     "sayyidti",    "madam, my lady", "NOUN:FS"),
+    "عمر":        ("عُمر",      "3umr",        "age, lifetime", "NOUN:MS"),
     "خالي":       ("خالي",      "khaali",      "my maternal uncle", "NOUN:MS"),
     "ضل":         ("ضَلّ",       "d.all",       "stay, remain", "VERB"),
     # ضل takes فضلك "please" with it, six tokens, so فضلك is written down too.
