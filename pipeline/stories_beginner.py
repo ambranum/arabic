@@ -232,6 +232,11 @@ STORIES = [
 ]
 
 def main():
+    from bookshelf import check_sentences
+    rc = check_sentences('beginner stories',
+                         [(a, e) for _t, _te, ss in STORIES for a, e in ss])
+    if rc:
+        return rc
     tdir = paths.texts()
     for i, (t_ar, t_en, sents) in enumerate(STORIES, 1):
         sid = 'story-beg-%02d' % i
@@ -244,4 +249,4 @@ def main():
     print('wrote %d beginner stories' % len(STORIES))
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main() or 0)

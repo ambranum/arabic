@@ -529,7 +529,7 @@
    "audio": "audio/s1.mp3"
   },
   {
-   "ar": "اللحن كان حزين حلو، بيمس القلب.",
+   "ar": "اللحن كان حزين حلو، بيلمس القلب.",
    "en": "The melody was sad and sweet, touching the heart.",
    "p": null,
    "words": [
@@ -676,18 +676,40 @@
      "vocalized_from": "lexicon:exact"
     },
     {
-     "surface": "بيمس",
-     "root": null,
-     "lemma": null,
-     "form": "بيمس",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بيمس",
-     "vocalized_from": "lexicon:exact"
+     "surface": "بيلمس",
+     "root": "ل.م.س",
+     "lemma": "لَمَس",
+     "form": "يِلْمَس",
+     "caphi_raw": "y i l m a s",
+     "caphi": "yilmas",
+     "gloss": "touch;frighten",
+     "analysis": "VERB:I",
+     "maknuune_id": "29756",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "29756",
+       "root": "ل.م.س",
+       "gloss": "touch;frighten",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "29757",
+       "root": "ل.م.س",
+       "gloss": "touch;frighten",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "29758",
+       "root": "ل.م.س",
+       "gloss": "touch_repeatedly",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "yilmas",
+     "vocalized": "بِيِلْمَس",
+     "vocalized_from": "derived:verb"
     },
     {
      "surface": "القلب",
@@ -1049,17 +1071,57 @@
     },
     {
      "surface": "وحكالي",
-     "root": null,
-     "lemma": null,
-     "form": "وحكالي",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وحكالي",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.ك.ي",
+     "lemma": "حَكِي",
+     "form": "حَكِي",
+     "caphi_raw": "7 a k i",
+     "caphi": "7aki",
+     "gloss": "speech",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "6618",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6618",
+       "root": "ح.ك.ي",
+       "gloss": "speech",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "6628",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "6630",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_(repeatedly)",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "6632",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_(repeatedly)",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "6620",
+       "root": "ح.ك.ي",
+       "gloss": "pontificate_on_sth",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "6621",
+       "root": "ح.ك.ي",
+       "gloss": "I_forgot_to_mention_sth_about_X",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "7aki",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "قصته",
@@ -2629,17 +2691,45 @@
    "words": [
     {
      "surface": "قلتله",
-     "root": null,
-     "lemma": null,
-     "form": "قلتله",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "قلتله",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.ل.ل",
+     "lemma": "قَلّ",
+     "form": "قِلّ",
+     "caphi_raw": "Q i l l",
+     "caphi": "Qill",
+     "gloss": "be_reduced;bediminished;be_less",
+     "analysis": "VERB:C",
+     "maknuune_id": "26651",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26651",
+       "root": "ق.ل.ل",
+       "gloss": "be_reduced;bediminished;be_less",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "26656",
+       "root": "ق.ل.ل",
+       "gloss": "be_reduced;bediminished;be_less_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26642",
+       "root": "ق.ل.ل",
+       "gloss": "tell_sb_off;insult_oneself",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26652",
+       "root": "ق.ل.ل",
+       "gloss": "be_reduced;bediminished;be_less",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "2ill",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "عزفك",

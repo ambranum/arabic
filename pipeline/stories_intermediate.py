@@ -170,7 +170,7 @@ STORIES = [
    ("خفت إنه الأكل يخرب، بس كملت.", "I was afraid the food would be ruined, but I continued."),
    ("حطيت العدس والرز والمي وستنيت.", "I added the lentils, rice, and water and waited."),
    ("بعد نص ساعة، فتحت الغطا وطلع ريحة حلوة.", "After half an hour, I opened the lid and a nice smell came out."),
-   ("ذقت الأكل وكان طيب أكتر مما توقعت.", "I tasted the food and it was better than I expected."),
+   ("جربت الأكل وكان طيب أكتر مما توقعت.", "I tried the food and it was better than I expected."),
    ("لما رجعت إمي، طبختلها وفتخرت فيي.", "When my mom came back, I cooked for her and she was proud of me."),
  ]),
  ("سهرة مع الاصحاب", "An Evening with Friends", [
@@ -358,6 +358,11 @@ STORIES = [
 ]
 
 def main():
+    from bookshelf import check_sentences
+    rc = check_sentences('intermediate stories',
+                         [(a, e) for _t, _te, ss in STORIES for a, e in ss])
+    if rc:
+        return rc
     tdir = paths.texts()
     for i, (t_ar, t_en, sents) in enumerate(STORIES, 1):
         sid = 'story-int-%02d' % i
@@ -370,4 +375,4 @@ def main():
     print('wrote %d intermediate stories' % len(STORIES))
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main() or 0)

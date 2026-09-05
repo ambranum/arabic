@@ -263,3 +263,27 @@ def book(book_id, title, level, chapters, **kw):
     json.dump(b, open(BASELINE, 'w', encoding='utf-8'),
               ensure_ascii=False, indent=1, sort_keys=True)
     return 0
+
+def check_sentences(label, pairs):
+    """-> exit code. The books' gate, for anything that is a flat list of (arabic, english).
+
+    The stories reached zero the same week the books did and there was nothing stopping them
+    drifting back, because unresolved_words() only speaks the CHAPTERS shape. No baseline here:
+    the stories are at zero already, so the rule is simply that they stay there.
+    """
+    import ingest
+    from maknuune import Lexicon
+    lex, res = Lexicon(), ingest.load_resolutions()
+    bad = {}
+    for ar, _en in pairs:
+        for t in ingest.tokenize(ar):
+            if ingest.annotate_word(lex, t, res)['provenance'] == 'unresolved':
+                bad.setdefault(t, ar)
+    if not bad:
+        return 0
+    print('%s — %d word(s) the reader cannot tap:' % (label, len(bad)))
+    for w, ar in sorted(bad.items()):
+        print('  !! %s   %s' % (w, ar[:70]))
+    print('\nnothing written. Curate them in pipeline/curated.py, or rewrite the sentence — and\n'
+          'run pipeline/collide.py on any short key first.')
+    return 1

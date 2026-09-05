@@ -451,17 +451,19 @@
     },
     {
      "surface": "يرتجف",
-     "root": null,
-     "lemma": null,
-     "form": "يرتجف",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "يِرتِجِف",
+     "form": "يِرتِجِف",
+     "caphi_raw": "yirtijif",
+     "caphi": "yirtijif",
+     "gloss": "he shivers, trembles",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "يرتجف",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "يِرتِجِف",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "yirtijif"
     },
     {
      "surface": "من",
@@ -519,7 +521,7 @@
    "audio": "audio/s2.mp3"
   },
   {
-   "ar": "وقفت جنبه وسألته: عمو، شو بك واقف هون؟",
+   "ar": "وقفت جنبه وسألته: عمو، ليش واقف هون؟",
    "en": "I stopped next to him and asked: uncle, why are you standing here?",
    "p": null,
    "words": [
@@ -664,33 +666,19 @@
      "caphi_urban": "3am"
     },
     {
-     "surface": "شو",
-     "root": "ش.و",
-     "lemma": "شُو",
-     "form": "شُو",
-     "caphi_raw": "sh uu",
-     "caphi": "shuu",
-     "gloss": "what",
-     "analysis": "PRON_REL",
-     "maknuune_id": "17123",
+     "surface": "ليش",
+     "root": "NTWS",
+     "lemma": "لَيش",
+     "form": "لَيش",
+     "caphi_raw": "l ee sh",
+     "caphi": "leesh",
+     "gloss": "why",
+     "analysis": "ADV_REL",
+     "maknuune_id": "30066",
      "village": null,
      "provenance": "maknuune:resolved",
-     "caphi_urban": "shuu",
-     "vocalized": "شُو",
-     "vocalized_from": "lexicon:exact"
-    },
-    {
-     "surface": "بك",
-     "root": null,
-     "lemma": null,
-     "form": "بك",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "بك",
+     "caphi_urban": "leesh",
+     "vocalized": "لَيش",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -999,36 +987,66 @@
    "audio": "audio/s4.mp3"
   },
   {
-   "ar": "قلتله: تعا معي، ما بينفع تضل بالبرد.",
+   "ar": "قلتله: يلا معي، ما بينفع تضل بالبرد.",
    "en": "I told him: come with me, you can't stay in the cold.",
    "p": null,
    "words": [
     {
      "surface": "قلتله",
-     "root": null,
-     "lemma": null,
-     "form": "قلتله",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "قلتله",
-     "vocalized_from": "lexicon:exact"
+     "root": "ق.ل.ل",
+     "lemma": "قَلّ",
+     "form": "قِلّ",
+     "caphi_raw": "Q i l l",
+     "caphi": "Qill",
+     "gloss": "be_reduced;bediminished;be_less",
+     "analysis": "VERB:C",
+     "maknuune_id": "26651",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "26651",
+       "root": "ق.ل.ل",
+       "gloss": "be_reduced;bediminished;be_less",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "26656",
+       "root": "ق.ل.ل",
+       "gloss": "be_reduced;bediminished;be_less_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "26642",
+       "root": "ق.ل.ل",
+       "gloss": "tell_sb_off;insult_oneself",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "26652",
+       "root": "ق.ل.ل",
+       "gloss": "be_reduced;bediminished;be_less",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "2ill",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
-     "surface": "تعا",
-     "root": null,
-     "lemma": null,
-     "form": "تعا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "تعا",
+     "surface": "يلا",
+     "root": "NTWS",
+     "lemma": "يَلَّا",
+     "form": "يَلَّا",
+     "caphi_raw": "y a l l a",
+     "caphi": "yalla",
+     "gloss": "come_on!",
+     "analysis": "INTERJ",
+     "maknuune_id": "36260",
+     "village": null,
+     "provenance": "maknuune:unique",
+     "caphi_urban": "yalla",
+     "vocalized": "يَلَّا",
      "vocalized_from": "lexicon:exact"
     },
     {
@@ -1241,17 +1259,57 @@
     },
     {
      "surface": "سخنتله",
-     "root": null,
-     "lemma": null,
-     "form": "سخنتله",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "سخنتله",
-     "vocalized_from": "lexicon:exact"
+     "root": "س.خ.ن",
+     "lemma": "سُخُن",
+     "form": "سُخُن",
+     "caphi_raw": "s u kh u n",
+     "caphi": "sukhun",
+     "gloss": "hot;have_a_temperature",
+     "analysis": "ADJ:MS",
+     "maknuune_id": "13911",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "13911",
+       "root": "س.خ.ن",
+       "gloss": "hot;have_a_temperature",
+       "analysis": "ADJ:MS"
+      },
+      {
+       "id": "13915",
+       "root": "س.خ.ن",
+       "gloss": "heat_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "13922",
+       "root": "س.خ.ن",
+       "gloss": "be_hot;have_a_temperature_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "13923",
+       "root": "س.خ.ن",
+       "gloss": "heat_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "13912",
+       "root": "س.خ.ن",
+       "gloss": "It_is_an_idiomatic_expression_that_means",
+       "analysis": "ADJ:PHRASE"
+      },
+      {
+       "id": "13913",
+       "root": "س.خ.ن",
+       "gloss": "a_big_catastrophe",
+       "analysis": "ADJ:PHRASE"
+      }
+     ],
+     "caphi_urban": "sukhun",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "أكل",
@@ -1353,17 +1411,57 @@
     },
     {
      "surface": "وحكالنا",
-     "root": null,
-     "lemma": null,
-     "form": "وحكالنا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وحكالنا",
-     "vocalized_from": "lexicon:exact"
+     "root": "ح.ك.ي",
+     "lemma": "حَكِي",
+     "form": "حَكِي",
+     "caphi_raw": "7 a k i",
+     "caphi": "7aki",
+     "gloss": "speech",
+     "analysis": "NOUN:MS",
+     "maknuune_id": "6618",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "6618",
+       "root": "ح.ك.ي",
+       "gloss": "speech",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "6628",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "6630",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_(repeatedly)",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "6632",
+       "root": "ح.ك.ي",
+       "gloss": "talk;tell;recount_(repeatedly)",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "6620",
+       "root": "ح.ك.ي",
+       "gloss": "pontificate_on_sth",
+       "analysis": "VERB:PHRASE"
+      },
+      {
+       "id": "6621",
+       "root": "ح.ك.ي",
+       "gloss": "I_forgot_to_mention_sth_about_X",
+       "analysis": "NOUN:PHRASE"
+      }
+     ],
+     "caphi_urban": "7aki",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-prefix"
     },
     {
      "surface": "إنه",
@@ -2483,17 +2581,19 @@
     },
     {
      "surface": "مرتجف",
-     "root": null,
-     "lemma": null,
-     "form": "مرتجف",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "مِرتِجِف",
+     "form": "مِرتِجِف",
+     "caphi_raw": "mirtijif",
+     "caphi": "mirtijif",
+     "gloss": "shivering, trembling",
+     "analysis": "ADJ:MS",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "مرتجف",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "مِرتِجِف",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "mirtijif"
     },
     {
      "surface": "بابا",

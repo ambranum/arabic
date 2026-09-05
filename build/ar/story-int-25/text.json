@@ -615,17 +615,19 @@
    "words": [
     {
      "surface": "ارتحنا",
-     "root": null,
-     "lemma": null,
-     "form": "ارتحنا",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "ارتَحنا",
+     "form": "ارتَحنا",
+     "caphi_raw": "rta7na",
+     "caphi": "rta7na",
+     "gloss": "we rested",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ارتحنا",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "ارتَحنا",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "rta7na"
     },
     {
      "surface": "كلنا",
@@ -1075,17 +1077,57 @@
    "words": [
     {
      "surface": "طبخنالها",
-     "root": null,
-     "lemma": null,
-     "form": "طبخنالها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "طبخنالها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ط.ب.خ",
+     "lemma": "طَبَّخ",
+     "form": "طَبِّخ",
+     "caphi_raw": "t. a b b i kh",
+     "caphi": "t.abbikh",
+     "gloss": "cook_several_ingredients_together;stir-fry_several_ingredients_together_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "18696",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "18696",
+       "root": "ط.ب.خ",
+       "gloss": "cook_several_ingredients_together;stir-f",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18702",
+       "root": "ط.ب.خ",
+       "gloss": "cook_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18703",
+       "root": "ط.ب.خ",
+       "gloss": "cook_several_ingredients_together;stir-f",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18695",
+       "root": "ط.ب.خ",
+       "gloss": "cook_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18700",
+       "root": "ط.ب.خ",
+       "gloss": "cook",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "18701",
+       "root": "ط.ب.خ",
+       "gloss": "cook_several_ingredients_together;stir-f",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "t.abbikh",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "أكل",

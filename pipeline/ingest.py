@@ -37,10 +37,15 @@ def load_resolutions():
         return json.load(open(RESOLUTIONS, encoding='utf-8'))
     return {}
 
+PUNCT = re.compile('[\\s،.؟!?,:؛;…"\'«»”“‘’\\-—()]+')
+
+
 def tokenize(sent):
     # Split on whitespace and punctuation — including the colon/semicolon and quotes that
     # dialogue uses (قال: ...), so "قال:" tokenizes as قال, not an unmatchable "قال:".
-    return [w for w in re.split(r'[\s،.؟!?,:؛;…"«»”“\-—()]+', sent.strip()) if w]
+    # Straight and curly quotes split too: a line quoted in the paper as ‘أنا’
+    # otherwise tokenizes with the quote glued on, which is not a word.
+    return [w for w in re.split(PUNCT, sent.strip()) if w]
 
 def annotate_word(lex, surface, res):
     key = norm(surface)

@@ -204,6 +204,40 @@ class Lexicon:
         # "because" became "No!", بقوة "with force" became "pour water". So they are held here
         # and candidates() reaches for them only when nothing else matched at all, where they
         # cannot displace an answer because there is none.
+        # THE DATIVE ل, held aside for the same reason _deep is. Palestinian glues the
+        # indirect object straight onto the verb — قلتله "I told him", حكالي "he told me",
+        # طبختلها "I cooked for her", جابولي "they brought me" — which is verb + ل + pronoun,
+        # two affixes deep where the peeler goes one. Forty of the ninety-two untappable
+        # tokens in the short stories were this one construction said by different people.
+        #
+        # It cannot go in desuffix(). Measured there it resolved 40 and WRECKED 39, because
+        # ة folds to ه and a great many ordinary nouns then look like a verb carrying a
+        # dative: الليلة "the night" became the relative pronoun, الحفلة "the party" became
+        # "blanket", وطاولة "table" became "decadence". Verbs whose root simply ENDS in ل are
+        # the other half of it — وسأله "he asked him" became "still, not yet".
+        #
+        # As a last resort none of that can happen: every one of those words already has a
+        # match, so this list is never consulted for them. Guarded at three letters, because
+        # anything shorter ending in ل is a word that happens to rather than a dative —
+        # بالي "my mind", حالي "my state", إلي "to me".
+        def dative(x):
+            out = []
+            for suf in ['ني', 'ها', 'هم', 'هن', 'نا', 'كم', 'ي', 'ك', 'ه']:
+                if not x.endswith(suf):
+                    continue
+                base = x[:-len(suf)]
+                if base.endswith('ل') and len(base) - 1 >= 3:
+                    out.append(base[:-1])
+            return out
+
+        # Each dative stem is then treated as a word in its own right — spelling folds and one
+        # more round of suffix stripping — because what is left after the ل is still inflected:
+        # قلتله leaves قلت, which is قال + ت, and حكالي leaves حكا, which the lexicon files
+        # as حكي. Without this the stems are real but none of them are entries.
+        self._dative = list(dict.fromkeys(
+            [z for y in [w] + tier1 + tier2 for d in dative(y)
+             for z in [d] + coda(d) + desuffix(d)
+                       + ([d[:-1] + 'ي'] if d.endswith('ا') and len(d) > 2 else [])]))
         self._deep = list(dict.fromkeys(
             [z for y in tier1b + tier3 for z in desuffix(y)]))
         self._pre_only = list(dict.fromkeys(tier1 + tier2))
@@ -253,9 +287,12 @@ class Lexicon:
                         seen.add(r['ID'])
                         r = dict(r); r['_stem'] = st       # which spelling found it
                         hits.append(r)
-        # LAST RESORT ONLY: a word nothing matched gets the deeper peel. See morph()._deep.
-        if not hits:
-            for st in self._deep:
+        # LAST RESORT ONLY: a word nothing matched gets the dative peel, then the deeper one.
+        # See morph()._dative and morph()._deep. Order is the specific before the general.
+        for last in (self._dative, self._deep):
+            if hits:
+                break
+            for st in last:
                 if st == bare: continue
                 for tbl in (self.by_form, self.by_lemma):
                     for r in tbl.get(st, []):

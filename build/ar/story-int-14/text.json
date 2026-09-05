@@ -829,17 +829,19 @@
     },
     {
      "surface": "احترق",
-     "root": null,
-     "lemma": null,
-     "form": "احترق",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "احتَرَق",
+     "form": "احتَرَق",
+     "caphi_raw": "7tara2",
+     "caphi": "7tara2",
+     "gloss": "it burned",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "احترق",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "احتَرَق",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "7tara2"
     },
     {
      "surface": "شوي",
@@ -1451,23 +1453,63 @@
    "audio": "audio/s7.mp3"
   },
   {
-   "ar": "ذقت الأكل وكان طيب أكتر مما توقعت.",
-   "en": "I tasted the food and it was better than I expected.",
+   "ar": "جربت الأكل وكان طيب أكتر مما توقعت.",
+   "en": "I tried the food and it was better than I expected.",
    "p": null,
    "words": [
     {
-     "surface": "ذقت",
-     "root": null,
-     "lemma": null,
-     "form": "ذقت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "ذقت",
-     "vocalized_from": "lexicon:exact"
+     "surface": "جربت",
+     "root": "ج.ر.ب",
+     "lemma": "اِجْرَب",
+     "form": "جُرُب",
+     "caphi_raw": "J u r u b",
+     "caphi": "Jurub",
+     "gloss": "having_scabs;inferior_[auto]",
+     "analysis": "ADJ:P",
+     "maknuune_id": "3764",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "3764",
+       "root": "ج.ر.ب",
+       "gloss": "having_scabs;inferior_[auto]",
+       "analysis": "ADJ:P"
+      },
+      {
+       "id": "3765",
+       "root": "ج.ر.ب",
+       "gloss": "having_scabs;inferior_[auto]",
+       "analysis": "ADJ:P"
+      },
+      {
+       "id": "3769",
+       "root": "ج.ر.ب",
+       "gloss": "scab",
+       "analysis": "NOUN:MS"
+      },
+      {
+       "id": "3776",
+       "root": "ج.ر.ب",
+       "gloss": "try;experiment_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "3780",
+       "root": "ج.ر.ب",
+       "gloss": "try;experiment_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "3778",
+       "root": "ج.ر.ب",
+       "gloss": "try;experiment",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "jurub",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "الأكل",
@@ -1699,31 +1741,73 @@
     },
     {
      "surface": "طبختلها",
-     "root": null,
-     "lemma": null,
-     "form": "طبختلها",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
-     "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "طبختلها",
-     "vocalized_from": "lexicon:exact"
+     "root": "ط.ب.خ",
+     "lemma": "طَبَّخ",
+     "form": "طَبِّخ",
+     "caphi_raw": "t. a b b i kh",
+     "caphi": "t.abbikh",
+     "gloss": "cook_several_ingredients_together;stir-fry_several_ingredients_together_[auto]",
+     "analysis": "VERB:C",
+     "maknuune_id": "18696",
+     "village": null,
+     "provenance": "AMBIGUOUS-needs-resolution",
+     "options": [
+      {
+       "id": "18696",
+       "root": "ط.ب.خ",
+       "gloss": "cook_several_ingredients_together;stir-f",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18702",
+       "root": "ط.ب.خ",
+       "gloss": "cook_[auto]",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18703",
+       "root": "ط.ب.خ",
+       "gloss": "cook_several_ingredients_together;stir-f",
+       "analysis": "VERB:P"
+      },
+      {
+       "id": "18695",
+       "root": "ط.ب.خ",
+       "gloss": "cook_[auto]",
+       "analysis": "VERB:C"
+      },
+      {
+       "id": "18700",
+       "root": "ط.ب.خ",
+       "gloss": "cook",
+       "analysis": "VERB:I"
+      },
+      {
+       "id": "18701",
+       "root": "ط.ب.خ",
+       "gloss": "cook_several_ingredients_together;stir-f",
+       "analysis": "VERB:I"
+      }
+     ],
+     "caphi_urban": "t.abbikh",
+     "vocalized": null,
+     "vocalized_from": "unvocalized:unknown-suffix"
     },
     {
      "surface": "وفتخرت",
-     "root": null,
-     "lemma": null,
-     "form": "وفتخرت",
-     "caphi": null,
-     "gloss": null,
-     "analysis": null,
+     "root": "—",
+     "lemma": "وافتَخَرَت",
+     "form": "وافتَخَرَت",
+     "caphi_raw": "wiftakharat",
+     "caphi": "wiftakharat",
+     "gloss": "and she was proud",
+     "analysis": "VERB",
      "maknuune_id": null,
-     "provenance": "unresolved",
-     "caphi_urban": null,
-     "vocalized": "وفتخرت",
-     "vocalized_from": "lexicon:exact"
+     "village": null,
+     "vocalized": "وافتَخَرَت",
+     "vocalized_from": "curated",
+     "provenance": "curated:modern-term",
+     "caphi_urban": "wiftakharat"
     },
     {
      "surface": "فيي",

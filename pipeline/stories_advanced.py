@@ -80,7 +80,7 @@ STORIES = [
    ("صارت إمي تطبخ لنا نفس الأكلات.", "My mom started cooking us the same dishes."),
    ("وكانت تحط فيها كل محبتها لإلنا.", "And she would put all her love for us into them."),
    ("شوي شوي، صار أكل إمي يشبه أكل جدتي.", "Little by little, my mom's food started to resemble my grandmother's."),
-   ("يوم، ذقت أكلها وحسيت إنه جدتي رجعت.", "One day, I tasted her food and felt my grandmother had come back."),
+   ("يوم، جربت أكلها وحسيت إنه جدتي رجعت.", "One day, I tried her food and felt my grandmother had come back."),
    ("قلتلها: هيك بالضبط كانت تطبخ جدتي.", "I told her: this is exactly how grandma used to cook."),
    ("إمي دمعت وقالت: عرفت السر أخيرا.", "My mom teared up and said: I finally learned the secret."),
  ]),
@@ -174,7 +174,7 @@ STORIES = [
    ("لما كنا صغار، أنا وصاحبي سامي كنا ما ننفصل.", "When we were young, my friend Sami and I were inseparable."),
    ("كل يوم كنا نلعب سوا ونحلم سوا.", "Every day we would play together and dream together."),
    ("مرة، وقفنا عالتلة اللي فوق الضيعة.", "Once, we stood on the hill above the village."),
-   ("سامي قال: تعا نوعد بعض نضل أصحاب للأبد.", "Sami said: let's promise each other to stay friends forever."),
+   ("سامي قال: خلينا نوعد بعض نضل أصحاب للأبد.", "Sami said: let's promise each other to stay friends forever."),
    ("مديت إيدي وقلتله: وعد.", "I extended my hand and told him: promise."),
    ("بس الحياة فرقتنا، هو سافر وأنا ضليت.", "But life separated us; he traveled and I stayed."),
    ("مرت سنين طويلة وما سمعت عنه خبر.", "Long years passed and I heard no news of him."),
@@ -295,9 +295,9 @@ STORIES = [
    ("ليلة، كنت راجع عالبيت والشتا نازلة بقوة.", "One night, I was going home while the rain poured heavily."),
    ("عالطريق، شفت رجال كبير واقف تحت المطر.", "On the road, I saw an old man standing under the rain."),
    ("كان مبلول وعم يرتجف من البرد.", "He was soaked and trembling from the cold."),
-   ("وقفت جنبه وسألته: عمو، شو بك واقف هون؟", "I stopped next to him and asked: uncle, why are you standing here?"),
+   ("وقفت جنبه وسألته: عمو، ليش واقف هون؟", "I stopped next to him and asked: uncle, why are you standing here?"),
    ("قال: ضيعت طريقي، وما بعرف وين أروح.", "He said: I lost my way, and I don't know where to go."),
-   ("قلتله: تعا معي، ما بينفع تضل بالبرد.", "I told him: come with me, you can't stay in the cold."),
+   ("قلتله: يلا معي، ما بينفع تضل بالبرد.", "I told him: come with me, you can't stay in the cold."),
    ("أخذته عالبيت، وإمي سخنتله أكل وشاي.", "I took him home, and my mom heated food and tea for him."),
    ("قعد يتدفى، وحكالنا إنه بيدور على ابنه.", "He sat warming up, and told us he was looking for his son."),
    ("قال إنه ما شاف ابنه من سنين طويلة.", "He said he hadn't seen his son in long years."),
@@ -363,7 +363,7 @@ STORIES = [
    ("بحديقة بيتنا، عشش عصفور صغير عالشجرة.", "In our house garden, a little sparrow nested in the tree."),
    ("كل الصبح، كان يصحينا بغناه الحلو.", "Every morning, it would wake us with its beautiful singing."),
    ("الولاد كانوا يحطولوا فتات خبز ومي.", "The kids would put out bread crumbs and water for it."),
-   ("صار العصفور يعرفنا وما يخاف منا.", "The sparrow came to know us and wasn't afraid of us."),
+   ("صار العصفور يعرفنا وما يخاف مننا.", "The sparrow came to know us and wasn't afraid of us."),
    ("مرة، هبت عاصفة قوية بالليل.", "Once, a strong storm blew at night."),
    ("الصبح، لقينا العش وقع عالأرض.", "In the morning, we found the nest had fallen to the ground."),
    ("الولاد زعلوا، وخافوا إنه العصفور مات.", "The kids got upset, and feared the sparrow had died."),
@@ -413,7 +413,7 @@ STORIES = [
  ("صوت العود", "The Sound of the Oud", [
    ("جاري أبو نبيل كان يعزف عود من زمان.", "My neighbor Abu Nabil used to play the oud long ago."),
    ("كل مسا، كنا نسمع صوت عوده من الشباك.", "Every evening, we would hear the sound of his oud from the window."),
-   ("اللحن كان حزين حلو، بيمس القلب.", "The melody was sad and sweet, touching the heart."),
+   ("اللحن كان حزين حلو، بيلمس القلب.", "The melody was sad and sweet, touching the heart."),
    ("مرة، سألته: ليش ألحانك حزينة يا عمو؟", "Once, I asked him: why are your melodies sad, uncle?"),
    ("حط العود جنبه، وحكالي قصته.", "He put the oud beside him, and told me his story."),
    ("قال إنه كان عنده بنت بتحب الموسيقى.", "He said he had a daughter who loved music."),
@@ -532,6 +532,11 @@ STORIES = [
 ]
 
 def main():
+    from bookshelf import check_sentences
+    rc = check_sentences('advanced stories',
+                         [(a, e) for _t, _te, ss in STORIES for a, e in ss])
+    if rc:
+        return rc
     tdir = paths.texts()
     for i, (t_ar, t_en, sents) in enumerate(STORIES, 1):
         sid = 'story-adv-%02d' % i
@@ -544,4 +549,4 @@ def main():
     print('wrote %d advanced stories' % len(STORIES))
 
 if __name__ == '__main__':
-    main()
+    raise SystemExit(main() or 0)
